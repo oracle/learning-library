@@ -15,7 +15,7 @@ The face to face interview process consists of a technical interview outlined be
 | Touch the Cloud - Oracle Cloud Research and Demo | 15 | Brief demo on Oracle Cloud Product(s) of interest and relevence (Trial Account) |  
 | Technical Q & A Interview | 10 | Technical Question and Answer Interview |
 
-## Overview Presentation
+## Overview 
 
 During this presentation, we ask that you provide a brief overview of yourself, including your technical experience and skills. It's not necessary to go into detail, as we will ask more questions during the **Technical Question and Answer Interview** section of the interview. 
 
@@ -53,8 +53,10 @@ In this section of the interview, you will select from the 2 options below:
 **Option 1: Obtain an Oracle Trial Account**
 Using an Oracle Trial account you can research more in-depth any of the Oracle Infrastructure or Platform Cloud Services, and present or demonstrate in up to 15 minutes what you have learned from hands-on experience and interest in these products.  Instructions for how to secure an Oracle Trial Account are provided below.
 
-**Option 2: Oracle Cloud Investigation**
-As an alternative to getting a Trial Account, you can investigate the Platform and Infrastructure Services and present back some of your findings and interests. You are given flexibility in what you present, so have fun with it. A few pointers: We are mostly interested in your understanding of the technical functionality of Oracle's Cloud Services, what you feel Oracle's Cloud capabilities are, and how they may compare to Oracle's competitor's solutions.  
+**Option 2: Recent Project Presentation**
+During this presentation, we would like you to provide an overview (or demonstration) of a development project on which you have recently worked. Provide examples of the technology, programming languages, and methodologies you used during this project. Feel free to use the whiteboard or laptop available in the interview room. If you use powerpoint, please keep your presentation to approximately 5 slides.
+
+
 
 **Instructions to register for Oracle Trial Account (Option1)**
 
