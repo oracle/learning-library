@@ -23,7 +23,7 @@ To run these hands-on-labs, you need to:
 -   Download the lab source files from [GitHub Page](https://github.com/ckoratam/OracleAPEX-Curriculum). Alternatively, download the Oracle Application Express Curriculum zip file from [https://apex.oracle.com/education](http://www.oracle.com/technetwork/developer-tools/apex/learnmore/apex-education-2517914.html) and then extract the **apex-course-labs.zip** file into your working directory.  
 
 ## IMPORTANT: 
-- The Lab documentation is **best viewed** by using the HOL's [GitHub Pages Website URL](https://ckoratam.github.io/OracleAPEX/workshops/apex-en). Once you are viewing the HOL's GitHub Pages website, you can see a list of Lab Guides at any time by clicking on the **Menu Icon**
+- The Lab documentation is **best viewed** by using the HOL's [GitHub Pages Website URL](https://oracle.github.io/learning-library/workshops/apex-en/). Once you are viewing the HOL's GitHub Pages website, you can see a list of Lab Guides at any time by clicking on the **Menu Icon**
 
     ![](images/WorkshopMenu.png)
 
