@@ -1,6 +1,6 @@
 # Deploying a PHP Application to Oracle Application Container Cloud Service #
 
-## Before You Begin ##
+## ![](../common/img/32_begin.png) Before You Begin ##
 This Oracle By Example (OBE) lab shows you how to deploy a PHP application to Oracle Application Container Cloud Service and how to integrate Oracle MySQL Service to your application.
 
 ### Background ###
@@ -14,7 +14,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 * PHP Employee application service [employee-service.zip](files/employee-service.zip)
 
 
-## Deploy Your Application to Oracle Application Container Cloud Service ##
+## ![](../common/img/32_1.png) Deploy Your Application to Oracle Application Container Cloud Service ##
 1. Log in to Oracle Cloud at http://cloud.oracle.com/. Enter your account credentials in the **Identity Domain**, **User Name**, and **Password** fields. 
 2. To open the Oracle Application Container Cloud Service console, click **Instances** in the dashboard. 
 <br>![](img/open_console.png)
@@ -31,7 +31,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 8. Click **OK** in the confirmation dialog box. 
 
 
-## Add the MySQLCS Service Binding ##
+## ![](../common/img/32_2.png) Add the MySQLCS Service Binding ##
 1. Wait until the application is created and click the application name and make note of the application URL. 
 <br>![](img/employee_service_app.png)
 <br>[Description of the illustration employee_service_app.png](files/employee_service_app.txt)
@@ -47,7 +47,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 5. Wait until the application is restarted. 
 
 
-## Test the Application ##
+## ![](../common/img/32_3.png) Test the Application ##
 1. In the Oracle Application Container Cloud Service console click the URL of your application.
 2. Click **Setup the database**. 
 <br>![](img/index-page.png)
@@ -78,7 +78,7 @@ url -i -X PUT -H "Content-Type:application/json" -d "{ \"firstName\" : \"John\",
 curl -i -X DELETE app_endpoint/employees-rest-api.php/employees/6
 ```
 
-## Want to Learn More? ##
+## ![](../common/img/32_more.png) Want to Learn More? ##
 * [Oracle Application Container Cloud Service](http://docs.oracle.com/en/cloud/paas/app-container-cloud/index.html) in the Oracle Help Center
 * [Oracle Application Container Cloud Service: Building a RESTful API with PHP](https://apexapps.oracle.com/pls/apex/f?p=44785:112:10556495222365::::P112_CONTENT_ID:17099) OBE
 * [Oracle Application Cloud Container: Creating a PHP REST Application Using Laravel and MySQL](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:18797) OBE

@@ -1,6 +1,6 @@
 # Running an App in Oracle Mobile Cloud Service #
 
-## Before You Begin ##
+## ![](../common/img/32_begin.png) Before You Begin ##
 
 This tutorial shows you how to import and run a mobile phone app with Oracle Mobile Cloud Service.
 
@@ -17,7 +17,7 @@ Oracle Mobile Application Accelerator (Oracle MAX) is a free mobile app. With it
 * The sample [phone app](files/package-crm-phone-app.zip) import package for Oracle Mobile Cloud Service
 
 
-## Log In to Your Instance of Oracle Mobile Cloud Service ##
+## ![](../common/img/32_1.png) Log In to Your Instance of Oracle Mobile Cloud Service ##
 
 1. Log in to your cloud instance.
 2. Click **Dashboard**.
@@ -29,7 +29,7 @@ Oracle Mobile Application Accelerator (Oracle MAX) is a free mobile app. With it
 <br>![](img/t01_02_mcs_details.png)
 <br>[Description of the illustration t01_02_mcs_details.png](files/t01_02_mcs_details.txt)
 
-## Import the Backend Service ##
+## ![](../common/img/32_2.png) Import the Backend Service ##
 
 In this section, you import the customer relationship management (CRM) backend service that provides data to the mobile app.
 
@@ -52,7 +52,7 @@ In this section, you import the customer relationship management (CRM) backend s
 <br>![](img/t02_07_imported_pkg.png)
 <br>[Description of the illustration t02_07_imported_pkg.png](files/t02_07_imported_pkg.txt)
 
-## Import the Phone App ##
+## ![](../common/img/32_3.png) Import the Phone App ##
 
 1. If you aren't logged in to your instance of Oracle Mobile Cloud Service, log in now.
 2. Click ![The DEVELOPMENT menu](img/t02_01_dev_menu.png), and then click **Applications**.
@@ -68,7 +68,7 @@ In this section, you import the customer relationship management (CRM) backend s
 8. On the **Import** Application page, confirm that the following message appears: `package-CRM-phone-app.zip: loaded and validated`.
 9. Click **Import**. The mobile app is opened in the **Application Designer** on the **Mobile Application Accelerator** page. 
 
-## Create a Mobile Test User ##
+## ![](../common/img/32_4.png) Create a Mobile Test User ##
 In this section, you create a mobile test user in Oracle Mobile Cloud Service. This user is required to test your mobile app.
 1. If you aren't logged in to your Mobile Cloud Service instance, log in now.
 2. Click ![The DEVELOPMENT menu](img/t02_01_dev_menu.png), and then click Applications.
@@ -84,7 +84,7 @@ In this section, you create a mobile test user in Oracle Mobile Cloud Service. T
 
 After the mobile test user is created, you receive an email message containing the user name and temporary password.
 
-## Test the Mobile App in Oracle Mobile Cloud Service ##
+## ![](../common/img/32_5.png) Test the Mobile App in Oracle Mobile Cloud Service ##
 
 1. If you aren't logged in in your instance of Oracle Mobile Cloud Service, log in now.
 2. Click ![The DEVELOPMENT menu](img/t02_01_dev_menu.png), and then click **Applications**.
@@ -96,7 +96,7 @@ After the mobile test user is created, you receive an email message containing t
 <br>![](img/t05_02_test_app_browser.png)
 <br>[Description of the illustration t05_02_test_app_browser.png](files/t05_02_test_app_browser.txt)
 
-## Test the Mobile App on Your Mobile Phone ##
+## ![](../common/img/32_6.png) Test the Mobile App on Your Mobile Phone ##
 
 1. On the **Application Designer** page, click **Test on Phone**. 
 2. Click **BUILD TEST APPLICATION**. Wait until your mobile app builds. 
@@ -114,7 +114,7 @@ After the mobile test user is created, you receive an email message containing t
 <br>![](img/t06_08_mobile_app.png)
 <br>[Description of the illustration t06_08_mobile_app.png](files/t06_08_mobile_app.txt)
 
-## Want to Learn More? ##
+## ![](../common/img/32_more.png) Want to Learn More? ##
 
 * [Oracle Mobile Cloud Service: Get Started](https://docs.oracle.com/en/cloud/paas/mobile-cloud/index.html)
 * [Assign MCS Team Member Roles](http://docs.oracle.com/en/cloud/paas/mobile-cloud/mcsua/set-service.html#GUID-2916A6ED-BA67-41D2-A88A-65CC3E9E18AB)

@@ -1,6 +1,6 @@
 # Developing a Business Application by Using Oracle Application Builder Cloud Service #
 
-## Before You Begin ##
+## ![](../common/img/32_begin.png) Before You Begin ##
 
 This tutorial shows you how to quickly develop a business app by using Oracle Application Business Cloud Service. This tutorial takes approximately 15 minutes to complete.
 
@@ -13,7 +13,7 @@ Oracle Application Builder Cloud Service is a visual development tool for creati
 * A desktop or laptop computer running Microsoft Windows 7 or later, Apple MacOS 10.9 or later, or Linux with a web browser
 * Access to an instance of Oracle Application Builder Cloud Service
 
-## Log In to Oracle Application Builder Cloud Service ##
+## ![](../common/img/32_1.png) Log In to Oracle Application Builder Cloud Service ##
 
 1. Sign in to your Oracle Cloud account and change the temporary password, if you haven't already done so.
 2. Log in to your Cloud instance.
@@ -24,7 +24,7 @@ Oracle Application Builder Cloud Service is a visual development tool for creati
 <br>![](img/abcs-00.png)<br>
 [Description of the illustration abcs-00.png](files/abcs-00.txt)
 
-## Design the Application UI ##
+## ![](../common/img/32_2.png) Design the Application UI ##
 
 1. On the **Oracle Application Builder Cloud Service** page, click **New Web Application**. 
 2. On the **Create Application** page, enter `Books Tracker` in the **Application Name** field and click **Next**. 
@@ -36,7 +36,7 @@ Oracle Application Builder Cloud Service is a visual development tool for creati
 6. Click **New Business Object**, enter `Book_Catalog_BO` in the **Business Object Name** field, and click **Accept** ![Business object accept button](img/func_checkmark_16_ena.png). 
 7. Click **Create** to save the changes.
 
-## Add a Table Component to the Form ##
+## ![](../common/img/32_3.png) Add a Table Component to the Form ##
 
 1. On the **Application Designer** page, in the **Filter Box** field of the components panel, enter `table`, and drag and drop the **table** component onto the **Book Catalog** form. 
 <br>![](img/abcs-07.png)<br>
@@ -62,7 +62,7 @@ The row is displayed in the books table on the **Book Catalog** page of your web
 <br>![](img/abcs-12.png)<br>
 [Description of the illustration abcs-12.png](files/abcs-12.txt)
 
-## Complete and Test the App ##
+## ![](../common/img/32_4.png) Complete and Test the App ##
 
 1. On the **Runtime** page, click **Back To Designer**.
 2. On the Application Designer page, click **Home**.
@@ -87,6 +87,6 @@ The row is displayed in the books table on the **Book Catalog** page of your web
 [Description of the illustration abcs-21.png](files/abcs-21.txt)
 
 
-## Want to Learn More? ##
+## ![](../common/img/32_more.png) Want to Learn More? ##
 * Oracle Application Builder Cloud Service: Get Started
 

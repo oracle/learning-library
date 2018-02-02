@@ -1,6 +1,7 @@
 # Creating a Node.js RESTful Application in Oracle Application Container Cloud Service #
 
-## Before You Begin ##
+## ![](../common/img/32_begin.png) Before You Begin ##
+
 This tutorial shows you how to develop a simple message board application. Using REST calls, you can read existing comments and create new comments on the message board. This tutorial takes 10 minutes to complete.
 
 ### Background ###
@@ -13,11 +14,10 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 * Access to an instance of Oracle Application Container Cloud Service
 * [A storage replication policy for your service instance](https://docs.oracle.com/en/cloud/iaas/storage-cloud/cssto/selecting-replication-policy-your-service-instance.html)
 
-## Develop a Sample RESTful Node.js Service ##
+## ![](../common/img/32_1.png) Develop a Sample RESTful Node.js Service ##
 1. Create a JavaScript file and name it `server.js`.
 2. Open `server.js` in an editor and create a simple Node.js server.
-
-   ````javascript
+   ```javascript
    var http = require('http');
    var PORT = 8089; 
    var server = http.createServer(function (request, response) {
@@ -27,23 +27,22 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
    server.listen(PORT, function () {
       console.log('Server running...');
    });
-   ````
+
+   ```
    This code fragment creates a service that listens on `HTTP` port `8089`. In a later step, you will change this port with an Oracle Application Container Cloud Service variable.
 3. Test your server.
-
    `node server.js`
 4. In a browser window, go to http://localhost:8089 and look for the following message: `"LATER ON, YOU WILL PLACE CODE HERE."`
 5. To stop the server, press CTRL+C.
 6. Add the following variable declarations after the `var PORT` declaration: 
-
-   ````javascript
+   ```javascript
    var topicList = [];
    var topicDetail = {};
    var currentId = 123;
-   ````
-7. Add the following functions after the variable declarations: 
 
-   ````javascript
+   ```
+7. Add the following functions after the variable declarations: 
+   ```javascript
    function addTopic(tTitle, tText) {
       console.log("addTopic(" + tTitle + "," + tText + ")");
       var topicId = ++currentId;
@@ -56,19 +55,19 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
       console.log("addComment(" + topicId + "," + text + ")");
       topicDetail[topicId].comments.push(text);
    } 
-   ````
-8. Create sample messages. 
 
-   ````javascript
+   ```
+8. Create sample messages.
+   ```javascript
    var id1 = addTopic("Topic 1","Topic 1 content");
    var id2 = addTopic("Topic 2","Topic 2 content");
    addComment(id1, "Good topic");
    addComment(id2, "This is a comment");
    addComment(id2, "This is another comment");
-   ````
-9. Replace the `http.createServer` function with the following code: 
 
-   ````javascript
+   ```
+9. Replace the `http.createServer` function with the following code: 
+   ```javascript
    var server = http.createServer(function (request, response) {
       response.setHeader('Access-Control-Allow-Origin', '*');
       response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -87,13 +86,12 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
          handleRequest(request, response, requestBody);
       });
    });
-   ````  
-10. Add this function to handle the HTTP requests: 
-
-   ````javascript
+   ```  
+10.  Add this function to handle the HTTP requests:
+   ```javascript
    function handleRequest(request, response, requestBody) {
       console.log(request.method + ":" + request.url + ' >>' + requestBody);
-
+      
       if (request.url == '/') {
          if (request.method == 'POST') {
             var jsonMsg = JSON.parse(requestBody);
@@ -113,17 +111,17 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
          }
       }
    }  
-   ````
+   ```
 11. Your application must listen to requests on a port provided by an Oracle Application Container Cloud Service environment variable. In your `server.js` file, update the `var PORT` variable declaration.
-
-   ````javascript
+   ```javascript
    var PORT = process.env.PORT || 80;
-   ````
-##  Prepare the Package for deployment ##
+
+   ```
+
+##  ![](../common/img/32_2.png) Prepare the Package for deployment ##
 Oracle Application Container Cloud Service requires a `manifest.json` file, which contains information about which Node.js command the service should run.
 1. Create a `manifest.json` file and add: 
-
-   ````json
+   ```json
    {
       "runtime":{
       "majorVersion":"4"
@@ -132,10 +130,11 @@ Oracle Application Container Cloud Service requires a `manifest.json` file, whic
       "release": {},
      "notes": ""
    }
-   ````
+
+   ```
 2. Compress the `server.js` and `manifest.json` files and bundle them into a single zip file named `sample.zip`.
 
-## Open the Oracle Application Container Cloud Service Console ##
+## ![](../common/img/32_3.png) Open the Oracle Application Container Cloud Service Console ##
 1. In a web browser, go to [https://cloud.oracle.com/home](https://cloud.oracle.com/home) and click **Sign In**.
 2. From the **Cloud Account** drop-down menu, select your data center and click **My Services**.
 3. Enter your identity domain and click **Go**.
@@ -143,40 +142,32 @@ Oracle Application Container Cloud Service requires a `manifest.json` file, whic
 5. If Oracle Application Container Cloud Service isn't listed in the dashboard, click **Customize Dashboard**.
 6. Under **Java**, find **Application Container**, select **Show**, and close the **Customize Dashboard** tab.
 7. In the **Application Container** tile, click **Action** and select **Open Service Console**.
+<br>![deploy-node-accs-03.jpg](img/deploy-node-accs-03.jpg)
+<br>[Description of the illustration deploy-node-accs-03.jpg](files/deploy-node-accs-03.jpg)
 
-   ![deploy-node-accs-03.jpg](img/deploy-node-accs-03.jpg)
-
-   [Description of the illustration deploy-node-accs-03.jpg](files/deploy-node-accs-03.jpg)
-
-## Deploy the Sample Application to Oracle Application Container Cloud Service ##
+## ![](../common/img/32_4.png) Deploy the Sample Application to Oracle Application Container Cloud Service ##
 1. On the **Applications** tab, click **Create Application**.
 2. Select **Node** as the application platform.
 3. On the **Create Application** page, enter `Sample` for the name. Under **Application Artifacts**, click **Choose File** next to **Archive**.
-
-   ![deploy-node-accs-04.jpg](img/deploy-node-accs-04.jpg)
-
-   [Description of the illustration deploy-node-accs-04.jpg](files/deploy-node-accs-04.jpg)
+<br>![deploy-node-accs-04.jpg](img/deploy-node-accs-04.jpg)
+<br>[Description of the illustration deploy-node-accs-04.jpg](files/deploy-node-accs-04.jpg)
 4. In the opened file browser, navigate to the folder where you created sample.zip, select the file, and click **Open**.
-
-   ![deploy-node-sample-05.jpg](img/deploy-sample-accs-04.jpg)
-
-   [Description of the illustration deploy-sample-accs-04.jpg](files/deploy-sample-accs-04.jpg)
+<br>![deploy-node-sample-05.jpg](img/deploy-sample-accs-04.jpg)
+<br>[Description of the illustration deploy-sample-accs-04.jpg](files/deploy-sample-accs-04.jpg)
 5. Click **Create**. Processing takes a few minutes. 
 
-## Test your Node.js RESTful Service using cURL ##
+## ![](../common/img/32_5.png) Test your Node.js RESTful Service using cURL ##
 1. On the **Applications** tab, click **Refresh** repeatedly until your application is created.
 2. Copy the application URL.
-
-   ![test-sample-accs-07.jpg](img/test-sample-accs-07.jpg)
-
-   [Description of the illustration test-sample-accs-07.jpg](files/test-sample-accs-07.jpg)
+<br>![test-sample-accs-07.jpg](img/test-sample-accs-07.jpg)
+<br>[Description of the illustration test-sample-accs-07.jpg](files/test-sample-accs-07.jpg)
 3. In a Git CMD window, access the URL as a REST endpoint:
 
    <code>curl -i -X GET <i>application URL</i></code>
 
    The sample data that you entered in `server.js` is displayed.
 
-   ````
+   ```
    HTTP/1.1 200 OK
    Server: Oracle-Traffic-Director/11.1.1.9
    Date: Fri, 07 Apr 2017 18:27:41 GMT
@@ -189,7 +180,8 @@ Oracle Application Container Cloud Service requires a `manifest.json` file, whic
    Proxy-agent: Oracle-Traffic-Director/11.1.1.9
 
    [{"title":"Topic 1","id":124},{"title":"Topic 2","id":125}]
-   ````
+  
+   ```
 
 4. Add a message.
 
@@ -197,7 +189,7 @@ Oracle Application Container Cloud Service requires a `manifest.json` file, whic
 
 5. Repeat step 2. The sample data is updated.
 
-   ````
+   ```
    HTTP/1.1 200 OK
    Server: Oracle-Traffic-Director/11.1.1.9
    Date: Wed, 12 Apr 2017 17:19:25 GMT
@@ -210,8 +202,9 @@ Oracle Application Container Cloud Service requires a `manifest.json` file, whic
    Proxy-agent: Oracle-Traffic-Director/11.1.1.9
 
    [{"title":"Topic 1","id":124},{"title":"Topic 2","id":125},{"title":"Hello","id":126}]
-   ````
-## Want to Learn More ##
+
+   ```
+## ![](../common/img/32_more.png) Want to Learn More ##
 
 * Node.js website [nodejs.org](https://nodejs.org/)
 * [Using Oracle Application Container Cloud Service](http://docs.oracle.com/cloud/latest/apaas_gs/CSJSE/toc.htm)

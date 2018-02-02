@@ -625,6 +625,10 @@ article ol ul li::before {
   padding-right: 5px;
 }
 
+article li p {
+	margin-left: 0;
+}
+
 pre {
     -webkit-overflow-scrolling: touch ;
     background-color: #EEF5FC;
