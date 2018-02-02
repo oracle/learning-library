@@ -35,20 +35,28 @@
 
 </head>
 <body ng-cloak ng-controller="labGuideController" md-theme="{{theme}}" class="{{theme}}">
-    
+
 <!--    TOP TOOLBAR-->
     <md-toolbar class="md-hue-2 infra" flex="none" layout-padding>
         <div class="md-toolbar-tools infra">
             <md-button class="md-icon-button md-raised md-accent infra" aria-label="menu-button" ng-disabled="false" ng-click="toggleLeft()">
-                <img src="https://oracle.github.io/learning-library/workshops/common-content/images/common/hamburger.png" class="menu-hamburger infra" /> 
+                <img src="https://oracle.github.io/learning-library/workshops/common-content/images/common/hamburger.png" class="menu-hamburger infra" />
             </md-button>
-            <h2 class="infra">
+            <h2 class="infra" flex="noshrink">
                 <span class="infra">{{manifest.workshop.title}}</span>
             </h2>
+            <div flex="grow" layout="row" layout-align="end center" ng-if="versionsAvailable.length > 1">
+              <md-input-container flex-shrink>
+                 <md-select name="version" ng-model="version.selected" id="version-selector">
+                   <md-option ng-repeat="version in versionsAvailable" value="{{version}}">{{version}}</md-option>
 
+                 </md-select>
+               </md-input-container>
+               <img src="https://derekoneil.github.io/WorkshopTemplate/workshops/workshop-template/images/ic_help_white_18dp_1x.png" ng-click="openDialog()" class="infra" flex-shrink style="margin-right: 100px;"/>
+            </div>
         </div>
     </md-toolbar>
-    
+
 <!--    SIDE NAV MENU-->
     <md-sidenav class="md-sidenav-left infra" md-component-id="left" md-whiteframe="4">
       <md-toolbar class="md-hue-2 infra">
@@ -56,7 +64,7 @@
       </md-toolbar>
       <md-content style="height: 110%;">
         <md-list>
-            <md-list-item class="md-3-line toc-item infra" ng-repeat="lab in manifest.workshop.labs" ng-click="getLabGuide(lab); close();">
+            <md-list-item class="md-3-line toc-item infra" ng-repeat="lab in manifest.workshop.labs | versionFilter:version.selected" ng-click="getLabGuide(lab); close();">
                 <div class="md-list-item-text infra">
                     <h3 class="infra">{{lab.title}}</h3>
                     <p class="infra">{{lab.description}}</p>
@@ -71,7 +79,7 @@
         </md-button>
       </md-content>
     </md-sidenav>
-    
+
 <!--    INTERACTIVE LOADER-->
     <md-button class="md-fab md-fab-top-right" aria-label="Interactive Tour" ng-click="showInteractive()" ng-show="enableInteractive">
         <md-tooltip md-direction="left">Interactive Tour</md-tooltip> <img class="interactive-img infra" style="" src="https://oracle.github.io/learning-library/workshops/common-content/images/common/interactive-logo.png" /> </md-button>
@@ -85,8 +93,8 @@
                         </h2>
                         <span flex></span>
 
-                        <md-button class="md-icon-button" aria-label="Cancel tour" ng-click="cancel()"> 
-                            <img src="https://oracle.github.io/learning-library/workshops/common-content/images/common/dialog-close.png" class="md-primary infra" ng-click="closeInteractive()" /> 
+                        <md-button class="md-icon-button" aria-label="Cancel tour" ng-click="cancel()">
+                            <img src="https://oracle.github.io/learning-library/workshops/common-content/images/common/dialog-close.png" class="md-primary infra" ng-click="closeInteractive()" />
                         </md-button>
                     </div>
                 </md-toolbar>
@@ -98,18 +106,18 @@
             </md-dialog>
         </div>
     </div>
-    
+
     <div id='labguide' ng-bind-html='htmlContent' ng-show='selection.lab'>
         <!--   content filled dynamically     -->
     </div>
     <div id='returnToTop' layout layout-align="center center">
         <a href="#" layout-margin layout-padding>^ Return to Top</a>
     </div>
-    
-    <script src='https://oracle.github.io/learning-library/workshops/common-content/js/workshop.js'></script>
-    <!--
-    <script src='./js/workshop.js'></script>
-    -->
+
+    <!-- <script src='https://oracle.github.io/learning-library/workshops/common-content/js/workshop.js'></script> -->
+    <script src='https://derekoneil.github.io/WorkshopTemplate/workshops/workshop-template/js/workshop.js'></script>
+    <!-- <script src='./js/workshop.js'></script> -->
+
 
 </body>
 </html>
