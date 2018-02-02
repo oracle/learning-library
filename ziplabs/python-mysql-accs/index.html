@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Part number: E91279-01 -->
+    	<!-- Published date: October 2017 -->
+        <!-- See this link for directions on getting a part number: https://confluence.oraclecorp.com/confluence/display/DLPP/Archive+an+OBE -->
+        <!-- Template date: 10/18/17 -->
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <title>Connect a Python Application to Oracle MySQL Cloud Service</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="robots" content="INDEX, FOLLOW">
+        <meta name="description" content="Learn how to deploy a Python application to Oracle Application Container Cloud Service and then integrate Oracle MySQL Cloud Service with your application.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../common/css/normalize.min.css">
+    <link rel="stylesheet" href="../common/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../common/css/obe-lite.css">
+    <script src="../common/js/jquery-1.11.0.min.js"></script>
+    <script src="../common/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="../common/js/jquery.tocify.jd.js"></script>
+    <script src="../common/js/leftnav.js"></script>
+    
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.created" content="2017-12-01T20:46:09+00:00">
+    <meta name="dcterms.title" content="Connect a Python Application to Oracle MySQL Cloud">
+    <meta name="dcterms.category" content="cloud">
+    <meta name="dcterms.isVersionOf" content="TUTORIAL-CONNECT-PYTHON-MYSQL">
+    <meta name="dcterms.product" content="en/cloud/paas/app-container-cloud">
+    <meta name="dcterms.identifier" content="E91279-01">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  </head>
+    <body>
+        <header>
+            <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com" class="oracle-logo">
+              <img src="../common/img/oracle_doc_logo.png" alt="Oracle Documentation" style="max-width: none;" height="22" width="236"></a>
+            </div>
+        </header>
+        <!--end header-->
+
+        <div id="content">
+
+            <h1><img src="../common/img/obe_tag.png" align="middle" alt="Oracle by Example branding">Connect a Python Application to Oracle MySQL Cloud Service</h1>
+        <div class="w1024" style="position:relative; margin-top:40px;">
+
+            <div class="navbackwide border-right"></div>
+
+            <div id="shownav" title="Show Navigation"></div>
+            <div id="hidenavw" title="Hide Navigation"></div>
+
+            <div id="sidebar">
+                <div class="left-nav-tut">
+                    <div id="navbar" class="left-nav-w">
+                        <div id="toc" class="tocify"></div>
+                    </div>
+                </div>
+                <script>
+                    $(function () {
+
+                        var toc = $("#toc").tocify({
+                            selectors: "h2,h3,h4,h5"
+                        }).data("toc-tocify");
+
+                        //prettyPrint();
+                        $(".optionName").popover({ trigger: "hover" });
+
+                        //sets options
+                        toc.setOptions({ extendPage: false, showEffect: "fadeIn", smoothScroll: false });
+
+                        // Writes all of the current plugin options to the console
+                        console.log(toc.options);
+
+                    });
+
+                </script> </div>
+                <div id="bookContainer">
+                    <article>
+                        <section>
+                            <h2><img src="../common/img/32_begin.png" alt="section 0" height="32" width="32" class="num_circ">Before You Begin</h2>
+                            <p>This 10-minute tutorial shows you how to deploy a Python application to Oracle Application Container Cloud Service and then integrate Oracle MySQL Cloud Service with your application.</p>
+                            <h3>Background</h3>
+                            <p>Oracle Application Container Cloud Service provides a lightweight infrastructure so that you can run Java, PHP, Node.js, Ruby, and Python applications in Oracle Cloud. </p>
+                            <h3>What Do You Need?</h3>
+                            <ul>
+                <li>Access to an instance of Oracle Application Container Cloud Service (Make a note of your account information: identity domain, user name, and password.)</li>
+                
+                <li>Access to an instance of Oracle MySQL Cloud Service. (See <a href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:19922" target="_blank">Creating an Instance of Oracle MySQL Cloud Service</a>.)</li>
+                <li><a href="https://www.python.org/downloads/" target="_blank">Python 3.6+</a> </li>
+                <li>The <a href="https://pip.pypa.io/en/stable/installing/" target="_blank">pip</a> package management system</li>
+                 <li>Python Employee application project <a href="files/employee-python-app.zip" target="_blank">employee-python-app.zip</a></li>
+                  <li><a href="http://curl.haxx.se/download.html" target="_blank">cURL
+                                                                7.0+</a> with SSL support</li>
+              </ul>
+                        </section>
+
+                        <!-- ========================================================================================================================= -->
+                        <section>
+                            <hr>
+                            <h2 id="section_1" role="button" style="text-align: left;"><img src="../common/img/32_1.png" alt="section 1" height="32" width="32" class="num_circ">Download the Project Dependencies</h2>
+                           <ol>
+                <li>Extract the contents of the <code>employee-python-app.zip</code> file in your local system.</li>
+                <li>Open a command-line window (or terminal in Linux) and go to the <code>employee-python-app</code> directory.</li>
+                <li>Install the project dependencies.
+                <pre><code>pip install -r requirements.txt -t modules</code></pre> 
+                </li>
+                <li>Create the <code>python-service-dist.zip</code> file with the content of the <code>employee-python-app</code> directory. Make sure that the <code>zip</code> file doesn't contain any subdirectories and all the files are at the root of the <code>zip</code> file. 
+                </li>
+                
+              </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_2" role="button" style="text-align: left;"><img src="../common/img/32_2.png" alt="section 2" height="32" width="32" class="num_circ">Deploy Your Application to Oracle Application Container Cloud Service</h2>
+                            <ol>
+               <li>In a web browser, go to <a href="https://cloud.oracle.com/home" target="_blank">https://cloud.oracle.com/home</a> and click <strong>Sign In.</strong></li>
+<li>From the <strong>Cloud Account</strong> drop-down menu, select <strong>Traditional Cloud Account</strong>, then select your data center, and click <strong>My Services.</strong> </li>
+<li>Enter your identity domain and click <strong>Go.</strong></li>
+<li>Enter your cloud account credentials and click <strong>Sign In.</strong> </li>
+                <li>In the <strong>Oracle Cloud My Services</strong> dashboard, click <img src="img/menu.png" alt="Action menu"> and select <strong>Oracle Application Container Cloud Service.</strong>
+                </li>
+                <li>In the <strong>Applications</strong> list view, click <strong>Create
+                    Application.</strong>
+                  
+                </li>
+                <li>In the <strong>Create Application</strong> dialog box, click <strong>Python.</strong>
+                  
+                </li>
+                <li>In the <strong>Application</strong> section, enter <code>EmployeeService</code> for the name
+                  of your application. Click <strong>Browse</strong>.
+                </li>
+                <li>In the <strong>File Upload</strong> dialog box, select <code>python-service-dist.zip</code> and
+                  click <strong>Open.</strong>
+                  
+                </li>
+                <li>Keep the default values in the <strong>Topology</strong>
+                  section and click <strong>Create.</strong> Processing takes a few minutes.                                         
+                        
+                </li>             
+             
+              </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_3" role="button" style="text-align: left;"><img src="../common/img/32_3.png" alt="section 3" height="32" width="32" class="num_circ">Add the MySQLCS Service Binding</h2>
+                            <ol>
+                            <li>Wait until the application is created.
+                            </li>
+                            <li>Click the <strong>Deployments</strong> tab.
+                                In the <strong>Service Binding</strong>
+                                section, click <strong>Add.</strong>
+                              <figure> <img src="img/deployments_tab.png" class="ScreenShot" alt="Deployments page"> <figcaption><a href="files/deployments_tab.txt">Description
+                                    of the illustration deployments_tab.png</a></figcaption> </figure>
+                            </li>
+                            <li>In the <strong>Service Type</strong> field, select <strong>MySQLCS Service.</strong>
+                                Enter or select values in the <strong>Service
+                                  Name, Username,</strong> and <strong>Password</strong>
+                                fields, and click <strong> Save.</strong> 
+                              <figure> <img src="img/add_service_binding.png" class="ScreenShot" alt="Add Service Binding dialog box"> <figcaption><a href="files/add_service_binding.txt">Description
+                                    of the illustration add_service_binding.png</a></figcaption> </figure>
+                            </li>
+                            <li>In the <strong>Deployments</strong> dialog
+                                box, click <strong>Apply Edits.</strong>
+                            </li>
+                            <li>Wait until the application is restarted and then copy the URL of your application. You'll use it in the next section.                             
+                              
+                            </li>
+                          </ol>
+                        </section>
+                        <hr>
+                        <section>
+                            <h2 id="section_4" role="button" style="text-align: left;"><img src="../common/img/32_4.png" alt="section 4" height="32" width="32" class="num_circ">Test Your Application</h2>
+                           <ol>
+                            	<li>Open a command-line window (or terminal in Linux). </li>
+                                <li>Create the <code>EMPLOYEE</code> table. Replace the <strong>app_endpoint</strong> placeholder with the URL of your application.
+                                <pre><code>curl -X GET -i <strong>app_endpoint</strong>/employees/setupdb</code></pre>
+                                 </li>
+                                <li>Create an employee.   
+                                <pre><code>curl -X POST -i -H "Content-Type: application/json" -d "{\"firstName\":\"Luis\",\"lastName\":\"Gray\",\"email\":\"john.gray@example.com\",\"phone\":\"1203123\",\"birthDate\":\"1975-05-14\",\"title\":\"Developer Manager\",\"dept\":\"IT\"}" <strong>app_endpoint</strong>/employees
+</code></pre>
+                                </li>
+                                <li>Get all employees. 
+                                <pre><code>curl -X GET -i <strong>app_endpoint</strong>/employees</code></pre>
+                                </li>
+                                <li>Delete the employee.
+                                <pre><code>curl -X DELETE -i <strong>app_endpoint</strong>/employees/1</code></pre>
+                                </li>
+                                <li>Get the employee by ID.
+                                <pre><code>curl -X GET -i <strong>app_endpoint</strong>/employees/1
+</code></pre>
+                                </li>
+                            </ol>
+                        </section>                        
+                       
+                        <hr>
+                        <section>
+                            <!-- Include the More Information section only in a single or the final lab or tutorial in a series -->
+                            <h2 id="more_info" role="button" style="text-align: left;"><img src="../common/img/32_more.png" alt="more information" height="32" width="32" class="num_circ">Want to Learn More?</h2>
+                            <ul>
+                <li><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=apaasgs" target="_blank">Oracle Application Container Cloud Service Get Started</a>
+                   in the Oracle Help Center</li>
+                  <li><a href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:16396753825687::::P112_CONTENT_ID:20165" target="_blank">Creating a Python Application Using Oracle MySQL Cloud Service on Oracle Application Container Cloud Service</a> OBE</li>
+              </ul>
+                            <hr>
+                        </section>
+                    </article>
+                </div>
+                <br class="clearfloat">
+            </div>
+        </div>
+        <!--close main--> 
+        <!--end content-->
+        <div class="footer-container ">
+            <div style="max-width: 994px; padding:10px 0 0 17px;">
+                <footer class="footer-list">
+                    <ul>
+                        <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About Oracle</a> </li>
+                        <li> <a href="https://www.oracle.com/us/corporate/contact/index.html" target="_blank">Contact Us</a> </li>
+                        <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal Notices</a> </li>
+                        <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms of Use</a> </li>
+                        <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your Privacy Rights</a> </li>
+                        <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&id=en">Copyright © 2017, Oracle and/or its affiliates. All rights reserved.</a></li>
+                    </ul>
+                </footer>
+            </div>
+            <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+        </div>
+    </body>
+</html>

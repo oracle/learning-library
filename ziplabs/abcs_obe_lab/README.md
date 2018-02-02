@@ -1,32 +1,32 @@
-# Developing a Business Application by Using Oracle Application Builder Cloud Service #
+# Developing a Business Application by Using Oracle Visual Builder Cloud Service #
 
 ## ![](../common/img/32_begin.png) Before You Begin ##
 
-This tutorial shows you how to quickly develop a business app by using Oracle Application Business Cloud Service. This tutorial takes approximately 15 minutes to complete.
+This tutorial shows you how to quickly develop a business app by using Oracle Visual Builder Cloud Service. This tutorial takes approximately 15 minutes to complete.
 
 ### Background ###
 
-Oracle Application Builder Cloud Service is a visual development tool for creating web and mobile apps by simply dragging and dropping user interface (UI) components onto a page. 
+Oracle Visual Builder Cloud Service is a visual development tool for creating web and mobile apps by simply dragging and dropping user interface (UI) components onto a page. 
 
 ### What Do You Need? ###
 
 * A desktop or laptop computer running Microsoft Windows 7 or later, Apple MacOS 10.9 or later, or Linux with a web browser
-* Access to an instance of Oracle Application Builder Cloud Service
+* Access to an instance of Oracle Visual Builder Cloud Service
 
-## ![](../common/img/32_1.png) Log In to Oracle Application Builder Cloud Service ##
+## ![](../common/img/32_1.png) Log In to Oracle Visual Builder Cloud Service ##
 
 1. Sign in to your Oracle Cloud account and change the temporary password, if you haven't already done so.
 2. Log in to your Cloud instance.
 3. Click **Dashboard**.
 4. Click **Customize Dashboard**.
 5. Select **Show** for **appbuilder** and close the dialog box.
-6. In the **Application Builder** tile, click **Action** ![Action Menu](img/hamburger.png) and select **Open Service Console**.
+6. In the **Visual Builder** tile, click **Action** ![Action Menu](img/hamburger.png) and select **Open Service Console**.
 <br>![](img/abcs-00.png)<br>
 [Description of the illustration abcs-00.png](files/abcs-00.txt)
 
 ## ![](../common/img/32_2.png) Design the Application UI ##
 
-1. On the **Oracle Application Builder Cloud Service** page, click **New Web Application**. 
+1. On the **Oracle Visual Builder Cloud Service** page, click **New Web Application**. 
 2. On the **Create Application** page, enter `Books Tracker` in the **Application Name** field and click **Next**. 
 3. In the **Application Template** field, select `Oracle Alta UI`, click **Next**, and then click **Finish**. 
 4. From the main toolbar, click **Home** and then click **New Page**. 
@@ -88,5 +88,4 @@ The row is displayed in the books table on the **Book Catalog** page of your web
 
 
 ## ![](../common/img/32_more.png) Want to Learn More? ##
-* Oracle Application Builder Cloud Service: Get Started
-
+* [Oracle Visual Builder Cloud Service: Get Started](http://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/app-builder-cloud&id=abcsgs)

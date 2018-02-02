@@ -12,10 +12,10 @@
     <!-- This OBE Lab is to showcase how to develop an app using Oracle abcs-->
     <!-- Template date: 5/30/17 -->
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
-    <title>Developing a Business Application by Using Oracle Application Builder Cloud Service</title>
+    <title>Developing a Business Application by Using Oracle Visual Builder Cloud Service</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="robots" content="INDEX, FOLLOW">
-    <meta name="description" content="Learn how to quickly develop a business application by using Oracle Application Builder Cloud Service.">
+    <meta name="description" content="Learn how to quickly develop a business application by using Oracle Visual Builder Cloud Service.">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -43,9 +43,7 @@
 
     <div id="content">
         <h1>
-            <img src="../common/img/obe_tag.png" align="middle" alt="Oracle by Example branding" />
-            <span id="mainTitle"></span>
-        </h1>
+            <img src="../common/img/obe_tag.png" align="middle" alt="Oracle by Example branding" />Developing a Business Application by Using Oracle Visual Builder Cloud Service</h1>
         <div class="w1024" style="position:relative; margin-top:40px;">
             <div class="navbackwide border-right"></div>
             <div id="shownav" title="Show Navigation"></div>
@@ -60,6 +58,339 @@
             <div id="bookContainer">
                 <article>
                     <div data-spy="scroll" data-target=".left-nav-w"> </div>
+                    <section>
+                        <h2>
+                            <img src="../common/img/32_begin.png" alt="section 0" height="32" width="32" class="num_circ">Before You Begin</h2>
+                        <p>This tutorial shows you how to quickly develop a business app by using Oracle Application Business
+                            Cloud Service. This tutorial takes approximately 15 minutes to complete.</p>
+                        <h3>Background</h3>
+                        <p>
+                            Oracle Visual Builder Cloud Service is a visual development tool for creating web and mobile apps by simply dragging
+                            and dropping user interface (UI) components onto a page.
+                        </p>
+                        <h3>What Do You Need?</h3>
+                        <ul>
+                            <li>A desktop or laptop computer running Microsoft Windows 7 or later, Apple MacOS 10.9 or later,
+                                or Linux with a web browser</li>
+                            <li>Access to an instance of Oracle Visual Builder Cloud Service</li>
+                        </ul>
+                    </section>
+
+                    <!-- ========================================================================================================================= -->
+                    <section>
+                        <hr>
+                        <h2 id="section_1" role="button" style="text-align: left;">
+                            <img src="../common/img/32_1.png" alt="section 1" height="32" width="32" class="num_circ">Log In to Oracle Visual Builder Cloud Service</h2>
+                        <ol>
+                            <li>Sign in to your Oracle Cloud account and change the temporary password, if you haven't already
+                                done so.</li>
+                            <li>Log in to your Cloud instance.</li>
+                            <li>Click
+                                <strong>Dashboard.</strong>
+                            </li>
+                            <li>Click
+                                <strong>Customize Dashboard.</strong>
+                            </li>
+                            <!--I shorted the product name here because that's the way appears in the customize dashboard dialog box. Same goes for the next step-->
+                            <li>Select
+                                <strong>Show</strong> for
+                                <strong>appbuilder</strong> and close the dialog box.</li>
+                            <li>
+                                In the
+                                <strong>Visual Builder</strong> tile, click
+                                <strong>Action</strong>
+                                <img src="./img/hamburger.png" alt="Action menu"> and select
+                                <strong>Open Service Console.</strong>
+                                <figure>
+                                    <img src='./img/abcs-00.png' class="ScreenShot" alt="Visual Builder tile">
+                                    <figcaption>
+                                        <a href="./files/abcs-00.txt">Description of the illustration abcs-00.png</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <hr>
+                    <section>
+                        <h2 id="section_2" role="button" style="text-align: left;">
+                            <img src="../common/img/32_2.png" alt="section 2" height="32" width="32" class="num_circ">Design the Application UI</h2>
+                        <ol>
+                            <li>On the
+                                <strong>Oracle Visual Builder Cloud Service</strong> page, click
+                                <strong>New Web Application.</strong>
+                            </li>
+                            <li>
+                                On the
+                                <strong>Create Application</strong> page, enter
+                                <code>Books Tracker</code> in the
+                                <strong>Application Name</strong> field and click
+                                <strong>Next.</strong>
+                            </li>
+                            <li>
+                                In the
+                                <strong>Application Template</strong> field, select
+                                <code>Oracle Alta UI,</code> click
+                                <strong>Next,</strong> and then click
+                                <strong>Finish.</strong>
+                            </li>
+                            <li>
+                                From the main toolbar, click
+                                <strong>Home</strong> and then click
+                                <strong>New Page.</strong>
+
+                            </li>
+                            <li>
+                                In the
+                                <strong>Create Page</strong> wizard, in the
+                                <strong>Page Title</strong> field, enter
+                                <code>Book Catalog,</code> click
+                                <strong>Edit,</strong> and then click
+                                <strong>Next.</strong>
+                                <figure>
+                                    <img src="./img/abcs-05.png" class="ScreenShot" alt="Create Page step">
+                                    <figcaption>
+                                        <a href="./files/abcs-05.txt">Description of the illustration abcs-05.png</a>
+                                    </figcaption>
+                                </figure>
+                                <li>
+                                    Click
+                                    <strong>New Business Object,</strong> enter
+                                    <code>Book_Catalog_BO</code> in the
+                                    <strong>Business Object Name</strong> field, and click
+                                    <strong>
+                                        Accept
+                                        <img src="./img/func_checkmark_16_ena.png" alt="Business object accept button">
+                                    </strong>.
+                                </li>
+                                <li>Click
+                                    <strong>Create</strong> to save the changes.</li>
+                        </ol>
+                    </section>
+                    <hr>
+                    <section>
+                        <h2 id="section_3" role="button" style="text-align: left;">
+                            <img src="../common/img/32_3.png" alt="section 3" height="32" width="32" class="num_circ">Add a Table Component to the Form</h2>
+                        <ol>
+                            <li>
+                                On the
+                                <strong>Application Designer</strong> page, in the
+                                <strong>Filter Box</strong> field of the components panel, enter
+                                <code>table,</code> and drag and drop the
+                                <strong>table</strong> component onto the
+                                <strong>Book Catalog</strong> form.
+                                <figure>
+                                    <img src="./img/abcs-07.png" class="ScreenShot" alt="Add a Table to the Book Catalog page">
+                                    <figcaption>
+                                        <a href="./files/abcs-07.txt">Description of the illustration abcs-07.png</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <!--I'm not being more specific in this step because the wizard automatically displays the next page after the table is drop on the form where the user selects the biz obj-->
+                            <li>
+                                On the
+                                <strong>Table Creation Wizard</strong> page, select
+                                <strong>Book_Catalog_BO</strong> as the business object.
+                                <figure>
+                                    <img src="./img/abcs-08.png" class="ScreenShot" alt="Data step" />
+                                    <figcaption>
+                                        <a href="./files/abcs-08.txt">Description of the illustration abcs-08.png</a>
+                                    </figcaption>
+                                </figure>
+                                <!--Same here, once the user selects the biz object the wizard moves to the fields selection-->
+                                <li>
+                                    On the
+                                    <strong>Table Creation Wizard</strong> page, click
+                                    <strong>New Field.</strong> In the
+                                    <strong>New Field</strong> dialog box, enter
+                                    <code>Book Title</code> and click
+                                    <strong>finish
+                                        <img src="./img/func_checkmark_16_ena.png" alt="Accept button">
+                                    </strong>. Repeat these actions to add the
+                                    <code>Author,</code>
+                                    <code>ISBN,</code> and
+                                    <code>Published Date</code> fields.
+
+                                </li>
+                                <li> In the
+                                    <strong>Available</strong> list, drag and drop
+                                    <strong>Id</strong> to the first position in the
+                                    <strong>Selected</strong> list, and click
+                                    <strong>Finish.</strong>
+                                    <figure>
+                                        <img src="./img/abcs-09.png" class="ScreenShot" alt="Mapping step" />
+                                        <figcaption>
+                                            <a href="./files/abcs-09.txt">Description of the illustration abcs-09.png</a>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>On the
+                                    <strong>Table Designer</strong> page, click
+                                    <strong>Actions</strong> (the hand icon) to open the list of available actions for the table.</li>
+                                <li>
+                                    On the
+                                    <strong>Application Designer</strong> page, in the
+                                    <strong>Create Book_Catalog_BO</strong> tile, click
+                                    <strong>Edit
+                                        <img src="./img/abcs-22.png" alt="Edit Action button">
+                                    </strong>.
+                                </li>
+                                <li>
+                                    On the
+                                    <strong>Configure Action</strong> page, in the
+                                    <strong>Save Book_Catalog_BO</strong> tile, click
+                                    <strong>Remove this item (X)</strong> to remove the save action. Click
+                                    <strong>Done.</strong>
+                                </li>
+                                <li>On the
+                                    <strong>Application Designer</strong> page, click
+                                    <strong>Test Application</strong>
+                                    <img src="./img/abcs-13.png" alt="Test Application button"> to run your web app on the
+                                    <strong>Runtime</strong> page.</li>
+                                <li>
+                                    On your running
+                                    <strong>Book Catalog</strong> web app page, click
+                                    <strong>Create,</strong> enter the values for the following fields, and then click
+                                    <strong>Save and Close:</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>Book Title:</strong>
+                                            <code>Oracle ABCS For Beginners</code> </li>
+                                        <li>
+                                            <strong>Author:</strong>
+                                            <code>Oracle Press</code>
+                                        </li>
+                                        <li>
+                                            <strong>ISBN:</strong>
+                                            <code>123-456-789-0</code> </li>
+                                        <li>
+                                            <strong>Published Date:</strong>
+                                            <code>today's date</code> </li>
+                                    </ul>
+                                    <p class="note">The row is displayed in the books table on the
+                                        <strong>Book Catalog</strong> page of your web app.</p>
+                                    <figure>
+                                        <img src="./img/abcs-12.png" class="ScreenShot" alt="Books Tracker application" />
+                                        <figcaption>
+                                            <a href="./files/abcs-12.txt">Description of the illustration abcs-12.png</a>
+                                        </figcaption>
+                                    </figure>
+
+                                </li>
+
+                        </ol>
+                    </section>
+                    <hr>
+                    <section>
+                        <h2 id="section_4" role="button" style="text-align: left;">
+                            <img src="../common/img/32_4.png" alt="section 4" height="32" width="32" class="num_circ">Complete and Test the App</h2>
+                        <ol>
+                            <li>On the
+                                <strong>Runtime</strong> page, click
+                                <strong>Back To Designer.</strong>
+                            </li>
+                            <li>On the
+                                <strong>Application Designer</strong> page, click
+                                <strong>Home.</strong>
+                            </li>
+                            <li>
+                                Clear
+                                <strong>Filter,</strong> click the picture component in the components panel, and then drag and drop
+                                it onto the Home page of your web app.
+                                <figure>
+                                    <img src="./img/abcs-15.png" class="ScreenShot" alt="UI Components section">
+                                    <figcaption>
+                                        <a href="./files/abcs-15.txt">Description of the illustration abcs-15.png</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                In the active window, click
+                                <strong>select from Image Gallery.</strong>
+
+                            </li>
+                            <li>
+                                On the
+                                <strong>Image Gallery</strong> tab, click
+                                <strong>Application Menu,</strong> click the
+                                <strong>navi_library</strong> image, and then click
+                                <strong>Select.</strong>
+                                <figure>
+                                    <img src="./img/abcs-17.png" class="ScreenShot" alt="Image Gallery tab">
+                                    <figcaption>
+                                        <a href="./files/abcs-17.txt">Description of the illustration abcs-17.png</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                In the
+                                <strong>Select from Image Gallery</strong> dialog box, click
+                                <strong>
+                                    Create
+                                    <img src="./img/func_checkmark_16_ena.png" alt="Accept button">
+                                </strong>.
+                            </li>
+                            <li>
+                                On the
+                                <strong>Application Designer</strong> page, click
+                                <strong>Actions,</strong> and then click
+                                <strong>Add Action.</strong>
+                                <figure>
+                                    <img src="./img/abcs-18.png" class="ScreenShot" alt="Properties panel for the Image component">
+                                    <figcaption>
+                                        <a href="./files/abcs-18.txt">Description of the illustration abcs-18.png</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                On the
+                                <strong>Configure Action</strong> page, select
+                                <strong>Navigate to Page</strong> in the
+                                <strong>Suggested</strong> panel and drag and drop it onto the
+                                <strong>THEN DO SOMETHING ELSE</strong> section.
+                                <figure>
+                                    <img src="./img/abcs-19.png" class="ScreenShot" alt="Configure Action page">
+                                    <figcaption>
+                                        <a href="./files/abcs-19.txt">Description of the illustration abcs-19.png</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                On the
+                                <strong>Configure Action</strong> page, select
+                                <code>Book Catalog</code> from the
+                                <strong>Page to Open</strong> drop-down list, and click
+                                <strong>Done.</strong>
+
+                            </li>
+                            <li>
+                                On the
+                                <strong>Application Designer</strong> page, click
+                                <strong>Test Application</strong>
+                                <img src="./img/abcs-13.png" alt="Test Application button">.
+                                <p class="note">Your running app should look like the following image:</p>
+                                <figure>
+                                    <img src="./img/abcs-21.png" class="ScreenShot" alt="Finalized Books Tracker application">
+                                    <figcaption>
+                                        <a href="./files/abcs-21.txt">Description of the illustration abcs-21.png</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ol>
+                    </section>
+                    <hr>
+                    <section>
+                        <!-- Include the More Information section only in a single or the final lab or tutorial in a series -->
+                        <h2 id="more_info" role="button" style="text-align: left;">
+                            <img src="../common/img/32_more.png" alt="more information" height="32" width="32" class="num_circ">Want to Learn More?</h2>
+                        <ul>
+                            <li>
+                                <a href="http://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/app-builder-cloud&id=abcsgs"
+                                    target="_blank">Oracle Visual Builder Cloud Service: Get Started</a>
+                            </li>
+                        </ul>
+                        <hr>
+                    </section>
                 </article>
             </div>
             <br class="clearfloat">
