@@ -1,9 +1,3 @@
----
-title: Developing a Business Application by Using Oracle Visual Builder Cloud Service
-categories: Visual Builder, Oracle Cloud
-description: Learn how to develop a business application using Oracle Visual Builder Cloud Service.
----
-
 # Developing a Business Application by Using Oracle Visual Builder Cloud Service #
 
 ## ![](../common/img/32_begin.png) Before You Begin ##
