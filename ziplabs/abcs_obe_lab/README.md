@@ -1,3 +1,6 @@
+---
+layout: ziplabs
+---
 # Developing a Business Application by Using Oracle Visual Builder Cloud Service #
 
 ## ![](../common/img/32_begin.png) Before You Begin ##
