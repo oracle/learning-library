@@ -1,37 +1,31 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
+<!doctype html>
+<html lang="{{ site.lang | default: " en-US " }}">
 
 <head>
-<!-- This OBE tutorial: --> 
-<!-- Part number: E86802-02 --> 
-<!-- Published: May 2017 -->
-<!-- Template date: 5/1/17 -->
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
-    <title>Creating a Node.js RESTful API in Oracle Application Container Cloud Service</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="robots" content="INDEX, FOLLOW">
-    <meta name="description" content="Learn how to create a simple REST service by using Node.js and Oracle Application Container Cloud Service.">
-    <meta name="keywords" content="Oracle Application Container Cloud Service, exploration, integration">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> {% seo %}
 
-    <link rel="stylesheet" href="../common/css/normalize.min.css">
-    <link rel="stylesheet" href="../common/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../common/css/obe-lite.css">
-    <script src="../common/js/jquery-1.11.0.min.js"></script>
-    <script src="../common/js/jquery-ui-1.10.4.custom.js"></script>
-    <script src="../common/js/jquery.tocify.jd.js"></script>
+    <meta name="viewport" content="width=device-width">
+
+    <meta name="robots" content="INDEX, FOLLOW">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="{{ '/ziplabs/common/css/normalize.min.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/ziplabs/common/css/font-awesome.min.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/ziplabs/common/css/obe-lite.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/ziplabs/common/js/jquery-1.11.0.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/ziplabs/common/js/jquery-ui-1.10.4.custom.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/ziplabs/common/js/jquery.tocify.jd.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src='https://cdn.rawgit.com/showdownjs/showdown/1.6.2/dist/showdown.min.js'></script>
-    <script src="../common/js/ziplabs.js"></script>
+
+    <script src="{{ '/ziplabs/common/js/ziplabs.jekyll.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  
-    </script>
+
 </head>
 
 <body>
@@ -63,12 +57,15 @@
             <div id="bookContainer">
                 <article>
                     <div data-spy="scroll" data-target=".left-nav-w"> </div>
+
+                    {{ content }}
+
                 </article>
             </div>
             <br class="clearfloat">
         </div>
     </div>
-    <!--close main-->
+
     <!--end content-->
     <div class="footer-container ">
         <div style="max-width: 994px; padding:10px 0 0 17px;">
@@ -108,10 +105,10 @@
             if (typeof (document.title) != "undefined") {
                 var s_pageName = s_prefix + ":" + document.title
             }
-            ;
         </script>
         <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
     </div>
+
 </body>
 
 </html>

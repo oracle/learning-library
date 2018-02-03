@@ -1,6 +1,6 @@
 # Deploy a Spring Application to Oracle Cloud #
 
-## Before You Begin ##
+## ![](../common/img/32_begin.png) Before You Begin ##
 This 15-minute tutorial shows you how to prepare a REST application built using Spring Data REST to be deployed to Oracle Application Container Cloud Service.
                             
 ### Background ###
@@ -21,7 +21,7 @@ For your application to run properly on Oracle Application Container Cloud Servi
 * Book application service [book-service.zip](files/book-service.zip)
 * [Git](https://git-scm.com/downloads) (Git CMD shell to execute cURL commands)
 
-## Create the Manifest.json File ##
+## ![](../common/img/32_1.png) Create the Manifest.json File ##
 1. Extract the content of the `book-service.zip` file in your local system.
 2. Create a `manifest.json` file at the same level than the `pom.xml` file and open it in a text editor.
 3. Add the following content and save the file.<br>
@@ -40,19 +40,19 @@ For your application to run properly on Oracle Application Container Cloud Servi
 }
 ```
 
-## Prepare the Application to Read the PORT Environment Variable ##
+## ![](../common/img/32_2.png) Prepare the Application to Read the PORT Environment Variable ##
 1. In the src/main directory, create the resources folder.
 2. In the resources directory, create the application.properties file.
 3. Add the following content:<br>
 `server.port=${PORT}`
 
-## Compile and Package Your Application ##
+## ![](../common/img/32_3.png) Compile and Package Your Application ##
 
 1. Open a command-line window (or Terminal in Linux) and go to the `book-service` directory.
 2. Compile and package your application using the Maven command:<br>
 `mvn compile package`
     
-## Deploy your Application to Oracle Application Container Cloud Service ##
+## ![](../common/img/32_4.png) Deploy your Application to Oracle Application Container Cloud Service ##
 1. Log in to Oracle Cloud at [http://cloud.oracle.com/](http://cloud.oracle.com/). Enter the **Identity Domain**, **User Name**, and **Password** for your account.
 2. In the Dashboard, click **Instances** to open the Oracle Application Container Cloud Service console.
 <br>![deploy-02.jpg](img/deploy-02.png)
@@ -64,7 +64,7 @@ For your application to run properly on Oracle Application Container Cloud Servi
 7. Keep the default values in the **Instances** and **Memory** fields and click Create.
 8. When the application is completely created copy the URL. 
 
-## Test Your Application ##
+## ![](../common/img/32_5.png) Test Your Application ##
 1. Open a command-line window (or Terminal in Linux).
 2. Create a new book record using the following cURL command. Replace the app_endpoint placeholder with the URL of your application.
 <br><code>curl -i -X POST -H "Content-Type:application/json" -d "{ \"title\" : \"Hamlet\",  \"author\" : \"William Shakespeare\",\"isbn\":\"978-0486272788\", \"published\":\"1937\",\"genre\":\"Novel\" }" <b>app_endpoint</b>/books</code>
@@ -76,7 +76,7 @@ For your application to run properly on Oracle Application Container Cloud Servi
 5. Delete the book.
 <br><code>curl -i -X DELETE curl -i -X DELETE app_endpoint/books/1/books/1</code>
 
-## Want to Learn More? ##
+## ![](../common/img/32_more.png) Want to Learn More? ##
 
 * [Oracle Application Container Cloud Service](http://docs.oracle.com/en/cloud/paas/app-container-cloud/index.html) in the Oracle Help Center
 * [Java SE 8: Creating a REST Service with Spring Data REST/JPA, and Tomcat for Oracle Application Container Cloud Service](https://apexapps.oracle.com/pls/apex/f?p=44785:112:::::P112_CONTENT_ID:18875) OBE

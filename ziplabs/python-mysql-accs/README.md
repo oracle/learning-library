@@ -1,6 +1,6 @@
 # Connect a Python Application to Oracle MySQL Cloud Service #
 
-## Before You Begin ##
+## ![](../common/img/32_begin.png) Before You Begin ##
 This 10-minute tutorial shows you how to deploy a Python application to Oracle Application Container Cloud Service and then integrate Oracle MySQL Cloud Service with your application.
                             
 ### Background ###
@@ -15,7 +15,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 * Python Employee application project [employee-python-app.zip](file:///C:/Users/tmcginn/Documents/GitHub/learning-library/ziplabs/python-mysql-accs/files/employee-python-app.zip)
 * [cURL 7.0+](http://curl.haxx.se/download.html) with SSL support
 
-## Download the Project Dependencies ##
+## ![](../common/img/32_1.png) Download the Project Dependencies ##
 1. Extract the contents of the employee-python-app.zip file in your local system.
 2. Open a command-line window (or terminal in Linux) and go to the employee-python-app directory.
 3. Install the project dependencies.
@@ -23,7 +23,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
    `pip install -r requirements.txt -t modules`
 4. Create the python-service-dist.zip file with the content of the employee-python-app directory. Make sure that the zip file doesn't contain any subdirectories and all the files are at the root of the zip file.
 
-## Deploy Your Application to Oracle Application Container Cloud Service ##
+## ![](../common/img/32_2.png) Deploy Your Application to Oracle Application Container Cloud Service ##
 1. In a web browser, go to https://cloud.oracle.com/home and click Sign In.
 2. From the Cloud Account drop-down menu, select Traditional Cloud Account, then select your data center, and click My Services.
 3. Enter your identity domain and click Go.
@@ -35,7 +35,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 9. In the File Upload dialog box, select python-service-dist.zip and click Open.
 10. Keep the default values in the Topology section and click Create. Processing takes a few minutes.
 
-## Add the MySQLCS Service Binding ##
+## ![](../common/img/32_3.png) Add the MySQLCS Service Binding ##
 1. Wait until the application is created.
 2. Click the Deployments tab. In the Service Binding section, click Add.
 
@@ -52,7 +52,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 4. In the Deployments dialog box, click Apply Edits.
 5. Wait until the application is restarted and then copy the URL of your application. You'll use it in the next section.
 
-## Test Your Application ##
+## ![](../common/img/32_4.png) Test Your Application ##
 1. Open a command-line window (or terminal in Linux).
 2. Create the EMPLOYEE table. Replace the app_endpoint placeholder with the URL
 
@@ -74,7 +74,7 @@ Oracle Application Container Cloud Service provides a lightweight infrastructure
 
    <code>curl -X GET -i <strong>app_endpoint</strong>/employees/1</code>
 
-## Want to Learn More ##
+## ![](../common/img/32_more.png) Want to Learn More ##
 
 * [Oracle Application Container Cloud Service Get Started](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=apaasgs) in the Oracle Help Center
 * [Creating a Python Application Using Oracle MySQL Cloud Service on Oracle Application Container Cloud Service](https://apexapps.oracle.com/pls/apex/f?p=44785:112:16396753825687::::P112_CONTENT_ID:20165) OBE
