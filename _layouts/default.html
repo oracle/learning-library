@@ -1,37 +1,28 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ site.lang | default: " en-US " }}">
 
 <head>
-    <!-- Part number: E91279-01 -->
-    <!-- Published date: October 2017 -->
-    <!-- See this link for directions on getting a part number: https://confluence.oraclecorp.com/confluence/display/DLPP/Archive+an+OBE -->
-    <!-- Template date: 10/18/17 -->
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
-    <title>Connect a Python Application to Oracle MySQL Cloud Service</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="robots" content="INDEX, FOLLOW">
-    <meta name="description" content="Learn how to deploy a Python application to Oracle Application Container Cloud Service and then integrate Oracle MySQL Cloud Service with your application.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"> {% seo %}
 
-    <link rel="stylesheet" href="../common/css/normalize.min.css">
-    <link rel="stylesheet" href="../common/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../common/css/obe-lite.css">
-    <script src="../common/js/jquery-1.11.0.min.js"></script>
-    <script src="../common/js/jquery-ui-1.10.4.custom.js"></script>
-    <script src="../common/js/jquery.tocify.jd.js"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="{{ '/ziplabs/common/css/normalize.min.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/ziplabs/common/css/font-awesome.min.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/ziplabs/common/css/obe-lite.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/ziplabs/common/js/jquery-1.11.0.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/ziplabs/common/js/jquery-ui-1.10.4.custom.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/ziplabs/common/js/jquery.tocify.jd.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src='https://cdn.rawgit.com/showdownjs/showdown/1.6.2/dist/showdown.min.js'></script>
-    <script src="../common/js/ziplabs.js"></script>
+
+    <script src="{{ '/ziplabs/common/js/ziplabs.jekyll.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    
-    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
-    <meta name="dcterms.created" content="2017-12-01T20:46:09+00:00">
-    <meta name="dcterms.title" content="Connect a Python Application to Oracle MySQL Cloud">
-    <meta name="dcterms.category" content="cloud">
-    <meta name="dcterms.isVersionOf" content="TUTORIAL-CONNECT-PYTHON-MYSQL">
-    <meta name="dcterms.product" content="en/cloud/paas/app-container-cloud">
-    <meta name="dcterms.identifier" content="E91279-01">
-    <meta name="dcterms.release" content="Latest Cloud Release">
 
 </head>
 
@@ -64,12 +55,15 @@
             <div id="bookContainer">
                 <article>
                     <div data-spy="scroll" data-target=".left-nav-w"> </div>
+
+                    {{ content }}
+
                 </article>
             </div>
             <br class="clearfloat">
         </div>
     </div>
-    <!--close main-->
+
     <!--end content-->
     <div class="footer-container ">
         <div style="max-width: 994px; padding:10px 0 0 17px;">
@@ -113,6 +107,7 @@
         </script>
         <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
     </div>
+
 </body>
 
 </html>
