@@ -1,5 +1,5 @@
 ---
-layout: ziplabs
+layout: default
 title: Developing a Business Application by Using Oracle Visual Builder Cloud Service
 date: 2018-02-02 08:26:00 -0600
 categories: Visual Builder, Oracle Cloud
