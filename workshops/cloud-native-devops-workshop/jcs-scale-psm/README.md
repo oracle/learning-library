@@ -76,20 +76,56 @@ Prior to running CLI commands, configure your connection to the Oracle cloud.
 Open a terminal and run the `setup` command. When prompted, enter your cloud user name, password, and identity domain. For example:
 
 	[oracle@localhost u01]$ psm setup
-	Username: john.i.smith@xxxxx.com
+	Username: cloud.admin
 	Password: 
 	Retype Password: 
-	Identity domain: hujohni
+	Identity domain: gse00012625
 	Region [us]: emea
-	Output format [json]: 
+	Output format [short]: json
 	----------------------------------------------------
 	'psm setup' was successful. Available services are:
-	  o MySQLCS : Oracle Oracle MySQL Cloud Service
-      o accs : Oracle Application Container Cloud Service
-      o dbcs : Oracle Database Cloud Service
+	   o ANALYTICS : Oracle Analytics Cloud
+	  o APICS : Oracle API Platform Cloud Service
+	  o APICatalog : Oracle API Catalog Service
+	  o BDCSCE : Oracle Big Data Cloud
+	  o BOTSCFG : Oracle Bots Configuration Service
+	  o BOTSCON : Oracle Bots Connector Service
+	  o BOTSINT : Oracle Bots Intent Service
+	  o BOTSMGM : Oracle Bots Management API Service
+	  o BOTSPIP : Oracle Bots Pipeline Service
+	  o BigDataAppliance : Oracle Big Data Cloud Service
+	  o CONTAINER : Oracle Container Cloud Service
+	  o CXAANA : Oracle CxA Analytics Service 
+	  o CXACFG : Oracle CxA Configuration Service 
+	  o CXACOL : Oracle CxA Collector Service 
+	  o CXAPOD : Oracle CxA Pod Cloud Service 
+	  o ContainerRegistry : Oracle Container Registry Service
+	  o DHCS : Oracle Data Hub Cloud Service
+	  o IDCS : Oracle Identity Cloud Service
+	  o IDCSControlPlane : Oracle Identity Cloud Service
+	  o IOTAssetMon : Oracle IoT Asset Monitoring Cloud Service
+	  o IOTConnectedWrker : Oracle IoT Connected Worker Cloud Service
+	  o IOTEnterpriseApps : Oracle Internet of Things Cloud - Enterprise
+	  o IOTFleetMon : Oracle IoT Fleet Monitoring Cloud Service
+	  o IOTProdMonitoring : Oracle IoT Production Monitoring Cloud Service
+	  o IOTSvcAsset : Oracle IoT Asset Monitoring CX Cloud Service
+	  o IntegrationCloud : Oracle Integration Cloud
+	  o jcs : Oracle Java Cloud Service
+	  o MobileCCC : Oracle Mobile Custom Code Container
+	  o MobileCorePOD : Oracle Mobile Core POD
+	  o MySQLCS : Oracle MySQL Cloud Service
+	  o OAICS : Oracle Adaptive Intelligence Applications Offers Cloud Service
+	  o OEHCS : Oracle Event Hub Cloud Service
+	  o OEHPCS : Oracle Event Hub Cloud Service - Dedicated
+	  o OMCE : Oracle Mobile Cloud Metering Service
+	  o SOA : Oracle SOA Cloud Service
+	  o VisualBuilder : Oracle Visual Builder Cloud Service
+	  o accs : Oracle Application Container Cloud Service
+	  o caching : Oracle Application Cache
+	  o dbcs : Oracle Database Cloud Service
+	  o dics : Oracle Data Integration Platform Cloud Service
 	  o ggcs : Oracle GoldenGate Cloud Service
-      o jcs : Oracle Java Cloud Service
-      o stack : Cloud Stack Manager
+	  o stack : Oracle Cloud Stack Manager
 	----------------------------------------------------
 	[oracle@localhost u01]$
 
@@ -238,108 +274,526 @@ View the available parameters for a specific command along with examples.
 	
 	[oracle@localhost Desktop]$ 
 
-####Use the Command Line Interface####
-First list the Java Cloud Services in the configured identity domain:
-
-	[oracle@localhost Desktop]$ psm jcs services
-	{
-	    "uri":"https://psm.europe.oraclecloud.com/paas/service/jcs/api/v1.1/instances/hujohni",
-	    "service_type":"jaas",
-	    "implementation_version":"1.0",
-	    "services":[
-	        {
-	            "service_name":"techco",
-	            "version":"12cRelease2",
-	            "wlsVersion":"12.2.1.0.160419",
-	            "status":"Running",
-	            "error_status_desc":"",
-	            "compliance_status":"",
-	            "compliance_status_desc":"",
-	            "auto_update":"true",
-	            "description":"TechCo sample app runtime environment",
-	            "identity_domain":"hujohni",
-	            "creation_time":"Sat Aug 20 10:3:45 UTC 2016",
-	            "last_modified_time":"Sat Aug 20 10:3:43 UTC 2016",
-	            "created_by":"john.i.smith@xxxxx.com",
-	            "service_uri":"https://psm.europe.oraclecloud.com/paas/service/jcs/api/v1.1/instances/hujohni/techco"
-	        }
-	    ]
-	}
-
+#### Use the Command Line Interface ####
 To get more details about specific service use psm service -s servicename command:
 
-	[oracle@localhost Desktop]$ psm jcs service -s techco
+	[oracle@localhost Desktop]$ psm jcs service -s Alpha01A-JCS
 	{
-	    "service_name":"techco",
-	    "version":"12cRelease2",
-	    "wlsVersion":"12.2.1.0.160419",
-	    "status":"Running",
-	    "error_status_desc":"",
-	    "compliance_status":"",
-	    "compliance_status_desc":"",
-	    "auto_update":"true",
-	    "description":"TechCo sample app runtime environment",
-	    "identity_domain":"hujohni",
-	    "creation_time":"Sat Aug 20 10:3:45 UTC 2016",
-	    "last_modified_time":"Sat Aug 20 10:3:43 UTC 2016",
-	    "created_by":"john.i.smith@xxxxx.com",
-	    "service_uri":"https://psm.europe.oraclecloud.com/paas/service/jcs/api/v1.1/instances/hujohni/techco",
-	    "domain_name":"techco_domain",
-	    "domain_mode":"PRODUCTION",
-	    "cluster_name":"techco_cluster",
-	    "num_nodes":2,
-	    "level":"PAAS",
-	    "subscription_type":"MONTHLY",
+	    "serviceId":339378,
+	    "serviceUuid":"4D5E9EB60AB6400FB5B8B3526F1D0F9B",
+	    "serviceLogicalUuid":"6740B4C1F4D14D65B5C1156CE8C4B1A1",
+	    "serviceName":"Alpha01A-JCS",
+	    "serviceType":"JaaS",
+	    "domainName":"gse00012625",
+	    "serviceVersion":"12cRelease212",
+	    "releaseVersion":"12.2.1.2.170818",
+	    "baseReleaseVersion":"12.2.1.2.170818",
+	    "metaVersion":"17.4.6-1712200213",
+	    "serviceDescription":"Alpha Office Java Cloud Service",
+	    "serviceLevel":"PAAS",
+	    "subscription":"HOURLY",
+	    "meteringFrequency":"HOURLY",
 	    "edition":"EE",
-	    "shape":"oc3",
-	    "otd_provisioned":"no",
-	    "service_components":[
-	        {
-	            "type":"JDK",
-	            "version":"1.8.0_91"
-	        },
-	        {
-	            "type":"OTD",
-	            "version":"12.2.1.0.0"
-	        },
-	        {
-	            "type":"WLS",
-	            "version":"12.2.1.0.160419"
-	        },
-	        {
-	            "type":"OTD_JDK",
-	            "version":"1.8.0_91"
-	        }
+	    "totalSSDStorage":0,
+	    "storageContainer":"https://gse00012625.storage.oraclecloud.com/v1/Storage-gse00012625/Alpha01A_JCS_SC",
+	    "state":"READY",
+	    "serviceStateDisplayName":"Ready",
+	    "clone":false,
+	    "creator":"cloud.admin",
+	    "creationDate":"2017-12-12T23:34:48.615+0000",
+	    "serviceEntitlementId":"584286487",
+	    "isBYOL":false,
+	    "isManaged":false,
+	    "iaasProvider":"NIMBULA",
+	    "attributes":{
+		"CONTENT_ROOT":{
+		    "displayName":"Content endpoint",
+		    "type":"STRING",
+		    "value":"https://144.21.67.87",
+		    "displayValue":"https://144.21.67.87",
+		    "isKeyBinding":false
+		},
+		"FMW_ROOT":{
+		    "displayName":"Open Fusion Middleware Control Console",
+		    "type":"URL",
+		    "value":"https://144.21.73.75:7002/em",
+		    "displayValue":"https://144.21.73.75:7002/em",
+		    "isKeyBinding":true
+		},
+		"customPayload":{
+		    "displayName":"AppToCloud Payload",
+		    "type":"CUSTOM_PAYLOAD",
+		    "value":"",
+		    "displayValue":"",
+		    "isKeyBinding":false
+		},
+		"OTD_ROOT":{
+		    "displayName":"Open Load Balancer Console",
+		    "type":"URL",
+		    "value":"https://144.21.67.87:8989/em",
+		    "displayValue":"https://144.21.67.87:8989/em",
+		    "isKeyBinding":true
+		},
+		"WLS_ROOT":{
+		    "displayName":"Open WebLogic Server Console",
+		    "type":"URL",
+		    "value":"https://144.21.73.75:7002/console",
+		    "displayValue":"https://144.21.73.75:7002/console",
+		    "isKeyBinding":true
+		},
+		"jdkVersion":{
+		    "displayName":"JDK",
+		    "type":"STRING",
+		    "value":"1.8.0_144",
+		    "displayValue":"1.8.0_144",
+		    "isKeyBinding":false
+		},
+		"cloudStorageContainer":{
+		    "displayName":"Cloud Storage Container",
+		    "type":"STRING",
+		    "value":"https://gse00012625.storage.oraclecloud.com/v1/Storage-gse00012625/Alpha01A_JCS_SC",
+		    "displayValue":"https://gse00012625.storage.oraclecloud.com/v1/Storage-gse00012625/Alpha01A_JCS_SC",
+		    "isKeyBinding":false
+		},
+		"BACKUP_DESTINATION":{
+		    "displayName":"Backup Destination",
+		    "type":"STRING",
+		    "value":"BOTH",
+		    "displayValue":"Both Remote and Disk Storage",
+		    "isKeyBinding":false
+		}
+	    },
+	    "tags":{
+		"items":[],
+		"totalResults":0,
+		"hasMore":false
+	    },
+	    "components":{
+		"WLS":{
+		    "serviceId":339378,
+		    "componentId":283819,
+		    "state":"READY",
+		    "componentStateDisplayName":"Ready",
+		    "version":"12.2.1.2.3",
+		    "componentType":"WLS",
+		    "creationDate":"2017-12-12T23:34:48.000+0000",
+		    "instanceName":"WLS",
+		    "instanceRole":"NONE",
+		    "isKeyComponent":true,
+		    "attributes":{
+			"upperStackProductName":{
+			    "displayName":"Fusion Middleware",
+			    "type":"STRING",
+			    "value":"",
+			    "displayValue":"",
+			    "isKeyBinding":false
+			}
+		    },
+		    "vmInstances":{
+			"alpha01a-jcs-wls-1":{
+			    "vmId":308855,
+			    "id":308855,
+			    "uuid":"E5EB9B04867E4BF8ADD414CC26AA3C1A",
+			    "hostName":"alpha01a-jcs-wls-1",
+			    "label":"Alpha01A-JCS wls 1",
+			    "ipAddress":"144.21.73.75",
+			    "publicIpAddress":"144.21.73.75",
+			    "usageType":"ADMIN_SERVER",
+			    "role":"ADMIN_SERVER",
+			    "componentType":"WLS",
+			    "state":"READY",
+			    "vmStateDisplayName":"Ready",
+			    "shapeId":"oc3",
+			    "totalStorage":78848,
+			    "creationDate":"2017-12-12T23:34:48.000+0000",
+			    "isAdminNode":true
+			}
+		    },
+		    "adminHostName":"alpha01a-jcs-wls-1",
+		    "hosts":{
+			"userHosts":{
+			    "alpha01a-jcs-wls-1":{
+				"vmId":308855,
+				"id":308855,
+				"uuid":"E5EB9B04867E4BF8ADD414CC26AA3C1A",
+				"hostName":"alpha01a-jcs-wls-1",
+				"label":"Alpha01A-JCS wls 1",
+				"ipAddress":"144.21.73.75",
+				"publicIpAddress":"144.21.73.75",
+				"usageType":"ADMIN_SERVER",
+				"role":"ADMIN_SERVER",
+				"componentType":"WLS",
+				"state":"READY",
+				"vmStateDisplayName":"Ready",
+				"shapeId":"oc3",
+				"totalStorage":78848,
+				"creationDate":"2017-12-12T23:34:48.000+0000",
+				"isAdminNode":true,
+				"servers":{
+				    "Alpha01A_server_1":{
+					"serverId":138632,
+					"serverName":"Alpha01A_server_1",
+					"serverType":"MS",
+					"serverRole":"JAAS_ROLE",
+					"state":"READY",
+					"serverStateDisplayName":"Ready",
+					"creationDate":"2017-12-12T23:34:48.000+0000",
+					"attributes":{
+					    "heap_size":"2048",
+					    "role":"managed",
+					    "template":"Alpha01A_cluster_Template",
+					    "perm_size":"256",
+					    "ssl_port":"9074",
+					    "port":"9073",
+					    "server_type":"WLS",
+					    "max_perm_size":"512",
+					    "additional_jvm_args":"-Xloggc:/u01/data/domains/Alpha01A_domain/GC_Alpha01A_server_1.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=2 -XX:GCLogFileSize=5m -Dweblogic.rjvm.enableprotocolswitch=true -Djava.net.preferIPv4Stack=true -Doracle.security.jps.db.connect.max.retry=720 -Doracle.security.jps.db.connect.retry.interval=10000 -Djps.auth.debug=false -DUSE_JAAS=false -Djps.combiner.optimize.lazyeval=true -Djps.combiner.optimize=true -Djps.authz=ACC -Djps.subject.cache.key=5 -Djps.subject.cache.ttl=600000 -Dweblogic.security.SSL.minimumProtocolVersion=TLSv1.2 -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Dweblogic.data.canTransferAnyFile=true -Djava.security.egd=file:/dev/./urandom -XX:CompileThreshold=8000 -XX:ReservedCodeCacheSize=1024m -Dtangosol.coherence.transport.reliable=tmb -Dtangosol.coherence.socketprovider=tcp",
+					    "cluster":"Alpha01A_cluster",
+					    "heap_start":"256",
+					    "ccsr":"DataGridConfig"
+					}
+				    },
+				    "Alpha01A_adminserver":{
+					"serverId":138631,
+					"serverName":"Alpha01A_adminserver",
+					"serverType":"ADMIN",
+					"serverRole":"JAAS_ROLE",
+					"state":"READY",
+					"serverStateDisplayName":"Ready",
+					"creationDate":"2017-12-12T23:34:48.000+0000",
+					"attributes":{
+					    "heap_start":"256",
+					    "role":"admin",
+					    "heap_size":"2048",
+					    "server_type":"WLS",
+					    "port":"9071",
+					    "ssl_port":"9072",
+					    "max_perm_size":"512",
+					    "perm_size":"256",
+					    "additional_jvm_args":"-Xloggc:/u01/data/domains/Alpha01A_domain/GC_Alpha01A_adminserver.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=2 -XX:GCLogFileSize=5m -Dweblogic.rjvm.enableprotocolswitch=true -Djava.net.preferIPv4Stack=true -Doracle.security.jps.db.connect.max.retry=720 -Doracle.security.jps.db.connect.retry.interval=10000 -Dweblogic.security.SSL.minimumProtocolVersion=TLSv1.2 -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Dweblogic.data.canTransferAnyFile=true  -Dweblogic.client.SocketConnectTimeoutInSecs=20"
+					}
+				    }
+				},
+				"storageVolumes":{
+				    "domain":{
+					"name":"domain",
+					"size":"10GB",
+					"partitions":"1"
+				    },
+				    "tools":{
+					"name":"tools",
+					"size":"10GB",
+					"partitions":"1"
+				    },
+				    "jdk":{
+					"name":"jdk",
+					"size":"2GB",
+					"partitions":"0"
+				    },
+				    "boot":{
+					"name":"boot",
+					"size":"25GB",
+					"partitions":"1"
+				    },
+				    "middleware":{
+					"name":"middleware",
+					"size":"10GB",
+					"partitions":"0"
+				    },
+				    "backup":{
+					"name":"backup",
+					"size":"20GB",
+					"partitions":"1"
+				    }
+				}
+			    }
+			}
+		    },
+		    "paasServers":{},
+		    "clusters":{
+			"Alpha01A_cluster":{
+			    "clusterId":339378,
+			    "clusterName":"Alpha01A_cluster",
+			    "clusterType":"PAAS",
+			    "profile":"{\"type\":\"APPLICATION_CLUSTER\",\"default\":\"true\",\"external\":\"true\"}",
+			    "creationDate":"2017-12-12T23:34:48.615+0000",
+			    "paasServers":{
+				"Alpha01A_server_1":{
+				    "serverId":138632,
+				    "serverName":"Alpha01A_server_1",
+				    "serverType":"MS",
+				    "serverRole":"JAAS_ROLE",
+				    "state":"READY",
+				    "serverStateDisplayName":"Ready",
+				    "creationDate":"2017-12-12T23:34:48.000+0000",
+				    "attributes":{
+					"heap_size":"2048",
+					"role":"managed",
+					"template":"Alpha01A_cluster_Template",
+					"perm_size":"256",
+					"ssl_port":"9074",
+					"port":"9073",
+					"server_type":"WLS",
+					"max_perm_size":"512",
+					"additional_jvm_args":"-Xloggc:/u01/data/domains/Alpha01A_domain/GC_Alpha01A_server_1.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=2 -XX:GCLogFileSize=5m -Dweblogic.rjvm.enableprotocolswitch=true -Djava.net.preferIPv4Stack=true -Doracle.security.jps.db.connect.max.retry=720 -Doracle.security.jps.db.connect.retry.interval=10000 -Djps.auth.debug=false -DUSE_JAAS=false -Djps.combiner.optimize.lazyeval=true -Djps.combiner.optimize=true -Djps.authz=ACC -Djps.subject.cache.key=5 -Djps.subject.cache.ttl=600000 -Dweblogic.security.SSL.minimumProtocolVersion=TLSv1.2 -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Dweblogic.data.canTransferAnyFile=true -Djava.security.egd=file:/dev/./urandom -XX:CompileThreshold=8000 -XX:ReservedCodeCacheSize=1024m -Dtangosol.coherence.transport.reliable=tmb -Dtangosol.coherence.socketprovider=tcp",
+					"cluster":"Alpha01A_cluster",
+					"heap_start":"256",
+					"ccsr":"DataGridConfig"
+				    }
+				}
+			    }
+			}
+		    },
+		    "displayName":"Weblogic"
+		},
+		"OTD":{
+		    "serviceId":339378,
+		    "componentId":283818,
+		    "state":"READY",
+		    "componentStateDisplayName":"Ready",
+		    "version":"12.2.1.2.2",
+		    "componentType":"OTD",
+		    "creationDate":"2017-12-12T23:34:48.000+0000",
+		    "instanceName":"OTD",
+		    "instanceRole":"NONE",
+		    "isKeyComponent":false,
+		    "attributes":{},
+		    "vmInstances":{
+			"alpha01a-jcs-lb-1":{
+			    "vmId":308854,
+			    "id":308854,
+			    "uuid":"4D8BF23889074B9ABAC6F73EE97FF6B8",
+			    "hostName":"alpha01a-jcs-lb-1",
+			    "label":"Alpha01A-JCS lb 1",
+			    "ipAddress":"144.21.67.87",
+			    "publicIpAddress":"144.21.67.87",
+			    "usageType":"ADMIN_SERVER",
+			    "role":"ADMIN_SERVER",
+			    "componentType":"OTD",
+			    "state":"READY",
+			    "vmStateDisplayName":"Ready",
+			    "shapeId":"oc3",
+			    "totalStorage":70656,
+			    "creationDate":"2017-12-12T23:34:48.000+0000",
+			    "isAdminNode":true
+			}
+		    },
+		    "adminHostName":"alpha01a-jcs-lb-1",
+		    "hosts":{
+			"userHosts":{
+			    "alpha01a-jcs-lb-1":{
+				"vmId":308854,
+				"id":308854,
+				"uuid":"4D8BF23889074B9ABAC6F73EE97FF6B8",
+				"hostName":"alpha01a-jcs-lb-1",
+				"label":"Alpha01A-JCS lb 1",
+				"ipAddress":"144.21.67.87",
+				"publicIpAddress":"144.21.67.87",
+				"usageType":"ADMIN_SERVER",
+				"role":"ADMIN_SERVER",
+				"componentType":"OTD",
+				"state":"READY",
+				"vmStateDisplayName":"Ready",
+				"shapeId":"oc3",
+				"totalStorage":70656,
+				"creationDate":"2017-12-12T23:34:48.000+0000",
+				"isAdminNode":true,
+				"servers":{
+				    "Alpha01A-JCS-lb-1":{
+					"serverId":138630,
+					"serverName":"Alpha01A-JCS-lb-1",
+					"serverType":"OTD_SERVER",
+					"serverRole":"JAAS_ROLE",
+					"state":"READY",
+					"serverStateDisplayName":"Ready",
+					"creationDate":"2017-12-12T23:34:47.000+0000",
+					"attributes":{
+					    "serviceListenerPort":"80",
+					    "otdSystemAdminUser":"JaaS_System_OTD_Admin",
+					    "otdConfigName":"opc-config",
+					    "serviceSecuredListenerPort":"443",
+					    "securedListenerPort":"8081",
+					    "otdAdminUser":"weblogic",
+					    "listenerPortEnabled":"true",
+					    "adminPort":"8989",
+					    "policy":"LEAST_CONNECTION_COUNT",
+					    "listenerPort":"8080"
+					}
+				    }
+				},
+				"storageVolumes":{
+				    "otd-instance":{
+					"name":"otd-instance",
+					"size":"6GB",
+					"partitions":"1"
+				    },
+				    "tools":{
+					"name":"tools",
+					"size":"10GB",
+					"partitions":"1"
+				    },
+				    "jdk":{
+					"name":"jdk",
+					"size":"2GB",
+					"partitions":"0"
+				    },
+				    "boot":{
+					"name":"boot",
+					"size":"21GB",
+					"partitions":"1"
+				    },
+				    "middleware":{
+					"name":"middleware",
+					"size":"10GB",
+					"partitions":"0"
+				    },
+				    "backup":{
+					"name":"backup",
+					"size":"20GB",
+					"partitions":"1"
+				    }
+				}
+			    }
+			}
+		    },
+		    "paasServers":{},
+		    "clusters":{},
+		    "displayName":"Oracle Load Balancer"
+		}
+	    },
+	    "activityLogs":[
+		{
+		    "activityLogId":3827970,
+		    "serviceName":"Alpha01A-JCS",
+		    "serviceType":"jaas",
+		    "identityDomain":"gse00012625",
+		    "serviceId":339378,
+		    "jobId":9813973,
+		    "startDate":"2017-12-28T11:55:54.946+0000",
+		    "endDate":"2017-12-28T12:36:24.971+0000",
+		    "status":"SUCCEED",
+		    "operationId":339378,
+		    "operationType":"BACKUP",
+		    "summaryMessage":"BACKUP",
+		    "initiatedBy":"SYSTEM",
+		    "messages":[
+			{
+			    "activityDate":"2017-12-28T11:55:54.946+0000",
+			    "message":"Activity Submitted"
+			},
+			{
+			    "activityDate":"2017-12-28T11:55:56.574+0000",
+			    "message":"Activity Started"
+			},
+			{
+			    "activityDate":"2017-12-28T12:36:22.507+0000",
+			    "message":"The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...Backup health check passed...Locked the WebLogic Server domain configuration...Started the backup of configuration data for WebLogic administration server and managed servers...Completed the backup of configuration data for WebLogic administration server and managed servers...Started the backup of configuration data for Oracle Traffic Director admin host alpha01a-jcs-lb-1...Completed the backup of configuration data for Oracle Traffic Director admin node on alpha01a-jcs-lb-1...Started the backup of database...Completed the backup of database...Capturing the service metadata...Completed the backup of service metadata...Unlocked the WebLogic Server domain configuration...Uploading the backup archive to the Oracle Storage Cloud Service container...Uploaded the object to the Oracle Storage Cloud Service container..."
+			},
+			{
+			    "activityDate":"2017-12-28T12:36:22.878+0000",
+			    "message":"SM-BKP-5127: There are no expired backups for the service Alpha01A-JCS."
+			},
+			{
+			    "activityDate":"2017-12-28T12:36:24.955+0000",
+			    "message":"Activity Ended"
+			},
+			{
+			    "activityDate":"2017-12-28T12:36:24.971+0000",
+			    "message":"Activity Ended"
+			}
+		    ]
+		}
 	    ],
-	    "creation_job_id":"1825892",
-	    "deletion_job_id":0,
-	    "db_info":"techcoDB:1521/PDB1.hujohni.oraclecloud.internal",
-	    "db_service_name":"techcoDB",
-	    "useStackTag":"false",
-	    "num_ip_reservations":2,
-	    "wls_admin_url":"https://xxx.86.6.145:7002/console",
-	    "fmw_control_url":"https://xxx.86.6.145:7002/em",
-	    "sample_app_url":"https://xxx.86.6.145/sample-app/",
-	    "content_url":"http://xxx.86.6.145",
-	    "secure_content_url":"https://xxx.86.6.145",
-	    "wls_deployment_channel_port":xxxx,
-	    "psm_plugin_version":"16.3.3-137",
-	    "compute_site_name":"EM002_Z14",
-	    "db_associations":[
-	        {
-	            "db_service_name":"techcoDB",
-	            "db_infra":true,
-	            "db_connect_string":"techcoDB:1521/PDB1.hujohni.oraclecloud.internal",
-	            "pdb_service_name":"PDB1",
-	            "db_version":"12.1.0.2"
-	        }
-	    ]
+	    "layeringMode":"None",
+	    "serviceLevelDisplayName":"Oracle Java Cloud Service",
+	    "editionDisplayName":"Enterprise Edition",
+	    "meteringFrequencyDisplayName":"Hourly",
+	    "OTD_ROOT":"https://144.21.67.87:8989/em",
+	    "INTERNAL_ROOT":"https://144.21.67.87",
+	    "jdkVersion":"1.8.0_144",
+	    "enableAdminConsoles":"true",
+	    "displayIDCSRoles":"true",
+	    "provisionEngine":"Metadata_1_0",
+	    "displayWLSAndFMWConsole":"true",
+	    "customPayload":"null",
+	    "CONTENT_ROOT":"https://144.21.67.87",
+	    "WLS_ROOT":"https://144.21.73.75:7002/console",
+	    "BACKUP_DESTINATION":"BOTH",
+	    "cloudStorageContainer":"https://gse00012625.storage.oraclecloud.com/v1/Storage-gse00012625/Alpha01A_JCS_SC",
+	    "identityTenancy":"StandardJCS",
+	    "FMW_ROOT":"https://144.21.73.75:7002/em",
+	    "totalSharedStorage":0,
+	    "allAssociations":{
+		"toAssociations":[
+		    {
+			"associationId":94111,
+			"displayName":"APP_DB",
+			"associationType":"USES",
+			"associationName":"APP_DB",
+			"associationState":"READY",
+			"assocStatusMessage":"newly created",
+			"isRequired":true,
+			"creationDate":"2017-12-12T23:34:48.000+0000",
+			"domain":"gse00012625",
+			"destServiceType":"DBaaS",
+			"destServiceName":"Alpha01A-DBCS",
+			"serviceStatus":"READY",
+			"serviceStateDisplayName":"Ready",
+			"edition":"EE",
+			"version":"12.1.0.2",
+			"level":"PAAS",
+			"ocpu":1,
+			"associationStateDisplayName":"Ready",
+			"assocNameDisplayName":"AppDB DbaaS association",
+			"assocTypeDisplayName":"Uses",
+			"assocTypeDescription":"Service A using Service B."
+		    },
+		    {
+			"associationId":94112,
+			"displayName":"INFRA_DB",
+			"associationType":"DEPENDS_ON",
+			"associationName":"INFRA_DB",
+			"associationState":"READY",
+			"assocStatusMessage":"newly created",
+			"isRequired":true,
+			"creationDate":"2017-12-12T23:34:48.000+0000",
+			"domain":"gse00012625",
+			"destServiceType":"DBaaS",
+			"destServiceName":"Alpha01A-DBCS",
+			"serviceStatus":"READY",
+			"serviceStateDisplayName":"Ready",
+			"edition":"EE",
+			"version":"12.1.0.2",
+			"level":"PAAS",
+			"ocpu":1,
+			"associationStateDisplayName":"Ready",
+			"assocNameDisplayName":"DbaaS association",
+			"assocTypeDisplayName":"Depends On",
+			"assocTypeDescription":"Service A depends on Resource B/Service B."
+		    }
+		],
+		"fromAssociations":[]
+	    },
+	    "region":"gbcom-south-1",
+	    "patching":{
+		"currentOperation":{
+		    "operation":"NONE"
+		},
+		"updateStatus":"NORMAL_PENDING",
+		"totalAvailablePatches":1
+	    },
+	    "backup":{
+		"operationInProgress":{},
+		"lastFailedBackupDate":"2017-12-19T11:56:01.634+0000",
+		"lastBackupDate":"2017-12-28T11:55:56.750+0000"
+	    }
 	}
+
 	[oracle@localhost Desktop]$ 
 
 Leave this terminal open.
 
-####Scale-In a Java Cloud Service instance####
+#### Scale-In a Java Cloud Service instance ####
 
 First we need to check that the previously submitted Scale-Out request has been finished.[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). On the dashboard open the Java Cloud Service Console.
 
@@ -358,50 +812,67 @@ Go back to the terminal where psm was used and get the help of the scale-in comm
 	[oracle@localhost Desktop]$ psm jcs scale-in help
 	
 	DESCRIPTION
-	  Remove a Managed Server to scale-in the Oracle Java Cloud Service instance by
-	  one node.
-	
+	  Scale in the service by deleting some of existing servers
+
 	SYNOPSIS
 	  psm jcs scale-in [parameters]
 	       -s, --service-name <value>
-	       -n, --name <value>
-	       [-f, --force <value>]
+	       -c, --config-payload <value>
 	       [-of, --output-format <value>]
-	
+	       [-wc, --wait-until-complete <value>]
+
 	AVAILABLE PARAMETERS
-	  -s, --service-name    (string)
+	  -s, --service-name    (string)  
 	       Name of the Oracle Java Cloud Service instance
-	
-	  -n, --name    (string)
-	       Name of the Managed Server to remove
-	
-	  -f, --force    (boolean)
-	       Flag that specifies whether you want to force the removal of the Managed
-	       Server, regardless of whether there are processes running. This value defaults
-	       to false.
-	
-	  -of, --output-format    (string)
-	       Desired output format. Valid values are [json, html]
-	
+
+	  -c, --config-payload    (file)  
+	       Path to JSON file containing payload for this command. A sample payload is
+	       included in EXAMPLES below.
+
+	  -of, --output-format    (string)  
+	       Desired output format. Valid values are [short, json, html]
+
+	  -wc, --wait-until-complete  (boolean)  
+	       Wait until the command is complete. Valid values are [true, false]. Default is
+	       false.
+
 	EXAMPLES
-	  psm jcs scale-in -s ExampleInstance -n ExampleI_server_4
-	
-	[oracle@localhost Desktop]$ 
+	  psm jcs scale-in -s ExampleInstance -c /home/templates/scale-in-payload.json
 
-According to the help give the necessary parameters to scale in the **techco** service.
-
-	[oracle@localhost Desktop]$ psm jcs scale-in -s techco -n techco_d_server_2
+	SAMPLE PAYLOAD
+	Required properties are indicated as "required". Replace in the actual payload with real values.
 	{
-	    "status":"New",
-	    "details":{
-	        "message":"JAAS-SCALING-044: Scaling in Job (ID: 1833472) server name [techco_d_server_2] submitted for service [techco]",
-	        "jobId":"1833472"
+	    "scalingComponentType":"",
+	    "force":"",
+	    "components":{
+		"WLS":{
+		    "hosts":[],
+		    "force":""
+		},
+		"OTD":{
+		    "hosts":[]
+		}
 	    }
 	}
-	Job ID : 1833472
+
+	[oracle@localhost Desktop]$ 
+
+According to the help give the necessary parameters to scale in the **Alpha01A-JCS** service, before running scaling command you can check content of *scale-in-payload.json* in */u01/content/cloud-native-devops-workshop/jcs-scale-in*.
+
+	[oracle@localhost Desktop]$ psm jcs scale-in -s Alpha01A-JCS -c /u01/content/cloud-native-devops-workshop/jcs-scale-in/scale-in-payload.json
+	{
+	    "details":{
+		"message":"Submitted job to scale in service [Alpha01A-JCS] in domain [gse00012625].",
+		"jobId":"9628594"
+	    }
+	}
+	Job ID : 9628594
+
 	[oracle@localhost Desktop]$ 
 
 The response shows the Scaling in Job has been submitted. You can get further information about the job using the provided jobId in the answer. Obviously if you have different service and/or managed server name then replace the parameters to reflect your environment properties.
+
+	psm jcs operation-status -j 9628594 -of json
 
 Go back to the browser where the service detail page is still opened and click on refresh or on Topology tile. Now you can see the service has changed to maintenance mode (exclamation mark) and Topology tile shows *Scaling...* is in progress.
 

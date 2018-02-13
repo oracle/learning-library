@@ -12,6 +12,7 @@ You can also scale up the node, for more information about scaling an Oracle Jav
 ### Prerequisites ###
 
 - [Deployed sample application on Java Cloud Service](../jcs-deploy/README.md)
+- Check available OCPU resource on Cloud Dashboard, you need 1 OCPU for this lab available, for example delete *tomcat* ACCS service from previous labs using following [Delete Application Cloud Container Service using PaaS Service Manager (PSM) Command Line Interface (CLI)](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/cleanup/cleanup-psm.md) steps
 
 ### Steps ###
 Navigate to the Oracle Java Cloud Service Console.[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). On the dashboard open the Java Cloud Service Console.
@@ -22,13 +23,17 @@ Click the service instance hosts sample application.
 
 ![](images/01.png)
 
-Navigate to the Topology page. Click Add Node.
+Navigate to the Overview page. Click Add Node.
 
 ![](images/02.png)
 
 To confirm you want to scale out the cluster, click Add Node.
 
 ![](images/03.png)
+
+Confirm that you want to scale out WL cluster and not OTD cluster.
+
+![](images/035.png)
 
 After a few moments the Topology tile will show Scaling... and the service instance will change to maintenance mode (yellow exclamation mark). If it has not changed click the Refresh icon to update the page. You can also click Activity to check in the history that Scale-Out is in progress.
 ![](images/04.png)

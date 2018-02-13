@@ -128,7 +128,7 @@ Open a browser and write the following URL: `https://<public-ip-address>/load/cp
 
 #### Create Auto Scaling Rule ####
 
-Create rule for Java Cloud Service which triggers auto scaling based on the defined criteria. Go back to the Java Cloud Service instance details page and click **Topology** on the left menu. Click **Add Node** and select **Auto Scaling** item.
+Create rule for Java Cloud Service which triggers auto scaling based on the defined criteria. Go back to the Java Cloud Service instance details page and click **Overview** on the left menu. Click **Add Node** and select **Auto Scaling** item.
 ![](images/25.topology.add.node.png)
 
 On the Rules page click **Create Rule**. 
@@ -138,7 +138,7 @@ Define the rule parameters.
 	
 + Perform: **Scale Out**
 + Maximum Cluster Size: **2** (1 more higher then the existing cluster size)
-+ CPU Utilization: **Average** - **50%**
++ CPU Utilization: **Maximum** - **50%**
 + Number for measurement period: **1**
 + Period length: **5** minutes (this is the minimum)
 + VM instances: **Any**
@@ -153,12 +153,11 @@ Wait till the rule will be complete.
 
 Before the load generation create `ssh` access to the VM hosts Managed Server to check CPU load during the utilization. Open a terminal and run `ssh -i privateKey opc@VM_PUBLIC_IP` command. The `privateKey` is your private key pair of the public key you defined during Java Cloud Service creation. If your private key has passphrase you need to provide when `ssh` requires
 
-	[oracle@localhost jcs.autoscale]$ ssh -i ../pk.openssh opc@140.XX.XX.45
-	The authenticity of host '140.86.12.45 (140.86.12.45)' can't be established.
+	[oracle@localhost jcs.autoscale]$ ssh -i ./cloud-utils/gse00012625labkey opc@144.21.73.75
+	The authenticity of host '144.21.73.75 (144.21.73.75)' can't be established.
 	RSA key fingerprint is b7:3b:1a:a0:9b:f0:e4:44:78:ac:c2:a8:81:4f:03:a3.
 	Are you sure you want to continue connecting (yes/no)? yes
-	Warning: Permanently added '140.86.12.45' (RSA) to the list of known hosts.
-	Enter passphrase for key '../pk.openssh': 
+	Warning: Permanently added '144.21.73.75' (RSA) to the list of known hosts.
 	[opc@winsdemowls-wls-1 ~]$ 
 
 Now you have established `ssh` connection to the VM. Run `top` to check the CPU utilization  of the VM hosting Managed Server during the load generation.

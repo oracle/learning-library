@@ -83,7 +83,7 @@ The next step is to build the sample SpringBoot application. Change the director
 	...
 	Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.1/file-management-1.1.jar (31 KB at 13.7 KB/sec)
 	[INFO] Reading assembly descriptor: assembly.xml
-	[INFO] Building zip: /u01/content/cloud-native-devops-workshop/springboot-sample/target/springbootdemo-0.0.1.zip
+	[INFO] Building zip: /u01/content/cloud-native-devops-workshop/springboot-sample/target/springbootdemo.zip
 	[INFO] 
 	[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ springbootdemo ---
 	Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
@@ -98,9 +98,9 @@ The next step is to build the sample SpringBoot application. Change the director
 	Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.jar (152 KB at 538.3 KB/sec)
 	Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar (228 KB at 800.4 KB/sec)
 	Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.jar (234 KB at 344.2 KB/sec)
-	[INFO] Installing /u01/content/cloud-native-devops-workshop/springboot-sample/target/springbootdemo-0.0.1.war to /home/oracle/.m2/repository/com/example/springboot/springbootdemo/0.0.1/springbootdemo-0.0.1.war
-	[INFO] Installing /u01/content/cloud-native-devops-workshop/springboot-sample/pom.xml to /home/oracle/.m2/repository/com/example/springboot/springbootdemo/0.0.1/springbootdemo-0.0.1.pom
-	[INFO] Installing /u01/content/cloud-native-devops-workshop/springboot-sample/target/springbootdemo-0.0.1.zip to /home/oracle/.m2/repository/com/example/springboot/springbootdemo/0.0.1/springbootdemo-0.0.1.zip
+	[INFO] Installing /u01/content/cloud-native-devops-workshop/springboot-sample/target/springbootdemo.war to /home/oracle/.m2/repository/com/example/springboot/springbootdemo/0.0.1/springbootdemo.war
+	[INFO] Installing /u01/content/cloud-native-devops-workshop/springboot-sample/pom.xml to /home/oracle/.m2/repository/com/example/springboot/springbootdemo/0.0.1/springbootdemo.pom
+	[INFO] Installing /u01/content/cloud-native-devops-workshop/springboot-sample/target/springbootdemo.zip to /home/oracle/.m2/repository/com/example/springboot/springbootdemo/0.0.1/springbootdemo.zip
 	[INFO] ------------------------------------------------------------------------
 	[INFO] BUILD SUCCESS
 	[INFO] ------------------------------------------------------------------------
@@ -110,9 +110,9 @@ The next step is to build the sample SpringBoot application. Change the director
 	[INFO] ------------------------------------------------------------------------
 	[oracle@localhost springboot-sample]$ 
 
-To deploy the application simply copy the application archive (`springbootdemo-0.0.1.war`) to the `TOMCAT_INSTALL_DIRECTORY/webapps` folder.
+To deploy the application simply copy the application archive (`springbootdemo.war`) to the `TOMCAT_INSTALL_DIRECTORY/webapps` folder.
 	
-	[oracle@localhost springboot-sample]$ cp target/springbootdemo-0.0.1.war /u01/apache-tomcat-8.5.6/webapps
+	[oracle@localhost springboot-sample]$ cp target/springbootdemo.war /u01/apache-tomcat-8.5.6/webapps
 	[oracle@localhost springboot-sample]$ 
 
 Now check the log file -using `tail`- about the successful deployment of sample application.
@@ -127,10 +127,10 @@ Now check the log file -using `tail`- about the successful deployment of sample 
 	2016-10-20 03:08:25.634  INFO 6785 --- [ost-startStop-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
 	2016-10-20 03:08:25.664  INFO 6785 --- [ost-startStop-2] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Thu Oct 20 03:08:25 PDT 2016]; parent: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7f790486
 	2016-10-20 03:08:25.765  INFO 6785 --- [ost-startStop-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'appServlet': initialization completed in 215 ms
-	20-Oct-2016 03:08:25.771 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /u01/apache-tomcat-8.5.6/webapps/springbootdemo-0.0.1.war has finished in 5,937 ms
+	20-Oct-2016 03:08:25.771 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /u01/apache-tomcat-8.5.6/webapps/springbootdemo.war has finished in 5,937 ms
 	[oracle@localhost springboot-sample]$ 
 
-You can see in the last two log entries about springbootdemo-0.0.1.war deployment. Go back to your browser and enter the sample application's URL: [http://localhost:8080/springbootdemo-0.0.1](http://localhost:8080/springbootdemo-0.0.1).
+You can see in the last two log entries about springbootdemo.war deployment. Go back to your browser and enter the sample application's URL: [http://localhost:8080/springbootdemo](http://localhost:8080/springbootdemo).
 
 ![](images/02.springboot.local.png)
 
@@ -224,7 +224,7 @@ Click OK to confirm the acknowledgement and the detail page of the new instance 
 The URL goes to the default Tomcat page which already shows the server is up and running.
 ![](images/09.tomcat.mgmt.png)
 
-To hit the sample application append `/springbootdemo-0.0.1` at the and of the URL.
+To hit the sample application append `/springbootdemo` at the and of the URL.
 ![](images/10.springboot.accs.png)
 
 Congratulate! You have successfully deployed the SpringBoot demo application on traditional (Web Archive) way using Tomcat container.
