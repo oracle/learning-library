@@ -34,6 +34,7 @@ This tutorial demonstrates how to:
 
 #### Complete the springboot-sample tutorial ####
 Complete the [springboot-sample tutorial](../springboot-sample/) to set up a continuous delivery pipeline from source control to ACCS deployment for our sample application.
+We will continue to use the same project you created for spring sample tutorial, with additonal steps to incorporate APM capabilities. 
 
 #### Prepare Notes ####
 There will be a number of keys, urls, and URI strings that you will need to keep track of across the setup process. To keep this clear in your head, create a Snippet (in a separate browser window/tab) or a text file with the following template, which we will fill in as we go along.
@@ -60,16 +61,22 @@ Download the master installer for your tenant and make note of a valid registrat
 
 If you have separate Oracle Management Cloud Service access, for example in case of trial use the proper identity domain and credentials to login.
 
-Once you have reached the Oracle Cloud Management Cloud Welcome page click **Application Navigator** and on the drop down list select **Administration** -> **Agents**
+Once you have reached the Oracle Cloud Management Cloud Welcome page click **OMC Navgation** button on upper left corner to get menu on the left side.
 ![](images/01.apm.welcome.png)
 
-On the left menu select **Download** and click on the green download icon.
+On the menu list select **Administration** 
+![](images/02.apm.welcome.png)
+
+Then **Agents** on tne menu, on the agent page click on "Download" TAB, for the Agent type choose "APM Agent" and click on "Universal Installer".
 ![](images/02.download.installer.png)
 
 Save the AgentInstall.zip file.
 
-Locate a **valid** registration key with a large maximum that we will use for agent deployment. Click **Registration Keys** on the left side menu. Copy-paste your Registration Key value into your notes for AGENT_REGISTRATION_KEY.
+Locate a **valid** registration key with a large maximum that we will use for agent deployment. Click **Registration Keys** TAB.
 ![](images/05.read.reg.key.png)
+
+You have to click on "Action" button on the right side and download key, copy-paste your Registration Key value into your notes for AGENT_REGISTRATION_KEY.
+![](images/06.read.reg.key.png)
 
 #### Upload Build Artifacts to Maven ####
 Now that we have downloaded the necessary master installer, we will need to make it available to our automated build process. We will use the DevCS Maven repository for this purpose. By uploading the master installer to the Maven repository, our build scripts will be able to download and use it to integrate the necessary agent components into our application.
