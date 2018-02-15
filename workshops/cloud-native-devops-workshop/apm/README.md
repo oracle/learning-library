@@ -183,6 +183,7 @@ https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/angular.html
 ```
 
 You should land on a sample single-page web app, and see in the Network tab of the inspector that there are calls to `collector`. Those calls represent browser telemetry being returned to APM.
+
 ![](images/apm-browser.png)
 
 Click on the various samples on this page to see what they do.
