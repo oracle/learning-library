@@ -152,7 +152,8 @@ Now let's make sure that the application deployment was successful and is return
 Point your browser at:
 
 ```https://<your ACCS URL>/<URI prefix from your notes>
-https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/```
+https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/
+```
 
 Verify that the springboot-sample looks the same as it did before.
 
