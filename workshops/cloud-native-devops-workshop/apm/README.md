@@ -235,6 +235,7 @@ On the menu click on Server Requests and than on ApiService.calcRandomIntArray_G
 Can you figure out how much memory is allocated for each execution of the sum of random integers? Does this amount seem correct?
 ![](images/apm-randomsum-samples.png)
 
+While still on Server Requests click on /trial100/gw/quote.
 Can you tell whether the quote functionality uses static data or makes a real external web service call?
 ![](images/apm-quote.png)
 
