@@ -39,15 +39,15 @@ We will continue to use the same project you created for spring sample tutorial,
 #### Prepare Notes ####
 There will be a number of keys, urls, and URI strings that you will need to keep track of across the setup process. To keep this clear in your head, create a Snippet (in a separate browser window/tab) or a text file with the following template, which we will fill in as we go along.
 ```
-Maven Base URL:
-Agent Install Zip Path:
+Maven Base URL=
+Agent Install Zip Path=
 
-AGENTINSTALL_ZIP_URL:
+AGENTINSTALL_ZIP_URL=
 
-AGENT_REGISTRATION_KEY:
+AGENT_REGISTRATION_KEY=
 
-URI Prefix:
-WAR_FILE:
+URI Prefix=
+WAR_FILE=
 ```
 ![](images/snippet.png)
 
@@ -122,8 +122,6 @@ Refer back to the full URL to our installer within Maven, the registration key t
 export AGENTINSTALL_ZIP_URL=https://developer.us2.oraclecloud.com/profile/developer48597-oxxxxxxxx/s/developer48597-ocloud100_springboot-sample_23623/maven/com/oracle/AgentInstall/1.10/AgentInstall-1.10.zip
 export AGENT_REGISTRATION_KEY=xxxxxxxxx-xxxxxxxxxxxxxxxx
 export WAR_FILE=trial100.war
-export CLOUD_USER_NAME=dusko.vukmanovic@oracle.com
-export CLOUD_USER_PWD=xxxxxxxx
 cd apm
 ./build.sh
 ```
@@ -153,13 +151,34 @@ Now let's make sure that the application deployment was successful and is return
 
 Point your browser at:
 
-```https://<your ACCS URL>/<URI prefix from your notes>```
+```https://<your ACCS URL>/<URI prefix from your notes>
+https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/```
 
 Verify that the springboot-sample looks the same as it did before.
 
-Next, let's what's going on in the page. In Chrome or Firefox, press Control-Shift-I to bring up the browser inspector. With the inspector open, visit the following URL:
+#### Enabling and Configuring End User Monitoring ####
+Now, you need to change the injection type to “reference” for discovered application server.  By default the Injection type is “correlation”
 
-```https://<your ACCS URL>/<URI prefix>/angular.html```
+To configure the default browser injection type for an application server:
+From the eft navigation menu, select APM.
+![](images/01.browser-injection.png)
+
+Then, APM Admin.
+![](images/02.browser-injection.png)
+
+Select Browser Agent. In the Configure End User Monitoring Injection Type Property section, all the application servers are listed. Optionally, click the Filter icon to search for the required application server.
+Select the application server to modify, and click the Edit icon in the Injection Type column.
+![](images/03.browser-injection.png)
+
+And select the required injection type, "Reference".
+![](images/04.browser-injection.png)
+
+Note: it may take several minutes for this change to be reflected in the configuration table. Refresh the browser to update the table.
+
+After setting injection type is done, let's what's going on in the page. In Chrome or Firefox, press Control-Shift-I to bring up the browser inspector. With the inspector open, visit the following URL:
+
+```https://<your ACCS URL>/<URI prefix>/angular.html
+https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/angular.html```
 
 You should land on a sample single-page web app, and see in the Network tab of the inspector that there are calls to `collector`. Those calls represent browser telemetry being returned to APM.
 ![](images/apm-browser.png)
@@ -168,11 +187,7 @@ Click on the various samples on this page to see what they do.
 
 #### Set Up Application Performance Monitoring ####
 
-[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign_in](https://cloud.oracle.com) and go to Dashboard Page. Click **Launch APM**.
-
-If you have separate Oracle Management Cloud Service access, for example in case of trial use the proper identity domain and credentials to login.
-
-Once you have reached the Oracle Cloud Management Cloud Welcome page click **Application Performance Monitoring**.
+From the left navigation menu select Home, then click on to reached the Oracle Cloud Management Cloud Welcome page and click **Application Performance Monitoring**.
 ![](images/15.apm.welcome.png)
 
 Now you can see the landing page of APM. This is a dashboard which contains the top metrics. Click the hamburger icon on the left side next to the **Home** text.
@@ -181,11 +196,11 @@ Now you can see the landing page of APM. This is a dashboard which contains the 
 Click the last **Administration** menu item.
 ![](images/16.apm.home.admin.png)
 
-Click the **Application definitions** menu item.
-![](images/17.apm.home.admin.application.png)
+Click the **APM Admin** menu item.
+![](images/16.apm.home.APMadmin.png)
 
-Here you can define new application definition. This definition ensures that your application(s) will have a single pane view. Click **Create Application Definition**.
-![](images/18.apm.app.def.png)
+Click the **Application definitions** menu item. Here you can define new application definition. This definition ensures that your application(s) will have a single pane view. Click **Create Application Definition**.
+![](images/17.apm.home.admin.application.png)
 
 On the Application Specification dialog define the criteria which is unique to your application or environment. We will use the customized *URI Prefix* that we chose earlier as the identifier for our application. The Application Name can be anything but it is useful to use similar name to context path. Please note the Application Name can not contain '-'. Select **Pages** for criteria and choose **URL**. The pattern for URL should be *URI Prefix* from your notes. Check your application URL in the browser to find the right context path/criteria. Click **OK** for the criteria and then **Save** the Application Definition.
 ![](images/19.app.spec.criteria.png)
@@ -210,6 +225,9 @@ Navigate back into your application in APM, and set the time frame to the last 1
 ![](images/apm-time.png)
 
 Try use the product and navigate the APM UI answer the following questions:
+
+On the menu click on Server Requests and than on ApiService.calcRandomIntArray_GET.
+![](images/apm-randomsum-samples.png)
 
 Can you figure out how much memory is allocated for each execution of the sum of random integers? Does this amount seem correct?
 ![](images/apm-randomsum-samples.png)
