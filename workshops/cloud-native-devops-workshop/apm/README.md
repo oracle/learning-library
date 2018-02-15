@@ -179,7 +179,8 @@ Note: it may take several minutes for this change to be reflected in the configu
 After setting injection type is done, let's what's going on in the page. In Chrome or Firefox, press Control-Shift-I to bring up the browser inspector. With the inspector open, visit the following URL:
 
 ```https://<your ACCS URL>/<URI prefix>/angular.html
-https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/angular.html```
+https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/angular.html
+```
 
 You should land on a sample single-page web app, and see in the Network tab of the inspector that there are calls to `collector`. Those calls represent browser telemetry being returned to APM.
 ![](images/apm-browser.png)
