@@ -67,7 +67,7 @@ Once you have reached the Oracle Cloud Management Cloud Welcome page click **OMC
 On the menu list select **Administration** 
 ![](images/02.apm.welcome.png)
 
-Then **Agents** on tne menu, on the agent page click on "Download" TAB, for the Agent type choose "APM Agent" and click on "Universal Installer".
+Then **Agents** on the menu, on the agent page click on "Download" TAB, for the Agent type choose "APM Agent" and click on "Universal Installer".
 ![](images/02.download.installer.png)
 
 Save the AgentInstall.zip file.
@@ -75,7 +75,7 @@ Save the AgentInstall.zip file.
 Locate a **valid** registration key with a large maximum that we will use for agent deployment. Click **Registration Keys** TAB.
 ![](images/05.read.reg.key.png)
 
-You have to click on "Action" button on the right side and download key, copy-paste your Registration Key value into your notes for AGENT_REGISTRATION_KEY.
+Find some of the available keys that you can use, or create new one. You have to click on "Action" button on the right side and download key, copy-paste your Registration Key value into your notes for AGENT_REGISTRATION_KEY.
 ![](images/06.read.reg.key.png)
 
 #### Upload Build Artifacts to Maven ####
@@ -93,8 +93,11 @@ Wait for the upload to complete successfully and then proceed to the next step.
 #### Determine the URL for the Maven Artifacts ####
 We will need to supply repository download URLs to the build scripts, which we will collect from the UI in this step.
 
-Return to Browse mode and then make note of the repository URL contained with the Distribution Management XML. Copy-paste this URL into your notes as *Maven Base URL*. Then, navigate to our artifact by clicking on the version number in the list of artifact directories.
+Return to Browse mode and then make note of the repository URL contained with the Distribution Management XML. Copy-paste this URL into your notes as *Maven Base URL*.
 ![](images/devcs-maven-url.png)
+
+Then, navigate to our artifact by clicking on the version number in the list of artifact directories.
+![](images/devcs-maven-url2.png)
 
 Now we're in the folder for our artifact. Click on the zip file and make note of the repository path. Copy-paste this path into your notes as *Agent Install Zip Path*.
 ![](images/devcs-maven-path.png)
@@ -104,17 +107,27 @@ Append the *Agent Install Zip Path* to the end of the *Maven Base URL* that we j
 #### Update the Build ####
 Now we'll return to our previous build and modify its configuration to run our APM-enabled build process. The script we are using here will package up the application as a Tomcat server based application and set up the APM agent automatically. The script will call maven to execute the springboot-sample code, and will additionally set up a Tomcat server and integrate APM into the Tomcat server. The deployment model in this case will be a WAR file based deployment, which means that our application will be served by Tomcat under a URI prefix derived from the WAR file name.
 
-First, come up with a short unique string (like your name or tenant identity domain) that will be used as the URI prefix for you application. Enter your chosen string as *URI Prefix* in your notes. Use the prefix as the name of your war file by appending ".war" to the end, like "trial021.war". Record this name as WAR_FILE in your notes.
+First, come up with a short unique string (like your name or tenant identity domain) that will be used as the URI prefix for you application. Enter your chosen string as *URI Prefix* in your notes. Use the prefix as the name of your war file by appending ".war" to the end, like "trial100.war". Record this name as WAR_FILE in your notes.
 
-Return to the `springboot_build` build job and navigate to its **Configure** section. Add a new **Execute shell** build step. Refer back to the full URL to our installer within Maven, the registration key that we collected in the previous steps, and your chose war file name. Substitute them into the appropriate <> within the Command as follows:
 ```
-export AGENTINSTALL_ZIP_URL=<AGENTINSTALL_ZIP_URL from your notes>
-export AGENT_REGISTRATION_KEY=<AGENT_REGISTRATION_KEY from your notes>
-export WAR_FILE=<WAR_FILE from your notes>
+URI Prefix:trial100
+WAR_FILE:trial100.war
+```
+
+Return to the `springboot_build` build job that you created earlier during springboot-sample lab and navigate to its **Configure** section and "Build Steps" tab. Add a new **Execute shell** build step. 
+![](images/build-steps.png)
+
+Refer back to the full URL to our installer within Maven, the registration key that we collected in the previous steps, and your chose war file name. Substitute them into the appropriate <> within the Command as follows:
+```
+export AGENTINSTALL_ZIP_URL=https://developer.us2.oraclecloud.com/profile/developer48597-oxxxxxxxx/s/developer48597-ocloud100_springboot-sample_23623/maven/com/oracle/AgentInstall/1.10/AgentInstall-1.10.zip
+export AGENT_REGISTRATION_KEY=xxxxxxxxx-xxxxxxxxxxxxxxxx
+export WAR_FILE=trial100.war
+export CLOUD_USER_NAME=dusko.vukmanovic@oracle.com
+export CLOUD_USER_PWD=xxxxxxxx
 cd apm
 ./build.sh
 ```
-![](images/build-steps.png)
+![](images/build-steps2.png)
 
 This build script will generate `apm/application.zip`, so we will need to update the **Post Build** configuration appropriately, and then **Save**
 ![](images/build-post.png)
@@ -131,7 +144,8 @@ Since our file to archive has been changed, we will need to update the Deploy co
 Ensure that `apm/application.zip` is specified as the Artifact. You may need to temporarily flip the **Type** to "On Demand" and pick you most recent build in order for the new artifact to show up, then return the type to "Automatic". Once done, **Save** the configuration.
 ![](images/deploy-configuration.png)
 
-A deployment should be immediately triggered. Monitor its progress and wait for it to complete successfully before proceeding.
+A deployment should be immediately triggered, if not then on Deployment's Action button click on Redeploy. Monitor its progress and wait for it to complete successfully before proceeding.
+![](images/deploy-configuration2.png)
 
 #### Validating the Application ####
 
