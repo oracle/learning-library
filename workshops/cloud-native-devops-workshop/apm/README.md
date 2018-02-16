@@ -239,7 +239,7 @@ While still on Server Requests click on /trial100/gw/quote.
 Can you tell whether the quote functionality uses static data or makes a real external web service call?
 ![](images/apm-quote.png)
 
-On the menu click on Session and pick one session. Can you tell which button clicks result in AJAX calls and which do not? Can you determine the cause of the behavior when you click **Compute* with 1048576 in *Return Array Index*?
+On the menu click on Sessions and pick one session. Can you tell which button clicks result in AJAX calls and which do not? Can you determine the cause of the behavior when you click **Compute* with 1048576 in *Return Array Index*?
 ![](images/apm-eum-session.png)
 
 This concludes the required parts of this tutorial.
