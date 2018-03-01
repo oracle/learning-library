@@ -34,19 +34,20 @@ This tutorial demonstrates how to:
 
 #### Complete the springboot-sample tutorial ####
 Complete the [springboot-sample tutorial](../springboot-sample/) to set up a continuous delivery pipeline from source control to ACCS deployment for our sample application.
+We will continue to use the same project you created for spring sample tutorial, with additonal steps to incorporate APM capabilities. 
 
 #### Prepare Notes ####
 There will be a number of keys, urls, and URI strings that you will need to keep track of across the setup process. To keep this clear in your head, create a Snippet (in a separate browser window/tab) or a text file with the following template, which we will fill in as we go along.
 ```
-Maven Base URL:
-Agent Install Zip Path:
+Maven Base URL=
+Agent Install Zip Path=
 
-AGENTINSTALL_ZIP_URL:
+AGENTINSTALL_ZIP_URL=
 
-AGENT_REGISTRATION_KEY:
+AGENT_REGISTRATION_KEY=
 
-URI Prefix:
-WAR_FILE:
+URI Prefix=
+WAR_FILE=
 ```
 ![](images/snippet.png)
 
@@ -60,16 +61,22 @@ Download the master installer for your tenant and make note of a valid registrat
 
 If you have separate Oracle Management Cloud Service access, for example in case of trial use the proper identity domain and credentials to login.
 
-Once you have reached the Oracle Cloud Management Cloud Welcome page click **Application Navigator** and on the drop down list select **Administration** -> **Agents**
+Once you have reached the Oracle Cloud Management Cloud Welcome page click **OMC Navgation** button on upper left corner to get menu on the left side.
 ![](images/01.apm.welcome.png)
 
-On the left menu select **Download** and click on the green download icon.
+On the menu list select **Administration** 
+![](images/02.apm.welcome.png)
+
+Then **Agents** on the menu, on the agent page click on "Download" TAB, for the Agent type choose "APM Agent" and click on "Universal Installer".
 ![](images/02.download.installer.png)
 
 Save the AgentInstall.zip file.
 
-Locate a **valid** registration key with a large maximum that we will use for agent deployment. Click **Registration Keys** on the left side menu. Copy-paste your Registration Key value into your notes for AGENT_REGISTRATION_KEY.
+Locate a **valid** registration key with a large maximum that we will use for agent deployment. Click **Registration Keys** TAB.
 ![](images/05.read.reg.key.png)
+
+Find some of the available keys that you can use, or create new one. You have to click on "Action" button on the right side and download key, copy-paste your Registration Key value into your notes for AGENT_REGISTRATION_KEY.
+![](images/06.read.reg.key.png)
 
 #### Upload Build Artifacts to Maven ####
 Now that we have downloaded the necessary master installer, we will need to make it available to our automated build process. We will use the DevCS Maven repository for this purpose. By uploading the master installer to the Maven repository, our build scripts will be able to download and use it to integrate the necessary agent components into our application.
@@ -86,8 +93,11 @@ Wait for the upload to complete successfully and then proceed to the next step.
 #### Determine the URL for the Maven Artifacts ####
 We will need to supply repository download URLs to the build scripts, which we will collect from the UI in this step.
 
-Return to Browse mode and then make note of the repository URL contained with the Distribution Management XML. Copy-paste this URL into your notes as *Maven Base URL*. Then, navigate to our artifact by clicking on the version number in the list of artifact directories.
+Return to Browse mode and then make note of the repository URL contained with the Distribution Management XML. Copy-paste this URL into your notes as *Maven Base URL*.
 ![](images/devcs-maven-url.png)
+
+Then, navigate to our artifact by clicking on the version number in the list of artifact directories.
+![](images/devcs-maven-url2.png)
 
 Now we're in the folder for our artifact. Click on the zip file and make note of the repository path. Copy-paste this path into your notes as *Agent Install Zip Path*.
 ![](images/devcs-maven-path.png)
@@ -97,17 +107,25 @@ Append the *Agent Install Zip Path* to the end of the *Maven Base URL* that we j
 #### Update the Build ####
 Now we'll return to our previous build and modify its configuration to run our APM-enabled build process. The script we are using here will package up the application as a Tomcat server based application and set up the APM agent automatically. The script will call maven to execute the springboot-sample code, and will additionally set up a Tomcat server and integrate APM into the Tomcat server. The deployment model in this case will be a WAR file based deployment, which means that our application will be served by Tomcat under a URI prefix derived from the WAR file name.
 
-First, come up with a short unique string (like your name or tenant identity domain) that will be used as the URI prefix for you application. Enter your chosen string as *URI Prefix* in your notes. Use the prefix as the name of your war file by appending ".war" to the end, like "trial021.war". Record this name as WAR_FILE in your notes.
+First, come up with a short unique string (like your name or tenant identity domain) that will be used as the URI prefix for you application. Enter your chosen string as *URI Prefix* in your notes. Use the prefix as the name of your war file by appending ".war" to the end, like "trial100.war". Record this name as WAR_FILE in your notes.
 
-Return to the `springboot_build` build job and navigate to its **Configure** section. Add a new **Execute shell** build step. Refer back to the full URL to our installer within Maven, the registration key that we collected in the previous steps, and your chose war file name. Substitute them into the appropriate <> within the Command as follows:
 ```
-export AGENTINSTALL_ZIP_URL=<AGENTINSTALL_ZIP_URL from your notes>
-export AGENT_REGISTRATION_KEY=<AGENT_REGISTRATION_KEY from your notes>
-export WAR_FILE=<WAR_FILE from your notes>
+URI Prefix:trial100
+WAR_FILE:trial100.war
+```
+
+Return to the `springboot_build` build job that you created earlier during springboot-sample lab and navigate to its **Configure** section and "Build Steps" tab. Add a new **Execute shell** build step. 
+![](images/build-steps.png)
+
+Refer back to the full URL to our installer within Maven, the registration key that we collected in the previous steps, and your chose war file name. Substitute them into the appropriate <> within the Command as follows:
+```
+export AGENTINSTALL_ZIP_URL=https://developer.us2.oraclecloud.com/profile/developer48597-oxxxxxxxx/s/developer48597-ocloud100_springboot-sample_23623/maven/com/oracle/AgentInstall/1.10/AgentInstall-1.10.zip
+export AGENT_REGISTRATION_KEY=xxxxxxxxx-xxxxxxxxxxxxxxxx
+export WAR_FILE=trial100.war
 cd apm
 ./build.sh
 ```
-![](images/build-steps.png)
+![](images/build-steps2.png)
 
 This build script will generate `apm/application.zip`, so we will need to update the **Post Build** configuration appropriately, and then **Save**
 ![](images/build-post.png)
@@ -124,7 +142,8 @@ Since our file to archive has been changed, we will need to update the Deploy co
 Ensure that `apm/application.zip` is specified as the Artifact. You may need to temporarily flip the **Type** to "On Demand" and pick you most recent build in order for the new artifact to show up, then return the type to "Automatic". Once done, **Save** the configuration.
 ![](images/deploy-configuration.png)
 
-A deployment should be immediately triggered. Monitor its progress and wait for it to complete successfully before proceeding.
+A deployment should be immediately triggered, if not then on Deployment's Action button click on Redeploy. Monitor its progress and wait for it to complete successfully before proceeding.
+![](images/deploy-configuration2.png)
 
 #### Validating the Application ####
 
@@ -132,26 +151,46 @@ Now let's make sure that the application deployment was successful and is return
 
 Point your browser at:
 
-```https://<your ACCS URL>/<URI prefix from your notes>```
+```https://<your ACCS URL>/<URI prefix from your notes>
+https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/
+```
 
 Verify that the springboot-sample looks the same as it did before.
 
-Next, let's what's going on in the page. In Chrome or Firefox, press Control-Shift-I to bring up the browser inspector. With the inspector open, visit the following URL:
+#### Enabling and Configuring End User Monitoring ####
+Now, you need to change the injection type to “reference” for discovered application server.  By default the Injection type is “correlation”
 
-```https://<your ACCS URL>/<URI prefix>/angular.html```
+To configure the default browser injection type for an application server:
+From the eft navigation menu, select APM.
+![](images/01.browser-injection.png)
+
+Then, APM Admin.
+![](images/02.browser-injection.png)
+
+Select Browser Agent. In the Configure End User Monitoring Injection Type Property section, all the application servers are listed. Optionally, click the Filter icon to search for the required application server.
+Select the application server to modify, and click the Edit icon in the Injection Type column.
+![](images/03.browser-injection.png)
+
+And select the required injection type, "Reference".
+![](images/04.browser-injection.png)
+
+Note: it may take several minutes for this change to be reflected in the configuration table. Refresh the browser to update the table.
+
+After setting injection type is done, let's what's going on in the page. In Chrome or Firefox, press Control-Shift-I to bring up the browser inspector. With the inspector open, visit the following URL:
+
+```https://<your ACCS URL>/<URI prefix>/angular.html
+https://springbootapp-xxxxxxxxx.apaas.us2.oraclecloud.com/trial100/angular.html
+```
 
 You should land on a sample single-page web app, and see in the Network tab of the inspector that there are calls to `collector`. Those calls represent browser telemetry being returned to APM.
+
 ![](images/apm-browser.png)
 
 Click on the various samples on this page to see what they do.
 
 #### Set Up Application Performance Monitoring ####
 
-[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign_in](https://cloud.oracle.com) and go to Dashboard Page. Click **Launch APM**.
-
-If you have separate Oracle Management Cloud Service access, for example in case of trial use the proper identity domain and credentials to login.
-
-Once you have reached the Oracle Cloud Management Cloud Welcome page click **Application Performance Monitoring**.
+From the left navigation menu select Home, then click on to reached the Oracle Cloud Management Cloud Welcome page and click **Application Performance Monitoring**.
 ![](images/15.apm.welcome.png)
 
 Now you can see the landing page of APM. This is a dashboard which contains the top metrics. Click the hamburger icon on the left side next to the **Home** text.
@@ -160,11 +199,11 @@ Now you can see the landing page of APM. This is a dashboard which contains the 
 Click the last **Administration** menu item.
 ![](images/16.apm.home.admin.png)
 
-Click the **Application definitions** menu item.
-![](images/17.apm.home.admin.application.png)
+Click the **APM Admin** menu item.
+![](images/16.apm.home.APMadmin.png)
 
-Here you can define new application definition. This definition ensures that your application(s) will have a single pane view. Click **Create Application Definition**.
-![](images/18.apm.app.def.png)
+Click the **Application definitions** menu item. Here you can define new application definition. This definition ensures that your application(s) will have a single pane view. Click **Create Application Definition**.
+![](images/17.apm.home.admin.application.png)
 
 On the Application Specification dialog define the criteria which is unique to your application or environment. We will use the customized *URI Prefix* that we chose earlier as the identifier for our application. The Application Name can be anything but it is useful to use similar name to context path. Please note the Application Name can not contain '-'. Select **Pages** for criteria and choose **URL**. The pattern for URL should be *URI Prefix* from your notes. Check your application URL in the browser to find the right context path/criteria. Click **OK** for the criteria and then **Save** the Application Definition.
 ![](images/19.app.spec.criteria.png)
@@ -190,13 +229,17 @@ Navigate back into your application in APM, and set the time frame to the last 1
 
 Try use the product and navigate the APM UI answer the following questions:
 
+On the menu click on Server Requests and than on ApiService.calcRandomIntArray_GET.
+![](images/apm-randomsum-samples.png)
+
 Can you figure out how much memory is allocated for each execution of the sum of random integers? Does this amount seem correct?
 ![](images/apm-randomsum-samples.png)
 
+While still on Server Requests click on /trial100/gw/quote.
 Can you tell whether the quote functionality uses static data or makes a real external web service call?
 ![](images/apm-quote.png)
 
-Can you tell which button clicks result in AJAX calls and which do not? Can you determine the cause of the behavior when you click **Compute* with 1048576 in *Return Array Index*?
+On the menu click on Sessions and pick one session. Can you tell which button clicks result in AJAX calls and which do not? Can you determine the cause of the behavior when you click **Compute* with 1048576 in *Return Array Index*?
 ![](images/apm-eum-session.png)
 
 This concludes the required parts of this tutorial.

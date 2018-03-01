@@ -9,7 +9,7 @@ Oracle Cloud is the industry’s broadest and most integrated public cloud. It o
 
 ### Prerequisites ###
 
-The workshop is intended to work with an Oracle PaaS trial account. To get an account look into [here](common/request.for.trial.md). Get the following account details ready to complete the tutorial and replace to your values when it is required:
+The workshop is intended to work with an Oracle PaaS trial account or Oracle GSE accounts. To get an account look into [here](common/request.for.trial.md). Get the following account details ready to complete the tutorial and replace to your values when it is required:
 
 + Oracle Cloud account **username** and **password**
 + Oracle Cloud **identity domain**
@@ -61,9 +61,10 @@ The content contains several independent modules that cover different aspects of
 #### Deploy Java EE application to Oracle Java Cloud Service ####
 
 + [Create Database Cloud Service Instance using user interface](dbcs-create/README.md)
-+ [Create Java Cloud Service Instance using user interface](jcs-create/README.md)
++ [Create Java Cloud Service Instance using user interface on OCI-Classic](jcs-create/README.md)
 + [Prepare Database Cloud Service Instance to store sample application's data](dbcs-prepare/README.md)
 + [Deploy Java EE sample application to Oracle Java Cloud Service using Admin console](jcs-deploy/README.md)
++ :new: [Create Java Cloud Service Instance using user interface on Oracle Cloud Infrastructure (OCI)](jcs-on-oci/README.md)
 
 #### Manage Oracle Java Cloud Service using UI and PaaS Service Manager ####
 

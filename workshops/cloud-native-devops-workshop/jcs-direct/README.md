@@ -19,7 +19,7 @@ This tutorial demonstrates how to:
 - [Deployed sample application on Java Cloud Service](../jcs-deploy/README.md)
 - Before you use the ssh utility to connect to a compute node, you need the following:
 - The IP address of a compute node associated with a WebLogic deployment. The IP address is listed on Java Cloud Service Overview page.
-- The SSH private key file that matches the public key associated with the deployment.
+- The SSH private key file that matches the public key associated with the deployment, check [environment setup](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/EnvSetup.md) page.
 
 ### Steps ###
 Navigate to the Oracle Java Cloud Service Console.[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). On the dashboard open the Java Cloud Service Console.
@@ -73,49 +73,45 @@ Confirm your order by selecting Yes and wait until it completes.
 Change to the terminal window where ssh connection is already established. To check what is the startup script for managed server check nodemanager.properties:
 
 	-bash-4.1$ less $DOMAIN_HOME/nodemanager/nodemanager.properties
+	#Tue Dec 12 23:50:00 UTC 2017
 	#Node manager properties
-	#Fri Aug 26 19:25:37 UTC 2016
-	DomainsFile=/u01/data/domains/techco_domain/nodemanager/nodemanager.domains
+	#Tue Dec 12 23:49:55 UTC 2017
+	DomainsFile=/u01/data/domains/Alpha01A_domain/nodemanager/nodemanager.domains
 	LogLimit=0
-	PropertiesVersion=12.2.1
+	PropertiesVersion=12.2.1.2.0
 	AuthenticationEnabled=true
-	NodeManagerHome=/u01/data/domains/techco_domain/nodemanager
+	NodeManagerHome=/u01/data/domains/Alpha01A_domain/nodemanager
 	JavaHome=/u01/jdk
 	LogLevel=FINE
 	DomainsFileEnabled=true
-	StartScriptName=startJCSServer.sh
-	ListenAddress=techco-wls-1
+	ListenAddress=alpha01a-jcs-wls-1
 	NativeVersionEnabled=true
 	ListenPort=5556
 	LogToStderr=true
+	weblogic.StartScriptName=startJCSServer.sh
 	SecureListener=true
 	LogCount=1
-	StopScriptEnabled=false
 	QuitEnabled=true
 	LogAppend=true
+	weblogic.StopScriptEnabled=false
 	StateCheckInterval=500
 	CrashRecoveryEnabled=true
-	StartScriptEnabled=true
-	LogFile=/u01/data/domains/techco_domain/nodemanager/nodemanager.log
-	LogFormatter=weblogic.nodemanager.server.LogFormatter
-	ListenBacklog=50
-	UseKSSForDemo=false
 	../nodemanager/nodemanager.properties (END) 
 
 The `StartScriptName` property shows the startup script for managed server which is `startJCSServer.sh`. Press q to quit. Open to edit this script. Use vi:
 
-	-bash-4.1$ vi /u01/data/domains/techco_domain/bin/startJCSServer.sh
+	-bash-4.1$ vi /u01/data/domains/Alpha01A_domain/bin/startJCSServer.sh
 
-Press 'i' to edit file. Insert `echo="CUSTOM PROPERTY SETTING"` before `/u01/data/domains/techco_domain/bin/startWebLogic.sh "$@"`. The goal is to demonstrate how you can set e.g. custom property which is necessary for your application. The `startJCSServer.sh` should look similar:
+Press 'i' to edit file. Insert `echo="CUSTOM PROPERTY SETTING"` before `/u01/data/domains/Alpha01A_domain/bin/startWebLogic.sh "$@"`. The goal is to demonstrate how you can set e.g. custom property which is necessary for your application. The `startJCSServer.sh` should look similar:
 
 	#!/bin/bash
-	# Copyright (c) 2014 Oracle and/or its affiliates. All rights reserved.
-	
+	# Copyright (c) 2014, 2016, Oracle and/or its affiliates. All rights reserved.
+
 	# script to set the USER_MEM_ARGS before starting Server
-	
-	managedServerName=techco__server_1
+
+	managedServerName=Alpha01A_server_1
 	patternToBeMatched=`echo $managedServerName | cut -d _ -f 1,2`
-	if [ "${SERVER_NAME}" = "techco__adminserver" ]
+	if [ "${SERVER_NAME}" = "Alpha01A_adminserver" ]
 	then
 	   USER_MEM_ARGS="-Djava.security.egd=file:/dev/./urandom"
 	   JAVA_OPTIONS="$JAVA_OPTIONS -Dweblogic.rjvm.enableprotocolswitch=true -Djava.net.preferIPv4Stack=true"
@@ -127,11 +123,9 @@ Press 'i' to edit file. Insert `echo="CUSTOM PROPERTY SETTING"` before `/u01/dat
 	    USER_MEM_ARGS=" "
 	    export USER_MEM_ARGS
 	fi
-	
 	echo "CUSTOM PROPERTY SETTING"
-	
-	/u01/data/domains/techco_domain/bin/startWebLogic.sh "$@"
-	~                                                                                                                                             
+	/u01/data/domains/Alpha01A_domain/bin/startWebLogic.sh noderby "$@"
+	~                                                                                                                                                                                                                    
 	~                                                                                                                                             
 	~                                                                                                                                             
 	~                                                                                                                                             
@@ -140,7 +134,7 @@ Press 'i' to edit file. Insert `echo="CUSTOM PROPERTY SETTING"` before `/u01/dat
 
 Before starting the managed server check that there is no such entry in log files belong to the managed server:
 
-	-bash-4.1$ grep -C 4 'CUSTOM PROPERTY' /u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.*
+	-bash-4.1$ grep -C 4 'CUSTOM PROPERTY' /u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.*
 	-bash-4.1$ 
 
 As you can see there is no such line in the log files. Now start the Managed Server.
@@ -162,37 +156,37 @@ Change directory `/u01/app/oracle/middleware/oracle_common/common/bin/` and run 
 
 As a first step you need to connect to the NodeManager that manages the target server. Execute nmConnect(<username>,<password>,<nodemanager-host>,<nodemanager-port>,<domain-name>,<domain-folder>,<nodemanager-type>) to connect node manager.
 
-	wls:/offline> nmConnect('weblogic', '<password>', 'techco-wls-1', '5556', 'techco_domain', '/u01/data/domains/techco_domain', 'SSL')
+	wls:/offline> nmConnect('weblogic', '<password>', 'alpha01a-jcs-wls-1', '5556', 'Alpha01A_domain', '/u01/data/domains/Alpha01A_domain', 'SSL')
 	Connecting to Node Manager ...
 	Successfully Connected to Node Manager.
-	wls:/nm/techco_domain> 
+	wls:/nm/Alpha01A_domain>
 
 Node manager accepted the connections use nmStart(<servername>) to start managed server.
 
-	wls:/nm/techco_domain> nmStart('techco__server_1')
-	Starting server techco__server_1 ...
-	Successfully started server techco__server_1 ...
-	wls:/nm/techco_domain> exit()
+	wls:/nm/Alpha01A_domain> nmStart('Alpha01A_server_1')
+	Starting server Alpha01A_server_1 ...
+	Successfully started server Alpha01A_server_1 ...
+	wls:/nm/Alpha01A_domain> exit()
 
 #### Search pattern in the WebLogic server log(s) ####
 
 When the managed server has been started check the log files again for the result. The `-C 5` argument ensures that `grep` displays 5 lines more before and after the pattern have been found:
 
-	-bash-4.1$ grep -C 5 'CUSTOM PROPERTY' $DOMAIN_HOME/servers/techco__server_1/logs/techco__server_1.*
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-<Aug 28, 2016 5:11:12 PM UTC> <FINEST> <NodeManager> <Environment: QTLIB=/usr/lib64/qt-3.3/lib>
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-<Aug 28, 2016 5:11:12 PM UTC> <FINEST> <NodeManager> <Environment: HOME=/u01/app/oracle/tools/paas/state/homes/oracle>
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-<Aug 28, 2016 5:11:12 PM UTC> <FINEST> <NodeManager> <Environment: UTILS_MEM_ARGS=-Xms32m -Xmx1024m>
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-<Aug 28, 2016 5:11:12 PM UTC> <INFO> <NodeManager> <Working directory is '/u01/data/domains/techco_domain'>
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-<Aug 28, 2016 5:11:12 PM UTC> <INFO> <NodeManager> <Server output log file is '/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out'>
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out:CUSTOM PROPERTY SETTING
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-.
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-.
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-JAVA Memory arguments:  
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-.
-	/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out-CLASSPATH=/u01/app/oracle/middleware/oracle_common/modules/features/com.oracle.db.jdbc7-dms.jar:/u01/jdk/lib/tools.jar:/u01/app/oracle/middleware/wlserver/server/lib/weblogic.jar:/u01/app/oracle/middleware/wlserver/../oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/u01/app/oracle/middleware/wlserver/modules/features/oracle.wls.common.nodemanager.jar:/u01/app/oracle/middleware/oracle_common/modules/oracle.jps/jps-manifest.jar:/u01/app/oracle/middleware/oracle_common/modules/internal/features/jrf_wlsFmw_oracle.jrf.wls.classpath.jar::/u01/app/oracle/middleware/wlserver/common/derby/lib/derbynet.jar:/u01/app/oracle/middleware/wlserver/common/derby/lib/derbyclient.jar:/u01/app/oracle/middleware/wlserver/common/derby/lib/derby.jar:/u01/jdk/lib/tools.jar:/u01/app/oracle/middleware/oracle_common/modules/oracle.jps/jps-manifest.jar
-	-bash-4.1$ 
-
-The "property" can be found in `/u01/data/domains/techco_domain/servers/techco__server_1/logs/techco__server_1.out`. Use exit command to log out from the ssh connection.
+	-bash-4.1$ grep -C 5 'CUSTOM PROPERTY' $DOMAIN_HOME/servers/Alpha01A_server_1/logs/Alpha01A_server_1.*
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-<Dec 20, 2017 2:10:41 PM UTC> <FINEST> <NodeManager> <Environment: CLASSPATHSEP=:>
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-<Dec 20, 2017 2:10:41 PM UTC> <FINEST> <NodeManager> <Environment: HOME=/u01/app/oracle/tools/home/oracle>
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-<Dec 20, 2017 2:10:41 PM UTC> <FINEST> <NodeManager> <Environment: UTILS_MEM_ARGS=-Xms32m -Xmx1024m>
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-<Dec 20, 2017 2:10:41 PM UTC> <INFO> <NodeManager> <Working directory is '/u01/data/domains/Alpha01A_domain'>
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-<Dec 20, 2017 2:10:41 PM UTC> <INFO> <NodeManager> <Server output log file is '/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out'>
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out:CUSTOM PROPERTY SETTING
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-.
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-.
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-JAVA Memory arguments:  
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-.
+	/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out-CLASSPATH=/u01/app/oracle/middleware/oracle_common/modules/features/com.oracle.db.jdbc7-dms.jar:/u01/jdk/lib/tools.jar:/u01/app/oracle/middleware/wlserver/server/lib/weblogic.jar:/u01/app/oracle/middleware/wlserver/../oracle_common/modules/net.sf.antcontrib_1.1.0.0_1-0b3/lib/ant-contrib.jar:/u01/app/oracle/middleware/wlserver/modules/features/oracle.wls.common.nodemanager.jar:/u01/app/oracle/middleware/oracle_common/modules/oracle.jps/jps-manifest.jar:/u01/app/oracle/middleware/oracle_common/modules/internal/features/jrf_wlsFmw_oracle.jrf.wls.classpath.jar:/u01/app/oracle/middleware/wlserver/common/derby/lib/derbyclient.jar:/u01/app/oracle/middleware/wlserver/common/derby/lib/derby.jar:/u01/jdk/lib/tools.jar:/u01/app/oracle/middleware/oracle_common/modules/oracle.jps/jps-manifest.jar
+	[oracle@alpha01a-jcs-wls-1 bin]$ 
+ 
+The "property" can be found in `/u01/data/domains/Alpha01A_domain/servers/Alpha01A_server_1/logs/Alpha01A_server_1.out`. Use exit command to log out from the ssh connection.
 
 Note this is one way to check log file(s) related to Java Cloud Service. There are many other way to have the log content. You can use:
 
