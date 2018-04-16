@@ -72,11 +72,9 @@ This version of the lab guides requires the use of an Oracle-provided VirtualBox
 
 ### **STEP 1**: Log in to your OCI dashboard
 
-- If you are using a Trial Account, **you must wait until you receive this email** indicating that your Cloud Account has been provisioned. _Please note that this email may arrive in your spam or promotions folder pending your email settings._
+- Please refer to the Cloud Account that has been provided by your host. _Please note your account detail will be provided separately and are not available on these pages._
 
-  ![](images/oraclecode/code_9.png)
-
-- Once you receive the **Get Started with Oracle Cloud** Email, make note of your **Username, Password and Cloud Account Name**.
+- Once you receive the **Oracle Cloud Account**, make note of your **Username, Password, Cloud Tenant Name and Console URL**.
 
   ![](images/200/0.1.png)
 
