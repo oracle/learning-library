@@ -123,7 +123,7 @@ An API key is required for Terraform to authenticate to OCI in order to create c
   cat ~/.oci/oci_api_key_public.pem | xclip -sel clip
   ```
 
-- In your browser window showing the OCI Console, click the **Identity** menu item. You will be brought to the **Users** menu. Find your username in the list and hover over the **three dots** menu at the far right of the row, then click **View User Details**.
+- In your browser window showing the OCI Console, click the **User Settings** item under the **api.user** drop down menu. You will be brought to the **Users Details** page for **api.user**.
 
   ![](images/200/56.png)
 
