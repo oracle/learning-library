@@ -207,15 +207,15 @@ An API key is required for Terraform to authenticate to OCI in order to create c
 - First, we will specify that we want only one OCPU in each of the worker and master nodes. This reduces the hourly cost of running our cluster. On **lines 15 and 16**, uncomment the **k8sMasterShape** and **k8sWorkerShape** parameters, and set both values to **VM.Standard1.1**:
 
   ```
-  k8sMasterShape = "VM.Standard1.1"
-  k8sWorkerShape = "VM.Standard1.1"
+  k8sMasterShape = "VM.Standard2.1"
+  k8sWorkerShape = "VM.Standard2.1"
   ```
 
-- Next, we will specify the type of load balancers we want for the master and etcd VMs -- 400Mbps in this case. Alter **lines 30 and 31** to read:
+- Next, we will specify the type of load balancers we want for the master and etcd VMs -- 100Mbps in this case. Alter **lines 30 and 31** to read:
 
   ```
-  etcdLBShape = "400Mbps"
-  k8sMasterLBShape = "400Mbps"
+  etcdLBShape = "100Mbps"
+  k8sMasterLBShape = "100Mbps"
   ```
 
 - The last change we will make is to open up the allowed Kubernetes master inbound IP address range, so that we can access our cluster from the internet. On **line 38**, remove the pound sign at the beginning of the line to uncomment it.
