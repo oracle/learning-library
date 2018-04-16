@@ -72,23 +72,27 @@ This version of the lab guides requires the use of an Oracle-provided VirtualBox
 
 ### **STEP 1**: Log in to your OCI dashboard
 
-- Please refer to the Cloud Account that has been provided by your host. _Please note your account details will be provided separately and are not available on these pages._
+- Please refer to the Cloud Account that has been provided by your workshop instructor. _Please note your account details will be provided separately and are not available on these pages._
 
 - Once you receive the **Oracle Cloud Account**, make note of your **Username, Password, Cloud Tenant Name and Console URL**.
 
+- Open your browser (Firefox or Chrome) and go to your Console URL. As en example, the Console URL will look something like the following:
+
+    [https://console.us-ashburn-1.oraclecloud.com/#/a/](https://console.us-ashburn-1.oraclecloud.com/#/a/)
+    
+    _This URL may be different to the one your are provided with. Use the provided URL if it is different to the above_
+
+- Click on **Change tenant** button if you are not presented with **Cloud Tenant** input field.
+
   ![](images/200/0.2.png)
 
-- From you you can also from any browser go to. :
+- Enter your **Cloud Tenant Name** in the input field and click the **Continue** button. This is supplied by your workshop instructor.
 
-    [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in)
-
-- Enter your **Cloud Account Name** in the input field and click the **My Services** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
-
-  ![](images/200/1.png)
+  ![](images/200/0.3.png)
 
 - Enter your **Username** and **Password** in the input fields and click **Sign In**. If you have a trial account, these can be found in your welcome email. Otherwise, these will be supplied by your workshop instructor.
 
-  ![](images/200/2.png)
+  ![](images/200/0.4.png)
 
 **NOTE**: If you have used your trial account already, you may have been prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
