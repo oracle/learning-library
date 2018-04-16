@@ -86,29 +86,17 @@ This version of the lab guides requires the use of an Oracle-provided VirtualBox
 
   ![](images/200/0.2.png)
 
-- Enter your **Cloud Tenant Name** in the input field and click the **Continue** button. This is supplied by your workshop instructor.
+- Enter your **Cloud Tenant Name** in the input field and click the **Continue** button. This is supplied by your workshop instructor earlier.
 
   ![](images/200/0.3.png)
 
-- Enter your **Username** and **Password** in the input fields and click **Sign In**. If you have a trial account, these can be found in your welcome email. Otherwise, these will be supplied by your workshop instructor.
+- Enter your **Username** and **Password** in the input fields and click **Sign In**. These are supplied by your workshop instructor earlier.
 
   ![](images/200/0.4.png)
 
-**NOTE**: If you have used your trial account already, you may have been prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-- In the top left corner of the dashboard, click the **hamburger menu**
 
-  ![](images/200/3.png)
-
-- Click to expand the **Services** submenu, then click **Compute**
-
-  ![](images/200/4.png)
-
-- On the OCI Console sign in page, enter the same **Username** as you did on the previous sign in page. If you are using a trial account and this is your first time logging into the OCI Console, enter the **temporary password** from your trial account welcome email. If you have already visited the OCI Console and changed your password, enter your **new password**. Otherwise, this password will be supplied by your workshop instructor.
-
-  ![](images/200/5.png)
-
-### **STEP 2**: Locate or Create a Compartment for your Kubernetes nodes
+### **STEP 2**: Locate a Compartment for your Kubernetes nodes
 
 Compartments are used to isolate resources within your OCI tenant. User-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
 
@@ -116,7 +104,7 @@ Compartments are used to isolate resources within your OCI tenant. User-based ac
 
   ![](images/200/6.png)
 
-- If your workshop instructor has directed you to use a pre-created compartment **_do not create a new one_**. Locate the compartment in the list and click **Copy** next to the displayed OCID. **Paste** this OCID into a text file or elsewhere for safe keeping. We will use it to tell Terraform where to set up our cluster in a later step. Proceed to **STEP 3**.
+- You will use a pre-created compartment **_do not create a new one_**. Locate the **Demo** compartment in the list and click **Copy** next to the displayed OCID. **Paste** this OCID into a text file or elsewhere for safe keeping. We will use it to tell Terraform where to set up our cluster in a later step. Proceed to **STEP 3**.
 
   Otherwise, if you are using a trial account or paid account, proceed to the next instruction to create a compartment.
 
