@@ -106,21 +106,8 @@ Compartments are used to isolate resources within your OCI tenant. User-based ac
 
 - You will use a pre-created compartment **_do not create a new one_**. Locate the **Demo** compartment in the list and click **Copy** next to the displayed OCID. **Paste** this OCID into a text file or elsewhere for safe keeping. We will use it to tell Terraform where to set up our cluster in a later step. Proceed to **STEP 3**.
 
-  Otherwise, if you are using a trial account or paid account, proceed to the next instruction to create a compartment.
-
   ![](images/200/9.png)
 
-- Click **Create Compartment**
-
-  ![](images/200/7.png)
-
-- In the **Name** field, enter `kubernetes`. Enter a description of your choice. Click **Create Compartment**.
-
-  ![](images/200/8.png)
-
-- In a moment, your new Compartment will show up in the list. Locate it and click **Copy** in the OCID display. **Paste** this OCID into a text file or elsewhere for safe keeping. We will use it to tell Terraform where to set up our cluster in a later step.
-
-  ![](images/200/9.png)
 
 ### **STEP 3**: Create and upload a new API key
 
