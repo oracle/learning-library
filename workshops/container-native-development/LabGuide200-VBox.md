@@ -72,11 +72,11 @@ This version of the lab guides requires the use of an Oracle-provided VirtualBox
 
 ### **STEP 1**: Log in to your OCI dashboard
 
-- Please refer to the Cloud Account that has been provided by your host. _Please note your account detail will be provided separately and are not available on these pages._
+- Please refer to the Cloud Account that has been provided by your host. _Please note your account details will be provided separately and are not available on these pages._
 
 - Once you receive the **Oracle Cloud Account**, make note of your **Username, Password, Cloud Tenant Name and Console URL**.
 
-  ![](images/200/0.1.png)
+  ![](images/200/0.2.png)
 
 - From you you can also from any browser go to. :
 
