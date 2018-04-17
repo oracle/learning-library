@@ -90,7 +90,7 @@ This version of the lab guides requires the use of an Oracle-provided VirtualBox
 
   ![](images/200/0.3.png)
 
-- Enter your **Username** and **Password** in the input fields and click **Sign In**. These are supplied by your workshop instructor earlier.
+- Enter your **Username** and **Password** in the input fields and click **Sign In**. These are supplied by your workshop instructor earlier. The default user will be **api.user**
 
   ![](images/200/0.4.png)
 
