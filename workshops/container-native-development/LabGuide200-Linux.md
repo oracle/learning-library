@@ -25,7 +25,7 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 ## Required Artifacts
 
 - The following lab requires:
-  - an Oracle Public Cloud account that will be supplied by your instructor, or a Trial Account
+  - an Oracle Cloud account that will be supplied by your instructor
 
 
 # Provision Kubernetes Using Terraform
@@ -34,41 +34,30 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 
 ### **STEP 1**: Log in to your OCI dashboard
 
-- If you are using a Trial Account, **you must wait until you receive this email** indicating that your Cloud Account has been provisioned. _Please note that this email may arrive in your spam or promotions folder pending your email settings._
+- Please refer to the Cloud Account that has been provided by your workshop instructor. _Please note your account details will be provided separately and are not available on these pages._
 
-  ![](images/oraclecode/code_9.png)
+- Once you receive the **Oracle Cloud Account**, make note of your **Username, Password, Cloud Tenant Name and Console URL**.
 
-- Once you receive the **Get Started with Oracle Cloud** Email, make note of your **Username, Password and Cloud Account Name**.
+- Open your browser (Firefox or Chrome) and go to your Console URL. As en example, the Console URL will look something like the following:
 
-  ![](images/200/0.1.png)
+   [https://console.us-ashburn-1.oraclecloud.com/#/a/](https://console.us-ashburn-1.oraclecloud.com/#/a/)
+    
+   _This URL may be different to the one your are provided with. Use the provided URL if it is different to the above_
 
-- From you you can also from any browser go to. :
+Click on **Change tenant** button if you are not presented with **Cloud Tenant** input field.
 
-    [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in)
+![](images/200/0.2.png)
 
-- Enter your **Cloud Account Name** in the input field and click the **My Services** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+- Enter your **Cloud Tenant Name** in the input field and click the **Continue** button. This is supplied by your workshop instructor earlier.
 
-  ![](images/200/1.png)
+  ![](images/200/0.3.png)
 
-- Enter your **Username** and **Password** in the input fields and click **Sign In**. If you have a trial account, these can be found in your welcome email. Otherwise, these will be supplied by your workshop instructor.
+- Enter your **Username** and **Password** in the input fields and click **Sign In**. These are supplied by your workshop instructor earlier. The default user will be **api.user**
 
-  ![](images/200/2.png)
+  ![](images/200/0.4.png)
 
-**NOTE**: If you have used your trial account already, you may have been prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-- In the top left corner of the dashboard, click the **hamburger menu**
-
-  ![](images/200/3.png)
-
-- Click to expand the **Services** submenu, then click **Compute**
-
-  ![](images/200/4.png)
-
-- On the OCI Console sign in page, enter the same **Username** as you did on the previous sign in page. If you are using a trial account and this is your first time logging into the OCI Console, enter the **temporary password** from your trial account welcome email. If you have already visited the OCI Console and changed your password, enter your **new password**. Otherwise, this password will be supplied by your workshop instructor.
-
-  ![](images/200/5.png)
-
-### **STEP 2**: Locate or Create a Compartment for your Kubernetes nodes
+### **STEP 2**: Locate a Compartment for your Kubernetes nodes
 
 Compartments are used to isolate resources within your OCI tenant. User-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
 
@@ -76,23 +65,10 @@ Compartments are used to isolate resources within your OCI tenant. User-based ac
 
   ![](images/200/6.png)
 
-- If your workshop instructor has directed you to use a pre-created compartment **_do not create a new one_**. Locate the compartment in the list and click **Copy** next to the displayed OCID. **Paste** this OCID into a text file or elsewhere for safe keeping. We will use it to tell Terraform where to set up our cluster in a later step. Proceed to **STEP 3**.
-
-  Otherwise, if you are using a trial account or paid account, proceed to the next instruction to create a compartment.
+- You will use a pre-created compartment **_do not create a new one_**. Locate the **Demo** compartment in the list and click **Copy** next to the displayed OCID. **Paste** this OCID into a text file or elsewhere for safe keeping. We will use it to tell Terraform where to set up our cluster in a later step. Proceed to **STEP 3**.
 
   ![](images/200/9.png)
 
-- Click **Create Compartment**
-
-  ![](images/200/7.png)
-
-- In the **Name** field, enter `kubernetes`. Enter a description of your choice. Click **Create Compartment**.
-
-  ![](images/200/8.png)
-
-- In a moment, your new Compartment will show up in the list. Locate it and click **Copy** in the OCID display. **Paste** this OCID into a text file or elsewhere for safe keeping. We will use it to tell Terraform where to set up our cluster in a later step.
-
-  ![](images/200/9.png)
 
 ### **STEP 3**: Create and upload a new API key
 
@@ -112,7 +88,7 @@ cat ~/.oci/oci_api_key_public.pem
 
   ![](images/200/11.png)
 
-- In your browser window showing the OCI Console, click the **Identity** menu item. You will be brought to the **Users** menu. Find your username in the list and hover over the **three dots** menu at the far right of the row, then click **View User Details**.
+- In your browser window showing the OCI Console, click the **User Settings** item under the **api.user** drop down menu. You will be brought to the **Users Details** page for **api.user**.
 
   ![](images/200/56.png)
 
@@ -241,18 +217,18 @@ export PATH=$PATH:`pwd`
 
 - The rest of the terraform.tfvars file controls the parameters used when creating your Kubernetes cluster. You can control how many OCPUs each node receives, whether nodes should be virtual machines or bare metal instances, how many availability domains to use, and more. We will modify three of the lines in the remainder of the file.
 
-- First, we will specify that we want only one OCPU in each of the worker and master nodes. This reduces the hourly cost of running our cluster. On **lines 15 and 16**, uncomment the **k8sMasterShape** and **k8sWorkerShape** parameters, and set both values to **VM.Standard1.1**:
+- First, we will specify that we want only one OCPU in each of the worker and master nodes. This reduces the hourly cost of running our cluster. On **lines 15 and 16**, uncomment the **k8sMasterShape** and **k8sWorkerShape** parameters, and set both values to **VM.Standard2.1**:
 
   ```
-  k8sMasterShape = "VM.Standard1.1"
-  k8sWorkerShape = "VM.Standard1.1"
+  k8sMasterShape = "VM.Standard2.1"
+  k8sWorkerShape = "VM.Standard2.1"
   ```
 
-- Next, we will specify the type of load balancers we want for the master and etcd VMs -- 400Mbps in this case. Alter **lines 30 and 31** to read:
+- Next, we will specify the type of load balancers we want for the master and etcd VMs -- 100Mbps in this case. Alter **lines 30 and 31** to read:
 
   ```
-  etcdLBShape = "400Mbps"
-  k8sMasterLBShape = "400Mbps"
+  etcdLBShape = "100Mbps"
+  k8sMasterLBShape = "100Mbps"
   ```
 
 - The last change we will make is to open up the allowed Kubernetes master inbound IP address range, so that we can access our cluster from the internet. On **line 38**, remove the pound sign at the beginning of the line to uncomment it.

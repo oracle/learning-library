@@ -13,13 +13,11 @@ _Note: When clicking on links in this labguide_, it is best to **Right Click** o
 
 [You Tube Recordings](https://www.youtube.com/playlist?list=PLPIzp-E1msrarZljayc5JwyrYA2vqWZJ_)
 
-### **Step 1**: Acquire an Oracle Cloud Trial Account
+### **Step 1**: Obtain an Oracle Cloud Account
 
-- If you do not have a trial account please click on this URL [cloud.oracle.com/tryit](http://cloud.oracle.com/tryit&intcmp=DeveloperInnovation-HOL-11NOV17), and complete all the required steps to get your free Oracle Cloud Trial Account.
+- Your Oracle Cloud Account details will be handed to you by your lab instructor. Please ensure you have this before you before you continue.
 
-- You will eventually receive the following email. _You may begin working on Lab 100 before you receive this email_, but you will not be able to start Lab 200 until you have received it.
-
-![](images/oraclecode/code_9.png)
+- _You may begin working on Lab 100, but you will not be able to start Lab 200 until you have received your Oracle Cloud Account details._
 
 
 
