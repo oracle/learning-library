@@ -17,7 +17,7 @@ _Note: When clicking on links in this labguide_, it is best to **Right Click** o
 
 - Your Oracle Cloud Account details will be handed to you by your lab instructor. Please ensure you have this before you before you continue.
 
-- _You may begin working on Lab 100, but you will not be able to start Lab 200 until you have received your Oracle Cloud Account details.
+- _You may begin working on Lab 100, but you will not be able to start Lab 200 until you have received your Oracle Cloud Account details._
 
 
 
