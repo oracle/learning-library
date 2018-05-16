@@ -34,11 +34,12 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 
 This version of the lab guides requires the use of an Oracle-provided VirtualBox or Cloud-hosted client image to use during the workshop. 
 
-- If you do not already have Virtual Box, use this [Virtual Box Software Link](https://www.virtualbox.org/) to download **Virtual Box**.
+- If you do not already have Virtual Box, you can use the one that is provided by your instructor
+- Or you can use this [Virtual Box Software Link](https://www.virtualbox.org/) to download **Virtual Box**.
 
 ### Download Virtual Box Image
 
-- Use this link to download the [VirtualBox image "OVA" file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SqwrD58l9JCOTuVK4OVbraDfp8IZVrMUoVYv2JalmpA/n/gse00014514/b/PublicBucket/o/OL74_ClientImageFinalBeta6.1.ova) that you will import into **Virtual Box**.
+- The Virtual Box image file (OL74_ClientImageFinalBeta6_2.ova) will be provided by your instructor for you to import into **Virtual Box**.
 
 
 ### Import the Virtual Box Image
