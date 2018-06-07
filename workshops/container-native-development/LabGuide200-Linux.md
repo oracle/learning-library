@@ -79,7 +79,7 @@ To create and manage clusters in your tenancy, Container Engine must have access
 
 - Click **Create**
 
-  ![](images/21.png)
+  ![](images/200/70.png)
 
 ## **STEP 3**: Configuring Network Resources
 
@@ -107,7 +107,7 @@ You must create a VCN for your cluster and it must include the following:
 
 - Click **Create Virtual Cloud Network**
 
-  ![](images/22.png)
+  ![](images/200/71.png)
 
 
 ### **STEP 3.2**: Internet Gateway Configuration
@@ -127,7 +127,7 @@ Once the **oke-cluster** VCN is created
 
 - Click **Create Internet Gateway**
 
-  ![](images/23.png)
+  ![](images/200/72.png)
 
 
 ### **STEP 3.3**: Route Table Configuration: 
@@ -136,11 +136,11 @@ The VCN must have a route table. The route table must have a route rule that spe
 
 - Select **Route Tables** from the list on the left
 
-  ![](images/26.png)
+  ![](images/200/75.png)
 
   A `Default Route Table for oke-cluster` should have been created for you, similar to below.
 
-  ![](images/27.png)
+  ![](images/200/76.png)
 
 If a default Route Table has not been created for you, then create a new Route Table.
 
@@ -156,7 +156,7 @@ If a default Route Table has not been created for you, then create a new Route T
 
 - Click **Create Route Table**
 
-  ![](images/24.png)
+  ![](images/200/73.png)
 
 However, if a default Route Table has been created, then you only need to add a new rule to the Route Table.
 
@@ -169,7 +169,7 @@ However, if a default Route Table has been created, then you only need to add a 
   - **Target Type:** `Internet Gateway`
   - **Target Internet Gateway:** `oke-gateway-0`
 
-  ![](images/25.png)
+  ![](images/200/74.png)
 
 
 ### **STEP 3.4**: DHCP Options Configuration
@@ -180,7 +180,7 @@ The VCN must have a DHCP Options configured. The default value for DNS Type of I
 
   A `Default DHCP Options for oke-cluster` should have been created for you, similar to below.
 
-  ![](images/29.png)
+  ![](images/200/78.png)
 
 
 ### **STEP 3.5**: Security List Configuration
@@ -199,7 +199,7 @@ Let's create the security lists and rules.
 
   There should be one default security list `Default Security List for oke-cluster` similar to below.
 
-  ![](images/30.png)
+  ![](images/200/79.png)
 
 ### **STEP 3.5.1**: Create Security List for Work Node Subnets
 
@@ -212,17 +212,17 @@ Let's create the security lists and rules.
   - **Source Port Range:** `ALL`
   - **Destination Port Range:** `ALL`
 
-  ![](images/31.png)
+  ![](images/200/80.png)
 
 - Enter the rest of the Ingress rules following the table below:
 
-  ![](images/32.png)
+  ![](images/200/81.png)
 
 - Before clicking on **Create Security List** button to complete, you need to enter the Ergress rules as well.
 
 - Enter the rest of the Engress rules following the table below:
 
-  ![](images/33.png)
+  ![](images/200/82.png)
 
 - Click on **Create Security List** button to complete
 
@@ -231,11 +231,11 @@ Let's create the security lists and rules.
 
 - Repeat Step 2.5.1 for the Load Balancer subnet using the rules below:
 
-  ![](images/34.png)
+  ![](images/200/83.png)
 
   You should now have three security lists similar to below:
 
-  ![](images/35.png)
+  ![](images/200/84.png)
 
 
 ### **STEP 3.6**: Subnet Configuration
@@ -263,18 +263,18 @@ We usually require five subnets in the VCN to create and deploy clusters in a hi
 
   You should have something similar to below:
 
-  ![](images/36.png)
+  ![](images/200/85.png)
 
 - Click **Create**
 
 - Repeat the above for the remaining two worker subnets **oke-workers-2** and **oke-workers-3** as below:
 
-  ![](images/37.png)
+  ![](images/200/86.png)
 
 
 - Repeat the above for the two load balancer subnets **oke-loadbalancer-1** and **oke-loadbalancer-2** as below:
 
-  ![](images/38.png)
+  ![](images/200/87.png)
 
 With the five subnets connected, we are ready to create a Kubernetes cluster.
 
@@ -297,7 +297,7 @@ With the five subnets connected, we are ready to create a Kubernetes cluster.
 
   Leave the rest of the fields to default and you should have something similar to below:
 
-  ![](images/39.png)
+  ![](images/200/88.png)
 
 You can either Click **Create** now and create your node pools later OR add the node pools now. Let's add the node pools now to save a step.
 
@@ -313,7 +313,7 @@ You can either Click **Create** now and create your node pools later OR add the 
 
   Leave the rest of the fields to default and you should have something similar to below:
 
-  ![](images/40.png)
+  ![](images/200/89.png)
 
 - Click **Create**
 
@@ -371,7 +371,7 @@ You can now upload the PEM public key in the OCI Console.
 
   You should see something similar to below with the key's fingerprint under the API Keys.
 
-  ![](images/41.png)
+  ![](images/200/90.png)
 
 
 ### **STEP 4.3**: Installing the Oracle Cloud Infrastructure CLI
@@ -400,13 +400,13 @@ Before using the CLI, you have to create a config file that contains the require
 
 - On the **Cluster** List page, click the **Demo** cluster you created. The Cluster page shows details of the cluster similar to below:
 
-  ![](images/42.png)
+  ![](images/200/91.png)
 
 - Click the **Access Kubeconfig** button to display the How to **Access Kubeconfig dialog box**
 
 - Click the **Download script** button to download the `get-kubeconfig.sh` file to a convenient location on the machine where you installed the Oracle Cloud Infrastructure CLI (for example, your home directory).
 
-  ![](images/43.png)
+  ![](images/200/92.png)
 
 - Make the get-kubeconfig.sh file executable. For example on Linux or MacOS:
 
@@ -481,7 +481,7 @@ Alternatively:
 
 - Under the Cluster Details, you will find the Kubernetes Cluster address similar to below:
 
-  ![](images/52.png)
+  ![](images/200/95.png)
 
   This should be the same address as the one found in `kubeconfig`.
   
