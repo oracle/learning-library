@@ -18,7 +18,7 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 
 - Create and Deploy to a Kubernetes Cluster
   - Set Up Oracle Cloud infrastructure
-  - Provision Kubernetes Using Terraform
+  - Provision Oracle Container Engine for Kubernetes
   - Configure and Run Wercker Deployment Pipelines
   - Deploy and Test the Product Catalog Application
 
@@ -28,7 +28,7 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
   - an Oracle Cloud account that will be supplied by your instructor
 
 
-# Provision Kubernetes Using Terraform
+# Provision Oracle Container Engine for Kubernetes
 
 ## Set Up Oracle Cloud infrastructure
 
