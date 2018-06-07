@@ -130,7 +130,7 @@ Once the **oke-cluster** VCN is created
   ![](images/200/72.png)
 
 
-### **STEP 3.3**: Route Table Configuration: 
+### **STEP 3.3**: Route Table Configuration
 
 The VCN must have a route table. The route table must have a route rule that specifies an internet gateway as the target for the destination CIDR block 0.0.0.0/0.
 
