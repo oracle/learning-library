@@ -70,208 +70,447 @@ Compartments are used to isolate resources within your OCI tenant. User-based ac
   ![](images/200/9.png)
 
 
-### **STEP 3**: Create and upload a new API key
-
-An API key is required for Terraform to authenticate to OCI in order to create compute instances for your Kubernetes master and worker nodes.
-
-- Open a terminal window and run each of the following commands, one at a time, pressing **Enter** between each one. These commands will create a new directory called `.oci`, generate a new PEM private key, generate the corresponding public key, and copy the public key to the clipboard. For more information on this process, including the alternate commands to protect your key file with a passphrase, see the [official documentation](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#two).
 
 
-```bash
-mkdir ~/.oci
-openssl genrsa -out ~/.oci/oci_api_key.pem 2048
-openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
-cat ~/.oci/oci_api_key_public.pem
-```
 
-- Select the entire public key, beginning with `-----BEGIN PUBLIC KEY-----` and ending with `-----END PUBLIC KEY-----` and **copy** it to the clipboard.
 
-  ![](images/200/11.png)
+## **STEP 1**: Create Policy for Container Engine
 
-- In your browser window showing the OCI Console, click the **User Settings** item under the **api.user** drop down menu. You will be brought to the **Users Details** page for **api.user**.
+To create and manage clusters in your tenancy, Container Engine must have access to all resources in the tenancy. To give Container Engine the necessary access, create a policy for the service as follows:
 
-  ![](images/200/56.png)
+- In the Console, click **Identity**, and then click **Policies**. A list of the policies in the compartment you're viewing is displayed.
+
+- Select the tenancy's **root** compartment from the list on the left
+
+- Click **Create Policy**
+
+- Enter the following:
+  - **Name:** `oke-service`
+  - **Description:** `allow OKE to manage all-resources in tenancy`
+  - **Policy Versioning:** Select **Keep Policy Current**, select **Use Version Date** and enter that date in YYYY-MM-DD format.
+  - **Statement:** The following policy statement:
+  `allow service OKE to manage all-resources in tenancy`
+
+- Leave the rest to default
+
+- Click **Create**
+
+  ![](images/21.png)
+
+## **STEP 2**: Configuring Network Resources
+
+You must create a VCN for your cluster and it must include the following:
+
+  - The VCN must have a CIDR block defined that is large enough for at least five subnets, in order to support the number of hosts and load balancers a cluster will have
+  - The VCN must have an internet gateway defined
+  - The VCN must have a route table defined that has a route rule specifying the internet gateway as the target for the destination CIDR block
+  - The VCN must have five subnets defined, three subnets in which to deploy worker nodes and two subnets to host load balancers.
+
+### **STEP 2.1**: VCN Configuration
+
+- In the Console, click **Networking**, and then click **Virtual Cloud Network**
+
+- Select your the tenancy's **Demo** compartment (for GSE env) from the list on the left
+
+- Click **Create Virtual Cloud Network**
+
+- Enter the following:
+  - **Name:** `oke-cluster`
+  - **CIDR Block:** `10.0.0.0/16`
+  - **DNS Resolution:** Check box to **USE DNS HOSTNAMES IN THIS VCN**
+
+- Leave the rest to default (Compartment defaults to **Demo** for GSE env)
+
+- Click **Create Virtual Cloud Network**
+
+  ![](images/22.png)
+
+
+### **STEP 2.2**: Internet Gateway Configuration
+
+The VCN must have an internet gateway. The internet gateway must be specified as the target for the destination CIDR block 0.0.0.0/0 in a route rule in a route table.
+
+Once the **oke-cluster** VCN is created
+
+- Click on the **oke-cluster** VCN to enter the details page
+
+- Select **Internet Gateways** from the list on the left
+
+- Enter the following:
+  - **Name:** `oke-gateway-0`
+
+- Leave the rest to default (Compartment defaults to **Demo** for GSE env)
+
+- Click **Create Internet Gateway**
+
+  ![](images/23.png)
+
+
+### **STEP 2.3**: Route Table Configuration: 
+
+The VCN must have a route table. The route table must have a route rule that specifies an internet gateway as the target for the destination CIDR block 0.0.0.0/0.
+
+- Select **Route Tables** from the list on the left
+
+  ![](images/26.png)
+
+  A `Default Route Table for oke-cluster` should have been created for you, similar to below.
+
+  ![](images/27.png)
+
+If a default Route Table has not been created for you, then create a new Route Table.
+
+- Click **Create Route Table**
+
+- Enter the following:
+  - **Name:** `routetable-0`
+  - **Destination CIDR block:** `0.0.0.0/0`
+  - **Target Type:** `Internet Gateway`
+  - **Target Internet Gateway:** `oke-gateway-0`
+
+- Leave the rest to default (Compartment defaults to **Demo** for GSE env)
+
+- Click **Create Route Table**
+
+  ![](images/24.png)
+
+However, if a default Route Table has been created, then you only need to add a new rule to the Route Table.
+
+- Click on the **Default Route Table for oke-cluster** (default generated name) Route Table to enter the details page
+
+- Click on **Edit Route Rules**
+
+- Enter the following:
+  - **Destination CIDR block:** `0.0.0.0/0`
+  - **Target Type:** `Internet Gateway`
+  - **Target Internet Gateway:** `oke-gateway-0`
+
+  ![](images/25.png)
+
+
+### **STEP 2.4**: DHCP Options Configuration
+
+The VCN must have a DHCP Options configured. The default value for DNS Type of Internet and VCN Resolver is acceptable.
+
+- While still in the VCN `oke-cluster` details page, select **DHCP Options** from the list on the left
+
+  A `Default DHCP Options for oke-cluster` should have been created for you, similar to below.
+
+  ![](images/29.png)
+
+
+### **STEP 2.5**: Security List Configuration
+
+The VCN must have security lists defined for the Worker Node Subnets and the Load Balancer Subnets. Two security lists need to be created (in addition to the default security list) to control access to and from the worker node subnets and load balancer subnets. The two security lists are named **oke-workers** and **oke-loadbalancers** respectively.
+
+Create two additional security lists to the default `Default Security List for oke-cluster`
+  - **Security List Name:** `oke-workers`
+  - **Security List Name:** `oke-loadbalancers`
+  
+There are two types of rules, Ingress and Egress, for both Workers and Load Balancer security lists. There 12 rules in total for the Worker Node Subnet and two rules in total for the Load Balancer Subnet.
+
+Let's create the security lists and rules.
+
+- Select **Security** from the list on the left
+
+  There should be one default security list `Default Security List for oke-cluster` similar to below.
+
+  ![](images/30.png)
+
+### **STEP 2.5.1**: Create Security List for Work Node Subnets
+
+- Click **Create Security Lists**
+
+- Enter the following for first Ingress rule for **oke-worker** security list name:
+  - **Security List Name:** `oke-workers`
+  - **Source CIDR:** `10.0.10.0/24`
+  - **IP Protocol:** `TCP`
+  - **Source Port Range:** `ALL`
+  - **Destination Port Range:** `ALL`
+
+  ![](images/31.png)
+
+- Enter the rest of the Ingress rules following the table below:
+
+  ![](images/32.png)
+
+- Before clicking on **Create Security List** button to complete, you need to enter the Ergress rules as well.
+
+- Enter the rest of the Engress rules following the table below:
+
+  ![](images/33.png)
+
+- Click on **Create Security List** button to complete
+
+
+### **STEP 2.5.2**: Create Security List for Load Balancer Subnets
+
+- Repeat Step 2.5.1 for the Load Balancer subnet using the rules below:
+
+  ![](images/34.png)
+
+  You should now have three security lists similar to below:
+
+  ![](images/35.png)
+
+
+### **STEP 2.6**: Subnet Configuration
+
+We usually require five subnets in the VCN to create and deploy clusters in a highly available configuration. The following configuration assumes you will be deploying across all three Availability Domains.
+
+
+  - Three subnets in which to deploy worker nodes. Each worker node subnet must be in a different availability domain. The worker node subnets must have different security lists to the load balancer subnets.
+  
+  - Two subnets to host load balancers. Each load balancer subnet must be in a different availability domain. The load balancer subnets must have different security lists to the worker node subnets.
+  
+- Still in the VCN page, select **Subnets** from the list on the left
+
+- Click **Create Subnet**
+
+- Enter the following for the first subnet:
+  - **Name:** `oke-workers-1`
+  - **Availability Domain:** `emra:US-ASHBURN-AD-1`
+  - **CIDR Block:** `10.0.10.0/24`
+  - **Route Table:** `Default Route Table for oke-cluster`
+  - **Public Subnet:** `Allow public IP addresses for instances in this Subnet`
+  - **DNS Resolution:** `Use DNS Hostnames In This Subnet`
+  - **DHCP Options:** `Default DHCP Options for oke-cluster`
+  - **Security Lists:** `oke-workers`
+
+  You should have something similar to below:
+
+  ![](images/36.png)
+
+- Click **Create**
+
+- Repeat the above for the remaining two worker subnets **oke-workers-2** and **oke-workers-3** as below:
+
+  ![](images/37.png)
+
+
+- Repeat the above for the two load balancer subnets **oke-loadbalancer-1** and **oke-loadbalancer-2** as below:
+
+  ![](images/38.png)
+
+With the five subnets connected, we are ready to create a Kubernetes cluster.
+
+
+
+## **STEP 3**: Create a Kubernetes Cluster
+  
+  
+- In the Console, click **Containers**, choose the **Demo** compartment, and then click **Clusters**
+
+- Click **Create Cluster**
+
+- Enter the following configuration details for the new cluster:
+  - **Name:** `Demo`
+  - **Version:** `v1.9.7`
+  - **VCN:** `oke-cluster`
+  - **Kubernetes Service LB Subnets:** `oke-workers-1`, `oke-workers-2`
+  - **Kubernetes Dashboard Enabled:** `Checked`
+  - **Tiller (Helm) Enabled:** `Checked`
+
+  Leave the rest of the fields to default and you should have something similar to below:
+
+  ![](images/39.png)
+
+You can either Click **Create** now and create your node pools later OR add the node pools now. Let's add the node pools now to save a step.
+
+- Click **Add Node Pool**
+
+- Enter the following configuration details for the new node pool:
+  - **Name:** `workbetter`
+  - **Version:** `v1.9.7`
+  - **Image:** `Oracle-Linux-7.4`
+  - **Shape:** `VM.Standard2.1`
+  - **Subnets:** `oke-wokrers-1`
+  - **Quantity Per Subnet:** `1`
+
+  Leave the rest of the fields to default and you should have something similar to below:
+
+  ![](images/40.png)
+
+- Click **Create**
+
+The Kubernetes cluster is now ready to use.
+
+
+
+## **STEP 4**: Downloading a kubeconfig File to Enable Cluster Access
+
+When you create a cluster, Container Engine creates a Kubernetes configuration file for the cluster called `kubeconfig`. The `kubeconfig` file provides the necessary details to access the cluster using **kubectl** and the Kubernetes Dashboard.
+
+You must download the `kubeconfig` file and set an environment variable to point to it. Having completed the steps, you can start using **kubectl** and the Kubernetes Dashboard to manage the cluster.
+
+
+### **STEP 4.1**: Generate an API Signing Key Pair
+
+Use OpenSSL commands to generate the key pair in the required PEM format.
+
+- If you haven't already, create a .oci directory to store the credentials:
+
+  `mkdir ~/.oci`
+
+- Generate the private key with one of the following commands:
+
+  `openssl genrsa -out ~/.oci/oci_api_key.pem -aes128 2048`
+
+- Ensure that only you can read the private key file:
+
+  `chmod go-rwx ~/.oci/oci_api_key.pem`
+
+- Generate the public key:
+
+  `openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem`
+
+- Copy the contents of the public key to the clipboard using pbcopy, xclip or a similar tool (you'll need to paste the value into the Console later). For example:
+
+  `cat ~/.oci/oci_api_key_public.pem | pbcopy`
+
+- Get the key's fingerprint with the following OpenSSL command:
+
+  `openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c`
+
+  When you upload the public key in the Console, the fingerprint is also automatically displayed there. It looks something like this: `12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef`
+
+
+### **STEP 4.2**: Upload the Public Key of the API Signing Key Pair
+
+You can now upload the PEM public key in the OCI Console.
+
+- In the Console, click **api.user**, and then click **User Settings**. The user details page is now shown.
 
 - Click **Add Public Key**
 
-  ![](images/200/12.png)
+- Paste the contents of the PEM public key in the dialog box and click **Add**
 
-- **Paste** the public key from your clipboard into the text field and click **Add**. Note: The public key was copied to the clipboard when you ran the `cat` command from the terminal window, which copied the results to the clipboard using the `clip` command.
+  You should see something similar to below with the key's fingerprint under the API Keys.
 
-  ![](images/200/13.png)
+  ![](images/41.png)
 
-- **Leave this browser window open**, as we will need to copy and paste some of this information into the Terraform configuration file.
 
-## Provision Kubernetes Using Terraform
+### **STEP 4.3**: Installing the Oracle Cloud Infrastructure CLI
 
-### **STEP 4**: Download Terraform
+The command line interface (CLI) is a tool that enables you to work with Oracle Cloud Infrastructure objects and services. The CLI provides much the same functionality as the Console and includes additional advanced commands.
 
-- Download the appropriate Terraform package for your operating system from the [terraform.io downloads page](https://www.terraform.io/downloads.html).
+There are different installation options and steps to install the CLI and required software depending on your platform. It is not possbile to cover all the options on this page. Please refer to [Installing the CLI Link](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/cliinstall.htm) to install your CLI.
 
-  ![](images/200/58.png)
 
-- **Unzip** the file you downloaded into the folder ~/terraform. You can use the command line or a graphical zip program for this operation. The example command below assumes you don't have other zip files in the current directory beginning with the string `terraform_`.
+### **STEP 4.4**: Configuring the Oracle Cloud Infrastructure CLI
 
-```bash
-cd ~/Downloads
-mkdir -p ~/terraform
-unzip terraform_*.zip
-mv terraform ~/terraform
-cd ~/terraform
-```
+Before using the CLI, you have to create a config file that contains the required credentials for working with Oracle Cloud Infrastructure. You can create this file using a setup dialog or manually, using a text editor. It is recommended to use the setup dialog.
 
-- Add Terraform to your PATH in the **terminal window** that you will _use for the next two steps_ using the following command:
+- Open a shell and run the `oci setup config` command
 
-```bash
-export PATH=$PATH:`pwd`
-```
-### **STEP 5**: Download the OCI Terraform Provider
+  The command prompts you for the information required for the config file and the API public/private keys.
 
-- Download the **OCI Terraform Provider** from the [GitHub release page](https://github.com/oracle/terraform-provider-oci/releases/latest). Select the package for your operating system. **Note:** for **Mac** use a **darwin** version of the tar file.
+- When prompted for the API public/private keys, you can specify the keys you generated previously.
 
-  ![](images/200/59.png)
 
-- Click on the **Save File** option if you are prompted and then click on **OK** to download the file.
+### **STEP 4.5**: Download the kubeconfig.sh File
 
-  ![](images/200/59.1.png)
+- In the Console, open the navigation menu. Click **Containers**
 
-- Run the following commands in a **terminal window** to extract the provider binary into the Terraform plugins folder. _Note:
-  replace_ the `linux_*.tar.gz` with the filename of the file you downloaded:
+- Choose the **Demo** compartment, and then click **Clusters**
 
-  ```bash
-  cd ~/Downloads
-  mkdir -p ~/.terraform.d/plugins && cat linux_*.tar.gz | tar -zxvf - -C ~/.terraform.d/plugins/
-  ```
+- On the **Cluster** List page, click the **Demo** cluster you created. The Cluster page shows details of the cluster similar to below:
 
-- Terraform will look in the `plugins` directory for the OCI provider when it is specified by an installer, as we will see in the next step.
+  ![](images/42.png)
 
-### **STEP 6**: Download and Configure the OCI Terraform Kubernetes Installer
+- Click the **Access Kubeconfig** button to display the How to **Access Kubeconfig dialog box**
 
-- _Install kubectl_. Terraform requires `kubectl` - the Kubernetes command line interface, to interact with Kubernetes from your local machine. You can install it by following the instructions for **Installing kubcectl binary via curl** for either mac or linux **[Kubernetes docs](https://kubernetes.io/docs/tasks/tools/install-kubectl/)**.
+- Click the **Download script** button to download the `get-kubeconfig.sh` file to a convenient location on the machine where you installed the Oracle Cloud Infrastructure CLI (for example, your home directory).
 
-- After you have installed kubectl, from the same **terminal window** you used in the previous step, run the following commands to download the OCI Terraform Kubernetes Installer:
+  ![](images/43.png)
 
-  ```bash
-  cd ~
-  git clone https://github.com/oracle/terraform-kubernetes-installer.git
-  cd terraform-kubernetes-installer
-  ```
+- Make the get-kubeconfig.sh file executable. For example on Linux or MacOS:
 
-- Initialize this Terraform installer by running the following command:
+  `$ chmod +x ~/get-kubeconfig.sh`
 
-  ```bash
-  terraform init
-  ```
+- Set the **ENDPOINT** environment variable to point to the region in which you created the cluster. Use one of us-phoenix-1, us-ashburn-1, eu-frankfurt-1, or uk-london-1 to specify the region. For example, on Linux or MacOS:
 
-- Verify proper installation of both Terraform and the OCI provider by running the following command from your **terminal window**:
+  `$ export ENDPOINT=containerengine.us-phoenix-1.oraclecloud.com`
 
-  ```bash
-  terraform --version
-  ```
-  You should see a version for `Terraform` as well as a version for the `provider.oci` plugin. It is OK if those versions differ from the screenshot below.
+- Run the `get-kubeconfig.sh` file to download the `kubeconfig` file and save it in a location accessible to kubectl and the Kubernetes Dashboard. For example on Linux or MacOS:
 
-  ![](images/200/57.png)
 
-- If you got the expected output from `terraform --version`, proceed to the next instruction. Otherwise, go back to the previous step and complete the instructions to **Download Terraform and the OCI Terraform Provider**. Also ensure that Terraform is in your PATH for the current terminal window.
+  `$ ~/get-kubeconfig.sh ocid1.cluster.oc1.phx.aaaaaaaaae... > ~/kubeconfig`
 
-- Once you have Terraform and the OCI provider set up, you are ready to configure the Kubernetes installer with your OCI account information. Start by making a copy of the included TFVARS example file to edit. Run the following from your **terminal window**:
+  Where ocid1.cluster.oc1.phx.aaaaaaaaae... is the OCID of the current cluster.
 
-  ```bash
-  cp terraform.example.tfvars terraform.tfvars
-  ```
+- For convenience, the command in the How to **Access Kubeconfig** dialog box already includes the cluster's OCID. You can simply copy and paste that command.
 
-- Open the `terraform.tfvars` file in your text editor of choice. On Linux you could run gedit. On a Mac, you can install gedit or use vi, but if you use TextEdit, ensure that any quotes (") you insert are not special characters:
 
-  ```bash
-  gedit terraform.tfvars
-  ```
+### **STEP 4.6**: Set the KUBECONFIG environment variable
 
-- You should still have a browser tab open to your **User Details** page in the OCI Console. If not, you can get to the User Details by selecting **Identity** then **Users** from the top menu of the Console. Then click on your **User's Name**.
+- In a terminal window, set the **KUBECONFIG** environment variable to the name and location of the `kubeconfig` file. For example, on Linux or MacOS:
 
-- While editing the file, you will first remove the **#** comment character and replace in the values in the terraform.tfvars file on lines **2, 4, 6, and 7** using the examples in the next two images below. **NOTE**: The **region** parameter may not already be present in your tfvars file. If it is not there, add it on a new line after the user_ocid parameter on line 6.
+  `$ export KUBECONFIG=~/kubeconfig`
 
-  ![](images/200/57.1.png)
+- Verify that **kubectl** is available and that it can connect to the cluster
 
-- Setting these variables can be a little tricky the first time you attempt it. [Checkout this video if you want to watch the steps performed. ](https://videohub.oracle.com/media/Lab+200A+Terraform+.tfvars+OCI+Configuration/0_vkxcw719)
+  `$ kubectl get nodes`
 
+  Information about the nodes in the cluster should be shown.
 
-- You will replace lines **2, 4, 6, and 7** with the values from the OCI Console, referring to the following screenshot for where to find them.
+You can now use kubectl and the Kubernetes Dashboard to perform operations on the cluster.
 
-  ![](images/200/17.png)
 
-- As an exmaple, Your terraform.tfvars file should now appear similar to the image shown below:
+## **STEP 4**: Starting The Kubernetes Dashboard
 
-  ![](images/200/57.2.png)
+Kubernetes Dashboard is a web-based user interface that you can use as an alternative to the Kubernetes kubectl command line tool to:
 
-- Now follow the same process of removing the comment character **#**, and fill in the OCI Compartment ID on **line 3**. Paste the value that you saved to a text file after creating the kubernetes **compartment** in the OCI Console. If you have lost it, you can retrieve it from the OCI Console compartment list (refer to **STEP 2**).
+- deploy containerized applications to a Kubernetes cluster
+- troubleshoot your containerized applications
 
-  ```
-  compartment_ocid = "Compartment OCID"
-  ```
+You use the Kubernetes Dashboard to get an overview of applications running on a cluster, as well as to create or modify individual Kubernetes resources. The Kubernetes Dashboard also reports the status of Kubernetes resources in the cluster, and any errors that have occurred.
 
-- The last piece of information we need to provide about your OCI tenant is the private key corresponding to the public API key you uploaded to the OCI console previously. Provide the path the the private key file on **line 5**. Note that _your path may differ_ from the example given below. Your public key was created as a first task in Step 3, and the location of your oci_api_key.pem file can be determined from how you completed those instructions.
+In contrast to the Kubernetes Dashboard, Container Engine enables you to create and delete Kubernetes clusters and node pools, and to manage the associated compute, network, and storage resources.
 
-  ```
-  private_key_path = "/Users/your-local-username/.oci/oci_api_key.pem"
-  ```
+Before you can use the Kubernetes Dashboard, you need to specify the cluster on which to perform operations.
 
-- The rest of the terraform.tfvars file controls the parameters used when creating your Kubernetes cluster. You can control how many OCPUs each node receives, whether nodes should be virtual machines or bare metal instances, how many availability domains to use, and more. We will modify three of the lines in the remainder of the file.
+To start the Kubernetes Dashboard:
 
-- First, we will specify that we want only one OCPU in each of the worker and master nodes. This reduces the hourly cost of running our cluster. On **lines 15 and 16**, uncomment the **k8sMasterShape** and **k8sWorkerShape** parameters, and set both values to **VM.Standard2.1**:
+- In a terminal window where you have exported the `KUBECONFIG` environment variable, enter **kubectl proxy** to ebable the Kubernetes Dashboard access.
 
-  ```
-  k8sMasterShape = "VM.Standard2.1"
-  k8sWorkerShape = "VM.Standard2.1"
-  ```
+- Open a browser and go to http://localhost:8001/ui to display the Kubernetes Dashboard.
 
-- Next, we will specify the type of load balancers we want for the master and etcd VMs -- 100Mbps in this case. Alter **lines 30 and 31** to read:
 
-  ```
-  etcdLBShape = "100Mbps"
-  k8sMasterLBShape = "100Mbps"
-  ```
+## **STEP 5**:
 
-- The last change we will make is to open up the allowed Kubernetes master inbound IP address range, so that we can access our cluster from the internet. On **line 38**, remove the pound sign at the beginning of the line to uncomment it.
+The Kubernetes cluster setup is complete and you are now able to deploy your application to this cluster. This cluster is can be reached by its cluster address. You can find this address either through the OCI console or in the `kubeconfig` file.
 
-  ```
-  master_https_ingress = "0.0.0.0/0"
-  ```
+- Open the `kubeconfig` file and look for the line with the **server** tag. For example:
 
-  **NOTE**: The 0.0.0.0/0 value means that any IP address can access your cluster. A better security practice would be to determine your externally-facing IP address and restrict access to only that address. If you'd like, you can find out your IP address by running `curl ifconfig.co` in a terminal window, and place that address into the `master_https_ingress` parameter (e.g. `master_https_ingress = "11.12.13.14/32"`). Note that if you need remote assistance with the workshop, you may need to open this back up to 0.0.0.0/0 to allow access to your cluster.
+  `server: https://cygiyzvmi4w.us-ashburn-1.clusters.oci.oraclecloud.com:6443`
+  
+  This is the cluster address you should use for deployment, such as the one specified for `KUBERNETES_MASTER` in **Wercker Environment**.
+  
+Alternatively:
 
-- **Double check** to ensure you removed the **#** character from in front of all the entries you modified
+- In the Console, open the navigation menu. Click **Containers**
 
-### **STEP 7**: Provision Kubernetes on OCI
+- Choose the **Demo** compartment, and then click **Clusters**
 
-- Now we are ready to have Terraform provision our Kubernetes cluster. **Save and close** your terraform.tfvars file. In your open **terminal window**, run the following command to have Terraform evaluate the various network and compute infrastructure that we are asking to be provisioned.
+- On the **Cluster** List page, click the **Demo** cluster you created.
 
-  ```bash
-  terraform plan
-  ```
+- Under the Cluster Details, you will find the Kubernetes Cluster address similar to below:
 
-  ![](images/200/60.png)
+  ![](images/52.png)
 
-- If the output of the plan step looks correct, you are ready to actually provision the infrastructure by running the following command in your **terminal window**. Note that Terraform will prompt you to type `yes` after it recomputes the required plan in order to begin provisioning.
+  This should be the same address as the one found in `kubeconfig`.
+  
+  You are ready to config Wercker to deploy to this cluster.
 
-  ```bash
-  terraform apply
-  ```
 
-  ![](images/200/61.png)
 
-- It will take several minutes to create the required Virtual Cloud Networks, load balancers, and compute instances that make up a Kubernetes cluster. If you'd like, you can observe the objects being created in the **OCI Console** -- click on **Compute** or **Networking** from the navigation menu and be sure to select the **Demo compartment** from the dropdown on the left side of the page.
 
-  ![](images/200/62.png)
 
-- **When provisioning is complete**, Terraform will output the details of all created infrastructure to the terminal:
 
-  ![](images/200/63.png)
 
-- Even though the Terraform provisioning has completed there is still configuration and setup being completed within the account. Make sure both Load Balancers are up and running before proceeding. In your account select **Networking-->Load Balancers**, and wait for the green health checkmarks to show that the Load Balances are up and running. 
 
-  ![](images/200/63.3.png)
 
-  ![](images/200/63.6.png)
 
 - During provisioning, Terraform generated a `kubeconfig` file that will authenticate you to the cluster. Let's configure and start the kubectl proxy server to make sure our cluster is accessible.
 
