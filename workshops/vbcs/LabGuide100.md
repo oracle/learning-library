@@ -37,7 +37,7 @@ This is the first of several labs that are part of the **Oracle Visual Builder C
 
     ![](images/100/nameApp.png)
 
-- **NOTE:** _If you receive a browser warning please update/change your browser to a compatible version._
+- **NOTE:** _If you receive a browser warning, please ensure you are using a [supported browser](https://docs.oracle.com/en/cloud/paas/app-builder-cloud/abcrn/supported-browsers.html)._
 
 ![](images/100/LabGuide100-01eb5aff.png)
 
