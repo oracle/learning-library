@@ -24,9 +24,9 @@ The exercises will cover the following CASB features and concepts:
 
 First, we must acquire a new Salesforce developer account. Sign-up for a Salesforce developer account at [https://developer.Salesforce.com/signup](https://developer.Salesforce.com/signup) (this is a free account, no credit card required). You will need an email address. After completing the signup process, check your email and click the account verification link. The verification link may look similar to this:
 
-	![](images/1/74FCDEE4-C1D1-49FE-960A-43BD91A87BBD.png)
+![](images/1/74FCDEE4-C1D1-49FE-960A-43BD91A87BBD.png)
  
- After clicking the verification link, next choose a new password for your Salesforce developer account.
+After clicking the verification link, next choose a new password for your Salesforce developer account.
 
 ### **STEP 2** Creating a Dedicated Profile in Salesforce
 
@@ -225,7 +225,7 @@ Recall that we changed the password policy in Salesforce to never expire however
 
 ## Exercise 3. Analyze Security Controls
 
-### **Overview**:
+### **Overview**
 
 Enterprise Cloud Applications have security-related settings, such as password complexity requirements and idle session timeouts. Oracle CASB Cloud Service can detect settings that aren’t strong enough.
 
@@ -237,7 +237,7 @@ Monitor-only. Oracle CASB Cloud Service reports on these security control values
 
 Monitor and push preferred values to the cloud application. At registration time, Oracle CASB Cloud Service ensures that your cloud application has your preferred security configuration values. After registration, Oracle CASB Cloud Service reports on changes to these values.
 
-### **Exercise**:
+### **Exercise**
 
 We will change the Salesforce Application's security control baseline in a way that will result in security control violations being reported in CASB. We will then review some of the resulting security control violations and finally we will explore how CASB can perform automated remediation of the security control violations. 
 
@@ -304,7 +304,7 @@ In Salesforce navigate to: *Setup -> Security Controls -> Session Settings* and 
 
 ## Exercise 4. Policies
 
-### **Overview**:
+### **Overview**
 
 A policy is a rule or a guideline, such as, "*only people in Finance can view files in the Finance folder*", or "*any change to network access rules must be reviewed*". You can define policies based on particular cloud services, resources in the service, actions on the resource, and optionally items such as actors, recipients, whole groups of users, domains, and IP addresses. In Oracle CASB Cloud Service, you define policies based on:
 
@@ -318,7 +318,7 @@ A policy is a rule or a guideline, such as, "*only people in Finance can view fi
 
 Oracle CASB Cloud Service generates an alert whenever an event that matches the policy occurs. The console displays a description of the policy violation and can provide recommendations for responding to it. You can also configure the alert to be sent to you over email or SMS.
 
-### **Exercise**:
+### **Exercise**
 
 In this exercise we will define a policy, for Saleforce, that will generate an incident when "*Any*" action is performed on the Salesforce CEO role (This includes adding or removing users to the role). 
 
@@ -387,32 +387,32 @@ The Policy will appear in the list of policies available for activation for the 
 ### **STEP 2**: Trigger the Policy Alert
 
 To test the policy log into the Salesforce account and perform an action on the *CEO* role that our new policy monitors.
- 
- Log into your Salesforce Developer account and follow these steps to create a *CEO* role and assign a user to it (This will result in the CASB policy alert)
- 
- #### **STEP 2.1**:In the Salesforce "*Setup*" section navigate to *Users -> Roles*
- 
- ![](images/1/SFrole1.png)
- Press the "*Set Up Roles*" button
 
- #### **STEP 2.2**: Select to create the suggested Salesforce Role Hierarchy.
+Log into your Salesforce Developer account and follow these steps to create a *CEO* role and assign a user to it (This will result in the CASB policy alert)
 
- Select the CEO role 
+#### **STEP 2.1**: In the Salesforce "*Setup*" section navigate to *Users -> Roles*
 
- ![](images/1/SFRole2.png)
+![](images/1/SFrole1.png)
+Press the "*Set Up Roles*" button
 
- #### **STEP 2.3**: Select "*Assign Users to Role*" (or "*New User*")
- 
+#### **STEP 2.2**: Select to create the suggested Salesforce Role Hierarchy.
 
- ![](images/1/SFRole3.png)
- 
-  #### **STEP 2.4**: Add a user to the policy role
- ![](images/1/SFRole4.png)
- Search for a user and add the user to the role by selecting the "*Add*" button to move the user from the search results to the "*Selected Users for CEO*" selection box. 
+Select the CEO role 
 
- > Make sure the user you add to the CEO role is **not** the Service Account user we used to sign-in to Salesforce when we onboarded the application in Exercise 2 . The reason being that CASB Cloud Service will not monitor actions performed by that user so as to ensure that the actions CASB take in the persona of that user, to collect data from Salesforce, does not appear in the data CASB analize.
+![](images/1/SFRole2.png)
 
- Click the "*Save*" button 
+#### **STEP 2.3**: Select "*Assign Users to Role*" (or "*New User*")
+
+
+![](images/1/SFRole3.png)
+
+#### **STEP 2.4**: Add a user to the policy role
+![](images/1/SFRole4.png)
+Search for a user and add the user to the role by selecting the "*Add*" button to move the user from the search results to the "*Selected Users for CEO*" selection box. 
+
+> Make sure the user you add to the CEO role is **not** the Service Account user we used to sign-in to Salesforce when we onboarded the application in Exercise 2 . The reason being that CASB Cloud Service will not monitor actions performed by that user so as to ensure that the actions CASB take in the persona of that user, to collect data from Salesforce, does not appear in the data CASB analize.
+
+Click the "*Save*" button 
 
 > ![](images/1/clock-icon.jpg) As noted before there is a delay between data collection cycles for the CASB service and the action you perform in Salesforce might not cause the policy alert in CASB to fire immediately but will appear on the next data collection that CASB does to the Salesforce tenant. **If you are following these instructions as part of a workshop you do not have to wait for the next CASB data collection run to take place before you can continue with this exercise. You can sign into the shared CASB tenant and complete the remainder of the exercise in the shared tenant.** Individual login instructions were provided for each participant if you did not receive your instructions please inform one of the workshop proctors.
 
@@ -426,7 +426,7 @@ Periodically, throughout the duration of the workshop, inspect the Salesforce ap
 
 ## Exercise 5. CASB Discovery
 
-### **Overview**:
+### **Overview**
 
 We will use Oracle CASB Cloud Service – Discovery to find applications that are not explicitly authorized, but are running in your environment and may present a security threat.
 
@@ -501,7 +501,7 @@ You'll notice there are 3 new actions available for the app you created an incid
 
 ## Exercise 6. Risk Events & User Risk
 
-### **Overview**:
+### **Overview**
 
 Risk events encompass *anomalies* and *threats* that Oracle CASB Cloud Service detects.
 
@@ -597,7 +597,7 @@ You can click on the individual sections on the bar chart to drill into the indi
 
 ## Exercise 7. Event Management
 
-### **Overview**:
+### **Overview**
 
 Oracle CASB Cloud Service generates a ticket in the Incidents section of the console whenever it detects a behavioral anomaly. Administrators also can create incident tickets manually.
 
