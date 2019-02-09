@@ -42,7 +42,19 @@ Note: Note there are two Docker files in the repository. That’s because we hav
 
 ATPnodeapp simply makes a connection to the ATP database and does not require any schema setup. aOne, on the other hand is a sample marketplace application and requires schema and seed data to be deployed in the backend. If you plan to use that app, you will need to first run the create_schema.sql scripts on the database.
 
-## Steps
+# Steps
+
+## Step -1: Set up schema in ATP for the aOne applicaiton
+
+In SQL Developer, connect to your ATP (assuming you haven't already).
+
+Run the contents of this script:
+[create_schema](https://github.com/cloudsolutionhubs/ATPDocker/blob/master/aone/create_schema.sql)
+
+followed by a good 'ole commit for good measure
+```
+commit;
+```
 
 ## Step 0: Install Docker on your Linux Server
 
@@ -76,13 +88,16 @@ Penultimately, lets open up the port in the firewall to let you get to the app o
 firewall-cmd --zone=public --permanent --add-port=3050/tcp
 ```
 
-Finally, lets get the latest Oracle Instant Client.
+Finally (at least on the linux server), lets get the latest Oracle Instant Client.
 
 ```
 cd ATPDocker
 
 wget https://objectstorage.us-phoenix-1.oraclecloud.com/n/apacanzset01/b/alb_adb_rs_software_bucket/o/instantclient-basic-linux.x64-12.1.0.2.0.zip
 ```
+
+Finally (really this time), 
+
 And, off with the rest of the lab!
 
 ### **STEP 1: Provision an ATP instance and copy secure credential file to application folder**
@@ -185,7 +200,7 @@ Your should get a response similar to this
 
 To check the app on the browser, you have bridged port 3050 on the container to your localhost.
 
-Open browser on your localhost and go to http://localhost:3050
+Open browser on your localhost and go to http://<ip address of you linux server>:3050
 
 This is what you see if your app ran successfully.
 
