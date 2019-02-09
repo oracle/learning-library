@@ -1,6 +1,6 @@
 <table class="tbl-heading"><tr><td class="td-logo">[![](images/obe_tag.png)](README.md)
 
-Last Updated:<br>October 18, 2018
+Last Updated:<br>Feb 10 2019
 </td>
 <td class="td-banner">
 # Getting Started with Autonomous Transaction Processing                                    
@@ -16,12 +16,13 @@ This workshop walks you through all the steps to get started using the **Oracle 
 - Scaling an ATP Database
 - Loading data into ATP Database
 - Configure node.js app with ATP
+- Building Microservices on ATP
 - Configure OCI-CLI
 
 Optionally, you can also learn how to:, 
 - Configure Java with ATP
 - Working with REST APIs
-- Building Microservices on ATP
+
 
 # How to Get Your Free Cloud Trial Account
 
@@ -100,6 +101,12 @@ Using the IP Address, username and password, logon to your "Virtual Desktop".
 
 ## Lab 6: Node.js - microservices or rest services lab
 
+**Key Objectives**:
+
+- To build a docker container running node.js microservice
+- Deploy it on an ATP service
+
+**[Click here to run Lab 8](LabGuide800BuildingMicroservicesOnATP.md)**
 
 
 ## Lab 7: Configure OCI-CLI
@@ -145,12 +152,3 @@ Use these links to get more information about Oracle Autonomous Transaction Proc
 - [Oracle Autonomous Transaction Processing Cloud Website](https://www.oracle.com/database/autonomous-transaction-processing.html)
 - [Oracle Autonomous Transaction Processing Cloud docs](https://docs.oracle.com/en/cloud/paas/atp-cloud/index.html)
 
-
-
-## Needs docker locally - dont use in the workshop or get docker installed on the linux "app server"
-**Key Objectives**:
-
-- To build a docker container running node.js microservice
-- Deploy it on an ATP service
-
-**[Click here to run Lab 8](LabGuide800BuildingMicroservicesOnATP.md)**
