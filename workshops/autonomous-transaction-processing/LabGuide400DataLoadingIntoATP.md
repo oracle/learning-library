@@ -174,7 +174,7 @@ Construct the URL that points to the location of the customers.csv file staged i
 
  In the below example of constructed URL, the region name is us-seattle-1, the tenant name is r1atpdemo6, and the bucket name is ATPLab. So the URL of the customers.csv file is:
  
- https://swiftobjectstorage.us-seattle-1.oraclecloud.com/v1/r1atpdemo6/ATPLab/customers.csv
+ ### **https://swiftobjectstorage.us-seattle-1.oraclecloud.com/v1/r1atpdemo6/ATPLab/customers.csv**
  
  Yours would be different, please change the above mentioned details and save your URL.
 

@@ -19,10 +19,6 @@ To **log issues**, click [here](https://github.com/cloudsolutionhubs/autonomous-
 
 - Learn how to build a linux node.js application server and connect it to an Oracle ATP database service
 
-## Required Artifacts
-
-- The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-
 ## Steps
 
 ### **STEP 1: Create a Virtual Cloud Network**

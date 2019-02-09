@@ -123,7 +123,7 @@ More information about Compartments and Policies is provided in the OCI Identity
 #### For this lab, we will be using the following as password
 
 ```
-WElcome_123#
+WElcome_123# (or choose your own complex password - but make sure you note it down somewhere :) )
 ```
 
 ![](./images/100/Picture100-29.jpeg)

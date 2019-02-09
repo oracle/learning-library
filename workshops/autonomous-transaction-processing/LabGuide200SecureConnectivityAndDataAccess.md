@@ -65,7 +65,7 @@ Enter the following in New database connection
 
 **Username**: admin
 
-**Password**: WElcome_123#
+**Password**: WElcome_123# (or the password you chose when you created the database)
 
 **Connection Type**: Cloud Wallet
 
