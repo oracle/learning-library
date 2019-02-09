@@ -154,7 +154,7 @@ $ docker images -a
 You need to launch your docker image and change the following
 - dbuser: admin
 - password: WElcome_123#
-- connect string: yourdbname_high 
+- connect string: yourdbname_tp 
 
 ```
 
