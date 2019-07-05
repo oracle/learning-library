@@ -132,13 +132,13 @@ resource "oci_core_security_list" "ExampleSL" {
   display_name   = "ExampleSL"
   vcn_id         = "${oci_core_virtual_network.ExampleVCN.id}"
 
-  egress_security_rules = [{
+  egress_security_rules = {
     protocol    = "all"
-    destination = "0.0.0.0/0"
+    destination = "0.0.0.0.0"
   },
-  ]
+  
 
-  ingress_security_rules = [{
+  ingress_security_rules = {
     tcp_options {
       "max" = 22
       "min" = 22
@@ -172,7 +172,7 @@ resource "oci_core_security_list" "ExampleSL" {
       protocol = 1
       source   = "0.0.0.0/0"
     },
-  ]
+  
 }
 
 

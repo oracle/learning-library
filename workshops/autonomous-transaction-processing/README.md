@@ -138,7 +138,7 @@ Read on to begin your Getting Started journey with Oracle Autonomous Transaction
 - Utilize Terraform to control ATP
 - Utilize OCI-CLI to control ATP
 
-**[Click here to run Lab 11](LabGuide1000AppDev.md)**
+**[Click here to run Lab 10](LabGuide1000AppDev.md)**
 
 ## Appendix
 

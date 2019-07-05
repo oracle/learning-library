@@ -402,7 +402,7 @@ ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
  
 9. Now start CPU stress, Enter command:
 
-```BASH
+```
 sudo stress --cpu 4 --timeout 350
 ```
 

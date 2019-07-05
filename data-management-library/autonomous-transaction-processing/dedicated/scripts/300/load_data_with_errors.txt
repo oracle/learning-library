@@ -1,0 +1,20 @@
+
+/* Specify the real base_URL for your OCI Object Storage in the define base_URL line below*/
+/* change tenancy00 to your real tenancy name. The name is case-sensitive. */
+/* change ADWClab to your real bucket name. The name is case-sensitive. */
+/* change us-ashburn-1 to your real region name. The name is case-sensitive. */
+/* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+define base_URL='https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/tenancy00/ADWClab'
+
+define chan_v3_error_dat_URL = '&base_URL/channels_error.csv';
+
+begin
+ dbms_cloud.copy_data(
+    table_name =>'CHANNELS',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'&chan_v3_error_dat_URL',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+ );
+end;
+/
+

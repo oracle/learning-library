@@ -1,6 +1,6 @@
 # Application Integration Lab Guide
 
-## June 20, 2019 - 11:40 AM
+## July 2, 2019 - 12:10 PM
 
 # Table of Contents
 
@@ -38,6 +38,7 @@
   - [Perform Data Associations](#Perform-Data-Associations)
   - [Configure the Conditional Flow](#Configure-the-Conditional-Flow)
   - [Access an Integration from a Process Model](#Access-an-Integration-from-a-Process-Model)
+  - [Validate an Application](#Validate-an-Application)
   - [Publish an Application](#Publish-an-Application)
   - [Activate an Application](#Activate-an-Application)
   - [Map Users to Swimlane Roles](#Map-Users-to-Swimlane-Roles)
@@ -266,6 +267,8 @@ have done the prerequisites, continue below:
         
           - Click the *Clear data* button.
 
+    *Pro Tip:* As an alternative to having to clear browser data periodically (as indicated) in these labs, you can also open your Chrome window in Incognito Mode by using the *File* / *New Incognito Window* / menu options.
+
 ## Check Autonomous Database Status
 
 7.  Access your Autonomous Database to see if it has been started:
@@ -305,7 +308,7 @@ have done the prerequisites, continue below:
     the Prerequisites section above.  The table of instances redisplays.
 
     - Click on your *Autonomous Database Name* that appears in the table.
-  You noted that name in the Prerequisites section above.
+  You noted that name in the *Prerequisites* section above.
 
         ![](./media/image6.png)
 
@@ -383,7 +386,7 @@ have done the prerequisites, continue below:
       - Configuration File: *Browse* to and select your wallet zip file
         that you just saved in your *ApplicationIntegrationLabs* folder above.
     
-      - Service: *\<Autonomous Database Name (all lowercase without spaces)\>\_high* option. Select it from the dropdown list.  The *high* option gives us the best performance.
+      - Service: *\<Autonomous Database Name (all lowercase without spaces)\>\_high* option. Select it from the dropdown list.  The *high* option gives us the best performance.  For example, you might select *dbappintshared_high*. 
     
       - Click on the "Save Password* field so you aren’t prompted for the
         atpc\_user password each time you activate your connection.
@@ -391,11 +394,13 @@ have done the prerequisites, continue below:
       - Click the *Test* button at the bottom to see if SQL Developer can
     connect to your ATP database as *atpc\_user*. Wait for a moment as
     access is attempted. When successful, celebrate the “*Status:
-    Success*” message that appears in the lower-left corner:
+    Success*” message that appears in the lower-left corner.  If the test fails, it is probably because the *Service* is specified incorrectly.
 
         ![](./media/image9.png)
 
         Figure 5: Creating a New SQL Developer Connection
+
+        
 
       - Click the *Save* button at the bottom of the dialog.
 
@@ -438,7 +443,7 @@ have done the prerequisites, continue below:
     
     - Access your Oracle Integration instance by
         browsing to the *Oracle Cloud My Services Page URL* noted 
-        in your *MyLabNotes* file to access your services.
+        in your *MyLabNotes* file to access your services.  If you forgot to write this URL down, use your browser history to navigate to *My Services - Dashboard*.  Then, note this URL in your *MyLabNotes* file as *Oracle Cloud My Services Page URL*.
 
     - Click on the *Integration* option.
 
@@ -578,9 +583,9 @@ Let's get started!
     seem to get “confused.”
 
 2.  Refresh your browser window. Due to clearing the browser cache, you
-    will lose your connection to the Oracle Cloud. Browse to the 
+    may lose your connection to the Oracle Cloud. Browse to the 
     *Oracle Integration Home Page URL* you noted in your *MyLabNotes* file 
-    to access your Integration instance.  You'll have to sign in again.  NOTE: If
+    to access your Integration instance.  You may have to sign in again.  NOTE: If
     you are an Oracle employee, follow the *Sign in with Oracle SSO* path.
 
 3. Click on the *Integrations* option to access the *Oracle Integration: Integrations* page. If you can’t see the menu options at the left, click the
@@ -616,6 +621,10 @@ initiated:
 7.  In the *Search* field, enter: *REST* and press *Return*. The REST
     adapter appears. Click the *Select* button for the *REST* adapter.
 
+    ![](./media/image130.png)
+
+      Figure 13: Creating a new connection based upon a prebuilt adapter
+
 8.  The *Create New Connection* dialog appears so you can provide details
     about how this connection will be used in your integration.
 
@@ -630,6 +639,10 @@ initiated:
     
     - Description: *REST connection to support triggering of an
         integration*   (copy and paste)
+
+        ![](./media/image129.png)
+
+      Figure 14: Creating a new connection
     
     - Click the *Create* button.
     
@@ -676,6 +689,10 @@ interact with the ATP Database:
     -   In the Description field, enter: *Insert an order row into the order
     table in ATP*
 
+        ![](./media/image131.png)
+
+        Figure 15: Creating a new connection based upon a prebuilt adapter
+
     - Click the *Create* button.
 
 19. Enter your *email address* in the *Email Address* field so you can be
@@ -688,7 +705,7 @@ interact with the ATP Database:
     *Connection Properties* area. The *Connection Properties* dialog
     appears.
 
-    - For Service Name, enter: *databaseappint\_high* (That gives us the best
+    - For Service Name, enter: *dbappintshared\_high* (That gives us the best
     performance.)
 
     - Click the *OK* button to close the *Create New Connection* dialog.
@@ -764,7 +781,7 @@ Create an integration that uses your two connections:
 
 28. Read the descriptions for each of the styles so you will appreciate the breadth of the style support.
 
-29. Select the *App Driven Orchestration* style by clicking on its *Select* button.  This is the best style for our needs because we want our integration to be *triggered by an Application."  You will develop that *application* in Lab 2.
+29. Select the *App Driven Orchestration* style by clicking on its *Select* button.  This is the best style for our needs because we want our integration to be *triggered by an Application*.  You will develop that *application* in Lab 2.
 
 30. The *Create New Integration* dialog appears. Fill in the fields:
 
@@ -775,7 +792,11 @@ Create an integration that uses your two connections:
     - What does the integration do? Enter: *Accept a REST POST call and
     create a new order in the ATP database*
 
-    - Click the *Create* button to display the *integration editor canvas*.
+      ![](./media/image132.png)
+
+      Figure 15: Creating a new integration
+
+    - Leave the default value (empty) alone for the package field and then click the *Create* button to display the *integration editor canvas*.
 
 
 31. Notice the beginnings of the new integration in the integration editor canvas. This is where you will
@@ -785,9 +806,7 @@ Create an integration that uses your two connections:
 
     Figure 16: Integration Editor Canvas
 
-32. Click the *Save* button in the upper-right corner. NOTE: It is
-    important to Save often so you don’t lose any of your work along the
-    way.
+32. Click the *Save* button in the upper-right corner. 
 
 ## Define the Integration
 
@@ -1156,9 +1175,9 @@ Let's keep going. Again, follow the steps and ask questions if you get confused:
     seem to get “confused.”
 
 2.  Refresh your browser window. Due to clearing the browser cache, you
-    will lose your connection to the Oracle Cloud. Browse to the 
+    may lose your connection to the Oracle Cloud. Browse to the 
     *Oracle Integration Home Page URL* you noted in your *MyLabNotes* file 
-    to access your Integration instance.  You'll have to sign in again.  NOTE: If you are an Oracle employee, follow the *Sign in with Oracle SSO* path.
+    to access your Integration instance.  You may have to sign in again.  NOTE: If you are an Oracle employee, follow the *Sign in with Oracle SSO* path.
 
 4.  On the *Integration Home Page*, select the *Processes* menu option
     at the left:
@@ -1197,7 +1216,9 @@ needs to be part of a process application. Let’s create one:
     
         - Description: *Workflow management application to process order
         requests*
-  
+
+        - Make sure that the *Open Immediately" field is checked on so the tooling will take us right into process creation after the process application has been created.   
+
 
         - Click the *Create* button at the left:
 
@@ -1205,8 +1226,7 @@ needs to be part of a process application. Let’s create one:
 
           Figure 35: Creating a New Process Application
 
-- The tooling assumes that you want to immediately add a process to
-    your new process application, so the *Create a Process* panel appears:
+- Wait a moment and the *Create a Process* panel appears:
 
 
     ![](./media/image44.png)
@@ -1230,6 +1250,8 @@ needs to be part of a process application. Let’s create one:
 
       - Description: *Process model that defines the submission and
     evaluation of order requests and creation of orders*
+
+      - For *Document-Only*, leave the default (unchecked) as is.
 
       - With *Form Approval Pattern* selected at the right, click the *Create*
     button in the lower-right corner to create the new process:
@@ -1274,6 +1296,8 @@ needs to be part of a process application. Let’s create one:
     Mama Maggy use case. Later, before testing, we’ll associate you with
     each of these roles.
 
+    - Turn your attention now to the left side of the process model to find the roles for each swimlane.
+
     - Click on the *Process Owner* label at the left in the top swimlane.
 
     - Click on the *Edit* (pencil) option that appears.
@@ -1296,7 +1320,7 @@ needs to be part of a process application. Let’s create one:
 
     Figure 41: Process Model with Updated Swimlane Roles
 
-13. Click the *Save* button to safely store away your updates. (Saving often is a great idea.)
+13. Click the *Save* button to safely store away your updates. 
 
 ## Implement the Submit Request Event
 
@@ -1348,6 +1372,10 @@ needs to be part of a process application. Let’s create one:
     
         - Description: *Form that a store manager uses to enter a new
         order request*
+
+          ![](./media/image135.png)
+
+          Figure 45: Form Editor Palette
     
         - Click *Create* to establish the new form. Notice that the new
         form name appears in the *Form* field in the properties panel.
@@ -1407,6 +1435,8 @@ needs to be part of a process application. Let’s create one:
 
     - Click the *Save* button in the upper-right corner of the form editor
     page.
+
+      *Pro Tip*: Before you leave for *Form Designer,* click on the *Preview* button at the top.  In the *Preview* window that appears, you can explore exactly how your form will display on a variety of different sized devices.  When done exploring, click the *X* in the upper-right corner to exit the *Preview* window.
 
 16. Turn your attention back to your process model by clicking on the
     *Request Evaluation* tab at the upper-left:
@@ -1497,7 +1527,7 @@ needs to be part of a process application. Let’s create one:
 
 ## Implement the Resubmit Activity
 
-20. Let’s work on the Resubmit human activity next:
+21. Let’s work on the Resubmit human activity next:
 
     ![](./media/image126.png)
 
@@ -1596,7 +1626,9 @@ moves from activity to activity. To do this, we need to configure the data assoc
       - Notice in the upper-left that we are mapping *Output* associations
     since no data is coming into the Submit Request start event. This
     start event simply creates a new instance of our process and
-    starts execution of the activities in it.
+    starts execution of the elements in it.
+       
+    
 
       - Expand the *formArg* data structure in the source panel (left-side)
     to expose all the data that our *InitiateForm* captures from the
@@ -1606,8 +1638,10 @@ moves from activity to activity. To do this, we need to configure the data assoc
 
         Figure 51: Source Fields in the Data Mapper
 
-      - We want to pass the store manager’s data entry along to the Approve
-    Request activity for the regional manager to evaluate. This means
+      - Notice that one mapping is already done for you.  All the data from the *InitiateForm*, shown under *formArg* is already mapped to the underlying data object *(InitiateFormDataObject)* so it is saved for later use.  That "later user" will come very soon.  Read on.
+
+      - We want to pass the store manager’s data entry along to the *Approve
+    Request* activity for the regional manager to evaluate. This means
     mapping individual fields in the *formArg* data object underlying
     *InitiateForm* to the corresponding fields in the
     *evaluateFormDataObject* that underlies your *EvaluateForm*. So,
@@ -1652,11 +1686,11 @@ moves from activity to activity. To do this, we need to configure the data assoc
 
         Figure 54: Selecting Input Mapping Mode in the Data Mapper
 
-      - For Input into our Approve Request activity, there is good news\!
+      - For *Input* into our *Approve Request* activity, there is good news\!
     You don’t have to do any mapping. Recall that in the *Output* data
     association for the Submit Request start event, you mapped data into
     evaluateFormDataObject that is used to populate fields for the
-    EvaluateForm used here in Approve Request. So, all that must be
+    EvaluateForm used here in *Approve Request*. So, all that must be
     mapped is to map the *evaluateFormDataObject* data structure into
     *evaluateForm* so that the data will be displayed on the form.
     Notice that the tooling assumed that and has done it for you:
@@ -1683,13 +1717,13 @@ moves from activity to activity. To do this, we need to configure the data assoc
 
         Figure 56: Mapping Outcome and Form Fields
 
-      - With the Input and Output mappings in place for Approve Request,
-    click on the *Cancel* button in the upper-right corner to return to
+      - With the *Input* and *Output* mappings in place for *Approve Request*,
+    click on the *Cancel* option in the upper-right corner to return to
     the Request Evaluation model. The *Apply* button isn’t available since
     we didn’t make any changes. The tooling had already done all the
     input and output mappings automatically.
 
-26.  Click *Save* in the upper-right corner.
+26.  Click *Save* in the upper-right corner.  It's just a good habit to get into.
 
 27.  Configure data associations for the *Resubmit* human activity:
 
@@ -1730,15 +1764,19 @@ upper-right corner.
 
       - By dragging and dropping fields from the *evaluateFormDataObject*
     (on the left) to the fields in *resubmitForm* (on the right), map
-    the corresponding fields so data transfer occurs at runtime. NOTE:
-    Be careful as you map since the fields may be in different order on
-    the source side than on the target side:
+    the corresponding fields so data transfer occurs at runtime. 
+      - NOTES: 
+        - Just reuse the fields for the *resubmitFormDataObject* --> *resubmitForm* mapping that the tooling did for you.
+        -   Be careful as you map since the fields may be in different order on
+    the source side than on the target side.
 
         ![](./media/image67.png)
 
         Figure 59: Mapping Fields in the Data Mapper
 
-      -  Turn your attention to the *Output* mappings for the Resubmit
+      - When done mapping the *Input* fields, DON'T click *Apply*.  
+
+      -  Turn your attention to the *Output* mappings for the *Resubmit*
     activity by clicking on *Output* in the upper-left corner.
 
       - Review what automatic mappings have been added by the tooling:
@@ -1759,7 +1797,7 @@ upper-right corner.
     leave them, but we need to add some additional mappings to get the
     data positioned so it can be displayed in the Approve Request human
     activity. This will allow the regional manager to re-evaluate the
-    resubmitted order request sent from the Resubmit activity. So,
+    resubmitted order request sent from the *Resubmit* activity. So,
     expand the data structure in the target panel (on the right side)
     to expose all the data that your *EvaluateForm* captures:
 
@@ -1768,9 +1806,16 @@ upper-right corner.
         Figure 61: Data Mapper Displaying Underlying Data object for the
 Evaluate Form
 
+      - Expand the *resubmitForm* data structure in the source panel (at the left side).
+      
       - By dragging and dropping fields from the *resubmitForm* (on the
     left) to the fields in *evaluateFormDataObject* (on the right), map
-    the corresponding fields so data transfer occurs at runtime. NOTE:  Again, be careful as you map since the fields may be in different order on the source and target sides. Notice that we are leaving the two automatic mappings untouched:
+    the corresponding fields so data transfer occurs at runtime. 
+        - NOTES: 
+          - Leave the two rows of automatic mappings in place.  Don't overlay them.
+          -   Be careful as you map since the fields may be in different order on
+    the source side than on the target side.
+  
 
         ![](./media/image70.png)
 
@@ -1788,7 +1833,7 @@ for the Evaluate Form
     exclusive gateway so that when a regional manager, working in the
     Approve Request activity, rejects an order request, the request is
     routed to the *Resubmit* activity where the store manager can work on
-    ait and resubmit it. 
+    it and resubmit it. 
     
       - Click on *No* above the *Approved?* exclusive gateway element:
 
@@ -1858,7 +1903,7 @@ our condition to see if the order request should be routed along the
     model. Based on our initial Mama Maggy scenario, what didn’t get
     done yet? If you answered: *“We haven’t created an order in the
     backend system (ATP database),”* you are right. We need to add a call
-    to the *Create New Order integration* that you built in Lab 1.  Here is the *Create Order* activity in your process model:
+    to the *Create New Order integration* that you built in Lab 1.  We need to add a *Create Order* activity that calls our *Create New Order* integration.  Here is how that *Create Order* activity *should* appear in the process model, so let's add it:
 
     ![](./media/image127.png)
 
@@ -1932,14 +1977,22 @@ our condition to see if the order request should be routed along the
         the data fields that your *Create Order* integration expects.
     
         - Map the fields for the Input to the Create Order integration
-        activity as shown below. Notice that some casting (data
-        conversion) needs to be done. You’ll use the *string()* function
-        to convert the *date* data type to *string*. The *int()* function is
-        used to convert the *decimal* data to *integer*. To implement these
+        activity as shown below. 
+        
+          - NOTES: 
+            - As you map, you will encounter some error messages that indicate type mismatches between the source field and the target field.  You will need to do some casting (data conversion). 
+              - You’ll use the *string()* function
+        to convert the *date* data type to *string*. 
+              - The *int()* function is
+        used to convert the *decimal* data to *integer*. 
+             - To implement these
         functions, do the drag and drop mapping as you have done before
         and then click in the cells (highlighted below) to add the *int*
         and *string* function calls and to surround the data field with
-        the *parentheses*. Press *Return* after you perform each edit:
+        the *parentheses*. Press *Return* after you perform each edit.
+
+          *Pro Tip*: You can also click the small *fx* symbol to the right of a target field and perform you casting edits in the *Expression Editor* popup window.
+
 
           ![](./media/image81.png)
 
@@ -1951,11 +2004,15 @@ our condition to see if the order request should be routed along the
 
           Figure 74: Mapping Inputs into an Integration Activity
 
-      - With the Input mapping completed, now click the *Output* option in
+      - With the *Input* mapping completed, now click the *Output* option in
     the upper-left to map the outputs generated by the *Create Order*
-    integration activity. Map the single output field as shown below.
-    Again notice that you’ll need to edit the mapping to implement the
-    *string()* function to cast the *bodyOutput* to a string. We don’t
+    integration activity. 
+    
+    - Map the single output field as shown below.
+      - NOTES: 
+        - Again notice that you’ll need to edit the mapping to implement the
+    *string()* function to cast the *bodyOutput* to a string. The error message will go away after you press Return to record your edit.
+        - We don’t
     use *bodyOutput* in our model, but the tooling requires us to map it
     anyway. We are just arbitrarily choosing the *TaskOutcomeDataObject*
     as the mapping target:
@@ -1964,8 +2021,7 @@ our condition to see if the order request should be routed along the
 
         Figure 75: Mapping Outputs from an Integration Activity
 
-        Again, here is another easier to read image showing just the mapping
-cells:
+        Again, here is another easier to read image showing just the completed mapping:
 
         ![](./media/image84.png)
 
@@ -1978,11 +2034,21 @@ cells:
 32. When the modeling canvas reappears, click *Save* in the upper-right
     corner.
 
+## Validate an Application
+
+We want to publish our application, but, before we do, let's validate it for errors:
+
+41. Find the *hamburger menu* in the upper-right corner of the window and click on it.
+
+42. Select the *Validate Application* option in the popup menu.
+
+43. Hopefully, you see the *validation was successful* message.  If not, follow the error message and make the corresponding changes to your process model.  Then *Save* and validate again.  
+
 ## Publish an Application
 
 Your application is finished so you can now publish it.  That gets us one step closer to being able to test it. 
     
-41. Click the *Save* button just to be sure everything is saved away.
+44. Click the *Save* button just to be sure everything is saved away.
 
     ![](./media/image91.png)
 
@@ -1994,7 +2060,7 @@ Your application is finished so you can now publish it.  That gets us one step c
     explanation in the Comments fields: *This version is the first
     publication of this process application.*
     
-44. Click the *Publish* button in the lower-right corner:
+44. Click the *Publish* button in the lower-right corner.  NOTE: Your *Publish Application* may show a different list of unpublished changes:
 
       ![](./media/image92.png)
 
@@ -2009,15 +2075,19 @@ After you publish, you need activate your process application so it is available
     
 46. Click on the *Activate* option at the top right of the window.
         The *Activation tab* appears and the associated panel is
-        displayed. Click the *Activate new version* button at the right:
+        displayed. Click the *Activate new version* button.  NOTE: If this is the first time your have activated this application, your window may appear slightly differently:
 
     ![](./media/image93.png)
 
     Figure 85: Activating a Process Application
 
-47. The *Activate Application to My Server* dialog appears indicating
-    that you are about to publish the *Last Published* Version. 
-    
+49. The *Activate Application to My Server* dialog appears indicating
+    that you are about to publish the *Last Published* Version:
+
+    ![](./media/image133.png)
+
+    Figure 86: Activating a Process Application
+
 48. Click the *Validate* button in the lower-right corner.
 
 49. In the *Validation Result* step, you see a green “*Application
@@ -2046,7 +2116,11 @@ After you publish, you need activate your process application so it is available
   51. In a moment, you will see the results appear in the Activation Result
     step. A green “*Application successfully activated\!*” message appears.
 
-  52. Click the *Finish* button in the lower-right corner to dismiss the dialog.
+  52. Click the *Finish* button in the lower-right corner to continue:
+  
+      ![](./media/image134.png)
+
+        Figure 87: Setting Activation Options
 
   53. Click the *Save* button in the upper-right corner when it redisplays.
 
@@ -2064,7 +2138,7 @@ We are getting very close to being able to test the application, but
 
 34. Navigate to the *Role Management* area to identify yourself as both a Store Manager and a Regional Manager:
         
-    - Click the *House icon* at the top of the menu at the left.
+    - Click the *House icon* at the top of the menu at the left.  If you don't see this icon, click on the *Home* menu option.
         
     - Click the *My Tasks* option on the menu at the left.
         
@@ -2072,7 +2146,7 @@ We are getting very close to being able to test the application, but
         
     - Click the *Administration* option on the menu at the left.
 
-    - Click the *Manager Roles" option (it may already be preselected) on the menu at the left. The *Manage Roles* *page* appears listing all the roles in all the activated process applications. Find the two roles for your application:
+    - Click the *Manage Roles* option (it may already be preselected) on the menu at the left. The *Manage Roles* *page* appears listing all the roles in all the activated process applications. Find the two roles for your application:
 
       ![](./media/image85.png)
 
@@ -2081,7 +2155,7 @@ We are getting very close to being able to test the application, but
     - Establish yourself as a *Regional Manager* for your process
  application:
     
-      -  Click on *your* (with your initials and timestamp appended to the from) *Regional Manager* role at the left:
+      -  Click on *your* (with your initials and timestamp appended to the front) *Regional Manager* role at the left:
 
           ![](./media/image86.png)
 
@@ -2093,7 +2167,7 @@ We are getting very close to being able to test the application, but
 
         Figure 79: Adding a Member to a Role
 
-    -  *Search* for your * first* or *last name*. When your row appears, click the *checkbox to the
+    -  *Search* for your *first* or *last name*. When your row appears, click the *checkbox to the
     left* of it and then click the *OK* button in the lower-right
     corner:
 
@@ -2135,7 +2209,7 @@ Let’s now perform an end-to-end test of your application by assuming
         data). If you need help, refer to the Preparing Your Environment
         section for the steps.
         
-55. Due to clearing the browser cache, you will lose your connection to the Oracle Public Cloud. Browse to 
+55. Due to clearing the browser cache, you may lose your connection to the Oracle Cloud. Browse to 
         the *Oracle Integration Home Page URL* you noted in the *MyLabNotes* file 
         to access your services.
 
@@ -2171,11 +2245,11 @@ Let’s now perform an end-to-end test of your application by assuming
       - Order ID: *\<insertYourInitialsHere\><insertCurrentTimeHere\>*
 
         NOTES:
+        - The Order ID must be unique since *orderID* is the primary key of the ORDERS table in our ATP database.
+        
         - Your replacement for *\<insertYourInitialsHere\>* must be *4 (or less)* characters (*alpha or numeric*).
 
-        - The Order ID must be unique since *orderID* is the primary key of the ORDERS table in our ATP database. So, for \*<insertAFourDigitNumberHere*\>*, use the current time*.
-
-        - If it is 1:31 PM right now, use *1331* and if it is 9:38 AM, use *0938*. Your 4-character value combined with your *\<insertCurrentTimeHere\>* should provide a unique orderID.
+        - If it is 1:31 PM right now, use *1331* and if it is 9:38 AM, use *0938* for *\<insertCurrentTimeHere\>*. Your 4-character value combined with your *\<insertCurrentTimeHere\>* should provide a unique orderID.
 
         - For, example: *TNB1105* would be a valid *orderID* as long as it was never used to create an order before.
     
@@ -2191,7 +2265,7 @@ Let’s now perform an end-to-end test of your application by assuming
       - Estimated Cost: *$170.00*
     
       - Initiator Comments: *I need this fast or my customers will be
-        unhappy*
+        unhappy.*
 
         ![](./media/image97.png)
 
@@ -2356,7 +2430,7 @@ Let’s now perform an end-to-end test of your application by assuming
 
           ![](./media/image107.png)
 
-            Figure 100: Tracking Integrations
+          Figure 100: Tracking Integrations
 
 ### Check the Database Table
 
@@ -2431,7 +2505,7 @@ Oracle Integration Setup.
     section for the steps.
 
 2.  Refresh your browser window. Due to clearing the browser cache, you
-    will lose your connection to the Oracle Public Cloud. Browse to the 
+    may lose your connection to the Oracle Public Cloud. Browse to the 
     *Oracle Integration Home Page URL* noted in your *MyLabNotes* file to 
     access your services.
 
@@ -2820,7 +2894,7 @@ ApplicationIntegrationLabs folder ApplicationIntegrationLabs folder.
     section for the steps.
 
 2.  Refresh your browser window. Due to clearing the browser cache, you
-    will lose your connection to the Oracle Public Cloud. 
+    may lose your connection to the Oracle Public Cloud. 
     
 3. Browse to the 
     *Oracle Integration Home Page URL* noted in your *MyLabNotes* file

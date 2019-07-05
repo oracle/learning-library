@@ -4,9 +4,9 @@ Welcome to the **Oracle Cloud** MySQL Deployment using Infrastructure as Code wo
 
 To learn more about this workshop please watch the video below.  
 
-<a href="add link" target="video">![](images/youtube.png)</a>
+<a href="https://videohub.oracle.com/media/Devops+and+IaC+Overview/1_5froypa9" target="video">![](images/youtube.png)</a>
 
-<a href="add link" target="video">Workshop Overview</a>
+<a href="https://videohub.oracle.com/media/Devops+and+IaC+Overview/1_5froypa9" target="video">Workshop Overview</a>
 
 ### **Step 1**: Acquire an Oracle Cloud Trial Account
 
