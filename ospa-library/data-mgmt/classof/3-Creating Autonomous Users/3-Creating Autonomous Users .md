@@ -37,7 +37,7 @@ gets downloaded to so you can find it on your system.
 ![../Desktop/Screen%20Shot%202019-04-22%20at%2012.23.30%20PM.png](./media/wallet1.jpg)
 <p align="center">Figure 1-2</p>
 
-3. If you completed the previous step successfuly you can proceed to Module 2. **Alternatively** you can download the wallet using the DB Connection button in the main Database
+3. If you completed the previous step successfully you can proceed to Module 2. **Alternatively** you can download the wallet using the DB Connection button in the main Database
 Details page to download the credentials:
 
 ![](./media/wallet2.jpg)
@@ -55,7 +55,7 @@ connection strings be copied from (more on this in other modules)
 
 ## Module 2:  Connect to your ADB instance with SQL Developer 
 
-**PLEASE NOTE: SQL DEVELOPER CONNECTONS DO NO WORK IF YOU ARE BEHIND THE VPN OR ORACLE OFFICE PRIVATE NETWORS. IF YOU ARE USING THE VPN CLIENT  YOU MUST DISCONNECT FROM VPN, AND FROM AN ORACLE OFFICE CONNECT TO A OPEN/PUBLIC ACCESS NETWORK**
+**PLEASE NOTE: SQL DEVELOPER CONNECTIONS DO NOT WORK IF YOU ARE BEHIND THE VPN OR ON ORACLE OFFICE PRIVATE NETWORKS. IF YOU ARE USING THE VPN CLIENT YOU MUST DISCONNECT FROM VPN, AND FROM AN ORACLE OFFICE CONNECT TO A OPEN/PUBLIC ACCESS NETWORK**
 
 *(Make sure you are running the latest version of SQL Developer 18.4. Some older versions will not work with ATP, see lab introductions on how to install)*
 
@@ -108,22 +108,22 @@ left corner of the main dashboard, under connections.
 ![../Desktop/Screen%20Shot%202019-04-22%20at%2012.28.02%20PM.png](./media/image10.png)
 <p align="center">Figure 2-4</p>
 
-**Toubleshooting your connection**
+**Troubleshooting your connection**
 
-If your test failed the successfuly connect to your database, the most likely reasons are:
+If your test failed to successfully connect to your database, the most likely reasons are:
 -   you are connected to VPN or in an Oracle office not on the public network
 -   that you used an incorrect password (or username and password)
--   you are behind the Oracle VPN - you need to be in a public network
+-   you are behind the Oracle VPN - you need to be on a public network
 -   you selected the wrong Service for your database
 
-Verify that all this information is correct and try your test again. Save your connection once the test succeeeds.
+Verify that all this information is correct and try your test again. Save your connection once the test succeeds.
 
 [Back to Top](#table-of-contents) 
 ***** 
 
 ## Module 3:  Create Autonomous Database Users
 
-The labs will require each member of the group to create and query tables in the the Autonomous Database just created. Unlike the **ADMIN** account created by default with the Autonomous Database, each user that will be using the database requires their own username and password. Follow the steps below to create an Autonomous Database user in the database just created for each member of the group. 
+The labs will require each member of the group to create and query tables in the Autonomous Database just created. Unlike the **ADMIN** account created by default with the Autonomous Database, each user that will be using the database requires their own username and password. Follow the steps below to create an Autonomous Database user in the database just created for each member of the group. 
 
 1. Once you have created a connection to your ADB with the Admin account in the previous module, now connect to ADB with that connection. By double clicking on the connection on the **Connections** window of SQL Developer (you may already be connected if you clicked on **Connect** in the previous section).
 
@@ -136,7 +136,7 @@ The labs will require each member of the group to create and query tables in the
 ![](media/b00b4ee8832a24f06a3c261311fcc724.png)
 <p align="center">Figure 3-2</p>
 
-3. A Worksheet connected to your ADB Database will open on the top righ window.
+3. A Worksheet connected to your ADB Database will open on the top right window.
 
 ![](media/3a8a6539c8e04037636b43ed466d8ba0.png)
 <p align="center">Figure 3-3</p>
@@ -165,7 +165,7 @@ Your Autonomous Database users are ready to be used.
 
 ## Module 4:  Create OML Users
 
-The labs will be using Oracle Machine Learning (OML) to learn its capabilities. Each users in the group should have their own OML username. Follow the steps below to create an OML user for each member of the group. 
+The labs will be using Oracle Machine Learning (OML) to learn its capabilities. Each user in the group should have their own OML username. Follow the steps below to create an OML user for each member of the group. 
 
 
 1. If you are not already logged into the ATP Service Console, in the main
