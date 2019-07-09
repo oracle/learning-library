@@ -23,14 +23,14 @@ with your Oracle Cloud account.
 ![](media/32da3d2a9a2066af692d571c6071efb6.png)
 <p align="center">Figure 1-1</p>
 
-2. Enter your Cloud Account Name (sometimes referred to as Tenancy) and click **Next**.
+2. Enter your Cloud Account Name (sometimes referred to as Tenancy, for the Class of most likely its orasenatdhubsblue02) and click **Next**.
 
 ![](media/2ff2c7b36d769075b9edbfa402528120.png)
 <p align="center">Figure 1-2</p>
 
-3. Enter your Cloud username and password, and click **Sign In**. 
+3. Click SSO to log in. If you don't have an SSO login, enter your Cloud username and password, and click **Sign In**. 
 
-![](media/3bcfe3c10f6b3821c1298edd15f11544.png)
+![](media/figure1-3.png)
 <p align="center">Figure 1-3</p>
 
 **PLEASE NOTE: Because the environmnet you are using is a LAB environment the pages you land on may be different than the ones  you see in this lab section. We try to incorporate all posibilities, however there may be some cases were the lab does not follow exactly what you see on your screen. Your objective is to get to the Autonomous Database (Datawarehouse or Transaction Processing) page.**
@@ -110,9 +110,9 @@ within your tenancy. Tags are composed of keys and values that can be attached
 to resources.
 
 3. After filling fields, click **Create Autonomous Database** which will open up
-the screen to complete you database information:
+the screen to complete you database information (PLEASE NOTE: YOU WILL HAVE THE OPTION TO CREATE A DATA WAREHOUSE OR TRANSACTION PROCESSING DATABASE IN THE WORKLOAD TYPE SECTION. IF YOU SELECT TRANSACTION PROCESSING YOU WILL SEE AN ADDITIONAL SELECTION FOR SERVERLESS OR DEDICATED. DO NOT CHANGE THE DEFAULT CHOICE WHICH IS SERVERLESS):
 
-![](media/ce48534c7dfffd014351615dd84e9ec1.png)
+![](media/figure2-2.png)
 <p align="center">Figure 2-2</p>
 
 **Make sure to store and share the Administrator Password (admin database user) with every member of your team since you will be sharing this database**
@@ -122,7 +122,7 @@ You will be placed on the Database Details page and your database will be in
 about your instance, notice the various menu buttons that help you manage your
 new instance.
 
-![](media/1865063cdcbea900e9233a4c0a36bc11.png)
+![](media/figure2-3.png)
 <p align="center">Figure 2-3</p>
 
 The status will automatically change to “**Available**” when the database is
@@ -130,19 +130,19 @@ ready in a few minutes…Your Autonomous Database is up and running! Take notice
 of the green color of the ATP logo indicating the service is available and
 commands to start, stop, terminate, and scale the service.
 
-![](media/f44598299d1fa60ad2ee5caf66734bfb.png)
+![](media/figure2-4.png)
 <p align="center">Figure 2-4</p>
 
 4. Now connect to your database, click the **Service Console** button:
 
-![](media/1e31bffc05142a7bfa190d9eb11bcb0f.png)
+![](media/figure2-5.png)
 <p align="center">Figure 2-5</p>
 
 5. You will be placed in the Service Console page, you will notice there is no
 activity displayed because this is a new instance. Select the **Administration**
 option from the left:
 
-![](media/0d68d4e2b1fa5ff9c451eb2adb865915.png)
+![](media/figure2-6.png)
 <p align="center">Figure 2-6</p>
 
 On the administration page there are six options. We will examin these in more detail in future labs.

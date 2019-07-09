@@ -1,5 +1,4 @@
 variable "region" {
-  default = "us-phoenix-1"
 }
 
 variable "compartment_ocid" {}

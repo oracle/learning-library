@@ -29,12 +29,13 @@ Email for Login & Link to Cloud My Services
     you’ll get an email. The email indicates your account is ready or provides
     you with cloud account details and sign in credentials dependent upon how its been setup by the Cloud Administrator.
 
-2.  Typically for customers, they will scroll down in their email invitation to the Access Details section and note user name           and password.
+2.  Typically for customers, they will scroll down in their email invitation to the Access Details section and note user name           and password. 
 
-3.  And its essential to note the name of the Cloud Account, Access Details, and Identity
+3.  Its essential to note the name of the Cloud Account, Access Details, and Identity
     Domain.
 
-4.  Then click Access your Cloud Services to get started.
+4.  Then click Access your Cloud Services to get started. 
+Note that for internal use, the Cloud Administrator may not setup access that way and you enter the specific environment you've been instructed to use and then your SSO credentials. 
 
 5.  And a best practices to bookmark it before sign-in.
 
@@ -53,9 +54,9 @@ Cloud.oracle.com
 -   You understand and have verified you meet the prerequisites to using the
     Oracle Cloud
 
--   You know the initial email is important as it has the Oracle Cloud access
-    link and initial sign-in credentials. And check the SPAM folder when it does
+-   You know the initial email is important as it can contain the Oracle Cloud access
+    link and initial sign-in credentials. And to check the SPAM folder when it does
     not appear when expected
 
 -   You can successfully login and actively participate in the HOL work in the
-    rest of the training session this week
+    rest of the training courses

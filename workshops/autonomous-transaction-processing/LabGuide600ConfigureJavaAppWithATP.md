@@ -13,7 +13,7 @@ Autonomous Transaction Processing provides all of the performance of the market-
 
 ATP provides a TLS 1.2 encrypted secure connectivity for applications. In fact, using a secure encryption wallet is the only way to connect to an ATP service instance, ensuring every connection to your database is secure, regardless how it gets routed.
 
-To **log issues**, click [here](https://github.com/cloudsolutionhubs/autonomous-transaction-processing/issues/new) to go to the github oracle repository issue submission form.
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 
@@ -168,45 +168,34 @@ sudo yum install -y java-1.8.0-openjdk-devel
 
 ![](./images/600/openjdk2.png)
 
-
-- Create a folder named ATPJava and clone the java app from git
-
-```
-cd ~
-
-mkdir ATPJava
-
-cd ATPJava
-
-sudo yum install git
-
-git clone https://github.com/cloudsolutionhubs/ATPJava.git
-```
-
-- Install JDBC drivers on Linux environment
+#### Cloning Java application
+- Download a sample java application and ojdbc8 in folder /home/opc
 
 ```
-cd /home/opc/ATPJava/
+$ wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/workshops/autonomous-transaction-processing/scripts/600/ojdbc8.zip?raw=true
 
-mkdir lib
+$ wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/workshops/autonomous-transaction-processing/scripts/600/ATPJava.zip?raw=true
+```
 
-cd lib 
+- Unzip the files
+```
+$ unzip /home/opc/ATPJava.zip
+$ unzip /home/opc/ojdbc8.zip
+```
 
-wget https://github.com/cloudsolutionhubs/ojdbc8-full/raw/master/ojdbc8-full.tar.gz
-
+Tar ojdbc8-full.tar.gz
+```
 tar xzfv ojdbc8-full.tar.gz
 ```
 
-![](./images/600/jdbc.png)
-
-![](./images/600/jdbc2.png)
+Now that you have a sample application setup, lets get your database's secure wallet for connectivity
 
 - Copy secured connection wallet to Linux instance
 
     - Open terminal in your laptop and run the following command
 
 ```
-scp sudo scp -i /path_to_ssh_key/id_rsa /path_to/wallet_DB.zip opc@publicIP:/home/opc/ATPJava/
+scp -i /path_to_ssh_key/id_rsa /path_to/wallet_DB.zip opc@publicIP:/home/opc/ATPJava/
 ```
 
 - Unzip secured wallet in your linux instance

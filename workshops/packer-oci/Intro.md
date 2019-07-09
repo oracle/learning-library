@@ -1,6 +1,6 @@
-# Build OCI Images using Packer
+# Build OCI Images using Packer - OCI for Developers
 
-Welcome to the **Oracle Cloud Infrastructure** Compute image building with Packer workshop. This workshop will walk you through the process of creating an custom infrastructure image to support a varity of DevOps and production use-cases.
+Welcome to the **Oracle Cloud Infrastructure** Compute image building with Packer workshop. This workshop will walk you through the process of creating an custom infrastructure image to support a verity of DevOps and production use-cases.
 
 As part of this workshop, you will complete labs helping you to better understand:
 

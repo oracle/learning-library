@@ -6,15 +6,16 @@ Contents
 
 [Section 9. Block Volume  Service](#block-volume-service)
 
-[Section 10. Install Web Server](#Install-a-web-server-and-configure-the-block-volume)
+[Section 10. Install Web Application](#Install-Simple-Web-Application)
 
 [Section 11. Delete Resources](#Delete-Resources )
 
 [Section 12. Conclusion](#conclusion)
 
 ## 
-#
+
 # Block Volume Service
+[Back to top](#Class-of-SE---HOL-Part-4---Block-storage-and-application-install)
 
 In this section we will create and mount block volume storage.  Then we will install and configure a basic web server.
 
@@ -151,6 +152,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 *<p align="center"> Figure 63: Linux mount commands for block volume </p>*
 
 # Install Simple Web Application
+[Back to top](#Class-of-SE---HOL-Part-4---Block-storage-and-application-install)
 
 1. Switch to the ssh session and install the httpd server, Enter Command:
 
@@ -201,7 +203,7 @@ Unzip the file into the opc home directory.
 
 6. Copy the web files into the newly created directory on the mounted block volume.
 
-```sudo cp -R oci-quickstart-lab-master/static/* /mnt/www/html/```
+```sudo cp -R static/* /mnt/www/html/```
 
 ![](./media/image109.png)
 
@@ -238,6 +240,7 @@ You should see the simple web application screen.
 *<p align="center"> Figure 72: Successful application access </p>*
 
 # Delete Resources
+[Back to top](#Class-of-SE---HOL-Part-4---Block-storage-and-application-install)
 
 It's nice to clean up after your work and free up resources in the tenancy for others.  In this section we'll delete the resources that we've created so we can start fresh later.  
 

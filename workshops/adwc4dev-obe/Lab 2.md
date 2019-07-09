@@ -73,7 +73,7 @@ order by d_monthnuminyear
 ```
 ![](./images/IL-2/004.png)
 
--	Note the query takes about six seconds to query and summarize 100M orders.
+-	Note the query takes a few seconds to query and summarize 100M orders.
 -	We now want to see if others who also run the same or similar queries use the results which are now cached.  This saves a huge amount of processing since the database just needs to retrieve the cached results.  Enter the following.  This is the same query as above, but does not clear the cache.  You may wish to first clear the previous result.
 ```
 select d_month, d_monthnuminyear
@@ -86,7 +86,7 @@ order by d_monthnuminyear
 ```
 ![](./images/IL-2/005.png)
 
-- Note the query now takes less than half a second to run.
+- Note the query is much faster.
 - Next query by nation and then year, and filter by region.  Enter the following.
 ```
 select c_nation
@@ -102,7 +102,7 @@ order by revenue desc;
 ```
 ![](./images/IL-2/006.png)
 
-- Again the query took about five seconds, while grouping by month and nation, and sorting by revenue descending.
+- Again the query took a few seconds, while grouping by month and nation, and sorting by revenue descending.
 - What about a more selective query?  Execute the following.
 ```
 select d_date
@@ -129,7 +129,7 @@ group by d_date
 ```
 ![](./images/IL-2/007.png)
 
-- Note it takes less than 1.5 seconds to retrieve 800 rows, without any indexes, pre-sorting, or pre-load processing.
+- Note a few seconds to retrieve 800 rows, without any indexes, pre-sorting, or pre-load processing.
 
 ## Run Queries Against Order History
 Vijay now feels confident that users hitting current closed orders will be happy with the response time, regardless how they query the data.  The order history is 60x larger, with 6B rows in the order history table (and 30M customers).  The business case to provide ad-hoc access to this volume of data relates to the data scientists, who are interested in uncovering long term patterns over time.  They are a smaller group that have spent weeks in the past extracting and pre-processing the data.  They are excited at the prospect of getting immediate access to real time data and having the ability to get results in a couple of minutes rather than a painful multi-week process.
@@ -162,7 +162,6 @@ group by d.d_date
 ```
 ![](./images/IL-2/008.png)
 
-- Vijay was surprised to see that the execution time to retrieve the first 5000 rows was again only a few seconds.
 - Vijay has requests from analysts about support for analytic queries.  The analysts have started to use these views in their on-premise Oracle Database, and have found them to be fast and suited to the historical type queries they typically run.  To test this expand 'Other Users in your connection.
 
   ![](./images/IL-2/009.png)
@@ -194,7 +193,7 @@ WHERE
 ```
 ![](./images/IL-2/011.png)
 
-- In this particular case the query took a bit longer (35 seconds), but was still extremely fast, and now offers analtytic support they never had before.
+- In this particular case the query took a bit longer, but was still fast, and now offers analtytic support they never had before.
 
 - Finally, what about a simple query to retrieve a single orderkey, realizing again there are no indexes on the table.  Enter the following.
 ```
@@ -202,7 +201,7 @@ select * from ssb.lineorder where lo_orderkey = 1174002208;
 ```
   ![](./images/IL-2/012.png)
 
-Note: Some queries may take two-three minutes (but no more), depending on how many rows are processed and returned, and the aggregation level.  These are not included so that the lab can proceed without delay.
+Note: Some queries may take longer, depending on how many rows are processed and returned, and the aggregation level.  These are not included so that the lab can proceed without delay.
 
 ## Review Database Activity
 

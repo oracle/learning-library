@@ -18,7 +18,8 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 **Some Key points;**
 
-- We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%
+**We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%**
+
 
 - All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
 
@@ -52,20 +53,25 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 ## Sign in to OCI Console and create ADW instance
 
+
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
 * **Password:** {{Password}}
 * **Compartment:**{{Compartment}}
 
+
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,click **Autonomous Data Warehouse** under **Database** and then **Create Autonomous Database**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_001.PNG" alt="image-alt-text" height="200" width="200">
+2. From the OCI Services menu,Click **Autonomous Data Warehouse** under **Database** and then **Create Autonomous Database**
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_001.PNG" alt="image-alt-text">
 
 3. Fill out the dialog box:
+
+
 - Workload Type: AUTONOMOUS DATA WAREHOUSE
 - COMPARTMENT: Choose your compartment
 - DISPLAY NAME: Provide a name
@@ -73,13 +79,13 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 - CPU CORE COUNT: 1
 - STORAGE(TB): 1
 - PASSWORD: Provide password per guideline (example Oracle123!!!!)
-- CNFIRM PASSWORD: Provide same password (example Oracle123!!!!)
+- CONFIRM PASSWORD: Provide same password (example Oracle123!!!!)
 - LICENSE TYPE: SUBSCRIBE TO NEW DATABASE SOFTWARE LICENSES AND THE DATABASE CLOUD SERVICE
 
 4. Leave **Tags** information as is, Click **Create Autonomous Database**. Wait for State to change to Available (few minutes) 
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_002.PNG" alt="image-alt-text" height="200" width="200">
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_003.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_002.PNG" alt="image-alt-text">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_003.PNG" alt="image-alt-text">
 
 5. Click Autonomous Data Warehouse Database instance name that you created to bring up Database details page. Click **DB Connection**
 
@@ -87,7 +93,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 **HINT:** You can use the same password that was used to create the instance or choose a new password. Note down the password
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_004.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_004.PNG" alt="image-alt-text">
 
 **We now have a Autonomous Data Warehouse instance created. We have also downloaded the Client Credentials file. We will use this file when connecting to the database instance  using Sql Developer. Next we will create a Data file and use Object stroage to upload it to Database instance.**
               
@@ -95,14 +101,14 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 In this section we will generate auth token for the user of this lab. An Auth token is an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
 
-1. In OCI console click the user icon (top right)  then **User settings**. Under Resrouces Click **Auth Token**, then **Generate Token**. In pop up window provide a description then click **Generate Token**
+1. In OCI console Click the user icon (top right)  then **User settings**. Under Resrouces Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_005.PNG" alt="image-alt-text" height="200" width="200">
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_006.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_005.PNG" alt="image-alt-text">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_006.PNG" alt="image-alt-text">
 
 2.  Click **Copy** and save the token in Notepad.**Do not close the window without saving the token as it can not be retrieved later**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_007.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_007.PNG" alt="image-alt-text">
 
 3. Note down your user name
 
@@ -110,12 +116,14 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
 **Screen shots for SQL developer are from 18.1.0 version**
 
-4. Launch SQL devleoper using Apps icon and click **+** to create a new connection
+4. Launch SQL devleoper using Apps icon and Click **+** to create a new connection
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_008.PNG" alt="image-alt-text" height="200" width="200">
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_009.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_008.PNG" alt="image-alt-text">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_009.PNG" alt="image-alt-text">
 
 5. Fill out the diaog box:
+
+
 - Connection Name: Provide a name
 - Username: admin
 - Password: Password used at ADW instance creation
@@ -126,41 +134,43 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
 **NOTE:** If using SQL devleoper 18.2.0 or higher this field is not available and not required
 
-- Service: <ADW_Instance_name>_medium 
+
+- Service: YOUR_ADW_INSTANCE_NAME_medium 
 - Click **Save**
 - Click **Connect** and verify Successful connection
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_010.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_010.PNG" alt="image-alt-text">
 
 6. Create a new user called ocitest and grant the DWROLE to ocitest user. Enter commands:
 ```
 create user ocitest identified by P#ssw0rd12##
-
+```
+```
 Grant dwrole to ocitest;
 ```
 
 7. Verify the user was created
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_011.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_011.PNG" alt="image-alt-text">
 
-8. Create another connection in SQL Developer (same steps as abovea), use following values:
+8. Create another connection in SQL Developer (same steps as above), use following values:
+
+
 - Connection Name: Provide a name
 - Username: OCITEST
 - Password:  P#ssw0rd12## 
 - Save Password: Check the flag
 - Connection Type: Cloud PDB
 - Configuration file: File that was dowloaded from ADW service console (Client credenitla zip file)
-- Keystore password: Password you provided when downloading the client credentials file 
-
-**NOTE:** If using SQL devleoper 18.2.0 or higher this field is not available and not required
-
-- Service: <ADW_Instance_name>_medium 
+- Keystore password: Password you provided when downloading the client credentials file (NOTE:If using SQL devleoper 18.2.0 or higher this field is not available and not required)
+- Service: YOUR_ADW_INSTANCE_NAME_medium 
 - Click **Save**
 - Click **Connect** and verify Successful connection
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_012.PNG" alt="image-alt-text" height="200" width="200">
 
-9. We will now download a text file from OCI Object storage. This file has commands that will be used to upload data into ADW and retreive it. Open a new browser tab and copy/paste or Etner URL;
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_012.PNG" alt="image-alt-text">
+
+9. We will now download a text file from OCI Object storage. This file has commands that will be used to upload data into ADW and retreive it. Open a new browser tab and copy/paste or Enter URL;
 
 https://objectstorage.us-ashburn-1.oraclecloud.com/n/us_training/b/Lab-images/o/ADW-File.txt
 
@@ -169,59 +179,68 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/n/us_training/b/Lab-images/o/
 10. Using OCITEST user store your Object Storage credenitals. From the ADW-File.txt content copy and paste the commands under  
 /**** Set Definitions ****/ section. The commands will look like below
 
-**NOTE:** user name shoud be your user name and password should be the Auth Token generated earlier.
+**Begin**
 
-```
-Begin
-          DBMS_CLOUD.create_credential (
-          credential_name => 'OCI_CRED_NAME',
-           username => '<YOUR_USER_NAME>',
-           password => '<AUTH_TOKEN>'
-) ;
-end;
-```
+**DBMS_CLOUD.create_credential (**
+
+**credential_name => 'OCI_CRED_NAME',**
+
+**username => '<YOUR_USER_NAME>',**
+
+**password => '<AUTH_TOKEN>'**
+
+**) ;**
+
+**end;**
+
+**NOTE:** user name should be your user name and password should be the Auth Token generated earlier.
 
 11. Verify **PL/SQL Procedure successfully completed** message is displayed.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_013.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_013.PNG" alt="image-alt-text">
 
 12. Create a new table (We will load data from file in Object Storage to this table). From the ADW-File.txt content copy and paste the commands undrer /**** Create Table ****/ section. The commands will look like below
-```
-CREATE TABLE CHANNELS (
-NAME VARCHAR2(20) NOT NULL ,
-gender VARCHAR2(20) NOT NULL ,
-NAME_total NUMBER NOT NULL );
-```
+
+**CREATE TABLE CHANNELS (**
+
+**NAME VARCHAR2(20) NOT NULL ,**
+
+**gender VARCHAR2(20) NOT NULL ,**
+
+**NAME_total NUMBER NOT NULL );**
 
 13. Verify **Table CHANNELS created** message
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_014.PNG" alt="image-alt-text" height="200" width="200">
-
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_014.PNG" alt="image-alt-text">
 
 14. Load data from file in Object Storage to newly created table.
 
 **NOTE:** A data file with 1000s of records exists in OCI Object storage and we will use this file records to populate ADW From the ADW-File.txt content copy and paste the commands undrer  /**** DBMS ****/ section. The commands will look like below
-```
-begin
-dbms_cloud.copy_data(
-table_name =>'CHANNELS',
-credential_name =>'OCI_CRED_NAME',
-file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/us_training/Lab-images/century_names_new.txt',
-format => json_object('delimiter' value ',', 'trimspaces' value 'lrtrim')
-);
-end;
-```
+
+**begin**
+
+**dbms_cloud.copy_data(**
+
+**table_name =>'CHANNELS',**
+
+**credential_name =>'OCI_CRED_NAME',**
+
+**file_uri_list =>'https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/us_training/Lab-images/century_names_new.txt',format => json_object('delimiter' value ',', 'trimspaces' value 'lrtrim')**
+
+**);**
+
+**end;**
 
 15. Verify **PL/SQL Procedure successfully completed** message
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_015.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_015.PNG" alt="image-alt-text">
 
 16. We will now query the table and veirfy the data Enter command:
 ```
 select * from channels;
 ```
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_016.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_016.PNG" alt="image-alt-text">
 
 **We have successfully deployed a Autonomous Data Warehouse instance,populated a table using a file stored in Object storage and successfully run a query against the table.**
 
@@ -231,11 +250,11 @@ select * from channels;
 
 1. Navigate to User Settings ,Click **Auth Token** and Click **Delete** for your Auth Token by Hovering your mouse over action icon (Three Dots)
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_017.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_017.PNG" alt="image-alt-text">
 
 2. Navigate to Autonomoud Data Warehouse menu, Hover over the action icon(Three dots) and Click **Terminate**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_018.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_018.PNG" alt="image-alt-text">
 
 **Congratulations! You have successfully completed the lab.**
 

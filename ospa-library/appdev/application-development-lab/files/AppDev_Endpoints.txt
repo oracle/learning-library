@@ -10,17 +10,3 @@ Store (Metadata live)
 Associate (Metadata live)
 
  https://ospa-class-of-se-orasenatdhubsblue02.builder.ocp.oraclecloud.com/ic/builder/rt/Mama_Maggy/live/resources/data/Associate/describe
- 
-
-************************************
-************************************
-
-For testing in ospatee
-
-Store
-
-https://ospavbcs1-ospatee.builder.ocp.oraclecloud.com/ic/builder/rt/Mama_Maggy/live/resources/data/Store/describe
-
-Associate
-
-https://ospavbcs1-ospatee.builder.ocp.oraclecloud.com/ic/builder/rt/Mama_Maggy/live/resources/data/Associate/describe

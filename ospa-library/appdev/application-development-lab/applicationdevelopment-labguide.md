@@ -62,8 +62,25 @@ these lab exercises.
 
 # Labs
 
-In these labs you will use Visual Builder to help Mama Maggy’s by adding
-product ordering and order tracking solutions.
+In these labs you will use Visual Builder to help Mama Maggy’s (using data supporting the Mama Maggy use case, but, other data could be substituted) by adding product ordering and order tracking solutions.
+
+Today when a manager or franchisee needs to order supplies everything is accomplished with a series of phone calls between the manager/franchisee and Mama Maggy headquarters. The only status checks available are by again calling headquarters. 
+1. Manager/franchisee determines need.
+2. Manager/franchisee calls HQ for product name and pricing info.
+3. Manager/franchisee calls HQ to create an order for one or more products.
+4. Manager/franchisee waits for delivery, if they wish to check status they must once again call HQ.
+
+In addition, if store managers/franchisees wish to contact other stores to ask about borrowing supplies or to discuss business, they once again have to go through headquarters to get contact information. 
+
+These processes are often inconvenient and slow, the managers/franchisees would like to improve things.
+
+In our lab we will BEGIN to address the needs of the managers/franchisees by adding:
+- Web application allowing managers/franchisees to see what products are available for order and what the prices are.
+- Web application to list all product orders including each line in the order's product, quantity, and prices.
+- Mobile application allowing busy manager/franchisee to check the status of their orders from anywhere with their phone.
+- Web application to list all Mama Maggy stores and their locations and the list of associates in that location along with contact information.
+
+In the interest of time this lab focuses on creating apps to help managers/franchisees to self-serve information they currently rely on headquarters for. Future work will be necessary to automate the creation and update of orders and/or the other information.
 
 The lab is presented in four parts: Lab 1 – Introduction and Setup, Lab
 2 - Spreadsheet-based Business Objects, Lab 3 – Web and Mobile Apps, Lab
@@ -72,7 +89,21 @@ for anyone who happens to finish early. No prior experience with Visual
 Builder is assumed or necessary.
 
 **Prerequisite**: Before starting these labs, you should have an OCI
-login and "ServerDeveloper" or "ServerAdminstrator" access to a VBCS instance; most formal classes will share an existing VBCS instance and your permissions will already correct. If you do not have a VBCS instance you may create one using the instructions in [Appendix A: Create VBCS Instance](#appendix-a-create-vbcs-instance). 
+login and "ServerDeveloper" or "ServerAdminstrator" access to our VBCS instance **"OSPA-Class-Of-SE"**  (if you are doing this lab NOT with Class Of SE; most formal classes will share an existing VBCS instance and your permissions will already correct. If you do not have a VBCS instance you may create one using the instructions in [Appendix A: Create VBCS Instance](#appendix-a-create-vbcs-instance)). 
+
+**Data Files**:
+You will need four data files, three will be used in Lab 3 and one will be used in Lab 4. All four files are available in a single .zip file named [vbcsfiles.zip](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/vbcsfiles.zip) on GitHub; download the file and expand it to find the following four files (keep them handy they will be used later in this lab):
+- Lab 2 (data for VBCS Business Objects)
+  - Product.csv
+  - ProductOrder.csv
+  - ProductOrderLine.csv
+- Lab 4 (links used for VBCS Service Connections)
+  - AppDev_Endpoints.txt
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTE: All four files may also be downloaded directly from GitHub, 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;however, to download the .csv files directly will require extra steps; 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open the .csv in your browser, then,
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click 'Save As' to store the file as .csv (use the .zip file it's easier)
 
 **NOTE:** Content is driven by external factors such as user data
 entries and login date. As a result, what you see displayed in your
@@ -168,8 +199,9 @@ Dashboard”)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.3.3 – Service: Oracle Visual Builder Cloud Service<br/> 
 
+## ** For 2019 Class Of SE - All participants will share the "OSPA-Class-Of-SE" instance **
 4.  A VBCS instance has been created and designated for your class to
-    share (your instance name may be different than the one shown.  
+    share **"OSPA-Class-Of-SE"** please create your VBCS application in the OSPA-Class-Of-SE instance unless your facilitator says differently (your instance name may be different than the one shown; the facilitator will let you know.) 
     (see Appendix A for instructions on creating a VBCS instance)
 
     ![](./media/vbcs_instance_list.png)
@@ -178,7 +210,7 @@ Dashboard”)
 
 #### Open VBCS Home Page  
 
-5.  Select the VBCS instance being used for the lab ("ospavcs1" below), then using the “Hamburger Icon” ![](./media/image16.png) on the far right;
+5.  Find the VBCS instance being used for the lab in the list ("OSPA-Class-Of-SE" below), then using the “Hamburger Icon” ![](./media/image16.png) on the far right;
     choose “Open Oracle Visual Builder Cloud Service Home Page”
 
     ![](./media/vbcs_instance_0.png)
@@ -191,27 +223,31 @@ Dashboard”)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.6 – VBCS Splash<br/>
 
-7.  When the “Visual Applications” list appears; choose the “New” button in the upper-right corner.
+7.  When the “Visual Applications” welcome appears; choose the “New Application” button.
 
-  ![](./media/image19.png)
+  ![](./media/New17.1_a.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.7.1 – Visual Applications<br/>
 
-  ![](./media/image20.png)
+  ![](./media/New17.2.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.7.2 – Import New Buttons<br/>
 
 8.  When the “Create Application” page appears, provide a name for the
     application; you may call your applications anything you wish.
     
+    ### ** Note you must be working within VBCS instance "OSPA-Class-Of-SE" for all labs to work properly **
+
     If you are sharing your lab environment with a group of people you might find it convenient to follow a naming convention to make it easier for you to find your work and for the facilitators to help you.
     
-    Perhaps combining your name or initials (or even employee id) with two-or-three characters representing your location to use as an application name or to add as a prefix to the names of all applications you create. Visual Builder's list of applications may be sorted and filtered easily.
+    Combine your name or initials with three characters representing your location to use as an application name or to add as a prefix to the names of all applications you create. Visual Builder's list of applications may be sorted and filtered easily.
+
+    (The facilitator will share a three-character code for you to use in your location.)
       
     Be sure the “Empty Application” template is selected and click
     “Finish” to continue.
 
-    ![](./media/image21.png)
+    ![](./media/New1.8.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.8 – Name application<br/>
 
@@ -228,12 +264,23 @@ This concludes Lab 1.
 
 # Lab 2: Spreadsheet-based Business Objects
 
+To build the solutions for Mama Maggy's managers/franchisees, data is required, right now that data is stored in several spreadsheets. We need to make that data available inside VBCS so that it may be used in the web and mobile applications created in these labs.
+
 Visual Builder provides two main methods to access data: built-in
-business objects, and service connections. This lab focuses on creating
-and using built-in business objects using spreadsheet (.csv/.xlsx)
+business objects, and service connections. VBCS business objects store data in tables like a database. This lab focuses on creating
+and using built-in business objects with data suppiled via spreadsheet (.csv/.xlsx)
 files. These files get copied into an Oracle Database (under the covers
 of VBCS) and are actually accessed using the same type of RESTful APIs
 as those used for service connections (more on this in Lab 4).
+
+ NOTE: For this lab you will need three data files (Product.csv, ProductOrder.csv, and ProductOrderLine.csv), if you have not already downloaded them they may be obtained from GitHub as a .zip file named [vbcsfiles.zip](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/vbcsfiles.zip); download the file and expand it to find the following three files (keep them handy they will be used later in this lab):
+- Product.csv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Products available for managers/franchisees to order
+- ProductOrder.csv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Existing order information: date of order, status, and associate who made the order.
+- ProductOrderLine.csv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order lines showing the products requested in each of the current orders, 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;their unit price, and the quantity desired.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A fourth file 'AppDev_Endpoints.txt' will be used in a later lab.
+<br/><br/>
 
 1.  If you have logged out of the Oracle Cloud, please log back in and
     return to your VBCS application. On the left-hand side of the Visual Builder interface is a navigator
@@ -269,8 +316,10 @@ upper-left corner.
 2.  From the application page, click “+ Business Object” to begin adding
     a business object
 
-3.  Set the business object name to “Product” as shown here and click
-    the Checkmark ![](./media/image24.png) when ready to continue
+3.  The first Business Object you will create will contain information about what products are available for managers/franchisees to order for their stores; we'll use the name "Product" to keep things simple.
+
+    Set the business object name to “Product” as shown here and click
+    the Checkmark ![](./media/image24.png) when ready to continue.
 
     ![](./media/image25.png)
 
@@ -300,7 +349,7 @@ upper-left corner.
     Builder creates the name as “productName”
 
   - Set the Type to character by making sure the “A”
-    ![](./media/image28.png) is selected as shown below
+    ![](./media/image28.png) is selected as shown below (be sure to select the correct "type")
 
   - Click the “Checkmark” icon ![](./media/vbcs_checkmark.png) when done
 
@@ -308,51 +357,64 @@ upper-left corner.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.6 – New Field Product Name<br/>
 
-7.  Set the field property to “Required”
+7.  In the box at the lower-right part of the VBCS editor set the field property to “Required”
 
     ![](./media/image30.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.7 – Product Name required<br/>
 
 8.  Now add three more fields; be sure to mark the all “Required” so
-    that you end up with a list like this:
+    that you end up with a list like this (note that all four of the fields added should be marked "Required"):
 
 <!-- end list -->
 
-  - A (text) productName Product Name (already done above)
+  - A (text)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;productName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Name (already done above)
 
-  - A (text) product Description Product Description
+  - A (text)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;product Description&nbsp;&nbsp; Product Description
 
-  - \# (numeric) unitPrice Unit Price
+  - \# (numeric) unitPrice &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit Price
 
 ![](./media/image31.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.8 – Product Business Object Fields<br/>
 
-9.  Create another Business Object named “Product Order” (ProductOrder).
+9.  Create another Business Object named “Product Order” (ProductOrder) by clicking the "plus sign" at the top of the Business Objects list again ![](./media/vbcs_add_biz_object.png). 
 
-    Add new fields as suggested below so that the final result looks like the screen shot in Figure 2.9.
+    The "Product Order" Business Object will contain specifics about orders made by managers/franchisees including the associate that made the order, the order date, the current order status (open, shipped, complete) , and the last date some action (order shipped, order closed, etc.) occurred on the order.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.9.1 – Business Objects +
+<br/>
+
+    Add new fields as suggested below so that the final result looks like the screen shot in Figure 2.9.2 (please be sure to pick the correct "type" and make sure that all four of the new fields are marked "Required").
 
 <!-- end list -->
 
-  - \# (numeric) associateId Associate Id
+  - \# (numeric)&nbsp;&nbsp;&nbsp;&nbsp;associate &nbsp;&nbsp;Associate
 
-  - ![](./media/image32.png) (datetime) orderDate Order Date
+  - ![](./media/image32.png) (datetime) orderDate &nbsp;&nbsp;&nbsp;&nbsp;Order Date
 
-  - A (text) orderStatus Order Status
+  - A (text)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderStatus &nbsp;&nbsp;Order Status
 
-  - ![](./media/image33.png)(datetime) actionDate Action Date
+  - ![](./media/image33.png)(datetime)&nbsp;&nbsp;actionDate&nbsp;&nbsp;&nbsp;&nbsp;Action Date
 
-> ![](./media/image34.png)
+> ![](./media/AppDev2.9.2.png)
 > 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.9 – Product Order Business Object Fields<br/>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.9.2 – Product Order Business Object Fields<br/>
 
 10. Create another Business Object named “Product Order Line”
-    (ProductOrderLine).
+    (ProductOrderLine). 
+
+    The "Product Order Line" Business Object will contain specifics about each item included in "Product Orders" made by managers/franchisees including the product ordered, its Unit Price, and the Quantity ordered. 
+    
+    To make it possible for VBCS to connect the "Product Order Line" with the correct "Product Order" and the "Product" being ordered (so that the product name can display rather than a product id) you will create two "Relationships":
+    
+    - between the "Product Order Line" and its associated "Product Order" record
+    - between the "Product Order Line" and the "Product" being ordered
     
     You will begin with the predefined fields as shown in Figure 2.10.1.
 
-    But this time before adding fields you will first add two relationships to the other business objects that will show up as 'references' later. Then, you will add two fields in the usual manner.
+    But this time before adding fields you will first add two relationships to the other business objects that will show up as 'references' later. These relationships connect specific products to product order lines and product order lines to product orders allowing VBCS to "automatically" connect that data when building web and mobile applications later.
+    
 
 ![](./media/image35.png)
 
@@ -402,11 +464,14 @@ The relationships have been defined, now to enter remaining fields.
 
 Return to the “Fields” tab; the two relationships are now listed as
 fields with a “reference” icon ![](./media/image42.png) indicating the
-relationship. Select the last row, “Product” as shown in Figure 2.10.8 and click “+ Add Field” to continue (VBCS adds new fields below the currently selected field).
+relationship. Select the last row, “Product” as shown in Figure 2.10.8 and click “+ New Field” icon ![](./media/vbcs_plus_new_field_small.png) to continue (VBCS adds new fields below the currently selected field).
 
 ![](./media/image43.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.10.8 – ProductOrderLine with relationships
+
+
+Next, you will add two fields in the usual manner.
 
 Add “Unit Price” and “Quantity” as numeric fields.
 
@@ -424,15 +489,15 @@ The completed field list should look like this:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.10.11 – Product Order Line fields
 
-11. Examine the “Endpoints” created for each of the Business Objects you
-    created; these are the RESTful APIs that allow your applications
+11. Examine the “Endpoints” created by VBCS for each of the Business Objects you
+    defined; these are the RESTful APIs that allow your applications
     (and others) to access the Business Object; Get (read), Post
-    (create), Patch (update), Delete (delete) – we will use these in the
-    next lab
-
+    (create), Patch (update), Delete (delete) – we will use at least two of these in the next lab.
 ![](./media/image47.png)
 
-12. Reopen the “Product" Business Object (from the Business Objects list); click on the "Data" tab and then click “+ Add Row” to add a
+12. It will be useful for testing purposes to have some data in the "Product" Business Object. VBCS provides a way to load single rows/records manually as shown below. (In #15 below you will add many rows/records from an input file).
+
+    Reopen the “Product" Business Object (from the Business Objects list); click on the "Data" tab and then click “+ Add Row” to add a
     row of data
 
 ![](./media/image48.png)
@@ -449,7 +514,7 @@ The completed field list should look like this:
 
   - Unit Price 7
 
-  (click the "Checkmark" ![](./media/vbcs_checkmark.png) when done)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(click the "Checkmark" ![](./media/vbcs_checkmark.png) when done)
 
 ![](./media/image49.png)
 
@@ -527,7 +592,7 @@ Click the “Import” button to upload the selected file
 
 
 19. Review the “Product” business object data to see the results of the
-    load
+    load. 
 
     ![](./media/image59.png)
 
@@ -535,14 +600,14 @@ Click the “Import” button to upload the selected file
 
 20. Create an initial “Product Order” (Product Order -> Data -> + Add Row) as follows, then review your
     results  
-    ![](./media/image60.png)
+    ![](./media/AppDev2.20.png)
 
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.20 – Add Product Order row
 
-21. Create an initial “Product Order Item” as follows, use the “Product
+21. Create an initial “Product Order Line” as follows, use the “Product
     Order” and “Product” pull-downs to choose those values (if the value
-    you don’t see does not appear in the list you can start to type the
-    value in and it will appear), type in the other two then review your
+    you want does not appear in the list you can start to type the
+    value in and it will appear, for instance "M" for "Mozzarella"), type in the other two then review your
     results and click the checkmark ![](./media/vbcs_checkmark.png).
 
     ![](./media/image61.png)
@@ -557,7 +622,7 @@ Click the “Import” button to upload the selected file
 
   - Product Order - ProductOrder.csv
 
-    ![](./media/image62.png)
+    ![](./media/AppDev2.22.1.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.22.1 – Product Order data
 
@@ -579,6 +644,8 @@ Click the “Import” button to upload the selected file
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.24.2 – Business Object diagram
 
+Congratulations! The data needed allowing Mama Maggy managers/franchisees to see what products are available to order and to check the status of existing orders is now ready for use. This data will be used in the next three labs.
+
 This concludes Lab 2.
 
 [Go to Lab 3](#lab-3-web-and-mobile-apps) – [Return to Table of Contents](#table-of-contents)
@@ -588,14 +655,12 @@ This concludes Lab 2.
 Visual Builder provides an easy-to-use WSYIWG (What You See Is What You
 Get) graphical interface for “painting” applications and providing
 values declaratively allowing people who are not professional developers
-to create applications. Professional developers can use Visual Builder
-too; they might also choose to use it’s more advanced features and
+to create applications. Professional developers may use Visual Builder
+too; they might also choose to use VBCS’s advanced features and
 coding capabilities to make applications more-robust.
 
-In this lab you will create a Web application to allow Mama Maggy
-managers/franchisees to order products used in making pizza. You will
-also create Mobile application allowing them to track their order
-status.
+In this lab you will create Web applications so that Mama Maggy
+managers/franchisees may see what products are available for order and to track the status of orders once they are made.
 
 This lab has three sections:
 
@@ -610,8 +675,11 @@ This lab has three sections:
 In the last lab you created three business objects and added data to
 them; now you will create a web application to work with them
 
-1.  If you have logged out of the Oracle Cloud, please log back in and
-    return to your VBCS application. You might find it useful to close
+1.  If you're still logged in to the Oracle Cloud and VBCS, skip to #2 below. 
+
+    If you have logged out of the Oracle Cloud, please log back in and return to your VBCS application. 
+
+    You might find it useful to close
     any open windows.
 
 2.  On the left-hand side of the Visual Builder interface is a navigator
@@ -629,14 +697,15 @@ them; now you will create a web application to work with them
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.2.1 – VBCS Icons  
   
-If you don’t see the navigator, click the “Expand Navigator” icon in the
-upper-left corner
+  &nbsp;&nbsp;&nbsp;&nbsp;If you don’t see the navigator, click the “Expand Navigator” icon in the upper-left corner, then click the "Web Applications" button
 
 > ![](./media/image74.png)
 > 
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.2.2 – Expand Navigator button
 
 3.  Add a new Web Application;
+
+> First, you'll create a web application with two features; a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
 
 > If you don’t have any Web Applications yet; click the “+ Web
 > Application” button
@@ -645,7 +714,7 @@ upper-left corner
 > 
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.3.1 – Add Web App 1
 > 
-> If you want to add to your existing Web Applications; click the plus
+> Or, if you want to add to your existing Web Applications; click the plus
 > sign “+” at the top of the Web Apps list
 > 
 > ![](./media/image76.png)
@@ -669,7 +738,7 @@ upper-left corner
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.5.1 – Web UI
 
-Visual Builder will also display an object list in the navigator
+> Visual Builder will also display an object list in the navigator
 
 ![](./media/image82.png)
 
@@ -686,7 +755,7 @@ Visual Builder will also display an object list in the navigator
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.6.2 – Heading in Design window
 
-Change the heading to “Product List” using the Property Inspector on the
+> Change the heading to “Product List” using the Property Inspector on the
 right-side of the screen. The “slider” may be used to alter the
 heading’s size.
 
@@ -694,14 +763,14 @@ heading’s size.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.6.3 – Heading Property Inspector
 
-If you don’t see the Property Inspector; click the “Expand Property
+> If you don’t see the Property Inspector; click the “Expand Property
 Inspector Icon” in the upper-right corner.
 
 ![](./media/image86.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.6.4 – Expand Property Inspector icon
 
-The screen should look something like this now.
+> The screen should look something like this now.
 
 ![](./media/image87.png)
 
@@ -727,17 +796,17 @@ The screen should look something like this now.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.1 – Add Data
 
-The “Add Data” wizard will list any Business Objects and/or Service
+> The “Add Data” wizard will list any Business Objects and/or Service
 Connections currently defined.
 
 ![](./media/image91.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.2 – Add Business Object
 
-Choose the “Product” business object then click “Next” to go to the next
+> Choose the “Product” business object then click “Next” to go to the next
 step in the wizard.
 
-Select the fields you wish to display (select them in the sequence to be
+> Select the fields you wish to display (select them in the sequence to be
 displayed, you can move them if you make a mistake) and click “Next” to
 continue in the wizard to “bind” the business object’s data to the
 objects on the screen.
@@ -746,14 +815,14 @@ objects on the screen.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.3 – Bind Data
 
-For this app you will not be changing the query, so just click the
+> For this app you will not be changing the query, so just click the
 “Finish” button
 
 ![](./media/image93.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.8.4 – Finish Add Data
 
-Visual Builder will then show some data in the design window.
+> Visual Builder will then show some data in the design window.
 
 ![](./media/image94.png)
 
@@ -766,13 +835,13 @@ Visual Builder will then show some data in the design window.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.9.1 – Visual Builder menu bar
 
-A new browser window will open with your running application.
+> A new browser window will open with your running application.
 
 ![](./media/image97.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.9.2 – Finished product list
 
-Success\!
+> Success\! Mama Maggy managers/franchisees can now see a list of the various products available for order (without having to call headquarters).
 
 10. Now, let’s add a page of detail. Return to the Visual Builder
     Designer and select the table containing the property list. Notice
@@ -782,32 +851,32 @@ Success\!
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.1 – Table Properties
 
-The “Quick Start” button makes adding to your application easy.
+> The “Quick Start” button makes adding to your application easy.
 
 ![](./media/image99.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.2 – Quick Start icon
 
-The Quick Start options include: Adding data, building a Create Page
+> The Quick Start options include: Adding data, building a Create Page
 (new row), an Edit Page (update row), a Detail page (display single
 row), Delete Action (delete row), or Task Actions (add task controls).
 
 ![](./media/image100.png)
 
-Click “Add Detail Page” to begin the wizard.
+> Click “Add Detail Page” to begin the wizard.
 
 ![](./media/image101.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.3 – Quick Start options
 
-Once the wizard starts; select the “Product” Business Object and click
+> Once the wizard starts; select the “Product” Business Object and click
 “Next” to continue.
 
 ![](./media/image102.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.4 – Add Detail 1
 
-Select the fields to be displayed; you may either select by checking
+> Select the fields to be displayed; you may either select by checking
 them in the list or “dragging” them to the fields in the center area.
 You may also change title and other features, even the name of the
 button that will display on the main page to launch this page. Click
@@ -817,8 +886,8 @@ button that will display on the main page to launch this page. Click
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.5 – Add Detail 2
 
-When complete, the object navigator on the left will show the new page.
-Select the new page “main-product-detail” to see what it looks like.
+> When complete, the object navigator on the left will show the new page.
+Select the new page “main-product-detail” to see what it looks like. Note that the "Product List" screen is called "main-start" and the "Product Detail" screen is called "main-product-detail" in Figure 3.10.6. (These may be renamed if desired but it's not really necessary.)
 
 ![](./media/image104.png)
 
@@ -830,13 +899,13 @@ You may see an “error” message similar to the following. Remember that
 Visual Builder is WYSIWYG (what you see is what you get) and attempts to
 show real data during the design process. This error frequently occurs
 because Visual Builder cannot find a “context” to tell it which data to
-display.
+display. (in this case, the VBCS editor wants to show the Product Detail page with "live" data, but, does not know which record to display) The process below uses the VBCS editor's "Live" capability to set the context.
 
 ![](./media/image105.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.7 – 404 Error
 
-Fortunately there is an easy fix for this. First, look for the
+Fortunately there is an easy fix for setting the context. First, look for the
 “Live/Design/Code” button in the upper-right part of the Visual
 Builder editor. Click on “Live” to begin the process.
 
@@ -844,8 +913,7 @@ Builder editor. Click on “Live” to begin the process.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.8 – Live, Design, Code button 1
 
-Now, return to the Product List display and select a row, this sets the
-context.
+Now, return to the Product List display (click "main-start" in the productlist flows - Figure 3.10.6 above) and select a row, this sets the context to the selected row. ("MOZZARELLA" selected below)
 
 ![](./media/image107.png)
 
@@ -857,17 +925,21 @@ Click the "Product Detail" button to return to the Product Detail display and yo
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.10 – Product Detail live
 
-Now, return to “Design” mode to continue editing.
+The VBCS "Live" mode is useful in testing to see how changes might behave, it is not the same as running the application. 
+
+Click "Design" to exit "Live" mode.
 
 ![](./media/image109.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.11 – Live, Design, Code 2
 
-Now, run the application. When the “Product List” displays note the
-“Product Detail” button is not available since no product has been
+Now, to really test the application; run the application using the "run" ![](./media/image95.png) button in the upper-right corner. When the “Product List” displays note the
+“Product Detail” button is not available (it is "grayed out") since no product has been
 chosen. Select one of the products and the “Product Detail” button will
 become active. Click on the “Product Detail” button to see the details
 for that product.
+
+The following two images show something similar your results.
 
 ![](./media/image110.png)
 
@@ -880,11 +952,12 @@ button to return to the list.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.10.13 – Product Detail page
 
-In this fashion you may also use the “Quick Start” do add Create, Edit,
-and Delete pages for products. (not part of this lab).
+In addition to viewing the data; you may also use the “Quick Start” do add Create, Edit, and Delete pages for products. (not part of this lab).
 
 Congratulations\! You’ve successfully created your first Visual Builder
-web application.
+web application. 
+
+You've also made a day in the life of a Mama Maggy manager/franchisee easier since they can now see what products are available to order without having to play telephone-tag with headquarters.
 
 [Return to top of Section 1 – Create First Web Application](#section-1--create-first-web-application)
 
@@ -900,6 +973,8 @@ web application.
 ![](./media/image65.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.11.1 – Data model
+
+The second application will allow Mama Maggy managers/franchisees to track the status of their product orders. This will include a list of all product orders, the ability to see the specifics of a single order including a list of each product in that order, its unit price, and the quantity ordered.
 
 In this lab section you will create a two-screen application similar to
 the last one with a twist, the Product Order Detail screen will include
@@ -1029,7 +1104,7 @@ Nothing really new so far…
     
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.18.3 – attribute
     
-    Select “op” and type “$eq” also as a “static value (equal condition
+    Select “op” and type “$eq” also as a “static" value (equal condition
     test).
     
     ![](./media/image123.png)
@@ -1050,16 +1125,18 @@ Nothing really new so far…
     “Live” mode again (see [Section 1 – Create First Web Application
     \#10 for more](#potential-context-error))
     
-    ![](./media/image125.png)
+    ![](./media/AppDev3.18.6.png)
     
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.18.6 – Finished screen
     
     You should now be able to test your Product Order – Product Order
     Line “master-detail” screens.
+
+    You've enabled Mama Maggy's managers/franchisees to retrieve a list of their orders and check order status when it is convenient to them without having to call headquarters.
     
     This is a good time to use “Quick Start” to build Create, Edit, and
     Delete screens for both the Product Order List table (Product Order
-    screen) and the Product Order Item table (Product Order Detail
+    screen) and the Product Order Line table (Product Order Detail
     screen).
     
     Congratulations\! You’re now ready to create your first Mobile
@@ -1070,6 +1147,8 @@ Nothing really new so far…
      [Return to Table of Contents](#table-of-contents)
 
 ## Section 3 – Create Mobile Application
+
+Mama Maggy's managers/franchisees want to be able to check product order status anytime, not just when they are in their offices. So, in this lab you will create a mobile application allowing them to check order status from their phone or other mobile devices, wherever they want, whenever they want.
 
 19. Use Visual Builder’s Navigator to open Mobile Applications
 
@@ -1161,8 +1240,16 @@ Nothing really new so far…
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.31 – Screen with empty table
 
-32. Use the table’s “Quick Start” to “Add Data” from "ProductOrderLine" to the table, add 
-    item\[i\] -\> Product Name (Text), Unit Price (Input Number), and
+32. Use the table’s “Quick Start” to “Add Data” from "ProductOrderLine" to the table, add Product Name (text),<br/>
+__*** find Product Name by drilling down ***__<br/>
+&nbsp;&nbsp;&nbsp; __{} response <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [] items <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} item\[i\] <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} Product Object <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[] items <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{} item[i] <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Name__<br/> 
+    Unit Price (Input Number), and
     Quantity (Input Number).
 
 > ![](./media/image141.png)
@@ -1199,6 +1286,8 @@ Nothing really new so far…
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.34.2 – Order Details
 
+Congratulations! You have made the daily lives of Mama Maggy managers/franchisees easier. Instead of calling headquarters to check the status of their product orders they can now use your mobile app when and where it is convenient.
+
 This concludes Lab 3.
 
 [Return to top of Section 3 – Create Mobile Application](#section-3--create-mobile-application)
@@ -1209,6 +1298,8 @@ This concludes Lab 3.
 
 # Lab 4: Data from service
 
+Mama Maggy's has multiple existing databases and other data stores being used to run their business. Mama Maggy management would prefer to access existing databases and any new databases directly rather than duplicating data in VBCS Business Objects.
+
 While using Visual Builder’s built-in business objects is useful; they
 limit applications to data found within the Visual Builder instance.
 Most modern applications will use data from varied sources both in and
@@ -1217,7 +1308,7 @@ connections that take advantage of RESTful APIs exposed by databases and
 other providers. API stands for Application Programming Interface; a
 pre-defined calling mechanism used to read and modify data using
 standardized calls over the internet with HTTP/HTTPS (often called
-RESTful APIs). This is the most common way of using external data in
+RESTful APIs). RESTful APIs are the most common way of using external data in
 modern applications. In this Lab you will add useful information to your
 application using RESTful API calls rather than Business Objects
 (though, the truth is that VBCS uses RESTful API calls when accessing
@@ -1228,9 +1319,13 @@ access data for Mama Maggy stores and Mama Maggy associates. You will
 use these “Service Connections” to provide data services to your
 applications. 
 
-Get the correct values for your class from the ["AppDev_Endpoints.txt" file in GitHub](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/AppDev_Endpoints.txt) and copy them to your local machine to make the lab a little quicker to complete<br/> 
+ ### ** Note you must be working within VBCS instance "OSPA-Class-Of-SE" for this lab to work properly **
+
+Get the correct connection URL values for your class from the ["AppDev_Endpoints.txt" file in GitHub](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/AppDev_Endpoints.txt) and copy them to your local machine to make the lab a little quicker to complete<br/> 
 (please
 ask the instructor if you have questions here).
+
+[Skip to Lab 4 beginning](#begin-lab-4)
 <br/><br/>
 
 *******************************************************************
@@ -1243,7 +1338,10 @@ NOTE 2:
   Lab 4 assumes access to modern APIs that provide an industry-standard manifest; if only old-style endpoints are available use the instructions in [Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) instead of the instructions in this Lab to access the APIs.
 *******************************************************************
 
-<br/><br/>
+
+#### Begin Lab 4
+
+In this lab you will create new VBCS Web applications to display a list of Mama Maggy stores and the Associates who work in them. This will make it easier for a Mama Maggy manager/franchisee to collaborate with other. The data used to create these apps will come from "Service Connections" that you will create allowing the application to use data via RESTful APIs provided by the service provider.
 
 1.  If you have logged out of the Oracle Cloud, please log back in and
     return to your VBCS application. You might find it useful to close
@@ -1347,10 +1445,7 @@ NOTE 2:
 > 
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.4 – Copy to Reponse Body
 > 
-> Click the “Create” button to finish the process of building the
-> service connection.
-> 
-> ![](./media/image158.png)
+
 > 
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.7.5 – Create button
 
@@ -1365,24 +1460,7 @@ NOTE 2:
     named). Type an associate id number (“7 in the example”) and “Send”
     to test.  
     ![](./media/image160.png)  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.9.1 – Test single associate connection
-
-> Provide a name for the connection (“mmassociateget” in the example).
-> 
-> ![](./media/image161.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.9.2 – Name single connection
-> 
-> ![](./media/image162.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.9.1 – Test single connection
-> 
-> Check the response status and values, then click “Copy to Response
-> Body” and the “Create” button to finish things up.
-> 
-> ![](./media/image163.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.9.2 – Single connection response
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.9 – Test single associate connection
 > 
 > You have now created and tested two connections.
 
@@ -1527,15 +1605,16 @@ NOTE 2:
 > 
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4.21 – Completed screen
 
-**Congratulations\!** You’ve now finished the required labs for this
-course.
 
 This concludes Lab 4.
 
-You may save today’s work using Visual Builder’s “export” capability:
+**Congratulations\!** You’ve now finished the required labs for this
+course.
+
+You may save today’s work using Visual Builder’s “export” capability, this will provide you with a starting point if you would like to continue working on the labs, **but more importantly will give you a starting point when you want to create a customer demonstration using VBCS**:
 
   - Return to the list of VBCS applications, highlight your application,
-    then click the “Hamburger” menu on the right.
+    then click the “Hamburger” menu icon on the right.
 
 > ![](./media/image179.png)
 
@@ -1550,7 +1629,9 @@ You may save today’s work using Visual Builder’s “export” capability:
 
 > ![](./media/image181.png)
 
-[Go to Extra Lab 5](#extra-lab-5-add-data-using-rest-call) – [Return to Table of Contents](#table-of-contents)
+[Go to Extra Lab 5](#extra-lab-5-add-data-using-rest-call) 
+
+[Return to Table of Contents](#table-of-contents)
 
 # Extra Lab 5: Add Data Using REST Call
 
@@ -1575,9 +1656,10 @@ In this lab you will work more with RESTful API calls.
     associate name in a copy of your mobile application (again, don’t
     mess up the original).
 
-This concludes Lab 5.
+This concludes Extra Lab 5.
 
-[Go to Extra Lab 6](#extra-lab-6-review-and-edit-javascript-code-under-the-covers-of-vbcs) – [Return to Table of Contents](#table-of-contents)
+[Go to Extra Lab 6](#extra-lab-6-review-and-edit-javascript-code-under-the-covers-of-vbcs) – 
+[Return to Table of Contents](#table-of-contents)
 
 # Extra Lab 6: Review and edit JavaScript code “under the covers” of VBCS
 
@@ -1612,7 +1694,7 @@ For instance:
 “\<h2…\>Order Items\</h2\>” on line 19 above might be changed to
 “\<h4…\>Order Items\</h4\>” to make the heading much smaller.
 
-This concludes Lab 6.
+This concludes Extra Lab 6.
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -1620,9 +1702,9 @@ This concludes Lab 6.
 
 &nbsp;&nbsp;&nbsp;&nbsp;[Appendix A: Create VBCS Instance](#appendix-a-create-vbcs-instance)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Create Service Connection from Endpoint](appendix-b-create-service-connection-from-endpoint)
+&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix C: Build Mama Maggy Data Application](appendix-c-build-mama-maggy-data-application)
+&nbsp;&nbsp;&nbsp;&nbsp;[Appendix C: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application)
 
 # Appendix A: Create VBCS Instance
 
@@ -1771,6 +1853,8 @@ NOTE:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See Oracle Documentation for more information.
 
 
+[Return to Appendix list](#appendix)
+
 [Return to Table of Contents](#table-of-contents)
 
 # Appendix B: Create Service Connection from Endpoint
@@ -1891,6 +1975,8 @@ NOTE:
 
 > Be sure to test your connections. Please ask the instructor if you
 > need assistance.
+
+[Return to Appendix list](#appendix)
 
 [Return to Table of Contents](#table-of-contents)
 
@@ -2181,14 +2267,14 @@ Results should be.
 
 14. Access points currently have a “version” number and will change each
     time the objects are modified. Currently only the “development”
-    addresses are available.
+    addresses are available. The steps below will show you how to publish and make the addresses constant.
 
 > ![](./media/image_c_32.png)
 > 
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure C.14 – Development-only Resource API addresses
 
 15. To “set” the access points so that they will not change over time;
-    you must first “Stage” and then “Publish” the application.  
+    you must first “Stage” and then “Publish” the application.  (When the application is in "Development" and "Staging" the addresses are versioned; once an application is published to the "Live" environment the address will not change and is suitable for sharing.)
       
     First, return to the list of business objects.
 
@@ -2263,5 +2349,6 @@ button.
 That’s it, you’ve created an application with business objects that may
 be accessed using REST APIs like those used in Lab 4.
 
+[Return to Appendix list](#appendix)
 
 [Return to Table of Contents](#table-of-contents)

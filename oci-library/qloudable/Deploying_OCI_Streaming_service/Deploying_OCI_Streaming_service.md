@@ -17,11 +17,12 @@
 
 ## Overview
 
-In this lab we will create a compute instance, download a script to configure streaming service, publish and consume messages.The Oracle Cloud Infrastructure Streaming service provides a fully managed, scalable, and durable storage solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming can be used for messaging, ingesting high-volume data such as application logs, operational telemetry, web click-stream data, or other use cases in which data is produced and processed continually and sequentially in a publish-subscribe messaging model.
+In this lab we will create a compute instance, download a script to configure streaming service, publish and consume messages.The Oracle Cloud Infrastructure Streaming service provides a fully managed, scalable, and durable storage solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming can be used for messaging, ingesting high-volume data such as application logs, operational telemetry, web Click-stream data, or other use cases in which data is produced and processed continually and sequentially in a publish-subscribe messaging model.
 
 **Some Key points;**
 
-- We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%
+**We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%**
+
 
 - All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
 
@@ -63,52 +64,49 @@ In this lab we will create a compute instance, download a script to configure st
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,click **Virtual Cloud Network** under Networking and click **Create Virtual Cloud Network**
+2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
 
 3. Select the compartment assigned to you from drop down menu on left part of the screen
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
 
 4. Fill out the dialog box:
 
+
+- **Name:** Enter easy to remember name
 - **Create in Compartment:** Has the correct compartment
-
-- **Name:** Enter easy to re¬member name
-
 - **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-
 - Click **Create Virtual Cloud Network**
-
 - Click **Close**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
               
 ## Create ssh keys and compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
 2. Enter command 
 ```
 ssh-keygen
 ```
 **HINT:** You can swap between OCI window, 
-git-bash sessions and any other application (Notepad, etc.) by clicking the Switch Window icon 
+git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon 
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL007.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL007.PNG" alt="image-alt-text">
 
 3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG" alt="image-alt-text">
 
 4. You should now have the Public and Private keys:
 
@@ -135,43 +133,36 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 ```
  , highlight the key and copy 
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG" alt="image-alt-text">
 
 6. Click the apps icon, launch notepad and paste the key in Notepad (as backup)
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
 7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
 
 8. Click Create Instance. Fill out the dialog box:
 
+
 - **Name:** Enter a name 
-
 - **Availability Domain:** Select availability domain
+- **Image Operating System:** Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
 
-- **Image Operating System:** Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and click **Select Image**
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_009.PNG" alt="image-alt-text">
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_009.PNG" alt="image-alt-text" height="200" width="200">
 
 - **Choose Instance Type:** Select Virtual Machine
-
 - **Choose Instance Shape:** Select VM shape
-
 - **Configure Boot Volume:** Leave the default
-
 - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-
 - **Virtual Cloud Network Compartment:** Choose your compartment
-
 - **Virtual Cloud Network:** Select the VCN you created in the previous section. 
-
 - **Subnet Compartment:** Choose your compartment. 
-
 - **Subnet:** Choose the first Subnet
 
 9. Click **Create**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
 10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
 ```
@@ -188,7 +179,7 @@ ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
 
 13. Enter 'Yes' when prompted for security message
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG" alt="image-alt-text">
  
 14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
 
@@ -200,15 +191,15 @@ ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
 oci setup config
 ```
 
-2. Accept the default directory location. For user OCI switch to OCI Console window. Click Human Icon and then your user name. In the user details page click **copy** to copy the OCID. **Also note down your region name as shown in OCI Console window**. Paste the OCID in ssh session.
+2. Accept the default directory location. For user OCI switch to OCI Console window. Click Human Icon and then your user name. In the user details page Click **copy** to copy the OCID. **Also note down your region name as shown in OCI Console window**. Paste the OCID in ssh session.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_004.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_004.PNG" alt="image-alt-text">
 
-3. Repeat the step to find tenancy OCID (Human icon followed by clicking Tenancy Name). Paste the Tenancy OCID in ssh session to compute instance followe by providing your region name (us-ashburn-1, us-phoneix-1 etc)
+3. Repeat the step to find tenancy OCID (Human icon followed by Clicking Tenancy Name). Paste the Tenancy OCID in ssh session to compute instance followe by providing your region name (us-ashburn-1, us-phoneix-1 etc)
 
 4. When asked for **Do you want to generate a new RSA key pair?** answer Y. For the rest of the question accept default by pressing Enter
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_005.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_005.PNG" alt="image-alt-text">
 
 5. **oci setup config** also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls. Switch to ssh session to compute instance, to display the conent of API key Enter command :
 
@@ -216,11 +207,11 @@ oci setup config
 cat ~/.oci/oci_api_key_public.pem
 ```
 
-6. Hightligh and copy the content from ssh session. Switch to OCI Console, click Human icon followe by your user name. In user details page click **Add Public Key**. In the dialg box paste the public key content and click **Add**.
+6. Hightligh and copy the content from ssh session. Switch to OCI Console, Click Human icon followe by your user name. In user details page Click **Add Public Key**. In the dialg box paste the public key content and Click **Add**.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_006.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_006.PNG" alt="image-alt-text">
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_007.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_007.PNG" alt="image-alt-text">
 
 7. Download and Install pip utility which will be used to install additional software. Enter command:
 
@@ -261,7 +252,7 @@ source ~/stream_env/bin/activate
 pip install oci
 ```
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_008.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_008.PNG" alt="image-alt-text">
 
 11. Now download the main script file though first we will remove the existing file, Enter Command:
 
@@ -272,7 +263,7 @@ cd /home/opc
 rm stream_example.py
 ```
 ```
-wget https://raw.githubusercontent.com/umairs123/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_example.py
+wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_example.py
 ```
 
 12. Now download a dependent script file though first we will remove the existing file, Enter Command:
@@ -284,10 +275,10 @@ cd /home/opc/stream_env/lib/python2.7/site-packages/oci/streaming/
 rm stream_admin_client_composite_operations.py
 ```
 ```
-wget https://raw.githubusercontent.com/umairs123/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_admin_client_composite_operations.py
+wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_admin_client_composite_operations.py
 ```
 
-13. Our setup is now ready. Before running the script switch to OCI Console window, from the main menu click **Compartments** under **Identity**. Click your compartment name and copy the OCID of the compartment. (Just as was done for user OCID earlier)
+13. Our setup is now ready. Before running the script switch to OCI Console window, from the main menu Click **Compartments** under **Identity**. Click your compartment name and copy the OCID of the compartment. (Just as was done for user OCID earlier)
 
 14. Switch to ssh session and run the script, Enter command:
 
@@ -309,22 +300,22 @@ python ~/stream_example.py ocid1.compartment.oc1..aaaaaaaada2gaukcqoagqoshxq2pyt
 
 3. Locate compute instance, Click Action icon and then **Terminat** 
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG" alt="image-alt-text">
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG" alt="image-alt-text">
 
 5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
 6. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
 
 7. From OCI services menu Click **Networking**, then **Public IPs**,locate the Reserved Public IP you created. Click Action icon and then **Terminate**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0019.PNG" alt="image-alt-text" height="200" width="200">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0019.PNG" alt="image-alt-text">
 
 ***Congratulations! You have successfully completed the lab. ***
 

@@ -1,0 +1,7 @@
+.ttc md-toolbar.md-default-theme.md-hue-2:not(.md-menu-toolbar),
+.ttc md-toolbar.md-hue-2:not(.md-menu-toolbar) {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #006E87;
+    background-image: url("https://cloudaccelerate.github.io/TTC-CommonContent/images/ttc-top-banner.jpg");
+}

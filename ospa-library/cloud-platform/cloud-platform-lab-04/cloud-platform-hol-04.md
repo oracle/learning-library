@@ -36,7 +36,7 @@ If you recieved an email that looks like Figure 1
 -   Oracle Cloud access has been made available to you by the Cloud
     Administrator
 
--   Then you next action will be in the #To Access the Oracle Cloud# section further down the page, and others are examples your customer may recieve; again dependent upon how the Cloud Administrator set up accounts.
+-   Then you next action will be in the To Access the Oracle Cloud section further down the page, and others are examples your customer may recieve; again dependent upon how the Cloud Administrator set up accounts.
 
 ## The Account Activation Email - Sign In For the First Time
 

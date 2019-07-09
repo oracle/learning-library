@@ -3,4 +3,4 @@ In the introduction to Oracle Cloud, the Oracle Cloud Platform course is targete
 
 *Class Of SE - Oracle Cloud Platform HOL Lab Preparation* Lab 3 reviews set-up requirements and how to gain access to the Oracle Cloud. So you can successfully login and use the Oracle Cloud to execute hands-on-lab activities.
 
-*Class Of SE - Oracle Cloud HOL Lab*, Lab 4 you’re going to become proficient logging and navigating the Oracle Cloud My Services console so as to execute cloud service and solution labs.
+*Class Of SE - Oracle Cloud Platform HOL Lab*, Lab 4 you’re going to become proficient logging in and navigating the Oracle Cloud My Services console so as to execute cloud service and solution labs.

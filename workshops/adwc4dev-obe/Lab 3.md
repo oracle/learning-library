@@ -74,11 +74,7 @@ To log issues and view the Lab Guide source, go to the [github oracle](https://g
 
   ![](./images/IL-3/029.png)
 
-- Construct a URL for the file in Object Storage.  This will be used in SQLDeveloper to import the file into a database table.  The URL is structured as follows. The values for you to specify are in brackets.  Save this to a notepad for use in the following steps.
-
-`https://swiftobjectstorage.<region_name>.oraclecloud.com/v1/<tenant_name>/<bucket_name>/<file_name>`
-
-eg:  `https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/dgcameron2/adwc/credit_scoring_100k.csv`
+- Copy the URL to a notepad for the following import process.
 
   ![](./images/IL-3/030.png)
 
@@ -230,8 +226,8 @@ begin
  dbms_cloud.copy_data(
     table_name =>'credit_scoring_100k',
     credential_name =>'adwc_token',
-    file_uri_list => 'https://swiftobjectstorage.<your data center - eg us-ashburn-1>/v1/<your tenant - eg dgcameron2>/adwc/credit_scoring_100k.csv',
-    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD HH24:MI:SS', 'blankasnull' value 'true', 'delimiter' value ',')
+    file_uri_list => 'https://objectstorage.<your data center - eg us-ashburn-1>/n/<your tenant - eg dgcameron2>/adwc/o/credit_scoring_100k.csv',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD HH24:MI:SS', 'blankasnull' value 'true', 'delimiter' value ',', 'skipheaders' value '1')
  );
 end;
 /

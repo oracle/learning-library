@@ -13,7 +13,7 @@ Autonomous Transaction Processing provides all of the performance of the market-
 
 ATP provides a TLS 1.2 encrypted secure connectivity for applications. In fact, using a secure encryption wallet is the only way to connect to an ATP service instance, ensuring every connection to your database is secure, regardless how it gets routed.
 
-To **log issues**, click [here](https://github.com/cloudsolutionhubs/autonomous-transaction-processing/issues/new) to go to the github oracle repository issue submission form.
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 
@@ -246,39 +246,22 @@ sudo mkdir /opt/oracle
 sudo mv /home/opc/instantclient_12_2_linux/instantclient_12_2/ /opt/oracle/instantclient_12_2/
 ```
 
-### **STEP 5: Install node oracle drivers through npm**
+### **STEP 5: Clone Node application**
 
-- Download sample node.js app from git
-
-```
-cd /home/opc/
-
-git clone https://github.com/cloudsolutionhubs/ATPnodeapp
-```
-
-- In the node.js app folder install node oracle drivers from npm
+- Download a sample Node application in folder /home/opc
 
 ```
-cd ATPnodeapp/
-
-npm install oracledb
+$ wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/workshops/autonomous-transaction-processing/scripts/500/ATPnodeapp.zip?raw=true
 ```
 
-- Your sample application consists of 2 files, dbconfig.js and server.js. Set dbuser, dbpassword and connectString in dbconfig.js to point to your ATP database.
-
-- **dbuser**: admin
-- **dbpassword**: Admin passwrod, in our case it is 'WElcome_123#'
-- **connectString**: 'yourdbname_high'
+- Unzip ATPnodeapp.zip
 
 ```
-nano dbconfig.js
+$ mkdir ATPnodeapp && cd ATPnodeapp
 
-module.exports= {
-dbuser: 'admin', 
-dbpassword: 'WElcome_123#', 
-connectString: 'atplab_high' 
-}
+$ unzip /home/opc/ATPnodeapp.zip
 ```
+Now that you have a sample application setup, lets get your database's secure wallet for connectivity
 
 ### **STEP 6: Upload connection wallet and run sample app**
 
@@ -325,6 +308,22 @@ export TNS_ADMIN=/home/opc/ATPnodeapp/wallet_RESTONHUBDB/
 ```
 
 - We have now set up all the required packages and settings to run our server.js.
+
+- Your sample application consists of 2 files, dbconfig.js and server.js. Set dbuser, dbpassword and connectString in dbconfig.js to point to your ATP database.
+
+- **dbuser**: admin
+- **dbpassword**: Admin passwrod, in our case it is 'WElcome_123#'
+- **connectString**: 'yourdbname_high'
+
+```
+nano dbconfig.js
+
+module.exports= {
+dbuser: 'admin', 
+dbpassword: 'WElcome_123#', 
+connectString: 'atplab_high' 
+}
+```
 
 - Run server.js
 

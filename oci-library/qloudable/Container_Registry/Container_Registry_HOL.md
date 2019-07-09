@@ -1,4 +1,4 @@
-# Container Registry Practice - Creating Container Registry
+# Create Docker registry in OCI
   
 ## Table of Contents
 
@@ -6,236 +6,250 @@
 
 [Pre-Requisites](#pre-requisites)
 
-[Practice 1: Sign in to OCI Console and create VCN and Docker Registry](#practice-1-sign-in-to-oci-console-and-create-vcn-and-docker-registry)
+[Sign in to OCI Console and create VCN, Auth token and Docker Registry](#sign-in-to-oci-console-and-create-vcn,-auth-token-and-docker-registry)
 
-[Practice 2: Create ssh keys and compute instance](#practice-2-create-ssh-keys-and-compute-instance)
+[Create compute instance, install Docker and push images to registry](#create-compute-instance,-install-docker-and-push-images-to-registry)
 
-[Practice 3: SSH to Compute Instance install Docker and push images to registry](#practice-3-ssh-to-compute-instance-install-docker-and-push-images-to-registry)
-
-[Practice 4: Delete the resources](#practice-4-delete-the-resources)
+[Delete the resources](#delete-the-resources)
 
 ## Overview
 
-In this lab we will create Docker registry in OCI, we will then install Docker on a 
-compute instance and push and pull images to/from this registry.
+Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow. Oracle Cloud Infrastructure Registry makes it easy for you as a developer to store, share, and manage development artifacts like Docker images. And the highly available and scalable architecture of Oracle Cloud Infrastructure ensures you can reliably deploy your applications.
 
-Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow. Oracle Cloud Infrastructure Registry makes it easy for you as a developer to store, share, and manage development artifacts like Docker images. And the highly available and scalable architecture of Oracle Cloud Infrastructure ensures you can reliably deploy your applicationsYou can use Oracle Cloud Infrastructure Registry as a private Docker registry for internal use, pushing and pulling Docker images to and from the Registry using the Docker V2 API and the standard Docker command line interface (CLI). You can also use Oracle Cloud Infrastructure Registry as a public Docker registry, enabling any user with internet access and knowledge of the appropriate URL to pull images from public repositories in Oracle Cloud Infrastructure Registry.
+**Some Key points;**
 
-## Pre-Requisites
+**We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%**
 
-- Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
-## Practice-1: Sign in to OCI Console and create VCN and Docker Registry
 
+- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
+
+- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+
+- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
+
+- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
+
+- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+
+**Cloud Tenant Name**
+**User Name**
+**Password**
+**Compartment Name (Provided Later)**
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-**Before You Begin**
+## Pre-Requisites
 
-- We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%
+1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
-1. Sign in using your tenant name, user name and password.
+2. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
-2. Once signed in select the compartment assigned to you from drop down menu on left part of the screen
+3. Familiarity with OCI console: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm
 
-3. From the OCI Services menu,click **Virtual Cloud Network** under Networking and click **Create Virtual Cloud Network**
+4. Overview of Networking: https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+
+5. Familiarity with Compartment: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm
+
+6. Connecting to a compute instance: https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm
+
+
+## Practice-1: Sign in to OCI Console and create VCN, Auth token and Docker Registry
+
+
+* **Tenant Name:** {{Cloud Tenant}}
+* **User Name:** {{User Name}}
+* **Password:** {{Password}}
+* **Compartment:**{{Compartment}}
+
+1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
+
+2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
+
+3. Select the compartment assigned to you from drop down menu on left part of the screen
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-![]( img/OCIR_HOL001.PNG)
-![]( img/OCIR_HOL002.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
 
 4. Fill out the dialog box:
 
+
 - **Create in Compartment:** Has the correct compartment
-
 - **Name:** Enter easy to re¬member name
-
 - **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-
 - Click **Create Virtual Cloud Network**
-
 - Click **Close**
 
-![]( img/OCIR_HOL003.PNG)
-![]( img/OCIR_HOL004.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
+            
 
 ***We will now create an Auth Token. This token will be used to login to connect to OCI Docker registry from the Docker computeinstance that will be created later one***
 
-5.  Click **user icon** (Top Right of OCI Console Window) and then **User Settings** and then **Auth Token**
-![]( img/OCIR_HOL005.PNG)
+5. In OCI console Click the user icon (top right)  then **User settings**. Under Resrouces Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**
 
-6. Click **Generate Token**, Provide a description, and click **Generate Token**
-![]( img/OCIR_HOL006.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_005.PNG" alt="image-alt-text">
 
-7. Click **Copy** (Under the token) to copy the token
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_006.PNG" alt="image-alt-text">
 
-8. If Notepad is not launched already, click the Apps icon  and click notepad.
+6.  Click **Copy** and save the token in Notepad.**Do not close the window without saving the token as it can not be retrieved later**
 
-![]( img/RESERVEDIP_HOL006.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_007.PNG" alt="image-alt-text">
 
-9. Paste the Auth Token in Note pad(using your mouse/touch pad or Ctrl v).
-10. Switch to the OCI console window. 
+7. From OCI Services menu, Click **Registry(OCIR)** under **Developer Services**
 
-**HINT:** You can swap between OCI window and any other application(git-bash etc) by clicking the switch window icon
-![]( img/RESERVEDIP_HOL007.PNG)
-
-11. From OCI Services menu, click **Registry(OCIR)** under **Developer Services**
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0033.PNG" alt="image-alt-text">
  
-12. Click **Create Repository**. Provide Repository name (all Lowercase), Check **Public** and click **Submit**
-![]( img/OCIR_HOL0012.PNG)
+8. Click **Create Repository**. Provide Repository name (all Lowercase), Check **Public** for **Acess**, Click **Submit**
 
-13.  Once created, verify there are no existing images in 
-the repository (as shown in OCI console)
+9.  Once created, verify there are no existing images in the repository (as shown in OCI console)
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0034.PNG" alt="image-alt-text">
 
 ***We now have a Docker registry and Auth token (to validate login to the registry). Next we will create a Public/Private key pair and then compute instance to test pushing and pulling images from the registry.***
 
-## Practice 2: Create ssh keys and compute instance
+## Create compute instance, install Docker and push images to registry
 
-1. Open built in Git bash application and generate ssh keys
+1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
-2. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
-3. Enter command:
+2. Enter command 
 ```
 ssh-keygen
 ```
 **HINT:** You can swap between OCI window, 
-git-bash sessions and any other application (Notepad, etc.) by clicking the Switch Window icon 
+git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon 
 
-![]( img/RESERVEDIP_HOL007.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL007.PNG" alt="image-alt-text">
 
-4. Press Enter When asked for ‘Enter File in which to save the key’, ‘Created Directory, ‘Enter passphrase’, and ‘Enter Passphrase again.
-![]( img/RESERVEDIP_HOL008.PNG)
+3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
 
-5. You should now have the Public and Private keys:
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG" alt="image-alt-text">
+
+4. You should now have the Public and Private keys:
 
 /C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
+
 /C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
 
 **NOTE:** id_rsa.pub will be used to create 
 Compute instance and id_rsa to connect via SSH into compute instance.
 
-**HINT:** Enter command: (No Spaces)
- ```
- cd /C/Users/PhotonUser/.ssh
+**HINT:** Enter command 
 ```
- and then 
- ```
- ls
- ```
+cd /C/Users/PhotonUser/.ssh (No Spaces) 
+```
+and then 
+```
+ls 
+```
 to verify the two files exist. 
 
-6. In git-bash Enter command:
+5. In git-bash Enter command  
 ```
 cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 ```
-, highlight the key and copy 
+ , highlight the key and copy 
 
-![]( img/RESERVEDIP_HOL009.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG" alt="image-alt-text">
 
-7. Click the apps icon, launch notepad and paste the key in Notepad (as backup)
+6. Click the apps icon, launch notepad and paste the key in Notepad (as backup)
 
-![]( img/RESERVEDIP_HOL0010.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-8. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
 
-9. Click Create Instance. Fill out the dialog box:
+8. Click Create Instance. Fill out the dialog box:
+
 
 - **Name:** Enter a name 
-
-- **Availability Domain:** Select the first available domain.(usually AD1)
-
+- **Availability Domain:** Select availability domain
 - **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-
 - **Choose Instance Type:** Select Virtual Machine
-
-- **Choose Instance Shape:** Select VM.Standard.E.2.1
-
+- **Choose Instance Shape:** Select VM shape
 - **Configure Boot Volume:** Leave the default
-
-- **Add SSH Keys:** Choose ‘Paste SSH Keys’ and paste the Public Key saved earlier.
-
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 - **Virtual Cloud Network Compartment:** Choose your compartment
-
 - **Virtual Cloud Network:** Select the VCN you created in the previous section. 
-
 - **Subnet Compartment:** Choose your compartment. 
-
 - **Subnet:** Choose the first Subnet
 
-10. Click **Create**
+9. Click **Create**
 
-**NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2
+**NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2 OR choose a different AD
 
-![]( img/RESERVEDIP_HOL0011.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
-***Next we will ssh to the compute instance and install Docker.***
-
-## Practice 3: SSH to Compute Instance install Docker and push images to registry
-
-1. In git-bash type cd /C/Users/PhotonUser/.ssh
-
-2. Enter command
+10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
 ```
-ls
+ cd /C/Users/PhotonUser/.ssh
 ```
-and verify id_rsa file exists
 
-3. Enter command 
+11. Enter **ls** and verify id_rsa file exists
+
+12. Enter command 
 ```
-ssh –i id_rsa opc@<PUBLIC_IP_OF_COMPUTE_INSTANCE>
+ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
 ```
-**NOTE:** User name is opc
 
-**HINT:** If ‘Permission denied error’ is seen, ensure you are using ‘-i’ in the ssh command
+**HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command
 
-4. Enter ‘Yes’ when prompted for security message
+13. Enter 'Yes' when prompted for security message
 
-![]( img/RESERVEDIP_HOL0014.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG" alt="image-alt-text">
  
-5. Verify opc@<COMPUTE_INSTANCE_NAME(reserved-ip-instance1 in this case) appears on the prompt
+14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt. Nex install Dcoker, Enter command:
 
-6.  Enter command:
 ```
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
-![]( img/OCIR_HOL0020.PNG)
 
-7. Enter command:
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0035.PNG" alt="image-alt-text">
+
+15. Enter command:
 ```
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo**
 ```
-![]( img/OCIR_HOL0021.PNG)
 
-8. Enter command:
+16. Enter command:
 ```
 sudo yum install docker-ce –y
 ```
 (Wait for ‘Complete’message)
-![]( img/OCIR_HOL0022.PNG)
 
-9. Enter command:
+17. Enter command:
 ```
 sudo systemctl enable docker
 ```
 
-10. Enter command:
+18. Enter command:
 ```
 sudo systemctl start docker
 ```
-11. Enter command: (To add user opc to Docker)
+
+19. Enter command: (To add user opc to Docker)
 ```
 sudo usermod -aG docker opc
 ```  
 
-12. Docker is installed and user opc enabled to use Docker. Enter Command 
-```Exit
+20. Docker is installed and user opc enabled to use Docker. Enter Command 
 ```
-to logout of ssh session on compute instance and then ssh back in to the compute instance. Enter command **Docker images** and ensure no error is displayed
-![]( img/OCIR_HOL0023.PNG)
+Exit
+```
 
-13. We will now pull a example image from Docker registry  to the compute instance. Enter Command:
+to logout of ssh session on compute instance and then ssh back in to the compute instance. Enter command **Docker images** and ensure no error is displayed
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0036.PNG" alt="image-alt-text">
+
+21. We will now pull a example image from Docker registry  to the compute instance. Enter Command:
+
 ```
 docker image pull alpine
 ``` 
@@ -244,36 +258,42 @@ Verify image pull was successful, Enter Command
 Docker images
 ``` 
 and verify alpine is present
-![]( img/OCIR_HOL0024.PNG)
 
-14. Now we will push this image to Docker registry created in OCI. First login to Registry in OCI. Enter command 
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0037.PNG" alt="image-alt-text">
+
+22. Now we will push this image to Docker registry created in OCI. First login to Registry in OCI. Enter command:
+
 ```
 docker login <Region_Name_Code>.ocir.io
 ```
-**NOTE:** Region name code are, fra for Frankfurt, iad for Ashburn, lhr for London, phx for Phoenix.
 
-![]( img/OCIR_HOL0025.PNG)
+**NOTE:** Region name code are, fra for Frankfurt, iad for Ashburn, lhr for London, phx for Phoenix.
 
 **HINT:** Your region is shown on top right corner of OCI console window
 
-![]( img/OCIR_HOL0026.PNG)
+23. Provide the information:
 
-- Username:  Enter it in format Tenancy Name/User name (TS-SPL-55/john_doe)
+
+- Username:  Enter it in format Tenancy Name/User name (for example: TS-SPL-55/john_doe)
 - Password: Paste the Auth key saved earlier (Characters wont be visible)
 
-![]( img/OCIR_HOL0027.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0038.PNG" alt="image-alt-text">
 
-15. Verify Login Succeeded message is displayed.
+24. Verify Login Succeeded message is displayed.
 
-16. Next we will tag the image that we pulled from the web. Enter command 
+25. Next we will tag the image that we pulled from the web. Enter command:
+
 ```
 docker images
 ``` 
 and note down the image id of alpine. Enter command: (No Spaces)
+
 ```
 docker tag <image_id>  <Region_Name_Code>.ocir.io/<TenancyName>/<docker_registry_name>:<image_name> 
 ```
-17. Verify the tag was created, Enter command 
+
+26. Verify the tag was created, Enter command:
+
 ```
 docker images
 ``` 
@@ -281,66 +301,72 @@ and verify version x.y.test is present. x and y will be the numeric version numb
 
 **NOTE:** In below example:
 
+
 - <image_id> is **3fd9065eaf02** 
-
 - <Region_Name_Code> is **iad** 
-
 - <Tenancy_Name> is **us_training** 
-
 - <docker_registry_name> is **docker-test-image**
-
 - <image_name> is **version4.0.test**  
-![]( img/OCIR_HOL0028.PNG)
 
-18. We will now push the image to docker registry in OCI. 
-Enter command: 
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0039.PNG" alt="image-alt-text">
+
+27. We will now push the image to docker registry in OCI. Enter command: 
+
 ```
 docker push <Region_Name_Code>.ocir.io/<Tenancy_Name>/<docker_registry_name>:<image_name>** (No Spaces)
 ```
 **NOTE:** In below example:
+
+
 - <Region_Name_Code> is **iad**
 - <Tenancy_Name> is **us_training**
 - <docker_registry_name> is **docker-test-image**
 - <image_name> is **version4.0.test**  
-![]( img/OCIR_HOL0029.PNG)
 
-19. Switch to OCI window and navigate to your registry. Newly pushed image should be visible.
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0040.PNG" alt="image-alt-text">
+
+28. Switch to OCI window and navigate to your registry. Newly pushed image should be visible.
 
 **HINT:** Refresh the browser window if image is not displayed
 
-![]( img/OCIR_HOL0030.PNG)
-
-20. Switch to compute instance ssh window. Enter command 
+29. Switch to compute instance ssh window. Enter command:
 ```
 docker pull <Region_Name_Code>.ocir.io/<Tenancy_Name>/<docker_registry_name>:<image_name>**  (No Spaces)    
 ```
-21. Verify the pull command was successful
-![]( img/OCIR_HOL0031.PNG)
+30. Verify the pull command was successful
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0041.PNG" alt="image-alt-text">
 
 **HINT:** We are pulling the same image that we just pushed.
 
 ***We now have a working Docker registry and can successfully push and pull images to/from it.***
 
-## Practice 4: Delete the resources
+## Delete the resources
 
 1. Switch to  OCI console window
 
 2. If your Compute instance is not displayed, From OCI services menu Click Instances under Compute
 
 3. Locate first compute instance, Click Action icon and then **Terminat** 
-![]( img/RESERVEDIP_HOL0016.PNG)
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG" alt="image-alt-text">
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate
 
-![]( img/RESERVEDIP_HOL0017.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG" alt="image-alt-text">
 
-5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
+
+5. Repeat the step to delete second compute instance
+
+6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-6. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
-![]( img/RESERVEDIP_HOL0018.PNG)
+7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
-7. From OCI Services menu, click **Registry(OCIR)** under **Developer Services**, click Registry Name, Under **Action** click **Delete Repository**  ,click **Delete** in confirmation window
-![]( img/OCIR_HOL0032.PNG)
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
 
-***Congratulations! You have successfully completed Creating Docker Registry on Oracle Cloud Infrastructure .In this lab we successfully set up a Registry in OCI, Installed Docker on compute instance and then pushed and pulled images from the registry.***
+8. Navigate to your registry(**Registry(OCIR)** under **Developer Services**), Click Registry Name, Under **Actions** Click **Delete Repository**  ,Click **Delete** in confirmation window
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Container_Registry/img/OCIR_HOL0042.PNG" alt="image-alt-text">
+
+***Congratulations! You have successfully completed the lab.***

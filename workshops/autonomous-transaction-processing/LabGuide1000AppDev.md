@@ -6,7 +6,7 @@ October 18, 2018
 # Lab 10: Mastering DevOps in the Oracle Cloud
 </td></tr><table>
 
-# Rapid Application Devlopment with Oracle Autonomous Database
+# Mastering DevOps in the Oracle Cloud
 
 DevOps is an organizational philosophy that allows for rapid delivery of products using agile practices, tools and infrastructure. DevOps focuses on the ability of developers and IT Operations  staff to leverage cloud resources to rapidly deploy infrastructure and PaaS services such that personnel bottlenecks is no longer an issue for delivering applications internally. DevOps practices can be adopted by anyone in an organization that wishes to participate in a changing culture of agility and collaboration.
 

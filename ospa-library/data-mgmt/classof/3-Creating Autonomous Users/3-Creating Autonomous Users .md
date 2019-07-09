@@ -55,7 +55,9 @@ connection strings be copied from (more on this in other modules)
 
 ## Module 2:  Connect to your ADB instance with SQL Developer 
 
+
 **PLEASE NOTE: SQL DEVELOPER CONNECTIONS DO NOT WORK IF YOU ARE BEHIND THE VPN OR ON ORACLE OFFICE PRIVATE NETWORKS. IF YOU ARE USING THE VPN CLIENT YOU MUST DISCONNECT FROM VPN, AND FROM AN ORACLE OFFICE CONNECT TO A OPEN/PUBLIC ACCESS NETWORK**
+
 
 *(Make sure you are running the latest version of SQL Developer 18.4. Some older versions will not work with ATP, see lab introductions on how to install)*
 
@@ -72,20 +74,26 @@ top left of the SQL Developer homepage.
 
 3. The new Database Connection screen will appear:
 
-![](./media/image8.png)
+![](./media/5e7ce7da8b1304d89cfad7c628942219.png)
 <p align="center">Figure 2-2</p>
 
 4. Fill in the connection details as below:
 
-**Connection Name:** `admin`
+**Name:** `admin`
+
+**Database Type:** Oracle
+
+**Authentication Type** Default
 
 **Username:** `admin`
 
 **Password:** *The admin password you specified during database provisioning*
 
-**Connection Type:** *Cloud Wallet*
+**Role** Default
 
-**Configuration File:** Enter the full path for the wallet file you downloaded before (in my example wallet\_ATPXWEEK.zip), or click the Browse button to point to the location of the file.
+**Connection Type:** Cloud Wallet
+
+**Configuration File:** Enter the full path for the wallet file you downloaded before, or click the Browse button to point to the location of the file.
 
 
 ![../Desktop/Screen%20Shot%202019-04-22%20at%2012.24.09%20PM.png](./media/image9.png)
@@ -105,7 +113,7 @@ top left of the SQL Developer homepage.
 your connection it will appear on the list of connections on the top
 left corner of the main dashboard, under connections.
 
-![../Desktop/Screen%20Shot%202019-04-22%20at%2012.28.02%20PM.png](./media/image10.png)
+![](./media/77e7f1ed47bd7ef10eee546c361aac8a.png)
 <p align="center">Figure 2-4</p>
 
 **Troubleshooting your connection**
@@ -141,11 +149,19 @@ The labs will require each member of the group to create and query tables in the
 ![](media/3a8a6539c8e04037636b43ed466d8ba0.png)
 <p align="center">Figure 3-3</p>
 
-4. For each member  in your group, copy  the SQL below, paste it in the Query Builder window and run it. Replicate the same code for each member, changing the information (the username and the password) for each member. The easiest way to do it is to create all users at once, but you can run the same code as many times as members in your group, changing the information each time.
+4. now create 5 student accounts, one for each member  in your group, copy  the SQL below, paste it in the Query Builder window and run it. If your group has less than 5 members don't worry. If your team has more than 5 members run the create student and grant role statements for each additional member. Each member of your group will have their own database account so distribute the accounts to each student. Member one wil be student1, member2 will be student2 and so on. To make it easier all student accounts have the same password "2019Students".
 
 ```
-create user  “studentname” identified by  "studentpassword" ;
-grant dwrole to “studentname”;
+create user student1 identified by "2019Students";
+grant dwrole to student1;
+create user student2 identified by "2019Students";
+grant dwrole to student2;
+create user student3 identified by "2019Students";
+grant dwrole to student3;
+create user student4 identified by "2019Students";
+grant dwrole to student4;
+create user student5 identified by "2019Students";
+grant dwrole to student5;
 ```
 
 In the picture below is an example of creating four accounts at once. I pasted and replicated the code for each user and then selected the run Run Script button.
@@ -200,10 +216,9 @@ your new OML user and click **Create**. This is a completely new user
 account that will be used anytime you want to access OML. Make sure you
 keep this information. Notice that you can specify an email address
 where your user information and a direct link to the OML login will be
-emailed to you. This will help you later when you need to reconnect to
-OML.
+emailed to you **by selecting the Generate password...** selection box. This will help you later when you need to reconnect to OML, but will also required a password change at first login. If you select this option, make sure that the email address is different and correct for every user that is created.
 
-A different account needs to be created for each member of your group just like you did in the module above in SQL Developer. To make things simple you can use the same account names (and passwords) for the OML accounts as you did for the database accounts.
+**A different account needs to be created for each member of your group** just like you did in the module above in SQL Developer. To make things simple you can use the same account names (and passwords) for the OML accounts as you did for the database accounts.
 
 ![../Desktop/Screen%20Shot%202019-04-22%20at%2012.29.21%20PM.png](./media/image17.png)
 <p align="center">Figure 4-5</p>

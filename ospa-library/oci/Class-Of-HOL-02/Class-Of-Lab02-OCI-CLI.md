@@ -36,6 +36,7 @@ This lab will show you the installation and configuration of the CLI, along with
 - Chrome browser is recommended
 
 # Create a VCN
+[Back to top](#Class-of-SE---HOL-Part-2)
 
 In this first section, we'll create a VCN and an OCI instance.  We'll install and run the CLI commands from this instance in order to create more resources.
 
@@ -72,6 +73,7 @@ Selecting **Create Virtual Cloud Network Plus Related Resources** is the easy wa
 
 
 # Create a compute instance and install the OCI CLI
+[Back to top](#Class-of-SE---HOL-Part-2)
 
 **Note:**  *You will need an SSH key pair to create and access an OCI instance.  You can use an existing SSH Key pair (the one you created in the last lab), or create a new one.  If you would like to create a new key pair, please reference the key pair creation information from the first hands on lab.*
 
@@ -88,23 +90,31 @@ Confirm that the proper compartment is selected and click on either **Create Ins
    ![](./media/image008.png)
 *<p align="center"> Figure 7: Compartment verification and Create Instance</p>*
 
-2. Use the following information to complete the instance dialog box.
+2. Use the following information to complete the create instance dialog box.
 
-   - **Name:** Enter a name.  *ex:*  cli-instance
-   - **Availability Domain:** Select AD1 unless otherwise instructed
-   - **Image Operating System:** Select **Oracle Linux 7.6** with the latest build
-   - **Choose Instance Type:** Choose **Virtual Machine**
-   - **Choose Instance Shape:** Select VM.Standard2.1 or smaller shape
-   - **Add SSH Keys:** Select your preferred SSH key 
-   
+| **Name:**                | \<instance name\> |
+| ------------------------ | ------------------------------------------------ |
+| Instance Name: | Name of your choice   |
+| Availability Domain: | AD of your choice, AD1, AD2, or AD3   |
+| Operating System:    | Oracle Linux 7.6                            |
+| Instance Type:       | Virtual Machine                             |
+| Shape:               | VM.Standard1.2                              |
+| Boot Volume:         | Default                                     |
+| SSH Key:             | Choose SSH Key file or Paste SSH keys      |
+| Compartment:         | Your compartment (*ex: team-100*)     |
+| VCN:                 | Your VCN (*ex: Team 100 VCN*)              |
+| Subnet Compartment:  | Your subnet compartment* (*ex: team-100*)     |
+| Subnet:              | Public Subnet in your compartment            |
+
    The following selections should contain default information.  Verify and change if necessary before continuing.
    - **Virtual Cloud Network Compartment:** Verify that your compartment is selected
    - **Virtual Cloud Network:** Select the VCN you created in the previous section.
    - **Subnet Compartment:** Verify the same compartment has been selected
    - **Subnet:** Choose the first public subnet
-   - Click **Create**
 
-**NOTE:** *If creation results in a 'Service limit' error.  Check the service limits and try a different shape such as VM.Standard.E2.1. You may need to alert an administrator for service limit and instance shape availability information*
+Click **Create**
+
+**NOTE:** *If creation results in a 'Service limit' error, try another Availability Domain or check the service limits and try a different shape.  You may need to alert an administrator for service limit and instance shape availability information*
 
    ![](./media/image009.png)
 *<p align="center"> Figure 8: Instance creation dialog</p>*
@@ -232,6 +242,7 @@ Use the *cat* command to view the RSA fingerprint listed in the config file.  We
 - Leave the SSH session window open and available.  We will use that information to compare with the OCI console after we've uploaded the API keys.
 
 # Upload API keys and Verify Connectivity
+[Back to top](#Class-of-SE---HOL-Part-2)
 
 In this section, we'll upload the API key to the web console.  
 
@@ -340,6 +351,7 @@ Use the variable we just created in a cli command to list the VCN's in your netw
 **NOTE:** *The command above should return details for the VCN you that you created at the start of this lab. If you encounter an error message, please contact the instructor.*
 
 # Use the CLI to create a VCN
+[Back to top](#Class-of-SE---HOL-Part-2)
 
 From this point in the lab, we'll mainly be using the CLI to add and configure resources.  Feel free to copy/paste the command line examples if you don't want to type each command directly.   The command lines can get quite lengthy with all the different available options.  This is where you can start thinking about how automation and scripting could make things faster and easier for customers.  From the CLI and scripting you can easily branch off to API calls and using other tools like Terraform.
 
@@ -487,6 +499,7 @@ Again, record the route table id as a variable.
 **Note:** *When updating route tables or security lists with the cli, you cannot insert rules one at a time.  If you have multiple rules, they must all be added simultaneously.*
 
 # Launch a Compute Instance
+[Back to top](#Class-of-SE---HOL-Part-2)
 
 1. Use the CLI ``query`` command to retrieve the OCID for the latest Oracle Linux image.  
 
@@ -580,6 +593,7 @@ Capture the ``id:`` of the compute instance launch output.
  [Conclusion](#Conclusion)
 
 # OCI Challenge - Create and Destroy resources
+[Back to top](#Class-of-SE---HOL-Part-2)
 
 This challenge is optional if you have extra time.   Below are a couple of objectives that you can try on your own with no step-by-step instructions.  Use the knowledge that you've gained already plus resources like the OCI CLI reference documentation, Oracle blogs, etc. for guidance.
 
