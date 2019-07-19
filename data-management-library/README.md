@@ -1,7 +1,7 @@
 ---
-layout: ziplab
+layout: dblab
 description: Data management library home page
-tags: ziplab, oracle cloud
+tags: dblab, oracle cloud
 permalink: /data-management-library/index.html
 ---
 # Oracle Autonomous Database Workshop Catalog
