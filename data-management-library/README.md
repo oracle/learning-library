@@ -2,7 +2,7 @@
 layout: ziplab
 description: Data management library home page
 tags: ziplab, oracle cloud
-permalink: /learning-library/data-management-library/index.html
+permalink: /data-management-library/index.html
 ---
 # Oracle Autonomous Database Workshop Catalog
 
