@@ -28,7 +28,7 @@ As a fleet administrator,
 
 ## Deploy your Autonomous Exadata Infrastructure (AEI) ##
 
-1. Login to your OCI account as a fleet administrator
+### Login to your OCI account as a fleet administrator ###
 
 Navigate to the 'Autonomous Transaction Processing' option in the top left hamburger menu from your OCI home screen
 
@@ -36,7 +36,7 @@ Navigate to the 'Autonomous Transaction Processing' option in the top left hambu
 
 
 
-2. Select 'Autonomous Exadata Infrastructure' and ensure you pick the fleet compartment as shown above. Click the blue 'Create Autonomous Exadata Infrastructure' button
+### Select 'Autonomous Exadata Infrastructure' and ensure you pick the fleet compartment as shown above. Click the blue 'Create Autonomous Exadata Infrastructure' button ###
 
 
 
@@ -44,7 +44,7 @@ Navigate to the 'Autonomous Transaction Processing' option in the top left hambu
 
 
 
-3. In the network section, select, 
+### In the network section, select, ###
 
     1. The compartment that hosts the VCN; typically the fleetCompartment
     2. Name of the VCN
