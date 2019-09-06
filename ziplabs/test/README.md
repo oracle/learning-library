@@ -40,7 +40,7 @@ Navigate to the 'Autonomous Transaction Processing' option in the top left hambu
 
 
 
-![create_aei3](./images/200/create_aei3.png)
+![create_aei3](./img/create_aei3.png)
 
 
 
@@ -55,11 +55,11 @@ Your network or fleet administrator needs to setup the network before you can de
 
 You can also modify the exadata and database maintenance schedules at this time. Click the 'Modify Schedule' button and specify the quarter, week, day and time you would like to schedule automatic maintenance for your exadata hardware and container databases
 
-![select_schedule](./images/200/select_schedule.png)
+![select_schedule](./img/select_schedule.png)
 
 You also have two options for selecting the license type for the database containers (ACDs) you deploy on your autonomous exadata infrastructure. You can either bring your spare corporate database licenses to OCI or you can buy a license subscription in the cloud. Pick the best option for you and hit the Create button. Your AEI will soon be ready to deploy autonomous container databases.
 
-![license_type](./images/200/license_type.png)
+![license_type](./img/license_type.png)
 
 
 ### All Done! You have successfully deployed your Autonomous Exadata Infrastructure and it should be available shortly.
