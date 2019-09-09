@@ -37,16 +37,17 @@ Navigate to the 'Autonomous Transaction Processing' option in the top left hambu
 ![create_aei1](./img/create_aei1.png)
 
 
+### Autonomous Exadata Infrastructure ###
 
-### Select 'Autonomous Exadata Infrastructure' and ensure you pick the fleet compartment as shown above. Click the blue 'Create Autonomous Exadata Infrastructure' button ###
+#### Select 'Autonomous Exadata Infrastructure' and ensure you pick the fleet compartment as shown above. Click the blue 'Create Autonomous Exadata Infrastructure' button ####
 
 
 
 ![create_aei3](./img/create_aei3.png)
 
+### Network Configuration ###
 
-
-### In the network section, select, ###
+#### In the network section, select, ####
 
     1. The compartment that hosts the VCN; typically the fleetCompartment
     2. Name of the VCN
