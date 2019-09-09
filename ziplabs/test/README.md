@@ -47,12 +47,15 @@ Navigate to the 'Autonomous Transaction Processing' option in the top left hambu
 
 ### Network Configuration ###
 
-- In the network section, select, 
+- In the network section, select,
 
+```
     1. The compartment that hosts the VCN; typically the fleetCompartment
     2. Name of the VCN
     3. The compartment that hosts the subnet, also fleetCompartment
     4. The subnet to hold the exadata infrastucture
+```
+
 
 Your network or fleet administrator needs to setup the network before you can deploy an AEI. Please contact your network / account admin if a suitable network is not visible in the drop down options
 
