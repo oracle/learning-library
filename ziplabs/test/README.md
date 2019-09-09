@@ -65,4 +65,4 @@ You also have two options for selecting the license type for the database contai
 ![license_type](./img/license_type.png)
 
 
-### All Done! You have successfully deployed your Autonomous Exadata Infrastructure and it should be available shortly.
+#### All Done! You have successfully deployed your Autonomous Exadata Infrastructure and it should be available shortly.
