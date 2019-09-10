@@ -28,7 +28,7 @@ As a fleet administrator,
 
 ## Deploy your Autonomous Exadata Infrastructure (AEI) ##
 
-### LOGIN ###
+### LOGIN stupid ###
 
 - Login to your OCI account as a fleet administrator 
 
