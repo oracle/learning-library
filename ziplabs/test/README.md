@@ -34,7 +34,7 @@ As a fleet administrator,
 
 Navigate to the 'Autonomous Transaction Processing' option in the top left hamburger menu from your OCI home screen
 
-![create_aei1](./img/create_aei1.png)[#imgFitWindowResize]
+![create_aei1](./img/create_aei1.png)[imgFitWindowResize id]
 
 
 ### Autonomous Exadata Infrastructure ###
