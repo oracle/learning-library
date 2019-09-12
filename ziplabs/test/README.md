@@ -28,13 +28,13 @@ As a fleet administrator,
 
 ## Deploy your Autonomous Exadata Infrastructure (AEI) ##
 
-### LOGIN ###
+### LOGIN changes ###
 
 - Login to your OCI account as a fleet administrator 
 
 Navigate to the 'Autonomous Transaction Processing' option in the top left hamburger menu from your OCI home screen
 
-![create_aei1](./img/create_aei1.png)[imgFitWindowResize id]
+![create_aei1](./img/create_aei1.png)
 
 
 ### Autonomous Exadata Infrastructure ###
