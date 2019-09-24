@@ -3,7 +3,7 @@
 
 ## Who Should Complete This Lab: All Participants
 
-# Loading An Autonomous Database
+# Loading an Autonomous Database
 
 ## Table of Contents
 
@@ -227,7 +227,7 @@ as well, for customers who want to put data on our Cloud Storage and load from
 there.
 
 3. Next click on **Browse** and navigate to the location on your machine where you
-stored the file channels.csb you just downloaded. Select the file and click **Open** once you
+stored the file channels.csv you just downloaded. Select the file and click **Open** once you
 find it.
 
 ![](media/fd5ce417e31ef97c150dc3a537e748e7.png)

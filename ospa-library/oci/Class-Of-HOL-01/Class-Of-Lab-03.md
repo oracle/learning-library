@@ -5,7 +5,7 @@
 
 Contents
 
-[Section 6. Create SSH Key Pair (Linux, Mac, Windows client)](#create-ssh-key-pair-linux-mac-windows-client)
+[Section 6. Create SSH Key Pair (Linux, Mac, Windows, Windows 10)](#create-ssh-key-pair-linux-mac-windows-client)
 
 [Section 7. Create a Compute Instance](#create-a-compute-instance)
 
@@ -18,16 +18,20 @@ Contents
 # Create SSH Key Pair (Linux, Mac, Windows client)
 [Back to top](#Class-of-SE---HOL-Part-3---Creating-and-accessing-an-instance)
 
-SSH keys are required to access a running OCI instance securely. You can use an existing SSH-2 RSA key pair or create a new one. Below are instructions for generating your individual key pair for Linux/Mac and Windows. You can also find instructions on the OCI documentation page.
+SSH keys are required to access a running OCI instance securely. You can use an existing SSH-2 RSA key pair or create a new one. Below are instructions for generating your individual key pair for Linux, Mac, Windows, and Windows 10.  Windows 10 is the first Windows version to natively support ssh and terminal access.   Insructions for creating SSH keys can also be found on the OCI documentation page.
 <https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/creatingkeys.htm>
 
-## Linux or Mac based Laptop  
+Scroll down and choose the key creation method for your operating system, Linux/Mac, Windows, or Windows 10.
 
-1.  **Open** a terminal and type the ssh-keygen command.
+## Linux or Mac based Operating System  
 
-    `[opc-instance]$ ssh-keygen -t rsa -N "passphrase" -b 2048 -C "<enteryourkeyname>" -f <enteryourkeyname>-key`
+1.  **Open a terminal**  From the opc user home directory (default) type the ssh-keygen command.  Press \<Enter> when asked for the filename, and \<Enter> twice for *no passphrase*.
 
-**Note:** *Don't lose your key or forget your passphrase, the key won't be usable without them.  Also, the passphrase isn't required for this lab but should be used for production as a security best practice.*
+    `[opc-instance]$ ssh-keygen`
+
+**Note:** *Don't lose your key or forget the passphrase if you assign one, the key won't be usable without them.* 
+
+Typing *ssh-keygen* by itself creates a key named id_rsa under the default .ssh directory.  If you want to name your key, store it in another directory, or add other security options, the ssh-keygen command takes a number of useful switches.  
 
 **ssh-keygen command switch guide:**
 
@@ -37,43 +41,45 @@ SSH keys are required to access a running OCI instance securely. You can use an 
     -C – Key name identifier
     -f - \<path/root\_name\> - location and root name for files
 
-![](./media/image32.png)
+![](./media/image32a.png)
 
 *<p align="center"> Figure 24: ssh-keygen command </p>*
 
-7.  The key pair you generated is now in the current directory.  Use the `ls -l` command to verify.
+For this lab, the default key is all that's necessary
 
-![](./media/image33.png)
+2.  The key pair you generated is now stored in the default .ssh directory.  Use the `ls -l .ssh` command to verify.
 
-*<p align="center"> Figure 25: Sample key pair with the example name of team-100.  Your key name should be different. </p>*
+![](./media/image33a.png)
 
-8.  For Linux and Mac Clients copy the contents of the public key file (.pub). Use an editor or cat command to view the file and copy the key contents. You can use this for the ‘paste key’ dialog when launching an instance.
+*<p align="center"> Figure 25: Sample key pair stored in the .ssh directory. </p>*
 
-![](./media/image34.png)
+3.  For Linux and Mac Clients you can load the .pub keyfile directly from the OCI Compute Instance creation screen.  Just remember the folder where you stored it.  Or optionally, you can copy the contents of the public key file (.pub). Use an editor or the `cat` command to view the file and copy the key contents. You can use this for the ‘paste key’ dialog when launching an instance.  Whichever method you prefer.
+
+![](./media/image34a.png)
 
 *<p align="center"> Figure 26: Copy ssh key </p>*
 
-##  Windows
+##  Windows Operating System (*Version earlier than 10*)
 
-A third party SSH client needs to be installed for Windows versions prior to Windows 10 in order to generate SSH keys. You can use Git Bash, Putty, or a tool of your choice. This tutorial will use Putty as an example. Git Bash instructions are the same as the Linux instructions above.
+A third party SSH client needs to be installed for Windows versions prior to Windows 10 in order to generate SSH keys. You can use Git Bash, Putty, or a tool of your choice. This tutorial will use Putty as an example. Git Bash or any third party shell program instructions will likely be the same as the Linux instructions above.
 
-**Note:** *If you don’t already have it, download the Putty application and install it on your Windows machine. [<span class="underline">Download Putty</span>](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).  Puttygen is a utility that comes with the Putty package and is used to generate SSH keys.*
+**Note:** *If you don’t already have it, download the Putty application and install it on your Windows machine. [<span class="underline">Download Putty</span>](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).  Puttygen is a utility that comes with the Putty package and is used to generate SSH keys.  For Oracle employees, Putty is also available from the MyDesktop application.*   
 
 <!-- end list -->
 
-9.  From the Windows start menu, run the PuTTYgen utility
+1.  After installing Putty, from the Windows start menu, run the PuTTYgen utility
 
 ![](./media/image35.png)
 
 *<p align="center"> Figure 27:  PuTTYgen utility command </p>*
 
-10. Click the Generate button and follow the instructions for generating random information.
+2. Click the Generate button and follow the instructions for generating random information.
 
 ![](./media/image36.png)
 
 *<p align="center"> Figure 28: Generate the key with PuttyGen </p>*
 
-11. After the key information has been generated, enter a **passphrase** and press the **Save private key** button to save the key to your system.
+3. After the key information has been generated, enter an optional **passphrase** and press the **Save private key** button to save the key to your system.
 
 **Note:** *A passphrase is not required but recommended for stronger security.*
 
@@ -81,7 +87,7 @@ A third party SSH client needs to be installed for Windows versions prior to Win
 
 *<p align="center"> Figure 29: Putty save key dialog </p>*
 
-12. The private key should have the .ppk extension. Store it in a folder that’s easily accessible.
+4. The private key should have the .ppk extension. Name it whatever you want and store it in a folder that’s easily accessible.
 
 ![](./media/image38.png)
 
@@ -89,40 +95,82 @@ A third party SSH client needs to be installed for Windows versions prior to Win
 
 **NOTE:**  *We will not use the ‘Save public key’ option in PuttyGen, as the keyfile is not compatible with Linux openSSH. Instead, we will copy and paste the key information into a text file.*
 
-13. Left click on the Public key information and choose ‘Select All’ to select everything in the key field. Then left click again and copy the selected information to the clipboard.
+5. Left click on the Public key information and choose ‘Select All’ to select everything in the key field. Then left click again and copy the selected information to the clipboard.
 
 ![](./media/image39.png)
 
 *<p align="center"> Figure 31: Save all and copy key to clipboard </p>*
 
-14. We will use the clipboard to paste the key information in the next step but you can also save your public key to a text file with Notepad. Open a plain text editor and paste the key information. Name and save the file with a .pub extension.
+6. We will use the clipboard to paste the key information in the next step but you can also save your public key to a text file with Notepad. Open a plain text editor and paste the key information. Name and save the file with a .pub extension.
 
 ![](./media/image40.png)
 
 *<p align="center"> Figure 32: Key pasted and saved with Windows Notepad </p>*
 
-15. Close the Puttygen application
+7. Close the Puttygen application
+
+## Windows 10 Based Operating System  
+
+1.  **Open a cmd or Powershell window** Either select the application from the Windows Start menu or type 'cmd' or 'powershell' from the Windows search menu.  
+
+![](./media/image400.png)
+
+*<p align="center"> Figure 33: Windows search menu 'Powershell' </p>*
+
+SSH commands are available from either application, you can use whichever application you prefer.
+
+![](./media/image401.png)
+
+*<p align="center"> Figure 34: Windows CMD window and Powershell window </p>*
+
+2. From your home directory (should be the default C:\Users\<Your Name>) type the `ssh-keygen` command.  Press **Enter** when asked for the filename, and press **Enter** twice for *no passphrase*.
+
+    `PS C:\Users\dkingsle> ssh-keygen`
+
+![](./media/image402.png)
+
+*<p align="center"> Figure 35: ssh-keygen command from Powershell</p>*
+
+Typing *ssh-keygen* by itself creates a key named id_rsa under the default .ssh directory.  If you want to name your key, store it in another directory, or add other security options, the ssh-keygen command takes a number of useful switches.  
+
+**ssh-keygen command switch guide:**
+
+    -t – algorithm
+    -N – “passphrase” Not required but best practice for better security
+    -b – Number of bits – 2048 is standard
+    -C – Key name identifier
+    -f - \<path/root\_name\> - location and root name for files
+
+For this lab, the default key is all that's necessary
+
+3.  The key pair you generated is now stored in the default .ssh directory.  Use the `ls -l .ssh` command to verify.
+
+**Note:** *With Linux/Mac OS, the .ssh directory is hidden and can be viewed with the `ls -a` command switch.  In Windows, the .ssh directory is not hidden and requires no special treatment.*
+
+![](./media/image403.png)
+
+*<p align="center"> Figure 36: Key pair files stored in the .ssh directory. </p>*
 
 # Create a Compute Instance
 [Back to top](#Class-of-SE---HOL-Part-3---Creating-and-accessing-an-instance)
 
-1.  Navigate to the OCI console, use the top left hamburger menu and choose **Compute \> Instances** to open the Instance Creation menu.
+1.  Now that you've successfully created your SSH keys on whatever platform you're using, open the OCI web console.  Use the top left hamburger menu and choose **Compute \> Instances** to open the Instance Creation menu.
 
 ![](./media/image41.png)
 
-*<p align="center"> Figure 33: Create Instance Menu item </p>*
+*<p align="center"> Figure 37: Create Instance Menu item </p>*
 
-16. Verify that you're using the correct compartment and click the **Create Instance** button
+2. Verify that you're using the correct compartment and click the **Create Instance** button
 
 ![](./media/image42a.png)
 
-*<p align="center"> Figure 34: Create instance button </p>*
+*<p align="center"> Figure 38: Create instance button </p>*
 
 ![](./media/image43a.png)
 
-*<p align="center"> Figure 35: Information required to create an instance </p>*
+*<p align="center"> Figure 39: Information required to create an instance </p>*
 
-17. Enter information to create your compute instance.
+3. Enter information to create your compute instance.
 
 **Note:** *Depending on available resources for Class of SE labs, you may need to select resources from a particular Availability Domain, or use a different compute shape.   If resources aren't available, try another AD, or use **Choose Instance Shape** to find another instance type that has availability.  If in doubt, ask your instructor which AD you should utilize.*
 
@@ -139,98 +187,112 @@ A third party SSH client needs to be installed for Windows versions prior to Win
 | Subnet Compartment:  | Your subnet compartment* (ex: team-100)     |
 | Subnet:              | Public Subnet in your compartment*            |
 
-18. In the **Add SSH Key** section you can select the SSH key file from your system or paste directly from the clipboard (if you’ve saved that information from the key generation step earlier)
+4. In the **Add SSH Key** section you can select the SSH key file from your file system, use the file with the .pub extension.  Or you can paste directly from the clipboard (if you’ve saved that information from the key generation step earlier).
 
 ![](./media/image44.png)
 
-*<p align="center"> Figure 36: Choose SSH Key option </p>*
+*<p align="center"> Figure 40: Choose SSH Key option </p>*
 
 ![](./media/image45.png)
 
-*<p align="center"> Figure 37:  Paste SSH key option </p>*
+*<p align="center"> Figure 41:  Paste SSH key option </p>*
 
-19. In the Configure networking Section leave the default VCN and subnet information and click **Create**. 
+5. In the Configure networking Section leave the default VCN and subnet information and click **Create**. 
 
 ![](./media/image46a.png)
 
-*<p align="center"> Figure 38: Create compute instance dialog </p>*
+*<p align="center"> Figure 42: Create compute instance dialog </p>*
 
 Your instance will begin provisioning and should be in the available state within a few moments.
 
 ![](./media/image47a.png)
 
-*<p align="center"> Figure 39: Instance provisioning </p>*
+*<p align="center"> Figure 43: Instance provisioning </p>*
 
 After a few moments, the icon will turn green and the title will change to RUNNING.
 
 ![](./media/image48a.png)
 
-*<p align="center"> Figure 40: Running instance and Primary VNIC information </p>*
+*<p align="center"> Figure 44: Running instance and Primary VNIC information </p>*
 
-20. Take note of the Primary VNIC information which contains the assigned Public and Private IP Addresses.  You will need this information to access the instance later in the lab.  
+6. Take note of the Primary VNIC information which contains the assigned Public and Private IP Addresses.  You will need this information to access the instance later in the lab.  
 
 # Access the instance 
 [Back to top](#Class-of-SE---HOL-Part-3---Creating-and-accessing-an-instance)
 
-We will use SSH through a terminal session to access the compute image. From there we will install the web application.
+We will use SSH through a terminal session to access the compute image. From there we will install a simple web application.  Scroll down and choose your preferred access method, Linux/Mac, Windows with Putty, or Windows 10 through Powershell.
 
 ## SSH Key access for Linux/Mac 
 
-1.  Use your favorite terminal program and issue the below ssh command to connect. Use the public IP address of your instance as referenced in the above screenshot.  (*The IP address listed is for example only, please use your own)*
+1.  Use your favorite terminal and issue the below `ssh` command to connect. Use the public IP address of your instance as referenced in the above screenshot.  *(The IP address listed is for example only, yours will be different.)*
 
-21. Issue the following command.
+2. Issue the following command.  Enter `yes` when prompted about authenticity.
 
     `ssh  opc@<your ip address>`
 
 ![](./media/image49a.png)
 
-*<p align="center"> Figure 41: SSH connection to running instance </p>*
+*<p align="center"> Figure 45: SSH connection to running instance </p>*
 
 **Note:**  *If your SSH key is located somewhere else in your file structure, use `ssh -i <keyfile path/keyfile name> opc@xxx.xxx.xxx.xxx` to enable SSH to use your key.*
 
 ## SSH Key access for Windows with Putty
 
-1.  For Windows clients, open Putty. With the Session category selected, enter the IP address for the instance you want to access and select SSH from the radio buttons (port 22).
+1.  For Windows clients prior to version 10, open Putty. With the Session category selected, enter the IP address for the instance you want to access and select SSH from the radio buttons (port 22).
 
 ![](./media/image50a.png)
 
-*<p align="center"> Figure 42: Putty session information </p>*
+*<p align="center"> Figure 46: Putty session information </p>*
 
-22. In the Connection category, choose **Data** and enter ‘opc’ as the Auto-login username.
+2. In the Connection category, choose **Data** and enter ‘opc’ as the Auto-login username.
 
 ![](./media/image51a.png)
 
-*<p align="center"> Figure 43: Putty auto-login information </p>*
+*<p align="center"> Figure 47: Putty auto-login information </p>*
 
-23. In the **Connection \> SSH \> Auth** category, use the Browse button to navigate and load the .ppk file you created earlier with Putty.
+3. In the **Connection \> SSH \> Auth** category, use the Browse button to navigate and load the .ppk file you created earlier with Putty.
 
 ![](./media/image52a.png)
 
-*<p align="center"> Figure 44: Putty private SSH key </p>*
+*<p align="center"> Figure 48: Putty private SSH key </p>*
 
-24. Navigate back to the **Session** category, enter a name in the **Saved Sessions** field and choose Save. Use any name you like for the session name in Putty.  This will save your SSH terminal session for use later without having to re-enter the information.
+4. Navigate back to the **Session** category, enter a name in the **Saved Sessions** field and choose Save. Use any name you like for the session name in Putty.  This will save your SSH terminal session for use later without having to re-enter the information.
 
 v![](./media/image53a.png)
 
-*<p align="center"> Figure 45: Putty Save SSH Session </p>*
+*<p align="center"> Figure 49: Putty Save SSH Session </p>*
 
-25. Click on **Open** to connect to the instance.
+5. Click on **Open** to connect to the instance.
 
 v![](./media/image53b.png)
 
-*<p align="center"> Figure 46: Open Putty Session </p>*
+*<p align="center"> Figure 50: Open Putty Session </p>*
 
-26. Choose **Yes** on the alert message:
+6. Choose **Yes** on the alert message:
 
 ![](./media/image54.png)
 
-*<p align="center"> Figure 47: Putty security alert </p>*
+*<p align="center"> Figure 51: Putty security alert </p>*
 
-27. You will be logged into the compute image:
+7. You will be logged into the compute image:
 
 ![](./media/image55.png)
 
-*<p align="center"> Figure 48: Successful Putty instance login </p>*
+*<p align="center"> Figure 52: Successful Putty instance login </p>*
+
+## SSH Key access for Windows 10 Systems
+
+1.  For Windows 10 clients, open a `cmd` or Powershell window.  From the default user directory enter the SSH login command using the `opc` username and the ip address of your instance.
+
+`ssh opc@<your instance ip address>`
+
+2. Enter `Yes` when asked about the fingerprint.
+
+![](./media/image404.png)
+
+*<p align="center"> Figure 53: Powershell SSH command </p>*
+
+You have successfully logged into a cloud Linux instance as the `opc` admin user.  You can browse the Linux OS, make configuration changes, or install software, as time permits.
 
 ![](./media/image99.png)
 

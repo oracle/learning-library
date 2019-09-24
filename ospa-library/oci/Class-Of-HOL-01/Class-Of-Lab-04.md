@@ -29,13 +29,13 @@ OCI Block Volumes can be created, attached, moved, and deleted as needed to supp
 
 ![](./media/image84.png)
 
-*<p align="center"> Figure 49: Block Volume item selection </p>*
+*<p align="center"> Figure 54: Block Volume item selection </p>*
 
 2.  In the Block Volumes dialog, verify that your compartment is selected and click on the Create Block Volume button
 
 ![](./media/image85.png)
 
-*<p align="center"> Figure 50: Create Block volume in assigned compartment </p>*
+*<p align="center"> Figure 55: Create Block volume in assigned compartment </p>*
 
 3.  Fill in the following details in the Create Block Volume dialog.
 
@@ -53,13 +53,13 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image86a.png)
 
-*<p align="center"> Figure 51: Create Block Volume dialog form </p>*
+*<p align="center"> Figure 56: Create Block Volume dialog form </p>*
 
 4.  Click on **Create Block Volume**, in a few moments the icon will turn green and your block volume will be provisioned.
 
 ![](./media/image87a.png)
 
-*<p align="center"> Figure 52: Block Volume Available </p>*
+*<p align="center"> Figure 57: Block Volume Available </p>*
 
 5.  Attach the block volume to an instance.
 
@@ -69,13 +69,13 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image88a.png)
 
-*<p align="center"> Figure 53: Instance action menu </p>*
+*<p align="center"> Figure 58: Instance action menu </p>*
 
 8.  Or you can open the instance details menu, and click on the **Attached Block Volumes** item, and attach a block volume from there.  Click on either one to open the the attach block volume dialog.
 
 ![](./media/image89a.png)
 
-*<p align="center"> Figure 54: Attach Block Volume </p>*
+*<p align="center"> Figure 59: Attach Block Volume </p>*
 
 **Note:** *In the Attach Block Volume dialog you can select iSCSI or Paravirtualized as the attachment type. Paravirtualized will connect the volume directly without any further commands, but at a potential performance trade-off from iSCSI. iSCSI attach will require iSCSI commands to be run on the host. These commands are also provided for you in the interface.*
 
@@ -83,25 +83,25 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image90a.png)
 
-*<p align="center"> Figure 55: Attach block volume dialog </p>*
+*<p align="center"> Figure 60: Attach block volume dialog </p>*
 
 10. You will see a message about iSCSI attachment commands. Click **Close** to dismiss this message.
 
 ![](./media/image91.png)
 
-*<p align="center"> Figure 56: Attach block volume instuctions </p>*
+*<p align="center"> Figure 61: Attach block volume instuctions </p>*
 
 11. When the volume finishes attaching, the icon will turn green with the Attached label below it. Click on the ellipsis and choose iSCSI Commands & Information
 
 ![](./media/image92a.png)
 
-*<p align="center"> Figure 57: iSCSI command dialog </p>*
+*<p align="center"> Figure 62: iSCSI command dialog </p>*
 
 12. Copy the iSCSI attach commands using the copy link below each command set, or you can copy them one at a time if you wish.  You will paste the commands into your SSH terminal connected to the instance.  The commands can be run as the 'opc' user.
 
 ![](./media/image93a.png)
 
-*<p align="center"> Figure 58: iSCSI commands and information </p>*
+*<p align="center"> Figure 63: iSCSI commands and information </p>*
 
 13. Go to the terminal window and issue the lsblk command to verify that nothing has been mounted yet.
 
@@ -109,7 +109,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image94a.png)
 
-*<p align="center"> Figure 59: Linux lsblk command output </p>*
+*<p align="center"> Figure 64: Linux lsblk command output </p>*
 
 14. Issue the iSCSI commands you copied from the Block Volume interface. (Your commands will be different)
 
@@ -121,7 +121,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image95a.png)
 
-*<p align="center"> Figure 60: iSCSI commands to mount disk on the instance </p>*
+*<p align="center"> Figure 65: iSCSI commands to mount disk on the instance </p>*
 
 15. Run the lsblk command to verify that the disk has been recognized by the operating system.
     
@@ -129,7 +129,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image96a.png)
 
-*<p align="center"> Figure 61: Linux lsblk command showing attached disk </p>*
+*<p align="center"> Figure 66: Linux lsblk command showing attached disk </p>*
 
 16. Run the following commands to format the disk and mount it. Press 'Y' to proceed when prompted with the warning about formatting the entire device.
 
@@ -137,7 +137,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image97a.png)
 
-*<p align="center"> Figure 62: File system commands for mounted volume </p>*
+*<p align="center"> Figure 67: File system commands for mounted volume </p>*
 
 `[opc@instance01 ~]# sudo mkdir /mnt/www`
 
@@ -149,7 +149,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image98b.png)
 
-*<p align="center"> Figure 63: Linux mount commands for block volume </p>*
+*<p align="center"> Figure 68: Linux mount commands for block volume </p>*
 
 # Install Simple Web Application
 [Back to top](#Class-of-SE---HOL-Part-4---Block-storage-and-application-install)
@@ -160,7 +160,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image100.png)
 
-*<p align="center"> Figure 64: Yum install httpd command </p>*
+*<p align="center"> Figure 69: Yum install httpd command </p>*
 
 2. Adjust the firewall rules to allow http traffic, then reload the firewall utility.  The commands below will open port 80 for http and https traffic and reload the firewall.
 
@@ -170,7 +170,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image101.png)
 
-*<p align="center"> Figure 65: Firewall configuration </p>*
+*<p align="center"> Figure 70: Firewall configuration </p>*
 
 3. Start the web server.  
 
@@ -178,7 +178,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image102.png)
 
-*<p align="center"> Figure 66: Start the web server </p>*
+*<p align="center"> Figure 71: Start the web server </p>*
 
 4. In the next steps, we'll download a pre-configured web application and install it on our instance.  Download the application zip file and unzip the package into the opc home directory.  Use the *wget* command to download the static web application.
 
@@ -187,7 +187,7 @@ Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolum
 
 ![](./media/image104.png)
 
-*<p align="center"> Figure 67: Download http application </p>*
+*<p align="center"> Figure 72: Download http application </p>*
 
 Unzip the file into the opc home directory.
 
@@ -195,7 +195,7 @@ Unzip the file into the opc home directory.
 
 ![](./media/image105.png)
 
-*<p align="center"> Figure 68: Unzip the package </p>*
+*<p align="center"> Figure 73: Unzip the package </p>*
 
 5. Create a new subdirectory on the mounted block volume.
 
@@ -207,7 +207,7 @@ Unzip the file into the opc home directory.
 
 ![](./media/image109.png)
 
-*<p align="center"> Figure 69: Copy web files to the new directory </p>*
+*<p align="center"> Figure 74: Copy web files to the new directory </p>*
 
 7. Use your favorite text editor to modify the httpd.conf file to point to the new default web directory. 
 
@@ -217,7 +217,7 @@ Unzip the file into the opc home directory.
 
 ![](./media/image107.png)
 
-*<p align="center"> Figure 70: Replace http default home </p>*
+*<p align="center"> Figure 75: Replace http default home </p>*
 
 9. Alter the firewall policy to allow access the the /mnt directory and restart httpd
 
@@ -227,7 +227,7 @@ Unzip the file into the opc home directory.
 
 ![](./media/image108.png)
 
-*<p align="center"> Figure 71: Update security and restart httpd </p>*
+*<p align="center"> Figure 76: Update security and restart httpd </p>*
 
 10. Launch a web browser from your local system.  Enter the compute instance IP address.
 
@@ -237,7 +237,7 @@ You should see the simple web application screen.
 
 ![](./media/image110.png)
 
-*<p align="center"> Figure 72: Successful application access </p>*
+*<p align="center"> Figure 77: Successful application access </p>*
 
 # Delete Resources
 [Back to top](#Class-of-SE---HOL-Part-4---Block-storage-and-application-install)
@@ -254,13 +254,13 @@ We'll delete the resources in the reverse order that they were created in.
 
 ![](./media/image111.png)
 
-*<p align="center"> Figure 73: Block Volume dialog </p>*
+*<p align="center"> Figure 78: Block Volume dialog </p>*
 
 2.  Copy the iSCSI detach commands to the clipboard.
 
 ![](./media/image112.png)
 
-*<p align="center"> Figure 74: Copy iSCSI detach commands </p>*
+*<p align="center"> Figure 79: Copy iSCSI detach commands </p>*
 
 3. Login to the instance via SSH and unmount the volume and issue the iSCSI detach commands.
 
@@ -271,65 +271,65 @@ We'll delete the resources in the reverse order that they were created in.
 
 ![](./media/image113.png)
 
-*<p align="center"> Figure 75: Detach block volume from instance </p>*
+*<p align="center"> Figure 80: Detach block volume from instance </p>*
 
 4. Return to the OCI Cloud console and open the **Attached Block Volumes** item, select the elipsis, and choose **Detach**.
 
 ![](./media/image114.png)
 
-*<p align="center"> Figure 76: Detach block volume console item </p>*
+*<p align="center"> Figure 81: Detach block volume console item </p>*
 
 The detach menu item will bring up another window where you can also utilize the iSCSI detach commands directly, or continue with detachment through the OCI interface.
 
 ![](./media/image115.png)
 
-*<p align="center"> Figure 77: Continue block volume detachment </p>*
+*<p align="center"> Figure 82: Continue block volume detachment </p>*
 
 ![](./media/image116.png)
 
-*<p align="center"> Figure 78: Confirm detach block volume </p>*
+*<p align="center"> Figure 83: Confirm detach block volume </p>*
 
 The volume icon will indicate 'detaching'.
 
 ![](./media/image117.png)
 
-*<p align="center"> Figure 79: Detaching in progress </p>*
+*<p align="center"> Figure 84: Detaching in progress </p>*
 
 5. The next step will be to delete the block volume and any backups that may have occurred.  The block volume dialog for the instance will be empty since we've detached the volume.  Navigate to the **Block Storage** section of the OCI menu and choose **Block Volumes**
 
 ![](./media/image118.png)
 
-*<p align="center"> Figure 80: Block volumes menu </p>*
+*<p align="center"> Figure 85: Block volumes menu </p>*
 
 6.  Choose the **Block Volume Backups** selection.  You may have more than one backup.  Choose the elipsis and click on **Terminate** to delete the block volume backup.
 
 ![](./media/image119.png)
 
-*<p align="center"> Figure 81: Block Volume Backups menu </p>*
+*<p align="center"> Figure 86: Block Volume Backups menu </p>*
 
 Select **Terminate** to confirm the backup volume deletion.
 
 ![](./media/image120.png)
 
-*<p align="center"> Figure 82: Terminate Block Volume Backup </p>*
+*<p align="center"> Figure 88: Terminate Block Volume Backup </p>*
 
 7.  Once the block volume backup is terminated, navigate to Block Volumes and click on the elipsis at the end of the volume you want to delete.  Choose **Terminate**.
 
 ![](./media/image121.png)
 
-*<p align="center"> Figure 83: Terminate Block Volume </p>*
+*<p align="center"> Figure 89: Terminate Block Volume </p>*
 
 Confirm termination.
 
 ![](./media/image122.png)
 
-*<p align="center"> Figure 84: Terminate Block Volume confirmation</p>*
+*<p align="center"> Figure 90: Terminate Block Volume confirmation</p>*
 
 8. After the volume has been terminated.  Navigate to the instance menu and choose the instance you created for this exercise.
 
 ![](./media/image123.png)
 
-*<p align="center"> Figure 85: Terminate instance </p>*
+*<p align="center"> Figure 91: Terminate instance </p>*
 
 You will get a confirmation dialog.  Select **Permanently delete the attached Boot Volume** to remove the boot volume.  
 
@@ -337,25 +337,25 @@ You will get a confirmation dialog.  Select **Permanently delete the attached Bo
 
 ![](./media/image124.png)
 
-*<p align="center"> Figure 86: Confirm instance termination </p>*
+*<p align="center"> Figure 92: Confirm instance termination </p>*
 
 Your instance will begin termination.   It might take a few moments for the instance to reach the terminated state.
 
 ![](./media/image125.png)
 
-*<p align="center"> Figure 87: Instance terminating </p>*
+*<p align="center"> Figure 93: Instance terminating </p>*
 
 9. We're almost done.  Navigate to the **Networking > Virtual Cloud Networks** menu item
 
 ![](./media/image126.png)
 
-*<p align="center"> Figure 88: Networking - VCN </p>*
+*<p align="center"> Figure 94: Networking - VCN </p>*
 
 Choose the elipsis at the end of the VCN item and choose **Terminate** to remove the VCN you created for this lab.
 
 ![](./media/image127.png)
 
-*<p align="center"> Figure 89: Terminate VCN </p>*
+*<p align="center"> Figure 95: Terminate VCN </p>*
 
 Review the confirmation dialog.  It will give you a list of items that will be deleted.  If you've created any extra gateways, security lists, or other VCN components, you may need to return and delete them manually.    
 
@@ -363,13 +363,13 @@ Review the confirmation dialog.  It will give you a list of items that will be d
 
 ![](./media/image128.png)
 
-*<p align="center"> Figure 90: Terminate VCN Confirmation Dialog</p>*
+*<p align="center"> Figure 96: Terminate VCN Confirmation Dialog</p>*
 
 You will receive a final confirmation of all that has been terminated.  Click the Close button.
 
 ![](./media/image130.png)
 
-*<p align="center"> Figure 91: Final Terminate VCN Confirmation Dialog</p>*
+*<p align="center"> Figure 97: Final Terminate VCN Confirmation Dialog</p>*
 
 Remove any other resources you may have created at this point.    You are now finished with this lab.  You may log off of your cloud session if you wish.
 

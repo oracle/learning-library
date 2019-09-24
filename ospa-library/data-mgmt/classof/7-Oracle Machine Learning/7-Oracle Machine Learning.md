@@ -37,7 +37,7 @@ If you received an email with a link to the Oracle Machine Learning Login Page w
 ![](media/64d3a0bce2f100135038be0bbd2ddcec.png)
   <p align="center">Figure 1-1</p>
 
-Otherwise review the steps to connect to OML in Lab 4 - Module 4. A brief rewiew follows. 
+Otherwise review the steps to connect to OML in Lab 4 - Module 4. A brief review follows. 
 1. Log into your Oracle Cloud Account and navigate to the Autonomous Database Service Console.
 
 2. Browse to your **Autonomous Database** page for the appropriate database you created in the earlier lab.
@@ -323,7 +323,7 @@ After selecting Manage Oracle ML Users you will be placed in the OML Administrat
                        <p align="center">Figure 5-1</p>
 
 2. A new SQL scratchpad will be created with the **%script** identifier already
-    selected, this identifier allows you to run multiple SQL statements.
+    selected; this identifier allows you to run multiple SQL statements.
 
     ![](media/42f55993f4e76ef7608e17616ceed5ac.png)
                            <p align="center">Figure 5-2</p>

@@ -18,7 +18,7 @@
 
 1. From the Cloud Console click on your Autonomous instance:
 
-If you are not already connected to your cloud account, review Lab 2 - Module 1, Conneting to your cloud account to get to the Cloud Console. 
+If you are not already connected to your cloud account, review Lab 2 - Module 1, Connecting to your cloud account to get to the Cloud Console. 
 
 ![](media/6fa762c8806e15b986a89966777c2864.png)
 <p align="center">Figure 1-1</p>
@@ -81,14 +81,14 @@ components on this page are:
 
 
 
-5. To analyse specific SQL statements, click on the **Monitored SQL** button. This
+5. To analyze specific SQL statements, click on the **Monitored SQL** button. This
 displays SQL that ran or is running in chronological order. The view below
 displays the queries ran in SQL Developer in earlier labs. 
 
 ![](media/1cfbed493164729fd401ac3bd297efab.png)
 <p align="center">Figure 1-5</p>
 
-6. Analyse statements you ran to get additional insight into how they executed and
+6. Analyze statements you ran to get additional insight into how they executed and
 why they executed differently. In this example I select row 1 by clicking
 anywhere in the row and then **Show Details:**
 
@@ -111,7 +111,7 @@ query.
 <p align="center">Figure 1-8</p>
 
 8. Close the parallel window and select the other statement, in this case 3 and hit
-**Show details** (this will be different in your environment, you can analyse
+**Show details** (this will be different in your environment, you can analyze
 any statement in the list):
 
 ![](media/62f9ff70338ee4e942b25b2d58dee9ca.png)

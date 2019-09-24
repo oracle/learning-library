@@ -122,6 +122,10 @@ the user interface.
 In this lab you will make sure you can access the VBCS instance for your
 classroom and supporting lab files.
 
+First, if you are part of an organized class, try using the URL from the Participant Guide (facilitator will also post on Slack); if that succeeds please jump to [Create Application](#create-application) (just before #6)
+
+### ***SKIP TO [Create Application](#create-application) UNLESS DOING THIS LAB OUTSIDE OF A FORMAL CLASS*** 
+
 1.  Log into class tenancy using cloud.oracle.com
 
 
@@ -222,6 +226,8 @@ Dashboard”)
     ![](./media/image18.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1.6 – VBCS Splash<br/>
+
+## Create Application
 
 7.  When the “Visual Applications” welcome appears; choose the “New Application” button.
 
@@ -516,7 +522,7 @@ The completed field list should look like this:
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(click the "Checkmark" ![](./media/vbcs_checkmark.png) when done)
 
-![](./media/image49.png)
+![](./media/vbcs_add_row_2.13.1.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.13.1 – Add Mozzarella
 
@@ -614,7 +620,7 @@ Click the “Import” button to upload the selected file
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2.21 – Add Product Order Line
 
-22. Now, using the technique illustrated in 16-18 above add data to the
+22. Now, using the technique illustrated in 16-18 above add data into (append to existing) the
     Product Order and Product Order Line business objects (note: file
     names same as business object names) using the provided data files
 
@@ -1252,9 +1258,9 @@ __*** find Product Name by drilling down ***__<br/>
     Unit Price (Input Number), and
     Quantity (Input Number).
 
-> ![](./media/image141.png)
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.32 – Items table contents  
+![](./media/endpoints2.png)
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3.32 – Endpoint Drilldown and Column List  
+
 >   
 > Use “Define Query” to connect the Product List to the list of Items as
 > follows:
@@ -2000,11 +2006,11 @@ In this lab you will create:
   - An “Associate” Business Object containing fields and data for Mama
     Maggy associates
 
-  - Two .csv files are provided to provide data for Store and
-    Associate  
-    (be sure to create “Store” before “Associate” (Associate references
-    Store), and  
-    load data into “Store” first before loading data into “Associate”)
+  - You will need two data files stored in a single .zip file named [setupfiles.zip](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/setupfiles.zip) on GitHub; download the file and expand it to find the following two files (keep them handy they will be used later to load data):
+      - Store.csv
+      - Associate.csv
+      
+        (be sure to create “Store” before “Associate” (Associate references Store), and load data into “Store” first before loading data into “Associate”)
 
 <!-- end list -->
 
