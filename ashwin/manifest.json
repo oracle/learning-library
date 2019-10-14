@@ -1,0 +1,10 @@
+{
+    "workshop": {
+        "title": "Enter OBE title here",
+        "description": "This 15-minute tutorial walks you through the steps to...",
+        "partnumber": "E12345_01",
+        "publisheddate": "10/14/2019",
+        "contentid": "123456",
+        "filename": "sample.md"
+    }
+}
