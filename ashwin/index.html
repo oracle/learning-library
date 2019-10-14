@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>    
+    <meta name="partnumber" content="xxx">
+    <meta name="publisheddate" content="xxx">
+    <meta name="contentid" content="xxx">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>Tutorial Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="description" content="Put the description of the tutorial here.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/css/normalize.min.css">
+    <link rel="stylesheet" href="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/css/obe-lite.css">
+    <script src="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/js/jquery-1.11.0.min.js"></script>
+    <script src="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/js/jquery.tocify.jd.js"></script>
+
+    <!-- Used for MD to HTML conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
+    <script src="dynamic_load.js"></script>
+    <!-- until here -->
+
+    <!-- Removing the following and loading it dynamically in dynamic_load.js file -->
+    <!--
+    <script src="js/leftnav.js"></script>
+    -->
+</head>
+
+<body>
+    <header>
+        <div class="w1024" style="min-height:55px; display:block;"> <a href="https://docs.oracle.com"
+                class="oracle-logo">
+                <img src="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/img/oracle_doc_logo.png"
+                    alt="Oracle Documentation" style="max-width: none;" height="22" width="236"></a>
+        </div>
+    </header>
+    <!--end header-->
+
+    <div id="content">
+
+        <!-- The title below is displayed as the title at the top of the OBE page. It can be shorter than the title in the <title> element, above. -->
+        <!-- Use an imperative verb in the title. -->
+        <h1><img src="https://docs.oracle.com/en/cloud/paas/nosql-cloud/gsans/img/obe_tag.png" align="middle"
+                alt="Oracle by Example branding"></h1>
+        <div class="w1024" style="clear:both; position:relative; margin-top:40px;">
+            <div class="navbackwide border-right">
+                <!-- -->
+            </div>
+            <div id="shownav" title="Show Navigation" tabindex="0"><span class="fa fa-list"></span></div>
+            <div id="sidebar">
+                <!-- -->
+                <div class="left-nav-tut">
+                    <!-- -->
+                    <div id="hidenavw" title="Hide Navigation" tabindex="0"><span class="fa fa-close"></span></div>
+                    <div id="navbar" class="left-nav-w">
+                        <!-- -->
+                        <div id="toc" class="tocify">
+                            <!-- -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bookContainer"></div>
+            <br class="clearfloat">
+        </div>
+    </div>
+    <!--close main-->
+    <!--end content-->
+    <div class="footer-container ">
+        <div style="max-width: 994px; padding:10px 0 0 17px;">
+            <footer class="footer-list">
+                <ul>
+                    <li> <a href="https://www.oracle.com/corporate/index.html" target="_blank">About Oracle</a> </li>
+                    <li> <a href="https://www.oracle.com/us/corporate/contact/index.html" target="_blank">Contact Us</a>
+                    </li>
+                    <li> <a href="https://www.oracle.com/us/legal/index.html" target="_blank">Legal Notices</a> </li>
+                    <li> <a href="https://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms of Use</a>
+                    </li>
+                    <li> <a href="https://www.oracle.com/us/legal/privacy/index.html" target="_blank">Your Privacy
+                            Rights</a> </li>
+                    <li> <a href="https://www.oracle.com/pls/topic/lookup?ctx=cpyr&id=en">Copyright © 2018, Oracle
+                            and/or its affiliates. All rights reserved.</a></li>
+                </ul>
+            </footer>
+        </div>
+        <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+    </div>
+    <!-- OBE Dialog Box code 10/15/2018 -->
+    <!-- DO NOT ALTER THE CODE BELOW   -->
+    <div id="lpModal" class="modal">
+        <!-- Modal hdr and body -->
+        <div id="obe_dialog" class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close">
+                    <span class="close">&times;</span>
+                </a>
+                <h1>Associated Learning Paths</h1>
+            </div>
+            <div id="dialog-content">
+            </div>
+            <div id="dialog-close" class="closeBtn">
+                <a href="#" class="close2">
+                    <p class="close2">
+                        <span>&nbsp;&nbsp;View&nbsp;&nbsp;</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- END OBE Dialog Box code -->
+</body>
+
+</html>
