@@ -1,3 +1,4 @@
+![](main_image.png)
 # OCI Fast Track
 
 Here are registered the files usesd to build  and run OCI Hands Workshops, named OCI Fast Track
