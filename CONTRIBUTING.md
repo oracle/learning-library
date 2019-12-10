@@ -13,7 +13,7 @@ the bottom of your commit message must have the following line using your name a
 e-mail address as it appears in the OCA Signatories list.
 
 ```
-Signed-off-by: Your Name <you@example.org>
+Signed-off-by: raekwon dill (rdill1345@gmail.com)
 ```
 
 This can be automatically added to pull requests by committing with:
