@@ -78,7 +78,7 @@ It may be listed in "Event Hub - Dedicated" in some versions.
 
 ### **STEP 7**: Once provisioning is completed, click on the name of the instance to go to the Service Overview page
 
-- After provisioning is completed, the Service Overiew page has useful information including the **Connect Descriptor**.  You will use the Connect Descriptor later in the lab exercises.
+- After provisioning is completed, the Service Overview page has useful information including the **Connect Descriptor**.  You will use the Connect Descriptor later in the lab exercises.
 
 ![](images/400/snap0012003.jpg) 
 
