@@ -4,13 +4,9 @@
 ## Table of Contents
 
 - [Module 1: Logging to CASB Community Tenant](#module-1--logging-to-casb-community-tenant)
-- [Module 2: Create and monitor a sanctioned application](#module-2--create-and-monitor-a-sanctioned-application)
-- [Module 3: Create a Policy Alert and Display Threats](#module-3--create-a-policy-alert-and-display-threats)
-- [Module 4: Oracle CASB Monitoring Oracle Cloud Infrastructure](#module-4--oracle-casb-monitoring-oracle-cloud-infrastructure)
-- [Module 5: Create a Policy for OCI](#module-5--create-a-policy-for-oci)
-- [Module 6: Run a Report in CASB](#module-6--run-a-report-in-casb)
-
-
+- [Module 2: Oracle CASB Monitoring Oracle Cloud Infrastructure](#module-4--oracle-casb-monitoring-oracle-cloud-infrastructure)
+- [Module 3: Create a Policy for OCI](#module-5--create-a-policy-for-oci)
+- [Module 4: Run a Report in CASB](#module-6--run-a-report-in-casb)
 
 
 ***** 
@@ -34,8 +30,8 @@ Her team is on its way of implementing CASB to monitor SaaS applications and OCI
 **Who Should Complete This Lab:  1 Participant for group**
 
 
-*	We are purposefully using our “Community” tenant instead of the tenant associated with the Cloud Account. 
-*	The “Community” tenant is a persistent sandbox environment where Oracle employees can try out CASB features.
+*	We are purposefully using our “shared” tenant instead of the tenant associated with the Cloud Account. 
+*	The shared tenant is a persistent sandbox environment where Oracle employees can try out CASB features.
 * Open your browser to the CASB instance: https://preprod.casb.ocp.oc-test.com/
 * Login to CASB using the Tenant shared admin account
 
@@ -65,297 +61,7 @@ Her team is on its way of implementing CASB to monitor SaaS applications and OCI
 **Note: Due to environment constraints you might not receive the email. Please proceed with the shared id delivered by the facilitator**
 
 
-## **EXERCISE** - Module 2:  Create and monitor a sanctioned application
-
-The following hands-on labs assume that you are familiar with Oracle Cloud Platform console navigation, as well as access to Oracle CASB Cloud Service console.
-In order to ease the process, we recommend using two separate browsers or windows.
-We will enroll third-party services as part of the exercises and it's requires to navigate back and forth between CASB and the vendors' dashboards to complete the lab.
-
-For the purpose of this workshop, you will be using Oracle CASB community tenant which you may use indefinitely for whatever CASB features you’d like to try for yourself.
-
-**NOTE: CASB is a dynamic service that is, by design, constantly in flux. As a result, what you see in the console may not match exactly with the lab screenshots. Screenshots are provided solely for illustrative purposes to help guide you directionally through the CASB console.**
-
-For consistency and for the ease of use-cases implementation, you will use a personal **email account (e.g. Gmail, Yahoo, Outlook) to sign-up for your Salesforce developer instance**, and for CASB application registration you will use the following naming convention:
-
-`COSE_location+room_appName_GroupNumber` *(e.g. **COSE_AU1_Salesforce_G1**, **COSE_AU1_Salesforce_G2**)*
-
-
-Following this name convention will help us to clean up the environment once the lab is completed.
-
-****
-## Monitoring SaaS applications
-Oracle CASB monitors your sanctioned applications after a simple registration process. This enables you to manage risk events from a centralized platform instead of having to monitor the individual application to remediate security threats. Oracle CASB monitors risk events such as blacklisted IP addresses, anomalous user behavior and unwanted security configurations in the application.
-As part of this first part of the module, we will enroll two applications used broadly by our customers base. The main goal of this section of the lab is to guide you through the process of configuring the applications to later integrate them with CASB.
-
-
-### Add SalesForce as a Sanctioned Application - Who Should Complete This Lab:  1 Participant for group
-
-**Note: The learner signing up for Salesforce must differ from the participant that have requested the SSO access via IDCS on LAB 1**
-
-You’ll now add SalesForce as a sanctioned application for monitoring in Oracle CASB, so this business critical application remains compliant with security standards.
-
-**NOTE: If you have a Salesforce developer account you can move to *Create Salesforce CASB Profile* section.**
-
-* Navigate to [Developer SalesForce](https://developer.salesforce.com/)
-    * Click the **Sign-up** button in the top right corner
-    * Enter the required information
-    * Click **Sign me up**
-
-**Note: You must sign-up with your personal account (e.g. Gmail, Yahoo, Outlook)**
-
-![SF registration](./media/sf_registration.png)
-<p align="center"> Figure 2-1 </p>  
-
-
-* You will get an email to confirm your account. Click **Verify Account**
-
-
-![SF verification](./media/sf_verification.png)
-<p align="center"> Figure 2-2 </p>  
-
-
-* Create a password for your account
-
-![SF Create Password](./media/sf_password.png)
-<p align="center"> Figure 2-3 </p>  
-
-
-### Create Salesforce CASB Profile
-
-* Login to your Salesforce account.
-* On the left Panel navigate to Users =  Profiles
-    * Click **New Profile**
-
-![SF Create profile](./media/sf_profile.png)
-<p align="center"> Figure 2-4 </p>  
-
-* Existing Profile needs to be set to System Administrator and Profile Name can be named whatever you like, for example, CASBUSER.
-
-![SF Set profile](./media/sf_setprofile.png)
-<p align="center"> Figure 2-5 </p>  
-
-* Press save
-
-* Navigate to Users =  Users 
-    * Click **New User**
-
-![SF create user](./media/sf_createuser.png)
-<p align="center"> Figure 2-6 </p>  
-
-* The following Screen will appear. Fill in the required fields. User License must be set to Salesforce.
-
-*Note: You must use another email address for this new account. (e.g. oracle.com).*
-    
-  * Profile name will be the name of the profile we previously created (e.g. CASBUSER)
-  * Save
-
-![SF modify user](./media/sf_user_profile.png)
-<p align="center"> Figure 2-7 </p>  
-
-
-* An email will be triggered allowing for verification
-
-![SF verification](./media/sf_verification_newuser.png)
-<p align="center"> Figure 2-8 </p>  
-
-* Click to Verify account in the link attached in the email and fill password details for the new user. Now you will see the following:
-
-![SF Dahsboard](./media/sf_dashboard.png)
-<p align="center"> Figure 2-9 </p>  
-
-This is the last step we need to complete in SalesForce.
-
-### **EXERCISE** - Registering a Salesforce instance (Push Security Controls Mode) - Who Should Complete This Lab:  1 Participant for group
-
-**NOTE: Due to capacity constraints, We will group individuals on teams of three to register the application in CASB. Instructor will provide group numbers. During the registration process learners must use the following name convention COSE_First-Two-letters-of-the location_APP_Group] (e.g. COSE_AU1_SALESFORCE_G1, COSE_AU2_SALESFORCE_G2)**
-
-* Open CASB Console
-
-* Click on **Add/Modify App** on the option located at the left hand side of the dashboard.
-
-![](./media/image76.jpeg)
-<p align="center"> Figure 2-10 </p> 
-
-* Select the SalesForce application to add the instance in Oracle CASB.
-
-![CASB SF enrolment](./media/casb_sf_enroll.png)
-<p align="center"> Figure 2-11 </p>  
-
-* Enter a unique name for you instance. Click the checkboxes from the picture below. Click **Next**.
-
-![CASB SF Unique name](./media/casb_sf_uniquename.png)
-<p align="center"> Figure 2-12 </p>  
-
-* Select Push controls and monitor
-
-![CASB SF Push](./media/casb_sf_push.png)
-<p align="center"> Figure 2-13 </p>  
-
-* Select Standard Security Controls. Check Approval box and Press Next
-
-![CASB SF security controls](./media/casb_sf_securitycontrols.png)
-<p align="center"> Figure 2-14 </p>  
-
-* You will redirected to the below page. Login with the user information created with the CASB profile (e.g. casbuser). Do not use your Salesforce developer administrator credentials.
-
-![CASB SF credentials](./media/casb_sf_allowcredentials.png)
-<p align="center"> Figure 2-15 </p>  
-
-* Allow Access
-
-![CASB SF Allow Access](./media/casb_sf_allowaccess.png)
-<p align="center"> Figure 2-16 </p>  
-
-
-* Success! You will now be able to monitor SalesForce! Click **Done** to finish
-
-![CASB SF completion](./media/casb_sf_complete.png)
-<p align="center"> Figure 2-17 </p>  
-
-[Back to Top](#table-of-contents)
-****
-
-## **EXERCISE** - Module 3:  Create a policy alert and display threats
-
-**Who Should Complete This Lab:  1 Participant for group**
-
-In Oracle CASB you can create application specific to specify the monitoring you want for your sanctioned applications. This adds another layer of customizable security for you. Oracle CASB also has pre-made Managed Policies for the applications to make sure application specific security can be enabled from the beginning.
-You will now create a policy in CASB that will trigger an alert every time a user is logged in to SalesForce.
-
-### Create a policy
-
-* Login to your cloud platform account and select Oracle CASB Cloud Service.
-* Select Configuration in the Navigation menu to the left 
-* Select Policy Management
-* Click **New Policy**
-
-![CASB Create new policy](./media/casb_sf_newpolicy.png)
-<p align="center"> Figure 3-1 </p>  
-
-
-* Fill out the fields as shown below. For the purpose of this lab we recommend you to use the following name convention for policies: COSE_FIRST-LETTER-OF-YOUR-NAME_LASTNAME_APPLICATION *(e.g. COSE_ACASAS_SALESFORCE)*
-* Select Priority **High**
-* Click **Next**
-
-![CASB Create new policy_2](./media/casb_sf_newpolicy_2.png)
-<p align="center"> Figure 3-2 </p>  
-
-* Select the application type as Salesforce, and add the application instance created in the previous steps *(e.g. COSE_AU1_SALESFORCE_G1)*
-* Change Resource to **Login History** 
-* Check the **Regular Expresion** option  
-* On the regular expresion field enter .*
-* Click **Next**
-
-![CASB Create new policy_3](./media/casb_sf_newpolicy_3.png)
-<p align="center"> Figure 3-3 </p>  
-
-![](./media/image106.jpeg)
-<p align="center"> Figure 3-4 </p> 
-
-*  Leave UserName settings by default. Click **Next**
-
-![](./media/image107.jpeg)
-<p align="center"> Figure 3-5 </p> 
-
-*  Leave Condition settings by default. Click **Next**
-
-![CASB Create new policy_4](./media/casb_sf_newpolicy_4.png)
-<p align="center"> Figure 3-6 </p>  
-
-* Populate fields as shown below. You can fill the message box with anything you consider such as "Verify SalesForce login activities". click **Next**
-
-![CASB Create new policy_5](./media/casb_sf_newpolicy_5.png)
-<p align="center"> Figure 3-7 </p>  
-
-* Review details previously entered and click **Submit**
-
-![CASB Create new policy_6](./media/casb_sf_newpolicy_review.png)
-<p align="center"> Figure 3-8 </p>  
-
-We must now trigger the policy that we created
-
-* Log in to the [Salesforce console](https://developer.salesforce.com) as the **user we created to be monitored by Oracle CASB**
-
-* Once logged in to Salesforce, you should be able to see the event in the dashboard
-
-![Login SF](./media/sf_login.png)
-<p align="center"> Figure 3-9 </p>  
-
-
-* This triggered the policy and an alert for Salesforce was generated. Every time a user logs in to Salesforce, you will be able to check it in your Salesforce instance. Navigate back to Oracle CASB Cloud Service console and click on **Policy alerts** and you will see all the alerts received for Salesforce.
-
-![CASB SF alert](./media/casb_sf_policyalerts.png)
-<p align="center"> Figure 3-10 </p>  
-
-* Click on a single policy alert generated by an authentication action to see the details
-
-![CASB SF alert_2](./media/casb_sf_polictyalerts_2.png)
-<p align="center"> Figure 3-11 </p>  
-
-### **DEMO** - Trigger action in Box account that will be detected as a threat in Oracle CASB
-
-
-* Check your IP. You can use any service or go to google and type `my ip`
-
-![Check IP](./media/checkip.png)
-<p align="center"> Figure 3-12 </p>  
-
-
-* Go to the Oracle CASB dashboard, section Configuration, **Manage IP Addresses**
-
-![Check IP](./media/casb_manageip.png)
-<p align="center"> Figure 3-13 </p>  
- 
-
-*  Click Add IP Address in the Blacklist section
-
-NOTE: In computing, a blacklist is a basic access control mechanism that allows everyone access, except for the subjects of the blacklist. The opposite is a whitelist, which means allow nobody, except members of the white list. These are two security control mechanisms that allow customers to protect their assets. While Blacklisting IPs are labor-intensive because you need to keep updating with IPs that have been identified as potential threats, whitelisting IPs block everything by default, except those on the list.
-
-![](./media/image69.jpeg)
-<p align="center"> Figure 3-14 </p>  
-
-*  Enter your IP address, description and select your recently added Salesforce application instance
-
-![](./media/image70.jpeg)
-<p align="center"> Figure 3-15 </p>  
-
-*  Click Save. Your IP address should appear now in the black list
-
-*  Log in to your Salesforce account as the user that we created to be monitored by CASB
-
-
-* These actions should have generated a threat in Oracle CASB for your Salesforce account. It should also be displayed in the access map as red pins referencing suspicious events.
-
-**Note: Information might take up to 2 hours to be displayed in the CASB console**
-
-![](./media/image76.jpeg)
-<p align="center"> Figure 3-16 </p>  
-
-* You can click on the red pin to check the detected suspicious events
-
-![](./media/image77.jpeg)
-<p align="center"> Figure 3-17 </p>   
-
-* Click on the suspicious events to have a better view of this
-
-![](./media/image78.jpeg)
-<p align="center"> Figure 3-18 </p>   
-
-* Check your Salesforce instance to see the generated threats for it
-
-![](./media/image79.jpeg)
-<p align="center"> Figure 3-19 </p> 
-
-* Click on the threats to check their details
-
-![](./media/image80.jpeg)
-<p align="center"> Figure 3-20 </p> 
-
-[Back to Top](#table-of-contents)
-
-****
-
-## Module 4:  Oracle CASB Monitoring Oracle Cloud Infrastructure
+## Module 2:  Oracle CASB Monitoring Oracle Cloud Infrastructure
 
 
 Oracle CASB has the broadest support of infrastructure as cloud services (IaaS). It enables you to monitor infrastructure provided by Amazon Web Services, Microsoft Azure, and Oracle Infrastructure Cloud (OCI). With Oracle CASB you can monitor all layers of your IT.
@@ -582,7 +288,7 @@ Note: if you do not see any Compute instance in the dashboard, click to Customiz
 
 ****
 
-## **EXERCISE** - Module 5:  Create a Policy for OCI 
+## **EXERCISE** - Module 3:  Create a Policy for OCI 
 
 **Who Should Complete This Lab:  1 Participant for group**
  
@@ -694,7 +400,7 @@ NOTE: For demo purposes we will use **COSE_OCI_OSPATEE_ACASAS** instance to trig
 
 ****
 
-## **EXERCISE** - Module 6:  Run A Report in CASB 
+## **EXERCISE** - Module 4:  Run A Report in CASB 
 
 **Who Should Complete This Lab:  1 Participant for group**
 
