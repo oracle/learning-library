@@ -21,6 +21,8 @@
 
   &nbsp;&nbsp;&nbsp;[Lab 1 URLs for Service Connections](files/AppDev_Endpoints.txt)
 
+ ****************
+
   &nbsp;&nbsp;&nbsp;[Lab 2 file 1 (OrderPizza.txt)](files/OrderPizza.txt)
 
   &nbsp;&nbsp;&nbsp;[Lab 2 file 2 (states.txt)](files/states.txt) 
