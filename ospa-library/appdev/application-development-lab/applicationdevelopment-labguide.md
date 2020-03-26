@@ -1244,14 +1244,6 @@ access data for Mama Maggy stores and Mama Maggy associates. You will
 use these “Service Connections” to provide data services to your
 applications. 
 
- ### ** Note you must be working within VBCS instance "OSPA-Class-Of-SE" for this lab to work properly **
-
-Get the correct connection URL values for your class from the ["AppDev_Endpoints.txt" file in GitHub](https://github.com/oracle/learning-library/blob/master/ospa-library/appdev/application-development-lab/files/AppDev_Endpoints.txt) and copy them to your local machine to make the lab a little quicker to complete<br/> 
-(please
-ask the instructor if you have questions here).
-
-[Skip to Lab 4 beginning](#begin-lab-4)
-<br/><br/>
 
 *******************************************************************
 NOTE 1:
