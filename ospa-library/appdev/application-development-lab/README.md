@@ -1,7 +1,7 @@
 ## Application Development Lab
 
-### [Lab Guide 1](applicationdevelopment-labguide.md)
-### [Lab Guide 2](oda-labguide.md)
+### [Lab Guide 1 - Application Development](applicationdevelopment-labguide.md)
+### [Lab Guide 2 - Digital Assistant](oda-labguide.md)
 
 ### Download all lab files as a zip
 
