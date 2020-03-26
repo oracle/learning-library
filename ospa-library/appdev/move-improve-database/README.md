@@ -79,30 +79,30 @@ In this exercise you will create a new Autonomous Transaction Processing
 please feel free to jump to the [Lab 2 : Obtain Connection
 Credentials](#lab-2-obtain-connection-credentials).
 
-First, log in to your Oracle Cloud instance using an ‘admin’ account
+First, go to cloud.oracle.com, click on **View Accounts** and select **Sign in to cloud**
 
-![](./media/image6.png)
+![](./media/cloudoracle.png)
 
-Next you need to see the ‘Compute’ instances’ available.
+Enter your tenant account
 
-![](./media/image7.png)
+![](./media/tenant.png)
 
-Unless you have already added them to the default view.
+On the login screen select SSO and provide your credentials *(Contact your tenant admin if you are using a different login mechanism)*
 
-![](./media/image8.png)
+![](./media/credentials.png)
 
-Click the ‘Hamburger Icon’ to display the list of available options.
+![](./media/credentials_2.png)
 
-![](./media/image9.png)
 
-Use the drop-down list and select ‘Compute’ to list available instances
+Once in the Oracle Cloud dashboard open the **General Menu** located at the upper left corner, scroll down and select **Compute**, and click on **Instances**
 
-![](./media/image10.png)
+![](./media/dashboard_compute.png)
 
 If the instance you want is currently STOPPED, use the ‘ellipsis’ (…) to
 the right to START
 
-![](./media/image11.png) ![](./media/image12.png)
+![](./media/image11.png) 
+![](./media/image12.png)
 
 The icon will turn green and the tag will switch to RUNNING once the
 instance has started. If you won’t be using the instance full-time, STOP
@@ -114,16 +114,12 @@ Click on the instance name to display its information page.
 
 ![](./media/image14.png)
 
-Use the instance ‘Hamburger Icon’ ![](./media/image15.png) to display
-the list of services available; you will use this set of menu options
-frequently.
-
-![](./media/image16.png)
-
-Choose ‘Autonomous Transaction Processing’ to continue and list any
+Use the instance **General Menu** ![](./media/image15.png) to display
+the list of services available; you will use this set of options
+frequently. Choose **Autonomous Transaction Processing** to continue and list any
 existing ATP databases in the instance.
 
-![](./media/image17.png)
+![](./media/instance_menu.png)
 
 The Autonomous Transaction Processing page shows all existing ATP
 databases; click “Create Autonomous Transaction Processing Database” to
