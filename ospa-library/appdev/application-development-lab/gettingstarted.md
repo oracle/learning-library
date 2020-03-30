@@ -156,6 +156,4 @@ NOTE:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See Oracle Documentation for more information.
 
 
-
-
-[Return to Table of Contents](#table-of-contents)
+[Return to Main Page](README.md)
