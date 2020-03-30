@@ -1291,7 +1291,7 @@ In this lab you will create new VBCS Web applications to display a list of Mama 
     the connection; for this lab we will choose “Define by
     Specification” for the connections created. Please click “Define
     by Specification” to continue. (if you only have an “endpoint” see
-    [Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) for an example of “Define by Endpoint”)
+    [Appendix A: Create Service Connection from Endpoint](#appendix-a-create-service-connection-from-endpoint) for an example of “Define by Endpoint”)
 
  ![](./media/image149.png)
  

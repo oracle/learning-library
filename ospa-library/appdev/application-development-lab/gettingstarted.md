@@ -5,12 +5,7 @@
 
 # Getting Started
 
-# Appendix
-
-&nbsp;&nbsp;&nbsp;&nbsp;[Create VBCS Instance](#create-vbcs-instance)
-
-
-# Lab Purpose and Rules
+## Lab Purpose and Rules
 
 These labs are designed to provide you with an introduction to using
 Visual Builder to create Web and Mobile applications and to prepare you
