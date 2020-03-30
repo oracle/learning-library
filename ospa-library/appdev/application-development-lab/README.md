@@ -1,4 +1,8 @@
-![](./media/banner.png)
+
+<p align="center">
+  <img width="650" height="300" src="./media/banner.png">
+</p>
+
 
 # Application Development Lab
 

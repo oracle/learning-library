@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="650" height="300" src="./media/banner.png">
+</p>
+
 # Application Development
 
 ## Table of Contents
@@ -22,11 +26,11 @@
 
 ### [Appendices](#appendix)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix A: Create VBCS Instance](#appendix-a-create-vbcs-instance) - In case you don't have one already
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) - For old-style RESTful APIs
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix C: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application) - Used in Lab 4 and Extra Lab 5
+&nbsp;&nbsp;&nbsp;&nbsp;[Appendix A: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint) - For old-style RESTful APIs
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application) - Used in Lab 4 and Extra Lab 5
 
 # Lab Guide Overview
 
@@ -1616,116 +1620,9 @@ This concludes Extra Lab 6.
 
 # Appendix
 
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix A: Create VBCS Instance](#appendix-a-create-vbcs-instance)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix B: Create Service Connection from Endpoint](#appendix-b-create-service-connection-from-endpoint)
-
-&nbsp;&nbsp;&nbsp;&nbsp;[Appendix C: Build Mama Maggy Data Application](#appendix-c-build-mama-maggy-data-application)
-
-# Appendix A: Create VBCS Instance
-
-Creating a VBCS instance is not part of the current Labs; learners will
-be sharing a lab with others that has already been created.
-
-However, it is possible you may need to create a VBCS instance in order
-to learn more about VBCS or to create a customer demo. If you are
-creating a new instance to support a customer demonstration please do
-this BEFORE meeting with the customer; the process is simple but can
-sometimes take several minutes.
-
-1.  Log into your tenancy using cloud.oracle.com; be sure it has been
-    provisioned to allow Visual Builder Cloud Service and the database
-    and object storage instances also required.  
-    (check with your tenancy admin if unsure)
 
 
-
-3.  From the “Visual Builder” service box there are two ways to open a
-    service console.
-
-![](./media/image_a_3.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.1 – Visual Builder service
-
-One method is to click on the box’s “Visual Builder” text to display an
-overview page.
-
-![](./media/image_a_7.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.2 – Visual Builder Overview
-
-From the overview page, click the “Open Service Console” button to
-continue.
-
-![](./media/image_a_8.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.1.3 – Open Service Console button
-
-Another method is to click the **General Menu** icon
-![](./media/image_a_9.png) in the lower-right corner of the  “Visual Builder” service box to display a menu.
-
-![](./media/image_a_3.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.2.1 – Visual Builder service box
-
-Select “Open Service Console” from the menu.
-
-![](./media/image_a_10.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.3.2.2 – Visual Builder service menu
-
-4.  If you have not created any services the Service Console prompts you
-    to begin the process.
-
-**DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using
-“Quick Starts” (see step 5).
-
-![](./media/image_a_11.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.4.1 – Create Instance invitation
-
-If Visual Builder instances already exist they will be shown in a table.
-
-![](./media/image_a_12.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.4.2 – VBCS existing instance(s)
-
-**DO NOT** CLICK “CREATE INSTANCE” at this time, we will be using “Quick Starts” (see step 5).
-
-5.  Visual Builder provides a “Quick Starts” capability to build an
-    instance complete with supporting database and object storage. Click
-    the “Quick Starts” button to get started it is located in the
-    upper-right portion of the Service Console display inside the big
-    blue bar.
-
-![](./media/image_a_13.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.1 – Quick Starts button When presented with the “QuickStarts” panel; provide an instance name and click the “Start” button to begin the process.
- 
-![](./media/image_a_14.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.2 – QuickStarts page Creation should take place in less than five minutes.
- 
-![](./media/image_a_15.png) 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure A.5.3 – Create button
- 
-That’s it, you’ve created an instance that can support many VBCS applications and user.
-
-
-NOTE:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If others will be sharing your VBCS instance you will need to use Oracle Identity Cloud Service (IDCS)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to make sure they have 'ServiceDeveloper' (Visual Builder Administrator) role for your instance if they are developers<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- or 'ServiceAdministrator' (Visual Builder Administrator) role if they need to administer other's applications.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See Oracle Documentation for more information.
-
-
-[Return to Appendix list](#appendix)
-
-[Return to Table of Contents](#table-of-contents)
-
-# Appendix B: Create Service Connection from Endpoint
+# Appendix A: Create Service Connection from Endpoint
 
 
 1.  If you have not yet created any “Service Connections” click the “+
@@ -1848,7 +1745,7 @@ NOTE:
 
 [Return to Table of Contents](#table-of-contents)
 
-# Appendix C: Build Mama Maggy Data Application
+# Appendix B: Build Mama Maggy Data Application
 
 This appendix shows how the “Mama Maggy” application was created to serve
 as a data source for the Application Development labs.
