@@ -1,5 +1,6 @@
-# Oracle Digital Assistant 
+![](./media/banner.png)
 
+# Oracle Digital Assistant 
 
 ## Table of Contents
 
