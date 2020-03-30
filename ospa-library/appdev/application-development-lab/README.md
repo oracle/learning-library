@@ -7,7 +7,7 @@
 # Application Development Lab
 
 
-### [Getting Started](getting-started.md)
+### [Getting Started](gettingstarted.md)
 ### [Lab Guide 1 - Application Development](applicationdevelopment-labguide.md)
 ### [Lab Guide 2 - Digital Assistant](oda-labguide.md)
 

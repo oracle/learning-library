@@ -519,5 +519,6 @@ You should receive an order confirmation similar to the one shown in the image b
 
 Congratulations! You have created your first skill and learned key aspects of defining intents, defining entities, designing the conversation flow, and using the tester to evaluate intent resolution and the conversation flow.
 
+[Return to Table of Contents](#table-of-contents)
 
-
+[Return to Main Page](README.md)
