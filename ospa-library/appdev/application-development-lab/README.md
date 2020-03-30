@@ -1,4 +1,6 @@
-## Application Development Lab
+![](./media/banner.png)
+
+# Application Development Lab
 
 
 ### [Getting Started](getting-started.md)
