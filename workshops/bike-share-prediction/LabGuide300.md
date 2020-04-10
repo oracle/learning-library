@@ -1,7 +1,8 @@
-# Getting Started with Oracle Analytics Cloud (OAC)
+Getting Started with Oracle Analytics Cloud (OAC)
+----------------------------------------------------------------------------
 
 ![](images/300/Picture300-lab.png)  
-Updated: January 4, 2019
+Updated: April 10, 2020
 
 ## Introduction
 
