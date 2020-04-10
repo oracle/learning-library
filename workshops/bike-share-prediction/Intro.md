@@ -1,6 +1,6 @@
 # Bike Share Demand Prediction Workshop
 
-## Introduction
+### Lab Introduction
 
 This is the first of several labs that are part of the **Bike Share Demand Prediction workshop.** This workshop will walk you through the process of using the Autonomous Data Warehouse for storing analytical datasets and applying Machine Learning models in order to learn the correlation between different attributes and predict the future demand.
 
@@ -9,7 +9,7 @@ You will take on 2 Personas during the workshop. The **Data Scientist Persona** 
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
-## Objectives
+### Objectives
 - Provision an Autonomous Data Warehouse (ADW) Instance
 - Transfer Data to the ADW Instance
 - Build and Apply Machine Learning Models in Oracle Analytics Cloud (OAC)
@@ -17,10 +17,10 @@ You will take on 2 Personas during the workshop. The **Data Scientist Persona** 
 - Build Machine Learning models in OAC without writing a single line of code!
 - Build and Apply Machine Learning Models Within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
 
-## Required Artifacts
+### Required Artifacts
 - The following lab requires an Oracle Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.
 
-## Step 1: Acquire an Oracle Cloud Free Tier Account or Workshop Account
+## **Step 1: Acquire an Oracle Cloud Free Tier Account or Workshop Account
 - Bookmark this page for future reference.
 
 - Open up a browser and navigate to www.oracle.com. Click the **Oracle Cloud Free Tier** button in the upper right hand corner.
@@ -40,7 +40,7 @@ You will take on 2 Personas during the workshop. The **Data Scientist Persona** 
 
     ![](images/signup-email-provisioned.png)
 
-## Step 2: Login to Oracle Cloud Account
+## **Step 2: Login to Oracle Cloud Account
 
 - From any browser go to oracle.com to access the Oracle Cloud.
 
@@ -62,7 +62,7 @@ You will take on 2 Personas during the workshop. The **Data Scientist Persona** 
 
   **NOTE**: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-## Step 2: Navigate to Lab 100
+## **Step 3: Navigate to Lab 100
 
 - Begin working on [Lab 100](LabGuide100.md)
 
