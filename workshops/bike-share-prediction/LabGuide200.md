@@ -1,7 +1,8 @@
-# Data Preparation Using SQL Developer
+Data Preparation Using SQL Developer
+----------------------------------------------------------------------------
 
 ![](images/200/Picture200-lab.png)  
-Updated: October 8, 2019
+Updated: April 10, 2020
 
 ## Introduction
 
