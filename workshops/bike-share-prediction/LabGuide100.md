@@ -2,7 +2,7 @@ Getting Started with Autonomous Data Warehouse (ADW) and Oracle Machine Learning
 ----------------------------------------------------------------------------
 
 ![](images/100/Picture100-lab.png)  
-Updated: January 4, 2019
+Updated: April 10, 2020
 
 ## Introduction
 
