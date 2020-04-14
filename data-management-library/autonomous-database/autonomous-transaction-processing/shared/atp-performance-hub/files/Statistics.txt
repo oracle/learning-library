@@ -1,0 +1,1 @@
+A chart reveals statistics about the query. Each row is numbered, matching an operation from the query. Columns are Operation, Object, Predicate, Operation Cost, Est.Rows, Est.Bytes, and Activity. The cells show various degrees of resource consumption.

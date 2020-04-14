@@ -180,7 +180,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -256,13 +256,11 @@ cd tflab
 
 11. tf_setup.sh creates a example .tf called **tftest.tf**, this file needs to be removed as we will download another .tf file to create infrastructure. Enter command
 
-
 ```
 rm tftest.tf
 ```
 
 12. Now edit the env-variables file. We will updated 2 variables. Enter command:
-
 
 ```
 vi env-vars
@@ -288,7 +286,6 @@ Paste this OCID in **env-vars** file
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Infra_Using_Terraform/img/Terraform_008.PNG" alt="image-alt-text">
 
 16. Save the file and then source it, Etner command:
-
 
 ```
 source env-vars

@@ -1,9 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Oracle Data Safe",
-            "description":"Overview of Oracle Data Safe content",
-            "filename":"./README.md"
-        }
-    ]
-}

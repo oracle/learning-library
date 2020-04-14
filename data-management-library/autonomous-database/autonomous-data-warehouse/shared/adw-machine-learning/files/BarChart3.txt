@@ -1,0 +1,1 @@
+This image shows the entire SQL Query Scratchpad. Below the page title is the Report Menu bar which contains a row of buttons for modifying the output report type. Below that is the bar graph. It displays a graph from 1998-2001 of the Values generated per Month.

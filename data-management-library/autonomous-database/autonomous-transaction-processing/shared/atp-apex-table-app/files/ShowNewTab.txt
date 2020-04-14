@@ -1,0 +1,5 @@
+This image shows a page with details on the ATP database instance you just created. To the left is a large ATP icon. It's green to indicate the service is availablle. 
+
+To the right of the icon are buttons, from left to right: DB Connection, Performance Hub, Service Concole, Scale Up/Down, Stop, and Actions. Service Console is highlighted with a red rectangle. The Actions button is expandable to reveal more options. 
+
+A header in the browser explains that Firefox is preventing a tab from appearing.  On the right side of the margin is a Preferences button. This button was pressed to reveal a menu. The final option in the menu is to show the content. Both the Preferences button and Show option are highlighted in a red rectangle.

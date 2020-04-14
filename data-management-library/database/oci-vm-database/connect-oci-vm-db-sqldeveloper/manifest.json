@@ -1,12 +1,12 @@
 {
     "tutorials": [
         {
-            "title": "Connect SQL Developer to an Oracle Cloud Infrastructure VM Database",
-            "description": "This 15-minute tutorial walks you through the steps to...",
-            "partnumber": "E12345_01",
-            "publisheddate": "10/14/2019",
-            "contentid": "123456",
-            "filename": "content.md"
+          "title": "Add an Ingress Rule to Open Access to the DB",
+          "filename": "add-ingress-rule/add-ingress-rule.md"
+        },
+        {
+          "title": "Connect SQL Developer to an Oracle Cloud Infrastructure VM Database",
+          "filename": "connect-oci-vm-db-sqldeveloper/connect-oci-vm-db-sqldeveloper.md"
         }
     ]
 }

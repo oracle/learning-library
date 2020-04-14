@@ -1,0 +1,26 @@
+Error starting at line : 1 in command -
+DROP TABLE customers
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 2 in command -
+DROP TABLE channels
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Table CHANNELS created.
+
+
+Table CUSTOMERS created.
+
+
+Table CUSTOMERS altered.
+
+
+Table CHANNELS altered.

@@ -18,9 +18,9 @@ To complete this lab, you need to have the following:
 
 ### Assumptions
 
-This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), PARTs 1 and 2.
+This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), Steps 1 and 2.
 
-## **PART 1**: Run a Security Assessment job against a target database
+## **STEP 1**: Run a Security Assessment job against a target database
 You can use Security Assessment to evaluate the current security state of your target databases and receive recommendations on how to mitigate the identified risks.
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click the **Security Assessment** tab.
@@ -31,12 +31,12 @@ You can use Security Assessment to evaluate the current security state of your t
 
    ![](./images/security-assess-target-database.png "fred")
 
-- While the assessment is running, continue to the next part.
+- While the assessment is running, continue to the next step.
 
   The assessment takes approximately 2-3 minutes to complete.
 
 
-## **PART 2**: Run a User Assessment job against a target database
+## **STEP 2**: Run a User Assessment job against a target database
 
 You can use User Assessment to identify user settings and risks on your target databases.
 
@@ -52,7 +52,7 @@ You can use User Assessment to identify user settings and risks on your target d
    ![](./images/user-assess-target-database.png " ")
 
 
-## **PART 3**: Analyze the user assessment results
+## **STEP 3**: Analyze the user assessment results
 
 - When the user assessment is completed, notice the following on the **User Assessment** page:
 
@@ -134,7 +134,7 @@ You can use User Assessment to identify user settings and risks on your target d
 
 
 
-## **PART 4**: Analyze the security assessment results
+## **STEP 4**: Analyze the security assessment results
 
 - Click the **Home** tab, and then click the **Security Assessment** tab.
 

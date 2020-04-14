@@ -131,9 +131,11 @@ Compute instance and id_rsa to connect via SSH into compute instance.
 cd /C/Users/PhotonUser/.ssh (No Spaces) 
 ```
 and then 
+
 ```
 ls 
 ```
+
 to verify the two files exist. 
 
 5. In git-bash Enter command  
@@ -185,7 +187,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 13.  ssh to **first** compute instance. Enter command:
             
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 **NOTE:** User name is ‘opc’.
@@ -210,6 +212,7 @@ ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 sudo yum -y install httpd (Install Apache HTTP Server)
 ```
+
 ```
 sudo firewall-cmd --permanent  --add-port=80/tcp 
 ```
@@ -242,6 +245,7 @@ echo 'WebServer1' >>/var/www/html/index.html
 ```
 sudo yum -y install httpd (Install Apache HTTP Server)
 ```
+
 ```
 sudo firewall-cmd --permanent  --add-port=80/tcp 
 ```

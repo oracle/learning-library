@@ -1,7 +1,8 @@
 ![](img/docker-title.png)  
 
 ## Table of Contents 
-- [Introduction](#lab-introduction)
+- [Table of Contents](#table-of-contents)
+- [Lab Introduction](#lab-introduction)
 - [Lab Assumptions](#lab-assumptions)
 - [Section 1-Login to your Oracle Cloud Account](#section-1-login-to-your-oracle-cloud-account)
 - [Section 2-Lab Setup](#section-2-lab-setup)
@@ -10,7 +11,7 @@
 - [Section 5-Create an Oracle Database Container](#section-5-create-an-oracle-database-container)
 - [Section 6-Create A Schema in Container Running Oracle Database and Login to EM Express](#section-6-create-a-schema-in-container-running-oracle-database-and-login-to-em-express)
 - [Section 7-Deploy Application](#section-7-deploy-application)
-- [Section 8-Change Application (optional)](#section-8-change-application-(optional))
+- [Section 8-Change Application](#section-8-change-application)
 
 ## Lab Introduction 
 Docker is a set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
@@ -20,7 +21,7 @@ Lab courtesy of NATD Solution Engineering Team.  Check out the original lab [her
 ## Lab Assumptions
 - Each participant has completed the Environment Setup lab and succesfully created a compute instance or has a Oracle Database marketplace instance running
 - The Virtual Compute Network (VCN) has been created with the appropriate Ingress rules
-- Each participant has created a docker hub [account](http://docker.hub.com)
+- Each participant has created a docker hub [account](http://hub.docker.com)
 - Participants are not logged onto Oracle's VPN
 - Participants are using Chrome as the preferred browser and have installed Chrome's JSON formatter
 
@@ -53,7 +54,7 @@ Lab courtesy of NATD Solution Engineering Team.  Check out the original lab [her
     ssh -i optionskey opc@<your ip address>
     ````
 
-1.  Before beginning the lab, you will need switch to the oracle user and stop the default listener running on port 1521.
+1.  OPTIONAL:  If you are running this on a compute instance that has Oracle already installed, you may need to shut down the listener.  If you do not have a listener running, proceed to the next step.
 
     ````
     sudo su - oracle
@@ -137,9 +138,11 @@ Lab courtesy of NATD Solution Engineering Team.  Check out the original lab [her
     - "-v" This maps the directory where you downloaded the restclient setup.
     ![](img/docker/dockerps.png) 
 
-3.  Find the public IP address of your instances.  Compute -> Instance
+3.  Find the public IP address of your instances.  Compute -> Instance. It is listed on the main page.  If you would like to do more exploration, it is also listed in the page for your instance.
 
     ![](img/docker/computeinstance.png) 
+
+    ![](img/instance-public-ip.png)
 
     ![](img/docker/selectdboptions2.png) 
 
@@ -147,7 +150,7 @@ Lab courtesy of NATD Solution Engineering Team.  Check out the original lab [her
 
 4.  Open up a browser on your laptop and go to your public URL on port 8002.  Go to http://Enter IP Address:8002/products. Depending on whether you have a JSON formatter, you should see the products in your application, in RAW or FORMATTED format.  `Note:  If you are on the VPN, disconnect`
 
-    ![](img/docker/products2-8002.png) 
+    ![](img/products2-8002.png) 
 
     ![](img/docker/products.png)    
 
@@ -215,23 +218,28 @@ Now that you know how to start, stop and relocate a container, let's see how to 
     ````
     docker login
     ````
-
-3.  There are database setup files that you cloned in an earlier step.   Ensure the listener has stopped.  Let's see how easy it is to deploy an Oracle Database to a docker container.  Issue the command below.  
+    ![](img/docker/section5step2.png)
+4.  There are database setup files that you cloned in an earlier step.   Ensure the listener has stopped.  Let's see how easy it is to deploy an Oracle Database to a docker container.  Issue the command below.  
     ````
     docker run -d -it --name orcl -h='oracledb-ao' -p=1521:1521 -p=5600:5600 -v /home/opc/AlphaOfficeSetup:/dbfiles wvbirder/database-enterprise:12.2.0.1-slim
     ````
+    ![](img/docker/section5step3.png)
 
-- -d runs the command in the background
-- -h assigns it the hostname oracleadb-ao
-- -p maps ports 1521 and 5600 (Enterprise Manager Express) inside the container to your compute instance. In an earlier step, we added ingress rules for these ports
-- --name is the name of the container
-- v maps the directory where you downloaded the setup files to the /dbfiles directory inside the container
+    - -d runs the command in the background
+    - -h assigns it the hostname oracleadb-ao
+    - -p maps ports 1521 and 5600 (Enterprise Manager Express) inside the container to your compute instance. In an earlier step, we added ingress rules for these ports
+    - --name is the name of the container
+    - v maps the directory where you downloaded the setup files to the /dbfiles directory inside the container
 
-4.  To watch the progress type the following command passing the name of the container:  orcl.
+5.  To watch the progress type the following command passing the name of the container:  orcl.  This takes time, **please be patient**.
     ````
     docker logs --follow orcl
     ````
-5.  When the database creationg is complete, you may see "The database is ready for use". The instance creation may happen quickly and that message may scroll past. Press control-c to continue.
+    ![](img/docker/section5step4.png)
+
+6.  When the database creation is complete, you may see "The database is ready for use". *The instance creation may happen quickly and that message may scroll past*. Press control-c to continue.
+
+    ![](img/docker/section5step4b.png)
 
 [Back to Top](#table-of-contents)
 
@@ -247,109 +255,153 @@ Now that you know how to start, stop and relocate a container, let's see how to 
     touch xxx
     ls
     ````
+    ![](img/docker/section6step2.png)
+
 3.  Now run the sql scipt from inside the container using sqlplus
     ````
     sqlplus / as sysdba
     @setupAlphaOracle.sql
     exit
     ````
-4.  Now that our schema is created, let's login to Enterprise Manager Express.  Enter the address below into your browser:
+    ![](img/docker/section6step3.png)
+
+4.  Now that our schema is created, let's login to Enterprise Manager Express.  Enter the address below into your browser.  If you've never downloaded flash player, you may need to install it and restart your browser.
     ````
     http://<Public IP Address>:5600/em
     ````
 
-5.  If prompted to enable Adobe Flash, click Allow.  Login using the credentials below.  Leave the container name field blank.  Explore the database using EM Express.
+5.  If prompted to enable Adobe Flash, click Allow.  Login using the credentials below.  Leave the container name field blank.  
     ````
     Username: sys
     Password: Oradoc_db1
     Check the "as SYSDBA" checkbox
     ````
+    ![](img/docker/em-express.png)
+
+    ![](img/docker/emexpress.png)    
+
+6. Explore the database using EM Express.
+
+
+
 [Back to Top](#table-of-contents)
 
 ## Section 7-Deploy Application
 
-1.  Download the docker image, twitterfeed, extract it and run the container.  The download is from the wvbirder docker hub account where this application is staged.
+In this section, you will deploy an application, twitterfeed, that is stored in the hub.docker.com site under the account wvbirder.  You will then run the rest client using an oracle database as the data source.
+
+1.  Make sure you have exited out of the docker container.  Download the docker image, twitterfeed, extract it and run the container.  The download is from the wvbirder docker hub account where this application is staged.
     ````
     docker run -d --name=twitterfeed -p=9080:9080 wvbirder/twitterfeed
     ````
+    ![](img/docker/section7step1.png)
 2.  Check to see which containers are running.  
     ````
     docker ps
     ````
+    ![](img/docker/section7step2.png)
+3.  Open up a broswer to see the application with the stream of texts.  http://Public IP address:9080/statictweets.  Expand to see the full json file.
 
-3.  Open up a broswer to see the application with the stream of texts.  http://Public IP address:9080/statictweets
-
+    ![](img/docker/section7step3.png)
 4.  Let's run the restclient with the Oracle Database as the datasource.
     ````
     docker run -d -it --rm --name restclient -p=8002:8002 --link orcl:oracledb-ao -e ORACLE_CONNECT='oracledb-ao/orclpdb1.localdomain' -e DS='oracle' wvbirder/restclient
 
     ````
 
-3.  Go back to your broswer to see the application with the stream of texts.  http://Public IP address:8002/products
+5.  Go back to your broswer to see the application with the stream of texts.  http://Public IP address:8002/products
 
-4.  An application called AlphaOfficeUI has been staged in wvbirders docker hub account.  Let's download it, extract and run it.
+    ![](img/docker/twitterproducts.png)
+
+6.  An application called AlphaOfficeUI has been staged in the docker hub account, wvbirder.  Let's download it, extract and run it.  Later on in this lab you will push a modified application up to your docker account.
     ````
     docker run -d --name=alphaofficeui -p=8085:8085 wvbirder/alpha-office-ui-js
     ````
-3.  Go back to your broswer to see the application running on port 8085.  http://Public IP address:8085.  Click on one of the products to see the details and the twitterfeed comments. 
+    ![](img/docker/section7step6.png)
+
+7.  Go back to your broswer to see the application running on port 8085.  http://Public IP address:8085.  Click on one of the products to see the details and the twitterfeed comments. 
+   ![](img/docker/alphaoffice.png)
 
 [Back to Top](#table-of-contents)
 
-## Section 8-Change Application (optional)
+## Section 8-Change Application
 
-1. Copy a background image from your compute instance into the filesystem of the container.
+This lab will show how you can share applications and make modifications in the container.  
+
+1. Copy a background image from your compute instance into the filesystem of the container. 
     ````
     docker cp /home/opc/AlphaOfficeSetup/dark_blue.jpg alphaofficeui:/pipeline/source/public/Images
     ````
 
-2.  wvbirder's container does not have vim installed.  So you will configure it.  First you need to login to the container.
+2.  wvbirder's container does not have vim (an editor) installed.  So you will configure it and use it to make changes to the css and html pages of the application.  First you need to login to the docker container using the command `docker exec`.
     ````
     docker exec -it alphaofficeui bash
     apt-get update
     apt-get install vim
     ````
-
-3.  Verify the dark_blue.jpg file is in the container and then use vim to edit the html file for the main page in your application.  Change the highlighted areas to your name.
+    ![](img/docker/section8step1.png)
+    
+    ![](img/docker/section8step2.png)
+3.  Verify the dark_blue.jpg file is in the container and then use vim to edit the html file for the main page in your application.  
     ````
     ls /pipeline/source/public/Images
+    ````
+4.  Use the vim editor to change the name of the application (between the H1 tags) to your name.
+    ````
     vim /pipeline/source/public/alpha.html
     ````
+    ![](img/docker/section8step4.png) 
 
-4.  Let's edit the css file as well and change the background color of the app.
+5.  Let's edit the css file as well and change the background color of the app.  Change the bg image to the dark_blue.jpg image you copied into the container.
     ````
     vim /pipeline/source/public/css/alpha.css
     exit
     ````
-5.  Let's commit this new docker image to your docker hub now.  Wvbirder thanks but we have our own Docker account.  Once commited, list the images.  Note that your image is now listed.
+    ![](img/docker/section8step5b.png) 
+
+    **Old Version of File**
+
+    ![](img/docker/section8oldversion.png) 
+
+6.  Let's view the running application now.  Notice the name and the background has changed.
+
+    ![](img/docker/section8step9.png) 
+
+    **Old Version of Application**
+
+    ![](img/docker/oldalphaoffice.png) 
+
+
+7.  If you were working with a team and needed to get this updated online, you would commit it.  Let's commit this new docker image to your docker hub now.  Wvbirder thanks but we have our own Docker account.  Once commited, list the images.  Note that your image is now listed.
     ````
     docker commit alphaofficeui (your-dockerhub-account)/(image-name)
     docker images
     ````
-6.  Let's start a container based on your image.  First we need to stop the existing container.
+    ![](img/docker/section8step5a.png)
+    ![](img/docker/section8step5.png)    
+
+8.  Let's start a container based on your image.  First we need to stop the existing container.
     ````
     docker stop alphaofficeui
     docker rm alphaofficeui
     ````
+    ![](img/docker/section8step6.png)
 
-7.  Let's download, extract and install the new container from your docker account
+9.  Let's download, extract and install the new container from your docker account
     ````
     docker run -d --name=alphaofficeui -p=8085:8085 (your-dockerhub-account)/(image-name)
     ````
-3.  Go back to your broswer to view the application.  http://Public IP address:8085
+    ![](img/docker/section8step7.png)
+10. Go back to your broswer to view the application.  http://Public IP address:8085
 
-4.  Now let's push this image to your docker hub account
+11. Now let's push this image to your docker hub account
     ````
     docker push (your-dockerhub-account)/(image-name)
     ````
-5.  Open up a new browswer tab and login to hub.docker.com.  Verify your new account is there.
 
-6.  Don't forget to restart your oracle listener!
-    ````
-    sudo su - oracle
-    . oraenv ORCL
-    lsnrctl start LISTENER
-    ps -ef | grep tns
-    ````
+12.  Open up a new browswer tab and login to hub.docker.com.  Verify your new image was successfully pushed. 
+
+Congratulations, this is the end of this lab.
 
 
 

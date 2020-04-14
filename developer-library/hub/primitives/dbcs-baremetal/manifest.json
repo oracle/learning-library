@@ -1,0 +1,22 @@
+{
+    "tutorials": [
+        {
+            "title": "Create a Database Cloud Service Bare Metal",
+            "description":"Create a Database Cloud Service Bare Metal",
+            "publisheddate": "03/15/2020",
+            "filename":"./about-this/about-this.md"
+        },
+        {
+            "title": "Provision Resources",
+            "description":"Provision Resources",
+            "publisheddate": "03/15/2020",
+            "filename":"./provision-resources/provision-resources.md"
+        },
+        {
+            "title": "Validate Provisioning",
+            "description":"Validate Provisioning",
+            "publisheddate": "03/15/2020",
+            "filename":"./validate-provisioning/validate-provisioning.md"
+        }
+    ]
+}

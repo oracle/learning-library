@@ -1,0 +1,34 @@
+{
+    "tutorials": [
+       {
+            "title": "Introduction and Overview",
+            "description": "Introduction to Oracle Database on Docker",
+            "filename": "../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-key.md"
+        },
+        {
+            "title": "Lab 2: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-ssworkshop.md"
+        },
+        {
+            "title": "Lab 3: Workshop Setup",
+            "description": "Setup Docker Workshop in Self Service Workshop",
+            "filename": "./../setup/setup-ssworkshop.md"
+        },
+        {
+            "title": "Lab 4: Database on Docker",
+            "description": "Clone, Plug and Drop Pluggable Databases",
+            "filename": "./../db-on-docker/db-on-docker.md"
+        },
+        {
+            "title": "Lab 5: Database on Docker - Application",
+            "description": "Using Application Containers with Multitenant",
+            "filename": "./../app-containers/app-containers.md"
+        }
+    ]
+}

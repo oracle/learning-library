@@ -333,7 +333,7 @@ If you are seeing an Authorization Error while trying to Select Shape to Create 
 Make sure your email has been verified. Log out and Log back in and restart from the listing link.
 Also, verify you are using the same region and compartment that was assigned to you.
 
-### **15. Additional information on Oracle Cloud Infrastructure Setup**
+### **15. Additional information on Oracle Cloud Infrastructure Pricing**
 <https://www.oracle.com/cloud/pricing.html>
 
 ### **16. Additional information on Oracle Cloud Infrastructure Setup**

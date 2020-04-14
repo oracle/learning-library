@@ -188,7 +188,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE> 
 ```
 
@@ -279,7 +279,7 @@ copy and paste the public key content to Notepad. We will use this public key to
  cd ~/.ssh
 ``` 
 then
-```
+```bash
 ssh –i id_rsa opc@<Private_IP_OF_COMPUTE_INSTANCE>
 ```
 

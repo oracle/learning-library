@@ -51,7 +51,7 @@ In the previous lab, you imported a 5 table star schema, ssb, into your compute 
     sqlplus / as sysdba
     show sga;
     show parameter inmemory; 
-    show parameter keep;
+    show parameter keep
     ````
     Notice that the SGA is made up of Fixed Size, Variable Size, Database Buffers and Redo.  There is no In-Memory in the SGA.  Let's enable it.
 
@@ -68,7 +68,8 @@ In the previous lab, you imported a 5 table star schema, ssb, into your compute 
     ````
     show sga;
     show parameter inmemory; 
-    show parameter keep
+    show parameter keep;
+    exit
     ````
 [Back to Top](#table-of-contents)
 

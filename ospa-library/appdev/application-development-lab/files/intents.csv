@@ -1,0 +1,30 @@
+query,topIntent
+Need to cancel my order,CancelPizza
+I really don't want the Pizza anymore,CancelPizza
+Its been more than 20 mts. Please cancel my order and issue a refund to my card.,CancelPizza
+Please cancel my pizza order,CancelPizza
+Can i cancel my order?,CancelPizza
+I'd like to cancel my order please,CancelPizza
+Don't need my Pie anymore,CancelPizza
+How do I cancel my order?,CancelPizza
+Cancel my Pizza please,CancelPizza
+Cancel my order,CancelPizza
+Your charged me wrong,FileComplaint
+I am not happy with my recent order,FileComplaint
+I am upset,FileComplaint
+I have some grief to share,FileComplaint
+I want to file a complaint,FileComplaint
+I want to speak with a manager,FileComplaint
+Can I raise a complaint,FileComplaint
+I want to order pizza for lunch,OrderPizza
+I want pizza,OrderPizza
+Let's order a cheese pizza,OrderPizza
+Order Pizza!,OrderPizza
+Can I order a Pizza?,OrderPizza
+Would love a large Pepperoni please!,OrderPizza
+What's on the menu today?,OrderPizza
+I feel like eating some pizza,OrderPizza
+Do you have deep dish pizzas available?,OrderPizza
+Do you server gluten-free pizza?,OrderPizza
+I would like to order a pizza,OrderPizza
+Would you happen to have thin crust options on your Pizzas?,OrderPizza

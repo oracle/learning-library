@@ -182,7 +182,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -245,7 +245,7 @@ This will list all availability domains in the current region.  Make note of one
 2. Return to the OCI Console and navigate to Identity -> Compartments.  Retrieve the OCID of the assigned compartment.
 
 3. Enter the following command to list VCN's:
-```
+```bash
 oci network vcn list --compartment-id <your compartment id>
 ```
 
@@ -254,13 +254,13 @@ oci network vcn list --compartment-id <your compartment id>
 **NOTE:** It should return the details of the VCN you created at the start of this lab.  If you encounter an error message, please contact the instructor.
 
 **TIP:** You can create an environment variable for your compartment ID to avoid having to paste it each time.
-```
+```bash
 export cid=<your compartment ocid>
 oci network vcn list --compartment-id $cid
 ```
 
 4. Create a new virtual cloud network with a unique CIDR block.  You will need the OCID of your compartment.
-```
+```bash
 oci network vcn create --cidr-block 192.168.0.0/16 -c <your compartment OCID> --display-name CLI-Demo-VCN --dns-label clidemovcn
 ```
 Record the ``id:`` of the resource after it is created.  You will need it in the upcoming steps.
@@ -272,7 +272,7 @@ oci network security-list create --display-name PubSub1 --vcn-id <your VCN OCID>
 Make a note of the resource ``id:`` for use in the next step.
 
 6. Create a public subnet.
-```
+```bash
 oci network subnet create --cidr-block 192.168.10.0/24 -c <your compartment OCID> --vcn-id <your VCN OCID> --security-list-ids '["<security list OCID from previous step>"]'
 ```
 Record the ``id:`` of the resources after it is created.  You will need it in an upcoming step.
@@ -280,14 +280,14 @@ Record the ``id:`` of the resources after it is created.  You will need it in an
 **Note:** You have the option to specify up to 5 security lists and a custom route table.  In this case, we are only assigning one security list and allowing the system to automatically associate the default route table.
 
 7. Create an Internet Gateway.  You will need the OCID of your VCN and Compartment.
-```
+```bash
 oci network internet-gateway create -c <your compartment OCID> --is-enabled true --vcn-id <your VCN OCID> --display-name DemoIGW
 ```
 Make a note of the ``id:`` for this resource after it has been created.
 
 8. Next, we will update the default route table with a route to the internet gateway.  First, you will need to locate the OCID of the default route table.
 
-```
+```bash
 oci network route-table list -c <your compartment OCID> --vcn-id <your VCN OCID>
 ```
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_CLI/img/100_CLI_004.png" alt="image-alt-text">
@@ -295,8 +295,8 @@ oci network route-table list -c <your compartment OCID> --vcn-id <your VCN OCID>
 record the ``id:`` of the `Default Route Table`
 
 9. Update the route table with a route to the internet gateway.
-```
-oci network route-table update --rt-id <route table OCID> --route-rules '[{"cidrBlock":"0.0.0.0/0","networkEntityId":"<your Internet Gateway OCID"}]'
+```bash
+oci network route-table update --rt-id <route table OCID> --route-rules '[{"cidrBlock":"0.0.0.0/0","networkEntityId":"<your Internet Gateway OCID>"}]'
 ```
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_CLI/img/100_CLI_004.png" alt="image-alt-text">
@@ -306,7 +306,7 @@ oci network route-table update --rt-id <route table OCID> --route-rules '[{"cidr
 **Use QUERY to find Oracle Linux Image ID, then launch a compute instance**
 
 10. Use the CLI ``query`` command to retrieve the OCID for the latest Oracle Linux image.  Make a note of the image ID for future use.
-```
+```bash
 oci compute image list --compartment-id <your compartment OCID> --query 'data[?contains("display-name",`Oracle-Linux-7.6-20`)]|[0:1].["display-name",id]'
 ```
 
@@ -323,13 +323,13 @@ You will need the following pieces of information:
 - Valid compute shape (i.e. VM.Standard.E2.1)
 - Your public SSH key
 
-```
+```bash
 oci compute instance launch --availability-domain <your AD name> --display-name demo-instance --image-id <ID from previous step> --subnet-id <subnet OCID> --shape VM.Standard.E2.1 --compartment-id <Compartment_ID> --assign-public-ip true --metadata '{"ssh_authorized_keys": "<your public ssh key here>"}'
 ```
 Capture the ``id:`` of the compute instance launch output.
 
 12. Check the status of the instances
-```
+```bash
 oci compute instance get --instance-id <the instance OCID> --query 'data."lifecycle-state"'
 ```
 
@@ -343,7 +343,7 @@ This section is optional and does not contain detailed instructions.  Instead, t
 https://docs.cloud.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/index.html
 
 14. Locate the public IP address of the instance using the CLI
-```
+```bash
 oci compute instance list-vnics --instance-id <instance OCID> | grep "ip.:"
 ```
 
@@ -359,7 +359,7 @@ oci compute instance list-vnics --instance-id <instance OCID> | grep "ip.:"
 
 20. Delete the Block volume, then compute instance and then VCN. Example command to delete VCN
 
-```
+```bash
  oci network vcn delete --vcn-id <YOUR_VCN_OCID>  
 ```
 

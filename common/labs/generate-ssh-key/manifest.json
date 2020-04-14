@@ -1,0 +1,20 @@
+{
+    "tutorials": [
+        {         
+            "title": "Lab: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "generate-ssh-keys.md"
+        },
+        {         
+            "title": "Lab: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "cloud-login.md"
+        }
+    ]
+}

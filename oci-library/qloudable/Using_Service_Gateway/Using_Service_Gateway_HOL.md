@@ -294,7 +294,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 15. In Order to ssh into private instance we will use the ssh proxy command. This command allows us to “tunnel” through the bastion host to our private instance. Storing private SSH keys on a public server such as a Bastion host(First Compute instance) is not recommended.
 
 16. Ensure you have both the Public IP of first compute and Private IP of second compute. In git-bash window ensure you are in **/C/Users/PhotonUser/.ssh** directory. Enter Command:
-``` 
+```bash 
 ssh -t -o ProxyCommand='ssh -i <SSH_Private_Key_Name> opc@<FIRST_COMPUTE_PUBLIC_IP> -W %h:%p %r' -i <SSH_Private_Key_Name> opc@<SECOND_COMPUTE_PRIVATE_IP>
 ```
 
@@ -352,7 +352,7 @@ the one in OCI console window and make sure they match
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Service_Gateway/img/SGW_032.PNG" alt="image-alt-text">
 
 5. Switch to git-bash window (ssh session to second compute instance) and download samplefile. Enter command:
-```
+```bash
 oci os object get --namespace <NAME_SPACE> --bucket-name <BUCKET_NAME> --name samplefile --file ./
 ```
 
@@ -405,7 +405,7 @@ and verify samplefile was not downloaded.
 14. Switch to git-bash window (with ssh to second compute instance).
 
 15. Re-enter download command:
-```
+```bash
 oci os object get --namespace <NAME_SPACE> --bucket-name<BUCKET_NAME> --name samplefile --file ./
 ```
 

@@ -13,9 +13,9 @@ To complete this lab, you need to have the following:
 - Oracle Data Safe enabled in a region of your tenancy
 - A registered target database in Oracle Data Safe
 
-## **PART 1**: Sign in to Oracle Cloud Infrastructure
+## **STEP 1**: Sign in to Oracle Cloud Infrastructure
 
-- From any browser, enter the following url:
+- From any browser, enter the following URL:
 
   [https://console.us-ashburn-1.oraclecloud.com/a/tenancy](https://console.us-ashburn-1.oraclecloud.com/a/tenancy)
 
@@ -32,7 +32,7 @@ To complete this lab, you need to have the following:
   ![](./images/oci-sign-in.png " ")
 
 
-## **PART 2**: Sign in to the Oracle Data Safe Console
+## **STEP 2**: Sign in to the Oracle Data Safe Console
 
 - From the navigation menu in Oracle Cloud Infrastructure, select **Data Safe**.
 
@@ -54,7 +54,7 @@ To complete this lab, you need to have the following:
 
 
 
-## **PART 3**: View the Oracle Data Safe Dashboard
+## **STEP 3**: View the Oracle Data Safe Dashboard
 
 - Notice that when you sign in to Oracle Data Safe, you are presented with a dashboard on the **Home** tab.
 
@@ -81,7 +81,7 @@ To complete this lab, you need to have the following:
 
 
 
-## **PART 4**: View details for a registered target database in Oracle Data Safe
+## **STEP 4**: View details for a registered target database in Oracle Data Safe
 
 - Click the **Targets** tab. Notice that there is only one target database to which you have access.
 

@@ -14,9 +14,9 @@ The following items are provided to you during the lab:
 - Oracle Data Safe enabled in a region of your tenancy
 - An Autonomous Transaction Processing (ATP) database and the password for the `ADMIN` user account
 
-## **PART 1**: View sensitive data in your ATP database
+## **STEP 1**: View sensitive data in your ATP database
 
-In this part, you use SQL Developer Web to query sensitive data in your ATP database. You can access SQL Developer Web in the ATP Console.
+In this step, you use SQL Developer Web to query sensitive data in your ATP database. You can access SQL Developer Web in the ATP Console.
 
 - From any browser, enter the following url:
 
@@ -24,7 +24,7 @@ In this part, you use SQL Developer Web to query sensitive data in your ATP data
 
 - If prompted, enter the tenancy name provided to you during the lab, and then click **Continue**.
 
-  Note: If you are signed in to Oracle Cloud Infrastructure on another tab, then you are not prompted to enter a tenancy name and can continue to the next part.
+  Note: If you are signed in to Oracle Cloud Infrastructure on another tab, then you are not prompted to enter a tenancy name and can continue to the next step.
 
     ![](./images/2019-08-13%2013_59_08-Oracle%20Cloud%20Infrastructure%20_%20Sign%20In.png " ")
 
@@ -107,13 +107,13 @@ In this part, you use SQL Developer Web to query sensitive data in your ATP data
 
   Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, `hire_date`, `job_id`, `salary`, and `manager_id` are considered sensitive data and should be masked if shared with developers and testers.
 
-  Keep this tab open so that you can return to it later in part 4 when you view the masked data.
+  Keep this tab open so that you can return to it later in step 4 when you view the masked data.
 
      ![](./images/query-results.png " ")
 
 
 
-## **PART 2**: Discover sensitive data by using Data Discovery
+## **STEP 2**: Discover sensitive data by using Data Discovery
 
 The Data Discovery wizard generates a sensitive data model that contains sensitive columns in your target database. When working in the wizard, you select sensitive types that you want to discover in your target database.
 
@@ -230,7 +230,7 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 
 
 
-## **PART 3**: Mask sensitive data by using Data Masking
+## **STEP 3**: Mask sensitive data by using Data Masking
 The Data Masking wizard generates a masking policy for your target database based on a sensitive data model. In the wizard, you select the sensitive columns that you want to mask and the masking formats to use.
 
 - Click **Continue to mask the data**. The Data Masking wizard is displayed.
@@ -330,9 +330,9 @@ The Data Masking wizard generates a masking policy for your target database base
 
 
 
-## **PART 4**: Validate the masked data in your ATP database
+## **STEP 4**: Validate the masked data in your ATP database
 
-- Return to the browser tab for **SQL Developer Web**. You should still have your query results from part 1 in this lab. Take a moment to review the data.
+- Return to the browser tab for **SQL Developer Web**. You should still have your query results from step 1 in this lab. Take a moment to review the data.
 
    ![](./images/sql-developer-old-query-results.png " ")
 

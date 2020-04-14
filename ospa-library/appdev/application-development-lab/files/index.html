@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Oracle Web SDK Sample</title>
+    <link rel="shortcut icon" href="https://oracle.github.io/learning-library/common/redwood-hol/img/favicon.ico" />
+    <link rel="stylesheet" href="resources/css/style.css">
+
+    <script>
+        var chatWidgetSettings = {
+            showConnectionStatus: true,
+            conversationBeginPosition: 'bottom',
+            openChatOnLoad: true,
+            position: {bottom: '2px', right: '2px'},
+            displayActionAsPills: true,    
+            embedTopStickyId: 'top-text',
+            URI: '<YOUR URI>',
+            channelId: '<YOUR CHANNEL>'
+
+        };
+        function initSdk(name) {
+            // Default name is Bots
+            if (!name) {
+                name = 'Bots';
+            }
+            setTimeout(() => {
+                const Bots = new WebSDK(chatWidgetSettings); // Initiate library with configuration
+                Bots.connect()                               // Connect to server
+                    .then(() => {
+                        console.log("Connection Successful");
+                    })
+                    .catch((reason) => {
+                        console.log("Connection failed");
+                        console.log(reason);
+                    });
+                window[name] = Bots;
+            });
+        }
+    </script>
+    <script src="resources/scripts/web-sdk.js" onload="initSdk('Bots')">
+    </script>
+
+</head>
+<body> 
+  <header class="hol-Header" role="banner">
+        <div class="hol-Header-wrap">
+            <div class="hol-Header-logo"><span>Hands on Labs</span></div>
+            <div class="hol-Header-actions">
+                <button id="openNav" class="hol-Header-button hol-Header-button--menu rightNav" aria-label="Open Menu"
+                    title="Open Menu">
+                    <span class="hol-Header-toggleIcon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+       
+        
+         <div class="img">
+            <img src="https://images.huffingtonpost.com/2015-10-07-1444224600-7634313-Pizza_1.jpeg">
+
+        </div>
+        
+ 
+    </div>            
+</body>
+</html>

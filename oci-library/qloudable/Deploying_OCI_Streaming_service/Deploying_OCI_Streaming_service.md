@@ -177,7 +177,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -240,7 +240,7 @@ sudo pip install virtualenv
 
 9. Now create a virtual environment, Enter command:
 
-```
+```bash
 virtualenv <Environment_Name>
 ```
 For example **virtualenv stream_env**
@@ -251,6 +251,7 @@ Now initialize the virtual enviornment, Enter command:
 ```
 cd /home/opc/stream_env/bin
 ```
+
 ```
 source ~/stream_env/bin/activate
 ```
@@ -268,9 +269,11 @@ pip install oci
 ```
 cd /home/opc
 ```
+
 ```
 rm stream_example.py
 ```
+
 ```
 wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_example.py
 ```
@@ -280,9 +283,11 @@ wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-librar
 ```
 cd /home/opc/stream_env/lib/python2.7/site-packages/oci/streaming/
 ```
+
 ```
 rm stream_admin_client_composite_operations.py
 ```
+
 ```
 wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/stream_admin_client_composite_operations.py
 ```
@@ -291,7 +296,7 @@ wget https://raw.githubusercontent.com/oracle/learning-library/master/oci-librar
 
 14. Switch to ssh session and run the script, Enter command:
 
-```
+```bash
 python ~/stream_example.py <COMPARTMENT_OCID>
 ```
 

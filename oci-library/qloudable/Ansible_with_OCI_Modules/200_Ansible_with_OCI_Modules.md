@@ -174,7 +174,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -218,7 +218,7 @@ cat ~/.oci/oci_api_key_public.pem
 22. Navigate to ``Identity`` --> ``Compartments`` and locate the OCID for your assigned compartment.  Copy it.
 
 23. Return to your SSH terminal session.  To validate that the CLI is working properly run the following command.
-```
+```bash
 oci compute instance list --compartment-id <value you copied in previous step>
 ```
 

@@ -189,78 +189,37 @@ identify the historical SQL that was monitored.
 
 **Start the Database Operation.**
 
-The DBOP script is started through a job in Enterprise manager and includes content such as
+ssh using a terminal window or putty and log in as oracle. (See FAQ section)
 
--   Create Table SH2.CUSTOMER_NEW
+Once Logged in perform the following
 
--   Insert /\*+APPEND \*/ into SH2.CUSTOMER_NEW
+[oracle\@em12 \~]\$ cd scripts
 
--   Add Primary key to SH2.CUSTOMER_NEW
+[oracle\@em12 scripts]\$ . ./ SALESENV
 
--   Create table SH2.CUSTOMER_TARGET
+[oracle\@em12 scripts]\$ cd load/frame/queries/awrv 
+[oracle\@em12 awrv]\$ pwd
 
--   Merge into SH2.CUSTOMER_TARGET using SH2.CUSTOMER_NEW
+/home/oracle/scripts/load/frame/queries/awrv
+1. Using SQLPlus connect to the sh2 account. [oracle@em12 awrv]$ sqlplus sh2/sh2@psales. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file.
+At the beginning of the file you will notice how we have tagged the operation with dbms_sql_monitor.begin_operation and ended it with dbms_sql_monitor.end_operation
+Now execute the file @DBOP.sql
 
--   PL/SQL block performing two SQL statements
+2. You should already be logged on to Enterprise Manager. If you are not, please follow the instructions detailed earlier. Select the Monitored SQL tab.
 
--   Select statement on SH2.SALES
+3. Review the list of currently executing SQLs are visible click on the DBOP_DEMO name. This will open the DBOP named DBOP_DEMO.
 
-**Before any of these statements are executed then we tag the operation with**
+Note: You may need to scroll down or select “Database operations” from the type dropdown.
 
-    var eid number
 
-    exec :eid := dbms_sql_monitor.begin_operation(dbop_name =\> 'DBOP_DEMO');
-
-    **When the operation has ended we end the tagging with exec**
-
-    dbms_sql_monitor.end_operation('DBOP_DEMO',:eid);
-
-    **This makes it possible to monitor the complete operation as one unit in
-    SQL monitoring**
-
-**Now execute the Database Operation job**
-
-1.  Go to Enterprise \> Job \> Library
-
-    ![](media/af24a363db75caa6bd0139d955c65811.tiff)
-
-2.  Select job RUN_DATABASE_OPERATIONS
-
-    ![](media/32024d8b72b182d210c910445d286080.png)
-
-3.  Click Submit button
-
-    ![](media/f5b7c3cfc72e29b94f73337fb9891087.png)
-
-4.  The workload has started.
-
-    ![](media/b7205f571157879583d090af34c0f96f.png)
-
-5.  Now go to the Sales database by select Targets \> Databases
-
-    ![](media/216559c32d78ee5c8c291858da897c19.png)
-
-6.  Right click on Sales database to take a shortcut directly to SQL Monitoring
-
-    Hover over **Performance** then **Performance Hub** , Click on SQL Monitor
-
-![](media/68245f38f9c9011a41eaa75ef0f3cbd1.png)
-
-7.  Select the Monitored SQL tab.
-
-    Review the list of currently executing SQLs are visible click on the
-    DBOP_DEMO name. This will open the DBOP named DBOP_DEMO.
-
->   Note: You may need to scroll down or select “Database operations” from the
->   type dropdown
 
 ![https://github.com/oracle/learning-library/raw/master/enterprise-manageability-library/enterprise_manager/media/b10c056370e56dd1286ca1f556118c8f.jpg](media/b10c056370e56dd1286ca1f556118c8f.jpg)
 
-8. Review the details of the Database Operations.
+4. Review the details of the Database Operations.
 
 ![https://github.com/oracle/learning-library/raw/master/enterprise-manageability-library/enterprise_manager/media/a59f28bdd1166978c41e9c9c6a5d9b93.jpg](media/a59f28bdd1166978c41e9c9c6a5d9b93.jpg)
 
-9.  Click on the Activity tab. You will see all the activity for this operation.
+5.  Click on the Activity tab. You will see all the activity for this operation.
 
 ![https://github.com/oracle/learning-library/raw/master/enterprise-manageability-library/enterprise_manager/media/1a32fbdd89e519c2b8401e7dd0626890.jpg](media/1a32fbdd89e519c2b8401e7dd0626890.jpg)
 
@@ -469,98 +428,202 @@ Details about newly published statistics can be found if you navigate **Schema**
 <br>**Activity 5: Database Workload Replay** 
 ======================================================================
 
-We have already created a capture and we have created a Replay task where we have preprocessed the capture and created a draft replay to minimize input errors.
+1. Create a Replay Task
+You need to connect two sessions to you dedicated host as user OPC using the provided SSH key. Use putty or similar to connect to your local host. (See FAQ section)
 
-1. From the **Enterprise** menu, navigate to **Quality Management** then **Database Replay** 
+    ssh -i [privatekey] opc@[Your IP]
+Session 1 and session 2
 
-    ![](media/cfff68203edd150c7b9293eb770e1691.png)
+2. Connect to user oracle from the OPC:
 
-2.  Select the Tab Replay Task
+    user sudo su – oracle
+    
+    ******** Session 1 *********
 
-3.  Click on **Workshop_REPLAY_BB1**
+3. Set Environment variables for sales database
+    
+    . ./sales.env
 
-    ![](media/2f17a56eee2a6c3321799cc0747b852a.png)
+4. Connect to sales database and create indexes. (indexes are already created, just need to make them visible)
+    
+    sqlplus system/welcome1@oltp
+    
+    alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
+    
+    alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
+    
+    alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
+    
+    exit
 
-4.  Select **BB_REPLAY_1** and click **Create Like**
+5. We have already performed the capture and stored it in 
 
-    ![](media/db4b7e0a639c9cfba92cbfab724fd94c.png)
+    /home/oracle/scripts/dbpack/RAT_CAPTURE/DBReplayWorkload_OLTP_CAP_1 RAT_REPLAY
 
-5.  Provide an unique replay name
+    The capture directory should be copied to a Replay directory. In a normal situation replay is performed against a test server. This test environment is limited so we will only copy the directory to a replay path instead
+    
+    cd scripts/dbpack
+    
+    cp -r RAT_CAPTURE/DBReplayWorkload_OLTP_CAP_1 RAT_REPLAY
+    
+    cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
 
-    ![](media/6596242a12cffca093fed1f38df58902.png)
+6. Connect to as sysdba and grant become user to system on all containers
+    
+    sqlplus sys/welcome1 as sysdba
 
-6.  Click on **Replay Workload**
+    grant become user to system container=all;
+7. Connect to system create a directory object to locate the capture and preprocess the capture
+    
+    connect system/welcome1
+    
+    CREATE DIRECTORY DBR_REPLAY AS
+'/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1';
+    
+    exec DBMS_WORKLOAD_REPLAY.PROCESS_CAPTURE (capture_dir => 'DBR_REPLAY');
+8. We can now start to replay the workload. Initialize replay will load replay metadata created during preprocessing
+    
+    exec DBMS_WORKLOAD_REPLAY.INITIALIZE_REPLAY (replay_name => 'REPLAY_1', replay_dir => 'DBR_REPLAY');
 
-    ![](media/8535707b3d8224edc8bfb9bbe3d97653.png)
+9. If the replay environment uses different connect strings compared to the capture environment then we need to remap connections. Check connect strings.
+    
+    select * from DBA_WORKLOAD_CONNECTION_MAP;
 
-7.  Since this is a Create Like it will remember all settings from previous
-    replay. On this page we provide Oracle Database credentials and Oracle
-    Database host credentials, then Click the **Next** button.
+10. Next, remap connections
+    
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 1, replay_connection => 'HR');
+    
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 2, replay_connection => 'OLTP');
+    
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 3, replay_connection => 'SALES');
+    
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 4, replay_connection => 'SALES');
+    
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 5, replay_connection => 'PSALES');
+    
+    exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 6, replay_connection=> 'SALES');
+11. Now check new settings for connect strings
+    
+    select * from DBA_WORKLOAD_CONNECTION_MAP;
+12. Prepare the replay by setting replay options. This replay will use default synchronization which is time-based synchronization. With this setting we honor timing for each individual call the best as possible. If a session has slow SQL statements then other sessions will still honor timing but they will not wait for the slow session. This can cause higher divergence. If divergence is less than 10 % then it should be considered as a good replay.
+    
+    exec DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY (synchronization => 'TIME');
 
-    ![](media/0e453f8f22b7564176981d873dc5e39e.png)
+Now switch to session 2. You should already be connected as user oracle
 
-8.  This page contains information about the replay directory storage location,and directory object used. Click the **Next** button.
+13. Set Environment variables for sales database and change to the replay directory
+    
+    . ./sales.env
+    
+    cd scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+14. Calibrate the replay and validate how many replay clients that are needed to replay the workload.
+    
+    wrc mode=calibrate replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+    
+    **Note**: Replay clients are the application tier and should not be co-allocated with the database due to resource usage. Our recommendation is to place replay clients close to the database to avoid delays between database and replay clients. This is regardless if the application tier is located far away. The reason is that the replay clients communicate with the database to know when a certain database call should be replayed and if replay clients are located far away it will delay the call and create artificial delays during the replay.
 
-    ![](media/4a5ec458704bebc33c7039c0d4739cfa.png)
+    ************* Calibrate output *************
+    Workload Replay Client: Release 18.0.0.0.0 - Production on Tue Nov 5 09:43:45 2019 Copyright (c) 1982, 2018, Oracle and/or its affiliates. All rights reserved.
+Report for Workload in:
+/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+-----------------------
+Recommendation: consider using at least 1 client divided among 1 CPU(s). You will need at least 112 MB of memory per client process. If your machine(s) cannot match that number, consider using more clients.
 
-9.  The check validates we have been preprocessing against the same version we
-    have been replaying against, but identifies it may not work on all versions
-    due to changed behavior in the RDBMS code. So we will allow to override this
-    check. In this case we have preprocessed against same Oracle Database so we
-    know that versions are same. Preprocess reports 18.0 while database version
-    is 18.3. Click the **OK** button.
+Workload Characteristics:
 
-    ![](media/64b5a3171c5a513896dc14bfbe294e8d.png)
+- max concurrency: 30 sessions
 
-10.  A new row appears with Ignore Preprocess warning and continue to check only
-    major database version. Check the **Check** box and click the **Next** button.
+- total number of sessions: 534
 
-    ![](media/945e4dd4f68429f39e1380bf4309f91f.png)
+Assumptions:
 
-11.  The remap connection page allow us to remap any connections from the production connect string to the test connect string. From Enterprise Manager there are three different methods. Provide a single connect descriptor for all connections. Use a single TNS net service name or separate connect descriptors. In this case we have captured the workload from all PDB’s in a CDB and cannot use single connect descriptors. Each connect descriptor needs to be mapped to its own descriptor. Click the **Next** button.
-![](media/eb111749b3668082f01706dca6bf7bc5.png)
+- 1 client process per 100 concurrent sessions
 
-12.  The replay option screen provides the ability to change characteristics of the replay. Enterprise Manager provides three synchronization modes for backward compatibilities. Object ID is deprecated and functionality has been incorporated into SCN synchronization. Off which is used for this replay, is for later release changed to Time. 
-With Synchronization = Time each session tries to replay each call according to the timing it was captured. If there are delays if will just impact the delayed session. This may increase the divergence since some sessions may execute SQL/DML statements on data that has either been changed or not been changed by delayed sessions. Click the **OK** button.
-![](media/5622fcdf25136254031e239742b34036.png)
+- 4 client processes per CPU
 
-13.  This is the page where we provide information about replay clients. Replay client are the drivers of the workload and consumes CPU, Memory and I/O. When replaying a production workload with several thousands of connections it is not uncommon to start 50 – 100 or even more replay clients. The calculation is that you can run 50 concurrent sessions on a replay client and you can start 4 replay clients/CPU thread so in reality if you have 1000 concurrent sessions then we will consume about 5 CPU threads in a system. We do not want to put this load on the database host since it will reduce the capacity for the database. Replay client should always be located on one or more separate servers. In this exercise we are limited to one server and will therefore start replay clients from same machine. Click the **Edit** tab.
-![](media/f9981a1d763f7df29baa4dc48ff26539.png)
+- 256 KB of memory cache per concurrent session
 
+- think time scale = 100
 
-14.  Normal inputs are the hostname and host credentials, replay client Oracle Home directory, client replay directory (this is the path to the replay directory from where replay clients can find the replay files and connect descriptor for how replay clients access the database and login credentials to the database. Click the **OK** button.
-![](media/4c079724ce5641755d1c8dee28898b6b.png)
+- connect time scale = 100
+
+- synchronization = TRUE 
 
 
-15.  Click the **Next** button.
-![](media/a262f4fab0faf98ffabe13f7c5997f40.png)
+15. The workload is relatively small and it needs only one replay client so we will start it from this session
+    
+    wrc system/welcome1@sales mode=replay replaydir=/home/
+    oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
 
-16.  Then click **Start Clients**
-![](media/6a67a661334140caf044e321283b69a0.png)
+    ****************** Session 1 ******************
 
-17.  Wait until the popup box displays a *Completed Successfully* message, then
-    click its **Close** button
+16. You should still be connected in the SQL*Plus session as used before. From this window start the replay
+    
+    Exec DBMS_WORKLOAD_REPLAY.START_REPLAY ();
 
-18.  Click the **Next** button.
-![](media/75976e71870bee08169de0e71f9ae6df.png)
+19.	Monitor the replay in session 2 and when the replay has finished the generate replay reports from session 1
 
-19.  Review and click the **Submit** button.
-![](media/d7c2e4aec6c40bebcfdd371101a4cc1c.png)
+20.	When replay has finished import capture AWR data. First create a common user as staging schema
+    
+    Create user C##CAP_AWR;
+    
+    Grant DBA to C##CAP_AWR;
+    
+    SELECT DBMS_WORKLOAD_CAPTURE.IMPORT_AWR (capture_id => 11,staging_schema => 'C##CAP_AWR') from dual;
 
-20.  The replay is now running and the progress can be viewed by refreshing the page. The data is only refreshed once a minute from the server so you don’t have to update the page too often. The replay will take about 12 minutes to finish and after there are a few background jobs that will generate the reports. From the **Replay** page we can see that the replay was successful and that the replay used less database time than the capture. This is promising and so it should be possible to implement the new indexes. Click on the **Reports** tab.
-![](media/50202305daf3e58d1fc6c3c6625c27c6.png)
+21.	Generate replay report as a text report. This report can also be generated in HTML or XML format.
+    
+    Set long 500000
+    
+    Set linesize 200
+    
+    Set pagesize 0
+    
+    Spool replay_report.txt
+    
+    select dbms_workload_replay.report (replay_id => 1, format=> 'TEXT') from dual;
+spool off
+22.	Please open the text report with a Linux editor of your choice such as vi and look at replay details.
+    
+    !vi replay_report.txt
+23.	Can you see if the replay uses more or less database time than the capture? Exit the report in vi use “ZZ” and you will return back to SQL*plus
+24.	Generate compare period report as HTML report.
+    
+    spool compare_period_report.html
+    
+    VAR v_clob CLOB
+    
+    BEGIN dbms_workload_replay.compare_period_report(replay_id1 => 1, replay_id2 => null, format => DBMS_WORKLOAD_REPLAY.TYPE_HTML, result => :v_clob);
+    
+    END;
+    
+    /
+    
+    print v_clob;
+    
+    spool off
+    
+    exit
+25.	To be able to read the report it needs to be downloaded change file permissions and copy the file to 
+    
+    /tmp chmod 777 compare_period_report.html
+    
+    cp compare_period_report.html /tmp
+26.	Use a scp client to copy the file to your local machine. Open the file in a text editor and remove initial lines before first row starting with
+    
+    “< html lang="en">”
 
-21.  There are several different reports that provide further details of the replay. The Database Replay Report provides similar information as the Replay home page you viewed, but this report can be distributed to stakeholders who doesn’t have access to Enterprise Manager.
-![](media/36d60b9ddd7d1291d76385afd4169f0d.png)
-![](media/932300976a4f6b71ccad72d4debdc456.png)
+and trailing lines after last row ending with
+    
+    “<b> End of Report. </b>
+    
+    </body>
+    
+    </html> “
+27.	You can now open the report in a browser and look at SQL statement with performance improvements and regression.
 
-22.  The Compare Period Report Capture vs. Replay provides detailed information about the replay on how the database handles top SQL Statements and if there are any gains on using the new indexes. You can see that top queries improved from 1940 s of DBtime to 40 s of DBtime. 
-![](media/b22fe0e617785101126d746dc1e2844c.png)
-![](media/6ec795093b3c257b8ab7fcb0a49beab6.png)
+We have seen how you can use Real Application Testing Database Replay to validate changes that may impact performance on both SQL statements and DML statements. We have also seen the extensive reporting that will help you find and analyze bottlenecks or peaks during certain workloads.
 
-Further familiarize yourself with the different reports including the AWR compare period report which provides a detailed analysis of waits, time models, operating system statics and SQL comparisons on different metrics to identify and pinpoint performance issues.
-
-You have learned how Real Application Testing Database Replay can be used to validate changes that may impact performance on both SQL statements and DML statements and seen its reporting functionality that helps you find and analyze workload bottlenecks, peaks or trends.
 
 That concludes this HOL activities.
 

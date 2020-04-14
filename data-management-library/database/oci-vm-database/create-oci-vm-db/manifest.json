@@ -1,12 +1,20 @@
 {
     "tutorials": [
-        {
-            "title": "Create an Oracle Cloud Infrastructure VM Database",
-            "description": "This 15-minute tutorial walks you through the steps to...",
-            "partnumber": "E12345_01",
-            "publisheddate": "10/14/2019",
-            "contentid": "123456",
-            "filename": "content.md"
-        }
+      {
+        "title": "Sign Up for Free Trial",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
+        "title": "Create SSH Keys",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+      },
+      {
+        "title": "Create a Virtual Cloud Network",
+        "filename": "create-virtual-cloud-network/create-virtual-cloud-network.md"
+      },
+      {
+        "title": "Create an Oracle Cloud Infrastructure VM Database",
+        "filename": "create-oci-vm-db/create-oci-vm-db.md"
+      }
     ]
 }

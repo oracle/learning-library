@@ -361,7 +361,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 2. Enter **ls** and verify id_rsa file exists
 
 3. Enter command 
-```
+```bash
 ssh -i id_rsa_user opc@<PUBLIC_IP_OF_FIRST_COMPUTE>
 ```
 
@@ -379,7 +379,7 @@ ssh -i id_rsa_user opc@<PUBLIC_IP_OF_FIRST_COMPUTE>
 
 6. Enter command:
 
-```
+```bash
 ping <PRIVATE_IP_OF_SECOND_COMPUTE_INSTANCE>
 ```
 
@@ -413,7 +413,7 @@ If ping is successful then we have successfuly created VCN peering across two di
 
 **Note:** We will run the command from the directory where ssh keys are stored and thus specifying entire PATH won't be neccessary
 
-```
+```bash
 ssh -i /<path>/<ssh_key> -o ProxyCommand='ssh -i /<path>/<ssh_key> -W %h:%p -p 443...
 ```
 

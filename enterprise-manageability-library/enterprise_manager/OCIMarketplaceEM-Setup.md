@@ -66,8 +66,8 @@ destabilization of the code.
 
 ==================================================================
 
-Oracle Cloud Prerequisites Setup
-================================
+1.Oracle Cloud Prerequisites Setup
+===================================
 
 How to Create a Virtual Cloud Network
 -------------------------------------
@@ -214,8 +214,8 @@ additional configuration details if you are using FastConnect with your VCN
 	You have completed the Oracle Cloud VCN prerequisite and are ready to Create a
 Compute Instance for your Oracle Enterprise Manager Marketplace image
 
-How To Create a Compute Instance
-================================
+2.How To Create a Compute Instance
+===================================
 
 The Instance can be created directly from the listing link OR by going to the Oracle Cloud hamburger menu, **Click** on Compute, **Click** on Instances and **Click** on Create Instance button. On the **Create Compute Instance** Screen (Also shown in Step 7) Under **Choosing an image source**, Select the image from Marketplace.
 
@@ -370,8 +370,8 @@ You now have an Oracle Cloud container with a running Oracle Enterprise Manager 
 	
 >NOTE: when your environment is not in use, it is recommended that it be shutdown to minimize billing use or trial credit charges.
 
-Get To Know The Preconfigured Environment<br>
-===============================================
+3.Get To Know The Preconfigured Environment<br>
+================================================
 
 In this Workshop example, the image used was a pre-configured environment of Oracle
 Enterprise Manager 13.3 with databases and targets all running within a single
@@ -436,7 +436,7 @@ Summary of Enterprise Manager and Host Details
 | **Host Credentials**            | Login as opc user using your private key (as described in *connecting to an instance* section) Login to root if needed: sudo –s (from opc user) Login to oracle if needed: sudo su – oracle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **Startup Scripts**             | All scripts are in /home/oracle. **Note:** All required EM services are brought up at creation and every reboot of the instance, so allot time for them to start automatically. **In case** you run into an issue, these scripts can help stop/start services within the instance. start_all.sh - Starts ALL services for EM (OMS, Agent etc.) start_oms.sh - Starts OMS start_agent.sh – Starts Agent start_db_hr.sh – Starts HR Database stop_db.sh – Stops emprep Database/Listener start_db_sales.sh – Starts Sales Database stop_oms.sh – Stops OMS start_db_cdb186.sh – Starts cdb186 Database start_db.sh – Starts all Databases stop_agent.sh – Stops Agent startdb_emrep.sh start_db.sh_orig stop_all.sh |
 
-Workshops and FAQ/Troubleshooting Guide
+4.Workshops and FAQ/Troubleshooting Guide
 =======================================
 
  [Frequently Asked Questions (FAQ) and Troubleshooting Guide](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md)

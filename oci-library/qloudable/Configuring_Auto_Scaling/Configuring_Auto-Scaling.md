@@ -406,7 +406,7 @@ Fill out the dialog box:
 6. Enter **ls** and verify id_rsa file exists
 
 7. Enter command 
-```
+```bash
 ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 

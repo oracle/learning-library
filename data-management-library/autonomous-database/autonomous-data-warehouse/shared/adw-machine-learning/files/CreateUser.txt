@@ -1,0 +1,1 @@
+This image shows the Users window for Oracle Machine Learning User Administration. In the upper left corner is the Create button, which this image highlights with a red rectangle.

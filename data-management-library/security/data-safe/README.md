@@ -7,12 +7,12 @@ The workshop lets you practice the main features in Oracle Data Safe, including 
 
 ### Access the Individual Labs on the Repo
 Alternatively, you can follow the labs on this repo:
-- [About this lab](https://github.com/oracle/learning-library/tree/master/data-management-library/security/data-safe/workshop/about-this-lab/about-this-lab.md)
-- [View a Registered Target Database](https://github.com/oracle/learning-library/tree/master/data-management-library/security/data-safe/workshop/view-registered-target-db/view-registered-target-db.md)
-- [Provision Audit and Alert Policies](https://github.com/oracle/learning-library/tree/master/data-management-library/security/data-safe/workshop/provision-audit-alert-policies/provision-audit-alert-policies.md)
-- [Assess Database Configurations and Users](https://github.com/oracle/learning-library/tree/master/data-management-library/security/data-safe/workshop/assess-db-config-users/assess-db-config-users.md)
-- [Analyze Alerts and Audit Reports](https://github.com/oracle/learning-library/tree/master/data-management-library/security/data-safe/workshop/analyze-alerts-audit-reports/analyze-alerts-audit-reports.md)
-- [Discover and Mask Sensitive Data](https://github.com/oracle/learning-library/tree/master/data-management-library/security/data-safe/workshop/discover-mask-data/discover-mask-data.md)
+- [About this lab](./workshop/about-this-lab/about-this-lab.md)
+- [View a Registered Target Database](./workshop/view-registered-target-db/view-registered-target-db.md)
+- [Provision Audit and Alert Policies](./workshop/provision-audit-alert-policies/provision-audit-alert-policies.md)
+- [Assess Database Configurations and Users](./workshop/assess-db-config-users/assess-db-config-users.md)
+- [Analyze Alerts and Audit Reports](./workshop/analyze-alerts-audit-reports/analyze-alerts-audit-reports.md)
+- [Discover and Mask Sensitive Data](./workshop/discover-mask-data/discover-mask-data.md)
 
 ## Get an Oracle Cloud Account
 

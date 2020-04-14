@@ -44,7 +44,7 @@ def publish_example_messages(client, stream_id):
 
 def get_or_create_stream(client, compartment_id, stream_name, partition, sac_composite):
 
-    list_streams = client.list_streams(compartment_id, name=stream_name,
+    list_streams = client.list_streams(compartment_id=compartment_id, name=stream_name,
                                        lifecycle_state=oci.streaming.models.StreamSummary.LIFECYCLE_STATE_ACTIVE)
     if list_streams.data:
         # If we find an active stream with the correct name, we'll use it.

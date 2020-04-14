@@ -183,7 +183,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE> -L 3000:localhost:3000
 ```
 **NOTE:** User name is opc. This will enable port forwarding on local host which is needed to access Grafana dash board later on
@@ -223,7 +223,6 @@ sudo grafana-cli plugins install oci-datasource
 
 ```
 sudo chmod 555 /var/lib/grafana/plugins/oci-datasource/dist/oci-plugin_linux_amd64
-
 ```
 
 4. Start Grafana server, Enter Command: 

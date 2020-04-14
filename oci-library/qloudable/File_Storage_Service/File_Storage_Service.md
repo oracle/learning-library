@@ -257,7 +257,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -287,7 +287,7 @@ sudo mkdir -p /mnt/nfs-data
 to create a mount point.
 
 3. Mount the file system, Enter command: 
-```
+```bash
 sudo mount 10.x.x.x:/<EXPORT_PATH_NAME> /mnt/nfs-data
 ```
 **NOTE:** The 10.x.x.x should be replaced with the  IP of File Storage system  and <EXPORT_PATH_NAME> should be replaced with Export path name used earlier(Example: If '/' was the EXPORT_PATH_NAME then **sudo mount 10.0.0.3:/ /mnt/nfs-data**).

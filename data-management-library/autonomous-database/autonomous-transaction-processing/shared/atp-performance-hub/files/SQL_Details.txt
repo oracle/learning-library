@@ -1,0 +1,1 @@
+Near the top of this SQL Details page, is a timeline showing the long-term activity of a query. A UI window narrows in on a segment of activity. Below is another section with five tabs: Summary, ASH Analytics, Execution Statistics, SQL Monitoring, and SQL Text. Execution Statistics is highlighted. 

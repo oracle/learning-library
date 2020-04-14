@@ -6,7 +6,11 @@ In this module, you will start working with the basics of JavaScript, including 
 
 This module is based on <a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank">Google Chrome's DevTools</a>, so use that browser if possible. You may use a different browser if you wish, but you'll need to adapt the instructions that follow as needed.
 
-<a href="https://www.slideshare.net/DanielMcGhan/introduction-to-javascript-for-apex-developers-module-1-javascript-basics" target="_blank">Click here</a> to view the slides for this module.
+<a href="https://www.youtube.com/watch?v=02thxqv-m_c&list=PLUo-NIMouZ_sgdQpMbXXwhHKpwRggCY34&index=2" target="_blank">
+  <img src="http://img.youtube.com/vi/02thxqv-m_c/0.jpg" alt="Video for Module 2" width="240" height="180" border="5" />
+</a>
+
+Click the image above to access the video for this module. <a href="https://www.slideshare.net/DanielMcGhan/module-1-javascript-basics" target="_blank">Click here</a> to view the slides.
 
 ***To log issues***, click here to go to the <a href="https://github.com/oracle/learning-library/issues/new" target="_blank">github oracle</a> repository issue submission form.
 

@@ -13,9 +13,9 @@ To complete this lab, you need to have the following:
 - A registered target database in Oracle Data Safe with sample audit data
 
 ### Assumptions
-This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), parts 1 and 2.
+This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), steps 1 and 2.
 
-## **PART 1**: Provision audit and alert policies on a target database by using the Activity Auditing wizard
+## **STEP 1**: Provision audit and alert policies on a target database by using the Activity Auditing wizard
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click the **Activity Auditing** tab.
 
@@ -149,13 +149,13 @@ This lab assumes that you are already signed in to the Oracle Data Safe Console.
 
 
 
-## **PART 2**: View details for an audit trail
+## **STEP 2**: View details for an audit trail
 
 On the **Audit Trails** page, you can manage all of the audit trails for your target databases.
 
 - In the **Collection State** column, click **COLLECTING** or **IDLE** if the audit data is collected.
 
-  Collection takes approximately 2 minutes. You can continue to the next part.
+  Collection takes approximately 2 minutes. You can continue to the next step.
 
 
   ![](./images/click-collecting-or-idle.png " ")
@@ -167,7 +167,7 @@ On the **Audit Trails** page, you can manage all of the audit trails for your ta
 
 
 
-## **PART 3**: Enable a custom audit policy on a target database
+## **STEP 3**: Enable a custom audit policy on a target database
 
 
 - Click the **Audit Policies** tab.

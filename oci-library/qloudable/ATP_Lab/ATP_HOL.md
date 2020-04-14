@@ -189,7 +189,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE> -L 3000:localhost:3000
 ```
 **NOTE:** User name is opc.
@@ -281,15 +281,17 @@ instance created earlier**
 5. Save the file in and Note down the directory name where the file was saved. We will need to upload this zip file on to public Compute instance
 
 6. In Git bash window change to directory where zip file was saved, Enter command,
-``` 
+```bash 
 cd <Directory_Name> (cd ~/Downloads)
 ```
 7. Upload the zip file to compute instance, Enter command,
-```
+
+```bash
 sftp  -i /C/Users/PhotonUser/.ssh/id_rsa opc@ <PUBLIC_IP_OF_COMPUTE>
+
 ```
 8. At sftp prompt Enter command,
-```
+```bash
 put <ZIP_FILE_NAME> 
 ```
 **NOTE:** Usually the file name starts with 'Wallet'. Verify the file transfer completed
@@ -300,6 +302,7 @@ put <ZIP_FILE_NAME>
 ``` 
 cd ~/swingbench/bin
 ```
+
 10. Enter command:
 ```
 which java
@@ -314,7 +317,7 @@ Answer 'Y' when prompted
 12. Enter below commands, replacing the value in < >. 
 (This will install a schema to run our transactions against)
 
-```
+```bash
 ./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba ADMIN -u soe -p <DB_PASSWORD> -async_off-scale 0.1 -hashpart -create -cl -v
 ```
 
@@ -327,7 +330,7 @@ Answer 'Y' when prompted
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_009.PNG" alt="image-alt-text">
 
 14. Validate the schema, Enter command:
-```
+```bash
 ./sbutil -soe -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -tables
 ```
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_010.PNG" alt="image-alt-text">
@@ -336,6 +339,7 @@ Answer 'Y' when prompted
 ```
 cd ~/swingbench/config
 ```
+
 16. Enter command:
 ```
 vi SOE_Server_Side_V2.xml
@@ -353,7 +357,7 @@ vi SOE_Server_Side_V2.xml
 cd ~/swingbench/bin. 
 ```
 Then Enter command:
-```
+```bash
 ./charbench -c ../configs/SOE_Server_Side_V2.xml -cf ~/<CREDENTIAL_ZIP_FILE>  -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:30.30
 ```
 
@@ -566,7 +570,7 @@ select * from channels;
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_024.PNG" alt="image-alt-text">
 
 5. Now we need to assign priviliges to this new user so it can access the data uploaded by the user we created earlier. Switch to SQL developer window and  from admin tab,Enter command:
-```
+```bash
 grant read any table to <USER_NAME>;
 ```
 
@@ -579,7 +583,7 @@ grant read any table to <USER_NAME>;
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_026.PNG" alt="image-alt-text">
 
 7. In the SQL statement section, Enter statement:
-```
+```bash
 %sql
 select * from <USER_NAME>.channels;
 ```

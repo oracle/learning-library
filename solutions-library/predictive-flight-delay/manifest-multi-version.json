@@ -1,0 +1,176 @@
+{
+    "workshop": {
+        "title": "Workshop Title",
+        "description": "Description of this workshop.",
+        "theme": "default",
+        "interactive":"https://launch.oracle.com/?container-native-development",
+        "versions": [
+          {
+            "name": "Instructor Led",
+            "description": "An in-person workshop with an Oracle instructor",
+            "imageUrl": "images/Instructor Led.png"
+          },
+          {
+            "name": "Self-Service",
+            "description": "Individual self-guided learning",
+            "imageUrl": "images/Self-Service.png"
+          },
+          {
+            "name": "Virtual Workshop",
+            "description": "An Oracle-organized remote session",
+            "imageUrl": "images/Virtual Workshop.png"
+          }
+        ],
+        "labs": [
+            {
+                "number": "0",
+                "filename": "Intro-Instructor-Led.md",
+                "title": "Intro - Instructor Led",
+                "description": "Step-by-step workshop instructions",
+                "labels": {
+                    "version": "Instructor Led"
+                }
+            },
+            {
+                "number": "100",
+                "filename": "LabGuide100.md",
+                "title": "Lab 100: Agile Project Management, plus an even longer section of text that will almost assuredly wrap unto the proximate lineage.",
+                "description": "Use Developer Cloud Service to create issues, tasks, and sprints, plus an even longer section of text that will almost assuredly wrap unto the proximate lineage, plus an even longer section of text that will almost assuredly wrap unto the proximate lineage.",
+                "labels": {
+                    "version": "Instructor Led"
+                }
+            },
+            {
+                "number": "200",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200:  Title of Lab 200",
+                "description": "Short description of lab 200",
+                "labels": {
+                    "version": "Instructor Led"
+                }
+            },
+            {
+                "number": "300",
+                "filename": "LabGuide300.md",
+                "title": "Lab 300:  Title of Lab 300",
+                "description": "Short description of lab 300",
+                "labels": {
+                    "version": "Instructor Led"
+                }
+            },
+            {
+                "number": "400",
+                "filename": "LabGuide400.md",
+                "title": "Lab 400: Title of Lab 400",
+                "description": "Short description of lab 400",
+                "labels": {
+                    "version": "Instructor Led"
+                }
+            },
+            {
+                "number": "0",
+                "filename": "Intro-Self-Service.md",
+                "title": "Intro - Self Service",
+                "description": "Step-by-step workshop instructions",
+                "labels": {
+                    "version": "Self-Service"
+                }
+            },
+            {
+                "number": "0",
+                "filename": "StudentGuide.md",
+                "title": "Student Guide",
+                "description": "Workshop guidance and prerequisites"
+            },
+            {
+                "number": "100",
+                "filename": "LabGuide100.md",
+                "title": "Lab 100: Agile Project Management",
+                "description": "SS: Use Developer Cloud Service to create issues, tasks, and sprints",
+                "labels": {
+                    "version": "Self-Service"
+                }
+            },
+            {
+                "number": "200",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200: Title of Lab 200",
+                "description": "SS: Short description of lab 200",
+                "labels": {
+                    "version": "Self-Service"
+                }
+            },
+            {
+                "number": "300",
+                "filename": "LabGuide300.md",
+                "title": "Lab 300:  Title of Lab 300",
+                "description": "SS: Short description of lab 300",
+                "labels": {
+                    "version": "Self-Service"
+                }
+            },
+            {
+                "number": "400",
+                "filename": "LabGuide400.md",
+                "title": "Lab 400: Title of Lab 400",
+                "description": "SS: Short description of lab 400",
+                "labels": {
+                    "version": "Self-Service"
+                }
+            },
+            {
+                "number": "0",
+                "filename": "Intro-Virtual-Workshop.md",
+                "title": "Intro - Virtual Workshop",
+                "description": "Step-by-step workshop instructions",
+                "labels": {
+                    "version": "Virtual Workshop"
+                }
+            },
+            {
+                "number": "0",
+                "filename": "StudentGuide.md",
+                "title": "Student Guide",
+                "description": "Workshop guidance and prerequisites"
+            },
+            {
+                "number": "100",
+                "filename": "LabGuide100.md",
+                "title": "Lab 100: Agile Project Management",
+                "description": "SS: Use Developer Cloud Service to create issues, tasks, and sprints",
+                "labels": {
+                    "version": "Virtual Workshop"
+                }
+            },
+            {
+                "number": "200",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200: Title of Lab 200",
+                "description": "SS: Short description of lab 200",
+                "labels": {
+                    "version": "Virtual Workshop"
+                }
+            },
+            {
+                "number": "300",
+                "filename": "LabGuide300.md",
+                "title": "Lab 300:  Title of Lab 300",
+                "description": "SS: Short description of lab 300",
+                "labels": {
+                    "version": "Virtual Workshop"
+                }
+            },
+            {
+                "number": "400",
+                "filename": "LabGuide400.md",
+                "title": "Lab 400: Title of Lab 400",
+                "description": "SS: Short description of lab 400",
+                "labels": {
+                    "version": "Virtual Workshop"
+                }
+            }
+
+
+        ]
+    }
+}

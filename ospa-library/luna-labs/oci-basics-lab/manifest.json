@@ -1,0 +1,8 @@
+{
+    "tutorials": [
+        {            
+            "title": "Compute Services Lab",
+            "filename": "./OCI-Basics-Lab.md"
+        }
+    ]
+}

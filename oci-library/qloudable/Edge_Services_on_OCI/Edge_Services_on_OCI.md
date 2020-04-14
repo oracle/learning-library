@@ -207,7 +207,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 13.  ssh to **first** compute instance. Enter command:
             
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 **NOTE:** User name is ‘opc’.
@@ -362,7 +362,7 @@ Click **Add new**
 
 - **SUBDOMAIN** : Use your user name
 - **COMPARTMENT** : ocispl24(root)
-- **ZONE** : Use the drop down and choose **Ocispl24.com**
+- **ZONE** : Use the drop down and choose **ocispl24.com**
 
 3. Click **Create Policy**
 
@@ -378,7 +378,7 @@ Click **Add new**
 
 6. Launch a new browser tab, open up the domain specified in your traffic policy(for webserver1) and you will be directed to the webserver1
 
-**http://<YOUR_USER_NAME>Ocispl24.com**
+**http://<YOUR_USER_NAME>.ocispl24.com**
 
 **NOTE : <YOUR_USER_NAME> is what was specified as the sub domain**
 

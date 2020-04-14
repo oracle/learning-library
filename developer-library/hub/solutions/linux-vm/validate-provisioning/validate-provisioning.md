@@ -1,13 +1,13 @@
-# Validate Provisioning
-
 This solution creates the following Oracle Cloud resources :
 
 * Linux VM
 * Virtual Cloud Network
 
-Complete the following steps to validate the cloud resources created.
+Complete the following steps to validate the resources created.
 
-## Validate Connectivity to the Linux VM
+## Validation Steps
+
+## STEP 1 : Validate Connectivity to the Linux VM
 
 You connect to a running instance by using a Secure Shell (SSH) connection. Most Linux distributions include an SSH client by default. For Windows, you can download a free SSH client called PuTTY from [http://www.putty.org](http://www.putty.org).
 
@@ -60,11 +60,11 @@ $ ssh –i <private_key> opc@<public-ip-address>
 
 4. In the **Category** pane, select **Session** and enter the following:
 
-	* Host Name (or IP address): **opc@\<public-ip-address\>**
+	* Host Name (or IP address): **opc@public-ip-address**
 	* Port: **22**
 	* Connection type: **SSH**
 
-	Where \<public-ip-address\> is your instance public IP address that you retrieved from the Console.
+	Where **public-ip-address** is your instance public IP address that you retrieved from the Console.
 
 5. In the **Category** pane, expand **Connection**, expand **SSH**, and then click **Auth**.
 

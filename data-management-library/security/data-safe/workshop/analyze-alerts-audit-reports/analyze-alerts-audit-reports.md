@@ -16,11 +16,11 @@ To complete this lab, you need to have the following:
 - Audit collection started on your target database in Oracle Data Safe. If not, see **Provision Audit and Alert Policies**.
 
 ### Assumptions
-This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), Parts 1 and 2.
+This lab assumes that you are already signed in to the Oracle Data Safe Console. If not, see [View a Registered Target Database](?lab=lab-1-view-registered-target-database), Steps 1 and 2.
 
 Your data values may be different than those shown in the screenshots in this lab.
 
-## **PART 1**: View and close alerts
+## **STEP 1**: View and close alerts
 
 - In Oracle Data Safe Console, click the **Home** tab, and then click the **Alerts** tab.
 
@@ -32,13 +32,11 @@ Your data values may be different than those shown in the screenshots in this la
   ![](./images/alerts-page-summary.png " ")
 
 
-
 -  View the totals for target databases, critical alerts, high risk alerts, medium risk alerts, and open alerts.
 
    At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
 
    ![](./images/all-alerts-totals.png " ")
-
 
 - Scroll down to review the alerts in the table.
 
@@ -120,7 +118,7 @@ Your data values may be different than those shown in the screenshots in this la
 
 
 
-## **PART 2**: Analyze open alerts from the dashboard
+## **STEP 2**: Analyze open alerts from the dashboard
 
 
 - Click the **Home** tab.
@@ -163,7 +161,7 @@ Your data values may be different than those shown in the screenshots in this la
   ![](./images/all-alerts-report-filtered.png " ")
 
 
-## **PART 3**: View all audit records for the past week
+## **STEP 3**: View all audit records for the past week
 
 - Click the **Reports** tab.
 
@@ -196,7 +194,7 @@ Your data values may be different than those shown in the screenshots in this la
 
 
 
-## **PART 4**: View a summary of audit events collected and alerts raised
+## **STEP 4**: View a summary of audit events collected and alerts raised
 
 - On the left, click **Summary Reports**, and then click **Audit Summary**.
 
@@ -249,7 +247,7 @@ Your data values may be different than those shown in the screenshots in this la
 
 
 
-## **PART 5**: Create a failed logins report
+## **STEP 5**: Create a failed logins report
 
 - Click the **Reports** tab.
 

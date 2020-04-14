@@ -1,0 +1,48 @@
+{
+    "tutorials": [
+        {
+          "title": "Workshop Overview",
+          "filename":"./workshop-intro/intro.md"
+        },
+        {
+          "title": "Lab 1: Sign Up for Free Trial",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+          "title": "Lab 2: Create SSH Keys",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+          "title": "Lab 3: Create a Oracle Virtual Cloud Network instance",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-virtual-cloud-network/create-virtual-cloud-network.md"
+        },
+        {
+          "title": "Lab 4: Create an Oracle Compute instance",
+          "filename":"./create-compute-instance/create-compute-instance.md"
+        },
+		    {
+          "title": "Lab 5: Setup Docker on an Oracle Compute instance",
+          "filename": "./setup-docker-compute/setup-docker-compute.md"
+        },
+		    {
+          "title": "Lab 6: Build an Oracle Database Docker image",
+          "filename": "./build-db-docker/build-db-docker.md"
+        },
+		    {
+          "title": "Lab 7: Start a Docker Container",
+          "filename": "./start-db-docker/start-db-docker.md"
+        },
+        {
+          "title": "Lab 8: Add an Ingress Rule to your VCN",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/connect-oci-vm-db-sqldeveloper/add-ingress-rule/add-ingress-rule.md"
+        },
+        {
+          "title": "Lab 9: Connect to Oracle Database in a Docker Container",
+          "filename": "./connect-db-docker/connect-db-docker.md"
+        },
+        {
+          "title": "Lab 10: Manage a Docker Container",
+          "filename": "./manage-docker-container/manage-docker-container.md"
+        }
+    ]
+}

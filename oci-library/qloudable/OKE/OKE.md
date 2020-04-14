@@ -10,7 +10,7 @@
 
 [Install OCI CLI in your enviornment](#install-oci-cli-in-your-enviornment)
 
-[Install Kubectl, OCI CLI and configure OCI CLI](#install-kubectl,-oci-cli-and-configure-oci-cli)
+[Install Kubectl](#install-kubectl)
 
 [Download get-kubeconfig.sh file and Initialize your environment](#download-get-kubeconfig.sh-file-and-initialize-your-environment)
 
@@ -70,6 +70,8 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
 2. From OCI Services menu, Click **Container Clusters (OKE)** under Developer Services
+
+**No need to create any policies for OKE, all the policies are pre-configured**
 
 3. Click **Create Cluster**. Choose **Quick Create** and click **Launch Workflow**. 
 
@@ -208,7 +210,7 @@ cat ~/.oci/oci_api_key_public.pem
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_007.PNG" alt="image-alt-text">
 
 
-## Install Kubectl, OCI CLI and configure OCI CLI
+## Install Kubectl
 
 In this section we will install kubectl. You can use the Kubernetes command line tool kubectl to perform operations on a cluster you've created with Container Engine for Kubernetes.
 
@@ -234,52 +236,15 @@ ls
 
 ## Download get-kubeconfig.sh file and Initialize your environment
 
-1. Switch to OCI console window and navigate to your cluster. In Cluster detail window Click **Access Kubeconfig**. Copy the 2nd command and enviornement variable command to notepad (using Built in Application)
-            
-**NOTE:** Since we already created .kube directory we dont need toexecute the first command 
+1. Switch to OCI console window and navigate to your cluster. In Cluster detail window Click **Quick Start**, under **Resources**. 
+Follow the steps under the **Quick Start** Section
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_005.PNG" alt="image-alt-text">
-
-2. Switch to git bash window and Enter the commands copied. Ensure the command is entered on a single line Ignore any errors related to Power shell.
+2. The Commands listed will need to be executed in your local terminal.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_006.PNG" alt="image-alt-text">
 
-3. Enter command ls and verify a file named **config** exists.
+3. Next follow the instruction under **Access Kubernetes Dashboard** to access the dash board.
 
-We have initialized the enviornment.
-
-## Starting the Kubernetes Dashboard
-
-In this section we will start Kubernetes Dashboard which is
-a web-based user interface that you can use as an alternative
-to the Kubernetes kubectl command line tool
-
-1. Switch to OCI Console window. From services menu, Click **Container Clusters(OKE)** under **Developer services**.
-
-2. Click your cluster name and verify Compute Node State shows active for all compute nodes
-
-3. Click **Getting Started** and Copy the URL under Getting Started
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_007.PNG" alt="image-alt-text">
-
-4. Switch to Git bash window, Enter Command:
-```
-./kubectl proxy and verify the service started.
-```
-
-5. Open a new browser tab and paste the URL copied earlier.
-
-6. This will open Kubernetes dash board. 
-
-7. Ensure Kubeconfig is selected, Click Action icon and browse to the location where config file is stored loclaly (/C/Users/Photonuser/.kube). This is being done for Authentication purposes.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_008.PNG" alt="image-alt-text">
-
-8. Kubernetes dash board should be displayed. Click **Overview** to see the applications deployed on the cluster
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_009.PNG" alt="image-alt-text">
-
-**We now have successfully accessed the Kubernetes Dash board**
 
 ## Deploying a Sample Nginx App on Cluster Using kubectl
 

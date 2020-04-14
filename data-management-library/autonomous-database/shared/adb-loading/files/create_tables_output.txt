@@ -1,0 +1,167 @@
+Error starting at line : 1 in command -
+DROP TABLE sales
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 2 in command -
+DROP TABLE customers
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 3 in command -
+DROP TABLE countries
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 4 in command -
+DROP TABLE supplementary_demographics
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 5 in command -
+DROP TABLE costs
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 6 in command -
+DROP TABLE times
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 7 in command -
+DROP TABLE promotions
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 8 in command -
+DROP TABLE products
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Error starting at line : 9 in command -
+DROP TABLE channels
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Table SALES created.
+
+
+Table COSTS created.
+
+
+Table TIMES created.
+
+
+Table PRODUCTS created.
+
+
+Table CHANNELS created.
+
+
+Table PROMOTIONS created.
+
+
+Table CUSTOMERS created.
+
+
+Table COUNTRIES created.
+
+
+Table SUPPLEMENTARY_DEMOGRAPHICS created.
+
+
+
+23 rows inserted.
+
+
+72 rows inserted.
+
+
+503 rows inserted.
+
+
+4,500 rows inserted.
+
+
+1,826 rows inserted.
+
+
+82,112 rows inserted.
+
+
+Commit complete.
+
+
+Table PROMOTIONS altered.
+
+
+Table SALES altered.
+
+
+Table COSTS altered.
+
+
+Table CUSTOMERS altered.
+
+
+Table SALES altered.
+
+
+Table PRODUCTS altered.
+
+
+Table SALES altered.
+
+
+Table COSTS altered.
+
+
+Table TIMES altered.
+
+
+Table SALES altered.
+
+
+Table COSTS altered.
+
+
+Table CHANNELS altered.
+
+
+Table SALES altered.
+
+
+Table COUNTRIES altered.
+
+
+Table CUSTOMERS altered.
+
+
+Table SUPPLEMENTARY_DEMOGRAPHICS altered.

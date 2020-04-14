@@ -1,0 +1,76 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to ADB",
+            "description": "ADB Introduction",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../common-labs/adb-shared-intro/adb-shared-intro.md"
+        },
+        {         
+            "title": "Lab: Sign up for a Free Tier Account",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/register-free-tier-account.md"
+        },
+        {         
+            "title": "Lab: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/cloud-login.md"
+        },
+            {         
+            "title": "Lab: Provision ADB",
+            "description": "Autonomous Database Provisioning",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/11/2020",
+            "contentid": "12nnnn",
+            "filename": "../common-labs/adb-shared-provisioning/adb-shared-provisioning.md"
+        },
+            {         
+            "title": "Lab: ADB Backup and Recovery",
+            "description": "ADW Loading",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/11/2020",
+            "contentid": "12nnnn",
+            "filename": "../common-labs/adb-backup-recovery/adb-backup-recovery.md"
+        },
+            {         
+            "title": "Lab: ADB Connecting with a Wallet",
+            "description": "ADW Loading",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/11/2020",
+            "contentid": "12nnnn",
+            "filename": "../common-labs/adb-connecting/adb-connecting.md"
+        },
+        {         
+        "title": "Lab: ATP Performance Hub - 15 min",
+        "description": "ADW Loading",
+        "partnumber": "Ennnnn_01",
+        "publisheddate": "03/11/2020",
+        "contentid": "12nnnn",
+        "filename": "../autonomous-transaction-processing/shared/atp-performance-hub/atp-performance-hub.md"
+        } ,
+        {         
+        "title": "Lab: APEX App on Existing Table - 15 min",
+        "description": "Create an app based on existing tables in Oracle DB",
+        "partnumber": "Ennnnn_01",
+        "publisheddate": "03/11/2020",
+        "contentid": "12nnnn",
+        "filename": "../autonomous-transaction-processing/shared/atp-apex-table-app/atp-apex-table-app.md"
+        }   ,
+        {         
+        "title": "Lab: APEX App on Spreadsheets - 15 min",
+        "description": "Create an app based on spreadsheet loaded into ATP",
+        "partnumber": "Ennnnn_01",
+        "publisheddate": "03/11/2020",
+        "contentid": "12nnnn",
+        "filename": "../autonomous-transaction-processing/shared/atp-apex-table-app/atp-apex-table-app.md"
+        }     
+    ]
+}

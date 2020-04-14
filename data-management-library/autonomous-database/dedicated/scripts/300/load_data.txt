@@ -1,0 +1,24 @@
+/* Specify the real base_URL for your OCI Object Storage in the define base_URL line below*/
+/* change gse00014623 to your real tenancy name. The name is case-sensitive. */
+/* change ATPDB to your real bucket name. The name is case-sensitive. */
+/* change us-phoenix-1 to your real region name. The name is case-sensitive. */
+/* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+
+define base_URL='https://swiftobjectstorage.us-phoenix-1.oraclecloud.com/v1/gse00014623/ATPDB'
+
+define customer_dat_URL = '&base_URL/customers.csv';
+
+
+
+
+
+begin
+ dbms_cloud.copy_data(
+    table_name =>'CUSTOMERS',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list => '&customer_dat_URL',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD HH24:MI:SS', 'blankasnull' value 'true')
+ );
+end;
+/
+

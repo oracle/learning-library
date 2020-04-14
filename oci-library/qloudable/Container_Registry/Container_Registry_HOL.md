@@ -205,7 +205,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -273,7 +273,7 @@ and verify alpine is present
 
 22. Now we will push this image to Docker registry created in OCI. First login to Registry in OCI. Enter command:
 
-```
+```bash
 docker login <Region_Name_Code>.ocir.io
 ```
 
@@ -298,7 +298,7 @@ docker images
 ``` 
 and note down the image id of alpine. Enter command: (No Spaces)
 
-```
+```bash
 docker tag <image_id>  <Region_Name_Code>.ocir.io/<TenancyName>/<docker_registry_name>:<image_name> 
 ```
 
@@ -322,7 +322,7 @@ and verify version<x.y>.test is present.
 
 27. We will now push the image to docker registry in OCI. Enter command: 
 
-```
+```bash
 docker push <Region_Name_Code>.ocir.io/<Tenancy_Name>/<docker_registry_name>:<image_name>* (No Spaces)
 ```
 **NOTE:** In below example:
@@ -340,7 +340,7 @@ docker push <Region_Name_Code>.ocir.io/<Tenancy_Name>/<docker_registry_name>:<im
 **HINT:** Refresh the browser window if image is not displayed
 
 29. Switch to compute instance ssh window. Enter command:
-```
+```bash
 docker pull <Region_Name_Code>.ocir.io/<Tenancy_Name>/<docker_registry_name>:<image_name>*  (No Spaces)    
 ```
 30. Verify the pull command was successful

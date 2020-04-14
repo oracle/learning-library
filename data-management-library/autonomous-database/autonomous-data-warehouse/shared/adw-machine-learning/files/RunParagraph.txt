@@ -1,0 +1,1 @@
+This image zooms in on the command buttons for the SQL paragraph. The Run This Paragraph button is the first in the row. It's highlighted with a red box. A keyboard shortcut to call this function is Shift+Enter.

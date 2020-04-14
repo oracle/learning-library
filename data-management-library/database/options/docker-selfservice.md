@@ -2,25 +2,32 @@
 
 # SSWorkshop: Docker Lab
 ## Table of Contents 
-- [Introduction](#introduction)
-- [Lab Assumptions](#lab-assumptions)
-- [Section 1-Login to the Oracle Cloud](#section-1-login-to-the-oracle-cloud)
-- [Section 2-Generate an SSH key pair](#section-2-generate-an-ssh-key-pair)
-- [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
-- [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
-- [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
-- [Section 5b-Run the Setup Scripts](#section-5b-run-the-setup-scripts)
+- [SSWorkshop: Docker Lab](#ssworkshop-docker-lab)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Lab Assumptions](#lab-assumptions)
+  - [Lab Settings](#lab-settings)
+  - [Section 1-Login to the Oracle Cloud](#section-1-login-to-the-oracle-cloud)
+  - [Section 2-Generate an SSH Key Pair](#section-2-generate-an-ssh-key-pair)
+    - [For MAC Users ###](#for-mac-users)
+    - [For Windows: Using GitBash or Windows Subsystem for Linux (WSL) ###](#for-windows-using-gitbash-or-windows-subsystem-for-linux-wsl)
+    - [For Windows: Using PuttyGen ###](#for-windows-using-puttygen)
+  - [Section 3-Login and Create Stack using Resource Manager](#section-3-login-and-create-stack-using-resource-manager)
+  - [Section 4-Terraform Plan and Apply](#section-4-terraform-plan-and-apply)
+  - [Section 5-Connect to your instance](#section-5-connect-to-your-instance)
+    - [Connecting via MAC or Windows CYGWIN Emulator](#connecting-via-mac-or-windows-cygwin-emulator)
+    - [Connecting via Windows](#connecting-via-windows)
 
 
 
 ## Introduction
 This lab will show you how to login to the cloud and setup your environment using Oracle Resource Manager.  Once the environment setup is complete, you will proceed to the Docker lab.
 
-**PLEASE READ:**  If you already have a compute instance running DB19c configured, skip directly to [Section 5](#section-5-connect-to-your-instance).
+**PLEASE READ:**  If you already have a compute instance (running linux or DB 19c) configured, proceed directly to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html).
 
 
 ## Lab Assumptions
-- Each participant has been sent two emails, one from Oracle Cloud  with their username and another from the Database PM gmail account with their temporary password.
+- Each participant has been sent two emails, one from Oracle Cloud  with their username and another with the subject SSWorkshop, this contains their temporary password.
 
 
 ## Lab Settings
@@ -29,7 +36,8 @@ This lab will show you how to login to the cloud and setup your environment usin
 - **Compartment**: \<Provided by Oracle\>
 - **VCN**: \<Provided by Oracle\>
 - **Region**: \<Provided by Oracle\>
-- **Subnet**: \<Provided by Oracle\>
+- **Subnet ID**: \<Provided by Oracle\>
+- **Linux Image ID**: \<Provided by Oracle\>
 
 
 ## Section 1-Login to the Oracle Cloud
@@ -117,7 +125,8 @@ If you already have an ssh key pair, you may use that to connect to your environ
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your enviornment.  
-- [multitenant-compute.tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1LYMqYL4xK0fq4iw1lr0ByzxyOACFQ_viboPmaEFGqM/n/c4u03/b/labfiles/o/multitenant-compute.tf.zip) - Packaged terraform instance creation script for 19C Databases.
+- [Linux Compute](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fS44gtlzyF-xooB7BUCJc1YpkCQ-4tXmqAlU3_QQZPU/n/c4u03/b/labfiles/o/linux-compute.zip) - Packaged terraform instance creation script for Linux compute instance in London region.
+
 
 2.  Save in your downloads folder.
 
@@ -137,23 +146,31 @@ You will be using Terraform to create your database environment.
 
 
     Enter the following information and accept all the defaults
-    **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-    **Description**:  Same as above
-    **Compartment**:  Select Compartment from Email 2
+    - **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
+    - **Description**:  Same as above
+    - **Compartment**:  Select Compartment from Email 2
 
 7.  Click **Next**.
 
-    ![](img/createstack3.png)
+    ![](img/linux-compute-stack-1.png)
 
-    Enter the following inforamtion. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+    **Make sure you have switched to the correct Region.**  Enter the following information. 
 
-    **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
-    **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+    **Choose a Name For Your Instance**
     
-    **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
+    - **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
+
+    **Enter Info from your SSWorkshop Email**
+    - **Instance Image OCID**: Enter the Image ID you received in your SSWorkshop email
+
+    - **Public Subnet ID**:  Enter the Subnet ID you received in your SSWorkshop email
+
+    - **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
     
-    **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
+    **Enter Your Public Key**
+
+    - **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
 
 8. Click **Next**.
 
@@ -178,6 +195,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
     ![](img/planjob1.png)
 
 2.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your instance and install Oracle 19c.
+
     ![](img/applyjob1.png)
 
     ![](img/applyjob2.png)
@@ -193,9 +211,12 @@ Based on your laptop config, choose the appropriate step to connect to your inst
 
 NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).  Also, the ssh-daemon is disable for the first 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.
 
+1.  Go to Compute -> Instance find the instance you created (make sure you choose the correct compartment)
+2.  On the instances homepage, find the Public IP addresss for your instance next to the Status column.
+
+    ![](img/instance-public-ip.png)
+
 ### Connecting via MAC or Windows CYGWIN Emulator
-1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
 
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -232,29 +253,8 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session section.
 
 8. Click Open to begin your session with the instance.
-
-[Back to Top](#table-of-contents)
-
-## Section 5b-Run the Setup Scripts
-
-1.  Copy the following commands into your terminal.  This script takes approximately 30 minutes to run.  It runs in the background so you should be able to exit out while it's running.  T
-
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
-
-    ````
-    cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
-    unzip multiscripts.zip; chmod +x *.sh
-    /home/opc/setupenv.sh
-    nohup /home/opc/setupdb.sh &> setupdb.out&
-    ````
-2.  To check the status of the script above run the command below.  This script takes about 30 minutes to complete.  You can also use the unix **jobs** command to see if the script is still running.
-
-    ````
-    tail -f /home/opc/setupdb.out
-    ````
-3.  Once the script is finished,        
-Congratulations!  Now you have the environment to run the In-Memory lab.   You may proceed to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html). 
+      
+Congratulations!  Now you have the environment to run the Docker lab.   You may proceed to the [Docker Lab](https://oracle.github.io/learning-library/data-management-library/database/options/docker.html). 
 
 [Back to Top](#table-of-contents)
 

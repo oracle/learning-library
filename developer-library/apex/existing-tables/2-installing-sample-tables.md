@@ -1,6 +1,6 @@
 # Module 2: Building your tables and views - Installing Sample Tables
 
-In this module, you will learn how to install sample tables and views from Sample Datasets which come complete with sample data. 
+In this module, you will learn how to install sample tables and views from Sample Datasets which come complete with sample data.
 
 ### **Part 1** - Creating the Project Tables
 
@@ -19,15 +19,15 @@ In this module, you will learn how to install sample tables and views from Sampl
 
 ### **Part 2** - Review Database Objects
 
-1. In the App Builder Menu, click **SQL Workshop**. 
+1. In the App Builder Menu, click **SQL Workshop**.
 2. Click **Object Browser**.  
 
     ![](images/2/go-object-browser.png)
-    
+
 3. Click on the tables starting with **SAMPLE$** and the various tabs, such as Data, Constraints, and so forth, to review the table details.  
 
     ![](images/2/review-tables.png)
 
 ### **Summary**
 
-This completes Module 2. You now know how to install a sample dataset. [Click here to navigate to Module 3](3-create-the-app.md)
+This completes Module 2. You now know how to install a sample dataset. [Click here to navigate to Module 3](3-create-app.md)

@@ -1,0 +1,28 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to ADB",
+            "description": "ADB Introduction",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/common-labs/cloud-login/cloud-login.md"
+        },
+            {         
+            "title": "Lab: Provision ADB",
+            "description": "Autonomous Database Provisioning",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "12/13/2019",
+            "contentid": "12nnnn",
+            "filename": "adb-shared-provisioning.md"
+        }
+    ]
+}

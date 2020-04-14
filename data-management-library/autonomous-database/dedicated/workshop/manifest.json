@@ -1,0 +1,180 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to ADB Dedicated",
+            "description": "Introduction to ADB Dedicated",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab 1: Prepare Private Network",
+            "description": "Preparing your private network in the Oracle Cloud Infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/26/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-network-prepare/adb-network-prepare.md"
+        },
+        {         
+            "title": "Lab 2: Provisioning Exadata",
+            "description": "Provisioning Exadata Infrastructure for Autonomous DB in OCI",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/26/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-provisioning-exadata/adb-provisioning-exadata.md"
+        },
+        {         
+            "title": "Lab 3: Provisioning an Autonomous Container Database",
+            "description": "Provisioning an Autonomous Container Database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/26/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-provisioning-autonomous-container/adb-provisioning-autonomous-container.md"
+        },
+        {         
+            "title": "Lab 4: Provisioning databases",
+            "description": "Provisioning databases on your dedicated Autonomous Infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/27/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-provisioning-databases/adb-provisioning-databases.md"
+        },
+        {         
+            "title": "Lab 5: Configuring a Development System",
+            "description": "Configuring a development system for use with your dedicated autonomous database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/27/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-configure-dev-client/adb-configure-dev-client.md"
+        },
+        {         
+            "title": "Lab 6: Configuring VPN into private ATP network",
+            "description": "Configuring VPN connectivity into your private ATP network",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/27/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {         
+            "title": "Lab 7: Build and Deploy Node.js Application",
+            "description": "Building and deploying node.js application stacks on dedicated autonomous infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/27/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-build-and-deploy-nodejs/adb-build-and-deploy-nodejs.md"
+        },
+        {         
+            "title": "Lab 8: Build Python Application Stacks",
+            "description": "Building and deploying Python application stacks on dedicated autonomous infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/30/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-build-python-apps/adb-build-python-apps.md"
+        },
+        {         
+            "title": "Lab 9: Build Java Application Stacks",
+            "description": "Building and deploying Java application stacks on dedicated autonomous infrastructure",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/30/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-build-java-apps/adb-build-java-apps.md"
+        },
+        {         
+            "title": "Lab 10: Using CLI commands",
+            "description": "Using CLI commands to work with your Autonomous databases",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/30/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-using-cli-commands/adb-using-cli-commands.md"
+        },
+        {         
+            "title": "Lab 11: SQL Developer Web Console",
+            "description": "Using sql*developer web console",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/30/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-sql-developer-web/adb-sql-developer-web.md"
+        },
+        {         
+            "title": "Lab 12: Build Apex Application",
+            "description": "Building Apex application on dedicated autonomous database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/30/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-build-apex-apps/adb-build-apex-apps.md"
+        },
+        {         
+            "title": "Lab 13: Migrate with Data Pump",
+            "description": "Migrating to Dedicated ATP using Data Pump",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/30/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-data-pump-migration/atp-data-pump-migration.md"
+        },
+        {         
+            "title": "Lab 14: Oracle Goldengate Replication",
+            "description": "Live migration to ATP-Dedicated using Oracle Goldengate replication",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/31/2020",
+            "contentid": "12nnnn",
+            "filename": "./../atp-goldengate-replication/atp-goldengate-replication.md"
+        },
+        {         
+            "title": "Lab 15: Build Always On Applications",
+            "description": "Building Always-On applications on the autonomous database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/31/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-build-always-on-apps/adb-build-always-on-apps.md"
+        },
+        {         
+            "title": "Lab 16: Managing Database Performance",
+            "description": "Managing database performance with Performance Hub",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-performance-hub/adb-performance-hub.md"
+        },
+        {         
+            "title": "Lab 17: Zero Downtime Scaling",
+            "description": "Zero downtime scaling",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-scaling/adb-scaling.md"
+        },
+        {         
+            "title": "Lab 18: Protect Data With Database Vault",
+            "description": "Protecting your data with Database Vault",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-vault/adb-vault.md"
+        },
+        {         
+            "title": "Lab 19: Recover Errors Using Flashback Recovery",
+            "description": "Recovering from user errors using flashback recovery",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-flashback-recovery/adb-flashback-recovery.md"
+        },
+        {         
+            "title": "Lab 20: OCI Notification Service",
+            "description": "Setting up DB event notifications using OCI Notification service",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-event-notifications/adb-event-notifications.md"
+        },
+        {         
+            "title": "Appendix",
+            "description": "Common tools for windows Users Finding the IP address of your AEI Cluster.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-appendix/adb-appendix.md"
+        }
+    ]
+}

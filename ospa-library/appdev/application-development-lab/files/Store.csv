@@ -1,0 +1,13 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,name,address,city,state,mailcode
+1,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza N Scottsdale Rd,13805 N. Scottsdale Rd. ,Scottsdale,AZ,85254
+2,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza N 83rd Ave,3850 N 83rd Ave,Phoenix,AZ,85033
+3,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza E Thomas Rd,4601 E Thomas Rd,Phoenix,AZ,85018
+4,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza Washington St,38615 Washington St.,Palm Desert,CA,92211
+5,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza E Daily Dr,1897 E Daily Dr,Camarillo,CA,93010
+6,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza S Glenoaks Blvd,909 S Glenoaks Blvd,Burbank,CA,91502
+7,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza C South Highway 183,2081 C South Highway 183,Leander,TX,78641
+8,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza E Oltorf St,2060 E. Oltorf St,Austin,TX,78741
+9,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza S I-35,1311 S Interstate 35,Round Rock,TX,78664
+10,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza Great Falls Plz,20969 Great Falls Plaza,Sterling,VA,20165
+11,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza Wilson Blvd,2440 Wilson Boulevard,Arlington,VA,22201
+12,2019-05-16T18:14:43,2019-05-16T18:14:43,dsmith@mamamaggy.com,dsmith@mamamaggy.com,Mama Maggy's Pizza Duke St,4529 Duke Street,Alexandria,VA,22304

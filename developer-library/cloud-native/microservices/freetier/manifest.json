@@ -1,0 +1,52 @@
+{
+    "tutorials": [
+        {           
+            "title": "Gigi's Pizza Hands on Labs",
+            "description": "About the Gigi's pizza HOLs",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "2/24/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+        },
+        {         
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {            
+            "title": "Lab 3: Gigi's Pizza Microservices",
+            "description": "Setup your gigi's pizza app based on microservices and multitenant & multimodal Oracle database",
+            "publisheddate": "04/07/2020",
+            "filename": "../microservices/hol5967_userguide.md"
+        },
+        {            
+            "title": "Lab 4: Gigi's Pizza Serverless",
+            "description": "Setup your gigi's pizza discount campaign serverless app with Oracle Autonomous database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless/gigis-serverless-HOL.md"
+        },
+        {            
+            "title": "Lab 5: Gigi's Pizza Serverless with pipelines",
+            "description": "Deploy your gigi's pizza discount campaign serverless app with Oracle Developer Cloud Service",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless/devcs2fn.md"
+        },
+        {            
+            "title": "Lab 6: Gigi's Pizza Api Gateway",
+            "description": "Connect your serverless HOL to microservices HOL with an OCI API Gateway",
+            "publisheddate": "04/07/2020",
+            "filename": "../api-gateway/oci_apigateway.md"
+        }
+    ]
+}

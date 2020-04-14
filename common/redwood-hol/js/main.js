@@ -1,8 +1,8 @@
 "use strict";
 var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/showdown.min.js";
 const manifestFileName = "manifest.json";
-const expandText = "Expand All Parts";
-const collapseText = "Collapse All Parts";
+const expandText = "Expand All Steps";
+const collapseText = "Collapse All Steps";
 const anchorOffset = 0; //if header is fixed, it should be 70
 const copyButtonText = "Copy";
 const queryParam = "?lab=";
@@ -26,19 +26,19 @@ $(document).ready(function () {
             //The setupAnalytics function is commented out as we are not using Google Analytics
             //setupAnalytics(); //enabling analytics
             console.log(selectedTutorial.filename + " loaded!");
-            $(articleElement).html(new showdown.Converter({ tables: true }).makeHtml(markdownContent)); //converting markdownContent to HTML by using showndown plugin                
-            articleElement = renderVideos(articleElement); //adds iframe to videos    
+            $(articleElement).html(new showdown.Converter({ tables: true }).makeHtml(markdownContent)); //converting markdownContent to HTML by using showndown plugin
+            articleElement = renderVideos(articleElement); //adds iframe to videos
             articleElement = addPathToImageSrc(articleElement, selectedTutorial.filename); //adding the path for the image based on the filename in manifest
-            articleElement = updateH1Title(articleElement); //adding the h1 title in the Tutorial before the container div and removing it from the articleElement            
-            articleElement = wrapSectionTag(articleElement); //adding each section within section tag                                        
+            articleElement = updateH1Title(articleElement); //adding the h1 title in the Tutorial before the container div and removing it from the articleElement
+            articleElement = wrapSectionTag(articleElement); //adding each section within section tag
             articleElement = wrapImgWithFigure(articleElement); //Wrapping images with figure, adding figcaption to all those images that have title in the MD
             articleElement = addPathToAllRelativeHref(articleElement, selectedTutorial.filename); //adding the path for all HREFs based on the filename in manifest
             articleElement = makeAnchorLinksWork(articleElement); //if there are links to anchors (for example: #hash-name), this function will enable it work
             articleElement = addTargetBlank(articleElement); //setting target for all ahrefs to _blank
-            articleElement = allowCodeCopy(articleElement); //adds functionality to copy code from codeblocks               
+            articleElement = allowCodeCopy(articleElement); //adds functionality to copy code from codeblocks
             updateHeadContent(selectedTutorial); //changing document head based on the manifest
         }).done(function () {
-            $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template                        
+            $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template
             setTimeout(setupContentNav, 0); //sets up the collapse/expand button and open/close section feature
             collapseSection($("#module-content h2:not(:eq(0))"), "hide"); //collapses all sections by default
             $('#openNav').click(); //open the right side nav by default
@@ -77,14 +77,14 @@ function closeRightSideNav() {
     $('h1').css("margin-right", "0px");
 }
 /* The following functions creates and populates the right side navigation including the open button that appears in the header.
-The navigation appears only when the manifest file has more than 1 tutorial. The title that appears in the side navigation 
+The navigation appears only when the manifest file has more than 1 tutorial. The title that appears in the side navigation
 is picked up from the manifest file. */
 function setupRightNav(manifestFileContent) {
     let allTutorials = manifestFileContent.tutorials;
     let selectedTutorial;
     if (allTutorials.length <= 1) {
         $('.rightNav').hide();
-    } else if (allTutorials.length > 1) { //means it is a workshop           
+    } else if (allTutorials.length > 1) { //means it is a workshop
         $('.rightNav').show();
         //adding tutorials from JSON and linking them with ?shortnames
         $(allTutorials).each(function (i, tutorial) {
@@ -92,7 +92,7 @@ function setupRightNav(manifestFileContent) {
             let li = $(document.createElement('li')).click(function () {
                 location.href = queryParam + shortTitle;
             });
-            $(li).text(tutorial.title); //The title specified in the manifest appears in the side nav as navigation                    
+            $(li).text(tutorial.title); //The title specified in the manifest appears in the side nav as navigation
             if (window.location.search.split(queryParam)[1] === shortTitle) { //the selected class is added if the title is currently selected
                 $(li).attr("class", "selected");
                 selectedTutorial = tutorial;
@@ -144,7 +144,7 @@ This ensures that the images are picked up from the same location as the MD file
 The manifest file can be in any location.*/
 function addPathToImageSrc(articleElement, myUrl) {
     if (myUrl.indexOf("/") !== -1) {
-        myUrl = myUrl.replace(/\/[^\/]+$/, "/"); //removing filename from the url       
+        myUrl = myUrl.replace(/\/[^\/]+$/, "/"); //removing filename from the url
         $(articleElement).find('img').each(function () {
             if ($(this).attr("src").indexOf("http") === -1) {
                 $(this).attr("src", myUrl + $(this).attr("src"));
@@ -173,7 +173,7 @@ The figcaption is in the format Description of illustration [filename].
 The image description files must be added inside the files folder in the same location as the MD file.*/
 function wrapImgWithFigure(articleElement) {
     $(articleElement).find("img").each(function () {
-        if ($(this).attr("title") !== undefined) { //only images with titles are wrapped with figure tags            
+        if ($(this).attr("title") !== undefined) { //only images with titles are wrapped with figure tags
             $(this).wrap("<figure></figure>"); //wrapping image tags with figure tags
             if ($.trim($(this).attr("title"))) {
                 let imgFileNameWithoutExtn = $(this).attr("src").split("/").pop().split('.').shift(); //extracting the image filename without extension
@@ -190,7 +190,7 @@ This ensures that the files are linked correctly from the same location as the M
 The manifest file can be in any location.*/
 function addPathToAllRelativeHref(articleElement, myUrl) {
     if (myUrl.indexOf("/") !== -1) {
-        myUrl = myUrl.replace(/\/[^\/]+$/, "/"); //removing filename from the url        
+        myUrl = myUrl.replace(/\/[^\/]+$/, "/"); //removing filename from the url
         $(articleElement).find('a').each(function () {
             if ($(this).attr("href").indexOf("http") === -1 && $(this).attr("href").indexOf("?") !== 0 && $(this).attr("href").indexOf("#") !== 0) {
                 $(this).attr("href", myUrl + $(this).attr("href"));
@@ -219,7 +219,7 @@ function addTargetBlank(articleElement) {
     });
     return articleElement;
 }
-/* Sets the title, contentid, description, partnumber, and publisheddate attributes in the HTML page. 
+/* Sets the title, contentid, description, partnumber, and publisheddate attributes in the HTML page.
 The content is picked up from the manifest file entry*/
 function updateHeadContent(tutorialEntryInManifest) {
     document.title = tutorialEntryInManifest.title;
@@ -256,7 +256,7 @@ function setupLeftNav() {
 
     $('.tocify-item').each(function () {
         let itemName = $(this).attr('data-unique');
-        if ($(this) !== $('.tocify-item:eq(0)')) { //as the first section is not expandable or collapsible            
+        if ($(this) !== $('.tocify-item:eq(0)')) { //as the first section is not expandable or collapsible
             $(this).click(function () { //if left nav item is clicked, the corresponding section expands
                 expandSectionBasedOnHash(itemName);
             });
@@ -271,7 +271,7 @@ function setupLeftNav() {
     $(window).scroll(function () {
         if ($(this).scrollTop() > $("article").offset().top) {
             $('#toc').addClass("scroll");
-            if (($(window).scrollTop() + $(window).height()) > $('footer').position().top) //if footer is seen                 
+            if (($(window).scrollTop() + $(window).height()) > $('footer').position().top) //if footer is seen
                 $('#toc').height($('footer').position().top - $(window).scrollTop());
             else
                 $('#toc').height('100%');
@@ -349,7 +349,7 @@ function changeButtonState() {
 }
 /* Expands section on page load based on the hash. Expands section when the leftnav item is clicked */
 function expandSectionBasedOnHash(itemName) {
-    let anchorElement = $('div[name="' + itemName + '"]').next(); //anchor element is always the next of div (eg. h2 or h3)    
+    let anchorElement = $('div[name="' + itemName + '"]').next(); //anchor element is always the next of div (eg. h2 or h3)
     if ($(anchorElement).hasClass('hol-ToggleRegions')) //if the next element is the collpase/expand button
         anchorElement = $(anchorElement).next();
     if (anchorElement[0].tagName !== 'H2') {
@@ -381,7 +381,7 @@ function allowCodeCopy(articleElement) {
     });
     return articleElement;
 }
-/* adds iframe to videos so that it renders in the same page. 
+/* adds iframe to videos so that it renders in the same page.
 The MD code should be in the format [](youtube:<enter_video_id>) for it to render as iframe. */
 function renderVideos(articleElement) {
     $(articleElement).find('a[href^="youtube:"]').each(function () {

@@ -222,7 +222,7 @@ In git-bash Enter Command:
 17. Enter **ls** and verify id_rsa file exists
 
 18. Enter command: **Make sure to use the Reserved Public IP that we assigned to the compute instane**
-```
+```bash
 ssh -i id_rsa opc@<RESERVED_PUBLIC_IP_OF_COMPUTE>
 ```
 

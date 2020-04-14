@@ -1,4 +1,4 @@
-#  Autonmous Transaction Processing
+# Autonomous Transaction Processing
   
 ## Table of Contents
 
@@ -38,46 +38,53 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 ## Practice-1: Sign in to OCI Console and create VCN
 
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+> **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
 1. Sign in using your tenant name, user name and password.
 2. Once signed select the compartment you have permissions on the left part of the screen
 3. From the OCI Services menu, click **Networking** and select **Virtual Cloud Network**. Click **Create Virtual Cloud Network**
 4. Fill out the dialog box:
 
-   - **Name:** Enter easy an easy name
+   - **Name:** *VCN-ATP*
    - **Create Virtual Cloud Network Plus Related Resources:** Select this option
-   - Click **Create Virtual Cloud Network**
+  ![](img/CreateVCN1.png)
+   - Scroll down and click the **Create Virtual Cloud Network** button.
    - Click **Close**
   
-  **NOTE:** This will create a complete VCN with 3 subnets and the required security lists to allow access to your instance using ssh.
+  > **NOTE:** This will create a complete VCN with 3 subnets and the required security lists to allow access to your instance using ssh.
 
 ## Practice 2: Create Compute instance and install Swing Bench
 
 1. Switch to the OCI console. From OCI servies menu, Click **Compute** and **Instances** 
+![](img/menu1.png)
 2. Click Create Instance. Fill out the dialog box:
-   - **Name:** Enter a name    
-   - **Availability Domain:** Select any availability domain
+   - **Name:** *ATP1*
    - **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
+   - Click on the *Show Shape, Network, Storage Options* link to expose those options.
+   - **Availability Domain:** Select any availability domain
    - **Choose Instance Type:** Select Virtual Machine
-   - **Choose Instance Shape:** Select VM shape
-   - **Configure Boot Volume:** Leave the default
-   - **Add SSH Keys:** Browse or enter the content of your public SSH
+   - **Choose Instance Shape:** Select *VM.Standard.E2.1.Micro (Virtual Machine)* for the shape.
    - **Virtual Cloud Network Compartment:** Choose your compartment
-   - **Virtual Cloud Network:** Select the VCN you created in the previous section. 
-   - **Subnet Compartment:** Choose your compartment. 
+   - **Virtual Cloud Network:** Select the *VCN-ATP* virtual cloiud netwrk that you created earlier.
+    - **Subnet Compartment:** Choose your compartment. 
    - **Subnet:** Choose the first Subnet
+   - Click the *Assign a public IP address* option!
+   - **Configure Boot Volume:** Leave the default
+   - **Add SSH Keys:** Browse or enter the content of your public SSH. Feel free to reuse one (*id_rsa.pu*)that you have created earlier in this set of labs.
    - Click **Create**
 
-**NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2
+> **NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2
 
 3. Wait for Instance to be in **Running** state. Then access your instance using ssh:
 
     `ssh –i <private_ssh_key> opc@<Public_IP_Address>`
 
-    **NOTE:** User name is opc
+    > **NOTE:** User name is opc
 
-    **HINT:** If ‘Permission denied error’ is seen, ensure you are using ‘-i’ in the ssh command
+    > **HINT:** If ‘Permission denied error’ is seen, ensure you are using ‘-i’ in the ssh command
+
+    For example:
+    `ssh -i ~/.ssh/id_rsa  opc@192.168.0.0`
 
 4.  On the compute instance enter the following commands: 
 
@@ -105,49 +112,60 @@ instance with only 1 OCPU and scale it after generating load test from the compu
 instance created earlier.
 
 1. Switch to OCI console, from services menu under **Database** click **Autonomous Transaction Processing**.
+![](img/menu2.png)
 2. Click **Create Autonmous Database**. Fill out the dialog box:
-   - **Workload Type:** Autonomous Transaction Processing
-   - **Display Name:** Provide an easy name to rememenber
-   - **Database Name:** Provide a name (can be sameas Display Name)
-   - **CPU Core Count:** 1
+   - **Choose a compartment:** Select your main working compartment.
+   - **Display Name:** *MyATP*
+   - **Database Name:** *MyATP*
+   ![](img/createATP1.png)
+   - **Workload Type:** *Autonomous Transaction Processing*
+   - **Choose a deployment type:** *Serverless* 
+   ![](img/createATP2.png)
+   - **OCPU Core Count:** 1
    - **Storage(TB):** 1
-   - **Password:** Provide a password (e.g Oracle098####)
+   - **Password:** Provide a password (e.g Oracle098Ax12w) 
+
+   > **NOTE:** *Be sure to write this down smewhere! Better yet, for the puroses of this lab simply ue te provided password of Oracle098Ax12w so you can copy and paste most commands directly.*
    - **Confirm Password:** Provide the same password
-   - **License Type:** Choose **SUBSCRIBE TO NEW DATABASE SOFTWARE LICENSES AND THE DATABASE CLOUD SERVICE**
+   - **License Type:** Choose **License Included**
+
+    ![](img/createATP3.png)
+
    -  Click Create **Autonomous Database**
 
-    ![](img/atp01.png)
-    ![](img/atp02.png)
+> **Note:** : It may take several minutes to provision your instance. This would be a good time for a quick break if you are so inclined.
 
 3. Once Database is in running state, click its Name. In Database details window click **Service Console** 
 
-    **NOTE:** If pop up blocker appears then click 'Allow' **
+    > **NOTE:** If pop up blocker appears then click 'Allow' **
 
-    ![](img/atp03.png)
+    ![](img/atp1.png)
 
 4. If prompted for password, enter the same password used to create the ATP instance
 
-5. Click **Administration** and then **Download Client Credentials (Wallet)**. In pop up window provide a password. This can be the same password as one used to create the ATP instance and click **Download**. This will download the credentials file that will be used to connect to this Databse instance from the compute instance created eaelier. Save the zip file.
+5. Click the **DB Connection** button and then **Download Client Credentials (Wallet)**. In pop up window provide a password. This can be the same password as one used to create the ATP instance and click **Download**. This will download the credentials file that will be used to connect to this Database instance from the compute instance created eaelier. Save the zip file.
 
-    **NOTE:** The file is generally downloaded in Downloads directory
+    > **NOTE:** The file is generally downloaded in Downloads directory
 
     ![](img/atp04.png)
 ß
 6. Save the file in and note down the directory name where the file was saved. We will need to upload this zip file on to public Compute instance.
    
-7. In Git bash window change to directory where zip file was saved, Enter command,
-
-    `cd <Directory_Name> (cd ~/Downloads)`
+7. Open a terminal window change to directory where zip file was saved.
 
 8. Upload the zip file to compute instance, Enter command,
 
     `sftp  -i <private_ssh_key> opc@<Public_IP_Address>`
 
+    For example:
+
+    `sftp  -i ~/.ssh/id_rsa opc@129.146.17.195`
+
 9. At sftp prompt Enter command,
 
-    `put <ZIP_FILE_NAME>`
+    `put Wallet_MyATP.zip`
 
-    **NOTE:** Usually the file name starts with 'Wallet'. Verify the file transfer completed
+    > **NOTE:** Usually the file name starts with 'Wallet'. Verify the file transfer completed
 
 10. Step 9. Switch to ssh session to the public compute instance. Enter command,
  
@@ -167,23 +185,25 @@ instance created earlier.
 
     `./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba ADMIN -u soe -p <DB_PASSWORD> -async_off -scale 0.1 -hashpart -create -cl -v`
 
-    **NOTE:** In below example,<CREDENTIAL_ZIP_FILE> is 'Wallet_ATPDB3.zip', <DB_NAME> is ATPDB3, <DB_PASSWORD> is Oracle098####.
+    > **NOTE:** In below example,<CREDENTIAL_ZIP_FILE> is 'Wallet_MyATP.zip', <DB_NAME> is MyATP, <DB_PASSWORD> is *Oracle098Ax12w*
 
-    ![](img/ATP_008.PNG)
+    For example, if you have followed this lab closely, your command would be:
 
-14. The script will take around 10-15 minutes to populate the Database. Verify the script complete successfully 
+    `./oewizard -cf ~/Wallet_MyATP.zip -cs MyATP_medium  -ts DATA -dbap Oracle098Ax12w -dba ADMIN -u soe -p Oracle098Ax12w -async_off -scale 0.1 -hashpart -create -cl -v`
+
+14. The script will take around 10-15 minutes to populate the Database. Tghis is another good time to take a quick break. Verify the script completes successfully 
 
     ![](img/ATP_009.PNG)
 
 15. Validate the schema, Enter command:
 
-    `./sbutil -soe -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -tables`
+    `./sbutil -soe -cf ~/Wallet_MyATP.zip -cs MyATP_medium -u soe -p Oracle098Ax12w -tables`
 
     ![](img/ATP_010.PNG)
 
 15. Next we will configure the load generator file. Enter command:
 
-    `cd ~/swingbench/config`
+    `cd ~/swingbench/configs`
 
 16. Enter command:
 
@@ -191,16 +211,16 @@ instance created earlier.
 
      ![](img/ATP_011.PNG)
 
-17. Search for string **LogonGroupCount** and change the existing number to **4**. On the next line with string **LogonDelay** change the number to **300**. Finally on line with string **WaitTillAllLogon** change the flag to **false** (case sensitive). Save and quite out of the editor. See below example
+17. Search for string **LogonGroupCount** and change the existing number to **4**. You will find it in the <Load> section near the top of the file. On the next line with string **LogonDelay** change the number to **300**. Finally on line with string **WaitTillAllLogon** change the flag to **false** (case sensitive). Save and quit out of the editor. See below example
 
     ![](img/ATP_012.PNG)
 
 18. Now we will generate some load. Enter the following commands:
     ```
     # cd ~/swingbench/bin
-    # ./charbench -c ../configs/SOE_Server_Side_V2.xml -cf ~/<CREDENTIAL_ZIP_FILE>  -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:30.30
+    # ./charbench -c ../configs/SOE_Server_Side_V2.xml -cf ~/Wallet_MyATP.zip  -cs MyATP_medium -u soe -p Oracle098Ax12w -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:30.30
     ```
-19. After a few seconds the number in 4th column (TPS)indicating Transactions Per Seconds will stabalize in 2xx range. Remember the current ATP DB instance has only 1 OCPU. 
+19. After a few seconds the number in 4th column (TPS)indicating Transactions Per Seconds will stabalize in 16xx range (Your exact numbers may be different by an order of magnitude). Remember the current ATP DB instance has only 1 OCPU. 
 
     ![](img/ATP_013.PNG)
 
@@ -229,20 +249,26 @@ In this section we will utilize the dynamic CPU scaling featue of ATP instance a
 ## Practice 5: Delete the resources
 We have now demonstrated the Dynamic Scaling of CPU for an ATP instance. We also successfully generated load traffic and observed CPU usage and other indicators for the ATP instance. Next we will delete the resources that we created
 
-1. Switch to  OCI console window
+1. Stop your script in the ssh terminal using CTRL+C. Close your ssh connection completely.
 
-2. From your ATP details page, Hover over the action icon  and Click **Terminate**. In the confimration windoe provide the ATP instance name and click **Terminate Database**
+2. Switch to  OCI console window
+
+3. From your ATP details page, Hover over the action icon  and Click **Terminate**. In the confimration window provide the ATP instance name and click **Terminate Database**
 
     ![](img/ATP_017.PNG)
 
-3. From OCI services menu Click Instances under Compute
+4. From OCI services menu Click *Instances* under *Compute*
 
-4. Locate first compute instance, Click Action icon and then **Terminate** 
+5. Locate first compute instance, Click Action icon and then **Terminate** 
 
-5. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate
+6. Make sure Permanently delete the attached Boot Volume is checked, Click *Terminate Instance*. Wait for instance to fully Terminate
 
-6. From OCI services menu under Networking, click **Virtual Cloud Networks**, list of all VCNs will appear.
+7. From OCI services menu under Networking, click **Virtual Cloud Networks**, list of all VCNs will appear.
 
-7. Locate your VCN, click action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
+8. Click on the name of your vcn (most likely *VCN-ATP*) to see the detals page for that vcn.
+
+9. Before you can terminate this vcn, you must first terinate each of the three subnets in the vcn using the vertical ellipse button to the right of each subnet. Terminate all three.
+
+8. Now for the vcn click the action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
 **Congratulations! You have successfully completed the lab.**
