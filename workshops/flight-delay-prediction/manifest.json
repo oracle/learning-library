@@ -1,0 +1,52 @@
+{
+    "workshop": {
+        "title": "Flight Delay Prediction",
+        "description": "This workshop will walk you through the process of using the Autonomous Data Warehouse (ADW) to build and apply predictive Machine Learning models.",
+        "theme": "default",
+        "interactive":"https://launch.oracle.com/?",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "Intro.md",
+                "title": "Workshop Introduction",
+                "description": "Step-by-step workshop instructions"
+
+            },
+            {
+                "number": "100",
+                "filename": "LabGuide100.md",
+                "title": "Lab 100: Getting Started with Autonomous Data Warehouse (ADW)",
+                "description": "This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance during this lab."
+
+            },
+            {
+                "number": "200",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200: Loading Datasets to Autonomous Data Warehouse (ADW) using SQL Developer",
+                "description": "This lab walks you through the steps to load datasets from local file system into the Autonomous Data Warehouse (ADW) instance that you provisioned in the previous lab. You will use SQL Developer for connecting and uploading datasets to ADW."
+
+            },
+            {
+                "number": "300",
+                "filename": "LabGuide300.md",
+                "title": "Lab 300: Building Machine Learning Models in Oracle Analytics Cloud (OAC)",
+                "description": "This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to the instance of ADW you created. In addition, we will demonstrate how to build machine learning models and how to find out which model fits flight delay prediction the best in OAC which is no-code development platform."
+            },
+            {
+                "number": "400",
+                "filename": "LabGuide400.md",
+                "title": "Lab 400: Building a Machine Learning Model in Oracle Machine Learning (OML) Notebook",
+                "description": "This lab walks you through the steps to build a linear regression model in Oracle Machine Learning (OML) Notebook since we learned that linear regression algorithm is one of the best models on previous lab."
+            },
+	    {
+                "number": "500",
+                "filename": "LabGuide500.md",
+                "title": "Lab 500:  Visualizing results of Validation and Prediction in Oracle Analytics Cloud (OAC)",
+                "description": "This lab walks you through the steps to visualize results of validation and prediction in Oracle Analytics Cloud (OAC)."
+
+            }
+
+
+        ]
+    }
+}
