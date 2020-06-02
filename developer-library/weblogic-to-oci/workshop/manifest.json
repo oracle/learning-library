@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Migrate a WebLogic domain to Oracle Cloud Infrastructure",
+            "description": "This lab walks you through the steps to migrate a WebLogic domain to Oracle Cloud Infrastructure from on-premises",
+            "filename": "./content.md"
+        }
+    ]
+}

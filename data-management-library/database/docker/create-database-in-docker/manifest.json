@@ -30,7 +30,7 @@
         },
         {
           "title": "Lab 7: Add an Ingress Rule to your VCN",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/connect-oci-vm-db-sqldeveloper/add-ingress-rule/add-ingress-rule.md"
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/add-ingress-rule/add-ingress-rule.md"
         },
         {
           "title": "Lab 8: Connect to Oracle Database in a Docker Container",

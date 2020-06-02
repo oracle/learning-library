@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+
+  oracledb:
+    build:
+      context: './oracledb'
+      dockerfile: Dockerfile
+    env_file: ./weblogic/env 
+    volumes:
+      - ../rman:/home/oracle/rman
+      - ../datapump:/home/oracle/datapump
+      - ./common/:/home/oracle/.ssh/
+    ports: 
+      - "127.0.0.1:1521:1521"
+      - "127.0.0.1:5000:5000"
+    privileged: true
+
+  oracledbinit:
+    build:
+      context: './oracledbinit'
+      dockerfile: Dockerfile
+    env_file: ./weblogic/env
+
+  wls_admin:
+    build:
+      context: './weblogic'
+      dockerfile: Dockerfile
+      args: 
+        # needs to match what's in the env file
+        - DOMAIN_NAME=base_domain
+    volumes:
+      - ../wdt:/home/oracle/wdt
+      - ./common/:/home/oracle/.ssh/
+    ports:
+      - "127.0.0.1:7001:7001"
+      - "127.0.0.1:7003:7003"
+      - "127.0.0.1:7005:7005"
