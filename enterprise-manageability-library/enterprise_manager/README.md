@@ -33,9 +33,9 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Videos
-- [Oracle Multitenant](https://www.oracle.com/enterprise-manager/?bcid=6122657568001)
+- [Oracle Enterprise Delivers Next-Gen Automation](https://www.oracle.com/enterprise-manager/?bcid=6122657568001)
 
 ### Issues?
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
 
--- Oracle Database Product Management
+-- Oracle Enterprise Manager Product Management
