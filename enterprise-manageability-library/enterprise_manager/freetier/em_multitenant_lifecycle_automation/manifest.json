@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Enterprise Manager - Multitenant Database Lifecycle Management",
+            "description": "The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database",
+            "filename": "em_multitenant_lifecycle_automation.md"
+        }
+    ]
+}

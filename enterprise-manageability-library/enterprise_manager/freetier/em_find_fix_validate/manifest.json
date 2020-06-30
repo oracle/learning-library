@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Enterprise Manager - Database Performance Management: Find, Fix, Validate",
+            "description": "The objective is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud",
+            "filename": "em_find_fix_validate.md"
+        }
+    ]
+}
