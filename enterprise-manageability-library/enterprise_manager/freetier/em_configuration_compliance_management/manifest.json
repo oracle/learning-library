@@ -1,9 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Enterprise Manager - Database Configuration and Compliance Management",
-            "description": "This lab provides an overview of Configuration and Compliance Management features in . It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
-            "filename": "em_configuration_compliance_management.md"
-        }
-    ]
-}

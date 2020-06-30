@@ -1,9 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Enterprise Manager - Automated Database Upgrade at Scale with Fleet Maintenance",
-            "description": "This lab walks you through the steps needed with Fleet Maintenance to automate upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
-            "filename": "em_fleet_maintenance_upgrade.md"
-        }
-    ]
-}
