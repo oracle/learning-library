@@ -1,10 +1,10 @@
 # Database Configuration and Compliance Management
 ## Before You Begin
 
-This 15-minute lab walks you through the steps to ...
+The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator
 
 ### Background
-Enter background information here..
+Configuration and Compliance Management is a feature of Oracle Enterprise Manager Database Lifecycle Management Pack. Enter background information here.
 
 Next paragraph of background information
 * List item 1.
@@ -16,7 +16,7 @@ Next paragraph of background information
 * Item no 1.
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
-## Section 1 title
+## Workshop Activity 1: Inventory & Usage Details
 
 Section 1 opening paragraph.
 
@@ -39,7 +39,7 @@ One line with code example `HelloWorld.java`.
 
 Section conclusion can come here.
 
-## Section 2 title
+## Workshop Activity 2: One Time Database Comparison
 
 1. List item 1.
 
@@ -62,7 +62,57 @@ Section conclusion can come here.
 
     [](youtube:zNKxJjkq0Pw)
 
-Conclusion of section 2 here.
+Conclusion of Workshop Activity 2 here.
+
+## Workshop Activity 3: Database CONFIGURATION Drift Management
+
+1. List item 1.
+
+2. List item 2.
+
+    ```
+    Adding code examples
+	Indentation is important for the code example to appear inside the step
+    Multiple lines of code
+	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
+    ```
+
+3. List item 3. To add a video, follow the following format:
+
+	```
+	<copy>[](youtube:&lt;video_id&gt;)</copy>
+	For example:
+	[](youtube:zNKxJjkq0Pw)
+    ```
+
+    [](youtube:zNKxJjkq0Pw)
+
+Conclusion of Workshop Activity 3 here.
+
+## Workshop Activity 4: Database and Host Security Compliance
+
+1. List item 1.
+
+2. List item 2.
+
+    ```
+    Adding code examples
+	Indentation is important for the code example to appear inside the step
+    Multiple lines of code
+	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
+    ```
+
+3. List item 3. To add a video, follow the following format:
+
+	```
+	<copy>[](youtube:&lt;video_id&gt;)</copy>
+	For example:
+	[](youtube:zNKxJjkq0Pw)
+    ```
+
+    [](youtube:zNKxJjkq0Pw)
+
+Conclusion of Workshop Activity 4 here.
 
 ## Want to Learn More?
 
