@@ -1,4 +1,4 @@
-# Enter lab title here
+# Multitenant Database Lifecycle Management
 ## Before You Begin
 
 This 15-minute lab walks you through the steps to ...
@@ -75,4 +75,4 @@ Conclusion of section 2 here.
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
