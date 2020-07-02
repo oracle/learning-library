@@ -1,0 +1,38 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction to REST services",
+            "description": "About the Introduction to REST Services Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+          },
+          {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Provision an Autonomous Database",
+            "description": "Provision an Autonomous Database - ATP or ADW",
+            "publisheddate": "5/20/2020",
+            "filename": "https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb"
+        },
+        {
+            "title": "Lab 3: Connect to ADB with SQL Dev Web",
+            "description": "Connect to an Autonomous Database with SQL Developer Web",
+            "publisheddate": "5/20/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md"
+        },		
+        {
+            "title": "Lab 3: RESTul Services",
+            "description": "RESTful Services for your Autonomous Database",
+            "publisheddate": "5/20/2020",
+            "filename": "../rest_services/rest_services.md"
+        }
+    ]
+}

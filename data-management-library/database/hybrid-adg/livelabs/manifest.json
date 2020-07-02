@@ -1,0 +1,76 @@
+{
+    "tutorials": [
+        {           
+            "title": "Introduction",
+            "description": "About the Hybrid ADG Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "5/6/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {         
+            "title": "Lab 2: Generate SSH Keys",
+            "description": "Generate SSH Keys",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {            
+            "title": "Lab 3: Environment Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-livelabs-197.md"
+        },
+        {            
+            "title": "Lab 4: Prepare On Premise Database",
+            "description": "Prepare On Premise Database",
+            "publisheddate": "5/6/2020",
+            "filename": "../prepare-op-database/prepare-op-database.md"
+        },
+        {            
+            "title": "Lab 5: Provision DBCS on OCI",
+            "description": "Provision DBCS on OCI",
+            "publisheddate": "5/6/2020",
+            "filename": "../provision-dbcs/provision-dbcs.md"
+        },
+        {            
+            "title": "Lab 6: Setup Connectivity Between Primary and Standby",
+            "description": "Setup Connectivity Between Primary and Standby",
+            "publisheddate": "5/6/2020",
+            "filename": "../set-primary-standby/set-primary-standby.md"
+        },
+        {            
+            "title": "Lab 7A: Deploy Active Data Guard with LVM",
+            "description": "Deploy Active Data Guard with LVM",
+            "publisheddate": "5/6/2020",
+            "filename": "../deploy-adg-lvm/deploy-adg-lvm.md"
+        },
+        {            
+            "title": "Lab 7B: Deploy Active Data Guard with ASM",
+            "description": "Deploy Active Data Guard with ASM",
+            "publisheddate": "5/6/2020",
+            "filename": "../deploy-adg-asm/deploy-adg-asm.md"
+        },
+        {            
+            "title": "Lab 8: Testing with Active Data Guard",
+            "description": "Testing with Active Data Guard",
+            "publisheddate": "5/6/2020",
+            "filename": "../test-with-adg/test-with-adg.md"
+        },
+        {            
+            "title": "Lab 9: Failover and Reinstate",
+            "description": "Failover and Reinstate",
+            "publisheddate": "5/6/2020",
+            "filename": "../failover-and-reinstate/failover-and-reinstate.md"
+        }
+    ]
+}

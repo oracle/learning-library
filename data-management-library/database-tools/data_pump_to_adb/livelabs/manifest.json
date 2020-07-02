@@ -1,0 +1,64 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction to Migrate to ADB",
+            "description": "Introduction to Using Data Pump to Migrate to ADB Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+          },
+          {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 3: Provision an Autonomous Database",
+            "description": "Provision an Autonomous Database - ATP or ADW",
+            "publisheddate": "5/20/2020",
+            "filename": "https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb"
+        },
+        {
+            "title": "Lab 4: Build a Compute Instance and create a database",
+            "description": "Build a Compute Instance",
+            "publisheddate": "5/20/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-livelabs.md"
+        },
+        {
+            "title": "Lab 5: Install Sample Schemas",
+            "description": "Install Sample Schema",
+            "publisheddate": "5/20/2020",
+            "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/database-setup/setup_sample_schema.md"
+        },
+        {
+            "title": "Lab 6: Install VNC Server",
+            "description": "Install VNC Server",
+            "publisheddate": "5/20/2020",
+            "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/database-setup/setup_vnc_compute.md"
+        },
+        {
+            "title": "Lab 7: Install SQL Developer on a Compute Instance",
+            "description": "SQL Developer on a Compute Instance",
+            "publisheddate": "5/23/2020",
+            "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/database-setup/setup_vnc_compute.md"
+        },
+        {
+            "title": "Lab 8: Connect to Source Database",
+            "description": "Use SQL Developer to connect to a local database",
+            "publisheddate": "5/23/2020",
+            "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/database-setup/setup_vnc_compute.md"
+        }
+    ]
+}

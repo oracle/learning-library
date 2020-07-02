@@ -1,0 +1,76 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction to ODI",
+            "description": "Introduction to ODI Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "06/25/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/odi-intro.md"
+        },
+        {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 3: Provision an Autonomous Database and link to an ODI repository",
+            "description": "Provision an Autonomous Database and link to an ODI repository",
+            "publisheddate": "5/20/2020",
+            "filename": "../setup/odi-adb-provision.md"
+        },
+        {
+            "title": "Lab 4: Create an ODI instance from Marketplace",
+            "description": "Build a Compute Instance",
+            "publisheddate": "7/01/2020",
+            "filename": "../setup/setup-odi-rep.md"
+        },
+        {
+            "title": "Lab 5: Getting Started with the Oracle Data Integrator",
+            "description": "Introduction to ODI",
+            "publisheddate": "6/29/2020",
+            "filename": "../odi/odi12c-lab.md"
+        },
+        {
+            "title": "Lab 6: ODI12c - Working with Mappings - 1",
+            "description": "ODI12c - Mapping TRG_CUSTOMERS",
+            "publisheddate": "6/29/2020",
+            "filename": "../mappings/odi12c-mappings-1.md"
+        },
+        {
+            "title": "Lab 7: ODI12c - Working with Mappings - 2",
+            "description": "ODI12c - Mapping TRG_SALES",
+            "publisheddate": "6/29/2020",
+            "filename": "../mappings/odi12c-mappings-2.md"		
+        },
+        {
+            "title": "Lab 8: ODI12c - Implementing Data Quality Control",
+            "description": "ODI12c - Data Quality Control",
+            "publisheddate": "6/29/2020",
+            "filename": "../quality/odi12c-data-quality-control.md"		
+        },
+        {
+            "title": "Lab 9: ODI12c - Working with Packages",
+            "description": "ODI12c - Working with Packages",
+            "publisheddate": "6/29/2020",
+            "filename": "../packages/odi12c-packages.md"		
+        },
+        {
+            "title": "Lab 10: ODI12c - Deploying Integrated Applications ",
+            "description": "ODI12c - Working with Packages",
+            "publisheddate": "6/29/2020",
+            "filename": "../production/odi12c-production.md"		
+        }
+    ]
+}

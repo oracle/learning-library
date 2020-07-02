@@ -1,0 +1,49 @@
+---
+- hosts: all
+  vars:
+    # ansible_python_interpreter: "/usr/bin/python3"
+
+    #########################################
+    # Apache specific configuration
+    #########################################
+    apache_listen_port: 80
+    apache_enablerepo: ""
+    apache_packages:
+    - httpd
+    - httpd-devel
+    - mod_ssl
+    - openssh
+    apache_service: httpd
+    apache_daemon: httpd
+    ansible_document_root: /var/www/html
+
+  tasks:
+    - name: Install apache
+      package:
+        name: "{{ apache_packages }}"
+        state: present
+        enablerepo: "{{ apache_enablerepo | default(omit, true) }}"
+
+    - name: Copy html file
+      copy:
+        src: files/index.html
+        dest: "{{ ansible_document_root }}/index.html"
+        owner: apache
+        group: apache
+        mode: 0644
+
+    - name: Allow apache http port from the firewall
+      firewalld:
+        port: "{{ apache_listen_port }}/tcp"
+        permanent: yes
+        state: enabled
+
+    - name: Restart firewalld
+      service:
+        name: firewalld
+        state: restarted
+
+    - name: (Re)start apache
+      service:
+        name: "{{ apache_service }}"
+        state: restarted

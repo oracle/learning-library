@@ -1,0 +1,43 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 3: Environment Setup",
+            "description": "Setup compute instance running 19c using Oracle Database Image from Marketplace",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-livelabs-197.md"
+        },
+        {
+            "title": "Lab 4: Python and Oracle Database: Scripting for the Future",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../python-scripting/python-scripting.md"
+        }
+
+    ]
+}
