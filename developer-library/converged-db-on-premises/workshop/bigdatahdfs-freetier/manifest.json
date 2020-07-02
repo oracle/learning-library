@@ -1,0 +1,38 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction and Overview",
+            "description": "Introduction to Oracle BigData",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../bigdatahdfs/intro.md"
+        },
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {         
+            "title": "Lab 2: Environment Setup",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../bigdatahdfs/setup.md"
+        },
+        {         
+            "title": "Lab 3: Data Access in HDFS",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../bigdatahdfs/data-access.md"
+        }
+        
+        
+    ]
+}

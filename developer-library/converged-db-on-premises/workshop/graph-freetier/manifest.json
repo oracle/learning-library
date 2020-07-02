@@ -1,0 +1,56 @@
+{
+    "tutorials": [
+        {         
+            "title": "Overview Of Oracle Graph",
+            "description": "Introduction to Oracle Graph Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../graph/intro.md"
+        },
+        {         
+            "title": "Property Graph  Environment setup",
+            "description": "Which products did customer 40202 buy from which store(s)?",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../graph/Oracle-Graph-Setup.md"
+        },
+        {         
+            "title": "Lab:1 Defining Graph",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../graph/Oracle-Graph-Define.md"
+        },
+        {         
+            "title": "Lab:2 Querying graph via PGQL",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../graph/Oracle-Graph-Lab1.md"
+        },
+        {         
+            "title": "Lab:3 Loading the Graph into memory and Querying graph",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../graph/Oracle-Graph-Lab6.md"
+        },
+        {         
+            "title": "Lab:4 Graph Visualization",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../graph/Oracle-Graph-Lab3.0.md"
+        }
+        
+
+    
+        
+    ]
+}
