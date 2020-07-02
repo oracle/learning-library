@@ -82,7 +82,7 @@ Under **Configure the database**
 - Always Free: Leave Default
 - Choose database version: Leave Default
 - OCPU count: 1
-- Auto Sclaing: Make sure flag is checked
+- Auto Sclaing: Make sure flag is Un-checked
 
 Under **Create administrator credentials**
 
@@ -97,7 +97,7 @@ Under **Choose network access**
 
 Under **Choose a license type**
 
-- License Included: Check this opttion
+- License Included: Check this option
 
 4. Click **Create Autonomous Database**
 

@@ -13,17 +13,19 @@ This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Co
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 
 ## **STEP 1**: Create the basic OCI resources
-You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name and user OCID. We recommend you open a text editor on your PC to keep track of this data.
+You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name and user OCID.
 
-1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
+1. Download and save <a href="files/ConvergedDBWorksheet.txt" target="\_blank">ConvergedDBWorksheet.txt</a> to store and keep track of the data you'll need in later labs. Open this file in a text editor.
+
+2. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
 
   ![](images/1-tenancy-details.png " ")
 
-2. The Tenancy Details page shows information about your cloud account. Note the Tenancy OCID by clicking on the **Copy** link next to it. Also note the Object Storage Namespace.
+3. The Tenancy Details page shows information about your cloud account. Note the Tenancy OCID by clicking on the **Copy** link next to it. Also note the Object Storage Namespace.
 
   ![](images/2-copy-ocid.png " ")
 
-3. To get the Region name, open up the hamburger menu in the top-left corner of the Console and choose **Administration > Region Management**. Note down the region identifier.
+4. To get the Region name, open up the hamburger menu in the top-left corner of the Console and choose **Administration > Region Management**. Note down the region identifier.
 
   ![](images/3-admin-region-mgmt.png " ")
 
@@ -31,11 +33,11 @@ You'll need to keep track of important information about the tenancy, such as re
 
   ![](images/4-example-region-id.png " ")
 
-4. To get the User OCID, open up the User icon in the top-right corner of the Console, and click your user name.
+5. To get the User OCID, open up the User icon in the top-right corner of the Console, and click your user name. Note your user name. If your user is federated, it will be prefixed with `oracleidentitycloudservice/`.
 
   ![](images/5-get-user-ocid.png " ")
 
-5. On the next page, note down the OCID by clicking on the **Copy** link next to it.
+6. On the next page, note the OCID by clicking on the **Copy** link next to it.
 
   ![](images/6-example-user-ocid.png " ")
 
@@ -71,7 +73,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/8B-gen-private-key.png " ")
 
-5. Confirm that the private key file has been created in the directory you specified using the following command.
+5. Confirm that the private key file has been created in the directory you specified using the following command. Note the complete path to the private key because you will need it later.
 
     ```
     <copy>ls -l ~/.oci/user1_api_key_private.pem</copy>
@@ -103,7 +105,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/9-confim-public-key.png " ")
 
-9. Copy in your clipboard the content of the public key file you just created by opening the file, selecting the entire content and right-click to copy.
+9. Copy the content of the public key file you just created to your clipboard by opening the file, selecting the entire content and right-click to copy.
 
     ```
     <copy>cat ~/.oci/user1_api_key_public.pem</copy>
@@ -155,7 +157,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   ![](images/21-dev-services-registry.png " ")
 
 2. Click **Create Repository** and specify the following details for your new repository.
-    - Repository Name: `<user-name>/msdataworkshop`
+    - Repository Name: `<firstname.lastname>/msdataworkshop`
 	  - Access: `Public`
 
   You can only make the new repository public if you belong to the tenancy's Administrators group or have been granted the REPOSITORY_MANAGE permission. If you make the new repository public, any user with internet access and knowledge of the appropriate URL will be able to pull images from the repository. If you make the repository private, you (along with users belonging to the tenancy's Administrators group) will be able to perform any operation on the repository.
@@ -197,12 +199,14 @@ balancers. Click **Launch Workflow**.
 
   ![](images/29-create-oke-wizard.png " ")
 
-4. Change the name of the cluster to `msdataworkshopcluster`, accept all the other
+4. Change the name of the cluster to `msdataworkshopcluster`, set the kubernetes version to **v1.15.7**, and accept all the other
 defaults, and click **Next** to review the cluster settings.
+
+  *The default kubernetes version is v1.16.8. If you do not change the version to v1.15.7 you may encounter errors that prevent the completion of this workshop.*
 
   ![](images/30-create-oke-wizard2.png " ")
 
-5. The defaults will create 3 worker nodes in a private subnet with a `VM.Standard2.1` shape and install the latest Kubernetes version on the master nodes. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
+5. The defaults will create 3 worker nodes in a private subnet with a `VM.Standard2.1` shape. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
 
   ![](images/31-create-oke-wizard3.png " ")
 
@@ -238,10 +242,10 @@ Autonomous Database page provide the following basic information and click **Cre
     -   Display name: `Order DB`
     -   Database name: `orderdb`
     -   Workload type: `Transaction Processing`
-    -   Deployment type: `Share Infrastructure`
+    -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
     -   Leave Auto scaling on
-    -   Provide the admin password
+    -   Provide the admin password - *Note: do not use special characters in the password, instead use integers and upper and lower case characters.*
     -   Leave the defaults for network access, which is “Allow secure access from
         everywhere”
     -   License type: `License included`
@@ -264,7 +268,7 @@ information and click **Create Autonomous Database**:
     -   Display name: `Inventory DB`
     -   Database name: `inventorydb`
     -   Workload type: `Transaction Processing`
-    -   Deployment type: `Share Infrastructure`
+    -   Deployment type: `Shared Infrastructure`
     -   Leave the defaults for version, OCPU count and Storage
     -   Leave Auto scaling on
     -   Provide the admin password
@@ -320,11 +324,14 @@ and running.
 
     ![](images/48-verify-oke.png " ")
 
+    *Note: You may have to execute the command a couple times to see all the pods.*
+
 You may proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Consulting Member of Technical Staff
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Last Updated By/Date** - Tom McGinn, April 2020
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Last Updated By/Date** - Tom McGinn, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

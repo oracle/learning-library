@@ -1,22 +1,39 @@
-# Create a Kubernetes Cluster**
+# Create a Kubernetes Cluster
 
-## Before You Begin
+## Introduction
 
 In this lab you will create a Kubernetes Cluster to deploy the microservices you will create in a later lab.
 
+Estimated time: 20 - 25 min
+
+### Objectives
+
+* Learn how to create a Kubernetes Cluster
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Sign up for a Free Trial
+* Lab: Provision a DevCS Instance
+* Lab: Build Virtual Machines in Developer Cloud Service
+
 ## **Step 1**: Create Policies
 
-1. Start by creating a policy that allows Service OKE to be created to manage all resources in this tenancy. To do this in OCI Dashboard Menu go to Identity-\>Policies.
+1. Start by creating a policy that allows Service OKE to be created and manage all resources in this tenancy. To do this open the menu and go to Identity-\>Policies.
 
   ![](./images/image56.png " ")
 
-2. Check that root compartment is selected. Then click **Button Create Policy** and fill in fields taking special care of filling in Statement field in Policy Statements area with this value:
+2. Check that the root compartment is selected. Then click **Create Policy** and fill in the name and description. Copy and paste the value below into the Policy Statements field:
 
-   ```
-   <copy>Allow service OKE to manage all-resources in tenancy</copy>
-   ```
+  ![](./images/image68.png " ")
 
-3. And then click **Create**:
+	````
+	<copy>
+    Allow service OKE to manage all-resources in tenancy
+    </copy>
+    ````
+
+3. And then click **Create**.
 
   ![](./images/image57.png " ")
 
@@ -26,27 +43,27 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
 ## **Step 2**: Create OKE Clusters
 
-1. In OCI Dashboard Menu go to: Developer Services-\> Container Clusters (OKE)
+1. In the OCI Dashboard Menu go to: Developer Services-\> Container Clusters (OKE).
 
   ![](./images/image59.png " ")
 
-2. Select the compartment you have previously created under List Scope and click **Create Cluster**:
+2. Select the compartment you created in lab 2 under List Scope and click **Create Cluster**.
 
   ![](./images/image60.png " ")
 
-3. Provide a name for the cluster, then select QUICK CREATE option and Launch Workflow button:
+3. Provide a name for the cluster, then select the QUICK CREATE option and click the **Launch Workflow** button.
 
   ![](./images/image300.png " ")
 
-4. Select Shape VM.Standard1.1 and 3 (or less if you don't want to create a 3 workernodes nodepool) in the NUMBER OF NODES (this number is the VMs that will be created into the node pool). Then click **NEXT** setting the default options for the rest of parameters for a cluster review:
+4. Select VM.Standard2.1 for SHAPE and 3 (or less if you don't want to create a 3 workernodes nodepool) for the NUMBER OF NODES (this number is the VMs that will be created into the node pool). Then click **NEXT**. Leave the rest of the parameters as defaults.
 
   ![](./images/image301.png " ")
 
-5. Review the cluster information before to create it, and click **Create Cluster** or back to modify cluster options:
+5. Review the cluster information before to create it, and click **Create Cluster** or back to modify cluster options.
 
   ![](./images/image302.png " ")
 
-6. The previous QUICK CREATE Option will setup a 3 nodes Kubernetes Cluster with predefined Virtual Cloud Network, 3 Subnets, Security Lists, Route tables. When you are done with checks, please click the Requesting Cluster area in your Cluster name.
+6. The previous QUICK CREATE Option will setup a 3 nodes Kubernetes Cluster with predefined Virtual Cloud Network, 3 Subnets, Security Lists, Route tables. When you are done with checks, please click **Close**.
 
   *Note: Cluster creation process can take several minutes.*
 
@@ -54,11 +71,11 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
   ![](./images/image64.png " ")
 
-7. Then you are taken to the Cluster Information page. Please copy Cluster id and don’t forget to make a note in a txt file as you will need this data later:
+7. Then you are taken to the Cluster Information page. Please copy Cluster id and don’t forget to make a note in a txt file as you will need this data later.
 
   ![](./images/image65.png " ")
 
-8. It will take several minutes for the cluster to be created. Once created, if you scroll down in previous screen and select Node Pools under Resources area, you can check that a Node Pool with three Node Clusters have been created:
+8. It will take several minutes for the cluster to be created and you may need to refresh the page. Once created, you can scroll down and select **Node Pools** under the Resources area, you can check that a node pool with three node clusters has been created.
 
   ![](./images/image66.png " ")
 
@@ -68,11 +85,9 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
 9. Now your Kubernetes Cluster is created. But we need to run some extra steps to get started with managing the Kubernetes Cluster.
 
-  If you click under Resources section in Getting Started. This section explains steps to access to you Cluster dashboard by using Kubectl. In this section it is explained in detail how to install ocicli and kubectl to access to Kubernetes management tool:
+  Click **Quick Start** under the Resources area. This section explains the steps to access your Cluster dashboard by using Kubectl. It is also explains how to install OCIcli and kubectl to access to Kubernetes management tool:
 
   ![](./images/image310.png " ")
-
-  ![](./images/image311.png " ")
 
   You can proceed to the next lab.
 
@@ -83,6 +98,7 @@ In this lab you will create a Kubernetes Cluster to deploy the microservices you
 
 ## Acknowledgements
 * **Authors** -  Iván Postigo, Jesus Guerra, Carlos Olivares - Oracle Spain SE Team
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, April 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.

@@ -4,6 +4,7 @@
 The industry’s leading database continues to deliver leading-edge innovations, including machine learning, to enable self-driving data management. This enterprise-proven, database cloud service is designed to support mixed workloads through any deployment strategy, on premises or in the cloud. Experience the power of the next-generation database with unmatched performance, ease, and flexibility by clicking on one of our hands-on workshops.
 
 
+
 ## Workshops
 - [New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
 
@@ -15,7 +16,15 @@ The industry’s leading database continues to deliver leading-edge innovations,
 
 - [In-Memory Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html) 
 
+<<<<<<< HEAD
+### Converged
+
+[![](./images/converged-database.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/converged-database/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/converged-database.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/converged-database/ssworkshop/index.html)
+
+### In-Memory Workshops
+=======
 - [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier) 
+>>>>>>> upstream/master
 
 - [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier) 
 

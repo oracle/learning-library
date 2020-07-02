@@ -1,1 +1,0 @@
-The illustration shows the following message in a dialog box: "Your application is being created."

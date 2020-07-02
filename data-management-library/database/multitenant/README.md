@@ -6,11 +6,11 @@ Oracle Multitenant is the architecture for the next-generation database cloud. I
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
 
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/ssworkshop/index.html)
+- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!

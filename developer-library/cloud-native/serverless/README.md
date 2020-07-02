@@ -6,7 +6,7 @@ Demo is known as Gigi’s Pizza. The Use Case is focused in microservices/server
 Hands on Labs - Gigis pizza microservices/serverless app (Oracle Cloud Infraestructure OCI)
 
 - [I have a Freetier or Oracle Cloud account](https://oraclespainpresales.github.io/GigisPizzaHOLsORAStyle/serverless/freetier/index.html))
-- [I have an account on LiveLabs](https://oraclespainpresales.github.io/GigisPizzaHOLsORAStyle/serverless/ssworkshop/index.html))
+- [I have an account on LiveLabs](https://oraclespainpresales.github.io/GigisPizzaHOLsORAStyle/serverless/livelabs/index.html))
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:

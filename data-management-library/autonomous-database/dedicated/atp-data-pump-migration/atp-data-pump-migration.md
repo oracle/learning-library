@@ -28,7 +28,7 @@ As a database admin or user,
 
     ```
     <copy>
-    wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/datapump/nodeapp.dmp?raw=true
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/8fcg4NskCWAIMvRpLE_ivj-a7baylei6XFF5_B1knzw/n/atpdpreview11/b/adb-data-pump/o/nodeapp.dmp
     </copy>
     ```
     
@@ -138,7 +138,7 @@ Here, we will use a local SQL Developer to demonstate the steps needed to setup 
 
     *connect\_string* - Connect string obtained from database console, it would be something like myDatabase_high
 
-    *directory* - Leave as shown above
+    *directory* - Leave as shown above for default or create your own directory object in database
 
     *dumpfile* - Use swift URL. If your .dmp file is in Ashburn, simply replace tenancy and bucket name
 
@@ -164,6 +164,6 @@ You may now connect to your autonomous database using a SQL client and validate 
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

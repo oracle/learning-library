@@ -12,7 +12,7 @@
 This lab assumes you have completed the following labs:
 * Lab: Login to Oracle Cloud
 * Lab: Generate SSH Key
-* Lab: Setup
+* Lab: Environment Setup
 
 ### Lab Preview
 
@@ -21,8 +21,29 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
 [](youtube:dZ9cnIL6KKw)
 
 
+## Step 0: Download the Lab Files
+
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
+
+
+2.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
+    ````
+    <copy>
+    cd /home/opc/
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    unzip multiscripts.zip; chmod +x *.sh
+    /home/opc/setupenv.sh
+    </copy>
+    ````
+    ![](./images/step5.png " ")  
+
 ## Step 1: Run the In-Memory Setup Scripts
 1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
+
+
     ````
     <copy>
     cd /home/opc/
@@ -236,6 +257,6 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 

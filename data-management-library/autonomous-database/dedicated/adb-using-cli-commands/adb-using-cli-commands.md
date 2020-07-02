@@ -144,6 +144,7 @@ You are expected to see the following output in the command line interface.
     ![](./images/GetDBOutput1.png " ")
     ![](./images/GetDBOutput2.png " ")
 
+**Note** the compartment-id OCIDs are provided in the json output above. Make a note of the compartment-id OCID assigned to you as you need it in the following example to list databases in a compartment.
 
 ### *Listing Databases*
 
@@ -290,6 +291,6 @@ These are a handful of examples on using the OCI CLI REST interface to work with
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

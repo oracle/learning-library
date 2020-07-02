@@ -18,7 +18,7 @@ Welcome to the Low Code Development with Oracle Autonomous Database hands-on lab
 
 - Click on **Sign Up for a Free Trial** from the menu on the right. If you already have an Oracle Cloud account, click on **Lab 1: Create an APEX Workspace**.
 
-- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top of the page.
+- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
 
 ### Downloads
 

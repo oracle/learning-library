@@ -28,6 +28,7 @@ Watch the video below for an overview of Autonomous Database Dedicated
 - Protect your data with Database Vault
 - Recover from user errors using flashback recovery
 - Setup monitoring events and notifications
+- Connect Oracle Analytics cloud with Autonomous Database Dedicated
 
 ## Lab Breakdown
 These hands-on lab guides provide step-by-step directions to setting up and using your dedicated Autonomous database platform in the Oracle Cloud Infrastructure. 

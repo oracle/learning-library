@@ -1,4 +1,0 @@
-select /* low */ c_city,c_region,count(*) 
-from ssb.customer c_low
-group by c_region, c_city
-order by count(*);

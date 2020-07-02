@@ -9,6 +9,11 @@
 
 This lab walks you through the steps to make an OML user and use SQL Developer as an interface to the ADW instance for granting user privileges. Then you will use OML to run a SQL script to generate machine learning models.
 
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[![Lab 200 Walkthrough Video](./images/lab200tn.png " ")](https://www.youtube.com/watch?v=uprqKyeuxik "Lab 200 Walkthrough Video - Click to Watch!")
+
+
 ### Objectives
 -   Learn how to make an OML user
 -   Learn how to grant user privileges using SQL developer web
@@ -112,7 +117,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/20.png " ")
 
-4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: [Download ML-Prediction-Models.json here](./files/ML-Prediction-Models.json). Then, open your browser window again back to the OML page.
+4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: [Download ML-Prediction-Models.json here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oaoaQIJWKEKsh0QaEnJfcJ5A7tak48DxjpeCQBSfSJk/n/c4u03/b/solutions-library/o/ML-Prediction-Models.json). Then, open your browser window again back to the OML page.
 
 5. Click **Import** and select **ML-Prediction-Models.json** that you just downloaded.
 
@@ -174,8 +179,8 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
 ## Acknowledgements
 
-- **Author** - NATD Solution Engineering - Austin Hub (Jess Rein, Philip Pavlov)
-- **Last Updated By/Date** - Jess Rein, Solutions Engineer, March 2020
+- **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
 

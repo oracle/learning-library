@@ -8,9 +8,9 @@ The Oracle Data Management Github is the central location for workshops related 
 - [Security](./security) 
 
 ## Autonomous Database (ADB) 
-- [Autonomous Database on Shared Infrasructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview/)
+- [Autonomous Database on Shared Infrastructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview/)
 
-- [Autonomous Database on Dedicated Infrasructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/dedicated/workshop/)
+- [Autonomous Database on Dedicated Infrastructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/dedicated/workshop/)
 
 
 ## For Developers

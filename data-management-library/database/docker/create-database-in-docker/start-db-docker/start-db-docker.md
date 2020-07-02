@@ -19,7 +19,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 - The **`-v`** parameter allows data files created by the database to exist outside of the Docker container. This separation means that even if the container is destroyed, the data files will be preserved. You should always use the `-v` parameter and create a named Docker volume.
 - The **`--name`** parameter specifies the name of the container. Starting and stopping the container requires the container name as a parameter. If you omit this parameter, a random name is generated.
 
-1. If you don't have an open SSH connection to your compute instance, open and terminal window and connect using the public IP address of your compute instance:
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys and connect using the public IP address of your compute instance:
 
     ```
     $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -33,7 +33,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
     oradata
     [opc@oraclelinux77 ~]$
     ```
-3. Run the Oracle Database container:
+3. Run the Oracle Database container: (This may take around 30 minutes)
 
     ```
     [opc@oraclelinux77 ~]$ <copy>docker run --name oracle-ee -p 1521:1521 -v oradata:/opt/oracle/oradata oracle/database:19.3.0-ee</copy>
@@ -135,7 +135,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
     [opc@oraclelinux77 ~]$
     ```
 
-  You may now proceed to the next lab.
+  You may now *proceed to the next lab*.
 
 ## Want to Learn More?
 
@@ -145,5 +145,6 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

@@ -31,11 +31,17 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ### Step 2: View sensitive data in your ExaCS database
 
-- On the **Navigator** tab in SQL Developer Web, select the HCM1 schema from the first dropdown menu. In the second drop-down menu, ensure that Tables is selected.
-- Drag the `EMPLOYEES` table to the worksheet.
-- When prompted to choose an insertion type, click Select, and then click Apply.
-- View the SQL query on the worksheet.
-- On the toolbar, click the Run Statement button (green circle with a white arrow) to execute the query.
+- In the SQL Developer worksheet, run the following command to connect to your PDB:
+```
+<copy>ALTER SESSION SET CONTAINER= <PDBNAME></copy>
+```
+
+- Run the following query to select the `EMPLOYEES` table:
+
+```
+<copy>SELECT * FROM HCM1.EMPLOYEES</copy>
+```
+
 - Review the query results. Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, `hire_date`, `job_id`, `salary`, and `manager_id` are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
 - Keep this tab open so that you can return to it later in part 4 when you view the masked
 data.

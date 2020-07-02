@@ -1,9 +1,9 @@
-# Add an Ingress Rule to Open a Port
+# Add an Ingress Rule to Open a Port to VCN
 ## Before You Begin
-This lab walks you through the steps to open an port to your Oracle Cloud network to allow access to on Oracle Database instance running on an Oracle Cloud Compute, Bare Metal or Virtual Machine instance. For example, by opening port 1521, you will allow Oracle Database clients and external applications to access your Oracle Database.
+This lab walks you through the steps to open a port to your Oracle Cloud network to allow access to an Oracle Database instance running on an Oracle Cloud Compute, Bare Metal or Virtual Machine instance. For example, by opening port 1521, you will allow Oracle Database clients and external applications to access your Oracle Database.
 
 ### Background
-Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Database 19c instance running in a Virtual Machine.
+Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Database 19c instance running in a Virtual Machine.
 
 ### What Do You Need?
 
@@ -28,28 +28,30 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 
   ![](images/default-security-list.png " ")
 
-5. Click **Add Ingress Rule**.
+5. Click **Add Ingress Rules**.
 
   ![](images/add-ingress-rule-1.png " ")
 
-6. In the Add Ingress Rules dialog, enter `0.0.0.0/0`. Enter `1521` as the port number (of the database), and click **Add Ingress Rules**.
+6. In the Add Ingress Rules dialog, enter the public IP address of your PC followed by `/32` as the source CIDR. Enter `1521` as the destination port number (of the database), and click **Add Ingress Rules**.
 
   ![](images/add-ingress-rule-2.png " ")
 
-  Note that 0.0.0.0/0 allows access to all IP traffic to your database. Alternatively, you can open access to a single IP address by entering the IP address followed by `/32`.
+  *Note 1: If you reconnect at a later date or connect to your company's VPN, your local machine's IP address may change.*
+  *Note 2: Make sure to enter your PC's IP address, not your LAN/Wifi's IP address.*
 
 7. You can remove or edit the Ingress rule by clicking the checkbox for the rule and the clicking the **Edit** or **Remove** buttons.
 
   ![](images/remove-ingress-rule.png " ")
 
-  You can proceed to the next lab.
+  You can *proceed to the next lab*.
 
 ## Want to Learn More?
 
-* [Oracle Cloud Infrastructure: Connecting to an DB System](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/connectingDB.htm)
+* [Oracle Cloud Infrastructure: Connecting to a DB System](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/connectingDB.htm)
 
 ## Acknowledgements
 * **Author** -Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

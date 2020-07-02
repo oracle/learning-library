@@ -3,7 +3,7 @@ var showdown = "https://oracle.github.io/learning-library/common/redwood-hol/js/
 const manifestFileName = "manifest.json";
 const expandText = "Expand All Steps";
 const collapseText = "Collapse All Steps";
-const anchorOffset = 0; //if header is fixed, it should be 70
+const anchorOffset = 70; //if header is fixed, it should be 70
 const copyButtonText = "Copy";
 const queryParam = "?lab=";
 

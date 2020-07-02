@@ -4,7 +4,7 @@
 
 **Before you begin**
 
-This 4 hours hands-on lab is an entry-level exercise for building a Web and Mobile App.
+This 3 hours hands-on lab is an entry-level exercise for building a Web and Mobile App.
 
 
 **Background**
@@ -79,13 +79,6 @@ The exercise is presented in five parts:
 * Exercise 4 – Web and Mobile Apps
 * Exercise 5 – Data from Service
 
-There are two additional **extra** exercises available for anyone who happens to finish early. No prior experience with Visual Builder is assumed or necessary.
-
-The Extra labs are: 
-
-- Extra Lab 6: Add Data Using REST Call *(Estimated Time - 10 Min)*
-- Extra Lab 7: Review and edit JavaScript code under the covers of VBCS *(Estimated Time - 10 Min)*
-
 
 **Getting Started**
 
@@ -106,7 +99,6 @@ You will need to download the data files, all the files are available in a singl
 <br>
 <br>
 * Exercise 5 (Links used for VBCS Service Connections)
-
 
 *****************************
 **NOTE** 
@@ -1449,56 +1441,14 @@ We hope you have enjoyed Oracle Visual Builder Cloud Service. We encourage you t
 
 [Oracle Visual Build Cloud Service at Oracle.com](https://www.oracle.com/application-development/cloud-services/visual-builder/)
 
-*****************************
+******
 
 **This concludes exercise 5.**
 
 ******
 
-## Extra Exercise 6: Add Data Using REST Call
-
-The **Extra** exercises are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
-
-In this exercise you will work more with RESTful API calls
-
-1.  Review the **orderlist** web application and the similar mobile application
-
-1.  Recreate the **orderlist** as a new application (so that you don’t mess up the old one) 
-      
-1. See if you can get data from the **mmassociates** service connection (single row access) to provide the associate’s **Name** rather than their **id** in the **Product Orders** list and **Product Order Detail** displays
-
-1.  (optional) Try to repeat \#2 and add replace the associate id with associate name in a copy of your mobile application (again, don’t mess up the original).
-
-**This concludes Extra Exercise 6**
-
-******
-
-[**Return to Main Page**](../index.html)
-
-<br>
-
-## Extra Exercise 7: Review and edit JavaScript code under the covers of VBCS
-
-The **Extra** exercise are intended to **flex** the mind-muscles of those who have finished the other exercises early so, they are short on explanation and there are no example solutions provided.
-
-In this exercise you will work actually **code** (assuming you know something about JET or at least HTML5, JavaScript, and CSS).
-
-1. Reopen one of your Web or Mobile application pages. Select the **Code** view
-![](./media/image182.png)
 
 
-2. This will display the actual code that supports your screen
-![](./media/image183.png)
-
-3. Depending upon the time available and your proficiency coding, experiment a little with the code
-4. If you’re light on coding skills just try something as simple as changing the size of one of the headings
-For instance:  
-**\<h2…\>Order Items\</h2\>** on line 19 above might be changed to
-**\<h4…\>Order Items\</h4\>** to make the heading much smaller
-
-**This concludes Extra Exercise 7**
-
-******
 
 
 [**Return to Main Page**](../index.html)

@@ -56,7 +56,7 @@ Generate SSH keys to be used later while launching an instance.
 
 2) Open Git-bash:
     
-  <img width="200" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image1.png">
+  <img width="200" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Compute_Services/media/image1.png">
 
 3) Generate ssh-keys by running this command in Git Bash
 ```
@@ -78,22 +78,22 @@ Your public key has been saved in /c/Users/username/.ssh/id\_rsa.pub.
 
 2) Enter your tenant name: <Tenant> and click **Continue**
 
-  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Identity_Access_Management/img/image001.png">
+  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image001.png">
 
 3) Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. You can just click **Continue**.
 
-  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Identity_Access_Management/img/image002.png">
+  <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image002.png">
 
  4) Enter your user name and password
 
  - **Username:** cloud.admin
  - **Password:** _instructor will provide password_
  
-<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Identity_Access_Management/img/image003.png">
+<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image003new.png">
 
 When you sign in to the Console, the home page is displayed.
 
- <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Identity_Access_Management/img/image004.png">
+ <img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Identity_Access_Management/img/image004.png">
 
 The home page gives you quick links to the documentation and to Oracle Support.
 
@@ -102,7 +102,7 @@ In order to automate with terraform we need to collect a few OCIDs in advance. O
 
 1) After login go to **Menu** > **Administration** > **Tenancy Details**. Take a note of the Tenancy OCID information. Save on your notepad. 
 
-<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/OOW-2018/Terraform/img/image001.png">
+<img width="800" alt="image001" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/DevOps/Terraform/img/image001.png">
 
 2) The correct compartment for this exercise is **Demo**. If you don't select the correct compartment, none of the steps below will work.  On **Menu** select **Identity** > **Compartments**. Take a note of the Compartment OCID information. Save on your notepad. 
 
@@ -140,7 +140,7 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 3) Select a compartment on the left that you have permission to work in.
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image2.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image001.png">
 
 4) Click **Create Virtual Cloud Network** and enter the following details:
 
@@ -149,23 +149,19 @@ A Virtual Cloud Network (VCN) is a virtual version of a traditional network incl
 
 > **Note:** Enter a friendly name for the cloud network. It doesn't have  to be unique, and it cannot be changed later in the Console (but you can change it with the API).
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image3.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image002.png">
+
 
 5) Select **Create Virtual Cloud Network plus related resources**. The dialog box expands to list the items that will be created with your cloud network.
 
 >**Note:** This option is the quickest way to get a working cloud network in the fewest steps.
 
-<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image4.png">
-
 6) Scroll to the bottom of the dialog box and click **Create Virtual Cloud Network**.
-
-<img width="800" alt="image005" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image5.png">
 
 A confirmation page displays the details of the cloud network that you just created.
 
-<img width="800" alt="image006" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image6.png">
+<img width="800" alt="image004" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Virtual_Cloud_Network/media/image003.png">
 
-<img width="800" alt="image007" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image7.png">
 
  The Virtual Cloud Network above has the following resources and characteristics:
 
@@ -197,15 +193,16 @@ Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts,
    - **VCN Name**: VCN you created in Practice 3
    - **Subnet**: Any subnet among the three ADs
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image8.png">
+<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Compute_Services/media/Create1.png">
 
-<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image9.png">
+<img width="600" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/L100-LAB/Compute_Services/media/Create2.png">
 
 Launching an instance is simple and intuitive with few options to select. Provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
 3) Once the instance state changes to Running, you can SSH to the Public IP address of the instance.
     
-<img width="800" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/Foundational/Network_Compute_and_Block_Service/media/image10.png">
+<img width="800" alt="image008" src="https://raw.githubusercontent.com/oracle/learning-library/master/ospa-library/luna-labs/oci-compute/media/image017.png">
+
 
 4) To connect to the instance, you can use ‘Terminal’ if you are using MAC or Gitbash if you are using Windows.
 

@@ -1,1 +1,0 @@
-There are three clickable icons. From left to right: errors, warnings, and processes. The current process running is a SQL query. The gear rotates to indicate that process is currently executing. To the right is a timestamp and status saying that code is executing.

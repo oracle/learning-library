@@ -1,4 +1,4 @@
-# Introduction to JavaScript for APEX Developers
+# Introduction
 
 ## Lab overview and setup
 
@@ -6,31 +6,31 @@ Welcome to the Introduction to JavaScript for APEX Developers hands-on lab. For 
 
 APEX developers only need to know a little bit of JavaScript to have a significant impact, and that's what this hands-on lab is all about! You'll start by learning some of the basics of JavaScript, then learn how to add JavaScript to APEX apps, and finally, you'll learn to use jQuery to work with the DOM.
 
-Before continuing to the first module, follow the steps below to create an APEX workspace using the free tier in Oracle Cloud. If you already have a workspace you'd like to use, you may [proceed to the first module](?lab=module-1-javascript-basics).
+Before continuing to the first lab, follow the steps below to create an APEX workspace using the free tier in Oracle Cloud. If you already have a workspace you'd like to use, you may [proceed to the first lab](?lab=module-1-javascript-basics).
 
-**Lab Modules**
+**Labs**
 
-| # | Module | Est. Time |
+| # | Lab | Est. Time |
 | --- | --- | --- |
-| 1 | [JavaScript Basics](?module=javascript-basics) | 60 min |
+| 1 | [JavaScript Basics](?module=javascript-basics) | 20 min |
 | 2 | [Adding JavaScript to APEX Apps](?module=adding-javascript-to-apex-apps) | 60 min |
 | 3 | [Working with jQuery and the DOM](?module=working-with-the-dom-and-jquery) | 60 min |
 
-## **Part 1**: Acquire an Oracle Cloud trial account
+## **Step 1**: Acquire an Oracle Cloud trial account
 
-In this part, you will sign up for an Oracle Cloud trial account. Trial accounts have access to the <a href="https://www.oracle.com/cloud/free/" target="_blank">free tier services</a> and get a $300 credit for other services. This lab only requires an APEX workspace, which is available via the free tier services and will continue to work when the credits expire (after 30 days). Use the credits as you wish to explore other parts of the Oracle Cloud.
+In this step, you will sign up for an Oracle Cloud trial account. Trial accounts have access to the <a href="https://www.oracle.com/cloud/free/" target="_blank">free tier services</a> and get a $300 credit for other services. This lab only requires an APEX workspace, which is available via the free tier services and will continue to work when the credits expire (after 30 days). Use the credits as you wish to explore other parts of the Oracle Cloud.
 
-1.  If you already have an Oracle Cloud trial account (or regular account), you may skip to the next part.
+1.  If you already have an Oracle Cloud trial account (or regular account), you may skip to the next step.
 
 2.  Please <a href="http://bit.ly/Javascript_APEX_HOL" target="_blank">click this link to create your free account</a>.
 
-3.  Soon after requesting your account you will receive the following email. Once you receive this email you may proceed to Part 2.
+3.  Soon after requesting your account you will receive the following email. Once you receive this email you may proceed to Step 2.
 
     ![](images/get-started-email.png)
 
-## **Part 2:** Log in to your Oracle Cloud account
+## **Step 2:** Log in to your Oracle Cloud account
 
-In this part, you will log into your Oracle Cloud account so that you can start working with various services.
+In this step, you will log into your Oracle Cloud account so that you can start working with various services.
 
 1.  Once you receive the **Get Started Now with Oracle Cloud** email, make note of your **Username**, **Password**, and **Cloud Account Name**.
 
@@ -44,9 +44,9 @@ In this part, you will log into your Oracle Cloud account so that you can start 
 
     ![](images/enter-user-name-and-password.png)
 
-## **Part 3:** Create an Autonomous Transaction Processing instance
+## **Step 3:** Create an Autonomous Transaction Processing instance
 
-In this part, you will create an instance of the Autonomous Transaction Processing database service.
+In this step, you will create an instance of the Autonomous Transaction Processing database service.
 
 1.  From the Cloud Dashboard, click the navigation menu icon in the upper left-hand corner and then select **Autonomous Transaction Processing**.
 
@@ -62,7 +62,7 @@ In this part, you will create an instance of the Autonomous Transaction Processi
     ![](images/atp-settings-2.png)
     ![](images/atp-settings-3.png)
 
-    After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance. Continue to the next part when the status changes from:
+    After clicking **Create Autonomous Database**, you will be redirected to the Autonomous Database Details page for the new instance. Continue to the next step when the status changes from:
 
     ![](images/status-provisioning.png)
 
@@ -70,7 +70,7 @@ In this part, you will create an instance of the Autonomous Transaction Processi
 
     ![](images/status-available.png)
 
-## **Part 4:** Create a new workspace in APEX
+## **Step 4:** Create a new workspace in APEX
 
 When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 
@@ -78,7 +78,7 @@ When you first access APEX you will need to log in as an APEX instance administr
 
     ![](images/click-atp-service-console.png)
 
-2.  Click **Development** option in the menu on the left, then click the **Oracle APEX** option.
+2.  Click **Tools** option in the menu on the left, then click the **Oracle APEX** option.
 
     ![](images/click-oracle-apex.png)
 
@@ -108,12 +108,10 @@ When you first access APEX you will need to log in as an APEX instance administr
 
     ![](images/log-in-to-workspace.png)
 
-## **Part 5**: Navigate to Module 1
+You may now proceed to the next lab.
 
-1.  [Click here](?module=javascript-basics) to navigate to Module 1. Alternatively, you can click the navigation menu icon in the upper-right corner of the browser window to see a list of modules in the lab.
+## **Acknowledgements**
+ - **Author/Contributors** -  Dan McGhan, Database Product Management
+ - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
 
-    ![](images/lab-intro.png)
-
-2. Click **Module 1: Create an ATP instance**.
-
-    ![](images/lab-contents.png)
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

@@ -1,1 +1,0 @@
-This image shows the photos page of the employee client. The left pane displays folder names, and the right pane displays four PNG image files showing people's faces. 

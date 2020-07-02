@@ -41,7 +41,7 @@ Click the navigation menu icon, in the upper-left corner of the header, to see a
 
 ## Downloads
 
-[Click here](remotedatasource-app.sql) to download the completed application. 
+[Click here](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/remote-data-source/remotedatesource-app.sql) to download the completed application. 
 
 ## Learn More - *Useful Links*
 

@@ -585,43 +585,50 @@ You can build a query that projects sales for 2002 based on the sales of 2000 an
     </copy>
     ````
 
+    ![](images/step7.3-setconvfactor.png " ")
+
 4.  Build the sales projection query (file /home/oracle/labs/new-features-for-developers/automaticindexing/ai\_sales\_proj.sql).
 
     ````
     <copy>
-    WITH  prod_sales_mo AS ( SELECT country_name c, prod_id p, calendar_year  y,
-    calendar_month_number  m, SUM(amount_sold) s
-    FROM sales s, customers c, times t, countries cn, promotions p, channels ch
-    WHERE  s.promo_id = p.promo_id AND p.promo_total_id = 1 AND
-      s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
-      s.cust_id=c.cust_id  AND
-      c.country_id=cn.country_id AND country_name='Canada' AND
-      s.time_id=t.time_id  AND t.calendar_year IN  (2000, 2001,2002)
-    GROUP BY cn.country_name, prod_id, calendar_year, calendar_month_number
-    ), time_summary AS( SELECT DISTINCT calendar_year cal_y, calendar_month_number cal_m
-    FROM times
-    WHERE  calendar_year IN  (2000, 2001, 2002) )
-    SELECT c, p, y, m, s,  nr FROM (
-    SELECT c, p, y, m, s,  nr
-    FROM prod_sales_mo s
-    PARTITION BY (s.c, s.p)
-    RIGHT OUTER JOIN time_summary ts ON (s.m = ts.cal_m AND s.y = ts.cal_y )
-    MODEL REFERENCE curr_conversion ON
-      (SELECT country, year, month, to_us
-      FROM currency)
-      DIMENSION BY (country, year y,month m) MEASURES (to_us)
+    WITH  prod_sales_mo AS
+      ( SELECT country_name c, prod_id p, calendar_year  y,
+        calendar_month_number  m, SUM(amount_sold) s
+        FROM sales s, customers c, times t, countries cn, promotions p, channels ch
+        WHERE  s.promo_id = p.promo_id AND p.promo_total_id = 1 AND
+              s.channel_id = ch.channel_id AND ch.channel_total_id = 1 AND
+              s.cust_id=c.cust_id  AND
+              c.country_id=cn.country_id AND country_name='Canada' AND
+              s.time_id=t.time_id  AND t.calendar_year IN  (2000, 2001,2002)
+        GROUP BY cn.country_name, prod_id, calendar_year, calendar_month_number), time_summary AS( SELECT DISTINCT calendar_year cal_y,
+                          calendar_month_number cal_m
+                          FROM times
+                          WHERE  calendar_year IN  (2000, 2001, 2002)
+              )
+    SELECT c, p, y, m, s, nr FROM (
+        SELECT c, p, y, m, s, nr
+        FROM prod_sales_mo s
+        PARTITION BY (s.c, s.p)
+        RIGHT OUTER JOIN time_summary ts ON (s.m = ts.cal_m AND s.y = ts.cal_y )
+    MODEL
+      REFERENCE curr_conversion ON
+        (SELECT country, year, month, to_us
+        FROM currency ORDER BY country,year,month)
+      DIMENSION BY (country, year y,month m ) MEASURES (to_us)
       PARTITION BY (s.c c)
       DIMENSION BY (s.p p, ts.cal_y y, ts.cal_m m)
-      MEASURES (s.s s, CAST(NULL AS NUMBER) nr, s.c cc )
-      RULES ( nr[ANY, ANY, ANY]
-      = CASE WHEN s[CV(), CV(), CV()] IS NOT NULL
-      THEN s[CV(), CV(), CV()]
-      ELSE ROUND(AVG(s)[CV(), CV(), m BETWEEN 1 AND 12],2)
-      END, nr[ANY, 2002, ANY] = ROUND(
-    ((nr[CV(),2001,CV()] - nr[CV(),2000, CV()])/ nr[CV(),2000, CV()]) * nr[CV(),2001, CV()]
-          + nr[CV(),2001, CV()],2),nr[ANY,y != 2002,ANY]
-        = ROUND(nr[CV(),CV(),CV()]
-          * curr_conversion.to_us[ cc[CV(),CV(),CV()], CV(y), CV(m)], 2) )
+              MEASURES (s.s s, CAST(NULL AS NUMBER) nr, s.c cc )
+      RULES ( nr[ANY, ANY, ANY] ORDER BY y, m ASC =
+                CASE
+                  WHEN s[CV(), CV(), CV()] IS NOT NULL
+                  THEN s[CV(), CV(), CV()]
+                  ELSE ROUND(AVG(s)[CV(), CV(), m BETWEEN 1 AND 12],2)
+                END,
+          nr[ANY, 2002, ANY] ORDER BY y,m ASC =
+            ROUND(((nr[CV(),2001,CV()] - nr[CV(),2000, CV()])/ nr[CV(),2000, CV()]) * nr[CV(),2001, CV()] + nr[CV(),2001,  CV()],2),
+          nr[ANY,y != 2002,ANY] ORDER BY y,m ASC =
+            ROUND(nr[CV(),CV(),CV()] * curr_conversion.to_us[ cc[CV(),CV(),CV()], CV(y), CV(m)], 2)
+          )
     ORDER BY c, p, y, m)
     WHERE y = '2002'
     ORDER BY c, p, y, m;

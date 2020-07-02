@@ -1,17 +1,11 @@
-/* Specify the base URL that you copied from your files in OCI Object Storage in the define base_URL line below*/
-/* change idthydc0kinr to your real namespace. The name is case-sensitive. */
-/* change ADWCLab to your real bucket name. The name is case-sensitive. */
-/* change us-phoenix-1 to your real region name. The name is case-sensitive. */
-/* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+/* Replace the <file_uri_base> variable in this file with the URL you copied from your files in OCI Object Storage.
 /* set define on */
-/* define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o' */
-
 
 begin
  dbms_cloud.copy_data(
     table_name =>'CHANNELS',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/chan_v3.dat',
+    file_uri_list =>'<file_uri_base>/chan_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
  );
 end;
@@ -21,7 +15,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'COUNTRIES',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/coun_v3.dat',
+    file_uri_list =>'<file_uri_base>/coun_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
  );
 end;
@@ -31,7 +25,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'CUSTOMERS',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/cust1v3.dat',
+    file_uri_list =>'<file_uri_base>/cust1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
  );
 end;
@@ -41,7 +35,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'SUPPLEMENTARY_DEMOGRAPHICS',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/dem1v3.dat',
+    file_uri_list =>'<file_uri_base>/dem1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
  );
 end;
@@ -51,7 +45,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'SALES',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/dmsal_v3.dat',
+    file_uri_list =>'<file_uri_base>/dmsal_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD')
  );
 end;
@@ -61,7 +55,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'PRODUCTS',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/prod1v3.dat',
+    file_uri_list =>'<file_uri_base>/prod1v3.dat',
     format => json_object('delimiter' value '|', 'quote' value '^', 'ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
  );
 end;
@@ -71,7 +65,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'PROMOTIONS',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/prom1v3.dat',
+    file_uri_list =>'<file_uri_base>/prom1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
  );
 end;
@@ -81,7 +75,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'SALES',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/sale1v3.dat',
+    file_uri_list =>'<file_uri_base>/sale1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
  );
 end;
@@ -91,7 +85,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'TIMES',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/time_v3.dat',
+    file_uri_list =>'<file_uri_base>/time_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
  );
 end;
@@ -102,7 +96,7 @@ begin
  dbms_cloud.copy_data(
     table_name =>'COSTS',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/costs.dat',
+    file_uri_list =>'<file_uri_base>/costs.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
  );
 end;

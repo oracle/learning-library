@@ -2,7 +2,7 @@
 
 Welcome!  To get started, click on one of our workshops below.
 
-## Autonomous Databse + Artificial Intelligence
+## Autonomous Database + Artificial Intelligence
 [![](./images/screenshot-adwai.png)](https://oracle.github.io/learning-library/solutions-library/cloud-data-platform/freetier/index.html)
 
 ### Workshop Highlights

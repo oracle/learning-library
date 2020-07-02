@@ -3,9 +3,6 @@
 ## Introduction
 Oracle Data Safe can connect to an Oracle Cloud database that has a public or private IP address on a virtual cloud network (VCN) in Oracle Cloud Infrastructure (OCI). This workshop describes the difference between public and private endpoints and explains the network connection between Oracle Data Safe and the databases. It also walks you through the steps of creating a private endpoint and registering a Exadata Cloud DB system with Oracle Data Safe when the DB system has a private IP address.
 
-## Requirements
-The following diagram illustrates the network connections between Oracle Data Safe and a DB system (VM, BM, or Exadata) and an Autonomous Database (ATP-D, ATP-S, or ADW) that have private IP addresses.
-
 ## Steps
 
 ### Step 1: Create a Private Endpoint

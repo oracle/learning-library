@@ -109,10 +109,23 @@ The examples are organized as follows:
     <td>-</td>
     <td>-</td>
   </tr>
+  </tr>
+    <tr>
+    <td><a href="?lab=lab-10-dev-tools">developer tools</td>
+    <td>Contains developer tools examples</td>
+    <td>OKE</td>
+    <td>API Gateway</td>
+    <td>Functions</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
 </table>
 
 ## Acknowledgements
 
-**Authors/Contributors** - Flavius Dinu, Ionut Sturzu, Ionut Irimia, Cristian Cozma, Marius Ciotir, Sorin Ionescu, Laura Paraschiv, Travis Mitchell, Thomas Liakos 
+**Authors/Contributors** - Flavius Dinu, Ionut Sturzu, Ionut Irimia, Cristian Cozma, Marius Ciotir, Sorin Ionescu, Laura Paraschiv, Bogdan Darie, Emanuel Grama, Travis Mitchell, Thomas Liakos 
 
 **Last Updated By/Date** - Flavius Dinu, April 2020

@@ -1,7 +1,0 @@
-This image shows the Activity section of the Service Console. On the left margin are links to the three pages of the Service console: Overview, Activity, and Administration. Activity is selected and highlighted with a red rectangle.
-
-The section has two tabs at the top of the page: Monitor and Monitored SQL. Monitor is selected.
-
-Under the Monitor tab are two buttons: Real time and Time period. Real time is selected.
-
-Under these buttons are four tiles displaying graphs these: Database Activity, CPU Utilization, Running Statements, Queued Statements. 

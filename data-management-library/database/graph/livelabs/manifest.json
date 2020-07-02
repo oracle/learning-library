@@ -11,24 +11,6 @@
             "description":"Use Case: Customer 360 Analysis",
             "publisheddate": "04/30/2020",
             "filename":"../customer_360_analysis/customer_360_analysis.md"
-        },
-        {
-            "title": "Lab 3: Setup with Free Tier",
-            "description":"Setup environment with Always Free",
-            "publisheddate": "04/30/2020",
-            "filename":"../setup/setup_always_free.md"
-        },
-        {
-            "title": "Lab 4: Create Graph as files",
-            "description":"Create Graph as files",
-            "publisheddate": "04/30/2020",
-            "filename":"../create_graph_as_files/create_graph_as_files.md"
-        },
-        {
-            "title": "Lab 5: Load from files",
-            "description":"Load from files",
-            "publisheddate": "04/30/2020",
-            "filename":"../load_from_files/load_from_files.md"
         }
     ]
 }

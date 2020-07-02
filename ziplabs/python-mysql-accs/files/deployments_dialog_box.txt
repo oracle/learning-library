@@ -1,1 +1,0 @@
-This illustration shows the deployments dialog box with the following message: Changes Not Saved. Apply Edits to save changes. Your application will restart. The dialog box has two buttons,  Apply Edits and Cancel, and the Apply Edits button is highlighted.

@@ -1,0 +1,50 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction and Overview",
+            "description": "Introduction to JSON Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../intro/intro.md"
+        },
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {         
+            "title": "Lab 2: Object Storage",
+            "description": "Create a bucket in Object Storage and transfer local files",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../object-storage/object-storage.md"
+        },
+        {            
+            "title": "Lab 3: Loading Oracle Database 19c from Storage",
+            "description": "In SQL Developer Web, use DBMS_CLOUD.COPY_DATA to load database from Object Storage",
+            "publisheddate": "3/24/2020",
+            "filename": "./../loading-from-object-storage/loading-from-object-storage.md"
+        },
+        {         
+            "title": "Lab 4: Creating Indexes and basic queries",
+            "description": "Create functional and search indexes on JSON data, and run queries against it",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../indexes-queries/indexes-queries.md"
+        },
+        {         
+            "title": "Lab 5: RESFful queries through Oracle Application Express",
+            "description": "Use Oracle Application Express to create a RESTful API over JSON queries",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../restful-queries/restful-queries.md"
+        }
+    ]
+}

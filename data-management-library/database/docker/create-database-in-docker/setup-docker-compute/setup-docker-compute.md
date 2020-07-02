@@ -1,22 +1,22 @@
 # Set up Docker on an Oracle Cloud Compute Instance
 ## Before You Begin
 
-This lab walks you through the steps to setup Docker on Oracle Linux 7.7 running on an Oracle Cloud Compute instance.
+This lab walks you through the steps to set up Docker on Oracle Linux 7.7 running on an Oracle Cloud compute instance.
 
 ### Background
 Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, and creates a platform for installing and setting up a Docker container.
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* An Oracle Cloud Compute instance Public IP address
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free)
+* An Oracle Cloud compute instance's Public IP Address
 * SSH keys
 
 ## **STEP 1**: Set up the Docker environment
 
-  Docker is shipped as addon with Oracle Linux 7 UEK4. On Oracle Cloud Compute instances, the `addons yum` repository is now enabled by default, so you only need to install the docker-engine package as root.
+  Docker is shipped as addon with Oracle Linux 7 UEK4. On Oracle Cloud compute instances, the `addons yum` repository is now enabled by default, so you only need to install the docker-engine package as root.
 
-1. In a terminal window, navigate to the folder where you created the SSH keys and connect to your compute instance using `ssh`, and the public IP address of your compute instance:
+1. In a terminal window, navigate to the folder where you created the SSH keys. Connect to your compute instance using `ssh`, and the public IP address of your compute instance:
 
      ```
      $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -35,7 +35,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
     [root@oraclelinux77 ~]#
     ```
 
-3. Install the Docker engine:
+3. Install the Docker engine, enter **y** when prompted:
 
     ```
     [root@oraclelinux77 ~]# <copy>yum install docker-engine</copy>
@@ -67,7 +67,7 @@ Oracle Cloud Compute makes it easy to create a Linux environment in the cloud, a
 
 ## **STEP 2**: Enable a non-root user
 
-Enable a non-root user to communicate with the Docker engine. When Docker was installed a new Unix group docker was created along with it. To allow a non-root user (for example, `opc`) to communicate with the Docker daemon directly, you add the non-root user to the docker group.
+Enable a non-root user to communicate with the Docker engine. When Docker was installed, a new Unix group docker was created along with it. To allow a non-root user (for example, `opc`) to communicate with the Docker daemon directly, you add the non-root user to the docker group.
 
 1. Determine which groups `opc` belongs to:
 
@@ -128,7 +128,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
 
 ## **STEP 4**: Connect to Docker with the non-root user
 
-1. Open a new terminal window and connect again using SSH:
+1. Open a new terminal window, navigate to the folder where you created the SSH keys. Connect again using SSH:
 
     ```
     <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
@@ -155,11 +155,12 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     [opc@oraclelinux77 ~]$
     ```
 
-  You may now proceed to the next lab.
+  You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Tom McGinn, March 2020
+* **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

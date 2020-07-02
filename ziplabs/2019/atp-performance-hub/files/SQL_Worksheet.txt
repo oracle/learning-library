@@ -1,1 +1,0 @@
-This image shows the Oracle SQL Developer Web worksheet with the SQL script pasted. The icon to run the script, fourth from the left, is highlighted by a red box.

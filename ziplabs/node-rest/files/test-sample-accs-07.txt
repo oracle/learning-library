@@ -1,1 +1,0 @@
-The illustration shows the Application detail page in Oracle Application Container Cloud Service, after the application is created. The URL field contains the URL of your application. 

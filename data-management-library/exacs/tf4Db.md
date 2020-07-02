@@ -201,3 +201,7 @@ Once you have the basic terraform config is setup, add database can be easily ac
 
 Similar to adding database, you can update the config by reduce the count of database or deleting the file all together, then run plan and apply to delete the database that you don't want.
 **Note**: most companies will want to take great care in delete database as data/information is the bread and butter of their business thus you will likely need to go through some formal process/workflow such as the GitHub workflow above.
+
+## References ##
+
+- [OCI Terraform Reference Manual](https://www.terraform.io/docs/providers/oci/index.html)

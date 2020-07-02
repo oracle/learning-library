@@ -1,28 +1,27 @@
-
-<!-- Updated March, 2020 -->
-
-# Bonus Lab 11: Simple Introduction to Machine Learning Algorithms (DBMS\_PREDICTIVE\_ANALYTICS)
+# Bonus Lab: Simple Introduction to Machine Learning Algorithms (DBMS\_PREDICTIVE\_ANALYTICS)
 
 ## Introduction
 
-During this lab you will be using the Oracle Machine Learning (OML) notebook application provided with ADWC to explore some samples of the DBMS\_PREDICTIVE\_ANALYTICS functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
+During this bonus lab you will be using the Oracle Machine Learning (OML) notebook application provided with ADWC to explore some samples of the DBMS\_PREDICTIVE\_ANALYTICS functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
 
 ### Objectives
 
 -   Learn how to import notebooks into Oracle ML Notebook
 -   Learn how to use DBMS\_PREDICTIVE\_ANALYTICS routines
--   Learn how to use Oracle ML Gallery
+-   Learn how to use Oracle ML Examples
 
-### Required Artifacts
+### Lab Prerequisites
 
--   The following lab requires a user with access to the Oracle Machine Learning Notebook application (note: you created such a user in the previous lab).
+-   This lab requires a user with access to the Oracle Machine Learning Notebook application
+
+    **Note:** you created such a user in the previous lab.
 
 ## STEP 1: Download the sample notebook for this lab
 The first step is to download the sample notebook and then import it into the Oracle ML notebook application.
 
-1. Download the sample notebook for this lab to a folder on your local computer from <a href="./files/Basic%20Machine%20Learning.zip" target="\_blank">here</a>.
+1. **Right-click** <a href="./files/Basic_Machine_Learning.json" download="./files/Basic_Machine_Learning.json" target="\_blank">here</a> and select **Save Link As...** from the menu, to download the sample notebook for this lab, Basic\_Machine\_Learning.json, to a folder on your local computer.
 
-  **Note:** the download is zipped and you will want to unzip it and copy the file in the zip to a known location on your computer.  After unzipping, you should have a file called "Basic Machine Learning.json".  Remember the location of where you have saved this file.
+  **Note:** Because this notebook is a JSON file, you cannot left-click to download the file.
 
 ## STEP 2: Login to the Oracle ML Notebook as one of your ML notebook users
 
@@ -32,11 +31,11 @@ The first step is to download the sample notebook and then import it into the Or
 
     ![](./images/Picture700-12.png " ")
 
-## STEP 3: Click the Go to Notebooks link
+## STEP 3: Click the Notebooks link
 
-1. Click the **Go to Notebooks** link.
+1. Click the **Notebooks** link.
 
-    ![](./images/snap0014521.jpg " ")
+    ![](./images/oml_dashboard_link.png " ")
 
 ## STEP 4: Click the Import button
 
@@ -44,9 +43,9 @@ The first step is to download the sample notebook and then import it into the Or
 
     ![](./images/snap0014522.jpg " ")
 
-## STEP 5: Select the unzipped lab notebook .json file you downloaded earlier
+## STEP 5: Select the lab notebook .json file you downloaded earlier
 
-1. Select the unzipped lab notebook **Basic Machine Learning.json** file you downloaded previously in Step 1.
+1. Select the lab notebook **Basic\_Machine\_Learning.json** file you downloaded previously in Step 1.
 
     ![](./images/snap0014523.jpg " ")
 
@@ -62,15 +61,15 @@ The first step is to download the sample notebook and then import it into the Or
 
     ![](./images/snap0014525.jpg " ")
 
-## STEP 8: Create a machine learning notebook using an OML Gallery template
+## STEP 8: Create a machine learning notebook using an OML Example
 
-1. Go back to OML dashboard and click **Go to Gallery**. The Gallery page lists pre-populated Oracle Machine Learning notebook templates which you can view, like, and use it to create new templates.
+1. Go back to OML dashboard and click **Examples**. The Examples lists pre-populated Oracle Machine Learning notebook templates which you can view, like, and use it to create new templates.
 
-    ![](./images/25.png " ")
+    ![](./images/oml_dashboard_link.png " ")
 
-2. In the Gallery page, select the template based on which you want to create a notebook.
+2. In the Examples page, select the template based on which you want to create a notebook.
 
-    ![](./images/26.png " ")
+    ![](./images/association_rules.png " ")
 
 3. Click **New Notebook**, and in the Create Notebook window, the name of the selected template appears. Enter information for notebook name and description and click on **OK**. For Association Rules example, it performs analysis based on SH schema. The results of the paragraphs have been shown. You can rerun each paragraph if you would like. You can go through this notebook at your own pace.
 
@@ -82,7 +81,7 @@ The first step is to download the sample notebook and then import it into the Or
 
 - Experiment with DBMS\_PREDICTIVE\_ANALYTICS with your data
 - Review the Oracle Database Data Mining documentation: [https://docs.oracle.com/en/database/oracle/oracle-database/18/dmapi/introduction-to-oracle-data-mining.html](https://docs.oracle.com/en/database/oracle/oracle-database/18/dmapi/introduction-to-oracle-data-mining.html)
-- Look at the DBMS\_DATA\_MINING sample notebooks in the Oracle ML Notebook Gallery
+- Look at the DBMS\_DATA\_MINING sample notebooks in the Oracle ML Notebook Examples
 
 ## Want to Learn More?
 
@@ -92,6 +91,6 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/20/dmapi
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, March 2020
+- **Last Updated By/Date** - Richard Green, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

@@ -1,1 +1,0 @@
-This image shows a page with the Containertab, Stack YAML tab, and Webhook tab that is shown after you deploy an application with Oracle Container Cloud Service. The Containers tab is active and displays the Status, Container Name, and Hostname columns. A ruby sample container is listed with the status shown as running.

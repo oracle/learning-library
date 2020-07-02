@@ -1,11 +1,11 @@
 ## Introduction
 
-Data Replication is a essential part of your efforts and tasks when you are migrating your Oracle databases. While data migration can be achieved in many ways, there are fewer options when downtime tolerance is low and live, trickle feed replication may be the only way. Oracle Cloud Infrastructure Marketplace provides a goldengate microservice that can easily be setup for logical data replication between a variety of databases. In this hands-on lab we will setup goldengate to replicate data from a 12.2 Oracle database comparable to an 'on-prem' source database to an ExaCS  database in OCI. This approach is recommended while migrating most production or business critical application to ExaCS .
+Data Replication is a essential part of your efforts and tasks when you are migrating your Oracle databases. While data migration can be acheived in many ways, there are fewer options when downtime tolerance is low and live, trickle feed replication may be the only way. Oracle Cloud Infrastructure Marketplace provides a goldengate microservice that can easily be setup for logical data replication between a variety of databases. In this hands-on lab we will setup goldengate to replicate data from a 12.2 Oracle database comparable to an 'on-prem' source database to an ExaCS  database in OCI. This approach is recommended while migrating most production or business critical application to ExaCS .
 
 Why Golden Gate?
 
 - Oracle Golden Gate is an enterprise grade tool which can provide near real time data replication from one database to another. 
-- Oracle GoldenGate offers a real-time, log-based change data capture (CDC) and replication software platform to meet the needs of today’s transaction-driven applications. It provides capture, routing, transformation, and delivery of transactional data across heterogeneous environments in real time can be achieved using Golden Gate. 
+- Oracle GoldenGate offers a real-time, log-based change data capture (CDC) and replication software platform to meet the needs of today’s transaction-driven applications. It provides capture, routing, transformation, and delivery of transactional data across heterogeneous environments in real time can be acheived using Golden Gate. 
 - Oracle GoldenGate only captures and moves committed database transactions to insure that transactional integrity is maintained at all times. The application carefully ensures the integrity of data as it is moved from the source database or messaging system, and is applied to any number of target databases or messaging systems.
 
 [Learn More](http://www.oracle.com/us/products/middleware/data-integration/oracle-goldengate-realtime-access-2031152.pdf)
@@ -26,12 +26,12 @@ Why Golden Gate?
 
 - There are three components to this lab. The **source database** that you are planning to migrate to ExaCS, the **target ExaCS database** in OCI and an instance of **Oracle Goldengate** server with access to both source and target databases.
 
-- The source database can be any Oracle database version 11.2.0.4 or higher with at least one application schema that you wish to replicate to an ExaCS database in OCI. For the purpose of this lab, you may provision a 12.2.0.1 DBCS instance in your compartment in OCI and configure it as source. 
+- The source database can be any Oracle database version 11.2.0.4 or higher with atleast one application schema that you wish to replicate to an ExaCS database in OCI. For the purpose of this lab, you may provision a 12.2.0.1 DBCS instance in your compartment in OCI and configure it as source. 
 
 
-- The ExaCS  database instance you provisioned in [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) can be used as a target database in this lab. Since this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target ExaCS instance using sql*plus or sql developer client. Refer [Lab 4](?lab=lab-4-configure-development-system-for-use). 
+- The ExaCS  database instance you provisioned in [Lab 4](./ProvisionADB.md) can be used as a target database in this lab. Since this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target ExaCS instance using sql*plus or sql developer client. Refer [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) to setup a jump server or setup VPN respectively. 
 
-**Note: You cannot complete this lab without setting up access to your ExaCS instance. Therefore [Lab 4](?lab=lab-4-configure-development-system-for-use)is a pre-requisite to completing this lab as instructed.**
+**Note: You cannot complete this lab without setting up access to your ExaCS instance. Therefore [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) are a pre-requisite to completing this lab as instructed.**
 
 - The Golden Gate software is going to be deployed on a linux server in a public network which has access to both the source database and the target database via the Goldengate marketplace image in OCI.
 
@@ -112,9 +112,11 @@ This should return **True**
 
 - Next, we need to create a golden gate user and grant the necessary previliges.
 
+**Note : Please make sure you replace pdb_name with your database's pdb name in the below code.**
+
 ```
 <copy>
-alter session set container=pdb1;
+alter session set container=pdb_name;
 create user appschema identified by WElcome_123# default tablespace users;
 grant connect, resource, dba to appschema;
 CREATE TABLE appschema.COMMENTS
@@ -124,9 +126,7 @@ CREATE TABLE appschema.COMMENTS
   "COMMENT_CREATE_DATE" DATE DEFAULT sysdate, 
   "COMMENT_TEXT" VARCHAR2(500)
    ) ;
-create user ggadmin identified by WElcome_123#;
-alter user ggadmin quota unlimited on users;
-alter user ggadmin quota unlimited on system;
+alter user appschema quota unlimited on users;
 </copy>
 ```
 
@@ -138,7 +138,7 @@ The source database is all set. Next, lets setup the target ExaCS instance.
 
 - Connect to the ExaCS database instance you created earlier as user **sys** as sysdba
 
-**Note: You will need to be VPN'd into the network or VNC to a jump server. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)**
+**Note: You will need to be VPN'd into the network or VNC to a jump server. Refer to Lab 5 and Lab 6**
 
 - First, lets create the a common user in ExaCS and grant the necessary previliges.
 
@@ -157,9 +157,12 @@ show parameter ENABLE_GOLDENGATE_REPLICATION;
 
 - Next we create an 'appschema' user similar to source and create the same set of tables as source. Also, we will create a goldengate admin user and grant necessary previliges to that user.
 
+**Note : Please make sure you replace pdb_name with your database's pdb name in the below code.**
+
 ```
 <copy>
-create user appschema identified by WElcome_123# default tablespace data;
+alter session set container = pdb_name
+create user appschema identified by WElcome_123# default tablespace users;
 grant connect, resource to appschema;
 alter user appschema quota unlimited on users;
 CREATE TABLE appschema.COMMENTS
@@ -169,9 +172,6 @@ CREATE TABLE appschema.COMMENTS
   "COMMENT_CREATE_DATE" DATE DEFAULT sysdate, 
   "COMMENT_TEXT" VARCHAR2(500)
    ) ;
-alter user ggadmin identified by WElcome_123#;
-alter user ggadmin quota unlimited on users;
-alter user ggadmin quota unlimited on system;
 </copy>
 ```
 
@@ -242,24 +242,24 @@ If you have browser issues or get Unicode warning, try using Firefox browser. Fi
 
 ![](./images/goldengate/ogg1.png " ")
 
-Once logged on, click on the port # for Admin server to get into configuration mode as shown below
+Once logged on, click on the port # for Admin server to get into configurtion mode as shown below
 
 ![](./images/goldengate/ogg2.png " ")
 
 
 If prompted, login with the same credentials one more time.
 
-From the top left hamburger menu, select 'Configuration' as shown below -
+From the top left hamberger menu, select 'Configuration' as shown below -
 
 ![](./images/goldengate/ogg3.png " ")
 
-**Here we configure connectivity to our source and target databases. We will setup 3 connections - The Source DB common user, Source DB appschema user and Target DB ggadmin user.**
+**Here we configure connectivity to our source and target databases. We will setup 4 connections - The Source DB common user, Source DB appschema user, Target DB common user and Target DB appschema user.**
 
 Use the screenshots below as a guide - 
 
 ![](./images/goldengate/creds1.png " ")
 
-Add the first credential for C##user01 you created earlier in the lab in the source DB.
+Add the first credential for appschema you created earlier in the lab in the source DB.
 
 ![](./images/goldengate/AddCred2.png " ")
 
@@ -271,7 +271,7 @@ Submit credentials and test connectivity as shown in screenshot below
 ![](./images/goldengate/creds3.png " ")
 
 
-Similarly, add credentials for source DB appschema and target ExaCS ggadmin schema as shown below. Note the ggadmin user connects using the same tns enty as 'admin' user.
+Similarly, add credentials for source DB c##user01, target ExaCS c##user01 schema and target ExaCS appschema schema as shown below.
 
 ![](./images/goldengate/AllCredGG.png " ")
 
@@ -379,6 +379,14 @@ Hit **Next**
 On the last and final screen (phew!) edit the parameter file to REPLACE the line mapping the source and target schemas as show below. 
 **Note: Pls remove the original line MAP *.*, TARGET *.*;**
 
+```
+<copy>
+replicat target
+useridalias pdb1_target domain OracleGoldenGate
+MAP <pdb_name>.appschema.*, TARGET <pdb_name>.appschema.*;
+</copy>
+```
+
 ![](./images/goldengate/paramRep.png " ")
 
 Hit **Create and Run**. If all goes well, you should now see both extract and replicat processes running on the dashboard.
@@ -399,3 +407,14 @@ commit;
 ![](./images/goldengate/AddRowsSource.png " ")
 
 ![](./images/goldengate/VerifyTarget.png " ")
+
+
+
+
+<table>
+<tr><td class="td-logo">[![](images/obe_tag.png " ")](#)</td>
+<td class="td-banner">
+## Great Work - All Done!
+</td>
+</tr>
+<table>

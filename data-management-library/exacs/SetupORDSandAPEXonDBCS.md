@@ -2,17 +2,18 @@
 
 In this lab we will install ORDS (Oracle REST Data Services) and Oracle APEX (Application Express) on Oracle Database Cloud Service using Terraform.
 
-Oracle REST Data Services(ORDS) is a tool offered by oracle through which we can develop and host Applications and REST Services. Oracle Application express is a low-code application development tool to build applications and REST Services right on top of an Oracle Database. In this lab, we will deploy ORDS to host an application developed using APEX.
+Oracle REST Data Services(ORDS) is a tool offered by Oracle through which we can develop and host Applications and REST Services. Oracle Application Express is a low-code application development tool to build applications and REST Services right on top of an Oracle Database. In this lab, we will deploy ORDS to host an application developed using APEX.
 
-In production environments, we deploy ORDS on a server in a public network and configure it to interact with APEX installed on the database server deployed in a private network. However, in Dev/test environments, we can choose to deploy both ORDS and APEX on the same database server.
+In production environments, we deploy ORDS on a server in a public network and configure it to interact with APEX which is installed on the database server deployed in a private network. However, in Dev/test environments, we can choose to deploy both ORDS and APEX on the same database server.
 
-To automate the deployment process for ORDS and APEX, we can use tools like Terraform, Ansible, etc. In this exercise, we will see how we can automate it using Terraform. The Terraform script provided in this lab will install ORDS and APEX for you. You just have to configure a few parameters mentioned below. The Terraform script will provide you two options to deploy ORDS and APEX as mentioned below:
+To automate the deployment process for ORDS and APEX, we can use tools like Terraform, Ansible, etc. In this exercise, we will see how we can automate it using Terraform. The Terraform script provided in this lab will install ORDS and APEX for you. You just have to configure a few parameters mentioned below. The Terraform script will provide you with two options to deploy ORDS and APEX as mentioned below:
 
 1. Deploy ORDS on a separate compute and APEX on the Database Server.
 2. Deploy ORDS and APEX on the Database Server.
 
 #### ORDS Architecture Options
 ```
+
 #### ARCHITECTURE - 1           |-------------Terraform Script Automation-----------------|
 ####      +-+-+-+-+-+-+-+       |        +-+-+-+-+-+-+-+               +-+-+-+-+-+-+-+    |
 ####      +             +       |        +             +               +             +    |
@@ -45,8 +46,8 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 ## Required Artifacts
 
 - Access to your Oracle cloud account.
-- A pre-provisioned DB instance on Exadata. Refer to **Lab 3** on how to provision a DB instance on Exadata.
-- Access to a Developer Client on OCI for the database instance. Refer to **Lab 4** to know how to setup a Dev Client.
+- A pre-provisioned DB instance on Exadata. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how to provision a DB instance on Exadata.
+- Access to a Dev Client on OCI for the database instance. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use) to know how to setup a Dev Client.
 - Have appropriate access to run Terraform on OCI.
 
 
@@ -54,14 +55,15 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### STEP 1: Install Terraform
 
-- Since our Exadata Cloud Service is sitting in a private network, we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer to **lab 4** in this workshop for more information.
+- Since our Exadata Cloud Service is sitting in a private network we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer to **lab 4** in this workshop for more information.
 
-- Then we install Terraform and execute the terraform script from that Developer Client/bastion Host which has access to the Exadata Cloud Service database, so that Terraform can access it.
+- Then, we install Terraform and execute the terraform script from that Developer Client/bastion Host which has access to the Exadata Cloud Service database so that Terraform can access it.
 
-- Once the developer client is provisioned, Log in to the Developer Client using ssh.
+- Once the developer client is provisioned, log in to the Developer Client using ssh.
 
 ```
 <copy> ssh -i private_ssh_key opc@public_ip</copy>
+
 ```
 
 - Please follow the steps on <a href="https://www.terraform.io/downloads.html">this</a> page to download Terraform on the developer client system.
@@ -78,13 +80,21 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>terraform -help</copy>
 ```
 
+- If you have already downloaded terraform prior to this lab, you can upgrade it using the below command.
+
+```
+<copy>sudo yum -y upgrade terraform-provider-oci</copy>
+```
+
+
 ### STEP 2: Download the Terraform Script
 
 - Download the Terraform script using the below command.
 
 ```
-<copy>wget -O ORDS-APEX_ExaCS.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/AvptmXHHfN-nAgnfOFLl5efClTlzb9oljukLsCilQ9c/n/orasenatdpltintegration02/b/ExaCSScripts/o/ORDS-APEX_ExaCS.zip</copy>
+<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/ORDS-APEX_ExaCS.zip</copy>
 ```
+**NOTE: Make sure you have wget installed before running the above command, otherwise run 'brew install wget' beforehand**
 
 - Unzip the file 
 
@@ -98,6 +108,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>cd ORDS-APEX_ExaCS</copy>
 ```
 
+
 ### STEP 3: Run the Terraform script
 
 - Create an ssh key pair or copy your existing key pair along with OCI API private key to the "keys" folder present in the same directory
@@ -106,6 +117,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>ls keys/</copy>
 ```
 
+You should see the following:
 ```
 $ ls keys/
 public_key.pub private_key oci_api_key.pem
@@ -116,10 +128,10 @@ public_key.pub private_key oci_api_key.pem
 
     2.  (Optional) if you need to setup a new oci api key for your Oracle Cloud Account, visit this <a href=https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionssetupapikey.htm>link</a>
 
-- Open the env-vars.sh script and fill in the values for the parameters. You can find the database details from instance we created in Lab 3 or any existing exadata database instance on which you want to install ORDS and APEX.
+- Open the env-vars.sh script and fill in the values for the parameters. You can find the database details from the instance we created in Lab 3 or any existing exadata database instance on which you want to install ORDS and APEX.
 
 ```
-<copy>vi env-vars.sh</copy>
+<copy>vi env-vars</copy>
 ```
 
 ```
@@ -140,8 +152,10 @@ TF_VAR_compartment_ocid: "OCID of the compartment in which the Compute needs to 
 TF_VAR_target_db_admin_pw: "DB Admin Password"
 
 TF_VAR_target_db_ip: "Private IP of the DBCS instance"
+-This can be found under the Nodes Resource
 
 TF_VAR_target_db_ip_public: "Public IP of the DB Server"
+-If there is no public IP available, use the private IP here
 
 TF_VAR_target_db_srv_name: "Service Name of the DB Server"
 
@@ -182,10 +196,11 @@ TF_VAR_URL_APEX_file: "Object Storage URL for apex.zip"
 TF_VAR_APEX_install_mode: "0" 
     # => Full Environment mode, 1 => Runtime Environment mode
 
+#If you have selected to deploy the ORDS server on a separate compute, then we will need a public subnet to deploy the compute instance. Please enter a public subnet OCID for the parameter below.
 TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 ```
 
-- The env-vars.sh file looks like this after you have entered all the information.
+- The env-vars.sh file should look like this after you have entered all the information.
 
 ![](./images/apex/Picture200-1.png " ")
 
@@ -196,7 +211,7 @@ TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 - Source the env-vars.sh file and Initialize terraform
 
 ```
-<copy>source env-vars.sh</copy>
+<copy>source env-vars</copy>
 ```
 
 ```
@@ -254,7 +269,10 @@ TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 ![](./images/apex/Picture202.png " ")
 
 - The URL is as follows:
-http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
+
+```
+http://<IP address of ORDS server>:<ORDS Port>/ords
+```
 
 - Enter the above URL in the browser and you will see APEX Login Page
 
@@ -262,14 +280,14 @@ http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
 
     **Note : If the URL is unreachable then you might have to add a rule in the firewall of the server where ORDS is installed to allow incoming connections on the ORDS port.**
 
-## STEP 4: Creating the Schema on the DB instance
+### STEP 4: Creating the Schema on the DB instance
 
-### **STEP 4-1: Connect to Database instance**
+#### STEP 4-1: Connect to Database instance
 
 - Refer **Lab 4** to know how to connect to the database.
 
 
-### STEP 3: Creating Users and Tables for the users in database
+#### STEP 4-2: Creating Users and Tables for the users in database
 
 Now, since we have provisioned the database instance and connected to it. We will now create a user and create a table to load data into it.
 

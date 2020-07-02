@@ -1,0 +1,40 @@
+{
+    "tutorials": [
+        {         
+            "title": "Workshop Introduction",
+            "publisheddate": "03/10/2020",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab1: Generate SSH Key",
+            "publisheddate": "03/10/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {         
+            "title": "Lab2: ADW and OML User",
+            "publisheddate": "03/10/2020",
+            "filename": "../adw-oml-provision/adw-oml-provision.md"
+        },
+        {         
+            "title": "Lab3: ADW and Sql Developer",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adw-sqldeveloper/adw-sqldeveloper.md"
+        },
+        {         
+            "title": "Lab4: OAC and Machine Learning",
+            "publisheddate": "03/10/2020",
+            "filename": "./../oac-machinelearning/oac-machinelearning.md"
+        },
+        {         
+            "title": "Lab5: OML and Machine Learning",
+            "publisheddate": "03/10/2020",
+            "filename": "./../oml-machinelearning/oml-machinelearning.md"
+        },
+        {         
+            "title": "Lab6: OAC Visualization",
+            "publisheddate": "03/10/2020",
+            "filename": "./../oac-visualization/oac-visualization.md"
+        }
+    ]
+}

@@ -1,8 +1,10 @@
 # Create a Digital Assistant User Interface
 
-## Before You Begin
+## Introduction
 
 This part of the hands-on lab is an entry-level exercise for modifying a skill in Oracle Digital Assistant.
+
+Estimated time: 20 - 25 min
 
 ### Background
 
@@ -22,13 +24,32 @@ In this lab, we are going to modify a skill that can be used for interactions wi
 
   *Oracle Digital Assistant is a platform that allows enterprises to create and deploy digital assistants for their users.*
 
+### Objectives
+
+* Learn how to modify a skill in Oracle Digital Assistant.
+
+### Lab Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Sign up for a Free Trial
+* Lab: Provision a DevCS Instance
+* Lab: Build Virtual Machines in Developer Cloud Service
+* Lab: Create a Kubernetes Cluster
+* Lab: Install the Front-end Client
+* Lab: Import a Developer Cloud Service Project
+* Lab: Configure the Project to Match the Kubernetes Cluster
+* Lab: Test the Implementation
+
 ## **Step 1**: Clone a Skill
 
 In this lab, we're starting from an existing one. So, the first thing you'll do is clone an existing skill.
 
 1. With the Oracle Digital Assistant UI open in your browser, click ![main menu icon](./images/image173.png) to open the side menu.
+
 2. Click **Development** and select Skills.
+
 3. Click ![main menu icon](./images/image173.png) again to collapse the side menu.
+
 4. Search “HOL\_Microservices”
 
   ![](./images/image174.png " ")
@@ -38,10 +59,11 @@ In this lab, we're starting from an existing one. So, the first thing you'll do 
   ![](./images/image175.png " ")
 
 6. Click **Clone** to open Create clone form.
-7. Introduce these values:    
-    - Display Name: HOL\_XX (where XX is your initials. Example: John Snow Green should use HOL\_JSG)    
-    - Name: HOL\_XX    
-    - Check “Open cloned skill bot afterwards”    
+
+7. Introduce these values:
+    - Display Name: HOL\_XX (where XX is your initials. Example: John Snow Green should use HOL\_JSG)
+    - Name: HOL\_XX
+    - Check “Open cloned skill bot afterwards”
     - Click “Clone” button
 
 ### Create Intents
@@ -96,11 +118,11 @@ On this case, we are going to modify the existing dialog flow to ask the user to
 
   ![](./images/image181.png " ")
 
-7. On the components window, choose “User interface”
+8. On the components window, choose “User interface”
 
   ![](./images/image182.png " ")
 
-8. Now choose “Text”, after that on the value list select “confirmation” to insert the System.Text component after “confirmation” status and click **Apply**
+9. Now choose “Text”, after that on the value list select “confirmation” to insert the System.Text component after “confirmation” status and click **Apply**
 
   ![](./images/image183.png " ")
 
@@ -108,34 +130,34 @@ On this case, we are going to modify the existing dialog flow to ask the user to
 
   When the Dialog Engine enters a System.Text state for the first time, it prompts the user to enter some text. When the user enters a value, the Dialog Engine returns to this state. The component processes the user response and if it can convert the user input to the variable type, it stores the value in the variable. The Dialog Engine moves on to another state when this variable has a value.
 
-9. So, you can check that the new state has been included in the flow.
+10. So, you can check that the new state has been included in the flow.
 
   ![](./images/image184.png " ")
 
-10. Rename “text” to “askUpgrade” as the state name. Fill in the blanks:
+11. Rename “text” to “askUpgrade” as the state name. Fill in the blanks:
 
-    - Prompt: "Do you want a 2-liter soda bottle for $1 and a free towel?"    
-    - variable: upgrade    
-    - Delete the following property "nlpResultVariable"    
-    - maxPrompts: 3 (to ask 3 times about the upgrade. If you answer something different to yes or no three times, the component will execute “cancel” action.)    
-    - translate: false    
+    - Prompt: "Do you want a 2-liter soda bottle for $1 and a free towel?"
+    - variable: upgrade
+    - Delete the following property "nlpResultVariable"
+    - maxPrompts: 3 (to ask 3 times about the upgrade. If you answer something different to yes or no three times, the component will execute “cancel” action.)
+    - translate: false
     - Update transition actions so that it looks like the following:
 
   ![](./images/image185.png " ")
 
-11. Move to the prior state named “confirmation” and change transition “next” value from “saveOrder” to “askUpgrade” to make the flow execute our new state. Result:
+12. Move to the prior state named “confirmation” and change transition “next” value from “saveOrder” to “askUpgrade” to make the flow execute our new state. Result:
 
   ![](./images/image186.png " ")  ![](./images/image187.png " ")
 
-12. To check that your new code it’s okay, click **Validate**.
+13. To check that your new code it’s okay, click **Validate**.
 
   ![](./images/image188.png " ")
 
-13. If all it’s okay, you will see this message:
+14. If all it’s okay, you will see this message:
 
   ![](./images/image189.png " ")
 
-14. If you have received this alert, review all the steps again and keep in mind that all indentations are very important
+15. If you have received this alert, review all the steps again and keep in mind that all indentations are very important
 
   ![](./images/image190.png " ")
 
@@ -173,7 +195,9 @@ Currently, our orders are being stored on a shared database. Now, we will modify
 Now that all of the skill's pieces are in place let's test its behavior.
 
 1. Open the skill tester by clicking ![the Skill Tester icon](./images/image195.png) on the bottom of the skill's left navigation bar.
+
 2. Click Reset.
+
 3. In the Message field, type I want to order a pizza and then press Enter.
 
   All kind of pizza will be shown (choose one)
@@ -185,6 +209,7 @@ Now that all of the skill's pieces are in place let's test its behavior.
   ![](./images/image197.png " ")
 
 4. In the pizza size menu, select an option, e.g. Small.
+
 5. Select a topping e.g. 1 2 4 (Mushrooms, BBQ Sauce, Tuna)
 
   ![](./images/image198.png " ")
@@ -212,9 +237,10 @@ Now that all of the skill's pieces are in place let's test its behavior.
   ![](./images/image203.png " ")
 
 11. Click **Reset**. To clean conversation screen an reset all the variables.
+
 12. Now try entering I want a large cheese basic pizza with mushrooms, tuna, and tomatoes paying with cash and pressing Enter.
 
-This time, you should be immediately presented with the results of the order after asking about the location.
+  This time, you should be immediately presented with the results of the order after asking about the location.
 
   ![](./images/image204.png " ")
 
@@ -222,6 +248,7 @@ This time, you should be immediately presented with the results of the order aft
 
   ![](./images/image203.png " ")
 
+This concludes the workshop.
 
 ## Want to Learn More?
 * [Using Oracle Digital Assistant](http://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/digital-assistant&id=DACUA-GUID-386AB33B-C131-4A0A-9138-6732AE841BD8)

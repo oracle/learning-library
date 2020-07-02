@@ -96,14 +96,7 @@ We will use the following IAM structure in line with the bare minimum isolation 
 
       - You now have the users, groups and compartments setup to provision an autonomous database platform.
 
-      - Alternatively, you may download this python script to provision compartments, users and set policies for your environment. Use the following command to download the package and follow usage instructions in the readme file.
-
-        ````
-        <copy>
-        wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/networking/atpd_policy_setup.zip?raw=true
-        </copy>
-        ````
-
+      
 
 ## STEP 2: Layout a secure network for the database and application infrastructure
 

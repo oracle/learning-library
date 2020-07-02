@@ -28,7 +28,8 @@ Labs 8 - 10 are intended for Backup, Recovering and Migrating your databases.
 
 Lab 11 - 12 onwards demonstrate advanced lab guides for Database Vault and advanced Data safe lab guides.
 
-Lab 13 - 16 are additional labs which talks about connecting your Exadata Cloud Service databases with Python application, working with OCI CLI, build APEX applications and automating with Terraform.
+Lab 13 - 19 are additional labs which talks about connecting your Exadata Cloud Service databases with Python application, working with OCI CLI, build APEX applications, automating with Terraform, configure and connect to Swingbench, build and connect to a Docker application, and connect to Oracle Analytics cloud.
+
 
 ## Goals for this workshop
 1. Prepare your private network in the Oracle Cloud Infrastructure
@@ -47,6 +48,9 @@ Lab 13 - 16 are additional labs which talks about connecting your Exadata Cloud 
 14. Automation with Terraform
 15. Build and deploy Python application stacks on Exadata Cloud Service
 16. Build APEX application on Exadata Cloud Service
+17. Install and configure Swingbench to simulate a transaction processing workload
+18. Build a docker container running node.js connected to EXACS database
+19. Connect Oracle Analytics Cloud to your Exadata database
 
 
 # Workshop Overview
@@ -227,6 +231,35 @@ As an application developer, DBA or DevOps user,
 - Create a VNC connection to developer client VM and access apex on your database
 - Setup additional apex developer users
 
+## Lab 17: - Introduction to Swingbench and Oracle database
+
+
+**Key Objectives**:
+
+As an application developer, DBA or DevOps user,
+
+- Install and configure Swingbench to simulate a transaction processing workload
+- Configure Exadata Cloud Service Database with Swingbench
+
+## Lab 18: - Docker Application with EXACS
+
+**Key Objectives**:
+
+As an application developer, DBA or DevOps user,
+
+- To build a docker container running node.js
+- Connect it to an Exadata Cloud Service running in the Oracle cloud
+- Deploy the docker container on Oracle Compute Instance
+
+## Lab 19: - Connect Oracle Analytics Cloud with your Exadata Cloud Service Database
+
+**Key Objectives**:
+
+As a LOB user
+
+- Install and configure Remote Data Gateway in Oracle Cloud Developer Image
+- Configure Remote Data Gateway with Oracle Analytics Cloud
+- Connect Exadata Cloud Service Database with Oracle Analytics Cloud
 
 
 ## Appendix

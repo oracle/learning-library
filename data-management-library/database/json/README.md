@@ -1,13 +1,27 @@
 # JSON Github
 
+## Introduction to JSON Data and Oracle Database
 
-Oracle provides an open, modern, easy and intelligent platform and infrastructure for developers to build and innovate. Oracle offers choice, portability and interoperability with other technologies, including open source and third-party components. Developers can build with the latest technologies, such as AI/ML, autonomous databases, Gen 2 cloud infrastructure, Kubernetes, serverless, blockchain, digital assistants, and more.
+Schemaless development based on persisting application data in the form of JSON documents lets you quickly react to changing application requirements. You can change and redeploy your application without needing to change the storage schemas it uses.
+
+SQL and relational databases provide flexible support for complex data analysis and reporting, as well as rock-solid data protection and access control. This is typically not the case for NoSQL databases, which have often been associated with schemaless development with JSON in the past.
+
+Oracle Database provides all of the benefits of SQL and relational databases to JSON data, which you store and manipulate in the same ways and with the same confidence as any other type of database data.
+
+[JSON in Oracle Database](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/json-in-oracle-database.html#GUID-A8A58B49-13A5-4F42-8EA0-508951DAE0BB)
+
+Oracle Database supports JavaScript Object Notation (JSON) data natively with relational database features, including transactions, indexing, declarative querying, and views.
+
+[JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/json-data.html#GUID-615A4146-6DC0-4E66-9AD0-CD74C90D208A)
+
+JavaScript Object Notation (JSON) is defined in standards ECMA-404 (JSON Data Interchange Format) and ECMA-262 (ECMAScript Language Specification, third edition). The JavaScript dialect of ECMAScript is a general programming language used widely in web browsers and web servers.
+
 
 Click on one of our workshops below to access the content.
 
 ## Workshops
 
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
+- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -33,4 +47,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
 
 -- Oracle Database Product Management
-

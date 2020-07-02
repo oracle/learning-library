@@ -1,0 +1,100 @@
+{
+    "tutorials": [
+        {           
+            "title": "Gigi's Pizza Hands on Labs",
+            "description": "About the Gigi's pizza HOLs",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/07/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },        
+        {           
+            "title": "Developer Machine from marketplace",
+            "description": "Developer machine for the labs if you don't have one",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/07/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oraclespainpresales/GigisPizzaHOLsORAStyle/master/devmachine-marketplace/devmachine-marketplace.md"
+        },
+        {           
+            "title": "Developer Machine Prerequisites",
+            "description": "Developer machine requisites",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/07/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oraclespainpresales/GigisPizzaHOLsORAStyle/master/developer-machine/developer-machine.md"
+        },
+        {           
+            "title": "Notes for the Labs",
+            "description": "About the Gigi's pizza HOLs",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/07/2020",
+            "contentid": "12nnnn",
+            "filename": "../serverless-fn-discount-upload/fn_pizza_discount_upload.md"
+        },
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Keys",
+            "description": "Generate SSH Keys",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 3: Gigi's Pizza Serverless Configuration",
+            "description": "Setup your gigi's pizza app based on microservices and multitenant & multimodal Oracle database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-hol/gigisserverlessHOL.md"
+        },
+        {
+            "title": "Lab 4: Gigi's Pizza Serverless Discount Upload",
+            "description": "Setup your gigi's pizza discount campaign serverless app with Oracle Autonomous database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-fn-discount-upload/fn_pizza_discount_upload.md"
+        },
+        {
+            "title": "Lab 5: Gigi's Pizza Serverless Discount Cloud Events",
+            "description": "Setup your gigi's pizza discount campaign serverless app with Oracle Autonomous database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-fn-discount-cloud-events/fn_pizza_discount_cloud_events.md"
+        },
+        {
+            "title": "Lab 6: Gigi's Pizza Serverless Events Service",
+            "description": "Setup your gigi's pizza discount campaign serverless app with Oracle Autonomous database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-event-service/event-service.md"
+        },
+        {
+            "title": "Lab 7: Gigi's Pizza Serverless Discount Upload",
+            "description": "Setup your gigi's pizza discount campaign serverless app with Oracle Autonomous database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-fn-discount-campaign/fn_pizza_discount_campaign.md"
+        },
+        {
+            "title": "OPTIONAL Lab: Gigi's Pizza Serverless Discount Upload",
+            "description": "Setup your gigi's pizza discount campaign serverless app with Oracle Autonomous database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-fn-discount-campaign-pool/fn_pizza_discount_campaign_pool.md"
+        },
+        {
+            "title": "Lab 9: Gigi's Pizza Serverless Testing",
+            "description": "Setup your gigi's pizza discount campaign serverless app with Oracle Autonomous database",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-function-testing/funtion_testing.md"
+        },
+        {            
+            "title": "OPTIONAL Lab: Gigi's Pizza Serverless with pipelines",
+            "description": "Deploy your gigi's pizza discount campaign serverless app with Oracle Developer Cloud Service",
+            "publisheddate": "04/07/2020",
+            "filename": "../serverless-pipelines/devcs2fn.md"
+        }
+    ]
+}

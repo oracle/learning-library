@@ -1,1 +1,0 @@
-This illustration shows the Application Container tile on the dashboard page. The Action Menu is expanded, and the Open Service Console option is selected.

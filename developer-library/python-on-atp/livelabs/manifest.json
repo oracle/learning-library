@@ -1,0 +1,52 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },  {         
+            "title": "Lab 0: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {         
+            "title": "Lab 1: Setup",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../setup/setup.md"
+        },
+        {         
+            "title": "Lab 2: Build and test python REST service",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../rest-service/rest-service.md"
+        },
+        {         
+            "title": "Lab 3: Plot data and show nearest service provider on map",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../plot-customers/plot-customers.md"
+        },
+        {         
+            "title": "Lab 4: Show customers based on regions",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../show-customers/show-customers.md"
+        }
+
+    ]
+}

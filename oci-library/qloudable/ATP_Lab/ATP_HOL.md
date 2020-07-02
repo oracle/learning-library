@@ -78,7 +78,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -220,10 +220,8 @@ java -version
 18. Next we will install Swing bench, Enter command:(No Spaces)
 
 ```
-curl http://www.dominicgiles.com/swingbench/swingbenchlatest.zip -o swingbench.zip
+curl http://www.dominicgiles.com/swingbench/swingbench261082.zip -o swingbench.zip
 ```
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_002.PNG" alt="image-alt-text">
 
 19. Enter command,
 ```
@@ -244,39 +242,45 @@ instance created earlier**
 
 1. Switch to OCI console, from services menu Click **Autonomous Transaction Processing** under Databse.Click **Create Autonomous Database**. Fill out the dialog box:
 
-
-- Workload Type: AUTONOMOUS TRANSACTION PROCESSING
-- COMPARTMENT: Choose your compartment
+COMPARTMENT: Choose your compartment
 - DISPLAY NAME: Provide a name
 - DATABASE NAME: Provide a name
-- CPU CORE COUNT: 1
-- STORAGE(TB): 1
-- Auto Scaling: Do NOT check this flag. (This flag can be checked to enable auto scaling though in this lab we will Dynamically scale the CPU using OCI console. This option can be used if user wants to test Auto scaling of CPU)
-- PASSWORD: Provide password per guideline 
-- CONFIRM PASSWORD: Provide same password 
+- Choose a Workload type: Transaction Processing
+- Choose a Deployment type: Shared Infrastructure
 
-**NOTE:** Do not use &, ), ( in the password due to script limitation that we will execute later.
+Under **Configure the database**
 
-- LICENSE TYPE: License Included
+- Always Free: Leave Default
+- Choose database version: Leave Default
+- OCPU count: 1
+- Auto Sclaing: Make sure flag is Un-checked
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_018.PNG" alt="image-alt-text">
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_019.PNG" alt="image-alt-text">
+Under **Create administrator credentials**
 
-2. Leave **Tags** information as is. Click **Create Autonomous Database**. Wait for State to change to Available (few minutes)
+- Username: Provide a username 
+- Password: Provide a password (For example : Oracle098#### **Do not use &,!, in the password due to script limitation that we will execute later.**)
+- Confirm Password: Confirm the password provided
 
-3. Once Database is in running state, Click its Name. In Database details window Click **DB Connection**
+Under **Choose network access**
+
+- Allow secure accces from anywhere: Make sure this option is checked
+- Confifure access conrol rules: Leave default (unchecked)
+
+Under **Choose a license type**
+
+- License Included: Check this opttion
+
+2. Click **Create Autonomous Database**. Wait for State to change to Available (few minutes)
+
+3. Once Database is in running state, Click its Name. In Database details window Click **DB Connection**. We will use this screen 
 
 **NOTE:** If pop up blocker appears then Click 'Allow'
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_005.PNG" alt="image-alt-text">
-
-4. In the pop up window Click **Download** under **Download Client Credentials (Wallet)**. Provide a password, Click **Download** and save the zip file (Note down zip file location)
+4. In the pop up window under **Wallet Type** choose **Intance Wallet**. Click **Download Wallet**. Provide a password (you can use the same password as the one used to create the instance , Oracle098####). 
 
 **HINT:** You can use the same password that was used to create the instance or choose a new password. Note down the password
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_004.PNG" alt="image-alt-text">
-              
-5. Save the file in and Note down the directory name where the file was saved. We will need to upload this zip file on to public Compute instance
+5. Save the file and Note down the directory name where the file was saved. We will need to upload this zip file on to public Compute instance
 
 6. In Git bash window change to directory where zip file was saved, Enter command,
 ```bash 
@@ -285,7 +289,7 @@ cd <Directory_Name> (cd ~/Downloads)
 7. Upload the zip file to compute instance, Enter command,
 
 ```bash
-sftp  -i /C/Users/PhotonUser/.ssh/id_rsa opc@ <PUBLIC_IP_OF_COMPUTE>
+sftp  -i /C/Users/PhotonUser/.ssh/id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 
 ```
 8. At sftp prompt Enter command,
@@ -316,10 +320,13 @@ Answer 'Y' when prompted
 (This will install a schema to run our transactions against)
 
 ```bash
-./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba ADMIN -u soe -p <DB_PASSWORD> -async_off-scale 0.1 -hashpart -create -cl -v
+./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba admin -u soe -p <DB_PASSWORD> -async_off -scale 0.1 -hashpart -create -cl -v
 ```
 
-**NOTE:** In below example, CREDENTIAL_ZIP_FILE is 'Wallet_ATPDB3.zip', DB_NAME is ATPDB3, DB_PASSWORD is Oracle098####.
+**For Example:**
+./oewizard -cf ~/Wallet_ATPDB3.zip -cs ATPDB3_medium -ts DATA -dbap Oracle098#### -dba admin -u soe -p Oracle098#### -async_off -scale 0.1 -hashpart -create -cl -v
+
+**NOTE:** In above example, CREDENTIAL_ZIP_FILE is 'Wallet_ATPDB3.zip', DB_NAME is ATPDB3, DB_PASSWORD is Oracle098####.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_008.PNG" alt="image-alt-text">
 
@@ -335,7 +342,7 @@ Answer 'Y' when prompted
 
 15. Next we will configure the load generator file. Enter command:
 ```
-cd ~/swingbench/config
+cd ~/swingbench/configs
 ```
 
 16. Enter command:
@@ -352,7 +359,7 @@ vi SOE_Server_Side_V2.xml
 
 18. Now we will generate some load. Enter command:
 ```
-cd ~/swingbench/bin. 
+cd ~/swingbench/bin 
 ```
 Then Enter command:
 ```bash

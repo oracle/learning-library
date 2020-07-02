@@ -1,10 +1,10 @@
 ## Introduction
 
-Oracle Data Pump offers very fast bulk data and metadata movement between user managed Oracle databases and Exadata Cloud Service Databaes.
+Oracle Data Pump offers very fast bulk data and metadata movement between user managed Oracle databases and Exadata Cloud Service Databases.
 
-Data Pump Import lets you import data from Data Pump files. You can save your data to either the database server or File Storage Server and use Oracle Data Pump to load data to Exadata Cloud Service Database.
+Data Pump Import lets you import data from Data Pump files. You can save your data to either the database server or File Storage Server and use Oracle Data Pump to load data to an Exadata Cloud Service Database.
 
-This lab walks you through the steps to migrate a sample application schema using datapump import into your exadata cloud service database.
+This lab walks you through the steps to migrate a sample application schema using Data Pump Import into your Exadata Cloud Service Database.
 
 To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
@@ -12,36 +12,33 @@ To log issues and view the Lab Guide source, go to the [github oracle](https://g
 
 As a database admin or user,
 
-1. Download a sample datapump export dump file from Oracle Learning Library github repository.
-2. Secure copy the dump file to the exadata machine to the required directory and run import data pump
+1. Download a sample datapump export dump file from the Oracle Learning Library github repository.
+2. Securely copy the dump file to the exadata machine and then to the required directory and run import data pump
 
 
 
 ## Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned Exadata cloud service database . Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
+- Access to a pre-provisioned Exadata cloud service database. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
 - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
+- Access to an exadata instance to copy the dump file into
 
 ## Steps
 
-### STEP 1: Download sample data pump export file from Oracle Learning Library github repository
+### STEP 1: Download a sample data pump export file from Oracle Learning Library github repository
 
 - Log into your bastion server
 
 ```
 <copy>
-ssh -i &ltprivate_key&gt opc@&ltpublic_IP_address&gt
+ssh -i /path/to/private/key private_key opc@public_IP_address
 </copy>
 ```
 
 ![bastion_login](./images/HOL-DataPump/bastion_login.png " ")
+
 - Create a folder on your bastion server as your user_number 
 
-```
-<copy>
-cd dump_file
-</copy>
-```
 
 ```
 <copy>
@@ -55,15 +52,13 @@ cd user_XX
 </copy>
 ```
 
-![cd_dump_file](./images/HOL-DataPump/cd_dump_file.png " ")
-
 ![mkdir_user_dump](./images/HOL-DataPump/mkdir_user_dump.png " ")
 
 - Use the following command in your folder on bastion server and download a sample schema dump from OLL
 
 ```
 <copy>
-wget -O user_01.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20TfCaQGHwH_fhi8xPRLZldM-QasPN2pjquak8/n/orasenatdpltintegration02/b/ExaCSScripts/o/data_pump_nodeapp.dmp
+wget -O user_XX.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20TfCaQGHwH_fhi8xPRLZldM-QasPN2pjquak8/n/orasenatdpltintegration02/b/ExaCSScripts/o/data_pump_nodeapp.dmp
 </copy>
 ```
 
@@ -76,19 +71,19 @@ wget -O user_01.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 
 ```
 <copy>
-ssh -i &lt/path/to/identity/file&gt opc@&ltexadata_node&gt
+ssh -i /path/to/identity/file oracle@exadata_node
 </copy>
 ```
 
 ```
 <copy>
-source userXX
+source userXX.env
 </copy>
 ```
 
 ```
 <copy>
-sqlplus system/<system_password>@usr_xx
+sqlplus system/system_password@usr_xx
 </copy>
 ```
 
@@ -100,17 +95,20 @@ column directory_path format a95
 
 select directory_name, directory_path from all_directories order by 1
 /
+exit
 </copy>
 ```
 
 ![all_db_dir](./images/HOL-DataPump/all_db_dir.png " ")
 **NOTE**: Make sure directory ***DATA_PUMP_DIR*** exists and copy the path
 
-- Secure copy the dump file to the oracle exadata cloud service server to the data pump directory that you have noted down before
+- Exit to your **bastion server**
+
+- Securely copy the dump file to the oracle exadata cloud service server to the data pump directory that you have noted down before
 
 ```
 <copy>
-scp -i &lt/path/to/identity/file&gt user_xx.dmp oracle@&ltExadata_private_ip&gt:&lt/path/to/DATA_PUMP_DIR&gt
+scp -i /path/to/identity/file /path/to/user_xx.dmp oracle@Exadata_private_ip:/path/to/DATA_PUMP_DIR
 </copy>
 ```
 
@@ -119,7 +117,7 @@ scp -i &lt/path/to/identity/file&gt user_xx.dmp oracle@&ltExadata_private_ip&gt:
 
 ```
 <copy>
-ssh -i &lt/path/to/identity/file&gt oracle@&ltexadata_node&gt
+ssh -i /path/to/identity/file oracle@exadata_node
 </copy>
 ```
 
@@ -129,7 +127,7 @@ source userXX
 </copy>
 ```
 
-***NOTE:*** Login to Node of Exadata and make a TNS entry on your tnsnames.ora file such that your import data pump process only uses this particular node as we are placing the dump file on only one node and not on a shared file system.
+***NOTE:*** Log in to the Node of Exadata and make a TNS entry on your tnsnames.ora file such that your import data pump process only uses this particular node as we are placing the dump file on only one node and not on a shared file system.
 
 ```
 <copy>
@@ -142,12 +140,12 @@ cd $ORACLE_HOME/network/admin/user_xx/
 vi tnsnames.ora
 </copy>
 ```
+- Since we have not attached the file system to the exadata, and to maintain consistency in the node usage, we will copy the PDB tns entry and edit the **Host** to the private IP of node1 of the exadata cloud service
 
 ```
-<copy>
 usrxx_1 =
   (DESCRIPTION =
-    (ADDRESS = (PROTOCOL = TCP)(HOST = <exa_node_1>.<subnet>.<vcn>.oraclevcn.com)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = PRIVATE_IP_ADDRESS_OF_EXA_NODE_1)(PORT = 1521))
     (CONNECT_DATA =
       (SERVER = DEDICATED)
       (SERVICE_NAME = usrxx..<subnet>.<vcn>.exavcn.oraclevcn.com)
@@ -157,22 +155,22 @@ usrxx_1 =
       )
     )
   )
-</copy>
 ```
+
 
 - Finally, the stage is set to run the import command from your dev client bash prompt
 
 ```
 <copy>
-IMPDP SYSTEM/<DB_PWD>@usrXX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUSTER=NO; 
+impdp SYSTEM/password@usr_XX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUSTER=NO; 
 </copy>
 ```
 
 - In the above command, replace
   * __password__ - Admin password for your database system user
-  * __usr_XX__ - The pluggable database that you created 
-  * __directory__ - leave as shown above
-  * __dumpfile__ -  The dump file that was secure copied to the directory location
+  * __usr_XX_1__ - The pluggable database that you created 
+  * __DIRECTORY__ - leave as shown above
+  * __user_xx.dmp__ -  The dump file that was securely copied to the directory location
 
 ![impdp_log](./images/HOL-DataPump/impdp_log.png " ")
 
@@ -182,4 +180,4 @@ All Done! Your application schema was successfully imported.
 
 You may now connect to your exadata cloud service database using a SQL client and validate import.
 
-Congratulations! You have successfully completed migration of an Oracle database to the Exadata Cloud Service Database using Data Pump
+Congratulations! You have successfully completed migration of an Oracle database to the Exadata Cloud Service Database using Data Pump.

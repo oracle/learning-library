@@ -31,37 +31,26 @@ To get started with the service, you create a table.
 
 3. Save the zip file to your home (~) folder.
 
+    - On Windows systems, your home folder is under `C:/Users/<your username>`.
+    - On a Mac, your home folder is under `/Users/<your username>`. Open Finder and press **Command-Shift-H** to open your home folder.
+
+    If you download the zip file to another folder (like Downloads) move the zip file to your home folder before proceeding.
+
 4. Open a shell (GitBash for Windows), and unzip the SDK:
 
     ```
-    $ <copy>unzip oracle-nosql-java-sdk-5.2.11.zip</copy>
-    Archive:  oracle-nosql-java-sdk-5.2.11.zip
-      creating: oracle-nosql-java-sdk-5.2.11/
-      creating: oracle-nosql-java-sdk-5.2.11/doc/
-      creating: oracle-nosql-java-sdk-5.2.11/doc/javadoc/
-      creating: oracle-nosql-java-sdk-5.2.11/doc/javadoc/jquery/
-      ...
-      inflating: oracle-nosql-java-sdk-5.2.11/lib/bcpkix-jdk15on.jar
-      inflating: oracle-nosql-java-sdk-5.2.11/lib/bcprov-jdk15on.jar
-      inflating: oracle-nosql-java-sdk-5.2.11/lib/guava.jar
-      inflating: oracle-nosql-java-sdk-5.2.11/lib/jackson-core.jar
-      inflating: oracle-nosql-java-sdk-5.2.11/lib/netty-all.jar
-      inflating: oracle-nosql-java-sdk-5.2.11/lib/nosqldriver.jar
-    $
+    <copy>unzip oracle-nosql-java-sdk-5.2.11.zip</copy>
     ```
+
+    ![](images/unzip-result.png " ")
+
 ## STEP 2: Download, build and run the sample application
 
-1. Download the provided [HelloWorld.java](files/HelloWorld.java) file your home directory.
+1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/qCpBRv5juyWwIF4dv9h98YWCDD50574Y6OwsIHhEMgI/n/c4u03/b/data-management-library-files/o/HelloWorld.java) file your home directory.
 
 2. Review the sample application. You can access the [JavaAPI Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html) to reference Java classes, methods, and interfaces included in this sample application.
 
-3. Use `vi` to create a `config` file. When `SignatureProvider` is constructed without any parameters, the default [SDK Configuration File](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm) is located in the `~/.oci/config`.
-
-    ```
-    $ <copy>vi ~/.oci/config</copy>
-    $
-    ```
-4. Create the file with the following information:
+3. Use `vi` or `nano` or any text editor to create a file named `config` in the `.oci` directory you created in your home directory with the following information:
 
     ```
     [DEFAULT]
@@ -72,28 +61,35 @@ To get started with the service, you create a table.
     pass_phrase=<key passphrase>
     ```
 
-    Save the file.
+    ![](images/config-file.png " ")
 
-5. Compile the sample application:
+    When `SignatureProvider` is constructed without any parameters, the default [SDK Configuration File](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm) is located in the `~/.oci/config` directory.
+
+4. Compile the sample application:
 
     *Note: Use your SDK driver version if it is different.*
 
     ```
-    $ <copy>javac -cp "oracle-nosql-java-sdk-5.2.11/lib/*" HelloWorld.java</copy>
-    $
+    <copy>javac -cp "oracle-nosql-java-sdk-5.2.11/lib/*" HelloWorld.java</copy>
     ```
 
-6. Run the application:
+    ![](images/compile.png " ")
+
+5. Run the application (on Windows):
 
     ```
-    $ <copy>java -cp ".;oracle-nosql-java-sdk-5.2.11/lib/*" HelloWorld</copy>
-    Creating table HelloWorldTable
-    Waiting for HelloWorldTable to become active
-    Table HelloWorldTable is active
-    Wrote {"name":"Tracy","employeeid":1}
-    Read {"employeeid":1,"name":"Tracy"}
-    $
+    <copy>java -cp ".;oracle-nosql-java-sdk-5.2.11/lib/*" HelloWorld</copy>
     ```
+    ![](images/run-helloworld.png " ")
+
+6. Run the application (on Mac)
+
+    *On a Mac, replace the semicolon with a colon (:) in the command above.*
+
+    ```
+    <copy>java -cp ".:oracle-nosql-java-sdk-5.2.11/lib/*" HelloWorld</copy>
+    ```
+    ![](images/mac-output.png " ")
 
     Note: In the main method of `HelloWorld.java`, the `dropTable(handle)` is commented out to allow you to see the result of creating the tables in the Oracle Cloud Console.
 
@@ -127,7 +123,7 @@ Oracle NoSQL Database also supports Python, Node.js and Go. This application acc
 
 ## Acknowledgements
 * **Author** - Dave Rubin, Senior Director, NoSQL and Embedded Database Development and Michael Brey, Director, NoSQL Product Development
-* **Adapted for Cloud by** -  Tom McGinn, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, May 2020
+* **Adapted for Cloud by** -  Tom McGinn, Database Innovations Architect, Product Management
+* **Last Updated By/Date** - Tom McGinn, Robert Ruppel, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

@@ -13,6 +13,8 @@ To execute this workshop, click on the link below.
 - Visualize Data and Prediction Models in Oracle Analytics Cloud (OAC)
 - Bonus: Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
 
+- [Converged-database](https://github.com/laxmi-oss/converged-database/freetier/index.html) 
+
 ### Workshop Overview
 
 *Complete AI Portfolio:*

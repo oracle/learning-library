@@ -1,1 +1,0 @@
-This illustration shows the form to create an Oracle MySQL Cloud Service instance. It shows two buttons (Cancel and Next) and  the step (Service) where the user provides the Service Name, Service Description, and Metering Frequency.

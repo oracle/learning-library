@@ -79,7 +79,7 @@ Data by Using Default Masking Formats in Oracle Data Safe](?lab=lab-12-1-discove
 - Notice that you can click **Add** to add additional sensitive columns.
 - Notice that you can upload pre/post masking scripts.
 - To return to the **Masking Policies** page in the Library, click the browser's **Back** button.
-  - If you click **Exit**, you are returned to the **Home** page.
+  - If you click **Exit** at the bottom, you are returned to the **Home** page.
 
 ### Step 4: Download your masking policy
 
@@ -100,24 +100,24 @@ A confirmation message is displayed on your page.
 
 ![](./images/dbsec/datasafe/masking/download-policy2.png " ")
 
-4. View your list of downloads in your browser and open the masking policy XML file.
-5. Review the file, and then close it.
+- View your list of downloads in your browser and open the masking policy XML file.
+- Review the file, and then close it.
 
 ### Step 5: Explore the Data Masking report
-1. Click the **Reports** tab.
-2. On the left, click **Data Masking** and then again **Data Masking**.
-3. Click your **Data Masking** report in the content pane to view it.
+- Click the **Reports** tab.
+- On the left, click **Data Masking** and then again **Data Masking**.
+- Click your **Data Masking** report in the content pane to view it.
 
 ### Step 6: Explore the Jobs page
-1. Click the **Jobs** tab.
+- Click the **Jobs** tab.
   - The **Current and Past Jobs** tab shows you all of the jobs that you ran and are in the process of running.
   - The **Scheduled Job** tab shows you all of the jobs that are scheduled.
-2. Examine the list of jobs on the **Current and Past Jobs** tab.
-3. Position the cursor over the **Start Time** column heading, and then click the arrow to sort the column in descending order. This action shows you your latest jobs.
-4. Find a recent data discovery job, and then view the **Elapsed Time** column. This column tells you how long the job took.
-5. Click the data discovery job's ID to view all of its details.
-6. Click the **X** button to close the dialog box.
-7. Click a data masking job's ID to view all of its details.
-8. Click the **X** button to close the dialog box.
+- Examine the list of jobs on the **Current and Past Jobs** tab.
+- Position the cursor over the **Start Time** column heading, and then click the arrow to sort the column in descending order. This action shows you your latest jobs.
+- Find a recent data discovery job, and then view the **Elapsed Time** column. This column tells you how long the job took.
+- Click the data discovery job's ID to view all of its details.
+- Click the **X** button to close the dialog box.
+- Click a data masking job's ID to view all of its details.
+- Click the **X** button to close the dialog box.
 
 ### All Done!

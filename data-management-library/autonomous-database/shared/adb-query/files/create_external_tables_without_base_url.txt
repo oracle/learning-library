@@ -4,15 +4,11 @@
 /* change us-phoenix-1 to your real region name. The name is case-sensitive. */
 /* you can find these values on the OCI Console .. Storage .. Object Storage screen */
 
-/* set define on */
-
-/* define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o' */
-
 begin
  dbms_cloud.create_external_table(
     table_name =>'CHANNELS_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/chan_v3.dat',
+    file_uri_list =>'<file_uri_base>/chan_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true'),
     column_list => 'CHANNEL_ID NUMBER,
 	CHANNEL_DESC VARCHAR2(20),
@@ -28,7 +24,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'COUNTRIES_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/coun_v3.dat',
+    file_uri_list =>'<file_uri_base>/coun_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true'),
     column_list => 'COUNTRY_ID NUMBER ,
 	COUNTRY_ISO_CODE CHAR(2) ,
@@ -48,7 +44,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'CUSTOMERS_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/cust1v3.dat',
+    file_uri_list =>'<file_uri_base>/cust1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS'),
     column_list => 'CUST_ID NUMBER ,
 	CUST_FIRST_NAME VARCHAR2(20) ,
@@ -81,7 +77,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'SUPPLEMENTARY_DEMOGRAPHICS_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/dem1v3.dat',
+    file_uri_list =>'<file_uri_base>/dem1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true'),
     column_list => 'CUST_ID NUMBER ,
 	EDUCATION VARCHAR2(21),
@@ -105,7 +101,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'PRODUCTS_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/prod1v3.dat',
+    file_uri_list =>'<file_uri_base>/prod1v3.dat',
     format => json_object('delimiter' value '|', 'quote' value '^', 'ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true'),
     column_list => 'PROD_ID NUMBER(6,0) ,
 	PROD_NAME VARCHAR2(50) ,
@@ -137,7 +133,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'PROMOTIONS_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/prom1v3.dat',
+    file_uri_list =>'<file_uri_base>/prom1v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true'),
     column_list => 'PROMO_ID NUMBER(6,0) ,
 	PROMO_NAME VARCHAR2(30) ,
@@ -158,7 +154,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'SALES_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/sale1v3.dat,&base_URL/dmsal_v3.dat',
+    file_uri_list =>'<file_uri_base>/sale1v3.dat,&base_URL/dmsal_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true'),
     column_list => 'PROD_ID NUMBER ,
 	CUST_ID NUMBER ,
@@ -175,7 +171,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'TIMES_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/time_v3.dat',
+    file_uri_list =>'<file_uri_base>/time_v3.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true'),
     column_list => 'TIME_ID DATE ,
 	DAY_NAME VARCHAR2(9) ,
@@ -224,7 +220,7 @@ begin
  dbms_cloud.create_external_table(
     table_name =>'COSTS_EXT',
     credential_name =>'OBJ_STORE_CRED',
-    file_uri_list =>'https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o/costs.dat',
+    file_uri_list =>'<file_uri_base>/costs.dat',
     format => json_object('ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true'),
     column_list => 'PROD_ID NUMBER ,
 	TIME_ID DATE ,

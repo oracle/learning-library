@@ -13,13 +13,13 @@ In this section, you will learn how to use an automation that creates a custom i
 
 You will have to generate a config file for oci in **/home/user/.oci/config**. If you are running the code as root, the path will be: **/root/.oci/config**
 
-The contents of this file should be:
+The contents of this file should look like:
 ```
 [DEFAULT]
-user=ocid1.user.oc1..aaaaaaaav6zc6gd6attdvesbaqj2klp2mribm4rfacbstzk7sag6yhmzetqa
-fingerprint=d7:07:3f:b6:f6:f1:ce:d3:0e:fd:24:e7:20:f0:3f:6a
-key_file=/root/.oci/oci_api_key.pem
-tenancy=ocid1.tenancy.oc1..aaaaaaaaksusyefovxt64bsovu523r5ez6qz25pcnqjw2a243qjmft5n7drq
+user=ocid1.user.........
+fingerprint=.........
+key_file=path_to_oci_api_private_key
+tenancy=ocid1.tenancy......
 region=us-ashburn-1
 ```
 
@@ -96,49 +96,80 @@ The new custom image can be used for creating new instances:
 ### QEMU examples
 Go to the folder specific to the desired operating system and version: *packer/qemu/OS* (for ex: *packer/qemu/centos7*)
 
-These examples will create a qcow2 image starting from an official linux image
-
-For the moment, the following options are available:
+These templates build QCOW2 images from scratch using an official ISO. The following are available:
 * CentOS 6
 * CentOS 7
 * Oracle Linux 6
 * Oracle Linux 7
+* Windows 10 Enterprise Evaluation
+* Windows 10 Pro
+* Windows 2016 Server (Server Core)
+* Windows 2016 Server (Desktop)
+* Windows 2019 Server (Server Core)
+* Windows 2019 Server (Desktop)
 
 The source of the base ISO images is:
 * for CentOS - official mirrors
-* for Oracle Linux - from https://blogs.oracle.com/linux/oracle-linux-iso-images-download-options
+* for Oracle Linux - https://blogs.oracle.com/linux/oracle-linux-iso-images-download-options
+* for Windows 10 Pro/Enterprise - https://www.microsoft.com/en-us/software-download/windows10
+* for Windows 2016/2019 Server - https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016
 
-#### Example files
-Each folder has some files in it which are used for building the image:
-* OS-ARCHITECTURE.json - packer template file
-* OS-ARCHITECTURE.ks - kickstart automation file
+### Linux templates
+Each folder has the following files which are used for building the image:
+* OS-ARCHITECTURE.json - packer template
+* OS-ARCHITECTURE.ks - kickstart
 * OS-ARCHITECTURE.sh - provisioning script used for customizations
 * other files - used for advanced customization
 
-#### Creating the image
-You can validate the syntax and configuration of the template:
+### Creating the image
+Validate the syntax and configuration of the template:
 ```
-packer validate image_name.json
+packer validate OS-ARCHITECTURE.json
 ```
-You can check what the template file is defining:
+Check what the template file is defining:
 ```
-packer inspect image_name.json
+packer inspect OS-ARCHITECTURE.json
+```
+Build the image:
+```
+PACKER_LOG=1 packer build OS-ARCHITECTURE.json
 ```
 
-Then you can build the image:
+### Windows templates
+Each Windows template folder is structured as follows:
+* a *floppy* subfolder containg two subfolders - *drivers* and *scripts*. The *drivers* subfolder contains the VirtIO drivers for network interface and SCSCI.
+The *scripts* contains five scripts:
+- SETUP.BAT: sets the WinRM service to automatically start at boot and then runs WinRM.ps1 
+- WinRM.ps1: configures the WinRM service in the virtual machine to accept connections
+- autounattend.xml: Windows unattended setup file
+- sysprep.xml: used for sysprepping the virtual machine
+- unattend.xml: injected in the virtual machine when the building process is finished. Sets the opc and Administrator account password and enables ICMP on the virtual machine.
+- windows\_version-x86\_64.json - packer template
+
+To find out more details on how Windows Setup process works check https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/how-configuration-passes-work
+
+### Creating the image
+Validate the syntax and configuration of the template:
 ```
-PACKER_LOG=1 packer build image_name.json
+packer validate windows_version-x86_64.json
+```
+Build the image:
+```
+PACKER_LOG=1 packer build windows_version-x86_64.json
 ```
 
-#### Using the image
-After the image is built, a qcow2 image file will be created in a folder. The folder is specified by the *output_directory* parameter from the json template file.
+
+
+### Importing the image
+Once the building process is finished with success the *output_directory* will be created containing the QCOW2 image.
 
 In order to use the image, you will have to:
 * create an **Object Storage Bucket** in OCI
 * upload the resulting qcow2 image in the bucket
-* create a PAR for the object
-* add the PAR URL in the OCI console, under **Compute**, in the **Custom Image** section
+* Import image using Compute / Custom Images / Import Image dialog. Use the option IMPORT FROM AN OBJECT STORAGE BUCKET
 
-The new custom image can be used for creating new instances:
-* from the OCI console
-* from terraform code (by using the custom image OCID)
+Once the import process is successfully finished a new custom image will appear in Compute / Custom Images console. The new custom image can be
+used just like any other base image.
+
+## Known issues
+**At the moment, there are no known issues**

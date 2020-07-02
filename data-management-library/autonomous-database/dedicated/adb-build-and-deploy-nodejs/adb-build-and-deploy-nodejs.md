@@ -59,7 +59,7 @@ As an application developer,
 
     ```
     <copy>
-    wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/600/ATPDnode.zip?raw=true
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/b47YwTBhIc8MGxgoS7iNamnbK4oL3a6N7dP1aKHw7uU/n/atpdpreview11/b/adb-build-and-deploy-nodejs/o/ATPDnode.zip
     </copy>
     ```
 
@@ -178,6 +178,6 @@ And finally, lets edit the dbconfig.js file in /home/opc/ATPDnode/ATPDnode-maste
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

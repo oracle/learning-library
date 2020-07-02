@@ -1,5 +1,0 @@
-This image shows a page with details on the ATP database instance you just created. To the left is a large ATP icon. It's green to indicate the service is available. However, it's status is shown as "SCALING IN PROGESS" underneith the icon. This status is highlighted with a red rectangle
-
-To the right of the icon are buttons, from left to right: DB Connection, Service Concole, Scale Up/Down, Start/Stop, and Actions. The actions button is expandable to reveal more options. The button Scale Up/Down is highlighted with a red rectangle.
-
-Below the buttons are text details for the instance. This includes the CPU Core Count: 2. This is the fourth item listed in the left column. The item is highlighted by a red rectangle. This value will change to 4 when the scaling is complete.

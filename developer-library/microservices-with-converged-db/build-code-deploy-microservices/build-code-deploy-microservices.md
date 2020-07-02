@@ -41,12 +41,12 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 ## **STEP 2**: Build the Microservices image from the GitHub repo
 
-1. To work with application code, you need to download GitHub repository using
+1. To work with application code, you need to download a GitHub repository using
     the following command. The Cloud Shell already has the `wget` command
     installed:
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/S0A1BNckU3xKNW-XIQVgJ76ESgAtRIZ2sT47AOrBdjc/n/c4u03/b/labfiles/o/msdataworkshop-master.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZaegTuNX8_vVPyP6QF1W6LaMXdziREUN1U_8JUEU9Zw/n/c4u03/b/data-management-library-files/o/msdataworkshop-master.zip</copy>
     ```
 
 2. Unzip the file you downloaded:
@@ -55,8 +55,8 @@ In order to divide and isolate cluster resources, you will create a cluster
     <copy>unzip msdataworkshop-master.zip</copy>
     ```
 
-3.  You need to compile, test and package into a .jar file the Helidon front-end
-    application code using maven. The maven package is already installed in the
+3.  You need to compile, test and package the Helidon front-end
+    application code into a `.jar` file using maven. The maven package is already installed in the
     Cloud Shell. Inside Cloud Shell go to the frontend helidon microservice
     folder.
 
@@ -90,15 +90,15 @@ After you have successfully compiled the application code, you are ready to push
 
 1.  You will need the following parameters which you have already noted down in the previous Labs.
 
-    - `<region-key>` - is the Region identifier
-    - `<tenancy-namespace>` - is Object Storage namespace
-    - `<username>` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname`
+    - `REGION-ID` - is the Region identifier
+    - `OBJECT-STORAGE-NAMESPACE` - is Object Storage namespace
+    - `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
 
     ```
-    docker login <region-key>.ocir.io -u <tenancy-namespace>/<username>
+    <copy>docker login REGION-ID.ocir.io -u OBJECT-STORAGE-NAMESPACE/USERNAME<copy>
     ```
 
-    *When prompted for password use the Auth token you generated.*
+    *When prompted for password use the Auth token (msdataworkshoptoken) you generated.*
 
   ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
 
@@ -110,10 +110,10 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
-3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `vi` editor
+3.  For convenience, let’s store some environment variables into the `.bashrc` file. Open `bashrc` file with `nano` editor. Alternatively, you can use the `vi` editor if you are familiar with `vi`.
 
     ```
-    <copy>vi ~/.bashrc</copy>
+    <copy>nano ~/.bashrc</copy>
     ```
 
   ![](images/36b9360ef7998ffe686346031227258f.png " ")
@@ -121,19 +121,21 @@ After you have successfully compiled the application code, you are ready to push
 4. Append the following lines at the end of the file:
 
     ```
-    export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
+    <copy>export MSDATAWORKSHOP_LOCATION=~/msdataworkshop-master
     source $MSDATAWORKSHOP_LOCATION/shortcutaliases
     export PATH=$PATH:$MSDATAWORKSHOP_LOCATION/utils/
-    export DOCKER_REGISTRY="<region-key>.ocir.io/<tenancy-namespace>/<repo-name>"
+    export DOCKER_REGISTRY="REGION-ID.ocir.io/OBJECT-STORAGE-NAMESPACE/REPO-NAME"</copy>
     ```
 
-  Where `<region-key>` and `<tenancy-namespace>` are the same as in the previous step, and `<repo-name>` is the Repository full name when creating an OCIR repository.
+  Where `REGION-ID` and `OBJECT-STORAGE-NAMESPACE` are the same as in the previous step, and `REPO-NAME` is the Repository full name you created in the OCIR Registry (`firstname.lastname/msdataworkshop`). You can use `Ctrl+SHIFT+V` to paste text into nano.
 
   ![](images/86828131170ee9c9fdb11fe1641ef34b.png " ")
 
   ![](images/05cb8e8493d83f0db1e36ca85ac84b40.png " ")
 
-5. Source the newly created bashrc file with the following command.
+  Close nano with the commands `CTRL+X`, `SHIFT+Y`, and `ENTER`.
+
+5. Source the newly created `.bashrc` file with the following command.
 
     ```
     <copy>source ~/.bashrc</copy>
@@ -248,6 +250,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Paul Parkinson, Consulting Member of Technical Staff
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Last Updated By/Date** - Tom McGinn, April 2020
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+* **Last Updated By/Date** - Tom McGinn, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

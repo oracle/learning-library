@@ -3,8 +3,11 @@
 ## Table of Contents
 
 [Overview](#overview)
+
 [Pre-Requisites](#pre-requisites)
+
 [Create Your VCN](#create-your-vcn)
+
 [Summary](#summary)
 
 **Note:** *Some of the UIs might look a little different than the screen shots included in the instructions, but you can still use the instructions to complete the hands-on labs.*

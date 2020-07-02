@@ -1,1 +1,0 @@
-This image shows the Application Container section on the Oracle Application Container Cloud Service console, with the Instances button highlighted. 

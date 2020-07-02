@@ -6,7 +6,7 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 ![](./images/Infra/ConfigureDevEnv/Marketplace.png " ")
 
-
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 

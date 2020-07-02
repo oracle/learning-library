@@ -34,7 +34,7 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
-1. Download the terraform zip file [here](./files/python4atp-tf.zip).  Then unzip it.
+1. Download the terraform zip file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf.zip).  Then unzip it.
 
 2. Now create a private key (id\_rsa) and a public key (id\_rsa.pub). The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).  Enter this in a command shell or terminal window. 
   ````
@@ -128,7 +128,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/025.png " ")
 
-5. [Download the database export file](./files/expdp_alpha.dmp).
+5. [Download the database export file](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/expdp_alpha.dmp).
 
 6. Go back to the console, and click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Core Infrastructure** section, select **Object Storage** then **Object Storage** .
 
@@ -204,18 +204,18 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/040.png " ")
 
-9. Import the data.  Paste this into your worksheet window.  The ONLY THING you need to change is the object storage file location.  
+9. Import the data.  Paste this into your worksheet window.   
   ```
-  <copy>
-  set scan off
-  set serveroutput on
-  set escape off
-  DECLARE
+<copy>
+set scan off
+set serveroutput on
+set escape off
+DECLARE
     s varchar2(1000); 
     h1 number;
     errorvarchar varchar2(100):= 'ERROR';
     tryGetStatus number := 0;
-  begin
+begin
     h1 := dbms_datapump.open (operation => 'IMPORT', job_mode => 'SCHEMA', job_name => 'IMPALPHA', version => 'COMPATIBLE'); 
     tryGetStatus := 1;
     dbms_datapump.set_parameter(h1, 'TRACE', 167144-96) ; 
@@ -226,28 +226,28 @@ Terraform provides a reusable process for creating infrastructure.  In some case
     dbms_datapump.add_file(handle => h1, filename => 'IMPORT-'||to_char(sysdate,'hh24_mi_ss')||'.LOG', directory => 'DATA_PUMP_DIR', filetype=>DBMS_DATAPUMP.KU$_FILE_TYPE_LOG_FILE); 
     dbms_datapump.set_parameter(handle => h1, name => 'KEEP_MASTER', value => 1); 
     dbms_datapump.metadata_filter(handle => h1, name => 'SCHEMA_EXPR', value => 'IN(''ALPHA'')'); 
-  -----------------------------------------------------
-    dbms_datapump.add_file(handle => h1, filename => '&lt;object storage file location&gt;', directory => 'PY4DEV_TOKEN', filetype =&gt; 5);
-  -----------------------------------------------------
+-----------------------------------------------------
+    dbms_datapump.add_file(handle => h1, filename => '&lt;object storage file location&gt;', directory => 'PY4DEV_TOKEN', filetype => 5);
+-----------------------------------------------------
     dbms_datapump.set_parameter(handle => h1, name => 'INCLUDE_METADATA', value => 1); 
     dbms_datapump.set_parameter(handle => h1, name => 'DATA_ACCESS_METHOD', value => 'AUTOMATIC'); 
     dbms_datapump.set_parameter(handle => h1, name => 'SKIP_UNUSABLE_INDEXES', value => 0);
     dbms_datapump.start_job(handle => h1, skip_current => 0, abort_step => 0); 
     dbms_datapump.detach(handle => h1); 
     errorvarchar := 'NO_ERROR'; 
-  EXCEPTION
+EXCEPTION
     WHEN OTHERS THEN
     BEGIN 
-      IF ((errorvarchar = 'ERROR')AND(tryGetStatus=1)) THEN 
-        DBMS_DATAPUMP.DETACH(h1);
+        IF ((errorvarchar = 'ERROR')AND(tryGetStatus=1)) THEN 
+            DBMS_DATAPUMP.DETACH(h1);
         END IF;
-      EXCEPTION 
-      WHEN OTHERS THEN 
+    EXCEPTION 
+    WHEN OTHERS THEN 
         NULL;
-      END;
-      RAISE;
-  END;
-  /</copy>
+    END;
+    RAISE;
+END;
+/</copy>
   ```
 
   ![](images/041.png " ")

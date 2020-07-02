@@ -6,11 +6,11 @@ Oracle Database In-Memory (Database In-Memory) is a suite of features, first int
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-ssworkshop.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
+[![](./images/screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/screenshot-livelabs.png)](https://oracle.github.io/learning-library/data-management-library/database/in-memory/livelabs/index.html)
 
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html)
-- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/in-memory/ssworkshop/index.html)
+- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/in-memory/livelabs/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!

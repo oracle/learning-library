@@ -65,7 +65,7 @@ As an application developer,
 
     ```
     <copy>
-    wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/700/ATPDpython.zip?raw=true
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/DhTOXBBDCJI5b-lStlkobmgro1fVMUgj8yZ3NArH_t4/n/atpdpreview11/b/adb-build-python-apps/o/ATPDpython.zip
     </copy>
     ```
 
@@ -176,6 +176,6 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

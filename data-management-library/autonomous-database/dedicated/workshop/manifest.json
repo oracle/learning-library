@@ -169,6 +169,22 @@
             "filename": "./../adb-event-notifications/adb-event-notifications.md"
         },
         {         
+            "title": "Lab 21: Oracle Analytics Cloud",
+            "description": "Connect OAC with Dedicated database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "05/19/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-connect-oac/adb-connect-oac.md"
+        },
+        {         
+            "title": "Lab 22: Automatic Indexing",
+            "description": "Automatic Indexing .",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "06/16/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-automatic-indexing/adb-automatic-indexing.md"
+        },
+        {         
             "title": "Appendix",
             "description": "Common tools for windows Users Finding the IP address of your AEI Cluster.",
             "partnumber": "Ennnnn_01",

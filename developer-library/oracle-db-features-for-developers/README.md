@@ -7,11 +7,11 @@ Click on one of our workshops below to access the content.
 
 ## Workshops
 
-- [Database Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/) 
-- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier) 
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
-- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier) 
-- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
+- [Database Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/)
+- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier)
+- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier)
+- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier)
+- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -33,7 +33,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Application Express (APEX)l](https://apex.oracle.com/en/)
 
 ## Videos
-- [How I automated by barn using Oracle Autonomous Database - Todd Sharp](https://developer.oracle.com/?ytid=iaesH24B9zg)
+- [How I automated my barn using Oracle Autonomous Database - Todd Sharp](https://developer.oracle.com/?ytid=iaesH24B9zg)
 - [Oracle Developers Channel](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g)
 - [Oracle Product Management](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 

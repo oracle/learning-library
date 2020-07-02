@@ -12,8 +12,6 @@
 
 [ssh to compute instance and test VCN peering](#ssh-to-compute-instance-and-test-vcn-peering)
 
-[Testing Console Connection to the compute instance](#testing-console-connection-to-the-compute-instance)
-
 [Delete the resources](#delete-the-resources)
 
 
@@ -71,7 +69,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
 *************
-2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
@@ -385,102 +383,6 @@ ping <PRIVATE_IP_OF_SECOND_COMPUTE_INSTANCE>
 **Verify the ping is successful**
 
 If ping is successful then we have successfuly created VCN peering across two different VCNs
-
-## Testing Console Connection to the compute instance
-
-1. Navigate to compute instance details page by Clicking one of the compute instance name
-
-2. Under Resources section on the Instance Details page, Click **Console Connections**, and then **Create Console Connection**.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_010.PNG" alt="image-alt-text">
-
-3. Add your public SSH key, by pasting the ssh key created earlier and Click **Create Console Connection** Refresh the screen and you will see an Active Console Connection
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_011.PNG" alt="image-alt-text">
-
-4. Click the Actions icon (three dots), and then **Connect with SSH**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_012.PNG" alt="image-alt-text">
-
-5. Select LINUX/MAC OS for PLATFORM, Click Copy and paste the command in Note Pad.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_013.PNG" alt="image-alt-text">
-
-6. Since we are using locally generated ssh keys, the command needs to be modified. Add ssh key path in the command as shown below in Yellow highlighted
-
-**Note:** We will run the command from the directory where ssh keys are stored and thus specifying entire PATH won't be neccessary
-
-```bash
-ssh -i /<path>/<ssh_key> -o ProxyCommand='ssh -i /<path>/<ssh_key> -W %h:%p -p 443...
-```
-
-7. Switch to gitbash window, If the ssh session to compute instance is active then type **Exit** to close the session.  Enter command 
-```
-ls
-```
-and verify the ssh key files are listed. If Not then switch to the directory where ssh key files are stored. Paste the ssh command from Note pad.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_014.PNG" alt="image-alt-text">
-
-**NOTE:** Once you are connected with an instance console connection, you can perform various tasks, such as:
-
-Edit system configuration files.
-
-Add or reset the SSH keys for the opc user.
-
-Both of these tasks require you to boot into a bash shell, in maintenance mode.
-
-8. **Reboot the instance from the Console**. In the Console, in the Instances Details page, Click **Reboot**.Once the reboot process starts, switch back to gitbash terminal,  Console messages start to appear. As soon as you see the GRUB boot menu appear, use the up/down arrow key to stop the automatic boot process,enabling you to use the boot menu.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_015.PNG" alt="image-alt-text">
-
-9. In the boot menu, highlight the top item in the menu, and type e to edit the boot entry.
-
-10. In edit mode, use the down arrow key to scroll down through the entries until you reach the line that starts with either linuxefi for instances running Oracle Linux 7.x, or kernel for instances running Oracle Linux 6.x.
-
-11. At the end of that line, add the following:
-```
-init=/bin/bash
-```
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_016.PNG" alt="image-alt-text">
-
-12. Reboot the instance from the terminal window by entering the keyboard shortcut CTRL+x.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_017.PNG" alt="image-alt-text">
-
-13. Now your instance is on Maintenance Mode and you can replace your SSH.
-
-14. From the Bash shell, run the following command to load the SELinux policies to preserve the context of the files you are modifying:
-```
-/usr/sbin/load_policy -i
-```
-
-15. Run the following command to remount the root partition with read/write permissions:
-```
-/bin/mount -o remount, rw /
-```
-
-16. From the Bash shell, run the following command to change to the SSH key directory for the opc user:
-```
-cd ~opc/.ssh
-```
-
-17. Rename the existing authorized keys file with the following command:
-```
-mv authorized_keys authorized_keys.old
-```
-
-18. Open a new Git bash window session and generate new ssh key pair. Replace the contents of the public key file with the new public key file with the following command:
-```
-echo '<contents of .pub key file>' >> authorized_keys
-```
-
-19. Restart the instance by running the following command:
-```
-/usr/sbin/reboot -f
-```
-20. Now you can login to your instance using the new SSH key.
 
 
 ## Delete the resources

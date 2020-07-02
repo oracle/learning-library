@@ -73,7 +73,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
    - **Attachement mode:** iSCSI
    - **Block Volume:** Select the volume created
    - **Device Path:** Select `/dev/oracleoci/oraclevdb`
-   - Cick **Attach**
+   - Click **Attach**
  
    ![](media/Attached2.png)
 

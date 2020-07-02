@@ -60,11 +60,12 @@ The totals and data in your reports will most likely be different than the repor
 - In the report, identify the following activities. Try to determine which statements are expected and which might be related to a breach. Create filters to help you find the information. Click on the **+ Filter** button to add these filters.
   - Logins made by the HCM1 user. To do this, create two filters: 1) **Event = LOGON**, and 2) **DB User = HCM1**.
   ![](./images/dbsec/datasafe/auditing/filter.png " ")
-  - **DDL statements**. To do this, at the top of the report, click **DDLs**.
+- Let's take a look at a few of the other items:
+    - **DDL statements**. To do this, at the top of the report, click **DDLs**.
   ![](./images/dbsec/datasafe/auditing/ddl-filter.png " ")
-  - **DML statements**. To do this, at the top of the report, click **DMLs**.
-  - **User entitlement changes**. To do this, at the top of the report, click **Privilege Changes**.
-  - **User changes**. To do this, at the top of the report, click **User Changes**.
+    - **DML statements**. To do this, at the top of the report, click **DMLs**.
+    - **User entitlement changes**. To do this, at the top of the report, click **Privilege Changes**.
+    - **User changes**. To do this, at the top of the report, click **User Changes**.
 - At the top of the report, view totals for targets, DB users, client hosts, login successes, login failures, user changes, privilege changes, DDLs, and DMLs. How many privilege changes do you see?
 
 ![](./images/dbsec/datasafe/auditing/filter-totals.png " ")
@@ -152,7 +153,7 @@ How many client hosts have connected to your database?
 
 ![](./images/dbsec/datasafe/auditing/login-activity.png " ")
 
-- Set a filter by selecting **Operation Status= FAILURE** (no quotes).
+- Set a filter by selecting **Operation Status= FAILURE**.
 - Click **Apply**.
 
 ![](./images/dbsec/datasafe/auditing/operation-status-failure.png " ")
@@ -160,12 +161,12 @@ How many client hosts have connected to your database?
 - Save the report:
   - From the **Report Definition** menu, select **Save As New**.
   ![](./images/dbsec/datasafe/auditing/save-as-new.png " ")
-  - In the **Save As** dialog box, enter the report name **<user name> Failed Logins**, for example, **Failed Logins Report**.
+  - In the **Save As** dialog box, enter the report name **<user name> Failed Logins**, for example, and **Failed Logins Report** as a description.
   ![](./images/dbsec/datasafe/auditing/save-as.png " ")
   - Enter an optional description.
   - Select your resource group.
   - Click **Save As**.
-  - A confirmation message states "Successfully created the report."
+  - A confirmation message states "Successfully created the report.".
 
 ![](./images/dbsec/datasafe/auditing/save-confirm.png " ")
 
@@ -227,15 +228,15 @@ A confirmation message states that the report is generated successfully.
 - Click **Save As**. The report is saved.
 ![](./images/dbsec/datasafe/auditing/all-activity-save-as.png " ")
 - Click the **Reports** tab.
-- Under **Custom Reports** at the top of the list, notice that your report is listed. (If your new report is not listed, please refresh the browser window.)
+- Under **Custom Reports** at the top of the list, notice that your report is listed. (If your new report is not listed, please refresh the browser window).
 ![](./images/dbsec/datasafe/auditing/custom-report-usage.png " ")
-- Click the** <user name> HCM1 Account Usage** report to view it.
+- Click the **<user name> HCM1 Account Usage** report to view it.
 
 ### Step 6: Explore which users entitlements were changed
 
 - Click the **Reports** tab.
 - In the left pane, click **Activity Auditing**, and then click **User/Entitlement Changes**.
-- Set a filter by selecting **DB USER Not In SYS, ADMIN** (no quotes).
+- Set a filter by selecting **DB USER Not In SYS, ADMIN**.
 - Click **Apply**.
 
 ![](./images/dbsec/datasafe/auditing/db-user-filter.png " ")
@@ -270,7 +271,7 @@ View this report to identify which schema objects were modified by the ADMIN use
 - Click the **Reports** tab.
 - In the left pane under **Activity Auditing**, click **Database Schema Changes**.
 - Set a filter by selecting **DB User = SYS**.
-- Click Apply.
+- Click **Apply**.
 - Examine the report to view the changes made by the **SYS** user.
 - Click a row to view the details.
 

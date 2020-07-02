@@ -1,0 +1,45 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "./../intro/intro.md"
+        },
+        {
+          "title": "Sign Up for a Free Trial",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+          "title": "Lab 1: Provision a DevCS Instance",
+          "filename": "./../provision-devcs/provision-devcs.md"
+        },
+        {
+          "title": "Lab 2: Build Virtual Machines in Developer Cloud Service",
+          "filename": "./../build-vm-configuration/build-vm-configuration.md"
+        },
+        {
+          "title": "Lab 3: Create a Kubernetes Cluster",
+          "filename": "./../create-oke-cluster/create-oke-cluster.md"
+        },
+        {
+          "title": "Lab 4: Install the Front-end Client",
+          "filename": "./../install-client/install-client.md"
+        },
+        {
+          "title": "Lab 5: Import a Developer Cloud Service Project",
+          "filename": "./../import-devcs-project/import-devcs-project.md"
+        },
+        {
+          "title": "Lab 6: Configure the Project to Match the Kubernetes Cluster",
+          "filename": "./../configure-devcs-project-oke/configure-devcs-project-oke.md"
+        },
+        {
+          "title": "Lab 7: Test the Implementation",
+          "filename": "./../test-implementation/test-implementation.md"
+        },
+        {
+          "title": "Lab 8: Create a Digital Assistant User Interface",
+          "filename": "./../create-digital-assistant/create-digital-assistant.md"
+        }
+
+    ]
+}

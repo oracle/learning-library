@@ -44,64 +44,51 @@ Any software client you use to connect to Oracle Cloud Infrastructure must be co
 
 To create a user API key, you will use `openssl` on your local system. If you are using Windows, we recommend the Git Bash Shell.
 
-3. Create a `~/.oci` directory:
+1. Create a `~/.oci` directory:
 
     *Note: if you already have a .oci directory, you can skip this step.*
 
     ```
-    $ <copy>mkdir ~/.oci</copy>
-    $
+    <copy>mkdir ~/.oci</copy>
     ```
 
-4. Generate a private key with the following command. On Windows, you will not see a prompt for a passphrase, but you should use one that you can remember. Be sure to make a note of the passphrase you enter, as you will need it later.
+    ![](images/mkdir-oci.png " ")
+
+2. Generate a private key with the following command. On Windows, you will not see a prompt for a passphrase, but you should use one that you can remember. Be sure to make a note of the passphrase you enter, as you will need it later.
 
     ```
-    $ <copy>openssl genrsa -out ~/.oci/oci_api_key_private.pem -aes128 -passout stdin 2048</copy>
-    {passphrase}
-    Generating RSA private key, 2048 bit long modulus (2 primes)
-    ..........................................................+++++
-    .................................................................................................................................+++++
-    e is 65537 (0x010001)
-
-    $
+    <copy>openssl genrsa -out ~/.oci/oci_api_key_private.pem -aes128 -passout stdin 2048</copy>
     ```
 
-5. Confirm that the private key file has been created in the directory you specified using the following command.
+    ![](images/create-pem-key.png " ")
+
+3. Confirm that the private key file has been created in the directory you specified using the following command.
 
     ```
-    $ <copy>ls -l ~/.oci</copy>
-    total 4
-    -rw-r--r-- 1 <user> 197121 1796 Apr 30 14:29 oci_api_key_private.pem
-
-    $
+    <copy>ls -l ~/.oci</copy>
     ```
+
+    ![](images/check-pem-key.png " ")
 
 6. Change permissions on the file to ensure that only you can read it.
 
     ```
-    $ <copy>chmod go-rwx ~/.oci/oci_api_key_private.pem</copy>
-    $
+    <copy>chmod go-rwx ~/.oci/oci_api_key_private.pem</copy>
     ```
+    ![](images/change-permissions.png " ")
 
 7. Generate a public key in the same location as the private key file using the following command. Enter the same passphrase you previously used to encrypt the private key file. *Note: there is no prompt on Windows.*
 
     ```
-    $ <copy>openssl rsa -pubout -in ~/.oci/oci_api_key_private.pem -out ~/.oci/oci_api_key_public.pem -passin stdin</copy>
-    {passphrase}
-    writing RSA key
-
-    $
+    <copy>openssl rsa -pubout -in ~/.oci/oci_api_key_private.pem -out ~/.oci/oci_api_key_public.pem -passin stdin</copy>
     ```
+
+    ![](images/generate-public-key.png " ")
 
 8. Confirm that the public key file has been created in the directory you specified.
 
     ```
-    $ <copy>ls -l ~/.oci</copy>
-    total 5
-    -rw-r--r-- 1 <user> 197121 1796 Apr 30 14:29 oci_api_key_private.pem
-    -rw-r--r-- 1 <user> 197121  460 Apr 30 14:39 oci_api_key_public.pem
-
-    $
+    <copy>ls -l ~/.oci</copy>
     ```
 
 11. Having created the API key pair, upload the public key value to Oracle Cloud Infrastructure. In the top-right corner of the Console, open the Profile menu again and then click **User Settings** to view the details.

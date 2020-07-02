@@ -9,6 +9,11 @@
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
 
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[![Lab 300 Walkthrough Video](./images/lab300tn.png " ")](https://www.youtube.com/watch?v=Zq0qEgF0bMU "Lab 300 Walkthrough Video - Click to Watch!")
+
+
 ### Objectives
 -   Learn how to enable Oracle Restful Data Services (ORDS) with APEX
 -   Learn how to import SQL queries as APIs in APEX
@@ -56,7 +61,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/8.png " ")
 
-2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](./files/ORDS-REST-DEMO.sql). Then, return back to your browser window.
+2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kKVRLnqKZkJCLhySyrSngqQ_5riJ8pGGmbepcgy0c8w/n/c4u03/b/solutions-library/o/ORDS-REST-DEMO.sql). Then, return back to your browser window.
 
 3. Click on **Choose File** and select **ORDS-REST-DEMO.sql**, the file you just downloaded for this workshop.
 
@@ -140,7 +145,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ### **STEP 2**: Add API URLs to Web Page Code
 
-1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](./files/WebPage.zip).
+1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SM0gd1zQgGI-O7fL3k3fUTP2zjsH7L6AEjc0WS_ckDk/n/c4u03/b/solutions-library/o/WebPage.zip).
 
 2. Then, go to your Downloads folder and unzip the .zip file.
 
@@ -182,8 +187,8 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ## Acknowledgements
 
-- **Author** - NATD Solution Engineering - Austin Hub (Jess Rein, Philip Pavlov)
-- **Last Updated By/Date** - Jess Rein, Solutions Engineer, March 2020
+- **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
 

@@ -224,6 +224,24 @@
         "filename": "Creating_an_Apex_Application.md"
       },
       {
+        "title": "Lab 17: Introduction to Swingbench and Oracle database",
+        "description": "Introduction to Swingbench and Oracle database",
+        "publisheddate": "5/18/2020",
+        "filename": "Swingbench.md"
+      },
+      {
+        "title": "Lab 18: Docker Application with EXACS",
+        "description": "Docker Application with EXACS",
+        "publisheddate": "5/18/2020",
+        "filename": "dockerapp.md"
+      },
+      {
+        "title": "Lab 19: Connect Oracle Analytics Cloud with your Exadata Cloud Service Database",
+        "description": "OAC to EXACS",
+        "publisheddate": "6/10/2020",
+        "filename": "oac.md"
+      },
+      {
         "title": "Appendix",
         "description": "Appendix",
         "publisheddate": "4/20/2020",

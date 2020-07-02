@@ -1,22 +1,20 @@
-# Module 2: Adding JavaScript to APEX Apps
+# Lab 2: Adding JavaScript to APEX Apps
 
-## Module overview
+## Lab overview
 
-Up to this point, you have been working with JavaScript outside of APEX. In this module, you will learn the most common ways to add JavaScript to APEX applications. The options include Dynamic Actions, Dynamic Actions with JavaScript hooks, page- and component-level attributes, and application files. 
+Up to this point, you have been working with JavaScript outside of APEX. In this Lab, you will learn the most common ways to add JavaScript to APEX applications. The options include Dynamic Actions, Dynamic Actions with JavaScript hooks, page- and component-level attributes, and application files. 
 
 Think of these options as a progression, with each one requiring more knowledge of JavaScript, APEX's JavaScript APIs, and web development in general. New APEX developers should start by learning Dynamic Actions and progress to subsequent options only when they are ready and the application requirements cannot be satisfied without a more advanced approach. Generally speaking, the more declarative the solution, the easier it will be to implement and maintain.
 
-<a href="https://www.youtube.com/watch?v=-l6E5LuNU3U&list=PLUo-NIMouZ_sgdQpMbXXwhHKpwRggCY34&index=3" target="_blank">
-  <img src="http://img.youtube.com/vi/-l6E5LuNU3U/0.jpg" alt="Video for Module 2" width="240" height="180" border="5" />
-</a>
+Play the video below to learn about for this lab.
 
-Click the image above to access the video for this module. <a href="https://www.slideshare.net/DanielMcGhan/module-2-adding-javascript-to-apex-apps" target="_blank">Click here</a> to view the slides.
+[](youtube:-l6E5LuNU3U)
 
-***To log issues***, click here to go to the <a href="https://github.com/oracle/learning-library/issues/new" target="_blank">github oracle</a> repository issue submission form.
+<a href="https://www.slideshare.net/DanielMcGhan/module-2-adding-javascript-to-apex-apps" target="_blank">Click here</a> to view the slides.
 
-## **Part 1:** Using Dynamic Actions
+## **Step 1:** Using Dynamic Actions
 
-Dynamic Actions are the easiest way to add JavaScript to an application in APEX. Often times, they can be completely declarative (no code needed). In this part, you will create a Dynamic Action that hides and shows page components based on the value of an item.
+Dynamic Actions are the easiest way to add JavaScript to an application in APEX. Often times, they can be completely declarative (no code needed). In this step, you will create a Dynamic Action that hides and shows page components based on the value of an item.
 
 1.  Log in to your APEX Workspace. If you created the Workspace using the instructions in the introduction to this lab, then the **Workspace** and **Username** will be `DEMO` and the **Password** will be `SecretPassw0rd`.
 
@@ -72,13 +70,13 @@ Dynamic Actions are the easiest way to add JavaScript to an application in APEX.
 
     ![](images/product-details-2.png)
     
-## **Part 2:** Using Dynamic Actions with JavaScript hooks
+## **Step 2:** Using Dynamic Actions with JavaScript hooks
 
 The Dynamic Action framework provides various JavaScript hooks, or features that are geared toward developers that know a little JavaScript. These features can make the framework much more powerful and flexible.
 
-In this part, you will use these features in the Dynamic Action you created in the previous part. The end result will be the same, but you will have a better idea of the JavaScript hooks available to you when needed. 
+In this step, you will use these features in the Dynamic Action you created in the previous step. The end result will be the same, but you will have a better idea of the JavaScript hooks available to you when needed. 
 
-1.  Return to the Page Designer for page 6 and select the Dynamic Action created in the previous part. 
+1.  Return to the Page Designer for page 6 and select the Dynamic Action created in the previous step. 
 
     ![](images/select-dynamic-action.png)
 
@@ -86,7 +84,7 @@ In this part, you will use these features in the Dynamic Action you created in t
 
     ![](images/when-javascript.png)
 
-    These settings are the same as the declarative ones. You will learn more about events, jQuery, and jQuery selectors in the next module.
+    These settings are the same as the declarative ones. You will learn more about events, jQuery, and jQuery selectors in the next lab.
 
 3.  In the **Client-side Condition** section, set **Type** to **JavaScript Expression** and **JavaScript Expression** to this code: `$v(this.triggeringElement.id) === 'Y'`
 
@@ -111,17 +109,20 @@ In this part, you will use these features in the Dynamic Action you created in t
 7.  In the right pane, set **Action** to **Execute JavaScript** and put the following code in the **Code** attribute.
 
     ```
+    <copy>
     $('#product-image-reg').show();
     $('#P6_PRODUCT_IMAGE')
-      .closest('.t-Form-fieldContainer')
-      .show();
+    .closest('.t-Form-fieldContainer')
+    .show();
+    </copy>
     ```
 
-    That code uses DOM traversal and manipulation methods that will be explained in the next module. The action should appear as follows.
+
+    That code uses DOM traversal and manipulation methods that will be explained in the next lab. The action should appear as follows.
 
     ![](images/show-javascript.png)
 
-8.  Set the **Fire on Initialization** attribute to **Yes**.
+8.  Set the **Fire on Initialization** attribute to **On**.
 
     ![](images/fire-on-init.png)
 
@@ -132,25 +133,28 @@ In this part, you will use these features in the Dynamic Action you created in t
 10. In the right pane, set **Action** to **Execute JavaScript** and put the following code in the **Code** attribute.
 
     ```
+    <copy>
     $('#product-image-reg').hide();
     $('#P6_PRODUCT_IMAGE')
-      .closest('.t-Form-fieldContainer')
-      .hide();
+    .closest('.t-Form-fieldContainer')
+    .hide();
+    </copy>
     ```
 
-    The action should appear as follows.
+
+   The action should appear as follows.
 
     ![](images/show-javascript-2.png)
 
-11. Set the **Fire on Initialization** attribute to **Yes**.
+11. Set the **Fire on Initialization** attribute to **On**.
 
     ![](images/fire-on-init-2.png)
 
 12. Save your changes and re-open the form page. Everything should work exactly as before. Hopefully you'll agree that the declarative options are much simpler than using the JavaScript hooks. However, when you need the flexibility they provide, you'll be glad the hooks are there!
 
-## **Part 3:** Using Page and Component level attributes
+## **Step 3:** Using Page and Component level attributes
 
-In addition to Dynamic Actions, there are various attributes at the page and component level that are made for JavaScript. In this part, you'll learn where those attributes are and how they are used.
+In addition to Dynamic Actions, there are various attributes at the page and component level that are made for JavaScript. In this step, you'll learn where those attributes are and how they are used.
 
 1.  Return to the Page Designer for page 1, the home page, and select the root element in the tree under the rendering tab. 
 
@@ -159,14 +163,22 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 2.  In the right pane, scroll down through the properties until you find the **JavaScript** section. Put the following function in the **Function and Global Variable Declaration** property.
 
     ```
+    <copy>
     function doWork() {
       console.log('doWork fired!');
     }
+    </copy>
     ```
 
     The code in that property executes in the global scope - before the DOM load event and APEX components are initialized. 
 
-    Next, add this code to the **Execute when Page Loads** property: `doWork();`
+    Next, add this code to the **Execute when Page Loads** property: 
+
+    ```
+    <copy>
+    doWork();
+    </copy>
+    ```
 
     Code in that property executes in a function scope - after the DOM load event and APEX components have been initialized.
 
@@ -174,7 +186,7 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
     ![](images/javascript-page-properties.png)
 
-3.  Save your changes and run the home page with the browser console open. You should see a message when the `doWork` function is invoked. While this simple example doesn't do anything functional, you'll learn more about the types of things you can do in the next module.
+3.  Save your changes and run the home page with the browser console open. You should see a message when the `doWork` function is invoked. While this simple example doesn't do anything functional, you'll learn more about the types of things you can do in the next lab.
 
     ![](images/console-open.png)
 
@@ -185,17 +197,20 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 5.  Navigate to the Page Designer for page 16 and drill down on the **Attributes** of the **Sales by Category** region. Scroll down through the properties until you come to **JavaScript Initialization Code**, then copy the following function to that field.
 
     ```
+    <copy>
     function(options) {
       options.dataFilter = function(data) {
         data.series[0].color = '#0B6623';
         data.series[1].color = '#9DC183';
         data.series[2].color = '#708238';
         
-        return data;
+
+
+            return data;
       };
-      
       return options;
     }
+    </copy>
     ```
 
     This anonymous function accepts an options object and modifies it by adding a `dataFilter` function. The `dataFilter` function gives each series in the chart an explicit color.
@@ -206,13 +221,14 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
     ![](images/sales-by-category-3.png)
 
-## **Part 4:** Using Static Files
+## **Step 4:** Using Static Files
 
-In the last part, you added JavaScript code directly to page and component level attributes. For performance and reusability reasons, it can be beneficial to move JavaScript code to Static Files instead. While you don't have enough JavaScript code in the Sample Database Application to realize those benefits, in this part, you'll move the code added previously to Static Files to see how it's done.
+In the last step, you added JavaScript code directly to page and component level attributes. For performance and reusability reasons, it can be beneficial to move JavaScript code to Static Files instead. While you don't have enough JavaScript code in the Sample Database Application to realize those benefits, in this step, you'll move the code added previously to Static Files to see how it's done.
 
 1.  The following code contains the `doWork` function that's being invoked on the home page and the function that's styling the colors of the Sales by Category chart. The only change to the second function is that it now has a name (it was an anonymous function before). Save the code in a new file on your computer named **sample-db-app.js**.
 
     ```
+    <copy>
     function doWork() {
       console.log('doWork fired!');
     }
@@ -228,6 +244,7 @@ In the last part, you added JavaScript code directly to page and component level
       
       return options;
     }
+    </copy>
     ```
 
 2.  Navigate to the **Shared Components** > **Static Application Files**. Click **Upload File**, use the **File(s)** item to pick the **sample-db-app.js** file created in the previous step, and then click **Upload**. Note the string in the **Reference** column for the newly uploaded file: **#APP_IMAGES#sample-db-app.js**. You will make use of that in the proceeding steps.
@@ -252,6 +269,12 @@ In the last part, you added JavaScript code directly to page and component level
 
 7.  Save your changes and run the page. You should see the same message from the `doWork` function as before, only now the function is defined in the static file.
 
-## Summary
+## **Summary**
 
-This completes Module 2. At this point, you should have a solid understanding of the options available for adding JavaScript to APEX applications. [Click here](?module=working-with-the-dom-and-jquery) to navigate to Module 3.
+This completes Lab 2. At this point, you should have a solid understanding of the options available for adding JavaScript to APEX applications. Please proceed to Lab 3.
+
+## **Acknowledgements**
+ - **Author/Contributors** -  Dan McGhan, Database Product Management
+ - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
+
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
