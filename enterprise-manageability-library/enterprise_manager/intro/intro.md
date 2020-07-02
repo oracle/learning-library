@@ -5,8 +5,6 @@ Oracle Enterprise Manager is Oracle’s on-premise management platform that prov
 
 Watch the video below for an how [Oracle Enterprise Manager delivers Next-gen automation](https://www.oracle.com/enterprise-manager/?bcid=6122657568001).
 
-[](youtube:https://www.oracle.com/enterprise-manager/?bcid=6122657568001)
-
 ## Enterprise Manager Management Packs
 
 Brief intro summary on EM Database Management Packs ...........
