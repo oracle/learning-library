@@ -9,9 +9,9 @@ Applicable User Roles in the Organization:
 
 ### Background
 
-The estimated time to complete all the lab activities is approximately 60 minutes.
+The estimated time to complete all the Step activities is approximately 60 minutes.
 
-| **No** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
+| **Step No** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
 |--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1    | Create a Pluggable Database (PDB)                                      | 10min                     | Create Pluggable database (PDB) within a CDB and run a post-script to lock/unlock accounts.                                                                                  | Create multiple PDBs with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                                           |
 | 2    | Un-plug/Plug an existing Pluggable Database | 10min                     | Un-plug a PDB and later Plug it back in a CDB when needed (Create from unplugged)                                                                                                                       | Unplug a PDB when not needed and plug it back as per need hence maximizing resource utilization in your organization. Easily upgrade PDBs with few clicks by moving from one container to another.                                                                                                                  |
@@ -25,16 +25,16 @@ The estimated time to complete all the lab activities is approximately 60 minute
 Prior to starting, you will need:
 
 - EM Instance Public IP address
-- [OMS Console URL:](http://<Public-IP>:7803/em)
+- OMS Console URL: http://\{Public-IP\}:7803/em
 - OMS super-user Credentials:
     -   Username: **sysman**
     -   password: **welcome1**
 
-## Lab 1: Create Pluggable Database (PDB)
+## Step 1: Create Pluggable Database (PDB)
 
 1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet. The Enterprise Manager credentials are “**sysman/welcome1**”.
 
-2.  **Navigate** to the “Enterprise menu >> Provisioning and Patching >> Database provisioning”.
+2.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
 ![](images/167e561726cc8d0a58d8b90a37274b06.jpg)
 
@@ -48,13 +48,13 @@ Prior to starting, you will need:
 
 ![](images/2248640eabc0efa2fb32293ec07fb389.jpg)
 
-6.  Use the named credentials (CDB186_SYS) for login
+6.  Use the named credentials (CDB186\_SYS) for login
 
 ![](images/8741cbb813d375a296f8344f4beaeb7e.jpg)
 
 ![](images/9be6823423a692b7e1f0e240c10567c9.jpg)
 
-7.  In the Source page of the Create Pluggable Database Wizard, in the Source Type section, **select** Create a new PDB . **Select** Named credentials “ORACLE”In the Identification page, **enter** a unique name for the PDB you are creating (your initial_pdb). **Optionally**, **select** check box to “create multiple DBs” and put **2** as number of copies.
+7.  In the Source page of the Create Pluggable Database Wizard, in the Source Type section, **select** Create a new PDB . **Select** Named credentials “ORACLE”In the Identification page, **enter** a unique name for the PDB you are creating (your initial\_pdb). **Optionally**, **select** check box to “create multiple DBs” and put **2** as number of copies.
 
 8.  In the PDB Administrator section, **enter** the credentials of the admin user account you need to create for administering the PDB. **UserName**: pdbadmin **Password**: welcome1 **Click** Next.
 
@@ -84,9 +84,9 @@ Prior to starting, you will need:
 
 ![](images/657ef309d7087942b8d871256a359050.jpg)
 
-## Lab 2: Un-plug/Plug an Existing Pluggable Database (PDB)
+## Step 2: Un-plug/Plug an Existing Pluggable Database (PDB)
 
-1. **Navigate** to the “Enterprise menu >> Provisioning and Patching >> Database provisioning”.
+1. **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
 ![](images/167e561726cc8d0a58d8b90a37274b06.jpg)
 
@@ -114,7 +114,7 @@ Prior to starting, you will need:
 
 ![](images/bdbafe949b2bc880e2a09b82f9edaf8a.jpg)
 
-8.  You can **Navigate to Targets >> Databases,** Click on CDB186 and you will see the PDB you unplugged is no longer in the list.
+8.  You can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the PDB you unplugged is no longer in the list.
 
 9.  Let us continue to next steps and plug the same PDB back into the container database. Navigate to the “Enterprise menu >> Provisioning and Patching >> Database provisioning”.
 
@@ -136,7 +136,7 @@ Prior to starting, you will need:
 
 ![](images/5427807b6e4c677bd991497cfc5468ce.jpg)
 
-14. In the Identification page, enter a unique name for the PDB you are plugging in. **Select** Create As Clone to ensure that Oracle Database generates unique PDB DBID, GUID, and other identifiers expected for the new PDB. **Enter** PDB name like “clone_pdb”.
+14. In the Identification page, enter a unique name for the PDB you are plugging in. **Select** Create As Clone to ensure that Oracle Database generates unique PDB DBID, GUID, and other identifiers expected for the new PDB. **Enter** PDB name like “clone\_pdb”.
 
 ![](images/2ac79b220d664b868c62e4529791e187.jpg)
 
@@ -160,7 +160,7 @@ Prior to starting, you will need:
 
 **Note**: You do not have to wait until the steps complete and move on to the next section.
 
-## Lab 3: Clone an Existing Pluggable Database (PDB)
+## Step 3: Clone an Existing Pluggable Database (PDB)
 
 1.  **Navigate** to the “Enterprise menu >> Provisioning and Patching >> Database provisioning”.
 
@@ -200,7 +200,7 @@ Optionally, you can select the postscript as we did in the creation flow. **Clic
 
 10.  Once the procedure is completed,  **Navigate** to Targets then **Databases**, then **Click** on CDB186 and you will see the newly created PDB
 
-## Lab 4: Compliance Management for Pluggable Database
+## Step 4: Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
@@ -256,9 +256,9 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 12. Then review/enter the Named Credentials for the database and host and **Click** the Submit button
 
-    a.  For the database named credentials use: OEM_SYS (scroll down after Database Credentials to see Host Credentials
+    a.  For the database named credentials use: OEM\_SYS (scroll down after Database Credentials to see Host Credentials
 
-    b.  For the host credentials use: ORACLE_HOST
+    b.  For the host credentials use: ORACLE\_HOST
 
 ![](images/6ccf17bb69cbc79dae30f95bc508f640.jpg)
 
@@ -272,14 +272,14 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 14. Once the status changes to Succeeded, **Click** Databases >> View >> Expand All and **Click** on Your PDB that you choose in the earlier step.
 
-15. Under Administration drop down **Click** Initialization Parameters, then Scroll down and you will see the “open_cursors” initialization parameter set to 400 as shown.
+15. Under Administration drop down **Click** Initialization Parameters, then Scroll down and you will see the “open\_cursors” initialization parameter set to 400 as shown.
 
 ![](images/6b842b0948b11c52c1d56d2f9cdf1088.jpg)
 
  Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using
  Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
 
-## Lab 5: Self-Service to Request PDB Using PDBaaS
+## Step 5: Self-Service to Request PDB Using PDBaaS
 
 With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
 
@@ -303,8 +303,8 @@ This template enables users to create a new pluggable database with data from no
 
 4.  In the “**Pluggable Database Configuration**” section, enter Service and SID details:
 
-Name: **YOUR INITIALS_PDB2** (e.g. AS_PDB2)
-Database Service Name **: SERVICE_YOUR INITIALS_PDB2 (e.g. SERVICE_AS_PDB2)**
+Name: **YOUR INITIALS\_PDB2** (e.g. AS\_PDB2)
+Database Service Name **: SERVICE\_YOUR INITIALS\_PDB2 (e.g. SERVICE\_AS\_PDB2)**
 Workload Size: Choose **Small**
 
 ![](images/fd8fe73465009dbd65e2231503481e40.jpg)
@@ -411,7 +411,7 @@ few minutes instance resize is completed. Expand **Resource Usage** section on P
 
 ![](images/2b44dd4c41f594cddd9adc74dd193297.jpg)
 
-## Lab 6: Administrative setup for PDB-as-a-Service (Private Cloud)
+## Step 6: Administrative setup for PDB-as-a-Service (Private Cloud)
 
 Previous exercises demonstrated the process of requesting PDBs using available service templates as performed by a Self-Service user. In this section, we will see the Administrative setup for PDBaaS.
 

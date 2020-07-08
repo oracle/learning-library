@@ -15,7 +15,7 @@ Benefits with Fleet Maintenance:
 ### Background
 The estimated time to complete the workshop is 75 minutes
 
-| Lab No | Feature                                                   | Approx Time | Details                                                                                                              | Value Proposition |
+| Step No | Feature                                                   | Approx Time | Details                                                                                                              | Value Proposition |
 |----------------------|-----------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
 | 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
@@ -87,7 +87,7 @@ We recommend that you read through each of the steps, review the emcli command, 
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
-## Lab 1: Detect Configuration Pollution
+## Step 1: Detect Configuration Pollution
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -529,7 +529,7 @@ exit</copy>
 
 ### Summary
 
-This completes Lab 2. In this section, you learned how to perform the following:
+This completes Step 2. In this section, you learned how to perform the following:
 
   - Create Oracle Database Software Gold Image
   - Subscribe Database to Gold Image
