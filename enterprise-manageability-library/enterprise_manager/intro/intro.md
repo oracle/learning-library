@@ -17,14 +17,11 @@ The following management packs are offered with Oracle Enterprise Manager:
 - Data Masking and Subsetting Pack
 - Real Application Testing
 
-Short summary of other non DB packs .........
-
 In addition to Oracle database management packs, Oracle Enterprise Manager also features packs covering the following:
 - Middleware Management
 - Applications and Services Management
 - System Monitoring Plug-ins for Non-Oracle Database
 - System Monitoring Plug-ins for Non-Oracle Middleware
-
 
 ## Other Key EM topics
 
@@ -44,6 +41,5 @@ Oracle Database Product Management Videos on Multitenant
 
 - **Authors/Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava, Bjorn Bolltoft, Harish Niddagatta, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, July 2020
-- **Workshop Expiration Date** - July 31, 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

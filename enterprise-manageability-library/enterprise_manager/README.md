@@ -10,7 +10,6 @@ Click on one of our workshops below to access the content.
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)
 - [I have an account on LiveLabs](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
 
-
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
 - $300 of free credits good for up to 3500 hours of Oracle Cloud usage
