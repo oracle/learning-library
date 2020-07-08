@@ -1,4 +1,4 @@
-# Automated Database Upgrade at Scale with Fleet Maintenance
+Step # Automated Database Upgrade at Scale with Fleet Maintenance
 ## Before You Begin
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
@@ -20,9 +20,6 @@ The estimated time to complete the workshop is 75 minutes
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
 | 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
-
-For more details refer to [Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html) documentation
-
 ### What Do You Need?
 
 This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
@@ -43,14 +40,12 @@ Prior to starting, you will need:
 Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “opc”
   - Authentication method - SSH RSA Key
-  - Oracle EM and DB Software OS User – “oracle”.
-
-First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
+  - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
 
 2. Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance. The Enterprise Manager credentials are “**sysman/welcome1**”
 
-You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”, add exception and proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
+You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 #### Update the Named Credentials with your SSH Key
 
@@ -148,7 +143,7 @@ Recommendation is based on union of all bugs included in the Patches in all OHs 
 
 ### Summary
 
-This completes Lab 1. In this section, you learned how to perform the following:
+This completes Step 1. In this section, you learned how to perform the following:
 
   - Access the Database Software Standardization Advisor
   - View Configuration summary
@@ -159,7 +154,7 @@ In the next section we will follow these recommendations to perform the followin
   - Patch database “finance.subnet.vcn.oraclevcn.com” from 18.8 to 18.10 [READ-ONLY– This step has already been implemented]
   - Upgrade “finance.subnet.vcn.oraclevcn.com” from 18.10 to 19.7
 
-## Lab 2: Oracle Database Upgrade with Fleet Maintenance
+## Step 2: Oracle Database Upgrade with Fleet Maintenance
 
 ### Database Fleet Maintenance
 
@@ -181,7 +176,7 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
 You will see finance.subnet.vcn.oraclevcn.com. If target status is ‘DOWN’, start the target (using /home/oracle/start\_db\_finance.sh).
 
-The next **[READ ONLY]** blocks are fully covered by the Patching lab (Part \#1) and are listed here for your information only.
+The next **[READ ONLY]** blocks are fully covered by the [Patching lab](../em_fleet_maintenance_patching/em_fleet_maintenance_patching.md) and are listed here for your information only.
 
 #### Create Gold Image [READ-ONLY– This step has already been implemented]
 
@@ -551,6 +546,7 @@ Thank you!
 ## Want to Learn More?
 
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
+  - [Oracle Enterprise Manager Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
   - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
   - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
