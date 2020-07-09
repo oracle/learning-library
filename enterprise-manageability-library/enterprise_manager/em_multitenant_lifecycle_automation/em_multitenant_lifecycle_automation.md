@@ -23,12 +23,20 @@ The estimated time to complete all the Step activities is approximately 60 minut
 ### What Do You Need?
 
 Prior to starting, you will need:
-
 - EM Instance Public IP address
 - OMS Console URL: http://\{EM Instance Public IP\}:7803/em
 - OMS super-user Credentials:
     -   Username: **sysman**
     -   password: **welcome1**
+
+## Getting Started
+
+### Access
+
+1. Login to OMS Console
+Log into your Enterprise Manager VM using the Public IP of your EM instance. The Enterprise Manager credentials are “**sysman/welcome1**”
+
+You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 ## Step 1: Create Pluggable Database (PDB)
 

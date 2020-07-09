@@ -32,9 +32,9 @@ Prior to starting, you will need:
     - Username: **sysman**
     - password: **welcome1**
 
-### Getting Started
+## Getting Started
 
-#### Access
+### Access
 
 1. Login to Host using SSH Key based authentication
 Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
@@ -47,13 +47,13 @@ Log into your Enterprise Manager VM using the Public IP of your EM instance. The
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-#### Update the Named Credentials with your SSH Key
+### Update the Named Credentials with your SSH Key
 
 Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
 ![](images/5429da7dcd00ecc7da6e779ed699c45e.jpg)
 
-#### Fleet Maintenance Login to EMCLI
+### Fleet Maintenance Login to EMCLI
 
 Upon login as user “oracle” via sudo from user “opc”, the following are performed automatically for your convenience:
 
@@ -73,7 +73,7 @@ While connected as “oracle” your emcli session may expire at some point due 
 sudo su - oracle</copy>
 ````
 
-#### Steps Completed in Advance
+### Steps Completed in Advance
 
 In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab:
 
