@@ -156,7 +156,7 @@ Prior to starting, you will need:
 
 23.  In the Procedure Activity page, view the status of the procedure.
 
-24. Optionally **Click** the status link for each step to view the details of the execution of each step. Once the procedure is completed, you can **Navigate to Targets >> Databases,** Click on CDB186 and you will see the newly created PDB
+24. Optionally **Click** the status link for each step to view the details of the execution of each step. Once the procedure is completed, you can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the newly created PDB
 
 **Note**: You do not have to wait until the steps complete and move on to the next section.
 
@@ -198,13 +198,13 @@ Optionally, you can select the postscript as we did in the creation flow. **Clic
 
 9.  After the Review page appears, and you have confirmed the information is correct for your deployment, click Submit. You can now click on View Execution Details link to see details and on the Procedure Activity page see the status of the procedure.
 
-10.  Once the procedure is completed,  **Navigate** to Targets then **Databases**, then **Click** on CDB186 and you will see the newly created PDB
+10.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Click** on CDB186 and you will see the newly created PDB
 
 ## Step 4: Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
-**Click** ![](images/2e18c410493be6ec0b9352b94c0ceb9c.png), **Click** Compliance, and then **Click** Library to get started
+Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
 ![](images/dblmcompliancelibrary.png)
 
@@ -224,13 +224,11 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 5.  You need to refresh PDB statistics to see notifications. To refresh:
 
-    a. **Click** the target icon >> Databases >> View >> Expand All
+- **Click** the ***target icon >> Databases >> View >> Expand All***
+- **Right Click** on ***PDB >> Oracle Database >> Configuration >> Latest.***
+- **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
 
-    b. **Right Click** on PDB >> Oracle Database >> Configuration >> Latest.
-
-    c. **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
-
-6.  Now **Click** ![](images/2e18c410493be6ec0b9352b94c0ceb9c.png) >> Compliance >> Results
+6.  Now Navigate to ***Enterprise >> Compliance >> Results***
 
 ![](images/1317deb228d80211d9e6a2edf2cbba9e.png)
 
@@ -256,9 +254,8 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 12. Then review/enter the Named Credentials for the database and host and **Click** the Submit button
 
-    a.  For the database named credentials use: OEM\_SYS (scroll down after Database Credentials to see Host Credentials
-
-    b.  For the host credentials use: ORACLE\_HOST
+    -  For the database named credentials use: OEM\_SYS (scroll down after Database Credentials to see Host Credentials
+    -  For the host credentials use: ORACLE\_HOST
 
 ![](images/6ccf17bb69cbc79dae30f95bc508f640.jpg)
 
@@ -276,8 +273,7 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 ![](images/6b842b0948b11c52c1d56d2f9cdf1088.jpg)
 
- Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using
- Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
+ Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
 
 ## Step 5: Self-Service to Request PDB Using PDBaaS
 
@@ -295,33 +291,30 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
 **Note: There are two service templates pertaining to Pluggable Database**
 
-* **Provision New Empty Pluggable Database**
-This template enables users to create a new pluggable database in a container database configured by DBA
-
-* **Provision Pluggable Database with Data**
-This template enables users to create a new pluggable database with data from non-container database.
+* **Provision New Empty Pluggable Database**: This template enables users to create a new pluggable database in a container database configured by DBA
+* **Provision Pluggable Database with Data**: This template enables users to create a new pluggable database with data from non-container database.
 
 4.  In the “**Pluggable Database Configuration**” section, enter Service and SID details:
 
-Name: **YOUR INITIALS\_PDB2** (e.g. AS\_PDB2)
-Database Service Name **: SERVICE\_YOUR INITIALS\_PDB2 (e.g. SERVICE\_AS\_PDB2)**
-Workload Size: Choose **Small**
+- Name: **YOUR INITIALS\_PDB2** (e.g. AS\_PDB2)
+- Database Service Name **: SERVICE\_YOUR INITIALS\_PDB2 (e.g. SERVICE\_AS\_PDB2)**
+- Workload Size: Choose **Small**
 
 ![](images/fd8fe73465009dbd65e2231503481e40.jpg)
 
 5.  Enter Credentials details in the “**Pluggable Database Administrator Account**”
 
-Administrator Name: **PDBADMIN**
-Password: **welcome1**
-Confirm Password: **welcome1**
-Tablespaces: **Accept default**
+- Administrator Name: **PDBADMIN**
+- Password: **welcome1**
+- Confirm Password: **welcome1**
+- Tablespaces: **Accept default**
 
 ![](images/181bed80a9978ed3e02c050838749f2b.jpg)
 
 6.  Instance Details, keep all defaults as they are. The Properties Page has the properties for the instance. The Self-Service Administrator has configured this as a optional step. However, properties can help users locate an instance more quickly. So Enter:
 
-Contact: **CYRUS**
-Lifecycle Status: **Test**
+- Contact: **CYRUS**
+- Lifecycle Status: **Test**
 
 ![](images/f5f29e12efaaf8a1fce318e871d9009d.jpg)
 
@@ -390,8 +383,7 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
 ![](images/cc03cc86d7e3d8146a3d799b52583a83.jpg)
 
-16. One you click on **Resize**, a job will be submitted to resize instance. In
-few minutes instance resize is completed. Expand **Resource Usage** section on PDB Home page. This shows now new resource usage limits.
+16. One you click on **Resize**, a job will be submitted to resize instance. In few minutes instance resize is completed. Expand **Resource Usage** section on PDB Home page. This shows now new resource usage limits.
 
 ![](images/64a8954df11d2e688a930fd92ae38cd8.jpg)
 
@@ -469,11 +461,8 @@ A Pluggable Database Pool consists of a set of Container Databases on which PDBs
 
 There are two service templates pertaining to Pluggable Database
 
-* **Provision New Empty Pluggable Database**
-This template enables the user to create a new pluggable database in a container database configured by DBA
-
-* **Provision Pluggable Database with Data**
-This template enables user to create a new pluggable database with data from a non-container database.
+* **Provision New Empty Pluggable Database**: This template enables the user to create a new pluggable database in a container database configured by DBA
+* **Provision Pluggable Database with Data**: This template enables user to create a new pluggable database with data from a non-container database.
 
 2. Click on name of any template to explore more details.
 
