@@ -1,775 +1,573 @@
 # Database Performance Management: Find, Fix, Validate
 ## Before You Begin
 
-This 15-minute lab walks you through the steps to ...
+The objective of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud
 
 ### Background
-Enter background information here..
 
-Next paragraph of background information
-* List item 1.
-* List item 2.
-* List item 3.
+The estimated time to complete all the lab activities is approximately 60 minutes.
+
+| **No** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|--------|-----------------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **1**  | Performance Hub                               | 15 minutes       | Oracle Enterprise Manager 13c includes a new Jet based unified Performance Hub Jet interface for performance monitoring.                                                                                           | Performance Hub is a single pane of glass view of database performance with access to Active Session History (ASH) Analytics, Real-time SQL Monitoring and SQL Tuning together. The time picker allows the administrator to switch between Real-Time and Historical views of database performance.                                                                                                                                                                                                                                                                      |
+| **2**  | Real-time database operation monitoring       | 10 minutes       | Real-Time Database Operations Monitoring, introduced in Oracle Database 12c, enables an administrator to monitor long running database tasks as a composite business operation.                                                | Developers and DBAs can define business operations for monitoring by explicitly specifying the start and end of an operation or implicitly with tags that identify the operation.                                                                                                                                                                                                                                                                                                                                                                                              |
+| **3**  | Tuning a SQL in a Pluggable Database (PDB)                         | 10 minutes       | In this activity see how a pluggable database administrator can tune queries in a PDB.                                                                                                                                        | The DBA for the PDB will not have access to the Container so their view is restricted to the queries running in the PDB assigned to them. This activity identifies a Top SQL in a PDB and then tune it using SQL Tuning Advisor.                                                                                                                                                                                                                                                                                                                                  |
+| **4**  | SQL Performance Analyzer Optimizer Statistics | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c with Oracle Database 18c. | SQL Performance Analyzer gathers Oracle Database Optimizer statistics for validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **5**  | Database Workload Replay                      | 10 minutes       | The objective of this activity is to is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c and Oracle Database 18c.                | **Scenario:** You've been asked to add three new indexes for an application, but before adding, you want proof that database performance is improved. Use of SQL Performance Analyzer (SPA) isn't enough because there is also the cost of maintaining the indexes. Replay will be performed against the **Sales** Container Database and changes need to be performed in the OLTP Container against the **DWH_TEST** schema. The database version is 18c so the capture and replay are performed using a CDB. |
 
 ### What Do You Need?
 
-* Item no 1.
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-## Section 1 title
+Prior to starting, you will need:
+- EM Instance Public IP address
+- SSH Private Key to access the host via SSH
+- OMS Console URL: http://\{EM Instance Public IP\}:7803/em
+- OMS super-user Credentials:
+    - Username: **sysman**
+    - password: **welcome1**
 
-Section 1 opening paragraph.
+### Getting Started
 
-One line with code example `HelloWorld.java`.
+#### Access
 
-1. Ordered list item 1.
-2. Ordered list item 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+1. Login to Host using SSH Key based authentication
+Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.m* doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “opc”
+  - Authentication method - SSH RSA Key
+  - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
 
-    ![Image alt text](images/sample1.png "Image title")
+2. Login to OMS Console
+Log into your Enterprise Manager VM using the Public IP of your EM instance. The Enterprise Manager credentials are “**sysman/welcome1**”
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-    ![Image alt text](images/sample1.png " ")
+_____________________________________
+### Running your Workload
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+#### Option 1: Using EM Console
+1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “***sysman/welcome1***”.
 
-5. One example with bold **text**.
+2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
+![](media/emjobnav.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+3. Locate and select the job name **1-DB_LAB_START**, and Click the Submit  button.
+![](media/emdbstartjob.png)
 
-Section conclusion can come here.
+4. Then Click the Submit button in the upper right of your window.
+![](media/emjobsubmitbutton.png)
 
-## Section 2 title
+5. The workload is now started and takes a few minutes to ramp up.
+![](media/emjobcom.png)
 
-1. List item 1.
+#### Option 2: Using SSH terminal from the VM host
 
-2. List item 2.
+- Login as user "opc",
+- Sudo over to user "oracle"
+- Change directory to **scripts**
+- Set your environment variables with ***SALESENV***
+- Execute the script **1-db\_lab\_start.sh**
 
-    ```
-    Adding code examples
-	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-	<copy>Enclose the text you want to copy in &lt;copy&gt;&lt;/copy&gt;.</copy>
-    ```
+````
+<copy>sudo su - oracle
+cd scripts
+source SALESENV
+. ./1-db_lab_start.sh</copy>
+````
 
-3. List item 3. To add a video, follow the following format:
+![](media/emopt2start.jpg)
 
-	```
-	<copy>[](youtube:&lt;video_id&gt;)</copy>
-	For example:
-	[](youtube:zNKxJjkq0Pw)
-    ```
+## Step 1: Performance Hub
 
-    [](youtube:zNKxJjkq0Pw)
+1.  Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
-Conclusion of section 2 here.
+![](media/1876be1823ca17d9ab7e663e128859c4.jpg)
+
+2.  **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
+
+![](media/9b88b0ba0cefae75a2374d91dcbd4e2e.jpg)
+
+3. Here you will notice different databases listed, such as SALES, HR etc., we will work the sales container database. **Select** the Sales database from the list, this will take you to the DB home page for this database
+
+![](media/95063e3082e730e54d957b9ff7575f49.jpg)
+
+![](media/89801010273a62f99a3da10de8bf5c71.jpg)
+
+4.  **Click** on the Containers tab. It is located at the upper right-hand corner of the page, underneath the Performance tile. This will show the list of pluggable databases in the CDB and their activity
+
+![](media/c6bc11e91d6db9627a146b3e79d0ce19.jpg)
+
+5.  Notice that the PSALES database is the busiest. We focus our attention to this PDB. Let us now navigate to Performance Hub. **Select** Performance Hub from the Performance Menu and **Click** on ASH Analytics and use the sales_system credential name from the database login screen
+
+![](media/e131e1ce965ab5bb248d5439529fc921.jpg)
+
+![](media/d4ec276ea05aceb2ff86f5b7ea71c36e.jpg)
+
+![](media/58e81976fa9957ee57f89139a06c4841.jpg)
+
+6. Make sure to slide the time picker on an area of high usage (e.g., CPU, IO or Waits). Notice how the corresponding selected time window also changes in the summary section. You can also resize the slider to entirely cover the time period of your interest.
+
+Notice the graph at bottom, it is providing more detailed view of the time window you selected. By Default the wait class dimension is selected. On the right hand side of the graph you have a list of wait classes for the time window you selected (blue for user I/O, green for CPU etc.). Notice how the color changes if you hover over either the menu or the graph to highlight the particular wait class.
+
+Wait class isn’t the only dimension you can drill into the performance issue by. Let’s say you wanted to identify the SQL that was causing the biggest performance impact. You can do that by **Clicking** the drop down list and changing the top dimension from wait class to SQL ID.
+
+7.  **Select** the SQL ID dimension from the list of available dimensions (Under Top Dimensions) using the dropdown box that is currently displaying Wait Class. Top Dimensions SQL ID
+
+![](media/32b079f89c002058721d0c8a3e41f993.jpg)
+
+8. **Hover** your mouse on top of the SQL (one at the bottom) and you will be able to see how much activity is consumed by this SQL. Now using the same list of filters select the PDB dimension. Session Identifiers PDB
+
+![](media/95cce3b331aa85fc893b8eecc9a6c0a6.jpg)
+
+9. What do you see? The chart changes to activity by the different pluggable databases created in this Container database. **Click** on the ‘PSALES” pluggable database on the list to add it to the filter by list and drilldown to activity by this PDB on the same page.
+
+![](media/384fdb12e234cbc0d60df1639079dc3e.jpg)
+
+![](media/07dcb138dcb6773ee6b560681a62ec5f.jpg)
+
+10.  **Click** on the SQL Monitoring Tab
+
+![](media/6e47bf2703c3c1e4adffd39d2202045f.jpg)
+
+11. You can see all the executed SQL during that time along with different attributes like ‘user’,’Start’,’Ended’ etc. The test next to the \@ sign indicates the name of the PDB. **Click** on any SQL of your choice (e.g. 6kd5jj7kr8swv)
+
+![](media/533523dca8453a0ce246ac933fdb639c.jpg)
+
+12. It will navigate you to show the details of this particular query. You can see the plan, parallelism and activity of the query. “Plan Statistics” tab is selected by default. You can see the plan of this query in graphical mode. In some cases, the Monitored SQL may have aged out and no rows are displayed, in this case try using the time-picker and pick last 24 hrs. time period to identify the historical SQL that was monitored.
+
+13. **Select** “Parallel” tab. This will give details about parallel coordinator and parallel slaves.
+
+14. **Click** on the SQL Text tab. You can see the query text which got executed.
+
+15. **Click** on the activity tab to understand about the activity breakdown for this SQL
+
+16. **Click** on “Save” button on top right corner of the page. This will help you to save this monitored execution in “.html” format, which you can use it to share or to diagnose offline.
+
+## Step 2: Real-Time Database Operations Monitoring
+
+- Login as user "opc",
+- Sudo over to user "oracle"
+- Change directory to **scripts**
+- Set your environment variables with ***SALESENV***
+- Change directory to **load/frame/queries/awrv**
+
+````
+<copy>sudo su - oracle
+cd scripts
+source SALESENV
+cd load/frame/queries/awrv</copy>
+````
+
+1. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file.
+At the beginning of the file you will notice how we have tagged the operation with dbms_sql_monitor.begin_operation and ended it with dbms_sql_monitor.end_operation
+Now execute the file \@DBOP.sql
+
+````
+<copy>sqlplus sh2/sh2@psales
+@DBOP.sql</copy>
+````
+
+2. You should already be logged on to Enterprise Manager. If you are not, please follow the instructions detailed earlier. Select the Monitored SQL tab.
+
+3. Review the list of currently executing SQLs are visible click on the DBOP_DEMO name. This will open the DBOP named DBOP_DEMO.
+
+Note: You may need to scroll down or select “Database operations” from the type dropdown.
+
+![](media/b10c056370e56dd1286ca1f556118c8f.jpg)
+
+4. Review the details of the Database Operations.
+
+![](media/a59f28bdd1166978c41e9c9c6a5d9b93.jpg)
+
+5.  Click on the Activity tab. You will see all the activity for this operation.
+
+![](media/1a32fbdd89e519c2b8401e7dd0626890.jpg)
+
+## Step 3: Tuning a SQL in a PDB
+
+1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
+
+![](media/8e45436e4fa48b9a5bda495da7b0a674.jpg)
+
+2.  Once logged into Enterprise Manager, **Select** Targets, then Databases . **Click** on the expand icon on the left and click on the database **sales.subnet.vcn.oraclevcn.com**
+
+![](media/63f4072fb3b311db561d2c284bc93ffe.png)
+
+3.  You should now see the Database Home page.
+
+![](media/611d814ca29dfc9f327a7c8159608093.jpg)
+
+4.  From the Performance Menu **Click** on Performance Hub, then ASH Analytics.
+
+![](media/ea10a67618855f3e0ce1a5f5c7157d71.jpg)
+
+5.  In the bottom left of the page, **Click** on the activity bar for the SQL showing highest activity.
+
+![](media/1530ad41444abf8120ba3a6bce8d9ba1.jpg)
+
+6.  Now schedule the SQL Tuning Advisor by **Clicking** on the **Tune SQL** button.
+
+![](media/4532cfdb72eeef8ade51f86d9974061e.jpg)
+
+7.  Accept the default and **Submit** the SQL tuning Job.
+
+![](media/528d1e6ee4c55f477811c554c2eeff99.jpg)
+
+![](media/8aaa9d1d202302cd87c3870ffe51b956.png)
+
+8.  Once the job completes. You should see the recommendations for either creating a profile or an index.
+
+![](media/64e4e02ca8258d7c1fc54bec446b691a.png)
+
+9.  Implement the SQL Profile recommendation. SQL Profiles are a great way of tuning a SQL without creating any new objects or making any code changes.
+
+10. At this point let’s now turn off the load: Change directory to scripts and execute the script ***1-db_lab_stop.sh*** as shown below
+
+![](media/e032d591c5b1132ac156974c6abbe2f4.jpg)
+
+>Alternatively you can use the Enterprise Manager Job Scheduler capability to stop the job.
+
+11. Navigate to Enterprise, then Job, then to Library
+
+![](media/emjoblibnav.png)
+
+12. Select the job *1-DB_LAB_STOP*
+
+![](media/emjoblabstop.png)
+
+13. And then Submit the job
+
+![](media/emlabstopsubmit.png)
+
+14. When the job is completed, the workload stops
+
+![](media/emlabstopped.png)
+
+This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity.
+
+## Step 4: SQL Performance Analyzer Optimizer Statistics
+
+In this activity we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
+
+1.  Execute SPA task using optimizer statistics - Login using username and password **sysman/ welcome1**
+
+![](media/6dc92e956b3d9cd7b140a588219ee285.jpg)
+
+2.  Navigate to the Job library, from **Enterprise**, to **Job**, to **Library**
+
+![](media/4037bd7209e67b936206da6f43991120.jpg)
+
+3.  Select SPA_STAT_SETUP and **Click** the **Submit** button
+
+![](media/emspasetup.png)
+
+4. Select OS Command in the Create library Job drop down list **Click** Go
+
+![](media/a04978f5e6e7d3e03d34685c7212f413.jpg)
+
+5. **Click** the **Submit** button
+
+![](media/spasubmit.png)
+
+6. The job then runs and completes
+
+![](media/emspajobconfirm.png)
+
+7. The job is now running. Continue with configuring SPA Quick Check. Navigate to ***Databases >> Targets >> Databases***
+
+![](media/baa21e15a952e1b090944051c919d47e.jpg)
+
+8. Expand the *sales.subnet.vcn.oraclevcn.com* database. **Click** on *sales.subnet.vcn.oraclevcn.com_HR* pluggable database.
+
+![](media/6273897d2614da4d3babab73299d5bc5.jpg)
+
+9. In ***sales.subnet.vcn.oraclevcn.com_HR*** database Navigate to ***Performance >> SQL >> SQL Performance Analyzer Quick Check Setup***
+
+![](media/52d28e53edc6e12a26eefd6df1487d20.jpg)
+
+10.  This is the page where you configure SPA Quick Check. Make sure that the selected SQL Tuning Set includes as many SQL statements as possible. If the application has specific workloads that are executed during End of Month, End of Year or even certain period during the day, then make sure to collect the workload in separate SQL Tuning Sets and merge them into a “Total Workload Tuning set”
+
+11. In this example we are working with a SQL Tuning Set called PENDING_STATS_WKLD. Select: SQL Tuning Set: PENDING_STATS_WKLD. Select “Comparision Metric”: Buffer Gets **Click** Save.
+
+![](media/dd8e59451bf9d2de14f07592d390da6a.jpg)
+
+12.  Navigate ***Performance >> SQL >> Optimizer Statistics***
+
+![](media/4e82b571a46f839223bca1f879643bb0.jpg)
+
+13.  **Click** “Gather”
+
+![](media/1e54f21d483e95189477069278b54053.jpg)
+
+14.  Select “Schema”. Check “Validate the impact of statistics on…..” **Click**  “Next”
+
+![](media/1d4b3ee3678078564de13336896fbe34.jpg)
+
+15.  **Click**  “Add”
+
+![](media/07c9dde006c7bc0a1fc804ef62f5cd5a.jpg)
+
+16.  **Click**  “Search”. **Select:** STAT1, STAT2 **Click**  “OK”
+
+![](media/5f8e1b0229f48747aa96998dbbe0aa87.jpg)
+
+17.  **Click**  “Next”
+
+![](media/47d4db96f2a225723e405f06171d2c7d.jpg)
+
+18.  **Click**  “Next”
+
+![](media/a4faddf1878e9f72df40f1bde4e54bdf.jpg)
+
+19.  **Click**  “Submit”
+
+![](media/d2c4f87d66682e3ecbb6b9c62e639281.jpg)
+
+20. In the confirmation section on top, click on the SQL Performance Analyzer Task that was started. If you accidentally closed or lost this page, navigate to **DB Target** , then **Performance Menu** ,  then **SQL Performance Analyzer Home** , then **Select** the latest SPA task you just created at the bottom of the page.
+
+![](media/24fee673a5a32b19e55b92dae376c233.jpg)
+
+21. You now have now a running SQL Performance Analyzer task. Wait until its Last Run Status is Completed. **Click**  on “Name”
+
+![](media/d7b97d687f8d9a904ed2e7ee68f5da89.jpg)
+
+22.  As you can see there have been four SQL trials executed. The first two have identified SQL statements with plan changes. In the last two trials it is only statements with plan changes that have been executed. This will reduce the amount of time and resources used in a production system. **Click** on the eyeglasses icon for the second report.
+
+![](media/e74bda3508f98dbfb69f1e9e196d9c01.jpg)
+
+23.  As we can see the majority of our statements had unchanged performance. We have a significant improvement but most important to notice is that we have no regression. If there had been regression then we have the ability to tune the regressed statement or use SQL Plan Baselines to remediate the identified regressions. Note you can also use SQL Tuning Advisor to remediate regressions by implementing SQL Profile recommendations
+
+![](media/2d5e94962e6a26f9d9442e09870cde04.jpg)
+
+24.  Since this application has used stale statistics for a long period, then it would be good to have new statistics implemented. **Click** on “Publish Object Statistics”
+
+![](media/bfd46716f39ec820e1c9c0c9982d5218.jpg)
+
+25. We can now change statistics for all tables where we have pending statistics. For the scope of this exercise we will only change statistics for schema STAT1. **Click** the Checkbox for schema STAT1 **Click** Publish
+
+![](media/1d3a02d5d46d720eefbe226143471f2c.jpg)
+
+26. **Click** “Yes”
+
+![](media/a8dc3af7bcf1c5b473e4f0037dd722a4.jpg)
+
+![](media/e75f7e6b78aafd328d6b57f505245622.jpg)
+
+You have now learned how to work with SPA. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
+
+Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
+
+## Step 5: Database Workload Replay
+
+1. Create a Replay Task
+You need to connect two sessions to you dedicated host as user OPC using the provided SSH key. Use putty or similar to connect to your local host. (See FAQ section)
+
+ssh -i [privatekey] opc@[Your IP]
+Session 1 and session 2
+
+2. Connect to user oracle from the OPC:
+
+user sudo su – oracle
+
+******** Session 1 *********
+
+3. Set Environment variables for sales database
+
+. ./sales.env
+
+4. Connect to sales database and create indexes. (indexes are already created, just need to make them visible)
+
+sqlplus system/welcome1@oltp
+
+alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
+
+alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
+
+alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
+
+exit
+
+5. We have already performed the capture and stored it in
+
+/home/oracle/scripts/dbpack/RAT_CAPTURE/DBReplayWorkload_OLTP_CAP_1 RAT_REPLAY
+
+The capture directory should be copied to a Replay directory. In a normal situation replay is performed against a test server. This test environment is limited so we will only copy the directory to a replay path instead
+
+cd scripts/dbpack
+
+cp -r RAT_CAPTURE/DBReplayWorkload_OLTP_CAP_1 RAT_REPLAY
+
+cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+
+6. Connect to as sysdba and grant become user to system on all containers
+
+sqlplus sys/welcome1 as sysdba
+
+grant become user to system container=all;
+7. Connect to system create a directory object to locate the capture and preprocess the capture
+
+connect system/welcome1
+
+CREATE DIRECTORY DBR_REPLAY AS
+'/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1';
+
+exec DBMS_WORKLOAD_REPLAY.PROCESS_CAPTURE (capture_dir => 'DBR_REPLAY');
+8. We can now start to replay the workload. Initialize replay will load replay metadata created during preprocessing
+
+exec DBMS_WORKLOAD_REPLAY.INITIALIZE_REPLAY (replay_name => 'REPLAY_1', replay_dir => 'DBR_REPLAY');
+
+9. If the replay environment uses different connect strings compared to the capture environment then we need to remap connections. Check connect strings.
+
+select * from DBA_WORKLOAD_CONNECTION_MAP;
+
+10. Next, remap connections
+
+exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 1, replay_connection => 'HR');
+
+exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 2, replay_connection => 'OLTP');
+
+exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 3, replay_connection => 'SALES');
+
+exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 4, replay_connection => 'SALES');
+
+exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 5, replay_connection => 'PSALES');
+
+exec DBMS_WORKLOAD_REPLAY.REMAP_CONNECTION (connection_id => 6, replay_connection=> 'SALES');
+11. Now check new settings for connect strings
+
+select * from DBA_WORKLOAD_CONNECTION_MAP;
+12. Prepare the replay by setting replay options. This replay will use default synchronization which is time-based synchronization. With this setting we honor timing for each individual call the best as possible. If a session has slow SQL statements then other sessions will still honor timing but they will not wait for the slow session. This can cause higher divergence. If divergence is less than 10 % then it should be considered as a good replay.
+
+exec DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY (synchronization => 'TIME');
+
+Now switch to session 2. You should already be connected as user oracle
+
+13. Set Environment variables for sales database and change to the replay directory
+
+. ./sales.env
+
+cd scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+14. Calibrate the replay and validate how many replay clients that are needed to replay the workload.
+
+wrc mode=calibrate replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+
+**Note**: Replay clients are the application tier and should not be co-allocated with the database due to resource usage. Our recommendation is to place replay clients close to the database to avoid delays between database and replay clients. This is regardless if the application tier is located far away. The reason is that the replay clients communicate with the database to know when a certain database call should be replayed and if replay clients are located far away it will delay the call and create artificial delays during the replay.
+
+************* Calibrate output *************
+Workload Replay Client: Release 18.0.0.0.0 - Production on Tue Nov 5 09:43:45 2019 Copyright (c) 1982, 2018, Oracle and/or its affiliates. All rights reserved.
+Report for Workload in:
+/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+-----------------------
+Recommendation: consider using at least 1 client divided among 1 CPU(s). You will need at least 112 MB of memory per client process. If your machine(s) cannot match that number, consider using more clients.
+
+Workload Characteristics:
+
+- max concurrency: 30 sessions
+
+- total number of sessions: 534
+
+Assumptions:
+
+- 1 client process per 100 concurrent sessions
+
+- 4 client processes per CPU
+
+- 256 KB of memory cache per concurrent session
+
+- think time scale = 100
+
+- connect time scale = 100
+
+- synchronization = TRUE
+
+
+15. The workload is relatively small and it needs only one replay client so we will start it from this session
+
+wrc system/welcome1@sales mode=replay replaydir=/home/
+oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1
+
+****************** Session 1 ******************
+
+16. You should still be connected in the SQL*Plus session as used before. From this window start the replay
+
+Exec DBMS_WORKLOAD_REPLAY.START_REPLAY ();
+
+19.	Monitor the replay in session 2 and when the replay has finished the generate replay reports from session 1
+
+20.	When replay has finished import capture AWR data. First create a common user as staging schema
+
+Create user C##CAP_AWR;
+
+Grant DBA to C##CAP_AWR;
+
+SELECT DBMS_WORKLOAD_CAPTURE.IMPORT_AWR (capture_id => 11,staging_schema => 'C##CAP_AWR') from dual;
+
+21.	Generate replay report as a text report. This report can also be generated in HTML or XML format.
+
+Set long 500000
+
+Set linesize 200
+
+Set pagesize 0
+
+Spool replay_report.txt
+
+select dbms_workload_replay.report (replay_id => 1, format=> 'TEXT') from dual;
+spool off
+22.	Please open the text report with a Linux editor of your choice such as vi and look at replay details.
+
+!vi replay_report.txt
+23.	Can you see if the replay uses more or less database time than the capture? Exit the report in vi use “ZZ” and you will return back to SQL*plus
+24.	Generate compare period report as HTML report.
+
+spool compare_period_report.html
+
+VAR v_clob CLOB
+
+BEGIN dbms_workload_replay.compare_period_report(replay_id1 => 1, replay_id2 => null, format => DBMS_WORKLOAD_REPLAY.TYPE_HTML, result => :v_clob);
+
+END;
+
+/
+
+print v_clob;
+
+spool off
+
+exit
+25.	To be able to read the report it needs to be downloaded change file permissions and copy the file to
+
+/tmp chmod 777 compare_period_report.html
+
+cp compare_period_report.html /tmp
+26.	Use a scp client to copy the file to your local machine. Open the file in a text editor and remove initial lines before first row starting with
+
+“< html lang="en">”
+
+and trailing lines after last row ending with
+
+“<b> End of Report. </b>
+
+</body>
+
+</html> “
+27.	You can now open the report in a browser and look at SQL statement with performance improvements and regression.
+
+We have seen how you can use Real Application Testing Database Replay to validate changes that may impact performance on both SQL statements and DML statements. We have also seen the extensive reporting that will help you find and analyze bottlenecks or peaks during certain workloads.
+
+This completes the Lab
+
+Thank You!
 
 ## Want to Learn More?
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+  - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
+  - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
+  - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
+* **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
+* **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
+* **Last Updated By/Date** - Rene Fontcha, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
-![](images/rdwd-emheader.png)
-
-Introduction
-============
-
-   The objective of this workshop is to highlight the Oracle Enterprise Manager
-   Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database.
-   We will walk through how Database organizations can begin their Cloud journey with
-   Multitenant Database by requesting a Pluggable Database (PDB) for testing purposes
-   and perform other Lifecycle Operations like Clone, Unplug etc. We will also focus
-   on setting up Private Cloud for PDBs and highlighting the ease of Provisioning,
-   Resizing and even Deleting a PDB using a Self-Service option.
-
-   Applicable User Roles in the Organization:
-
-![](images/ca612c296dce62109ae33de2f81110a7.jpg)
-
-=============================================================
-
-### Contents
-
-**Workshop Activity 1:** Create a Pluggable Database
-    (PDB)
-
-**Workshop Activity 2:** Un-plug/Plug an existing Pluggable Database
-
-**Workshop Activity 3:** Clone an existing Pluggable Database (PDB)
-
-**Workshop Activity 4:** Compliance Management for Pluggable Database (PDB)
-
-**Workshop Activity 5:** Self-service to request a PDB using
-    PDBaaS
-
-**Workshop Activity 6:** Administrative Setup for
-    PDB-as-a-Service
-
-
-
-
-
-
-   The estimated time to complete all the lab activites is approximately 60 minutes.
-
-| **No** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
-|--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | Create a Pluggable Database (PDB)                                      | 10min                     | Create Pluggable database (PDB) within a CDB and run a post-script to lock/unlock accounts.                                                                                  | Create multiple PDBs with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                                           |
-| 2    | Un-plug/Plug an existing Pluggable Database | 10min                     | Un-plug a PDB and later Plug it back in a CDB when needed (Create from unplugged)                                                                                                                       | Unplug a PDB when not needed and plug it back as per need hence maximizing resource utilization in your organization. Easily upgrade PDBs with few clicks by moving from one container to another.                                                                                                                  |
-| 3    | Clone an existing Pluggable Database                                 | 5min                      | Create multiple copies (Clones) of a PDB to dev/test purpose                                                                                                                     | Create multiple PDBs clones for Dev/test with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                      |
-| 4    | Compliance Management for Pluggable Database                                                         | 10min                     | Apply a compliance standard on PDB and use corrective action to fix the violation                                                                                                | Make sure PDBs comply with compliance standards and fix them with a click of a button if there is any anomaly.                                                                                                                         |
-| 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
-| 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
-
-
-
-<br>**Workshop Activity 1: Create Pluggable Database (PDB)**
-======================================================================
-
-
-
-1.  Log into your Enterprise Manager VM using the IP provided on your cheat
-    sheet. The Enterprise Manager credentials are “**sysman/welcome1**”.
-
-2.  **Navigate** to the “Enterprise menu \> Provisioning and Patching \>
-    Database provisioning”.
-
-![](images/167e561726cc8d0a58d8b90a37274b06.jpg)
-
-3.  In the Database Provisioning page, in the Related Links section of the left
-    menu pane, **click** “**Provision Pluggable Databases**”
-
-4.  In the Provision Pluggable Database Console, in the **Container Database**
-    section, **select** the CDB (**CDB186 – 18.8 version**) within which you
-    want to create new PDBs.
-
-![](images/4a1835f78c064502ccac88138075133c.jpg)
-
-5.  In the PDB Operations section, **select** Create Pluggable Databases ,
-    **Click** Launch
-
-![](images/2248640eabc0efa2fb32293ec07fb389.jpg)
-
-6.  Use the named credentials (CDB186_SYS) for login
-
-![](images/8741cbb813d375a296f8344f4beaeb7e.jpg)
-
-![](images/9be6823423a692b7e1f0e240c10567c9.jpg)
-
-
-
-7.  In the Source page of the Create Pluggable Database Wizard, in the Source Type section, **select** Create a new PDB . **Select** Named credentials “ORACLE”In the Identification page, **enter** a unique name for the PDB you are
-    creating (your initial_pdb). **Optionally**, **select** check box to “create
-    multiple DBs” and put **2** as number of copies.
-
-8.  In the PDB Administrator section, **enter** the credentials of the admin
-    user account you need to create for administering the PDB. **UserName**: pdbadmin **Password**: welcome1 **Click** Next.
-
-
-
-![](images/7442f8d5bf4704af57849ae9741f5a36.jpg)
-
-9.  For storage option, **select** “Use Common Location for PDB Datafiles” and
-    leave defaults as-is.
-
-![](images/e42b8bce3bdaac0c78fccbe24f1ede48.jpg)
-
-10. Optionally, you may also want to select a post-script, which will run post
-creation of PDB. Choose “Select from software library” and then search for
-“**unlock**” and select unlock.sql (Or you can upload a SQL file from your
-system).
-
-![](images/7d3fcabc8fe5f6f80fe20e55bb28655d.jpg)
-
-11.  In the Schedule page, **select** immediately check box next to Start.
-    **Click** Next**.**
-
-12.  In the Review page, review the details you have provided for the deployment
-    procedure. If you are satisfied with the details, click Submit. You can now
-    click on View Execution Details link to see details.
-
-![](images/d12c1a1d5e3c3f394248da7d12813b6b.jpg)
-
-13.  In the Procedure Activity page, view the status of the procedure. Click the Status link for each step to view the details of the execution of each step.
-
-
-
-![](images/3657eb9bb536b26d163c148e40a99332.jpg)
-
-14. Once the procedure is completed (takes about 3-5 mins), you can **Navigate to
-Targets \> Databases, Click on CDB186** and you will see the newly created PDB
-
-![](images/657ef309d7087942b8d871256a359050.jpg)
-
-<br>**Workshop Activity 2: Un-plug/Plug an Existing Pluggable Database (PDB)**
-======================================================================
-
-
-1.  **Navigate** to the “Enterprise menu \> Provisioning and Patching \>
-    Database provisioning”.
-
-![](images/167e561726cc8d0a58d8b90a37274b06.jpg)
-
-2.  In the Database Provisioning page, in the Related Links section of the left
-    menu pane, **click** “**Provision Pluggable Databases**”
-
-![](images/33b77cf547caf09fe9c2d56b23fbaf43.jpg)
-
-3.  In the Provision Pluggable Database Console, in the Container Database
-    section, **select** the CDB (**CDB186**) within which you want to create new
-    PDBs.
-
-![](images/4a1835f78c064502ccac88138075133c.jpg)
-
-4.  In the PDB Operations section, **select Unplug** Pluggable Databases ,
-    **Click** Launch
-
-![](images/b727e1673cfa38c85130ef6e2365055d.jpg)
-
-5.  In the **Select** PDB page of the Unplug Pluggable Database Wizard, in the
-    Select Pluggable Database section, select the PDB you want to unplug. Also
-    **Select** Named credentials “ORACLE”
-
-![](images/39102476b5e5915a1491e28525af88f5.jpg)
-
-6.  In the Destination page, select the type of PDB template you want to
-    generate for unplugging the PDB, and the location where you want to store
-    it. The PDB template consists of all datafiles as well as the metadata XML
-    file. **Select** radio button for software library. **Select** Generate PDB archive. **Enter** /tmp in location under Temporary working directory
-
-
-
-
-
-![](images/4ad828f403bf702b7318f718ad98f117.jpg)
-
-7.  In the Schedule page, **Select** immediately check box next to Start. **Click Next.** In the Review page, review the details you have provided for the deployment
-    procedure. If you are satisfied with the details, click Submit. In the Procedure Activity page, view the status of the procedure.
-
-
-
-
-![](images/bdbafe949b2bc880e2a09b82f9edaf8a.jpg)
-
-8.  You can **Navigate to Targets \> Databases,** Click on CDB186 and you will
-    see the PDB you unplugged is no longer in the list.
-
-
-
-
-9.  Let us continue to next steps and plug the same PDB back into the container database. Navigate to the “Enterprise menu \> Provisioning and Patching \> Database
-    provisioning”.
-
-![](images/167e561726cc8d0a58d8b90a37274b06.jpg)
-
-10. In the Database Provisioning page, in the Related Links section of the left
-    menu pane, **click** Provision Pluggable Databases
-
-![](images/33b77cf547caf09fe9c2d56b23fbaf43.jpg)
-
-11. In the Provision Pluggable Database Console, in the Container Database
-    section, **select** the CDB (**CDB186**) within which you want to create new
-    PDBs.
-
-![](images/4a1835f78c064502ccac88138075133c.jpg)
-
-12. In the PDB Operations section, **select** Create Pluggable Databases ,
-    **Click** Launch
-
-![](images/2248640eabc0efa2fb32293ec07fb389.jpg)
-
-13. In the Create Pluggable Database Wizard, in the Create Options section, select **Plug an unplugged PDB**. **Select** Named credentials
-    “ORACLE”
-
-![](images/5427807b6e4c677bd991497cfc5468ce.jpg)
-
-14. In the Identification page, enter a unique name for the PDB you are plugging
-    in. **Select** Create As Clone to ensure that Oracle Database generates unique PDB DBID, GUID, and other identifiers expected for the new PDB. **Enter** PDB name like “clone_pdb”.
-
-
-
-
-
-![](images/2ac79b220d664b868c62e4529791e187.jpg)
-
-**Note**: We will keep pdbadmin as a default admin. So, don’t select
-    anything in this section.
-
-17. On the Identification page, in the PDB Template Location section: **Select** “Software Library” radio
-    button. **Click** on the magnifier icon placed on Location text box. **Select** the Name which you created During Unplug **Click** Next
-
-
-
-![](images/dad1846d73cd9ca339bab04718e09816.jpg)
-
-18.  **Select** “Use Common Location for PDB Datafiles” and use **/tmp** as
-    temporary working directory.
-
-![](images/a6353f812935eeb6148a79693ae0c4fd.jpg)
-
-21.  In the Schedule page, **select** immediately check box next to Start.
-    **Click** Next.
-
-22.  In the review page, review the details you have provided for the deployment
-    procedure. If you are satisfied with the details, **click** Submit. You can
-    now click on View Execution Details link to see details.
-
-23.  In the Procedure Activity page, view the status of the procedure.
-
-24. Optionally **Click** the status link for each step to view the details of the
-execution of each step. Once the procedure is completed, you can **Navigate to
-Targets \> Databases,** Click on CDB186 and you will see the newly created PDB
-
-
-
-Note: You do not have to wait until the steps complete and move on to the next section.
-
-
-<br>**Workshop Activity 3: Clone an Existing Pluggable Database (PDB)**
-======================================================================
-
-
-
-1.  **Navigate** to the “Enterprise menu \> Provisioning and Patching \>
-    Database provisioning”.
-
-![](images/167e561726cc8d0a58d8b90a37274b06.jpg)
-
-2.  In the Database Provisioning page, in the Related Links section of the left
-    menu pane, **click** Provision Pluggable Databases
-
-![](images/33b77cf547caf09fe9c2d56b23fbaf43.jpg)
-
-3.  In the Provision Pluggable Database Console, in the Container Database
-    section, **select** the CDB (**CDB186**) within which you want to create new
-    PDBs.
-
-![](images/4a1835f78c064502ccac88138075133c.jpg)
-
-4.  In the PDB Operations section, **select** Create Pluggable Databases ,
-    **Click** Launch
-
-![](images/2248640eabc0efa2fb32293ec07fb389.jpg)
-
-5.  **Select** clone PDB and select source as CDB186 (if you choose any other
-    CDB, this operation might fail). Please keep Database link box empty. Select named credentials “ORACLE”, **Click** Next.
-
-
-
-![](images/472126037592bdeca5eaa6027ebb57a3.jpg)
-
-6.  **Enter** new PDB name
-
-![](images/4a4164d7ee405fed16dc5a0aeefe430f.jpg)
-
-7.  **Select** “Use Common Location for PDB Datafiles” in the Source page of the
-    Create Pluggable Database Wizard, please enter **/tmp** in temporary working
-    directory. Optionally, you can select the postscript as we did in the creation flow.
-**Click** Next
-
-
-
-![](images/ff556eb15570c55dfd477361c20051d6.jpg)
-
-8.  When the see the Schedule page, just **select** the immediately check box next to Start. Then **Click** Next.
-
-![](images/dblmschedulepage.jpg)
-
-
-
-9.  After the Review page appears, and you have confirmed the information is correct for your deployment, click Submit. You can now
-    click on View Execution Details link to see details and on the Procedure Activity page see the status of the procedure.
-
-
-
-10.  Once the procedure is completed,  **Navigate** to Targets then
-**Databases**, then **Click** on CDB186 and you will see the newly created PDB
-
-
-
-<br**Workshop Activity 4: Compliance Management for Pluggable Database**
-======================================================================
-
-
-   Now database administrator applies a Corporate Standard on the newly created
-   PDB database, which results in a “Violation”. Then, the DBA fixes the issue
-   using corrective actions. Let us examine how a DBA applies the fixes in the
-   following steps.
-
-**Click** ![](images/2e18c410493be6ec0b9352b94c0ceb9c.png) then **Click** Compliance, then **Click** Library to get started
-
-![](images/dblmcompliancelibrary.png)
-
-1.  **Click** the Compliance Standards tab,  then **Select** the row “Corporate Database Standard” then **Click** the Associate Targets tab
-
-![](images/8ed5400adb044b81194db800cfd4c953.jpg)
-
-
-2.  Afterwhich, **Click** Add and choose the row with your PDB, then **Click** the OK Button
-
-3. In the Save Association dialog box, **Click** the Yes button
-
-![](images/0ccc894ff6c91bdd0aa1b7e5f78fbe6e.png)
-
-4. Then upon the Information processing prompt, **Click** the OK button
-
-![](images/a01dffb956af685a866f02e68eff72b1.png)
-
-
-
-5.  You need to refresh PDB statistics to see notifications. To refresh:
-
-    a.  **Click** the target icon, then **Click** Databases, then **Click** View, then **Click** Exapand All
-
-
-    b.  Then **Right Click** on PDB, then **Click** Oracle Database, then **Click**  Configuration, then **Click** Latest.
-   **Click** the Refresh icon on the page (it will take few minutes for refresh to complete)
-
-6.  Now **Click** ![](images/2e18c410493be6ec0b9352b94c0ceb9c.png) then **Click** Compliance, then **Click** Results
-
-
-
-![](images/1317deb228d80211d9e6a2edf2cbba9e.png)
-
-7. Click Corporate Database Standard under Compliance Standards
-
-![](images/4fd761f917fd5b2374e852575b2fe99f.jpg)
-
-
-8. And you  will see the following screen
-
-![](images/1376bfeae918518dbfd16d32ffc67b72.jpg)
-
-
-
-
-
-9.  Click Violations link and  click on one of the Open Cursor Setting lines on the left under the Corporate Database Standard heading (red x).
-
-![](images/e48f5a64f52812e23a631e0f3f270371.jpg)
-
-10. You will see open cursors notification. Scroll down as needed then **Click** on the link “Submit from Library” link under the Corrective Actions heading.
-
-![](images/19317a4da691bc2a1049ca7923414db3.png)
-
-11. From the Corrective Actions popup box, Select the “FIX OPEN CURSOR” corrective action.
-
-![](images/61ea7b2393701bf4ce48bd301a67b332.jpg)
-
-12. Then review/enter the Named Credentials for the database and host and **Click** the Submit button
-
-    a.  For the database named credentials use: OEM_SYS (scroll down after Database Credentials to see Host Credentials
-
-    b.  For the host credentials use: ORACLE_HOST
-
-![](images/6ccf17bb69cbc79dae30f95bc508f640.jpg)
-
-13.  You will then see the popup as shown below. **Click** on the link “Click here to view the execution details”
-
-![](images/21e5a02e32296dd7dea196a7edfd29ac.jpg)
-
-    The job will take about a minute to complete. Click on refresh icon if the job did not complete. You will see the status change to Succeeded
-
-![](images/3be714a84eeca17c22b2c786688b567a.jpg)
-
-
-14. Once the status changes to Succeeded, **Click** Databases **Click** View
-    **Click** Expand All **Click** on Your PDB that you choose in the earlier step.
-
-15. Under Administration drop down **Click** Initialization Parameters, then Scroll down and you will see the “open_cursors” initialization parameter set
-    to 400 as shown.
-
-
-![](images/6b842b0948b11c52c1d56d2f9cdf1088.jpg)
-
-   Now that you have gone through PDB life cycle operations, we
-   will switch focus and cover the use case of building a private cloud using
-   Enterprise Manager and how to quickly provision (with
-   minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
-
-<br>**Workshop Activity 5: Self-Service to Request PDB Using PDBaaS**
-======================================================================
-
-
-
-With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the
-pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
-
-
-
-1.  Login into Enterprise Manager as a Self-Service User. Self-Service User
-    credentials are: **cyrus/welcome1**
-
-
-2.  By default, you'll see the Database Cloud Self Service Portal landing page
-    as shown below.
-
-![](images/2d9dd5550b4774b590ccb4b1815ac70d.jpg)
-
-3. **Click** the “Create Instance” button and then **Click** on Select icon for “**Provision New Empty Pluggable Database**”
-
-![](images/ee694403e4c718e224a01ae91dbc88fd.jpg)
-
-**Note: There are two service templates pertaining to Pluggable Database**
-
--   **Provision New Empty Pluggable Database**
-
-    -   This template enables users to create a new pluggable database in a
-        container database configured by DBA
-
--   **Provision Pluggable Database with Data**
-
-    -   This template enables users to create a new pluggable database with data from non-container database.
-
-
-
-4.  In the “**Pluggable Database Configuration**” section, enter Service and SID details :
-
-      Name: **YOUR INITIALS_PDB2** (e.g. AS_PDB2)
-
-      Database Service Name **: SERVICE_YOUR INITIALS_PDB2 (e.g. SERVICE_AS_PDB2)**
-
-      Workload Size: Choose **Small**
-
-![](images/fd8fe73465009dbd65e2231503481e40.jpg)
-
-5.  Enter Credentials details in the “**Pluggable Database Administrator
-    Account**”
-
-      Administrator Name: **PDBADMIN**
-
-      Password: **welcome1**
-
-    Confirm Password: **welcome1**
-
-     Tablespaces: **Accept default**
-
-![](images/181bed80a9978ed3e02c050838749f2b.jpg)
-
-6.  Instance Details, keep all defaults as they are. The Properties Page has the properties for the instance. The Self-Service Administrator has configured
-        this as a optional step. However, properties can help users locate an instance more quickly. So Enter
-
-        Contact: **CYRUS**
-
-        Lifecycle Status: **Test**
-
-![](images/f5f29e12efaaf8a1fce318e871d9009d.jpg)
-
-7.  Instance Duration - For Instance Duration Start: Accept the default (Immediately). For Duration: Specify 4 hours from the
-        current time by selecting the “Until” radio button, changing to current
-        date and specify time to be 4 hours from the current time
-
-
-
-![](images/3035739cd46353882939fd894197f2ed.jpg)
-
-8.  Click on Submit button
-
-   What do these options represent? In most cases the PDBaaS options are
-   self-explanatory. The self-service user should be able to provision a PDB by entering minimal information. Fields with an ‘\*’ represent mandatory input fields. Please refer to the
-   table listed below for a description of each option:
-
-
-
-
-| **Field**                   | **Description**                                                                                                                                                                                                                                                                                    |
-|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Request Name                | By default, it is the Self-Service User Requestor name with timestamp. This field can be modified                                                                                                                                                                                                  |
-| Zone                        | The Zone is a PaaS Zone that represents hosts/vm, where the PDB database will be deployed for this request. The zones are configured by the administrator. Self-service user need not know the host or platform details.                                                                           |
-| PDB Name                    | Required input. PDB database with user defined will be created for the container database                                                                                                                                                                                                          |
-| Database Service Name       | The user defined prefix for the database service or alias for this self-service PDB. The rest of the service name will be system generated and will be associated with a database resource management plan.                                                                                        |
-| Workload Size               | The resources allocated to the Database Service. The database resource management plan is derived from this option. You can configure multiple workload sizes. Each service template will contain unique workload sizes. This typically depends on the roles assigned to self-service user.        |
-| Schedule Request            | Self-service user has the ability to create a PDB database immediately or choose to create at a later time. In this lab exercise, the administrator has defined a policy, so a self- service user has to specify time duration. The PDB database will be automatically deleted after the duration. |
-| Administrator Name/Password | A database user with required administrative privileges will be created on the provisioned PDB. A self-service user will be able to administer the PDB database by logging in as this database user.                                                                                               |
-
-9.  Once you submit a request, you will be redirected back to the “**Database
-    Cloud Services**” Page. Your PDB creation request has been submitted to
-    Enterprise Manager for execution. Under “**Requests**” region, you should
-    see 2 requests: “**Create**” and “**Delete**” request
-
-![](images/0d01a3a45ebb7f97fcc8752d52241b9d.jpg)
-
-10. At this point, provisioning engine has received a request to create a PDB
-    based on the service template and input provided by self-service user. You will also notice the delete operation is scheduled for future (not
-    started yet) time. Click on the **hourglass** icon under Status column for
-    the Create Pluggable Database step. You will see details of request.
-
-11.  It will perform the following actions:
-
-
-        Create database roles and PDB
-
-        Create a resource plan based on the workload size
-
-        Create and register the database
-
-        The request should take less than 10 minutes to complete. Click on refresh
-        icon or as an alternative set Refresh to 30 seconds. The success status
-        indicates that PDB database was successfully created. The new PDB database
-        should be visible under Database Cloud Services page.
-
-![](images/3fc668c3d45cc0a1a7dc3c3f7233bfe6.jpg)
-
-12. Click on Close button. You will see the following under Requests section.
-
-![](images/9bd785e399889d2a53d9e7284bf6c329.jpg)
-
-13. Click on the Home Icon. You will see new PDB instance.
-
-![](images/ee3e8bccf25b8a836bea2f9a3a487cb7.jpg)
-
-Note
-----
-
-Following widgets are shown on the Database Cloud Services landing Page
-
-    **Instances** show the number and status (Up/Down) of the DB/PDB Instances
-    provisioned by the self-service user.
-
-    **Expiry**, shows the expiration summary of DB/PDB Instances.
-
-    **Usage**, resource usage status for the Self-Service user, status of the
-    resource consumption for this user.
-
-    **Memory**, current memory consumption against the Quota for this user.
-
-    **Storage**, current storage consumption against the Quota for this user.
-
-14. Click on the name of the PDB. You can use the connection details to connect to the PDB using SQL tools.
-
-
-![](images/9ca31e90c86263e6cddde14da1c6954f.jpg)
-
-15. Click on **Resize** button to resize a PDB instance.
-
-![](images/20537907e3a274a9df16e7c54f73713f.jpg)
-
-   Resize allows you to resize your instance to other available resource sizes.
-   We have 2 resource sizes available for Service Template. Both are displayed.
-   Current size of PDB instance is Small, you can now resize it to large.
-
-![](images/cc03cc86d7e3d8146a3d799b52583a83.jpg)
-
-16. One you click on **Resize**, a job will be submitted to resize instance. In
-few minutes instance resize is completed. Expand **Resource Usage** section on PDB Home page. This shows now new resource usage limits.
-
-
-
-
-![](images/64a8954df11d2e688a930fd92ae38cd8.jpg)
-
-17.  Next delete the database Instance: Go to the Database Cloud Services Home page by clicking on **Database
-        Cloud Service Portal link**
-
-
-
-![](images/a24b112c579e1df59bb4919a0bbe2b67.jpg)
-
-18. Click on the action menu for new PDB and delete this instance.
-
-![](images/877bc45ab2f0ab8acd7ea6507baee575.jpg)
-
-19. While deleting instance you can preserve a backup of the instance and create a new instance using this backup. To store backup of this instance, select check-box: **Preserve a backup of this instance**
-
-
-![](images/2840b2e0869edc22af3245e98dba13eb.jpg)
-
-20. Click OK. You will see confirmation to delete the instance.
-
-![](images/2b44dd4c41f594cddd9adc74dd193297.jpg)
-
-<br>**Workshop Activity 6: Administrative setup for PDB-as-a-Service (Private Cloud)**
-======================================================================
-
-
-Previous exercises demonstrated the process of requesting PDBs using
-available service templates as performed by a Self-Service user. In this section,
-we will see the Administrative setup for PDBaaS.
-
-Login to the EM Console as super administrator **sysman/welcome1**
-
-PaaS Infrastructure Zone
-------------------------
-
-1. On the EM Console, go to Setup -\> Cloud -\> Database.
-
-![](images/edfbce40d3abb0f21705992cc042c3ee.jpg)
-
-2. Select **Pluggable Database** from the drop-down menu.
-
-![](images/cf57fcbd4fe1570c40a1ee7f9b75dcec.jpg)
-
-3. Then **Click** on **PaaS Infrastructure Zone** **Sales Infra Zone** is the zone where PDBs were provisioned in the
-previous sections. **Click** on name of the zone.
-
-
-![](images/8ed6c692f382172bbc9f6e2b90179f9e.jpg)
-
-4. You are taken to the Zone Home page; you can see all the details of a Zone
-such as the host members of this zone. You can explore more about the zone
-on this page.
-
-![](images/b3ddc4d5e436d1e6dec7eb0ed795f0b7.jpg)
-
-Pluggable Database Pool
------------------------
-
-5. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select **Pluggable Database** from the drop-down menu. And then click on **Pluggable Database Pool**’.
-
-   A Pluggable Database Pool consists of a set of Container Databases on which
-   PDBs will be provisioned.
-
-![](images/b49f455842d0fb11dd7de44fcaccfe26.jpg)
-
-6. Click on name of the pool to see more details.
-
-![](images/5fa7e9b6bb3648c664e4afc7aeac5670.jpg)
-
-7. Scroll down to see details of Members and Service Templates.
-
-![](images/243ed347412f16a2159b2184c2dacdf7.jpg)
-
-Data Sources
-------------
-
-8. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select Pluggable Database from the drop-down menu. And then click on **Data Sources** observe that the profile is based on Schema Export(s). This Data Profile was used for provisioning a PDB with data.
-
-![](images/d834209bf1c6a238679ae419098ee0f3.jpg)
-
-9. Select the row with profile to see more details.
-
-![](images/532db10bbaab85fcdd83f245bd317a6b.jpg)
-
-Service Templates
------------------
-
-10. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select Pluggable Database from the drop-down menu. And then click on **Service Templates from you left menu.**
-
-![](images/47baba2a1e7567bfb0b5f89429a7831d.jpg)
-
-   There are two service templates pertaining to Pluggable Database
-
--   **Provision New Empty Pluggable Database**
-
-    -   This template enables the user to create a a new pluggable database in a
-        container database configured by DBA
-
--   **Provision Pluggable Database with Data**
-
-    -   This template enables user to create a new pluggable database with data
-        from a non-container database.
-
-11. Click on name of any template to explore more details.
-
-![](images/a0efb63a12d01e1254593656765ec52a.jpg)
-
-That concludes this lab.
-
-   [Return back to top menu listing all available labs](../readme.md)

@@ -1,4 +1,4 @@
-Step # Automated Database Upgrade at Scale with Fleet Maintenance
+# Automated Database Upgrade at Scale with Fleet Maintenance
 ## Before You Begin
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
@@ -27,7 +27,7 @@ This lab environment is setup with Enterprise Manager Cloud Control Release 13.3
 Prior to starting, you will need:
 - EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: http://\{Public-IP\}:7803/em
+- OMS Console URL: http://\{EM Instance Public IP\}:7803/em
 - OMS super-user Credentials:
     - Username: **sysman**
     - password: **welcome1**
@@ -75,9 +75,9 @@ sudo su - oracle</copy>
 
 #### Steps Completed in Advance
 
-In the interest of simplifying the setup and save time, the following steps were completed in advance for part \#2 covered in this lab:
+In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab:
 
-  - We have created a pre-patched Oracle Home with 18.10 release using which we will create the gold image [/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]
+  - We have created and pre-patched an Oracle Home with 18.10 release using which will be use to create the gold image [/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]
   - We have created a pre-patched Oracle Home with 19.7 release using which we will create the gold image [/u01/app/oracle/product/19/db\_home\_src, Orasidb19c\_home1\_2020\_05\_13\_04\_24\_10\_emcc.marketplace.com\_2953]
   - Creation of the first version of “Tier\#1” Gold Image
   - Subscription of “finance.subnet.vcn.oraclevcn.com” Database to above image
@@ -158,9 +158,7 @@ In the next section we will follow these recommendations to perform the followin
 
 ### Database Fleet Maintenance
 
-Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription based out of place patching solution. Gold Image(s) are software
-library entities storing archive of an upgraded software home. Targets, to be upgraded, subscribe to a relevant Gold Image. Target subscription persists
-through the lifecycle of the Target or Gold Image unless modified by an administrator. We will go through the following steps for this Fleet Maintenance Exercise.
+Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription based out of place patching solution. Gold Image(s) are software library entities storing archive of an upgraded software home. Targets, to be upgraded, subscribe to a relevant Gold Image. Target subscription persists through the lifecycle of the Target or Gold Image unless modified by an administrator. We will go through the following steps for this Fleet Maintenance Exercise.
 
 ![](images/DB_Fleet_Upgrade.png)
 

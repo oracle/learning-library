@@ -25,7 +25,7 @@ The estimated time to complete all the Step activities is approximately 60 minut
 Prior to starting, you will need:
 
 - EM Instance Public IP address
-- OMS Console URL: http://\{Public-IP\}:7803/em
+- OMS Console URL: http://\{EM Instance Public IP\}:7803/em
 - OMS super-user Credentials:
     -   Username: **sysman**
     -   password: **welcome1**
@@ -162,7 +162,7 @@ Prior to starting, you will need:
 
 ## Step 3: Clone an Existing Pluggable Database (PDB)
 
-1.  **Navigate** to the “Enterprise menu >> Provisioning and Patching >> Database provisioning”.
+1.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
 ![](images/167e561726cc8d0a58d8b90a37274b06.jpg)
 
