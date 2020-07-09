@@ -157,7 +157,7 @@ You should see the comparison definition you created in this page.
 
 In this step, you learned steps to compare two database targets to determine configuration differences. This one-time database (or any Enterprise Manager managed targets) comparison will help you quickly determine specific configuration changes when compared with reference configuration. This is very ideal for troubleshooting any target configuration parameters.
 
-## Step 3: Database CONFIGURATION Drift Management
+## Step 3: Database Configuration Drift Management
 
 ### Overview
 
