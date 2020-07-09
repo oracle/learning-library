@@ -472,9 +472,8 @@ cd scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
 ##### Calibrate output
 
 >Workload Replay Client: Release 18.0.0.0.0 - Production on Tue Nov 5 09:43:45 2019 Copyright (c) 1982, 2018, Oracle and/or its affiliates. All rights reserved.
->Report for Workload in:
->/home/oracle/scripts/dbpack/RAT\_REPLAY/DBReplayWorkload\_OLTP\_CAP\_1
->-----------------------
+>Report for Workload in: /home/oracle/scripts/dbpack/RAT\_REPLAY/DBReplayWorkload\_OLTP\_CAP\_1
+>
 >Recommendation: consider using at least 1 client divided among 1 CPU(s). You will need at least 112 MB of memory per client process. If your machine(s) cannot match that number, consider using more clients.
 
 >Workload Characteristics:
@@ -586,7 +585,7 @@ Thank You!
   - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 
 ## Acknowledgements
-* **Author** - Bjorn Bolltoft, Oracle Enterprise Manager Product Management
+* **Author** - Björn Bolltoft, Oracle Enterprise Manager Product Management
 * **Adapted for Cloud by** -  Rene Fontcha, Oracle Enterprise Manager Sales Engineering
 * **Last Updated By/Date** - Rene Fontcha, July 2020
 

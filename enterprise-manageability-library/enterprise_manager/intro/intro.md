@@ -39,7 +39,7 @@ Oracle Database Product Management Videos on Multitenant
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava, Bjorn Bolltoft, Harish Niddagatta, Rene Fontcha
+- **Authors/Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava, Björn Bolltoft, Harish Niddagatta, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
