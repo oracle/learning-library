@@ -49,15 +49,19 @@ _____________________________________
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “***sysman/welcome1***”.
 
 2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
+
 ![](images/emjobnav.png)
 
 3. Locate and select the job name **1-DB\_LAB\_START**, and Click the Submit  button.
+
 ![](images/emdbstartjob.png)
 
 4. Then Click the Submit button in the upper right of your window.
+
 ![](images/emjobsubmitbutton.png)
 
 5. The workload is now started and takes a few minutes to ramp up.
+
 ![](images/emjobcom.png)
 
 #### Option 2: Using SSH terminal from the VM host

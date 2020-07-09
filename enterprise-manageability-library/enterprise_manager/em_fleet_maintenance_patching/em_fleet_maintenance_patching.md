@@ -88,6 +88,7 @@ This exercise enables us to analyze the database estate using Software Standardi
 ### Software Standardization Advisor
 
 Software Standardization Advisor enables administrators to understand various database configurations prevailing in their environment. Each deployment with a unique platform, release and patch level is identified as a distinct configuration. This provides the administrators a view of the configuration pollution in their estate. It also analyzes and provides a recommendation to standardize the environment and reduce the number of configurations required for managing the database estate.
+
 ![](images/2de751b1331829d53a7b96f6feca6c60.png)
 
 1.  Log on to Enterprise Manager Console as sysman
@@ -222,6 +223,7 @@ cat create_image_Tier2_sidb_x64.sh</copy>
 ````
 
 ![](images/979c7a2ab44a65b0a6faf911cac1b64a.png)
+
 IMAGE ID retrieved from the output of above command is used in further operations like Target Subscription.
 
 * After retrieving a list of the available images, one can view a list of versions available for a specific image with the following command:
