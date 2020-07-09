@@ -3,10 +3,6 @@
 
 The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database. We will walk through how Database organizations can begin their Cloud journey with Multitenant Database by requesting a Pluggable Database (PDB) for testing purposes and perform other Lifecycle Operations like Clone, Unplug etc. We will also focus on setting up Private Cloud for PDBs and highlighting the ease of Provisioning, Resizing and even Deleting a PDB using a Self-Service option.
 
-Applicable User Roles in the Organization:
-
-![](images/ca612c296dce62109ae33de2f81110a7.jpg)
-
 ### Background
 
 The estimated time to complete all the Step activities is approximately 60 minutes.
