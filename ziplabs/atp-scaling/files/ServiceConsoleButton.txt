@@ -1,4 +1,0 @@
-This image shows a page with details on the ATP database instance you created. To the left is a large ATP icon. It's green to indicate the service is available.
-
-To the right of the icon are buttons, from left to right: DB Connection, Service Concole, Scale Up/Down, Start/Stop, and Actions. The actions button is expandable to reveal more options. The button Service Console is highlighted with a red rectangle.
-

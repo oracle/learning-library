@@ -1,11 +1,11 @@
 # Data Preparation Using SQL Developer
 
 ![](images/200/Picture200-lab.png)  
-Updated: January 4, 2019
+Updated: October 8, 2019
 
 ## Introduction
 
-This lab walks you through the steps to upload the required datasets to the Autonomous Data Warehouse (ADW) instance that you provisioned in the previous lab. You will you SQL Developer as an interface to the ADW instance for uploading and preparing the dataset.
+This lab walks you through the steps to upload the required datasets to the Autonomous Data Warehouse (ADW) instance that you provisioned in the previous lab. You will use SQL Developer as an interface to the ADW instance for uploading and preparing the dataset.
 
 
 **_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
@@ -16,10 +16,9 @@ This lab walks you through the steps to upload the required datasets to the Auto
 -   Learn how to prepare datasets for training, validating and applying the machine learning models
 
 ## Required Artifacts
--   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through signing up for a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
--   Oracle SQL Developer 18.3 or later (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">Oracle Technology Network download site</a>)
-Please use SQL Developer version 18.3 or later as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.
+-   Oracle SQL Developer (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank"> Oracle Technology Network download site</a>) - Please use the latest version of SQL Developer version as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.  At time of update, the version of SQL Developer available for download is 19.2.
 
 
 # Connect to ADW and Prepare Data Using SQL Developer
@@ -83,7 +82,7 @@ example, if you the database you created was named adwfinance, select adwfinance
 
 -   Use the SQLDeveloper to import the [station_info.csv](./files/datasets/station_info.csv) dataset to a table (Station_Info) in the database.
 
--   Use the SQLDeveloper to import the [station_status_weather.csv](./files/datasets/station_status_weather.csv) dataset to a table (Station_Status_Weather) in the database. Make sure the LAST_REPORTED column is created as a DATE type column. (Note that this table has ~1M rows, so it may take about 30mins to import the table using the SQL Developer wizard.)
+-   Use the SQLDeveloper to import the [station_status_weather.csv](./files/datasets/station_status_weather.csv) dataset to a table (Station_Status_Weather) in the database. Make sure the LAST_REPORTED column is created as a TIMESTAMP type column with the following format: DD-MON-YY HH24:MI:SS (Note that this table has ~1M rows, so it may take about 30mins to import the table using the SQL Developer wizard.)
 
 
 

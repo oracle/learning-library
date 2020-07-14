@@ -1,0 +1,251 @@
+{
+  "tutorials": [
+      {
+        "title": "Workshop README",
+        "description": "Exadata Cloud Service self-guided hands-on Workshop overview",
+        "publisheddate": "4/20/2020",
+        "filename": "README.md"
+      },
+      {
+        "title": "Lab 1: Preparing your private data center in the Oracle Cloud Infrastructure",
+        "description": "Preparing your private data center in the Oracle Cloud Infrastructure",
+        "publisheddate": "4/20/2020",
+        "filename": "EXACS-Networking.md" 
+      },
+      {
+        "title": "Lab 2: Provision Exadata Infrastructure in a private OCI network",
+        "description": "Provision Exadata Infrastructure in a private OCI network",
+        "publisheddate": "4/20/2020",
+        "filename": "ProvisionExaInfra.md"
+      },
+      {
+        "title": "Lab 3: Provision databases on your Exadata Cloud Service Infrastructure",
+        "description": "Provision databases on your Exadata Cloud Service Infrastructure",
+        "publisheddate": "4/20/2020",
+        "filename": "ProvisionDatabase.md"
+      },
+      {
+        "title": "Lab 4: Configure a development system for use with your Exadata Cloud Service database",
+        "description": "Configure a development system for use with your Exadata Cloud Service database",
+        "publisheddate": "4/20/2020",
+        "filename": "ConfigureDevClient.md"
+      }
+      ,
+      {
+        "title": "Lab 5: Setup VPN Connectivity to your Exadata Cloud Service Infrastructure",
+        "description": "Setup VPN Connectivity to your Exadata Cloud Service Infrastructure",
+        "publisheddate": "4/20/2020",
+        "filename": "ConfigureVPN.md"
+      },
+      {
+        "title": "Lab 6: Setup, Discover, Manage and Monitor database with Enterprise Manager",
+        "description": "Setup, Discover, Manage and Monitor database with Enterprise Manager",
+        "publisheddate": "4/20/2020",
+        "filename": "MonitorAndManageWithEM.md"
+      },
+      {
+        "title": "Lab 7: Data Safe with EXACS",
+        "description": "Data Safe with EXACS",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafe.md"
+      },
+      {
+        "title": "Lab 7-1: Register target database using private end point",
+        "description": "Register target database using private end point",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafePE.md"
+      },
+      {
+        "title": "Lab 7-2: Assess Database Configurations with Oracle Data Safe",
+        "description": "Assess Database Configurations with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAssessment.md"
+      },
+      {
+        "title": "Lab 7-3: Assess Users with Oracle Data Safe",
+        "description": "Assess Users with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAssessment2.md"
+      },
+      {
+        "title": "Lab 7-4: Discover Sensitive Data with Oracle Data Safe",
+        "description": "Discover Sensitive Data with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeSDD.md"
+      },
+      {
+        "title": "Lab 7-5: Verify a Sensitive Data Model with Oracle Data Safe",
+        "description": "Verify a Sensitive Data Model with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeSDD2.md"
+      },
+      {
+        "title": "Lab 7-6: Update a Sensitive Data Model with Oracle Data Safe",
+        "description": "Update a Sensitive Data Model with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeSDD3.md"
+      },
+      {
+        "title": "Lab 7-7: Create a Sensitive Type and Sensitive Category with Oracle Data Safe",
+        "description": "Create a Sensitive Type and Sensitive Category with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeSDD4.md"
+      },
+      {
+        "title": "Lab 8: Migrate an on-prem application schema using Data Pump",
+        "description": "Migrate an on-prem application schema using Data Pump",
+        "publisheddate": "4/20/2020",
+        "filename": "DataPump.md"
+      },
+      {
+        "title": "Lab 9: Real time migration of database using Oracle Goldengate Replication",
+        "description": "Real time migration of database using Oracle Goldengate Replication",
+        "publisheddate": "4/20/2020",
+        "filename": "Goldengate.md"
+      },
+      {
+        "title": "Lab 10: Backup and Recovery using Console and API’s",
+        "description": "Backup and Recovery using Console and API’s",
+        "publisheddate": "4/20/2020",
+        "filename": "Backup&Recovery.md"
+      },
+      {
+        "title": "Lab 11: Protect your data with Database Vault",
+        "description": "Protect your data with Database Vault",
+        "publisheddate": "4/20/2020",
+        "filename": "DBVault.md"
+      },
+      {
+        "title": "Lab 12: Data Safe Advanced lab",
+        "description": "Data Safe Advanced lab",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAdvanced.md"
+      },
+      {
+        "title": "Lab 12-1: Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe",
+        "description": "Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM.md"
+      },
+      {
+        "title": "Lab 12-2: Explore Data Masking Results and Reports in Oracle Data Safe",
+        "description": "Explore Data Masking Results and Reports in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM2.md"
+      },
+      {
+        "title": "Lab 12-3: Create a Masking Format in Oracle Data Safe",
+        "description": "Create a Masking Format in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM3.md"
+      },
+      {
+        "title": "Lab 12-4: Configure a Variety of Masking Formats with Oracle Data Safe",
+        "description": "Configure a Variety of Masking Formats with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM4.md"
+      },
+      {
+        "title": "Lab 12-5: Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe",
+        "description": "Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAudit.md"
+      },
+      {
+        "title": "Lab 12-6: Analyze Audit Data with Reports and Alerts in Oracle Data Safe",
+        "description": "Analyze Audit Data with Reports and Alerts in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAudit2.md"
+      },
+      {
+        "title": "Lab 12-7: Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe",
+        "description": "Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAudit3.md"
+      },
+      {
+        "title": "Lab 13: Use OCI CLI commands to work with EXACS",
+        "description": "Use OCI CLI commands to work with EXACS",
+        "publisheddate": "4/20/2020",
+        "filename": "OCI-CLI.md"
+      },
+      {
+        "title": "Lab 14: Automation with Terraform",
+        "description": "Automation with Terraform",
+        "publisheddate": "4/20/2020",
+        "filename": "Terraform.md"
+      },
+      {
+        "title": "Lab 14-1: Git for Beginner",
+        "description": "Git for Beginner",
+        "publisheddate": "4/20/2020",
+        "filename": "gitBeginner.md"
+      },      
+      {
+        "title": "Lab 14-2: Terraform for Beginner",
+        "description": "Terraform for Beginner",
+        "publisheddate": "4/20/2020",
+        "filename": "tfBeginner.md"
+      },
+      {
+        "title": "Lab 14-3: Terraform for database",
+        "description": "Terraform for database",
+        "publisheddate": "4/20/2020",
+        "filename": "tf4Db.md"
+      },
+      {
+        "title": "Lab 15: Build and deploy Python application stacks on EXACS",
+        "description": "Build and deploy Python application stacks on EXACS",
+        "publisheddate": "4/20/2020",
+        "filename": "BuildPythonApps.md"
+      },
+      {
+        "title": "Lab 16: Introduction to Oracle APEX and ORDS",
+        "description": "Introduction to Oracle APEX and ORDS",
+        "publisheddate": "4/20/2020",
+        "filename": "APEX.md"
+      },
+      {
+        "title": "Lab 16-1: Install ORDS and APEX",
+        "description": "Install ORDS and APEX",
+        "publisheddate": "4/20/2020",
+        "filename": "SetupORDSandAPEXonDBCS.md"
+      },
+      {
+        "title": "Lab 16-2: Create a RestService on Database",
+        "description": "Create a RestService on Database",
+        "publisheddate": "4/20/2020",
+        "filename": "Create_a_RestService_on_DBCS.md"
+      },
+      {
+        "title": "Lab 16-3: Build APEX application on EXACS",
+        "description": "Build APEX application on EXACS",
+        "publisheddate": "4/20/2020",
+        "filename": "Creating_an_Apex_Application.md"
+      },
+      {
+        "title": "Lab 17: Introduction to Swingbench and Oracle database",
+        "description": "Introduction to Swingbench and Oracle database",
+        "publisheddate": "5/18/2020",
+        "filename": "Swingbench.md"
+      },
+      {
+        "title": "Lab 18: Docker Application with EXACS",
+        "description": "Docker Application with EXACS",
+        "publisheddate": "5/18/2020",
+        "filename": "dockerapp.md"
+      },
+      {
+        "title": "Lab 19: Connect Oracle Analytics Cloud with your Exadata Cloud Service Database",
+        "description": "OAC to EXACS",
+        "publisheddate": "6/10/2020",
+        "filename": "oac.md"
+      },
+      {
+        "title": "Appendix",
+        "description": "Appendix",
+        "publisheddate": "4/20/2020",
+        "filename": "Appendix.md"
+      }
+    ]
+}

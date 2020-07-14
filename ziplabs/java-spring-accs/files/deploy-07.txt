@@ -1,1 +1,0 @@
-This illustration shows a part of the Create Application window after the user click the Create button. It shows the Create Application title, below the title is the Processing Archive... message. The message is highlighted. Bellow the message is the Java SE icon follow by the Application title. Below that, is the name of the application (BookRestService).

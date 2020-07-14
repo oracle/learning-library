@@ -1,41 +1,36 @@
-![](common/images/customer.logo.png)
+![](common/images/learning-library-title.png)
 ---
-# ORACLE Learning Library #
+# Build, test and deploy applications on Oracle's Cloud! #
+The Oracle Learning Library is a place to explore Oracle's products and services using labs designed to enhance your experience building and deploying applications on the Cloud and On-Premises.   This library of assets covers everything from how to provision the world's first autonomous database to setting up a webserver on our world class Generation 2 infrastructure, machine learning and much more.  Use your existing Oracle Cloud account or a Free Tier account to build, test, and deploy applications on Oracle's Cloud. 
 
-Note: Content in the README is under development !
+### How do I get started? ###
+First, you need an Oracle Cloud account.  Sign up [here](https://oracle.com/free) to create a free-tier account.  Second, visit one of our libraries below or start with one of our featured labs for this month. 
 
-## Introduction ##
+## Oracle GitHub Libraries ## 
+- [Data Management Library](data-management-library)
+- [Cloud Infrastructure (OCI) Library](oci-library)
+- [Developer Library](developer-library)
+- [Solutions Library](solutions-library)
 
-Oracle Cloud is the industry’s broadest and most integrated public cloud. It offers best-in-class services across software as a service (SaaS), platform as a service (PaaS), and infrastructure as a service (IaaS), and even lets you put Oracle Cloud in your own data center. Oracle Cloud helps organizations drive innovation and business transformation by increasing business agility, lowering costs, and reducing IT complexity. The workshop content shows different aspects of Application Development in the cloud with different set of Oracle Cloud Services.
+## July's Featured Workshops
+- [Machine Learning on Autonomous Database](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/)
+- [Database 19c New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/livelabs/)
+- [Autonomous Database on Shared Infrasructure](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/freetier-overview/)
+- [Multitenant Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
+- [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
 
+Workshops are being added daily, please visit frequently for new content.
 
-## Repository Folder Structure ##
-
-The following directories are contained within this repository:
-
-**/articles**
-- This folder will contain interesting Articles on Oracle Technology
-
-**/common**
-- This folder contains common images and assets used by content in other folders
-
-**/oci-library**
-- This folder contains OCI Hands-on-Labs
-
-**/templates**
-- This folder contains templates used for Articles and Workshops
-
-**/workshops**
-- This folder will contain subfolders, each with documentation for individual workshops. The documentation is always in Markdown Format.
-
-**/ziplabs
-----This folder will contain subfolders, each with documentation for individual zip Labs in Markdown Format. Oracle Zip Labs are short 10-20 minute labs that guide users through a sequence of steps to accomplish a specific task using Oracle Cloud services.
-
+## How does the Free Tier Work? ##
+Use your Always Free resources as long as you want with no time constraints—subject only to the capacity limits noted. When your 30-day trial period for the expanded set of services ends, you can continue using Always Free services with no interruption.
 
 
 ## [Contributing](CONTRIBUTING.md)
-Pull Requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.
+Pull requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.  To get your workshop featured on this page, please contact Kay Malcolm or Tom McGinn.
 
 ## [License](LICENSE.md)
 Copyright (c) 2014, 2016 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
+
+## Issues?
+Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.  Make sure to include the name of the workshop and/or lab when submitting.

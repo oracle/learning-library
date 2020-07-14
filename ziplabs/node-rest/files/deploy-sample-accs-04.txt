@@ -1,1 +1,0 @@
-The illustration shows three files in the directory for the Sample project (manifest.json, sample.zip, and server.js). The sample.zip file is selected.

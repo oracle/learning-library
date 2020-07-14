@@ -1,0 +1,11 @@
+# OCID of assigned compartment
+export compartment_ocid=ocid1.compartment.oc1..xxxxxxxxxxxzmanutdw7ujxickx3kq
+
+# Oracle-Linux-7.7-2019.08-28-0
+#Ashburn
+export image_ocid=ocid1.image.oc1.iad.aaaaaaaayuihpsm2nfkxztdkottbjtfjqhgod7hfuirt2rqlewxrmdlgg75q
+#Phoenix
+#export image_ocid=ocid1.image.oc1.phx.aaaaaaaadtmpmfm77czi5ghi5zh7uvkguu6dsecsg7kuo3eigc5663und4za
+
+# skip host verification prompts for demo
+export ANSIBLE_HOST_KEY_CHECKING=False

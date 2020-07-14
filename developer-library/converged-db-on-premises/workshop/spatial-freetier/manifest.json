@@ -1,0 +1,44 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction and Overview",
+            "description": "Introduction to Spatial Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../spatial/intro-spatial.md"
+        },
+        {         
+            "title": " Env Setup",
+            "description": "Env Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../spatial/setup.md"
+        },
+        {         
+            "title": "Lab:1 Load Data and Metadata",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../spatial/load_spatial.md"
+        },
+        {         
+            "title": "Lab:2 Spatial Indexing",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../spatial/spatial_index.md"
+        },
+        {         
+            "title": "Lab:3 Usage of Spatial Functions",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../spatial/spatial_fun.md"
+        }
+                 ]
+}

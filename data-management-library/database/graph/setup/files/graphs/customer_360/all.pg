@@ -1,0 +1,51 @@
+# Nodes
+101 type:customer name:"John" age:10 location:"Boston"
+102 type:customer name:"Mary" gender:"F"
+103 type:customer name:"Jill" location:"Boston"
+104 type:customer name:"Todd" student:true
+201 type:account account_no:"xxx-yyy-201" balance:1500
+202 type:account account_no:"xxx-yyy-202" balance:200
+203 type:account account_no:"xxx-yyy-203" balance:2100
+204 type:account account_no:"xxx-yyy-204" balance:100
+
+# Edges
+201 -> 101 :owned_by since:"2015-10-04"
+202 -> 102 :owned_by since:"2012-09-13"
+203 -> 103 :owned_by since:"2016-02-04"
+204 -> 104 :owned_by since:"2018-01-05"
+103 -> 104 :parent_of
+
+# Nodes
+301 type:merchant name:"Apple Store"
+302 type:merchant name:"PC Paradise"
+303 type:merchant name:"Kindle Store"
+304 type:merchant name:"Asia Books"
+305 type:merchant name:"ABC Travel"
+
+# Edges
+201 -> 301 :purchased amount:800
+201 -> 302 :purchased amount:15
+202 -> 301 :purchased amount:150
+202 -> 302 :purchased amount:20
+202 -> 304 :purchased amount:10
+203 -> 301 :purchased amount:350
+203 -> 302 :purchased amount:20
+203 -> 303 :purchased amount:15
+204 -> 303 :purchased amount:10
+204 -> 304 :purchased amount:15
+204 -> 305 :purchased amount:450
+
+# Nodes
+211 type:account account_no:xxx-zzz-001
+212 type:account account_no:xxx-zzz-002
+
+# Edges
+201 -> 202 :transfer amount:200 date:"2018-10-05"
+211 -> 202 :transfer amount:900 date:"2018-10-06"
+202 -> 212 :transfer amount:850 date:"2018-10-06"
+201 -> 203 :transfer amount:500 date:"2018-10-07"
+203 -> 204 :transfer amount:450 date:"2018-10-08"
+204 -> 201 :transfer amount:400 date:"2018-10-09"
+202 -> 203 :transfer amount:100 date:"2018-10-10"
+202 -> 201 :transfer amount:300 date:"2018-10-10"
+

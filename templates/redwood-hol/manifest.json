@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Enter lab title here",
+            "description": "This lab walks you through the steps to...",
+            "filename": "content.md"
+        }
+    ]
+}

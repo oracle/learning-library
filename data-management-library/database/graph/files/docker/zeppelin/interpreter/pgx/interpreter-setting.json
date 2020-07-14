@@ -1,0 +1,69 @@
+[
+  {
+    "group": "pgx",
+    "name": "pgx",
+    "className": "oracle.pgx.zeppelin.PgxInterpreter",
+    "editor": {
+      "language": "scala",
+      "editOnDblClick": false,
+      "completionKey": "TAB"
+    },
+    "properties": {
+      "pgx.baseUrl": {
+        "envName": "PGX_SERVER_BASEURL",
+        "propertyName": "pgx.baseUrl",
+        "defaultValue": "http://graph-server:7007",
+        "description": "Base URL of a running PGX server this interpreter should connect to"
+      },
+      "pgx.trustStore": {
+        "envName": null,
+        "propertyName": "pgx.trustStore",
+        "defaultValue": "",
+        "description": "Path to the truststore to use when connecting to PGX"
+      },
+      "pgx.keyStore": {
+        "envName": null,
+        "propertyName": "pgx.keyStore",
+        "defaultValue": "",
+        "description": "Path to the keystore to use when connecting to PGX"
+      },
+      "pgx.secretStore": {
+        "envName": null,
+        "propertyName": "pgx.secretStore",
+        "defaultValue": "",
+        "description": "Path to the keystore to use when credentials are needed for loading to PGX"
+      },
+      "pgx.timeout": {
+        "envName": null,
+        "propertyName": "pgx.timeout",
+        "defaultValue": "600",
+        "description": "Timeout in seconds after which a command should be canceled"
+      },
+      "pgx.maxConcurrency": {
+        "envName": null,
+        "propertyName": "pgx.maxConcurrency",
+        "defaultValue": "1",
+        "description": "Number of executions which can run simultaneously"
+      },
+      "pgx.prettyprint": {
+        "envName": null,
+        "propertyName": "pgx.prettyprint",
+        "defaultValue": "false",
+        "description": "pretty print text output as html (experimental) - true or false"
+      },
+      "pgx.visualizePgqlResults": {
+        "envName": null,
+        "propertyName": "pgx.visualizePgqlResults",
+        "defaultValue": "false",
+        "description": "If true, will return special JSON for PGQL queries which can be used for visualization (needs frontend support)"
+      },
+      "pgx.maxResults": {
+        "envName": null,
+        "propertyName": "pgx.maxResults",
+        "defaultValue": "100",
+        "description": "Maximum number of results to be returned"
+      }
+    }
+  }
+]
+

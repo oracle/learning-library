@@ -1,1 +1,0 @@
-sqlldr CONTROL=credit_scoring_100k.ctl   skip=1   

@@ -1,54 +1,52 @@
 {
-    "workshop": {
-        "title": "Bike Share Demand Prediction",
-        "description": "This workshop will walk you through the process of using the Autonomous Data Warehouse (ADW) to build and apply predictive Machine Learning models.",
-        "theme": "default",
-        "interactive":"https://launch.oracle.com/?",
-        "labs": [
+    "tutorials": [
             {
-                "number": "0",
-                "filename": "Intro.md",
                 "title": "Workshop Introduction",
-                "description": "Step-by-step workshop instructions"
-
+                "description": "Step-by-step workshop instructions",
+                "partnumber": "0",
+                "publisheddate": "01/22/2020",
+                "contentid": "12nnnn",
+                "filename": "Intro.md"
             },
             {
-                "number": "100",
-                "filename": "LabGuide100.md",
                 "title": "Lab 100: Getting Started with Autonomous Data Warehouse (ADW) and Oracle Machine Learning (OML)",
-                "description": "This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) and the new Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance and create a new OML user."
-
+                "description": "This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) and the new Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance and create a new OML user.",
+                "partnumber": "100",
+                "publisheddate": "01/22/2020",
+                "contentid": "12nnnn",
+                "filename": "LabGuide100.md"
             },
             {
-                "number": "200",
-                "filename": "LabGuide200.md",
                 "title": "Lab 200: Data Preparation Using SQL Developer",
-                "description": "This lab walks you through the steps to upload the required datasets to the Autonomous Data Warehouse (ADW) instance that you provisioned in the previous lab. You will you SQL Developer as an interface to the ADW instance for uploading and preparing the dataset."
-
-            },
+                "description": "This lab walks you through the steps to upload the required datasets to the Autonomous Data Warehouse (ADW) instance that you provisioned in the previous lab. You will use SQL Developer as an interface to the ADW instance for uploading and preparing the dataset.",
+                "partnumber": "200",
+                "publisheddate": "01/22/2020",
+                "contentid": "12nnnn",
+                "filename": "LabGuide200.md"
+                },
             {
-                "number": "300",
-                "filename": "LabGuide300.md",
                 "title": "Lab 300: Getting Started with Oracle Analytics Cloud (OAC)",
-                "description": "This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to your Autonomous Data Warehouse (ADW) instance. "
-
-            },
+                "description": "This lab walks you through the steps to provision an Oracle Analytics Cloud (OAC) instance and connect it to your Autonomous Data Warehouse (ADW) instance. ",
+                "number": "300",
+                "publisheddate": "01/22/2020",
+                "contentid": "12nnnn",
+                "filename": "LabGuide300.md"
+                },
             {
-                "number": "400",
-                "filename": "LabGuide400.md",
                 "title": "Lab 400: Building Machine Learning Models in Oracle Analytics Cloud (OAC)",
-                "description": "This lab walks you through the steps to create and train a machine learning model in the Oracle Analytic Cloud, without writing a single line of code. Also, we will show you a comparision between different machine learning models that you can create using OAC."
-
-            },
-	    {
-                "number": "500",
-                "filename": "LabGuide500.md",
+                "description": "This lab walks you through the steps to create and train a machine learning model in the Oracle Analytic Cloud, without writing a single line of code. Also, we will show you a comparision between different machine learning models that you can create using OAC.",
+                "number": "400",
+                "publisheddate": "01/22/2020",
+                "contentid": "12nnnn",
+                "filename": "LabGuide400.md"
+                },
+	          {
                 "title": "Lab 500: Building Machine Learning Models in Oracle Machine Learning Tool (OML)",
-                "description": "This lab walks you through the steps to create a linear regression model in the Oracle Machine Learning tool and apply it to the dataset in the Autonomous Datawarehouse. Also, we will show you how you can use the Oracle Analytics Cloud to visualize the results of the model created in OML."
-
-            }
-
-
+                "description": "This lab walks you through the steps to create a linear regression model in the Oracle Machine Learning tool and apply it to the dataset in the Autonomous Datawarehouse. Also, we will show you how you can use the Oracle Analytics Cloud to visualize the results of the model created in OML.",
+                "number": "500",
+                "publisheddate": "01/22/2020",
+                "contentid": "12nnnn",
+                "filename": "LabGuide500.md"
+                }
         ]
-    }
 }

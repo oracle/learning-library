@@ -1,6 +1,9 @@
 # The last matching pattern has the most precedence.
-*                         @peterfz @snicholspa @flavio-santino
-/data-management-library/ @nilaypanchal @kbhanush @kaymalcolm @tammybednar
-/oci-library/             @flavio-santino @jamalarif @enschilling
+*                         @snicholspa @flavio-santino @kaymalcolm @tmcginn @tammybednar @davidastart
+/data-management-library/ @kaymalcolm @tammybednar @tmcginn @troyanthony06 @davidastart
+/developer-library/       @kaymalcolm @tammybednar @davidastart @tmcginn @troyanthony06
+/enterprise-manageability-library/            @dankoloski @davidleroyatoracle @kaymalcolm @tmcginn
+/oci-library/             @flavio-santino @umairs123 @enschilling @snafuz @kaymalcolm @tmcginn
 /ospa-library/            @jjking2019 @dankingsley001 @AlejandroCasas-oracle
-/workshops/               @snicholspa @chipbaber 
+/solutions-library/       @kaymalcolm @tammybednar @tmcginn @troyanthony06 @davidastart
+/workshops/               @snicholspa @chipbaber @kaymalcolm @tmcginn @tammybednar @troyanthony06

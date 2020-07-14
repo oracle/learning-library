@@ -88,9 +88,9 @@ Now that we have the credentials token, lets setup the target database to read f
 
 Note: There are two ways to do this - 
 
-1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 5](./ConfigureVPN.md)
+1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 6](./ConfigureVPN.md)
 
-2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 6](./ConfigureDevClient.md). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 6.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
+2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 5](./ConfigureDevClient.md). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 6.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
 
 Here, we will use a local SQL Developer to demonstate the steps needed to setup object store credentials
 

@@ -1,47 +1,44 @@
 {
-    "workshop": {
-        "title": "Oracle Analytics Cloud",
-        "description": "This workshop provides you with an introduction to the data visualization capabilities included in OAC. Data Visualization (DV) enables you to quickly synthesize a variety of data sources to gain meaningful insights. In this workshop you will learn how to massage and analyze data with the help of custom calculations, advanced filtering, and machine learning.", 
-        
-        "theme": "default",
-        "interactive":"https://launch.oracle.com/?oac",
-        "labs": [
-            {
-                "number": "100",
-                "filename": "LabGuide100.md",
-                "title": "Lab 100: Getting Started with Oracle Analytics Cloud Data Visualization",
-                "description": "Learning how to provision an OAC instance. Getting acclimatized to the DV interface."
-
-            },
-            {
-                "number": "200",
-                "filename": "LabGuide200.md",
-                "title": "Lab 200:  Analyzing Sales - Basic Introduction to Core Features",
-                "description": "Creating projects with data sets and visualizations. Understanding the visualization capabilities of DV. Telling a story with annotated visualizations."
-
-            },
-            {
-                "number": "300",
-                "filename": "LabGuide300.md",
-                "title": "Lab 300:  Analyzing Social Media with Sales – Data Blending and Wrangling",
-                "description": "Learning to Wrangle Data Sets. Joining Multiple Data Sets for analysis."
-
-            },
-            {
-                "number": "400",
-                "filename": "LabGuide400.md",
-                "title": "Lab 400: Analyzing Social Media with Sales – Visualize and Narrate",
-                "description": "Learning how to use Calculations. Using different visualizations to obtain insights from data set. Narrating a meaningful story using Narrate"
-
-            },
-            {
-                "number": "500",
-                "filename": "LabGuide500.md",
-                "title": "Lab 500: Predicting Subscriptions - Machine Learning",
-                "description": "Learning how to create data flows. Using the Machine Learning abilities of OAC."
-
-            }
-
-        ]
-    }
+	"tutorials": [
+		{
+			"title": "Lab 100: Getting Started with Oracle Analytics Cloud Data Visualization",
+			"description": "Learning how to provision an OAC instance and getting acclimatized to the DV interface",
+			"partnumber": "Ennnnn_01",
+			"publisheddate": "02/18/2020",
+			"contentid": "12nnnn",
+			"filename": "LabGuide100.md"
+		},
+		{
+			"title": "Lab 200:  Basic Introduction to Core Features",
+			"description": "Creating projects with data sets and visualizations",
+			"partnumber": "Ennnnn_01",
+			"publisheddate": "02/18/2020",
+			"contentid": "12nnnn",
+			"filename": "LabGuide200.md"
+		},
+		{
+			"title": "Lab 300:  Data Blending and Wrangling",
+			"description": "Learning to Wrangle Data Sets by joining Multiple Data Sets for analysis",
+			"partnumber": "Ennnnn_01",
+			"publisheddate": "02/18/2020",
+			"contentid": "12nnnn",
+			"filename": "LabGuide300.md"
+		},
+		{
+			"title": "Lab 400: Visualize and Narrate",
+			"description": "Learning how to use Calculations and visualizations to obtain insights from data set",
+			"partnumber": "Ennnnn_01",
+			"publisheddate": "02/18/2020",
+			"contentid": "12nnnn",
+			"filename": "LabGuide400.md"
+		},
+		{
+			"title": "Lab 500: Machine Learning",
+			"description": "Learning how to create data flows and use the Machine Learning abilities of OAC",
+			"partnumber": "Ennnnn_01",
+			"publisheddate": "02/18/2020",
+			"contentid": "12nnnn",
+			"filename": "LabGuide500.md"
+		}
+	]
 }

@@ -1,0 +1,21 @@
+/* Specify the URL that you copied from your files in OCI Object Storage in the define base_URL line below*/
+/* change idthydc0kinr to your real namespace. The name is case-sensitive. */
+/* change ADWCLab to your real bucket name. The name is case-sensitive. */
+/* change us-phoenix-1 to your real region name. The name is case-sensitive. */
+/* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+
+set define on
+
+define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o';
+
+define chan_v3_error_dat_URL = '&base_URL/chan_v3_error.dat';
+
+begin
+ dbms_cloud.copy_data(
+    table_name =>'CHANNELS',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'&chan_v3_error_dat_URL',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+ );
+end;
+/

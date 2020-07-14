@@ -1,0 +1,20 @@
+{
+    "tutorials": [
+        {
+          "title": "Workshop Overview",
+          "filename":"./workshop-intro/workshop-intro.md"
+        },
+        {
+          "title": "Sign Up for Free A Trial",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+          "title": "Lab 1: Create an API Signing Keys",
+          "filename":"./create-api-signing-keys/create-api-signing-keys.md"
+        },
+		    {
+          "title": "Lab 2: Run the Sample NoSQL Application",
+          "filename": "./run-sample-application/run-sample-application.md"
+        }
+    ]
+}

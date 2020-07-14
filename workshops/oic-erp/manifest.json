@@ -1,0 +1,31 @@
+{
+   
+  "tutorials": [
+
+     {
+          "title": "README: Oracle Integration Cloud Workshop",
+          "description": "Learning about Oracle Integration Cloud as well as the UseCase ",
+          "filename": "./README.md"
+
+     } ,     
+    
+    {           
+        "title": "Lab 100: Getting Started with Oracle Integration Cloud ERP Integration   (OIC-ERP Integration)",
+        "description": "Learning how to use a provisioned OIC instance to set up connections and its features ",
+        "filename": "./LabGuide100.md"
+    
+    },
+
+    {           
+       
+        "title": "Lab 200:  Orchestrating ERP Import Journals Integration",
+        "description":  "Orchestrating ERP Import Journal Integration , configuring FTP and ERP adapters , triggering integrations and monitoring them.",
+        "filename": "./LabGuide200.md"
+    
+    }
+               
+            
+      ]
+        
+ 
+}

@@ -1,0 +1,22 @@
+{
+    "tutorials": [
+        {
+            "title": "A Linux Compute Instance in Oracle Cloud",
+            "description":"Provision a Linux Compute Instance in Oracle Cloud",
+            "publisheddate": "01/15/2020",
+            "filename":"./about-this/about-this.md"
+        },
+        {
+            "title": "Provision Resources",
+            "description":"Provision Resources",
+            "publisheddate": "01/15/2020",
+            "filename":"./provision-resources/provision-resources.md"
+        },
+        {
+            "title": "Validate Provisioning",
+            "description":"Validate Provisioning",
+            "publisheddate": "01/15/2020",
+            "filename":"./validate-provisioning/validate-provisioning.md"
+        }
+    ]
+}

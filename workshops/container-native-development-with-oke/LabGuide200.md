@@ -4,15 +4,13 @@
 
 ## Introduction
 
-This is the second of several labs that are part of the **Oracle Public Cloud Container Native Development workshop.** This workshop will walk you through the process of moving an existing application into a containerized CI/CD pipeline and deploying it to a Kubernetes cluster in the Oracle Public Cloud.
-
-You will take on 2 personas during the workshop. The **Lead Developer Persona** will be responsible for configuring the parts of the automated build and deploy process that involve details about the application itself. The **DevOps Engineer Persona** will configure the parts of the automation involving the Kubernetes infrastructure. To containerize and automate the building and deploying of this application you will make use of Wercker Pipelines for CI/CD, OCI Registry for a container registry, and OCI Container Engine for Kubernetes for provisioning a Kubernetes cluster on Oracle Cloud Infrastructure.
+This is the second of several labs that are part of the **Oracle Public Cloud Container Native Development workshop.** 
 
 During this lab, you will take on the **DevOps Engineer Persona**. You will provision a Kubernetes cluster and all of the infrastructure that it requires using the OCI console. OCI will provision the Virtual Cloud Network, Load Balancers, Kubernetes Master and Worker instances, and etcd instance required to support your cluster.
 
 **_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
-## Objectives
+### Objectives
 
 **Automate Deployment to Kubernetes**
 
@@ -22,7 +20,7 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
   - Configure and Run Wercker Deployment Pipelines
   - Deploy and Test the Product Catalog Application
 
-## Required Artifacts
+### Required Artifacts
 
 - The following lab requires:
   - an Oracle Cloud Trial Account
@@ -35,37 +33,26 @@ During this lab, you will take on the **DevOps Engineer Persona**. You will prov
 
 - If you are using a Trial Account, **you must wait until you receive this email** indicating that your Cloud Account has been provisioned. _Please note that this email may arrive in your spam or promotions folder pending your email settings._
 
-  ![](images/oraclecode/code_9.png)
+  ![](images/200/Step1/Lab200-Step1-1.png)
 
-- Once you receive the **Get Started with Oracle Cloud** Email, make note of your **Username, Password and Cloud Account Name**.
+- Once you receive the **Your Oracle Cloud Account is Fully Provisioned** Email, make note of your **Username, Password and Cloud Account Name**.
 
-  ![](images/200/0.1.png)
-
-- From any browser go to:
+- From any browser go to and click on **View Accounts** and then click on **Sign in to Cloud**:
 
     [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in)
 
-- Enter your **Cloud Account Name** in the input field and click the **My Services** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+    ![](images/200/Step1/Lab200-Step1-2.png)
 
-  ![](images/200/1.png)
+- Enter your **Cloud Account Name** in the input field and click the **Next** button. If you have a trial account, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+
+  ![](images/200/Step1/Lab200-Step1-3.png)
 
 - Enter your **Username** and **Password** in the input fields and click **Sign In**. If you have a trial account, these can be found in your welcome email. Otherwise, these will be supplied by your workshop instructor.
 
-  ![](images/200/2.png)
+  ![](images/200/Step1/Lab200-Step1-4.png)
 
 **NOTE**: If you have used your trial account already, you may have been prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-- In the top left corner of the dashboard, click the **hamburger menu**
-
-  ![](images/200/3.png)
-
-- Click to expand the **Services** submenu, then click **Compute**
-
-  ![](images/200/4.png)
-
-- On the OCI Console sign in page, enter the same **Username** as you did on the previous sign in page. If you are using a trial account and this is your first time logging into the OCI Console, enter the **temporary password** from your trial account welcome email. If you have already visited the OCI Console and changed your password, enter your **new password**. Otherwise, this password will be supplied by your workshop instructor.
-
-  ![](images/200/5.png)
 
 ### **STEP 2**: Create a Compartment for your Kubernetes nodes
 
@@ -97,11 +84,11 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/200/LabGuide200-e67b7705.png)
 
-  - Click the **Add Policy Statement** button
+  - Click the **Edit Policy Statement** button
 
     ![](images/200/LabGuide200-3d4a7471.png)
 
-  - In the Statement box, enter: `allow service OKE to manage all-resources in tenancy` and click **Add Statement**
+  - Click **Another Statement** and in the Statement box, enter: `allow service OKE to manage all-resources in tenancy`  
 
     ![](images/200/LabGuide200-bd5bcbd1.png)
 
@@ -122,8 +109,8 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
   - We don't need to make any changes to the default values on this form, but let's look at what will be created when we submit it.
 
     ![](images/LabGuide200-6ff14524.png)
-    ![](images/LabGuide200-11191333.png)
-
+    ![](images/200/LabGuide200-k8s-2.png)
+    
     - Starting at the top you'll notice that the cluster will be created in our **Demo** compartment.
     - We can customize the name of this cluster if we want
     - Multiple versions of Kubernetes are available, with the newest version selected by default
@@ -134,323 +121,260 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   - Click **Create**. You will be brought to the cluster detail page. Your cluster will take a while to provision, so let's use this time to create a cloud VM that we can use to manage our cluster using the command line.
 
-### **STEP 5**: Launch a Cloud Compute Instance for Cluster Management
 
-  - Before we can launch a compute instance, we need two things: a Virtual Cloud Network to connect it to, and an SSH key pair to use for authentication. We could create a new VCN, but since the cluster wizard is already going to create one, we will just make use of that. So let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
+### **STEP 5**: Prepare Token using Cloud Shell
 
-    **NOTE**: There are several files that will be downloaded or created on your local machine during this workshop. We recommend creating a directory to store them in for ease of locating and cleaning up. In this step, you will create a directory inside your home/user directory called `container-workshop`. You are free to change the location and name of this directory, but the lab guide will assume it is located at `~/container-workshop/`. **You will need to modify the given terminal commands throughout this lab** if you change the location or name of the directory.
-
-    **Mac/Linux**:
-
-      - Open a terminal or shell window and run the following commands:
-
-        ```bash
-        cd ~
-        mkdir container-workshop && cd container-workshop && mkdir ssh-keys && cd ssh-keys
-        ssh-keygen -f ./ssh-key -N ""
-        ```
-        ![](images/200/LabGuide200-a5328c9e.png)
-
-    **Windows**:
-
-      - If you don't already have them, download PuTTY and PuTTYgen from [http://www.putty.org/](http://www.putty.org/)
-
-        ![](images/200/LabGuide200-395eff32.png)
-        ![](images/200/LabGuide200-e2207b4c.png)
-
-      - Locate and run **puttygen.exe** in the PuTTY install folder.
-
-      - Ensure that **RSA** or **SSH-2 RSA** is selected in the `Type of key to generate` field (which one you see is dependent on your version of PuTTY)
-
-      ![](images/LabGuide200-614f9c26.png)
-
-      ![](images/LabGuide200-f0a8b7ba.png)
-
-      - Click **Generate**
-
-        ![](images/200/LabGuide200-4c048053.png)
-
-      - **Move your mouse around the blank area** as instructed to genereate random data.
-
-        ![](images/200/LabGuide200-eb2e6690.png)
-
-      - Click **Save private key** and then click **Yes** to continue saving without a passphrase.
-
-        ![](images/200/LabGuide200-2f7bb25a.png)
-
-      - In the save dialog box:
-
-      - Navigate to your home directory/user folder (usually **C:\Users\\<username\>**).
-      
-      - Click **New Folder** and name the folder `container-workshop`.
-
-        ![](images/200/LabGuide200-b203da00.png)
-          
-      - **Double-click** the `container-workshop` folder to enter it.
-      
-      - Click **New Folder** again. This time name the folder `ssh-keys`.
-
-          ![](images/200/LabGuide200-af71f041.png)
-          
-      - **Double click** on `ssh-keys` to enter that folder.
-      
-      - Finally, name the key **ssh-key.ppk** and click **Save**.
-
-          ![](images/200/LabGuide200-0f4dd743.png)
-
-      - Select and copy the **public key** using Control-C, which is displayed in the `Public key for pasting into OpenSSH authorized_keys file` region. Paste it into a **new text file** using **notepad** and save the file in the `C:\Users\username\container-workshop\ssh-keys` folder.
-
-        **NOTE**: Do not use the Save public key button, as it uses an incompatible key format.
-
-        ![](images/200/LabGuide200-dfe10559.png)
-        ![](images/200/LabGuide200-81767c01.png)
-
-      - When you SSH to your instance in a later step, use PuTTY to connect instead of a command-line ssh session.
-
-  - With the keys generated, we are ready to launch an instance. From the OCI Console navigation menu, select **Compute->Instances**. Ensure you are still working in the **Demo** compartment using the drop down list in the left pane.
-
-    ![](images/200/LabGuide200-bdda7d5d.png)
-
-  - Click the **Create Instance** button.
-
-    ![](images/200/LabGuide200-071f038f.png)
-
-  - Leave the Availability Domain, Image Source, and Instance Type settings at the defaults.
-
-    ![](images/LabGuide200-026d5a7f.png)
-
-  - In the Instance Shape field, click **Change Shape**. We will use a 2-OCPU VM, since we are using all of our available 1-OCPU VMs for Kubernetes worker nodes.
-
-    ![](images/LabGuide200-e8686157.png)
-
-  - In the Browse All Shapes pane, check the box next to **VM.Standard2.2** and click **Select Shape**.
-
-    ![](images/LabGuide200-e02b046c.png)
-
-  - In the Add SSH Key area, click **Choose Files** and select the **ssh public key** you generated at the beginning of this step (e.g. `~/container-workshop/ssh-keys/ssh-key.pub`).
-
-    ![](images/LabGuide200-4b3f9759.png)
-
-  - Make the following selections in the **Configure Networking** form:
-    - In the VCN Compartment field, ensure **Demo** is selected.
-    - In the VCN field, ensure **oke-vcn-quick-cluster1** is selected (if you changed the name of your cluster, the `cluster1` portion of these name will differ).
-    - In the Subnet Compartment field, ensure **Demo** is selected.
-    - In the Subnet field, select the subnet that begins with **oke-svclbsubnet-quick-cluster1**, which is in the **Public Subnets** section. Take care __not__ to select the subnet that begins with oke-subnet, as this one is a private subnet (not accessible from the internet).
-
-    ![](images/LabGuide200-e67f88fa.png)
-
-  - Click **Create**
-
-    ![](images/LabGuide200-68185e86.png)
-
-  - You will be brought to the instance details page. Wait for your instance to transition from the Provisioning state to the **Running** state before proceeding.
-
-    ![](images/LabGuide200-585fa5fe.png)
-
-### **STEP 6**: SSH into your Compute instance 
-
-  - Your instance should now be in the **Running** state. Let's SSH into the instance and install the command line utility that will let us interact with our cluster. Still on the instance details page, find the **Public IP Address** and copy it to the clipboard.
-    ![](images/200/LabGuide200-3986ce91.png)
-
-  - Open an SSH connection to the instance using the following OS-specific method:
-
-    **Mac/Linux**
-      - Open a terminal or shell window
-      - Run the following commands, pasting in the **Public IP Address** from your clipboard in place of <Public IP Address>
-
-        ```
-        cd ~/container-workshop/ssh-keys/
-        ssh -i ssh-key opc@<Public IP Address>
-        ```
-      - Type **yes** and **press enter** when asked if you want to continue connecting
-
-        ![](images/200/LabGuide200-edc8f079.png)
-
-    **Windows**
-      - Open PuTTY
-      - In the Category pane, select Session and enter the following:
-        - Host Name (or IP address): **opc@[Public IP Address you copied to the clipboard]**
-        - Connection type: SSH
-        - Port: 22
-      - In the Category pane, expand Connection, expand SSH, and then click **Auth**. Click **Browse** and select your private key (for example, **C:\Users\\<username\>\container-workshop\ssh-keys\ssh-key.ppk**).
-      - Click **Open** to start the session.
-
-### **STEP 7**: Prepare OCI CLI for Cluster Access and Download kubeconfig
-
-- From _inside the SSH session_, run the following command to install the OCI CLI, which will allow you to interact with your cluster. You will su into the root user and stay as the root user throughout the rest of this step:
-
-  ```
-  sudo -s  
-  bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
-  ```
-
-    **CAUTION**: When copying the above command, be careful not to copy a newline character at the end. If you paste the command into your SSH session and it executes without you pressing enter, cancel the command with **Control-C**, then press the **up arrow** to retrieve it from the history, and press **enter** to run it without the newline character.
-
-    ![](images/200/LabGuide200-41638e46.png)
-
-- For each of the prompts, accept the default by **pressing enter**
-
-    ![](images/200/LabGuide200-dd2c64cd.png)
-
-- **Type** the following to reset your SHELL environment:
-
-  ```
-  exec -l $SHELL
-  ```
-
-- In a web browser go back to the OCI Console and open your **User Settings** page: Use the navigation menu to go to **Identity->Users** and select **View User Details** from the three-dots menu for the Cloud user you logged in as. You will need some details from this page to complete the setup.
-
-    ![](images/LabGuide200-f1749ef3.png)
-
-- In your SSH session **Type** `oci setup config` responding to the prompts as follows:
-
-  **NOTE:** (Your still the root user)
-    - Enter a location for your config: **accept default by pressing enter**
-    - Enter a user OCID: In the OCI Console **Copy** your user OCID by clicking **Copy** in the **User Information** box.
-    - Enter a tenancy OCID: **Copy** the **Tenancy OCID** from the `Tenancy Details` page (found under the `Administration` section of the OCI navigation menu)
-
-      ![](images/LabGuide300-fefb896c.png)
-
-      ![](images/LabGuide300-80c6b300.png)
-
-    - Enter your region: type the **region shown in the upper right** corner of OCI Console. (This will most likely be `us-ashburn-1` for this workshop)
-    - Do you want to generate a new RSA key pair?: **Y**
-    - Enter a directory for your keys to be created: **accept default by pressing enter**
-    - Enter a name for your key: **accept default by pressing enter**
-    - Enter a passphrase for your private key: **accept default by pressing enter**
-
-    Example:
-
-    ![](images/200/LabGuide200-ashburn.png)
-
-- You've just generated an RSA key pair that we will use to authenticate you to the OCI API. Click **back** to get back to the User Settings page in your browser, click **Add Public Key**
-
-    ![](images/200/LabGuide200-70626501.png)
-
- - We need to copy and paste the public key into this box. In your _SSH session_, run the following command to output the public key:
-
-    `cat /root/.oci/oci_api_key_public.pem`
-
-    ![](images/200/LabGuide200-6cead97f.png)
-
-  - Select the entire key, beginning with: `-----BEGIN PUBLIC KEY-----` and ending with `-----END PUBLIC KEY-----`. **Copy it** and **paste it** into the Public Key text area in the OCI Console Add Public Key dialog. Then click **Add**.
-
-    ![](images/200/LabGuide200-cc48303b.png)
-
-  - You are now ready to download the `kubeconfig` file using the OCI CLI that you just installed. From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**, then click the name of your cluster, **cluster1**
+  - From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**, then click the name of your cluster, **cluster1**
 
     ![](images/200/LabGuide200-5c0a2b4c.png)
 
     ![](images/LabGuide200-931bae7f.png)
 
-  - Click **Access Kubeconfig**.
+  - Click **Access Cluster**.
 
     ![](images/LabGuide200-2adad8f0.png)
 
-  - Two commands are displayed in the dialog box. **Copy and paste** each command (one at a time) into your _SSH session_ and run them. The first creates a directory to store the `kubeconfig` file, and the second invokes the OCI CLI to download and store the `kubeconfig` file on your client virtual machine. Then click **Close**.
+  - Click on **Cloud Shell** and then click **Launch Cloud Shell**
 
-    ![](images/200/LabGuide200-0c484a65.png)
+    ![](images/200/cloud_shell.png)
 
-    ![](images/200/LabGuide200-36da5eac.png)
+  - Once the Cloud Shell is launched copy the command shown in the screen and paste it in the cloud shell terminal. New config will be created and the output should be similar as below
 
-    **NOTE**: Copy and paste the commands from the OCI Console window -- the second command below is personalized with your cluster OCID. They are listed here for reference only.
+    ![](images/200/Lab200-step7-2.png)
 
-    >mkdir -p $HOME/.kube
+    **NOTE**: Copy and paste the commands from the OCI Console window -- the command below is personalized with your cluster OCID. They are listed here for reference only.
 
     >oci ce cluster create-kubeconfig --cluster-id <your-kubernetes-cluster-ocid\> --file $HOME/.kube/config
 
-  - Your `kubeconfig` file was downloaded from OCI and stored in ~/.kube/config. In your _SSH session_, **run** `cat ~/.kube/config` to output the contents of the file. **Copy** the contents and **paste** them into a new text file on your local machine. Name the file `kubeconfig` and **Save** the file to your **container-workshop directory** (e.g. `~/container-workshop/` or `C:\Users\<username>\container-workshop\`)
+- In your _Cloud Shell session_, run the following commands to verify that kubectl is able to communicate with your cluster. You should see cluster-info print out the URL of the Kubernetes Master node and get nodes print out the IP address and status of each of the worker nodes.
+  
+    ![](images/200/step8/Lab200-step8-1.png)
 
-    **NOTE**: Save the `kubeconfig` file as a plain text file, not as a .docx, .rtf, .html, etc.
+- In your _Cloud Shell session_, create a file (for example, called **oke-admin-service-account.yaml**) with the following command:
 
-    ![](images/200/LabGuide200-8d14ba10.png)
+```
+<copy>vi oke-admin-service-account.yaml</copy>
+```
 
-  - In order to interact with your cluster and view the dashboard, you will need to install the Kubernetes command line interface, `kubectl`. We will do that next.
+- press **i** and **copy and paste** the following content: Once done press esc key from keyboard, type **:wq** and press enter to exit.
 
-### **STEP 8**: Install and Test kubectl on Your Local Machine
-
-- The method you choose to install `kubectl` will depend on your operating system and any package managers that you may already use. The generic method of installation, downloading the binary file using `curl`, is given below (**run the appropriate command in a terminal or command prompt**). If you prefer to use a package manager such as apt-get, yum, homebrew, chocolatey, etc, please find the specific command in the [Kubernetes Documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
-
-
-  **Windows**
     ```bash
-    cd %USERPROFILE%\container-workshop
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.11.2/bin/windows/amd64/kubectl.exe
+    <copy>
+    apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: oke-admin
+      namespace: kube-system
+    ---
+    apiVersion: rbac.authorization.k8s.io/v1beta1
+    kind: ClusterRoleBinding
+    metadata:
+      name: oke-admin
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: cluster-admin
+    subjects:
+    - kind: ServiceAccount
+      name: oke-admin
+      namespace: kube-system
+      </copy>
     ```
 
-  **Mac**
+- Create the service account and the clusterrolebinding in the cluster by entering the following command where <filename> is the name of the file you created earlier:
+
     ```bash
-    cd ~/container-workshop
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
-    chmod +x ./kubectl
+    <copy>
+    kubectl apply -f oke-admin-service-account.yaml
+    </copy>
     ```
 
-  **Linux**
+- The **output** from the above command confirms the creation of the service account and the clusterrolebinding:
+
     ```bash
-    cd ~/container-workshop
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-    chmod +x ./kubectl
+    serviceaccount "oke-admin" created
+    clusterrolebinding.rbac.authorization.k8s.io "oke-admin" created
     ```
 
-- In your terminal window or command prompt, run the following commands to verify that `kubectl` is able to communicate with your cluster. You should see `cluster-info` print out the URL of the Kubernetes Master node and `get nodes` print out the IP address and status of each of the worker nodes.
+- Obtain an authentication token for the oke-admin service account by entering:
 
-  **Windows**
-    ```bash
-    set KUBECONFIG=%USERPROFILE%\container-workshop\kubeconfig
-    kubectl.exe cluster-info
-    kubectl.exe get nodes
+    ```
+    <copy>
+    kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep oke-admin | awk '{print $1}')
+    </copy>
     ```
 
-  **Mac/Linux**
-    ```bash
-    export KUBECONFIG=~/container-workshop/kubeconfig
-    ./kubectl cluster-info
-    ./kubectl get nodes
-    ```
+    ![](images/200/step8/Lab200-step8-2.png)
 
-    ![](images/LabGuide200-397f4902.png)
-
-    ![](images/LabGuide200-778c8b15.png)
-
-    **NOTE**: You should see in the `cluster-info` that the Kubernetes master has an `oraclecloud.com` URL. If it instead has a `localhost` URL, your `KUBECONFIG` environment variable may not be set correctly. Double check the environment variable against the path and filename of your `kubeconfig` file.
+- **Copy and note the token, we will use that to login in kube dashboard.**
 
 - Now that we have verified that `kubectl` is connected to our cluster, let's increase the default auto-logout time so that we don't have to keep re-authenticating during the workshop. Note that the default logout time of 15 minutes is set for security reasons. The `--token-ttl=43200"` argument in the following command is the only change that we are making to the dashboard.
 
   **NOTE**: The following commands are **optional**.
 
-  **Windows**
-  ```bash
-  kubectl.exe patch deployment kubernetes-dashboard -n kube-system -p "{\"spec\": {\"template\": {\"spec\": {\"containers\": [{\"name\": \"kubernetes-dashboard\", \"args\": [\"--token-ttl=43200\", \"--auto-generate-certificates\"]}]}}}}"
-  ```
-
-  **Mac/Linux**
-  ```bash
-  ./kubectl patch deployment kubernetes-dashboard -n kube-system -p '{"spec": {"template": {"spec": {"containers": [{"name": "kubernetes-dashboard", "args": ["--token-ttl=43200", "--auto-generate-certificates"]}]}}}}'
-  ```
+    ```bash
+    <copy>
+    kubectl patch deployment kubernetes-dashboard -n kube-system -p '{"spec": {"template": {"spec": {"containers": [{"name": "kubernetes-dashboard", "args": ["--token-ttl=43200", "--auto-generate-certificates"]}]}}}}'
+    </copy>
+    ```
 
   ![](images/LabGuide200-a5c59f02.png)
 
-- Now that we've increased the session timeout, we can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
+  - In order to interact with your cluster and view the dashboard, you will need to install the Kubernetes command line interface, `kubectl`. We will do that next.
+
+### **STEP 6**: Install and Test kubectl on Your Local Machine
+
+- The method you choose to install `kubectl` will depend on your operating system and any package managers that you may already use. The generic method of installation, downloading the binary file using `curl`, is given below (**run the appropriate command in a terminal or command prompt**). If you prefer to use a package manager such as apt-get, yum, homebrew, chocolatey, etc, please find the specific command in the [Kubernetes Documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+
+    **NOTE**: There are several files that will be downloaded or created on your local machine during this workshop. We recommend creating a directory to store them in for ease of locating and cleaning up. In this step, you will create a directory inside your home/user directory called `container-workshop`. You are free to change the location and name of this directory, but the lab guide will assume it is located at `~/container-workshop/`. **You will need to modify the given terminal commands throughout this lab** if you change the location or name of the directory.
+
+    ```bash
+    <copy>
+    cd ~
+    mkdir container-workshop
+    </copy>
+    ```
 
   **Windows**
     ```bash
+    <copy>
+    cd %USERPROFILE%\container-workshop
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/windows/amd64/kubectl.exe
+    </copy>
+    ```
+
+  **Mac**
+    ```bash
+    <copy>
+    cd ~/container-workshop
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
+    chmod +x ./kubectl
+    </copy>
+    ```
+    - To install with brew
+    ```bash
+    <copy>
+    brew install kubectl 
+    </copy>
+    ```
+
+  **Linux**
+    ```bash
+    <copy>
+    cd ~/container-workshop
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+    chmod +x ./kubectl
+    </copy>
+    ```
+
+- To access the dashboard we need to create kubeconfig file.
+- In _Cloud Shell Session_, run the following command and copy the output
+
+    ```bash
+    <copy>
+    cat ~/.kube/config
+    </copy>
+    ```
+
+- In your _local machine_, open the terminal and create kubeconfig file and paste the copied content, press **i** and paste: 
+- If possible create file in container-workshop directory
+  
+    ```bash
+    <copy>
+    vi kubeconfig
+    </copy>
+    ```
+
+**Note**: Remember the path where you are creating this file
+
+   
+
+- We need to modify the file, remove all the content after user and it should look as follow:
+
+    ![](images/200/Step7/Lab200-step7-2.png)
+
+- Now paste the token which we copied in **Step 5** in the file as follow
+- Once the changes are made to **save and exit** press escape key in keyboard and type **:wq** and press enter.
+
+    ![](images/200/Step7/Lab200-step7-3.png)
+
+**Note**: Make sure the intendation is correct for token. It should be 4 spaces from the beginning of line and space between token and value.
+
+- Export the path of KUBECONFIG to the file.
+  
+    **Windows**
+    ```bash
+    <copy>
+    set KUBECONFIG=PATH_OF_KUBECONFIG_FILE
+    </copy>
+    ```
+  **Note**: Make sure to replace the path in above command
+  - Example, if path is ~/container-workshop
+
+    ```bash
+    <copy>
+   set KUBECONFIG=%USERPROFILE%\container-workshop\kubeconfig
+    </copy>
+    ```
+   - To confirm the config is correct, try the following commands:
+   
+    ```bash
+    <copy>
+    kubectl.exe cluster-info
+    kubectl.exe get nodes
+    </copy>
+    ```
+    
+
+  **Mac/Linux**
+    ```bash
+    <copy>
+    export KUBECONFIG=PATH_OF_KUBECONFIG_FILE
+    </copy>
+    ```
+  
+   **Note**: Make sure to replace the path in above command
+  - Example, if path is ~/container-workshop
+
+    ```bash
+    <copy>
+   export KUBECONFIG=~/container-workshop/kubeconfig
+    </copy>
+    ```
+- To confirm the config is correct, try the following commands:
+
+    ```bash
+    <copy>
+    ./kubectl cluster-info
+    ./kubectl get nodes
+    </copy>
+    ```
+
+- We can use `kubectl` to start a proxy that will give us access to the Kubernetes Dashboard through a web browser at a localhost URL. Run the following command in the same terminal window:
+
+  **Windows**
+    ```bash
+    <copy>
     kubectl.exe proxy
+    </copy>
     ```
 
   **Mac/Linux**
     ```bash
+    <copy>
     ./kubectl proxy
+    </copy>
     ```
 
   ![](images/LabGuide200-73acec26.png)
 
   **NOTE**: If you receive an error stating `bind: address already in use`, you may have another application running on port 8001. You can specify a different port for the proxy by passing the `--port=` parameter, for example `kubectl proxy --port=8002`. Note that you  will have to modify the URL for the dashboard in the next step to match this port.
 
-- Leave the proxy server running and navigate to the [Kubernetes Dashboard by Right Clicking on this link](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), and choosing **open in a new browser tab**.
+- Leave the proxy server running and navigate to the [Kubernetes Dashboard by Clicking on this link](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), and choosing **open in a new browser tab**.
 
-- You are asked to authenticate to view the dashboard. Click **Choose kubeconfig file** and select your `kubeconfig` file from the folder `~/container-workshop/kubeconfig`. Click **Open**, then click **Sign In**.
+- In the [Kubernetes Dashboard](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/), select **Kubeconfig** and click three dots to choose the kubeconfig file, then click **Sign In**.
 
-  ![](images/200/LabGuide200-2a1a02ce.png)
+  ![](images/200/Step7/Lab200-step7-4.png)
 
 - After authenticating, you are presented with the Kubernetes dashboard.
 
@@ -460,7 +384,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 ## Configure and Run Wercker Deployment Pipelines
 
-### **STEP 9**: Define Kubernetes Deployment Specification
+### **STEP 7**: Define Kubernetes Deployment Specification
 
 - From a browser, navigate to your forked twitter-feed repository on GitHub. If you've closed the tab, you can get back by going to [GitHub](https://github.com/), clicking the **Repositories** tab at the top of the page, and clicking the **twitter-feed-oke** link.
 
@@ -477,6 +401,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 - **Copy** the YAML below and **paste** it into the file editor.
 
     ```yaml
+    <copy>
     apiVersion: extensions/v1beta1
     kind: Deployment
     metadata:
@@ -520,6 +445,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
         app: twitter-feed
       type: ClusterIP
     ---
+    </copy>
     ```
   >This configuration consists of two parts. The first section (up to line 28) defines a **Deployment**, which tells Kubernetes about the application we want to deploy. In this Deployment we instruct Kubernetes to create two Pods (`replicas: 2`) that will run our application. Within those pods, we specify that we want one Docker container to be run, and compose the link to the image for that container using environment variables specific to this workflow execution (`image: ${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}`).
 
@@ -533,7 +459,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   - Since you've committed to the repository, Wercker will trigger another execution of your workflow. We haven't defined the deployment pipelines yet, so this will just result in a new entry in Wercker's Runs tab and a new image pushed to the container registry. You don't need to do anything with those; you can move on to the next step.
 
-### **STEP 10**: Define Wercker Deployment Pipelines
+### **STEP 8**: Define Wercker Deployment Pipelines
 
   - Click the file **wercker.yml** and then click the **pencil** button to begin editing the file.
 
@@ -542,6 +468,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
   - **Copy** the YAML below and **paste** it below the pipelines we defined earlier.
 
     ```yaml
+    <copy>
     #Deploy our container from the Oracle Container Registry to the Oracle Container Engine (Kubernetes)
     deploy-to-cluster:
       box:
@@ -576,6 +503,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
           token: $KUBERNETES_AUTH_TOKEN
           insecure-skip-tls-verify: true
           command: apply -f kubernetes.yml
+          </copy>
     ```
 
     >This will define a new **Pipeline** called deploy-to-cluster. The pipeline will make use of a new type of step: **kubectl**. If you have used Kubernetes before, you will be familiar with kubectl, the standard command line interface for managing Kubernetes. The kubectl Wercker step can be used to execute Kubernetes commands from within a Pipeline.
@@ -588,7 +516,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Since you've committed to the repository again, Wercker will once again trigger an execution of your workflow. We still haven't configured the deployment pipelines in Wercker yet, so we'll still end up with a new Run and a new image, but not a deployment to Kubernetes.
 
-### **STEP 11**: Set up deployment pipelines in Wercker
+### **STEP 9**: Set up deployment pipelines in Wercker
 
 - Open **[Wercker](https://app.wercker.com)** in a new tab or browser window, or switch to it if you already have it open. In the top navigation bar, click **Pipelines**, then click on your **twitter-feed-oke** application.
 
@@ -614,49 +542,24 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Now we've got our workflow updated with our deployment pipelines, but there's one more thing we need to do before we can actually deploy. We need to set a few environment variables that tell Wercker the address of our Kubernetes master and provide authentication tokens for Wercker to issue commands to Kubernetes and to OCI.
 
-### **STEP 12**: Set up environment variables in Wercker
+### **STEP 10**: Set up environment variables in Wercker
 
-- Our first step is to set our cluster's authentication token as a Wercker environment variable. In your **terminal window**, run the following commands to output the token, then **select it and copy it** to your clipboard:
 
-  **Windows**
-    ```bash
-    cd %USERPROFILE%\container-workshop
-    notepad kubeconfig
-    ```
-
-    - Find the `token:` section at the bottom of the file, and copy the token value from there.
-
-    ![](images/LabGuide200-406fe845.png)
-
-  **Mac/Linux**
-    ```bash
-    cd ~/container-workshop
-    cat kubeconfig | grep token | awk '{print $2}'
-    ```
-
-    ![](images/200/LabGuide200-8ef1b50b.png)
-
-- Back in your Wercker browser tab, click the **Environment** tab. In the key field of the empty row below the last environment variable, enter the key **KUBERNETES_AUTH_TOKEN**. In the value field, **paste** the token we just copied. Check the **Protected** box and click **Add**.
+- Back in your Wercker browser tab, click the **Environment** tab. In the key field of the empty row below the last environment variable,   enter the key **`KUBERNETES_AUTH_TOKEN`**.
+-  In the value field, **paste** the token we copied in **Step 5**. Check the **Protected** box and click **Add**.
 
   ![](images/200/LabGuide200-7a3d011b.png)
 
-- The next environment variable we need to add is the address of the Kubernetes master we want to deploy to. We can get the URL from `kubectl`. Run the following command in your **terminal window** to output the URL, then **select it and copy it** to your clipboard:
+- The next environment variable we need to add is the address of the Kubernetes master we want to deploy to. We can get the URL from `kubectl`. Run the following command in your _Cloud Shell Terminal_ to output the URL, then **select it and copy it** to your clipboard:
 
-  **Windows**
-
-  - **Copy and Paste** the `server` string from your **kubeconfig** file:
-
-    ![](images/200/54-6.PNG)
-
-  **Mac/Linux**
-
-  - For Linux/Mac:
 
     ```bash
-    echo $(./kubectl config view | grep server | cut -f 2- -d ":" | tr -d " ")
+    <copy>
+    echo $(kubectl config view | grep server | cut -f 2- -d ":" | tr -d " ")
+    </copy>
     ```
 
-- In your Wercker browser tab, add a new environment variable with the key **KUBERNETES_MASTER**. In the value field, **paste** the value you copied from `kubectl`. The value **must start with https://** for Wercker to communicate with the cluster. When finished, click **Add**.
+- In your Wercker browser tab, add a new environment variable with the key **`KUBERNETES_MASTER`**. In the value field, **paste** the value you copied from `kubectl`. The value **must start with https://** for Wercker to communicate with the cluster. When finished, click **Add**.
 
   ![](images/200/55.png)
 
@@ -664,7 +567,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/200/LabGuide200-9d5e858e.png)
 
-- The last environment variable we need to create in Wercker is a token for Wercker to authenticate to OCI so that it can push our Docker image to the OCI Repository (OCIR). We will generate this authentication token in the OCI Console and then paste it into a Wercker environment variable. Add a new environment variable with the key **OCI_AUTH_TOKEN**.
+- The last environment variable we need to create in Wercker is a token for Wercker to authenticate to OCI so that it can push our Docker image to the OCI Repository (OCIR). We will generate this authentication token in the OCI Console and then paste it into a Wercker environment variable. Add a new environment variable with the key **`OCI_AUTH_TOKEN`**.
 
   ![](images/200/LabGuide200-ad86d83b.png)
 
@@ -684,7 +587,9 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   ![](images/200/LabGuide200-a04556fa.png)
 
-- Click the **Copy** link under the generated token, then click **Close**. Switch back to your Wercker browser tab and **Paste** this token into the Value field of the **OCI_AUTH_TOKEN** environment variable you started creating earlier. Check the **Protected** box and click **Save**.
+- Click the **Copy** link under the generated token, then click **Close**. Save the token in notes we will use the same token in Lab 500
+  
+- Switch back to your Wercker browser tab and **Paste** this token into the Value field of the **`OCI_AUTH_TOKEN`** environment variable you started creating earlier. Check the **Protected** box and click **Save**.
 
   ![](images/200/LabGuide200-8313bb92.png)
 
@@ -709,10 +614,12 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/LabGuide200-cc8b640d.png)
 
+- Before moving to next step make sure that all the env variables are set
+    ![](images/200/Step12/Lab200-step12-1.png)
 
 - Now we're ready to try out our workflow from start to finish. We could do that by making another commit on GitHub, since Wercker is monitoring our source code. We can also trigger a workflow execution right from Wercker. We'll see how in the next step.
 
-### **STEP 13**: Trigger a retry of the pipeline
+### **STEP 11**: Trigger a retry of the pipeline
 
 - On your Wercker application page in your browser, click the **Runs** tab. Your most recent run should have a successful build pipeline and a failed push-release pipeline. Click the **push-release** pipeline.
 
@@ -726,7 +633,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   ![](images/200/42.png)
 
-### **STEP 14**: Validate deployment
+### **STEP 12**: Validate deployment
 
 - First we will validate that our Docker image is visible in the OCI Registry. In your **OCI Console** browser tab, select **Registry (OCIR)** from the navigation menu, under the Developer Services category.
 
@@ -788,7 +695,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 ## Deploy and Test the Product Catalog Application
 
-### **STEP 15**: Download the Product Catalog Kubernetes YAML file
+### **STEP 13**: Download the Product Catalog Kubernetes YAML file
 
 - From a browser, navigate to your forked twitter-feed repository on GitHub. If you've closed the tab, you can get back by going to [GitHub](https://github.com/), clicking the **Repositories** tab at the top of the page, and clicking the **twitter-feed-oke** link.
 
@@ -804,7 +711,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 **NOTE**: This YAML file contains the configuration for a Kubernetes deployment and service, much like the configuration for our twitter feed microservice. In a normal development environment, the product catalog application would be managed by Wercker as well, so that builds and deploys would be automated. In this workshop, however, you will perform a one-off deployment of a pre-built Docker image containing the product catalog application from within the Kubernetes dashboard.
 
-### **STEP 16**: Deploy and test the Product Catalog using the Kubernetes dashboard
+### **STEP 14**: Deploy and test the Product Catalog using the Kubernetes dashboard
 
 - Switch back to your **Kubernetes dashboard** browser tab. If you have closed it, navigate to the Kubernetes dashboard at [**Kubernetes dashboard**](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/)
 
@@ -838,4 +745,4 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Some tweets are indeed displayed, but they aren't relevant to this product. It looks like there is a bug in our twitter feed microservice! Continue on to the next lab to explore how to make bug fixes and updates to our microservice.
 
-**You are now ready to move to the next lab: [Lab 300](LabGuide300.md)**
+**You are now ready to move to the next lab: Lab 300**

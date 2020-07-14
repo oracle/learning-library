@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                Enter Tutorial Details
+                <button type="button" id="download_manifest" class="btn btn-primary float-right">Download Manifest</button>
+                <button type="button" id="reset_manifest" class="btn btn-primary float-right">Reset Manifest</button>
+                <input type="file" id="upload_json" accept="application/JSON" hidden />
+                <button type="button" id="enter_json" class="btn btn-primary float-right">Upload JSON</button>
+            </div>
+            <div class="card-body">
+                <div id="tabs-container" class="container">
+                    <ul id="tutorials-nav" class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tutorial1">Tutorial 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="add-tutorial" href="#">+ Add Tutorial</a>
+                        </li>
+                    </ul>
+                    <br />
+                    <form id="manifestForm" name="manifestForm" autocomplete="off">
+                        <div id="tab-content" class="tab-content">
+
+                            <div class="tab-pane container active" id="tutorial1">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="title" class="mr-sm-2">Title:</label>
+                                        <input type="text" class="form-control mb-2 mr-sm-2" name="title"
+                                            maxlength="100">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="description" class="mr-sm-2">Description:</label>
+                                        <textarea type="text" class="form-control mb-2 mr-sm-2" name="description"
+                                            maxlength="400"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="filename" class="mr-sm-2">MD File Path:</label>
+                                        <input type="text" class="form-control mb-2 mr-sm-2" name="filename"
+                                            maxlength="400">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="partnumber" class="mr-sm-2">Part Number:</label>
+                                        <input type="text" class="form-control mb-2 mr-sm-2" name="partnumber"
+                                            maxlength="10">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="publisheddate" class="mr-sm-2">Published Date:</label>
+                                        <input type="date" class="form-control mb-2 mr-sm-2" name="publisheddate">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="contentid" class="mr-sm-2">Content ID:</label>
+                                        <input type="text" class="form-control mb-2 mr-sm-2" name="contentid"
+                                            maxlength="6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div id="rightBox-manifest" class="card">
+            <div class="card-header">
+                Manifest File Preview
+                <button type="button" id="preview_from_manifest" class="btn btn-primary float-right">Preview in HTML</button>
+                <!--
+                <button type="button" id="download_zip" class="btn btn-primary float-right">                    
+                    Download ZIP
+                </button>-->
+            </div>
+            <div id="manifestBox" class="card-body">
+                <pre></pre>
+            </div>
+        </div>
+    </div>
+</div>

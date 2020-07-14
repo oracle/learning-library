@@ -72,29 +72,29 @@ In this lab you will deploy http servers on two compute instances in Oracle Clou
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Choose **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
 
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-- **Name:** Enter easy to remember name
-- **Create in Compartment:** Has the correct compartment
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-- Click **Create Virtual Cloud Network**
-- Click **Close**
+5. Verify all the information and  Click **Create**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+6. This will create a VCN with followig components.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
+
+7. Click **View Virtual Cloud Network** to display your VCN details.
               
               
 ## Create Public Private SSH Key Pair, two compute instances and install web server
@@ -129,9 +129,11 @@ Compute instance and id_rsa to connect via SSH into compute instance.
 cd /C/Users/PhotonUser/.ssh (No Spaces) 
 ```
 and then 
+
 ```
 ls 
 ```
+
 to verify the two files exist. 
 
 5. In git-bash Enter command  
@@ -146,28 +148,32 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
 10. Repeat Steps to launch a second Compute instance and note down its public IP address.
 
@@ -179,8 +185,8 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 13.  ssh to **first** compute instance. Enter command:
             
-```
-ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
+```bash
+ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 **NOTE:** User name is ‘opc’.
 
@@ -204,6 +210,7 @@ ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 sudo yum -y install httpd (Install Apache HTTP Server)
 ```
+
 ```
 sudo firewall-cmd --permanent  --add-port=80/tcp 
 ```
@@ -236,6 +243,7 @@ echo 'WebServer1' >>/var/www/html/index.html
 ```
 sudo yum -y install httpd (Install Apache HTTP Server)
 ```
+
 ```
 sudo firewall-cmd --permanent  --add-port=80/tcp 
 ```
@@ -310,9 +318,10 @@ In this section we will create a new security list. This security list will be u
 
 7. Ensure the new route table appears in the list (Under Create Route Table).
 
-**We now have a route table that allows all traffic. Next we will attach this route table to two new subnets that we will create (These 2 subnets will be used by the Load Balancer).**
+**We now have a route table that allows all traffic. Next we will attach this route table to two new subnets that we will create (This subnet will be used by the Load Balancer).**
 
 8. Create First subnet:
+
 **First Subnet:** (Your Virtual Cloud Network should be visible in OCI Console window.) 
 
 9. Click **Subnets**.
@@ -320,17 +329,17 @@ In this section we will create a new security list. This security list will be u
 10. Click **Create Subnet**. Fill out the dialog box:
 
 
-- Name: Enter a name (for example, LB-Subnet-1).
-- Subnet Type: Regional
+- **Name**: Enter a name (for example, LB-Subnet-1).
+- **Subnet Type**: Regional
 
  **(When using a regional subnet, OCI selects two AD's. If you would like to control which two AD's are used, you would want to create individual AD-speicfic subnets)**
 
 
-- CIDR Block: Enter 10.0.4.0/24 
-- Route Table: Select the Route Table you created earlier.
-- Subnet access: select Public Subnet.
-- DHCP Options: Select the default.
-- Security Lists: Select the Security List you created earlier.
+- **CIDR Block**: Enter 10.0.4.0/24 
+- **Route Table**: Select the Route Table you created earlier.
+- **Subnet access**: select Public Subnet.
+- **DHCP Options**: Select the default.
+- **Security Lists**: Select the Security List you created earlier.
 
 11. Leave all other options as default, Click **Create Subnet**.
 
@@ -348,22 +357,22 @@ In this section we will create a new security list. This security list will be u
 **Under Add Details**
 
 
-- LOAD BALANCER NAME: Enter a name for your load balancer.
-- CHOOSE VISIBILITY TYPE: Public
-- CHOOSE THE MAXIMUM TOTAL BANDWIDTH: Select 100Mbps. (This specifies the bandwidth of the load balancer.)
+- **LOAD BALANCER NAME**: Enter a name for your load balancer.
+- **CHOOSE VISIBILITY TYPE**: Public
+- **CHOOSE THE MAXIMUM TOTAL BANDWIDTH**: Small, 100Mbps. (This specifies the bandwidth of the load balancer.)
 
 **NOTE:** Shape cannot be changed later.
 
 
-- VIRTUAL CLOUD NETWORK: Choose your Virtual Cloud Network
-- SUBNET: Choose the Regional Subnet we created. 
+- **VIRTUAL CLOUD NETWORK**: Choose your Virtual Cloud Network
+- **SUBNET**: Choose the Regional Subnet we created (10.0.4.0 in this lab) 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Fundamentals_Lab/img/OCI_Fundamentals_006.PNG" alt="image-alt-text">
 
 **Under Choose Backends:**
 
 
-- SPECIFY A LOAD BALANCING POLICY: Weighted Round Robin
+- **SPECIFY A LOAD BALANCING POLICY**: Weighted Round Robin
 - Click **Add Backend** and choose the two backend compute instance created earlier
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Fundamentals_Lab/img/OCI_Fundamentals_007.PNG" alt="image-alt-text">
@@ -390,7 +399,7 @@ In this section we will create a new security list. This security list will be u
 
 4. Wait for the load balancer to become active and then note down it’s Public IP address.
 
-**We now have a load balancer that will manage the 2 subnets we had created earlier.**
+**We now have a load balancer that will manage the subnet we created earlier.**
 
 5. From OCI Services menu, Click **Virtual Cloud Network** under Networking. Locate the VCN you created.
 
@@ -403,46 +412,45 @@ Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure 
 
 
 
-- Source Type: CIDR 
-- Source CIDR: Enter 0.0.0.0/0.
-- IP Protocol: Select TCP.
-- Source Port Range: All.
-- Destination Port Range: Enter 80 (the listener port).
+- **Source Type**: CIDR 
+- **Source CIDR**: Enter 0.0.0.0/0.
+- **IP Protocol**: Select TCP.
+- **Source Port Range**: All.
+- **Destination Port Range**: Enter 80 (the listener port).
 
 9. Click **Add Ingress Rule**. 
 
 10. Click **Egress Rule** under Resources. Click **Add Egress Rule**,  Click **+Additional Egress Rule** and enter the following Egress rule; Ensure to leave STATELESS flag un-checked
 
 
-- Destination Type: CIDR
-- Destination CIDR: 0.0.0.0/0
-- IP Protocol: Select TCP.
-- Destination Port Range: All.
+- **Destination Type**: CIDR
+- **Destination CIDR**: 0.0.0.0/0
+- **IP Protocol**: Select TCP.
+- **Destination Port Range**: All.
 
 11. Click **Add Egress Rule**.
 
-12. Click **Security Lists**, and locate the Default Security List of the VCN Click **Add Egress Rule**.  Click **+Additional Egress Rule** and Add below 2 Rules for Egress; Ensure to leave STATELESS flag un-checked.:
+12. Click **Security Lists**, and locate the Default Security List of the VCN Click **Add Ingress Rule**.  Click **+Additional Ingress Rule** and Add below 2 Rules for Ingress; Ensure to leave STATELESS flag un-checked.:
 
 **First Rule**
 
 
-- Destination Type: CIDR
-- Destination CIDR: 10.0.4.0/24
+- Source Type: CIDR
+- Source CIDR: 10.0.4.0/24
 - IP Protocol: Select TCP.
 - Source Port Range: All
 - Destination Port Range: 80
 
-13. Click **+Additional Egress Rule** and enter the following Egress rule; Ensure to leave STATELESS flag un-checked
+13. Click **+Additional Ingress Rule** and enter the following Ingress rule; Ensure to leave STATELESS flag un-checked
 
 **Second Rule**
 
-
-- Destination Type: CIDR
-- Destination CIDR: 10.0.5.0/24
+- Source Type: CIDR
+- Source CIDR: 10.0.5.0/24
 - IP Protocol: Select TCP
 - Destination Port Range: 80
 
-14. Click **Add Egress Rule**.
+14. Click **Add Ingress Rule**.
 
 We now have the set-up configured with 2 Compute instances running http server with a index.html file, Load Balancer with all relevant policies and components.
 
@@ -482,7 +490,7 @@ Delete Load Balancer and associated components:
 
 4. From OCI services menu Click **Instances** under Compute
 
-5. Locate first compute instance, Click Action icon and then **Terminat** 
+5. Locate first compute instance, Click Action icon and then **Terminate** 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG" alt="image-alt-text">
 
@@ -498,10 +506,6 @@ appear.
 9. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
-
-10. From OCI services menu Click **Networking**, then **Public IPs**,locate the Reserved Public IP you created. Click Action icon and then **Terminate**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0019.PNG" alt="image-alt-text">
 
 
 ***Congratulations! You have successfully completed the lab. ***

@@ -15,7 +15,9 @@ Lab 1 deals with setting up the network, users and groups and requires administr
 
 Labs 2 & 3 are geared towards the fleet administrator role responsible for deploying the autonomous exadata infrastructure and container databases.
 
-Labs 4 onwards are intended for a regular database user, DBA or developer who simply want to spin up an autonomous database in one of the pre-provisioned containers and start building applications.
+Labs 4 and  6 - 12  are intended for a regular database user, DBA or developer who simply want to spin up an autonomous database in one of the pre-provisioned containers and start building applications.
+
+Lab 13 onwards demonstrate the operational aspects of the service
 
 ## Goals for this workshop
 - Prepare your private network in the Oracle Cloud Infrastructure
@@ -27,19 +29,18 @@ Labs 4 onwards are intended for a regular database user, DBA or developer who si
 - Build and deploy Python application stacks on dedicated autonomous infrastructure
 - Build and deploy node.js application stacks on dedicated autonomous infrastructure
 - Build and deploy Java application stacks on dedicated autonomous infrastructure
-- Use OCI CLI commands to work with your Autonomous databases
+- Use OCI CLI commands to work with your autonomous databases
 - Invoke and use the sqldevweb console
-- Build apex applications on dedicated autonomous database
-- Manage database & performance using SQL Developer Web and Performance Hub
+- Build apex applications on the autonomous database
 - Migrate an on-prem application schema using Data Pump
 - Setup live migration of business critical databases using Oracle Goldengate replication
+- Build 'Always-On' application on the autonomous database
+- Manage database performance with Performance Hub
+- Scale your database service with zero downtime
+- Protect your data with Database Vault
+- Recover from user errors using flashback recovery
+- Setup monitoring events and notifications
 
-<!-- # How to Get Your Free Cloud Trial Account
-Please click on the following link to create your <a class=“trial-link” href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK181011P00041:ATPHOL&SC=:ex:tb:::RC_NAMK181011P00041:ATPHOL&pcode=NAMK181011P00041" target="_trial">Free Account</a>, and complete all the required steps to get your free Oracle Cloud Trial Account. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free.  Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
-
-  - Soon after requesting your trial you will receive the following email. You may begin working on Lab 100. -->
-
-  <!-- ![](images/readme/code_9.png) -->
 
 
 
@@ -58,7 +59,7 @@ Read on to begin your Getting Started journey with Oracle Autonomous Transaction
 **You are all set, let's begin!**
 
 
-## Lab 1: Preparing your private network in the Oracle Cloud Infrastructure
+## Lab 1: Preparing your private network in the Oracle Cloud Infrastructure (demo only)
 
 **Key Objectives**:
 - Create compartments and user groups with the right set of access policies for separation of duties
@@ -68,7 +69,7 @@ Read on to begin your Getting Started journey with Oracle Autonomous Transaction
 **[Click here to run Lab 1](ATPD-Networking.md)**
 
 
-## Lab 2: Provisioning Exadata Infrastructure for Autonomous DB in OCI
+## Lab 2: Provisioning Exadata Infrastructure for Autonomous DB in OCI (demo only)
 
 **Key Objectives**:
 
@@ -80,7 +81,7 @@ As a fleet administrator,
 **[Click here to run Lab 2](ProvisionAEI.md)**
 
 
-## Lab 3: Provisioning an Autonomous Container Database
+## Lab 3: Provisioning an Autonomous Container Database (demo only)
 
 **Key Objectives**:
 
@@ -101,7 +102,17 @@ As a database user, DBA or application developer,
 
 **[Click here to run Lab 4](ProvisionADB.md)**
 
-## Lab 5: Configuring VPN connectivity into your private ATP network
+
+
+## Lab 5: Configuring a development system for use with your dedicated autonomous database
+
+**Key Objectives**:
+As a database user, DBA or application developer,
+- Configure a secure connection from your application instance to your dedicated autonomous database using Oracle SQL Developer, SQLCL and SQL*Plus.
+
+**[Click here to run Lab 5](ConfigureDevClient.md)**
+
+## Lab 6: Configuring VPN connectivity into your private ATP network
 
 **Key Objectives**:
 
@@ -114,16 +125,8 @@ As a database admin / user,
 - Configure your VPN client and connect to VPN Server
 - Launch SQL Developer on client and connect to a dedicated ATP instance
 
-**[Click here to run Lab 5](ConfigureVPN.md)**
+**[Click here to run Lab 6](ConfigureVPN.md)**
 
-
-## Lab 6: Configuring a development system for use with your dedicated autonomous database
-
-**Key Objectives**:
-As a database user, DBA or application developer,
-- Configure a secure connection from your application instance to your dedicated autonomous database using Oracle SQL Developer, SQLCL and SQL*Plus.
-
-**[Click here to run Lab 6](ConfigureDevClient.md)**
 
 ## Lab 7: Building and deploying node.js application stacks on dedicated autonomous infrastructure
 
@@ -203,7 +206,6 @@ As a database admin or user,
 
 ## Lab 14: Live migration to ATP-Dedicated using Oracle Goldengate replication
 
-
 **Key Objectives**:
 
 As a database admin,
@@ -213,3 +215,92 @@ As a database admin,
 - Replicate real time data from a simulated on-premise database to ATP-Dedicated
 
 **[Click here to run Lab 14](Goldengate.md)**
+
+## Lab 15: Building 'Always-On' applications on the autonomous database 
+
+
+**Key Objectives**:
+
+As a database admin,
+
+- Install and configure a Java OLTP application for High Availability
+- Simulate a planned maintenance event and observe workload
+
+**[Click here to run Lab 15](Swingbench.md)**
+
+## Lab 16: Managing database performance with Performance Hub 
+
+
+**Key Objectives**:
+
+As a database admin or database user,
+
+- Simulate a production OLTP workload using Swingbench load generator
+- Monitor and Manage your autonomous database performance using Performance Hub.
+
+**[Click here to run Lab 16](Performancehub.md)**
+
+
+## Lab 17: Zero downtime scaling
+
+
+**Key Objectives**:
+
+As a database admin or database user,
+
+- Simulate a production workload using Swingbench load generator
+- Scale up and scale down a database online and observe workload
+
+**[Click here to run Lab 17](Scaling.md)**
+
+
+
+## Lab 18: - Protecting your data with Database Vault
+
+
+**Key Objectives**:
+
+As a database security admin,
+
+- Enable database vault in your autonomous database service
+- Implement separation of duties to protect sensitive data in your autonomous database
+
+**[Click here to run Lab 18](DBVault.md)**
+
+
+## Lab 19: - Recovering from user errors using flashback recovery
+
+
+**Key Objectives**:
+
+As a developer or database admin,
+
+- Setup recovery points in your database code
+- Flashback your database to recover from erroneous updates
+
+**[Click here to run Lab 19](Flashback.md)**
+
+## Lab 20: - Setting up DB event notifications using OCI Notification service
+
+
+**Key Objectives**:
+
+As a developer or database admin,
+
+- Setup autonomous database event topics
+- Add subscribers to recieve service event notifications via email, SMS & Slack
+
+
+**[Click here to run Lab 20](CNS.md)**
+
+
+
+## Appendix
+
+
+**Common tools for windows Users**
+**Finding the IP address of your AEI Cluster**
+
+
+
+**[Click here to access appendix](Appendix.md)**

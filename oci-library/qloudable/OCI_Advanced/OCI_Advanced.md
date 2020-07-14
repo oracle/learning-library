@@ -12,8 +12,6 @@
 
 [ssh to compute instance and test VCN peering](#ssh-to-compute-instance-and-test-vcn-peering)
 
-[Testing Console Connection to the compute instance](#testing-console-connection-to-the-compute-instance)
-
 [Delete the resources](#delete-the-resources)
 
 
@@ -70,31 +68,22 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+*************
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
+3. Fill out the dialog box:
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
 
-4. Fill out the dialog box:
-
-
-- **Name:** Enter easy to remember name
-- **Create in Compartment:** Has the correct compartment
-- **Create Virtual Cloud Network Only:** Select this option.
--**CIDR BLOCK**: 10.0.0.0/16
-- Click **Create Virtual Cloud Network**
-- Click **Close**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_001.PNG" alt="image-alt-text">
+4. Click **Create Virtual Cloud Network**
 
 5. Virtual Cloud Network will be created and VCN name will appear on OCI Console. Scroll down to find your VCN if multiple VCN exist, and Click your VCN name.
 
-6. In VNC detials page,  Click **Internet Gateways** under Resources, and Click **Create Internet Gateway**. Fill out the dialog box. Click **Create Internet Gateway** (ensure correct compartment is selected).
+6. In VCN detials page,  Click **Internet Gateways** under Resources, and Click **Create Internet Gateway**. Fill out the dialog box. Click **Create Internet Gateway** (ensure correct compartment is selected).
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_002.PNG" alt="image-alt-text">
 
@@ -105,23 +94,23 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 8. Click **Add Route Rules**. Fill out the dialog box:
 
 
-- Target Type: Internet Gateway
-- Destination CIDR Block: 0.0.0.0/0
-- Compartment: Your Compartment.
-- Target Internet Gateway: Select the Internet Gateway created previously.
+- **Target Type**: Internet Gateway
+- **Destination CIDR Block**: 0.0.0.0/0
+- **Compartment**: Your Compartment.
+- **Target Internet Gateway**: Select the Internet Gateway created previously.
 
 9. Click **Add Route Rules**.
 
-10. Click **Subnets** then **Create Subnet**. Fill out the dialog box:
+10. Click **VCN** and then **Subnets** then **Create Subnet**. Fill out the dialog box:
 
 
-- Name: Enter a name (for example Management Peering subnet).
-- Subnet Type: Regional
-- CIDR Block: Enter 10.0.0.0/24
-- Route Table: Default Route Table.
-- Subnet access: Public Subnet.
-- DHCP Options: Select the default.
-- Security Lists: Default Security List
+- **Name**: Enter a name (for example Management Peering subnet).
+- **Subnet Type**: Regional
+- **CIDR Block**: Enter 10.0.0.0/24
+- **Route Table**: Default Route Table.
+- **Subnet access**: Public Subnet.
+- **DHCP Options**: Select the default.
+- **Security Lists**: Default Security List
 
 11. Leave all other options as default, Click **Create Subnet**.
 
@@ -130,15 +119,14 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 12. Once the Subnet is in the ‘Available’ state, Click **Local Peering Gateways**, then **Create Local Peering Gateway** (local peering gateway  is a component on a VCN for routing traffic to a locally peered VCN). Fill out the dialog box:
 
 
-- NAME: Provide a Name 
-- CREATE IN COMPARTMENT: Select your compartment
+- **NAME**: Provide a Name 
+- **CREATE IN COMPARTMENT**: Select your compartment
 
 13. Click **Create Local Peering Gateway**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_004.PNG" alt="image-alt-text">
 
 14. Create a second VCN using steps above use CIDR block:
-
 
 -**CIDR BLOCK**: 10.10.0.0/16
 
@@ -147,28 +135,28 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 16. Add subnet for second VCN, use below data:
 
 
-- Name: Enter a name (for example Marketing Peering subnet).
-- Subnet Type: Regional
-- CIDR Block: Enter 10.10.0.0/24
-- Route Table: Default Route Table.
-- Subnet access: Public Subnet.
-- DHCP Options: Select the default.
-- Security Lists: Default Security List
+- **Name**: Enter a name (for example Marketing Peering subnet)
+- **Subnet Type**: Regional
+- **CIDR Block**: Enter 10.10.0.0/24
+- **Route Table**: Default Route Table.
+- **Subnet access**: Public Subnet.
+- **DHCP Options**: Select the default.
+- **Security Lists**: Default Security List
 
 17. Leave all other options as default, Click **Create Subnet**.
 
 18. Add route table for second VCN. Click **Route Table**, then **Create Route Table**. Fill out the dialog box:
 
 
-- Name: Provide a Name
-- Compartment: Select your Compartment
+- **Name**: Provide a Name
+- **Compartment**: Select your Compartment
 
-**CLick ++ Additional Route Rules**
+**CLick +Additional Route Rules**
 
-- Target Type: Internet Gateway 
-- Destination CIDR Block: 0.0.0.0/0
-- Compartment: Select Your Compartment
-- Target Internet Gateway: Select second VCN's internet gateway
+- **Target Type**: Internet Gateway 
+- **Destination CIDR Block**: 0.0.0.0/0
+- **Compartment**: Select Your Compartment
+- **Target Internet Gateway**: Select second VCN's internet gateway
 
 
 19. Leave all other options as default, Click **Create Route Table**.
@@ -176,8 +164,8 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 20. Create second Local peering gateway. Once the Subnet is in the ‘Available’ state, Click **Local Peering Gateways**, then **Create Local Peering Gateway** (local peering gateway  is a component on a VCN for routing traffic to a locally peered VCN). Fill out the dialog box:
 
 
-- NAME: Provide a Name 
-- CREATE IN COMPARTMENT: Select your compartment
+- **NAME**: Provide a Name 
+- **CREATE IN COMPARTMENT**: Select your compartment
 
 **WE have created two VCN with internet gateway for internet traffic, added default rule in the route table, created subnet and added two local peering gateways(one for each VCN). For VCN peering each VCN must have a local peering gateway.**
 
@@ -233,24 +221,28 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
 
-8. Click **Create Instance**. 
+8. Click **Create Instance**. Fill out the dialog box:
 
 **This is the first compute instance and ensure to create in the first VCN**. 
 
-Fill out the dialog box:
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the first VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
@@ -261,17 +253,24 @@ Fill out the dialog box:
 10. Repeate the steps to create a second compute instance in the **Second VCN**
 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the Second VCN you created in the previous section. 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
+
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 11. Click **Create**
 
@@ -281,10 +280,10 @@ Fill out the dialog box:
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_005.PNG" alt="image-alt-text">
 
-14. Fill out the dialg box:
+14. Fill out the dialog box:
 
 
-- SPECIFY THE LOCAL PEERING GATEWAY: Browse only (To browse the list of available gateways)
+- SPECIFY THE LOCAL PEERING GATEWAY: Browse below (To browse the list of available gateways)
 - VIRTUAL CLOUD NETWORK COMPARTMENT: Select your compartment
 - VIRTUAL CLOUD NETWORK: Choose the **second VCN** (Gateway1 needs to pair with Gateway2 that is in second VCN)
 - LOCAL PEERING GATEWAY COMPARTMENT: Choose the comprtment
@@ -292,29 +291,27 @@ Fill out the dialog box:
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_006.PNG" alt="image-alt-text">
 
-15. Repeat the step for second Local peering gateway and peer it with First peering gateway
-
-16. Verify the Local Peering Gateway shows Status as Peered and Peered information is correct.
+15. Verify the Local Peering Gateway shows Status as Peered and Peered information is correct.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_007.PNG" alt="image-alt-text">
 
-17. We now need to configure Route tables and Security Lists for the two VCNs. Navigate to First VCN's details page and clik **Route Tables**, then **Default Route table for <FIRST_VCN_NAME>**
+16. We now need to configure Route tables and Security Lists for the two VCNs. Navigate to First VCN's details page and click **Route Tables**, then **Default Route table for <FIRST_VCN_NAME>**
 
-18. Click **Add route rule** and add the followig rule
+17. Click **Add route rule** and add the followig rule
 
 
 - Target Type: Select **Local Peering gateway**
 - Destination CIDR Block: Enter 10.10.0.0/24
 - Compartment:  Make sure the correct Compartment is selected: 
-- TARGET LOCAL PEERING GATEWAY: Select the Local peering Gateway of second VCN 
+- TARGET LOCAL PEERING GATEWAY: Select the Local peering Gateway of First VCN 
 
-19. Click **Add Route Rule**
+18. Click **Add Route Rule**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_009.PNG" alt="image-alt-text">
 
-20. Navigate to you VCN details page, Click **Security Lists**, then **Default Security list for <FIRST_VCN_NAME>**. Click **Add Ingress Rule**.
+29. Navigate to you VCN details page, Click **Security Lists**, then **Default Security list for <FIRST_VCN_NAME>**. Click **Add Ingress Rule**.
 
-21. Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
+20. Enter the following ingress rule; Ensure to leave STATELESS flag un-checked
 
 
 - Source CIDR: 10.10.0.0/24
@@ -324,9 +321,9 @@ Fill out the dialog box:
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_008.PNG" alt="image-alt-text">
 
-22. Click **Add Ingress Rule**. 
+21. Click **Add Ingress Rule**. 
 
-23. Repeat the steps for second VCN Route table and security list. Use below data:
+22. Repeat the steps for second VCN Route table and security list. Use below data:
 
 **Second VCN Route table**
 
@@ -338,7 +335,7 @@ Fill out the dialog box:
 
 **Second VCN Security list rule** (Navigate to Security List and Click **Add Ingress Rule**.)
 
-24. Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
+23. Enter the following ingress rule; Ensure to leave STATELESS flag un-checked
 
 
 - Source CIDR: 10.0.0.0/24
@@ -359,7 +356,7 @@ Fill out the dialog box:
 2. Enter **ls** and verify id_rsa file exists
 
 3. Enter command 
-```
+```bash
 ssh -i id_rsa_user opc@<PUBLIC_IP_OF_FIRST_COMPUTE>
 ```
 
@@ -377,7 +374,7 @@ ssh -i id_rsa_user opc@<PUBLIC_IP_OF_FIRST_COMPUTE>
 
 6. Enter command:
 
-```
+```bash
 ping <PRIVATE_IP_OF_SECOND_COMPUTE_INSTANCE>
 ```
 
@@ -386,102 +383,6 @@ ping <PRIVATE_IP_OF_SECOND_COMPUTE_INSTANCE>
 **Verify the ping is successful**
 
 If ping is successful then we have successfuly created VCN peering across two different VCNs
-
-## Testing Console Connection to the compute instance
-
-1. Navigate to compute instance details page by Clicking one of the compute instance name
-
-2. Under Resources section on the Instance Details page, Click **Console Connections**, and then **Create Console Connection**.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_010.PNG" alt="image-alt-text">
-
-3. Add your public SSH key, by pasting the ssh key created earlier and Click **Create Console Connection** Refresh the screen and you will see an Active Console Connection
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_011.PNG" alt="image-alt-text">
-
-4. Click the Actions icon (three dots), and then **Connect with SSH**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_012.PNG" alt="image-alt-text">
-
-5. Select LINUX/MAC OS for PLATFORM, Click Copy and paste the command in Note Pad.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_013.PNG" alt="image-alt-text">
-
-6. Since we are using locally generated ssh keys, the command needs to be modified. Add ssh key path in the command as shown below in Yellow highlighted
-
-**Note:** We will run the command from the directory where ssh keys are stored and thus specifying entire PATH won't be neccessary
-
-```
-ssh -i /<path>/<ssh_key> -o ProxyCommand='ssh -i /<path>/<ssh_key> -W %h:%p -p 443...
-```
-
-7. Switch to gitbash window, Enter command 
-```
-ls
-```
-and verify the ssh key files are listed. If Not then switch to the directory where ssh key files are stored. Paste the ssh command from Note pad.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_014.PNG" alt="image-alt-text">
-
-**NOTE:** Once you are connected with an instance console connection, you can perform various tasks, such as:
-
-Edit system configuration files.
-
-Add or reset the SSH keys for the opc user.
-
-Both of these tasks require you to boot into a bash shell, in maintenance mode.
-
-8. **Reboot the instance from the Console**. In the Console, in the Instances Details page, Click **Reboot**.Once the reboot process starts, switch back to gitbash terminal,  Console messages start to appear. As soon as you see the GRUB boot menu appear, use the up/down arrow key to stop the automatic boot process,enabling you to use the boot menu.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_015.PNG" alt="image-alt-text">
-
-9. In the boot menu, highlight the top item in the menu, and type e to edit the boot entry.
-
-10. In edit mode, use the down arrow key to scroll down through the entries until you reach the line that starts with either linuxefi for instances running Oracle Linux 7.x, or kernel for instances running Oracle Linux 6.x.
-
-11. At the end of that line, add the following:
-```
-init=/bin/bash
-```
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_016.PNG" alt="image-alt-text">
-
-12. Reboot the instance from the terminal window by entering the keyboard shortcut CTRL+x.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Advanced/img/OCI_Advanced_017.PNG" alt="image-alt-text">
-
-13. Now your instance is on Maintenance Mode and you can can replace your SSH.
-
-14. From the Bash shell, run the following command to load the SELinux policies to preserve the context of the files you are modifying:
-```
-/usr/sbin/load_policy -i
-```
-
-15. Run the following command to remount the root partition with read/write permissions:
-```
-/bin/mount -o remount, rw /
-```
-
-16. From the Bash shell, run the following command to change to the SSH key directory for the opc user:
-```
-cd ~opc/.ssh
-```
-
-17. Rename the existing authorized keys file with the following command:
-```
-mv authorized_keys authorized_keys.old
-```
-
-18. Replace the contents of the public key file with the new public key file with the following command:
-```
-echo '<contents of .pub key file>' >> authorized_keys
-```
-
-19. Restart the instance by running the following command:
-```
-/usr/sbin/reboot -f
-```
-20. Now you can login to your instance using the new SSH key.
 
 
 ## Delete the resources

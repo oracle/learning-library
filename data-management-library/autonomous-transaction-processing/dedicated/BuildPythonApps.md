@@ -36,7 +36,7 @@ As an application developer,
 
 ## Steps
 
-### **STEP 1: SSH into Oracle Cloud Developer image and clone Java application**
+### STEP 1: Download sample python application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu
 
@@ -49,7 +49,7 @@ As an application developer,
 ![](./images/800/Compute2.png)
 
 
-### Mac / Linux users
+**Mac / Linux users**
 
 - Open Terminal and SSH into linux host machine
 
@@ -59,13 +59,15 @@ sudo ssh -i /path_to/sshkeys/id_rsa opc@publicIP
 
 ![](./images/800/SSH1.png)
 
-### Windows users
+**Windows users**
 
 - You can connect to and manage linux host mahine using SSH client. Recent versions of Windows 10 provide OpenSSH client commands to create and manage SSH keys and make SSH connections from a command prompt.
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-### Cloning sample python Application
+**Download sample python Application**
+
+In your developer client ssh session,
 
 ```
 cd /home/opc/
@@ -84,7 +86,7 @@ unzip ATPDpython.zip
 ```
 
 
-### **STEP 2: Secure Copy ATP Dedicated database wallet to linux host machine**
+### STEP 2: Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select **Autonomous Transaction Processing** from menu
 ![](./images/800/atpd1.png)
@@ -120,7 +122,7 @@ sudo scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@pu
 
 
 
-### **STEP 3: Update sqlnet.ora and run python application on client**
+### STEP 3: Run your python application**
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folde
 

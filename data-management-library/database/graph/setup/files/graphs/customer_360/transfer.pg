@@ -1,0 +1,14 @@
+# Nodes
+211 type:account account_no:xxx-zzz-001
+212 type:account account_no:xxx-zzz-002
+
+# Edges
+201 -> 202 :transfer amount:200 date:"2018-10-05"
+211 -> 202 :transfer amount:900 date:"2018-10-06"
+202 -> 212 :transfer amount:850 date:"2018-10-06"
+201 -> 203 :transfer amount:500 date:"2018-10-07"
+203 -> 204 :transfer amount:450 date:"2018-10-08"
+204 -> 201 :transfer amount:400 date:"2018-10-09"
+202 -> 203 :transfer amount:100 date:"2018-10-10"
+202 -> 201 :transfer amount:300 date:"2018-10-10"
+

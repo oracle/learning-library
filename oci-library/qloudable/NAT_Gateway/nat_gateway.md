@@ -12,7 +12,7 @@
 
 [Create ssh keys compute instance](#create-ssh-keys-compute-instance)
 
-[Create and configure NAT gateway](#create-and-configure-nat-gateway)
+[Configure NAT gateway](#configure-nat-gateway)
 
 [Delete the resources](#delete-the-resources)
 
@@ -75,27 +75,29 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
 
-- **Name:** Enter easy to remember name
-- **Create in Compartment:** Has the correct compartment
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-- Click **Create Virtual Cloud Network**
-- Click **Close**
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+5. Verify all the information and  Click **Create**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
+6. This will create a VCN with followig components.
+
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
+
+7. Click **View Virtual Cloud Network** to display your VCN details.
               
 ## Create ssh keys compute instance
 
@@ -147,22 +149,28 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
@@ -177,7 +185,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE> 
 ```
 
@@ -189,19 +197,17 @@ ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
  
 14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
 
-## Create and configure NAT gateway
+## Configure NAT gateway
 
-**We will now create a route table and NAT gateway in the VCN.**
+**We will now create a route table in the VCN.**
 
 1. Switch to OCI console. From OCI services menu Click **Virtual Cloud Networks** under Networking. Locate your VCN and Click the VCN name to display VCN details. 
 
-2. Click **NAT Gateways** , then **Create**. Ensure correct compartment is selected and provide a Name and Click **Create NAT Gateway**.
+2. Click **NAT Gateways** 
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/NAT_Gateway/img/NAT_001.PNG" alt="image-alt-text">
+3. Click **Route Tables**, then **Create Route Table**. Fill out the dialog box:
 
-3. Once NAT gateway is in Available state, Click **Route Tables**, then **Create Route Table**. Fill out the dialog box:
 - Create in Compartment: This field defaults to your current compartment. Make sure correct Compartment is selected.
-
 
 - Name: Enter a name
 
@@ -261,31 +267,16 @@ cat ~/.ssh/id_rsa.pub
 
 copy and paste the public key content to Notepad. We will use this public key to launch a compute instance in private subnet of the VCN.
 
-11. Switch to OCI console window and launch a second compute instance as done previously. Ensure the subnet chosen is the private subnet that we created previously.
+11. Switch to OCI console window and launch a second compute instance as done previously. **Ensure the subnet chosen is the private subnet that we created previously**.
 
+12. Once the Instance is running, Note down private IP address of the instance from instance detail page (by Clicking Instance name) 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
-- **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** choose the subnet under Private Subnet
-
-12. Click **Create**
-
-13. Once the Instance is running, Note down privateIP address of the instance from instance detail page (by Clicking Instance name) 
-
-14. Switch to git-bash window with ssh session to Public compute instsance (first compute instance created earlier). Enter command:
+13. Switch to git-bash window with ssh session to Public compute instance (first compute instance created earlier). Enter command:
 ```
  cd ~/.ssh
 ``` 
 then
-```
+```bash
 ssh –i id_rsa opc@<Private_IP_OF_COMPUTE_INSTANCE>
 ```
 
@@ -295,9 +286,9 @@ ssh –i id_rsa opc@<Private_IP_OF_COMPUTE_INSTANCE>
 
 **NOTE:** Use the private ip of second compute instance noted earlier
 
-15. Enter ‘Yes’ when prompted for security message
+14. Enter ‘Yes’ when prompted for security message
 
-16. In the private compute instance Enter command:
+15. In the private compute instance Enter command:
 ```
 ping 8.8.8.8 
 ```
@@ -305,15 +296,15 @@ and verify there is internet connectivity
 
 **The compute instance in private subnet has internet access. This is possible since traffic is being routed through the NAT gateway that we created and attached to the VCN. Next we will use the traffic toggle function on NAT gateway to block/allow traffic with a single Click.**
 
-17. Switch to OCI console window. In your VCN's detail page, Click **NAT Gateways**
+16. Switch to OCI console window. In your VCN's detail page, Click **NAT Gateways**
 
-18. Hover over the Action icon  and choose Block Traffic. 
+17. Hover over the Action icon  and choose Block Traffic. 
 
-19. Switch back to ssh session to the private compute instance and Enter command ping 8.8.8.8 (if not already running). Verify there is no repsonse
+18. Switch back to ssh session to the private compute instance and Enter command ping 8.8.8.8 (if not already running). Verify there is no repsonse
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/NAT_Gateway/img/NAT_003.PNG" alt="image-alt-text">
 
-20. Switch back to OCI console window and using above step, this time choose Allow Traffic. Switch back to ssh session and verify ping response is received.
+19. Switch back to OCI console window and using above step, this time choose Allow Traffic. Switch back to ssh session and verify ping response is received.
        
 ## Delete the resources
 
@@ -321,7 +312,7 @@ and verify there is internet connectivity
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**
 
-3. Locate compute instance, Click Action icon and then **Terminat** 
+3. Locate compute instance, Click Action icon and then **Terminate** 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG" alt="image-alt-text">
 
@@ -329,16 +320,16 @@ and verify there is internet connectivity
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG" alt="image-alt-text">
 
-5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
+5. Repeat the steps to delete the second compute instance.
+
+6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-6. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
+7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
 
-7. From OCI services menu Click **Networking**, then **Public IPs**,locate the Reserved Public IP you created. Click Action icon and then **Terminate**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0019.PNG" alt="image-alt-text">
 
 ***Congratulations! You have successfully completed the lab. ***
 

@@ -1,0 +1,17 @@
+Tenancy OCID:
+Object Store Namespace:
+Region Identifier:
+Username:
+User OCID:
+PEM passphrase:
+API Key Fingerprint:
+msdataworkshop compartment OCID:
+OCI Registry:
+msdataworkshoptoken:
+msdataworkshopcluster Cluster Id:
+Order DB Admin password:
+Order DB OCID:
+Inventory DB Admin password:
+Inventory DB OCID:
+Load balancer external IP address and port: :8080
+PAR URL (Inventory DB cwallet.sso):

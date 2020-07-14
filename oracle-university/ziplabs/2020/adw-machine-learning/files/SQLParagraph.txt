@@ -1,0 +1,1 @@
+This image shows the SQL Query Scratchpad. Under the title is a whitespace for entering code, known as the SQL Paragraph zone. On the right edge of this window are command buttons.

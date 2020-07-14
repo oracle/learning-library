@@ -1,0 +1,45 @@
+{
+    "tutorials": [
+      {
+           "title": "Prerequisites",
+           "description": "Get a Free Trial",
+           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+       },
+        {
+            "title": "Introduction",
+            "filename": "./../../../intro/intro-ziplab.md"
+        },
+        {
+            "title": "Lab 1: Provision an ADW Instance",
+            "description": "Provision a new ADW instance and connect to the database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/29/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adb-provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 2: Loading Data",
+            "description": "Load data into ADB",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adb-loading/adb-loading.md"
+        },
+        {
+            "title": "Lab 3: Getting Started with Machine Learning Notebooks",
+            "description": "Using Oracle Machine Learning Notebooks",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adw-oml-notebooks/adw-oml-notebooks.md"
+        },
+        {
+            "title": "Lab 4: Building a Simple Machine Learning Algorithm",
+            "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adw-machine-learning/adw-machine-learning.md"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+  "lab": {
+    "title": "Building an App from a Spreadsheet",
+    "modules": [
+      {
+        "filename": "README.md",
+        "title": "Lab Introduction"
+      },
+      {
+        "filename": "1-sign-up-apex.md",
+        "title": "Module 1: Signing up for an APEX Workspace"
+      },
+      {
+        "filename": "2-creating-an-app-from-a-spreadsheet.md",
+        "title": "Module 2: Creating an App from a Spreadsheet"
+      },
+      {
+          "filename": "3-improving-the-faceted-search.md",
+          "title": "Module 3: Improving the Faceted Search"
+      },
+      {
+        "filename": "4-improving-the-report-and-form.md",
+        "title": "Module 4: Improving the Report and Form"
+      },
+      {
+        "filename": "5-linking-the-calendar.md",
+        "title": "Module 5: Linking the Calendar"
+      }
+    ]
+  }
+}

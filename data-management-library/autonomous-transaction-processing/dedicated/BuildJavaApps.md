@@ -37,7 +37,7 @@ As an application developer,
 
 ## Steps
 
-### **STEP 1: SSH into Oracle Cloud Developer image and clone Java application**
+### STEP 1: Download sample java application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** and **Instances** from the hamburger menu top left
 
@@ -50,7 +50,7 @@ As an application developer,
 ![](./images/800/Compute2.png)
 
 
-### For Mac users
+**Mac users**
 
 - Open Terminal and SSH into linux host machine
 
@@ -60,14 +60,12 @@ sudo ssh -i /path_to/sshkeys/id_rsa opc@publicIP
 
 ![](./images/800/SSH1.png)
 
-### For Windows users
+**Windows users**
 
 - You can connect to and manage linux host mahine using SSH client. Recent versions of Windows 10 provide OpenSSH client commands to create and manage SSH keys and make SSH connections from a command prompt.
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-
-### Download sample Java application
 
 - Download a sample java application for the purpose of this lab as follows,
 
@@ -105,7 +103,7 @@ tar xzfv ojdbc8-full.tar.gz
 ```
 
 
-### **STEP 2: Secure Copy ATP Dedicated database wallet to linux host machine**
+### STEP 2: Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and click on **Autonomous Transaction Processing** from top left menu
 ![](./images/800/atpd1.png)
@@ -139,7 +137,7 @@ sudo scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@pu
 
 - Windows users: Use a scp client such as winSCP to move your wallet to the client machine
 
-### **STEP 3: Update sqlnet.ora and run java application on client**
+### STEP 3: Run your java application**
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder
 
@@ -206,13 +204,13 @@ echo $TNS_ADMIN
 - Set java class path
 
 ```
-javac -cp .:/home/opc/atpjava/ojdbc/ojdbc8/ojdbc8-full/ojdbc8.jar com/oracle/autonomous/GetAutonomousConnection.java
+javac -cp .:/home/opc/atpjava/ojdbc/ojdbc8-full/ojdbc8.jar com/oracle/autonomous/GetAutonomousConnection.java
 ```
 
 - Run application 
 
 ```
-java -cp .:/home/opc/atpjava/ojdbc/ojdbc8/ojdbc8-full/ojdbc8.jar com/oracle/autonomous/GetAutonomousConnection
+java -cp .:/home/opc/atpjava/ojdbc/ojdbc8-full/ojdbc8.jar com/oracle/autonomous/GetAutonomousConnection
 ```
 
 ![](./images/800/atpd9.png)

@@ -1,0 +1,204 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction and Overview",
+            "description": "Introduction to Converged Database Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        }, 
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {         
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {            
+            "title": "Lab 3: Create Compute Instance",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-marketplaceoci-freetier.md"
+        },
+        {         
+            "title": "Lab 4: Environment Setup",
+            "description": "Connect to Schema",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../setup/setup.md"
+        },
+        {         
+            "title": "NODE.JS Lab 1: Intro and Setup",
+            "description": "Env Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../nodejs/setup.md"
+        },    
+        {         
+            "title": "NODE.JS Lab 2: Node.js Rest API",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../nodejs/postman.md"
+        },
+        {         
+            "title": "JSON Lab 1: Intro and Setup",
+            "description": "Json Environment Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../json/setup.md"
+        },
+        {         
+            "title": "JSON Lab 2: Load Json Data",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../json/load_json.md"
+        },
+        {         
+            "title": "JSON Lab 3: Insert and Update Json Data",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../json/insert_json.md"
+        },
+        {         
+            "title": "JSON Lab 4: Usage of Json Functions",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../json/json_fun.md"
+        },
+        {         
+            "title": "XML Lab 1: Setup",
+            "description": "Env setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../xml/setup_xml.md"
+        },
+        {         
+            "title": "XML Lab 2: Query XML Content",
+            "description": "Env setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../xml/xml_query.md"
+        },
+        {         
+            "title": "XML Lab 3: Insert and Update XML Data",
+            "description": "Env setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../xml/xml_insert.md"
+        },
+        {         
+            "title": "XML Lab 4: Usage of XML Function",
+            "description": "Env setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../xml/xml_fun.md"
+        },
+        {         
+            "title": "SPATIAL Lab 1: Setup",
+            "description": "Env Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../spatial/spatial_env_setup.md"
+        },
+        {         
+            "title": "SPATIAL Lab 2: Load Data and Metadata",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../spatial/load_spatial.md"
+        },
+        {         
+            "title": "SPATIAL Lab 3: Spatial Indexing",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../spatial/spatial_index.md"
+        },
+        {         
+            "title": "SPATIAL Lab 4: Usage of Spatial Functions",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../spatial/spatial_fun.md"
+        },
+        {         
+            "title": "GRAPH Lab 1: Intro and Setup",
+            "description": "Which products did customer 40202 buy from which store(s)?",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../graph/Oracle-Graph-Setup.md"
+        },
+        {         
+            "title": "GRAPH Lab 2:  Defining Graph",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../graph/Oracle-Graph-Define.md"
+        },
+        {         
+            "title": "GRAPH Lab 3: Querying graph via PGQL",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../graph/Oracle-Graph-Lab1.md"
+        },
+        {         
+            "title": "GRAPH Lab 4: Loading the Graph into memory and Querying graph",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../graph/Oracle-Graph-Lab6.md"
+        },
+        {         
+            "title": "GRAPH Lab 5: Graph Visualization",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../graph/Oracle-Graph-Lab3.0.md"
+        },
+        {         
+            "title": "CROSS Lab 1: Intro and Usage",
+            "description": "Which products did customer 40202 buy from which store(s)?",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../crossdatatype/crossdatatype.md"
+        }
+
+
+    ]
+}

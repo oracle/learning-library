@@ -1,0 +1,1 @@
+This image shows the Oracle Machine Learning home menu. It features a large window for Quick Actions. There are five options listed in this menu. From left to right, these are: Run SQL Statements, Run SQL Scripts, Notebooks, Jobs, and Examples. Run SQL Statements is highlighted in red.

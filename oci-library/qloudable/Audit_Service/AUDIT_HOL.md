@@ -1,6 +1,7 @@
 # OCI Audit Service
   
-## Table of Contents
+## Table of Content
+
 
 [Overview](#overview)
 
@@ -18,21 +19,39 @@ Each log event includes a header ID, target resource(s), time stamp of the recor
 
 The purpose of this lab is to give you an overview of the Audit Service and an example scenario to help you understand how the service works.
 
+**Some Key points;**
+
+**We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%**
+
+
+- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
+
+- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+
+- Do NOT use compartment name and other data from screen shots. Only use  data(including compartment name) provided in the content section of the lab
+
+- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
+
+- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+
+**Cloud Tenant Name**
+**User Name**
+**Password**
+**Compartment Name (Provided Later)**
+
+**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+
+
 ## Pre-Requisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
-**Before You Begin**
-
-- We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%
-
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
-
-Ensure you have below information available:
-
-- Tenant, User name, Password, and compartment name
-
 ## Practice-1: Sign in to OCI Console and Create Object Storage Bucket
+
+* **Tenant Name:** {{Cloud Tenant}}
+* **User Name:** {{User Name}}
+* **Password:** {{Password}}
+* **Compartment:**{{Compartment}}
 
 1. Sign in using your tenant name, user name and password.
 
@@ -41,15 +60,12 @@ Ensure you have below information available:
 3. From the OCI Services menu,click **Object Storage** then **Create Bucket**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
-![]( img/AUDIT001.PNG)
-![]( img/AUDIT002.PNG)
 
 4. Fill out the dialog box:
 - **Bucket Name:** Provide a name (Test-Bucket in this lab)
 - **Storage Tier:**  STANDARD 
 
 5. Click **Create Bucket**
-![]( img/AUDIT003.PNG)
 
 ## Practice-2: Upload Object and Check Audit logs
 
@@ -76,8 +92,6 @@ This should create a file by the name"samplefile" in the Downloads folder
 
 5. Bucket detail window should be visible. Click **Upload Object**
 
-![]( img/AUDIT007.PNG)
-
 6. Click on Upload Object > Browse > This PC > Downloads. You should see the sample file created earlier
 
 7. Select the file, then click **Upload Object** in the Dialog box.
@@ -86,9 +100,6 @@ This should create a file by the name"samplefile" in the Downloads folder
 Keyword section. You can choose other options
 such as dates and Request Action Type. For this 
 lab we will leave them as default. Audit logs for the Storage bucket should be visible
-
-![]( img/AUDIT008.PNG)
-![]( img/AUDIT009.PNG)
 
 ***You have utilized OCI’s Audit service to extract events specific to Storage bucket created. Audit service can be used to monitor operations performed on OCI resources and can assist in trouble 
 shooting your OCI environment***

@@ -1,7 +1,7 @@
+![](common-content/images/nahandson-title.png)
+---
 # Workshop Catalog
 
-
-## Workshops and Hands-on-labs
 
 | Title | Location | Desc |
 | ----- | -------- | ---- |

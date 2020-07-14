@@ -94,7 +94,7 @@ Object Storage is a regional service and is not tied to any specific compute ins
 
 2. Change directory to the Downloads folder Enter command:
 ```
-$ cd /c/Users/PhotonUser/Downloads/**
+$ cd /c/Users/PhotonUser/Downloads/
 ```
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Object_Storage/img/OBJECT-STORAGE005.PNG" alt="image-alt-text">
 
@@ -153,8 +153,9 @@ This should create a file by the name"samplefile" in the Downloads folder
 
 1. From the Object Storage detail window, Click **Pre-Authenticated Requests**, Click **Delete**, then Click **OK** in Confirm window.
 
-2. Click **Objects**, Click the action icon , select Delete, Click **OK** in the Confirm window.
+2. From OCI services menu navigate to **OBject Storage**. Click your bucket name. Under **Objects** your file should be visible. Click the Action icon (3 vertical dots) and click **Delete** to delete the object
 
-3. Under Bucket Name, Click **Delete**, then Click **OK** in the Confirm window.
+3. Once the Object is deleted, click **Delete** to delete the bucket
+
 
 **Congratulations! You have successfully completed the Lab** 

@@ -16,11 +16,7 @@
 
 ## Overview
 
-Oracle Cloud Infrastructure Reserved Public IP service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Reserved Public IP service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
-
-With Reserved Public IP, you can safely and securely store or retrieve data directly from the internet or from within the cloud platform. Reserved Public IP offers multiple management interfaces that let you easily manage storage at scale.
-
-Reserved Public IP is a regional service and is not tied to any specific compute instance. You can access data from anywhere inside or outside the context of the Oracle Cloud Infrastructure
+A public IP address is an IPv4 address that is reachable from the internet. If a resource in your tenancy needs to be directly reachable from the internet, it must have a public IP address. Depending on the type of resource, there might be other requirements.
 
 The purpose of this lab is to give you an overview of the Reserved Public IP Service and an example scenario to help you understand how the service works.
 
@@ -79,40 +75,38 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
 
-- Create in Compartment: Has the correct compartment
-- Name: Enter easy to remember name
-- Create Virtual Cloud Network Plus Related Resources: Select this option.
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-5. Click **Create Virtual Cloud Network**
+5. Verify all the information and  Click **Create**
 
-6. Click **Close**
+6. This will create a VCN with followig components.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
+7. Click **View Virtual Cloud Network** to display your VCN details.
+             
+8. From OCI servies menu Click **Public IPs** under **Networking** 
 
-7. From OCI servies menu Click **Public IPs** under **Networking** 
-
-8. Click **Create Reserved Public IP**.  Fill out the dialog box:
-
+9. Click **Create Reserved Public IP**.  Fill out the dialog box:
 
 - **NAME:** Provide a name (optional)
 - **COMPARTMENT:** Ensure correct compartment is selected
 
-9. Click **Create Reserved Public IP**
+10. Click **Create Reserved Public IP**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0020.PNG" alt="image-alt-text">
 
@@ -174,32 +168,29 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
 8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- Name: Enter a name 
-- Availability Domain: Select availability domain
-- Image Operating System: For the image, we recommend using the Latest Oracle Linux available.
-- Choose Instance Type: Select Virtual Machine
-- Choose Instance Shape: Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- Configure Boot Volume: Leave the default
-- Add SSH Keys: Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- Virtual Cloud Network Compartment: Choose your compartment
-- Virtual Cloud Network: Select the VCN you created in the previous section. 
-- Subnet Compartment: Choose your compartment. 
-- Subnet: Choose the first Subnet
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
+- **Subnet Compartment:** Choose your compartment. 
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Do Not Assign a public IP address**: Check this option
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0021.PNG" alt="image-alt-text">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
-9. Click **Show Advanced Options**. 
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0022.PNG" alt="image-alt-text">
-
-10. Click **Networking**. Un-check **Assign Public IP address** option if it is checked
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0023.PNG" alt="image-alt-text">
 
 11. Click **Create**
 
@@ -229,8 +220,8 @@ In git-bash Enter Command:
 17. Enter **ls** and verify id_rsa file exists
 
 18. Enter command: **Make sure to use the Reserved Public IP that we assigned to the compute instane**
-```
-ssh -i id_rsa_user opc@<RESERVED_PUBLIC_IP_OF_COMPUTE>
+```bash
+ssh -i id_rsa opc@<RESERVED_PUBLIC_IP_OF_COMPUTE>
 ```
 
 **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
@@ -254,13 +245,17 @@ Reserved Public IP will be unassigned) . Click **Update**
 
 **Reserved Public IP has now been un-assigned from this compute instance. Next we will create a new compute instance and assign this same Public IP to it.**
 
-3. Create a second compute instance following same steps as for the first compute instnae. **Make sure to not assign a Public IP to this compute either**
+3. Create a second compute instance following same steps as for the first compute instance. **Make sure to not assign a Public IP to this compute either**
 
 4. Following same steps as earlier Edit the VNIC information for this compute instance and assign it the same Reserved Public IP that we created.
 
-5. Following same steps as earlier, ssh to the second compute instance using the Reserved Public IP address.
+5. Remove the known_hosts file to ensure old entry for the host is deleted. Enter Command:
 
-6. Verify you logged into the second compute instance.
+```
+rm /c/Users/PhotonUser/.ssh/known_hosts
+```
+
+6. Following same steps as earlier, ssh to the second compute instance using the Reserved Public IP address.Verify you logged into the second compute instance.
 
 **This demonstrated how to use Reserved IP address functionality in OCI to access different compute instances**
 

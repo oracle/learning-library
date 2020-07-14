@@ -1,9 +1,0 @@
-version: '3'
-services:
-  tickets-app:
-    build: .
-    ports:
-      - "5000:5000"
-  tickets-db:
-    image: "mongo"
-

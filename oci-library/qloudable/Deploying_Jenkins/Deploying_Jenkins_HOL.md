@@ -65,28 +65,29 @@ Faster software development has become a competitive advantage for companies. Th
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu, Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
 
-- **Create in Compartment:** Has the correct compartment
-- **Name:** Enter easy to re¬member name
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-- Click **Create Virtual Cloud Network**
-- Click **Close**
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+5. Verify all the information and  Click **Create**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
+6. This will create a VCN with followig components.
+
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
+
+7. Click **View Virtual Cloud Network** to display your VCN details.
                     
 ##  Create Compute instance, configure OCI CLI and upload API keys
 
@@ -137,31 +138,35 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
-
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_009.PNG" alt="image-alt-text">
 
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
-
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
@@ -174,7 +179,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 12. Enter command 
 ```
-ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
+ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
 **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
@@ -202,7 +207,7 @@ oci setup config
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_004.PNG" alt="image-alt-text">
 
-18. Repeat the step to find tenancy OCID (Human icon followed by Clicking Tenancy Name). Paste the Tenancy OCID in ssh session to compute instance followe by providing your region name (us-ashburn-1, us-phoneix-1 etc)
+18. Repeat the step to find tenancy OCID (Human icon followed by Clicking Tenancy Name). Paste the Tenancy OCID in ssh session to compute instance followe by providing your region name (us-ashburn-1, us-phoenix-1 etc)
 
 19. When asked for **Do you want to generate a new RSA key pair?** answer Y. For the rest of the question accept default by pressing Enter
 
@@ -214,11 +219,21 @@ oci setup config
 cat ~/.oci/oci_api_key_public.pem
 ```
 
-21. Hightlight and copy the content from ssh session. Switch to OCI Console, Click Human icon followe by your user name. In user details page Click **Add Public Key**. In the dialg box paste the public key content and Click **Add**.
+21. Hightlight and copy the content from ssh session. Switch to OCI Console, Click Human icon followed by your user name. In user details page Click **Add Public Key**. In the dialg box paste the public key content and Click **Add**.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_006.PNG" alt="image-alt-text">
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_007.PNG" alt="image-alt-text">
+
+22. This will generate a finger print, Copy and save the finger print in notepad using built in application in the platform.
+
+23. Switch back to ssh session to the compute instance and Enter command:
+
+```
+cat ~/.oci/oci_api_key.pem
+```
+
+Copy and save the content of the file 
 
 ## Install Jenkins, Configure Jenkins Master instance and create Jenkins Slave instance
 
@@ -258,7 +273,7 @@ sudo firewall-cmd --reload
 2.  To login to Jenkins master node we just set-up its password needs to be retrieved. Enter command:
 
 ```
-sudo cat /var/lib/jenkins/secrets/initialAdminPassword. 
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 Copy and paste the password to Notepad
 
@@ -272,7 +287,7 @@ Copy and paste the password to Notepad
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploy_Redis/img/Customer_Lab_001.PNG" alt="image-alt-text">)
 
-6. In Security list details page, Click **Add Ingress Rule**. Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
+6. In Security list details page, Click **Add Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
 
 
 - Source Type: CIDR 
@@ -334,47 +349,59 @@ from computeinstance earlier (32 character password)
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_020.PNG" alt="image-alt-text">
 
-18. In Manage Jenkins screen, Click **Configure System**, Scroll Down and Click **drop down arrow under Add a new cloud**. Click **Oracle Cloud Infrastructure Compute**. New dialog box will appear
+18. In Manage Jenkins screen, scroll down and Click **Manage Nodes and Clouds**. Click **Configure Clouds** in the left menu. 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_021.PNG" alt="image-alt-text">
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_022.PNG" alt="image-alt-text">
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_021b.PNG" alt="image-alt-text">
 
-19. Fill out the dialog box:
-
+19. Click **Add a new cloud** dropdown. Select **Oracle Cloud Infrastructure Compute**. Insert a name. 
 
 - **Name:** Use easy to remember name (This is the slave node that will be created)
-- **Fingerprint:** Copy/paste OCI_api_key_fingerprint file content save earlier
+  
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_022.PNG" alt="image-alt-text">
+
+20.   Click **Add** dropdown. Select **Jenkins**. A new dialog box will appear.  
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_022b.PNG" alt="image-alt-text">
+
+21.   Click **Kind** dropdown. Select **Oracle Cloud Infrastructure Credentials**. Fill out the dialog box:
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_022c.PNG" alt="image-alt-text">
+
+- **Fingerprint:** Copy/paste OCI_api_key_fingerprint file content saved earlier
 - **APIKey:** Copy/paste OCI_api_key.pem file content saved earlier
 - **PassPhrase:** Leave empty
 - **Tenant Id:** Copy/Pare Tenant OCID saved earlier
 - **User Id:** Copy/Pare User OCID saved earlier
 - **Region:** Type your region Name (Shown in OCI console window, us-ashburn-1 etc)
 
-20. Click **Test Connection** and verify ‘Successful’ message. We have now verified connectivityto OCI via the master Jenkins compute node. Next we will create a slave Jenkins node
+22.  Click **Verify Credentials** and verify ‘Successful’ message. Click **Add**. We have now verified connectivityto OCI via the master Jenkins compute node. Next we will create a slave Jenkins node
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_023.PNG" alt="image-alt-text">
 
-21. Click **Add a new instance template**. Fill out the dialog box:
+23. Click **Add a new instance template**. Fill out the dialog box:
 
 
-- Instance Template Description: Provide description (Jenkins-Slave etc)
-- Usage: Leave as is (use this node as much as possible)
-- Label: Provide label(Jenkins-Slave etc)
-- Compartment: Choose the compartment assigned to you from drop down
-- Availability Domain: Choose the same Availability domain as the Compute instance created earlier
-- Image: Select latest Oracle Linux (Not anything with‘GPU’ in it)
-- Shape: Select a VM shape
+- **Instance Template Description**: Provide description (Jenkins-Slave etc)
+- **Usage**: Leave as is (use this node as much as possible)
+- **Label**: Provide label(Jenkins-Slave etc)
+- **Compartment**: Choose the compartment assigned to you from drop down
+- **VCN Compartment**: Choose your VCN compartment
+- **Availability Domain**: Choose the same Availability domain as the Compute instance created earlier
+- **Image Compartment**: Choose the compartment of your image
+- **Image**: Select latest Oracle Linux (Not anything with‘GPU’ in it)
+- **Shape**: Select a VM shape
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape 
 
 
-- Virtual Cloud Network: Select the VCN you created in the previous section
-- Subnet: Select the same subnet as the Compute instance created earlier
-- Assign Public IP address: Check this box
-- Connect Agent using public IP: Check this box
-- SSH Public key: Copy/Paste ssh public key generated earlier 9Id_rsa_user.pub)
-- SSH Private key: Copy/Paste ssh private key generated earlier (id_rsa_user)
+- **Virtual Cloud Network**: Select the VCN you created in the previous section
+- **Subnet**: Select the same subnet as the Compute instance created earlier
+- **Assign Public IP address**: Check this box
+- **Connect Agent using public IP**: Check this box
+- **SSH Public key**: Copy/Paste ssh public key generated earlier 9Id_rsa_user.pub)
+- **SSH Private key**: Copy/Paste ssh private key generated earlier (id_rsa_user)
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_024.PNG" alt="image-alt-text">
 
@@ -384,7 +411,7 @@ from computeinstance earlier (32 character password)
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_026.PNG" alt="image-alt-text">
 
-23. Click **Advanced**, Fill out the dialog box:
+24. Click **Advanced**, Fill out the dialog box:
 
 
 - Remote FS Root: /tmp
@@ -398,17 +425,17 @@ from computeinstance earlier (32 character password)
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_027.PNG" alt="image-alt-text">
 
-24. Click **Save** . Main Jenkins page will appear
+25. Click **Save** . Main Jenkins page will appear
 
-25. In main Jenkins web page, Click Build Executor Status (Left Navigation pan). Click **drop down menu (Under master node information section)** and choose the Newly saved template.(Jenkins-Slave in this case)
+26. In main Jenkins web page, Click Build Executor Status (Left Navigation pan). Click **drop down menu (Under master node information section)** and choose the Newly saved template.(Jenkins-Slave in this case)
 
-26. Verify ‘Started Provisioning’ message is displayed
+27. Verify ‘Started Provisioning’ message is displayed
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_028.PNG" alt="image-alt-text">
 
-27. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute**  Verify new compute node (Jenkins-Slave) is being provisioned.
+28. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute**  Verify new compute node (Jenkins-Slave) is being provisioned.
 
-28. Once compute instance is fully provisioned, switch back to Jenkins window and verify the new node appears on the screen. Click **Refresh Status** a few times to ensure Node is fully accessible (no next to it). You have now successfully deployed Jenkins with two compute nodes
+29. Once compute instance is fully provisioned, switch back to Jenkins window and verify the new node appears on the screen. Click **Refresh Status** a few times to ensure Node is fully accessible (no next to it). You have now successfully deployed Jenkins with two compute nodes
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_Jenkins/img/Jenkins_030.PNG" alt="image-alt-text">
 
@@ -430,10 +457,12 @@ from computeinstance earlier (32 character password)
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG" alt="image-alt-text">
 
-5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
+5. Repeat the steps to delete second compute instance
+
+6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-6. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
+7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
 

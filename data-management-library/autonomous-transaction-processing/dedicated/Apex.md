@@ -49,10 +49,10 @@ To get the APEX URL for your ATP Dedicated instance,
 - Save the URL as we are going to need it later in this lab.
 
 ![](./images/1100/NavigateATP1.png)
-![](./images/1100/NavigateATP2.png)
-![](./images/1100/NavigateATP3.png)
-![](./images/1100/NavigateATP4.png)
-![](./images/1100/NavigateATP5.png)
+![](./images/1100/selectADB.png)
+![](./images/1100/tools.png)
+![](./images/1100/getApexURL.png)
+
 
 ### **STEP 2: Setup VNC connection to the developer client VM and access APEX on the database as an admin user**
 

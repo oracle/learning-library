@@ -1,0 +1,119 @@
+#metadata: information about the flow
+#  platformVersion: the version of the bots platform that this flow was written to work with 
+metadata:
+  platformVersion: "1.1"
+main: true
+name: MammaMaggy
+#context: Define the variables which will used throughout the dialog flow here.
+
+
+
+context:
+  variables:
+    iResult: "nlpresult"
+    pizzaSize: "PizzaSize"
+    pizzaTopping: "PizzaTopping"
+    deliveryTime: "TIME"
+    pizzaOrderMsg: "string"
+
+
+states:
+  intent:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"
+      optionsPrompt: "Do you want to"      
+    transitions:
+      actions:
+        OrderPizza: "startOrderPizza"
+        CancelPizza: "cancelPizza"
+        FileComplaint: "fileComplaint"
+        unresolvedIntent: "startUnresolved"        
+
+  startOrderPizza:
+    component: "System.Output"
+    properties:
+      text: "OK, lets get that order sorted"
+      keepTurn: true
+    transitions:
+      next: "setPizzaSize"
+  
+  setPizzaSize:
+    component: "System.List"
+    properties:
+      options: "${pizzaSize.type.enumValues}"
+      prompt: "What size of pizza do you want?"
+      variable: "pizzaSize"
+      nlpResultVariable: "iResult"
+    transitions:
+      next: "setPizzaTopping"
+  
+  setPizzaTopping:
+    component: "System.List"
+    properties:
+      options: "${pizzaTopping.type.enumValues}"
+      prompt: "What type of pizza would you like?"
+      variable: "pizzaTopping"
+      nlpResultVariable: "iResult"
+    transitions:
+      next: "setPizzaDeliveryTime"
+  
+  setPizzaDeliveryTime:
+    component: "System.Text"
+    properties:
+      prompt: "When can we deliver that for you?"
+      variable: "deliveryTime"
+      nlpResultVariable: "iResult"
+      maxPrompts: 3
+    transitions:
+      actions:
+        cancel: "maxError"
+        next: "setPizzaOrderMessage"
+        
+  setPizzaOrderMessage:
+    component: "System.SetVariable"
+    properties:
+      variable: "pizzaOrderMsg"
+      value: 
+        - "Thank you for the order!"
+        - "OK, so we are getting you the following items:"
+        - "A ${pizzaSize.value} ${pizzaTopping.value} pizza at ${deliveryTime.value.date?long?number_to_time?string('HH:mm')}."
+  
+  showPizzaOrder:
+    component: "System.Output"
+    properties:
+      text: |-
+        <#list pizzaOrderMsg.value as text>${text}
+        </#list>
+    transitions: 
+      return: "done"
+  
+  startUnresolved:
+    component: "System.Output"
+    properties:
+      text: "I am sorry I could not understand, lets connect you with someone to help."
+      keepTurn: false
+    transitions:
+      return: "done"      
+
+      
+  cancelPizza:
+    component: "System.Output"
+    properties:
+      text: "I am sorry to hear this. Let me take your cancellation request."
+    transitions: 
+      return : "done" 
+      
+  fileComplaint:
+    component: "System.Output"
+    properties:
+      text: "I am sorry to hear this. Let me take your complaint details."
+    transitions: 
+      return : "done"   
+      
+  maxError:
+    component: "System.Output"
+    properties:
+      text: "OK lets connect you with someone to help"
+    transitions:
+      return: "done"      

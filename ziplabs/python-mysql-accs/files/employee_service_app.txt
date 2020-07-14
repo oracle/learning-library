@@ -1,1 +1,0 @@
-This illustration shows the EmployeeService application on the Applications tab of the Oracle Application Container Cloud Service console. It shows the details of the applications, including Version, Last Deployed On, Memory, Runtime, Created On, Instances, and URL.

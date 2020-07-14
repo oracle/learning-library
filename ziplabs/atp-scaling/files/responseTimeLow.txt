@@ -1,3 +1,0 @@
-This image shows the Oracle SQL Developer worksheet with the SQL script for querying the LOW database service. The icon to run the script, second from the left, is highlighted by a red box.
-
-Under the worksheet is a window for Script Output. This window has a heading noting a response time: "Task completes in 6.587 seconds". This information is highlighted by a red box. Within the window is the output of the query.

@@ -1,0 +1,7 @@
+This image shows the expanded OCI Menu. The menu expands on the left edge of the screen after clicking the menu icon. 
+
+There are two top-level menu categories visible: Core Infrastructure and Database. Under the Core Infrastructure heading are options for Compute, Block Storage, Object Storage, File Storage, and Networking. Under the Database heading are options for Bare metal VM and Exadata, Autonomous Data Warehouse, and Autonomous Transaction Processing.
+
+The Autonomous Transaction Processing is selected.
+
+A red box outlines the menu icon and the Autonomous Transaction Processing option.

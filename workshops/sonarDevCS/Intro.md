@@ -13,7 +13,7 @@ Watch Overview Video
 
 - Bookmark this page for future reference.
 
-- Please click on the URL to create your <a class="trial-link"  href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK190523P00163:CodeInspect_HOL&SC=:ex:tb:::RC_NAMK190523P00163:CodeInspect_HOL&pcode=NAMK190523P00163" target="_trial">Free Account</a> and complete all the required steps. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free. Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
+- Please click on the URL to create your <a class="trial-link" href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK190523P00163:CodeInspect_HOL&SC=:ex:tb:::RC_NAMK190523P00163:CodeInspect_HOL&pcode=NAMK190523P00163" target="_trial">Free Account</a> and complete all the required steps. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free. Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
 
 - Soon after requesting your trial you will receive the following email.
 

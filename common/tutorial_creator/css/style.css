@@ -1,0 +1,129 @@
+.row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card {
+    height: 100%;            
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.btn {
+    border-radius: 0;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+#shortcuts .btn {
+    font-size: 0.8rem;
+    line-height: 0.7;
+    padding: .4rem .35rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+#import,
+#preview_from_home,
+#preview_from_manifest,
+#download_md,
+#download_html,
+#download_manifest,
+#reset_manifest,
+#btn_image_files,
+#download_zip,
+#enter_json,
+#import_md, 
+#view_md_template {
+    font-size: 0.8rem;
+    line-height: 0.8;
+    padding: .5rem .7rem;
+}
+
+#image_files {
+    font-size: 0.85rem;
+}
+
+#shortcuts {    
+    position: sticky;
+    top: 0;
+    margin-bottom: 5px;
+    background-color: white;    
+}
+
+.checkbox-inline {        
+    font-size: 0.8rem;        
+    margin-right:10px;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+#mdBox,
+#htmlBox,
+#previewBox {    
+    height: 100%;
+    /*height: 69vh;*/
+    vertical-align: top;
+}
+
+#manifestBox,
+#tabs-container {
+    overflow-y:auto;    
+    height: 73vh;
+}
+
+#manifestBox pre{
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+
+}
+#previewIframe, #htmlElement {
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+.float-right {
+    float: right;
+}
+
+#previewBox {
+    padding:0;
+}
+
+nav>p {
+    font-size: 0.65rem;
+}
+
+.nav-link .close {    
+    font-size: 16px;
+    color: inherit;    
+    margin-left:4px;
+}
+
+.nav-link .close:hover {    
+    color: inherit;        
+    cursor: pointer;
+}   
+
+textarea {
+    resize: none;
+}
+
+#manifestForm * {
+    -webkit-appearance: none;
+}
+.spinner-grow {
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    vertical-align: unset !important;
+}

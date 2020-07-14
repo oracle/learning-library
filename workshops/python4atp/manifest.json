@@ -1,64 +1,30 @@
+
 {
-    "workshop": {
-        "title": "Introduction to Python Development with Autonomous Transaction Processing Hands on Lab",
-        "description": "Learn how to spin up and Autonomous Transaction Processing Database,load and access data, and create a REST service using Python in minutes.",
-        "theme": "default",
-        "interactive":"https://isdportal.oracle.com/sfdemo/SF_UPK/user2016/160902-cbaber-1200649797/index.html?jsonId=REPO_f1256738334_P398630059&pin=python-atp",
-        "labs": [
-            {
-                "number": "0",
-                "filename": "README.md",
-                "title": "Workshop Introduction",
-                "description": "",
-                "labels": {
-                    "version": "Instructor Led"
-                }
-            },
-            {
-                "number": "050",
-                "filename": "LabGuide050.md",
-                "title": "Lab 050: Setup Cloud Environment",
-                "description": "",
-                "labels": {
-                    "version": "Instructor Led"
-                }
-            },
-            {
-                "number": "100",
-                "filename": "LabGuide100.md",
-                "title": "Lab 100: Load and Access Data",
-                "description": "",
-                "labels": {
-                    "version": "Instructor Led"
-                }
-            },
-            {
-                "number": "200",
-                "filename": "LabGuide200.md",
-                "title": "Lab 200: Build and test python REST Service",
-                "description": "",
-                "labels": {
-                    "version": "Instructor Led"
-                }
-            },
-            {
-                "number": "300",
-                "filename": "LabGuide300.md",
-                "title": "Lab 300: Plot data and show nearest service provider on map",
-                "description": "",
-                "labels": {
-                    "version": "Instructor Led"
-                }
-            },
-            {
-                "number": "400",
-                "filename": "LabGuide400.md",
-                "title": "Lab 400: Show customers based on regions",
-                "description": "",
-                "labels": {
-                    "version": "Instructor Led"
-                }
-            }
-        ]
-    }
+    "tutorials": [
+        {         
+            "title": "Introduction",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/python-on-atp/intro/intro.md"
+        },  {         
+            "title": "Lab 0: Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {         
+            "title": "Lab 1: Setup",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/python-on-atp/setup/setup.md"
+        },
+        {         
+            "title": "Lab 2: Build and test python REST service",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/python-on-atp/rest-service/rest-service.md"
+        },
+        {         
+            "title": "Lab 3: Plot data and show nearest service provider on map",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/python-on-atp/plot-customers/plot-customers.md"
+        },
+        {         
+            "title": "Lab 4: Show customers based on regions",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/python-on-atp/show-customers/show-customers.md"
+        }
+
+    ]
 }
+

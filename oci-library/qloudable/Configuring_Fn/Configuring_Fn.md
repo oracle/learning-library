@@ -63,28 +63,29 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
 
-- **Name:** Enter easy to remember name
-- **Create in Compartment:** Has the correct compartment
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-- Click **Create Virtual Cloud Network**
-- Click **Close**
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+5. Verify all the information and  Click **Create**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
+6. This will create a VCN with followig components.
+
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
+
+7. Click **View Virtual Cloud Network** to display your VCN details.
               
 ## Create ssh keys and compute instance
 
@@ -139,51 +140,54 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+7. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploying_OCI_Streaming_service/img/Stream_009.PNG" alt="image-alt-text">
-
-
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
 
-9. Click **Create**
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+
+8. Click **Create**
+
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
-10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
+9. Wait for Instance to be in **Running** state. In git-bash Enter Command:
 ```
  cd /C/Users/PhotonUser/.ssh
 ```
-11. Enter **ls** and verify id_rsa file exists
+10. Enter **ls** and verify id_rsa file exists
 
-12. Enter command 
-```
+11. Enter command 
+```bash
 ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
 **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
 
-13. Enter 'Yes' when prompted for security message
+12. Enter 'Yes' when prompted for security message
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG" alt="image-alt-text">
  
-14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
+13. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
 
 ## Configure and invoke Function
 
@@ -230,9 +234,10 @@ In OCI console Click the user icon (top right)  then **User settings**. Under Re
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_005.PNG" alt="image-alt-text">
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_006.PNG" alt="image-alt-text">
 
-9.  Click **Copy** and save the token in Notepad.**Do not close the window without saving the token as it can not be retrieved later**
+9.  Click **Copy** and save the token in Notepad.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_007.PNG" alt="image-alt-text">
+**Do not close the window without saving the token as it can not be retrieved later**
+
 
 10. Nex install Dcoker, Enter command:
 
@@ -251,38 +256,31 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 12. Enter command:
 
 ```
-sudo yum install docker-ce –y
-```
-(Wait for ‘Complete’message)
-
-13. Enter command:
-
-```
 sudo systemctl enable docker
 ```
 
-14. Enter command:
+13. Enter command:
 
 ```
 sudo systemctl start docker
 ```
 
-15. Enter command: (To add user opc to Docker)
+14. Enter command: (To add user opc to Docker)
 
 ```
 sudo usermod -aG docker opc
 ```  
 
-16. Docker is installed and user opc enabled to use Docker. Logout and log back in to the compute instance. Enter command;
+15. Docker is installed and user opc enabled to use Docker. Logout and log back in to the compute instance. Enter command;
 
 ```
-Exit
+exit
 ```
 
 ssh back in to the compute instance. Enter commands;
 
 ```
-Docker images 
+docker images 
 ```
 and ensure no error is displayed
 
@@ -298,38 +296,40 @@ $ docker run hello-world
 ```
 To launch the standard hello-world Docker image as a container
 
-17. Next we will install Fn CLI which is needed to execute CLI commands. Enter command;
+16. Next we will install Fn CLI which is needed to execute CLI commands. Enter command;
 ```
 curl -LSs https://raw.githubusercontent.com/fnproject/cli/master/install | sh
 ```
 
-18. Confirm that the CLI has been installed. Enter command;
+17. Confirm that the CLI has been installed. Enter command;
 ```
 fn version
 ```
 
-19. Next create the new Fn Project CLI context. Enter command;
-```
+18. Next create the new Fn Project CLI context. Enter command;
+
+**NOTE**: 'CONTEXT-NAME' below can be a name that you can choose e.g test-fn
+```bash
  fn create context <CONTEXT NAME> --provider oracle
 ```
 
-20. Specify that the Fn Project CLI is to use the new context. Enter command;
-```
+19. Specify that the Fn Project CLI is to use the new context. Enter command;
+```bash
 fn use context <CONTEXT NAME>
 ```
 
-21. Switch to OCI Cosole. From OCI Services Meneu, Click **Compartments** under **Identity**. 
+20. Switch to OCI Cosole. From OCI Services Meneu, Click **Compartments** under **Identity**. 
 
-22. Locate your compartment and click the name. Copy the OCID of the compartment just as was done for User and Tenancy. Also note down youe region name
+21. Locate your compartment and click the name. Copy the OCID of the compartment just as was done for User and Tenancy. Also note down youe region name
 
-23. Switch back to ssh session to compute instance. Configure the new context with the OCID of the compartment you want to own deployed functions. Enter Command;
+22. Switch back to ssh session to compute instance. Configure the new context with the OCID of the compartment you want to own deployed functions. Enter Command;
 
-```
+```bash
 fn update context oracle.compartment-id <compartment-ocid>
 ```
 
 
-24. Configure the new context with the api-url endpoint to use when calling the OCI API. Enter command;
+23. Configure the new context with the api-url endpoint to use when calling the OCI API. Enter command;
 
 ```
 fn update context api-url https://functions.us-<REGION NAME>.oraclecloud.com
@@ -338,76 +338,89 @@ fn update context api-url https://functions.us-<REGION NAME>.oraclecloud.com
 **For example: fn update context api-url https://functions.us-ashburn-1.oraclecloud.com**
 
 
-25. Configure the new context with the address of the Docker registry and repository that you want to use with Oracle Functions, Enter command;
-```
+24. Configure the new context with the address of the Docker registry and repository that you want to use with Oracle Functions, Enter command;
+```bash
 fn update context registry <region-code>.ocir.io/<tenancy-namespace>/<repo-name>
 ```
 
-where <region-code> indicates the registry location. Region codes are list at https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#regional-availability, and <tenancy-namespace> is the tenancy's name string shown on the Tenancy Information page.
+where "region-code" indicates the registry location. Region codes are list at https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#regional-availability, and "tenancy-namespace" is the tenancy's name string shown on the Tenancy Information page.
 
-***For example: fn update context registry phx.ocir.io/ansh81vru1zp/acme-repo** (Here region code is phx, tenancy name is ansh81vru1zp and acme-repo is docker registry repo which will be used for Function)
+***For example:** fn update context registry phx.ocir.io/ansh81vru1zp/acme-repo Here;
 
-26. Configure the new context with the name of the profile you've created for use with Oracle Functions. Enter command;
+**region code:** phx
+
+**tenancy name:** ansh81vru1zp and
+
+**docker registry repo:** acme-repo (which will be used for Function)
+
+25. Configure the new context with the name of the profile you've created for use with Oracle Functions. Enter command;
+
 ```
 fn update context oracle.profile DEFAULT
 ```
 
-27. Next we will login to OCI Registry and ensure we have access. Enter command;
-```
+26. Next we will login to OCI Registry and ensure we have access. Enter command;
+```bash
 docker login <region-code>.ocir.io
 ```
 
 **For example: docker login iad.ocir.io**
 
-28. When prompted, enter your user name in the format <tenancy-namespace>/<username>.
+27. When prompted, enter your user name in the format;
+
+**tenancy-namespace>/<username**
+
 **For example: ansh81vru1zp/jdoe@acme.com**
  
-29. When prompted for a password, enter the auth token generated ealier.
+28. When prompted for a password, enter the auth token generated ealier.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Configuring_Fn/img/Fn_001.PNG" alt="image-alt-text">
 
-30. Next we will create our fist applicaiton. Login to OCI console. Under OCI serverices menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**
+29. Next we will create our fist applicaiton. Login to OCI console. Under OCI serverices menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**
 
-31. Click **Create Application** and fill out the dialog box:
+30. Click **Create Application** and fill out the dialog box:
 
 - **NAME**: Provide a name (note down the name)
 - **VCN in** : Choose the compartment where VCN was created
-- **SUBNETS** : Choose one of the subnet
+- **SUBNETS** : Choose the subnet
 - **LOGGING POLICY**: None
 
 Click **Create**
 
-32. Next we will create our first function. In the ssh session to compute instance, Enter command;
-```
+31. Next we will create our first function. In the ssh session to compute instance, Enter command;
+
+**NOTE** 'FUNCTION_NAME' below shoudl be what you created in above step
+
+```bash
 fn init --runtime java <FUNCTION_NAME>
 ```
-A directory called <FUNCTION_NAME>-func is created, containing:
+A directory called <FUNCTION_NAME> is created, containing:
 
 a function definition file called func.yaml
 a /src directory containing source files and directories for the <FUNCTION_NAME> function
 a Maven configuration file called pom.xml that specifies the dependencies required to compile the function
 
-33. Next we will deploy the function. Change directory to the <FUNCTION_NAME> directory created in the previous step
-```
-cd <FUNCTION_NAME>-func
+32. Next we will deploy the function. Change directory to the <FUNCTION_NAME> directory created in the previous step
+```bash
+cd <FUNCTION_NAME>
 ```
 
-34. Enter the following single Fn Project command to build the function and its dependencies as a Docker image called <FUNCTION_NAME>, push the image to the specified Docker registry, and deploy the function to Oracle Functions in the <NAME> used when **Create Application** was used. Enter command;
-```
+33. Enter the following single Fn Project command to build the function and its dependencies as a Docker image called <FUNCTION_NAME>, push the image to the specified Docker registry, and deploy the function to Oracle Functions in the <NAME> used when **Create Application** was used. Enter command;
+```bash
 fn deploy --app <NAME>
 ```
 
 **NOTE: <FUNCTION_NAME> is what was used in the compute instance and <NAME> is what was used in OCI Console**
 
-35. You can also Confirm that the <FUNCTION_NAME> image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the Console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**. 
+34. You can also Confirm that the <FUNCTION_NAME> image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the Console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**. 
 
-36.  Now lets Invoke your first function. In the ssh session to compute instance, Enter command;
-```
+35.  Now lets Invoke your first function. In the ssh session to compute instance, Enter command;
+```bash
 fn invoke <NAME> <FUNCTION_NAME>-func
 ```
 **For exampel if in OCI console we used *helloworld-app* as the name and in compute instance we use *helloworld* then the command will be 'fn invoke helloworld-app helloworld-func'**
 
-37. Verify 'Hello World !' message is displayed.
+36. Verify 'Hello World !' message is displayed.
 
 Congratulations! You've just created, deployed, and invoked your first function using Oracle Functions!
 

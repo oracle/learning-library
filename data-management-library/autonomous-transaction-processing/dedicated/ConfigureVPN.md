@@ -2,7 +2,7 @@
 
 </td>
 <td class="td-banner">
-# Lab 5: Configuring VPN connectivity into your private ATP network
+# Lab 6: Configuring VPN connectivity into your private ATP network
 </td></tr><table>
 
 
@@ -122,17 +122,21 @@ The following illustration shows a network topology that can be used to provide 
 
 **Save your setting before advancing to the VPN settings page**
 
--   Click **VPN settings** and add CIDR ranges for both the app Subnet and the exadata Subnet. The exadata subnet CIDR can be avoided if you DO NOT plan to connect directly to your databases using a desktop SQL Client like SQL Developer.
-Note that in the **Routing** section, ensure that the option **Should client Internet traffic be routed through the VPN?** is set to **YES**
+Click **VPN settings** and scroll down to the section labeled **Routing**
 
-![](./images/1200/openvpn_vpnsetting.png)
+Here we configure how traffic from your VPN client (i.e. your personal laptop for example) shoud be NATed and how DNS resolution should occur.
+
+Configure this section as shown in the screenshot below. 
+- Choose **Yes using NAT**
+- Provide CIDR ranges for your application and exadata subnets
+- Pick 'No' for the question - **Should client internet traffic be routed through the VPN?**
+
+![](./images/1200/vpn_NAT.png)
 
 
--   Under **Have Clients user these DNS servers**, pick a pair of public DNS resolvers. Here we choose Google's DNS resolvers 8.8.8.8 and 8.8.8.4
+Scroll down and configure the DNS settings as shown below.
 
-![](./images/1200/openvpn_DNS.png)
-
-**Save your setting before advancing to the Advanced VPN settings page**
+![](./images/1200/vpn_routing2.png)
 
 -   In the **Advanced VPN** section, ensure that the option **Should clients be able to communicate with each other on the VPN IP Network?** is set to **Yes**
 
@@ -163,64 +167,12 @@ Note: Once you have applied your changes, click **Save Settings** once again. Th
 You may also setup your VPN server with multiple users. Follow the OpenVPN configuration guide to setup additional users.
 
 
-### **STEP 4: Configure and connect SQL Developer to your dedicated ATP database**
-
-Before you launch and connect SQL Developer, you have to ensure that the SCAN host name in tnsnames.ora can resolve to an IP address for your exadata infrastructure. Since your exadata infrastructure is in a private network, it has a private ip from the 10.0.0.0/24 CIDR pool and is therefore not resolvable by public DNS servers. 
-
-You need to, 
-
-a. Find the private IP address if your dedicated autonomous database host which in this case is something like 10.0.0.X
-
-b. Edit your local host file and add an entry for the SCAN host
-
-Once you do you this, you can them simply launch SQL Developer and use the database wallet to make a connection to your ATP-D instance as long as you are on VPN
-
-
-
-
-#### Lets first find the SCAN host name from the credentials wallet file.
-
-- Download the wallet .zip file to your local machine
-- Unzip file and open tnsnames.ora in an editor
-- The SCAN host name appears similar to the one shown below. Copy the SCAN host name some place. 
-
-    ![](./images/1200/atpd_hostname.png)
-    
-
-    
-Since your autonomous exadata infrastructure is setup as a RAC configuration, the SCAN host resolves to 3 IP addresses to load balance between the RAC nodes. You may use any one of those IP addresses for connectivity
-
-#### Lets find the private IP address of your exadata RAC nodes
-    
-- ssh into your VPN server. You may use public or private IP. If you are on VPN, the private IP should work.
-
-    ```
-    $ ssh opc@<IP_address_of_VPN_Server>
-    ```
- Query OCI DNS for private IP of Exadata SCAN Host
-
-    
-        $ nslookup SCAN_Hostname_from_tnsnames.ora
-
-    
-![](./images/1200/atpd_privateIP.png)
-    
-    
-Now that you have an IP address for your autonomous exadata infrastructure, update the hosts file on your local machine (/etc/hosts on a mac or the C:\Windows\System32\Drivers\etc\hosts on Windows) 
--   Add ATPD Private IP and Hostname in Local Platform
-
-    e.g. on a Mac: add IP and hostname to /etc/hosts
-
-    
-
-    ```
-    10.x.x.6 hosxxxxxxxan.exadatasubnet.ocivcn.oraclevcn.com
-    ```
-
--   You are now ready to connect to your dedicated ATP instance using a local SQL Client such as SQL Developer
+### **STEP 4: Connect SQL Developer to your dedicated ATP database**
 
 
 Launch SQL Developer and connect using the downloaded credentials wallet as shown below
+
+**Note: Your SQL Developer version needs to be 18.3 or higher to connect to a cloud database using a wallet**
 
 ![](./images/1200/atpd_conn.png)
     

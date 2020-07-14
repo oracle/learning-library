@@ -39,9 +39,15 @@ On the Create Autonomous Container Database dialog box you can choose / modify t
 
 ![create_acd2](./images/300/create_acd2.png)
 
-As you scroll down the form you will see an option to modify your ACD's maintenance schedule. While the time of the maintenance is set to be the same at that of your AEI, you can specify if you'd like to the quarterly RU's ( Release Updates) or also the RURs (Release Update Rivisions)
+As you scroll down the form you will see an option to modify your ACD's maintenance schedule and the type of update you wish to apply to the container. 
+
+- You may choose to apply a Release Update (RU) or simply apply any rivisions (fixes and security updates) to the current Release Update (RUR)
 
 ![create_acd3](./images/300/create_acd3.png)
+
+- Specify your ACDs maintenance schedule, picking a month, week, day and time in each quarter when a maintenance operation can be carried out on that container
+
+![create_acd4](./images/300/create_acd4.png)
 
 You may also choose a different backup retention period by selecting a retention policy from the Management tab under Advanced Options as shown below
 

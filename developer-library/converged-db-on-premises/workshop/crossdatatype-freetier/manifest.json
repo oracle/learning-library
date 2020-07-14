@@ -1,0 +1,25 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to Cross Datatype",
+            "description": "Introduction to Oracle Graph Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../crossdatatype/intro.md"
+        },
+        {         
+            "title": "Lab1:Usage of Cross Datatype",
+            "description": "Which products did customer 40202 buy from which store(s)?",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../crossdatatype/crossdatatype.md"
+        }
+        
+        
+
+    
+        
+    ]
+}

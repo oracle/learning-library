@@ -1,1 +1,0 @@
-This illustration shows the Application Container service in the Dashboard when you log in your Oracle cloud account. It shows the Application Container service and the Instances link is highlighted.

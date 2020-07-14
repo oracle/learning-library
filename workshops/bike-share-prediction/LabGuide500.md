@@ -16,7 +16,7 @@ This lab walks you through the steps to create a linear regression model in the 
 
 
 ## Required Artifacts
--   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+-    The following lab requires an Oracle  Cloud account. You may use your own cloud account, a cloud account that you obtained through signing up for the free tier, or a training account whose details were given to you by an Oracle instructor.
 
 
 
@@ -28,7 +28,6 @@ This lab walks you through the steps to create a linear regression model in the 
 
 -   Go back to the Cloud Console and open the Instances screen. Find your database, click the action menu and select **Service Console**.
 
-![](./images/500/Picture700-1.png)
 
 -   Log in to the service with your admin password.
 
@@ -51,6 +50,8 @@ This lab walks you through the steps to create a linear regression model in the 
 ![](./images/500/Picture500-16.png)
 
 -   In the **Notebooks** section, click on **Import** and import the [**Bike Share Availability Prediction.json**](./files/scripts/Bike Share Availability Prediction.json) file.
+
+-   If you are on Orale/learning library, click on <a href="https://raw.githubusercontent.com/oracle/learning-library/master/workshops/bike-share-prediction/files/scripts/Bike%20Share%20Availability%20Prediction.json" target="_blank">here</a> to download the file (right click then save page as .json file). 
 
 ![](./images/500/Picture500-17.png)
 

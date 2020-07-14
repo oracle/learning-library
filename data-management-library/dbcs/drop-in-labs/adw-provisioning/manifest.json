@@ -1,0 +1,12 @@
+{
+    "tutorials": [
+        {         
+            "title": "Lab: Autonomous Data Warehouse Provisioning",
+            "description": "Autonomous Data Warehouse Machine Learning",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "12/13/2019",
+            "contentid": "12nnnn",
+            "filename": "content.md"
+        }
+    ]
+}

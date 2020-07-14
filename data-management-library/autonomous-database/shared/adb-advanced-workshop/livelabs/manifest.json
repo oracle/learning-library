@@ -1,0 +1,64 @@
+{
+    "tutorials": [
+      {
+          "title": "Introduction to ADB on Shared Infrastructure",
+          "description": "Introduction to ADB on Shared Infrastructure",
+          "filename": "./intro.md"
+      },
+      {
+          "title": "Lab 1: Login to Oracle Cloud",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+      },
+        {
+            "title": "Lab 2: Getting Started",
+            "description": "Provision Autonomous Database",
+            "filename": "./../../adb-provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 3: Working with Free Sample Data Sets",
+            "description": "Explore SQL Developer Web",
+            "filename": "./../../adb-sqldevweb/adb-sqldevweb.md"
+        },
+        {
+            "title": "Lab 4: Loading Data",
+            "description": "Load data into ADB",
+            "filename": "./../../adb-loading/adb-loading.md"
+        },
+        {
+            "title": "Lab 5: Querying External Data",
+            "description": "Query Data in External Files",
+            "filename": "./../../adb-query/adb-query.md"
+        },
+        {
+            "title": "Lab 6: Visualizing Your Data",
+            "description": "Create Rich Data Visualizations",
+            "filename": "./../../adw-visualizations/adw-visualizations.md"
+        },
+        {
+            "title": "Lab 7: Using Wallets for Secure Connections",
+            "description": "Connecting Securely with a Connection Wallet",
+            "filename": "./../../adw-connection-wallet/adw-connection-wallet.md"
+        },
+        {
+            "title": "Lab 8: Monitoring",
+            "description": "Managing and Monitoring Your Autonomous Database Instance using the Cloud Console",
+            "filename": "./../../adw-managing-monitoring/adw-managing-monitoring.md"
+        },
+        {
+            "title": "Lab 9: Scaling and Performance",
+            "description": "Scaling and Performance in Your Autonomous Database",
+            "filename": "./../../adw-scaling-performance/adw-scaling-performance.md"
+        },
+        {
+            "title": "Lab 10: Getting Started with Machine Learning Notebooks",
+            "description": "Using Oracle Machine Learning Notebooks",
+            "filename": "./../../adw-oml-notebooks/adw-oml-notebooks.md"
+        },
+        {
+            "title": "Lab 11: Building a Simple Machine Learning Algorithm",
+            "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
+            "filename": "./../../adw-machine-learning/adw-machine-learning.md"
+        }
+    ]
+}

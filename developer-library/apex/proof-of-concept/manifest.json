@@ -1,0 +1,39 @@
+{
+    "tutorials": [
+        {
+            "filename": "intro/intro.md",
+            "title": "Workshop Overview"
+          },
+          {
+            "filename": "signup/sign-up-apex.md",
+            "title": "Lab 1: Sign up for an APEX Workspace"
+          },
+          {
+            "filename": "quick-sql/using-quick-sql.md",
+            "title": "Lab 2: Define New Data Structures"
+          },
+          {
+              "filename": "create-app/create-app.md",
+              "title": "Lab 3: Create the Application"
+          },
+          {
+            "filename": "regen-app/regen-app.md",
+            "title": "Lab 4: Regenerate the Application"
+          },
+          {
+            "filename": "improving-tasks/improving-tasks.md",
+            "title": "Lab 5: Improve Tasks"
+          },
+          {
+            "filename": "improving-todos/improving-todos.md",
+            "title": "Lab 6: Improve To Dos"
+          },
+          {
+            "filename": "improving-links/improving-links.md",
+            "title": "Lab 7: Improve Links"
+          }
+
+
+
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "tutorials": [
+    {
+        "title": "Introduction to ADB on Shared Infrastructure",
+        "description": "Introduction to ADB on Shared Infrastructure",
+        "filename": "./intro.md"
+    },
+    {
+         "title": "Lab 1: Get a Free Trial",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+     },
+      {
+          "title": "Lab 2: Getting Started",
+          "description": "Provision Autonomous Database",
+          "filename": "./../../adb-provision/adb-provision.md"
+      },
+      {
+          "title": "Lab 3: Working with Free Sample Data Sets",
+          "description": "Explore SQL Developer Web",
+          "filename": "./../../adb-sqldevweb/adb-sqldevweb.md"
+      },
+      {
+          "title": "Lab 4: Loading Data",
+          "description": "Load data into ADB",
+          "filename": "./../../adb-loading/adb-loading.md"
+      },
+      {
+          "title": "Lab 5: Querying External Data",
+          "description": "Query Data in External Files",
+          "filename": "./../../adb-query/adb-query.md"
+      },
+      {
+          "title": "Lab 6: Visualizing Your Data",
+          "description": "Visualizing Your Data",
+          "filename": "./../../adw-visualizations/adw-visualizations.md"
+      }
+    ]
+}

@@ -1,1 +1,0 @@
-This image shows Oracle SQL Developer. In the Connections panel on the left edge of the screen, is a list of pottential connections. The mouse double clicking the option for admin_low. Also included in the list, but not selected, is admin_high.

@@ -1,0 +1,29 @@
+{
+  "tutorials": [
+    {
+        "title": "Prerequisites",
+        "description": "Login to Oracle Cloud",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/0-lab-intro-and-setup/content.md"
+    },
+    {
+      "title": "Lab 1: Create an APEX Workspace",
+      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
+    },
+    {
+      "title": "Lab 2: JavaScript Basics",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/1-javascript-basics/content.md"
+    },
+    {
+      "title": "Lab 3: Adding JavaScript to APEX Apps",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/2-adding-javascript-to-apex-apps/content.md"
+    },
+    {
+      "title": "Lab 4: Working with the DOM and jQuery",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/3-working-with-the-dom-and-jquery/content.md"
+    }
+  ]
+}

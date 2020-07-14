@@ -71,21 +71,35 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 3. Fill out the dialog box:
 
-
-- Workload Type: AUTONOMOUS DATA WAREHOUSE
 - COMPARTMENT: Choose your compartment
 - DISPLAY NAME: Provide a name
 - DATABASE NAME: Provide a name
-- CPU CORE COUNT: 1
-- STORAGE(TB): 1
-- PASSWORD: Provide password per guideline (example Oracle123!!!!)
-- CONFIRM PASSWORD: Provide same password (example Oracle123!!!!)
-- LICENSE TYPE: SUBSCRIBE TO NEW DATABASE SOFTWARE LICENSES AND THE DATABASE CLOUD SERVICE
+- Choose a Workload type: Data Warehouse
+- Choose a Deployment type: Shared Infrastructure
 
-4. Leave **Tags** information as is, Click **Create Autonomous Database**. Wait for State to change to Available (few minutes) 
+Under **Configure the database**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_002.PNG" alt="image-alt-text">
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_003.PNG" alt="image-alt-text">
+- Always Free: Leave Default
+- Choose database version: Leave Default
+- OCPU count: 1
+- Auto Sclaing: Make sure flag is Un-checked
+
+Under **Create administrator credentials**
+
+- Username: Provide a username 
+- Password: Provide a password (example Oracle123!!!!)
+- Confirm Password: Confirm the password provided
+
+Under **Choose network access**
+
+- Allow secure accces from anywhere: Make sure this option is checked
+- Confifure access conrol rules: Leave default (unchecked)
+
+Under **Choose a license type**
+
+- License Included: Check this option
+
+4. Click **Create Autonomous Database**
 
 5. Click Autonomous Data Warehouse Database instance name that you created to bring up Database details page. Click **DB Connection**
 

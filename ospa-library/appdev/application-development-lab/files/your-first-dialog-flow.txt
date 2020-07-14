@@ -1,0 +1,73 @@
+#metadata: information about the flow
+#  platformVersion: the version of the bots platform that this flow was written to work with 
+metadata:
+  platformVersion: "1.0"
+main: true
+name: MamaMaggy
+#context: Define the variables which will used throughout the dialog flow here.
+
+context:
+
+  variables:
+  
+    iResult: "nlpresult"
+    
+    pizzaSize: "PizzaSize"
+    
+    pizzaTopping: "PizzaTopping"
+    
+    deliveryTime: "TIME"
+    
+    pizzaOrderMsg: "string"
+
+
+states:
+  intent:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"
+      optionsPrompt: "Do you want to"      
+    transitions:
+      actions:
+        OrderPizza: "startOrderPizza"
+        CancelPizza: "cancelPizza"
+        FileComplaint: "fileComplaint"
+        unresolvedIntent: "startUnresolved"        
+
+  startOrderPizza:
+    component: "System.Output"
+    properties:
+      text: "Hello, Starting your order process"
+      keepTurn: false
+    transitions:
+      return: "done"
+  
+  startUnresolved:
+    component: "System.Output"
+    properties:
+      text: "I am sorry I could not understand, lets connect you with someone to help."
+      keepTurn: false
+    transitions:
+      return: "done"      
+
+      
+  cancelPizza:
+    component: "System.Output"
+    properties:
+      text: "I am sorry to hear this. Let me take your cancellation request."
+    transitions: 
+      return : "done" 
+      
+  fileComplaint:
+    component: "System.Output"
+    properties:
+      text: "I am sorry to hear this. Let me take your complaint details."
+    transitions: 
+      return : "done"   
+      
+  maxError:
+    component: "System.Output"
+    properties:
+      text: "OK lets connect you with someone to help"
+    transitions:
+      return: "done"      

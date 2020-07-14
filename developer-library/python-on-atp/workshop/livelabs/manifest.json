@@ -1,0 +1,29 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+          {
+            "title": "Lab 0: Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 1: Setup",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 2: Build and test python REST service",
+            "filename": "../../rest-service/rest-service.md"
+        },
+        {
+            "title": "Lab 3: Plot data and show nearest service provider on map",
+            "filename": "../../plot-customers/plot-customers.md"
+        },
+        {
+            "title": "Lab 4: Show customers based on regions",
+            "filename": "../../show-customers/show-customers.md"
+        }
+
+    ]
+}

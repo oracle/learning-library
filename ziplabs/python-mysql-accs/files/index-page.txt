@@ -1,1 +1,0 @@
-This illustration shows a Firefox window. It displays the content of the index.html file which means the application is running. The page contains the Employee Application Service title and below that is the Setup the database link.

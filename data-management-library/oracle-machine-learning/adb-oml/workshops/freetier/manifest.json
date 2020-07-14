@@ -1,0 +1,33 @@
+{
+  "tutorials": [
+      {
+        "title": "Prerequisites",
+        "description": "Get a Free Trial",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+        "title": "Introduction",
+        "description": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+      "title": "Lab 1: Provision ADB",
+      "filename": "../../connect-provision-adb/connect-provision-adb.md"
+      },
+      {
+        "title": "Lab 2: Create Machine Learning Model",
+        "description": "Explore Zeppelin notebooks and create a ML model on customer credit data set.",
+        "filename":  "../../create-ml-model/create-ml-model.md"
+      },
+      {
+        "title": "Lab 3: Migrate ML Model to ATP",
+        "description": "Export the ML model from ADW and import into ATP",
+        "filename": "../../move-model-to-db/move-model-to-db.md"
+      },
+      {
+        "title": "Lab 4: Using Prediction in an Application",
+        "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
+        "filename": "../../integrate-with-app/integrate-with-app.md"
+      }
+    ]
+}

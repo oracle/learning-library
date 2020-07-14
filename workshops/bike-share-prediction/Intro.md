@@ -18,16 +18,49 @@ You will take on 2 Personas during the workshop. The **Data Scientist Persona**
 - Build and Apply Machine Learning Models Within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
 
 ## Required Artifacts
-- The following lab requires an Oracle Public Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.
+- The following lab requires an Oracle Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.
 
-## Step 1: Acquire an Oracle Cloud Trial or Workshop Account
+## Step 1: Acquire an Oracle Cloud Free Tier Account or Workshop Account
 - Bookmark this page for future reference.
 
-- Please click on the URL to create your <a class=“trial-link”  href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK190227P00084:PredictDemandML_ADW_HOL&SC=:ex:tb:::RC_NAMK190227P00084:PredictDemandML_ADW_HOL&pcode=NAMK190227P00084" target="trial">Free Account</a> and complete all the required steps. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free. Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
+- Open up a browser and navigate to www.oracle.com. Click the **Oracle Cloud Free Tier** button in the upper right hand corner.
 
-- Soon after requesting your trial you will receive the following email. You may begin working on this lab once you receive this email.
+    ![](images/free-tier-account.png)
 
-  ![](images/common/cloud_ready.jpg)
+- Click on the **Start for Free** button
+
+    ![](images/free-tier-account-2.png)
+
+- Follow the instructions to create your account.  Be sure to enter an email you can access.  
+
+  ![](images/free-tier-account-3.png)
+
+
+- Once you complete the signup, you will receive the **Your Cloud Account is fully provisioned** Email, make note of your **Username and Cloud Account Name**.   *Note: `Usernames are usually your email address.`*  You can login by clicking the Sign In button or access it from any browser.
+
+    ![](images/signup-email-provisioned.png)
+
+## Step 2: Login to Oracle Cloud Account
+
+- From any browser go to oracle.com to access the Oracle Cloud.
+
+    [https://www.oracle.com/](https://www.oracle.com/)
+
+    ![](images/login-screen.png)
+
+- Click the icon in the upper right corner.  Click on **Sign in to Cloud** at the bottom of the drop down.  *NOTE:  Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud*
+
+    ![](images/signup.png)    
+
+- Enter your **Cloud Account Name** in the input field and click the **My Services** button. If you have a Free Tier account provisioned, this can be found in your welcome email. Otherwise, this will be supplied by your workshop instructor.
+
+    ![](images/login-tenancy.png)  
+
+- Enter your **Username** and **Password** in the input fields and click **Sign In**.
+
+    ![](images/cloud-login.png) 
+
+  **NOTE**: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
 ## Step 2: Navigate to Lab 100
 

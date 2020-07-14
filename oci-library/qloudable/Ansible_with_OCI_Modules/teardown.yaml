@@ -1,0 +1,164 @@
+---
+# Copyright (c) 2018, 2019 Oracle and/or its affiliates.
+# This software is made available to you under the terms of the GPL 3.0 license or the Apache 2.0 license.
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Apache License v2.0
+# See LICENSE.TXT for details.
+
+- name: Delete instance pool example resources
+  hosts: localhost
+
+  tasks:
+    - name: Load common variables
+      include_vars: vars.yaml
+
+    # ========================================== #
+    - name: Get our instance pool
+      oci_instance_pool_facts:
+        compartment_id: "{{ instance_compartment }}"
+      register: result
+
+    - set_fact:
+        instance_pool_id: "{{ item.id }}"
+      when: '"{{ instance_pool_name }}" in item.display_name and item.lifecycle_state == "RUNNING"'
+      with_items: "{{ result.instance_pools }}"
+      ignore_errors: yes
+
+    - name: Delete our instance pool
+      oci_instance_pool:
+        instance_pool_id: "{{ instance_pool_id }}"
+        state: absent
+      register: result
+      when: instance_pool_id is defined
+
+    # ========================================== #
+
+    - name: Get our instance configuration
+      oci_instance_configuration_facts:
+        compartment_id: "{{ instance_compartment }}"
+      register: result
+
+    - set_fact:
+        instance_configuration_id: "{{ item.id }}"
+      when: '"{{ instance_configuration_name }}" in item.display_name'
+      with_items: "{{ result.instance_configurations }}"
+      ignore_errors: yes
+
+    - name: Delete our instance configuration
+      oci_instance_configuration:
+        instance_configuration_id: "{{ instance_configuration_id }}"
+        state: absent
+      register: result
+      when: instance_configuration_id is defined
+    
+    # ========================================== #
+
+    - name: Get our vcn
+      oci_vcn_facts:
+        compartment_id: "{{ instance_compartment }}"
+        lifecycle_state: "AVAILABLE"
+      register: result
+
+    - set_fact:
+        vcn_id: "{{ item.id }}"
+      when: '"{{ vcn_name }}" in item.display_name'
+      with_items: "{{ result.vcns }}"
+      ignore_errors: yes
+
+    # ========================================== #
+
+    - name: Get our subnet
+      oci_subnet_facts:
+        vcn_id: "{{ vcn_id }}"
+        compartment_id: "{{ instance_compartment }}"
+        lifecycle_state: "AVAILABLE"
+      register: result
+      when: vcn_id is defined
+
+    - set_fact:
+        subnet_id: "{{ item.id }}"
+      when: '"{{ subnet_name }}" in item.display_name'
+      with_items: "{{ result.subnets }}"
+      ignore_errors: yes
+
+    - name: Delete our subnet
+      oci_subnet:
+        subnet_id: "{{ subnet_id }}"
+        state: absent
+      register: result
+      when: subnet_id is defined
+
+    # ========================================== #
+
+    - name: Get our route table
+      oci_route_table_facts:
+        vcn_id: "{{ vcn_id }}"
+        compartment_id: "{{ instance_compartment }}"
+      register: result
+      when: vcn_id is defined
+
+    - set_fact:
+        route_table_id: "{{ item.id }}"
+      when: '"{{ route_table_name }}" in item.display_name'
+      with_items: "{{ result.route_tables }}"
+      ignore_errors: yes
+
+    - name: Delete our route table
+      oci_route_table:
+        rt_id: "{{ route_table_id }}"
+        state: absent
+      register: result
+      when: route_table_id is defined
+
+    # ========================================== #
+
+    - name: Get our internet gateway
+      oci_internet_gateway_facts:
+        vcn_id: "{{ vcn_id }}"
+        compartment_id: "{{ instance_compartment }}"
+      register: result
+      when: vcn_id is defined
+
+    - set_fact:
+        ig_id: "{{ item.id }}"
+      when: '"{{ ig_name }}" in item.display_name'
+      with_items: "{{ result.internet_gateways }}"
+      ignore_errors: yes
+
+    - name: Delete our internet gateway
+      oci_internet_gateway:
+        id: "{{ ig_id }}"
+        state: absent
+      register: result
+      when: ig_id is defined
+
+    # ========================================== #
+
+    - name: Get our security list
+      oci_security_list_facts:
+        vcn_id: "{{ vcn_id }}"
+        compartment_id: "{{ instance_compartment }}"
+      register: result
+      when: vcn_id is defined
+
+    - set_fact:
+        security_list_id: "{{ item.id }}"
+      when: '"{{ securitylist_name }}" in item.display_name'
+      with_items: "{{ result.security_lists }}"
+      ignore_errors: yes
+
+    - name: Delete our security list
+      oci_security_list:
+        id: "{{ security_list_id }}"
+        state: absent
+      register: result
+      when: security_list_id is defined
+    
+    # ========================================== #
+
+    - name: Delete our VCN
+      oci_vcn:
+        id: "{{ vcn_id }}"
+        state: absent
+      register: result
+      when: vcn_id is defined

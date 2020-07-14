@@ -1,0 +1,31 @@
+{
+  "lab": {
+    "title": "Building an App using REST Web Sources",
+    "modules": [
+      {
+        "filename": "README.md",
+        "title": "Lab Introduction"
+      },
+      {
+        "filename": "1-sign-up-apex.md",
+        "title": "Module 1: Signing up for an APEX Workspace"
+      },
+      {
+        "filename": "2-rest-enabling.md",
+        "title": "Module 2: REST Enabling Database Objects"
+      },
+      {
+          "filename": "3-defining-web-source.md",
+          "title": "Module 3: Defining Web Sources"
+      },
+      {
+        "filename": "4-creating-pages.md",
+        "title": "Module 4: Creating Pages"
+      },
+      {
+        "filename": "5-defining-lov.md",
+        "title": "Module 5: Defining a List of Values"
+      }
+    ]
+  }
+}

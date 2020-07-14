@@ -1,7 +1,0 @@
-This image shows the details popup window. There is an "x" all the way to the right to close this window.
-
-The window has three tabs: Overview, Plan Statistics, and Parallel. Overview is selected. Parallel is highlighted with a red rectangle.
-
-Under the tabs is the General section, giving general information and the SQL text that was executed.
-
-Under that are two tiles. The first for Time & Wait Statistics, the other for I/O statistics.

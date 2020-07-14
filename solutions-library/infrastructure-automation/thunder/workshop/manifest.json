@@ -1,0 +1,100 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction and Overview",
+            "description": "Introduction to Thunder Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab 1: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {         
+            "title": "Lab 2: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {         
+            "title": "Lab 3: Install and prepare prerequisites",
+            "description": "Install and prepare prerequisites",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/prerequisites.md"
+        },
+        {         
+            "title": "Lab 4: Crawl and Walk",
+            "description": "Terraform Crawl and Walk Components",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/crawl-walk.md"
+        },
+        {         
+            "title": "Lab 5: Free Tier",
+            "description": "Free Tier",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../examples/free_tier/free-tier.md"
+        },
+        {         
+            "title": "Lab 6: Enterprise Tier",
+            "description": "Enterprise Tier",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../examples/enterprise_tier/enterprise-tier.md"
+        },
+        {         
+            "title": "Lab 7: Run examples",
+            "description": "Run example",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/run.md"
+        },
+        {         
+            "title": "Lab 8: Network Architectures",
+            "description": "Network Architectures",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../examples/network_architectures/network-architectures.md"
+        },
+        {         
+            "title": "Lab 9: Custom Images",
+            "description": "Custom Images",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../examples/custom_images/custom-images.md"
+        },
+        {         
+            "title": "Lab 10: Dev Tools",
+            "description": "Developer tools",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../examples/dev_tools/dev-tools.md"
+        },
+        {         
+            "title": "Lab 11: CI CD",
+            "description": "CI CD",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../examples/ci-cd/ci-cd.md"
+        }
+    ]
+}

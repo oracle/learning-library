@@ -1,0 +1,8 @@
+{
+    "tutorials": [
+        {
+            "title": "Autonomous Database Workshops",
+            "description": "Official Autonomous Database Workshops from the ADB Team",
+            "filename": "landing-page.md"
+        }]
+}

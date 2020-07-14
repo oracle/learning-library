@@ -1,51 +1,43 @@
 {
-    "workshop": {
-        "title": "Autonomous Data Warehouse Cloud Service for Developers",
-        "description": "These labs will give you an understanding of the Autonomous Data Warehouse Cloud Service and how it can manage vast amounts of data with minimal management, and serve the needs of citizen data scientists and line of business analysts.  The labs will walk you through creating and accessing a new Autonomous Data Warehouse Cloud Service instance.  Next, you will test ADWC's ability to query billions of rows of data quickly to support end user ad-hoc access to their critical business information.  Next you will assume the role of a citizen data scientist, and will create learning models on your customer credit data to identify those most likely to be interested in a loyalty card program.  Lastly you will assume the role of a marketing analyst, and will visualize the credit, sales, and order data to support marketing programs.",
-        "interactive":"https://launch.oracle.com/?adwc4dev",
-        "versions": [
-           {
-            "name": "Self-Guided",
-            "description": "Individual self-guided learning",
-            "imageUrl": "https://oracle.github.io/learning-library/workshops/common-content/images/common/Self-Service.png"
-          }
-        ],
-        "labs": [
-            {
-                "number": "10",
-                "filename": "SG-intro.md",
-                "title": "Self Guided Introduction",
-                "description": "Step-by-step workshop instructions",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "100",
-                "filename": "L100.md",
-                "title": "Lab 100: Introduction",
-                "description": "Create and access an Autonomous Database Cloud Service",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "200",
-                "filename": "L200.md",
-                "title": "Lab 200: Review Query Performance",
-                "description": "Run sample queries against a 100 million row current data set and a six billion row historic data set",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "300",
-                "filename": "L300.md",
-                "title": "Lab 300: Machine Learning",
-                "description": "Work with an Apache Zepplin notebook and create a Machine Learning model to predict customer good credit",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "400",
-                "filename": "L400.md",
-                "title": "Lab 400: Create Data Visualizations",
-                "description": "Create data visualizations with Oracle Analytics Cloud to review sales performance and better understand the factors that affect good credit",
-                "labels": {"version": "Self-Guided"}
-            }
-        ]
-    }
-}
+    "tutorials": [
+        {
+          "title": "Introduction",
+          "description": "Introduction",
+          "publisheddate": "4/8/2020",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/adb-oml/intro/intro.md"
+        },
+        {         
+          "title": "Lab 0: Login to Oracle Cloud",
+          "description": "Register for Free Tier Account",
+          "partnumber": "Ennnnn_01",
+          "publisheddate": "03/10/2020",
+          "contentid": "12nnnn",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1:  Provision ADB",
+        "description": "Introduction",
+        "publisheddate": "3/24/2020",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/adb-oml/connect-provision-adb/connect-provision-adb.md"
+      },
+        {
+          "title": "Lab 2: Create Machine Learning Model",
+          "description": "Explore Zeppelin notebooks and create a ML model on customer credit data set.",
+          "publisheddate": "3/24/2020",
+          "filename":  "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/adb-oml/create-ml-model/create-ml-model.md"
+        },
+        {
+          "title": "Lab 3: Migrate ML Model to ATP",
+          "description": "Export the ML model from ADW and import into ATP",
+          "publisheddate": "3/24/2020",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/adb-oml/move-model-to-db/move-model-to-db.md"
+        },
+        {
+          "title": "Lab 4: Using Prediction in an Application",
+          "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
+          "publisheddate": "3/24/2020",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/adb-oml/integrate-with-app/integrate-with-app.md"
+        }
+      ]
+  }
+  

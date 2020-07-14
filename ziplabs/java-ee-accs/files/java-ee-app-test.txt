@@ -1,1 +1,0 @@
-This illustration shows a Firefox window with the response of the JavaEESample application.

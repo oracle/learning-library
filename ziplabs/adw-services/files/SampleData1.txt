@@ -1,3 +1,0 @@
-This image shows the Oracle SQL Developer worksheet with the SQL script for querying the many categories of the LOW database service. All the queries in the worksheet are highlighted. The icon to run the statement, first from the left, is highlighted by a red box.
-
-Under the worksheet are a number of tabs, one for each query. Under that is a window which shows the output as tables.

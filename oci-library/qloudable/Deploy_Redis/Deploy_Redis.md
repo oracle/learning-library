@@ -79,28 +79,30 @@ In this lab we will deploy Redis in Master-Slave mode (similar to below) though 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
 
-- **Create in Compartment:** Has the correct compartment
-- **Name:** Enter easy to re¬member name
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-- Click **Create Virtual Cloud Network**
-- Click **Close**
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+5. Verify all the information and  Click **Create**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
+6. This will create a VCN with followig components.
+
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
+
+7. Click **View Virtual Cloud Network** to display your VCN details.
+             
                     
 ## Create ssh keys, two compute instances and install Redis
 
@@ -156,68 +158,75 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 8. Click Create Instance. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
+
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
-16. Repeat the steps to create second Compute Instance. This compute instance should be created in a different AD then the first instance. **Ensure to choose a different AD then the first compute instance**
+10. Repeat the steps to create second Compute Instance. This compute instance should be created in a different AD then the first instance. **Ensure to choose a different AD then the first compute instance**
 
 **NOTE:** This instance will be the Slave node
 
-10. Wait for Instances to be in **Running** state. Note down both Public and Private IP addresse of both compute instance.
+11. Wait for Instances to be in **Running** state. Note down both Public and Private IP addresse of both compute instance.
 Next we will ssh into the **first compute instance**. In git-bash Enter Command:
 ```
  cd /C/Users/PhotonUser/.ssh
 ```
-11. Enter **ls** and verify id_rsa file exists
+12. Enter **ls** and verify id_rsa file exists
 
-12. Enter command: (**Ensure to use Public IP of the first compute instnace)
+13. Enter command: (**Ensure to use Public IP of the first compute instnace)
 ```
-ssh -i id_rsa_user opc@<PUBLIC_IP_OF_COMPUTE>
+ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
 **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command
 
-13. Enter 'Yes' when prompted for security message
+14. Enter 'Yes' when prompted for security message
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG" alt="image-alt-text">
  
-14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
+15. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
 
 **We now have a VCN and two compute instance (Master and Slave). Next we will  install and configure Redis.**
 
-15. In ssh session to first compute instance, Enter Command:
+16. In ssh session to first compute instance, Enter Command:
 ```
 sudo yum install redis -y
 ```
 
 Wait for installation to complete
 
-16. Start Redis. Enter command:
+17. Start Redis. Enter command:
 ```
 sudo systemctl start redis.service
 ```
-17. Enable Redis to start on reboot. Enter command:
+18. Enable Redis to start on reboot. Enter command:
 ```
 sudo systemctl enable redis
 ```
 
-18. Check status of redis server. Enter command:
+19. Check status of redis server. Enter command:
 ```
 sudo systemctl status redis.service
 ```
@@ -225,13 +234,13 @@ Verify service is active and is using loop back  interface (127.0.0.1) on port 6
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploy_Redis/img/Redis_002.PNG" alt="image-alt-text">)
 
-19. Test the set-up. Enter command:
+20. Test the set-up. Enter command:
 ```
 redis-cli ping
 ```
 Verify PONG is received as the response
 
-20. Launch a second git-bash window and ssh into second compute instance (redis-slave). Once logged in repeat the steps  to install and verify redis.
+21. Launch a second git-bash window and ssh into second compute instance (redis-slave). Once logged in repeat the steps  to install and verify redis.
 
 **We now have redis installed on two compute instances. Next we will configure the two instances in Master-Slave mode and verify the configuration**
 
@@ -270,18 +279,16 @@ Verify service is active and is using Private IP of the compute instance on port
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploy_Redis/img/Redis_006.PNG" alt="image-alt-text">)
 
 7. Redis Master node has been configued. We will now configure Redis Slave node. Bring up the git-bash window with ssh session to second compute node(redis-slave).
+ 
+8. Edit /etc/redis.conf file as above. Change the bind address to the private IP of the second compute instance. Do not exit out of the file.
 
-8. Install and start redis service following above steps and verify Redis service started on loop back(127.0.0.1) interface. 
-
-9. Edit /etc/redis.conf file as above. Change the bind address to the private IP of the second compute instance. Do not exit out of the file.
-
-10. Search for string 'slaveof'. Un-comment the line and change the IP address to the private IP address of the master node(10.0.0.6 in this example). Keep the port number as 6379. Do not exit out of the file.
+9. Search for string 'slaveof'. Un-comment the line and change the IP address to the private IP address of the master node(10.0.0.6 in this example). Keep the port number as 6379. Do not exit out of the file.
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploy_Redis/img/Redis_007.PNG" alt="image-alt-text">)
 
-11. Search for string 'masterauth' and change the password noted down from master node config file (foobared in this example)
+10. Search for string 'masterauth' and change the password noted down from master node config file (foobared in this example) and uuncomment the line by removing #
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploy_Redis/img/Redis_008.PNG" alt="image-alt-text">)
 
-12. Save and exit out of the file. Restart Redis service and verify status to make sure Redis service is using the private IP of the second compute node
+11. Save and exit out of the file. Restart Redis service and verify status to make sure Redis service is using the private IP of the second compute node
 (redis-slave).
 
 **We have installed and configued Redis in Master-Slave mode using two compute instance in different Availability domains. Next we will update security list rules to ensure the two instances can communicate with each other Ensure both your ssh sessions are open**
@@ -296,7 +303,7 @@ Verify service is active and is using Private IP of the compute instance on port
 2. From OCI services menus Navigate to your VCN created earlier and Click your VCN name, Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Deploy_Redis/img/Customer_Lab_001.PNG" alt="image-alt-text">)
 
-3. In Security list details page, Click **Add Ingress Rule**. Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
+3. In Security list details page, Click **Add Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked
 
 
 - Source Type: CIDR 
@@ -418,10 +425,12 @@ address
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG" alt="image-alt-text">
 
-5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
+5. Repeat the steps to delete second compute instance
+
+6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
 appear.
 
-6. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
+7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
 

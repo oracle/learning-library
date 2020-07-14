@@ -33,7 +33,7 @@ As an application developer,
 
 ## Steps
 
-### **STEP 1: SSH into Oracle Cloud Developer image and clone Node application**
+### STEP 1: Download sample node.js application
 
 - Login to your Oracle Cloud Infrastructure account select **Compute** —>  **Instances** from top left menu
 
@@ -46,7 +46,7 @@ As an application developer,
 ![](./images/800/Compute2.png)
 
 
-### Mac / Linux users
+**Mac / Linux users**
 
 - Open Terminal and SSH into linux host machine, we will need port forwarding to see the Node application running in our local browser. If you use VNC then there is no need to configure port forwarding
 
@@ -56,13 +56,13 @@ sudo ssh -i /path_to/sshkeys/id_rsa -L 3050:127.0.0.1:3050 opc@publicIP
 
 ![](./images/800/SSH1.png)
 
-### Windows users
+**Windows users**
 
 - You can connect to and manage linux host mahine using SSH client. Recent versions of Windows 10 provide OpenSSH client commands to create and manage SSH keys and make SSH connections from a command prompt.
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-### Cloning Node Application
+**Download sample Node.js Application**
 
 - Once you ssh into your developer client machine you can download a sample node.js application to folder /home/opc using the following command,
 
@@ -76,7 +76,7 @@ mkdir /home/opc/ATPDnode && cd /home/opc/ATPDnode && unzip /home/opc/ATPDnode.zi
 
 Now that you have a sample application setup, lets get your database's secure wallet for connectivity
 
-### **STEP 2: Secure Copy ATP Dedicated database wallet to linux host machine**
+### STEP 2: Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select **Autonomous Transaction Processing** from menu
 ![](./images/800/atpd1.png)
@@ -99,7 +99,7 @@ Now that you have a sample application setup, lets get your database's secure wa
 
 - Open Terminal in your laptop and type in the following commands
 
-#### Note: Please change path and name of your private ssh keyhole,   wallet and the ip address of your developer client in the command below.
+**Note: Please change path and name of your private ssh keyhole,   wallet and the ip address of your developer client in the command below.**
 
 ```
 scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@publicIP:/home/opc/
@@ -108,7 +108,7 @@ scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@publicI
 
 
 
-### **STEP 3: Configure env. variables and run your node.js application**
+### STEP 3: Run your node.js application**
 
 Now that you have copied the database wallet to your development host, lets configure some env. variables and database authentication file to connect your node.js app to the database
 
@@ -165,7 +165,7 @@ node server.js
 ```
 ![](./images/700/runNode.png)
 
-- Open a browser and go to localhost:3050 to see the successful connection!
+- From within your VNC session, open a browser and go to localhost:3050 to see the successful connection!
 
 ![](./images/700/connectionSuccessful.png)
 

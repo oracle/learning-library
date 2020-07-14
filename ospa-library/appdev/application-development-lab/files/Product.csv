@@ -1,7 +1,7 @@
 id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,productName,productDescription,unitPrice
-1,2019-05-14T17:15:45,2019-05-14T17:15:45.018,john.j.king@oracle.com,john.j.king@oracle.com,MOZZARELLA,Mozzarella cheese,7
-2,2019-05-14T17:16:13,2019-05-14T17:16:13.006,john.j.king@oracle.com,john.j.king@oracle.com,DOUGH,Dough,11
-3,2019-05-14T17:16:52,2019-05-14T17:16:52.004,john.j.king@oracle.com,john.j.king@oracle.com,PIZZA_SAUCE,Pizza sauce,6
+1,2019-05-14T17:15:45,2019-05-14T17:15:45.018,jgarcia@mamamaggy.com,jgarcia@mamamaggy.com,MOZZARELLA,Mozzarella cheese,7
+2,2019-05-14T17:16:13,2019-05-14T17:16:13.006,dsmith@mamamaggy.com,dsmith@mamamaggy.com,DOUGH,Dough,11
+3,2019-05-14T17:16:52,2019-05-14T17:16:52.004,jgarcia@mamamaggy.com,jgarcia@mamamaggy.com,PIZZA_SAUCE,Pizza sauce,6
 101,,,,,ALFREDO,Alfredo Sauce,8
 102,,,,,ANCHOVIES,Anchovies,16
 103,,,,,ARUGULA,Arugula,5

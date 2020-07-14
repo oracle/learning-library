@@ -1,8 +1,0 @@
-This illustration shows the Add Service Binding dialog box. The following values are displayed in the form’s fields: 
-
-* Service Type: MySQLCS Service 
-* Service Name: TestDB 
-* Username: root
-* Password: (hidden password)
-
-The dialog box has two buttons, Cancel and Save, and the Save button is highlighted.

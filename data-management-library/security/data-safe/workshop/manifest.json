@@ -1,0 +1,34 @@
+{
+    "tutorials": [
+        {
+            "title": "Oracle Data Safe Workshop",
+            "description":"Introduction to the workshop",
+            "filename":"./about-this-lab/about-this-lab.md"
+        },
+        {
+            "title": "Lab 1: View a Registered Target Database",
+            "description":"View a Registered Target Database",
+            "filename":"./view-registered-target-db/view-registered-target-db.md"
+        },
+		    {
+            "title": "Lab 2: Provision Audit and Alert Policies",
+            "description": "Provision Audit and Alert Policies",
+            "filename": "./provision-audit-alert-policies/provision-audit-alert-policies.md"
+        },
+		    {
+            "title": "Lab 3: Assess Database Configurations and Users",
+            "description": "Assess Database Configurations and Users",
+            "filename": "./assess-db-config-users/assess-db-config-users.md"
+        },
+		    {
+            "title": "Lab 4: Analyze Alerts and Audit Reports",
+            "description": "Analyze Alerts and Audit Reports",
+            "filename": "./analyze-alerts-audit-reports/analyze-alerts-audit-reports.md"
+        },
+        {
+            "title": "Lab 5: Discover and Mask Sensitive Data",
+            "description": "Discover and Mask Sensitive Data",
+            "filename": "./discover-mask-data/discover-mask-data.md"
+        }
+    ]
+}

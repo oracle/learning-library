@@ -1,0 +1,4 @@
+oJDBCDriver = oracle.jdbc.OracleDriver
+oJDBCURL = jdbc:oracle:thin:@//dbsec.oracledemo.com:1521/pdb1
+oJDBCUser = employeesearch
+oJDBCPassword = Oracle123

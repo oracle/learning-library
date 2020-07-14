@@ -1,0 +1,35 @@
+{
+  "lab": {
+    "title": "Building an App using a Remote Data Source",
+    "modules": [
+      {
+        "filename": "README.md",
+        "title": "Lab Introduction"
+      },
+      {
+        "filename": "1-sign-up-apex.md",
+        "title": "Module 1: Signing up for an APEX Workspace"
+      },
+      {
+        "filename": "2-create-table.md",
+        "title": "Module 2: Creating the Table"
+      },
+      {
+          "filename": "3-populating-table.md",
+          "title": "Module 3: Populating the Table"
+      },
+      {
+        "filename": "4-improving-report.md",
+        "title": "Module 4: Improving the Report"
+      },
+      {
+        "filename": "5-adding-chart.md",
+        "title": "Module 5: Adding a Chart"
+      },
+      {
+        "filename": "6-adding-chart-criteria.md",
+        "title": "Module 6: Adding Chart Criteria"
+      }
+    ]
+  }
+}

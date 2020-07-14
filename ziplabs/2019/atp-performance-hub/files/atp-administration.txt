@@ -1,1 +1,0 @@
-THis image shows the ATP overview page. In the left edge of the page are menu items, from top to bottom: Overview (which is currently selected), Activity, and Administration. To the right are graphs indicating usage statistics for the ATP instance.

@@ -135,43 +135,20 @@ oci setup autocomplete
 
 Now that you have setup OCI CLI, let us now look at examples of using Autonomous Transaction Processing Database. 
 
-#### Creating Database
-
-Open your command line interface and run the following command to create an Autonomous Transaction Processing Database
-
-```
-oci db autonomous-database create --admin-password [password] --compartment-id [OCID] --cpu-core-count [integer] --data-storage-size-in-tbs [integer] --db-name [Database Name] --display-name [Display Name] --is-dedicated True --autonomous-container-database-id [OCID]
-```
-
-Container Database OCID can be found by clicking on the hamburger menu on the top left corner of OCI Dashboard, then navigating to Autonomous Transaction Processing > Container Database.
-
-![](./images/900/ContainerDatabaseOCID1.png)
-
-![](./images/900/ContainerDatabaseOCID2.png)
-
-For example:
-
-```
-oci db autonomous-database create --admin-password "WElcome_123#" -c ocid1.compartment.oc1..aaaaaaaaditjcqg4pp7a7izwthnk4c6apz4bapczjz7ff4vy2ttfvwwfifra --cpu-core-count 1 --data-storage-size-in-tbs 1 --db-name "prodATPD1" --display-name "ProdATPD' --is-dedicated True --autonomous-container-database-id ocid1.autonomouscontainerdatabase.oc1.iad.abuwcljrlpmviswncdr6x7f5jo5pkjynxsnyqbtdyvshe7373qds7tetebva
-```
-
-You are expected to see the following output in the command line interface
-
-![](./images/900/CreateDBOutput1.png)
-![](./images/900/CreateDBOutput2.png)
+Let's start with a simpler command to get details on your autonomous database instance.
 
 #### Get Database
 
 Open your command line interface and run the following command to get details of an Autonomous Transaction Processing Database
 
 ```
-oci db autonomous-database get --autonomous-database-id [OCID] --compartment-id [OCID]
+oci db autonomous-database get --autonomous-database-id [OCID]
 ```
 
 For Example:
 
 ```
-oci db autonomous-database get --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.abuwcljri2ydrtmg472fhrt67ddxm26mldj2s6gokywxfhuvuvrrhmn7mlna --compartment-id ocid1.compartment.oc1..aaaaaaaahnmqede4hg2sdom74lpljjwyu6nc6o2jr77rc5wagez3cwutu57a
+oci db autonomous-database get --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.abuwcljri2ydrtmg472fhrt67ddxm26mldj2s6gokywxfhuvuvrrhmn7mlna 
 ```
 
 You are expected to see the following output in the command line interface
@@ -179,9 +156,10 @@ You are expected to see the following output in the command line interface
 ![](./images/900/GetDBOutput1.png)
 ![](./images/900/GetDBOutput2.png)
 
-#### Listing Database
 
-Open your command line interface and run the following command to List all Autonomous Transaction Processing Database
+#### Listing Databases
+
+Open your command line interface and run the following command to List all Autonomous Transaction Processing Databases in a specific compartment
 
 ```
 oci db autonomous-database list --compartment-id [OCID]
@@ -197,22 +175,55 @@ You are expected to see the following output in the command line interface
 
 ![](./images/900/ListDBOutput1.png)
 
-Run the following command to List all Autonomous Transaction Processing Database in a specific Container Database.
+Run the following command to List all Autonomous Transaction Processing Database in a specific compartment in a specific Container database
 
 ```
-oci db autonomous-database list --autonomous-container-database-id [OCID]
+oci db autonomous-database list --compartment-id [OCID] --autonomous-container-database-id [OCID]
 ```
 
 For Example:
 
 ```
-oci db autonomous-database list --autonomous-container-database-id ocid1.autonomouscontainerdatabase.oc1.iad.abuwcljrlpmviswncdr6x7f5jo5pkjynxsnyqbtdyvshe7373qds7tetebva
+oci db autonomous-database list --compartment-id ocid1.compartment.oc1..aaaaaaaaditjcqg4pp7a5izwthnk4c6apz4bapczjz7ff4vy2ttfvwwfifra --autonomous-container-database-id ocid1.autonomouscontainerdatabase.oc1.iad.abuwcljror6spbcnp56j4ihw3rg5k23hjfk24hgiush43akcl7h5k6iobjmvhq
 ```
 
 You are expected to see the following output in the command line interface
 
 ![](./images/900/ListDBOutput2.png)
 ![](./images/900/ListDBOutput3.png)
+
+
+
+
+#### Creating Database
+
+To create an autonomous dedicated database you will need some information handy such as the OCID of the Container Database and OCID of the compartment you want to create the database in. Once you have that ready, open your command line interface and run the following command to create an Autonomous Transaction Processing (dedicated) Database. 
+
+**To find the OCID of the container database, simply navigate to your autonomous database details page and click on the link for container DB. This will take you to the container DB details page and you can copy the OCID there.**
+![](./images/900/ContainerDatabaseOCID2.png)
+
+```
+oci db autonomous-database create --admin-password [password] --compartment-id [OCID] --cpu-core-count [integer] --data-storage-size-in-tbs [integer] --db-name [Database Name] --display-name [Display Name] --is-dedicated True --autonomous-container-database-id [OCID]
+```
+
+
+
+
+
+
+
+For example:
+
+```
+oci db autonomous-database create --admin-password "WElcome_123#" -c ocid1.compartment.oc1..aaaaaaaaditjcqg4pp7a7izwthnk4c6apz4bapczjz7ff4vy2ttfvwwfifra --cpu-core-count 1 --data-storage-size-in-tbs 1 --db-name "prodATPD1" --display-name "ProdATPD" --is-dedicated True --autonomous-container-database-id ocid1.autonomouscontainerdatabase.oc1.iad.abuwcljrlpmviswncdr6x7f5jo5pkjynxsnyqbtdyvshe7373qds7tetebva
+```
+
+You are expected to see the following output in the command line interface
+
+![](./images/900/CreateDBOutput1.png)
+![](./images/900/CreateDBOutput2.png)
+
+
 
 #### Deleting Database
 
@@ -272,7 +283,7 @@ oci db autonomous-database stop --autonomous-database-id [OCID]
 oci db autonomous-database update --autonomous-database-id [OCID] --cpu-core-count [integer]
 ```
 
-For further examples on how to work with OCI CLI with different services check out OCI documentation [here](https://docs.cloud.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/db.html).
+These are a handful of examples on using the OCI CLI REST interface to work with autonomous databases in your OCI tenancy. For a complete command reference,check out OCI documentation [here](https://docs.cloud.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/db.html).
 
 
 

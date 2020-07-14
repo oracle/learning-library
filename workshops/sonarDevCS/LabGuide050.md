@@ -171,6 +171,77 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTmnQPppvuP15M5jzTrRoMzWpERDIV9r0Eq1mj+5rE
 
 ### **STEP 7**: Create Java Web Service
 
+  - Before we can launch a compute instance, we need an SSH key pair to use for authentication.let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
+
+    **NOTE**: There are several files that will be downloaded or created on your local machine during this workshop. We recommend creating a directory to store them in for ease of locating and cleaning up. In this step, you will create a directory inside your home/user directory called `container-workshop`. You are free to change the location and name of this directory, but the lab guide will assume it is located at `~/container-workshop/`. **You will need to modify the given terminal commands throughout this lab** if you change the location or name of the directory.
+
+    **Mac/Linux**:
+
+      - Open a terminal or shell window and run the following commands:
+
+        ```bash
+        cd ~
+        mkdir container-workshop && cd container-workshop && mkdir ssh-keys && cd ssh-keys
+        ssh-keygen -f ./ssh-key -N ""
+        ```
+        ![](images/200/LabGuide200-a5328c9e.png)
+
+    **Windows**:
+
+      - If you don't already have them, download PuTTY and PuTTYgen from [http://www.putty.org/](http://www.putty.org/)
+
+        ![](images/200/LabGuide200-395eff32.png)
+        ![](images/200/LabGuide200-e2207b4c.png)
+
+      - Locate and run **puttygen.exe** in the PuTTY install folder.
+
+      - Ensure that **RSA** or **SSH-2 RSA** is selected in the `Type of key to generate` field (which one you see is dependent on your version of PuTTY)
+
+      ![](images/200/LabGuide200-614f9c26.png)
+
+      ![](images/200/LabGuide200-f0a8b7ba.png)
+
+      - Click **Generate**
+
+        ![](images/200/LabGuide200-4c048053.png)
+
+      - **Move your mouse around the blank area** as instructed to genereate random data.
+
+        ![](images/200/LabGuide200-eb2e6690.png)
+
+      - Click **Save private key** and then click **Yes** to continue saving without a passphrase.
+
+        ![](images/200/LabGuide200-2f7bb25a.png)
+
+      - In the save dialog box:
+
+      - Navigate to your home directory/user folder (usually **C:\Users\\<username\>**).
+      
+      - Click **New Folder** and name the folder `container-workshop`.
+
+        ![](images/200/LabGuide200-b203da00.png)
+          
+      - **Double-click** the `container-workshop` folder to enter it.
+      
+      - Click **New Folder** again. This time name the folder `ssh-keys`.
+
+          ![](images/200/LabGuide200-af71f041.png)
+          
+      - **Double click** on `ssh-keys` to enter that folder.
+      
+      - Finally, name the key **ssh-key.ppk** and click **Save**.
+
+          ![](images/200/LabGuide200-0f4dd743.png)
+
+      - Select and copy the **public key** using Control-C, which is displayed in the `Public key for pasting into OpenSSH authorized_keys file` region. Paste it into a **new text file** using **notepad** and save the file in the `C:\Users\username\container-workshop\ssh-keys` folder.
+
+        **NOTE**: Do not use the Save public key button, as it uses an incompatible key format.
+
+        ![](images/200/LabGuide200-dfe10559.png)
+        ![](images/200/LabGuide200-81767c01.png)
+
+      - When you SSH to your instance in a later step, use PuTTY to connect instead of a command-line ssh session.
+
 - Click on the hamburger menu on top right, then Compute and then click on **Instances**.
 
     ![](images/050/lab100_Create_Instance_1.png)
@@ -185,9 +256,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTmnQPppvuP15M5jzTrRoMzWpERDIV9r0Eq1mj+5rE
 
 - Paste the following public key.
 
-```
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTmnQPppvuP15M5jzTrRoMzWpERDIV9r0Eq1mj+5rEkFpWaRHccgkGZRpjTBcqWn83UGG1bmffDdCy4EkWWydNu5Jll3L2MFrF9TBPg4Zj2Mh2V5x3DQoszypDHiGl7sp1z+LGYpPCmdPcuz/SrLbMrK22X6jHtEZJX56YfZ5FEVKiiOsq/Ae48zbxEUUKZAQ5YdWSLLiaOAmpMqe2qQvyiRiz0PAsQp8qP6pGjqxxMBZacZGlPCDurD6E5Xxh/V+TL8Q0X73N1FexlIuO4x5KoAJQdQQrSRETJuNRC1h7BNNAn9u0Jby9U0qo20UtgLQbpBSnb0FoLuwUxmPUpc/r varuny@Varuns-MacBook-Pro-2.local
-```
+- In the Add SSH Key area, click **Choose Files** and select the **ssh public key** you generated at the beginning of this step (e.g. `~/container-workshop/ssh-keys/ssh-key.pub`).
 
    ![](images/050/lab100_Create_Instance_3_2.png)
 

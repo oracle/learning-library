@@ -1,0 +1,44 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction and Overview",
+            "description": "Introduction to JSON Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../intro/intro_json.md"
+        },
+        {         
+            "title": " Env Setup",
+            "description": "Env Setup",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../labs/setup.md"
+        },
+        {         
+            "title": "Lab:1 Load JSON Data",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../labs/load_json.md"
+        },
+        {         
+            "title": "Lab:2 Insert and Update JSON Data",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../labs/insert_json.md"
+        },
+        {         
+            "title": "Lab:3 Usage of JSON Functions",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../labs/json_fun.md"
+        }
+                 ]
+}

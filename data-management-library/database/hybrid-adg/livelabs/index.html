@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oracle Hands-on Labs</title>
+
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/jquery-1.11.0.min.js"></script>
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/jquery.tocify.jd.js"></script>
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/main.js"></script>
+
+    <link rel="stylesheet" href="https://oracle.github.io/learning-library/common/redwood-hol/css/style.css" />
+    <link rel="shortcut icon" href="https://oracle.github.io/learning-library/common/redwood-hol/img/favicon.ico" />
+</head>
+
+<body>
+    <header class="hol-Header" role="banner">
+        <div class="hol-Header-wrap">
+            <div class="hol-Header-logo"><span>Oracle Database Hybrid ADG Workshop</span></div>
+            <div class="hol-Header-actions">
+                <button id="openNav" class="hol-Header-button hol-Header-button--menu rightNav" aria-label="Open Menu"
+                    title="Open Menu">
+                    <span class="hol-Header-toggleIcon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mySidenav" class="rightNav">
+        <nav class="hol-Nav">
+            <button id="closeNav" class="hol-Nav-close" aria-label="Close Menu" title="Close Menu"><span
+                    class="hol-Nav-closeIcon"></span></button>
+            <div class="hol-Nav-title">Contents</div>
+            <ul class="hol-Nav-list">
+            </ul>
+        </nav>
+    </div>
+
+    <div id="container">
+        <div id="leftNav">
+            <div id="toc"></div>
+        </div>
+        <div id="contentBox">
+            <main class="hol-Content" id="module-content"></main>
+        </div>
+    </div>
+
+      <footer class="hol-Footer">
+        <a class="hol-Footer-topLink" href="#top">Return to Top</a>
+        <div id="footer-banner"><div class="footer-row">
+          <div class="footer-content"><ul class="footer-links">
+              <li><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/legal&id=cpyr" target="_blank" aria-label="Open a new window to Oracle legal notices" data-lbl="copyright">© Oracle</a></li>
+              <li><a href="https://www.oracle.com/corporate/index.html" target="_blank" aria-label="Open a new window to learn more about oracle" data-lbl="about-oracle">About Oracle</a></li>
+              <li><a href="https://www.oracle.com/corporate/contact/" target="_blank" aria-label="Open a new window to contact oracle" data-lbl="contact-us">Contact Us</a></li>
+              <li class="footer-links-break"></li>
+              <li><a href="https://docs.oracle.com/en/browseall.html" target="_blank" aria-label="Open a new window to products a-z" data-lbl="products-a-z">Products A-Z</a></li>
+              <li><a href="https://www.oracle.com/legal/privacy/" target="_blank" aria-label="Open a new window to read more about oracle terms of use and privacy" data-lbl="terms-of-use-and-privacy">Terms of Use & Privacy</a></li>
+              <li><div id="teconsent">
+                <script type="text/javascript">
+                function _truste_eumap(){truste=self.truste||{};truste.eu||(truste.eu={});var f=truste.eu.bindMap={version:"v1.7-16",domain:"oracle.com",width:parseInt("850"),height:parseInt("300"),baseName:"te-notice-clr1-78bec7f8-2bc8-4d23-966d-5004299f6bb3",showOverlay:"{ShowLink}",hideOverlay:"{HideLink}",anchName:"te-notice-clr1-78bec7f8-2bc8-4d23-966d-5004299f6bb3-anch",intDivName:"te-notice-clr1-78bec7f8-2bc8-4d23-966d-5004299f6bb3-itl",iconSpanId:"te-notice-clr1-78bec7f8-2bc8-4d23-966d-5004299f6bb3-icon",containerId:(!"teconsent"||/^_LB.*LB_$/.test("teconsent"))?"teconsent":"teconsent",messageBaseUrl:"http://consent.trustarc.com/noticemsg?",daxSignature:"cb8350a2759273dccf1e483791e6f8fd",privacyUrl:"",prefmgrUrl:"http://consent-pref.trustarc.com/?type=oracle6",text:"true",icon:"Cookie Preferences",locale:"en",language:"en",country:"us",state:"",noticeJsURL:((parseInt("0")?"https://consent-st.trustarc.com/":"http://consent.trustarc.com/"))+"asset/notice.js/v/v1.7-16",assetServerURL:(parseInt("0")?"https://consent-st.trustarc.com/":"http://consent.trustarc.com/")+"asset/",cdnURL:"https://consent-st.trustarc.com/".replace(/^(http:)?\/\//,"https://"),iconBaseUrl:"http://consent.trustarc.com/",behavior:"implied",behaviorManager:"us",provisionedFeatures:"",cookiePreferenceIcon:"cookiepreferencestext3.png",closeButtonUrl:"//consent.trustarc.com/get?name=noticeclosebtn.png",apiDefaults:'{"reportlevel":16777215}',cmTimeout:parseInt("6000",10),popTime:Date.parse("".replace(" +0000","Z").replace(" ","T"))||null,popupMsg:"",bannerMsgURL:"http://consent.trustarc.com/bannermsg?",IRMIntegrationURL:"",feat:{iabGdprApplies:false,consentResolution:false,dropBehaviorCookie:false,crossDomain:true,uidEnabled:false,replaceDelimiter:false,enableBanner:false,enableIRM:false},autoDisplayCloseButton:false};
+                if(/layout=gdpr/.test(f.prefmgrUrl)){f.isGdprLayout=true}if(self.location.protocol!="http:"){for(var a in f){if(f[a]&&f[a].replace){f[a]=f[a].replace(/^(http:)?\/\//,"https://")
+                }}}if(f.feat.enableIRM){f.autoDisplayCloseButton=true}if(!truste.cma){var c=self.document,b=c.createElement("script");
+                b.setAttribute("async","async");b.setAttribute("type","text/javascript");b.setAttribute("crossorigin","");
+                b.src=f.noticeJsURL;(c.getElementById(f.containerId)||c.getElementsByTagName("body")[0]||c.getElementsByTagName("head")[0]).appendChild(b)
+                }(function(e){if(e.feat.crossDomain){var d=function(){if(!window.frames.trustarc_notice){if(document.body){var g=document.body,h=document.createElement("iframe");
+                h.style.display="none";h.name="trustarc_notice";h.id="trustarcNoticeFrame";h.src=e.cdnURL+"get?name=crossdomain.html&domain="+e.domain;
+                g.appendChild(h)}else{setTimeout(d,5)}}};d()}})(truste.eu.bindMap);(function(k){const e="__cmpTrustarc";
+                const j="__tcfapiTrustarc";var i=function(){if(k.feat.iab){return}var n=self.document,m=n.createElement("script");
+                m.setAttribute("async","async");m.setAttribute("type","text/javascript");m.setAttribute("crossorigin","");
+                m.src="//trustarc.mgr.consensu.org/get?name=cmp.js";(n.getElementById(k.containerId)||n.getElementsByTagName("body")[0]||n.getElementsByTagName("head")[0]).appendChild(m);
+                k.feat.iab=true};var l=function(){if(k.feat.iab){return}var n=self.document,m=n.createElement("script");
+                m.setAttribute("async","async");m.setAttribute("type","text/javascript");m.setAttribute("crossorigin","");
+                m.src="https://trustarc.mgr.consensu.org/asset/tcfapi.js";(n.getElementById(k.containerId)||n.getElementsByTagName("body")[0]||n.getElementsByTagName("head")[0]).appendChild(m);
+                k.feat.iab=true};if(document.getElementById(e)){i()}else{var d=new MutationObserver(function g(m){if(document.getElementById(e)){d.disconnect();
+                i()}});d.observe(document.body||document.getElementsByTagName("body")[0]||document.documentElement,{attributes:false,childList:true,characterData:false,subtree:true});
+                setTimeout(function(){d.disconnect()},30000)}if(document.getElementById(j)){l()}else{var h=new MutationObserver(function g(m){if(document.getElementById(j)){h.disconnect();
+                l()}});h.observe(document.body||document.getElementsByTagName("body")[0]||document.documentElement,{attributes:false,childList:true,characterData:false,subtree:true});
+                setTimeout(function(){h.disconnect()},30000)}})(truste.eu.bindMap);f.styles={};f.styles.closebtn=typeof $temp_closebtn_style!="undefined"&&$temp_closebtn_style;
+                f.styles.box_overlay=typeof $temp_box_overlay!="undefined"&&$temp_box_overlay;f.styles.overlay=typeof $temp_overlay!="undefined"&&$temp_overlay;
+                f.styles.inner_iframe=typeof $temp_inner_iframe!="undefined"&&$temp_inner_iframe;f.styles.outerdiv=typeof $temp_style_outerdiv!="undefined"&&$temp_style_outerdiv;
+                f.outerdiv=typeof $temp_outerdiv!="undefined"}self._truste&&(self._truste.eumap=_truste_eumap)||_truste_eumap();
+                </script>
+              </div></li>
+              <li><a href="https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html#adchoices" target="_blank" aria-label="Open a new window to ad choices" data-lbl="ad-choices">Ad Choices</a></li>
+              <li class="footer-links-break"></li><li class="last"><a href="https://docs.oracle.com/pls/topic/lookup?ctx=en/legal&id=cpyr" target="_blank" aria-label="Open a new window to Oracle legal notices" data-lbl="copyright">© Oracle</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+
+</html>

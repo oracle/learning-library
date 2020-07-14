@@ -1,0 +1,76 @@
+{
+    "tutorials": [
+        {         
+            "title": "Run intro",
+            "description": "run intro",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./run.md"
+        },
+        {         
+            "title": "Lab 1: Backup and Restore",
+            "description": "Backup and Restore lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../backup-restore/backup-restore.md"
+        },
+        {         
+            "title": "Lab 2: Autoscaling",
+            "description": "Autoscaling lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../asg/asg.md"
+        },
+        {         
+            "title": "Lab 3: Glusterfs",
+            "description": "GlusterFS lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../glusterfs/glusterfs.md"
+        },
+        {         
+            "title": "Lab 4: Grafana",
+            "description": "Grafana lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../grafana/grafana.md"
+        },
+        {         
+            "title": "Lab 5: KMS",
+            "description": "KMS lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../kms/kms.md"
+        },
+        {         
+            "title": "Lab 6: Remote peering",
+            "description": "Remote peering Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../remote-peering/remote-peering.md"
+        },
+        {         
+            "title": "Lab 7: Start Stop VMs",
+            "description": "Start Stop VMs Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../start-stop/start-stop.md"
+        },
+        {         
+            "title": "Lab 8: WaaS",
+            "description": "WaaS Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../waas/waas.md"
+        }
+    ]
+}

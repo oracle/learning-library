@@ -78,35 +78,29 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
-
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-- **Create in Compartment:** Has the correct compartment
+5. Verify all the information and  Click **Create**
 
-- **Name:** Enter easy to remember name
+6. This will create a VCN with followig components.
 
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-- Click **Create Virtual Cloud Network**
-
-- Click **Close**
-
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
-              
+7. Click **View Virtual Cloud Network** to display your VCN details.
+             
 ## Create ssh keys Compute instance and ssh to compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
@@ -157,22 +151,28 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine
-- **Choose Instance Shape:** Select VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+
+<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
+
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
@@ -187,10 +187,10 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE> -L 3000:localhost:3000
 ```
-**NOTE:** User name is opc. This will enable port forwarding on local host which is needed to access Grafana dash board later on
+**NOTE:** User name is opc.
 
 **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
 
@@ -220,10 +220,8 @@ java -version
 18. Next we will install Swing bench, Enter command:(No Spaces)
 
 ```
-curl http://www.dominicgiles.com/swingbench/swingbenchlatest.zip -o swingbench.zip
+curl http://www.dominicgiles.com/swingbench/swingbench261082.zip -o swingbench.zip
 ```
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_002.PNG" alt="image-alt-text">
 
 19. Enter command,
 ```
@@ -242,51 +240,60 @@ instance with only 1 OCPU and scale it after generating load test from the compu
 instance created earlier**
 
 
-1. Switch to OCI console, from services menu Click **Autonomous Transaction Processing** under Databse.Click **Create Autonmous Trasnaction Processing Database**. Fill out the dialog box:
+1. Switch to OCI console, from services menu Click **Autonomous Transaction Processing** under Databse.Click **Create Autonomous Database**. Fill out the dialog box:
 
-
-- Workload Type: AUTONOMOUS TRANSACTION PROCESSING
-- COMPARTMENT: Choose your compartment
+COMPARTMENT: Choose your compartment
 - DISPLAY NAME: Provide a name
 - DATABASE NAME: Provide a name
-- CPU CORE COUNT: 1
-- STORAGE(TB): 1
-- PASSWORD: Provide password per guideline 
-- CONFIRM PASSWORD: Provide same password 
+- Choose a Workload type: Transaction Processing
+- Choose a Deployment type: Shared Infrastructure
 
-**NOTE:** Do not use &, ), ( in the password due to script limitation that we will execute later.
+Under **Configure the database**
 
-- LICENSE TYPE: SUBSCRIBE TO NEW DATABASE SOFTWARE LICENSES AND THE DATABASE CLOUD SERVICE
+- Always Free: Leave Default
+- Choose database version: Leave Default
+- OCPU count: 1
+- Auto Sclaing: Make sure flag is Un-checked
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_018.PNG" alt="image-alt-text">
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_019.PNG" alt="image-alt-text">
+Under **Create administrator credentials**
 
-2. Leave **Tags** information as is. Click **Create Autonomous Database**. Wait for State to change to Available (few minutes)
+- Username: Provide a username 
+- Password: Provide a password (For example : Oracle098#### **Do not use &,!, in the password due to script limitation that we will execute later.**)
+- Confirm Password: Confirm the password provided
 
-3. Once Database is in running state, Click its Name. In Database details window Click **DB Connection**
+Under **Choose network access**
+
+- Allow secure accces from anywhere: Make sure this option is checked
+- Confifure access conrol rules: Leave default (unchecked)
+
+Under **Choose a license type**
+
+- License Included: Check this opttion
+
+2. Click **Create Autonomous Database**. Wait for State to change to Available (few minutes)
+
+3. Once Database is in running state, Click its Name. In Database details window Click **DB Connection**. We will use this screen 
 
 **NOTE:** If pop up blocker appears then Click 'Allow'
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_005.PNG" alt="image-alt-text">
-
-4. In the pop up window Click **Download** under **Download Client Credentials (Wallet)**. Provide a password, Click **Download** and save the zip file (Note down zip file location)
+4. In the pop up window under **Wallet Type** choose **Intance Wallet**. Click **Download Wallet**. Provide a password (you can use the same password as the one used to create the instance , Oracle098####). 
 
 **HINT:** You can use the same password that was used to create the instance or choose a new password. Note down the password
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Autonomous_Data_Warehouse/img/ADW_004.PNG" alt="image-alt-text">
-              
-5. Save the file in and Note down the directory name where the file was saved. We will need to upload this zip file on to public Compute instance
+5. Save the file and Note down the directory name where the file was saved. We will need to upload this zip file on to public Compute instance
 
 6. In Git bash window change to directory where zip file was saved, Enter command,
-``` 
+```bash 
 cd <Directory_Name> (cd ~/Downloads)
 ```
 7. Upload the zip file to compute instance, Enter command,
-```
-sftp  -i /C/Users/PhotonUser/.ssh/id_rsa opc@ <PUBLIC_IP_OF_COMPUTE>
+
+```bash
+sftp  -i /C/Users/PhotonUser/.ssh/id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
+
 ```
 8. At sftp prompt Enter command,
-```
+```bash
 put <ZIP_FILE_NAME> 
 ```
 **NOTE:** Usually the file name starts with 'Wallet'. Verify the file transfer completed
@@ -297,6 +304,7 @@ put <ZIP_FILE_NAME>
 ``` 
 cd ~/swingbench/bin
 ```
+
 10. Enter command:
 ```
 which java
@@ -311,11 +319,14 @@ Answer 'Y' when prompted
 12. Enter below commands, replacing the value in < >. 
 (This will install a schema to run our transactions against)
 
-```
-./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba ADMIN -u soe -p <DB_PASSWORD> -async_off-scale 0.1 -hashpart -create -cl -v
+```bash
+./oewizard -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium  -ts DATA -dbap <DB_PASSWORD> -dba admin -u soe -p <DB_PASSWORD> -async_off -scale 0.1 -hashpart -create -cl -v
 ```
 
-**NOTE:** In below example, CREDENTIAL_ZIP_FILE is 'Wallet_ATPDB3.zip', DB_NAME is ATPDB3, DB_PASSWORD is Oracle098####.
+**For Example:**
+./oewizard -cf ~/Wallet_ATPDB3.zip -cs ATPDB3_medium -ts DATA -dbap Oracle098#### -dba admin -u soe -p Oracle098#### -async_off -scale 0.1 -hashpart -create -cl -v
+
+**NOTE:** In above example, CREDENTIAL_ZIP_FILE is 'Wallet_ATPDB3.zip', DB_NAME is ATPDB3, DB_PASSWORD is Oracle098####.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_008.PNG" alt="image-alt-text">
 
@@ -324,15 +335,16 @@ Answer 'Y' when prompted
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_009.PNG" alt="image-alt-text">
 
 14. Validate the schema, Enter command:
-```
+```bash
 ./sbutil -soe -cf ~/<CREDENTIAL_ZIP_FILE> -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -tables
 ```
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_010.PNG" alt="image-alt-text">
 
 15. Next we will configure the load generator file. Enter command:
 ```
-cd ~/swingbench/config
+cd ~/swingbench/configs
 ```
+
 16. Enter command:
 ```
 vi SOE_Server_Side_V2.xml
@@ -347,10 +359,10 @@ vi SOE_Server_Side_V2.xml
 
 18. Now we will generate some load. Enter command:
 ```
-cd ~/swingbench/bin. 
+cd ~/swingbench/bin 
 ```
 Then Enter command:
-```
+```bash
 ./charbench -c ../configs/SOE_Server_Side_V2.xml -cf ~/<CREDENTIAL_ZIP_FILE>  -cs <DB_NAME>_medium -u soe -p <DB_PASSWORD> -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:30.30
 ```
 
@@ -368,7 +380,7 @@ Then Enter command:
 
 2. Click the name of Autonomous Transaction Processing instance created earlier
 
-3. Click **Scale Up/Down**, in the pop up windowchange CPU CORE COUNT to **4** and Click **Update**. Also observe the Automatic backup that are being performed. Instance will be in 'Scaling in Progress' state for some time
+3. Click **Scale Up/Down**, in the pop up windowchange CPU CORE COUNT to **2** and Click **Update**. Also observe the Automatic backup that are being performed. Instance will be in 'Scaling in Progress' state for some time
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_014.PNG" alt="image-alt-text">
 
@@ -563,7 +575,7 @@ select * from channels;
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_024.PNG" alt="image-alt-text">
 
 5. Now we need to assign priviliges to this new user so it can access the data uploaded by the user we created earlier. Switch to SQL developer window and  from admin tab,Enter command:
-```
+```bash
 grant read any table to <USER_NAME>;
 ```
 
@@ -576,7 +588,7 @@ grant read any table to <USER_NAME>;
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/ATP_Lab/img/ATP_026.PNG" alt="image-alt-text">
 
 7. In the SQL statement section, Enter statement:
-```
+```bash
 %sql
 select * from <USER_NAME>.channels;
 ```

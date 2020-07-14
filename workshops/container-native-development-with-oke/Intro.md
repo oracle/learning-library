@@ -19,8 +19,10 @@ To learn more about this workshop please watch the video below.
 
 ### **Step 2**: Navigate to Lab 100
 
-- You may proceed to [Lab 100](LabGuide100.md)
+- You may proceed to Lab 100
 
-- _You can see a list of Lab Guides_ by clicking on the **Menu Icon** in the upper left corner of the browser window. You're now ready to continue with **Lab 100**.
+- _You can see a list of Lab Guides_ by clicking on the **Menu Icon** in the upper right corner of the browser window. You're now ready to continue with **Lab 100**.
+
+  ![](images/LabMenuIcon-1.png)
 
   ![](images/LabMenuIcon.png)

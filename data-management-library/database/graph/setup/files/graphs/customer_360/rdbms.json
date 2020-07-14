@@ -1,0 +1,27 @@
+{
+  "format":"pg",
+  "db_engine":"rdbms",
+  "jdbc_url":"jdbc:oracle:thin:@oracle-db:1521/orclpdb1",
+  "username":"customer_360",
+  "keystore_alias":"database1",
+  "max_num_connections":8,
+  "name":"customer_360",
+  "vertex_props": [
+    {"name":"type", "type":"string"},
+    {"name":"name", "type":"string"},
+    {"name":"age", "type":"integer"},
+    {"name":"location", "type":"string"},
+    {"name":"gender", "type":"string"},
+    {"name":"student", "type":"string"},
+    {"name":"account_no", "type":"string"},
+    {"name":"balance", "type":"integer"}
+  ],
+  "edge_props": [
+    {"name":"since", "type":"string"},
+    {"name":"amount", "type":"integer"},
+    {"name":"date", "type":"string"}
+  ],
+  "loading":{
+    "load_edge_label":true
+  }
+}

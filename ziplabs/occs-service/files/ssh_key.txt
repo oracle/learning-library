@@ -1,1 +1,0 @@
-This image shows the SSH Public Key for VM Access page that shows three options. The first option is to upload a Key File Name. The second option is to paste a Key Value. The third option is to Create a New Key and it is selected and highlighted. 

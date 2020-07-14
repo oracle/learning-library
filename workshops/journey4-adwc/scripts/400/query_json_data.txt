@@ -1,5 +1,0 @@
---show how we can use the simple dot notation to access JSON data
-SELECT p.doc.prod_name, p.doc.prod_category 
-  FROM products_json_ext p
-  WHERE rownum<8;
-  

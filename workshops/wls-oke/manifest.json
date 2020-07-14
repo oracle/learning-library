@@ -1,39 +1,38 @@
 {
-    "workshop": {
-        "title": "On-premises WebLogic to OKE",
-        "description": "Description of this workshop.",
-        "theme": "default",
-        "interactive":"https://launch.oracle.com/?weblogic-to-oke",
-        "labs": [
-            {
-                "number": "0",
-                "filename": "Intro.md",
-                "title": "Workshop Introduction",
-                "description": "Step-by-step workshop instructions"
+    "tutorials": [
+        {
+            "number": "0",
+            "filename": "./lab-000/content.md",
+            "title": "Read Me First",
+            "description": "Step-by-step workshop instructions",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "12/02/2020",
+            "contentid": "12nnnn"
+        },
+        {         
+            "title": "Lab 100: Pull the Docker image for the WebLogic and push to Oracle Cloud Infrastructure Registry (OCIR)",
+            "description": "The Oracle Cloud Infrastructure Registry to push the WebLogic Server Docker Image",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "./lab-100/content.md"
+        },
+        {         
+            "title": "Lab 200: Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)",
+            "description": "Use OKE to build, deploy, and manage cloud-native applications",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "./lab-200/content.md"
+        },
+        {         
+            "title": "Lab 300: Prepare the WebLogic Kubernetes Operator environment",
+            "description": "How to run WebLogic clusters on the Oracle Cloud Infrastructure Container Engine for Kubernetes",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "./lab-300/content.md"
+        }
 
-            },
-            {
-                "number": "100",
-                "filename": "LabGuide100.md",
-                "title": "Lab 100: Pull the Docker image for the WebLogic and push to Oracle Cloud Infrastructure Registry (OCIR)",
-                "description": "The Oracle Cloud Infrastructure Registry to push the WebLogic Server Docker Image."
-
-            },
-            {
-                "number": "200",
-                "filename": "LabGuide200.md",
-                "title": "Lab 200:  Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)",
-                "description": "Use OKE to build, deploy, and manage cloud-native applications."
-
-            },
-            {
-                "number": "300",
-                "filename": "LabGuide300.md",
-                "title": "Lab 300:  Prepare the WebLogic Kubernetes Operator environment",
-                "description": "How to run WebLogic clusters on the Oracle Cloud Infrastructure Container Engine for Kubernetes"
-
-            }
-
-        ]
-    }
+    ]
 }

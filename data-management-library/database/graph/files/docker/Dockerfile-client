@@ -1,0 +1,13 @@
+FROM oraclelinux:7-slim
+COPY ./tmp/oracle-graph-20.1.0.x86_64.rpm /tmp
+RUN rpm -ivh /tmp/oracle-graph-20.1.0.x86_64.rpm \
+ && rm /tmp/oracle-graph-20.1.0.x86_64.rpm \
+ && yum install -y java-11-openjdk-devel \
+ && yum clean all \
+ && rm -rf /var/cache/yum/*
+ENV PATH=$PATH:/opt/oracle/graph/bin
+WORKDIR /opt/oracle/graph/bin
+
+# The server package (rpm) is used instead of the client package (zip) because:
+# - In 20.1, opg-rdbms-jshell does not run without giving server URL
+# - It is run without server URL for executing create statements in this tutorial

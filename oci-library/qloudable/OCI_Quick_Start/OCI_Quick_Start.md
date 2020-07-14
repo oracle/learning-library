@@ -1,4 +1,4 @@
-# OCI Quick Start (VCN, Compute and Block Volume)
+# OCI Quick Start Lab (VCN, Compute and Block Volume)
 
 ## Table of Contents
 
@@ -8,7 +8,7 @@
 
 [Sign in to OCI Console and create VCN](#sign-in-to-oci-console-and-create-vcn)
 
-[ Creat ssh keys, compute instance and Block Volume. Attach block volume to compute instance](#creat-ssh-keys,-compute-instance-and-block-volume.-attach-block-volume-to-compute-instance)
+[Create ssh keys, compute instance and Block Volume. Attach block volume to compute instance](#create-ssh-keys,-compute-instance-and-block-volume.-attach-block-volume-to-compute-instance)
 
 [Install httpd on compute instance and install an app on Block Volume](#install-httpd-on-compute-instance-and-install-an-app-on-block-volume)
 
@@ -52,7 +52,8 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 ## Pre-Requisites
 
-1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
+1. Oracle Cloud Infrastructure account credentials (User, 
+   Password, Tenant, and Compartment)  
 
 2. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
@@ -78,36 +79,33 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
-2. From the OCI Services menu,Click **Virtual Cloud Network** under Networking and Click **Create Virtual Cloud Network**
-
-3. Select the compartment assigned to you from drop down menu on left part of the screen
+2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL002.PNG" alt="image-alt-text">
+3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
 4. Fill out the dialog box:
 
 
+- **VCN NAME**: Provide a name
+- **COMPARTMENT**: Ensure your compartment is selected
+- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
+- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
+- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
+- Click **Next**
 
-- **Create in Compartment:** Has the correct compartment
-- **Name:** Enter easy to remember name
-- **Create Virtual Cloud Network Plus Related Resources:** Select this option.
-- Click **Create Virtual Cloud Network**
-- Click **Close**
+5. Verify all the information and  Click **Create**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL003.PNG" alt="image-alt-text">
+6. This will create a VCN with followig components.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL004.PNG" alt="image-alt-text">
-              
-5. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
+**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_001.PNG" alt="image-alt-text">
+7. Click **View Virtual Cloud Network** to display your VCN details.
+             
+8. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
 
-6. Click **Add Ingress Rule** under **Ingress Rules** and add below rule:
-
+9. Click **Add Ingress Rule** under **Ingress Rules** and add below rule:
 
 - **Make sure STATELESS Flag in un-checked**
 - **SOURCE TYPE:** CIDR
@@ -116,17 +114,16 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 - **SOURCE PORT RANGE:** ALL
 - **DESTINATION PORT RANGE:** 80
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_002.PNG" alt="image-alt-text">
-
-7. Click **Add Ingress Rule** at the bottom
+10. Click **Add Ingress Rule** at the bottom
               
-## Creat ssh keys, compute instance and Block Volume. Attach block volume to compute instance
+## Create ssh keys, compute instance and Block Volume. Attach block volume to compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
 2. Enter command 
+
 ```
 ssh-keygen
 ```
@@ -162,7 +159,7 @@ to verify the two files exist.
 ```
 cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 ```
- , highlight the key and copy 
+, highlight the key and copy 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG" alt="image-alt-text">
 
@@ -170,37 +167,39 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
 
-7. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
+7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
 
-8. Click Create Instance. Fill out the dialog box:
+8. Click **Create Instance**. Fill out the dialog box:
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
+- **Availability Domain**: Select availability domain
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Name:** Enter a name 
-- **Availability Domain:** Select availability domain
-- **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
-- **Choose Instance Type:** Select Virtual Machine (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **Choose Instance Shape:** Select VM shape
-- **Configure Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Choose your compartment
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
 - **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the first Subnet
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
 
 9. Click **Create**
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1 OR choose a different AD
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
-
 10. Wait for Instance to be in **Running** state. In git-bash Enter Command:
 ```
  cd /C/Users/PhotonUser/.ssh
 ```
+
 11. Enter **ls** and verify id_rsa file exists
 
 12. Enter command 
-```
+```bash
 ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 ```
 
@@ -212,51 +211,37 @@ ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
  
 14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
 
-15. From OCI services menu Click **Block Volumes** under Block Storage, then Click **Create Block Volume**.
+15. From OCI services menu Click **Block Volumes** under **Block Storage**, then Click **Create Block Volume**.
 
 16. Fill out the dialog box: 
 
-
-- **Create in Compartment:** Has the correct compartment selected.
-- **Name:** Enter a name for the block volume (e.g. "block_vm).
+- **Name:** Enter a name for the block volume (e.g. "block_vm)- **Create in Compartment:** Has the correct compartment selected.
 - **Availability Domain:** Select the first available domain (must be same as 
 Compute).
 - **SIZE:** Set to 50
-- **BACKUP POLICY:** Set to None (If this field shows ‘Error Retrieving Value’ then leave it as is)
-
+- **COMPARTMENT FOR BACKUP POLICY:** Leave Default
+- **BACKUP POLICY:** Leave Empty
+-**VOLUME PERFORMANCE:** Leave as Default
 17. Click **Create Block Volume**. Wait for volume to become available. Wait for Block Volume state to change from 'Provisioning' to 'Available'
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_003.PNG" alt="image-alt-text">
 
 18. Attach Block volume to your compute instance. From OCI services menu Click **Instance** under Compute 
 
-19. For the compute instance created earlier, Click Action item. Click **Attach Block Volume**.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_004.PNG" alt="image-alt-text">
+19. Click Compute instance name compute created earlier to see instance details page. Click **Attach Block Volume**.
 
 20. Fill out the dialog box:
 
+- **VOLUME ATTACHMENT TYPE:** Choose Paravirtualized
+-**BLOCK VOLUME IN:** Click the drop down and choose the block volume created earlier
 
-- Choose how you want to attach your block volume:Check Paravirtualized
-
-**NOTE:** We can also use ISCSI mode, in which case we will not have to use ISCSI commands as detailed later on. For more information please refer to ;
+**NOTE:** We can also use ISCSI mode. For more information please refer to ;
 
 **https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#attachtype** OR refer Appendix section at the end of the lab.
 
-
-- BLOCK VOLUME COMPARTMENT: Ensure correct compartment is selected
-- Block Volume: Choose the volume created earlire
-- Access: Choose READ/WRITE
-
 21. Click **Attach**.
 
-22. Click **Close**.
+22. Verify Block volume is attached on compute instance details page. (Refresh the screen if needed)
 
 **We now have a block volume created and attached to the Compute instance.**
-
-23. Verify the Block Volume is attached by Clicking the Compute Instance name.
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_005.PNG" alt="image-alt-text">
 
 ## Install httpd on compute instance and install an app on Block Volume
 
@@ -288,15 +273,15 @@ sudo systemctl start httpd
 **HINT:** The Name sdb is the block volume storage. This name could change for your specific attachment (i.e sdc)
 
 5. To format the block volume, Enter Command: 
-```            
-sudo fdisk /dev/<VOLUME_NAME> -l 
+```bash            
+sudo fdisk <DEVICE_PATH> -l 
 ```
 **For example sudo fdisk /dev/sdb -l**   
 Wait for formatting to complete
 
 6. Create a file system on the block volume, Enter Command: 
-```
-sudo mkfs.ext4 -L datapartition /dev/<VOLUME_NAME>   
+```bash
+sudo mkfs.ext4 -L datapartition <DEVICE_PATH> 
 ```         
 
 This will create the file system on the entire disk. Enter y when prompted with 'Proceed anyway'
@@ -368,7 +353,7 @@ sudo systemctl restart httpd
 ```
 
 19. Launch a web browser and Enter compute Instance's public IP:
-```
+```bash
 http://<COMPUTE_INSTANCE_PUBLIC_IP>
 ```
 
@@ -380,19 +365,15 @@ http://<COMPUTE_INSTANCE_PUBLIC_IP>
 
 ## OPTIONAL: Detach the block volume and launch second compute instance using boot volume and attach Block Volume
 
-**In this section we will detach the block volume, Stop the compute instance, use its boot volume to launch a second compute instnace and delete the second compute instance**
+**In this section we will detach the block volume, Stop the compute instance, use its boot volume to launch a second compute instance and delete the second compute instance**
 
 1. In ssh session to the compute instance unmount the directory from block volume, Enter command:
-```
+```bash
 sudo umount /dev/<VOLUME_NAME> 
 ```
 2. In OCI console window, Click your compute instance name and in **Attached Block Volume** section  Click the action icon and **Click Detach**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_009.PNG" alt="image-alt-text">
-
 3. Stop your compute instance by Clicking **Stop** in compute instance details page and then **OK** in Confirm window
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_010.PNG" alt="image-alt-text">
 
 4. Once the instance is in Stopped state, Click **Boot Volume**, Click action icon and Click **Detach**. Click **OK** in Confirm window.
 
@@ -406,33 +387,35 @@ sudo umount /dev/<VOLUME_NAME>
 
 7. In the Boot Volume Details window Click **Create Instance:**
 
+- **Name your instance**: Enter a name 
+- **Choose an operating system or image source**: Leave as is (It should show the boot volume of the terminated instance)
 
-- **Name:** Enter a name (e.g. "boot volume instance").
-- **Availability Domain:** Make sure its same AD as where the block volume was created
+- **Availability Domain**: Select availability domain
 
 **NOTE :** Boot Volume field is set to BOOT VOLUME and to the boot volume you detached from the original Instance.
 
+- **Instance Type**: Select Virtual Machine 
+- **Instance Shape**: Select VM shape 
 
-- **Intance Type:** Select Virtual Machine
-- **Instance Shape:** Choose a VM shape (Choose from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1)
-- **SSH Keys:** Choose ‘Paste SSH Keys’ and paste the Public Key saved earlier.
-- **Virtual Cloud Network Compartment:** Select yor compartment 
-- **Virtual Cloud Network:** Select the VCN created earlier
-- **Subnet compartment:** Select yor compartment 
-- **Subnet:** Select the Public subnet.
+**Under Configure Networking**
+- **Virtual cloud network compartment**: Select your compartment
+- **Virtual cloud network**: Choose the VCN 
+- **Subnet Compartment:** Choose your compartment. 
+- **Subnet:** Choose the Public Subnet under **Public Subnets** 
+- **Use network security groups to control traffic** : Leave un-checked
+- **Assign a public IP address**: Check this option
 
-8. Click **Create Instance**.
+- **Boot Volume:** Leave the default
+- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+
+8. Click **Create**.
 
 **NOTE:** If 'Service limit' error is displayed choose a different shape such as VM.Standard.E2.2 OR VM.Standard2.2 OR Choose a different AD
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_013.PNG" alt="image-alt-text">
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_014.PNG" alt="image-alt-text">
 
 9. Once the instance is in Running state, attach the block volume to this new instance using OCI Console.**Ensure to use Paravirtualized mode.**
 
 10. ssh to compute instance and mount the block volume as before, Enter Command:
-```
+```bash
 sudo mount  /dev/<VOLUME_NAME>  /mnt/www/html
 ```
 
@@ -456,7 +439,7 @@ sudo systemctl restart httpd
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**
 
-3. Locate first compute instance, Click Action icon and then **Terminat** 
+3. Locate first compute instance, Click Action icon and then **Terminate** 
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG" alt="image-alt-text">
 
@@ -484,10 +467,6 @@ appear.
 11. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
-
-12. From OCI services menu Click **Networking**, then **Public IPs**,locate the Reserved Public IP you created. Click Action icon and then **Terminate**
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0019.PNG" alt="image-alt-text">
 
 
 ***Congratulations! You have successfully completed the lab. ***

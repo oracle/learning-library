@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Provisioning Autonomous Data Warehouse",
+            "description": "Learn how to get started using the Oracle Autonomous Data Warehouse (ADW) on Oracle Cloud Infrastructure (OCI)",
+            "filename": "content.md"
+        }
+    ]
+}
