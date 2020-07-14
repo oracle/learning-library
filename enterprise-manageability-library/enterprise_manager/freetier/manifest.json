@@ -31,9 +31,9 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-Setup.md"
     },
     {
-      "title": "Lab 4: Database Configuration and Compliance Management",
-      "description": "This lab provides an overview of Configuration and Compliance Management features in . It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
-      "filename": "./../em_configuration_compliance_management/em_configuration_compliance_management.md"
+      "title": "Lab 4: Multitenant Database Lifecycle Management",
+      "description": "The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database",
+      "filename": "./../em_multitenant_lifecycle_automation/em_multitenant_lifecycle_automation.md"
     },
     {
       "title": "Lab 5: Database Performance Management: Find, Fix, Validate",
@@ -51,9 +51,9 @@
       "filename": "./../em_fleet_maintenance_upgrade/em_fleet_maintenance_upgrade.md"
     },
     {
-      "title": "Lab 8: Multitenant Database Lifecycle Management",
-      "description": "The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database",
-      "filename": "./../em_multitenant_lifecycle_automation/em_multitenant_lifecycle_automation.md"
+      "title": "Lab 8: Database Configuration and Compliance Management",
+      "description": "This lab provides an overview of Configuration and Compliance Management features in . It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
+      "filename": "./../em_configuration_compliance_management/em_configuration_compliance_management.md"
     }
   ]
 }
