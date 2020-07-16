@@ -1,13 +1,15 @@
 # Database Performance Management: Find, Fix, Validate
-## Before You Begin
+## Introduction
+
+### Objectives
 
 The objective of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud
 
 ### Background
 
-The estimated time to complete all the lab activities is approximately 60 minutes.
+The estimated time to complete all the lab activities is approximately 60 minutes as further detailed below.
 
-| **No** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Step No.** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |--------|-----------------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1**  | Performance Hub                               | 15 minutes       | Oracle Enterprise Manager 13c includes a new Jet based unified Performance Hub Jet interface for performance monitoring.                                                                                           | Performance Hub is a single pane of glass view of database performance with access to Active Session History (ASH) Analytics, Real-time SQL Monitoring and SQL Tuning together. The time picker allows the administrator to switch between Real-Time and Historical views of database performance.                                                                                                                                                                                                                                                                      |
 | **2**  | Real-time database operation monitoring       | 10 minutes       | Real-Time Database Operations Monitoring, introduced in Oracle Database 12c, enables an administrator to monitor long running database tasks as a composite business operation.                                                | Developers and DBAs can define business operations for monitoring by explicitly specifying the start and end of an operation or implicitly with tags that identify the operation.                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -15,7 +17,12 @@ The estimated time to complete all the lab activities is approximately 60 minute
 | **4**  | SQL Performance Analyzer Optimizer Statistics | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c with Oracle Database 18c. | SQL Performance Analyzer gathers Oracle Database Optimizer statistics for validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **5**  | Database Workload Replay                      | 10 minutes       | The objective of this activity is to is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c and Oracle Database 18c.                | **Scenario:** You've been asked to add three new indexes for an application, but before adding, you want proof that database performance is improved. Use of SQL Performance Analyzer (SPA) isn't enough because there is also the cost of maintaining the indexes. Replay will be performed against the **Sales** Container Database and changes need to be performed in the OLTP Container against the **DWH\_TEST** schema. The database version is 18c so the capture and replay are performed using a CDB. |
 
-### What Do You Need?
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+* [Lab 1: Login to Oracle Cloud](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
+* [Lab 2: Generate SSH Key](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)
+* [Lab 3: Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup)
 
 This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -27,10 +34,6 @@ Prior to starting, you will need:
     - Username: **sysman**
     - password: **welcome1**
 
-## Getting Started
-
-### Access
-
 1. Login to Host using SSH Key based authentication
 Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “opc”
@@ -38,15 +41,14 @@ Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library
   - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
 
 2. Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance. The Enterprise Manager credentials are “**sysman/welcome1**”
+Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-_____________________________________
-### Running your Workload
+## Step 0: Running your Workload
 
-#### Option 1: Using EM Console
-1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “***sysman/welcome1***”.
+### Option 1: Using EM Console
+1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
 2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
 
@@ -64,7 +66,7 @@ _____________________________________
 
 ![](images/emjobcom.png)
 
-#### Option 2: Using SSH terminal from the VM host
+### Option 2: Using SSH terminal from the VM host
 
 - Login as user "opc",
 - Sudo over to user "oracle"

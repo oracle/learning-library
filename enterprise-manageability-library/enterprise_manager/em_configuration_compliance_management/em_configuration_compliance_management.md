@@ -1,20 +1,26 @@
 # Database Configuration and Compliance Management
-## Before You Begin
+## Introduction
+
+### Objectives
 
 The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
 
 ### Background
-The estimated time to complete the workshop is 60 minutes
+The estimated time to complete the lab is 60 minutes as further detailed below
 
-| Step No                                      | Feature                                                                 | Approx. Time | Details                                                                                                                                                                                    | Value proposition                                                                                                   |
+| Step No.                                      | Feature                                                                 | Approx. Time | Details                                                                                                                                                                                    | Value proposition                                                                                                   |
 |-----------------------------------------------------------|-------------------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | 1                                                         | Inventory & Usage details                                               | 10 minutes   | IT Manager wants to get an inventory of all existing databases managed by Enterprise Manager including different versions of databases, number of instances deployed over a period of time | Reduce number of different configuration sets and increase standardization across the data center.                  |
 | 2                                                         | One-time database comparison                                            | 10 minutes   | Compare latest reference configuration to one or more targets to determine the configuration differences                                                                                   | Validate the configuration of new database provisioned aligns with IT configuration policy                          |
 | 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
 | 4                                                         | Database and host security compliance using custom compliance framework | 20 minutes   | Aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets                                                                                      | Monitor security compliance for heterogenous targets from one customized dashboard.                                 |
 
+### Prerequisites
 
-### What Do You Need?
+This lab assumes you have completed the following labs:
+* [Lab 1: Login to Oracle Cloud](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
+* [Lab 2: Generate SSH Key](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)
+* [Lab 3: Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup)
 
 Prior to starting, you will need:
 - EM Instance Public IP address
@@ -23,12 +29,8 @@ Prior to starting, you will need:
     -   Username: **sysman**
     -   password: **welcome1**
 
-## Getting Started
-
-### Access
-
 1. Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance. The Enterprise Manager credentials are “**sysman/welcome1**”
+Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -42,7 +44,7 @@ All the items in this step are read-only, primary goal is to learn about invento
 
 ### Execution
 
-1.  Log into your Enterprise Manager VM using the IP provided on your cheat  sheet.
+1.  Log into your Enterprise Manager as indicated in the Prerequisites step if not already done.
 
 2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
 
@@ -83,7 +85,7 @@ In this step, you will compare two database targets to determine configuration d
 
 ### Execution
 
-1.  Log into your Enterprise Manager VM using the IP provided .
+1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
 2.  Navigate to ***Enterprise >> Configuration >> Comparison & Drift Management***
 

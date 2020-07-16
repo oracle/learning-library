@@ -1,5 +1,7 @@
 # Automated Database Upgrade at Scale with Fleet Maintenance
-## Before You Begin
+## Introduction
+
+### Objectives
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
 
@@ -13,14 +15,19 @@ Benefits with Fleet Maintenance:
 ![](images/a5e5d36c2da3bb5669a7a6c79e46a555.png)
 
 ### Background
-The estimated time to complete the workshop is 75 minutes
+The estimated time to complete the workshop is 75 minutes as further detailed below.
 
-| Step No | Feature                                                   | Approx Time | Details                                                                                                              | Value Proposition |
+| Step No. | Feature                                                   | Approx. Time | Details                                                                                                              | Value Proposition |
 |----------------------|-----------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
 | 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
-### What Do You Need?
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+* [Lab 1: Login to Oracle Cloud](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
+* [Lab 2: Generate SSH Key](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)
+* [Lab 3: Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup)
 
 This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -32,10 +39,6 @@ Prior to starting, you will need:
     - Username: **sysman**
     - password: **welcome1**
 
-## Getting Started
-
-### Access
-
 1. Login to Host using SSH Key based authentication
 Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “opc”
@@ -43,9 +46,11 @@ Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library
   - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
 
 2. Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance. The Enterprise Manager credentials are “**sysman/welcome1**”
+Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
+
+## Step 0: Running your lab
 
 ### Update the Named Credentials with your SSH Key
 

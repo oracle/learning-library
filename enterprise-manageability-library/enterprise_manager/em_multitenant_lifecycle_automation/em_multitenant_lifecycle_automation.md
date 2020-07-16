@@ -1,13 +1,15 @@
 # Multitenant Database Lifecycle Management
-## Before You Begin
+## Introduction
+
+### Objectives
 
 The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database. We will walk through how Database organizations can begin their Cloud journey with Multitenant Database by requesting a Pluggable Database (PDB) for testing purposes and perform other Lifecycle Operations like Clone, Unplug etc. We will also focus on setting up Private Cloud for PDBs and highlighting the ease of Provisioning, Resizing and even Deleting a PDB using a Self-Service option.
 
 ### Background
 
-The estimated time to complete all the Step activities is approximately 60 minutes.
+The estimated time to complete all the Step activities is approximately 60 minutes as further detailed below.
 
-| **Step No** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
+| **Step No.** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
 |--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1    | Create a Pluggable Database (PDB)                                      | 10min                     | Create Pluggable database (PDB) within a CDB and run a post-script to lock/unlock accounts.                                                                                  | Create multiple PDBs with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                                           |
 | 2    | Un-plug/Plug an existing Pluggable Database | 10min                     | Un-plug a PDB and later Plug it back in a CDB when needed (Create from unplugged)                                                                                                                       | Unplug a PDB when not needed and plug it back as per need hence maximizing resource utilization in your organization. Easily upgrade PDBs with few clicks by moving from one container to another.                                                                                                                  |
@@ -16,7 +18,12 @@ The estimated time to complete all the Step activities is approximately 60 minut
 | 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
 | 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
 
-### What Do You Need?
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+* [Lab 1: Login to Oracle Cloud](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
+* [Lab 2: Generate SSH Key](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)
+* [Lab 3: Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup)
 
 Prior to starting, you will need:
 - EM Instance Public IP address
@@ -25,18 +32,14 @@ Prior to starting, you will need:
     -   Username: **sysman**
     -   password: **welcome1**
 
-## Getting Started
-
-### Access
-
 1. Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance. The Enterprise Manager credentials are “**sysman/welcome1**”
+Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 ## Step 1: Create Pluggable Database (PDB)
 
-1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet. The Enterprise Manager credentials are “**sysman/welcome1**”.
+1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
 2.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
