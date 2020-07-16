@@ -52,13 +52,13 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 ## Step 0: Running your lab
 
-### Update the Named Credentials with your SSH Key
+1. Update the Named Credentials with your SSH Key
 
 Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
 ![](images/5429da7dcd00ecc7da6e779ed699c45e.jpg)
 
-### Fleet Maintenance Login to EMCLI
+2. Fleet Maintenance Login to EMCLI
 
 Upon login as user “oracle” via sudo from user “opc”, the following are performed automatically for your convenience:
 
@@ -78,7 +78,7 @@ While connected as “oracle” your emcli session may expire at some point due 
 sudo su - oracle</copy>
 ````
 
-### Steps Completed in Advance
+3. Steps Completed in Advance
 
 In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab:
 
