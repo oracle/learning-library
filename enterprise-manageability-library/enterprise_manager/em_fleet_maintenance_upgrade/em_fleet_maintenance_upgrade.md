@@ -519,9 +519,10 @@ Where:
 * Force Listener registration and confirm that it is now servicing “*finance.subnet.vcn.oraclevcn.com*”
 
 ````
-<copy>sqlplus '/as sysdba'
+<copy>sqlplus '/as sysdba' <<EOF
 alter system register;
-exit</copy>
+exit
+EOF</copy>
 ````
 * Check status of LISTENER\_1525
 

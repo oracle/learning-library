@@ -405,7 +405,7 @@ Once the database is updated, we will perform a rollback to 18.3
 * Review and execute below command to rollback DB Target ***hr.subnet.vcn.oraclevcn.com***
 
 ````
-<copy>curl -i -X POST https://emcc.marketplace.com:7803/em/websvcs/restful/emws/db/fleetmaintenance/performOperation/rollback -H "Content-Type:application/json" -u sysman:welcome1 --data-binary "@/home/oracle/fleet rollback_hr_payload.json" --insecure</copy>
+<copy>curl -i -X POST https://emcc.marketplace.com:7803/em/websvcs/restful/emws/db/fleetmaintenance/performOperation/rollback -H "Content-Type:application/json" -u sysman:welcome1 --data-binary "@/home/oracle/fleet/rollback_hr_payload.json" --insecure</copy>
 ````
 
 **OR**
@@ -511,6 +511,36 @@ Where:
 
 ````
 <copy>lsnrctl start LISTENER_1522</copy>
+
+LSNRCTL for Linux: Version 18.0.0.0.0 - Production on 17-JUL-2020 16:21:49
+
+Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+
+Starting /u01/app/oracle/product/18/db_home2/bin/tnslsnr: please wait...
+
+TNSLSNR for Linux: Version 18.0.0.0.0 - Production
+System parameter file is /u01/app/oracle/product/18/db_home2/network/admin/listener.ora
+Log messages written to /u01/app/1806/diag/tnslsnr/emcc/listener_1522/alert/log.xml
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=emccworkshop-s01.pub.emcclab1.oraclevcn.com)(PORT=1522)))
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1522)))
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=emcc.marketplace.com)(PORT=1522)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER_1522
+Version                   TNSLSNR for Linux: Version 18.0.0.0.0 - Production
+Start Date                17-JUL-2020 16:21:49
+Uptime                    0 days 0 hr. 0 min. 0 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /u01/app/oracle/product/18/db_home2/network/admin/listener.ora
+Listener Log File         /u01/app/1806/diag/tnslsnr/emcc/listener_1522/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=emccworkshop-s01.pub.emcclab1.oraclevcn.com)(PORT=1522)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1522)))
+The listener supports no services
+The command completed successfully
 ````
 
 ![](images/465b2cea9ae4e176c314eff253ef4b68.png)
@@ -518,15 +548,50 @@ Where:
 * Force Listener registration and confirm that it is now servicing “***hr.subnet.vcn.oraclevcn.com***”
 
 ````
-<copy>sqlplus '/as sysdba'
+<copy>sqlplus '/as sysdba' <<EOF
 alter system register;
-exit</copy>
+exit
+EOF</copy>
 ````
 
 * Check status of LISTENER\_1522
 
 ````
 <copy>lsnrctl status LISTENER_1522</copy>
+
+LSNRCTL for Linux: Version 18.0.0.0.0 - Production on 17-JUL-2020 16:22:58
+
+Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=emcc.marketplace.com)(PORT=1522)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER_1522
+Version                   TNSLSNR for Linux: Version 18.0.0.0.0 - Production
+Start Date                17-JUL-2020 16:21:49
+Uptime                    0 days 0 hr. 1 min. 8 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /u01/app/oracle/product/18/db_home2/network/admin/listener.ora
+Listener Log File         /u01/app/1806/diag/tnslsnr/emcc/listener_1522/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=emccworkshop-s01.pub.emcclab1.oraclevcn.com)(PORT=1522)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1522)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=emccworkshop-s01.pub.emcclab1.oraclevcn.com)(PORT=5501))(Security=(my_wallet_directory=/u01/app/oracle/product/18/db_home2/admin/hr/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+Services Summary...
+Service "64a52f53a7683286e053cda9e80aed76.subnet.vcn.oraclevcn.com" has 1 instance(s).
+  Instance "hr", status READY, has 1 handler(s) for this service...
+Service "950d0aa9d2f543a8e0530300000a5ebe.subnet.vcn.oraclevcn.com" has 1 instance(s).
+  Instance "hr", status READY, has 1 handler(s) for this service...
+Service "hr.subnet.vcn.oraclevcn.com" has 1 instance(s).
+  Instance "hr", status READY, has 1 handler(s) for this service...
+Service "hrXDB.subnet.vcn.oraclevcn.com" has 1 instance(s).
+  Instance "hr", status READY, has 1 handler(s) for this service...
+Service "hrpdb.subnet.vcn.oraclevcn.com" has 1 instance(s).
+  Instance "hr", status READY, has 1 handler(s) for this service...
+The command completed successfully
+
 ````
 
 ![](images/b95a982c86b233dfa1af34d29c03aa6e.png)
