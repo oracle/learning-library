@@ -122,7 +122,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 *NOTE 2: The ssh-daemon is disabled for the up to 5 minutes or so while the instance is processing.  If you are unable to connect and sure you have a valid key, wait a few minutes and try again.*
 
-*Note 3: It takes about 30 minutes for all Enterprise Manager processes and monitored databases to fully start upon instance creation before you can access the EM console*
+*NOTE 3: It takes about 30 minutes for all Enterprise Manager processes and monitored databases to fully start upon instance creation before you can access the EM console*
 
 ### Oracle Cloud Shell
 
@@ -163,30 +163,47 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 ### Windows using Putty
 
-1.  Open up putty and create a new connection.
+On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
-    ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
-    ````
-    ![](./images/ssh-first-time.png " ")
+1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)
 
-2.  Enter a name for the session and click **Save**.
+2.  Run the PuTTY program. On your computer, go to **All Programs > PuTTY > PuTTY**
 
-    ![](./images/putty-setup.png " ")
+3.  Select or enter the following information:
 
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
+    Category: _Session_
 
-4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
+    IP address: _Your service instance’s public IP address_
 
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.    NOTE:  You may not be able to connect while on any corporate VPN or in the Oracle office on clear-corporate (choose clear-internet if you are in an Oracle office).
+    Port: _22_
 
-    ![](./images/putty-auth.png " ")
+    Connection type: _SSH_
 
-6. The file path for the SSH private key file now displays in the Private key file for authentication field.
+![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
-7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session Step.
+#### **Configuring Automatic Login**
 
-8. Click Open to begin your session with the instance.
+1.  In the category section, **Click** Connection and then **Select** Data.
+
+2.  Enter your auto-login username. Enter **opc**.
+
+![](images/36164be0029033be6d65f883bbf31713.jpg " ")
+
+#### **Adding Your Private Key**
+
+1.  In the category section, **Click** Auth.
+
+2.  **Click** browse and find the private key file that matches your VM’s public
+    key. This private key should have a .ppk extension for PuTTy to work.
+
+![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
+
+To save all your settings:
+
+1.  In the category section, **Click** session.
+
+2.  In the saved sessions section, name your session, for example ( EM13C-ABC )
+    and **Click** Save.
 
 You may now proceed to the next lab.  
 
