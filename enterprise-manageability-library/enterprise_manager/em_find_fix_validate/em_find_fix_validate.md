@@ -34,13 +34,13 @@ Prior to starting, you will need:
     - Username: **sysman**
     - password: **welcome1**
 
-1. Login to Host using SSH Key based authentication
+#### Login to Host using SSH Key based authentication
 Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “opc”
   - Authentication method - SSH RSA Key
   - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
 
-2. Login to OMS Console
+#### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.

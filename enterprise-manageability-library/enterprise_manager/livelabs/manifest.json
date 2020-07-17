@@ -28,7 +28,7 @@
       "title": "Lab 3: Environment Setup",
       "description": "Setup compute instance running EM 13.3 with pre-configured database targets using Terraform script and Resource Manager",
       "publisheddate": "7/16/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-marketplaceoci-freetier.md"
+      "filename": "./../setup-compute/setup-marketplaceoci-freetier.md"
     },
     {
       "title": "Lab 4: Multitenant Database Lifecycle Management",

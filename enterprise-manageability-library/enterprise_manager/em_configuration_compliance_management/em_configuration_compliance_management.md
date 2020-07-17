@@ -28,8 +28,7 @@ Prior to starting, you will need:
 - OMS super-user Credentials:
     -   Username: **sysman**
     -   password: **welcome1**
-
-1. Login to OMS Console
+#### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
