@@ -69,13 +69,13 @@ This lab assumes you have already completed the following labs:
 
     **(4) SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
 
-6. Click **Next**.
+6. Review and click **Create**.
 
     ![](./images/em-create-stack-3.png " ")
 
-7.  Review and click **Create**
+7. Your stack has now been created!  
 
-Your stack has now been created!  Now to create your network and instance.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
+Now to create your network and instance.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
     ![](./images/em-stack-details.png " ")
 
