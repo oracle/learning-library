@@ -66,6 +66,15 @@ Managing Your Hybrid Database Fleet
 Drive Your Autonomous Future with Oracle Enterprise Manager
 [](youtube:7khTglg0_3g)
 
+- Enterprise Manager Cloud Control Solutions
+- Enterprise Manager Cloud Control 13.4 Getting Started
+- Architecture of Enterprise Manager Cloud Control
+- Installation and Upgrade
+- Enterprise Manager Blogs
+- Enterprise Manager Videos
+- Enterprise Manager Licensing Guide
+- oracle.com/enterprisemanager
+
 ## Acknowledgements
 
 - **Authors/Contributors** - Dave Le Roy, Rene Fontcha, Pankaj Chandiramani, Shefali Bhargava, Björn Bolltoft, Harish Niddagatta
