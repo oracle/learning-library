@@ -71,18 +71,18 @@ Enter the following information:
 
 6. Review and click **Create**.
 
+*Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
+
 ![](./images/em-create-stack-3.png " ")
 
 7. Your stack has now been created!  
-
-Now to create your network and instance.  *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
 ![](./images/em-stack-details.png " ")
 
 ## Step 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
 
-1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
+1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
 ![](./images/em-stack-plan-1.png " ")
 
