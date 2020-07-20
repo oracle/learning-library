@@ -142,7 +142,6 @@ The EM Recommended Configuration report recommends reducing 5 configurations and
 Recommendation is based on union of all bugs included in the Patches in all OHs and based on configuration type.
 
 ### Summary
-
 This completes Step 1. In this section, you learned how to perform the following:
 
   - Access the Database Software Standardization Advisor
