@@ -11,18 +11,15 @@ Resource Manager is an Oracle Cloud Infrastructure service that allows you to au
 [](youtube:udJdVCz5HYs)
 
 ### Oracle Cloud Marketplace
-
 The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
 
 Link to Marketplace - https://www.oracle.com/cloud/marketplace/
 
 ### Objectives
-
 -   Setup a network and compute instance using the  Marketplace image specified in the Introduction
 -   Use Terraform and Resource Manager to complete the setup
 
 ### Lab Prerequisites
-
 This lab assumes you have already completed the following labs:
 * [Lab 1: Login to Oracle Cloud](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
 * [Lab 2: Generate SSH Key](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)
