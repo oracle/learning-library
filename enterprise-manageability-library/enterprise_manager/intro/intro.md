@@ -3,43 +3,72 @@
 ## Introduction to Oracle Enterprise Manager ##
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
-Watch the video below for an how [Oracle Enterprise Manager delivers Next-gen automation](https://www.oracle.com/enterprise-manager/?bcid=6122657568001).
+Join Oracle's Mughees Minhas, VP Product Management, Enterprise and Cloud Manageability, to explore advancements for managing a hybrid database environment including Autonomous Database, Exadata and other Oracle database technologies. Hear from customers benefiting from Enterprise Manager, see demonstrations, and participate in Q&A with Oracle experts.
+- Learn how you can use these features to support your database processes with:
+- Greater visibility and intelligent machine learning-based analytics for the latest Oracle technology
+- Comprehensive fleet automation and control for hybrid Database and Exadata cloud environments
+- Enterprise grade, secure platform, with new Mobile app and Grafana Plug-in extensions
 
-## Enterprise Manager Management Packs
+[](youtube:TUaAweMX3S4)
 
-Brief intro summary on EM Database Management Packs ...........
+## Enterprise Manager Workshop Description
 
-The following management packs are offered with Oracle Enterprise Manager:
-- Database Diagnostic Pack
-- Database Tuning Pack  
+The EM Workshop is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets
+- Available as a self-service workshop VM via OCI Marketplace or can be reserved via LiveLabs [add link]
+- The EM Workshop VM on OCI comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
+- Easy and quick to deploy - everything starts automatically in under 20 minutes
+- The EM Workshop comes with step-by-step instructions (hosted on Oracle Learning Library on GitHub) that walks the user though multiple use cases for the following areas:
+
+### Oracle Database Lifecycle Management including configuration and compliance, provisioning, patching and upgrades
 - Database Lifecycle Management Pack
 - Cloud Management Pack for Oracle Database
-- Data Masking and Subsetting Pack
+
+### Oracle Database Performance Management including overall DB performance, SQL analysis, real-time operation monitoring, and tuning
+- Oracle Diagnostics Pack for Oracle Database
+- Tuning Pack for Oracle Database
 - Real Application Testing
 
-In addition to Oracle database management packs, Oracle Enterprise Manager also features packs covering the following:
-- Middleware Management
-- Applications and Services Management
-- System Monitoring Plug-ins for Non-Oracle Database
-- System Monitoring Plug-ins for Non-Oracle Middleware
+## Workshop Supported Used Cases
 
-## Other Key EM topics
+### Database Fleet Maintenance
+- Detect Configuration Pollution
+- Patch a Database target using a Gold Image
+  - All Pluggable Databases in that Container Database will automatically get patched
+  - Rollback and Cleanup
+- Upgrade Oracle DB Software at scale with minimal downtime
+  - Rollback and cleanup
+### Database Lifecycle Automation
+- Provision a new PDB and use Post Scripts for customization
+- Unplug a PDB
+- Plug a PDB into existing CDB
+- Clone multiple PDB’s
+- Compliance on PDB’s including remediation  
+- Use Self- service to request a PDB using PDBaaS (Private Cloud)
 
-The following figure shows a CDB with four containers: the root, seed, and two PDBs. Each PDB has its own dedicated application. A different PDB administrator manages each PDB. A common user exists across a CDB with a single identity. In this example, common user SYS can manage the root and every PDB. At the physical level, this CDB has a database instance and database files, just as a non-CDB does.
+### Compliance and Drift Management (New!)
+- Analyze, Increase standardization, reduce number of different configuration sets
+- Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
+- Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
+- Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
 
-![](./images/arch.png " ")
+### Find, Fix, Validate
+- View unified Database Performance via Performance Hub
+- Use Real-time Database Operations Monitoring to view long running database tasks
+- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
+- Use SQL Performance Analyzer Optimizer to gather statistics for validation
+- Use Database Workload Replay to run real workload against your changes for additional validation
 
 ## More Information on Oracle Enterprise Manager
 
-Seven Sources of Savings for Companies with Multitenant
-<a href="https://www.youtube.com/watch?v=beB8_jS7Vh0&list=PLdtXkK5KBY55xRePeQfgTOK6rYScVsMcN">![](./images/sevensources.png " ") </a>
+Managing Your Hybrid Database Fleet
+[](youtube:TUaAweMX3S4)
 
-Oracle Database Product Management Videos on Multitenant
-<a href="https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ/search?query=multitenant">![](./images/youtube.png " ") </a>
+Drive Your Autonomous Future with Oracle Enterprise Manager
+[](youtube:7khTglg0_3g)
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava, Björn Bolltoft, Harish Niddagatta, Rene Fontcha
+- **Authors/Contributors** - Dave Le Roy, Rene Fontcha, Pankaj Chandiramani, Shefali Bhargava, Björn Bolltoft, Harish Niddagatta
 - **Last Updated By/Date** - Rene Fontcha, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
