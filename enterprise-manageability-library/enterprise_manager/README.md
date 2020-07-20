@@ -5,7 +5,7 @@ Oracle Enterprise Manager is Oracle’s on-premise management platform that prov
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
+[![](./images/multitenant-screenshot-freetier.png)](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)
 - [I have an account on LiveLabs](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)

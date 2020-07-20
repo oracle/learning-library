@@ -3,9 +3,7 @@
 ## Introduction to Oracle Enterprise Manager ##
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
-Join Oracle's ***Mughees Minhas***, *VP Product Management, Enterprise and Cloud Manageability*, to explore advancements for managing a hybrid database environment including Autonomous Database, Exadata and other Oracle database technologies. Hear from customers benefiting from Enterprise Manager, see demonstrations, and participate in Q&A with Oracle experts.
-
-Learn how you can use these features to support your database processes with:
+Join Oracle's ***Mughees Minhas***, *VP Product Management, Enterprise and Cloud Manageability*, to explore advancements for managing a hybrid database environment including Autonomous Database, Exadata and other Oracle database technologies. Hear from customers benefiting from Enterprise Manager, see demonstrations, and participate in Q&A with Oracle experts. Learn how you can use these features to support your database processes with:
 - Greater visibility and intelligent machine learning-based analytics for the latest Oracle technology
 - Comprehensive fleet automation and control for hybrid Database and Exadata cloud environments
 - Enterprise grade, secure platform, with new Mobile app and Grafana Plug-in extensions
@@ -13,7 +11,6 @@ Learn how you can use these features to support your database processes with:
 [](youtube:TUaAweMX3S4)
 
 ## Enterprise Manager Workshop Description
-
 The EM Workshop is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
 - Available as a self-service workshop VM via OCI Marketplace or can be reserved via LiveLabs
 - The EM Workshop VM on OCI comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
@@ -46,7 +43,7 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 - Compliance on PDB’s including remediation  
 - Use Self- service to request a PDB using PDBaaS (Private Cloud)
 
-### 3. Compliance and Drift Management (New!)
+### 3. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
