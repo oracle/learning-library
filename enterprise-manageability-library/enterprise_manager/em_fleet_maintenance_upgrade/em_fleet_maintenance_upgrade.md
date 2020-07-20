@@ -12,7 +12,7 @@ Benefits with Fleet Maintenance:
 - Ability to schedule/retry/suspend/resume.
 - Database patching across different infrastructure including engineered systems like Exadata
 
-![](images/a5e5d36c2da3bb5669a7a6c79e46a555.png)
+![](images/em-fleet-maintenance-overview-1.png)
 
 ### Background
 The estimated time to complete the workshop is 75 minutes as further detailed below.
@@ -100,7 +100,7 @@ This exercise enables us to analyze the database estate using Software Standardi
 
 Software Standardization Advisor enables administrators to understand various database configurations prevailing in their environment. Each deployment with a unique platform, release and patch level is identified as a distinct configuration. This provides the administrators a view of the configuration pollution in their estate. It also analyzes and provides a recommendation to standardize the environment and reduce the number of configurations required for managing the database estate.
 
-![](images/2de751b1331829d53a7b96f6feca6c60.png)
+![](images/em-fleet-maintenance-overview-2.png)
 
 1.  Log on to Enterprise Manager Console as sysman
 
@@ -114,7 +114,7 @@ Software Standardization Advisor enables administrators to understand various da
 
 4.  Software Standardization Advisor shows two graphs depicting current configuration and recommended configuration.
 
-![](images/47b4e9b7912393c2a93a283db42e61a1.jpg)
+![](images/em-pollution-detection-1.png)
 
 A Software Configuration is identified by Database Release, Platform and set of Patches installed on the target.
 
@@ -126,7 +126,7 @@ Let us see details of the reports in next steps.
 
 6.  Click on Current Configurations to open the Excel report
 
-![](images/0e038f3bcf66c76ae804361dad21ffa2.jpg)
+![](images/em-pollution-detection-2.png)
 
 When opening the downloaded Excel Spreadsheet report, a warning on XLS format and file extension mismatch may pop up (see below). Simply click on “Yes” to
 ignore the warning and open the file.
@@ -139,7 +139,7 @@ Current Configuration shows five different Oracle home software versions
 
 7.  Next, click on Recommended Configurations to open the Excel Report
 
-![](images/02a39c45b351146bec1e94859830a0ea.jpg)
+![](images/em-pollution-detection-3.png)
 
 The EM Recommended Configuration report recommends reducing 5 configurations and standardizing the database estate on 2 configurations, one based on 18c and the other based on 19c. This means All Oracle Homes of Release 18c should uptake the corresponding 18c configuration and the 19c homes will use the one based on Release 19c
 
