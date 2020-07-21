@@ -29,12 +29,13 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 ## Workshop Supported Used Cases
 
 ### 1. Database Fleet Maintenance
-- Detect Configuration Pollution
-- Patch a Database target using a Gold Image
-  - All Pluggable Databases in that Container Database will automatically get patched
-  - Rollback and Cleanup
-- Upgrade Oracle DB Software at scale with minimal downtime
-  - Rollback and cleanup
+* Detect Configuration Pollution
+* Patch a Database target using a Gold Image
+    - All Pluggable Databases in that Container Database will automatically get patched
+    - Rollback and Cleanup
+* Upgrade Oracle DB Software at scale with minimal downtime
+    - All Pluggable Databases in that Container Database will automatically get upgraded
+    - Rollback and cleanup
 ### 2. Database Lifecycle Automation
 - Provision a new PDB and use Post Scripts for customization
 - Unplug a PDB
