@@ -12,9 +12,8 @@ Join Oracle's ***Mughees Minhas***, *VP Product Management, Enterprise and Cloud
 
 ## Enterprise Manager Workshop Description
 The EM Workshop is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
-- Available as a self-service workshop VM via OCI Marketplace or can be reserved via LiveLabs
-- The EM Workshop VM on OCI comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
-- Easy and quick to deploy - everything starts automatically in under 20 minutes
+- The EM Workshop VM comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
+- Easy and quick to deploy - Everything starts automatically in under 20 minutes
 - The EM Workshop comes with step-by-step instructions that walks the user through multiple use cases for the areas summarized below and further detailed for each lab (4-8) listed on the right:
 
 ### 1. Oracle Database Lifecycle Management including configuration and compliance, provisioning, patching and upgrades
