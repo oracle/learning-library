@@ -1,6 +1,6 @@
 # Advanced JSON on Oracle Database 19c
 
-## Introduction
+## **Introduction**
 
 This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
 
@@ -21,7 +21,7 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
 
-## Step 1: Performance Considerations when Querying JSON Documents
+## **Step 1**: Performance Considerations when Querying JSON Documents
 
 Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle database, using standard functions and procedures.
 
@@ -83,7 +83,7 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
     The execution time difference is insignificant (00:00:00.02 compared to 00:00:00.00), however, for millions of transactions it may have to be considered. The point is coding with JSON objects is a matter of choice, and always there will be multiple options for reaching the same result, and we need to choose the most optimal one.
 
-## Step 2: Retrieve Sub-Regions Information In JSON Format
+## **Step 2**: Retrieve Sub-Regions Information In JSON Format
 
 1.  Using a cursor, and the query you like most, we can run a loop, to retrieve the sub-regions for every region in Spain. This procedure will store a JSON document in our table, with the sub-regions, for each region (19 documents).
 
@@ -149,7 +149,7 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
     Now we have the entire geographic division.
 
-## Step 3: Retrieve Castles Information In JSON Format
+## **Step 3**: Retrieve Castles Information In JSON Format
 
 1.  In order to retrieve information about castles from GeoNames web service, we have to create a new function. The input for this function is the ISO country code, the code of the region, and the code of the sub-region. The output is a JSON document with all castles in that sub-region.
 
@@ -244,7 +244,7 @@ Using PL/SQL, we may treat and manipulate JSON arrays as strings, inside Oracle 
 
     This query should return 269 rows.
 
-## Step 4: Syntax simplifications querying JSON Data
+## **Step 4**: Syntax simplifications querying JSON Data
 
 In Oracle Database 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data.
 
@@ -285,7 +285,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
     This requires more time and code to be written.
 
-## Step 5: JSON Query Improvements In Oracle 19C
+## **Step 5**: JSON Query Improvements In Oracle 19C
 
 1.  In Oracle 19c, function *JSON\_OBJECT* can generate JSON objects receiving as argument just a relational column name, possibly preceded by a table name or alias, or a view name followed by a dot. For example *TABLE.COLUMN*, or just *COLUMN*.
 
@@ -309,7 +309,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
 In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows what is allowed for column names and wildcards in a SQL SELECT query.
 
-## Step 6: Using Custom Types And Wildcard
+## **Step 6**: Using Custom Types And Wildcard
 
 1.  There are some cases, exceptions, where wildcards are not accepted for tables with columns of certain custom data types, like our table **CUSTOMERS**, for example.
 
@@ -374,7 +374,7 @@ In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows
 
 In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
-## Step 7: Updating a JSON Document
+## **Step 7**: Updating a JSON Document
 
 You can now update a JSON document declaratively using the new SQL function **JSON_MERGEPATCH**. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
@@ -553,7 +553,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
 
     Updating JSON documents inside the Oracle Database is that simple.
 
-## Step 8: JSON Materialized View Support
+## **Step 8**: JSON Materialized View Support
 
 Materialized views query rewriting has been enhanced so that queries with *JSON\_EXISTS*, *JSON\_VALUE* and other functions can utilize a materialized view created over a query that contains a *JSON\_TABLE* function.
 
@@ -699,7 +699,7 @@ Significant performance gains can often be achieved using query rewrite and mate
 
     If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
-## Step 9: JSON-Object Mapping
+## **Step 9**: JSON-Object Mapping
 
 This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data into an instance of a SQL object type using SQL/JSON function *JSON\_VALUE*. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function *JSON\_OBJECT* or *JSON\_ARRAY*.
 
@@ -944,10 +944,11 @@ It would be equally easy to convert user-defined SQL object type instances into 
 
 This lab is now complete.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
-
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,6 +1,6 @@
 # Python Programming
 
-## Introduction
+## **Introduction**
 
 PL/SQL is ideal for programming tasks within Oracle Database. Most Oracle professionals, however, aren't confined to working strictly within the database itself.
 
@@ -27,7 +27,7 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## Step 1: Install Python
+## **Step 1**: Install Python
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
@@ -57,7 +57,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![](./images/p_installPython.jpg " ")
 
-## Step 2: The Python Interpreter
+## **Step 2**: The Python Interpreter
 
 There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
@@ -95,7 +95,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-2.png " " )
 
-## Step 3: Install Python Oracle module and connect to a database
+## **Step 3**: Install Python Oracle module and connect to a database
 
 *cx\_Oracle* is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
@@ -154,7 +154,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-3.png " ")
 
-## Step 4: Querying the Oracle database
+## **Step 4**: Querying the Oracle database
 
 Retrieving records from Oracle database using cursors is a simple as embedding a SQL statement within a cursor().execute statement. For this example, we will use an existing table from the *SH* sample schema.
 
@@ -197,7 +197,7 @@ Retrieving records from the Oracle database using cursors is a simple as embeddi
 
 **Note**: Closing the cursor is considered good practice. Oracle will automatically close the cursor after the execution of its parent block finishes.
 
-## Step 5: Query a JSON table from PYTHON
+## **Step 5**: Query a JSON table from PYTHON
 
 This section provides detail on how to work with JSON data in Oracle Database 19c using Python’s interface. The exercises include creating a table in the pluggable database ORCLPDB, loading data into the table, validating documents with IS JSON check, and querying data from Python.
 
@@ -400,7 +400,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
     ![](./images/step5.10-conclose.png " " )
 
-## Step 6: Load JSON data into a table using PYTHON
+## **Step 6**: Load JSON data into a table using PYTHON
 
 It is likely that rather than writing one JSON row at a time to the database, you will want to load many JSON records at once. In this example, we will leverage Oracle External Tables functionality to do this.
 
@@ -509,9 +509,11 @@ The second part of the guide goes through a number of demo cases available throu
 
 An additional lab on using Python with Spatial data is also available elsewhere in this module.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Troy Anthony
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,7 +1,7 @@
 # Improve the Calendar
 
-## Introduction
-In this lab, you will learn how to improve a calendar and link an existing page to a modal form page.
+## **Introduction**
+In this lab, you will learn how to improve a Calendar and link an existing page (Calendar) to a modal form page.
 
 ## **STEP 1** - Improving the Calendar
 The **Calendar** page currently displays the project, rather than the task name, and only shows the start date, instead of displaying duration-based events.
@@ -17,17 +17,15 @@ The **Calendar** page currently displays the project, rather than the task name,
 3. You can change the displayed column and make the events duration based by updating the calendar attributes.
 
     In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
-    Within the Property Editor (right pane), for Settings > Display Column select **TASK_NAME**, and for End Date Column select **END_DATE**.
+    Within the Property Editor (right pane), for Settings > Display Column select **TASK\_NAME**, and for End Date Column select **END\_DATE**. Click **Save and Run** to review your changes
 
     ![](images/update-attributes.png " ")
 
-4. In Page Designer, within the toolbar click **Save and Run** to review your changes.    
+4. Reviewing the revised calendar changing to duration-based events is not optimal. Therefore, you should remove the End Date Column added above.
 
     ![](images/upd-calendar.png " ")
 
-5. Reviewing the revised calendar changing to duration-based events is not optimal. Therefore, you should remove the End Date Column added above.
-
-    Navigate back to the APEX App Builder, in Page Designer, with Page 6 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
+5. Navigate back to the APEX App Builder, in Page Designer, with Page 6 selected, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
     Within the Property Editor (right pane), for Settings > End Date Column select **- Select -** to clear the **END_DATE** entry.
 
     ![](images/remove-end-date.png " ")
@@ -36,15 +34,15 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     ![](images/upd-calendar2.png " ")
 
-## **STEP 2** - Linking the Calendar
-When you click on a calendar entry then it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
+## **STEP 2:** Linking the Calendar
+When you click on a calendar entry, it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
 
 1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 6 selected.
 
-2. Define a view / edit link from the **Calendar** region to **Page 5**, the Project Tasks form page you modified in the previous lab.
+2. Define a *View / Edit Link* from the **Calendar** region to **Page 5**, the Project Tasks form page you modified in the previous lab.
 
     In Page Designer, within the Rendering tree (left pane), find Calendar, and then click **Attributes** directly below that.
-    Within the Property Editor (right pane), for Settings > View / Edit Link click **No Link Defined**.
+    Within the Property Editor (right pane), for Settings > View / Edit Link, click **No Link Defined**.
 
     In the Link Builder page, enter the following and click **Ok**.
 
@@ -70,48 +68,48 @@ When you click on a calendar entry then it shows event details. It would be far 
     | Group | Property | Value |
     | --- | --- | --- |
     | Identification | Name | **Refresh Calendar** |
-    | When | Event | **Dialog Closed** |
+    | When | Event | **Dialog Closed** (under **Framework Events**)|
     | | Selection Type | **Region** |
     | | Region | **Calendar** |
 
     ![](images/name-dynamic-action.png " ")
 
-5. Within the Rendering tree (left pane), under the True action for the Dynamic Action, select **Show**. In the Property Editor (right pane), enter the following.
+5. Within the Rendering tree (left pane), under the True action for the Dynamic Action, select **Show**. In the Property Editor (right pane), select the following. Click **Save and Run** to review the completed application
 
     | Group | Property | Value |
     | --- | --- | --- |
-    | Identification | Action | **Refresh** |
+    | Identification | Action | **Refresh** (under **Component**)|
     | Affected Elements | Selection Type | **Region** |
     | | Region | **Calendar** |
 
     ![](images/define-action.png " ")
 
-6. In Page Designer, within the toolbar, click **Save and Run** to review the completed application.
-
-    In the runtime environment, from the Calendar, select an event. In the Project Task form page update the Task Name and Start Date. Click **Apply Changes**.
+6. In the runtime environment, from the Calendar, select an event. In the Project Task form page, update the Task Name and Start Date. Click **Apply Changes**.
 
     ![](images/edit-final.png " ")
 
-    Confirm that the calendar refreshes to show the updated details.
+    Confirm that the Calendar refreshes to show the updated details.
 
     ![](images/updated-final.png " ")
 
 
 ## **Summary**
 
-This completes Lab 5. You now know how to create an application by uploading a file, enhancing the page using runtime environment and page designer, and also linking pages to enhance the application.
+This completes Lab 5. You now know how to create an application by uploading a file, enhancing the page using runtime environment and Page Designer, and also linking pages to enhance the application.
 
 ## **Learn More** - *Useful Links*
 
 - [APEX on Autonomous](https://apex.oracle.com/autonomous)
 - [APEX Collateral](https://apex.oracle.com)
-- [Tutorials](https://apex.oracle.com/en/learn/tutorials)
-- [Community](https://apex.oracle.com/community)
-- [External Site + Slack](http://apex.world)
+- [APEX Tutorials](https://apex.oracle.com/en/learn/tutorials)
+- [APEX Community](https://apex.oracle.com/community)
+- [APEX External Site + Slack](http://apex.world)
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

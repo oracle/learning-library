@@ -6,6 +6,8 @@ Oracle Application Express (APEX) is a feature of Oracle Database, including the
 
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 
+Estimated Time: 5-10 minutes
+
 ### Objectives
 
 - Create an Autonomous Transaction Processing instance
@@ -65,11 +67,11 @@ Within your new database, APEX is not yet configured. Therefore, when you first 
     | Workspace Name | **DEMO** |
 
     Click **Create Workspace**.
-  
+
     ![](images/create-workspace.png " ")
 
-6.  In the PEX Instance Administration page, click the **DEMO** link in the success message.         
-    *{Note: This will log you out of APEX Administration so that you can log into your new workspace.}*
+6.  In the APEX Instance Administration page, click the **DEMO** link in the success message.         
+    *Note: This will log you out of APEX Administration so that you can log into your new workspace.*
 
     ![](images/log-out-from-admin.png " ")
 
@@ -82,7 +84,9 @@ Within your new database, APEX is not yet configured. Therefore, when you first 
 This completes this lab. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. Click on **Lab 2: Create an APEX App from a Spreadsheet** to build an APEX application in your workspace.
 
 ## Acknowledgements
-* **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
-* **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+- **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
+- **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+- **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

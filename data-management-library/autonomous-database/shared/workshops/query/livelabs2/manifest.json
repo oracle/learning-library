@@ -1,0 +1,30 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "./../../../intro/intro-ziplab.md"
+        },
+        {
+            "title": "Lab 1: Provision an ADW Instance",
+            "description": "Provision a new ADW instance and connect to the database",
+            "filename": "./../../../adb-provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 2: ADB Loading",
+            "description": "Provision a new ADW instance and connect to the database",
+            "filename": "./../../../adb-loading/adb-loading.md"
+        }
+        ,
+        {
+            "title": "Lab 3: ADB Query",
+            "description": "Provision a new ADW instance and connect to the database",
+            "filename": "./../../../adb-query/adb-query.md"
+        }
+    ]
+}

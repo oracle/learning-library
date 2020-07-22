@@ -1,6 +1,8 @@
-# Introduction 
+# Introduction
 
 Welcome to the Python Development with Autonomous Transaction Processing Workshop. This workshop will introduce you to the most rapid and advanced full-stack development environment available today.
+
+## Workshop Overview
 
 In the next two hours you will experience a day in the life of Derek McCarthy – a full-stack developer for the fictious company Alpha Office. Derek has been hired to introduce new best practices to Alpha Office microservices developers. In this workshop you will take on Derek’s persona to build a series of three cloud-based microservices database applications. In doing so, you will leverage the latest and most advanced Oracle and open-source technologies.
 
@@ -18,5 +20,5 @@ Please proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
-
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

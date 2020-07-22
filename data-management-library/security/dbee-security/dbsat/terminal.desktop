@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Exec=/bin/bash
+Name=terminal
+Icon=/usr/share/icons/gnome/256x256/apps/utilities-terminal.png
+

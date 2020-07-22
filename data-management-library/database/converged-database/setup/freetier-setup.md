@@ -15,7 +15,7 @@ You will be using Terraform to create your database environment.
 
 3.  Open up the hamburger menu in the left hand corner.  Choose **Resource Manager > Stacks**.   Choose the compartment from your email, click the  **Create Stack** button
 
-    ![](./images/cloud-homepage.png " ") 
+    ![](./images/cloud-homepage.png " ")
 
     ![](./images/resource.png " ")
 
@@ -31,9 +31,9 @@ You will be using Terraform to create your database environment.
     Enter the following information and accept all the defaults
 
     - **Name**:  Enter your firstname and lastname and the day you were born (DO NOT ENTER ANY SPECIAL CHARACTERS HERE, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-    
+
     - **Description**:  Same as above
-    
+
     - **Compartment**:  Select Compartment from Email 2
 
 7.  Click **Next**.
@@ -45,9 +45,9 @@ You will be using Terraform to create your database environment.
     **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
     **Display Name:** Enter your firstname and lastname and the day you were born (do not enter any special characters here, including periods, it may mess up the configuration)
-    
+
     **AD**: Enter 1, 2, or 3 based on your last name.  (A-J -> 1, K - M -> 2, N-Z -> 3)
-    
+
     **SSH Public Key**:  Paste the public key you created in the earlier step (it should be one line)
 
 8. Click **Next**.
@@ -95,7 +95,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
     ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/ssh-first-time.png " ") 
+    ![](./images/ssh-first-time.png " ")
 
 3.  Continue to [Step 5b-Run the Setup Scripts](#Step:  5b-run-the-setup-scripts)
 
@@ -106,11 +106,11 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     ````
     ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/ssh-first-time.png " ") 
+    ![](./images/ssh-first-time.png " ")
 
 2.  Enter a name for the session and click **Save**.
 
-    ![](./images/putty-setup.png " ") 
+    ![](./images/putty-setup.png " ")
 
 3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
 
@@ -118,7 +118,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
-    ![](./images/putty-auth.png " ") 
+    ![](./images/putty-auth.png " ")
 
 6. The file path for the SSH private key file now displays in the Private key file for authentication field.
 
@@ -156,7 +156,7 @@ Note: If you are running in windows using putty, ensure your Session Timeout is 
     tail -f /home/opc/setupdb.out
     ````
 ## Step 3d: Run the Multitenant Setup Scripts
-The setupcdb.sh takes 60 minutes to run and is also setup to run in the background. 
+The setupcdb.sh takes 60 minutes to run and is also setup to run in the background.
 
 1.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.
 
@@ -177,4 +177,5 @@ Congratulations!  Now you have the environment to run the Multitenant labs.
 - **Author** - Kay Malcolm, Director, DB Product Management
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

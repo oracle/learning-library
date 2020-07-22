@@ -12,9 +12,9 @@
 ### Lab Prerequisites
 This lab assumes you have completed the following labs:
 [Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb)
-* Lab: [Login to Oracle Cloud](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-1-login-oracle-cloud)
-* Lab: [Provision an Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb)
- * Lab: [Connect to ADB with SQL Dev Web](https://oracle.github.io/learning-library/developer-library/rest-services-for-adb/livelabs/?lab=lab-3-connect-to-adb-with-sql-dev-web)
+* Lab: Login to Oracle Cloud
+* Lab: Provision an Autonomous Database
+ * Lab: Connect to ADB with SQL Dev Web
 
 
 # Developing RESTful Services in Autonomous Database
@@ -281,4 +281,5 @@ After an access token has been acquired, the client application must remember th
  - **Author** - Jeff Smith, 2019
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+ ## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

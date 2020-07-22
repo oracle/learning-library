@@ -1,9 +1,9 @@
-# Building an App using REST Web Sources for Oracle Autonomous Cloud Services
+# Introduction
 
-## Overview
-This lab REST enables database objects, and then uses those REST endpoints as the basis for Web Source Modules within an application. Application components are then defined against these Web Source Modules, instead of being defined on local database objects.
+## Workshop Overview
+This workshop REST enables database objects, and then uses those REST endpoints as the basis for Web Source Modules within an application. Application components are then defined against these Web Source Modules, instead of being defined on local database objects.
 
-### Lab Objectives
+### Objectives
 
 * Obtain a free development environment
 * REST enabling tables and views
@@ -12,7 +12,7 @@ This lab REST enables database objects, and then uses those REST endpoints as th
 
 *Note: This lab assumes you are using Oracle APEX 19.2.*
 
-### Lab Modules
+### Labs
 
 | # | Module | Est. Time |
 | --- | --- | --- |
@@ -21,8 +21,6 @@ This lab REST enables database objects, and then uses those REST endpoints as th
 | 3 | [Defining Web Sources](?lab=lab-3-defining-web-sources) | 10 min |
 | 4 | [Creating Pages](?lab=lab-4-creating-pages) | 15 min |
 | 5 | [Defining a List of Values](?lab=lab-5-defining-list-values) | 10 min |
-
-**To log issues**, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
 ### **Let's Get Started!**
 
@@ -40,10 +38,11 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 - [Community](https://apex.oracle.com/community)
 - [External Site + Slack](http://apex.world)
 
-## **Acknowledgements**
+## Acknowledgements
 
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

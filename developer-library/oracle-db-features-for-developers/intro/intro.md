@@ -1,6 +1,6 @@
-# Workshop Introduction and Overview #
+# Introduction
 
-## Introduction ##
+## **What is Oracle Database 19c** ##
 
 Oracle Database 19c provides the most advanced SQL engine on the planet. It complies with the latest ISO SQL standard, making it not only the most comprehensive database but also the most open one. It supports highly sophisticated analytics alongside and with no impact on OLTP workloads, eliminating the need to develop and orchestrate complex, fragile, and inconsistent data movement between different specialized data stores. Oracle’s SQL engine ships with integrated machine learning algorithms and allows developers to easily apply them on the data directly, hence moving the computation to the data—rather than having to pull the data out of the database and perform the calculation within the application. Using this capability, developers can create real-time prediction models directly on the data itself and act on insights more quickly and easily than ever before.
 
@@ -14,11 +14,9 @@ Watch this video to gain insight into why Oracle Database 19c is the best databa
 
 [](youtube:LcsPSJrZDrI)
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Authors** -  Database Partner Technical Services (PTS)
-- **Contributors** - Troy Anthony, Kay Malcolm
-- **Last Updated By/Date** - Troy Anthony, March 2020
+- **Contributors** - Troy Anthony, Kay Malcolm, Arabella Yao, Dylan McLeod
+- **Last Updated By/Date** - Arabella Yao, July 2020
 - **Workshop Expiration Date** - March 31, 2021
-
-

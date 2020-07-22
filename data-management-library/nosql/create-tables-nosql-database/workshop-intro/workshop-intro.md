@@ -26,4 +26,5 @@ Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Ora
 ## Acknowledgements
 * **Author** - Dave Rubin, Senior Director, NoSQL and Embedded Database Development and Michael Brey, Director, NoSQL Product Development
 * **Adapted for Cloud by** -  Tom McGinn, Database User Assistance
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, May 2020

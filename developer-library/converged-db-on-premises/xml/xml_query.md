@@ -5,7 +5,7 @@
  This lab walks you through different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL.
  We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
 
-## Before You Begin
+### Before You Begin
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
@@ -18,12 +18,12 @@ This lab assumes you have completed the following labs:
 ## Step 1: Getting the number of XML documents. 
    
 ````
-        <copy>
-       SELECT Count(*) FROM   purchaseorder p,  XMLTABLE('for $r in /PurchaseOrder return $r' passing object_value) t;
-       </copy>
+  <copy>
+  SELECT Count(*) FROM   purchaseorder p,  XMLTABLE('for $r in /PurchaseOrder return $r' passing object_value) t;
+  </copy>
 ````
      
-   ![](./images/xml_m1.PNG " ")
+   ![](./images/xml_m1a.png " ")
 
 ## Step 2: Retrieving the content of an XML document-using pseudocolumn OBJECT_VALUE
     
@@ -35,8 +35,8 @@ This lab assumes you have completed the following labs:
  
        </copy>
  ````
-  ![](./images/xml_query_m2.PNG " ")
-  ![](./images/xml_m2.PNG " ")
+  ![](./images/xml_query_m2a.png " ")
+  ![](./images/xml_m2a.png " ")
 
 ## Step 3:  Accessing text node value
 
@@ -50,8 +50,8 @@ This lab assumes you have completed the following labs:
     </copy>
    ````
 
-   ![](./images/xml_m4.PNG " ")
-   ![](./images/xml_query_meth4.PNG " ")
+   ![](./images/xml_m4a.png " ")
+   ![](./images/xml_query_meth4a.png " ")
 
 
 ## Step 4: Searching XML document
@@ -66,20 +66,20 @@ This lab assumes you have completed the following labs:
   
      
     
-  ![](./images/xml_query_meth5.PNG " ")
-  ![](./images/xml_m5.PNG " ")
+  ![](./images/xml_query_meth5a.png " ")
+  ![](./images/xml_m5a.png " ")
         
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
   
 
 

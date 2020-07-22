@@ -1,15 +1,7 @@
 {
     "tutorials": [
         {
-            "title": "New Features for Developers Introduction",
-            "description": "About the New features for Developers Workshop",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/01/2020",
-            "contentid": "12nnnn",
-            "filename": "../intro/intro.md"
-          },
-          {
-            "title": "Lab 1: Login to Oracle Cloud",
+            "title": "Prerequisites - Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/01/2020",
@@ -17,7 +9,15 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 2: Generate SSH Key",
+            "title": "Introduction",
+            "description": "About the New features for Developers Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+          },
+        {
+            "title": "Lab 1: Create SSH Keys",
             "description": "Generate SSH Key",
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/01/2020",
@@ -25,13 +25,13 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 3A: Environment Setup",
+            "title": "Lab 2: Environment Setup",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-livelabs.md"
         },
         {
-            "title": "Lab 3B: Sample Schema Setup",
+            "title": "Lab 3: Sample Schema Setup",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
             "filename": "../setup/setup.md"
@@ -48,26 +48,21 @@
             "publisheddate": "4/05/2020",
             "filename": "../partitioning/partitioning.md"
         },
+		
 		{
-            "title": "Lab 6: Application Continuity - Coming soon",
-            "description": "Application Continuity",
-            "publisheddate": "4/05/2020",
-            "filename": "../appcont/appcont.md"
-        },
-		{
-            "title": "Lab 7: JSON in the Oracle DB",
+            "title": "Lab 6: Oracle Database 19c JSON Documents",
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",
             "filename": "../json/json.md"
         },
         {
-            "title": "Lab 8: JSON in the Oracle DB - Advanced",
+            "title": "Lab 7: Advanced JSON on Oracle Database 19c",
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",
             "filename": "../json/json-advanced.md"
         },
 		{
-            "title": "Lab 9: Python Programming",
+            "title": "Lab 8: Python Programming",
             "description": "Python Programming",
             "publisheddate": "4/05/2020",
             "filename": "../python/python.md"

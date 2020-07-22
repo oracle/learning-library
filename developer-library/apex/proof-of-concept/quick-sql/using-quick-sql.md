@@ -4,6 +4,8 @@
 
 Memorizing the SQL to create and maintain database objects can be difficult. However, there are tools that can generate the code for you based on a shorthand syntax or a graphical user interface. In this lab, you will learn how to create tables and views by defining data structures in Quick SQL.
 
+Estimated Time: 15 minutes
+
 ### Problem Definition
 Within most organizations, the use of spreadsheets is prolific. Spreadsheets are excellent for doing simple data review and tracking personal data, however, they are very ill suited to gathering data amongst team members for example.
 
@@ -27,7 +29,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, LiveLabs account or free trial. 
 - An APEX Workspace
 
 ## **Step 1** - Open Quick SQL
@@ -133,7 +135,7 @@ By indenting a table name, you can define the new table as a child table of the 
 
     Indent 2 or more spaces and enter the Column Names and directives:  
     <code>name /nn</code>   
-    <code>assignee /references team members</code>   
+    <code>assignee /references team_members</code>   
     <code>milestone id /references milestones</code>   
 
     ![](images/enter-tasks.png " ")
@@ -245,12 +247,13 @@ At this stage you have created a list of SQL statements. However, you first need
     *{Note: If you do not see 217 statements processed then return to Quick SQL and click _Generate SQL_, resave the script and then run it again. If you do not see 217 successful, then review the errors displayed in Feedback within the results.}*
 
 ## **Summary**
-This completes Lab 2. You now know how to utilize Quick SQL to build complex data structures, complete with sample data. [Click here to navigate to Lab 3](?lab=lab-3-creating-application)
+This completes Lab 1. You now know how to utilize Quick SQL to build complex data structures, complete with sample data. [Click here to navigate to Lab 2](?lab=lab-2-creating-application)
 
 ## **Acknowledgments**
 
 - **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
-- **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
+- **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -22,7 +22,7 @@ What Alpha Office wants is to deploy this machine learning model in a production
 ### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
-* Login to Oracle Cloud
+* Login to Oracle Cloud/Sign Up for Free Tier
 
 *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
@@ -41,7 +41,7 @@ First, we are going to create an ADW Instance.
 
     ![](./images/006.png  " ")
 
-3.  Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
+3.  Select **Compartment** by clicking on the drop-down list. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
 
     ![](./images/007.png  " ")
 
@@ -79,7 +79,7 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
     ![](./images/015.png  " ")
 
-3.  Select **Compartment**. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
+3.  Select **Compartment**. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **Display Name**, **Database Name**.
 
     ![](./images/016.png  " ")
 
@@ -97,7 +97,7 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
 7.  Under **Choose a license type**, select **Bring Your Own License (BYOL)**.
 
-    ![](./images/011.png  " ")
+    ![](./images/011a.png  " ")
 
 8.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
@@ -392,4 +392,5 @@ Please proceed to the next lab.
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 - **Contributors** -  Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

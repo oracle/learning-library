@@ -1,0 +1,29 @@
+{
+    "tutorials": [
+        {
+            "title": "Workshop Overview",
+            "filename":"../../workshop-intro/intro.md"
+        },
+        {
+            "title": "Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs20.md"
+        },
+        {
+          "title": "Lab 1: Create an APEX Workspace",
+          "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
+        },
+		    {
+            "title": "Lab 2: Create an APEX App from a Spreadsheet",
+            "filename": "../../create-app-spreadsheet/2-create-an-app-from-a-spreadsheet.md"
+        },
+		    {
+            "title": "Lab 3: Build Database Objects in Autonomous Database",
+            "filename": "../../build-db-obj-adb/3-build-database-objects-in-autonomous-database.md"
+        },
+		    {
+            "title": "Lab 4: Create and Modify an APEX Application",
+            "filename": "../../create-modify-apex-app/4-create-and-modify-an-apex-app.md"
+        }
+    ]
+}

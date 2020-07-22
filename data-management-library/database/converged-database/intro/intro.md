@@ -26,7 +26,7 @@ Every CDB has the following containers:
 
 The following figure shows a CDB with four containers: the root, seed, and two PDBs. Each PDB has its own dedicated application. A different PDB administrator manages each PDB. A common user exists across a CDB with a single identity. In this example, common user SYS can manage the root and every PDB. At the physical level, this CDB has a database instance and database files, just as a non-CDB does.
 
-![](./images/arch.png " ") 
+![](./images/arch.png " ")
 
 ## More Information on Multitenant
 
@@ -42,4 +42,5 @@ Oracle Database Product Management Videos on Multitenant
 - **Last Updated By/Date** - Kay Malcolm, March 2020
 - **Workshop Expiration Date** - March 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

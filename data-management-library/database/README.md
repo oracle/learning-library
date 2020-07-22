@@ -6,37 +6,7 @@ The industry’s leading database continues to deliver leading-edge innovations,
 
 
 ## Workshops
-- [New Features for Developers](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/freetier/index.html)  
-
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier) 
-
-- [Spatial](https://oracle.github.io/learning-library/data-management-library/database/spatial/freetier/index.html)
-
-- [Multitenant Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  
-
-- [In-Memory Fundamentals](https://oracle.github.io/learning-library/data-management-library/database/in-memory/freetier/index.html) 
-
-<<<<<<< HEAD
-### Converged
-
-[![](./images/converged-database.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/converged-database/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/converged-database.png)](https://laxmi-oss.github.io/learning-library/data-management-library/database/converged-database/ssworkshop/index.html)
-
-### In-Memory Workshops
-=======
-- [Hybrid Partitioning](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/hybridpart-freetier) 
->>>>>>> upstream/master
-
-- [Automatic Indexing](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/autoindex-freetier) 
-
-- [Python](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/python-freetier) 
-
-- [Containerized Development on the Oracle Database](https://oracle.github.io/learning-library/data-management-library/database/docker/db-on-docker/freetier) 
-
-- [Create a Database in a Docker Container](https://oracle.github.io/learning-library/data-management-library/database/docker/create-database-in-docker) 
-
-- [Create a Database on OCI VM ](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db) 
-
-- [Connect SQL Developer to OCI VM Database](https://oracle.github.io/learning-library/data-management-library/database/oci-vm-database/create-oci-vm-db/) 
+Click [here](http://bit.ly/golivelabs) to access DB content.
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -57,7 +27,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 ## Videos
 - [Oracle Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management

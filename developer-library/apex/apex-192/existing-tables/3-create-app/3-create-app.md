@@ -147,9 +147,9 @@ The **EBA\_PROJECT_TASKS** table is the primary table, where records will be rev
     - Check **Include Form**
     - Expand Lookup Columns
         - Lookup Key 1 - select **PROJECT_ID**
-        - Display Col 1 - select **SAMPLE$PROJECTS.NAME**
+        - Display Col 1 - select **EBA\_PROJECTS.NAME**
         - Lookup Key 2 - select **MILESTONE_ID**
-        - Display Col 2 - select **SAMPLE$PROJECT_MILESTONES.NAME**
+        - Display Col 2 - select **EBA\_PROJECT_MILESTONES.NAME**
 
     - Click **Add Page**  
 
@@ -172,7 +172,7 @@ The **EBA\_PROJECT_TASKS** table is the primary table, where records will be rev
 
     ![](images/set-calendar.png " ")
 
-*Note: If you go to SQL Workshop > Object Browser, select the _SAMPLE$PROJECT\_TASKS_ table and then click _Create App_ then it will create an app with a Dashboard page, Faceted Search page, Report and Form pages, and a Calendar page (if appropriate) all based on the selected table. This technique provides a great starting point for creating your apps, especially if you are not sure what pages you want up front.*
+*Note: If you go to SQL Workshop > Object Browser, select the EBA\_PROJECT\_TASKS table and then click _Create App_ then it will create an app with a Dashboard page, Faceted Search page, Report and Form pages, and a Calendar page (if appropriate) all based on the selected table. This technique provides a great starting point for creating your apps, especially if you are not sure what pages you want up front.*
 
 ![](images/object-browser-create-app.png " ")
 
@@ -204,9 +204,35 @@ Now that you have added all the pages, it is time to generate the app and review
 
 This completes Lab 3. You now know how to create an application, with numerous different page types, based on existing database objects. [Click here to navigate to Lab 4](?lab=lab-4-regenerating-app)
 
+## Learn More / Troubleshooting: How to change a page's name
+If you want to change a page's name after you create an application, the process is involved. Though it is recommended that you give a page an accurate name at the beginning, here are the instructions on how you can change a page's name.
+
+1. In *App Builder*, click you Project. In you Project home page, click the page you want to edit. In *Page Designer*, change **Identification > Name** and **Identification > Title** to the new name. Click **Save and Run Page**. In the runtime environment, you will see the tab's name is updated.
+
+    ![](../../common/change-page-name/images/change_name.png " ")
+
+2. In your Project home page, click **Shared Component** in the development toolbar.
+    ![](../../common/change-page-name/images/shared_component.png " ")
+
+    In Shared Component home page, under **Navigation**, click **Breadcrumbs**. Click **Breadcrumbs** again, click the page you want to edit.
+    ![](../../common/change-page-name/images/shared_component_menu.png " ")
+
+    Change **Entry > Short Name** to the new name. Click **Apply Changes**. In the runtime environment, you will see the title of the page is updated.
+    ![](../../common/change-page-name/images/breadcrumb.png " ")
+
+3. In Shared Component home page, under **Navigation**, click **Navigation Menu**, click **Desktop Nagivation Menu**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated on the left navigation menu.
+
+    ![](../../common/change-page-name/images/navigation_menu.png " ")
+
+4. In Shared Component home page, under **Navigation**, click **Lists**, then click **Page Navigation**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated in the Home page of you application.
+
+    ![](../../common/change-page-name/images/page_navigation.png " ")
+
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Tom McGinn, Database Cloud Services, Product Management, June 2020
- - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Mangement, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

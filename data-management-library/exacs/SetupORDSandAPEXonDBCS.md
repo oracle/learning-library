@@ -37,8 +37,8 @@ To automate the deployment process for ORDS and APEX, we can use tools like Terr
 ```
 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 - Learn how to set up ORDS and APEX on Oracle Database Cloud Service using Terraform.
@@ -48,14 +48,19 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Access to your Oracle cloud account.
 - A pre-provisioned DB instance on Exadata. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how to provision a DB instance on Exadata.
 - Access to a Dev Client on OCI for the database instance. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use) to know how to setup a Dev Client.
-- Have appropriate access to run Terraform on OCI.
+- Have appropriate IAM policies assigned to run Terraform on OCI. Please request your tenancy administrator to assign you policies to allow access.
+- SSH Key pair (OpenSSH) and API Sign-in Key.
+    - Note :
+        1.  (Optional) if you need to create a new ssh key pair visit this <a href=https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html>link</a>
+
+        2.  (Optional) if you need to setup a new oci api key for your Oracle Cloud Account, visit this <a href=https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionssetupapikey.htm>link</a>
 
 
 ## Steps
 
 ### STEP 1: Install Terraform
 
-- Since our Exadata Cloud Service is sitting in a private network we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer to **lab 4** in this workshop for more information.
+- Since our Exadata Cloud Service is sitting in a private network we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer **lab 4** in this workshop for more information.
 
 - Then, we install Terraform and execute the terraform script from that Developer Client/bastion Host which has access to the Exadata Cloud Service database so that Terraform can access it.
 
@@ -66,7 +71,28 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ```
 
-- Please follow the steps on <a href="https://www.terraform.io/downloads.html">this</a> page to download Terraform on the developer client system.
+- Please follow the steps on <a href="https://learn.hashicorp.com/terraform/getting-started/install.html">this</a> page to download Terraform on the developer client system.
+
+- For linux based systems. You can use the below command to download Terraform
+
+```
+<copy>wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip</copy>
+```
+
+- unzip the downloaded zip file as shown below.
+
+```
+<copy>unzip terraform_0.12.28_linux_amd64.zip</copy>
+```
+
+- Move the Terraform binaries to the below path.
+
+```
+<copy>mv <Absolute Path of your Terraform directory>terraform /usr/local/bin/</copy>
+```
+
+![](./images/apex/Setup_Terraform.png " ")
+
 
 - Click on Linux 64 bit option to download it and install Terraform into one of the locations present in $PATH variable. To check the directories in $PATH variable, execute the below command. 
 
@@ -80,11 +106,14 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>terraform -help</copy>
 ```
 
-- If you have already downloaded terraform prior to this lab, you can upgrade it using the below command.
+- Once you have installed Terraform, you can upgrade the provider using the below command.
 
 ```
 <copy>sudo yum -y upgrade terraform-provider-oci</copy>
 ```
+
+![](./images/apex/Setup_Terraform_Provider-1.png " ")
+![](./images/apex/Setup_Terraform_Provider-2.png " ")
 
 
 ### STEP 2: Download the Terraform Script
@@ -92,7 +121,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Download the Terraform script using the below command.
 
 ```
-<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/ORDS-APEX_ExaCS.zip</copy>
+<copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/8tSwgAMJClHVWVbWhHlmzTpS5CVTyxm3lWuDzDN9Jf8/n/orasenatdpltintegration02/b/ExaCSScripts/o/ORDS-APEX_ExaCS.zip</copy>
 ```
 **NOTE: Make sure you have wget installed before running the above command, otherwise run 'brew install wget' beforehand**
 
@@ -108,10 +137,11 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>cd ORDS-APEX_ExaCS</copy>
 ```
 
+![](./images/apex/Download_Script.png " ")
 
 ### STEP 3: Run the Terraform script
 
-- Create an ssh key pair or copy your existing key pair along with OCI API private key to the "keys" folder present in the same directory
+- Create an ssh key pair or copy your existing key pair along with OCI API private key to the "keys" folder present in the same directory. Please refer the links mentioned below on how to create keys.
 
 ```
 <copy>ls keys/</copy>
@@ -135,28 +165,38 @@ public_key.pub private_key oci_api_key.pem
 ```
 
 ```
-TF_VAR_PathToYourSshPublicKey: "keys/"ssh key file name".pub"
+# Replace the correct file name for all the 3 keys mentioned below
 
-TF_VAR_PathToYourSshPrivateKey: "keys/"ssh key private file name""
+TF_VAR_PathToYourSshPublicKey: "keys/ssh_key_file_name.pub"
 
-TF_VAR_PathToYourApiPrivateKey: "keys/"OCI API key private file name".pem"
+TF_VAR_PathToYourSshPrivateKey: "keys/ssh key private file name"
 
+TF_VAR_PathToYourApiPrivateKey: "keys/OCI API key private file name.pem"
+
+# Obtain the tenancy OCID from the Tenancy details page on OCI console
 TF_VAR_tenancy_ocid: "Tenancy OCID obtained from OCI account"
 
+# Obtain the User OCID from the User details page on OCI console
 TF_VAR_user_ocid: "User OCID obtained from OCI account"
 
+# Obtain the fingerprint you see after uploading the OCI API key on OCI User Console page.
 TF_VAR_fingerprint: "Fingerprint of the API Key uploaded on the user account on OCI"
 
+# Obtain the OCID compartment from the compartment details page on OCI console
 TF_VAR_compartment_ocid: "OCID of the compartment in which the Compute needs to be created."
 
+# Obtain the sys user password for the database on ExaCS.
 TF_VAR_target_db_admin_pw: "DB Admin Password"
 
-TF_VAR_target_db_ip: "Private IP of the DBCS instance"
--This can be found under the Nodes Resource
+# Obtain the Database IP from the DB System details page on OCI console under the Resources > Nodes option.
+TF_VAR_target_db_ip: "Private IP of the DB server"
 
+# Obtain the Database IP from the DB System details page on OCI console under the Resources > Nodes option.
+# If there is no public IP available, use the private IP here.
 TF_VAR_target_db_ip_public: "Public IP of the DB Server"
--If there is no public IP available, use the private IP here
 
+# Obtain the Database Service Name from the DB TNS names file. 
+# This file is generally located at $ORACLE_HOME/network/admin/<DB Name>/tnsnames.ora in the ExaCS server.
 TF_VAR_target_db_srv_name: "Service Name of the DB Server"
 
 ORDS Installation Configuration
@@ -178,6 +218,7 @@ TF_VAR_AD: "Availability Domain to provision Compute Instance"
 
 TF_VAR_InstanceOSVersion: "7.7" # OR any Oracle Linux 7.x version which is available in OCI
 
+# The Object Storage URL is already given for you
 TF_VAR_URL_ORDS_file: "Object Storage URL for ords.war"
 
 TF_VAR_web_srv: "0" 
@@ -185,12 +226,17 @@ TF_VAR_web_srv: "0"
 
 TF_VAR_com_port: "Port for ORDS"
 
+# Required only if you set the TF_VAR_ords_compute variable to 1. Make sure your name does not conflict with any other
+# instance in your compartment.
 TF_VAR_ComputeDisplayName: "ORDS Compute Instance Display Name"
 
+# Required only if you set the TF_VAR_ords_compute variable to 1.
 TF_VAR_InstanceName: "ORDS Compute Instance Name"
-
+ 
+ # Required only if you set the TF_VAR_ords_compute variable to 1.
 TF_VAR_InstanceShape: "ORDS Compute Instance Shape"
 
+# The Object Storage URL is already given for you
 TF_VAR_URL_APEX_file: "Object Storage URL for apex.zip"
 
 TF_VAR_APEX_install_mode: "0" 
@@ -284,31 +330,56 @@ http://<IP address of ORDS server>:<ORDS Port>/ords
 
 #### STEP 4-1: Connect to Database instance
 
-- Refer **Lab 4** to know how to connect to the database.
+- Connect to your database using the SQL Client or SQL Developer. Please Refer **Lab 4** to know how to setup the connectivity.
 
+    Using SQL Client
+
+    ```
+    sqlplus sys/password@pdbname as sysdba
+    ```
 
 #### STEP 4-2: Creating Users and Tables for the users in database
 
 Now, since we have provisioned the database instance and connected to it. We will now create a user and create a table to load data into it.
 
-- Execute the below SQL commands to create user (let's say APPSCHEMA). 
+- Execute the below SQL commands to create user (let's say APPSCHEMA). Please make sure you substitute the correct pdb name for your database.
 
     ```
     alter session set container = <pdb_name>;
+    ```
 
-    create user <SchameName> identified by WElCome12_34#;
+    For example
 
-    grant CREATE CLUSTER, CREATE DIMENSION, CREATE INDEXTYPE, CREATE JOB, CREATE MATERIALIZED VIEW, CREATE OPERATOR, CREATE PROCEDURE, CREATE SEQUENCE, CREATE SESSION, CREATE SYNONYM, CREATE TABLE, CREATE TRIGGER, CREATE TYPE, CREATE VIEW, resource to <SchemaName>;
+    ```
+    alter session set container = AO_PDB;
+    ```
+
+    In our exercise we are going to use APPSCHEMA as the username/schema.
+
+    ```
+    <copy>create user APPSCHEMA identified by WElCome12_34#;<copy>
+    ```
+
+    ```
+    <copy>alter user appschema quota unlimited on users;</copy>
+    ```
+
+    ```
+    <copy>alter user appschema quota unlimited on system;</copy>
+    ```
+
+    ```
+    <copy>grant CREATE CLUSTER, CREATE DIMENSION, CREATE INDEXTYPE, CREATE JOB, CREATE MATERIALIZED VIEW, CREATE OPERATOR, CREATE PROCEDURE, CREATE SEQUENCE, CREATE SESSION, CREATE SYNONYM, CREATE TABLE, CREATE TRIGGER, CREATE TYPE, CREATE VIEW, resource to APPSCHEMA;</copy>
     ```
 
 - Now let's create 2 tables in the schema we just created. In this exercise we will create the user with the name "APPSCHEMA" and a tables with the name "TWEETSDATA" and "JSONTWEETS" to store tweet data.
 
     ```
-    CREATE TABLE APPSCHEMA.TWEETSDATA (tweet_id NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1) PRIMARY KEY, ts TIMESTAMP, username VARCHAR2(100), tweet VARCHAR2(300), tweet_time TIMESTAMP, retweeted VARCHAR2(20), source VARCHAR2(1000), retweet_count NUMBER(38), place VARCHAR2(500), tweet_weekday VARCHAR2(15), location VARCHAR2(1000));
+    <copy>CREATE TABLE APPSCHEMA.TWEETSDATA (tweet_id NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1) PRIMARY KEY, ts TIMESTAMP, username VARCHAR2(100), tweet VARCHAR2(4000), tweet_time TIMESTAMP, retweeted VARCHAR2(20), source VARCHAR2(1000), retweet_count NUMBER(38), place VARCHAR2(500), tweet_weekday VARCHAR2(15), location VARCHAR2(1000));</copy>
     ```
 
     ```
-    CREATE TABLE appschema.jsontweets (ts TIMESTAMP,TWEETJSON clob not null CONSTRAINT check_json CHECK (TWEETJSON IS JSON));
+    <copy>CREATE TABLE appschema.jsontweets (ts TIMESTAMP,TWEETJSON clob not null CONSTRAINT check_json CHECK (TWEETJSON IS JSON));</copy>
     ```
 
 - Now, you have setup the schema and the tables.

@@ -17,7 +17,8 @@ or
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, June 04 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, June 4 2020
 
 
-***To log issues***, submit an Github [issue](https://github.com/oracle/learning-library/issues/new?title=Weblogic%20to%20OCI&body=Weblogic%20to%20OCI%0A@streamnsight).  Please provide the name of the workshop, the link, and the step along with details of the issue.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

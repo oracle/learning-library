@@ -12,10 +12,10 @@ Before you begin, please connect to your instance, using the commands from **[La
 
 Then, login using the commands from **[Lab 4, Step 1.1 and 1.2](?lab=lab-4-multitenant-basics#Step1:LoginandCreatePDB)**
 
-## Step 1: Instant Sa
+## Step 1: Instant SaaS
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Setup Application Root - wmStore_Master
 - Install v1 of Application wmStore in Application Root
 - Create and sync Application Seed and provision Application PDBs for four franchises: Tulsa, California, Tahoe, NYC
@@ -307,7 +307,7 @@ The tasks you will accomplish in this lab are:
 ## Step 2: PDB Exploration
 This section will take a brief tour of the newly created SaaS estate.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Look at the PDBs that have been created so far
 - Experiment with different classes of User
 - Perform queries against different franchises
@@ -439,7 +439,7 @@ The tasks you will accomplish in this lab are:
 ## Step 3: Upgrade from v1 to v2
 This section we upgrade Application wmStore from v1 to v2. Despite each franchise having a separate tenant PDB, there is only one master application definition to be upgraded – in Application Root. We run the upgrade script only once, against the Application Root. It is then simply a matter of synchronizing the tenant PDBs for each franchise for them to be upgraded to the new version. Note that this model allows for granular (per tenant/franchise) upgrade schedules.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Upgrade application wmStore to v2
 - Synchronize three of four Application Tenant PDBs
 
@@ -647,7 +647,7 @@ The tasks you will accomplish in this lab are:
 ## Step 4: Containers Queries
 This section we introduce a very powerful cross-container aggregation capability – containers() queries. Containers() queries allow an application administrator to connect to Application Root and aggregate data with a single query across multiple Application Tenants (Franchises) – or across all of them. This is another example of how Multitenant, with Application Containers, allows you to manage many Application Tenants as one, when needed. Notice values in column Franchise come from Con$Name. Remember that containers() queries are executed in Root and all containers plugged into it.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Run Queries across containers
 
 1. Connect to ``CDB1``.
@@ -769,7 +769,7 @@ The tasks you will accomplish in this lab are:
 ## Step 5: Application Root Clones and Compatibility
 This section will explore the PDBs, users and data within the various pluggable databses created in the earlier section.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Create a pluggable database ``OE`` in the container database ``CDB1``
 - Create a load against the pluggable database ``OE``
 - Create a hot clone ``OE_DEV`` in the container database ``CDB2`` from the pluggable database ``OE``
@@ -1002,7 +1002,7 @@ The tasks you will accomplish in this lab are:
 ## Step 6: Expansion Beyond Single CDB and Application Root Replicas
 This section we follow the global expansion of Walt's Malts. In order to comply with requirements of data sovereignty and latency Walt's Malts has had to expand into a second CDB, CDB2. (In reality this would be in a separate server.) It is very important to note that we still only have a single master application definition, despite the application now being deployed across multiple CDBs.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Create and Open Application Root Replicas (ARRs): wmStore_International, wmStore_West
 - Create Proxy PDBs for the ARRs
 - Synchronize the ARRs via their proxies
@@ -1268,7 +1268,7 @@ The tasks you will accomplish in this lab are:
 ## Step 7: Durable Location Transparency
 This section demonstrates "durable location transparency". In the previous section we saw how Proxy PDBs can provide location transparency. The Proxy PDBs for the Application Root Replicas (ARRs) provided local context (in the master Application Root) for the ARRs, which are physically located in a different CDB. This is a good example of location transparency. In this section, we see how these ARR Proxies can provide "durable location transparency". That is, location transparency that survives the physical reconfiguration of the Application Estate – specifically by relocating an Application PDB for a particular franchise from one CDB to another.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Run a report against wmStore_Master
 - Relocate Tahoe to wmStore_West
 - Run the report again
@@ -1391,7 +1391,7 @@ The tasks you will accomplish in this lab are:
 ## Step 8: Data Sharing
 This section we introduce the advanced concept of data sharing. We have already seen how Multitenant, with Application Containers, can provide an instant SaaS architecture for an application previously architected for standalone deployment. Technically this is done by installing a master application definition in an Application Root. Application PDBs for each tenant / franchise are plugged into this Application Root and the metadata for the database components of the Application definition is served from the Application root. However, so far all data, including data which may be considered part of the application definition ("seed data") has been local. In other words, there's a replica of this seed data in every Application PDB. In this lab we'll see how, in addition to metadata, common data may also be shared from Application Root. To do this we'll upgrade application wmStore to v3.0 and introduce various powerful data sharing capabilities.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Upgrade Application wmStore to v3.0
 - Propagate the Upgrade to all franchises
 - Query the wm_Products table in a franchise PDB to see the sources of data
@@ -1713,7 +1713,7 @@ This section we define an application patch. Patches are comparable to the appli
 - Patches do not involve creation of Application Root Clones.
 - Patches are not version-specific. This means that a single patch may be applied to multiple application versions.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Define patch 301 for application wmStore
 - Propagate the patch to the Application Root Replicas. Then apply it to three franchises (but not to all)
 
@@ -1888,7 +1888,7 @@ The tasks you will accomplish in this lab are:
 ## Step 10: DBA Views
 This section we introduce some of the DBA Views which are relevant to Application Containers.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Explore various DBA Views
 
 1. DBA_PDBs
@@ -2136,7 +2136,7 @@ The tasks you will accomplish in this lab are:
 ## Step 11: Diagnosing, Correcting Problems, and Restarting Sync
 This section we explore the restartability of the patching process.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Deliberately make a manual change to NYC that will conflict with applying patch 301
 - Attempt to sync NYC to apply the patch – anticipating a failure
 - Query relevant DBA views to identify the problem
@@ -2197,7 +2197,7 @@ The tasks you will accomplish in this lab are:
 ## Step 12: Container Map
 This section we explore another location transparency technology: Container Map. Here we follow the expansion of Walt's Malts through the acquisition of a formerly independent distributor of Walt's Malts products. This company is named Terminally Chill, and their niche was selling Walt's Malts produce through a number of small kiosks in various airports globally. The Terminally Chill application has a different design from the original wmStore application. Whereas wmStore was originally designed for standalone deployment, Terminally Chill used a single database to manage data for all kiosks in all airports. The application server tiers are designed to connect directly to a single database, with query predicates to retrieve data for the right airport and kiosk. In this lab, we'll see how Container Map can help accommodate applications of this design.
 
-The tasks you will accomplish in this lab are:
+The tasks you will accomplish in this step are:
 - Setup Application PDBs for new Airport franchises
 - Install v1 of Application "Terminal"
 - Sync Application PDBs
@@ -2499,4 +2499,5 @@ The tasks you will accomplish in this lab are:
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

@@ -4,6 +4,8 @@
 
 In this lab, you will create a new APEX application that will utilize the database objects you created in the previous module. You will then extend the application by adding an Interactive Grid and Calendar pages.
 
+Estimated Time: 20-30 minutes
+
 ### Objectives
 
 - Create an app from a script
@@ -37,7 +39,7 @@ In lab 3, step 1, you used Quick SQL to create a script which you subsequently r
 
    ![](images/click-create-app-from-script.png " ")
 
-   *{Note: The tables listed are those from the HOL script you created from Quick SQL, and does not include HOL\_TODOS which you created manually using SQL Developer Web.}*
+   *Note: The tables listed are those from the HOL script you created from Quick SQL, and does not include HOL\_TODOS which you created manually using SQL Developer Web.*
 
 6. On the Create an Application page, set Name to **HOL Projects** and then click the popup icon for Appearance. In the dialog, select **Vita - Slate** and then click **Save Changes**.
 
@@ -85,7 +87,7 @@ Thus far, you've used high-level wizards to generate applications, first from a 
 
   ![](images/navigation-menu.png " ")
 
-  *{Note: The navigation menu entry defaults to the value you entered for Page Name.}*
+  *Note: The navigation menu entry defaults to the value you entered for Page Name.*
 
 6. In the Report Source dialog, for Table / View Name, select **HOL_TODOS (table)**, then click **Create**.
 
@@ -99,7 +101,7 @@ Thus far, you've used high-level wizards to generate applications, first from a 
 
    ![](images/new-interactive-grid-page.png " ")
 
-   *{Note: A new navigation menu item has been added on the left as well.}*
+   *Note: A new navigation menu item has been added on the left as well.*
 
 8. Since there is no data in the HOL_TODOS table, the Interactive Grid displays one empty record by default. Use the **Add Row** button to add two more empty rows, populate the columns as follows:
 
@@ -113,7 +115,7 @@ Thus far, you've used high-level wizards to generate applications, first from a 
 
    ![](images/create-new-todos.png " ")
 
-   *{Note: Don't populate the additional columns yet, you'll do that in the next part.}*
+   *Note: Don't populate the additional columns yet, you'll do that in the next part.*
 
 ## **Step 3:** Enhance the Interactive Grid
 
@@ -131,7 +133,7 @@ A page in APEX is made up of various components, such as regions, items, and but
 
 3. When it comes to foreign key columns, it's often best to use a List of Values item that displays one thing to the end user from a lookup table, but returns the foreign key value behind the scenes. This is known as a dynamic list of values. You can define a list of values directly on a page, or define them as a Shared Component that can be used on any page.
 
-    When you generated the application various list of values were created as Shared Components for use on other pages. You can reuse the List of Values defined for TEAM_MEMBERS.
+    When you generated the application various list of values were created as Shared Components for use on other pages. You can reuse the List of Values defined for **TEAM_MEMBERS**.
 
     In the Rendering tree (left pane), under Columns, select **TEAM\_MEMBER\_ID**.        
     In the Property Editor (right pane), enter the following:
@@ -164,7 +166,7 @@ A page in APEX is made up of various components, such as regions, items, and but
 
    ![](images/page-designer-task-id.png " ")
 
-5. In addition to dynamic lists of values, it is sometimes beneficial to create a static list of values to constrain user input to a small set of allowable values. The STATUS column should only allow _Pending_, _In Progress_, or _Complete_.
+5. In addition to dynamic lists of values, it is sometimes beneficial to create a static list of values to constrain user input to a small set of allowable values. The STATUS column should only allow `Pending`, `In Progress`, or `Complete`.
 
     In the Rendering tree (left pane), under Columns, select **STATUS**.        
     In the Property Editor (right pane), enter the following:
@@ -180,7 +182,7 @@ A page in APEX is made up of various components, such as regions, items, and but
         |In Progress|In Progress|
         |Complete|Complete|
 
-        Click **Ok**
+        Click **Ok**.
 
    ![](images/page-designer-status.png " ")
 
@@ -192,11 +194,11 @@ A page in APEX is made up of various components, such as regions, items, and but
 
    ![](images/interactive-grid-after-edits.png " ")
 
-   *{Note: The data for Team Members and Tasks is sample data created by Quick SQL, and may not be representative of the names your end users would enter. However, such data is invaluable for seeing data in the pages, and so forth.}*
+   *Note: The data for Team Members and Tasks is sample data created by Quick SQL, and may not be representative of the names your end users would enter. However, such data is invaluable for seeing data in the pages, and so forth.*
 
 ## **Step 4:** Add a Calendar Page
 
-APEX includes different components for viewing and working with data in different ways, including forms, reports, charts, and much more. One of the easiest ways to visualize data related to dates is with a calendar. In this part, you'll create a new calendar page in your application to view data in the HOL_TASKS table. The HOL_TASKS table includes both a Start Date and End Date so you could choose to create a duration-based calendar, however, for this lab you are just going to use the Start Date.
+APEX includes different components for viewing and working with data in different ways, including forms, reports, charts, and much more. One of the easiest ways to visualize data related to dates is with a calendar. In this part, you'll create a new calendar page in your application to view data in the HOL\_TASKS table. The HOL\_TASKS table includes both a Start Date and End Date so you could choose to create a duration-based calendar, however, for this lab you are just going to use the Start Date.
 
 1. Click the **Application 102** link (your app number may be different) in the Developer Toolbar. This will return you to the application's home page in the Application Builder.
 
@@ -237,6 +239,8 @@ You have completed the lab, well done! At this point you should have a basic und
 
 ## Acknowledgements
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

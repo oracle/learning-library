@@ -1,12 +1,10 @@
 {
   "tutorials": [
     {
-
-      "title": "Workshop Introduction and Setup",
+      "title": "Introduction",
       "filename": "0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
     },
     {
-
       "title": "Lab 1: Sign up for an APEX Workspace",
       "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
     },

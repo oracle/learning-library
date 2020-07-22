@@ -1,17 +1,23 @@
-# Get an Oracle Cloud Free Tier Account
+# Sign Up for Free Trial
 
 ## Introduction
 
-This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
+This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.  
 
-### What Do You Need? ###
+### Two Cloud Offers in One
 
-* An email address
+Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first.
+
+![](images/freetrial.png " ")
+
+### Prerequisites
+
+* A valid email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
 
-## STEP 1: Create Your Free Trial Account ##
+## STEP 1: Create Your Free Trial Account 
 
-In this section, you'll fill out the registration form at [oracle.com/cloud/free](https://oracle.com/cloud/free).
+In this section, you will fill out the registration form at [oracle.com/cloud/free](https://oracle.com/cloud/free).
 
 1.  Click on the "Start for free" button and enter the appropriate information to create your account.
     * Enter the same **email address** you used to register for Oracle Open World / Oracle Code One. A popup should appear recognizing your email. If not, the registration form will ask for additional information later.
@@ -20,7 +26,7 @@ In this section, you'll fill out the registration form at [oracle.com/cloud/free
 
     ![](images/signup-for-freetier.png " ")
 
-2.  Enter a few details for a new personal account.
+2.  Enter a few details for your new Oracle Cloud account.
     * You can choose almost anything for your Cloud Account Name. Remember what you wrote. You'll need this name later to sign in.
     * Click **Enter Password**.
 
@@ -34,9 +40,9 @@ In this section, you'll fill out the registration form at [oracle.com/cloud/free
 
 6. Click **Review Terms and Conditions**. Read and agree to the Terms & Conditions by checking the box and click **Complete Sign-Up**.
 
-7. Your account is partitioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
+7. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
 
-## STEP 2: Sign in to Your Account ##
+## STEP 2: Sign in to Your Account 
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
@@ -65,6 +71,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Last Updated By/Date** - Kay Malcolm, Database Product Management, April 2020
+- **Last Updated By/Date** - Kay Malcolm, Database Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

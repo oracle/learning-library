@@ -4,8 +4,8 @@ Data Safe is a unified control center for your Oracle Databases which helps you 
 
 This lab walks you through the steps to get started using Oracle Data Safe with ExaCS on Oracle Cloud Infrastructure. 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Requirements
 
 - Login credentials for your tenancy in Oracle Cloud Infrastructure

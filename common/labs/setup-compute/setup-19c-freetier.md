@@ -1,4 +1,4 @@
-# Setup - Freetier or Existing Cloud Account 
+# Setup - Freetier or Existing Cloud Account
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running a pre-configured Oracle Database 19c install using Oracle Resource Manager and Terraform.  
@@ -25,7 +25,7 @@ Link to Marketplace - https://www.oracle.com/cloud/marketplace/
 
 This lab assumes you have already completed the following labs:
 - Register for Free Tier
-- Create SSH Keys
+- Generate SSH Keys
 
 ### Estimated Time
 
@@ -34,30 +34,30 @@ This lab takes approximately 10 minutes to complete.
 ## Step 1: Login and Create Stack using Resource Manager
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [db19c-compute-vcn-19-7.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k52Q1PBzZUsUlTUEKwdfN63LY9naMuiOA9QaK5naUHE/n/c4u03/b/labfiles/o/db19c-compute-v19-7.zip) - Packaged terraform instance creation script for creating network and instance running the 19c Oracle Database
+    - [db19c-compute-vcn-v2.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6SuZ5vfQinfsZv8FgFCA7ZbpWqRWKEyKvFyo3DZf-E0/n/c4u03/b/labfiles/o/db19c-compute-vcn-v2.zip) - Packaged terraform instance creation script for creating network and instance running the 19c Oracle Database
 
 2.  Save in your downloads folder.
 
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *dboptionsUSERS*.  Choose **Resource Manager > Stacks**.  
 
-    ![](./images/cloud-homepage.png " ") 
+    ![](./images/cloud-homepage.png " ")
 
     ![](./images/resource.png " ")
 
     ![](./images/createstackpage.png " ")
 
-4.  Click the **Browse** link and select the zip file (db19c-compute-vcn.zip) that you downloaded. Click **Open**.
+4.  Click the **Browse** link and select the zip file (db19c-compute-vcn-v2.zip) that you downloaded. Click **Open**.
 
     ![](./images/create-db-stack.png " ")
 
     Enter the following information:
 
     - **Name**:  Enter a name  (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-    
+
     - **Description**:  Same as above
 
     Click **Next**
-    
+
 5.  Now, configure your instance.
 
     ![](./images/create-db-19c-stack.png " ")
@@ -65,8 +65,10 @@ This lab takes approximately 10 minutes to complete.
     Enter the following information:
 
     **Choose a Display Name For Your Instance:** Enter a display name. This will be the display name for the compute instance you create.  We recommend your name and a set of numbers
-        
+
     **SSH Public Key**:  Paste the public key you created in the earlier lab *(Note: If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance)*
+
+    **Instance Shape**: Enter **VM.Standard2.1**
 
     Click **Next**.
 
@@ -118,7 +120,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-    ![](./images/cloudshell.png " ") 
+    ![](./images/cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP addresss for your instance.
@@ -140,9 +142,9 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ````
     ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/cloudshellssh.png " ") 
+    ![](./images/cloudshellssh.png " ")
 
-    ![](./images/cloudshelllogin.png " ") 
+    ![](./images/cloudshelllogin.png " ")
 
     *Note: The angle brackets <> should not appear in your code.*
 
@@ -155,13 +157,13 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ````
     ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
     ````
-    ![](./images/ssh-first-time.png " ") 
+    ![](./images/ssh-first-time.png " ")
 
     *Note: The angle brackets <> should not appear in your code.*
 
 2.  Enter a name for the session and click **Save**.
 
-    ![](./images/putty-setup.png " ") 
+    ![](./images/putty-setup.png " ")
 
 3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
 
@@ -169,7 +171,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
-    ![](./images/putty-auth.png " ") 
+    ![](./images/putty-auth.png " ")
 
 6. The file path for the SSH private key file now displays in the Private key file for authentication field.
 
@@ -188,7 +190,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     ![](./images/tailOfBuildDBInstanceLog.png " ")
 
 2.  When you see the following message, the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes).  However certain labs may proceed without the entire database setup being finished.
-   
+
     ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
 
 3. Run the following command to verify the database with the SID **ORCL** is up and running
@@ -199,7 +201,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     </copy>
     ````
 
-    ![](./images/pseforcl.png " ") 
+    ![](./images/pseforcl.png " ")
 
 
 4. Verify the listener is running
@@ -209,10 +211,10 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     </copy>
     ````
 
-    ![](./images/pseftns.png " ") 
+    ![](./images/pseftns.png " ")
 
 5.  Connect to the Database using SQL*Plus as the **oracle** user.
-    
+
     ````
     <copy>
     sudo su - oracle
@@ -220,7 +222,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     exit
     </copy>
     ````
-    
+
     ![](./images/sqlplus_login_orclpdb.png " ")
 
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
@@ -232,4 +234,5 @@ You may now proceed to the next lab.
 - **Contributors** - Quintin Hill, Brian McGraw, Oracle North America Technology
 - **Last Updated By/Date** - Kay Malcolm, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

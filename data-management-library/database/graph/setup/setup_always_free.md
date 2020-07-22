@@ -19,8 +19,8 @@ In this workshop you will:
 
 ## Acknowledgements ##
 
-- **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
-  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
-  Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
-
-- **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+  
+* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+    Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
+    Arabella Yao, Product Manager Intern, Database Management.

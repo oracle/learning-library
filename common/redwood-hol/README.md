@@ -25,4 +25,4 @@
     }
     ```
 * You can test locally using any local HTTP server, for example, [simplehttpserver](https://www.npmjs.com/package/simplehttpserver), [http-server](https://www.npmjs.com/package/http-server), [live-server](https://www.npmjs.com/package/live-server) and others.
-* When deployed to GitHub, provide your customers the link to a GitHub page (oracle.github.io) that includes the path to the index.html file in your project. For example [https://oracle.github.io/learning-library/data-management-library/security/data-safe/workshop](https://oracle.github.io/learning-library/data-management-library/security/data-safe/worksop).
+* When deployed to GitHub, provide your customers the link to a GitHub page (oracle.github.io) that includes the path to the index.html file in your project. For example [https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=560](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=560).

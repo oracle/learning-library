@@ -33,7 +33,7 @@ When you ran the script in your first workspace you created a REST handler for b
 
     - Web Source Type - select **ORACLE REST Data Services**
     - Name - enter **REST DEPT Source**
-    - URL Endpoint - Enter the REST URI for the dept.rest handler. This is the same URI you got in lab 2 step 3 but `emp` is replaced with `dept`. {Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/ }
+    - URL Endpoint - Enter the REST URI for the dept.rest handler. This is the same URI you got in Lab 2, Step 3 but `emp` is replaced with `dept`. {Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/ }
 
     Click **Next**.
 
@@ -202,7 +202,8 @@ This completes Lab 5 and the workshop. You now know how to define List of Values
 ## **Acknowledgements**
 
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
+ - **Contributors** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Jeffrey Malcolm Jr, Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

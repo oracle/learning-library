@@ -1,43 +1,40 @@
 {
-  "lab": {
-    "title": "Building an App on Existing Tables",
-    "modules": [
-      {
-        "filename": "README.md",
-        "title": "Lab Introduction"
-      },
-      {
-        "filename": "1-sign-up-apex.md",
-        "title": "Module 1: Signing up for an APEX Workspace"
-      },
-      {
-        "filename": "2-installing-sample-tables.md",
-        "title": "Module 2: Installing Sample Tables"
-      },
-      {
-          "filename": "3-create-app.md",
-          "title": "Module 3: Creating the Application"
-      },
-      {
-        "filename": "4-regenerate-app.md",
-        "title": "Module 4: Regenerating the App"
-      },
-      {
-        "filename": "5-improving-dashboard.md",
-        "title": "Module 5: Improving the Dashboard"
-      },
-      {
-        "filename": "6-improving-projects.md",
-        "title": "Module 6: Improving Projects"
-      },
-      {
-        "filename": "7-improving-milestones.md",
-        "title": "Module 7: Improving Milestones"
-      },
-      {
-        "filename": "8-improving-tasks.md",
-        "title": "Module 8: Improving Tasks"
-      }
-    ]
-  }
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
+    },
+    {
+      "title": "Lab 1: Installing Sample Tables",
+      "filename": "2-installing-sample-tables/2-installing-sample-tables.md"
+    },
+    {
+      "title": "Lab 2: Creating the Application",
+      "filename": "3-create-app/3-create-app.md"
+    },
+    {
+      "title": "Lab 3: Regenerating the App",
+      "filename": "4-regenerate-app/4-regenerate-app.md"
+    },
+    {
+      "title": "Lab 4: Improving the Dashboard",
+      "filename": "5-improving-dashboard/5-improving-dashboard.md"
+    },
+    {
+      "title": "Lab 5: Improving Projects",
+      "filename": "6-improving-projects/6-improving-projects.md"
+    },
+    {
+      "title": "Lab 6: Improving Milestones",
+      "filename": "7-improving-milestones/7-improving-milestones.md"
+    },
+    {
+      "title": "Lab 7: Improving Tasks",
+      "filename": "8-improving-tasks/8-improving-tasks.md"
+    }
+  ]
 }

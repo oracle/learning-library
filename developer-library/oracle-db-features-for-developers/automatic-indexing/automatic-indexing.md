@@ -1,6 +1,6 @@
 # Automatic Indexing
 
-## Introduction
+## **Introduction**
 
 The automatic indexing feature automates index management tasks based on changes in the application workload. This feature improves database performance by managing indexes automatically in an Oracle database.
 
@@ -31,7 +31,7 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## Step 1: Verify sample data and drop indexes
+## **Step 1**: Verify sample data and drop indexes
 
 Index structures are an essential feature of database performance. Indexes are critical for OLTP applications, which use large data sets and run millions of SQL statements a day. Indexes are also critical for data warehousing applications, which typically query a relatively small amount of data from very large tables. If you do not update the indexes whenever there are changes in the application workload, the existing indexes can cause the database performance to deteriorate considerably.
 
@@ -111,7 +111,7 @@ This Lab will use the Sales History (SH) sample schema.
 
     ![](./images/step1.4-gatherstats.png " " )
 
-## Step 2: Logging In and Examining Schema
+## **Step 2**: Logging In and Examining Schema
 
 1.  All scripts for this lab are stored in the labs/new-features-for-developers/automaticindexing folder and are run as the oracle user. Let's navigate there now. We recommend you to type the commands to get a feel for working on the lab. But we will also allow you to copy the commands via the COPY button.
 
@@ -158,7 +158,7 @@ This Lab will use the Sales History (SH) sample schema.
     </copy>
     ````
 
-## Step 3: Add Schemas
+## **Step 3**: Add Schemas
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called ORCLPDB you must supply this alias when connecting to the SH account.
 
@@ -247,7 +247,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     This sample report will show Automatic Indexes activity for the last 30 days. If Automatic Indexing were *OFF* during this time, there may be minimal or no information.
 
-## Step 4: Run a workload
+## **Step 4**: Run a workload
 
 Automatic indexing can work with data for OLTP applications, which use large data sets and run millions of SQL statements a day, as well as with data for data warehousing applications.
 In this Lab, we don’t have any application running on our database, so we will generate a synthetic workload manually.
@@ -304,7 +304,7 @@ In this Lab, we don’t have any application running on our database, so we will
 
     ![](images/ai_stats_gather.png " ")
 
-## Step 5: View Advisor Tasks
+## **Step 5**: View Advisor Tasks
 
 DBA\_ADVISOR\_TASKS displays information about all tasks in the database. The view contains one row for each task. Each task has a name that is unique to the owner. We are interested in the STATUS of the task named SYS\_AUTO\_INDEX\_TASK. This STATUS can be:
 - INITIAL - Initial state of the task; no recommendations are present.
@@ -344,7 +344,7 @@ DBA\_ADVISOR\_TASKS displays information about all tasks in the database. The vi
     </copy>
     ````
 
-## Step 6: Generate Workload
+## **Step 6**: Generate Workload
 
 Automatic indexing improves database performance by managing indexes automatically and dynamically in an Oracle database based on changes in the application workload. This is why we need more workload on our Pluggable Database ORCLPDB, to simulate changes in the application workload.
 
@@ -543,7 +543,7 @@ Automatic indexing improves database performance by managing indexes automatical
 
     ![](images/ai_change_markt_share_results.png " ")
 
-## Step 7: Calculate a sales projection
+## **Step 7**: Calculate a sales projection
 
 You can build a query that projects sales for 2002 based on the sales of 2000 and 2001. Firstly, finds the most percentage changes in sales from 2000 to 2001 and then adds that to the sales of 2002. You can build a subclause that finds the monthly sales per product by country for the years 2000, 2001, and 2002, and then a second subclause finds a list of distinct times at the month level.
 
@@ -645,7 +645,7 @@ You can build a query that projects sales for 2002 based on the sales of 2000 an
     </copy>
     ````
 
-## Step 8: Automatic Indexing Results
+## **Step 8**: Automatic Indexing Results
 
 In this section, you will look at how Automatic Indexing has worked to improve the performance of your queries.
 
@@ -797,9 +797,11 @@ In this section, you will look at how Automatic Indexing has worked to improve t
 
 In this Lab, you had an opportunity to examine the Automatic Indexing capabilities of Oracle Database 19c.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Jean-Francois Verrier
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** - Anoosha Pilli, Product Manager, DB Product Management | Dylan McLeod, LiveLabs QA Intern
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

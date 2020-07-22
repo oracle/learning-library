@@ -44,6 +44,8 @@ Any software client you use to connect to Oracle Cloud Infrastructure must be co
 
 To create a user API key, you will use `openssl` on your local system. If you are using Windows, we recommend the Git Bash Shell.
 
+  *Note: To paste in Git Bash Shell right click in the window and click paste(Ctrl + V does not work in the shell).*
+
 1. Create a `~/.oci` directory:
 
     *Note: if you already have a .oci directory, you can skip this step.*
@@ -116,6 +118,8 @@ You may proceed to the next lab.
 ## Acknowledgements
 * **Author** - Dave Rubin, Senior Director, NoSQL and Embedded Database Development and Michael Brey, Director, NoSQL Product Development
 * **Adapted for Cloud by** -  Tom McGinn, Database User Assistance
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

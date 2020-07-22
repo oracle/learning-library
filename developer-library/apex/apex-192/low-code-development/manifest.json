@@ -1,7 +1,7 @@
 {
     "tutorials": [
         {
-            "title": "Workshop Overview",
+            "title": "Introduction",
             "filename":"./workshop-intro/intro.md"
         },
         {

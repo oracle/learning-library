@@ -4,7 +4,9 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ATP instance using the cloud console.
 
-*Note: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
+*Note1: While this lab uses ATP, the steps are identical for creating and connecting to an ADW database.*
+
+*Note2: If you want to create an Always Free autonomous database, you need to be in a region where Always Free Resources are available. (Not all regions have Always Free Resources)*
 
 ### Objectives
 
@@ -43,7 +45,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
     ![](../images/Compartment.png " ")
 
-7. You can see your current default **region** in the top, right hand corner of the page. Go ahead and select a different available region such as **Phoenix** or **Toronto**.
+6. You can see your current default **region** in the top, right hand corner of the page. You can select a different region. If you want to create an Always Free ADB, go ahead and select a region where Always Free Resources are available.
 
     ![](./../../../../autonomous-database/shared/adb-provision/images/Region.png " ")
 
@@ -128,6 +130,7 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

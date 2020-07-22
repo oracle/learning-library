@@ -4,7 +4,7 @@
 
 In this lab you will regenerate the application to create a better starting point for development.
 
-If you review the Milestones report and form you will see there are only four items. Secondly, after speaking to your end users you learn that they often want to enter in many milestones at once for a given project.
+If you review the Milestones report and form you will see there are only four items. Secondly, after speaking to your end users you learn that they often want to enter in many milestones at once for a given project
 
 ![](images/milestones.png " ")
 
@@ -13,6 +13,8 @@ Therefore, it would be preferable to replace the current report and form with an
 Given that no additional development has been performed in the application, you just generated, it is quickest and easiest to delete the current application, and then regenerate a new application.
 
 *{Note: If development had been performed in the application then you would lose any changes when you regenerate. To avoid this, you could use the Create Page Wizard to create a new Interactive Grid page, delete the existing report and form, and then modify the navigation lists to point to the new page.}*
+
+Estimated Time: 5 minutes
 
 ### Objectives
 - Regenerate the application for a developer friendly environment
@@ -103,12 +105,13 @@ Now that you have the original pages reloaded, it is simply a matter of removing
     *{Note: Records can be inserted, updated, and deleted directly within the Interactive Grid. The wizard generated a list of values for Projects, the Due Date utilizes a pop-up calendar, and the other two fields use text areas to maintain the data directly on the page.}*
 
 ## **Summary**
-This completes Lab 4. You now know how to utilize the blueprint to load a previous application definition into the Create Application wizard. [Click here to navigate to Lab 5](?lab=lab-5-improving-tasks)
+This completes Lab 3. You now know how to utilize the blueprint to load a previous application definition into the Create Application wizard. [Click here to navigate to Lab 4](?lab=lab-4-improving-tasks)
 
 ## **Acknowledgments**
 
 - **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
-- **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
+- **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,8 +1,8 @@
-# Lab 2: Adding JavaScript to APEX Apps
+# Adding JavaScript to APEX Apps
 
-## Lab overview
+## Introduction
 
-Up to this point, you have been working with JavaScript outside of APEX. In this Lab, you will learn the most common ways to add JavaScript to APEX applications. The options include Dynamic Actions, Dynamic Actions with JavaScript hooks, page- and component-level attributes, and application files. 
+Up to this point, you have been working with JavaScript outside of APEX. In this Lab, you will learn the most common ways to add JavaScript to APEX applications. The options include Dynamic Actions, Dynamic Actions with JavaScript hooks, page- and component-level attributes, and application files.
 
 Think of these options as a progression, with each one requiring more knowledge of JavaScript, APEX's JavaScript APIs, and web development in general. New APEX developers should start by learning Dynamic Actions and progress to subsequent options only when they are ready and the application requirements cannot be satisfied without a more advanced approach. Generally speaking, the more declarative the solution, the easier it will be to implement and maintain.
 
@@ -10,7 +10,7 @@ Play the video below to learn about for this lab.
 
 [](youtube:-l6E5LuNU3U)
 
-<a href="https://www.slideshare.net/DanielMcGhan/module-2-adding-javascript-to-apex-apps" target="_blank">Click here</a> to view the slides.
+<a href="https://www.slideshare.net/DanielMcGhan/module-2-adding-javascript-to-apex-apps" target="\_blank">Click here</a> to view the slides.
 
 ## **Step 1:** Using Dynamic Actions
 
@@ -52,11 +52,11 @@ Dynamic Actions are the easiest way to add JavaScript to an application in APEX.
 
     This will ensure the image item is shown correctly, but you need to account for the region too. You'll do that next.
 
-9.  Right-click the **Show** action in the left pane and select **Duplicate**. 
+9.  Right-click the **Show** action in the left pane and select **Duplicate**.
 
     ![](images/duplicate-action.png)
 
-10. In the properties pane on the right, set **Selection Type** to **Region** and **Region** to **..Product Image**. 
+10. In the properties pane on the right, set **Selection Type** to **Region** and **Region** to **..Product Image**.
 
     ![](images/affected-elements-2.png)
 
@@ -69,14 +69,14 @@ Dynamic Actions are the easiest way to add JavaScript to an application in APEX.
 12. Save your changes and then return to the runtime application. Close the form page and re-open it by clicking on a product again. Now, the image item and region should be hidden or shown based on the value of **Product Available**. With Dynamic Actions, you can do all of that without writing a single line of JavaScript code!
 
     ![](images/product-details-2.png)
-    
+
 ## **Step 2:** Using Dynamic Actions with JavaScript hooks
 
 The Dynamic Action framework provides various JavaScript hooks, or features that are geared toward developers that know a little JavaScript. These features can make the framework much more powerful and flexible.
 
-In this step, you will use these features in the Dynamic Action you created in the previous step. The end result will be the same, but you will have a better idea of the JavaScript hooks available to you when needed. 
+In this step, you will use these features in the Dynamic Action you created in the previous step. The end result will be the same, but you will have a better idea of the JavaScript hooks available to you when needed.
 
-1.  Return to the Page Designer for page 6 and select the Dynamic Action created in the previous step. 
+1.  Return to the Page Designer for page 6 and select the Dynamic Action created in the previous step.
 
     ![](images/select-dynamic-action.png)
 
@@ -156,7 +156,7 @@ In this step, you will use these features in the Dynamic Action you created in t
 
 In addition to Dynamic Actions, there are various attributes at the page and component level that are made for JavaScript. In this step, you'll learn where those attributes are and how they are used.
 
-1.  Return to the Page Designer for page 1, the home page, and select the root element in the tree under the rendering tab. 
+1.  Return to the Page Designer for page 1, the home page, and select the root element in the tree under the rendering tab.
 
     ![](images/root-tree-node.png)
 
@@ -170,9 +170,9 @@ In addition to Dynamic Actions, there are various attributes at the page and com
     </copy>
     ```
 
-    The code in that property executes in the global scope - before the DOM load event and APEX components are initialized. 
+    The code in that property executes in the global scope - before the DOM load event and APEX components are initialized.
 
-    Next, add this code to the **Execute when Page Loads** property: 
+    Next, add this code to the **Execute when Page Loads** property:
 
     ```
     <copy>
@@ -203,7 +203,7 @@ In addition to Dynamic Actions, there are various attributes at the page and com
         data.series[0].color = '#0B6623';
         data.series[1].color = '#9DC183';
         data.series[2].color = '#708238';
-        
+
 
 
             return data;
@@ -225,9 +225,9 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
 In the last step, you added JavaScript code directly to page and component level attributes. For performance and reusability reasons, it can be beneficial to move JavaScript code to Static Files instead. While you don't have enough JavaScript code in the Sample Database Application to realize those benefits, in this step, you'll move the code added previously to Static Files to see how it's done.
 
-1.  The following code contains the `doWork` function that's being invoked on the home page and the function that's styling the colors of the Sales by Category chart. The only change to the second function is that it now has a name (it was an anonymous function before). 
+1.  The following code contains the `doWork` function that's being invoked on the home page and the function that's styling the colors of the Sales by Category chart. The only change to the second function is that it now has a name (it was an anonymous function before).
 
-    **Click** <a href="sample-db-app.js" download="sample-db-app.js" target="\_blank">here</a> and use the **Save File** dialog box to download the Javascript file for this lab `sample-db-app.js` to your local computer.
+    **Click** <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/VdYE763I4zIFZWL9yGaz-TzxjgUA-9peZjtM3efZRlY/n/c4u03/b/developer-library/o/sample-db-app.js" download="sample-db-app.js" target="\_blank">here</a> and use the **Save File** dialog box to download the Javascript file for this lab `sample-db-app.js` to your local computer.
 
    Or you can save the code in a new file on your computer named **sample-db-app.js**.
 
@@ -236,16 +236,16 @@ In the last step, you added JavaScript code directly to page and component level
     function doWork() {
       console.log('doWork fired!');
     }
-    
+
     function styleSalesByCatChart(options) {
       options.dataFilter = function(data) {
         data.series[0].color = '#0B6623';
         data.series[1].color = '#9DC183';
         data.series[2].color = '#708238';
-        
+
         return data;
       };
-      
+
       return options;
     }
     </copy>
@@ -282,4 +282,5 @@ This completes Lab 2. At this point, you should have a solid understanding of th
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

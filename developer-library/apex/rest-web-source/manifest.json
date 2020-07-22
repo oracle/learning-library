@@ -1,31 +1,30 @@
 {
-  "lab": {
-    "title": "Building an App using REST Web Sources",
-    "modules": [
-      {
-        "filename": "README.md",
-        "title": "Lab Introduction"
-      },
-      {
-        "filename": "1-sign-up-apex.md",
-        "title": "Module 1: Signing up for an APEX Workspace"
-      },
-      {
-        "filename": "2-rest-enabling.md",
-        "title": "Module 2: REST Enabling Database Objects"
-      },
-      {
-          "filename": "3-defining-web-source.md",
-          "title": "Module 3: Defining Web Sources"
-      },
-      {
-        "filename": "4-creating-pages.md",
-        "title": "Module 4: Creating Pages"
-      },
-      {
-        "filename": "5-defining-lov.md",
-        "title": "Module 5: Defining a List of Values"
-      }
-    ]
-  }
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
+    },
+    {
+
+      "title": "Lab 1: REST Enabling Database Objects",
+      "filename": "2-rest-enabling/2-rest-enabling.md"
+    },
+    {
+
+      "title": "Lab 2: Defining Web Sources",
+      "filename": "3-defining-web-source/3-defining-web-source.md"
+    },
+    {
+      "title": "Lab 3: Creating Pages",
+      "filename": "4-creating-pages/4-creating-pages.md"
+    },
+    {
+      "title": "Lab 4: Defining a List of Values",
+      "filename": "5-defining-lov/5-defining-lov.md"
+    }
+  ]
 }

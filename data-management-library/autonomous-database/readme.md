@@ -3,13 +3,7 @@
 Oracle’s revolutionary cloud database is self-driving, self-securing, self-repairing, and designed to eliminate error-prone manual data management. Easily deploy new or move your existing OLTP and data warehouse to the cloud. The secured, intelligent, highly available database in the cloud enables you to get more value from your data to grow your business.
 
 ## Workshops
-Click on one of our workshops below to access the content.
-
-### [Autonomous Database on Shared Infrastructure Quickstart Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-quickstart-workshop/freetier/)
-
-### [Autonomous Database on Shared Infrastructure Advanced Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-advanced-workshop/freetier/)
-
-### [Autonomous Database on Dedicated Infrastructure Workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/dedicated/workshop/)
+Click [here](http://bit.ly/golivelabs) to access ADB content.
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -43,7 +37,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Oracle Database 19c](https://www.youtube.com/watch?v=EVPNyL2vAVI)
 
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management

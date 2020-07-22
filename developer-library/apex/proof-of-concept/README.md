@@ -32,7 +32,6 @@ components to improve the initial app.
 | 6 | [Improving To Dos](6-improving-todos.md) | 10 min |
 | 7 | [Improving Links](7-improving-links.md) | 5 min |
 
-***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
 
 ## Navigating in the Lab
 To return to this page from anywhere within the lab click either Oracle Hands on Labs, or Home in the header.
@@ -55,3 +54,5 @@ Click the navigation menu icon, in the upper-left corner of the header, to see a
 - Community   https://apex.oracle.com/community
 - External Site + Slack   http://apex.world
 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

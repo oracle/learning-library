@@ -19,18 +19,15 @@ Traditionally you would have to download and install client tools onto your loca
 
 1. From the Autonomous Database Details page of the database that you just created there is a Tools tab located in the middle of the page. On this tab you will see SQL Developer Web, Oracle ML User Administration, and Oracle Application Express. Click on "Open SQL Developer Web" to launch the login page.
 
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
+![](media/atp_tools_sql_web_dev.png)
 
 2. Since you haven't created any users yet, you first have to login as ADMIN using the password you specified when you created the Autonomous Database.
 
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
+![](media/sql_web_dev_admin_login.png)
 
 3. Once you are logged in you will be presented with a screen that looks like the one below:
 
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
+![](media/sqlwebdev_landing.png)
 
 4. The components of the window that you can explore:
 * **Worksheet-** This is where you will type all of your commands and run them. Most of the time we spend in SQL Developer Web will be in the worksheet. The large green play button will run a single command. The smaller green play button will run many commands as a script. You have the option of saving and opening worksheets. There are some more advanced buttons like explain plans and autotrace that once you are more familiar with SQL you will be able to try out.
@@ -43,8 +40,7 @@ Traditionally you would have to download and install client tools onto your loca
 
 * **Data Modeler-** We won't be looking into the data modeler, however, if you were working on designing an actual system you can use the data modeler to visually design and generate the schema.
 
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
+![](media/sqlwebdev_landing_markup.png)
 
 [Back to Top](#table-of-contents)
 *****
@@ -54,7 +50,8 @@ Traditionally you would have to download and install client tools onto your loca
 
 1. Navigate to the Worksheet window so we can create the users needed for the rest of the labs.
 
-2. Create the users needed for the APEX application and for the loading lab. The dwrole is a role that comes with the Autonomous Database and gives the user the ability to login as well as create objects. We will also give them unlimited quota on data so they can create objects. Copy the code below into the worksheet and click the Run Script button.
+2. Create the users needed for the APEX application and for the loading lab. The dwrole is a role that comes with the Autonomous Database and gives the user the ability to login as well as create objects. We will also give them unlimited quota on data so they can create objects. Copy the code below into the worksheet and click the Run Script button. In the Script Output window you will see if the commands succeeded.
+
 ```
 create user apex_app identified by "ApexPassword123!";
 grant dwrole to apex_app;
@@ -64,10 +61,12 @@ create user mama_maggy identified by "MamaPassword123!";
 grant dwrole to mama_maggy;
 alter user mama_maggy quota unlimited on data;
 ```
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
 
-3. If you want to be able to log into SQL Developer Web as the user mama_maggy there are two more steps you need to do. The first is enabling their schema to log into SQL Developer Web. Below is the command. p_schema is the user you are enabling and p_url_mapping_pattern is an alias you are giving the user to use in the URL for their login in the next step.
+![](media/sqlwebdev_create_users.png)
+
+You will use the user mama_maggy in SQL Developer Web to load some data in a future lab. To enable SQL Developer Web for this user there are two more steps to do. The first is enabling their schema to log into SQL Developer Web. The second is building a URL for the user to use to log into.
+
+3. To enable the user mama_maggy to log into SQL Developer Web we will use the command below. p_schema is the user you are enabling and p_url_mapping_pattern is an alias you are giving the user to use in the URL for their login in the next step. Click the Clear button (trashcan) to clear the worksheet and then copy and paste the code below. Then click the Run Script Button.
 
 ```
 BEGIN
@@ -82,23 +81,18 @@ BEGIN
 END;
 /
 ```
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
+![](media/sqlwebdev_enable_schema.png)
 
 4. The second step is you have to create a specific URL for that user to use. If you look at the URL for your SQL Developer Web session it will break down like the one below. Make sure to copy your URL and make the change for the p_url_mapping_pattern you created in the previous step. I used mamamaggy so you can see I substituted mamamaggy for admin, the rest of the URL stays the same.
 
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
-
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
+![](media/sqlwebdev_old_url.png)
+![](media/sqlwebdev_new_url.png)
 
 **Save this URL. We will use it in future labs**
 
 5. If you want to try logging in as MAMA_MAGGY, open a new window and paste your URL in and try it. We will be using this user and URL for the Loading an Autonomous Database Lab.
 
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
+![](media/sqlwebdev_mamamaggy_login.png)
 
 [Back to Top](#table-of-contents)
 *****

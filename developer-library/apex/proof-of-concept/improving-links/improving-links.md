@@ -4,13 +4,15 @@
 
 In this lab, you will learn how to modify the URL so that it can be used to display the content listed in a new window.
 
+Estimated Time: 5 minutes
+
 ### Objectives
 - Improve the Projects List of Values
 - Update the Links section of you application
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, a LiveLabs account or free trial. 
 - An APEX Workspace and application
 
 ## **Step 1** - Adding Columns to the Report.
@@ -19,6 +21,7 @@ In a similar fashion to how you modified the To Dos report, you need to update t
 1. From the runtime application, navigate to the Links report page, and then navigate to Page Designer.
 
     In the Developer Toolbar click **Edit Page11**.
+    ![](images/edit-page11.png " ")
 
     You should now be in Page Designer with **Page 11: Links** loaded.
 
@@ -124,6 +127,7 @@ In a similar fashion to how you modified the To Dos report, you need to update t
 If you review the Links form page, by clicking an edit icon on the report, you will see that the Task item is not displaying the Project and Milestone. In the previous lab you updated the Tasks LOV to include the extra display columns. Therefore, all you need to do now is update the Task item to be a Popup LOV.
 
 1. From the runtime environment, in the Developer Toolbar, click **Edit Page 12**.
+![](images/edit-page12.png " ")
 
 7. Within Page Designer, in the Rendering tree (left pane), click **P12\_TASK_ID**.  
     In the Property Editor (right pane), for Identification > Type, select **Popup LOV**.
@@ -152,7 +156,7 @@ If you review the Links form page, by clicking an edit icon on the report, you w
 
 ## **Summary**
 
-This completes Lab 7 and the workshop. You now know how to change a URL value to be a link to a separate browser tab or window.
+This completes Lab 6 and the workshop. You now know how to change a URL value to be a link to a separate browser tab or window.
 
 ## **Learn More** - *Useful Links*
 
@@ -165,7 +169,8 @@ This completes Lab 7 and the workshop. You now know how to change a URL value to
 ## **Acknowledgments**
 
 - **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
-- **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
+- **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

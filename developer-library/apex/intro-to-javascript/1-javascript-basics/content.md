@@ -1,16 +1,16 @@
-# Lab 1: JavaScript Basics
+# JavaScript Basics
 
-## Lab overview
+## Introduction
 
-In this lab, you will start working with the basics of JavaScript, including variables, operators, and functions - all from the console in your browser's developer tools. 
+In this lab, you will start working with the basics of JavaScript, including variables, operators, and functions - all from the console in your browser's developer tools.
 
-This lab is based on <a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank">Google Chrome's DevTools</a>, so use that browser if possible. You may use a different browser if you wish, but you'll need to adapt the instructions that follow as needed.
+This lab is based on <a href="https://developers.google.com/web/tools/chrome-devtools/" target="\_blank">Google Chrome's DevTools</a>, so use that browser if possible. You may use a different browser if you wish, but you'll need to adapt the instructions that follow as needed.
 
 Play the video below to learn about this lab.
 
 [](youtube:02thxqv-m_c)
 
- <a href="https://www.slideshare.net/DanielMcGhan/module-1-javascript-basics" target="_blank">Click here</a> to view the slides.
+ <a href="https://www.slideshare.net/DanielMcGhan/module-1-javascript-basics" target="\_blank">Click here</a> to view the slides.
 
 ## **Step 1:** Using the browser's console
 
@@ -20,13 +20,13 @@ In this part, you will learn how to declare variables and work with different op
 
     ![](images/open-console.png)
 
-2.  The developer tools window can be docked to the browser in different ways or completely undocked. Take a moment to practice resizing and changing the position of the developer tools window using the customization menu. 
+2.  The developer tools window can be docked to the browser in different ways or completely undocked. Take a moment to practice resizing and changing the position of the developer tools window using the customization menu.
 
     Go to the next step when you have the developer tools window positioned as you like it.
 
     ![](images/devtools-dock-side.png)
 
-3.  Type the following code into the **Console** tab. Try typing it out, rather than copy-pasting it. Note that pressing **Enter** will execute the code in the console. Use **Shift+Enter** to add new lines. 
+3.  Type the following code into the **Console** tab. Try typing it out, rather than copy-pasting it. Note that pressing **Enter** will execute the code in the console. Use **Shift+Enter** to add new lines.
 
     ```
     <copy>
@@ -69,7 +69,7 @@ In this part, you will learn how to declare variables and work with different op
 
     Note that if you type the full name of a variable and press **Enter**, the value of the variable will be displayed in the console.
 
-8.  Refresh the web page and try typing the name of a variable again. They will not show up because each time a page is loaded in the browser, it gets its own new JavaScript context. 
+8.  Refresh the web page and try typing the name of a variable again. They will not show up because each time a page is loaded in the browser, it gets its own new JavaScript context.
 
 ## **Step 2:** Variables, data types, and operators
 
@@ -160,4 +160,5 @@ This completes Lab 1. At this point, you should be getting comfortable working w
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Jeffrey Malcolm Jr, LiveLabs QA, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

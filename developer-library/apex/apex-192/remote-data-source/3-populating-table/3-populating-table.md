@@ -6,20 +6,20 @@ In this lab, you will learn how to insert data into a table from a REST API.
 
 ### Background Information
 
-The **apex\_data_parser** is a PL/SQL package which provides an easy interface to parse files from various file formats, including comma-delimited (.csv). The parser is implemented as a table function - so the developer accesses parser results like a table. Therefore, the parser can utilize INSERT ... SELECT statements to insert rows directly into a table from the specified file.
+The **apex\_data\_parser** is a PL/SQL package which provides an easy interface to parse files from various file formats, including comma-delimited (.csv). The parser is implemented as a table function - so the developer accesses parser results like a table. Therefore, the parser can utilize INSERT ... SELECT statements to insert rows directly into a table from the specified file.
 
-The **apex\_web\_service.make\_rest\_request\_b** is a PL/SQL function which invokes a RESTful style Web service and returns the results in a BLOB. Utilizing this function within apex_data_parser will allow you to load data from a REST API directly into your table.
+The **apex\_web\_service.make\_rest\_request\_b** is a PL/SQL function which invokes a RESTful style Web service and returns the results in a BLOB. Utilizing this function within apex\_data\_parser will allow you to load data from a REST API directly into your table.
 
 ## **STEP 1** - Create a Script
 Rather than running a one-off SQL statement to load the data, writing a SQL Script enables the SQL statement to be run repeatedly.
 
 The Big Mac Data is refreshed every 6 months. Therefore, this script can be used twice a year to keep the data current.
 
-1. From the runtime environment, in the Developer Toolbar (bottom of screen), click **Home**
+1. From the runtime environment, in the Developer Toolbar (bottom of screen), click **Home**.
 
     ![](images/go-home.png " ")
 
-2. Click **SQL Workshop**, and then select **SQL Scripts**
+2. Click **SQL Workshop**, and then select **SQL Scripts**.
 
     ![](images/go-sql-scripts.png " ")
 
@@ -27,7 +27,7 @@ The Big Mac Data is refreshed every 6 months. Therefore, this script can be used
 
 4. In the Script Editor page, enter the following:
     - Script Name - enter **Populate BIG\_MAC\_INDEX**
-    -  Copy and paste the following:
+    -  Copy and paste the following into the editor.
 
         ```
         <copy>-- Remove current data
@@ -49,18 +49,18 @@ The Big Mac Data is refreshed every 6 months. Therefore, this script can be used
         delete big_mac_index  
         where local_price = 0;</copy>
         ```
-    Click **Run**
+    Click **Run**.
 
     ![](images/set-script.png " ")
 
 5. On the Run Script page, click **Run Now**.
 
 6. The Script Results page will be displayed listing the statements processed, successful, and with errors.     
-    In February 2020, Results should show **1586 row(s) inserted** and **1 row(s) deleted**.
+    In February 2020, Results should show **1586 row(s) inserted** and **1 row(s) deleted**. You may have a different number of rows added and deleted depending on when you run the script.
 
     ![](images/script-results.png " ")
 
-    *{Note: If you do not see 3 statements processed successfully then double check your table definition and the script to populate the table.}*
+    *Note: If you do not see 3 statements processed successfully then double check your table definition and the script to populate the table.*
 
 ## **STEP 2** - Review the Data
 There are several ways to review the data.
@@ -72,7 +72,7 @@ There are several ways to review the data.
 
     ![](images/runtime.png " ")
 
-    *{Note: Many of the Dollar Exchange Rate values simply show 1.}*
+    *Note: Many of the Dollar Exchange Rate values simply show 1.*
 
 3. In the APEX Builder tab or window, click **SQL Workshop**, and then select **Object Browser**.
 
@@ -83,14 +83,16 @@ There are several ways to review the data.
 
     ![](images/review-data.png " ")
 
-    *{Note: Review the decimal places on the _DOLLAR\_EXCHANGE\_RATE_ column. In the next lab you will ensure the data displays properly.}*
+    *Note: Review the decimal places on the _DOLLAR\_EXCHANGE\_RATE_ column. In the next lab you will ensure the data displays properly.*
 
 ## **Summary**
-This completes Lab 3. You now know how to utilize **apex\_data\_parser** and **apex\_web\_service.make\_rest\_request\_b** to populate a table in the Oracle database based on a REST endpoint. [Click here to navigate to Lab 4](?lab=lab-4-improving-report)
+This completes Lab 3. You now know how to utilize **apex\_data\_parser** and **apex\_web\_service.make\_rest\_request\_b** to populate a table in the Oracle database based on a REST endpoint. [Click here to navigate to Lab 4](?lab=lab-4-improving-report).
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

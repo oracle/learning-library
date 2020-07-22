@@ -16,6 +16,7 @@ To get started with the service, you create a table.
 * The fingerprint of the public key
 * Your tenancy's Oracle Cloud Identifier (OCID)
 * The OCID of your user account
+* A recent version of the java jdk installed locally on your computer
 
 ## STEP 1: Download the Oracle NoSQL SDK
 
@@ -38,6 +39,8 @@ To get started with the service, you create a table.
 
 4. Open a shell (GitBash for Windows), and unzip the SDK:
 
+    *Note: If the file name is different than oracle-nosql-java-sdk-5.2.11.zip make sure to alter the command below with your file name.*
+
     ```
     <copy>unzip oracle-nosql-java-sdk-5.2.11.zip</copy>
     ```
@@ -46,20 +49,22 @@ To get started with the service, you create a table.
 
 ## STEP 2: Download, build and run the sample application
 
-1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/qCpBRv5juyWwIF4dv9h98YWCDD50574Y6OwsIHhEMgI/n/c4u03/b/data-management-library-files/o/HelloWorld.java) file your home directory.
+1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/qCpBRv5juyWwIF4dv9h98YWCDD50574Y6OwsIHhEMgI/n/c4u03/b/data-management-library-files/o/HelloWorld.java) file and move it to your home directory.
 
 2. Review the sample application. You can access the [JavaAPI Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html) to reference Java classes, methods, and interfaces included in this sample application.
 
 3. Use `vi` or `nano` or any text editor to create a file named `config` in the `.oci` directory you created in your home directory with the following information:
 
     ```
-    [DEFAULT]
-    user=<user-ocid>
-    fingerprint=<fingerprint value>
-    tenancy=<tenancy-ocid>
+    <copy>[DEFAULT]
+    user=USER-OCID
+    fingerprint=FINGERPRINT-VALUE
+    tenancy=TENANCY-OCID
     key_file=~/.oci/oci_api_key_private.pem
-    pass_phrase=<key passphrase>
+    pass_phrase=KEY-PASSPHRASE</copy>
     ```
+
+    Replace USER-OCID with you user OCID, FINGERPRINT-VALUE with your API key fingerprint, TENANCY-OCID with your tenancy OCID, and KEY PASSPHRASE with the passphrase you used to create your keys. You should have noted these values in a text file as you've been working through this workshop.
 
     ![](images/config-file.png " ")
 
@@ -101,13 +106,15 @@ To get started with the service, you create a table.
 
 2. Click **HelloWorldTable** to open the details page.
 
+  *If you do not see HelloWorldTable select your root compartment on the left dropdown.*
+
   ![](images/open-helloworldtable.png " ")
 
 3. Click **Table Rows** under Resources.
 
   ![](images/helloworldtable.png " ")
 
-4. Click Run Query to execute the select statement and display the record inserted into the table:
+4. Click Run Query to execute the select statement and display the record inserted into the table.
 
   ![](images/run-query.png " ")
 
@@ -124,6 +131,8 @@ Oracle NoSQL Database also supports Python, Node.js and Go. This application acc
 ## Acknowledgements
 * **Author** - Dave Rubin, Senior Director, NoSQL and Embedded Database Development and Michael Brey, Director, NoSQL Product Development
 * **Adapted for Cloud by** -  Tom McGinn, Database Innovations Architect, Product Management
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, Robert Ruppel, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

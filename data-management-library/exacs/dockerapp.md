@@ -8,8 +8,8 @@ This lab walks you through the steps to connect a containerized node.js applicat
 
 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 - To build a docker container running node.js microservice
@@ -108,7 +108,7 @@ vi dbconfig.js
 
 - Now we'll deploy docker image.
 
-NOTE: To check if the docker is installed run the below command
+**NOTE: To check if the docker is installed, run the below command.**
 
 ```
 <copy>docker -v</copy>
@@ -129,7 +129,7 @@ With the dbconfig.js file edited with the appropriate ExaCS credentials, let us 
 ```
 <copy>docker build -t aone:1 .</copy>
 ```
-**NOTE: When running the docker build command make sure in the same directory as dockerfile, In this case /nodeappDocker**
+**NOTE: When running the docker build command, make sure you are in the same directory as dockerfile. In this case, that would be nodeappDocker.**
 
 Once the docker image build is done, you can find the image by running the below command
 ```
@@ -148,7 +148,7 @@ Once the docker image build is done, you can find the image by running the below
 
 ![](./images/dockerApp/docker_run.png " ") 
 
-**NOTE: When running the docker run command make sure port 3050 is open for the compute instance**
+**NOTE: When running the docker run command, make sure port 3050 is open for the compute instance.**
 
 - Run the below command to check the logs. 
 
@@ -158,9 +158,9 @@ Once the docker image build is done, you can find the image by running the below
  
 ![](./images/dockerApp/docker_logs.png " ")
 
-- To check the app on the browser, you have bridged port 3050 on the container to your compute instance
+- You have now bridged port 3050, on the container, to your compute instance
 
-- Open browser on your local machine and go to http://public_ip_of_your_compute_instance:3050
+- To check the app, open your browser on your local machine and go to http://public_ip_of_your_compute_instance:3050
 
 ![](./images/dockerApp/nodeapp.png)
 

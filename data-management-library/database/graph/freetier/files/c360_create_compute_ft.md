@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and Client, as well as ADB Wallet on your compute instance.
+This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and ADB Wallet on your compute instance.
 
 ### What Do You Need? 
 * Register cloud account
@@ -51,11 +51,12 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
 
     *Note: For Oracle Linux VMs, the default username is **opc***
 
+    If your SSH Keys are kept under `HOME/.ssh/` directory, run:
     ```shell
     <copy>ssh opc@</copy>&lt;public_ip_address>
     ```
 
-    If you have a different path for your SSH key enter the following:
+    If you have a different path for your SSH key, enter the following:
 
     ```shell
     <copy>ssh -i &lt;path_to_private_ssh_key> opc@&lt;public_ip_address></copy>
@@ -202,7 +203,7 @@ The steps are as follows:
     Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
 
-## STEP 3: Download and Copy Graph Server and Client, Copy ADB Wallet to the Linux Compute
+## STEP 3: Download and Copy Graph Server, Copy ADB Wallet to the Linux Compute
 
 Choose the environment where you created your SSH Key.
 
@@ -255,9 +256,9 @@ Choose the environment where you created your SSH Key.
 
 
 ### Other
-1.  Download the Graph Server and Client RPM.
+1.  Download the Graph Server RPM.
 
-    Click [here](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features/graph-server-and-client/graph-server-and-client-downloads.html) to download the Graph Server and the Client. Login and accept the license terms and downlaod the 20.2 Graph Server RPM.
+    Click [here](https://www.oracle.com/database/technologies/spatialandgraph/property-graph-features/graph-server-and-client/graph-server-and-client-downloads.html) to download the Graph Server. Login and accept the license terms and downlaod the 20.2 Graph Server RPM.
 
     ![](../images/download_graph_server.png " ")
 
@@ -401,10 +402,12 @@ Choose the environment where you created your SSH Key.
 
 ## Acknowledgements ##
 
-- **Author** - Jayant Sharma - Product Manager, Spatial and Graph.  
-  With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
+* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+
+* **Contributors** - With a little help from colleagues (Albert Godfrind and Ryota Yamanaka).  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

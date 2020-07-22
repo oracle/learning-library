@@ -1,6 +1,6 @@
 # Oracle Database 19c JSON Documents
 
-## Introduction
+## **Introduction**
 
 This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
 
@@ -26,7 +26,7 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
 
-## Step 1: Environment Preparation
+## **Step 1**: Environment Preparation
 
 Grant Required Privileges to the OE user.
 
@@ -109,7 +109,7 @@ Grant Required Privileges to the OE user.
 
     ![](./images/step1.5-connectoe.png " ")
 
-## Step 2:  Register for Geonames
+## **Step 2**:  Register for Geonames
 
 For the purpose of this exercise we will use a web service, that returns information in JSON format, provided by GeoNames - [geonames.org](http://www.geonames.org/). GeoNames is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/). You are free to:
 
@@ -120,7 +120,7 @@ For the purpose of this exercise we will use a web service, that returns informa
 
 2.  Enable the account for web services on the account page [GeoNames Account Page](http://www.geonames.org/manageaccount).
 
-## Step 3: Generate JSON Data
+## **Step 3**: Generate JSON Data
 
 First step is to generate some JSON data into the database, or retrieve sample documents from a web service. Oracle Database supports *JavaScript Object Notation (JSON)* data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
@@ -163,7 +163,7 @@ This lab covers the use of database languages and features to work with JSON dat
 
 4.  Please make sure you receive a similar output to the sample shown above.
 
-## Step 4: Store Json Documents Into Oracle Database
+## **Step 4**: Store Json Documents Into Oracle Database
 
 1.  Create a new table to store all JSON documents inside the pluggable database.
 
@@ -214,7 +214,7 @@ This lab covers the use of database languages and features to work with JSON dat
 
     ![](./images/p_jsonDoc_1.png " ")
 
-## Step 5:  Single Dot Notation
+## **Step 5**:  Single Dot Notation
 
 Oracle database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like *TABLE\_Alias.JSON\_Column.JSON\_Property.JSON\_Property* which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, JSDN syntax is case sensitive.
 
@@ -243,7 +243,7 @@ The return value for a dot-notation query is always a string (data type VARCHAR2
 
 3.  Test other queries and review the output.
 
-## Step 6: Retrieve Sample Data
+## **Step 6**: Retrieve Sample Data
 
 The objective for our lab is to retrieve information about castles in Europe, and use them as JSON documents in different scenarios. Imagine you are starting the development of a new mobile application that provides recommendations for tourists.  For convenience and comfort, we can encapsulate the communication with a web service into a function. This way, we don’t have to write all the code required for a simple request, which in most of the cases is even more complicated than our simple example here, because they require a more complex authentication.
 
@@ -439,9 +439,11 @@ Note: Remember to replace ***GeoNames_username***.
 
 Please proceed to the next lab.
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
+- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,12 +1,14 @@
 # Improving Tasks
 
 ## Introduction
-In this module, you will learn how to define a shared list of values and use it to improve the Faceted Searches, and Interactive Report pages for Tasks. You will also learn how easy it is to link the calendar to the Tasks Form page.
+In this lab, you will learn how to define a shared list of values and use it to improve the Faceted Searches and Interactive Report pages for Tasks. You will also learn how easy it is to link the calendar to the Tasks Form page.
 
 ## **STEP 1** - Defining a Shared List of Values
-In the Runtime environment navigate to Tasks Search and review the page. Notice how Is Complete simply displays "Y". Now navigate to Tasks Report and you will notice the same issue. It would be far better to display "Yes" or "No". This can readily be achieved by defining a List of Values (LOV)
+In the Runtime environment, navigate to Tasks Search and review the page. Notice that *Is Complete* simply displays "Y" or "N". Now, navigate to Tasks Report and you will notice the same issue. It would be far better to display "Yes" or "No". This can readily be achieved by defining a *List of Values (LOV)*
 
-You can define a LOV directly on a page. However, if you require the same LOV on multiple pages, as you do here, it is far better to define it once as a Shared Component.
+![](images/is_complete.png " ")
+
+You can define a LOV directly on a page. However, if you require the same LOV on multiple pages, as you do here, it is far better to define it once as a *Shared Component*.
 
 1. Navigate back to the App Builder browser tab.
 2. On the application home page, click **Shared Components**.
@@ -21,14 +23,14 @@ You can define a LOV directly on a page. However, if you require the same LOV on
 
     ![](images/go-lov.png " ")
 
-4. You will notice there are already several LOVs listed.   
+4. You will notice there are already several LOVs listed.
     To create a new LOV click **Create**.
 
     ![](images/create-lov.png " ")
 
 5. On the Create List of Values dialog, for Source keep the default selection ("From Scratch")
     Click **Next**
-6. On the Name and Type dialog, enter the following:
+6. On the Name and Type Step, enter the following:
     - Name - enter **YES_NO**
     - Type - select **Static**
 
@@ -36,7 +38,7 @@ You can define a LOV directly on a page. However, if you require the same LOV on
 
     ![](images/lov-name.png " ")
 
-7. On the Static Values dialog, enter the following:
+7. On the Static Values Step, enter the following:
     - Sequence 1
         - Display Value - enter **Yes**
         - Return Value - enter **Y**
@@ -49,7 +51,7 @@ You can define a LOV directly on a page. However, if you require the same LOV on
     ![](images/lov-values.png " ")
 
 ## **STEP 2** - Updating the Faceted Search
-Now that you have defined the shared component you need to utilize it on the Faceted Search page.
+Now that you have defined the shared component, you need to utilize it on the Faceted Search page.
 
 1. In the breadcrumbs, click **Application xxxxx**
 
@@ -67,7 +69,7 @@ Now that you have defined the shared component you need to utilize it on the Fac
 
     ![](images/set-facet.png " ")
 
-4. Next you also want to update the displayed value in the report.  
+4. Next you also want to update the displayed value in the Project Tasks report.  
     In the Rendering tree (left pane), under **Project Tasks**, expand **Columns**.  
     Within the list of columns, click **IS\_COMPLETE_YN**.  
     In the Property Editor (right pane), enter the following:
@@ -78,19 +80,19 @@ Now that you have defined the shared component you need to utilize it on the Fac
     ![](images/set-report.png " ")
 
 5. The report has many columns. The Description column takes up too much real estate, so should be hidden.  
-    In the Rendering tree (left pane), under **Project Tasks**, within the list of columns, click **DESCRIPTION**.   
+    In the Rendering tree (left pane), under **Project Tasks**, within the list of Columns, click **DESCRIPTION**.   
     In the Property Editor (right pane), for Identification > Type select **Hidden Column**.
 
     ![](images/hide-desc.png " ")
 
 6. While we are on the page, we can quickly change the order of the search columns.  
-    In the Rendering tree (left pane), click **P3\_MILESTONE_ID**   
+    In the Rendering tree (left pane), under **Search**, click **P3\_MILESTONE_ID**   
     In the Property Editor (right pane), for Layout > Sequence enter **25**     
-    *{Note: This will position Milestones after Projects}*
+    *Note: This will position Milestones after Projects (Sequence 20)*
 
-    In the Rendering tree (left pane), click **P3\_IS\_COMPLETE_YN**    
+    In the Rendering tree (left pane), under **Search**, click **P3\_IS\_COMPLETE_YN**    
     In the Property Editor (right pane), for Layout > Sequence enter **35**     
-    *{Note: This will position Is Complete after Assignee}*
+    *Note: This will position Is Complete after Assignee (Sequence 30)*
 
     ![](images/order-facet.png " ")
 
@@ -101,11 +103,11 @@ Now that you have defined the shared component you need to utilize it on the Fac
     ![](images/facet-complete.png " ")
 
 ## **STEP 3** - Updating the Interactive Report
-The Tasks Report also needs the Is Complete column updated.
+The Tasks Report also needs the *Is Complete* column updated.
 
 1. In the Runtime environment, click **Tasks Report** in the menu.  
     In the Developer Toolbar (bottom of page), click **Edit Page 6**.    
-    *{Note: You can also navigate back to the App Builder browser tab and manually navigate to Page 6}*
+    *Note: You can also navigate back to the App Builder browser tab and manually navigate to Page 6*
 
 2. In Page Designer, with **Page 6: Tasks Report** selected, in the Rendering tree (left panel), under **Project Tasks** region, expand **Columns**.    
     In the list of columns, click **IS\_COMPLETE_YN**.   
@@ -121,8 +123,10 @@ The Tasks Report also needs the Is Complete column updated.
     ![](images/ir-complete.png " ")
 
 4. Click on the edit icon for a record.     
-    Notice that Is Complete uses a Switch so no need to modify the form page.   
-    *(Note: The form page is Page 7 which we will need in the next part}*
+    Notice that Is Complete uses a Switch, so no need to modify the form page.   
+
+    ![](images/is_complete_switch.png " ")
+    *Note: The Project Task form page is Page 7, which we will need in the next part*
 
 ## **STEP 4** - Linking the Calendar
 The Tasks Calendar page shows numerous tasks, however, there is no way to directly modify a record. Therefore, you should add a link to the existing Project Task form page.
@@ -134,35 +138,36 @@ The Tasks Calendar page shows numerous tasks, however, there is no way to direct
 
 3. In the Developer Toolbar (bottom of page), click **Edit Page 8**
 4. In Page Designer, within the Rendering tree (left pane), under **Tasks Calendar**  region, click **Attributes**.  
-    In the Property Editor (right pane), for Settings > View / Edit Link click **No Link Defined**.     
+    In the Property Editor (right pane), for Settings > View / Edit Link, click **No Link Defined**.     
     In the Link Builder dialog, enter the following:
     - Target > Page - select **7**
     - Set Items > Name - select **P7_ID**
-    - Set Items > Value - select **ID** {Returns **&ID**.}
-    - Clear Cache - enter **7**
+    - Set Items > Value - select **ID** (Returns `&ID.`)
+    - Clear / Reset > Clear Cache - enter **7**
 
     - Click **OK**
 
     ![](images/set-link.png " ")
 
-5. It is important that the calendar is updated if the Task Name, Start Date or End Date are updated when the Project Task form page is called from the calendar.    
+5. It is important that the calendar is updated if the Task Name, Start Date, or End Date are updated when the Project Task form page is called from the calendar.    
     In the Rendering tree (left pane), _right-click_ **Tasks Calendar**.    
-    Select **Dynamic Actions**.
+    Select **Create Dynamic Action**.
 
     ![](images/go-da.png " ")
 
 6. With the Dynamic Actions selected, in the Property Editor (right pane), enter the following:
     - Identification > Name - enter **Refresh Calendar**
-    - When > Event - select **Dialog Closed**   
-    *{Note: The Dialog Closed event will fire when the Project Task form page is closed as it is a modal page}*
+    - When > Event - under **Framework Events**, select **Dialog Closed**   
+    *Note: The Refresh Calendar event will fire when the Project Task form page is closed as it is a modal page*
 
     ![](images/name-da.png " ")
 
 7. In the Rendering tree (left pane), under the True action, click **Show**.    
     In the Property Editor (right pane), enter the following:
-    - Identification > Action - select **Refresh**
+    - Identification > Action - under  **Component**, select **Refresh**
     - Affected Elements > Selection Type - select **Region**
     - Affected Elements > Region - select **Tasks Calendar**
+    - Click **Save**
 
     ![](images/set-true.png " ")
 
@@ -171,23 +176,25 @@ The Tasks Calendar page shows numerous tasks, however, there is no way to direct
 
     ![](images/final-cal.png " ")
 
-    If you update the Name, Start Date or End Date and click **Apply Changes** on the Project Task form page, the changes will be reflected immediately in the calendar.
+    If you update the Name, Start Date, or End Date, and click **Apply Changes** on the Project Task form page, the changes will be reflected immediately in the calendar.
 
 ## **Summary**
 
-This completes Lab 8 and the lab. You now know how to create a Shared Component, improve a Faceted Search page, and link a Calendar page that refreshes after a record is updated.
+This completes Lab 8 and the workshop. You now know how to create a Shared Component, use it to improve Faceted Search page and Interactive Report, and link a Calendar page that refreshes after a record is updated.
 
 ## Learn More - *Useful Links*
 
-- [APEX on Autonomous](https://apex.oracle.com/autonomous)
+- [APEX on Autonomous Database](https://apex.oracle.com/autonomous)
 - [APEX Collateral](https://apex.oracle.com)
-- [Tutorials](https://apex.oracle.com/en/learn/tutorials)
-- [Community](https://apex.oracle.com/community)
-- [External Site + Slack](http://apex.world)
+- [APEX Tutorials](https://apex.oracle.com/en/learn/tutorials)
+- [APEX Community](https://apex.oracle.com/community)
+- [APEX External Site + Slack](http://apex.world)
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

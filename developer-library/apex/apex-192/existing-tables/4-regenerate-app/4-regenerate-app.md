@@ -2,18 +2,18 @@
 
 ## Introduction
 
-In the runtime environment, if you navigate to Milestones, and then from the report page, click the edit icon, the form page for maintaining milestones will be displayed. You will notice that there are only a few fields. Therefore, it may be better to utilize an Interactive Grid, which is similar to a spreadsheet, where several records can be maintained directly within the grid.
+In the runtime environment, if you navigate to Milestones, and then from the report page, click the edit icon, the form page for maintaining milestones will be displayed. You will notice that there are only a few fields. Therefore, it may be better to utilize an *Interactive Grid*, which is similar to a spreadsheet, where several records can be maintained directly within the grid.
 
 ![](images/milestone-form.png " ")
 
 ## **STEP 1** - Delete Generated App
 Given you are going to regenerate the app from the Create Application Wizard, it is best to delete the app you just generated to avoid confusion.
 
-1. In the runtime environment, within the develop toolbar, click **Application xxxxx**.  
+1. In the runtime environment, within the develop toolbar, click **Application xxxxx**. (See how to access runtime environment from Lab 3, Step 7, Step 8)
 
     ![](images/dev-toolbar.png " ")  
 
-    *{Note: The Developer Toolbar is only shown to developers who run the application from the App Builder. End users will never be shown the Developer Toolbar}*
+    *Note: The Developer Toolbar is only shown to developers who run the application from the App Builder. End users will never be shown the Developer Toolbar*
 
 2. From the App Home Page, under Tasks, click **Delete this Application**.  
 
@@ -49,7 +49,7 @@ Rather than having two ways to maintain milestone records, you will delete the o
 4. Click **Interactive Grid**.
 5. On the Add Interactive Grid Page, enter the following:
     - Page Name - enter **Milestones**
-    - Table - select **SAMPLE$PROJECT_MILESTONES**
+    - Table - select **EBA\_RPROJECT_MILESTONES**
 
     - Click **Add Page**  
 
@@ -57,20 +57,20 @@ Rather than having two ways to maintain milestone records, you will delete the o
 
 6. Now to reorder the new page.
 
-    In the list of Pages, for the Milestones page, select the hamburger.    
+    In the list of Pages, for the Milestones page, select the hamburger.
     Drag the page up until it is under the Projects page and drop.
 
     ![](images/move-milestones.png " ")
 
 
 ## **STEP 4** - Add the Status Page
-The **SAMPLE$PROJECT_STATUS** table is used to maintain project statuses. This table should be maintainable, however, only application administrators should be able to modify records. As such adding the page under Administration is the optimal solution.
+The **EBA\_PROJECT_STATUS** table is used to maintain project statuses. This table should be maintainable, however, only application administrators should be able to modify records. As such, adding the page under Administration is the optimal solution.
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Interactive Grid**.
 3. On the Add Interactive Grid Page, enter the following:
     - Page Name - enter **Statuses**
-    - Table - select **SAMPLE$PROJECT_STATUS**
+    - Table - select **EBA\_PROJECT_STATUS**
     - Expand **Advanced**
         - Click **Set as Administration Page**
 
@@ -80,24 +80,24 @@ The **SAMPLE$PROJECT_STATUS** table is used to maintain project statuses. This t
 
 
 ## **STEP 5** - Completing the App
-The Create Application Wizard also has the ability to add various features to your app, such as Access Control, Activity Reporting, Feedback, and more, to make it more functionally complete, and "production-ready".
+The Create Application Wizard also has the ability to add various features to your app, such as Access Control, Activity Reporting, Feedback, and more, to make it more functionally complete and "production-ready".
 
-1. In the Create Application wizard, for Features, click **Check All**
+1. In the Create Application wizard, scroll down to Features, click **Check All**
 2. Click **Create Application**
 
     ![](images/check-features.png " ")
-    *{Note: Your new application will generally have a new Application Id}*
+    *Note: Your new application will generally have a new Application Id*
 
-    Your new application will be displayed in the Application Builder.
+    Your new application will be displayed in the *App Builder*.
 
 3. Click **Run Application**.
 4. Enter your user credentials.
-5. Navigate to **Milestones**.
+5. Click nagivation button at the top-left corner, click **Milestones**.
 6. Double-click in any column to see how you can enter data directly into the grid.
 
     ![](images/view-milestones.png " ")
 
-    *{Note: The Project column will display a list of projects, Name and Description will be text areas, and Due Date will be a date picker, based on the different data types.}*
+    *Note: The Project column will display a list of projects, Name and Description will be text areas, and Due Date will be a date picker, based on the different data types.*
 
 7. Navigate to **Administration** and review the capabilities provided.
 
@@ -109,7 +109,9 @@ This completes Lab 4. You now know how to regenerate an application, and add add
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

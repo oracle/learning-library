@@ -17,30 +17,28 @@ console.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com), click View Accounts and then Sign in to Cloud to log in.
 
-![](media/noimage.png)
-<p align="center">Figure 1-1</p>
+![](media/cloud_login1.png)
 
 2. Enter your Cloud Account Name (sometimes referred to as Tenancy, for the Class of most likely its OSPATraining1 or OSPATraining2) and click **Next**.
 
-![](media/noimage.png)
-<p align="center">Figure 1-2</p>
+![](media/cloud_login2.png)
 
 3. Click Oracle SSO at the bottom to log in. If you don't have an SSO login, enter your Cloud username and password, and click **Sign In**.
 
-![](media/noimage.png)
-<p align="center">Figure 1-3</p>
+![](media/cloud_login3.png)
 
 **PLEASE NOTE: Because the environment you are using is a LAB environment the pages you land on may be different than the ones  you see in this lab section. We try to incorporate all posibilities, however there may be some cases were the lab does not follow exactly what you see on your screen. Your objective is to get to the Autonomous Database (Data Warehouse or Transaction Processing) page.**
 
 4. Either from the Quick Actions menu or from the menu in the upper left corner of the page select Autonomous Transaction Processing.
 
-![](media/noimage.png)
-<p align="center">Figure 1-4</p>
+![](media/launch_atp.png)
 
-6. This will put you in the main Autonomous Database Landing page. Any Autonomous database you create will get listed here. A few things to take note of:
+5. This will put you in the main Autonomous Database Landing page. Any Autonomous database you create will get listed here. A few things to take note of:
 * Set your Compartment to the one you were assigned. You will get error messages trying to create objects in compartments you don't have privileges on.
 * Set your filter to Workload Type All. Otherwise you will only see either ATP or ADW databases, not both.
 * In the upper right is your region. Your instructor will tell you which region to use. This page will only list the ADB instances for that specific region. Also when you create them, they will create in that specific region.
+
+![](media/adb_landing_page.png)
 
 Continue onto the next module to create your Autonomous Transaction Processing Database.
 
@@ -53,8 +51,7 @@ Continue onto the next module to create your Autonomous Transaction Processing D
 1. Click on the “**Create Autonomous Database**” button, as
 shown below:
 
-![](media/noimage.png)
-<p align="center">Figure 2-1</p>
+![](media/adb_create.png)
 
 2. The following information must be filled in this page:
 
@@ -84,20 +81,18 @@ shown below:
 
 **License Type –** If a customer already has licenses and wants to leverage them they can use BYOL if not then License Included will include everything they need. For this lab we will use BYOL since we already have licenses.
 
-![](media/noimage.png)
-<p align="center">Figure 2-3</p>
+![](media/adb_create1.png)
+![](media/adb_create2.png)
+![](media/adb_create3.png)
 
 3. After filling fields, click **Create Autonomous Database** which will open up
 the screen to complete you database information. You will be placed on the Database Details page and your database will be in “**Provisioning**” status. The Database Details page displays more information about your instance. The status will automatically change to “**Available**” when the database is ready in a few minutes.
 
-![](media/noimage.png)
-<p align="center">Figure 2-3</p>
+![](media/atp_creating.png)
 
-Your Autonomous Database is up and running! Take notice of the green color of the ATP logo indicating the service is available and commands to start, stop, terminate, and scale the service.
+Your Autonomous Database is up and running! Take notice of the green color of the ATP logo indicating the service is available and the commands are no longer greyed out.
 
-![](media/noimage.png)
-<p align="center">Figure 2-4</p>
-
+![](media/atp_created.png)
 
 **You have successfully provisioned an Autonomous Database. In the future labs we will explore the Tools tab, Performance Hub and the Service Console.**
 
