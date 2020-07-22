@@ -72,8 +72,7 @@ To install a VNC viewer for Windows
 This example uses TigerVNC
 
 Open the VNC viewer and enter the Public IP Address for your compute Instance
-
-    ![](./images/odi_studio_4.png " ")  
+    ![](./images/odi_studio_4.png " ")
 
 6. Enter the VNC Password you added when creating the ODI Instance
 

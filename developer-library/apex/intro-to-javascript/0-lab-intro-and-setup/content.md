@@ -114,4 +114,4 @@ You may now proceed to the next lab.
  - **Author/Contributors** -  Dan McGhan, Database Product Management
  - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

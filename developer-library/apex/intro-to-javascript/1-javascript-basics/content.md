@@ -156,7 +156,8 @@ Objects and functions are used to compose and organize code in JavaScript. It's 
 This completes Lab 1. At this point, you should be getting comfortable working with the console and some of JavaScript's core concepts. Please proceed to Lab 2.
 
 ## **Acknowledgements**
- - **Author/Contributors** -  Dan McGhan, Database Product Management
- - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
+ - **Author** -  Dan McGhan, Database Product Management
+ - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
+ - **Last Updated By/Date** - Jeffrey Malcolm Jr, LiveLabs QA, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

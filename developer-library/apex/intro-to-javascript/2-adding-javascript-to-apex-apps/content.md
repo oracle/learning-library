@@ -225,7 +225,11 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
 In the last step, you added JavaScript code directly to page and component level attributes. For performance and reusability reasons, it can be beneficial to move JavaScript code to Static Files instead. While you don't have enough JavaScript code in the Sample Database Application to realize those benefits, in this step, you'll move the code added previously to Static Files to see how it's done.
 
-1.  The following code contains the `doWork` function that's being invoked on the home page and the function that's styling the colors of the Sales by Category chart. The only change to the second function is that it now has a name (it was an anonymous function before). Save the code in a new file on your computer named **sample-db-app.js**.
+1.  The following code contains the `doWork` function that's being invoked on the home page and the function that's styling the colors of the Sales by Category chart. The only change to the second function is that it now has a name (it was an anonymous function before). 
+
+    **Click** <a href="sample-db-app.js" download="sample-db-app.js" target="\_blank">here</a> and use the **Save File** dialog box to download the Javascript file for this lab `sample-db-app.js` to your local computer.
+
+   Or you can save the code in a new file on your computer named **sample-db-app.js**.
 
     ```
     <copy>
@@ -274,7 +278,8 @@ In the last step, you added JavaScript code directly to page and component level
 This completes Lab 2. At this point, you should have a solid understanding of the options available for adding JavaScript to APEX applications. Please proceed to Lab 3.
 
 ## **Acknowledgements**
- - **Author/Contributors** -  Dan McGhan, Database Product Management
- - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
+ - **Author** -  Dan McGhan, Database Product Management
+ - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

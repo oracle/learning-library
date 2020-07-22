@@ -41,6 +41,7 @@ technology and includes six datastores:
   * SRC\_REGION
 
 A schema diagram of this data model:
+
    ![](./images/odi_oders_schema_diagram.png)
 
 Note that this data model does not enforce any foreign key constraints,
@@ -162,7 +163,7 @@ Getting Started tutorial:
 
   * In the Projects accordion, you will find the *Demo* project and the *Sales Administration* folder which already contains several mappings. You will develop your new mappings in this folder.
 The necessary Knowledge Modules (KM) are already imported in the Demo Project:
-In addition, there are many more in Global KM folder. 
+In addition, there are many more in Global KM folder.
 
 ## Step 4: Operator Navigator
 Operator Navigator is the management and monitoring tool. It is designed for IT operators and can be used by developers to check code execution and perform debugging operations. Through Operator Navigator, you can manage your development executions in the sessions, as well as the scenarios.

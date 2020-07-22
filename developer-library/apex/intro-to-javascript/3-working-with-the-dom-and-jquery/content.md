@@ -145,7 +145,8 @@ In this step, you will create basic regular event listeners and then learn why s
 This completes Lab 3. At this point, you should have a good idea of how to use jQuery to select, traverse, and manipulate DOM elements. In addition, you should have a basic understanding of how events work and how event delegation can be used in APEX.
 
 ## **Acknowledgements**
- - **Author/Contributors** -  Dan McGhan, Database Product Management
- - **Last Updated By/Date** - Jeffrey Malcolm, Arabella Yao, LiveLabs QA, June 2020
+ - **Author** -  Dan McGhan, Database Product Management
+ - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
+ - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
