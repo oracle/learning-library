@@ -17,10 +17,8 @@ The estimated time to complete the lab is 60 minutes as further detailed below
 
 ### Prerequisites
 
-This lab assumes you have completed the following labs:
-* [Lab 1: Login to Oracle Cloud](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-1-login-oracle-cloud)
-* [Lab 2: Generate SSH Key](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-generate-ssh-key)
-* [Lab 3: Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup)
+- The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
+- This lab assumes you have completed the **Prerequisites** or Setup labs seen in the Contents menu on the right.  
 
 Prior to starting, you will need:
 - EM Instance Public IP address
@@ -28,6 +26,7 @@ Prior to starting, you will need:
 - OMS super-user Credentials:
     -   Username: **sysman**
     -   password: **welcome1**
+
 #### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
 
