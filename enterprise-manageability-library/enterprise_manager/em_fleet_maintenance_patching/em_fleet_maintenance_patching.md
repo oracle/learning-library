@@ -36,7 +36,7 @@ Prior to starting, you will need:
     - password: **welcome1**
 
 #### Login to Host using SSH Key based authentication
-Refer to [Lab 3 - Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+Refer to [Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “opc”
   - Authentication method - SSH RSA Key
   - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
