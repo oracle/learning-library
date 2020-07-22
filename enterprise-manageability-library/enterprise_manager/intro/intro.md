@@ -1,6 +1,6 @@
-# Oracle Enterprise Manager Workshop Introduction and Overview #
+# Oracle Enterprise Manager Workshop Introduction and Overview
 
-## Introduction to Oracle Enterprise Manager ##
+## Introduction to Oracle Enterprise Manager
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
 Join Oracle's ***Wim Coekaerts***, *senior vice president of software development*, as he describes key innovations delivered in Oracle Enterprise Manager to help customers easily migrate their databases to the cloud and simplify management of hybrid IT environments
