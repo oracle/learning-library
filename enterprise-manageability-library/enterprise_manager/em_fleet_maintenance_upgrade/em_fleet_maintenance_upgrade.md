@@ -12,7 +12,7 @@ Benefits with Fleet Maintenance:
 - Ability to schedule/retry/suspend/resume.
 - Database patching across different infrastructure including engineered systems like Exadata
 
-![](images/em-fleet-maintenance-overview-1.png)
+  ![](images/em-fleet-maintenance-overview-1.png)
 
 ### Background
 The estimated time to complete the workshop is 75 minutes as further detailed below.
@@ -40,7 +40,7 @@ Prior to starting, you will need:
     - password: **welcome1**
 
 #### Login to Host using SSH Key based authentication
-Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+Refer to [Lab 3 - Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “opc”
   - Authentication method - SSH RSA Key
   - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
@@ -56,7 +56,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
-![](images/5429da7dcd00ecc7da6e779ed699c45e.jpg)
+  ![](images/5429da7dcd00ecc7da6e779ed699c45e.jpg)
 
 2. Fleet Maintenance Login to EMCLI
 
@@ -88,7 +88,7 @@ In the interest of simplifying the setup and save time, the following steps were
   - Subscription of “finance.subnet.vcn.oraclevcn.com” Database to above image
   - Patching of “finance.subnet.vcn.oraclevcn.com” Database from 18.8 to 18.10 using Fleet Maintenance
 
-We recommend that you read through each of the steps, review the emcli command, its verbs and deployment procedures to get an understanding of what it takes to do it from scratch. For a full end-to-end hands-on execution of “patching” lab, we highly recommend part \#1
+We recommend that you read through each of the steps, review the emcli command, its verbs and deployment procedures to get an understanding of what it takes to do it from scratch. For a full end-to-end hands-on execution of “patching” lab, we highly recommend [Lab 6 -Automated Database Patching at Scale with Fleet Maintenance](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-6-automated-database-patching-at-scale)
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
@@ -100,21 +100,21 @@ This exercise enables us to analyze the database estate using Software Standardi
 
 Software Standardization Advisor enables administrators to understand various database configurations prevailing in their environment. Each deployment with a unique platform, release and patch level is identified as a distinct configuration. This provides the administrators a view of the configuration pollution in their estate. It also analyzes and provides a recommendation to standardize the environment and reduce the number of configurations required for managing the database estate.
 
-![](images/em-fleet-maintenance-overview-2.png)
+  ![](images/em-fleet-maintenance-overview-2.png)
 
 1.  Log on to Enterprise Manager Console as sysman
 
 2.  Click on ***Targets >> Databases***.
 
-![](images/038585c9308635261ae7e4aa956525af.png)
+  ![](images/038585c9308635261ae7e4aa956525af.png)
 
 3.  In the Databases targets page, click on ***Administration >> Software Standardization Advisor***
 
-![](images/6198ae4976d5ddad0fde0432c472e9e8.jpg)
+  ![](images/6198ae4976d5ddad0fde0432c472e9e8.jpg)
 
 4.  Software Standardization Advisor shows two graphs depicting current configuration and recommended configuration.
 
-![](images/em-pollution-detection-1.png)
+  ![](images/em-pollution-detection-1.png)
 
 A Software Configuration is identified by Database Release, Platform and set of Patches installed on the target.
 
@@ -126,24 +126,24 @@ Let us see details of the reports in next steps.
 
 6.  Click on Current Configurations to open the Excel report
 
-![](images/em-pollution-detection-2.png)
+  ![](images/em-pollution-detection-2.png)
 
 When opening the downloaded Excel Spreadsheet report, a warning on XLS format and file extension mismatch may pop up (see below). Simply click on “Yes” to
 ignore the warning and open the file.
 
-![](images/d9ea997d07c30f80083e097f6b578200.png)
+  ![](images/d9ea997d07c30f80083e097f6b578200.png)
 
 Current Configuration shows five different Oracle home software versions
 
-![](images/84e0ac92b29e45e91b9d17a8e0b3a2da.jpg)
+  ![](images/84e0ac92b29e45e91b9d17a8e0b3a2da.jpg)
 
 7.  Next, click on Recommended Configurations to open the Excel Report
 
-![](images/em-pollution-detection-3.png)
+  ![](images/em-pollution-detection-3.png)
 
 The EM Recommended Configuration report recommends reducing 5 configurations and standardizing the database estate on 2 configurations, one based on 18c and the other based on 19c. This means All Oracle Homes of Release 18c should uptake the corresponding 18c configuration and the 19c homes will use the one based on Release 19c
 
-![](images/06ff90fdba8aa5abebd066086e33f700.jpg)
+  ![](images/06ff90fdba8aa5abebd066086e33f700.jpg)
 
 Recommendation is based on union of all bugs included in the Patches in all OHs and based on configuration type.
 
@@ -165,7 +165,7 @@ In the next section we will follow these recommendations to perform the followin
 
 Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription based out of place patching solution. Gold Image(s) are software library entities storing archive of an upgraded software home. Targets, to be upgraded, subscribe to a relevant Gold Image. Target subscription persists through the lifecycle of the Target or Gold Image unless modified by an administrator. We will go through the following steps for this Fleet Maintenance Exercise.
 
-![](images/DB_Fleet_Upgrade.png)
+  ![](images/DB_Fleet_Upgrade.png)
 
 ### Upgrading with Fleet Maintenance
 
@@ -173,9 +173,9 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
 1.  Log on to Enterprise Manager Console and review the status and version of DB Target.
 
-![](images/ec0b6926d4f65b52a771483ace24055c.png)
+  ![](images/ec0b6926d4f65b52a771483ace24055c.png)
 
-![](images/05ab9d53e622fe6b226647d67750c1dd.jpg)
+  ![](images/05ab9d53e622fe6b226647d67750c1dd.jpg)
 
 You will see finance.subnet.vcn.oraclevcn.com. If target status is ‘DOWN’, start the target (using /home/oracle/start\_db\_finance.sh).
 
@@ -198,7 +198,7 @@ This reference Oracle Home is discovered in Enterprise Manager as shown below an
 
 Navigate to “***Targets >> All Targets***” and type in “Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192” in the “Search Target Name” box.
 
-![](images/ea2416958193764cc47426f0ad8a0a67.jpg)
+  ![](images/ea2416958193764cc47426f0ad8a0a67.jpg)
 
 * Review “Create New Gold Image” from ssh terminal using the following emcli command
 
@@ -206,7 +206,7 @@ Navigate to “***Targets >> All Targets***” and type in “Orasidb18c\_home1\
 <copy>cd fleet
 cat create_image_Tier1_sidb_x64.sh</copy>
 ````
-![](images/e4a3896e00184146230d4d974e64a528.png)
+  ![](images/e4a3896e00184146230d4d974e64a528.png)
 
 3.  List Available Gold Images
 
@@ -216,7 +216,7 @@ Execute the following commands in ssh terminal to see the list of Gold Images av
 <copy>emcli db_software_maintenance -getImages</copy>
 ````
 
-![](images/81fa9422f35c2dadac8595ef44a5f772.png)
+  ![](images/81fa9422f35c2dadac8595ef44a5f772.png)
 
 IMAGE ID retrieved from the output of above command is used in further operations like Target Subscription. After retrieving a list of the available images, one can view a list of versions available for a specific image with the following command:
 
@@ -224,7 +224,7 @@ IMAGE ID retrieved from the output of above command is used in further operation
 <copy>emcli db_software_maintenance -getVersions -image_id=A5F3D8523BDF635BE0531A00000AA55B</copy>
 ````
 
-![](images/8c48a86f30874b71459424dc8f69e05f.png)
+  ![](images/8c48a86f30874b71459424dc8f69e05f.png)
 
 When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked as CURRENT is used to deploy the new Oracle Home.
 
@@ -237,7 +237,7 @@ This step verifies if the image can be used to patch a specified database target
 <copy>emcli db_software_maintenance -checkApplicability -image_id="A5F3D8523BDF635BE0531A00000AA55B" -target_list=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database</copy>
 ````
 
-![](images/a7ef76d93e9ee75da1a6a16a7f7620d4.png)
+  ![](images/a7ef76d93e9ee75da1a6a16a7f7620d4.png)
 
 This command can show one of the following results:
 
@@ -255,7 +255,7 @@ This command can show one of the following results:
 <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="A5F3D8523BDF635BE0531A00000AA55B"</copy>
 ````
 
-![](images/95439c2138aabd69382c9b0489f14c3b.png)
+  ![](images/95439c2138aabd69382c9b0489f14c3b.png)
 
  Where:
     - target\_name – Name of the Database target which needs to be patched
@@ -272,7 +272,7 @@ This command can show one of the following results:
 <copy>cat deploy1810_finance.sh</copy>
 ````
 
-![](images/81d4a98e953a1d2ee999a1b718fd825b.png)
+  ![](images/81d4a98e953a1d2ee999a1b718fd825b.png)
 
 #### Migrate Listener - [READ ONLY – This step has already been implemented]
 
@@ -284,7 +284,7 @@ This command can show one of the following results:
 <copy>cat migrate_listener_finance_update.sh</copy>
 ````
 
-![](images/17322b2523052b40c7d105c51b6a2967.png)
+  ![](images/17322b2523052b40c7d105c51b6a2967.png)
 
 ### Update Database – Patch to 18.10 - [READ ONLY – This step has already been implemented]
 
@@ -296,7 +296,7 @@ This command can show one of the following results:
 <copy>cat update_finance.sh</copy>
 ````
 
-![](images/ed90e634e7779548a6f7aebecec5e189.png)
+  ![](images/ed90e634e7779548a6f7aebecec5e189.png)
 
 #### Create New Image Version
 
@@ -308,7 +308,7 @@ Just as it was done for the first version of this image, a reference 19.7 Oracle
 
 Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\_2020\_05\_13\_04\_24\_10\_emcc.marketplace.com\_2953” in the “*Search Target Name*” box.
 
-![](images/a3ba55228f1e4a239c81bd01ed86c299.png)
+  ![](images/a3ba55228f1e4a239c81bd01ed86c299.png)
 
 * Review and execute the following command to add Image version 19.7 to "*Tier1 SIDB Linux-x64*"
 
@@ -321,15 +321,15 @@ Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\
 <copy>sh add_image_version197_tier1_sidb_x64.sh</copy>
 ````
 
-![](images/d3f1d7ec4ab73bd6e50aab47fbf3ffca.png)
+  ![](images/d3f1d7ec4ab73bd6e50aab47fbf3ffca.png)
 
 * Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘CreateGoldImage\*’ run
 
-![](images/98008aab963de3d4439767ccab3fbba0.png)
+  ![](images/98008aab963de3d4439767ccab3fbba0.png)
 
 * Review the Procedure Activity steps performed.
 
-![](images/0dedb16ddd453f5fa9d312229e9bd072.png)
+  ![](images/0dedb16ddd453f5fa9d312229e9bd072.png)
 
 10. Set Version 19.7 to Status Current
 
@@ -339,7 +339,7 @@ Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\
 <copy>emcli db_software_maintenance -getVersions -image_id=A5F3D8523BDF635BE0531A00000AA55B</copy>
 ````
 
-![](images/9bba5ae0276141179ba6b22e984ba3f7.png)
+  ![](images/9bba5ae0276141179ba6b22e984ba3f7.png)
 
 * Using the VERSION ID from Step above, review and execute the following command to set Version Name 19.7 to Status Current
 
@@ -347,7 +347,7 @@ Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\
 <copy>emcli db_software_maintenance -updateVersionStatus -status=CURRENT -version_id=A79931EC777968D6E0532A00000A806B</copy>
 ````
 
-![](images/7796c07b2b8273dc93221a84b784dc63.png)
+  ![](images/7796c07b2b8273dc93221a84b784dc63.png)
 
 #### Deploy New Image Version
 
@@ -381,15 +381,15 @@ Where:
   - privilege\_credential = This should be provided in the format \{Named Credential: Credential Owner\}
   - start\_schedule = Schedule when the stage and deploy should start if that needs to be done in future. Format: “start\_time:yyyy/mm/dd HH:mm”. It is an optional parameter, if not provided, operation will start immediately
 
-![](images/75e3dbfe7a2cfe2a8a6fc286d3f5caa2.png)
+  ![](images/75e3dbfe7a2cfe2a8a6fc286d3f5caa2.png)
 
 * Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
 
-![](images/aa899356fbcdb73732d72b507bc6a7df.png)
+  ![](images/aa899356fbcdb73732d72b507bc6a7df.png)
 
 * Review the Procedure Activity steps performed.
 
-![](images/2db6aa6336c6d7b6d846a90fad68f5c7.png)
+  ![](images/2db6aa6336c6d7b6d846a90fad68f5c7.png)
 
 #### Migrate Listener to New Upgraded Home
 
@@ -407,15 +407,15 @@ Where:
 <copy>sh migrate_listener_finance_update.sh</copy>
 ````
 
-![](images/bc197f2a6ee3475949e203a1a250352d.png)
+  ![](images/bc197f2a6ee3475949e203a1a250352d.png)
 
 * Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘Fleet\_migrate\_\*’ run
 
-![](images/7d1f66b6cf7dcc1ef60ae87ae4a1f176.png)
+  ![](images/7d1f66b6cf7dcc1ef60ae87ae4a1f176.png)
 
 * Review the Procedure Activity steps performed.
 
-![](images/5b63a9af8400bf71eb838f3a00cc2667.png)
+  ![](images/5b63a9af8400bf71eb838f3a00cc2667.png)
 
 #### Update Database – Upgrade to 19.7
 
@@ -440,19 +440,19 @@ Where:
   - Name – Name of the operation. This is a logical name and should be kept unique  
   - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 
-![](images/c1eb432957066af8ddc4062159d28f47.png)
+  ![](images/c1eb432957066af8ddc4062159d28f47.png)
 
 * Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘Fleet\_UPDATE\_...’ deployment procedure instance.
 
-![](images/5f7ea1d549b6bb5edf2cfadcc0fad0bc.png)
+  ![](images/5f7ea1d549b6bb5edf2cfadcc0fad0bc.png)
 
 * Review the Procedure Activity steps performed
 
-![](images/fa46b7e21ac3396ec567446a8a12a6d2.png)
+  ![](images/fa46b7e21ac3396ec567446a8a12a6d2.png)
 
 * Verify the Upgraded target by going to ***Targets >> Databases*** as shown below. Operation above will take \~40 minutes to complete.
 
-![](images/0dd5dbdbd9c2f2eac424cf9cf976aa34.png)
+  ![](images/0dd5dbdbd9c2f2eac424cf9cf976aa34.png)
 
 #### Cleanup Old Homes
 
@@ -470,7 +470,7 @@ Where:
 <copy>sh cleanup_finance_report.sh</copy>
 ````
 
-![](images/228ae0280ff2878bb4902cb263529bb9.png)
+  ![](images/228ae0280ff2878bb4902cb263529bb9.png)
 
 * Review and execute the following command to cleanup finance  
 
@@ -484,15 +484,15 @@ Where:
 <copy>sh cleanup_finance.sh</copy>
 ````
 
-![](images/3f41abadf32e4b8d4900467985a093ef.png)
+  ![](images/3f41abadf32e4b8d4900467985a093ef.png)
 
 * Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘CLEANUP\_SOFTWARE\_...’ deployment procedure instance.
 
-![](images/94954554c777d24280599507c28a75d3.png)
+  ![](images/94954554c777d24280599507c28a75d3.png)
 
 * Review the Procedure Activity steps performed
 
-![](images/777053c04e0851859856c8d32b9d94c2.png)
+  ![](images/777053c04e0851859856c8d32b9d94c2.png)
 
 * Verify to confirm that the two old Oracle Homes reported have been removed
 
@@ -500,7 +500,7 @@ Where:
 <copy>ls -l /u01/app/18c/sales188 /u01/app/oracle/product/18/db_home1</copy>
 ````
 
-![](images/58ba7d42eb61331e3d0bec6588086b47.png)
+  ![](images/58ba7d42eb61331e3d0bec6588086b47.png)
 
 * As part of the cleanup operation, LISTENER\_1525 which support *“finance.subnet.oraclevcn.com”* is shutdown. Set your environment by passing *“finance”* to *“oraenv”* when prompted.
 
@@ -513,7 +513,7 @@ Where:
 <copy>lsnrctl start LISTENER_1525</copy>
 ````
 
-![](images/b3d1a555c6eeb3d0d899da4291a6441c.png)
+  ![](images/b3d1a555c6eeb3d0d899da4291a6441c.png)
 
 * Force Listener registration and confirm that it is now servicing “*finance.subnet.vcn.oraclevcn.com*”
 
@@ -528,7 +528,7 @@ exit</copy>
 <copy>lsnrctl status LISTENER_1525</copy>
 ````
 
-![](images/7626fd3264e4a514fde576ecd9369456.png)
+  ![](images/7626fd3264e4a514fde576ecd9369456.png)
 
 ### Summary
 

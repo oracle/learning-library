@@ -35,7 +35,7 @@ Prior to starting, you will need:
     - password: **welcome1**
 
 #### Login to Host using SSH Key based authentication
-Refer to [Frequently Asked Questions](https://github.com/oracle/learning-library/blob/master/enterprise-manageability-library/enterprise_manager/OCIMarketplaceEM-FAQ.md) doc for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+Refer to [Lab 3 - Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “opc”
   - Authentication method - SSH RSA Key
   - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
@@ -52,19 +52,19 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
 
-![](images/emjobnav.png)
+  ![](images/emjobnav.png)
 
 3. Locate and select the job name **1-DB\_LAB\_START**, and Click the Submit  button.
 
-![](images/emdbstartjob.png)
+  ![](images/emdbstartjob.png)
 
 4. Then Click the Submit button in the upper right of your window.
 
-![](images/emjobsubmitbutton.png)
+  ![](images/emjobsubmitbutton.png)
 
 5. The workload is now started and takes a few minutes to ramp up.
 
-![](images/emjobcom.png)
+  ![](images/emjobcom.png)
 
 ### Option 2: Using SSH terminal from the VM host
 
@@ -81,35 +81,35 @@ source SALESENV
 . ./1-db_lab_start.sh</copy>
 ````
 
-![](images/emopt2start.jpg)
+  ![](images/emopt2start.jpg)
 
 ## Step 1: Performance Hub
 
 1.  Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
-![](images/1876be1823ca17d9ab7e663e128859c4.jpg)
+  ![](images/1876be1823ca17d9ab7e663e128859c4.jpg)
 
 2.  **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
 
-![](images/9b88b0ba0cefae75a2374d91dcbd4e2e.jpg)
+  ![](images/9b88b0ba0cefae75a2374d91dcbd4e2e.jpg)
 
 3. Here you will notice different databases listed, such as SALES, HR etc., we will work the sales container database. **Select** the Sales database from the list, this will take you to the DB home page for this database
 
-![](images/95063e3082e730e54d957b9ff7575f49.jpg)
+  ![](images/95063e3082e730e54d957b9ff7575f49.jpg)
 
-![](images/89801010273a62f99a3da10de8bf5c71.jpg)
+  ![](images/89801010273a62f99a3da10de8bf5c71.jpg)
 
 4.  **Click** on the Containers tab. It is located at the upper right-hand corner of the page, underneath the Performance tile. This will show the list of pluggable databases in the CDB and their activity
 
-![](images/c6bc11e91d6db9627a146b3e79d0ce19.jpg)
+  ![](images/c6bc11e91d6db9627a146b3e79d0ce19.jpg)
 
 5.  Notice that the PSALES database is the busiest. We focus our attention to this PDB. Let us now navigate to Performance Hub. **Select** Performance Hub from the Performance Menu and **Click** on ASH Analytics and use the sales\_system credential name from the database login screen
 
-![](images/e131e1ce965ab5bb248d5439529fc921.jpg)
+  ![](images/e131e1ce965ab5bb248d5439529fc921.jpg)
 
-![](images/d4ec276ea05aceb2ff86f5b7ea71c36e.jpg)
+  ![](images/d4ec276ea05aceb2ff86f5b7ea71c36e.jpg)
 
-![](images/58e81976fa9957ee57f89139a06c4841.jpg)
+  ![](images/58e81976fa9957ee57f89139a06c4841.jpg)
 
 6. Make sure to slide the time picker on an area of high usage (e.g., CPU, IO or Waits). Notice how the corresponding selected time window also changes in the summary section. You can also resize the slider to entirely cover the time period of your interest.
 
@@ -119,25 +119,25 @@ Wait class isn’t the only dimension you can drill into the performance issue b
 
 7.  **Select** the SQL ID dimension from the list of available dimensions (Under Top Dimensions) using the dropdown box that is currently displaying Wait Class. Top Dimensions SQL ID
 
-![](images/32b079f89c002058721d0c8a3e41f993.jpg)
+  ![](images/32b079f89c002058721d0c8a3e41f993.jpg)
 
 8. **Hover** your mouse on top of the SQL (one at the bottom) and you will be able to see how much activity is consumed by this SQL. Now using the same list of filters select the PDB dimension. Session Identifiers PDB
 
-![](images/95cce3b331aa85fc893b8eecc9a6c0a6.jpg)
+  ![](images/95cce3b331aa85fc893b8eecc9a6c0a6.jpg)
 
 9. What do you see? The chart changes to activity by the different pluggable databases created in this Container database. **Click** on the ‘PSALES” pluggable database on the list to add it to the filter by list and drilldown to activity by this PDB on the same page.
 
-![](images/384fdb12e234cbc0d60df1639079dc3e.jpg)
+  ![](images/384fdb12e234cbc0d60df1639079dc3e.jpg)
 
-![](images/07dcb138dcb6773ee6b560681a62ec5f.jpg)
+  ![](images/07dcb138dcb6773ee6b560681a62ec5f.jpg)
 
 10.  **Click** on the SQL Monitoring Tab
 
-![](images/6e47bf2703c3c1e4adffd39d2202045f.jpg)
+  ![](images/6e47bf2703c3c1e4adffd39d2202045f.jpg)
 
 11. You can see all the executed SQL during that time along with different attributes like ‘user’,’Start’,’Ended’ etc. The test next to the \@ sign indicates the name of the PDB. **Click** on any SQL of your choice (e.g. 6kd5jj7kr8swv)
 
-![](images/533523dca8453a0ce246ac933fdb639c.jpg)
+  ![](images/533523dca8453a0ce246ac933fdb639c.jpg)
 
 12. It will navigate you to show the details of this particular query. You can see the plan, parallelism and activity of the query. “Plan Statistics” tab is selected by default. You can see the plan of this query in graphical mode. In some cases, the Monitored SQL may have aged out and no rows are displayed, in this case try using the time-picker and pick last 24 hrs. time period to identify the historical SQL that was monitored.
 
@@ -179,75 +179,75 @@ Now execute the file \@DBOP.sql
 
 Note: You may need to scroll down or select “Database operations” from the type dropdown.
 
-![](images/b10c056370e56dd1286ca1f556118c8f.jpg)
+  ![](images/b10c056370e56dd1286ca1f556118c8f.jpg)
 
 4. Review the details of the Database Operations.
 
-![](images/a59f28bdd1166978c41e9c9c6a5d9b93.jpg)
+  ![](images/a59f28bdd1166978c41e9c9c6a5d9b93.jpg)
 
 5.  Click on the Activity tab. You will see all the activity for this operation.
 
-![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg)
+  ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg)
 
 ## Step 3: Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
-![](images/8e45436e4fa48b9a5bda495da7b0a674.jpg)
+  ![](images/8e45436e4fa48b9a5bda495da7b0a674.jpg)
 
 2.  Once logged into Enterprise Manager, **Select** Targets, then Databases . **Click** on the expand icon on the left and click on the database **sales.subnet.vcn.oraclevcn.com**
 
-![](images/63f4072fb3b311db561d2c284bc93ffe.png)
+  ![](images/63f4072fb3b311db561d2c284bc93ffe.png)
 
 3.  You should now see the Database Home page.
 
-![](images/611d814ca29dfc9f327a7c8159608093.jpg)
+  ![](images/611d814ca29dfc9f327a7c8159608093.jpg)
 
 4.  From the Performance Menu **Click** on Performance Hub, then ASH Analytics.
 
-![](images/ea10a67618855f3e0ce1a5f5c7157d71.jpg)
+  ![](images/ea10a67618855f3e0ce1a5f5c7157d71.jpg)
 
 5.  In the bottom left of the page, **Click** on the activity bar for the SQL showing highest activity.
 
-![](images/1530ad41444abf8120ba3a6bce8d9ba1.jpg)
+  ![](images/1530ad41444abf8120ba3a6bce8d9ba1.jpg)
 
 6.  Now schedule the SQL Tuning Advisor by **Clicking** on the **Tune SQL** button.
 
-![](images/4532cfdb72eeef8ade51f86d9974061e.jpg)
+  ![](images/4532cfdb72eeef8ade51f86d9974061e.jpg)
 
 7.  Accept the default and **Submit** the SQL tuning Job.
 
-![](images/528d1e6ee4c55f477811c554c2eeff99.jpg)
+  ![](images/528d1e6ee4c55f477811c554c2eeff99.jpg)
 
-![](images/8aaa9d1d202302cd87c3870ffe51b956.png)
+  ![](images/8aaa9d1d202302cd87c3870ffe51b956.png)
 
 8.  Once the job completes. You should see the recommendations for either creating a profile or an index.
 
-![](images/64e4e02ca8258d7c1fc54bec446b691a.png)
+  ![](images/64e4e02ca8258d7c1fc54bec446b691a.png)
 
 9.  Implement the SQL Profile recommendation. SQL Profiles are a great way of tuning a SQL without creating any new objects or making any code changes.
 
 10. At this point let’s now turn off the load: Change directory to scripts and execute the script ***1-db\_lab\_stop.sh*** as shown below
 
-![](images/e032d591c5b1132ac156974c6abbe2f4.jpg)
+  ![](images/e032d591c5b1132ac156974c6abbe2f4.jpg)
 
 >Alternatively you can use the Enterprise Manager Job Scheduler capability to stop the job.
 
 11. Navigate to Enterprise, then Job, then to Library
 
-![](images/emjoblibnav.png)
+  ![](images/emjoblibnav.png)
 
 12. Select the job *1-DB\_LAB\_STOP*
 
-![](images/emjoblabstop.png)
+  ![](images/emjoblabstop.png)
 
 13. And then Submit the job
 
-![](images/emlabstopsubmit.png)
+  ![](images/emlabstopsubmit.png)
 
 14. When the job is completed, the workload stops
 
-![](images/emlabstopped.png)
+  ![](images/emlabstopped.png)
 
 This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity.
 
@@ -257,107 +257,107 @@ In this activity we need to configure the database to set up optimizer statistic
 
 1.  Execute SPA task using optimizer statistics - Login using username and password **sysman/ welcome1**
 
-![](images/6dc92e956b3d9cd7b140a588219ee285.jpg)
+  ![](images/6dc92e956b3d9cd7b140a588219ee285.jpg)
 
 2.  Navigate to the Job library, from **Enterprise**, to **Job**, to **Library**
 
-![](images/4037bd7209e67b936206da6f43991120.jpg)
+  ![](images/4037bd7209e67b936206da6f43991120.jpg)
 
 3.  Select SPA\_STAT\_SETUP and **Click** the **Submit** button
 
-![](images/emspasetup.png)
+  ![](images/emspasetup.png)
 
 4. Select OS Command in the Create library Job drop down list **Click** Go
 
-![](images/a04978f5e6e7d3e03d34685c7212f413.jpg)
+  ![](images/a04978f5e6e7d3e03d34685c7212f413.jpg)
 
 5. **Click** the **Submit** button
 
-![](images/spasubmit.png)
+  ![](images/spasubmit.png)
 
 6. The job then runs and completes
 
-![](images/emspajobconfirm.png)
+  ![](images/emspajobconfirm.png)
 
 7. The job is now running. Continue with configuring SPA Quick Check. Navigate to ***Databases >> Targets >> Databases***
 
-![](images/baa21e15a952e1b090944051c919d47e.jpg)
+  ![](images/baa21e15a952e1b090944051c919d47e.jpg)
 
 8. Expand the *sales.subnet.vcn.oraclevcn.com* database. **Click** on *sales.subnet.vcn.oraclevcn.com\_HR* pluggable database.
 
-![](images/6273897d2614da4d3babab73299d5bc5.jpg)
+  ![](images/6273897d2614da4d3babab73299d5bc5.jpg)
 
 9. In ***sales.subnet.vcn.oraclevcn.com\_HR*** database Navigate to ***Performance >> SQL >> SQL Performance Analyzer Quick Check Setup***
 
-![](images/52d28e53edc6e12a26eefd6df1487d20.jpg)
+  ![](images/52d28e53edc6e12a26eefd6df1487d20.jpg)
 
 10.  This is the page where you configure SPA Quick Check. Make sure that the selected SQL Tuning Set includes as many SQL statements as possible. If the application has specific workloads that are executed during End of Month, End of Year or even certain period during the day, then make sure to collect the workload in separate SQL Tuning Sets and merge them into a “Total Workload Tuning set”
 
 11. In this example we are working with a SQL Tuning Set called PENDING\_STATS\_WKLD. Select: SQL Tuning Set: PENDING\_STATS\_WKLD. Select “Comparison Metric”: Buffer Gets **Click** Save.
 
-![](images/dd8e59451bf9d2de14f07592d390da6a.jpg)
+  ![](images/dd8e59451bf9d2de14f07592d390da6a.jpg)
 
 12.  Navigate ***Performance >> SQL >> Optimizer Statistics***
 
-![](images/4e82b571a46f839223bca1f879643bb0.jpg)
+  ![](images/4e82b571a46f839223bca1f879643bb0.jpg)
 
 13.  **Click** “Gather”
 
-![](images/1e54f21d483e95189477069278b54053.jpg)
+  ![](images/1e54f21d483e95189477069278b54053.jpg)
 
 14.  Select “Schema”. Check “Validate the impact of statistics on…..” **Click**  “Next”
 
-![](images/1d4b3ee3678078564de13336896fbe34.jpg)
+  ![](images/1d4b3ee3678078564de13336896fbe34.jpg)
 
 15.  **Click**  “Add”
 
-![](images/07c9dde006c7bc0a1fc804ef62f5cd5a.jpg)
+  ![](images/07c9dde006c7bc0a1fc804ef62f5cd5a.jpg)
 
 16.  **Click**  “Search”. **Select:** STAT1, STAT2 **Click**  “OK”
 
-![](images/5f8e1b0229f48747aa96998dbbe0aa87.jpg)
+  ![](images/5f8e1b0229f48747aa96998dbbe0aa87.jpg)
 
 17.  **Click**  “Next”
 
-![](images/47d4db96f2a225723e405f06171d2c7d.jpg)
+  ![](images/47d4db96f2a225723e405f06171d2c7d.jpg)
 
 18.  **Click**  “Next”
 
-![](images/a4faddf1878e9f72df40f1bde4e54bdf.jpg)
+  ![](images/a4faddf1878e9f72df40f1bde4e54bdf.jpg)
 
 19.  **Click**  “Submit”
 
-![](images/d2c4f87d66682e3ecbb6b9c62e639281.jpg)
+  ![](images/d2c4f87d66682e3ecbb6b9c62e639281.jpg)
 
 20. In the confirmation section on top, click on the SQL Performance Analyzer Task that was started. If you accidentally closed or lost this page, navigate to **DB Target** , then **Performance Menu** ,  then **SQL Performance Analyzer Home** , then **Select** the latest SPA task you just created at the bottom of the page.
 
-![](images/24fee673a5a32b19e55b92dae376c233.jpg)
+  ![](images/24fee673a5a32b19e55b92dae376c233.jpg)
 
 21. You now have now a running SQL Performance Analyzer task. Wait until its Last Run Status is Completed. **Click**  on “Name”
 
-![](images/d7b97d687f8d9a904ed2e7ee68f5da89.jpg)
+  ![](images/d7b97d687f8d9a904ed2e7ee68f5da89.jpg)
 
 22.  As you can see there have been four SQL trials executed. The first two have identified SQL statements with plan changes. In the last two trials it is only statements with plan changes that have been executed. This will reduce the amount of time and resources used in a production system. **Click** on the eyeglasses icon for the second report.
 
-![](images/e74bda3508f98dbfb69f1e9e196d9c01.jpg)
+  ![](images/e74bda3508f98dbfb69f1e9e196d9c01.jpg)
 
 23.  As we can see the majority of our statements had unchanged performance. We have a significant improvement but most important to notice is that we have no regression. If there had been regression then we have the ability to tune the regressed statement or use SQL Plan Baselines to remediate the identified regressions. Note you can also use SQL Tuning Advisor to remediate regressions by implementing SQL Profile recommendations
 
-![](images/2d5e94962e6a26f9d9442e09870cde04.jpg)
+  ![](images/2d5e94962e6a26f9d9442e09870cde04.jpg)
 
 24.  Since this application has used stale statistics for a long period, then it would be good to have new statistics implemented. **Click** on “Publish Object Statistics”
 
-![](images/bfd46716f39ec820e1c9c0c9982d5218.jpg)
+  ![](images/bfd46716f39ec820e1c9c0c9982d5218.jpg)
 
 25. We can now change statistics for all tables where we have pending statistics. For the scope of this exercise we will only change statistics for schema STAT1. **Click** the Checkbox for schema STAT1 **Click** Publish
 
-![](images/1d3a02d5d46d720eefbe226143471f2c.jpg)
+  ![](images/1d3a02d5d46d720eefbe226143471f2c.jpg)
 
 26. **Click** “Yes”
 
-![](images/a8dc3af7bcf1c5b473e4f0037dd722a4.jpg)
+  ![](images/a8dc3af7bcf1c5b473e4f0037dd722a4.jpg)
 
-![](images/e75f7e6b78aafd328d6b57f505245622.jpg)
+  ![](images/e75f7e6b78aafd328d6b57f505245622.jpg)
 
 You have now learned how to work with SPA. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
 

@@ -8,7 +8,7 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
 
-[](youtube:udJdVCz5HYs)
+  [](youtube:udJdVCz5HYs)
 
 ### Oracle Cloud Marketplace
 The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
@@ -33,15 +33,15 @@ This lab assumes you have already completed the following labs:
 
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install. In this example we choose *EmWorkshop*.  Choose **Resource Manager > Stacks**.  
 
-![](./images/em-oci-landing.png " ")
+  ![](./images/em-oci-landing.png " ")
 
-![](./images/em-nav-to-orm.png " ")
+  ![](./images/em-nav-to-orm.png " ")
 
-![](./images/em-create-stack.png " ")
+  ![](./images/em-create-stack.png " ")
 
 4.  Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-v3-flex-shape.zip) that you downloaded. Click **Select**.
 
-![](./images/em-create-stack-1.png " ")
+  ![](./images/em-create-stack-1.png " ")
 
 Enter the following information:
 
@@ -54,7 +54,7 @@ Enter the following information:
 
 5.  Click **Next**.
 
-![](./images/em-create-stack-2.png " ")
+  ![](./images/em-create-stack-2.png " ")
 
 Enter the following information:
 
@@ -70,45 +70,45 @@ Enter the following information:
 
 *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces.  It will fail.*
 
-![](./images/em-create-stack-3.png " ")
+  ![](./images/em-create-stack-3.png " ")
 
 7. Your stack has now been created!  
 
-![](./images/em-stack-details.png " ")
+  ![](./images/em-stack-details.png " ")
 
 ## Step 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
-![](./images/em-stack-plan-1.png " ")
+  ![](./images/em-stack-plan-1.png " ")
 
-![](./images/em-stack-plan-2.png " ")
+  ![](./images/em-stack-plan-2.png " ")
 
-![](./images/em-stack-plan-results-1.png " ")
+  ![](./images/em-stack-plan-results-1.png " ")
 
-![](./images/em-stack-plan-results-2.png " ")
+  ![](./images/em-stack-plan-results-2.png " ")
 
-![](./images/em-stack-plan-results-3.png " ")
+  ![](./images/em-stack-plan-results-3.png " ")
 
 ## Step 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network, instance and install Oracle 19c.
 
-![](./images/em-stack-details-post-plan.png " ")
+  ![](./images/em-stack-details-post-plan.png " ")
 
-![](./images/em-stack-apply-1.png " ")
+  ![](./images/em-stack-apply-1.png " ")
 
-![](./images/em-stack-apply-2.png " ")
+  ![](./images/em-stack-apply-2.png " ")
 
 2.  Once this job succeeds, you will get an apply complete notification from Terraform.  Examine it closely, 7 resources have been added.  Congratulations, your environment is created!  Time to login to your instance to finish the configuration.
 
-![](./images/em-stack-plan-results-1.png " ")
+  ![](./images/em-stack-plan-results-1.png " ")
 
-![](./images/em-stack-plan-results-2.png " ")
+  ![](./images/em-stack-plan-results-2.png " ")
 
-![](./images/em-stack-plan-results-3.png " ")
+  ![](./images/em-stack-plan-results-3.png " ")
 
 ## Step 4: Connect to your instance
 
@@ -124,7 +124,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
-![](./images/em-cloudshell.png " ")
+  ![](./images/em-cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
@@ -133,7 +133,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
 ````
 
-![](./images/em-cloudshell-ssh.png " ")
+  ![](./images/em-cloudshell-ssh.png " ")
 
 If you used the default RSA key name of **id_rsa** then use the following to connect as there's no need to explicitly specify the key.
 
@@ -153,7 +153,7 @@ ssh  opc@<Your Compute Instance Public IP Address>
 ````
 ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
 ````
-![](./images/em-mac-linux-ssh-login.png " ")
+  ![](./images/em-mac-linux-ssh-login.png " ")
 
 4.  After successfully logging in, proceed to Step 5.
 
@@ -175,7 +175,7 @@ Port: _22_
 
 Connection type: _SSH_
 
-![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
+  ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
 #### **Configuring Automatic Login**
 
@@ -183,7 +183,7 @@ Connection type: _SSH_
 
 2.  Enter your auto-login username. Enter **opc**.
 
-![](images/36164be0029033be6d65f883bbf31713.jpg " ")
+  ![](images/36164be0029033be6d65f883bbf31713.jpg " ")
 
 #### **Adding Your Private Key**
 
@@ -192,7 +192,7 @@ Connection type: _SSH_
 2.  **Click** browse and find the private key file that matches your VM’s public
     key. This private key should have a .ppk extension for PuTTy to work.
 
-![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
+  ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
 To save all your settings:
 
