@@ -39,7 +39,10 @@ Prior to starting, you will need:
 Refer to [Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
-  - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g. ``<copy>sudo su - oracle</copy>``
+  - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
+  ````
+  <copy>sudo su - oracle</copy>
+  ````
 
 #### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
@@ -422,8 +425,7 @@ Once the deploy operation completes successfully. We are ready to run the final 
 * Review and execute below command to update DB Target *finance.subnet.vcn.oraclevcn.com*
 
 ````
-<copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=finance.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN
--database_credential=sales_SYS:SYSMAN</copy>
+<copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=finance.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
 ````
 
 **OR**
@@ -432,7 +434,7 @@ Once the deploy operation completes successfully. We are ready to run the final 
 <copy>sh update_finance.sh</copy>
 ````
 
-Where:
+Where:  
   - Name – Name of the operation. This is a logical name and should be kept unique  
   - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 

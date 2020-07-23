@@ -5,7 +5,7 @@ Oracle Enterprise Manager is Oracle’s on-premise management platform that prov
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/multitenant-screenshot-freetier.png)](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
+[![](./images/em-freetier.png)](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/em-livelabs.png)](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
 
 - [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)
 - [I have an account on LiveLabs](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
@@ -29,7 +29,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Videos
-- [Oracle Enterprise Delivers Next-Gen Automation](https://www.oracle.com/enterprise-manager/?bcid=6122657568001)
+- [Oracle Enterprise Videos](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/videos.html)
 
 ### Issues?
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
