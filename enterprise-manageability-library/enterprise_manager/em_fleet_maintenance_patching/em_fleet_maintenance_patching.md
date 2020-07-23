@@ -24,7 +24,7 @@ The estimated time to complete the workshop is 60 minutes as further detailed be
 
 ### Prerequisites
 - The following lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** or Setup labs seen in the Contents menu on the right.  
+- This lab assumes you have completed the **Prerequisites** and reviewed all items shown in the Contents menu on the right up to **Lab 1**.  
 - This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
 Prior to starting, you will need:
@@ -36,10 +36,10 @@ Prior to starting, you will need:
     - password: **welcome1**
 
 #### Login to Host using SSH Key based authentication
-Refer to [Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-2-environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “opc”
-  - Authentication method - SSH RSA Key
-  - Oracle EM and DB Software OS User – “oracle”. First login as “opc”, then sudo to “oracle”. E.g. “sudo su - oracle"
+Refer to [Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g. ``<copy>sudo su - oracle</copy>``
 
 #### Login to OMS Console
 Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
