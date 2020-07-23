@@ -15,6 +15,10 @@ An APEX Workspace is a logical domain where you define APEX applications. Each w
 To determine which release of Oracle Application Express you are currently running, do one of the following:
 * View the release number on the Workspace home page:
     - Sign in to Oracle Application Express. The Workspace home page appears. The current release version displays in bottom right corner.
+
+    ![](images/release-number.png " ")
+    ![](images/release-number2.png " ")
+
 * View the About Application Express page:
     - Sign in to Oracle Application Express. The Workspace home page appears.
     - Click the Help menu at the top of the page and select About. The About Application Express page appears.
@@ -102,7 +106,8 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff | Arabella Yao, Product Manager Intern, Database Management, June 2020
+ - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Contributor** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead)
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
 ## See an issue? 

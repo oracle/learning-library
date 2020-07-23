@@ -1,20 +1,20 @@
 # Improving Projects
 
 ## Introduction
-In this lab, you will learn how to use the Create Page Wizard to add additional pages to your app. Then you will then link the new page to the existing card page. You will then learn how to easily manipulate how items are displayed, and finally to create a Dynamic Action.
+In this lab, you will learn how to use the *Create Page Wizard* to add additional pages to your app. Then, you will link the new page to the existing Card page. You will then learn how to easily manipulate how items are displayed, and finally to create a *Dynamic Action*.
 
 ## **STEP 1** - Improving the Cards Display
-Looking at the Projects card region you should notice it is only 3 cards wide and includes icons, which could be displayed better. To improve the page, you will utilize **Live Template Options** directly in the runtime environment. You could also make changes from the App Builder, however, it is much easier to see the results as you make them.
+Looking at the Projects Card region, you should notice it is only 3 cards wide and icons include initials, which could be displayed better. To improve the page, you will utilize **Live Template Options** directly in the runtime environment. You could also make changes from the App Builder; however, it is much easier to make changes as you can see the results.
 
 1. In the runtime environment, click **Projects**.
-2. In the Developer Toolbar (at the bottom of the runtime page), click **Quick Edit**.
+2. In the Developer Toolbar (at the bottom of the runtime environment), click **Quick Edit**.
 
     Move the mouse until it is inside the Cards region, and a blue box surrounds the region, with a wrench in the top right corner.     
     Click the wrench.
 
     ![](images/quick-edit.png " ")
 
-3. In the Live Template Options dialog, click **Attributes**, and enter the following:
+3. In the Live Template Options dialog, click **Attributes**, and select the following:
     - Icons - select **Display Icons**
     - Layout - select **4 columns**
 
@@ -23,7 +23,7 @@ Looking at the Projects card region you should notice it is only 3 cards wide an
     ![](images/live-template.png " ")
 
 ## **STEP 2** - Adding a Form Page
-Currently there is no way to maintain project records. Therefore, you will use the **Create Page Wizard** to create a form page on the **EBA_PROJECTS** table.
+Currently there is no way to maintain project records. Therefore, you will use the *Create Page Wizard* to create a form page on the *EBA_PROJECTS* table.
 
 1. Navigate back to the App Builder  by clicking **Application xxxxx** in the Developer Toolbar, or by navigating back to the App Builder browser tab manually.
 2. On the application home page, click **Create Page**.
@@ -38,15 +38,15 @@ Currently there is no way to maintain project records. Therefore, you will use t
 
     ![](images/select-form-page.png " ")
 
-5. In the Create Form dialog, enter the following:
-   - Page Name – enter **Project**
-   - Page Mode – click **Modal Dialog**
-
-6. Click **Next**
+5. In the Create Form dialog, for Page Attributes, enter the following:
+      - Page Name – enter **Project**
+      - Page Mode – click **Modal Dialog**
+    
+    Click **Next**
 
     ![](images/page-attributes.png " ")
 
-6. For Navigation Preference, select **Identify an existing navigation menu entry for this page**.
+6. For Navigation Menu, select **Identify an existing navigation menu entry for this page**.
     For Existing Navigation Menu Entry, select **Projects**.    
     Click **Next**.  
 
@@ -61,28 +61,28 @@ Currently there is no way to maintain project records. Therefore, you will use t
     Click **Create**.
 
     ![](images/columns.png " ")
-    *{Note: This will create _Page 10: Project_ if you have followed the previous sections correctly. If not page 10, please repeat Section 4, and ensure the Interactive Grids for both Milestones and Statuses are created}*
+    *Note: This will create _Page 10: Project_ if you have followed the previous sections correctly. If not Page 10, please repeat Lab 3, and ensure the Interactive Grids for both Milestones and Statuses are created*
 
 ## **STEP 3** - Link to Projects Page
-Now to link this new page to the Project cards page.    
-*{Note: Defining a link for a Card region requires modifying the SQL statement. However, elsewhere in Oracle APEX defining links is very easy and declarative as you will learn in Lab 7.}*
+Now to link this new page to the Project Cards page.    
+*Note: Defining a link for a Card region requires modifying the SQL statement. However, elsewhere in Oracle APEX, defining links is very easy and declarative as you will learn in Lab 7.*
 
 1. In the Application Toolbar, click the page selector in front of the page number (10).    
     Click **4**, for the Projects page
 
     ![](images/go-cards.png " ")
 
-    *{Note: Alternatively, you can type in a page number or use the up / down arrows in the Application Toolbar to navigate to different pages within Page Designer}*
+    *Note: Alternatively, you can type in a page number or use the up / down arrows in the Application Toolbar to navigate to different pages within Page Designer*
 
 2. In the Rendering tree (left pane), select **Projects**.   
-    In the Property Editor (right pane), right of Source > SQL Query, click the **Code Editor** icon.  
+    In the Property Editor (right pane), right of **Source > SQL Query**, click the **Code Editor** icon.  
 
     For the CARD\_LINK selection, replace the existing code with the following:   
     ```
     <copy>apex_util.prepare_url('f?p='||:APP_ID||':10:'||:APP_SESSION||'::::P10_ID:'||id) CARD_LINK,</copy>
     ```
 
-    *{Note: f?p= is the call to an APEX page; :APP\_ID is the Application Id; 10 is the target page (Project form page); :APP\_SESSION is the current user’s session; P10\_ID is the primary key item on the target page; _id_ is the primary key from the Projects table}*
+    *Note: f?p= is the call to an APEX page; :APP\_ID is the Application Id; 10 is the target page (Project Form page); :APP\_SESSION is the current user’s session; P10\_ID is the primary key item on the target page; _id_ is the primary key from the Projects table*
 
     Click **OK**.
 
@@ -95,41 +95,41 @@ Now to link this new page to the Project cards page.
       - Click and hold **Text [Hot]**.  
       - Drag the button up into the Breadcrumb region, and hover under the **Create** placeholder.
 
-    Once the selection expands to a large yellow box release the mouse.
+    Once the CREATE selection expands to a large yellow box, release the mouse.
 
     ![](images/drag-button.png " ")
 
 4. Now to update the button properties.     
     In the Property Editor (right pane), enter the following:
 
-    - Identification > Name - enter **CREATE**  
-    *{Note: The Identification > Type attribute is update to _Create_ once you enter the Title}*
+    - Identification > Button Name - enter **CREATE**  
+    *Note: The Identification > Label is update to _Create_ once you enter the Button Name*
     - Behavior > Action - select **Redirect to Page in this Application**
-    - Behavior > Target - click _No Link Defined_, and enter:
+    - Behavior > Target - click **No Link Defined**, and enter:
         - Target > Page - enter **10**
-        - Clear Session State > Clear Cache - enter **10**
+        - Clear / Reset > Clear Cache - enter **10**
 
-5. Click **Ok**
+5. Click **OK**
 
     ![](images/set-button.png " ")
 
 6. Now to test the page links work!     
-    Click **Save and Run**.
+    Click **Save and Run Page** button.
     Click on a project card or click **Create**.
 
     ![](images/view-form.png " ")
 
 ## **STEP 4** - Update How Items are Displayed
-The way the Status, Name, and Project Lead are displayed can be easily improved.
-The **STATUS_ID** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. Therefore, rather than requiring end users to enter a number, you will update the item to be a list of values based on the lookup table. The Name and Project Lead fields should be updated to Text Fields. Lastly, the audit columns should be hidden.
+The way the Status Id, Name, and Project Lead are displayed can be easily improved.
+The **Status Id** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. Therefore, rather than requiring end users to enter a number, you will update the item to be a list of values based on the lookup table. The Name and Project Lead fields should be updated to Text Fields. Lastly, the audit columns (Created, Created By, Updated, Updated by) should be hidden.
 
 1. First you need to change the Status item from a number entry to a list of allowable values.   
-    From the Runtime environment, from the Project form page, in the Developer Toolbar, click **Edit Page 10**.  
-    Alternatively, navigate back to the App Builder browser tab, and then navigate to Page 10.
+    From the Runtime environment, from the Project Form page, in the Developer Toolbar, click **Edit Page 10**.  
+    Alternatively, navigate back to the App Builder browser tab, and then navigate to Page 10 manually.
 2. In Page Designer for Page 10, in the Rendering tree (left pane), click **P10\_STATUS_ID**.  
     In the Property Editor (right pane), enter the following:
     - Identification > Type - select **Select List**    
-    *{Note: As soon as you choose Select List the item will change to red and a Message indicator will display in a center pane. This will be remedied once the List of Values attributes are entered}*
+    *Note: As soon as you choose Select List, P10\_STATUS\_ID item will change to red and a Message indicator will display in the Application Toolbar. This will be remedied once the List of Values attributes are entered*
 
     - Label > Label - enter **Status**
     - List of Values > Type - select **SQL Query**
@@ -141,18 +141,18 @@ The **STATUS_ID** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. T
         order by display_order</copy
         ```
 
-    *{Note: The _code_ column is the value displayed to users, while the _id_ column is the value returned to the table column. The table includes a _display\_order_ column to ensure the statuses are displayed in the correct order}*    
+    *Note: The _code_ column is the value displayed to users, while the _id_ column is the value returned to the table column. The table includes a _display\_order_ column to ensure the statuses are displayed in the correct order*    
 
-    - Display Extra Values - click **No**   
+    - Display Extra Values - **Uncheck**   
     - Null Display Value - enter **– Select Status -**   
-    *{Note: This text must be typed}*
+    *Note: This text must be typed*
 
     ![](images/set-status.png " ")
     ![](images/set-status2.png " ")
 
 3. Now to update the Name and Project Lead items to text fields.    
     In the Rendering Tree (left pane), click **P10\_NAME**  
-    Hold down the [Control] key and click **P10\_PROJECT\_LEAD**  
+    Hold down the [Control] key (or [Command] key in Mac) and click **P10\_PROJECT\_LEAD**  
 
     In the Property Editor (right pane), for Identification > Type, select **Text Field**
 
@@ -167,7 +167,7 @@ The **STATUS_ID** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. T
     ![](images/set-hidden.png " ")
 
 ## **STEP 5** - Improve the Completed Date
-Currently a Completed Date can be entered on any project. However, it would greatly improve data quality to only allow the date to be entered if the Status is _COMPLETED_. In order to implement such functionality requires JavaScript to dynamically enable / disable the Completed Date item based on the value of Status. Thankfully, as an APEX developer you don't need to write such JavaScript. You can simply define a Dynamic Action which allows you to declaratively define such client-side interactively, by specifying the trigger, action, and affected element(s).
+Currently a Completed Date can be entered on any project. However, it would greatly improve data quality to allow the completed date to be entered only if the Status is _COMPLETED_. Implementing such functionality requires JavaScript to dynamically enable / disable the Completed Date item based on the value of Status. Thankfully, as an APEX developer, you don't need to write such JavaScript. You can simply define a *Dynamic Action*, which allows you to declaratively define such client-side interactivity, by specifying the trigger, action, and affected element(s).
 
 1. You need to define the Dynamic Action on the triggering element, which is the Status.        
     In the Rendering Tree (left pane), _right-click_ **P10\_STATUS\_ID**.  
@@ -175,20 +175,20 @@ Currently a Completed Date can be entered on any project. However, it would grea
 
     ![](images/go-da.png " ")
 
-2. Update the Dynamic Action so only trigger when the Status is _COMPLETED_.   
-    With the Dynamic Action selected, in the Property Editor (right pane), enter the following:
+2. Update the Dynamic Action so that it only trigger when the Status is _COMPLETED_.   
+    With the Dynamic Actions selected (click **New** under Dynamic Actions), in the Property Editor (right pane), enter the following:
     - Identification > Name - enter **Enable Completed Date**
-    - Client-Side Condition > Type - select **Item = Value**    
-    *{Note: The Client-Side Condition > Item is automatically set to the current item _P10\_STATUS\_ID_}*
-    - Client-Side Condition > Value - enter **3**   
-    *{Note: The value _3_ corresponds to a status of COMPLETED}*
+    - Client-side Condition > Type - select **Item = Value**    
+    *Note: The Client-side Condition > Item is automatically set to the current item _P10\_STATUS\_ID_*
+    - Client-side Condition > Value - enter **3**   
+    *Note: The value _3_ corresponds to a status of COMPLETED*
 
     ![](images/name-da.png " ")
 
 3. Next you need to specify what happens when the triggering event is true.     
     In the Rendering tree (left pane), click the action under True (currently Show).  
     In the Property Editor (right pane), enter the following:
-    - Identification > Action - select **Enable**
+    - Identification > Action - select **Enable** (under **Component**)
     - Affected Elements > Item(s) - select **P10\_COMPLETED\_DATE**
 
     ![](images/set-da.png " ")
@@ -203,15 +203,15 @@ Currently a Completed Date can be entered on any project. However, it would grea
     In the Rendering tree (left pane), click **P10\_COMPLETED\_DATE**.    
     In the Property Editor (right pane), enter the following:
     - Layout > Sequence - enter **25**  
-    *{Note: This will position the item between P10\_STATUS\_ID (Sequence 20) and P10\_NAME (Sequence 30)}*
+    *Note: This will position P10\_COMPLETED\_DATE between P10\_STATUS\_ID (Sequence 20) and P10\_NAME (Sequence 30)*
     - Layout > Start New Row - _Uncheck_    
-    *{Note: This will position the item on the same line as the previous item, P10\_STATUS\_ID}*
+    *Note: This will position the item on the same line as the previous item, P10\_STATUS\_ID*
 
     ![](images/set-date.png " ")
 
-6. Now to review the Project form page.     
+6. Now to review the Project Form page.     
     Click **Save**  
-    *{Note: If you click Save and Run your changes will be saved but the page will not be run. Given this is a modal page it must be run from a calling page rather than directly from Page Designer}*
+    *Note: If you click the Save and Run Page button, your changes will be saved but the page will not be run. Given the Project Form page is a modal page, it must be run from a calling page, rather than directly from Page Designer*
 
 7. Navigate back to the Runtime environment, refresh the browser, and within the Navigation Menu (left side) click **Projects**.     
     Click a card record to display the corresponding record in the form page.    
@@ -227,7 +227,7 @@ This completes Lab 5. You now know how to add additional pages to your applicati
 ## **Acknowledgements**
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Arabella Yao, Product Manager Intern, Database Management
+ - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?

@@ -209,24 +209,24 @@ If you want to change a page's name after you create an application, the process
 
 1. In *App Builder*, click you Project. In you Project home page, click the page you want to edit. In *Page Designer*, change **Identification > Name** and **Identification > Title** to the new name. Click **Save and Run Page**. In the runtime environment, you will see the tab's name is updated.
 
-    ![](../../common/change-page-name/images/change_name.png " ")
+    ![](../../../common/change-page-name/images/change_name.png " ")
 
 2. In your Project home page, click **Shared Component** in the development toolbar.
-    ![](../../common/change-page-name/images/shared_component.png " ")
+    ![](../../../common/change-page-name/images/shared_component.png " ")
 
     In Shared Component home page, under **Navigation**, click **Breadcrumbs**. Click **Breadcrumbs** again, click the page you want to edit.
-    ![](../../common/change-page-name/images/shared_component_menu.png " ")
+    ![](../../../common/change-page-name/images/shared_component_menu.png " ")
 
     Change **Entry > Short Name** to the new name. Click **Apply Changes**. In the runtime environment, you will see the title of the page is updated.
-    ![](../../common/change-page-name/images/breadcrumb.png " ")
+    ![](../../../common/change-page-name/images/breadcrumb.png " ")
 
 3. In Shared Component home page, under **Navigation**, click **Navigation Menu**, click **Desktop Nagivation Menu**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated on the left navigation menu.
 
-    ![](../../common/change-page-name/images/navigation_menu.png " ")
+    ![](../../../common/change-page-name/images/navigation_menu.png " ")
 
 4. In Shared Component home page, under **Navigation**, click **Lists**, then click **Page Navigation**. Click the page you want to edit, change **Entry > List Entry Label** to the new name. Click **Apply Changes**. You will see the page's name is updated in the Home page of you application.
 
-    ![](../../common/change-page-name/images/page_navigation.png " ")
+    ![](../../../common/change-page-name/images/page_navigation.png " ")
 
 ## **Acknowledgements**
 

@@ -1,20 +1,20 @@
 # Improving Milestones
 
 ## Introduction
-In this lab, you will learn how to update the layout of an Interactive Grid.
+In this lab, you will learn how to update and then save the layout of an *Interactive Grid* to improve your Milestones.
 
 ## **STEP 1** - Change the Name Column
-When you run the application and click on **Milestones** and then double-click a record you can edit the details. Navigate to each column and notice that the Project column is a select list, the Name and Description columns are textareas, and the Due Date is a date picker. Generally, the Name is not that long, therefore, you should update the column type to a text field.
+In your runtime environment, click on **Milestones** and then double-click a record, you can edit the details. Navigate to each column and notice that the Project column is a select list, the Name and Description columns are textareas, and the Due Date is a date picker. Generally, the Name is not that long; therefore, you should update the column type to a text field.
 
 1. Navigate to the App Builder.
-2. Within your application, navigate to Page 5 in Page Designer.
+2. Within your application, navigate to **Page 5: Milestones** in Page Designer.
 3. In the Rendering tree (left pane), under the **Project Milestones** region, expand **Columns**.  
     Within the list of columns click **Name**.  
     In the Property Editor (right pane), for Identification > Type select **Text Field**.
 
     ![](images/set-name.png " ")
 
-4. In the Application toolbar, click **Save and Run**   
+4. In the Application toolbar, click **Save and Run Page**   
     Double-click a record and review the Name column.
 
     ![](images/view-name.png " ")
@@ -26,7 +26,7 @@ Once again reviewing the report, it would be beneficial to rearrange the columns
 
     ![](images/go-columns.png " ")
 
-2. In the Columns dialog, click **Name** and then click the up arrow to move the column before **Projects**.    
+2. In the Columns dialog, click **Name** and then click the up arrow to move the column before **Project**.    
     Click **Save**.
 
     ![](images/move-name.png " ")
@@ -55,7 +55,7 @@ Once again reviewing the report, it would be beneficial to rearrange the columns
       - Hover in between the **Name** and **Project** columns until the resize indicator is displayed.  
       - Drag the column separator to the right until it is a good size for the **Name** column.     
       - Repeat for the Project and Due Date columns.  
-    *{Note: You can also expand the size of the Description column by using the resize indicator at the end of the column}*
+    *Note: You can also expand the size of the Description column by using the resize indicator at the end of the column*
 
     ![](images/get-resize.png " ")
     ![](images/column-sizes.png " ")
@@ -65,10 +65,10 @@ Once again reviewing the report, it would be beneficial to rearrange the columns
     ![](images/freeze-display.png " ")
 
 ## **STEP 3** - Save the Report
-The changes you have made to the grid layout are only your view of the grid. If other users log in they will see the original layout with the previous column order and column sizes. Therefore, you need to save the Default report layout.
+The changes you have made to the grid layout are only visible to you. If other users log in, they will see the original layout with the previous column order and column sizes. Therefore, you need to save the Default report layout.
 
 1. In the runtime environment, click **Actions**, select **Report**, and then select **Save**.  
-    *{Note: Only developers, who have run the application from App Builder, can save the "Default" report. End users can only use "Save As"}*
+    *Note: Only developers, who have run the application from App Builder, can save the "Default" report. End users can only use "Save As"*
 
     ![](images/save.png " ")
 
@@ -79,7 +79,7 @@ This completes Lab 6. You now know how to manipulate an Interactive Grid and sav
 ## **Acknowledgements**
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Arabella Yao, Product Manager Intern, Database Management
+ - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?

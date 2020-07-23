@@ -15,38 +15,43 @@ Once the Web Source module is defined in an APEX application, rather than callin
 ## **STEP 1** – Creating the Sample Tables
 This lab utilizes the common EMP and DEPT tables. These can easily be installed using Sample Datasets.
 
-1. Log into your workspace
-2. In the main menu, select **SQL Workshop**, select **Utilities**, click **Sample Datasets**
+1. Log into your workspace.
+2. In the main menu, select **SQL Workshop**, select **Utilities**, click **Sample Datasets**.
 
     ![](images/go-samples.png " ")
 
-3. In the list of Sample Datasets, on the EMP / DEPT row, click **Install**  
+3. In the list of Sample Datasets, on the EMP / DEPT row, click **Install**.
 
     ![](images/install-empdept.png " ")
 
-4. On the Manage Sample Dataset dialog, click **Next**
-5. On the Load Sample Dataset dialog, click **Install Dataset**
-6. On the Load Sample Dataset - Results dialog, click **Exit**  
-    *{Note: We do not want to create an application directly on the tables}*
+4. On the Manage Sample Dataset dialog, click **Next**.
+
+    ![](images/manage-sample-dataset.png " ")
+5. On the Load Sample Dataset dialog, click **Install Dataset**.
+
+    ![](images/install-dataset.png " ")
+6. On the Load Sample Dataset - Results dialog, click **Exit**.
+
+    *Note: We do not want to create an application directly on the tables.*
 
     ![](images/load-results.png " ")
 
 ## **STEP 2** – REST Enabling the Database Objects
-Running the SQL Script below will REST Enable the schema and also create modules for the EMP and DEPT tables and the EMP_DEPT_V view, together with the appropriate handlers.
+Running the SQL Script below will REST Enable the schema and also create modules for the EMP and DEPT tables and the EMP\_DEPT\_V view, together with the appropriate handlers.
 
-Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled the schema. Then go to SQL Workshop > Object Browser, clicked on each table / view and then selected REST to define the REST services. However, the handlers created using the SQL Workshop > Object Browser will utilize Data Dictionary lookups each time they are called. This is less efficient then the manually created services you will create, especially on services, such as apex.oracle.com, which have an extremely large data dictionary. On apex.oracle.com there are over 20,000 schemas.
+Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled the schema. Then go to SQL Workshop > Object Browser, clicked on each table/view and then selected REST to define the REST services. However, the handlers created using the SQL Workshop > Object Browser will utilize Data Dictionary lookups each time they are called. This is less efficient then the manually created services you will create, especially on services, such as apex.oracle.com, which have an extremely large data dictionary. On apex.oracle.com there are over 20,000 schemas.
 
-1. In the main menu, select **SQL Workshop**, click **SQL Scripts**  
+1. In the main menu, select **SQL Workshop**, click **SQL Scripts**.
 
     ![](images/go-scripts.png " ")
 
-2. On the SQL Scripts page, click **Create**  
+2. On the SQL Scripts page, click **Create**.
 
     ![](images/create-script.png " ")
 
-3. In the Script Editor, enter the following:
-    - Script Name - enter **Define REST Endpoints for EMP and DEPT**
-    - Script Editor - cut and paste the following:
+3. In the Script Editor, enter the following.
+    - **Script Name:** Enter **Define REST Endpoints for EMP and DEPT**.
+    - **Script Editor:** Cut and paste the following.
 
     ```
     <copy>begin
@@ -183,40 +188,38 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
     end;
     /<copy>
     ```
-    *{Note: You can also cut and paste the script from the following URL -* <a href="https://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-hol-rest-enable-5478504.txt" target="\_blank">https://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-hol-rest-enable-5478504.txt</a> *}*
+    *Note: You can also cut and paste the script from the following URL -* [https://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-hol-rest-enable-5478504.txt](https://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-hol-rest-enable-5478504.txt)
 
     Click **Run**.
 
     ![](images/set-scripts.png " ")
 
-4. On the Run Script page, click **Run Now**
-5. Results should show 4 statements processed successfully
+4. On the Run Script page, click **Run Now**.
+5. Results should show 4 statements processed successfully.
 
     ![](images/script-results.png " ")
 
 ## **STEP 3** – Reviewing the REST Services
 
-1. In the main menu, select **SQL Workshop**, click **RESTful Services**
+1. In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     ![](images/go-restful.png " ")
 
 3. In the ORDS RESTful Services page, expand **Modules**, expand **emp.rest**, and then expand **hol/**.        
-    Click on **GET**
+    Click on **GET**.
 
     Click on the Copy to Clipboard icon (or manually copy the Full URL).
 
     ![](images/show-get.png " ")
 
-4. Open a new tab / window in your browser.
-
-    Paste the Full URL
+4. Open a new tab/window in your browser and paste the Full URL. Keep this tab open or make a note of this URL because you will need it later.
 
     ![](images/show-data.png " ")
 
-    *{Note: Depending on your browser you may just see the raw JSON document rather than the formatted output displayed above.}*
+    *Note: Depending on your browser you may just see the raw JSON document rather than the formatted output displayed above.*
 
 ## **Summary**
-This completes Lab 1. You now know how to REST enable database objects include all of the necessary handlers. [Click here to navigate to Lab 2](?lab=lab-2-defining-web-sources).
+This completes Lab 2. You now know how to REST enable database objects include all of the necessary handlers. [Click here to navigate to Lab 3](?lab=lab-3-defining-web-sources).
 
 ## **Acknowledgements**
 

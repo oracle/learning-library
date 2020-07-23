@@ -13,7 +13,7 @@
         {
             "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
-            "filename": "./../../../adb-provision/adb-provision.md"
+            "filename": "./../../../adb-provision/adb-provision-livelabs.md"
         }
     ]
 }

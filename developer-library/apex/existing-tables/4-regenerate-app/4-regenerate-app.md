@@ -5,6 +5,8 @@ In the runtime environment, if you navigate to Milestones, and then from the rep
 
 ![](images/milestone-form.png " ")
 
+*Note: See how to go to your runtime environment from the previous lab.*
+
 ## **STEP 1** - Delete Generated App
 Given you are going to regenerate the app from the Create Application Wizard, it is best to delete the app you just generated to avoid confusion.
 
@@ -12,7 +14,7 @@ Given you are going to regenerate the app from the Create Application Wizard, it
 
     ![](images/dev-toolbar.png " ")  
 
-    *{Note: The Developer Toolbar is only shown to developers who run the application from the App Builder. End users will never be shown the Developer Toolbar}*
+    *Note: The Developer Toolbar is only shown to developers who run the application from the App Builder. End users will never be shown the Developer Toolbar*
 
 2. From the App Home Page, under Tasks, click **Delete this Application**.  
 
@@ -21,7 +23,7 @@ Given you are going to regenerate the app from the Create Application Wizard, it
 3. On the Confirm Delete page, click **Permanently Delete Now**.
 
 ## **STEP 2** - Reload the Projects App
-The Create Application Wizard includes the ability to reload apps that you previously generated, making it easy to make some changes and then generate a new and improved version of the initial app.
+The Create Application Wizard includes the ability to reload apps that you previously generated, making it easy to make some changes and generate a new and improved version of the initial app.
 
 1. From the App Builder Home Page, click **Create**.
 
@@ -34,7 +36,7 @@ The Create Application Wizard includes the ability to reload apps that you previ
 
     ![](images/load-blueprint.png " ")  
 
-    The previously defined app definition will be displayed.
+    The previously defined app blueprint will be displayed.
 
 ## **STEP 3** - Replacing the Milestone Pages
 Rather than having two ways to maintain milestone records, you will delete the original report and form pages, and then add a new page, and reposition it in the list of pages.
@@ -44,11 +46,11 @@ Rather than having two ways to maintain milestone records, you will delete the o
 
     ![](images/delete-old-page.png " ")
 
-3. In the Create Application wizard, click **Add Page**.
+3. In the Create Application Wizard, click **Add Page**.
 4. Click **Interactive Grid**.
 5. On the Add Interactive Grid Page, enter the following:
     - Page Name - enter **Milestones**
-    - Table - select **EBA\_PROJECT\_MILESTONES**
+    - Table or View - select **EBA\_PROJECT\_MILESTONES**
 
     - Click **Add Page**  
 
@@ -63,13 +65,13 @@ Rather than having two ways to maintain milestone records, you will delete the o
 
 
 ## **STEP 4** - Add the Status Page
-The **EBA\_PROJECT\_STATUS** table is used to maintain project statuses. This table should be maintainable, however, only application administrators should be able to modify records. As such adding the page under Administration is the optimal solution.
+The **EBA\_PROJECT\_STATUS** table is used to maintain project statuses. This table should be maintainable; however, only application administrators should be able to modify records. As such, adding the Status page under Administration is the optimal solution.
 
-1. In the Create Application wizard, click **Add Page**.
+1. In the Create Application Wizard, click **Add Page**.
 2. Click **Interactive Grid**.
 3. On the Add Interactive Grid Page, enter the following:
     - Page Name - enter **Statuses**
-    - Table - select **EBA\_PROJECT\_STATUS**
+    - Table or View - select **EBA\_PROJECT\_STATUS**
     - Expand **Advanced**
         - Click **Set as Administration Page**
 
@@ -79,15 +81,15 @@ The **EBA\_PROJECT\_STATUS** table is used to maintain project statuses. This ta
 
 
 ## **STEP 5** - Completing the App
-The Create Application Wizard also has the ability to add various features to your app, such as Access Control, Activity Reporting, Feedback, and more, to make it more functionally complete, and "production-ready".
+The Create Application Wizard also has the ability to add various features to your app, such as Access Control, Activity Reporting, Feedback, and more, to make your app more functionally complete and "production-ready".
 
-1. In the Create Application wizard, for Features, click **Check All**
+1. In the Create Application Wizard, for Features, click **Check All**
 2. Click **Create Application**
 
     ![](images/check-features.png " ")
-    *{Note: Your new application will generally have a new Application Id}*
+    *Note: Your new application will generally have a new Application Id*
 
-    Your new application will be displayed in the Application Builder.
+    Your new application will be displayed in the App Builder.
 
 3. Click **Run Application**.
 4. Enter your user credentials.
@@ -96,20 +98,20 @@ The Create Application Wizard also has the ability to add various features to yo
 
     ![](images/view-milestones.png " ")
 
-    *{Note: The Project column will display a list of projects, Name and Description will be text areas, and Due Date will be a date picker, based on the different data types.}*
+    *Note: Project column will display a list of projects, Name and Description columns will be text areas, and Due Date column will be a date picker, based on the different data types.*
 
-7. Navigate to **Administration** and review the capabilities provided.
+7. Click the navigation button at the top-left of the page, and navigate to **Administration** to review the capabilities provided.
 
     ![](images/view-admin.png " ")
 
 ## **Summary**
 
-This completes Lab 3. You now know how to regenerate an application, and add additional features. [Click here to navigate to Lab 4](?lab=lab-4-improving-dashboard)
+This completes Lab 3. You now know how to regenerate an application and add additional features. [Click here to navigate to Lab 4](?lab=lab-4-improving-dashboard)
 
 ## **Acknowledgements**
 
  - **Author** -  David Peake, Consulting Member of Technical Staff
- - **Contributors** - Arabella Yao, Product Manager Intern, Database Management
+ - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?

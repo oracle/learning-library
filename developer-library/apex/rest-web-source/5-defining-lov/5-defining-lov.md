@@ -1,4 +1,4 @@
-# Defining List of Values
+# Defining a List of Values
 
 ## Introduction
 In this lab, you will learn how to utilize Web Source modules as the basis for list of values for use within an application.
@@ -25,16 +25,17 @@ handler for both the EMP and DEPT tables. You have already created a Web Source 
 
 6. On the Web Source Modules page, click **Create**.
 
-    On the Create Web Source Module - Method dialog, click **Next**.    *{Default: From Scratch}*
+    On the Create Web Source Module - Method dialog, click **Next**. *Default: From Scratch*
 
     ![](images/set-method.png " ")
 
-7. On the Create Web Source - General dialog, enter the following:
+7. On the Create Web Source - General dialog, enter the following.
 
-    - Web Source Type - select **ORACLE REST Data Services**
-    - Name - enter **REST DEPT Source**
-    - URL Endpoint - enter the REST URI for the dept.rest handler
-{Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/ }
+    - **Web Source Type:** select **ORACLE REST Data Services**
+    - **Name:** enter **REST DEPT Source**
+    - **URL Endpoint:** enter the REST URI for the dept.rest handler Similar to https://{cloud\_url}/ords/{your_workspace}/**dept**/hol/
+    
+    The URL Endpoint is the same URL you entered in Lab 2 Step 3 exept `emp` is replaced with `dept`.
 
     Click **Next**.
 
@@ -45,10 +46,10 @@ handler for both the EMP and DEPT tables. You have already created a Web Source 
 
     ![](images/review-urls.png " ")
 
-    *{Note: As you have already defined a Web Source with the same base path, for the REST EMP Source, then the Base URL is not updateable.}*
+    *Note: As you have already defined a Web Source with the same base path, for the REST EMP Source, then the Base URL is not updateable.*
 
 9. On the Authentication dialog, click **Discover**.
-    {Authentication Required = No}
+    Authentication Required = No
 10. On the Preview dialog, click **Create Web Source**
 
     ![](images/create-ws.png " ")
@@ -67,7 +68,7 @@ You now have the Web Source modules which can be used as the basis for List of V
 3. On the List of Values page, click **Create**.
 
     On the Create List of Values - Source dialog, click **Next**.       
-    *{Default: From Scratch}*
+    *Default: From Scratch*
 
     ![](images/set-source.png " ")
 
@@ -76,19 +77,19 @@ You now have the Web Source modules which can be used as the basis for List of V
 
     ![](images/set-lov-name.png " ")
 
-5. On the List of Values Source dialog, enter the following:
+5. On the List of Values Source dialog, enter the following.
 
-    - Data Source - click **Web Source**
-    - Web Source Module -  select **REST EMP Source**
+    - **Data Source:** click **Web Source**
+    - **Web Source Module:**  select **REST EMP Source**
 
     Click **Next**.
 
     ![](images/set-ws-source.png " ")
 
-6. On the Column Mappings dialog, enter the following:
+6. On the Column Mappings dialog, enter the following.
 
-    - Return Column - select **EMPNO**
-    - Display Column - select **ENAME**
+    - **Return Column:** select **EMPNO**
+    - **Display Column:** select **ENAME**
 
     Click **Create**.
 
@@ -97,23 +98,23 @@ You now have the Web Source modules which can be used as the basis for List of V
 7. To create the List of Values for Departments is the same as above.
 
     On the List of Values page, click **Create**.   
-    On the Create List of Values - Source dialog, click **Next**.       
-    *{Default: From Scratch}*
+    On the Create List of Values - Source dialog, click **Next**.     
+    *Default: From Scratch*
 
 8. On the Name and Type dialog, for Name, enter **REST DEPT LOV**.       
     Click **Next**.
 
-9. On the List of Values Source dialog, enter the following:
+9. On the List of Values Source dialog, enter the following.
 
-    - Data Source - click **Web Source**
-    - Web Source Module -  select **REST DEPT Source**
+    - **Data Source:** click **Web Source**
+    - **Web Source Module**:  select **REST DEPT Source**
 
     Click **Next**.
 
-10. On the Column Mappings dialog, enter the following:
+10. On the Column Mappings dialog, enter the following.
 
-    - Return Column - select **DEPTNO**
-    - Display Column - select **DNAME**
+    - **Return Column:** select **DEPTNO**
+    - **Display Column:** select **DNAME**
 
     Click **Create**.
 
@@ -126,24 +127,24 @@ If you review the Maintain Employee form page more closely you will see that the
 
 2. From Page Designer, in the Rendering tree (left pane), click **P5_DEPTNO**.
 
-    In the Property Editor (right pane), enter the following:
+    In the Property Editor (right pane), enter the following.
 
-    - Identification > Type - select **Select List**
-    - List of Values > Type - select **Shared Component**
-    - List of Values > List of Values - select **REST DEPT LOV**
-    - List of Values > Display Extra Values - Uncheck
+    - **Identification > Type:** select **Select List**
+    - **List of Values > Type:** select **Shared Component**
+    - **List of Values > List of Values:** select **REST DEPT LOV**
+    - **List of Values > Display Extra Values:** Uncheck
 
     ![](images/set-deptno.png " ")
     ![](images/set-deptno2.png " ")
 
 3. From Page Designer, in the Rendering tree (left pane), click **P5_MGR**.
 
-    In the Property Editor (right pane), enter the following:
+    In the Property Editor (right pane), enter the following.
 
-    - Identification > Type - select **Select List**
-    - List of Values > Type - select **Shared Component**
-    - List of Values > List of Values - select **REST EMP LOV**
-    - List of Values > Display Extra Values - Uncheck
+    - **Identification > Type:** select **Select List**
+    - **List of Values > Type:** select **Shared Component**
+    - **List of Values > List of Values:** select **REST EMP LOV**
+    - **List of Values > Display Extra Values:** Uncheck
 
 4. In the Page Designer toolbar, click **Save**.
 
@@ -159,30 +160,30 @@ Similarly, the Employees report shows numerical values rather than names.
 
 2. Given this is a report you will need to modify columns instead of items.
 
-    In the Rendering tree (left pane), click Columns, click **MGR**  
+    In the Rendering tree (left pane), click Columns, click **MGR**.
 
-    In the Property Editor (right pane), enter the following:
+    In the Property Editor (right pane), enter the following.
 
-    - Type - select **Plain Text (based on List of Values)**
-    - List of Values - select **REST EMP LOV**
-    - Heading > Alignment - click **Start**
-    - Layout > Column Alignment - click **Start**
+    - **Type:** select **Plain Text (based on List of Values)**
+    - **List of Values:** select **REST EMP LOV**
+    - **Heading > Alignment:** click **Align Left**
+    - **Layout > Column Alignment:** click **Align Left**
 
     ![](images/set-mgr-col.png " ")
 
-3. In the Rendering tree (left pane), under Columns, click **DEPTNO**  
+3. In the Rendering tree (left pane), under Columns, click **DEPTNO**. 
 
-    In the Property Editor (right pane), enter the following:
+    In the Property Editor (right pane), enter the following.
 
-    - Type - select **Plain Text (based on List of Values)**
-    - List of Values - select **REST DEPT LOV**
-    - Heading > Alignment - click **Start**
-    - Layout > Column Alignment - click **Start**
+    - **Type:** select **Plain Text (based on List of Values)**
+    - **List of Values:** select **REST DEPT LOV**
+    - **Heading > Alignment:** click **Align Left**
+    - **Layout > Column Alignment:** click **Align Left**
 
     Click **Save**.
 
-4. Navigate to the application Runtime Environment
-5. Refresh your browser
+4. Navigate to the application Runtime Environment.
+5. Refresh your browser.
 
     ![](images/runtime-report.png " ")
 
@@ -193,7 +194,7 @@ Similarly, the Employees report shows numerical values rather than names.
     ![](images/runtime-form.png " ")
 
 ## **Summary**
-This completes Lab 4 and the workshop. You now know how to define List of Values against REST endpoints and then utilize those within an application.
+This completes Lab 5 and the workshop. You now know how to define List of Values against REST endpoints and then utilize those within an application.
 
 ## Learn More - Useful Links
 

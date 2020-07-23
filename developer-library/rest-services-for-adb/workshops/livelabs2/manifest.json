@@ -13,7 +13,7 @@
         {
             "title": "Lab 1: Provision an Autonomous Database",
             "description": "Provision an Autonomous Database - ATP or ADW",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-livelabs.md"
         },
         {
             "title": "Lab 2: Connect to ADB with SQL Dev Web",
