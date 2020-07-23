@@ -1,4 +1,4 @@
-# Automated Database Upgrade at Scale with Fleet Maintenance
+oracle# Automated Database Upgrade at Scale with Fleet Maintenance
 ## Introduction
 
 ### Objectives
@@ -36,7 +36,7 @@ Prior to starting, you will need:
     - password: **welcome1**
 
 #### Login to Host using SSH Key based authentication
-Refer to [Environment Setup](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+Refer to [Environment Setup](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=environment-setup#Step4:Connecttoyourinstance) for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
@@ -87,7 +87,7 @@ In the interest of simplifying the setup and save time, the following steps were
   - Subscription of “finance.subnet.vcn.oraclevcn.com” Database to above image
   - Patching of “finance.subnet.vcn.oraclevcn.com” Database from 18.8 to 18.10 using Fleet Maintenance
 
-We recommend that you read through each of the steps, review the emcli command, its verbs and deployment procedures to get an understanding of what it takes to do it from scratch. For a full end-to-end hands-on execution of “patching” lab, we highly recommend [Lab 6 -Automated Database Patching at Scale with Fleet Maintenance](https://rfontcha.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-6-automated-database-patching-at-scale)
+We recommend that you read through each of the steps, review the emcli command, its verbs and deployment procedures to get an understanding of what it takes to do it from scratch. For a full end-to-end hands-on execution of “patching” lab, we highly recommend [Lab 3 -Automated Database Patching at Scale with Fleet Maintenance](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/?lab=lab-3-automated-database-patching-at-scale)
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
