@@ -3,7 +3,7 @@
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems.  
 
 ## Workshops
-Click on one of our workshops below to access the content.
+Click on one of the options below to access the content.
 
 [![](./images/em-freetier.png)](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/em-livelabs.png)](https://oracle.github.io/learning-library/enterprise-manageability-library/enterprise_manager/livelabs/index.html)
 
