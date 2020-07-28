@@ -1,0 +1,64 @@
+{
+    "tutorials": [
+        {         
+            "title": "Workshop Introduction",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "README.md"
+        },
+        {
+            "title": "Sign Up for Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+          },
+        {         
+            "title": "Setup Cloud Environment",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./setup-cloud-env/0-setup-cloud-env.md"
+        },
+        {         
+            "title": "Lab 1: Autonomous Microservice Data Structure Configuration",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./autonomous-microservice-data-structure-configuration/1-autonomous-microservice-data-structure-configuration.md"
+        },
+        {         
+            "title": "Lab 2: Building, Containerizing Java REST Services",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./containerizing-java-services/2-containerizing-java-services.md"
+        },
+        {         
+            "title": "Lab 3: Kubernetes REST Service Deployment",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./kubernetes-rest-service-deployment/3-kubernetes-rest-service-deployment.md"
+        },
+        {         
+            "title": "Lab 4: Low Code, Microservice Mobile Development",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./low-code-mobile-development/4-low-code-mobile-development.md"
+        },
+        {         
+            "title": "Lab 5: Low Code, APEX CI/CD Development",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "1980",
+            "filename": "./low-code-apex-development/5-low-code-apex-development.md"
+        }        
+    ]
+}

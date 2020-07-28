@@ -117,7 +117,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/20.png " ")
 
-4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: [Download ML-Prediction-Models.json here](./files/ML-Prediction-Models.json). Then, open your browser window again back to the OML page.
+4. You will download a dataset file from this workshop to load into OML. You can download it by right clicking on the following text link and selecting **Save link as**. Keep the default options when downloading: [Download ML-Prediction-Models.json here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oaoaQIJWKEKsh0QaEnJfcJ5A7tak48DxjpeCQBSfSJk/n/c4u03/b/solutions-library/o/ML-Prediction-Models.json). Then, open your browser window again back to the OML page.
 
 5. Click **Import** and select **ML-Prediction-Models.json** that you just downloaded.
 
@@ -182,7 +182,8 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
 
 
 

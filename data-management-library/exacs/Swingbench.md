@@ -1,5 +1,5 @@
 ## Introduction
-In this lab we will install and configure a workload generation tool called Swingbench, and demonstrate the high availability features of the service while simulating a planned maintenance operation.
+In this lab we will install and configure a workload generation tool called Swingbench, and demonstrate the high performance features of the service while simulating a planned maintenance operation.
 Swingbench is a free load generator (and benchmarks) designed to stress test an Oracle database. SwingBench consists of a load generator, a coordinator and a cluster overview. The software enables a load to be generated and the transactions/response times to be charted.
 
 Swingbench can be used to demonstrate and test technologies such as Real Application Clusters, Online table rebuilds, Standby databases, Online backup and recovery etc.
@@ -24,7 +24,7 @@ As a database user, a DBA, or an application developer,
 ### STEP 1: Connect to developer cloud client desktop over VNC
 
 
-First we shh into the dev client and invoke the VNC server that comes pre-installed.
+First, we shh into the dev client and invoke the VNC server that comes pre-installed.
 
 
 - SSH into your dev client compute instance
@@ -86,13 +86,13 @@ Connect to your developer client machine via VNC.
 **The remainder of this lab assumes you are connected to the image through VNC Viewer and are operating from the image itself and not your local machine (except if noted)**
 
 
-Once connected, open a terminal window and download the latest version of swingbench using the curl command below,
+Once connected, open a terminal window and download the latest version of swingbench using the curl command below:
 
 ````
 wget http://www.dominicgiles.com/swingbench/swingbenchlatest.zip
 ````
 
-- unzip swingbenchlatest.zip. It unzips contents in the swingbench folder
+- Unzip swingbenchlatest.zip. It unzips contents in the swingbench folder
 
 ```
 unzip /home/opc/swingbenchlatest.zip
@@ -122,13 +122,13 @@ Use instructions below to update drivers if needed, else move on to transfer DB 
 
 Now that you have installed swingbench, the next step is to build the sample Order Entry schema in the database. 
 
-ssh into your dev client machine and change directory to /home/opc/swingbench/bin
+- First, ssh into your dev client machine and change directory to '/home/opc/swingbench/bin'
 
 ```
 cd /home/opc/swingbench/bin
 ```
 
-Run the Order Entry wizard
+- Run the Order Entry wizard
 
 ```
 ./oewizard
@@ -144,24 +144,26 @@ Run the Order Entry wizard
 
 ![](./images/swingbench/oewizard_install2.png " ")
 
-- Select Create the Order entry Schema and click NEXT
+- Select **Create the Order Entry Schema** and click NEXT
 
 ![](./images/swingbench/oewizard_install3.png " ")
 
 - Enter Connect String, Administrator Username and Password and click next
-
-![](./images/swingbench/oewizard_install4.png " ")
 
 ```
 Connect String: //Hostname:port/ServiceName
 Administrator Username: sys as sysdba
 Administrator Password: Your admin password
 ```
-- Select default in the next screen and click NEXT
+
+![](./images/swingbench/oewizard_install4.png " ")
+
+
+- Leave the default informtation in the Schema Details screen and click NEXT
 
 ![](./images/swingbench/oewizard_install5.png " ")
 
-- Select default information in Database Options page and Click NEXT
+- Leave the default information in Database Options page and click NEXT
 
 ![](./images/swingbench/oewizard_install6.png " ")
 
@@ -180,15 +182,15 @@ Administrator Password: Your admin password
 
 ### STEP 4: Start Load generator on Exadata Cloud Service database
 
-- Start with swinbench load generator on your Developer cloud image
+- Start the swinbench load generator on your Developer cloud image
 
 ![](./images/swingbench/swingbench1.png " ")
 
-- This will pop up swingbench load generator screen, select SOE_SERVER_SIDE_V2 and click OK
+- This will pop up swingbench load generator screen. Select **SOE_SERVER_SIDE_V2** and click OK
 
 ![](./images/swingbench/swingbench2.png " ")
 
-- Under Configuration Enter Username, Password, Connect String and Drive Type
+- Under Configuration enter Username, Password, Connect String and Drive Type
 
 ```
 Username: soe
@@ -197,7 +199,7 @@ Conenct String: //hostname:port/serviceName
 Drive Type: Oracle jdbc Driver
 ```
 
-- Check the checkbox in Collect Database Statistics and enter Admin Username and Admin Password
+- Check the checkbox in **Collect Database Statistics** and enter Admin Username and Admin Password
 
 ```
 Admin Username: System
@@ -205,7 +207,7 @@ Admin Password: Your admin Password
 ```
 ![](./images/swingbench/swingbench3.png " ")
 
-- Once the database has been connected, click on Green Start to start to load on the database
+- Once the database has been connected, click on the green **Start** button to start the load on the database
 
 ![](./images/swingbench/swingbench4.png " ")
 
@@ -213,8 +215,8 @@ Admin Password: Your admin Password
 
 ![](./images/swingbench/swingbench5.png " ")
 
-- You can further change the configuration settings like, increasing Logged on Sessions, shutting down one of the nodes in the Exadata Cloud Service and increasing the initial data size with Swingbench. 
+- You can further change the configuration settings, increasing Logged on Sessions, shutting down one of the nodes in the Exadata Cloud Service, and increasing the initial data size with Swingbench. 
 
 You can find more information on Swingbench [Here](http://www.dominicgiles.com/swingbench.html).
 
-Great Work! You successfully configured swingbench and ran load on Exadata Cloud Service Database.
+Great Work! You have successfully configured Swingbench and ran a load on Exadata Cloud Service Database.

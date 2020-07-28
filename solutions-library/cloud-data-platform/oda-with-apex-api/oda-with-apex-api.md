@@ -90,7 +90,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
     ![](./images/10.png " ")
 
-3. Before Importing the skill in the next step, please make sure you **download** this file via this text link: [Download ODA Skill .zip here](./files/DemoDigitalAssistantSkill.zip)
+3. Before Importing the skill in the next step, please make sure you **download** this file via this text link: [Download ODA Skill .zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MYxOb3NlvZ7F0HQ3AsMrTuXRUoD954Fvq8eZBhPndzw/n/c4u03/b/solutions-library/o/DemoDigitalAssistantSkill.zip)
 
 4. On the skill, click on the **Import Skill** button in the top right corner.
 
@@ -157,4 +157,5 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

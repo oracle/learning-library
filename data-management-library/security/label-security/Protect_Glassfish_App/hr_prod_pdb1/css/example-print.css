@@ -1,0 +1,8 @@
+/* $Id: example-print.css,v 1.2 2006/03/06 04:11:55 pat Exp $ */
+/* When printing, hide the tab navigation list
+   and don't use any other styles
+*/
+
+.tabbernav {
+ display:none;
+}

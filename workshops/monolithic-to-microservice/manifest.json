@@ -1,0 +1,60 @@
+{
+    "tutorials": [
+        {         
+            "title": "Workshop Introduction",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "README.md"
+        },
+        {         
+            "title": "Lab 050: Setup Cloud Environment",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "50.md"
+        },
+        {         
+            "title": "Lab 100: Autonomous Microservice Data Structure Configuration",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "100.md"
+        },
+        {         
+            "title": "Lab 200: Building, Containerizing Java REST Services",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "200.md"
+        },
+        {         
+            "title": "Lab 300: Kubernetes REST Service Deployment",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "300.md"
+        },
+        {         
+            "title": "Lab 400: Low Code, Microservice Mobile Development",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "400.md"
+        },
+        {         
+            "title": "Lab 500: Low Code, APEX CI/CD Development",
+            "description": "",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "4/10/2020",
+            "contentid": "12nnnn",
+            "filename": "500.md"
+        }        
+    ]
+}

@@ -43,10 +43,20 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
 
 ## Step: Connect to the Pluggable Database (PDB)
-1. Run the oraenv script to set the        
+1. Set the Oracle environment    
+    ````
+    <copy>
+    sudo su - oracle
+    </copy>
+    ````   
     ````
     <copy>
     . oraenv
+    </copy>
+    ````
+
+    ````
+    <copy>
     ConvergedCDB
     </copy>
     ````
@@ -65,24 +75,24 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     Name    : Spatial
     Username: APPSPAT
     Password: Oracle_4U
-    Hostname: localhost
+    Hostname: PUBLIC-IP
     Port    : 1521
     Service name: SGRPDB
 
     </copy>
     ````
  
-  ![](./images/spatial_env.PNG " ") 
+  ![](./images/spatial_enva.png " ") 
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-### Issues
-Have an issue? Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       
  

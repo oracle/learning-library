@@ -1,0 +1,33 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+      {
+          "title": "Introduction",
+          "filename": "./../../intro/intro.md"
+      },
+      {
+          "title": "Lab 1: Identity Access Management",
+          "filename": "../../../identity-access-management/identity-access-management.md"
+      },
+      {
+          "title": "Lab 2: Virtual Cloud Networks",
+          "filename": "../../../virtual-cloud-networks/virtual-cloud-networks.md"
+      },
+      {
+          "title": "Lab 3: Compute Services",
+          "filename": "../../../compute-service/compute-service.md"
+      },
+      {
+          "title": "Lab 4: Block Volume",
+          "filename": "../../../block-volume/block-volume.md"
+      },
+      {
+          "title": "Lab 5: Object Storage",
+          "filename": "../../../object-storage/object-storage.md"
+      }
+    ]
+}

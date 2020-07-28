@@ -1,9 +1,9 @@
-# Setup - LiveLabs #
+# Sample Schema Setup
 
-## Introduction
+## **Introduction**
 This lab will show you how to setup your environment using Oracle Resource Manager.
 
-## Step 1: Install Sample Data
+## **Step 1**: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
@@ -54,9 +54,11 @@ The above copyright notice and this permission notice shall be included in all c
 
 *THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** - Anoosha Pilli, Product Manager, DB Product Management
+- **Last Updated By/Date** - Arabella Yao, Dylan McLeod, LiveLabs QA Team, DB Product Management, July 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -6,7 +6,7 @@
 This lab walks you through the steps of inserting and updating json data. We can use standard database APIs to insert or update JSON data. We can work directly with JSON data contained in file-system files by creating an external table that exposes it to the database.
 In this lab we can add a row to our json table using insert query and  we can use Oracle SQL function json_mergepatch to update specific portions of a JSON document.
 
-## Before You Begin
+### Before You Begin
 
 **What Do You Need?**
 
@@ -27,7 +27,7 @@ This lab assumes you have completed the following labs:
     </copy>
   ````
     
-  ![](./images/insert_json.PNG " ")  
+  ![](./images/insert_json.png " ")  
 
  b. Insert a record.
 
@@ -75,29 +75,40 @@ The above insert query is also available as a sql file in the directory “/u01/
 The script is called as insert.sql. You can run this connecting to the SQL prompt.
 
 Set your oracle environment and connect to PDB as **oracle** user.
- ````
-    <copy>
-. oraenv
-ConvergedCDB
-sqlplus appjson/Oracle_4U@JXLPDB
-@insert.sql
-</copy>
-   ````
+````
+  <copy>
+  . oraenv
+  </copy>
+````
+````
+  <copy>
+  ConvergedCDB
+  <copy>
+````
+````
+  <copy>
+  sqlplus appjson/Oracle_4U@JXLPDB
+  </copy>
+````
+````
+  <copy>
+  @insert.sql
+  </copy>
+````
     
 
 
 c. **Verify the count after insert.**
 
   
-  ````
-    <copy>
-   Select * from purchase_order j where j.po_document.PONumber=10001;
+````
+  <copy>
+  Select * from purchase_order j where j.po_document.PONumber=10001;
+  </copy>
+````
     
-    </copy>
-   ````
     
-    
-  ![](./images/json.PNG " ")
+  ![](./images/json.png " ")
    
   **Note:** Please copy the red highlighted id which we will use in our next section of update query.
 
@@ -120,7 +131,7 @@ c. **Verify the count after insert.**
     </copy>
     
   ````
- ![](./images/json_lab7_6.PNG " ")
+ ![](./images/json_lab7_6.png " ")
 
 
 
@@ -129,12 +140,12 @@ c. **Verify the count after insert.**
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       
 

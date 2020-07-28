@@ -10,7 +10,7 @@
         },
         {
           "title": "Lab 2: Create SSH Keys",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
         },
         {
           "title": "Lab 3: Setup Network and Compute Instance",

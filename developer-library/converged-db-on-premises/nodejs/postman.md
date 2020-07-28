@@ -38,15 +38,15 @@ Web services based on REST Architecture are known as RESTful web services. These
  1. Download the Postman.
     -  [Click here to download Postman](https://www.postman.com/downloads/)
 
-    ![](./images/Postman1.PNG " ")
+    ![](./images/postman1a.png " ")
 
-    ![](./images/postman2.PNG " ")
+    ![](./images/postman2a.png " ")
 
  2. Launch the Postman.
-    ![](./images/nodejs-postman1.PNG " ")
+    ![](./images/nodejs-postman1a.png " ")
 
  3. Open a new tab. 
-    ![](./images/nodejs-postman2.PNG " ")
+    ![](./images/nodejs-postman2a.png " ")
 
  4. Select POST Method and enter the request URL
     - Method: - POST
@@ -54,20 +54,20 @@ Web services based on REST Architecture are known as RESTful web services. These
     - Data Format: - Insert the data in the Body in the form of JSON (check the image below attached)
     - Product details: - Example
      
-    ````
-    <copy>  
-	  {
-    "pid": "488",
-    "category": "Puma Shoe ",
-    "title": "Puma-shoe Demo3",
-    "details": "Puma-shoe-Original",
-    "price": "9",
-    "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
-    }  
-    </copy>
-    ````    
+      ````
+      <copy>  
+      {
+      "pid": "488",
+      "category": "Puma Shoe ",
+      "title": "Puma-shoe Demo3",
+      "details": "Puma-shoe-Original",
+      "price": "9",
+      "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
+      }  
+      </copy>
+      ````
+    ![](./images/nodejs2a.png " ")
   
-  ![](./images/nodejs2.PNG " ")
 
 5. Click on the **Submit** button, Postman return the HTTP 200 after successfully adding the product in oracle database.
 
@@ -76,37 +76,33 @@ Web services based on REST Architecture are known as RESTful web services. These
     
 1. Open a new tab
 
-2. Select GET Method and enter the request URL
+2. Select GET Method and enter the request URL http://&lt;PUBLIC-IP&gt;:3001/products/31
 
   -  Method: - GET
     To get list of all the product details
   -  URL: - <\PUBLIC-IP>:3001/products
     To get the specific product details by using PID.
   -  URL: - <\PUBLIC-IP>:3001/products/31
-    
-  ![](./images/nodejs-postman4.PNG " ")
-    
 
- 3. Open the browser and verify the above using link- "localhost:3001/products/31"
+![](./images/postman10a.png " ")
 
-  ![](./images/nodejs-postman5.PNG " ")
+
+ 3. Open the browser and verify the above using link- "PUBLIC-IP:3001/products/31"
+
+  ![](./images/nodejs-postman5a.png " ")
 
 ## Step 3: Using HTTP POST Method
     
-    
-1. Open a new tab.
-       
-  ![](./images/nodejs-postman6a.PNG " ")
 
-2. Before applying the POST method, please check the product table format by using GET Method.
+1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;localhost&gt;:3001/products/13.
  
-  ![](./images/nodejs-postman7.PNG " ")
+  ![](./images/postman11a.png " ")
 
   We are going to update the price from 9$ to 12$ for the product PID=13.
 
   Check the key value format for the price field.
 
-			{"Key": "value"}
+		{"Key": "value"}
 		
     	{"price": "9"}
    
@@ -119,16 +115,21 @@ Web services based on REST Architecture are known as RESTful web services. These
 		
     
        {"Key": "value"}
-		   {"price": "12"}
+       
+    ````
+  <copy>
+	{"price": "12"}
+  </copy>
+    ```` 
 
      
-    ![](./images/nodejs-postman8.PNG " ")
+    ![](./images/postman12a.png " ")
 
    
         
 ## Step 4: Verify product details by using HTTP GET method.  
     
-![](./images/nodejs-postman9.PNG " ")
+![](./images/nodejs-postman9a.png " ")
 
 You may now proceed to the next lab. 
 
@@ -150,6 +151,6 @@ You may now proceed to the next lab.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       

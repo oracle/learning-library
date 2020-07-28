@@ -68,4 +68,5 @@ In this lab you will use the SQL Developer tool, connect to your source database
  - **Author** - Troy Anthony, May 2020
  - **Last Updated By/Date** - Troy Anthony, May 20 2020
 
- See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+ ## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

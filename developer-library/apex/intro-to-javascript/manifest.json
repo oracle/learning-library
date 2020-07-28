@@ -1,23 +1,26 @@
 {
   "tutorials": [
     {
-
-      "title": "Workshop Introduction and Setup",
-      "filename": "0-workshop-intro-and-setup/content.md"
+      "title": "Lab Introduction and Setup",
+      "filename": "0-lab-intro-and-setup/content.md"
+    },
+    {
+      "title": "Lab 1: Create an APEX Workspace",
+      "filename": "create-apex-workspace/create-apex-workspace.md"
     },
     {
 
-      "title": "Lab 1: JavaScript Basics",
+      "title": "Lab 2: JavaScript Basics",
       "filename": "1-javascript-basics/content.md"
     },
     {
 
-      "title": "Lab 2: Adding JavaScript to APEX Apps",
+      "title": "Lab 3: Adding JavaScript to APEX Apps",
       "filename": "2-adding-javascript-to-apex-apps/content.md"
     },
     {
 
-      "title": "Lab 3: Working with the DOM and jQuery",
+      "title": "Lab 4: Working with the DOM and jQuery",
       "filename": "3-working-with-the-dom-and-jquery/content.md"
     }
   ]

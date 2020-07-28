@@ -48,108 +48,13 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 **A Vast Number of Libraries**
    Npm with its simple structure helped the ecosystem of Node.js proliferate, and now the npm registry hosts over 1,000,000 open source packages you can freely use.  
 
-## Step 1: Start Docker and Run Node.js application
-
-1. In Oracle CloudShell (*recommended*) or the terminal of your choice, login via ssh as the **opc** user.  
- 
-      ````
-      ssh -i <<sshkeylocation>> opc@<<your address>>
-      ````
-
-      - sshkeylocation - Full path of your SSH key
-      - your address - Your Public IP Address
-
-   ![](./images/systemctl-stop.png " ")
-
-  
- 1. Check the firewall status by using below.
-
-    ````
-    <copy>
-    sudo systemctl status firewalld
-    </copy>
-    ````
-
-    ![](./images/systemctl-status.png " ")
- 
-2. If firewall enable or running, Please Disable and stop it by using below command.
-   
-    ````
-    <copy>
-    sudo systemctl stop firewalld
-    </copy>
-    ````
-
-    ````
-    <copy>
-    sudo systemctl disable firewalld
-    </copy>
-    ````
-
-    ![](./images/nodejs1.png " ")
-
-3. After disabling the firewall restart the docker service by using the command below.
-     
-    ````
-    <copy>
-    sudo systemctl restart docker
-    </copy>
-    ````
-   ![](./images/systemctl-restart.png " ")
 
 
-4. After restart docker service  switch to oracle user and check the status of docker 
-        
-    ````
-    <copy>
-    sudo su - oracle
-    </copy>
-    ````
+## Step 1:  Verify Application 
 
-    ````
-    <copy>
-    systemctl status docker
-    </copy>
-    ````
-   ![](./images/systemctl-status-docker.png " ")
+1.  The script (env_setup_script.sh) which was run in Lab-4 has started the application. Also at the end of the script. you      will be presented with two URLs. 
 
-5. Check the script in the below location using below command.
-   
-    ````
-    <copy>
-    cd /u01/workshop/application
-    </copy>
-    ````
-6. Before running the script collect the database host IP- address by using below command.
-   
-    ````
-    <copy>
-    curl ifconfig.co
-    </copy>
-    ````
-   ![](./images/ifconfig.png " ")
-
-7. Run the script,it will start downloading the image from OCI registry and it will ask for Database Server Public IP to make connection with the Database.
-
-    ````
-    <copy>
-    ./applicationscript.sh
-    </copy>
-    ````
-   ![](./images/appscript.png " ")
-
-   ![](./images/appscript2.png " ")
-
-8.  Enter the Public IP of your compute instance when prompted.
-   
-   ![](./images/appscript3.png " ")
-
-
-## Step 2:  Verify Application 
-
-1.  Once the application has been installed, you will be presented with two URLs. 
-
-   ![](./images/appscript4.png " ")
+   ![](./images/appscript4a.png " ")
 
 2. Open up a web browser and visit the Application URL indicated in your terminal.   http://your address:3000/
 
@@ -158,7 +63,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 3. Open up a web browser and visit the Application API indicated in your terminal.   http://your address:3000/
       - your address - Your Public IP Address
 
-    ![](./images/env_nodejs.PNG " ") 
+    ![](./images/env_nodejsa.png " ") 
 
 You may proceed to the next lab.
 
@@ -179,6 +84,6 @@ You may proceed to the next lab.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
       

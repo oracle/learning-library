@@ -10,10 +10,8 @@ Remember that we are trying to help Alpha Office predict the credit and payment 
 
 This lab uses a decision tree algorithm which is a classification technique. If these are new to you, here’s a [presentation](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/adbml/o/Machine_Learning_Introduction.pdf) and a short video below that explains machine learning, classification, and decision trees at a high level.
 
-<video controls poster="../create-ml-model/files/Video_Introduction.png">
-    <source src="../create-ml-model/files/Machine_Learning_Introduction.mp4" type="video/mp4">
-</video>
-<br>
+[](youtube:IkOz2rrB7hU)
+
 In this lab, you will use Apache Zeppelin notebooks to do this work. The lab will help you create a new notebook, and also import an existing one with all the code, descriptions, and examples that you need. You will then step through that notebook, examining the code, data, and visualizations and, most importantly, executing each step to populate the database.
 
 Estimated time: 20 - 30 minutes
@@ -27,7 +25,7 @@ Estimated time: 20 - 30 minutes
 ### Lab Prerequisites
 
 This lab assumes you have completed the following labs:
-- Register for Free Tier Account
+- Login to Oracle Cloud/Sign Up for Free Tier Account
 - Connect and Provision ADB
 
 ## Step 1: Create ML User
@@ -303,5 +301,7 @@ Please proceed to the next lab.
 
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
+- **Contributors** - Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

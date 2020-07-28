@@ -1,0 +1,61 @@
+-- DEFAULT Oracle Database AUDIT Settings
+
+Audit alter any table by access;
+
+Audit create any table by access;
+
+Audit drop any table by access;
+
+Audit Create any procedure by access;
+
+Audit Drop any procedure by access;
+
+Audit Alter any procedure by access;
+
+Audit Grant any privilege by access;
+
+Audit grant any object privilege by access;
+
+Audit grant any role by access;
+
+Audit audit system by access;
+
+Audit create external job by access;
+
+Audit create any job by access;
+
+Audit create any library by access;
+
+Audit create public database link by access;
+
+Audit exempt access policy by access;
+
+Audit alter user by access;
+
+Audit create user by access;
+
+Audit role by access;
+
+Audit create session by access;
+
+Audit drop user by access;
+
+Audit alter database by access;
+
+Audit alter system by access;
+
+Audit alter profile by access;
+
+Audit drop profile by access;
+
+Audit database link by access;
+
+Audit system audit by access;
+
+Audit profile by access;
+
+Audit public synonym by access;
+
+Audit system grant by access;
+
+

@@ -8,6 +8,8 @@ An Autonomous Container Database resource provides a container for your Autonomo
 As a fleet administrator,
 - Deploy an Autonomous Container Database (ACD) onto an Autonomous Exadata Infrastructure (AEI)
 
+**Note: When using Exadata Cloud@Customer, ACDs are deployed on Autonomous VM Clusters**
+
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account with fleet administrator privileges. For a detailed description of required IAM policies, please refer to the [fleet admin guide](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpfg/index.html) of the autonomous database documentation set.
@@ -50,4 +52,5 @@ That's it. Simply scroll down to the bottom and hit the blue 'Create Autonomous 
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

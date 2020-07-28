@@ -4,13 +4,15 @@
 
 In this lab, you will learn how to improve the Task form page by utilizing improved list of values.
 
+Estimated Time: 15 minutes
+
 ### Objectives
 - Improve the Projects List of Values
 - Update the Task Form page
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+- An Oracle Cloud paid account, a LiveLabs account or free trial. 
 - An APEX application
 
 ## **Step 1** - Improving the Projects List of Values.
@@ -147,7 +149,7 @@ If you review the Milestones select list you will notice that all milestones are
 
     ![](images/go-page8.png " ")
 
-2. In Page Designer, in the left pane click **Rendering**.
+2. In Page Designer, in the left pane click the **Rendering** icon.
     In the Rendering tree (left pane), click **P8\_MILESTONE_ID**
 
     In the Property Editor (right pane), enter the following:
@@ -184,12 +186,13 @@ If you review the Milestones select list you will notice that all milestones are
 
 ## **Summary**
 
-This completes Lab 5. You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV. [Click here to navigate to lab 6](?lab=lab-6-improving-dos)
+This completes Lab 4. You now know how to utilize different types of list of values, to display additional columns, and also how to define a Cascading-LOV. [Click here to navigate to lab 5](?lab=lab-5-improving-dos)
 
 ## **Acknowledgments**
 
 - **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
-- **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
+- **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

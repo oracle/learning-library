@@ -1,16 +1,15 @@
 # Oracle Database Multitenant Github
 
-
 Oracle Multitenant is the architecture for the next-generation database cloud. It delivers isolation, agility and economies of scale. A multitenant container database can hold many pluggable databases. An existing database can simply be adopted with no application changes required. Oracle Multitenant fully complements other options, including Oracle Real Application Clusters and Oracle Active Data Guard.  
 
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
+[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/workshops/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/workshops/livelabs/index.html)
 
 
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
-- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
+- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant//workshops/freetier/index.html)
+- [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/workshops/livelabs/index.html)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
@@ -40,7 +39,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Multitenant PDBs for Microservices and Clouds](https://www.youtube.com/watch?v=JdfATqdXuRc)
 - [The Hidden Data Economy](https://www.youtube.com/watch?v=CP3pwAwNepU)
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management

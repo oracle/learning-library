@@ -1,0 +1,14 @@
+{
+    "tutorials": [
+        {
+            "title": "Lab: Generate SSH Key Using Local Tools",
+            "description": "Generate SSH Key",
+            "filename": "generate-ssh-keys-local.md"
+        },
+        {
+            "title": "Lab: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "filename": "../cloud-login/cloud-login.md"
+        }
+    ]
+}

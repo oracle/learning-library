@@ -10,10 +10,10 @@ With Oracle Machine Learning, Oracle moves the algorithms to the data, processin
 ## Workshops
 Click on the workshop below to begin.
 
-[![](./images/screenshot.png)](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/index.html)  
+[![](./images/screenshot.png)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)  
 
 
-- [Access lab here](https://oracle.github.io/learning-library/data-management-library/oracle-machine-learning/adb-oml/workshop/index.html)
+- [Access lab here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -36,7 +36,7 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 ## Videos
 - [Oracle Machine Learning Video Playlist](https://www.youtube.com/playlist?list=PLdtXkK5KBY57_y3Z0SW2cbCqGUPbfc94w)
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 -- Oracle Database Product Management

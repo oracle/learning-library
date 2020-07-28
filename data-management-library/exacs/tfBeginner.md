@@ -22,8 +22,8 @@
 
 [Step 8:  Install and configure Terraform](#practice-8-install-and-configure-terraform)
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Overview
 
 The lab exercises are designed to complement your training, reinforcing the key concepts by applying and demonstrating what you learned in the presentation sessions. This lab book is comprised of individual exercises. These exercises allow you to get first hands-on exposure working with the Oracle Cloud Infrastructure (OCI) using a demo environment, where you will see how key features and functionality are deployed in the software. Using what you learn in the presentations and individual exercises working with the software, you will collaborate as a team in developing and delivering practice presentations.

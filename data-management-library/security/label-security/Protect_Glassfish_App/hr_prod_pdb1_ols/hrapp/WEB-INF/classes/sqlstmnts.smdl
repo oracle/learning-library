@@ -1,0 +1,16 @@
+ModelBegin
+	DB=
+	Location=
+	Version=
+	ChangeAuthor=oracle
+	RevisionDate=2011-08-25
+	ChangeStatus=0
+	ChangeNotes=
+	FreeText=
+	GrammarName=Oracle
+	SelectedTables=
+	SelectedColumns=
+	SourcesBegin
+		Source=("1"|"1"|"C:\Documents and Settings\oracle\Desktop\sqlstmnts.train")
+	SourcesEnd
+ModelEnd

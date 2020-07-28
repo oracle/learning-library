@@ -1,0 +1,28 @@
+{
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
+    },
+    {
+      "title": "Lab 1: Sign up for an APEX Workspace",
+      "filename": "../../../common/1-sign-up-apex/1-sign-up-apex.md"
+    },
+    {
+      "title": "Lab 2: REST Enabling Database Objects",
+      "filename": "../../2-rest-enabling/2-rest-enabling.md"
+    },
+    {
+      "title": "Lab 3: Defining Web Sources",
+      "filename": "../../3-defining-web-source/3-defining-web-source.md"
+    },
+    {
+      "title": "Lab 4: Creating Pages",
+      "filename": "../../4-creating-pages/4-creating-pages.md"
+    },
+    {
+      "title": "Lab 5: Defining a List of Values",
+      "filename": "../../5-defining-lov/5-defining-lov.md"
+    }
+  ]
+}

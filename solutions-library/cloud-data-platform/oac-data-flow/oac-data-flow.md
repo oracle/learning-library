@@ -31,31 +31,25 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
 1.   To begin, make sure to already be signed in to cloud.oracle.com with your account credentials as done before in the previous labs.
 
-2.   Then, in the Oracle Cloud console, click on the **Hamburger menu** icon. Then, scroll down to the **More Oracle Cloud Services** section, hover over **Platform Services** and then click on **Analytics**. 
+2.   Then, in the Oracle Cloud console, click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**. 
 
    ![](./images/0a.png " ")
 
-3.   Click on **Create Instance**.
+3.   Make sure you are in the correct compartment by selecting your compartment from the dropdown on the lefthand side (hint: use the same compartment as your ADW instance).  Then, cllick on **Create Instance**.
 
-   ![](./images/0b.png " ")
+   ![](./images/ob.png " ")
 
-4.   Provide all the required information (fields specified by \*). For the **Instance Name**, input a name such as **OACDEMO**. For the **Region**, select from the dropdown box the same region as your ADW instance. For the **Number of OCPUs**, select from the dropdown box **2**.
+4.   Provide all the required information. For the **Instance Name**, input a name such as **OACDEMO**.  Make sure that you have the correct compartment selected (use the same one that you have your ADW instance in).  Leave the rest of the selections as the default selections, as shown in the image below.  When you are finished, click **Create**.
 
    ![](./images/0c.png " ")
 
-5.   Then click on **Next**.
-
-6.   After validating your configuration, click on **Create**.
+7.   It will take a few minutes (could be up to 10 minutes) until your instance is fully provisioned and ready to use. Note the Status 'CREATING' shows that the service is being created. Wait until this process is fully completed, then the status will change.
 
    ![](./images/0d.png " ")
 
-7.   It will take a few minutes until your instance is fully provisioned and ready to use. Note the Status and the sign which indicate that the service is being creating. Wait until this process is fully completed.
+8.   After a few minutes refresh your page to see if your instance is available. Once your instance is green and in the 'ACTIVE' state, now your OAC instance is ready. In order to access your instance, click  **Open URL**. This will redirect you to a new page to the OAC home console. Save this web page link for future use.
 
    ![](./images/0e.png " ")
-
-8.   After a few minutes refresh your page and you will see the status and the sign are disappeared. Now your OAC instance is ready. In order to access your instance, click on the **hamburger icon** on the right side of your instance. Then, click on **Oracle Analytics Cloud URL** which redirects you to a new page to the OAC home console. Save this web page link for future use.
-
-   ![](./images/0f.png " ")
 
 9.   Welcome to the Oracle Analytics Cloud! Enjoy exploring it! If you are on the OAC home console page, as shown below, please skip "Part 1" as you already successfully created and navigated to your OAC instance.
 
@@ -67,17 +61,13 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
 1. If you are not already signed in, sign in to cloud.oracle.com with your account credentials as done in the previous labs.
 
-2. Click on the **Hamburger menu** icon. Then, scroll down to the **More Oracle Cloud Services** section, hover over **Platform Services** and then click on **Analytics**. 
+2. Click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**. 
 
     ![](./images/0a.png " ")
 
-3. Find your OAC instance that you will be using. For example, clicking on the OAC instance **CloudDataWorkshop** is shown below.
+3. Make sure that you are in the correct compartment by using the dropdown menu on the lefthand side of your screen.  Then, find your OAC instance that you will be using. For example, we are using the OAC instance **OACDEMO** shown below.  In order to access your instance, click on the **menu icon**, denoted by triple dots, on the right side of your instance. Then, click on **Open URL** which redirects you to a new page. Save this web page link for future use.
 
-    ![](./images/400new1.png " ")
-
-4. In order to access your instance, click on the **hamburger icon** on the right side of your instance. Then, click on **Oracle Analytics Cloud URL** which redirects you to a new page. Save this web page link for future use.
-
-    ![](./images/400new2.png " ")
+    ![](./images/0a2.png " ")
 
 5. Welcome to the Oracle Analytics Cloud! Enjoy exploring it!
 
@@ -386,4 +376,5 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

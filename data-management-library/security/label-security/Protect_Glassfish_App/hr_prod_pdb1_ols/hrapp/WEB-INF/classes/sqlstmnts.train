@@ -1,0 +1,27 @@
+
+select userid,firstname,lastname from demo_hr_users where ( userstatus is null or upper( userstatus ) = '######' ) and upper(userid) = '#######' and password = '########'
+select roleid from demo_hr_roles where upper(userid) = '#######'
+select a.userid, a.firstname, a.lastname from demo_hr_employees a where a.ismanager = 0 and a.active = 0 order by a.lastname, a.firstname
+select a.userid, a.firstname, a.lastname, a.email, a.phonemobile, a.phonefix, a.phonefax, a.emptype, a.position, a.ismanager, a.managerid, a.department, a.organization, a.startdate, a.enddate, a.active, a.costcenter, b.firstname as mgr_firstname, b.lastname as mgr_lastname, b.userid as mgr_userid from demo_hr_employees a left outer join demo_hr_employees b on a.managerid = b.userid where 0=0 order by a.lastname, a.firstname
+select a.userid, a.firstname, a.lastname, a.email, a.phonemobile, a.phonefix, a.phonefax, a.emptype, a.position, a.ismanager, a.managerid, a.department, a.organization, a.startdate, a.enddate, a.active, a.costcenter, b.firstname as mgr_firstname, b.lastname as mgr_lastname, b.userid as mgr_userid from demo_hr_employees a left outer join demo_hr_employees b on a.managerid = b.userid where 0=0 and upper(a.firstname) like '#####' order by a.lastname, a.firstname
+select a.userid, a.firstname, a.lastname, a.email, a.phonemobile, a.phonefix, a.phonefax, a.emptype, a.position, a.location, a.ismanager, a.managerid, a.department, a.organization, a.startdate, a.enddate, a.active, a.costcenter, a.isheadofdepartment, b.firstname as mgr_firstname, b.lastname as mgr_lastname, b.userid as mgr_userid from demo_hr_employees a left outer join demo_hr_employees b on a.managerid = b.userid where a.userid = 000 
+
+
+select a.userid, a.firstname, a.lastname, a.email, a.phonemobile, a.phonefix, a.phonefax, a.emptype, a.position, a.ismanager, a.managerid, a.department, a.organization, a.startdate, a.enddate, a.active, a.costcenter, b.firstname as mgr_firstname, b.lastname as mgr_lastname, b.userid as mgr_userid from demo_hr_employees a left outer join demo_hr_employees b on a.managerid = b.userid where 0=0 and upper(a.lastname) like '#####' order by a.lastname, a.firstname
+select a.userid, a.firstname, a.lastname, a.email, a.phonemobile, a.phonefix, a.phonefax, a.emptype, a.position, a.ismanager, a.managerid, a.department, a.organization, a.startdate, a.enddate, a.active, a.costcenter, b.firstname as mgr_firstname, b.lastname as mgr_lastname, b.userid as mgr_userid from demo_hr_employees a left outer join demo_hr_employees b on a.managerid = b.userid where 0=0 and upper(a.lastname) like '#####' and upper(a.firstname) like '#####' order by a.lastname, a.firstname
+select a.userid, a.firstname, a.lastname, a.email, a.phonemobile, a.phonefix, a.phonefax, a.costcenter, a.emptype, a.position, a.location, a.ismanager, a.managerid, a.department, a.organization, a.startdate, a.enddate, a.active, b.firstname as mgr_firstname, b.lastname as mgr_lastname, b.userid as mgr_userid from demo_hr_employees a left outer join demo_hr_employees b on a.managerid = b.userid where a.managerid = 000 order by a.lastname, a.firstname
+select demo_hr_employees_seq.currval from dual
+insert into demo_hr_employees ( firstname, lastname, phonemobile, phonefix, phonefax, emptype, position, location, ismanager, managerid, costcenter, department, isheadofdepartment, organization, active, startdate, enddate ) values ( '#####', '######', '', '', '', '#########', '###', '########', 0, 000, '###', '#####', 0, '###############', 0, to_date('##########','##########'), to_date('','##########') )
+
+begin dbms_application_info.set_module(:0,null); end;
+begin dbms_application_info.set_module(:0,null); end;
+begin dbms_output.disable; end;
+select attribute,scope,numeric_value,char_value,date_value from system.product_privs where (upper('########') like upper(product)) and (user like userid)
+select char_value from system.product_privs where   (upper('########') like upper(product)) and   ((user like userid) or (userid = '######')) and   (upper(attribute) = '#####')
+select decode('#','#','#','#') from dual
+begin dbms_output.disable; end;
+select user from dual
+
+
+
+

@@ -1,0 +1,29 @@
+{
+  "tutorials": [
+      {
+        "title": "Workshop Overview",
+        "description": "Oracle Cloud VMware Solution Self-Guided Hands-On Workshop Overview",
+        "filename": "README.md"
+      },
+      {
+        "title": "Lab 1: Provision Infrastructure for OCVS",
+        "description": "Provisioning the infrastructure for the OCVS solution",
+        "filename": "provision-ocvs/provision-ocvs.md" 
+      },
+      {
+        "title": "Lab 2: Generate Export of On-Premises workload",
+        "description": "Export on-premises workload in the form of a .ovf file",
+        "filename": "export-workload/export-workload.md"
+      },
+      {
+        "title": "Lab 3: Migrate On-Premises workload to OCVS",
+        "description": "Migrate on-premises workload to OCVS",
+        "filename": "migrating-onprem-to-oci/migrating-onprem-to-oci.md"
+      },
+      {
+        "title": "Lab 4: Extend Application to OCI",
+        "description": "Extend the solution to use OCI services",
+        "filename": "extend-app-to-oci/extend-app-to-oci.md"
+      }
+    ]
+}

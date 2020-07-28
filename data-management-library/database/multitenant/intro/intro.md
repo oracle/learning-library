@@ -1,6 +1,6 @@
-# Workshop Introduction and Overview #
+# Introduction 
 
-## Introduction to Multitenant ##
+## Oracle Multitenant
 From the point of view of an application, the pluggable database (PDB) is the database, in which applications run unchanged. PDBs can be very rapidly provisioned and a pluggable database is a portable database, which makes it very easy to move around, perhaps for load balancing or migration to the Cloud.
 
 Many PDBs can be plugged into a single Multitenant Container Database (CDB). From the point of view of a Database Administrator (DBA), the CDB is the database. Common operations are performed at the level of the CDB enabling the DBA to manage many as one for operations such as upgrade, configuration of high availability, taking backups; but we retain granular control when appropriate. This ability to manage many as one enables tremendous gains in operational efficiency.
@@ -11,7 +11,7 @@ Watch the video below for an overview of Oracle Multitenant.
 
 [](youtube:I7cygRKBbI8)
 
-## Containers and Pluggable Databases
+### Containers and Pluggable Databases
 
 A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs.
 
@@ -22,7 +22,7 @@ Every CDB has the following containers:
 - Exactly one seed PDB
 - User-created PDBs
 
-## Diagram of CDBs and PDBs
+### Diagram of CDBs and PDBs
 
 The following figure shows a CDB with four containers: the root, seed, and two PDBs. Each PDB has its own dedicated application. A different PDB administrator manages each PDB. A common user exists across a CDB with a single identity. In this example, common user SYS can manage the root and every PDB. At the physical level, this CDB has a database instance and database files, just as a non-CDB does.
 
@@ -42,4 +42,5 @@ Oracle Database Product Management Videos on Multitenant
 - **Last Updated By/Date** - Kay Malcolm, March 2020
 - **Workshop Expiration Date** - March 31, 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

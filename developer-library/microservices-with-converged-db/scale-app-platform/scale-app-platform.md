@@ -99,7 +99,7 @@ Horizontal scaling is an important aspect for microservices architecture
     <copy>cd $MSDATAWORKSHOP_LOCATION ; ./installMetricsServer.sh</copy>
     ```
 
-1. Open the Cloud Shell and run the following command to deploy a simple Linux
+2. Open the Cloud Shell and run the following command to deploy a simple Linux
     pod.
 
     ```
@@ -110,7 +110,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    *Notice that the pod has request and limit CPU resource attributes.*
 
-2. Check that the pod is running using the below command.
+3. Check that the pod is running using the below command.
 
     ```
     <copy>pods | grep linux</copy>
@@ -118,7 +118,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/e97786d4e8475b430c6cd66949c8a5a3.png " ")
 
-3. Create a horizontal pod autoscaler for this container. Notice that this HPA
+4. Create a horizontal pod autoscaler for this container. Notice that this HPA
     will get triggered once CPU threshold exceeds 50%. Also the minimum number
     of pods is set to 1, while the maximum is 10.
 
@@ -128,7 +128,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/fe370c12f8de0f64e8425ff0a9b0d5c5.png " ")
 
-4. Run the below command to get additional information about the HPA deployment
+5. Run the below command to get additional information about the HPA deployment
     and CPU utilization of the pod.
 
     ```
@@ -137,7 +137,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/31c3a877bc6cc5ee6e28337a3e88ce6e.png " ")
 
-5. Enter the pod, execute a command to stress the CPU.
+6. Enter the pod, execute a command to stress the CPU.
 
     ```
     <copy>podshell linux</copy>
@@ -151,7 +151,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/22b8ac3195bac2f9f61bc91a9f4a7c47.png " ")
 
-6. Use the `exit` command to leave the linux pod.
+7. Use the `exit` command to leave the linux pod.
 
     ```
     <copy>exit</copy>
@@ -159,7 +159,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/e4d252c59984f38a7ef73ec7b1b46804.png " ")
 
-7. Execute the commands below to get additional information about the HPA and linux pods.
+8. Execute the commands below to get additional information about the HPA and linux pods.
 
     ```
     <copy>hpa ; toppod linux ; k get deployment oraclelinux77-hpa-demo -n msdataworkshop ; pods | grep linux ;echo ----------------</copy>
@@ -169,7 +169,7 @@ Horizontal scaling is an important aspect for microservices architecture
 
    ![](images/96f267ff0337bc4f2a14b368d0d23a4e.png " ")
 
-8. You can now delete the linux pods and HPA using the commands:
+9. You can now delete the linux pods and HPA using the commands:
 
     ```
     <copy>k delete deployment oraclelinux77-hpa-demo -n msdataworkshop</copy>
@@ -191,4 +191,5 @@ Horizontal scaling is an important aspect for microservices architecture
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

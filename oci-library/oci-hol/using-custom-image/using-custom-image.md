@@ -99,9 +99,9 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 4. You should now have the Public and Private keys:
 
-    /C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
+    /C/Users/ PhotonUser/.ssh/id\_rsa (Private Key)
 
-    /C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
+    /C/Users/PhotonUser/.ssh/id\_rsa.pub (Public Key)
 
     **NOTE:** id\_rsa.pub will be used to create 
     Compute instance and id\_rsa to connect via SSH into compute instance.
@@ -274,4 +274,5 @@ A compute instance can have a lot more applications installed and this custom im
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

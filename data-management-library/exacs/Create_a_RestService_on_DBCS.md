@@ -5,8 +5,8 @@ Application Express (APEX) is a great tool to build Applications, REST API's on 
 In this lab, you are going to create a REST service which you will use in the next lab, to send data from a Python Application into Oracle Database.
 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 - Learn how to build REST services using APEX.
@@ -79,13 +79,23 @@ Note :
 ![](./images/apex/workspace-8.png " ")
 ![](./images/apex/workspace-9.png " ")
 
-- Click on SQL Workshop  and then on RESTful Services tab and Click **Register schema with ORDS**  button, if prompted.
+- Click on SQL Workshop and Click **Register schema with ORDS**  button, if prompted.
 
 ![](./images/apex/Picture300-8.png " ")
+
+- Click on RESTful Service Tab
+
 ![](./images/apex/Picture300-9.png " ")
+
+- Click **Register schema with ORDS**  button, if prompted.
+
 ![](./images/apex/Picture300-7-1.png " ")
 
-- A Pop-up window opens up. Select yes for enable restful services option, select  No for Install Sample service and select No for authorization required option. Click **Save Schema Attributes**.
+- A Pop-up window opens up. 
+    - Select yes for enable restful services option
+    - You may choose Yes or No for Install Sample service option
+    - Select No for authorization required option. 
+    - Click **Save Schema Attributes**.
 
 ![](./images/apex/enable_rest_2.png " ")
 ![](./images/apex/enable_rest.png " ")
@@ -95,13 +105,16 @@ Note :
 
 ![](./images/apex/Picture300-10.png " ")
 
-- Click **Create Module** on top right of the screen.
+- Make sure the right schema is selected from the dropdown located at the top right part of the screen and Click **Create Module** on top right of the screen.
 - Enter the Module name and the Base Path of your choice. Click **Create Module** button.
 
 ![](./images/apex/Picture300-11.png " ")
+
+- You can also choose to edit the base path after creating the Module. Make sure you save your changes once done.
+
 ![](./images/apex/create_module.png " ")
 
-- Now, on the Module Definition page. Click **Create Template** on right side of the screen.
+- Now, on the Module Definition page scroll down a bit and click **Create Template** button on right side of the screen.
 
 ![](./images/apex/create_template.png " ")
 
@@ -111,13 +124,13 @@ Note :
 
 - Now you will see a message on the top of the screen confirming that the Template is created.
 
-- Now, click **Create Handler** button on right side of the screen.
+- Now, scroll down a bit and click **Create Handler** button on right side of the screen.
 
 ![](./images/apex/create_handler.png " ")
 
 - On the Handler Definition page, select the **Method** as GET and select the **Source Type** as PL/SQL from the dropdown.
 
--  Now, enter the below PL/SQL procedure in the **source** section below the comments box. This procedure will create a get request to extract data from the table containing tweets.
+-  Now, scroll down and enter the below PL/SQL procedure in the **source** section below the comments box. This procedure will create a get request to extract data from the table containing tweets.
 
 ```
     <copy>begin
@@ -132,19 +145,17 @@ Note :
     end;</copy>
 ```
 
-    **Note : we will create the tables we are referencing here in the next part of this lab**
-
 - Now, click **Create Handler** button on top right of the page.
 
 - Now, click on the template you created from the panel on the left side.
 
 ![](./images/apex/Picture300-16.png " ")
 
-- Now, click on **Create Handler** button on right side of the screen again.
+- Now, scroll down and click on **Create Handler** button on right side of the screen again.
 
 ![](./images/apex/Picture300-18.png " ")
 
-- Select the **Method** to be POST and copy the below PL/SQL procedure
+- Select the **Method** to be POST, enter the Mime Type as "application/json" and copy the below PL/SQL procedure
 
 ```
   <copy>begin
@@ -152,11 +163,9 @@ Note :
   end;</copy>
 ```
 
-   **Note : we will create the tables we are referencing here in the next part of this lab**
+- Scroll back up and click **Create Handler** button.
 
 ![](./images/apex/Post_request_apex.png " ")
-
-- Scroll back up and click **Create Handler**.
 
 - Copy the REST Endpoint by clicking on the copy button beside the Full URL on the Handler's Definition Page. 
 

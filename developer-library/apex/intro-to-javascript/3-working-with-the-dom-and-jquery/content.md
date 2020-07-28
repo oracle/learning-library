@@ -1,4 +1,4 @@
-# Lab 3: Working with the DOM and jQuery
+# Working with the DOM and jQuery
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Play the video below to learn about this lab.
 
 [](youtube:uK7vCqfXxNs)
 
- <a href="https://www.slideshare.net/DanielMcGhan/module-3-working-with-the-dom-and-jquery" target="_blank">Click here</a> to view the slides.
+ <a href="https://www.slideshare.net/DanielMcGhan/module-3-working-with-the-dom-and-jquery" target="\_blank">Click here</a> to view the slides.
 
 ## **Step 1:** Basic selection, traversal, and manipulation in the DOM
 
@@ -145,7 +145,9 @@ In this step, you will create basic regular event listeners and then learn why s
 This completes Lab 3. At this point, you should have a good idea of how to use jQuery to select, traverse, and manipulate DOM elements. In addition, you should have a basic understanding of how events work and how event delegation can be used in APEX.
 
 ## **Acknowledgements**
- - **Author/Contributors** -  Dan McGhan, Database Product Management
+ - **Author** -  Dan McGhan, Database Product Management
+ - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Jeffrey Malcolm, LiveLabs QA, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

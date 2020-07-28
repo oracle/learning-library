@@ -1,8 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Provision ADB",
-            "filename":"./adb-provision.md"
-        }
-    ]
-}

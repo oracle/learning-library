@@ -1,10 +1,12 @@
-# Create an App from a Spreadsheet
+# Create an APEX App from a Spreadsheet
 
 ## Introduction
 
 After you have logged into your workspace, you can start creating APEX applications. In this lab, you will build a simple application based on a spreadsheet. Keep in mind that APEX is great for a variety of apps, from simple ones like this to large, sophisticated apps based on local database objects, REST enabled SQL objects, and even REST APIs.
 
 While APEX developers spend the majority of their time in the App Builder, you should also investigate the SQL Workshop, where you can create and maintain database objects, Team Development, where you can track large APEX development projects, and the App Gallery, which contains numerous productivity and sample apps that can be installed within minutes.
+
+Estimated Time: 10-20 minutes
 
 ### Objectives
 
@@ -57,9 +59,9 @@ The Data Load wizard has created a new table and populated that table with the r
 
 3. On the Create an Application page, click **Create App**.
 
-2. In the Create an Application page, review the pages listed. Click the **Edit** button for a page to review more details.
+4. In the Create an Application page, review the pages listed. Click the **Edit** button for a page to review more details.
 
-    Click **Check All** for Features, and then click **Create Application**.
+    Scroll down then click **Check All** for Features, and then click **Create Application**.
 
     ![](images/name-for-application.png " ")
     ![](images/create-application.png " ")
@@ -74,7 +76,7 @@ The Data Load wizard has created a new table and populated that table with the r
 
 2.  Enter your user credentials and click **Sign In**.
 
-    *Note: Use the same Username and Password you used to sign into the APEX Workspace.*
+    *Note: Use the same Username and Password you used to sign into the APEX Workspace. For this workshop your username should be DEMO and your password should be SecretPassw0rd.*
 
     ![](images/sign-in.png " ")
 
@@ -88,6 +90,8 @@ This completes this lab. You now know how to create an application from a spread
 
 ## Acknowledgements
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

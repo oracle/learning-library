@@ -1,21 +1,20 @@
-# Building an App from a Spreadsheet for Oracle Autonomous Cloud Service
+# Introduction
 
-## Overview
+## **What is APEX?**
+Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. Oracle APEX is a low-code development environment with various features and tools, where you can create an application fast. In the future, rather than emailing spreadsheets around to gather information, you'll know how to easily create an app in minutes using APEX and email the URL instead. The result will be a secure, scalable, multi-user app that provides a single source-of-truth for your data!
 
-This lab walks you through uploading a spreadsheet into an Oracle database table, and then creating an application based on this new table. You will then learn to work with the resulting Faceted Search page, Interactive Report and form pages. Finally, you will improve the Calendar page and then link it to the existing form page.
+### Objectives
 
-In the future, rather than emailing spreadsheets around to gather information, you'll know how to easily create an app in minutes and email the URL instead. The result will be a secure, scalable, multi-user app that provides a single source-of-truth for your data!
-
-### Lab Objectives
-
-* Obtain a free development environment
+* Obtain a APEX free development environment
 * Build your first app through uploading a Spreadsheet
-* Improve the Search and Report pages
+* Improve the Faceted Search page
+* Improve the Interactive Report and form pages
+* Improve Calendar page
 * Link pages
 
-*{Note: This lab assumes you are using Oracle APEX 19.2.}*
+*Note: This workshop assumes you are using Oracle APEX 19.2.*
 
-### Lab Modules
+### Labs
 
 | # | Module | Est. Time |
 | --- | --- | --- |
@@ -25,11 +24,11 @@ In the future, rather than emailing spreadsheets around to gather information, y
 | 4 | [Improving the Report and Form](?lab=lab-4-improve-report-form) | 20 min |
 | 5 | [Linking the Calendar](?lab=lab-5-link-calendar) | 5 min |
 
-***To log issues***, click here to go to the [github oracle repository](https://github.com/oracle/learning-library/issues/new) issue submission form.
+Total estimated time: 45 min
 
 ### **Let's Get Started!**
 
-If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
+If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the upper-right corner of the page.
 
 ### Downloads
 
@@ -45,7 +44,9 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
- - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
+ - **Author** -  David Peake, Consulting Member of Technical Staff | Arabella Yao, Product Manager Intern, Database Mangement, June 2020
+ - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
+ - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Databse Management, July 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

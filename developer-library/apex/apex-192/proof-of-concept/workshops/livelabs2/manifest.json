@@ -1,0 +1,40 @@
+{
+  "tutorials": [
+    {
+        "title": "Prerequisites",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
+    },
+    {
+      "title": "Lab 1: Create an APEX Workspace",
+      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
+    },
+    {
+      "title": "Lab 2: Defining New Data Structures",
+      "filename": "../../2-using-quick-sql/2-using-quick-sql.md"
+    },
+    {
+      "title": "Lab 3: Creating the Application",
+      "filename": "../../3-create-app/3-create-app.md"
+    },
+    {
+      "title": "Lab 4: Regenerating the Application",
+      "filename": "../../4-regen-app/4-regen-app.md"
+    },
+    {
+      "title": "Lab 5: Improving Tasks",
+      "filename": "../../5-improving-tasks/5-improving-tasks.md"
+    },
+    {
+      "title": "Lab 6: Improving To Dos",
+      "filename": "../../6-improving-todos/6-improving-todos.md"
+    },
+    {
+      "title": "Lab 7: Improving Links",
+      "filename": "../../7-improving-links/7-improving-links.md"
+    }
+  ]
+}

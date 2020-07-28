@@ -6,7 +6,7 @@
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
-            "filename": "../intro/intro.md"
+            "filename": "./../../intro/intro.md"
         },
         {         
             "title": "Lab 1: Login to Oracle Cloud",
@@ -17,8 +17,8 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {         
-            "title": "Lab 2: Configuring Auto Scaling",
-            "filename": "./../Configuring_Auto_Scaling/Configuring_Auto-Scaling.md"
+            "title": "Lab 2: Using Ansible with OCI modules to manage infrastructure",
+            "filename": "./../../ansible-with-oci-modules/ansible-with-oci-modules.md"
         }
     ]
 }

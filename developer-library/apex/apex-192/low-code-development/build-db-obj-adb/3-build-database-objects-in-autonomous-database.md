@@ -4,6 +4,8 @@
 
 Memorizing the SQL to create and maintain database objects can be difficult. However, there are tools that can generate the code for you based on a shorthand syntax or a graphical user interface. In this lab, you will create database objects using Quick SQL and then view the objects in SQL Developer Web. Then you will then use SQL Developer Web to create an additional table and view all the database objects as a data model.
 
+Estimated Time: 30-45 minutes
+
 ### Objectives
 
 - Create database objects using Quick SQL
@@ -37,7 +39,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
 
 2. Quick SQL is a tool for creating database objects and data using a SQL shorthand syntax.
 
-    In the SQL Scripts toolbar, click **Quick SQL**
+    In the SQL Scripts toolbar, click **Quick SQL**.
 
    ![](images/sql-scripts-quick-sql.png " ")
 
@@ -74,7 +76,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
     view project_tasks projects tasks</copy>
     ```
 
-    *{Note: This shorthand does not include the To DOs and Links tables from the napkin design. You will add the To Dos table using SQL Developer Web later in this lab.}*
+    *Note: This shorthand does not include the To DOs and Links tables from the napkin design. You will add the To Dos table using SQL Developer Web later in this lab.*
 
 4. Review the shorthand code. How many tables will be created and how are they related? What types of columns and constraints will be created for the tables? Note that the **Help** button provides details on the shorthand syntax along with several examples of its usage.
 
@@ -152,7 +154,7 @@ In this step, you will learn how to access SQL Developer Web and then use it to 
 
    ![](images/login-as-admin.png " ")
 
-3. You created your database objects in the DEMO schema so you will need to enable SQL Developer Web access for that schema. Close the help popup, then copy and paste the following code into the  Worksheet:
+3. You created your database objects in the DEMO schema so you will need to enable SQL Developer Web access for that schema. Close the help popup, then copy and paste the following code into the Worksheet.
 
     ```
     <copy>begin    
@@ -169,11 +171,11 @@ In this step, you will learn how to access SQL Developer Web and then use it to 
     end;</copy>
     ```
 
-4. In the Worksheet toolbar, click **Run Script** to execute the code in the Worksheet. When the script finishes executing, you should see a success message under the _Script Output_ tab at the bottom.
+4. In the Worksheet toolbar, click **Run Script** to execute the code in the Worksheet. When the script finishes executing, you should see a success message under the **Script Output** tab at the bottom.
 
    ![](images/enable-schema.png " ")
 
-5. In the browser address bar, change the URL by replacing **admin** with **demo** (the value passed to the p\_url\_mapping_pattern parameter in the script above). Then press enter to go to the new URL.
+5. In the browser address bar, change the URL by replacing `admin` with `demo` (the value passed to the p\_url\_mapping\_pattern parameter in the script above). Then press enter to go to the new URL.
 
    ![](images/url-before.png " ")
 
@@ -195,9 +197,9 @@ In this step, you will learn how to access SQL Developer Web and then use it to 
     <copy>select * from hol_projects;</copy>
     ```
 
-    In the Worksheet toolbar, click **Run Statement** to see the data in the table.
+    In the Worksheet toolbar, click **Run Script** to see the data in the table.
    The data should be displayed in the Script Output tab at the bottom.
-   *{Note: The table you see may contain different values.}*
+   *Note: The table you see may contain different values.*
 
    ![](images/query-results.png " ")
 
@@ -211,7 +213,7 @@ In this step, you will learn how to create an Entity Relationship Diagram (ERD) 
 
    ![](images/drop-hol-milestones.png " ")
 
-3. Drag the other three **HOL_*** tables to the right. Use the diagram controls to adjust the zoom level and layout of the objects. Note that the foreign keys are detected and drawn on the diagram.
+3. Drag the other three **HOL_** tables to the right. Use the diagram controls to adjust the zoom level and layout of the objects. Note that the foreign keys are detected and drawn on the diagram.
 
    ![](images/drop-remaining-tables.png " ")
 
@@ -233,12 +235,11 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 
    ![](images/table-properties.png " ")
 
-3. Select the new column **NEW\_COLUMN_1** and select the checkbox for **PK** to make it the primary key for this new table.        
-    Click in the Name filed and enter **ID**. Click in the Data Type select **NUMBER** from the drop down list.
+3. Select the new column **NEW\_COLUMN_1** and select the checkbox for **PK** to make it the primary key for this new table. Click in the Name filed and enter **ID**. Click in the Data Type select **NUMBER** from the drop down list.
 
    ![](images/new-column-1.png " ")
 
-4. Press "+" to add three additional columns to the table with the following properties:
+4. Press "**+**" to add three additional columns to the table with the following properties:
 
     | # | Name | Data Type |
     | --- | --- | --- |
@@ -255,14 +256,14 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 
    ![](images/new-table-ddl.png " ")
 
-6. In the Navigator, click the Refresh icon to see the new HOL_TODOS table.
+6. In the Navigator, click the Refresh icon to see the new **HOL_TODOS** table.
 
     Right-click on the **HOL_TODOS** table and select **Edit...**.
 
     ![](images/edit-hol-todos.png " ")
 
 7. Add a new column.        
-    Set Name to **TEAM\_MEMBER_ID** and Data Type to **NUMBER**, then click **Apply**.
+    Set Name to **TEAM\_MEMBER\_ID** and Data Type to **NUMBER**, then click **Apply**.
 
    ![](images/add-column-to-hol-todos.png " ")
 
@@ -270,7 +271,7 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 
    ![](images/add-team-member-id-results.png " ")
 
-8. Click the **Foreign Key** option on the left side of the dialog, then click "+" to create a new foreign key.
+8. Click the **Foreign Key** option on the left side of the dialog, then click "**+**" to create a new foreign key.
 
     Select the new foreign key and configure it with the following settings:
 
@@ -281,7 +282,7 @@ In the original napkin design, there was a table called To Dos. However, the Qui
     | Constraint | **HOL\_TEAM_MEMBERS\_ID\_PK** |
     | Local Column | **TEAM\_MEMBER_ID** |
 
-    *{Note: If when selecting the Local Column, you see _NEW\_COLUMN\_5_ instead of _TEAM\_MEMBER\_ID_ then close the dialog, refresh the Navigator and then edit the table again.}*
+    *Note: If when selecting the Local Column, you see NEW\_COLUMN\_5 instead of TEAM\_MEMBER\_ID then close the dialog, refresh the Navigator and then edit the table again.*
 
     Click **Apply**.
 
@@ -297,12 +298,12 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 
     Right-click on the **HOL_TODOS** table and select **Edit...**.
 
-    Click "+" to create a new column.
+    Click "**+**" to create a new column.
     Set Name to **TASK_ID** and Data Type to **NUMBER**, then click **Apply**.
 
     ![](images/add-task-id.png " ")
 
-10. Click the **Foreign Key** option on the left side of the dialog, then click "+" to create a new foreign key.
+10. Click the **Foreign Key** option on the left side of the dialog, then click "**+**" to create a new foreign key.
 
     Select the new foreign key and configure it with the following settings:
 
@@ -313,7 +314,7 @@ In the original napkin design, there was a table called To Dos. However, the Qui
     | Constraint | **HOL\_TASKS\_ID\_PK** |
     | Local Column | **TASK_ID** |
 
-    *{Note: If when selecting the Local Column, you see _NEW\_COLUMN\_6_ instead of _TASK\_ID_ then close the dialog, refresh the Navigator and then edit the table again.}*
+    *Note: If when selecting the Local Column, you see _NEW\_COLUMN\_6_ instead of _TASK\_ID_ then close the dialog, refresh the Navigator and then edit the table again.*
 
     Click **Apply**.
 
@@ -325,7 +326,7 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 
     Click **Close** to dismiss the dialog.
 
-11. Drag the new **HOL_TODOS** table from the Navigator to the diagram. Notice that the new foreign keys are displayed from HOL\_TODOS to HOL\_TEAM\_MEMBERS and HOL\_TASKS.
+11. Drag the new **HOL\_TODOS** table from the Navigator to the diagram. Notice that the new foreign keys are displayed from **HOL\_TODOS** to **HOL\_TEAM\_MEMBERS** and **HOL\_TASKS**.
 
     Rearrange the diagram to clearly display the tables and their foreign key relationships.
 
@@ -337,6 +338,8 @@ This completes this lab. At this point you know how to use Quick SQL to generate
 
 ## Acknowledgements
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

@@ -30,6 +30,9 @@ Lab 11 - 12 onwards demonstrate advanced lab guides for Database Vault and advan
 
 Lab 13 - 19 are additional labs which talks about connecting your Exadata Cloud Service databases with Python application, working with OCI CLI, build APEX applications, automating with Terraform, configure and connect to Swingbench, build and connect to a Docker application, and connect to Oracle Analytics cloud.
 
+Watch the video below for an overview of Exadata Cloud Service workshop
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_tj6oiorp&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_qlq1nb37" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
 
 ## Goals for this workshop
 1. Prepare your private network in the Oracle Cloud Infrastructure
@@ -265,3 +268,11 @@ As a LOB user
 ## Appendix
 
 **This covers some general help for Windows users and other occasional issues you may encounter while working with your Exadata Cloud Service.**
+
+## Acknowledgements
+
+**Author** - Tasbir Imam, Phani Turlapati, Abdul Rafae, Sravya Ganugapati, Sathis Muniyasamy, Albert Kwok, Padma Priya, Aubrey Patsika, Jacob Harless, Tejus Subrahmanya
+
+**Last Update** - July 21, 2020.
+
+**You are all set. Let us begin!**

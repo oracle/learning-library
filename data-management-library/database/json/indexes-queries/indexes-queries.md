@@ -135,7 +135,7 @@ Search indexes take a significant time to create on large collections. As earlie
     select u.jtext.name, r.jtext.text
     from reviews r, users u
     where json_textcontains(r.jtext, '$.text', 'sushi') 
-    and u.jtext.user_id = r.jtext.user_;
+    and u.jtext.user_id = r.jtext.user_id;
     </copy>
     ```
     And finally to make the query actually useful, we'll get the business name and search only within a range of zip codes. We'll also add some the number of stars, and some column aliases (meaning we can distinguish between user name and business name).
@@ -167,4 +167,5 @@ You may now proceed to the next lab.
 - **Author** - Roger Ford, Principal Product Manager
 - **Last Updated By/Date** - Roger Ford, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,0 +1,61 @@
+{
+  "tutorials": [
+    {
+         "title": "Prerequisites",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+     },
+    {
+      "title": "Introduction and Overview",
+      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
+      "partnumber": "Ennnnn_01",
+      "publisheddate": "07/18/2020",
+      "contentid": "12nnnn",
+      "filename": "./../intro/intro.md"
+    },
+    {
+      "title": "Generate SSH Key",
+      "description": "Generate SSH Key",
+      "partnumber": "Ennnnn_01",
+      "publisheddate": "03/10/2020",
+      "contentid": "12nnnn",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Environment Setup",
+      "description": "Setup compute instance running EM 13.3 with pre-configured database targets using Terraform script and Resource Manager",
+      "publisheddate": "7/16/2020",
+      "filename": "./../setup-compute/setup-marketplaceoci-freetier.md"
+    },
+    {
+      "title": "Lab 1: Multitenant Database Lifecycle Management",
+      "description": "The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database",
+      "publisheddate": "7/16/2020",
+      "filename": "./../em_multitenant_lifecycle_automation/em_multitenant_lifecycle_automation.md"
+    },
+    {
+      "title": "Lab 2: Database Performance Management: Find, Fix, Validate",
+      "description": "The objective is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud",
+      "publisheddate": "7/16/2020",
+      "filename": "./../em_find_fix_validate/em_find_fix_validate.md"
+    },
+    {
+      "title": "Lab 3: Automated Database Patching at Scale with Fleet Maintenance",
+      "description": "This lab walks you through the steps needed with Fleet Maintenance to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
+      "publisheddate": "7/16/2020",
+      "filename": "./../em_fleet_maintenance_patching/em_fleet_maintenance_patching.md"
+    },
+    {
+      "title": "Lab 4: Automated Database Upgrade at Scale with Fleet Maintenance",
+      "description": "This lab walks you through the steps needed with Fleet Maintenance to automate upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
+      "publisheddate": "7/16/2020",
+      "filename": "./../em_fleet_maintenance_upgrade/em_fleet_maintenance_upgrade.md"
+    },
+    {
+      "title": "Lab 5: Database Configuration and Compliance Management",
+      "description": "This lab provides an overview of Configuration and Compliance Management features in . It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
+      "publisheddate": "7/16/2020",
+      "filename": "./../em_configuration_compliance_management/em_configuration_compliance_management.md"
+    }
+  ]
+}

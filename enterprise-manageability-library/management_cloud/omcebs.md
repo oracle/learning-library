@@ -55,67 +55,53 @@ Using and maintaining a whole bunch of tools, especially legacy ones, ones that 
 
 **Duration**: 15 mins.
 
-![](media/omcdash.jpg)
+1. After you have entered your information, click the Sign In button. After login, go to the upper left of the window and use the navigation menu (looks like 3 stacked lines aka hamburger menu) to navigate to a service. From the Navigation drop down menu continue down till you see E-Business Suite and select it and then choose the **ebs1229** instance.
 
-1. After you have entered your information, click the Sign In button. After login, go to the upper left of the window and use the navigation menu (looks like 3 stacked lines aka hamburger menu) to navigate to Oracle Management Cloud and its Dashboards.
+![](media/omcselectebs.png)
 
-![](media/7d61202715d4ef0c141f8768180c8097.jpg)
+2. See how in one view, you have complete visibility to E-Business services whether they are running on-premise or deployed in the cloud - natively monitored by OMC. View the associated entities and their status, alerts, performance, database errors, middleware errors, CPU utilization, memory utilization and more.
 
-2. **Click** on the Dashboards tile.
+![](media/omcebsfleet2.png)
 
-![](media/aad5c57c98305c02c64dcfcf18b87fdf.jpg)
-
-3. From the available dashboards, locate the one for EBS Health. It is a custom dashboard designed to manage all EBS related entities and associated infrastructure. Using it, you will experience an example of how Oracle Management Cloud (OMC) can manage Oracle EBS Infrastructure on the Oracle Cloud within a single view. **Click** the EBS Health dashboard. Alternatively from the left navigation menu of the Oracle Management Cloud home page, **Select** E-Business Suite.
-
-![](media/cde6c381db1096c38bb509ee313d5ef3.jpg)
-
-4. See how it provides in one view, complete visibility to E-Business services whether they are running on-premise or deployed in the cloud - natively monitored by OMC. View the associated entities and their status, alerts, performance, database errors, middleware errors, CPU utilization, memory utilization and more.
-
-![](media/897c4722621329593cca1aecf4371ecd.jpg)
-
-5. Next, we will search for a specific EBS composite entity. **Type** EBS in the Global Context Bar, just to the right of the Topology icon (that looks like a snowflake icon) on the top left and **Select** the EBS12_2_OCI entity from the drop down menu.
+3. Next, we will search for a specific EBS composite entity. **Type** EBS in the Global Context Bar, just to the right of the Topology icon (that looks like a snowflake icon) on the top left and **Select** the EBS12_2_OCI entity from the drop down menu.
 
 ![](media/ff6fadad2a16018214b606934ea05161.jpg)
 
-6. Now from the top right, drop down the time period menu and **Select** Last 7 days to display the widget showing Top Programs with Maximum Running Time and Average Running Time details.
+4. Now from the top right, drop down the time period menu and **Select** Last 7 days to display the widget showing Top Programs with Maximum Running Time and Average Running Time details.
 
 ![](media/f71d3dd91aefd0c6032054407d0c8b98.jpg)
 
-7. From this widget your able to obtain a consolidated view of the most active programs by maximum run time and average run time.
+5. From this widget your able to obtain a consolidated view of the most active programs by maximum run time and average run time.
 
 ![](media/14ca06af4c70b868b04ca0cad5579807.jpg)
 
-8. Now **Scroll Down** the window using the scroll bar on the right hand side to further view the Errored Transactions, Database Errors, Middleware Errors, Web Request Rate, EBS Front End Activity widgets. Note there have been no Errored Transactions or Database Errors in the last 7 days.
+6. Now **Scroll Down** the window using the scroll bar on the right hand side to further view the Errored Transactions, Database Errors, Middleware Errors, Web Request Rate, EBS Front End Activity widgets. Note there have been no Errored Transactions or Database Errors in the last 7 days.
 
 ![](media/d942c59d0ea941aabfb00f40b4e060ff.jpg)
 
-9. From the upper left, **Click** on the Topology icon (looks like a snowflake) to view this application entities topology.
+7. From the upper left, **Click** on the Topology icon (looks like a snowflake) to view this application entities topology.
 
 ![](media/b4982902f249a0188359cf7ba3cc73e7.jpg)
 
-10. Maximizing the topology view, you can see middleware entities displayed in red that are down/unavailable. **Hover** the mouse over those entities to check out the details for each.
+8. Maximizing the topology view, you can see middleware entities displayed in red that are down/unavailable. **Hover** the mouse over those entities to check out the details for each.
 
 ![](media/33eba4dcf7e4a5cae9bd27be00cfd358.jpg)
 
-11. Next we will look at the EBS Infrastructure being monitored. Before doing that **Click** on the topology icon to close the topology view and then on the far left **Select** Monitoring from the navigation menu.
+9. Next we will look at the EBS Infrastructure being monitored. Before doing that **Click** on the topology icon to close the topology view and then on the far left **Select** Monitoring from the navigation menu.
 
 ![](media/be8b11819c4b8c8beebee6f78d03080d.jpg)
 
-12. On the monitoring Enterprise Summary page is an overall view of monitoring for this EBS composite entity. Next, on the left side, navigate to and **Click** Entities for a detailed view of all the entities associated with this EBS composite.
+10. On the monitoring Enterprise Summary page is an overall view of monitoring for this EBS composite entity. Next, on the left side, navigate to and **Click** Entities for a detailed view of all the entities associated with this EBS composite.
 
 ![](media/d01bdb5660cb667a6bc65b18bc865815.jpg)
 
-13. View the entity types, the number of entities in each entity type, and overall status. Now **Click** the EBS12_2_OCI entity to drill down into.
+11. View the entity types, the number of entities in each entity type, and overall status. Now **Click** the EBS12_2_OCI entity to drill down into.
 
 ![](media/9381fd7d2f464abf7a7f7a5e1d36506e.jpg)
 
-14. Review Key Performance Indicators (KPIs) for the entity: success and error rate of concurrent processing, resource utilization of Hosts, Database, HTTP Server, and WebLogic Server.
+12. Review Key Performance Indicators (KPIs) for the entity: success and error rate of concurrent processing, resource utilization of Hosts, Database, HTTP Server, and WebLogic Server.
 
 ![](media/146f87d97ba89ddbfa790d221cbe1de8.jpg)
-
- 
-
-
 
 <br>**Lab Activity 2: Identify EBS Resource & Capacity  Performance Bottlenecks using Log Analysis**
 ======================================================================

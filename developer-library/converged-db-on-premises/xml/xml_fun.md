@@ -4,7 +4,7 @@
 
 This lab walks you through the steps of inserting and updating xml data. We can add a row to our xml table purchaseorder using insert query. Also we can use Oracle UPDATEXML function to update XML content stored in Database.
 
-## Before You Begin
+### Before You Begin
 
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
@@ -26,7 +26,7 @@ This lab assumes you have completed the following labs:
       </copy>
    ````
  
-   ![](./images/xml_m6.PNG " ")
+   ![](./images/xml_m6a.png " ")
 
   **Notes:** XMLEXISTS is an SQL/XML operator that we can use to query XML values in SQL, in a regular query we can use the xmlexists function to look if a specific value is present in an xmltype column.
 
@@ -43,7 +43,7 @@ This lab assumes you have completed the following labs:
       </copy>
    ````
   
-   ![](./images/xml_m7.PNG " ")
+   ![](./images/xml_m7a.png " ")
 
   **Notes:** The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
    
@@ -58,20 +58,20 @@ This lab assumes you have completed the following labs:
     SELECT XMLSERIALIZE(CONTENT COLUMN_VALUE AS CLOB INDENT SIZE=2)
 FROM  Purchaseorder p,
       XMLTable(
-        '<Summary>
+        '&lt;Summary&gt;
          {
           for $r in /PurchaseOrder/LineItems/Part
           return $r/Description
          }
-         </Summary>'
+         &lt;/Summary&gt;'
          passing object_value
       )
 WHERE xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' passing object_value, '27.95' AS "UnitPrice" );
-/
+
       </copy>
   ````
   
-  ![](./images/xml_m8.PNG " ")
+  ![](./images/xml_m8a.png " ")
     
    **Notes:** XMLSERIALIZE is a SQL/XML operator that you can use to convert an XML type to a character type.
 
@@ -82,12 +82,12 @@ WHERE xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' pas
    ````
     <copy>
     SELECT xmlquery(
-        '<POSummary lineItemCount="{count($XML/PurchaseOrder/LineItems/ItemNumber)}">{
+        '&lt;POSummary lineItemCount="{count($XML/PurchaseOrder/LineItems/ItemNumber)}"&gt;{
            $XML/PurchaseOrder/User,
            $XML/PurchaseOrder/Requestor,
            $XML/PurchaseOrder/LineItems/LineItem[2]
          }
-         </POSummary>'
+         &lt;/POSummary&gt;'
         passing object_value AS "XML"
         returning content
       ).getclobval() initial_state
@@ -100,11 +100,11 @@ WHERE xmlExists(
       </copy>
   ````
   
-  ![](./images/xml_m9.PNG " ")
+  ![](./images/xml_m9a.png " ")
 
   **Notes:** XMLQUERY lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
         
-## Step 5: Custer Delivery Priority Instruction for e.g Ex - Courier, Expidite,Surface Mail,Air Mail etc..  
+## Step 5: Custer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
     
   Condition -1: Special_Instructions="Next Day Air 
 
@@ -117,7 +117,7 @@ WHERE xmlExists(
    ````
   
  
-  ![](./images/xml_m10_a.PNG " ")
+  ![](./images/xml_m10_aa.png " ")
 
   Condition -2: Special_Instructions="Priority Overnight
     
@@ -132,8 +132,8 @@ WHERE xmlExists(
       </copy>
   ````
   
-  ![](./images/xml_m10_b.PNG " ")
-  ![](./images/xml_m10_c.PNG " ")
+  ![](./images/xml_m10_ba.png " ")
+  ![](./images/xml_m10_ca.png " ")
    
   **Notes**: ExistsNodechecks if xpath-expression returns at least one XML element or text node. If so, existsNode returns 1, otherwise, it returns 0. existsNode should only be used in the where clause of the select statement.
 
@@ -141,12 +141,12 @@ WHERE xmlExists(
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K.
+- **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel.
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Director, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
 
-**Issues-**
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page. We review it regularly.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
   
 

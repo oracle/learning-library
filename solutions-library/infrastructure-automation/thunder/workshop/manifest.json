@@ -87,6 +87,14 @@
             "publisheddate": "04/01/2020",
             "contentid": "12nnnn",
             "filename": "../examples/dev_tools/dev-tools.md"
+        },
+        {         
+            "title": "Lab 11: CI CD",
+            "description": "CI CD",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../examples/ci-cd/ci-cd.md"
         }
     ]
 }

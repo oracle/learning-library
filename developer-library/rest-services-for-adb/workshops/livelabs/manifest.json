@@ -1,0 +1,28 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "About the Introduction to REST Services Workshop",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 1: Provisioning Autonomous Database (ADW and ATP)",
+            "description": "Provision an Autonomous Database - ATP or ADW",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 2: Connect to ADB",
+            "description": "Connect to an Autonomous Database with SQL Developer Web",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md"
+        },
+        {
+            "title": "Lab 3: RESTful Services for your Autonomous Database",
+            "description": "RESTful Services for your Autonomous Database",
+            "filename": "../../rest_services_for_adb/rest_services_for_adb.md"
+        }
+    ]
+}

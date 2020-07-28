@@ -1,0 +1,18 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Firefox Web Browser
+GenericName=Web Browser
+Comment=Browse the Web
+Exec=firefox -new-tab https://dbsec.oracledemo.com:7803/em
+Icon=firefox
+Terminal=false
+Type=Application
+StartupWMClass=Firefox-bin
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;
+StartupNotify=true
+X-Desktop-File-Install-Version=0.15
+Categories=Network;WebBrowser;
+Name[en_US]=01_Login-Oracle_Enterprise_Manager

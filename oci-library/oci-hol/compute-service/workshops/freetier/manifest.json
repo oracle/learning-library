@@ -1,0 +1,22 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+          "title": "Introduction and Overview",
+          "filename": "./../../../intro/intro.md"
+      },
+      {
+          "title": "Lab 1: Generate SSH Keys",
+          "description": "Generate SSH Keys",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+      },
+      {
+          "title": "Lab 2: Create a Compute Service",
+          "filename": "./../../compute-service.md"
+      }
+    ]
+}

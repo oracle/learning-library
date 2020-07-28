@@ -1,6 +1,6 @@
 # Improve the Faceted Search
 
-## Introduction
+## **Introduction**
 
 In this lab, you will get first-hand experience with enhancing the application by improving the faceted search page for better clarity and improved usability. The search page includes facets on the left which can readily be used to limit the data shown in the report on the right.
 
@@ -65,4 +65,5 @@ This completes Lab 3. You now know how to enhance a faceted search page and have
  - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
 
-See an issue? Please open up a request [here](https://github.com/oracle/learning-library/issues). Please include the workshop name and lab in your request.
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

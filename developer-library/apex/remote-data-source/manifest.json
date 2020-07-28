@@ -1,35 +1,32 @@
 {
-  "lab": {
-    "title": "Building an App using a Remote Data Source",
-    "modules": [
-      {
-        "filename": "README.md",
-        "title": "Lab Introduction"
-      },
-      {
-        "filename": "1-sign-up-apex.md",
-        "title": "Module 1: Signing up for an APEX Workspace"
-      },
-      {
-        "filename": "2-create-table.md",
-        "title": "Module 2: Creating the Table"
-      },
-      {
-          "filename": "3-populating-table.md",
-          "title": "Module 3: Populating the Table"
-      },
-      {
-        "filename": "4-improving-report.md",
-        "title": "Module 4: Improving the Report"
-      },
-      {
-        "filename": "5-adding-chart.md",
-        "title": "Module 5: Adding a Chart"
-      },
-      {
-        "filename": "6-adding-chart-criteria.md",
-        "title": "Module 6: Adding Chart Criteria"
-      }
-    ]
-  }
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
+    },
+    {
+      "title": "Lab 1: Creating the Table",
+      "filename": "2-create-table/2-create-table.md"
+    },
+    {
+      "title": "Lab 2: Populating the Table",
+      "filename": "3-populating-table/3-populating-table.md"
+    },
+    {
+      "title": "Lab 3: Improving the Report",
+      "filename": "4-improving-report/4-improving-report.md"
+    },
+    {
+      "title": "Lab 4: Adding a Chart",
+      "filename": "5-adding-chart/5-adding-chart.md"
+    },
+    {
+      "title": "Lab 5: Adding Chart Criteria",
+      "filename": "6-adding-chart-criteria/6-adding-chart-criteria.md"
+    }
+  ]
 }

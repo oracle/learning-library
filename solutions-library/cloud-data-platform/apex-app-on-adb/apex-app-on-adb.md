@@ -156,7 +156,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_3.png " ")
 
-4. You will download a dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download Transactions_History.xlsx here](./files/Transactions_History.xlsx). Then, open your browser window again back to the APEX page.
+4. You will download a dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download Transactions_History.xlsx here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/12bfXzt-Xjke4OhGSREiN9Duebr2AWesAp-vMkloItQ/n/c4u03/b/solutions-library/o/Transactions_History.xlsx). Then, open your browser window again back to the APEX page.
 
 5. Continue by clicking on **Load Data** which allows you to load CSV, XLSX, XML, and JSON data.
 
@@ -178,7 +178,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_9.png " ")
 
-10. You will download another dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download US_CENSUS.csv here](./files/US_CENSUS.csv). 
+10. You will download another dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download US_CENSUS.csv here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/5NcnFldIcsd-bGWyX2INoj0wx6sU0zIvOuEKHS4erz0/n/c4u03/b/solutions-library/o/US_CENSUS.csv). 
 
 11. Then, open your browser window and navigate back to the **Data Workshop** section in APEX to then click **Load Data** again for this new file.
 
@@ -209,7 +209,7 @@ You have now changed the data type for the Date of Sale column from a Date to a 
 
 ### **STEP 5**: Create an App in APEX
 
-1. You will download another data file from this workshop to create your APEX app. You can download it by clicking on the following text link: [Download ApexApp.sql here](./files/ApexApp.sql). Then, open your browser window again back to the APEX page.
+1. You will download another data file from this workshop to create your APEX app. You can download it by clicking on the following text link: [Download ApexApp.sql here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8WEdglMP5bCOZLKBK5hMGY4-mnnSh7ZbzJMPn0lCh6Y/n/c4u03/b/solutions-library/o/ApexApp.sql). Then, open your browser window again back to the APEX page.
 
 2. To start creating an app, click on **App Builder** on the top navigation bar.  Next, click on **Import**.
 
@@ -274,6 +274,7 @@ Please proceed to the next lab.
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
 
 

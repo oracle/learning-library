@@ -11,7 +11,7 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 The result of this code runned successfully will generate:
 * kubernetes cluster with nodepools, each nodepool having a minimum of one node
 
-* Parameters
+**Parameters**
   * OKE Cluster
     * compartment_name - The compartment name in which the OKE Cluster will be created
     * kubernetes_version - The version of kubernetes that will be used for this particular cluster
