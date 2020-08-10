@@ -1,15 +1,14 @@
-# Oracle Database Multitenant Github
+# Oracle Real Application Clusters Github
 
-
-Oracle Multitenant is the architecture for the next-generation database cloud. It delivers isolation, agility and economies of scale. A multitenant container database can hold many pluggable databases. An existing database can simply be adopted with no application changes required. Oracle Multitenant fully complements other options, including Oracle Real Application Clusters and Oracle Active Data Guard.  
+Oracle RAC is a cluster database with a shared cache architecture that overcomes the limitations of traditional shared-nothing and shared-disk approaches to provide highly scalable and available database solutions for all business applications. Oracle RAC is a key component of Oracle's private cloud architecture.
 
 ## Workshops
 Click on one of our workshops below to access the content.
 
-[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
+[![](./images/multitenant-screenshot-freetier.png)](https://oracle.github.io/learning-library/data-management-library/database/rac-base/index.html)  ![](./images/transparent.png " ")  [![](./images/multitenant-screenshot-livelabs.png)](https://oracle.github.io/learning-library/data-management-library/database/rac-base/index.html)
 
 
-- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/multitenant/freetier/index.html)
+- [I have a Freetier or Oracle Cloud account](https://oracle.github.io/learning-library/data-management-library/database/rac-base/index.html)
 - [I have an account on LiveLabs](https://oracle.github.io/learning-library/data-management-library/database/multitenant/livelabs/index.html)
 
 
@@ -23,22 +22,15 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 
 
 ## Product Pages
-- [Oracle Multitenant](https://www.oracle.com/database/technologies/multitenant.html)
+- [Oracle RAC](https://www.oracle.com/goto/rac)
 - [Oracle Database 19c](https://www.oracle.com/database/)
 
 ## Documentation
-- [Introduction to the Multitenant Architecture](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/introduction-to-the-multitenant-architecture.html#GUID-267F7D12-D33F-4AC9-AA45-E9CD671B6F22)
-- [Multitenant Administrators Guide - 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/index.html)
+- [RAC Administrators Guide - 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/racad/index.html)
 - [Database Product Management YouTube Channel](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ)
 
 ## Videos
-- [Oracle Multitenant](https://www.youtube.com/watch?v=lho1kurDVWE)
-- [Multitenant for World-Class SaaS](https://www.youtube.com/watch?v=-okrTDHqAdA)
-- [Oracle Database 19c](https://www.youtube.com/watch?v=EVPNyL2vAVI)
-- [Upgrading to Oracle Database 19c](https://www.youtube.com/watch?v=lOzL5irmuJo)
-- [Converged Database Architcture](https://www.youtube.com/watch?v=9d76-LhgMQs)
-- [Multitenant PDBs for Microservices and Clouds](https://www.youtube.com/watch?v=JdfATqdXuRc)
-- [The Hidden Data Economy](https://www.youtube.com/watch?v=CP3pwAwNepU)
+[Introduction to RAC](youtube:CbIGJs_eNtI)
 
 ### Issues?
 Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
