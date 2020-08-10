@@ -1,0 +1,20 @@
+{
+    "workshoptitle": "Real Application Clusters Workshop",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "This lab walks you through the steps to...",
+            "filename": "./intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys - Cloud Shell",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Build a DB System",
+            "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
+            "filename": "./setup/livelabs-setup.md"
+        }
+    ]
+}

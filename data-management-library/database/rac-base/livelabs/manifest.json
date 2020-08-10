@@ -1,0 +1,50 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction and Overview",
+            "description": "Introduction to RAC Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "08/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 3a: Environment Setup 1",
+            "description": "Setup RAC environment using VirtualBox (Laptop install)",
+            "publisheddate": "3/24/2020",
+            "filename": "../setup/livelabs-setup.md"
+        },
+        {
+            "title": "Lab 3b: Environment Setup 2",
+            "description": "Setup RAC environment using libvirt (OCI install)",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../setup/livelabs-virt-setup.md"
+        },
+        {
+            "title": "Lab 3c: Setup RAC environment using OCI DB System (OCI install)",
+            "description": "Setup RAC environment in Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../setup/livelabs-rac-oci.md"
+        }
+    ]
+}
