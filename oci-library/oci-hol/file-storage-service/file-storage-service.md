@@ -1,6 +1,6 @@
 # File System Storage Service
 
-## Introduction
+## **Introduction**
 
 Welcome to the Cloud Storage (File System Storage) self-paced lab from Oracle!
 
@@ -10,28 +10,13 @@ Oracle Cloud Infrastructure File Storage Service provides a durable, scalable, d
 - Create and mount File Storage System to a compute instance
 - Verify availability of the File Storage system
 
-### Some Key points
+### Key points
 
 *We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80% if you are splitting your screen into two browsers.*
 
 - All screenshots are examples ONLY.
 
-- Do NOT use compartment name and other data from screenshots. Only use data (including compartment name) provided in the *content* section of the lab.
-
-- MacOS Users can use command+C / command+V or right-click on the content and select Copy / Paste to copy and paste inside the OCI Console.
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-
-    **Cloud Tenant Name**
-
-    **User Name**
-
-    **Password**
-
-    **Compartment Name (Provided Later)**
-
-*Note: OCI UI is being updated, thus some screenshots in the instructions may be different from the actual UI*
+- You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
 ### Prerequisites
 
@@ -47,15 +32,8 @@ Oracle Cloud Infrastructure File Storage Service provides a durable, scalable, d
 
 6. Completed **Lab 1: Generate SSH Keys** on the Contents menu on the right
 
-*Note: OCI UI is being updated, thus some screenshots in the instructions may be different from the actual UI*
-
 
 ## **Step 1**: Sign in to OCI Console and Create VCN
-
-* **Tenant Name:** {{Cloud Tenant Name}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
 
 
 1. Sign in using your cloud tenant name, user name, and password. Use the login option under **Oracle Cloud Infrastructure**.
@@ -183,9 +161,9 @@ You are assumed to have generated your SSH Keys in the *Cloud Shell*.
 	![](./../file-storage-service/images/QuickStart_S2P4.5.PNG " ")
 
     Under **Configure networking**:
-     - **Virtual Cloud Network Compartment**: Select your compartment in whih you created your VCN
+     - **Virtual Cloud Network Compartment**: Select your compartment in which you created your VCN
      - **Select a Virtual Cloud Network**: Choose the VCN you created in Step 1
-     - **Subnet Compartment:** Choose the compartment in whih you created your VCN
+     - **Subnet Compartment:** Choose the compartment in which you created your VCN
      - **Subnet:** Choose the Public Subnet (Public Subnet-Name\_of\_VCN) under **Public Subnets**
      - **Use Network Security Groups to Control Traffic** : Leave un-checked
      - **Assign a public IP address**: Check this option
@@ -277,7 +255,7 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
 
      ![](./../file-storage-service/images/FSS_008.png " ")
 
-6. Go to your VCN instance, click **Security Lists** and then **Default Security List for YOUR\_VCN\_NAME**. If you do NOT see any Ingress Rule with *ICMP* as IP Protocal and want to ping the mount point, then you can add an Ingress Rule:
+6. Go to your VCN instance, click **Security Lists** and then **Default Security List for YOUR\_VCN\_NAME**. If you do NOT see any Ingress Rule with *ICMP* as IP Protocol and want to ping the mount point, then you can add an Ingress Rule:
 
       - Source CIDR: 0.0.0.0/0
       - IP Protocol: ICMP
@@ -331,7 +309,7 @@ In this section, we will delete all the resources we created in this lab.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - Isa Kessinger, QA Intern, LiveLabs QA Team
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Last Updated By/Date** - Kamryn Vinson, QA Engineer Lead
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

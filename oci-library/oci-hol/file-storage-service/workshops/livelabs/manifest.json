@@ -2,18 +2,10 @@
     "tutorials": [
         {         
             "title": "Prerequisites",
-            "description": "Login to Oracle Cloud",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {         
             "title": "Introduction",
-            "description": "Introduction to Multitenant Workshop",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
             "filename": "./../../intro/intro.md"
         },
         {
@@ -23,7 +15,7 @@
         },
         {         
             "title": "Lab 2: Configuring File System Storage",
-            "filename": "./../../file-storage-service/file-storage-service.md"
+            "filename": "./../../file-storage-service.md"
         }
     ]
 }
