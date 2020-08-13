@@ -18,7 +18,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
 
-    ![](./../grafana/images/Grafana_015.PNG " ")
+    ![](images/Grafana_015.PNG " ")
 
 2. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
 
@@ -63,7 +63,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+    ![](images/RESERVEDIP_HOL0011.PNG " ")
 
       - **Boot Volume:** Leave the default
       - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
@@ -72,7 +72,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+    ![](images/RESERVEDIP_HOL0011.PNG " ")
 
 4.  Wait for Instance to be in **Running** state. In Cloud shell Terminal, enter command:
 
@@ -94,7 +94,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 7.  Enter 'yes' when prompted for security message.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
+    ![](images/RESERVEDIP_HOL0014.PNG " ")
 
 8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
@@ -122,7 +122,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 4. Click **Create Route Table**.
 
-    ![](./../nat-gateway/images/NAT_002.PNG " ")
+    ![](images/NAT_002.PNG " ")
 
 5. Click your VCN name to display the VCN details. Click **Create Subnet**. Fill out the dialog box:
 
@@ -208,7 +208,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 18. Switch back to ssh session to the private compute instance and Enter command ping 8.8.8.8 (if not already running). Verify there is no response.
 
-    ![](./../nat-gateway/images/NAT_003.PNG " ")
+    ![](images/NAT_003.PNG " ")
 
 19. Switch back to OCI console window and using above step, this time choose Allow Traffic. Switch back to ssh session and verify ping response is received.
 
@@ -220,11 +220,11 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 3. Locate compute instance, Click Action icon and then **Terminate**.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
+    ![](images/RESERVEDIP_HOL0016.PNG " ")
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
+    ![](images/RESERVEDIP_HOL0017.PNG " ")
 
 5. Repeat the steps to delete the second compute instance.
 
@@ -233,7 +233,7 @@ appear.
 
 7. Locate your VCN, Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
+    ![](images/RESERVEDIP_HOL0018.PNG " ")
 
 ## Acknowledgements
 *Congratulations! You have successfully completed the lab.*

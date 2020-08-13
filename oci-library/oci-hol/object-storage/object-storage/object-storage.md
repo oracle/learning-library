@@ -30,7 +30,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 3. From the OCI Services menu, click **Object Storage** then **Create Bucket**
 
   **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
-  ![]( images/OBJECT-STORAGE001.PNG " ")
+  ![](images/OBJECT-STORAGE001.PNG " ")
 
 4. Fill out the dialog box:
 
@@ -38,62 +38,67 @@ The purpose of this lab is to give you an overview of the Object Service and an 
     - Storage Tier: STANDARD
 
 5.  Click **Create Bucket**
-  ![]( images/OBJECT-STORAGE002.PNG " ")
+  ![](images/OBJECT-STORAGE002.PNG " ")
 
 ## **STEP 2**: Upload Object and create pre authenticated link
 
 1. **Windows**: Click the Apps icon in the toolbar and select Git-Bash to open a terminal window.
 
   ![](images/OBJECT-STORAGE004.PNG " ")
+
   Change directory to the Downloads folder Enter command:
-  ```
-  $ <copy>cd /c/Users/PhotonUser/Downloads/**</copy>
-  ```
-    ![]( images/OBJECT-STORAGE005.PNG " ")
 
-- **Mac / Linux**: Open a terminal window and navigate to your home directory.
+    ```
+    $ <copy>cd /c/Users/PhotonUser/Downloads/**</copy>
+    ```
 
-2. Create a sample file, Enter command:
-  ```
-  <copy>touch samplefile</copy>
-  ```
+    ![](images/OBJECT-STORAGE005.PNG " ")
+
+2. **Mac / Linux**: Open a terminal window and navigate to your home directory.
+
+  Create a sample file, Enter command:
+
+    ```
+    <copy>touch samplefile</copy>
+    ```
+
   This should create a file by the name "samplefile" in the current folder
 
-4. Switch to OCI window and click the Bucket Name.
+3. Switch to OCI window and click the Bucket Name.
 
-5. Bucket detail window should be visible. Click **Upload**
-  ![]( images/OBJECT-STORAGE007.PNG " ")
+4. Bucket detail window should be visible. Click **Upload**
+  ![](images/OBJECT-STORAGE007.PNG " ")
 
-6. Click on *Upload* and then browse to where you created your *samplefile* moments ago.
+5. Click on *Upload* and then browse to where you created your *samplefile* moments ago.
 
-7. Select the file, then click **Upload** in the Dialog box.
+6. Select the file, then click **Upload** in the Dialog box.
 
-8. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
+7. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
-  ![]( images/PreAuth1.PNG " ")
+  ![](images/PreAuth1.PNG " ")
 
-9. Fill out the dialog box:
+8. Fill out the dialog box:
 
     - NAME: Use an easy to remember name.
     - PRE AUTHENTICATION REQUEST TARGET: OBJECT
     - ACCESS TYPE: PERMIT READS ON THE OBJECT
     - EXPIRATION DATE/TIME: Specify link expiration date
 
-10. Click **Create Pre-Authenticated Request**
+9. Click **Create Pre-Authenticated Request**
 
-  ![]( images/OBJECT-STORAGE009.PNG " ")
+  ![](images/OBJECT-STORAGE009.PNG " ")
 
-11. Click **Copy** to copy the link
+10. Click **Copy** to copy the link
 
   **NOTE:** The link must be copied and saved once the window is closed the link can not be retrieved again.
-  ![]( images/PreAuth2.PNG " ")
+  ![](images/PreAuth2.PNG " ")
 
-12. Click **Close**
+11. Click **Close**
 
-13. Open a new browser window and paste Pre-Authenticated link.
-  ![]( images/OBJECT-STORAGE011.PNG " ")
+12. Open a new browser window and paste Pre-Authenticated link.
+  ![](images/OBJECT-STORAGE011.PNG " ")
 
-14.  An option to download the file will appear.
+13.  An option to download the file will appear.
 
   **NOTE:** Do NOT download the file as due to space restrictions it is not allowed for the purpose of this lab.
 

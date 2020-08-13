@@ -64,7 +64,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
     commands sequentially, using the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon ; ./build.sh ; ./deploy.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/inventory-helidon  ; ./deploy.sh</copy>
     ```
 
    ![](images/2ee20f868b1d740d8ce7d3a7ec37fc03.png " ")
@@ -77,7 +77,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
     the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/supplier-helidon-se ; ./build.sh ; ./deploy.sh</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/supplier-helidon-se ; ./deploy.sh</copy>
     ```
 
    ![](images/3e833f33e529bdd714c5e6b94b6dfb94.png " ")

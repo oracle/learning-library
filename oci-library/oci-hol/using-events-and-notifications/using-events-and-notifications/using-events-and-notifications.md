@@ -11,7 +11,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
 
-    ![](./../grafana/images/Grafana_015.PNG " ")
+    ![](images/Grafana_015.PNG " ")
 
 2. First we will create a Notification topic and subscribe to this topic. From OCI Services menu, click **Notifications** under **Application Integration**.
 
@@ -22,7 +22,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 4. Click **Create**.
 
-    ![](./../using-events-and-notifications/images/Events_001.PNG " ")
+    ![](images/Events_001.PNG " ")
 
 5. Once the topic state changes to **Active**, Click the topic Name. Click **Create Subscription** and fill out the dialog box:
 
@@ -58,7 +58,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 12. Click **Create Rule**.
 
-    ![](./../using-events-and-notifications/images/Events_002.PNG " ")
+    ![](images/Events_002.PNG " ")
 
 
 We have now configured Notification service and tied events to it with a specific compartment. When a new compute instance is launched or terminated an email notification will be sent to the email address specified.
@@ -109,7 +109,7 @@ We have now configured Notification service and tied events to it with a specifi
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+    ![](images/RESERVEDIP_HOL0011.PNG " ")
 
     - **Boot Volume:** Leave the default
     - **Add SSH Keys:** Leave empty
@@ -118,7 +118,7 @@ We have now configured Notification service and tied events to it with a specifi
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+    ![](images/RESERVEDIP_HOL0011.PNG " ")
 
 4. Switch to your email account and verify an event indicating compute instance launch was received.
 
@@ -134,11 +134,11 @@ We have now configured Notification service and tied events to it with a specifi
 
 3. Locate first compute instance, Click Action icon and then **Terminate**.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
+    ![](images/RESERVEDIP_HOL0016.PNG " ")
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click **Terminate Instance**. Wait for instance to fully Terminate.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
+    ![](images/RESERVEDIP_HOL0017.PNG " ")
 
 5. Switch to your email account and verify an event indicating compute instance terminate was received.
 
@@ -148,7 +148,7 @@ We have now configured Notification service and tied events to it with a specifi
 
 7. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0018.PNG " ")
+    ![](images/RESERVEDIP_HOL0018.PNG " ")
 
 8. From OCI Services menu, under **Application Integration**, click **Notifications**. Click your Topic name.
 
