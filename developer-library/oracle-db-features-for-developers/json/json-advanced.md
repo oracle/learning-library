@@ -405,7 +405,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
     This requires more time and code to be written.
 
-## **Step 5**: JSON Query Improvements In Oracle 19C
+## **Step 6**: JSON Query Improvements In Oracle 19C
 
 1.  In Oracle 19c, function *JSON\_OBJECT* can generate JSON objects receiving as argument just a relational column name, possibly preceded by a table name or alias, or a view name followed by a dot. For example *TABLE.COLUMN*, or just *COLUMN*.
 
@@ -429,7 +429,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
 In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows what is allowed for column names and wildcards in a SQL SELECT query.
 
-## **Step 6**: Using Custom Types And Wildcard
+## **Step 7**: Using Custom Types And Wildcard
 
 1.  There are some cases, exceptions, where wildcards are not accepted for tables with columns of certain custom data types, like our table **CUSTOMERS**, for example.
 
@@ -494,7 +494,7 @@ In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows
 
 In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (\*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
-## **Step 7**: Updating a JSON Document
+## **Step 8**: Updating a JSON Document
 
 You can now update a JSON document declaratively using the new SQL function **JSON_MERGEPATCH**. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
@@ -673,7 +673,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
 
     Updating JSON documents inside the Oracle Database is that simple.
 
-## **Step 8**: JSON Materialized View Support
+## **Step 9**: JSON Materialized View Support
 
 Materialized views query rewriting has been enhanced so that queries with *JSON\_EXISTS*, *JSON\_VALUE* and other functions can utilize a materialized view created over a query that contains a *JSON\_TABLE* function.
 
@@ -699,7 +699,7 @@ As a performance enhancement in Oracle 19c, if you create a refresh-on-statement
           jt.fcode, convert(jt.toponymName,'WE8ISO8859P1','AL32UTF8') Title,
           convert(jt.name,'WE8ISO8859P1','AL32UTF8') Name FROM MYJSON j,
     JSON_TABLE(DOC, '$' COLUMNS
-    (NESTED PATH '$.geonames[\*]'
+    (NESTED PATH '$.geonames[*]'
       COLUMNS (countryName VARCHAR2(80) PATH '$.countryName' ERROR ON ERROR NULL ON EMPTY,
               adminName1 VARCHAR2(80) PATH '$.adminName1' ERROR ON ERROR NULL ON EMPTY,
               adminName2 VARCHAR2(80) PATH '$.adminName2' ERROR ON ERROR NULL ON EMPTY,
@@ -819,7 +819,7 @@ Significant performance gains can often be achieved using query rewrite and mate
 
     If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
-## **Step 9**: JSON-Object Mapping
+## **Step 10**: JSON-Object Mapping
 
 This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data into an instance of a SQL object type using SQL/JSON function *JSON\_VALUE*. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function *JSON\_OBJECT* or *JSON\_ARRAY*.
 

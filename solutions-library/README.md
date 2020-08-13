@@ -2,7 +2,7 @@
 
 Welcome! 
 
-Click [here](http://bit.ly/golivelabs) to access solutions content.
+Click [here](http://bit.ly/golivelabs) to access solutions workshops.
 
 
 ## Get an Oracle Cloud Trial Account for Free!

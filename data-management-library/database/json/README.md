@@ -21,7 +21,7 @@ Click on one of our workshops below to access the content.
 
 ## Workshops
 
-- [JSON](https://oracle.github.io/learning-library/developer-library/oracle-db-features-for-developers/workshops/json-freetier)
+- [JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
 
 
 ## Get an Oracle Cloud Trial Account for Free!
