@@ -6,27 +6,14 @@ OCI DNS has advanced traffic management capabilities to steer DNS traffic across
 
 In this lab, we will learn how to use OCI DNS Traffic Management service to ensure high availability of your web applications through detection of endpoint health and diverting your traffic accordingly.
 
-**Some Key points:**
+**Key points:**
 
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%.*
+*We recommend using Chrome or Edge as the browser. 
 
 - All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
 
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+- You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-    **Cloud Tenant Name**
-
-    **User Name**
-
-    **Password**
-
-    **Compartment Name (Provided Later)**
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
