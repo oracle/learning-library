@@ -8,7 +8,7 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
 
 **Key points:**
 
-*We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%.*
+*We recommend using Chrome or Edge as the browser. 
 
 - All screen shots are examples ONLY.
 
