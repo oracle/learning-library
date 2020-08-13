@@ -4,7 +4,7 @@ Getting Started with Autonomous Data Warehouse (ADW) and Oracle Machine Learning
 ![](images/100/Picture100-lab.png)  
 Updated: January 4, 2019
 
-## **Introduction**
+## Introduction
 
 This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) and the new Oracle Machine Learning (OML) SQL notebook application provided with your Autonomous Data Warehouse on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance and create a new OML user.
 

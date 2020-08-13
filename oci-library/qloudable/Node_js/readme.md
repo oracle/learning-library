@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Installing Node js](#installing-node-js)
 
@@ -47,7 +47,7 @@ Oracle Autonomous Transaction Processing delivers a self-driving, self-securing,
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-## Pre-Requisites
+## Prerequisites
 
 1. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 

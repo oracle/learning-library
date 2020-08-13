@@ -1,6 +1,6 @@
 # Getting Started with Oracle Data Integrator 12c
 
-## Step 1: Understanding the Environment  
+## **Step 1:** Understanding the Environment  
 
 ### The Example Environment
 The *Demo* project is an example to help you understand how to transform and check the integrity of the data in your information systems.
@@ -99,7 +99,7 @@ During this getting started tutorial, you will learn how to:
 
 Now that you have been introduced to the concepts of the Demo Project and its components, you can move on to *Introduction to using ODI Studio*.
 
-## Step 2: Introduction to Using Oracle Data Integrator Studio
+## **Step 2:** Introduction to Using Oracle Data Integrator Studio
 This chapter describes the first steps towards using Oracle Data Integrator Studio.
 
 1.  Using the ODI Studio Navigators
@@ -135,7 +135,7 @@ The ODI Studio client will continue to load. Click on Connect to Repository then
 **When prompted for a wallet password enter *welcome1***
    ![](./images/odi_password.png)
 
-## Step 3: Designer Navigator
+## **Step 3:** Designer Navigator
 
 Designer Navigator is used to manage metadata, to design data integrity checks, and to build transformations.
 The main objects you handle through Designer Navigator are *models* and *projects*.
@@ -165,7 +165,7 @@ Getting Started tutorial:
 The necessary Knowledge Modules (KM) are already imported in the Demo Project:
 In addition, there are many more in Global KM folder.
 
-## Step 4: Operator Navigator
+## **Step 4:** Operator Navigator
 Operator Navigator is the management and monitoring tool. It is designed for IT operators and can be used by developers to check code execution and perform debugging operations. Through Operator Navigator, you can manage your development executions in the sessions, as well as the scenarios.
 The Operator Navigator has the following accordions:
 

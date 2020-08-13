@@ -31,7 +31,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
-## Workshop Pre-requisites
+## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
 
 **You are all set to begin the labs! Please click Lab 1: Setup the BDS Environment in the Contents menu on the right.**

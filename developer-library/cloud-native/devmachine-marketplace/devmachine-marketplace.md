@@ -54,7 +54,7 @@ Configure your virtual machine as:
 * Write a descriptive name [dev-machine].
 * Select your Availability domain [AD-1 by default]
 * Instance Type as [Virtual Machine]
-* Configure your compute as your needs. We recomend to create the developer machine with **VM.StandardE2.1** shape (1 OCPU and 8GB vRAM) but the image create by default **2.1 (without E)** machine (1 OCPU and 15GB vRAM). You'll can change the VM shape after you create it, so you could start with StandardE2.1 and if you need more vRAM or OCPUs you'll can change to a higher specs shape in the future.
+* Configure your compute as your needs. We recomend to create the developer machine with **VM.StandardE2.1** shape (1 OCPU and 8GB vRAM) but the image create by default **2.1 (without E)** machine (1 OCPU and 15GB vRAM). You'll can change the VM shape after you create it, so you could start with StandardE2.1 and if you need more vRAM or OCPUs you will can change to a higher specs shape in the future.
 
 ![](./images/oci-marketplace-dev-machine-configuration04.PNG)
 

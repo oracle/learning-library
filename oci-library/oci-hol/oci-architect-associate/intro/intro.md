@@ -1,7 +1,7 @@
 
 # Introduction
 
-The labs in this workshop provide some of the foundational skills and knowledge you'll need to attempt the [Oracle Cloud Infrastructure Architect Associate Certification](https://www.oracle.com/cloud/iaas/training/architect-associate.html) offered by Oracle University.
+The labs in this workshop provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Architect Associate Certification](https://www.oracle.com/cloud/iaas/training/architect-associate.html) offered by Oracle University.
 
 The Oracle Cloud Infrastructure Architect Associate Certification provides cloud architects with an understanding of Oracle Cloud Infrastructure services, and provides a competitive edge for industry professionals. 
 

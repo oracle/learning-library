@@ -8,7 +8,7 @@ This template creates the following Oracle Cloud resources :
 
 Complete the following steps to validate the resources created.
 
-## STEP 1 : Validate Oracle Autonomous Data Warehouse
+## **Step 1:** Validate Oracle Autonomous Data Warehouse
 
 Complete the following steps to validate the resources created.
 

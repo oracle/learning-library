@@ -1,7 +1,7 @@
 
 # Introduction
 
-The labs in this workshop provide some of the foundational skills and knowledge you'll need to attempt the [Oracle Cloud Infrastructure Operations Associate Certification](https://www.oracle.com/cloud/iaas/training/operations.html) offered by Oracle University.
+The labs in this workshop provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Operations Associate Certification](https://www.oracle.com/cloud/iaas/training/operations.html) offered by Oracle University.
 
 The Oracle Cloud Infrastructure Operations Associate Certification validates deep understanding of managing Oracle Cloud Services, and provides a competitive edge for industry professionals. This certification is available to all candidates.
 

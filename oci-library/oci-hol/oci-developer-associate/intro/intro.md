@@ -1,7 +1,7 @@
 
 # Introduction
 
-The labs in this workshop provide some of the foundational skills and knowledge you'll need to attempt the [Oracle Cloud Infrastructure Developer Associate Certification](https://www.oracle.com/cloud/iaas/training/developers.html) offered by Oracle University.
+The labs in this workshop provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Developer Associate Certification](https://www.oracle.com/cloud/iaas/training/developers.html) offered by Oracle University.
 
 The Oracle Cloud Infrastructure Developer Associate Certification provides the candidate with the ability to design and architect cloud native applications on Oracle Cloud Infrastructure. The certification is intended for developers who are looking to validate their understanding of Oracle Cloud Infrastructure services and develop applications using cloud native services.
 

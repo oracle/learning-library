@@ -5,7 +5,7 @@ In this hands on lab, you will be able to bring up and configure a Cloud Manager
 
 The lab can be divided into the following sections:
 
-Readme: Review the pre-requisites and set up your workstation/laptop 
+Readme: Review the Prerequisites and set up your workstation/laptop 
 
 ## Overview of Labs
 

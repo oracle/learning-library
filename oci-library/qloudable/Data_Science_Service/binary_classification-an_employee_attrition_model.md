@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre Requisites](#pre-requisites)
+[Pre Requisites](#Prerequisites)
 
 [Getting Started](#getting-started)
 
@@ -32,7 +32,7 @@ In this module, we will build a binary classification model in an effort to pred
 
 **We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%**
 
-## Pre-Requisites
+## Prerequisites
 
 **Chrome or Edge are the browsers. You can switch during your session.**
 

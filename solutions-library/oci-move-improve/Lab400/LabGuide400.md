@@ -21,14 +21,14 @@ Estimated time to complete this lab is 75 minutes
 
 ## Part 1. Downloading the Agent from Oracle Management Cloud
 
-### Step 1: Navigate to the Agents Page
+### **Step 1:** Navigate to the Agents Page
 Open Oracle Management Cloud and on the menu on the left hand side of your screen, click "Administration -> Agents" to get to the agents page.
 
 Once here, click the hamburger menu on the top right hand side of the screen and click the download agent button.
 
  ![](./images/1.png "")
 
-### Step 2: Download the agent
+### **Step 2:** Download the agent
 For agent type, select "Cloud Agent" and for your operating system choose "Linux (64 Bit)"
 
 Download the "Cloud Agent - Linux (64-bit)" file and save it to your computer.
@@ -41,11 +41,11 @@ Download the "Cloud Agent - Linux (64-bit)" file and save it to your computer.
 
 ## Part 2: Moving and Unzipping the Agent
 
-### Step 1: Installing Cyberduck
+### **Step 1:** Installing Cyberduck
 
  Download the appropriate version of [Cyberduck](https://cyberduck.io/download/) for your system.
 
-### Step 2 Connecting to your Application
+### **Step 2:**Connecting to your Application
 
 Open Cyberduck. If prompted to “Set Cyberduck as default application for FTP and SFTP locations” click cancel.
 
@@ -67,7 +67,7 @@ Once connected, you should see the home directory for oscommerce. Simply drag yo
 
 ![](./images/5.png "")
 
-### Step 3: Unzipping the Agent
+### **Step 3:** Unzipping the Agent
 
 Open your terminal and type ```cd .ssh``` to change to your ssh directory.
 
@@ -136,7 +136,7 @@ From here, you can check the status of your agent by typing:
 
 ![](./images/10.png "")
 
-### Step 4: Confirming the Agent is Running
+### **Step 4:** Confirming the Agent is Running
 Open OMC and navigate to agents by accessing the menu on the left hand side of your screen and clicking Administration -> Agents.
 
 At the bar at the top, click Cloud Agents, and you should see your Virtual Box Agent up and running.
@@ -147,7 +147,7 @@ To monitor your agent, click the hamburger menu on the right hand side of the ag
 
 ## Part 3: Discovering MySQL
 
-### Step 1: Configuring MySQL
+### **Step 1:** Configuring MySQL
 
 SSH into your instance if you aren't already there.
 
@@ -291,7 +291,7 @@ Don't worry if your graphs look boring or uneventful now. The agent has only jus
 
 This is a great tool to use to create custom, useful dashboards to help provide you with a quick overview of the health of your application.
 
-Let's now go ahead and save this by clicking the save button at the top of the screen. Be sure to give it a name you'll be able to remember.
+Let's now go ahead and save this by clicking the save button at the top of the screen. Be sure to give it a name you will be able to remember.
 
 Navigate over to the Dashboards page from the menu on the left hand side of your screen.
 

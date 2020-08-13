@@ -257,7 +257,7 @@ public class DiscountCampaignUploader {
         String functionId           = System.getenv().get("UPLOAD_FUNCTION_ID");
 
 ```
-Next is the code for cloud event trigger catch. After a cloud event trigger is fired, you'll must receive a cloud event (JSON format) similar to:
+Next is the code for cloud event trigger catch. After a cloud event trigger is fired, you will must receive a cloud event (JSON format) similar to:
 ```yaml
 {
     "eventType" : "com.oraclecloud.objectstorage.createobject",

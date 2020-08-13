@@ -31,7 +31,7 @@ Essentially, it’s a feature-rich replacement for Graphite-web, which helps use
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
@@ -45,7 +45,7 @@ Essentially, it’s a feature-rich replacement for Graphite-web, which helps use
 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create VCN
+## **Step 1:** Sign in to OCI Console and create VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -80,7 +80,7 @@ Essentially, it’s a feature-rich replacement for Graphite-web, which helps use
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
              
-## Step 2: Create ssh keys, compute instance
+## **Step 2:** Create ssh keys, compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -193,7 +193,7 @@ Essentially, it’s a feature-rich replacement for Graphite-web, which helps use
  
 14. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-## Step 3: Install Grafana and stress tool on compute instance
+## **Step 3:** Install Grafana and stress tool on compute instance
 
 As part of preperation for this lab, a dynamic group and IAM policy was created. This configuration enables Grafana based monitoring on the compute instance. Below 2 policy statements are already configured though for any new deployment they must be configured under IAM Policy.
 
@@ -309,14 +309,14 @@ Choose **OCI Instance** for Enviornment.
     ```
 We now have  completed our setup with a compute instance and installed and executed a tool to stress the CPU and Memory. Next we will monitor  Grafana dash board for this compute instance.
 
-## Step 4: Adjust Parameters in Grafana dashboard
+## **Step 4:** Adjust Parameters in Grafana dashboard
 
 1. Switch to Grafana dash board, you should observe the CPU utilization and Memory utilization grpah changing. You can adjust parameters such as Time period and refresh rate as shown below.
     ![](./../grafana/images/Grafana_014.PNG " ")
 
 We have now completed Grafana setup and can monitor the utilization of parameters on the compute instance. Next we will delete the resources we created.
 
-## Step 5: Delete the resources
+## **Step 5:** Delete the resources
 
 1. Switch to  OCI console window.
 

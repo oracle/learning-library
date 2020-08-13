@@ -31,7 +31,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 
 
-## Step 1: Querying graph using PGQL
+## **Step 1:** Querying graph using PGQL
 
 Below are some of the examples where we can query against the graph we created using PGQL:
 

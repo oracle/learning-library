@@ -18,6 +18,9 @@
 
 In this lab you will use your Oracle Cloud Trial Account to upload a Data Pump export file to Object Storage and leverage SQL Developer Web to import the Data Pump export file into an Autonomous Transaction Processing (ATP) Database.
 
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[](youtube:vo_doCpX0KQ)
+
 ## **STEP 1:** Log into your OCI Tenancy
 
    Log in to your OCI dashboard and retrieve information required to create resources.

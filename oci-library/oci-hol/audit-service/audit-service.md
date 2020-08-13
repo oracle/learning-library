@@ -30,7 +30,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
     *Note: OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.*
 
-### Pre-Requisites
+### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 

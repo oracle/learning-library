@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Generate SSH Keys](#practice-1-generate-ssh-keys)
 
@@ -33,7 +33,7 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 
 Container Engine for Kubernetes uses Kubernetes - the open-source system for automating deployment, scaling, and management of containerized applications across clusters of hosts. Kubernetes groups the containers that make up an application into logical units (called pods) for easy management and discovery. Container Engine for Kubernetes uses versions of Kubernetes certified as conformant by the  [Cloud Native Computing Foundation (CNCF)](https://github.com/cncf/k8s-conformance)
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - Region and compartment with limits for a few small instances (1.1 or 2.1 is sufficient)

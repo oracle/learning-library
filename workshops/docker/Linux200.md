@@ -382,7 +382,7 @@ In this section of the lab you will deploy the remaining containers to support t
 
 - Go to the browser, open up a new tab and **enter**: `http://<Public-IP>:9080/statictweets`
 
-  **NOTE:** If you don't have a JSON formatter add-on you'll see a stream of text representing the tweets.
+  **NOTE:** If you don't have a JSON formatter add-on you will see a stream of text representing the tweets.
 
   ![](images/200Linux/Picture200-22.png)
 
@@ -539,7 +539,7 @@ Even though the orginal AlphaOfficeUI image could have been set up ahead of time
 
 ## **STEP 3**: Edit the alpha.html file   
 
-- Edit the `alpha.html` file to fix a typo - Note, if you are unfamiliar with `vim`, you'll find information at this URL: [VIM](http://vimsheet.com). The commands are very similar to vi:
+- Edit the `alpha.html` file to fix a typo - Note, if you are unfamiliar with `vim`, you will find information at this URL: [VIM](http://vimsheet.com). The commands are very similar to vi:
 
   ```
   vim /pipeline/source/public/alpha.html

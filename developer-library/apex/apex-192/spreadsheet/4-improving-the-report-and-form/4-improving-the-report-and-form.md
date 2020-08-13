@@ -1,6 +1,6 @@
 # Improve the Report and Form
 
-## **Introduction**
+## Introduction
 
 In this lab, you will gain an insight into the abilities of Interactive Reports, and learn how to enhance a form page.
 

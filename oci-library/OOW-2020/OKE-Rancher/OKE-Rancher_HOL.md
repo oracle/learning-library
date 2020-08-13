@@ -24,9 +24,9 @@ credentials handy.
 
 Replace the below credentials with your own (seek instructors for assistance)
 
-## Pre-requisites 
+## Prerequisites 
 
-To run the lab the below pre-requisites are required:
+To run the lab the below Prerequisites are required:
 
 - OCI Tenancy and Compartment name
 - Tenancy, Compartment and User OCIDs

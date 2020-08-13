@@ -8,7 +8,7 @@ Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Co
 
 [](youtube:mIYSgeX5FkM)
 
-### Pre-Requisites
+### Prerequisites
 
 To sign in to the Console, you need the following:
 

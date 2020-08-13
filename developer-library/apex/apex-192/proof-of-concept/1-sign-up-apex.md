@@ -18,7 +18,7 @@ Click one of the options below to proceed.
 
 In this part, you will create an Oracle Cloud trial account. Once you have signed up for the service you will create an Autonomous Transaction Processing database. The final step in the process is to provision Oracle APEX.
 
-1.  Please [click this link to create your free account](https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType). When you complete the registration process you'll receive an account with a $300 credit and several "forever free" services that will enable you to complete the lab for free. You can then use any remaining credit to continue to explore the Oracle Cloud. The forever free services will continue to work after the trial expires.
+1.  Please [click this link to create your free account](https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType). When you complete the registration process you will receive an account with a $300 credit and several "forever free" services that will enable you to complete the lab for free. You can then use any remaining credit to continue to explore the Oracle Cloud. The forever free services will continue to work after the trial expires.
 
 2.  Soon after requesting your trial you will receive a  **Get Started Now with Oracle Cloud** email.   
     Make note of your **Username**, **Password**, and **Cloud Account Name**.
@@ -86,7 +86,8 @@ In this part, you will create an Oracle Cloud trial account. Once you have signe
     | Password | **`SecretPassw0rd`** |
     | Workspace Name | DEMO |
     
-    Click **Create Workspace**.
+    Click **Create Workspace**.
+
     ![](images/1/create-workspace.png)
 
 6. In the PEX Instance Administration page, click the **DEMO** link in the success message.         

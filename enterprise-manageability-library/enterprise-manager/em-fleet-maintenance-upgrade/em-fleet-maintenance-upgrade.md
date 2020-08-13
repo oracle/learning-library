@@ -91,7 +91,7 @@ We recommend that you read through each of the steps, review the emcli command, 
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
-## Step 1: Detect Configuration Pollution
+## **Step 1:** Detect Configuration Pollution
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -158,7 +158,7 @@ In the next section we will follow these recommendations to perform the followin
   - Patch database “finance.subnet.vcn.oraclevcn.com” from 18.8 to 18.10 [READ-ONLY– This step has already been implemented]
   - Upgrade “finance.subnet.vcn.oraclevcn.com” from 18.10 to 19.7
 
-## Step 2: Oracle Database Upgrade with Fleet Maintenance
+## **Step 2:** Oracle Database Upgrade with Fleet Maintenance
 
 ### Database Fleet Maintenance
 

@@ -23,7 +23,7 @@ Oracle Cloud Infrastructure provides a quick and easy to create an Oracle Databa
 
   ![](images/select-db-system.png " ")
 
-3. Copy the **Host Domain Name** - you'll need this later when you create a connection in SQL Developer.
+3. Copy the **Host Domain Name** - you will need this later when you create a connection in SQL Developer.
 
   ![](images/db-system-details.png " ")
 

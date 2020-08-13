@@ -87,7 +87,7 @@ User Interface</span>** - 92
 [<span class="underline">Troubleshooting Errors in the Dialog
 Flow</span> - 98 -](#troubleshooting-errors-in-the-dialog-flow)
 
-## **Introduction**
+## Introduction
 
 This HOL is based in a Demo developed by WeDo Team as part of an innovation initiative to approach Oracle Cloud Solutions by providing
 practical examples that could be “touched” and easily understood.
@@ -1142,7 +1142,7 @@ process, you will:
 
 ## Clone a Skill
 
-In this lab, we're starting from an existing one. So, the first thing you'll do is clone an existing skill.
+In this lab, we're starting from an existing one. So, the first thing you will do is clone an existing skill.
 
 1. With the Oracle Digital Assistant UI open in your browser, click ![main menu icon](./images/image173.png) to open the side menu.
 2. Click Development and select Skills.

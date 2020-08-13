@@ -28,7 +28,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
@@ -40,7 +40,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create VCN
+## **Step 1:** Sign in to OCI Console and create VCN
 
 
 * **Tenant Name:** {{Cloud Tenant}}
@@ -148,7 +148,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 **WE have created two VCN with internet gateway for internet traffic, added default rule in the route table, created subnet and added two local peering gateways(one for each VCN). For VCN peering each VCN must have a local peering gateway.**
 
-## Step 2: Create ssh keys two compute instances and configure routing
+## **Step 2:** Create ssh keys two compute instances and configure routing
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -327,7 +327,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 **We now have two VCNs with one compute instance in each VCN. These VCNs have been connected using a Local Peering Gateway. Any instance in one VCN can reach an instance in the other VCN. Next we will test the connectivity.**
 
-## Step 3: ssh to compute instance and test VCN peering
+## **Step 3:** ssh to compute instance and test VCN peering
 
 1. In git bash window, Enter command:
 
@@ -375,7 +375,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
     If ping is successful then we have successfuly created VCN peering across two different VCNs.
 
 
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 1. Switch to  OCI console window.
 

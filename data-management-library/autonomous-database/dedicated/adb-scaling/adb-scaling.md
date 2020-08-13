@@ -20,7 +20,7 @@ As an adminstrator,
 - Successful completion of [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
 
 
-## STEP 1: Log in to the Oracle Cloud Developer image and start the order entry workload
+## **Step 1:** Log in to the Oracle Cloud Developer image and start the order entry workload
 
 To complete this lab its mandatory you have a developer client image configured with swingbench, an autonomous dedicated database instance with the wallet uploaded to the dev client. Follow instructions in [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
 
@@ -57,7 +57,7 @@ To complete this lab its mandatory you have a developer client image configured 
 
 
 
-## STEP 2: Scale up the OCPUs in your autonomous database service
+## **Step 2:** Scale up the OCPUs in your autonomous database service
 
 Now, lets scale the autonomous database you created in previous labs from 1 OCPU to 2 or more while swingbench continues running. You should see the transactions/sec numbers start changing as your database is scaling. Please note that this is also highly influenced by the connection service your are using with the *-cs* parameter. In the statement above we are using the *\_tp* service, but while you are experimenting, stop and start swingbench with a different service, such as *\_low*, or *\_high* to see what differences you observe.
 

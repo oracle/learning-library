@@ -18,7 +18,7 @@ To get started with the service, you create a table.
 * The OCID of your user account
 * A recent version of the java jdk installed locally on your computer
 
-## STEP 1: Download the Oracle NoSQL SDK
+## **Step 1:** Download the Oracle NoSQL SDK
 
 1. Open the [Oracle Cloud Download](https://www.oracle.com/downloads/cloud/oracle-cloud-downloads.html) page in a browser and click **Download Oracle NoSQL Java SDK**.
 
@@ -47,7 +47,7 @@ To get started with the service, you create a table.
 
     ![](images/unzip-result.png " ")
 
-## STEP 2: Download, build and run the sample application
+## **Step 2:** Download, build and run the sample application
 
 1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/qCpBRv5juyWwIF4dv9h98YWCDD50574Y6OwsIHhEMgI/n/c4u03/b/data-management-library-files/o/HelloWorld.java) file and move it to your home directory.
 
@@ -98,7 +98,7 @@ To get started with the service, you create a table.
 
     Note: In the main method of `HelloWorld.java`, the `dropTable(handle)` is commented out to allow you to see the result of creating the tables in the Oracle Cloud Console.
 
-## STEP 3: Explore tables using the Oracle Cloud Infrastructure Console
+## **Step 3:** Explore tables using the Oracle Cloud Infrastructure Console
 
 1. On the left hand menu, click **NoSQL Database**.
 

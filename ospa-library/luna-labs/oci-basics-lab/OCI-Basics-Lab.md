@@ -4,7 +4,7 @@
 
 In this lab we will illustrate deploying a single instance web application environment.  We will create a Virtual Cloud Network (VCN), a compute instance, attach block volume storage, and install a simple application.  Then we'll create a second compute instance that will re-use the boot volume of the first compute instance.  And finally we'll move the application block volume to the second compute instance.
 
-The goal of this lab is to demonstrate basic functionality of OCI.  You'll create a VCN, a compute instance, and block volume storage.  You'll deploy a simple web-application.   Then you'll demonstrate the ability to move both the boot and block volume to a new instance for portability and scaling needs.  
+The goal of this lab is to demonstrate basic functionality of OCI.  You'll create a VCN, a compute instance, and block volume storage.  You'll deploy a simple web-application.   Then you will demonstrate the ability to move both the boot and block volume to a new instance for portability and scaling needs.  
 
 **Lab Objectives**
 
@@ -366,7 +366,7 @@ Click the **Attach to Instance** button and use the following information to fil
 
 ![](img/029.png " ")
 
-Click **Attach**  After a few moments, you'll get a confirmation screen that your block volume is attached.  Note that from this screen, the heading says **Attached Instances**.  This is because we're viewing the block volume mount from the **Block Volume** section of the console.
+Click **Attach**  After a few moments, you will get a confirmation screen that your block volume is attached.  Note that from this screen, the heading says **Attached Instances**.  This is because we're viewing the block volume mount from the **Block Volume** section of the console.
 
 ![](img/030.png " ")
 

@@ -25,7 +25,7 @@ As a fleet administrator
 
 ## Steps
 
-### STEP 1: Create an Autonomous Container Database (ACD)
+### **Step 1:** Create an Autonomous Container Database (ACD)
 
 **Login to your OCI account as a fleet administrator**
 

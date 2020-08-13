@@ -28,7 +28,7 @@ Follow these general steps:
 
 ## Steps
 
-### Step 1: Sign in to the Oracle Data Safe Console for your region
+### **Step 1:** Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -43,7 +43,7 @@ Follow these general steps:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 2: Review the predefined sensitive types in the Oracle Data Safe Library
+### **Step 2:** Review the predefined sensitive types in the Oracle Data Safe Library
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Types**. The **Sensitive Types** page is displayed. On this page you can view predefined sensitive types and manage your own sensitive types.
 
@@ -75,11 +75,11 @@ The search finds **Department Name**, but nothing for department IDs.
 - Clear the search field, and then press **Enter** to restore the list.
 - Keep this page open because you return to it later in the lab.
 
-### Step 3: Connect to your ExaCS database as the SYS user with SQL Developer
+### **Step 3:** Connect to your ExaCS database as the SYS user with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Step 4: In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
+### **Step 4:** In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
 
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
@@ -93,7 +93,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 - Notice that the department ID values are 10, 20, 30, up to 270.
 
-### Step 5: In the Oracle Data Safe Console, create a sensitive type and sensitive category
+### **Step 5:** In the Oracle Data Safe Console, create a sensitive type and sensitive category
 
 - Return to the **Sensitive Types** page in the Oracle Data Safe Console.
 - Click **Add**.<br>

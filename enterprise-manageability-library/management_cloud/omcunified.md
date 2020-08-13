@@ -145,7 +145,7 @@ Investigating and actually determing why an application is "running slow" is imp
 
 ![](media/f841ba388810d54b231ac5ea1aa048b5.jpg)
 
-7. You now see the topology of the application and infrastructure and the application logs all on the same page. **Hover** over any entity and you can view its status. **Click** on one entity and only the logs for that entity are shown. When you **Click** on a relationship link, just the logs for that relationship appear. Now in the storage tier **Hover** over the icon in red and you'll see that **“OrderAppASM2”** is down. Click on the icon in red and navigate to the upper right of the page and **Click** on the bidirectional arrow icon.
+7. You now see the topology of the application and infrastructure and the application logs all on the same page. **Hover** over any entity and you can view its status. **Click** on one entity and only the logs for that entity are shown. When you **Click** on a relationship link, just the logs for that relationship appear. Now in the storage tier **Hover** over the icon in red and you will see that **“OrderAppASM2”** is down. Click on the icon in red and navigate to the upper right of the page and **Click** on the bidirectional arrow icon.
 
 ![](media/9e2feae47299fb62a285f38225954e8f.jpg)
 

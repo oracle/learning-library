@@ -33,7 +33,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample node.js application
+### **Step 1:** Download sample node.js application
 
 - Login to your Oracle Cloud Infrastructure account select **Compute** —>  **Instances** from top left menu
 
@@ -76,7 +76,7 @@ mkdir /home/opc/ATPDnode && cd /home/opc/ATPDnode && unzip /home/opc/ATPDnode.zi
 
 Now that you have a sample application setup, lets get your database's secure wallet for connectivity
 
-### STEP 2: Transfer database wallet to developer client
+### **Step 2:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select **Autonomous Transaction Processing** from menu
 ![](./images/800/atpd1.png)
@@ -108,7 +108,7 @@ scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@publicI
 
 
 
-### STEP 3: Run your node.js application**
+### **Step 3:** Run your node.js application**
 
 Now that you have copied the database wallet to your development host, lets configure some env. variables and database authentication file to connect your node.js app to the database
 

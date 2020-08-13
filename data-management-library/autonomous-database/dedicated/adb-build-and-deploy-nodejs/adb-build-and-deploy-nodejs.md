@@ -24,7 +24,7 @@ As an application developer,
 
 - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
-## STEP 1: Instance Setup
+## **Step 1:** Instance Setup
 
 - Login to your Oracle Cloud Infrastructure account select *Compute* —>  *Instances* from top left menu.
     ![](./images/Compute1.png " ")
@@ -53,7 +53,7 @@ As an application developer,
 
   - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-## STEP 2: Download sample Node.js Application
+## **Step 2:** Download sample Node.js Application
 
 - Once you ssh into your developer client machine you can download a sample node.js application to folder /home/opc using the following command,
 
@@ -71,7 +71,7 @@ As an application developer,
 
 Now that you have a sample application setup, lets get your database's secure wallet for connectivity.
 
-## STEP 3: Transfer database wallet to developer client
+## **Step 3:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from the menu.
     ![](./images/atpd1.png " ")
@@ -100,7 +100,7 @@ Now that you have a sample application setup, lets get your database's secure wa
     ```
     ![](./images/atpd5.png " ")
 
-## STEP 4: Run your node.js application
+## **Step 4:** Run your node.js application
 
 Now that you have copied the database wallet to your development host, lets configure some env. variables and database authentication file to connect your node.js app to the database.
 

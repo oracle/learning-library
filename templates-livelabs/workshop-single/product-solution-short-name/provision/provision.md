@@ -13,7 +13,7 @@ Enter background information here..
 
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
-In this lab, you'll:
+In this lab, you will:
 * Objective 1
 * Objective 2
 * Objective 3

@@ -35,7 +35,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -49,7 +49,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console create Object Storage Bucket and VCN
+## **Step 1:** Sign in to OCI Console create Object Storage Bucket and VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -160,7 +160,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     ![](./../using-service-gateway/images/SGW_033.PNG " ")
 
-## Step 2: Create ssh keys, Create two Compute instances with OCI CLI pre installed
+## **Step 2:** Create ssh keys, Create two Compute instances with OCI CLI pre installed
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -324,7 +324,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     ![](./../deploying-oci-streaming-service/images/Stream_005.PNG " ")
 
-## Step 3: Upload API keys, and verify functionality
+## **Step 3:** Upload API keys, and verify functionality
 
 1. **oci setup config** also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls. Switch to ssh session to compute instance, to display the conent of API key Enter command :
 

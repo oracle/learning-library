@@ -18,7 +18,7 @@ Of those 5 files, we need 3:
 
 In the next step we will upload these files to Oracle Cloud storage
 
-## Step 1: Upload JSON data files to Oracle Cloud storage
+## **Step 1:** Upload JSON data files to Oracle Cloud storage
 
 1.  Log in to the Oracle Cloud console. Click on the hamburger menu at the top left and choose "Object Storage".
 

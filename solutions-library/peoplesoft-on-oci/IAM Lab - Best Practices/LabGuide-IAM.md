@@ -14,7 +14,7 @@ Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets yo
         2. URL for the Console: https://oracle.com
         3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
-## Step 1: Signing in to the Console
+## **Step 1:** Signing in to the Console
 
 Console Overview
 In this, you sign in to the Oracle Cloud Infrastructure console using your credentials.
@@ -37,7 +37,7 @@ In this, you sign in to the Oracle Cloud Infrastructure console using your crede
 
 ![](./images/4.png "")
 
-## Step 2: Creating Compartments
+## **Step 2:** Creating Compartments
 
 Compartments Overview:
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
@@ -52,7 +52,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 3.	You have just created a compartment for all of your work in this Test Drive.
 
-## Step 3: Managing Users, Groups and Policies to Control Access
+## **Step 3:** Managing Users, Groups and Policies to Control Access
 
 Security Overview
 A user's permissions to access services comes from the groups to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
@@ -209,7 +209,7 @@ NOTE: You may need to click on the + sign next to your main compartment name to 
     g) Sign out.
 
 
-## Step 4: Creating a VCN
+## **Step 4:** Creating a VCN
 
 1.	On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard.
 
@@ -250,7 +250,7 @@ USE DNS HOSTNAMES IN THIS VCN |	Checked
 This VCN will contain all of the other assets that you will create during this set of labs. In real-world situations, you would create multiple VCNs based on their need for access (which ports to open) and who can access them
 
 
-## Step 5: Creating a new subnet
+## **Step 5:** Creating a new subnet
 
 1.	Navigate to Menu -> Networking -> Virtual Cloud Networks.  Set the Compartment to ‘PSFT_Lab’.  Click on the existing VCN "OCI_HOL_VCN". 
 
@@ -278,7 +278,7 @@ Security List	|Add two security lists using the button + Additional Security Lis
 ![](./images/subnet4.png "")
 
 
-## Step 6: Create Windows Instance
+## **Step 6:** Create Windows Instance
 
 In this lab exercise, Windows node was removed from the topology to keep the provisioning process short and simple.  If you want to provision Windows instances as part of an environment at a later point in time, you can do so easily. 
 

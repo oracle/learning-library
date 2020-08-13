@@ -2,7 +2,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Install Terraform](#install-terraform)
 
@@ -18,7 +18,7 @@ Terraform is a cloud-neutral scripting language. It works not only with te Oracl
 
 In this lab, you will create a script that essentially does all of the work defined in the other Lab-100 labs.
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:

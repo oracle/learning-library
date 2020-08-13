@@ -31,7 +31,7 @@ To complete this lab, you will have needed to do the following:
 
 ## Overview
 
-1. Setting Up Policies/Pre-requisites
+1. Setting Up Policies/Prerequisites
 2. Provision Marketplace Image
 3. Logging into the Image
 4. Set up credentials in Enterprise Manager
@@ -45,7 +45,7 @@ To complete this lab, you will have needed to do the following:
 ## Step-by-Step Instructions
 
 
-### Step 1: Setting Up Policies
+### **Step 1:** Setting Up Policies
 
 
 - Refer the [documentation](https://blogs.oracle.com/oem/oracle-enterprise-manager-is-now-available-on-oracle-cloud-marketplace) here to help set up your EM Marketplace Image.
@@ -147,7 +147,7 @@ To complete this lab, you will have needed to do the following:
 
 
 ​
-### Step 2: Provision Marketplace Image
+### **Step 2:** Provision Marketplace Image
 
 - From the navigation menu, under 'Solutions and Platform' click on **Marketplace**
 
@@ -195,7 +195,7 @@ To complete this lab, you will have needed to do the following:
 
 ​
 
-### Step 3: Logging into the Image
+### **Step 3:** Logging into the Image
 
 
 - Once your VM instance is in running state, click on the instance and copy the Public IP Address.  SSH into the VM instance with the ssh key.
@@ -268,7 +268,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 ​
 
-### Step 4: Set up credentials in Enterprise Manager
+### **Step 4:** Set up credentials in Enterprise Manager
 
 - Log in to your Enterprise Manager from a bastion host through VNC/ VNC like application.
 
@@ -303,7 +303,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 ![](./images/dbsec/lab6EM/CreateCredential.png " ")
 
-### Step 5: Add host target manually
+### **Step 5:** Add host target manually
 
 - To **Add Target manually**, Click on **Setup**, select **Add Target** and then click **Add Targets Manually**.
 
@@ -343,7 +343,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 **NOTE: If you run into deployment issues, make sure port 3872 is open on DB port, and edit hosts file on both target and EM host to include each other with a full qualified unique name.** 
 
 ​
-### Step 6: Add Non-Host Targets using a guided process
+### **Step 6:** Add Non-Host Targets using a guided process
 
 - Click on **Setup**, then **Add Target**, and then **Configure Auto Discovery**.
 
@@ -407,7 +407,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 - If there are errors, you need to make changes to your credentials or Installation Details Page.
 ​
 
-### Step 7: View monitoring details/set alerts
+### **Step 7:** View monitoring details/set alerts
 
 - To View an Enterprise Summary of all targets, go to 'Enterprise' and click on **Summary**.
 
@@ -421,7 +421,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 ![](./images/dbsec/lab6EM/EnterpriseSummary.png " ")
 
 
-### Step 8: Creating Groups
+### **Step 8:** Creating Groups
 
 - To create a group, navigate to 'Targets' and click on **Groups**. We will create a dynamic group that includes everything on our Exadata Cloud Service hosts.
 
@@ -457,7 +457,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Then press **OK** and **OK** again to create 'Group'.
 
-### Step 9: Viewing Monitoring Details
+### **Step 9:** Viewing Monitoring Details
 
 - To navigate to 'Targets', click on the **Targets** dropdown and select **All Targets**.
 

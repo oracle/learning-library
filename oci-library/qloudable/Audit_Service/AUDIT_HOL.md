@@ -5,7 +5,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice-1: Sign in to OCI Console and Create Object Storage Bucket](#practice-1-sign-in-to-oci-console-and-create-object-storage-bucket)
 
@@ -42,7 +42,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 

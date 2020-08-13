@@ -16,7 +16,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
-## Step 1: Loading the Graph into memory
+## **Step 1:** Loading the Graph into memory
 
 Run the below command in jshell prompt.
 
@@ -130,7 +130,7 @@ It is required to have the graph loaded into memory and published before visuali
 
 So, our graph is loaded into the memory, let’s publish it 
 
-## Step 3: Publish the graph
+## **Step 3:** Publish the graph
 
 ````
 <copy>

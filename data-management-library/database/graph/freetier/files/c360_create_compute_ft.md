@@ -10,7 +10,7 @@ This lab walks you through the steps to get started with setting up and connecti
 
 *Note 1: Some of the UIs may look a little different from the screenshots in the instructions.*
 
-## STEP 1: Create a Free Tier Virtual Machine
+## **Step 1:** Create a Free Tier Virtual Machine
 
 An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
 
@@ -92,7 +92,7 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
 
     *Note 2: Make sure to enter your PC's IP address, not your LAN/Wifi's IP address.*
 
-## STEP 2: Configure your Compute Instance, Download ADB Wallet
+## **Step 2:** Configure your Compute Instance, Download ADB Wallet
 
 The [Property Graph Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/property-graph-overview-spgdg.html#GUID-FF149F69-574D-43B8-B888-4CCD019DAE56) describes the installation and configuration process in greater detail.
 
@@ -201,7 +201,7 @@ The steps are as follows:
     Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
 
-## STEP 3: Download and Copy Graph Server, Copy ADB Wallet to the Linux Compute
+## **Step 3:** Download and Copy Graph Server, Copy ADB Wallet to the Linux Compute
 
 Choose the environment where you created your SSH Key.
 
@@ -277,7 +277,7 @@ Choose the environment where you created your SSH Key.
     ```
     ![](../images/copy_wallet.png " ")
 
-## STEP 4: Deploy Graph Server and ADB Wallet
+## **Step 4:** Deploy Graph Server and ADB Wallet
 
 1.  Now go back to the Terminal window which is connected (via SSH) to the compute instance as `opc`, enter **y** when prompted during installation.
 

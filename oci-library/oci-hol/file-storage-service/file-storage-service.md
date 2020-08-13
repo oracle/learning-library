@@ -1,6 +1,6 @@
 # File System Storage Service
 
-## **Introduction**
+## Introduction
 
 Welcome to the Cloud Storage (File System Storage) self-paced lab from Oracle!
 
@@ -33,7 +33,7 @@ Oracle Cloud Infrastructure File Storage Service provides a durable, scalable, d
 
 *Note: OCI UI is being updated, thus some screenshots in the instructions may be different from the actual UI*
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 

@@ -6,17 +6,8 @@ Automation is a critical component when it comes to managing Cloud workloads at 
 
 This lab will walk you through installation and configuration of the CLI, along with the execution of several create, read, and terminate commands.  Upon completion of this lab you should have a good understanding of how to use the OCI CLI to automate common tasks in OCI.
 
-*Note: We recommend using Chrome or Edge as the broswer.*
-
-### Pre-Requisites
-1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
-   
 ## **Step 1**: Create a VCN
-1. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
+1. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
     ![](images/HAApplication_001.png " ")
 
@@ -50,7 +41,7 @@ This lab will walk you through installation and configuration of the CLI, along 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
     ![](images/CLI_003.png " ")
-              
+
 ## **Step 2**: Create Compute instance, configure OCI CLI and upload API keys
 1. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
 
@@ -84,8 +75,8 @@ This lab will walk you through installation and configuration of the CLI, along 
     ![](images/CLI_005.png " ")
 
     - **Boot Volume:** Leave the default
-    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier. 
-    
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier.
+
     *Ensure when you are pasting that you paste one line*
 
     ![](images/HAApplication_012.png " ")
@@ -110,7 +101,7 @@ This lab will walk you through installation and configuration of the CLI, along 
 6. To ssh into the compute instance enter the following command replacing SSH-KEY-NAME with the name of your ssh key and replacing PUBLIC-IP-OF-COMPUTE1 with the IP address of the compute instance you created.
 
     *Note: Your SSH-KEY-NAME name should NOT end in .pub*
-            
+
     ```
     <copy>
     ssh -i SSH-KEY-NAME opc@PUBLIC-IP-OF-COMPUTE-1
@@ -123,10 +114,10 @@ This lab will walk you through installation and configuration of the CLI, along 
 7. Enter 'Yes' when prompted for security message.
 
     ![](images/CLI_006.png " ")
- 
+
 8. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-9. Install OCI CLI on the compute instance by entering the following command. When prompted for the install directory press enter(leave default). When prompted for the oci executable directory press enter(leave default). When prompted for the OCI script directory press enter(leave default). When prompted to install optional packages press enter(leave default). When prompted to update your $PATH enter `Y`.
+9. Install OCI CLI on the compute instance by entering the following command. When prompted for the install directory press enter (leave default). When prompted for the oci executable directory press enter(leave default). When prompted for the OCI script directory press enter(leave default). When prompted to install optional packages press enter(leave default). When prompted to update your $PATH enter `Y`.
 
     ```
     <copy>
@@ -135,7 +126,7 @@ This lab will walk you through installation and configuration of the CLI, along 
     ```
 
 10. Check oci CLI installed version, Enter command:
-   
+
     ```
     <copy>
     oci -v
@@ -204,7 +195,7 @@ We will now test the functionality of the CLI.
     ![](images/CLI_010.png " ")
 
 3. Enter the following command to list VCN's:
-    
+
     ```
     <copy>
     oci network vcn list --compartment-id COMPARTMENT-ID
@@ -271,7 +262,7 @@ We will now test the functionality of the CLI.
     record the ``id:`` of the `Default Route Table`
 
 9. Update the route table with a route to the internet gateway. When prompted to continue enter `y`.
-    
+
     ```
     <copy>
     oci network route-table update --rt-id ROUTE-TABLE-OCID --route-rules '[{"cidrBlock":"0.0.0.0/0","networkEntityId":"INTERNET-GATEWAY-OCID"}]'
@@ -366,7 +357,7 @@ We will now test the functionality of the CLI.
 
      ![](./../../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
 
-5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
+5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will
 appear.
 
 6. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
@@ -382,5 +373,4 @@ appear.
 - **Last Updated By/Date** - Jaden McElvey, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
-
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

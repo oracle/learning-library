@@ -35,7 +35,7 @@ Log into your Enterprise Manager VM using the Public IP of your EM instance and 
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## Step 1: Create Pluggable Database (PDB)
+## **Step 1:** Create Pluggable Database (PDB)
 
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
@@ -89,7 +89,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/657ef309d7087942b8d871256a359050.jpg " ")
 
-## Step 2: Un-plug/Plug an Existing Pluggable Database (PDB)
+## **Step 2:** Un-plug/Plug an Existing Pluggable Database (PDB)
 
 1. **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -165,7 +165,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 **Note**: You do not have to wait until the steps complete and move on to the next section.
 
-## Step 3: Clone an Existing Pluggable Database (PDB)
+## **Step 3:** Clone an Existing Pluggable Database (PDB)
 
 1.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -205,7 +205,7 @@ Optionally, you can select the postscript as we did in the creation flow. **Clic
 
 10.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Click** on CDB186 and you will see the newly created PDB
 
-## Step 4: Compliance Management for Pluggable Database
+## **Step 4:** Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
@@ -280,13 +280,13 @@ The job will take about a minute to complete. Click on refresh icon if the job d
 
  Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
 
-## Step 5: Self-Service to Request PDB Using PDBaaS
+## **Step 5:** Self-Service to Request PDB Using PDBaaS
 
 With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
 
 1.  Login into Enterprise Manager as a Self-Service User. Self-Service User credentials are: **cyrus/welcome1**
 
-2.  By default, you'll see the Database Cloud Self Service Portal landing page as shown below.
+2.  By default, you will see the Database Cloud Self Service Portal landing page as shown below.
 
   ![](images/2d9dd5550b4774b590ccb4b1815ac70d.jpg " ")
 
@@ -408,7 +408,7 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/2b44dd4c41f594cddd9adc74dd193297.jpg " ")
 
-## Step 6: Administrative setup for PDB-as-a-Service (Private Cloud)
+## **Step 6:** Administrative setup for PDB-as-a-Service (Private Cloud)
 
 Previous exercises demonstrated the process of requesting PDBs using available service templates as performed by a Self-Service user. In this section, we will see the Administrative setup for PDBaaS.
 

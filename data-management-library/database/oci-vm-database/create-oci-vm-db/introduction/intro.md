@@ -1,7 +1,7 @@
 # Create an Oracle Cloud Infrastructure VM Database Workshop
 ## Introduction
 
-Welcome to the Oracle Cloud Infrastructure VM Database Workshop. Oracle Cloud offers 1-node database systems on bare metal or virtual machines. In this workshop, you'll build an Oracle Database instance on a Virtual Machine. This approach is useful when you want a quick way to spin up an Oracle Database instance.
+Welcome to the Oracle Cloud Infrastructure VM Database Workshop. Oracle Cloud offers 1-node database systems on bare metal or virtual machines. In this workshop, you will build an Oracle Database instance on a Virtual Machine. This approach is useful when you want a quick way to spin up an Oracle Database instance.
 This workshop will walk you through the following tasks:
 
 - Sign up for an Oracle Free Trial account and sign in to your account
@@ -13,7 +13,7 @@ Optional Labs:
 - Add an Ingress Rule to an existing Virtual Cloud Network (VCN) instance
 - Connect to a Virtual Machine Database instance using SQL Developer
 
-Each of the labs are 5 -10 minutes in length, so you'll be up and running in no time.
+Each of the labs are 5 -10 minutes in length, so you will be up and running in no time.
 
 *Note: You will need a Free Trial or Paid account for this workshop (not Always Free services)*
 

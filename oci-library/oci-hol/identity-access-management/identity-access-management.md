@@ -8,7 +8,7 @@ There is a recording of the instructor going through this lab here:
 
 [](youtube:wQU9mb9yX7o)
 
-### Pre-Requisites
+### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:

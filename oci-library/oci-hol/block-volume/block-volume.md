@@ -8,7 +8,7 @@ This video provides an overview of creating and attaching Oracle Cloud Infrastru
 
 [](youtube:kpL7czRCRLs)
 
-### Pre-Requisites
+### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:

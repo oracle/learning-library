@@ -7,7 +7,7 @@ Once you have finished the microservices HOL and the serverless HOL, you might h
 As you can see there isn't any connection or call from microservice orchestrator to the new discount campaign serverless app or serverless function. You might have connected the old serverless function to your microservice orchestrator, but the idea is that you could use the new serverless app.
 
 ### Objetives
-To connect your microservice orchestrator to the new serverless app, you'll use [OCI api gateway service](https://docs.cloud.oracle.com/es-ww/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm). Following next HOL you'll can create an API Gateway in OCI to invoke your discount serverless function from microservice orchestrator in a simple way.
+To connect your microservice orchestrator to the new serverless app, you will use [OCI api gateway service](https://docs.cloud.oracle.com/es-ww/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm). Following next HOL you will can create an API Gateway in OCI to invoke your discount serverless function from microservice orchestrator in a simple way.
 
 If you review the orchestrator nodejs code, you can see that a direct serverless function invoke is a little tricky, because you must create an access file with your credentials, OCI tenancy, OCI comparment and so. You must read this file, create a context and invoke the serverless function with this context. All this task are simplified using an API Gateway and you can improve security, because you don't have to create text plain config files and include them in your docker image.
 
@@ -20,7 +20,7 @@ Lets create an OCI Api Gateway!
 ### Prerequisites
 You must have finished the microservices HOL and the serverless HOL.
 
-## Step 1: OCI Policies to use API Gateway.
+## **Step 1:** OCI Policies to use API Gateway.
 To use API Gateway you must create a new Security Policy in your **root compartment**. Go to OCI main menu -> Identity -> Policies
 
 ![](./images/api-gateway-policies01.png)
@@ -38,7 +38,7 @@ Then Click Create Button to create the new api gateway policy.
 
 ![](./images/api-gateway-policies03.png)
 
-## Step 2: OCI Api Gateway Creation.
+## **Step 2:** OCI Api Gateway Creation.
 Go to OCI main menu -> Developer Services -> API Gateway.
 
 ![](./images/api-gateway-creation01.png)
@@ -93,7 +93,7 @@ If you click on your new Deployment you could see the Deployment data including 
 
 ![](./images/api-gateway-creation10.png)
 
-## Step 3: Test your API Route.
+## **Step 3:** Test your API Route.
 To test your new API Gateway deployment and route, you can use your development machine to execute a cURL command like:
 ```sh
 curl -i -k --data '{"demozone":"madrid","paymentMethod":"amex","pizzaPrice":"21"}' https://<your_endpoint_id>.apigateway.eu-frankfurt-1.oci.customer-oci.com/discount-fn/discount
@@ -114,7 +114,7 @@ opc-request-id: /56B744A399CAB72AE35DD23ABD7294D8/E72C6994D4E16D8C3F5DDD0742375F
 
 21.0
 ```
-## Step 4: Modifiying your Microservice Orchestrator
+## **Step 4:** Modifiying your Microservice Orchestrator
 Now that you have created and tested your serverless function with your new api gateway, let's change your microservice orchestrator to send an API call to your serverless function.
 
 To modify your microservice orchestrator, you should use an IDE software like it's installed in your development machine (visual studio core for example). You could get the code from your GIT repository in Developer Cloud Service (git clone command).
@@ -342,7 +342,7 @@ adapters.use(config.jsonfncl.getDiscount, totalpaidInput).then((response) => {
 
 ![](./images/api-gateway-microservice13.png)
 
-## Step 5: Test the microservice orchestrator.
+## **Step 5:** Test the microservice orchestrator.
 Once you have finished the change of the new code, you must update your DevCS Git repository. Click File Save All in your IDE. 
 
 ![](./images/api-gateway-microservice14.png)

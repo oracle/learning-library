@@ -19,33 +19,33 @@ You will also clone a GitHub repository.
 * Your updated `msdataworkshop.properties` file.
 
 ## **STEP 1**: Copy your msdataworkshop.properties to your root directory
-In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you updated it with all of the information generated while setting up OCI, OKE, and ATP. Now you will create an empty properties file and copy the contents of your local file to your root directory (`~/`).  
+In Lab 1 you downloaded a copy of the `msdataworkshop.properties` file and you updated it with all of the information generated while setting up OCI, OKE, and ATP. Now you will use your Cloud Shell to copy the contents of your local file into a `msdataworkshop.properties` file that you will create in your root directory (~/) so that this information can be used within the Cloud Shell in subsequent steps.  
 
-1. Create an empty msdataworkshop.roperties file in your root directory.
+1. Create an empty `msdataworkshop.properties` file in your root directory.
 
   ```
   <copy>cd ~ ; touch msdataworkshop.properties</copy>
 
   ```
-2. Open the msdataworkshop.properties file that you just created in root:
+2. Open the `msdataworkshop.properties` file that you just created in root:
 
   ```
   <copy>vi msdataworkshop.properties</copy>
 
   ```
 
-3. Go to your text editor and copy the contents of your local msdataworkshop.properties file. Be sure to select all content from the file.
+3. Go to your text editor and copy the contents of your local `msdataworkshop.properties file`. Be sure to select all content from the file.
 
 4. In vi, use the Insert key at the beginning of the file and then paste the content into the empty properties file. Make sure that you copied everything.
 
-5. Close vi and save your changes with the commands `:x` and `ENTER`.
+5. Complete the insert, save your changes, and close vi with the commands `ESC` and `:x` and `ENTER`
 
 ## **STEP 2**: Download workshop source code
 To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
- <copy>cd ~ ; curl -sL https://tinyurl.com/y3pqypkc --output master.zip ; unzip master.zip ; rm master.zip</copy>
+ <copy>cd ~ ; curl -sL https://tinyurl.com/y5rrqh37 --output master.zip ; unzip master.zip ; rm master.zip</copy>
    ```
 
   You should now see **msdataworkshop-master** in your root directory.
@@ -104,7 +104,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
 1. Install GraalVM
 
-    Run the installGraalVM.sh script from your root directory.
+    Run the installGraalVM.sh script from your root directory. GraalVM must be installed in your root directory.
     ```
     <copy>./msdataworkshop-master/installGraalVM.sh</copy>
     ```
@@ -117,7 +117,7 @@ In order to divide and isolate cluster resources, you will create a cluster
 
   ![](images/graalvmversion.png " ")
 
-  Verify that the graalvm install location in your `msdataworkshop.properties` file is correct.  Change it if necessary.
+
 
 2. Install Jaeger and note the services it creates.
 
@@ -127,29 +127,52 @@ In order to divide and isolate cluster resources, you will create a cluster
 
    ![demo-erd.png](images/jaegerinstall.png " ")
 
-4.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. If your jaeger-query state is pending, and you do not see the External-IP address, you may need to execute this command again.
+3.  Issue the `kubectl get services --all-namespaces` command and notice the services it installs.  
+The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. If your jaeger-query state is pending, and you do not see the External-IP address, you may need to execute this command again.
 
-   ```
+     ```
+     <copy>kubectl get services --all-namespaces</copy>
+     ```
 
-   <copy>kubectl get services --all-namespaces</copy>
+    ![](images/jaegerservice.png " ")
 
-   ```
 
-   ![demo-erd.png](images/jaegerservice.png " ")
+ 4. Add the jaeger-query EXTERNAL-IP:PORT to your `msdataworkshop.properties` file.
 
-   The jaeger-query IP address highlighted above is the load balancer address that will be used for visualizing the Jaeger UI later in the workshop.
+     Use your Cloud Shell and repeat the process from STEP 1 to modify the `msdataworkshop.properties` file in your root directory.
 
-   Add the jaeger-query EXTERNAL-IP:port to your `msdataworkshop.properties` file (as the JAEGER_QUERY_ADDRESS).
+     ```
+     <copy>vi msdataworkshop.properties</copy>
+     ```
 
-5.  The jaeger-collector service (shown just above the jaeger-query service in the image above) is referenced in two files:
+     ![](images/jaeger_address_prop.png)
 
-  - $MSDATAWORKSHOP_LOCATION/**frontend-helidon**/src/main/resources/META-INF/microprofile-config.properties
+     *Make sure that you add the jaeger-query EXTERNAL-IP address and NOT the CLUSTER-IP.*
 
- - $MSDATAWORKSHOP_LOCATION/**order-helidon**/src/main/resources/META-INF/microprofile-config.properties
+     Complete the insert, save your changes, and close vi with the commands `ESC` and `:x` and `ENTER`
 
- Open each file and verify that `tracing.host=jaeger-collector.msdataworkshop` and `tracing.port=14268`.
 
-   ![demo-erd.png](images/tracingprops.png " ")
+5. After you update the `msdataworkshop.properties` file in your root directory, you must source the `.bashrc` file again to apply the changes.
+
+     ```
+     <copy>source ~/.bashrc</copy>
+     ```
+
+     (*Optional*) You may want to add the `jaeger-query` address to your local `msdataworkshop.properties` file as a backup.   
+
+
+
+
+
+6.  Verify that the jaeger-collector service `tracing.host` and `tracing.port` are the same in the `microprofile-config.properties` files. The jaeger-collector service is referenced in two files:
+
+   - `$MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/resources/META-INF/microprofile-config.properties`
+
+   - `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/resources/META-INF/microprofile-config.properties`
+
+    Open each file and verify that **tracing.host**=`jaeger-collector.msdataworkshop` and **tracing.port**=`14268`.
+
+    ![demo-erd.png](images/tracingprops.png " ")
 
 
 
@@ -162,7 +185,7 @@ In order to divide and isolate cluster resources, you will create a cluster
     folder.
 
     ```
-    <copy>cd msdataworkshop-master/frontend-helidon</copy>
+    <copy>$MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
     ```
 
 2.  Run `maven` to build the package using the following command. Since this is
@@ -192,21 +215,21 @@ After you have successfully compiled the application code, you are ready to push
 1.  You will need the following parameters which you have already added to your `msdataworkshop.properties` file:
 
     - `REGION-ID` - is the Region identifier
-    - `OBJECT-STORAGE-NAMESPACE` - is Object Storage namespace
+    - `OBJECT-STORAGE-NAMESPACE` - is your Object Storage namespace
     - `USERNAME` - is the username used to log in. If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something`
 
     ```
-   <copy>docker login REGION-ID.ocir.io -u OBJECT-STORAGE-NAMESPACE/USERNAME<copy>
+  <copy>docker login REGION-ID.ocir.io -u OBJECT-STORAGE-NAMESPACE/USERNAME</copy>
     ```
 
     *When prompted for password use the Auth token (msdataworkshoptoken) you generated.*
 
   ![](images/1bcf17e7001e44e1e7e583e61618acbf.png " ")
 
-2.  Once successfully logged into OCIR, we can list the existing docker images. Since this is the first time logging into OCIR, no images will be shown.
+2.  Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
 
     ```
-    <copy>docker images</copy>
+    <copy>docker images </copy>
     ```
 
   ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
@@ -223,7 +246,7 @@ After you have successfully compiled the application code, you are ready to push
 
   ![](images/418a175c8093375d4264d6cd5897ead9.png " ")
 
-2.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to OCIR
+2.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
 
     ```
     <copy>./build.sh</copy>
@@ -236,7 +259,7 @@ After you have successfully compiled the application code, you are ready to push
   ![](images/cb413dce71ae945decf19e468a94a89e.png " ")
 
 3.  Go to the Console, click the hamburger menu in the top-left corner and open
-    **Developer Services > Registry (OCIR)**.
+    **Developer Services > Container Registry**.
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
@@ -306,7 +329,7 @@ After you have successfully compiled the application code, you are ready to push
   ![](images/bdd2f05cfc0d1aac84b09dbe5b48993a.png " ")
 
 11.  Go to the Console, click the hamburger menu in the top-left corner and open
-    **Developer Services > Registry (OCIR)**.
+    **Developer Services > Container Registry**.
 
   ![](images/efcd98db89441f5a40389c99e5afd4b5.png " ")
 
@@ -318,7 +341,8 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 

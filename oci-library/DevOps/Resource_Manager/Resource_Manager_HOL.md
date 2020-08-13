@@ -5,7 +5,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Configuring IAM to control user access in Resource Manager](#practice-1-configuring-iam-to-control-user-access-in-resource-manager) 
 
@@ -21,7 +21,7 @@
 The Oracle Cloud Infrastructure Resource Manager is a fully managed service that lets you provision infrastructure resources on Oracle Cloud Infrastructure using Terraform. You can bring in your Terraform template definition and easily create and manage your infrastructure resources. This allows you to use infrastructure-as-code to automate provisioning across all OCI resources including Compute, Networking,Load Balancers, Block and Object Storage. Resource Manager also integrates with Identity and Access Management (IAM) so you can define granular permissions for Terraform operations. It currently has support for CLI, SDK and Console. 
 
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
 - To sign in to the Console, you need the following:

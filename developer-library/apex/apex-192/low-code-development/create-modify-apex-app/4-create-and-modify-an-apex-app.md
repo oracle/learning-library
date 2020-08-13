@@ -49,7 +49,7 @@ In lab 3, step 1, you used Quick SQL to create a script which you subsequently r
 
    ![](images/create-an-application-2.png " ")
 
-   After the app is created, you'll be redirected to the application home page in the Application Builder.
+   After the app is created, you will be redirected to the application home page in the Application Builder.
 
 8. Click **Run Application** to see the app at runtime.
 
@@ -65,7 +65,7 @@ In lab 3, step 1, you used Quick SQL to create a script which you subsequently r
 
 ## **Step 2:** Add an Interactive Grid page and create records
 
-Thus far, you've used high-level wizards to generate applications, first from a spreadsheet and then from a script. In this part, you'll work at a lower level to add a new Interactive Grid page to the application. After that, you'll use the new Interactive Grid to add some data to the HOL_TODOS table.
+Thus far, you've used high-level wizards to generate applications, first from a spreadsheet and then from a script. In this part, you will work at a lower level to add a new Interactive Grid page to the application. After that, you will use the new Interactive Grid to add some data to the HOL_TODOS table.
 
 1. Return to the application home page in the Application Builder, then click **Create Page**.
 
@@ -115,13 +115,13 @@ Thus far, you've used high-level wizards to generate applications, first from a 
 
    ![](images/create-new-todos.png " ")
 
-   *Note: Don't populate the additional columns yet, you'll do that in the next part.*
+   *Note: Don't populate the additional columns yet, you will do that in the next part.*
 
 ## **Step 3:** Enhance the Interactive Grid
 
-A page in APEX is made up of various components, such as regions, items, and buttons. Once created, these components can be configured via the Page Designer. In this part, you'll use the Page Designer to make some changes to the Interactive Grid region created in the previous part.
+A page in APEX is made up of various components, such as regions, items, and buttons. Once created, these components can be configured via the Page Designer. In this part, you will use the Page Designer to make some changes to the Interactive Grid region created in the previous part.
 
-1. At the bottom of the runtime page, you'll see the Developer Toolbar (only displayed to developers). Click **Edit Page 10** to return to the Page Designer for page 10 (your page number may be different).
+1. At the bottom of the runtime page, you will see the Developer Toolbar (only displayed to developers). Click **Edit Page 10** to return to the Page Designer for page 10 (your page number may be different).
 
    ![](images/developer-toolbar.png " ")
 
@@ -198,7 +198,7 @@ A page in APEX is made up of various components, such as regions, items, and but
 
 ## **Step 4:** Add a Calendar Page
 
-APEX includes different components for viewing and working with data in different ways, including forms, reports, charts, and much more. One of the easiest ways to visualize data related to dates is with a calendar. In this part, you'll create a new calendar page in your application to view data in the HOL\_TASKS table. The HOL\_TASKS table includes both a Start Date and End Date so you could choose to create a duration-based calendar, however, for this lab you are just going to use the Start Date.
+APEX includes different components for viewing and working with data in different ways, including forms, reports, charts, and much more. One of the easiest ways to visualize data related to dates is with a calendar. In this part, you will create a new calendar page in your application to view data in the HOL\_TASKS table. The HOL\_TASKS table includes both a Start Date and End Date so you could choose to create a duration-based calendar, however, for this lab you are just going to use the Start Date.
 
 1. Click the **Application 102** link (your app number may be different) in the Developer Toolbar. This will return you to the application's home page in the Application Builder.
 

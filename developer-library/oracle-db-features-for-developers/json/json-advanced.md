@@ -1,8 +1,10 @@
 # Advanced JSON on Oracle Database 19c
 
-## **Introduction**
+## Introduction
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This lab will explore advanced concepts around JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
+
+Estimated Lab Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
@@ -25,21 +27,41 @@ For this lab we will use the *Order Entry (OE)* sample schema that is provided w
 
 If you have logged out of the Cloud Shell, perform the commands below.
 
-1.  Login to the instance using Oracle Cloud Shell and ssh
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
-    ssh -i yourkeyname opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-2.  Connect to the **ORCLPDB** pluggable database, as SYSDBA using SQL\*Plus.
-
+2.  Switch to the oracle user
     ````
     <copy>
     sudo su - oracle
+    </copy>
+    ````
+    ![](./images/sudo-oracle.png " ")
+
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+    ![](./images/oraenv.png " ")
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
+
+    ````
+    <copy>
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
-    Once connected to SQL\*Plus, connect to the OE user.
+
+    ![](./images/sqlplus.png " ")
+
+5.  Once connected to SQL\*Plus, connect to the OE user.
     ````
     <copy>
     connect oe/Ora_DB4U@localhost:1521/orclpdb
@@ -1045,7 +1067,7 @@ This lab is now complete.
 ## **Acknowledgements**
 
 - **Author** - Valentin Leonard Tabacaru
-- **Contributors** - Anoosha Pilli & Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
+- **Contributors** - Anoosha Pilli, Troy Anthony, Product Manager, Dylan McLeod, LiveLabs QA Intern
 - **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
 
 ## See an issue?

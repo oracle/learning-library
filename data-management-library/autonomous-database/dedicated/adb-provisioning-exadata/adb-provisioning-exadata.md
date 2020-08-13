@@ -20,7 +20,7 @@ Watch the video below for an overview of creating an Autonomous Container Databa
 
 [](youtube:0iL-zyMziOM)
 
-## STEP 1: Deploy your Autonomous Exadata Infrastructure (AEI)
+## **Step 1:** Deploy your Autonomous Exadata Infrastructure (AEI)
 
 *Login to your OCI account as a fleet administrator*
 

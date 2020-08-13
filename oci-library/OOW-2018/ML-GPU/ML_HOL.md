@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 ### H20ai Lab 
 
@@ -40,7 +40,7 @@ The key topics touched upon by both labs are:
 - To showcase Nvidia-Docker as a means of containerising ML workloads to leverage GPU (because normal docker cannot  _see_  the GPU).
 - To show how quickly the GPU can process ML image recognition workloads.
 
-## Pre-Requisites 
+## Prerequisites 
 
 - Access to a GPU instance in Oracle Cloud Infrastructure
 - SSH Client

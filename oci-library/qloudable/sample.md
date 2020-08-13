@@ -3,7 +3,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Sign in to OCI Console](#sign-in-to-oci-console)
 
@@ -17,7 +17,7 @@
 
 ## Overview
 
-Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous database that scales elastically, delivers fast query performance and requires no database administration. In this hands on lab, you will deploy an Autonomous Data Warehouse instance, and load a table using a text file that is stored in object storage. Using the data table, and a Zeppelin Notebook, you'll apply Machine Learning algorithms to select a good wine that costs less than $20 to bring to a party.
+Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous database that scales elastically, delivers fast query performance and requires no database administration. In this hands on lab, you will deploy an Autonomous Data Warehouse instance, and load a table using a text file that is stored in object storage. Using the data table, and a Zeppelin Notebook, you will apply Machine Learning algorithms to select a good wine that costs less than $20 to bring to a party.
 
 **Some Key points**
 
@@ -35,7 +35,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-## Pre-Requisites
+## Prerequisites
 
 1. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
@@ -90,7 +90,7 @@ Sign in using your tenant name, user name and password. Use the login option und
 
 ## Import the Machine Learning Notebook
 
-Next, you'll import a Zeppelin Notebook into the Oracle Machine Learning instance associated with your Autonomous Data Warehouse instance.
+Next, you will import a Zeppelin Notebook into the Oracle Machine Learning instance associated with your Autonomous Data Warehouse instance.
 
 1. Select Autonomous Data Warehouse from the menu
 

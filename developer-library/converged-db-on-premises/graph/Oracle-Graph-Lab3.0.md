@@ -19,7 +19,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
   
-## Step 1: Visualize the Graph
+## **Step 1:** Visualize the Graph
 
 **Scenario 1 : What products did customer 202 buy from which store(s)?**
 
@@ -172,7 +172,7 @@ where product.PRODUCT_ID=44;
 ![](./images/IMGG37.PNG)
 
 
-## Step 2: Deleting the Graph
+## **Step 2:** Deleting the Graph
 
 Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the following statements to delete the in-memory graph 
 

@@ -21,7 +21,7 @@ As a LOB user
 - A pre-provisioned Oracle Analytics Cloud instance. Refere [Here](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acoci/create-services.html#GUID-D2F03D22-95FB-45C8-AB94-928AE4E167AB) to create Oracle Analytics Cloud.
 - VNC Viewer or other suitable VNC client on your local laptop
 
-## STEP 1: Download DB wallet to local machine
+## **Step 1:** Download DB wallet to local machine
 
 Let's first download the DB wallet to your local machine (laptop) and then scp / sftp it to the developer client machine.
 
@@ -49,7 +49,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. 
 
 
-## STEP 2: Connect to dev client desktop over VNC
+## **Step 2:** Connect to dev client desktop over VNC
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -105,7 +105,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 
   - If all goes well, you should now see a linux desktop in your VNC window.
 
-## STEP 3: Download, install and configure Remote Data Gateway
+## **Step 3:** Download, install and configure Remote Data Gateway
 
 1. Download OAC Data Gateway 5.6.0+ from [Here](https://www.oracle.com/middleware/technologies/oac-downloads.html)
 
@@ -222,7 +222,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
     ![](./images/RDC-installer13.png " ")
 
 
-## STEP 4: Configure Remote Data Connectivity and connect Autonomous Database Dedicated to Oracle Analytics Cloud
+## **Step 4:** Configure Remote Data Connectivity and connect Autonomous Database Dedicated to Oracle Analytics Cloud
 
 
 

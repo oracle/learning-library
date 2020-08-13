@@ -17,7 +17,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-## Step 1: Insert a record.
+## **Step 1:** Insert a record.
 
   a. **Take a count of the rows in the json table-**
 
@@ -112,7 +112,7 @@ c. **Verify the count after insert.**
    
   **Note:** Please copy the red highlighted id which we will use in our next section of update query.
 
-## Step 2: Update a Table.
+## **Step 2:** Update a Table.
   We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
    
    **Note:** In the above update query replace the id which we copied in previous step.

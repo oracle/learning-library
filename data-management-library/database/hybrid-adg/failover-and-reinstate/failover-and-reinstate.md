@@ -9,7 +9,7 @@ This lab assumes you have already completed the following labs:
 - Deploy Active Data Guard with LVM or ASM
 - Test with Active Data Guard
 
-## Step 1: Setup the current primary database flashback on
+## **Step 1:** Setup the current primary database flashback on
 
 In the previous lab, you have done the Data Guard switch over. Now, the current primary database is the DBCS and the current standby database in the on-premise database.
 
@@ -77,7 +77,7 @@ Version 19.7.0.0.0
 [oracle@dbstby ~]$ 
 ```
 
-## Step 2: Failover
+## **Step 2:** Failover
 
 1. Connect with DGMGRL, validate the primary and standby database
 
@@ -174,7 +174,7 @@ DGMGRL>
 
 Now, the primary is the on-premise database, and the standby database is disabled, which needs to be reinstated.
 
-## Step 3: Reinstate the previous primary database
+## **Step 3:** Reinstate the previous primary database
 
 1. In cloud side(the previous primary), connect to sqlplus as sysdba, shutdown the database and startup mount before reinstating. 
 

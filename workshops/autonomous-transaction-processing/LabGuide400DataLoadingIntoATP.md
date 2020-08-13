@@ -207,7 +207,7 @@ For this lab we will be using admin user.
 
     ![](./images/400/snap0015310.jpg)
 
--   The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save this in a temporary notepad document for the next few minutes (you'll use it in the next step). **You can't retrieve the Auth Token again after closing the dialog box**.
+-   The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save this in a temporary notepad document for the next few minutes (you will use it in the next step). **You can't retrieve the Auth Token again after closing the dialog box**.
 
     ![](./images/400/snap0015311.jpg)
 

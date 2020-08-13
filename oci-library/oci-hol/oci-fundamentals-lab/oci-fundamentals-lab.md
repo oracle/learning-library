@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will deploy web servers on two compute instances in Oracle Cloud Infrastructure (OCI), configured in High Availability mode by using a Load Balancer. 
+In this lab you will deploy web servers on two compute instances in Oracle Cloud Infrastructure (OCI), configured in High Availability mode by using a Load Balancer.
 
 Estimated time: 1 hour
 
@@ -28,7 +28,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 4. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Create a Virtual Cloud Network
+## **Step 1:** Create a Virtual Cloud Network
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**
 
@@ -52,25 +52,25 @@ Lab 2: Create SSH Keys - Cloud Shell
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
 6. Click **View Virtual Cloud Network** to display your VCN details.
-              
-              
-## Step 2: Create two compute instances and install web server
+
+
+## **Step 2:** Create two compute instances and install web server
 
 1. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
 
 2. Click **Create Instance**. Fill out the dialog box:
 
-      - **Name your instance**: Enter a name 
+      - **Name your instance**: Enter a name
       - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
       - **Availability Domain**: Select availability domain
-      - **Instance Type**: Select Virtual Machine 
-      - **Instance Shape**: Select VM shape 
+      - **Instance Type**: Select Virtual Machine
+      - **Instance Shape**: Select VM shape
 
       **Under Configure Networking**
       - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN 
-      - **Subnet Compartment:** Choose your compartment. 
-      - **Subnet:** Choose the Public Subnet under **Public Subnets** 
+      - **Virtual cloud network**: Choose the VCN
+      - **Subnet Compartment:** Choose your compartment.
+      - **Subnet:** Choose the Public Subnet under **Public Subnets**
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
@@ -85,7 +85,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 
 4.  Repeat steps 1 - 3 to launch a **second** Compute instance and note down its public IP address.
 
-5.  Wait for Instances to be in **Running** state. 
+5.  Wait for Instances to be in **Running** state.
 6.  Launch the Cloud Shell if it is not running.  When running, enter the command below:
 
     ```
@@ -96,7 +96,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 7.  Enter **ls** and verify your key file exists.
 
 8.  Ssh to  the **first** compute instance. Enter command:
-            
+
     ```
     <copy>
     bash
@@ -110,7 +110,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 9.  Enter 'Yes' when prompted for security message.
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
- 
+
 10. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
 11. Open up a second tab of Oracle Cloud.  Launch a second cloud shell window using the steps above and connect via SSH into the **second** Compute instance (using the same steps as above)
@@ -120,17 +120,17 @@ Lab 2: Create SSH Keys - Cloud Shell
 
     *HINT: Ensure to use the IP address of the second Compute instance in the SSH command.*
 
-12. Go back to the 1st tab cloud shell for the first Compute instance and install a Web server, using the commands below: 
+12. Go back to the 1st tab cloud shell for the first Compute instance and install a Web server, using the commands below:
 
     ```
     <copy>
     sudo yum -y install httpd </copy>(Install Apache HTTP Server)
-    
+
     ```
 
     ```
     <copy>
-    sudo firewall-cmd --permanent  --add-port=80/tcp 
+    sudo firewall-cmd --permanent  --add-port=80/tcp
     </copy>
     ```
 
@@ -140,28 +140,28 @@ Lab 2: Create SSH Keys - Cloud Shell
 
     ```
     <copy>
-    sudo firewall-cmd --reload 
+    sudo firewall-cmd --reload
     </copy>
     ```
     (Reload the firewall to activate the rules).
 
     ```
     <copy>
-    sudo systemctl start httpd 
+    sudo systemctl start httpd
     </copy>
     ```
     (Start the web server).
 
     ```
     <copy>
-    sudo su 
+    sudo su
     </copy>
     ```
     (Change user privilege)
 
     ```
     <copy>
-    echo 'WebServer1' >>/var/www/html/index.html 
+    echo 'WebServer1' >>/var/www/html/index.html
     </copy>
     ```
     (create index.html file. The content of the file will be displayed when the web server is accessed.)
@@ -176,7 +176,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 
     ```
     <copy>
-    sudo firewall-cmd --permanent  --add-port=80/tcp 
+    sudo firewall-cmd --permanent  --add-port=80/tcp
     </copy>
     ```
     (Open port 80 on the firewall to allow http and https traffic).
@@ -185,28 +185,28 @@ Lab 2: Create SSH Keys - Cloud Shell
 
     ```
     <copy>
-    sudo firewall-cmd --reload 
+    sudo firewall-cmd --reload
     </copy>
     ```
     (Reload the firewall to activate the rules).
 
     ```
     <copy>
-    sudo systemctl start httpd 
+    sudo systemctl start httpd
     </copy>
     ```
     (Start the web server).
 
     ```
     <copy>
-    sudo su 
+    sudo su
     </copy>
     ```
     (Change user privilege)
 
     ```
     <copy>
-    echo 'WebServer2' >>/var/www/html/index.html 
+    echo 'WebServer2' >>/var/www/html/index.html
     </copy>
     ```
     (create index.html file. The content of the file will be displayed when the web server is accessed.)
@@ -217,19 +217,19 @@ We now have two Compute instances with Web servers installed and a basis index.h
 
 Load balancers should always reside in different subnets than your application instances. This allows you to keep your application instances secured in private subnets, while allowing public Internet traffic to the load balancers in the public subnets.
 
-## Step 3: Create Security List Route table and additional subnet
+## **Step 3:** Create Security List Route table and additional subnet
 
 In this section we will create a new security list. This security list will be used by the load balancer (that will be created later on). This will ensure all traffic to the two web servers is routed properly.
 
 1. From OCI Services menu, Click **Virtual Cloud Network** under **Networking**. This displays the list of VCNs in current compartment.
 
-    **HINT:** If there are multiple Networks, scroll down to locate the one you just created. 
+    **HINT:** If there are multiple Networks, scroll down to locate the one you just created.
 
 2. Click your VCN name, then **Security Lists** and then **Create Security List** (You will be creating a new security list).
 
       - CREATE IN COMPARTMENT: Select the compartment assigned to you (if not already selected).
       - SECURITY LIST Name: Specify a name (for example, LB Security List).
-      - Click **Create Security List** 
+      - Click **Create Security List**
 
 3. Verify the New Security List got created.
 
@@ -245,10 +245,10 @@ In this section we will create a new security list. This security list will be u
     **Click +Additional Route Rules**
 
 
-    - Target Type: Select **Internet Gateway** 
-    - Destination CIDR Block: 0.0.0.0/0 
+    - Target Type: Select **Internet Gateway**
+    - Destination CIDR Block: 0.0.0.0/0
     - Compartment: Make sure the correct Compartment is selected
-    - Target Internet Gateway: Select the Internet Gateway for your VCN. 
+    - Target Internet Gateway: Select the Internet Gateway for your VCN.
 
         ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_003.PNG " ")
 
@@ -260,7 +260,7 @@ In this section we will create a new security list. This security list will be u
 
 8. Create First subnet:
 
-    **First Subnet:** (Your Virtual Cloud Network should be visible in OCI Console window.) 
+    **First Subnet:** (Your Virtual Cloud Network should be visible in OCI Console window.)
 
 9. Click **Subnets**.
 
@@ -271,7 +271,7 @@ In this section we will create a new security list. This security list will be u
 
      **(When using a regional subnet, OCI selects two AD's. If you would like to control which two AD's are used, you would want to create individual AD-speicfic subnets)**
 
-    - **CIDR Block**: Enter 10.0.4.0/24 
+    - **CIDR Block**: Enter 10.0.4.0/24
     - **Route Table**: Select the Route Table you created earlier.
     - **Subnet access**: select Public Subnet.
     - **DHCP Options**: Select the default.
@@ -282,7 +282,7 @@ In this section we will create a new security list. This security list will be u
      ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_004.PNG " ")
 
 
-## Step 4: Create Load Balancer and update Security List
+## **Step 4:** Create Load Balancer and update Security List
 
 When you create a load balancer, you choose its shape (size) and you specify subnet (created earlier) from different Availability Domains. This ensures that the load balancer is highly available and is only active in one subnet at a time.
 
@@ -300,7 +300,7 @@ When you create a load balancer, you choose its shape (size) and you specify sub
 
 
     - **VIRTUAL CLOUD NETWORK**: Choose your Virtual Cloud Network
-    - **SUBNET**: Choose the Regional Subnet we created (10.0.4.0 in this lab) 
+    - **SUBNET**: Choose the Regional Subnet we created (10.0.4.0 in this lab)
 
      ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_006.PNG " ")
 
@@ -315,7 +315,7 @@ When you create a load balancer, you choose its shape (size) and you specify sub
     ***Under SPECIFY HEALTH CHECK POLICY***
 
     - PROTOCOL: HTTP
-    - Port: Enter 80 
+    - Port: Enter 80
     - URL PATH (URI): /
 
     ***Leave other options as default***
@@ -342,13 +342,13 @@ When you create a load balancer, you choose its shape (size) and you specify sub
 8. Click Load Balancer Security List created earlier, Click **Add Ingress Rule**.
 Click **+Additional Ingress Rule** and enter the following ingress rule; Ensure to leave STATELESS flag un-checked.
 
-      - **Source Type**: CIDR 
+      - **Source Type**: CIDR
       - **Source CIDR**: Enter 0.0.0.0/0.
       - **IP Protocol**: Select TCP.
       - **Source Port Range**: All.
       - **Destination Port Range**: Enter 80 (the listener port).
 
-9. Click **Add Ingress Rule**. 
+9. Click **Add Ingress Rule**.
 
 10. Click **Egress Rule** under Resources. Click **Add Egress Rule**,  Click **+Additional Egress Rule** and enter the following Egress rule; Ensure to leave STATELESS flag un-checked.
 
@@ -386,18 +386,18 @@ We will now test the Load Balancer functionality (load balance using round robin
 
 **Note:** Be sure to take note of the "Health" field in the Networking > Load Balancers dashboard. If the health is "Critical," the load balancer may not work as intended, and the best course of action may be to create a new one. This is likely the result of something being mis-configured, and it should only happen rarely.
 
-## Step 5: Verify High Availability of HTTP Servers
+## **Step 5:** Verify High Availability of HTTP Servers
 
 In this section we will access the two Web servers configured earlier using Load Balancer’s Public IP address and demonstrate Load Balancer’s ability to route traffic on round robin basis(Per the Policy Configured). In case one of the web server becomes un-available the web content will be available via the second server (High Availability)
 
-1. Open a web browser and enter load balancer's public IP address. 
+1. Open a web browser and enter load balancer's public IP address.
 
 2. Verify the text in index.html file on the 2 servers (WebServer1, WebServer2)  displayed.
 
 3. Refresh the browser multiple times and Observer Load Balancer Balancing traffic between the 2 web servers.
 
      ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_009.PNG " ")
-             
+
     **NOTE:** In case one of the server goes down the Application will be accessible via Load Balancer’s Public IP address.
 
 This Lab is not intended to test Failover and Recovery of Backend Servers. User can test that functionality at their own discretion. Any trouble shooting in case any issue is encountered is out of scope of this lab
@@ -418,7 +418,7 @@ Delete Load Balancer and associated components:
 
 4. From OCI services menu Click **Instances** under Compute.
 
-5. Locate first compute instance, Click Action icon and then **Terminate** 
+5. Locate first compute instance, Click Action icon and then **Terminate**
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
@@ -426,9 +426,9 @@ Delete Load Balancer and associated components:
 
      ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
 
-7. Repeat the step to delete the second compute intance.
+7. Repeat the step to delete the second compute instance.
 
-8. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
+8. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will
 appear.
 
 9. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
@@ -444,5 +444,4 @@ appear.
 - **Last Updated By/Date** - Kay Malcolm, July 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
-
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

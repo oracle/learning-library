@@ -37,7 +37,7 @@ Data Replication is a essential part of your efforts and tasks when you are migr
 
     - The Golden Gate software is going to be deployed on a linux server in a public network which has access to both the source database and the target database via the Goldengate marketplace image in OCI.
 
-## STEP 1: Provision a Goldengate Microservice from OCI Marketplace
+## **Step 1:** Provision a Goldengate Microservice from OCI Marketplace
 
 - Connect to your OCI tenancy and select *Marketplace* from top left menu.
 
@@ -68,7 +68,7 @@ Data Replication is a essential part of your efforts and tasks when you are migr
 
 - Your Goldengate instance should be ready in a few minutes and we will come back to configure it. 
 
-## STEP 2: Configure the source database
+## **Step 2:** Configure the source database
 
 It is assumed that you either have an Oracle 12c database configured as source or know how to provision a 12c DBCS instance in OCI.
 
@@ -119,7 +119,7 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
 
     The source database is all set. Next, lets setup the target ATPD instance.
 
-## STEP 3: Configure the target ATP Dedicated database
+## **Step 3:** Configure the target ATP Dedicated database
 
 - Connect to the ATPD database service intance you created earlier as user *admin*.
 
@@ -152,7 +152,7 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
     ````
 That is it! Your target DB is now ready.
 
-## STEP 4: Configure Goldengate service
+## **Step 4:** Configure Goldengate service
 - By now, your Goldengate service instance must be deployed. On your OCI console navigate to *Compute* from top left menu and *choose your compartment*.
 
 - Click on your Goldengate compute instance to get to the details page that looks as follows.

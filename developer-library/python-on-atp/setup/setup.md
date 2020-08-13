@@ -16,7 +16,7 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## STEP 1: Prepare Terraform
+## **Step 1:** Prepare Terraform
 
 1. Login to the Oracle Cloud
 
@@ -30,13 +30,14 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
   ![](images/005.png " ")
 
-## STEP 2: Prepare your terraform script for execution
+## **Step 2:** Prepare your terraform script for execution
 
 This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
 1. Download the terraform zip file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf.zip).  Then unzip it.
 
-2. Now create a private key (id\_rsa) and a public key (id\_rsa.pub). The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).  Enter this in a command shell or terminal window. 
+2. Now create a private key (id\_rsa) and a public key (id\_rsa.pub). The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).  Enter this in a command shell or terminal window.  By default the key is stored in the .ssh folder.  You can save elsewhere by specifying the path.
+
   ````
   <copy>ssh-keygen -b 2048 -t rsa</copy>
   ````
@@ -54,7 +55,7 @@ This will create your cloud resources (VCN, Compute Image, Autonomous Transactio
 
   ![](images/009.png " ")
 
-## STEP 3: Create a Resource Manager Stack
+## **Step 3:** Create a Resource Manager Stack
 
 Terraform provides a reusable process for creating infrastructure.  In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.
 
@@ -74,7 +75,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/046.png " ")
 
-5. Next locate the **SSH\_PUBLIC\_KEY** variable and paste the public ssh key you created earlier in the given field. **It must be in text format.**
+5. Next locate the **SSH\_PUBLIC\_KEY** variable and paste the public ssh key you created earlier in the given field.
 
   ![](images/013.png " ")
 
@@ -86,7 +87,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/015.png " ")
 
-## STEP 4: Create OCI Resources in Resource Manager
+## **Step 4:** Create OCI Resources in Resource Manager
 
 1. Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
@@ -96,11 +97,13 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/017.png " ")
 
-3. Wait for the plan to succeed, then click on **Stack Details**.
+3. Wait for the plan to succeed.
 
   ![](images/018.png " ")
 
-4. Again, hover over **Terraform Actions** and click on **Apply**.
+4. Return to `Stacks` upper left, select your stack, and select **Terraform Actions** and click on **Apply**.
+
+  ![](images/018.1.png " ")
 
   ![](images/019.png " ")
 
@@ -108,7 +111,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/020.png " ")
 
-## STEP 5: Prepare to Load Data
+## **Step 5:** Prepare to Load Data
 
 1. Generate an Auth Token.  Navigate to **Identity** > **Users**.  
 
@@ -134,19 +137,21 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/026.png " ")
 
-7. Select the Compartment **python4dev**.  Your new Object Storage Bucket should show up in the list. Once it appears click on the `py4dev` bucket url to view the details.
+7. Select the Compartment **python4dev**.  You may need to refresh your page to have this new compartment show up.  Your new Object Storage Bucket should show up in the list. Once it appears click on the `py4dev` bucket url to view the details.
 
   ![](images/027.png " ")
 
-8. Navigate to your object storage bucket and then click **Upload Object**.
+8. Navigate to your object storage bucket and then click **Upload**.
 
   ![](images/028.png " ")
 
-9. Click **select files**, then select the **expdp\_alpha.dmp** for import into the database in the next steps.  Click **Open**, then **Upload Objects**.
+9. Click **select files**, then select the **expdp\_alpha.dmp** for import into the database in the next steps.  Click **Open**, then **Upload Objects**.  When the upload is done close the window.
 
   ![](images/029.png " ")
 
   ![](images/030.png " ")
+
+  ![](images/030.1.png " ")
 
 10. Now, select the icon on the far right to retrieve details from **expdp\_alpha.dmp**.
 
@@ -156,7 +161,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/032.png " ")
 
-## STEP 6: Log into SQL Developer and Load Data into userid Alpha.
+## **Step 6:** Log into SQL Developer and Load Data into userid Alpha.
 
 1. Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Database** section, select **Autonomous Transaction Processing**.
 
@@ -182,7 +187,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/038.png " ")
 
-7. Enter the following commands.  The first is to create user **alpha**.
+7. We're now going to execute SQL to create a user and credential.  Enter the following commands.  Use the small arrow to execute.  The first is to create user **alpha**.
   ```
   <copy>create user alpha identified by "&lt;atp password&gt;";
   grant dwrole to alpha;</copy>
@@ -190,7 +195,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/039.png " ")
 
-8. Create credential.  This is used by the ATP database to access the dmp file in Object Storage.  This is your cloud account userid and your token password (created in a previous step).
+8. Create credential.  This is used by the ATP database to access the dmp file in Object Storage.  This is your cloud account userid and your token password (created in a previous step).  If your account is federated enter the full name including the identity provider.
   ```
   <copy>BEGIN
     DBMS_CLOUD.CREATE_CREDENTIAL(
@@ -204,7 +209,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/040.png " ")
 
-9. Import the data.  Paste this into your worksheet window.   
+9. Import the data.  Paste this into your worksheet window. **Be sure to update the object storage file location located between the dashed lines**.  
   ```
 <copy>
 set scan off
@@ -252,7 +257,7 @@ END;
 
   ![](images/041.png " ")
 
-10. If your token was not created with the right information (eg password is wrong), you will get an error (invalid setting).  To correct this you need to either drop and re-create the credential or create a new credential with a new name, and then re-run this job **WITH A NEW JOB NAME**.  If you create a new credential with a new name then update the credential in this code.
+10. If your token was not created with the right information (eg password is wrong), you will get an error (invalid setting).  To correct this you need to either drop and re-create the credential or create a new credential with a new name, and then re-run this job **WITH A NEW JOB NAME**.  The current job name is **IMPALPHA** Located just below the **begin** statement.  If you create a new credential with a new name then update the credential in this code.
 
 11. Next grant SQL Developer Web to user **alpha**.  Enter the following.
   ```
@@ -284,7 +289,7 @@ END;
 
   ![](images/045.png " ")
 
-## STEP 7: Connect to your Marketplace Developer Image
+## **Step 7:** Connect to your Marketplace Developer Image
 
 For more information about the Marketplace Developer Image [click here](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).
 

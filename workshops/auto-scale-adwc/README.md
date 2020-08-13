@@ -10,7 +10,7 @@ Approximately 180 minutes.
 
 - Bookmark this page for future reference.  If you already have an Oracle Cloud account then you can skip this section.
 
-- Please click on the URL to create your <a class=“trial-link”  href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK181017P00031:ADW_IMHOL&SC=:ex:tb:::RC_NAMK181017P00031:ADW_IMHOL&pcode=NAMK181017P00031" target="trial">Free Account</a> and complete all the required steps. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free. Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
+- Please click on the URL to create your <a class=“trial-link”  href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK181017P00031:ADW_IMHOL&SC=:ex:tb:::RC_NAMK181017P00031:ADW_IMHOL&pcode=NAMK181017P00031" target="trial">Free Account</a> and complete all the required steps. When you complete the registration process you will receive a $300 credit that will enable you to complete the lab for free. Additionally, you will have 1000s of hours left over to continue to explore the Oracle Cloud.
 
 - Soon after requesting your trial you will receive the following email.
 

@@ -267,7 +267,7 @@ push-release:
 
   ![](images/100/30.png)
 
-- Once the workflow finishes, you'll see both the build and push-release pipelines turn green to indicate success.
+- Once the workflow finishes, you will see both the build and push-release pipelines turn green to indicate success.
 
   ![](images/100/39.1.png)
 

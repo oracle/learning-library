@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Rather than requiring that you install Python and other software, the front-end application and related components have been created for you. In this lab, you'll choose to install the front-end client as a Virtual Box image (VM) or Docker image.
+Rather than requiring that you install Python and other software, the front-end application and related components have been created for you. In this lab, you will choose to install the front-end client as a Virtual Box image (VM) or Docker image.
 
 Estimated time: 45 - 90 min
 

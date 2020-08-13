@@ -20,7 +20,7 @@ As a LOB user
 - Download and transfer ATP-D Wallet to Source Machine. Refer to [Lab 8](?lab=lab-8-configuring-development-system) Step 2.
 - A pre-generated Auth Token from the console. (Menu==>Identity==>Users==>User Details==>Auth Tokens==>Generate Tokens)
 
-## STEP 1: Create a Bucket
+## **Step 1:** Create a Bucket
 
 - Login to the OCI tenancy. Goto Menu => Core Infrastructure => Oject Storage => Object Storage
    ![](./Images/Img13.png " ") 
@@ -28,7 +28,7 @@ As a LOB user
 - Ensure you are in the right compartment and Click on Create Bucket.
    ![](./Images/Img14.png " ") 
 
-## STEP 2: Install Instant Client on the Source DBCS instance
+## **Step 2:** Install Instant Client on the Source DBCS instance
 
 - ssh into the Source DBCS instance
 
@@ -54,7 +54,7 @@ As a LOB user
 
 The instant cient package containing Basic Package, SQLPlus Package and Tools Package is now installed.
 
-## STEP 2: Check connectivity to the Target ATP-D instance from Source
+## **Step 2:** Check connectivity to the Target ATP-D instance from Source
 
 - Download and transfer ATP-D DB Wallet to Source Machine (DBCS instance).  
 *Note: We have downloaded the DB Wallet onto our local machine and uploaded it to object storage. We then used scp to transfer it to DBCS. Refer to [Lab 5](?lab=lab-5-configuring-development-system) Step 2.*
@@ -90,7 +90,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     </copy>
     ```
 
-## STEP 3: Download and Install MV2ADB on Source DBCS instance.
+## **Step 3:** Download and Install MV2ADB on Source DBCS instance.
 
 - Download the MV2ADB rpm file [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4). Platform specific rpm can be downloaded under the History Tab. 
 
@@ -125,7 +125,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
 
 *Note: The cfg file created here will be used as a reference for our configuration file.*
 
-## STEP 4: Encrypt Passwords
+## **Step 4:** Encrypt Passwords
 
 Generate encrypted passwords using the “mv2adb encpass” command for system password, Admin password and auth token (OCI Password) and copy the values to a safe location (Eg: Notepad).
 
@@ -137,7 +137,7 @@ Generate encrypted passwords using the “mv2adb encpass” command for system p
     ```
    ![](./Images/Img7.jpg " ")
 
-## STEP 5: Run the Migration Script
+## **Step 5:** Run the Migration Script
 
 - Take a backup of the existing configuration file and edit the DBNAME.mv2adb.cfg file.
 
@@ -189,7 +189,7 @@ Navigate to your console and get the OCI Details.
 
 *Note: Migration of schema from source machine to Autonomous Database is complete*
 
-## STEP 6: Validate the Data Migration
+## **Step 6:** Validate the Data Migration
 
 We had migrated a sample HR schema in this lab. Let's connect to the ATPD (Target) and validate the migration of data.
 

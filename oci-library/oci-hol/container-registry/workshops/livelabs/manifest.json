@@ -1,0 +1,22 @@
+{
+    "workshoptitle": "Create a Docker Registry in OCI",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction and Overview",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Create Docker registry in OCI",
+            "filename": "../../container-registry.md"
+        }
+    ]
+}

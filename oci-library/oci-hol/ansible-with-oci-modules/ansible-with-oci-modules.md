@@ -28,7 +28,7 @@ This lab will demonstration both provisioning and configuration of your infrastr
 
   **Note:** The OCI UI is regularly being enhanced.  Therefore, some screenshots in the instructions might be different than actual user interface.
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
@@ -40,7 +40,7 @@ This lab will demonstration both provisioning and configuration of your infrastr
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create a VCN
+## **Step 1:** Sign in to OCI Console and create a VCN
 
 
 * **Tenant Name:** {{Cloud Tenant}}
@@ -74,7 +74,7 @@ This lab will demonstration both provisioning and configuration of your infrastr
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
-## Step 2: Create Compute instance, configure OCI CLI, and upload API keys
+## **Step 2:** Create Compute instance, configure OCI CLI, and upload API keys
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
      ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
@@ -238,7 +238,7 @@ This lab will demonstration both provisioning and configuration of your infrastr
     </copy>
     ```
 
-## Step 3: Getting started with Ansible
+## **Step 3:** Getting started with Ansible
 In this section we will download some sample Ansible resources and configure it to work with our OCI tenancy.  Before starting this section, make sure you are in your SSH connection to the server you created in the previous section.
 
 1. Create an SSH key that Ansible will use when deploying new compute resources.  Press enter repeatedly to accept all default.
@@ -313,7 +313,7 @@ In this section we will download some sample Ansible resources and configure it 
 10. Open a new tab in the web browser and paste in the IP address; press enter.  You should encounter an error because nothing has been installed on the server yet.  Proceed to the next section.
 
 
-## Step 4: Deploying applications and code with Ansible
+## **Step 4:** Deploying applications and code with Ansible
 Now that we have provisioned our infrastructure, it is time to deploy an application (Apache) and some code (a simple HTML page).
 
 1. Return to your SSH terminal session.
@@ -333,7 +333,7 @@ In this tutorial, Ansible is deploying a simple HTML page.  You can make modific
 
 When finished, refresh your browser to see the changes.
 
-## Step 4: Cleaning up your environment
+## **Step 4:** Cleaning up your environment
 In this exercise, all of the resources provisioned by Ansible were also tagged.  The sample ``teardown.yaml`` script leverages these tags to find and destroy all the resources that were created.
 
 1. Run the following command to remove all the resources.

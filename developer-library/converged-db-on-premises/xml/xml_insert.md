@@ -16,7 +16,7 @@ This lab assumes you have completed the following labs:
 - Note :  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user. 
   
  
-## Step 1: Insert XML record.
+## **Step 1:** Insert XML record.
 
  1. Lets take a count of the rows we have currently and then will do a insert.
    
@@ -76,7 +76,7 @@ This lab assumes you have completed the following labs:
   ![](./images/xml_insert3a.png " ")
 
   
-## Step 2: Update XML table
+## **Step 2:** Update XML table
   
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.

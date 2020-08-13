@@ -34,7 +34,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
@@ -46,7 +46,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create VCN
+## **Step 1:** Sign in to OCI Console and create VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -82,7 +82,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
              
-## Step 2: Create ssh keys Compute instance and ssh to compute instance
+## **Step 2:** Create ssh keys Compute instance and ssh to compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -240,7 +240,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
     ```
      ![](./../atp-hol/images/ATP_003.PNG " ")
 
-## Step 3: Create ATP instance in OCI and Configure Swing Bench on Compute instance to generate load traffic
+## **Step 3:** Create ATP instance in OCI and Configure Swing Bench on Compute instance to generate load traffic
 
 *In this section we will create a ATP instance in OCI. We will initially create this instance with only 1 OCPU and scale it after generating load test from the compute instance created earlier*
 
@@ -416,7 +416,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 *We have Autonomous Transaction Processing DB instance configured and are testing Transaction per second data using a compute instance.Next we will dynamically scale the OCPU count via OCI console and observe the Transaction Per Second number. We will also see that Dynamic CPU scaling has no impact on the operation of Autonomous Transaction Processing Instance.*
 
-## Step 4: Dynamically Scale CPU on ATP instance and verify results
+## **Step 4:** Dynamically Scale CPU on ATP instance and verify results
 
 In this section we will utilize the dynamic CPU scaling featue of Autonomous Transaction Processing instance and verify Transaction Per second number.
 
@@ -439,7 +439,7 @@ In this section we will utilize the dynamic CPU scaling featue of Autonomous Tra
 
 *We have now demonstrated the Dynamic Scaling of CPU for an ATP instance. We also successfully generated load traffic and observed CPU usage and other indicators for the ATP instance.*
 
-## Step 5: Create auth token for the user to connect to ATP instance
+## **Step 5:** Create auth token for the user to connect to ATP instance
 
 In this section we will generate auth token for the user of this lab. An Auth token is an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
 
@@ -604,7 +604,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
 *We have successfully deployed a ATP instance,populated a table using a file stored in Object storage and successfully run a query against the table.*
 
-## Step 6: Create a Machine Learning User and access data from ATP instance
+## **Step 6:** Create a Machine Learning User and access data from ATP instance
 
 In this section we will create a Machine Learning User and access data that was uploaded. We will also explore other options avaialble in ATP.
 
@@ -674,7 +674,7 @@ In this section we will create a Machine Learning User and access data that was 
 
 *Next we will delete the resources we created which will complete this lab.*
 
-## Step 7: Delete the resources
+## **Step 7:** Delete the resources
 *NOTE: As a practice user will need to figure out any errors encountered during deletion of resources.*
 
 1. Switch to  OCI console window

@@ -3,7 +3,7 @@
 **Description**
 
 The workhorse of OCI is the compute instance.  Oracle offers Virtual Machine or Bare Metal instances in many shapes, from a single OCPU up to 24 OCPUs, catering to a variety of workloads and software architectures.  
-This lab will walk you through the deployment of a virtual machine instance and accompanying infrastructure.  After the instance is deployed, you'll access it securely from your computer, attach external block storage, install a simple web-application, and terminate it when you're done.
+This lab will walk you through the deployment of a virtual machine instance and accompanying infrastructure.  After the instance is deployed, you will access it securely from your computer, attach external block storage, install a simple web-application, and terminate it when you're done.
 
 **Lab Objectives**
 
@@ -87,7 +87,7 @@ The **Create Compute Instance** workflow will default to the most common selecti
 
 And finally, the last two sections are the **Boot Volume** and **Add SSH Keys** sections.   Leave the boot volume section with the defaults.   Note the you can specify a custom size or data encryption.  Do not select anything at this time.
 
-Next you'll need to create and paste SSH keys so that you can securely access the new instance.  
+Next you will need to create and paste SSH keys so that you can securely access the new instance.  
 
 6.  Click on the Applications Menu at the top of your screen and choose **Terminal Emulator** to open up a terminal window in your desktop environment.
 
@@ -97,7 +97,7 @@ Next you'll need to create and paste SSH keys so that you can securely access th
 
 ![](media/image010.png " ")
 
-In this next step, you'll display the contents of the public SSH key so that you can copy it and paste it into our compute instance creation dialog.    Type
+In this next step, you will display the contents of the public SSH key so that you can copy it and paste it into our compute instance creation dialog.    Type
 
 8.  Type the following command in the terminal window.
 
@@ -123,7 +123,7 @@ The instance will begin provisioning.  You should see the instance details scree
 
 ## Part 3: Connect to the instance
 
-1.  Examine the instance details screen.  Left click to drag and select the **Public IP Address** and right click or CTL-C to copy the IP address.  you'll need that to connect to the instance next.
+1.  Examine the instance details screen.  Left click to drag and select the **Public IP Address** and right click or CTL-C to copy the IP address.  you will need that to connect to the instance next.
 
 ![](media/image016.png " ")
 
@@ -165,7 +165,7 @@ In the next steps we will install and configure an Apache webserver via the Linu
 
 ![](media/image020.png " ")
 
-4.  Create the landing page for your web server.  For standard http the default web page is normally named index.html.  you'll use the linux *echo* command to alter the default file in its default location.
+4.  Create the landing page for your web server.  For standard http the default web page is normally named index.html.  you will use the linux *echo* command to alter the default file in its default location.
 
 ```sudo bash -c 'echo This is my Web-Server running on OCI >> /var/www/html/index.html'```
 

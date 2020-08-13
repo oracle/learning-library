@@ -67,7 +67,7 @@ If you already have an account or an active trial, you may skip this section.  I
 
   **NOTE**: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-### Step 2: Navigate to Lab 100
+### **Step 2:** Navigate to Lab 100
 - The Lab Guides are best viewed using the Workshop's [GitHub Pages Website URL](https://oracle.github.io/learning-library/workshops/bike-share-prediction).
 
 - You can see a list of Lab Guides by clicking on the Menu Icon in the upper left corner of the browser window. You're now ready to continue with Lab 100.

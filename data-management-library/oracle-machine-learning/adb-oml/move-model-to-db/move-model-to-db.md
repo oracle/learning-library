@@ -37,7 +37,7 @@ This lab assumes you have completed the following labs:
 - Connect and Provision ADB
 - Create a Machine Learning Model
 
-## Step 1: Grant Privileges to ML\_USER
+## **Step 1:** Grant Privileges to ML\_USER
 
 1.  Log into Oracle Cloud Console, if you have not already done so.
 
@@ -97,7 +97,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/010.png  " ")
 
-## Step 2: Export the machine learning model
+## **Step 2:** Export the machine learning model
 
 1.  Copy the SQL Developer URL from the browser and paste it in another tab. Change the user in the SQL Developer URL from admin to **ml\_user** and hit enter to log in as ml\_user. Copy the URL to a notepad - you will need it later.
 
@@ -159,7 +159,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/015.png  " ")
 
-## Step 3: Grant Create Table Privileges
+## **Step 3:** Grant Create Table Privileges
 
 1.  In Oracle Cloud Console, navigate to Autonomous Transaction Processing menu item and select your ATP instance.
 
@@ -221,7 +221,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/026.png  " ")
 
-## Step 4: Copy Machine Learning Models between ADW and ATP
+## **Step 4:** Copy Machine Learning Models between ADW and ATP
 
 1.  With the admin userid in ATP SQL Developer Web, create a credential to copy your ADW wallet from Object Storage to the DATA\_PUMP\_DIR which will be used later in this step. Specify the credentials:
 
@@ -331,7 +331,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/step4.10-041.png  " ")
 
-## Step 5: Copy tables from ADW to ATP
+## **Step 5:** Copy tables from ADW to ATP
 
 1.  First, copy the credit\_scoring\_100k table into ml\_user in ATP. Normally, this table would already exist in the production system. We could have loaded this table to ATP in lab 1 when we loaded the table into ADW. But, since we were going to create this database link, we can just copy it from ADW. Run the following statement to copy credit\_scoring\_100k table into ml\_user in ATP.
 
@@ -353,7 +353,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/043.png  " ")
 
-## Step 6: Import the ml model
+## **Step 6:** Import the ml model
 
 1.  Copy the SQL Developer URL from the browser and paste it in another tab. Change the user in the SQL Developer URL from admin to **ml\_user** and hit enter to log in as ml\_user. Copy the URL to a notepad - you will need it later.
 

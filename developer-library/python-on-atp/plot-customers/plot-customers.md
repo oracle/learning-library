@@ -9,7 +9,7 @@
 
 Support is interested in a new app that provides insights into customer and service provider data by geography, and would like an intuitive map like interface.  You plan to use the open source GeoPandas extension to quickly mock up an application interface leveraging Oracle Spatial.  You need to assess customer service provider availability for your products, and identify service provider coverage based on customer proximity to those services.  You plan to use some of Oracle's comprehensive library of Spatial functions such as SDO_NN to calculate distances between customers and their nearest service provider, and use this information to assess future service provider outlet requirements.
 
-## STEP 1: Configure project in Visual Studio Code
+## **Step 1:** Configure project in Visual Studio Code
 
 1. Open the terminal,click on **Applications**, select **Favorites** and then click on **Visual Studio**.
 
@@ -54,7 +54,7 @@ Support is interested in a new app that provides insights into customer and serv
 
 ![](images/8.png " ")
 
-## STEP 2: Plot customers on Map
+## **Step 2:** Plot customers on Map
 
 1. Leave the terminal open. Click on **config.py** file from the left pane and change the details in the file with your Autonomous Transaction Processing Database information.  
 

@@ -18,7 +18,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
-## Step 1: Make a JDBC connection to the database:
+## **Step 1:** Make a JDBC connection to the database:
 At the jshell prompt.
 
 ````
@@ -65,7 +65,7 @@ var pgql = PgqlConnection.getConnection(conn);
 ````
 ![](./images/IMGG5.PNG) 
 
-## Step 2: Create Graph
+## **Step 2:** Create Graph
 
 **Note: Below steps are already completed.**
 

@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Signing in to the Console](#practice-1-signing-in-to-the-console)
 
@@ -18,7 +18,7 @@ Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets yo
 
 There is a recording of the instructor going through this lab here: [Identity and Access Management](https://youtu.be/wQU9mb9yX7o)
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:

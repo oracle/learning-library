@@ -23,7 +23,7 @@ As an adminstrator,
 
 
 
-## Required Artifacts & pre-requisites
+## Required Artifacts & Prerequisites
 
 - An Oracle Cloud Infrastructure account
 

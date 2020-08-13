@@ -1,0 +1,21 @@
+{
+    "workshoptitle": "Using Oracle Cloud Infrastructure Block Volumes",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Key - Cloud Shell",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Lab 2: Moving Block Valumes",
+            "filename": "../../oci-quick-start/oci-quick-start.md"
+        }
+    ]
+}

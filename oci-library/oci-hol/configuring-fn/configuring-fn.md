@@ -27,7 +27,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 
@@ -39,7 +39,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI Console and create a VCN
+## **Step 1:** Sign in to OCI Console and create a VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -72,7 +72,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
               
-## Step 2: Create ssh keys and compute instance
+## **Step 2:** Create ssh keys and compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
     ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
@@ -179,7 +179,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
  
 13. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt.
 
-## Step 3: Configure and invoke Function
+## **Step 3:** Configure and invoke Function
 
 1. Check oci CLI installed version, Enter command:
     ```
@@ -466,7 +466,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 Congratulations! You've just created, deployed, and invoked your first function using Oracle Functions!
 
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 1. Switch to  OCI console window.
 

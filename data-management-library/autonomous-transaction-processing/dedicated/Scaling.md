@@ -26,7 +26,7 @@ and observe effect on the workload performance
 and observe effect on the workload performance
 
 
-## Required Artifacts & pre-requisites
+## Required Artifacts & Prerequisites
 
 - An Oracle Cloud Infrastructure account
 

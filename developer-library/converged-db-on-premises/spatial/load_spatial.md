@@ -15,7 +15,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
   
-## Step 1: Create spatial tables
+## **Step 1:** Create spatial tables
 
 We have created tables and spatial metadata for CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP 
 Notice that each has a column of type SDO\_GEOMETRY to store location. 
@@ -53,7 +53,7 @@ CREATE TABLE "WAREHOUSES_DTP"
 
     </copy>
 ````
-## Step 2 : Add spatial metadata
+## **Step 2:** Add spatial metadata
 
 Next we added Spatial metadata for the CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP 
 tables to the USER\_SDO\_GEOM\_METADATA view. Each SDO\_GEOMETRY column is registered with a row in USER\_SDO\_GEOM\_METADATA.
@@ -88,7 +88,7 @@ We have inserted spatial data and we have used two spatial functions for this.
 - We use sdo\_geom.validate\_geometry() to insert only valid geometries.
 
 
-## Step 3: Sample insert query 
+## **Step 3:** Sample insert query 
 
 Below is the sample insert query-
 

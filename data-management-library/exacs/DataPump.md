@@ -26,7 +26,7 @@ As a database admin or user,
 
 ## Steps
 
-### STEP 1: Download a sample data pump export file from Oracle Learning Library github repository
+### **Step 1:** Download a sample data pump export file from Oracle Learning Library github repository
 
 - Log into your bastion server
 
@@ -67,7 +67,7 @@ wget -O user_XX.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 ![wget_dump_details](./images/HOL-DataPump/wget_dump_details.png " ")
 ![dump_complete](./images/HOL-DataPump/dump_complete.png " ")
 
-### STEP 2: Setup environment to import data to Exadata Cloud Service Database 
+### **Step 2:** Setup environment to import data to Exadata Cloud Service Database 
 - Log into your database from your bastion server and execute following command
 
 ```
@@ -113,7 +113,7 @@ scp -i /path/to/identity/file /path/to/user_xx.dmp oracle@Exadata_private_ip:/pa
 </copy>
 ```
 
-### STEP 3: Perform Data Import
+### **Step 3:** Perform Data Import
 - Log into the exadata cloud service DB server 
 
 ```

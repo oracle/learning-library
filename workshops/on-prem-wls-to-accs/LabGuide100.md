@@ -15,7 +15,7 @@ Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?
 
 - Bookmark this page for future reference.
 
-- Please click on the following link to create your Free Account, and complete all the required steps to get your free Oracle Cloud Trial Account. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free. Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
+- Please click on the following link to create your Free Account, and complete all the required steps to get your free Oracle Cloud Trial Account. When you complete the registration process you will receive a $300 credit that will enable you to complete the lab for free. Additionally, you will have 1000s of hours left over to continue to explore the Oracle Cloud.
 
     - Soon after requesting your trial you will receive the following email. You may begin working on Lab 100 before you receive this email, but you will not be able to start Lab 200 until you have received it.
 

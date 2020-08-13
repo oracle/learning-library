@@ -266,7 +266,7 @@ Even though the original AlphaOfficeUI image could have been set up ahead of tim
 
 #### **STEP 4c**: Edit the alpha.html file   
 
-- Edit the `alpha.html` file to fix a typo - Note, if you are unfamiliar with `vim`, you'll find information at this URL: [VIM](http://vimsheet.com). The commands are very similar to vi.
+- Edit the `alpha.html` file to fix a typo - Note, if you are unfamiliar with `vim`, you will find information at this URL: [VIM](http://vimsheet.com). The commands are very similar to vi.
 
   ```
   vim /pipeline/source/public/alpha.html

@@ -13,7 +13,7 @@ As an adminstrator,
 - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 5](?lab=lab-5-configuring-development-system).
 - A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
 
-## STEP 1: Log in to the Oracle Cloud Developer image and invoke SQL Developer
+## **Step 1:** Log in to the Oracle Cloud Developer image and invoke SQL Developer
 - To connect to your Oracle Cloud Developer image please refer to [Lab 5](?lab=lab-5-configuring-development-system). If  you are already connected from the previous lab skip to *STEP 2*.  
 
     *The remainder of this lab assumes you are connected to the image through VNC Viewer and are operating from the image itself and not your local machine (except if noted).*
@@ -23,7 +23,7 @@ As an adminstrator,
 - Next, open a connection to your dedicated autonomous DB instance. Once again, refer to [Lab 5](?lab=lab-5-configuring-development-system) if you do not know how to do that. Alternatively, you may also use sqlcl or sql*plus clients for this lab but screenshots here are based on SQL Developer.
 
 
-## STEP 2: Recover from erroneous transactions
+## **Step 2:** Recover from erroneous transactions
 *Lets first see how to recover from an accidental data loss.*
 
 - In SQL Developer worksheet, lets first make sure the database is in archivelog mode. An autonomous database is always created in archivelog mode.

@@ -11,7 +11,7 @@ In this lab, we will import the on-premises VMWare environment that we had expor
 1. Access to the object storage bucket used to store the exported workload in Lab 2.
 2. The deployed OCVS environment from Lab 1.
 
-## STEP 1: Import the osCommerce OVF into Oracle Cloud VMware Service
+## **Step 1:** Import the osCommerce OVF into Oracle Cloud VMware Service
 
 1. Use the RDP client to connect to the bastion host. Using the pre-authenticated request URL from Lab 2, download the zipped ovf file. Unzip to extract the 3 ovf files on your computer.
 
@@ -69,7 +69,7 @@ In this lab, we will import the on-premises VMWare environment that we had expor
 
      ![](./images/300_13.png " ")
 
-## STEP 2: Enable Internet on the VM
+## **Step 2:** Enable Internet on the VM
 
 1. The VM does not have DNS settings. To add the DNS server click the network icon in the top right corner and click on **Edit Connections**
 

@@ -111,7 +111,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ![](images/LabGuide200-6ff14524.png)
     ![](images/200/LabGuide200-k8s-2.png)
     
-    - Starting at the top you'll notice that the cluster will be created in our **Demo** compartment.
+    - Starting at the top you will notice that the cluster will be created in our **Demo** compartment.
     - We can customize the name of this cluster if we want
     - Multiple versions of Kubernetes are available, with the newest version selected by default
     - The default cluster creation mode will automatically create a Virtual Cloud Network for our cluster, including 2 load balancer subnets and 3 subnets for our worker VMs

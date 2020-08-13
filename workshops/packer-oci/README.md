@@ -19,7 +19,7 @@ To learn more about this workshop please watch the video below.
 
 - Bookmark this page for future reference.
 
-- Please click on the URL to create your <a class="trial-link" href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ow:lp:2t::RC_NAMK190212P00041:PackerOCI_HOL&intcmp=:ow:lp:2t::RC_NAMK190212P00041:PackerOCI_HOL" target="trial">Free Account</a> and complete all the required steps. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free.  Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
+- Please click on the URL to create your <a class="trial-link" href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ow:lp:2t::RC_NAMK190212P00041:PackerOCI_HOL&intcmp=:ow:lp:2t::RC_NAMK190212P00041:PackerOCI_HOL" target="trial">Free Account</a> and complete all the required steps. When you complete the registration process you will receive a $300 credit that will enable you to complete the lab for free.  Additionally, you will have 1000s of hours left over to continue to explore the Oracle Cloud.
 
   - Soon after requesting your trial you will receive the following email.
 

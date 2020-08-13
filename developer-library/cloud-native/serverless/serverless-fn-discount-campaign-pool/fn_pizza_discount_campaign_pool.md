@@ -1,9 +1,9 @@
 # Function fn discount campaign With pooled connections
 This serverless function access **ATP DB** with **JDBC UCP driver** and get information about current and enabled discount campaigns. Whether the current pizza order has a discount campaign available, based on the dates, method of payment and pizza price then this function will response with the new pizza order price, applying the discount to the original pizza price. 
 
-In this function you'll use pooled connections with UCP jdbc driver instead of a DB direct jdbc connection. DB wallet should be downloaded locally and unzipped in an OCI private Object Storage Bucket (keeping the appropiate policy access to FaaS service to access the private bucket), after that you could create a method to upload these wallet files to your container. You will do almost the same but unzipping the wallet.zip in the docker image creation (the code is in the Dockerfile).
+In this function you will use pooled connections with UCP jdbc driver instead of a DB direct jdbc connection. DB wallet should be downloaded locally and unzipped in an OCI private Object Storage Bucket (keeping the appropiate policy access to FaaS service to access the private bucket), after that you could create a method to upload these wallet files to your container. You will do almost the same but unzipping the wallet.zip in the docker image creation (the code is in the Dockerfile).
 
-If you do the optional Developer Cloud Service part of the lab, you'll create a CI/CD pipeline with the same procedure but without download wallet.zip locally or using a private object storage bucket and the addional download method (this method should be quite similar to the **fn_pizza_discount_cloud_events**) to read the file from the bucket.
+If you do the optional Developer Cloud Service part of the lab, you will create a CI/CD pipeline with the same procedure but without download wallet.zip locally or using a private object storage bucket and the addional download method (this method should be quite similar to the **fn_pizza_discount_cloud_events**) to read the file from the bucket.
 
 Table of Contents:
 1. [fn discount campaign IDE preparation](#fn-discount-campaign-ide-preparation)
@@ -143,7 +143,7 @@ Next copy from raw [Docker file code](https://raw.githubusercontent.com/oraclesp
 After that, click in File -> Save All in your IDE to save all changes.
 
 ## Copy necessary files
-To run the serverless function as a docker container you'll need to download a dbwallet.zip file (generated when you created the ATP db).
+To run the serverless function as a docker container you will need to download a dbwallet.zip file (generated when you created the ATP db).
 
 ### JDBC drivers and data access libs.
 You can use [maven repository web](https://mvnrepository.com/artifact/com.oracle.database.jdbc?sort=newest) look for your apropiate maven repo or library and import to your **pom.xml** project copying from the **maven tab**. Next you could download the lib file from **Files** clicking in **jar**.
@@ -496,7 +496,7 @@ RUN yum install -y unzip
 COPY dbwallet.zip /function
 RUN unzip /function/dbwallet.zip -d /function/wallet/ && rm /function/dbwallet.zip
 ```
-Database Resident Connection Pool (DRCP) in Autonomous Database supports easier and more efficient management of open connections. You should include (SERVER=POOLED) in your tnsnames.ora connection string. In this case you'll change tnsnames.ora file once it would be unzipped and sed command will change the ```high.atp.oraclecloud.com)``` connection string to ```high.atp.oraclecloud.com)(SERVER=POOLED)```.
+Database Resident Connection Pool (DRCP) in Autonomous Database supports easier and more efficient management of open connections. You should include (SERVER=POOLED) in your tnsnames.ora connection string. In this case you will change tnsnames.ora file once it would be unzipped and sed command will change the ```high.atp.oraclecloud.com)``` connection string to ```high.atp.oraclecloud.com)(SERVER=POOLED)```.
 ```dockerfile
 RUN sed -i 's/high.atp.oraclecloud.com)/high.atp.oraclecloud.com)(SERVER=POOLED)/g' /function/wallet/tnsnames.ora
 ```

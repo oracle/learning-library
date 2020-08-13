@@ -35,16 +35,16 @@ You have several development interfaces available, including:
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
 
-## Step 1 Connect to your Autonomous Database using SQL Developer Web
+## **Step 1:**Connect to your Autonomous Database using SQL Developer Web
 
-## Step 2 Create a user for Application development
+## **Step 2:**Create a user for Application development
 
-## Step 3 Build a simple GET handler
+## **Step 3:**Build a simple GET handler
 
-## Step 4 Register an OAUTH Client application
+## **Step 4:**Register an OAUTH Client application
 
 ## Conclusion
- In this Lab, you had an opportunity to get an introduction to REST services.
+ In this lab, you had an opportunity to get an introduction to REST services.
 
 ## Acknowledgements
 

@@ -19,7 +19,7 @@ In this lab, you examine the structures and data in the Sales History (SH) sampl
 
 -   This lab requires completion of the preceding 3 labs in the Contents menu on the right.
 
-## STEP 1: Examine the SH Tables and Their Relationships
+## **Step 1:** Examine the SH Tables and Their Relationships
 
 A database schema is a collection of metadata that describes the relationship between the data in a database. A schema can be simply described as the "layout" of a database or the blueprint that outlines how data is organized into tables.
 
@@ -36,7 +36,7 @@ Here is the entity-relationship diagram of the SH schema:
 
 ![](./images/sales_history_sh_schema_er_diagram.png " ")
 
-## STEP 2: Use the DESCRIBE Command to Examine the Details of an SH Table
+## **Step 2:** Use the DESCRIBE Command to Examine the Details of an SH Table
 
 The `DESCRIBE` command provides a description of a specified table or view. The description for tables and views contains the following information:
 -   Column names

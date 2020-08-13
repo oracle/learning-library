@@ -1,6 +1,6 @@
 # Connect to ADB with SQL Developer Web and Run Your First Query
 
-## **Introduction**
+## Introduction
 
 In this lab, you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) instance using SQL Developer Web.
 

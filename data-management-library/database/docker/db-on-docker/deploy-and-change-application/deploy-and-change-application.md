@@ -23,7 +23,7 @@ In this section of the lab you will deploy the remaining containers to support t
     - Docker Setup
     - Create an Oracle DB Container
 
-## Step 1: Deploy Application
+## **Step 1:** Deploy Application
 
 In this section, you will deploy an application, twitterfeed, that is stored in the hub.docker.com site under the account wvbirder.  You will then run the rest client using an oracle database as the data source.
 
@@ -72,7 +72,7 @@ In this section, you will deploy an application, twitterfeed, that is stored in 
 7.  Go back to your broswer to see the application running on port 8085.  http://Public IP address:8085.  Click on one of the products to see the details and the twitterfeed comments. 
    ![](images/alphaoffice.png " ")
 
-## Step 2: Change Application (Container in place modifications)
+## **Step 2:** Change Application (Container in place modifications)
 
 This lab will show how you can share applications and make modifications in the container.  
 
@@ -131,7 +131,7 @@ This lab will show how you can share applications and make modifications in the 
     ![](images/oldalphaoffice.png " ") 
 
 
-## Step 3: Updating an Image to Docker Hub
+## **Step 3:** Updating an Image to Docker Hub
 
 1.  If you were working with a team and needed to get this updated online, you would commit it.  Let's commit this new docker image to your docker hub now.  Wvbirder thanks but we have our own Docker account.  Once commited, list the images.  Note that your image is now listed.
     ````

@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Creating the Instance Console Connection](#practice-1-creating-the-instance-console-connection)
 
@@ -26,7 +26,7 @@ There are two types of instance console connections:
 - Serial console connections
 - VNC console connections
 
-## Pre-Requisites 
+## Prerequisites 
 
 - Oracle Cloud Infrastructure account credentials (Tenant ID, Username and Password)
 

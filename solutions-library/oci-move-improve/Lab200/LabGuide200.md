@@ -34,7 +34,7 @@ Estimated time to complete this lab is three hours.
 
 ## Part 1. Transfer and synchronize webserver files and database files between primary instance and secondary instance.
 
-### Step 1: Installing rsync utility on primary and secondary compute instances
+### **Step 1:** Installing rsync utility on primary and secondary compute instances
 
 Run the following command on primary compute instance.
 
@@ -43,7 +43,7 @@ sudo apt-get install rsync
 ```
 Repeat the same for secondary compute instance.
 
-### Step 2: Secure copy your private ssh key to primary compute OR Generate new ssh key pair
+### **Step 2:** Secure copy your private ssh key to primary compute OR Generate new ssh key pair
 
 As written in the pre-reqs, we will require to setup ssh access from primary server to secondary server and vice-versa. If you want to use the same ssh keys as the one you are using to ssh into oscommerce compute, you can scp the private key file from local to primary oscommerce instance by using the following:
 
@@ -85,7 +85,7 @@ cat >> ~/.ssh/authorized_keys
 
 Paste your clipboard contents.
 
-### Step 3: Replicate web server files and database files
+### **Step 3:** Replicate web server files and database files
 
 Our web server files are located at /var/www/html. In order to demonstrate replication of web server files from primary server to secondary server, lets delete all the web server files from secondary server and then set up a replication from primary server using rsync.
 
@@ -127,7 +127,7 @@ We have successfully replicated the web server files. Similarly, we can replicat
 * Using mysql dump utility
 
 
-### Step 4: Replicate mysql database files
+### **Step 4:** Replicate mysql database files
 
 Run the following command on primary and backup server:
 
@@ -217,7 +217,7 @@ Thus, we have the webserver files as well as the database files in a secondary s
 ## Part 2. Configure DNS failover
 At this point of time, our primary server and secondary server are in sync. Lets proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover like using keepalived, using load balancers and using DNS Traffic Management Steering policies in OCI. For the purpose of this lab, we will use the DNS Traffic Management Steering Policy in Oracle Cloud Infrastructure.
 
-### Step 1: Make your application accessible from your ip address
+### **Step 1:** Make your application accessible from your ip address
 
 ssh into your primary compute instance
 
@@ -259,7 +259,7 @@ Now, if you hit your public ip address in the browser, you should be able to see
 
 ### If you already have your DNS Zone within Oracle Cloud Infrastructure, Skip step 2 and step 3
 
-### Step 2: Export DNS zone file
+### **Step 2:** Export DNS zone file
 
 **Prequisite**
 
@@ -278,7 +278,7 @@ Export the resource record. This file would be exported as a .txt file. Store in
 
 ![](./images/11.png "")
 
-### Step 3: Create Zone on Oracle Cloud infrastructure
+### **Step 3:** Create Zone on Oracle Cloud infrastructure
 In this step, you will create a zone. A zone holds the trusted DNS records that will reside on Oracle Cloud Infrastructure’s nameservers.
 
 Navigate back to OCI console to create a zone using the exported file
@@ -309,7 +309,7 @@ I’m using google-domain in this case. Add name servers to your domain name ser
 ![](./images/16.png "")
 
 
-### Step 4: Add an "A" record to DNS zone
+### **Step 4:** Add an "A" record to DNS zone
 
 There are many record types you can add to your zone, depending on your goals for the zone and its DNS management. For this Lab, we would add an “A” record. For more information about record types refer [Supported Resource Records](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Tasks/managingdnszones.htm)
 
@@ -339,7 +339,7 @@ In the confirmation dialog box, click Publish Changes.
 
 ![](./images/43.png "")
 
-### Step 5: Create a failover traffic steering policy on OCI console
+### **Step 5:** Create a failover traffic steering policy on OCI console
 
 Traffic Management Steering Policies enables you to configure policies to serve intelligent responses to DNS queries, meaning different answers (endpoints) may be served for the query depending on the logic you define in the policy. Traffic Management Steering Policies can account for health of answers to provide failover capabilities
 

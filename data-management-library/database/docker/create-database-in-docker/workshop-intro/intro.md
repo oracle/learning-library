@@ -17,7 +17,7 @@ Welcome to the Oracle Database Docker Workshop. Using Docker build files for Ora
 - Connect to the Database in the container
 - Manage your Docker container
 
-Each of the labs is 5 -10 minutes in length, so you'll be up and running in no time.
+Each of the labs is 5 -10 minutes in length, so you will be up and running in no time.
 
 *Note 1: You will need a Free Trial or an existing Oracle Cloud account for this workshop (Not all services in this workshop are Always Free services)*
 

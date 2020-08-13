@@ -33,7 +33,7 @@ As an developer or DBA,
 
 ## Steps
 
-### STEP 1: Access OCI autonomous database console and get URL for sql developer web cosole
+### **Step 1:** Access OCI autonomous database console and get URL for sql developer web cosole
 
 Login to your Oracle Cloud Infrastructure account and navigate to the console page of your dedicated autonomous database. 
 
@@ -50,7 +50,7 @@ Save the URL some place while you work on the next step to access your developer
 
 
 
-### STEP 2: Create a VNC connection to developer client VM and access sqldevweb console 
+### **Step 2:** Create a VNC connection to developer client VM and access sqldevweb console 
 
 
  Since your autonomous database in a private network, you cannot access it with the URL above unless you are on a machine that has a network path to your database subnet. 
@@ -89,7 +89,7 @@ Note: Mac users should user CRTL + V to paste into VNC and not Command + V
 
 
 
-### STEP 3: Access the Performance Hub through SQL Developer Web Console
+### **Step 3:** Access the Performance Hub through SQL Developer Web Console
 
 The SQL Developer Web home page provides quick links on the right to some of its key features, including the Performance Hub. 
 

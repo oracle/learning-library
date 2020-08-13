@@ -77,7 +77,7 @@ The next steps will download the files needed for the rest of the workshop and c
 
 *Note: Some commands throughout the rest of this lab may take 10-60 seconds to complete.*  
 
-## Step 1: Login and Create PDB
+## **Step 1:** Login and Create PDB
 This section looks at how to login and create a new PDB.
 
 The tasks you will accomplish in this step are:
@@ -246,7 +246,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/step1.9-containers.png " ")
 
-## Step 2: Clone a PDB
+## **Step 2:** Clone a PDB
 This section looks at how to clone a PDB.
 
 The tasks you will accomplish in this step are:
@@ -325,7 +325,7 @@ The tasks you will accomplish in this step are:
 
    ![](./images/pdb3mytab.png " ")
 
-## Step 3: Unplug a PDB
+## **Step 3:** Unplug a PDB
 This section looks at how to unplug a PDB.
 
 The tasks you will accomplish in this step are:
@@ -419,7 +419,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/xmlfile.png " ")
 
-## Step 4: Plug in a PDB
+## **Step 4:** Plug in a PDB
 This section looks at how to plug in a PDB.
 
 The tasks you will accomplish in this step are:
@@ -548,7 +548,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/pdb3mytab2.png " ")
 
-## Step 5: Drop a PDB
+## **Step 5:** Drop a PDB
 This section looks at how to drop a pluggable database.
 
 The tasks you will accomplish in this step are:
@@ -585,7 +585,7 @@ The tasks you will accomplish in this step are:
     ![](./images/droppdb.png " ")
 
 
-## Step 6: Clone an Unplugged PDB
+## **Step 6:** Clone an Unplugged PDB
 This section looks at how to create a gold copy of a PDB and clone it into another container.
 
 The tasks you will accomplish in this step are:
@@ -759,7 +759,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/step6.12-guid.png " ")
 
-## Step 7: PDB Hot Clones
+## **Step 7:** PDB Hot Clones
 This section looks at how to hot clone a pluggable database.
 
 The tasks you will accomplish in this step are:
@@ -906,7 +906,7 @@ The tasks you will accomplish in this step are:
 
 You can see that the clone of the pluggable database worked without having to stop the load on the source database. In the next step, you will look at how to refresh a clone.
 
-## Step 8: PDB Refresh
+## **Step 8:** PDB Refresh
 This section looks at how to hot clone a pluggable database, open it for read only and then refresh the database.
 
 [](youtube:L9l7v6dH-e8)
@@ -1004,7 +1004,7 @@ The tasks you will accomplish in this step are:
 
 7. Leave the **OE** pluggable database open with the load running against it for the rest of this lab.
 
-## Step 9: PDB Relocation
+## **Step 9:** PDB Relocation
 
 This section looks at how to relocate a pluggable database from one container database to another. One important note, either both container databases need to be using the same listener in order for sessions to keep connecting or local and remote listeners need to be setup correctly. For this lab we will change **CDB2** to use the same listener as **CDB1**.
 

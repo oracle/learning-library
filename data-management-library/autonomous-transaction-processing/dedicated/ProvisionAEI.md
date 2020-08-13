@@ -28,7 +28,7 @@ As a fleet administrator,
 
 ## Steps
 
-### STEP 1: Deploy your Autonomous Exadata Infrastructure (AEI)
+### **Step 1:** Deploy your Autonomous Exadata Infrastructure (AEI)
 
 **Login to your OCI account as a fleet administrator**
 

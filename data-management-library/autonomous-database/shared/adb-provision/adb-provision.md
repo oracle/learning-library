@@ -1,6 +1,6 @@
 # Provisioning Autonomous Database (ADW and ATP)
 
-## **Introduction**
+## Introduction
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. You will provision a new ADW instance and connect to the database using Oracle SQL Developer Web.
 

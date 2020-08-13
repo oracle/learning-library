@@ -1,5 +1,5 @@
 # Microservices/Serverless Workshop (Gigi's Pizza)
-## **Introduction**
+## Introduction
 
 This Hands-on Lab (HOL) is based on a Demo developed by the WeDo Team as part of an innovation initiative to approach Oracle Cloud Solutions by providing practical examples that can be “touched” and easily understood.
 

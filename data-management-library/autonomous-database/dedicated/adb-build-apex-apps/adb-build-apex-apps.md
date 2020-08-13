@@ -24,7 +24,7 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 - A pre-provisioned autonomous database with admin access.
 - A pre-provisioned developer client machine with network access to database.
 
-## STEP 1: Accessing the OCI Autonomous Transaction Processing console and finding APEX URL
+## **Step 1:** Accessing the OCI Autonomous Transaction Processing console and finding APEX URL
 
 - To get the APEX URL for your ATP Dedicated instance, log into the Oracle Cloud and navigate to Autonomous Transaction Processing option from the Hamburger menu. 
 - On the Autonomous Database console, select the ATP-Dedicated database you created.
@@ -37,7 +37,7 @@ Oracle Application Express (APEX) is a low-code development platform that enable
     ![](./images/getApexURL.png " ")
 
 
-## STEP 2: Setup VNC connection to the developer client VM and access APEX on the database as an admin user
+## **Step 2:** Setup VNC connection to the developer client VM and access APEX on the database as an admin user
 
 - Since ATP Dedicated instances are typically deployed in a private network, one way to get to your APEX console is via a developer client machine setup in the same network.
 
@@ -85,7 +85,7 @@ Oracle Application Express (APEX) is a low-code development platform that enable
     ![](./images/SettingVNC4.png " ")
     ![](./images/SettingVNC6.png " ")
 
-## STEP 3: Setting up additional users on APEX
+## **Step 3:** Setting up additional users on APEX
 - When you have logged into the VNC, use the URL you saved in step 1 and paste it in the browser in the VNC to connect to APEX on your ATP-D database. You will the APEX login page for your database.
 
 - Login to APEX, by using the following credentials.

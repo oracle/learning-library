@@ -1,6 +1,6 @@
 # Improve the Faceted Search
 
-## **Introduction**
+## Introduction
 
 In this lab, you will get first-hand experience with enhancing the application by improving the faceted search page for better clarity and improved usability. The search page includes facets on the left which can readily be used to limit the data shown in the report on the right.
 

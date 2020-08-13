@@ -23,7 +23,7 @@ As an adminstrator,
 - Monitor and Manage your autonomous database performance using Performance Hub.
 
 
-## Required Artifacts & pre-requisites
+## Required Artifacts & Prerequisites
 
 - An Oracle Cloud Infrastructure account
 

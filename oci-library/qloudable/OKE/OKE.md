@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Sign in to OCI Console and create Kubernetes Cluster](#sign-in-to-oci-console-and-create-kubernetes-cluster)
 
@@ -48,7 +48,7 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-## Pre-Requisites
+## Prerequisites
 
 1. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 

@@ -38,7 +38,7 @@ Follow these general steps:
 
 ## Steps
 
-### Step 1: Sign in to the Oracle Data Safe Console for your region
+### **Step 1:** Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -53,7 +53,7 @@ Follow these general steps:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 2: Explore masking formats in the Library
+### **Step 2:** Explore masking formats in the Library
 
 - In the Oracle Data Safe Console, click the **Library** tab.
 - Click **Masking Formats**.
@@ -69,7 +69,7 @@ Follow these general steps:
 - Notice that there is a description and three examples. The description says `Replaces values with random numbers between 0 and 110`.
 - Click **Close**.
 
-### Step 3: Explore masking policies in the Library
+### **Step 3:** Explore masking policies in the Library
 
 - Click the **Library** tab.
 - Click **Masking Policies**. Your masking policy that you created in [Masking Lab 1 - Discover and Mask Sensitive
@@ -85,7 +85,7 @@ Data by Using Default Masking Formats in Oracle Data Safe](?lab=lab-12-1-discove
 - To return to the **Masking Policies** page in the Library, click the browser's **Back** button.
   - If you click **Exit** at the bottom, you are returned to the **Home** page.
 
-### Step 4: Download your masking policy
+### **Step 4:** Download your masking policy
 
 - Go to the **Library tab** and click on **Masking Policies**.
 
@@ -107,12 +107,12 @@ A confirmation message is displayed on your page.
 - View your list of downloads in your browser and open the masking policy XML file.
 - Review the file, and then close it.
 
-### Step 5: Explore the Data Masking report
+### **Step 5:** Explore the Data Masking report
 - Click the **Reports** tab.
 - On the left, click **Data Masking** and then again **Data Masking**.
 - Click your **Data Masking** report in the content pane to view it.
 
-### Step 6: Explore the Jobs page
+### **Step 6:** Explore the Jobs page
 - Click the **Jobs** tab.
   - The **Current and Past Jobs** tab shows you all of the jobs that you ran and are in the process of running.
   - The **Scheduled Job** tab shows you all of the jobs that are scheduled.

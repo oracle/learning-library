@@ -8,7 +8,7 @@ Loading Knowledge Modules (LKM) are used for loading strategies and Integration 
 
 You have to define the way to retrieve the data from the SRC\_AGE\_GROUP, SRC\_ SALES\_PERSON files and from the SRC\_CUSTOMER table in your source environment.
 
-## Step 1: Define the loading strategies:
+## **Step 1:** Define the loading strategies:
 
 1.  In the Physical tab of the Mapping Editor, select the access point
     that corresponds to the loading of the SRC\_AGE\_GROUP,

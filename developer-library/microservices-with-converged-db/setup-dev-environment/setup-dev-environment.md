@@ -15,21 +15,28 @@ This 25-minute lab will show you how to setup the Oracle Cloud Infrastructure Co
 
  You will not be able to complete this workshop with the 'free always' account. Make sure that you select the free trial account with credits.
 
-## **STEP 1**: Create the basic OCI resources
+## **STEP 1**: Download and save the msdataworkshop.properties file
 You'll need to keep track of important information about the tenancy, such as resource IDs, Tenancy OCID, Region name, Object Storage Namespace and user OCID.
 
-1. Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you'll need in later labs. Open this file in a text editor.
+1.  Download and save <a href="files/msdataworkshop.properties" target="\_blank">msdataworkshop.properties</a> to store and keep track of the data you will need in later labs.
+2. Open this file in a text editor. You will update it throughout this lab.
+
    You will later copy this information to your root directory using Cloud Shell and source it for the workshop.
 
-2. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
+
+## **STEP 2**: Create the basic OCI resources
+
+1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
 
   ![](images/1-tenancy-details.png " ")
 
-3. The Tenancy Details page shows information about your cloud account. Add the Tenancy OCID to your `msdataworkshop.properties` file by clicking on the **Copy** link next to it. Also add the Object Storage Namespace - you will need this when logging into Docker.
+2. The Tenancy Details page shows information about your cloud account. Add the Tenancy OCID to your `msdataworkshop.properties` file by clicking on the **Copy** link next to it.
+
+ Also add the Object Storage Namespace to your `msdataworkshop.properties` file - you will need this when logging into Docker.
 
   ![](images/2-copy-ocid.png " ")
 
-4. To get the Region name, open up the hamburger menu in the top-left corner of the Console and choose **Administration > Region Management**. Add the region identifier to your `msdataworkshop.properties` file.
+3. To get the Region name, open up the hamburger menu in the top-left corner of the Console and choose **Administration > Region Management**. Add the region identifier to your `msdataworkshop.properties` file.
 
   ![](images/3-admin-region-mgmt.png " ")
 
@@ -37,15 +44,15 @@ You'll need to keep track of important information about the tenancy, such as re
 
   ![](images/4-example-region-id.png " ")
 
-5. To get the User OCID, open up the User icon in the top-right corner of the Console, and click your user name. If your user is federated, it will be prefixed with `oracleidentitycloudservice/`.
+4. To get the User OCID, open up the User icon in the top-right corner of the Console, and click your user name. If your user is federated, it will be prefixed with `oracleidentitycloudservice/`.
 
   ![](images/5-get-user-ocid.png " ")
 
-6. On the next page, copy and paste the User OCID to your `msdataworkshop.properties` file by clicking on the **Copy** link next to it.
+5. On the next page, copy and paste the User OCID to your `msdataworkshop.properties` file by clicking on the **Copy** link next to it.
 
   ![](images/6-example-user-ocid.png " ")
 
-## **STEP 2**: Create User API Keys
+## **STEP 3**: Create User API Keys
 
 To create a user API key, you will use the Cloud Shell. Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated OCI CLI, set to the Console tenancy home page region, as well as up-to-date tools and utilities.
 
@@ -69,7 +76,7 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/8A-create-oci-dir.png " ")
 
-4. Generate a private key with the following command. Choose a private key name you can remember. When prompted, enter a passphrase to encrypt the private key file. Be sure you add this passphrase to your `msdataworkshop.properties` file, as you will need it later. When prompted again, re-enter the passphrase to confirm it.
+4. Generate a private key with the following command. Choose a private key name you can remember. When prompted, enter a passphrase to encrypt the private key file.  When prompted again, re-enter the passphrase to confirm it. Be sure to make note of this password as you will need it later.
 
     ```
     <copy>openssl genrsa -out ~/.oci/user1_api_key_private.pem -aes128 2048</copy>
@@ -125,13 +132,13 @@ To create a user API key, you will use the Cloud Shell. Cloud Shell is a small v
 
   ![](images/12-upload-key.png " ")
 
-12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed. Add the fingerprint value to your `msdataworkshop.properties` file, you'll use the fingerprint later.
+12. Paste the public key's value into the window and click **Add**. The key is uploaded, and its fingerprint is displayed.
 
   ![](images/13-upload-key2.png " ")
 
   ![](images/14-save-fingerprint.png " ")
 
-## **STEP 3**: Create a Compartment for OKE and ATP Resources
+## **STEP 4**: Create a Compartment for OKE and ATP Resources
 
 You will now create a compartment which would hold the resources used by OKE and ATP.
 
@@ -153,10 +160,10 @@ You will now create a compartment which would hold the resources used by OKE and
 
   ![](images/20-compartment-ocid.png " ")
 
-## **STEP 4**: Create an Oracle Cloud Infrastructure Registry and Auth key
+## **STEP 5**: Create an Oracle Cloud Infrastructure Registry and Auth key
 You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
-1. Open up the hamburger button in the top-left corner of the console and go to **Developer Services > Registry (OCIR)**.
+1. Open up the hamburger button in the top-left corner of the console and go to **Developer Services > Container Registry**.
 
   ![](images/21-dev-services-registry.png " ")
 
@@ -184,11 +191,10 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/26-save-auth-token.png " ")
 
-## **STEP 5**: Create OKE Cluster
+## **STEP 6**: Create OKE Cluster
 
 1.  To create an OKE cluster, open up the hamburger button in the top-left
-    corner of the Console and go to **Developer Services > Container Clusters
-    (OKE)**.
+    corner of the Console and go to **Developer Services > Kubernetes Clusters**.
 
   ![](images/27-dev-services-oke.png " ")
 
@@ -223,7 +229,7 @@ fully provisioned and the Cluster Status should show Active. Go to the
 
   ![](images/34-copy-cluster-id.png " ")
 
-## **STEP 6**: Setup ATP databases
+## **STEP 7**: Setup ATP databases
 
 1. To create the two Autonomous Transaction Processing databases, open up the
     hamburger button in the top-left corner of the Console and go to Autonomous
@@ -276,7 +282,7 @@ information and click **Create Autonomous Database**:
         everywhere”
     -   License type: `License included`
 
-  ![](images/40-create-second-atp.png " ")
+  ![](images/40-create-second-atp2.png " ")
 
 6. Once both databases are provisioned you should see the state changed to
 Available. Click on each of the ATP names in order to go to their pages and copy
@@ -291,12 +297,12 @@ their OCIDs to your `msdataworkshop.properties` file.
   You have successfully created the two ATP databases that will be used for
   backend inventory and order datastores.
 
-## **STEP 7**: Access OKE from the Cloud Shell
+## **STEP 8**: Access OKE from the Cloud Shell
 For this step, we are going to use the Cloud Shell to access the OKE cluster
 we created in Step 5 and we will verify that all the cluster resources are up
 and running.
 
-1.  In the Cloud console go to **Developer Services > Container Clusters (OKE)**.
+1.  In the Cloud console go to **Developer Services > Kubernetes Clusters**.
 
     ![](images/44-dev-services-oke.png " ")
 
@@ -329,10 +335,13 @@ and running.
 You may proceed to the next lab.
 
 ## Acknowledgements
+
 * **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
+
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

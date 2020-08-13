@@ -14,6 +14,9 @@ Thus far on our journey from a monolithic application to microservices, we have 
 
 During this lab, you will verify REST Services deployed in Lab 300 via Kubernetes Dashboard.
 
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:FPN_ggM1f3c
+[](youtube:FPN_ggM1f3c)
+
 ## Required Artifacts
 
 - You should already have completed labs 50, 100, and 200 before beginning this lab.

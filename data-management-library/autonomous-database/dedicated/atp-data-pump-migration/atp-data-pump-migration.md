@@ -22,7 +22,7 @@ As a database admin or user,
 - Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
 - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
 
-## STEP 1: Download sample data pump export file from Oracle Learning Library github repo
+## **Step 1:** Download sample data pump export file from Oracle Learning Library github repo
 
 - Use the following command from your mac / PC to download a sample schema dump from OLL.
 
@@ -32,7 +32,7 @@ As a database admin or user,
     </copy>
     ```
     
-## STEP 2: Create an object storage bucket and upload dump
+## **Step 2:** Create an object storage bucket and upload dump
 
 - Login to your OCI account with your user credentials.
 
@@ -48,7 +48,7 @@ As a database admin or user,
 - Upload nodeapp.dmp downloaded from OLL.
     ![upload-dmp](./images/upload-dmp.png " ")
 
-## STEP 3: General an authentication token for your user account
+## **Step 3:** General an authentication token for your user account
 
 - Assuming you are logged into your OCI account, navigate to the user details page from the top right menu item as shown below.
     ![get-token1](./images/get-token1.png " ")
@@ -60,7 +60,7 @@ As a database admin or user,
     ![get-token3](./images/get-token3.png " ")
 
 
-## STEP 4: Setup Object Store user credentials in your target autonomous database
+## **Step 4:** Setup Object Store user credentials in your target autonomous database
 
 - Now that we have the credentials token, lets setup the target database to read from object store and import data.
 
@@ -94,7 +94,7 @@ Here, we will use a local SQL Developer to demonstate the steps needed to setup 
 
 - Ensure the pl/sql procedure executed successfully from the log message.
 
-## STEP 5: Import data from object store using impdp utility
+## **Step 5:** Import data from object store using impdp utility
 
 - If all went well so far, proceed to ssh into your developer client machine and run the data pump import command.
 

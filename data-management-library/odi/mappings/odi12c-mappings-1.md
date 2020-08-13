@@ -7,7 +7,7 @@ This chapter describes how to work with mappings in Oracle Data Integrator. The 
   * Load TRG\_CUSTOMER: This mapping loads the data from the SRC\_CUSTOMER table in the *Orders Application* model into the TRG\_ CUSTOMER target table in the *Sales Administration* model.
   * Load TRG\_SALES: This mapping loads the data from the SRC\_ ORDERS table and from the SRC\_ORDER\_LINES table in the *Orders Application* model into the TRG\_SALES target table in the *Sales Administration* model. (details in Lab *ODI12c: Working with Mappings - 2*)
 
-## Step 1:  Load TRG\_CUSTOMER Mapping Example
+## **Step 1:**  Load TRG\_CUSTOMER Mapping Example
 
 1. Purpose and Integration Requirements
 The purpose of the Load TRG\_CUSTOMER mapping is to load the data from the SRC\_ CUSTOMER table in the *Orders Application* model into the TRG\_CUSTOMER target table in the *Sales Administration* model.
@@ -71,7 +71,7 @@ The Load TRG\_CUSTOMER mapping uses the following data and transformations:
 | CRE\_DATE      | Today's date                         | SYSDATE                 |
 | UPD\_DATE      | Today's date            | SYSDATE                 |
 
-## Step 2: Creating the Mapping
+## **Step 2:** Creating the Mapping
 
 This section describes how to create the Load TRG\_CUSTOMER mapping. To create the Load TRG\_CUSTOMER mapping perform the following procedure:
 1. Insert a New Mapping
@@ -89,7 +89,7 @@ To create a new mapping:
 
  Ensure the *Create Empty Dataset* option is not selected.
 
-## Step 3: Define the Target
+## **Step 3:** Define the Target
 
 The target is the element that will be loaded by the mapping.
 
@@ -103,7 +103,7 @@ The target is the element that will be loaded by the mapping.
 
   ![](./images/selecting_the_target.png)
 
-## Step 4: Define the Source
+## **Step 4:** Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastores from the *Orders Application* and *Parameters* models.
 
@@ -118,7 +118,7 @@ The source datastores contain data used to load the target datastore. Two types 
 
   ![](./images/adding_data_stores.png)
 
-## Step 5: Define the Lookup
+## **Step 5:** Define the Lookup
 
 This section describes how to create a lookup that defines that the customer\'s age must be between the minimum and maximum ages in the file.
 A lookup is a datastore (from a model or the target datastore of a map) - called the *lookup table* - associated to a source datastore - the *driving table* - via a join expression and from which data can be fetched and used in mappings.
@@ -155,7 +155,7 @@ This corresponds to a join between the SRC\_CUSTOMER and the SRC\_AGE\_GROUP dat
 
 6.  Click **Save**.
 
-## Step 6: Define the Join between the Source Datastores
+## **Step 6:** Define the Join between the Source Datastores
 
 This section describes how to define a join between the source datastores. To create the join defined in Step 1 above:
 
@@ -171,7 +171,7 @@ This section describes how to define a join between the source datastores. To cr
 
   ![](./images/diagram_of_TRG_CUSTOMER_mapping.png)
 
-## Step 7: Define the Target Expressions
+## **Step 7:** Define the Target Expressions
 
 The following columns are mapped in this section: CUST\_ID, DEAR, CUST\_NAME, AGE\_RANGE, SALES\_PERS, CRE\_DATE and UPD\_DATE.
 To Auto Map from the sources to the target, the connector points need to be dragged and dropped between components.
@@ -188,7 +188,7 @@ Click on the TRG\_CUSTOMER datastore in the mapping to display the properties.
 
   ![](./images/trg_customer_properties.png)
 
-## Step 8: CUST\_ID Mapping Expression
+## **Step 8:** CUST\_ID Mapping Expression
 
 The CUST\_ID mapping expression maps the SRC\_CUSTOMER.CUSTID source column to the TRG\_CUSTOMER.CUST\_ID target column. Note that these 2 columns have not been automatically mapped, since their names are slightly different.
 
@@ -321,7 +321,7 @@ Your transformation rules appear in the Target Datastore Attributes panel:
 
 Finally click on TRG\_CUSTOMER datastore in the Mapping and in the Properties panel under Target set the Integration Type to Incremental Update.
 
-## Step 9: Define the Data Loading Strategies (LKM)
+## **Step 9:** Define the Data Loading Strategies (LKM)
 
 The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping\'s diagram. It proposes default Knowldege Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
 
@@ -339,7 +339,7 @@ To define the loading strategies:
 
 3.  Use **LKM SQL to SQL (Built-In)** for the access point corresponding to SRC\_CUSTOMER as well.
 
-## Step 10: Define the Data Integration Strategies (IKM)
+## **Step 10:** Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -355,7 +355,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.For more information on importing KMs into your Projects, see *Importing a KM* in the *Oracle Fusion Middleware Developer\'s Guide for Oracle Data Integrator*.
 
-## Step 11: Define the Data Control Strategy
+## **Step 11:** Define the Data Control Strategy
 
 In the preceeding steps you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 

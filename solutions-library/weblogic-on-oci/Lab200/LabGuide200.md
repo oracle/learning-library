@@ -1,6 +1,6 @@
 # Lab 200: Prepare the OCI account
 
-## Step 1: Sign Up for a Free Tier Account
+## **Step 1:** Sign Up for a Free Tier Account
 
 - Open up a browser and go to https://www.oracle.com/ to sign up for an Oracle Cloud Account. Follow the instructions to create your account. Be sure to enter an email you can access.
 

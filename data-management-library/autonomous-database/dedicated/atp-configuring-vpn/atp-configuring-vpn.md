@@ -33,7 +33,7 @@ The following illustration shows a network topology that can be used to provide 
 - For detailed instructions on network setup for an dedicated autonomous DB infrastructure, refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
 
-## STEP 1: Launch a CentOS VM for the OpenVPN server
+## **Step 1:** Launch a CentOS VM for the OpenVPN server
 
 - Login to the Oracle Cloud Infrastructure using your tenancy, userId and password. 
 
@@ -58,7 +58,7 @@ The following illustration shows a network topology that can be used to provide 
 
 -  Click Create and within a few minutes your CentOS server will be ready with a public IP for ssh access.
 
-## STEP 2: Install and Configure OpenVPN Server
+## **Step 2:** Install and Configure OpenVPN Server
 
 -   SSH into centOS vm and download the openVPN rpm package.
 
@@ -120,7 +120,7 @@ The following illustration shows a network topology that can be used to provide 
 
 Note: Once you have applied your changes, click *Save Settings* once again. Then, *Update Running Server* to push your new configuration to the OpenVPN server.
 
-## STEP 3: Install OpenVPN Client
+## **Step 3:** Install OpenVPN Client
 
 -   Launch your OpenVPN Access Server Client UI at *https://Your\_VPN\_Server\_Public\_IP:943* and download the OpenVPN client for your platforms.
     ![](./images/openvpn_client.png " ")
@@ -138,7 +138,7 @@ Note: Once you have applied your changes, click *Save Settings* once again. Then
 You may also setup your VPN server with multiple users. Follow the OpenVPN configuration guide to setup additional users.
 
 
-## STEP 4: Connect SQL Developer to your dedicated ATP database
+## **Step 4:** Connect SQL Developer to your dedicated ATP database
 
 - Launch SQL Developer and connect using the downloaded credentials wallet as shown below.
 

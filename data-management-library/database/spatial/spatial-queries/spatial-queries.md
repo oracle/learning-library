@@ -22,7 +22,7 @@ This tutorial uses CUSTOMERS and WAREHOUSES tables. WAREHOUSES are created from 
 
 Each table stores location using Oracle's native spatial data type, ```SDO_GEOMETRY```. A location can be stored as a point in an ```SDO_GEOMETRY``` column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface - for example, -63.13631, 52.485426.
 
-## Step 1: Prepare the Lab Environment
+## **Step 1:** Prepare the Lab Environment
 
 1. Work as **oracle** user, connect to the PDB **orclpdb** with **system** user.
 
@@ -112,7 +112,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
 
 
 
-## Step 2: Load Data and Create Spatial Index
+## **Step 2:** Load Data and Create Spatial Index
 
 1. First we load CUSTOMERS by copying from the table OE.CUSTOMERS. Note that we are using two spatial functions in this step: 
 
@@ -164,7 +164,7 @@ Each table stores location using Oracle's native spatial data type, ```SDO_GEOME
     
     ![](./images/image-20200429144831067.png " ") 
 
-## Step 3: Perform location-based queries
+## **Step 3:** Perform location-based queries
 1. Find the five customers closest to the warehouse whose warehouse ID is 3. 
 
     ````

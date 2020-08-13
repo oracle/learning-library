@@ -22,7 +22,7 @@ As a database user, DBA or application developer,
 - VNC Viewer or other suitable VNC client on your local laptop
 
 
-## STEP 1: Provision an OCI Marketplace Developer Client image instance
+## **Step 1:** Provision an OCI Marketplace Developer Client image instance
 
 We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
@@ -64,7 +64,7 @@ We start with deploying a pre-configured client machine instance from the OCI ma
     ![](./images/computeready.png " ")
 
 
-## STEP 2: Download and transfer DB wallet to client machine
+## **Step 2:** Download and transfer DB wallet to client machine
 
 Let's first download the DB wallet to your local machine (laptop) and then scp / sftp it to the developer client machine.
 
@@ -113,7 +113,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
     ```
 
 
-## STEP 3: Connect to dev client desktop over VNC
+## **Step 3:** Connect to dev client desktop over VNC
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -169,7 +169,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 
   - If all goes well, you should now see a linux desktop in your VNC window.
 
-## STEP 4: Connect to your autonomous DB using SQL Developer, SQLCL and SQL Plus
+## **Step 4:** Connect to your autonomous DB using SQL Developer, SQLCL and SQL Plus
 
 1. In your VNC session, invoke SQL Developer from the top left Applications menu as shown below.
     ![](./images/sql-developer-vnc.png " ")

@@ -101,7 +101,7 @@ When creating a new compartment, you must provide a name for it (maximum 100 cha
 
 The Console is designed to display your resources by compartment within the current region. When you work with your resources in the Console, you must choose which compartment to work in from a list on the page. 
 
-That list is filtered to show only the compartments in the tenancy that you have permission to access. If you're an administrator, you'll have permission to view all compartments and work with any compartment's resources, but if you're a user with limited access, you probably won't.
+That list is filtered to show only the compartments in the tenancy that you have permission to access. If you're an administrator, you will have permission to view all compartments and work with any compartment's resources, but if you're a user with limited access, you probably won't.
 
 Compartments are global, across regions, and when you create a compartment, it is available in every region that your tenancy is subscribed to.
 

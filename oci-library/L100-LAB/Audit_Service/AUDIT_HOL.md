@@ -2,7 +2,7 @@
   
 - [OCI Audit Service](#oci-audit-service)
   - [Overview](#overview)
-  - [Pre-Requisites](#pre-requisites)
+  - [Prerequisites](#Prerequisites)
   - [Practice-1: Sign in to OCI Console and Create Object Storage Bucket](#practice-1-sign-in-to-oci-console-and-create-object-storage-bucket)
   - [Practice-2: Upload Object and Check Audit logs](#practice-2-upload-object-and-check-audit-logs)
   - [Conclusion](#conclusion)
@@ -16,7 +16,7 @@ Each log event includes a header ID, target resource(s), time stamp of the recor
 
 The purpose of this lab is to give you an overview of the Audit Service and an example scenario to help you understand how the service works. You can view a video recording of this lab at [Youtube](https://www.youtube.com/watch?v=hKGWn_m2zHU)
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 

@@ -8,7 +8,7 @@ This document walks you through the steps needed to replicate this use case in y
 
 This section works through the steps that are required to build the integration from scratch.
 
-**Pre-requisites:**
+**Prerequisites:**
 
 You will need access to the following applications and products:
 

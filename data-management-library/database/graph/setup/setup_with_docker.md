@@ -15,7 +15,7 @@ Let's load graph data from files before setting up database.
 
 ![](./images/load_data.jpg)
 
-## Step 1: Launch Graph Server
+## **Step 1:** Launch Graph Server
 
 ### Clone this Repository
     $ <copy>git clone https://github.com/jayant62/oracle-pg.git</copy>
@@ -93,7 +93,7 @@ $ <copy>cd oracle-pg/docker/ ;</copy>
 $ <copy>docker-compose down</copy>
 ```
 
-## Step 2: Configure database on Docker
+## **Step 2:** Configure database on Docker
 
 In this tutorial, we will create a docker container for Oracle Database as a backend storage of graphs.
 ![](./images/build_docker.jpg)

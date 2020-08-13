@@ -92,7 +92,7 @@ In the interest of simplifying the setup and save time, the following steps were
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
-## Step 1: Detect Configuration Pollution
+## **Step 1:** Detect Configuration Pollution
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -158,7 +158,7 @@ In the next section we will follow these recommendations to perform the followin
 
   - Patch database “hr.subnet.vcn.oraclevcn.com” from 18.3 to 18.10
 
-## Step 2: Database Server patching with Fleet maintenance
+## **Step 2:** Database Server patching with Fleet maintenance
 
 ### Database Fleet Maintenance
 

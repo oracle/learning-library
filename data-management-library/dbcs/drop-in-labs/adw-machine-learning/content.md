@@ -14,7 +14,7 @@ Oracle Machine Learning SQL notebooks provide easy access to Oracle's paralleliz
 * Have completed the previous lab **Provisioning Autonomous Data Warehouse**.
 
 
-## STEP 1: Create an OML User ##
+## **Step 1:** Create an OML User ##
 1. Sign in to the [Oracle Cloud](https://cloud.oracle.com/home).
 2. Click the menu icon to expand the menu on the left edge of the screen.
 3. Click **Autonomous Date Warehouse**.
@@ -58,7 +58,7 @@ Oracle Machine Learning SQL notebooks provide easy access to Oracle's paralleliz
 14. You'll also recieve a confirmation email that your OML user has been created. This email contains a direct link to the OML application sign in, and your password if you chose to auto-generate one.
 
 
-## STEP 2: Sign in to OML ##
+## **Step 2:** Sign in to OML ##
 1. Go to the OML sign in page. You have two options to navigate there:
      * Click the link included in your confirmation, or... 
      * Click the **Home** button on the Users page.
@@ -77,7 +77,7 @@ Oracle Machine Learning SQL notebooks provide easy access to Oracle's paralleliz
 3. You're taken to the OML home page.
     
 
-## STEP 3: Open a New SQL Query Scratchpad ##
+## **Step 3:** Open a New SQL Query Scratchpad ##
 1. Click **Run SQL Statements** in the Quick Actions window.
 
     ![](img/QuickActions.png " ")
@@ -115,14 +115,14 @@ Oracle Machine Learning SQL notebooks provide easy access to Oracle's paralleliz
 
     [Description of the illustration RunParagraph.png](files/RunParagraph.txt)
 
-7. Observe the results. If the Zip Lab event has quizzes, you'll need this output to answer a quiz question.
+7. Observe the results. If the Zip Lab event has quizzes, you will need this output to answer a quiz question.
 
     ![](img/SQLOutput.png " ")
 
     [Description of the illustration SQLOutput.png](files/SQLOutput.txt)
 
 
-## STEP 4: Change the Report Type ##
+## **Step 4:** Change the Report Type ##
 The report menu bar lets you change the table to a graph and/or export the result set to a CSV or TSV file. When you change the report type to one of the graphs, a Settings link appears to the right of the menu. Settings
 allows you to control the layout of columns within the graph.
 
@@ -138,7 +138,7 @@ allows you to control the layout of columns within the graph.
     [Description of the illustration BarChart1.png](files/BarChart1.txt)
 
 
-## STEP 5: Change the Layout of the Graph ##
+## **Step 5:** Change the Layout of the Graph ##
 Now that we're showing a bar graph, let's see how the output can be customized. To add a column to one of the Keys, Groups of Values panels just drag and drop the column name into the required panel. To remove a column from the Keys, Groups of Values panel just click on the **x** next to the column name displayed in the relevant
 panel.
 
@@ -153,7 +153,7 @@ panel.
     [Description of the illustration BarChart2.png](files/BarChart2.txt)
 
 
-## STEP 6: Tidy up the Report ##
+## **Step 6:** Tidy up the Report ##
 1. Click **Settings** to hide the layout controls.
 2. Click the **Hide editor** button which is to the right of the "Run this paragraph" button.
 
@@ -168,7 +168,7 @@ panel.
     [Description of the illustration BarChart3.png](files/BarChart3.txt)
 
 
-## STEP 7: Save the Scratchpad as a New Notebook ##
+## **Step 7:** Save the Scratchpad as a New Notebook ##
 The SQL Scratchpad we're using is simply a default type notebook with a system generated name. You can change the name of the scratchpad and save it for later use by your team.
 
 1. Click the menu icon in left corner of the page to expand a navigation menu, and select **Home**.
@@ -186,7 +186,7 @@ The SQL Scratchpad we're using is simply a default type notebook with a system g
 
     [Description of the illustration Notebooks.png](files/Notebooks.txt)
 
-7. Close the excess tabs. You've opened quite a few tabs finishing this lab. Close the last three browser tabs for the Cloud. For the next labs, the only tab you'll need is for the ADW instance's details page.
+7. Close the excess tabs. You've opened quite a few tabs finishing this lab. Close the last three browser tabs for the Cloud. For the next labs, the only tab you will need is for the ADW instance's details page.
 
     ![](img/adw_instance.png " ")
 

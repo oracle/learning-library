@@ -7,7 +7,7 @@ This chapter describes how to work with mappings in Oracle Data Integrator. The 
   * Load TRG\_CUSTOMER: This mapping loads the data from the SRC\_CUSTOMER table in the *Orders Application* model into the TRG\_ CUSTOMER target table in the *Sales Administration* model. (details in Lab *ODI12c: Working with Mappings - 1*)
   * Load TRG\_SALES: This mapping loads the data from the SRC\_ ORDERS table and from the SRC\_ORDER\_LINES table in the *Orders Application* model into the TRG\_SALES target table in the *Sales Administration* model.
 
-## Step 1: Load TRG\_SALES Mapping Example
+## **Step 1:** Load TRG\_SALES Mapping Example
 
 This section contains the following topics:
 
@@ -71,7 +71,7 @@ The Load TRG\_SALES mapping uses the following data and transformations:
   |AMOUNT                 |Sum of the amounts from the order lines             | SUM(SRC\_ORDER\_LINES.AMOUNT)    |
   |PROD\_AVG\_PRICE       |Average amount from the order lines                 | AVG(SRC\_ORDER\_LINES.AMOUNT)    |
 
-## Step 2: Creating the Mapping
+## **Step 2:** Creating the Mapping
 
 This section describes how to create the Load TRG\_SALES mapping. To create the Load TRG\_SALES mapping perform the following procedure:
 
@@ -107,7 +107,7 @@ To add source datastores to the Load TRG\_SALES mapping:
   * SRC\_ORDER\_LINES from the *Orders Application* model
   ![](./images/load_trg_sales_mapping.png)
 
-## Step 3: Define the Order Filter
+## **Step 3:** Define the Order Filter
 
 In this example, only completed orders should be retrieved. A filter needs to be defined on the SRC\_ORDERS datastore.
 
@@ -127,7 +127,7 @@ In this example, only completed orders should be retrieved. A filter needs to be
   SRC_ORDERS.STATUS = 'CLO'
   </copy>
   ````
-## Step 4: Define Joins between the Source Datastores
+## **Step 4:** Define Joins between the Source Datastores
 
 This section describes how to define joins between the source datastores. To create the join defined earlier:
 
@@ -140,7 +140,7 @@ This section describes how to define joins between the source datastores. To cre
 A join linking the two datastores appears. This is the join on the order number. The join has the following expression:
     SRC\_ORDERS.ORDER\_ID=SRC\_ORDER\_LINES.ORDER\_ID
 
-## Step 5: Define the Transformation Rules
+## **Step 5:** Define the Transformation Rules
 
 Many of the transformations used for this mapping will use an aggregate function. These functions are implemented using the AGGREGATE Component.
 
@@ -204,10 +204,10 @@ Review carefully your Aggregate rules and make sure that you have defined the ru
 **Note** that even though this example uses aggregation functions, you do not have to specify the group by rules: Oracle Data Integrator will infer that from the mappings, applying SQL standard coding practices.
   ![](./images/mapping_logical_view.png)
 
-## Step 6: Setting the Integration Type
+## **Step 6:** Setting the Integration Type
 Click on the TRG\_SALES datastore in the mapping, in the *Properties* panel under Target set the Integration Type to Incremental Update.
 
-## Step 7: Define the Data Loading Strategies (LKM)
+## **Step 7:** Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed.
 
@@ -223,7 +223,7 @@ To define the loading strategies:
 
   ![](./images/aggregate_ap_lkm_selection.png)
 
-## Step 8: Define the Data Integration Strategies (IKM)
+## **Step 8:** Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -235,7 +235,7 @@ To define the integration strategies:
 
 3.  In the knowledge module options, leave the default values.
 
-## Step 9: Define the Data Control Strategy
+## **Step 9:** Define the Data Control Strategy
 
 In \"Define the Data Loading Strategies (LKM)\"and \"Define the Data Integration Strategies (IKM)\" you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 

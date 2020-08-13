@@ -1,19 +1,20 @@
 # Sample Schema Setup
 
-## **Introduction**
+## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
-## **Step 1**: Install Sample Data
+## **Step**: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
 By completing the instructions below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
 
-1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.
+1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the opc user*.  Run a *whoami* to ensure the value *opc* comes back.  If you are stil the oracle user, type the **exit** command to return back to opc)
 
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
 
     ````
+    whoami   
     <copy>
     cd /home/opc/
 
@@ -29,20 +30,31 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
     ![](./images/step1.1-setupscript1.png " " )
 
-    ![](./images/step1.1-setupscript2.png " " )
+    ![](./images/setupNFresults.png " " )
 
-2.  Install the Sample Schemas.  If prompted for the sid, enter **ORCL**.
-
+2.  Switch now to the oracle user and run oraenv to set up your environment.  Enter *ORCL* when prompted for the SID.
     ````
     <copy>
     sudo su - oracle
+    . oraenv
+    </copy>
+    ORCL
+    ````
+    ![](./images/oraenv.png " " )
+
+3.  Install the Sample Schemas by running the script below. 
+
+    ````
+    <copy>
     . /home/oracle/setupNF_DB.sh
     </copy>
     ````
 
-    ![](./images/step1.2-setupcomplete.png " " )
+    ![](./images/setupNFscriptresults.png " " )
 
 Congratulations! Now you have the environment to run the labs.
+
+You may now *proceed to the next lab*.
 
 ## Oracle Database Sample Schemas Agreement
 
@@ -57,8 +69,8 @@ The above copyright notice and this permission notice shall be included in all c
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Contributors** - Anoosha Pilli, Product Manager, DB Product Management
-- **Last Updated By/Date** - Arabella Yao, Dylan McLeod, LiveLabs QA Team, DB Product Management, July 2020
+- **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
+- **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

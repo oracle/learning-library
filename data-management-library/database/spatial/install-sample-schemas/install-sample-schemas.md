@@ -14,7 +14,7 @@ This lab assumes you have completed the following labs:
 * Lab: Setup
 
 
-## Step 1: Download Sample Schemas installation Scripts
+## **Step 1:** Download Sample Schemas installation Scripts
 1.  Sudo to **oracle** user. Run this command to download the database sample schemas installation scripts. You will download a zip file named **v19.2.zip**.
     ````
     <copy>
@@ -47,7 +47,7 @@ This lab assumes you have completed the following labs:
     <img src="images/image-20200429133949928.png" alt="image-20200429133949928" style="zoom:42%;" />
 
     
-## Step 2: Install the Sample Schemas
+## **Step 2:** Install the Sample Schemas
 
 1. Before install, let's check the oracle environment
 

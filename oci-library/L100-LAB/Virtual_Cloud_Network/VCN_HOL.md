@@ -6,7 +6,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Create a Virtual Cloud Network](#practice-1-create-a-virtual-cloud-network)
 
@@ -16,7 +16,7 @@ When you work with Oracle Cloud Infrastructure, one of the first steps is to set
 
 **Note:** *Some of the UIs might look a little different than the screen shots included in the instructions, but you can still use the instructions to complete the hands-on labs.*
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
   - To sign in to the Console, you need the following:

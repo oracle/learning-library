@@ -115,7 +115,7 @@ cmd: com.example.fn.HelloFunction::handleRequest
 ## Overwriting pom.xml file
 Next you must overwrite the example maven pom.xml file with the [pom.xml](https://raw.githubusercontent.com/oraclespainpresales/fn_pizza_discount_campaign/master/pom.xml) content of the github function project. Maven is used to import all the dependencies and java classes needed to create your serverless function jar. 
 
-Next JDBC and DB access dependencies will be included and configured in the maven project in the dockerfile. These jar libraries will have to be downloaded and stored in a directory in your IDE project, you'll can download and configure them in your project in next sections
+Next JDBC and DB access dependencies will be included and configured in the maven project in the dockerfile. These jar libraries will have to be downloaded and stored in a directory in your IDE project, you will can download and configure them in your project in next sections
 ```java
 <dependency>
     <groupId>com.oracle.jdbc</groupId>
@@ -173,7 +173,7 @@ RUN ["mvn", "install:install-file", "-Dfile=/function/target/libs/osdt_cert.jar"
 After that, click in File -> Save All in your IDE to save all changes.
 
 ## Copy necessary .libs and other files
-To run the serverless function as a docker container you'll need to download and import to your project several files, like jdbc driver libs or dbwallet.zip file (generated when you created the ATP db).
+To run the serverless function as a docker container you will need to download and import to your project several files, like jdbc driver libs or dbwallet.zip file (generated when you created the ATP db).
 
 ### JDBC drivers and data access libs.
 You have to include the JDBC driver jar libraries into your IDE project. Then you can include in your maven project copiying it in your dockerfile temp build stage layer.

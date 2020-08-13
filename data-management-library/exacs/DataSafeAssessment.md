@@ -27,11 +27,11 @@ Suppose that you are notified by the “Audit and Compliance” department that 
 
 ## Steps
 
-### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
+### **Step 1:** Connect to your ExaCS database as the SYS user with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Step 2: In the Oracle Data Safe Console, generate a Comprehensive Assessment report
+### **Step 2:** In the Oracle Data Safe Console, generate a Comprehensive Assessment report
 - Return to the Oracle Data Safe Console.
 - Click the **Home** tab and then **Security Assessment**.
 
@@ -63,7 +63,7 @@ This table compares the number of findings for each category and counts the numb
 
 ![](./images/dbsec/datasafe/assessment/summary.png " ")
 
-### Step 3: Review the Medium Risk, Low Risk, and Advisory findings
+### **Step 3:** Review the Medium Risk, Low Risk, and Advisory findings
 - At the top of the report, click **Medium Risk** to filter the report to show only the medium risk findings.
 - Deselect all other risk levels.
 - Scroll through the report to view the medium risk findings.
@@ -74,7 +74,7 @@ This table compares the number of findings for each category and counts the numb
 - Deselect all other risk levels.
 - Review the advisory findings.
 
-### Step 4: Review the Evaluate findings and fix some of them, if possible
+### **Step 4:** Review the Evaluate findings and fix some of them, if possible
 
 - At the top of the report, click **Evaluate** to filter the report to show only the Evaluate findings.
 
@@ -113,7 +113,7 @@ This table compares the number of findings for each category and counts the numb
 - Unified Auditing is the recommended audit method and is available in Oracle Database 12.1 and later releases. Not using Unified Auditing or disabling unified auditing policies is a risk. Verify that unified audit policies are enabled on the database. Audit all sensitive operations, including privileged user activities. Also audit access to application data that bypasses the application.
 - How many unified audit policies are on your target database and how many of them are enabled?
 
-### Step 5: Review the Pass findings
+### **Step 5:** Review the Pass findings
 
 - At the top of the report, click **Advisory** to filter the report to show only the Advisory findings.
 
@@ -149,7 +149,7 @@ This table compares the number of findings for each category and counts the numb
 
   - ....and more
 
-### Step 6: Rerun Security Assessment and compare the results to the first assessment
+### **Step 6:** Rerun Security Assessment and compare the results to the first assessment
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **Security Assessment**.
 - On the **Security Assessment** page, select the check box for your target database, and then click **Assess**.

@@ -54,14 +54,14 @@ In this lab you will use the SQL Developer tool, connect to your source database
 ## Create an Autonomous Database
 
 ## Main Labs
-## Step 1 Connect to your source database using SQL Developer
+## **Step 1:**Connect to your source database using SQL Developer
 
-## Step 2 Use Data Pump to extract a schema from your source
+## **Step 2:**Use Data Pump to extract a schema from your source
 
-## Step 3 Use SQL Developer to import the schema in to the Oracle Autonmous Database
+## **Step 3:**Use SQL Developer to import the schema in to the Oracle Autonmous Database
 
 ## Conclusion
- In this Lab, you used SQL Developer and Data Pump to migrate a database to the Oracle Autonomous Database.
+ In this lab, you used SQL Developer and Data Pump to migrate a database to the Oracle Autonomous Database.
 
 ## Acknowledgements
 

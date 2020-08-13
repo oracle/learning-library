@@ -21,7 +21,7 @@ As an application developer,
 - A pre-provisioned dedicated autonomous database instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
 - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
-## STEP 1: Download sample java application
+## **Step 1:** Download sample java application
 
 - Login to your Oracle Cloud Infrastructure account and select *Compute* and *Instances* from the hamburger menu top left.
     ![](./images/Compute1.png " ")
@@ -92,7 +92,7 @@ tar xzfv ojdbc8-full.tar.gz
 ```
 
 
-## STEP 2: Transfer database wallet to developer client
+## **Step 2:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and click on *Autonomous Transaction Processing* from top left menu.
     ![](./images/atpd1.png " ")
@@ -128,7 +128,7 @@ tar xzfv ojdbc8-full.tar.gz
 
 - Use a scp client such as winSCP to move your wallet to the client machine.
 
-## STEP 3: Run your java application
+## **Step 3:** Run your java application
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder.
 

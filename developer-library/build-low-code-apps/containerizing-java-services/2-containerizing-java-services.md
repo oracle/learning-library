@@ -10,7 +10,8 @@
 
 In this lab you will deploy a Java application using Docker. This will require you to setup Visual Builder Studio configurations of build job and run the job to deploy java REST application container to OKE.
 
-
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[](youtube:uty6BgUWeeA)
   
 ## **STEP 1**: Create Project and setup Build VM
 1.  Navigate to Visual Builder Studio by selecting **Platform Services**->**Developer**

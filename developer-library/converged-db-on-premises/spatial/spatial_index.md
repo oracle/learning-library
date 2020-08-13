@@ -14,7 +14,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
-## Step 1:  Create Indexes 
+## **Step 1:**  Create Indexes 
 We have created indexes for each table- CUSTOMERS, WAREHOUSES and WAREHOUSES_DTP
 
 ````

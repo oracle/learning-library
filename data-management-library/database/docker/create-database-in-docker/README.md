@@ -13,7 +13,7 @@ Welcome to the Oracle Database Docker Workshop. Using Docker build files for Ora
 - Add an Ingress rule to the VCN
 - Connect to the Database in the container
 
-Each of the labs are 5 -10 minutes in length, so you'll be up and running in no time.
+Each of the labs are 5 -10 minutes in length, so you will be up and running in no time.
 
 *Note: You will need a Free Trial or Paid account for this workshop (not Always Free services)*
 

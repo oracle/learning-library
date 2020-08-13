@@ -11,7 +11,7 @@ This lab assumes you have completed the following labs:
 * Environment Setup
 
 
-## Step 1: Open the 1521 port for the on-premise database
+## **Step 1:** Open the 1521 port for the on-premise database
 
 1. From the OCI console, from the main menu, choose **Netwoking** and click **Virtual Cloud Networks**.
 
@@ -56,7 +56,7 @@ This lab assumes you have completed the following labs:
    ```
 
    
-## Step 2: Enable ssh connect for the oracle user
+## **Step 2:** Enable ssh connect for the oracle user
 
 1. Work as opc user, edit the ssh configure file.
 
@@ -79,7 +79,7 @@ AllowUsers opc</copy>
 
 
 
-## Step 3: Enable TDE
+## **Step 3:** Enable TDE
 
 Oracle MAA best practice recommends using Oracle Transparent Data Encryption (TDE) to encrypt both primary and standby databases to ensure all data is encrypted at-rest. Data can be converted during the migration process but it’s highly recommended to convert to TDE prior to migration to provide the most secure Data Guard environment. 
 
@@ -280,7 +280,7 @@ SQL>
 
 
 
-## Step 4: Encrypt the data files
+## **Step 4:** Encrypt the data files
 
 According to the best practice, you should encrypt all the data files. In this lab, we only encrypt the **USERS** tablespace in the pdb.
 
@@ -330,7 +330,7 @@ USERS			       YES
 
 
 
-## Step 5: Enable the Network Encryption
+## **Step 5:** Enable the Network Encryption
 
 VPN connection or Oracle Net encryption is also required for encryption-in-flight for any other database payload (e.g. data file or redo headers) that are not encrypted by TDE. In this lab, you use public internet to connect between on-premise and the cloud, so you need to enable the network encryption.
 
@@ -418,7 +418,7 @@ SQL>
 
 
 
-## Step 6: Enable achivelog and flashback
+## **Step 6:** Enable achivelog and flashback
 
 1. Check the achivelog mode, you can find it's disable now.
 
@@ -492,7 +492,7 @@ SQL>
 
 
 
-## Step 7: Change redo log size and create standby log
+## **Step 7:** Change redo log size and create standby log
 
 1. Change the redo log size to 1024M according to the best practice. Check the status of the redo log first.
 
@@ -594,7 +594,7 @@ SQL>
 ```
 
 
-## Step 8: Modify the init parameters for best practice
+## **Step 8:** Modify the init parameters for best practice
 
 Modify some init parameters for best practice.
 

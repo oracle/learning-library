@@ -1,6 +1,6 @@
 # RESTful Services for your Autonomous Database
 
-## **Introduction**
+## Introduction
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
 
@@ -336,7 +336,7 @@ The **Script Output** tab at the bottom of the screen shows the result of the SQ
     If the Authorization header is omitted, then the status *401 Unauthorized* is returned instead. Clear the **TOKEN** field to see the *401 Unauthorized* error.
 
 ## Conclusion
-In this Lab, you had an opportunity to get an introduction to REST services.
+In this lab, you had an opportunity to get an introduction to REST services.
 
 ## **Acknowledgements**
 

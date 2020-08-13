@@ -6,7 +6,7 @@ Development and deployment platforms can be created on Oracle Cloud Infrastructu
 
 In this lab we will create all the required components on OCI.
 
-## Step 1: Generate SSH Keys
+## **Step 1:** Generate SSH Keys
 
 On a linux machine you can generate the required ssh keys
 
@@ -101,7 +101,7 @@ JlqG6nM3TEMfWLIvW2RFFFXtmBD5dBaqe3fWIZ8u+mP2XUdQc7T/YUx4y2gvga7BrbguyB
 ````
 >**Note** : Use these keys as examples, and for training purpose only. It is highly recommended to create your own SSH keys for your development environments.
 
-## Step 2: Login to Oracle Cloud Infrastructure
+## **Step 2:** Login to Oracle Cloud Infrastructure
 
 Oracle cloud console URL: [https://console.eu-frankfurt-1.oraclecloud.com](https://console.eu-frankfurt-1.oraclecloud.com)
 
@@ -109,7 +109,7 @@ Oracle cloud console URL: [https://console.eu-frankfurt-1.oraclecloud.com](https
 - Username: oci-username
 - Password: oci-password
 
-## Step 3: Create Network
+## **Step 3:** Create Network
 
 Click on hamburger menu ≡, then Networking > **Virtual Cloud Networks**. Click **Start VCN Wizard**.
 
@@ -134,7 +134,7 @@ When complete, under Networking > **Virtual Cloud Networks**. Click **[Your Init
 
 **Create Subnet**.
 
-## Step 4: Create Database
+## **Step 4:** Create Database
 
 Click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. **Create DB System**.
 
@@ -161,7 +161,7 @@ Next.
 
 **Create DB System**.
 
-## Step 5: Create Compute Instance
+## **Step 5:** Create Compute Instance
 
 Click on hamburger menu ≡, then Compute > **Instances**. Click **Create Instance**.
 
@@ -174,7 +174,7 @@ Click on hamburger menu ≡, then Compute > **Instances**. Click **Create Instan
 
 Create.
 
-## Step 6: Create Container Cluster
+## **Step 6:** Create Container Cluster
 
 Click on hamburger menu ≡, then Developer Services > **Container Clusters (OKE)**. Click **Create Cluster**.
 
@@ -207,7 +207,7 @@ Next. **Create Cluster**. Close.
 
 Copy the Cluster OCID in your notes text file, Cluster Id: ocid1.cluster.oc1.eu-frankfurt-1.aa[some_long_string]mu2d
 
-## Step 7: Create Container Repository
+## **Step 7:** Create Container Repository
 
 Click on hamburger menu ≡, then Developer Services > **Registry (OCIR)**. Click **Create Repository**.
 
@@ -216,7 +216,7 @@ Click on hamburger menu ≡, then Developer Services > **Registry (OCIR)**. Clic
 
 **Create Repository**.
 
-## Step 8: Create Authentication Token
+## **Step 8:** Create Authentication Token
 
 Click on profile icon 👤 on upper right corner, then on the name of your user. It opens Identity > Users > User Details page. On the lower left side menu, click on **Auth Tokens**.
  
@@ -226,7 +226,7 @@ Click **Generate Token**.
 
 Generated Token: **Copy this token for your records in a text file on your computer** in a notes text file. It will not be shown again.
 
-## Step 9: Create API Key
+## **Step 9:** Create API Key
 
 In the same dialog, or click on profile icon 👤 on upper right corner, then on the name of your user. It opens Identity > Users > User Details page. On the lower left side menu, click on **API Keys**.
 
@@ -248,7 +248,7 @@ jQIDAQAB
 
 Click Add. Save the **Fingerprint** in your notes text file.
 
-## Step 10: Gather OCID Values
+## **Step 10:** Gather OCID Values
 
 During the workshop, we will need some OCID values from Oracle Cloud console. Get these values and save them in your text notes file.
 

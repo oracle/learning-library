@@ -24,7 +24,7 @@ Oracle Database Cloud Backup Module is the cloud backup module that is installed
 - An OCI account with proper priviledge to access the object stortage in OCI
 
 
-## Step 1: Start the On-Premise Oracle Database
+## **Step 1:** Start the On-Premise Oracle Database
 
 If your lab local database in the VM is not running for some reason (it should be).
 
@@ -107,7 +107,7 @@ If your lab local database in the VM is not running for some reason (it should b
 
 
 
-## Step 2: Install the Cloud Backup Module
+## **Step 2:** Install the Cloud Backup Module
 
 In this lab, You will download the cloud backup module, prepare the keys and OCIDs, and install the module for OCI.
 
@@ -312,7 +312,7 @@ It also downloads cwallet.sso an Oracle wallet that securely stores Oracle Objec
       </copy>
       ```
 
-## Step 3: Prepare the on premise database
+## **Step 3:** Prepare the on premise database
 Now, We will set the database to Archivelog mode. Creat a user in the pdb and create a new table for testing the backup and recover.
 
 1. Start a SQL*Plus session
@@ -436,7 +436,7 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
 
 
 
-## Step 4: Configure RMAN to support Cloud Backups
+## **Step 4:** Configure RMAN to support Cloud Backups
 
    - Before we can do backups to the Cloud storage location in your account, you need to configure a number of RMAN properties. These properties define:
 
@@ -573,7 +573,7 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       ```
 
 
-## Step 5: Backup the On Premise Database
+## **Step 5:** Backup the On Premise Database
 
 For backup and recovery we could always run the following sequence of commands from a shell script or an RMAN run block, but we’ll be copying and pasting each individual command in sequence so you’ll get a better feel for what is going on.
 
@@ -764,7 +764,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
    ![](./images/image-20200410113002589.png " ")
  
 
-## Step 6: Query and Exit
+## **Step 6:** Query and Exit
 
 1. Open up a new terminal window and connect to the **johnsmith** schema in the local **orclpdb** container database.
 
@@ -823,7 +823,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       ```
 
 
-## Step 7: Restore and Recover the Database to a Point in Time
+## **Step 7:** Restore and Recover the Database to a Point in Time
 
 We now need to restore the database to the point in time before the **mstar** table was accidentally deleted (:> The backup files stored in cloud will be used.
 

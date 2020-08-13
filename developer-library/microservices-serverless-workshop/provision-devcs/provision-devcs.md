@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/image17.png " ")
 
-This process will take some time. Proceed to the next step to gather the data you'll need to configure the Developer Cloud Service Instance when it is ready.
+This process will take some time. Proceed to the next step to gather the data you will need to configure the Developer Cloud Service Instance when it is ready.
 
 ## **Step 2**: Gather Key Config Data from the Oracle Cloud Tenancy
 

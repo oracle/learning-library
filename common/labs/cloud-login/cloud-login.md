@@ -22,7 +22,7 @@ We offer two types of Cloud Accounts:
 - Username
 - Password
 
-## Step 1:  Login to Oracle Cloud
+## **Step 1:**  Login to Oracle Cloud
 1. From any browser go to oracle.com to access the Oracle Cloud.
 
     [https://www.oracle.com/](https://www.oracle.com/)

@@ -36,7 +36,7 @@ Follow these general steps:
 
 ## Steps
 
-### Step 1: Sign in to the Oracle Data Safe Console for your region
+### **Step 1:** Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -51,7 +51,7 @@ Follow these general steps:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 2: Launch the Data Masking wizard and discover sensitive data
+### **Step 2:** Launch the Data Masking wizard and discover sensitive data
 
 - In Oracle Data Safe, click the **Home** tab, and then click **Data Masking**. The **Data Masking** wizard is displayed.
 - On the **Select Target for Data Masking** page, select your target database, and then click **Continue**.
@@ -94,7 +94,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/masking-policy2.png " ")
 
-### Step 3: Configure a masking format for `EMP_EXTENDED.TAXPAYERID` to generate random numbers between 100,000,000 and 899,999,999
+### **Step 3:** Configure a masking format for `EMP_EXTENDED.TAXPAYERID` to generate random numbers between 100,000,000 and 899,999,999
 
 - Search for `EMP_EXTENDED.TAXPAYERID`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 
@@ -109,7 +109,7 @@ The **Masking Policy** page is displayed.
 
 - Click **Save**.
 
-### Step 4: Configure a masking format for `SUPPLEMENTAL_DATA.TAXPAYER_ID` to generate a fixed string `***-**-****`
+### **Step 4:** Configure a masking format for `SUPPLEMENTAL_DATA.TAXPAYER_ID` to generate a fixed string `***-**-****`
 
 - Search for `SUPPLEMENTAL_DATA.TAXPAYER_ID`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 - Select **Fixed String**.
@@ -118,7 +118,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/fixed-string.png " ")
 
-### Step 5: Configure a masking format for `LOCATIONS.POSTAL_CODE` to generate 5-digit random numbers between 10000 and 99999
+### **Step 5:** Configure a masking format for `LOCATIONS.POSTAL_CODE` to generate 5-digit random numbers between 10000 and 99999
 
 - Search for `LOCATIONS.POSTAL_CODE`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 
@@ -132,7 +132,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/random-postal-code.png " ")
 
-### Step 6: Configure a masking format for `COUNTRIES.COUNTRY_NAME` to shuffle values within each `REGION_ID`
+### **Step 6:** Configure a masking format for `COUNTRIES.COUNTRY_NAME` to shuffle values within each `REGION_ID`
 
 - Search for `COUNTRIES.COUNTRY_NAME`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 - Select **Group Shuffle**.
@@ -141,7 +141,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/group-shuffle-region.png " ")
 
-### Step 7: Configure a masking format that masks columns with email addresses that contain `@ORACLE.COM`
+### **Step 7:** Configure a masking format that masks columns with email addresses that contain `@ORACLE.COM`
 
 - Search for `EMAIL`. The search returns the `HCM1.EMPLOYEES.EMAIL` column.
 - Select the `HCM1.EMPLOYEES.EMAIL` column in the table to enable it for masking, and then click its Edit button (pencil icon). The Edit Format dialog box is displayed.
@@ -152,7 +152,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/regular-expression.png " ")
 
-### Step 8: Configure a masking format for `JOB_HISTORY.DATE_OF_TERMINATION` that generates dates from two years ago to the present
+### **Step 8:** Configure a masking format for `JOB_HISTORY.DATE_OF_TERMINATION` that generates dates from two years ago to the present
 
 - Search for `JOB_HISTORY.DATE_OF_TERMINATION`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 - Select **Random Date**.
@@ -162,7 +162,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/random-date.png " ")
 
-### Step 9: Configure a masking format for `EMPLOYEES.SALARY` that masks values greater than 10,000 with the fixed number 10,000
+### **Step 9:** Configure a masking format for `EMPLOYEES.SALARY` that masks values greater than 10,000 with the fixed number 10,000
 
 - Search for `EMPLOYEES.SALARY`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 - Move the Conditional Masking slider to the right.
@@ -187,7 +187,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/complex-format.png " ")
 
-### Step 10: Configure a masking format for `SUPPLEMENTAL_DATA.BONUS_AMOUNT` that generates a random list of values, including 1000, 1500, 2000, 2500, and 3000
+### **Step 10:** Configure a masking format for `SUPPLEMENTAL_DATA.BONUS_AMOUNT` that generates a random list of values, including 1000, 1500, 2000, 2500, and 3000
 
 - Search for `SUPPLEMENTAL_DATA.BONUS_AMOUNT`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 - If needed, move the **Conditional Masking** slider to the left so that it is disabled.
@@ -198,7 +198,7 @@ The **Masking Policy** page is displayed.
 
 ![](./images/dbsec/datasafe/masking/random-list.png " ")
 
-### Step 11: Schedule the data masking job to run immediately and then view the masking report
+### **Step 11:** Schedule the data masking job to run immediately and then view the masking report
 
 - **Select all** the sensitive columns and click **Confirm Policy**.
 
@@ -217,11 +217,11 @@ Now you are ready to run the data masking job.
   - How many values are masked?
   - How many tables are masked?
 
-### Step 12: Connect to your ExaCS database as the `SYS` user with SQL Developer
+### **Step 12:** Connect to your ExaCS database as the `SYS` user with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Step 13: In SQL Developer, verify that the data is masked according to your masking policy
+### **Step 13:** In SQL Developer, verify that the data is masked according to your masking policy
 
 Because many of the masking formats use random formulas, your results are probably different than those shown below.
 

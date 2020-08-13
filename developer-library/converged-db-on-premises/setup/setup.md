@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to start a database instance and listener from a Putty window. You will also setup vncserver and SQLDeveloper.
+This lab will show you how to start a database instance and listener from a Putty window. You will also setup SQLDeveloper.
 
 Estimated time: 10 Minutes
 
@@ -15,9 +15,10 @@ Estimated time: 10 Minutes
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
 
-## STEP 1: Start the Database and the Listener
+## **Step 1:** Login to ConvergedDB Compute instance
+If you aren't already logged in, follow the steps below to login.  If you are logged in, skip to Step 2.
 
-1. Click the Hamburger Menu in the top left corner. Then hover over Compute > Instances. Find the instance you created in the previous lab.
+1. Click the Hamburger Menu in the top left corner. Then hover over **Compute** > **Instances**. Find the instance you created in the previous lab.
 
    ![](./images/nav_compute_instance.png " ")
 
@@ -34,6 +35,10 @@ Estimated time: 10 Minutes
 
       - sshkeylocation - Full path of your SSH key
       - your address - Your Public IP Address
+  
+## **Step 2:** Start the Database and the Listener
+
+
 
 4. Switch to the oracle user
       ````
@@ -49,8 +54,9 @@ Estimated time: 10 Minutes
       <copy>cd /u01/script
       ./env_setup_script.sh</copy>
       ````
+   ![](./images/setup-script.png " ")
 
-## STEP 2: Download SQL Developer
+## **Step 3:** Download SQL Developer
 
 Certain workshops require SQL Developer.  To setup SQL Developer, follow the steps below.
 
@@ -60,7 +66,7 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
       ![](./images/start-sql-developer.png " ")
 
-## STEP 3:  Test a connection
+## **Step 4:**  Test a connection
 
 1.  In the connections page click the green plus to create a new connection
 
@@ -74,6 +80,8 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 
     ![](./images/sql_developer_connection.png " ")
 
+    *Note: If you cannot login to SQL Developer, check to ensure your VCN has the correct ports opened*
+
 3.  Once your connection is successful in the SQL Developer panel execute the query below
       ````
       <copy>select name, open_mode from v$database;</copy>
@@ -85,7 +93,7 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -17,8 +17,7 @@
         {
             "title": "Lab 2: Setup Compute Instance",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
-            "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-custom-freetier.md"
+            "filename": "../../setup-compute/setup-compute.md"
         },
         {
             "title": "Lab 3: Start Database and Application",
@@ -55,7 +54,6 @@
             "description": "Labs that leverage data types across schemas",
             "filename": "../../crossdatatype/crossdatatype.md"
         }
-
 
     ]
 }

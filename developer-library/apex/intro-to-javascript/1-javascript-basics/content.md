@@ -4,7 +4,7 @@
 
 In this lab, you will start working with the basics of JavaScript, including variables, operators, and functions - all from the console in your browser's developer tools.
 
-This lab is based on <a href="https://developers.google.com/web/tools/chrome-devtools/" target="\_blank">Google Chrome's DevTools</a>, so use that browser if possible. You may use a different browser if you wish, but you'll need to adapt the instructions that follow as needed.
+This lab is based on <a href="https://developers.google.com/web/tools/chrome-devtools/" target="\_blank">Google Chrome's DevTools</a>, so use that browser if possible. You may use a different browser if you wish, but you will need to adapt the instructions that follow as needed.
 
 Play the video below to learn about this lab.
 

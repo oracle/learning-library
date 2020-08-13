@@ -14,7 +14,7 @@ This lab assumes you have completed the following labs:
 - Note :  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user. 
   
  
-## Step 1:	Get the list of the customer and their purchased information from a geo graphical location 
+## **Step 1:**	Get the list of the customer and their purchased information from a geo graphical location 
     
   XMLEXISTS is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column
     
@@ -30,7 +30,7 @@ This lab assumes you have completed the following labs:
 
   **Notes:** XMLEXISTS is an SQL/XML operator that we can use to query XML values in SQL, in a regular query we can use the xmlexists function to look if a specific value is present in an xmltype column.
 
-## Step 2: Customer purchase history  
+## **Step 2:** Customer purchase history  
     
   XMLTABLE: Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -48,7 +48,7 @@ This lab assumes you have completed the following labs:
   **Notes:** The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
    
 
-## Step 3: Listing the product description those unit price matches to ‘$xx’
+## **Step 3:** Listing the product description those unit price matches to ‘$xx’
     
 
  XMLSERIALIZE is a SQL/XML operator that you can use to convert an XML type to a character type.
@@ -75,7 +75,7 @@ WHERE xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' pas
     
    **Notes:** XMLSERIALIZE is a SQL/XML operator that you can use to convert an XML type to a character type.
 
-## Step 4: Customer order summary – Cost center wise 
+## **Step 4:** Customer order summary – Cost center wise 
     
   XMLQUERY lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
 
@@ -104,7 +104,7 @@ WHERE xmlExists(
 
   **Notes:** XMLQUERY lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
         
-## Step 5: Custer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
+## **Step 5:** Custer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
     
   Condition -1: Special_Instructions="Next Day Air 
 

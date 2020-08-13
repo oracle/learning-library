@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to start the Docker and Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQL Developer.
+This lab walks you through the steps to start the Docker and Node.js Retail application. You can connect to an Node.js running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
 
 Estimated Lab Time: 20 Minutes
 ### Prerequisites
@@ -44,7 +44,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
    The official Node.js website has installation instructions for [Node.js](https://yum.oracle.com/oracle-linux-nodejs.html).
 
-## STEP 1:  Verify Application
+## **Step 1:**  Verify Application
 
 1.  The script (env\_setup\_script.sh) which you ran started the application. Also at the end of the script. you will be presented with two URLs.
 
@@ -58,7 +58,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
     ![](./images/application_home_pageupdated.png " ")
 
-## STEP 2: Download Postman
+## **Step 2:** Download Postman
 
  1. Download Postman.
     -  [Click here to download Postman](https://www.postman.com/downloads/)
@@ -94,7 +94,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 5. Click on the **Send** button, Postman should return the HTTP 200 after successfully adding the product in oracle database.
 ![](./images/postman_return.png " ")
 
-## STEP 3: Using HTTP GET method.
+## **Step 3:** Using HTTP GET method.
 
 1. Open a new tab
 
@@ -110,7 +110,7 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
     ![](./images/nodejs-postman5a.png " ")
 
-## STEP 4: Using HTTP POST Method
+## **Step 4:** Using HTTP POST Method
 
 
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;PUBLIC-IP&gt;:3001/products/13.
@@ -138,12 +138,12 @@ http://&lt;PUBLIC-IP&gt;:3001/
 
 ## Want to learn more
 
-    - [Node-js](https://nodejs.org/en/)
-    - [Node-js for Oracle Linux](https://yum.oracle.com/oracle-linux-nodejs.html)  
-    - [Node-js Driver](https://oracle.github.io/node-oracledb/)
-    - [Oracle Instant Client](https://www.oracle.com/in/database/technologies/instant-client/downloads.html)
-    - [Docker](https://www.docker.com/)
-    - [Postman](https://www.postman.com/)
+ - [Node-js](https://nodejs.org/en/)
+ - [Node-js for Oracle Linux](https://yum.oracle.com/oracle-linux-nodejs.html)  
+ - [Node-js Driver](https://oracle.github.io/node-oracledb/)
+ - [Oracle Instant Client](https://www.oracle.com/in/database/technologies/instant-client/downloads.html)
+ - [Docker](https://www.docker.com/)
+ - [Postman](https://www.postman.com/)
 
 
 ## Acknowledgements

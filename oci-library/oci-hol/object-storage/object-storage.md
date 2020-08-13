@@ -16,7 +16,7 @@ Object Storage is a regional service and is not tied to any specific compute ins
 
 The purpose of this lab is to give you an overview of the Object Service and an example scenario to help you understand how the service works.
 
-### Pre-Requisites
+### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 - We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%

@@ -27,13 +27,13 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## Step 1: The Beginning
+## **Step 1:** The Beginning
 
 Lab under construction. Please come back soon!
 
 ## Conclusion
 
-In this Lab you had an opportunity to examine Application Continuity.
+In this lab you had an opportunity to examine Application Continuity.
 
 You will have learned that Application Continuity improves the user experience for both unplanned outages and planned maintenance. Application Continuity enhances the fault tolerance of systems and applications that use an Oracle database.
 

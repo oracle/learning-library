@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Sign in to OCI Console and create a VCN](#practice-1-sign-in-to-oci-console-and-create-a-vcn)
 
@@ -24,7 +24,7 @@ Automation is a critical component when it comes to managing Cloud workloads at 
 
 This lab will walk you through installation and configuration of the CLI, along with the execution of several create, read, and terminate commands.  Upon completion of this lab you should have a good understanding of how to use the OCI CLI to automate common tasks in OCI.
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)
 - [Create an SSH Key Pair](#create-an-ssh-key-pair)
@@ -70,7 +70,7 @@ This lab will walk you through installation and configuration of the CLI, along 
 
 ## Practice 2: Create a Compute instance and install OCI CLI
 
-**Pre-requisites: Create SSH Key Pair**
+**Prerequisites: Create SSH Key Pair**
 [Create an SSH Key Pair](#create-an-ssh-key-pair)
 
 1. Open the OCI console. From OCI services menu, mouse-over **Compute** and click **Instances**

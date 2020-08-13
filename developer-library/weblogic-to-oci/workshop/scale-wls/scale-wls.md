@@ -13,23 +13,23 @@ There are 2 ways to scale a domain:
 
 ***Important Note***: Beware that manual node shape changes will be overriden when applying changes through the Resources Manager, like when scaling the number of nodes. It is recommended to scale the number of nodes rather than change the shape of the nodes, but we'll show this process for reference.
 
-- To scale a node by changing its shape, go to **Compute -> Instances**
+- 1. To scale a node by changing its shape, go to **Compute -> Instances**
 
   <img src="./images/scale-compute.png" width="50%">
 
-- Click the WebLogic instance to modify
+- 2. Click the WebLogic instance to modify
 
   <img src="./images/scale-compute-instance.png" width="100%">
 
-- In the instance details, click **Edit**
+- 3. In the instance details, click **Edit**
 
   <img src="./images/scale-compute-edit.png" width="70%">
 
-- In the Edit pane, click **Edit Shape**
+- 4. In the Edit pane, click **Edit Shape**
 
   <img src="./images/scale-compute-edit-shape.png" width="70%">
 
-- Select an new shape and click **Save Changes**
+- 5. Select an new shape and click **Save Changes**
 
   <img src="./images/scale-compute-edit-shape2.png" width="70%">
 
@@ -40,25 +40,25 @@ You will be prompted to reboot the instance. The WebLogic servers will be restar
 
 ***Important note***: If you changed the shape manually previously, any change using the variables and re-applying to the stack will revert manual node shape scaling to the shape originally defined at provisioning time.
 
-- To scale the number of nodes, go to **Resources Manager -> Stacks** and select the stack that was used to provision the WebLogic domain
+- 1. To scale the number of nodes, go to **Resources Manager -> Stacks** and select the stack that was used to provision the WebLogic domain
 
   <img src="./images/scale-stack.png" width="100%">
 
-- Click **Variables** then click **Edit Variables**
+- 2. Click **Variables** then click **Edit Variables**
 
   <img src="./images/scale-variables.png" width="100%">
 
-- Scroll to the **Weblogic Server Node Count** input and adjust the number of nodes
+- 3. Scroll to the **Weblogic Server Node Count** input and adjust the number of nodes
 
   <img src="./images/scale-10-nodes.png" width="70%">
 
-- Make sure the **Do not update domain configuration** is left **unchecked**. This option is to be used if you want to scale the number of nodes without scaling the cluster
+- 4. Make sure the **Do not update domain configuration** is left **unchecked**. This option is to be used if you want to scale the number of nodes without scaling the cluster
 
   <img src="./images/scale-no-update.png" width="70%">
 
-- Click **Next** and then **Save Changes**
+- 5. Click **Next** and then **Save Changes**
 
-- Then Click **Terraform Actions -> Apply** to make the changes
+- 6. Then Click **Terraform Actions -> Apply** to make the changes
 
   <img src="./images/scale-tf-apply.png" width="70%">
 

@@ -12,7 +12,7 @@ Oracle’s Autonomous Data Warehouse is the perfect quick-start service for fast
 * Access to an Oracle Cloud account, such as the [Oracle Cloud Free Tier](https://oracle.com/oow19freetier).
 
 
-## STEP 1: Create an ADW Instance ##
+## **Step 1:** Create an ADW Instance ##
 1. Sign in to the [Oracle Cloud](https://cloud.oracle.com/home).
 2. Click the menu icon to expand the menu on the left edge of the screen. If you just provisioned the tenancy this menu may not show all of the options because they are being installed and configured. Wait a couple of minutes and click on refresh.
 3. Click **Autonomous Date Warehouse**.

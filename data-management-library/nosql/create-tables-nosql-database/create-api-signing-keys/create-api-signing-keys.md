@@ -105,7 +105,7 @@ To create a user API key, you will use `openssl` on your local system. If you ar
 
   ![](images/upload-public-key.png " ")
 
-14. Note the fingerprint value, you'll use the fingerprint later.
+14. Note the fingerprint value, you will use the fingerprint later.
 
   ![](images/copy-fingerprint.png " ")
 

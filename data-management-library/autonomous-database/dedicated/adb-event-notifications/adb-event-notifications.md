@@ -13,7 +13,7 @@ As an database developer or adminstrator,
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account with priviledges to provision an autonomous database and create ONS topics and events.
 
-## STEP 1: Setup email / SMS notification on ADB provisioning events
+## **Step 1:** Setup email / SMS notification on ADB provisioning events
 
 - Lets start by setting up a simple email / SMS notification when autonomous database instances are provisioned in the users compartment.
 

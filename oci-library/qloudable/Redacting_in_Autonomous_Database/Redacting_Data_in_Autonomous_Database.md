@@ -12,7 +12,7 @@ randomize the data and set the masking conditions.
 
 [Objectives](#objectives)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Sign in to OCI Console](#sign-in-to-oci-console)
 
@@ -23,7 +23,7 @@ randomize the data and set the masking conditions.
 ## Objectives
 The objective of this lab is to mask the CUST_LAST_NAME and CUST_MAIN_PHONE_NUMBER column values from the TEST.CUSTOMERS table.
 
-## Pre-Requisites
+## Prerequisites
 
 * The lab requires an Oracle Public Cloud account with Autonomous Transaction Processing Cloud Service.
 * Granting DBMS_REDACT access to the user creating the redaction policy is required to complete the operation. The user ADMIN is already granted the EXECUTE object privilege on SYS.DBMS_REDACT package.

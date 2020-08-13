@@ -25,7 +25,7 @@ As a database user, DBA or application developer,
 - VNC Viewer or other suitable VNC client on your local laptop
 
 
-## STEP 1: Download and install Swingbench
+## **Step 1:** Download and install Swingbench
 
 The Oracle Cloud Infrastructure Marketplace provides a pre-configured developer client image that come with database drivers for Java, node.js, python and other popular languages. Instructions to install and use this developer client are provided in [Lab 5](?lab=lab-5-configure-dev-client)
 
@@ -59,7 +59,7 @@ This will create a folder /home/opc/swingbench and unzip contents in there. Opti
 Thats all it takes to install this app. 
 
 
-## STEP 2: Deploy swingbench schema without indexes
+## **Step 2:** Deploy swingbench schema without indexes
 
 Assuming you have uploaded your database wallet and can connect to your autonomous database via sql*plus or sqlcl, you are now ready to deploy the swingbench schema.
 
@@ -92,7 +92,7 @@ Replace parameters DB-wallet-file-name, TNS_service and DB-admin-passwd to match
 The time required to build the soe schema depends on the degree of parallelism available on the database instance and the size of the schema. Above we've chosen a 1 GB schema which should take less than 15 mins in most cases
 
 
-## STEP 3: Enable Automatic Indexing
+## **Step 3:** Enable Automatic Indexing
 
 Once the schema is build you may now go ahead and enable automatic indexing. First, lets ensure there are no indexes. Connect to your autonomous database as 'admin' using SQL*Developer or any SQL Client
 
@@ -134,7 +134,7 @@ The Automatic Indexing Settings page is where you can,
  ![](./images/EM3.png " ")
 
 
-## STEP 4: Run workload and observe automatic index creation
+## **Step 4:** Run workload and observe automatic index creation
 
 Next, lets fire up swingbench and simulate an OLTP order-entry workload.
 

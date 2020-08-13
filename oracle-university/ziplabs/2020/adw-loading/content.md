@@ -28,7 +28,7 @@ Storage using two of the procedures in the DBMS_CLOUD package:
 * Have completed the previous lab **Provisioning Autonomous Data Warehouse**.
 
 
-## STEP 1: Load a data file to your Object Store ##
+## **Step 1:** Load a data file to your Object Store ##
 Oracle Cloud Infrastructure offers two distinct storage class tiers.  Object Storage, for data which you need fast, immediate and frequent access and Archive Storage, for data which you seldom or rarely access.  In this ziplab you will stage data into an object store in the Oracle Cloud Infrastructure Object Storage service.
 
 1. Login to your Oracle Cloud Infrastructure Console
@@ -86,7 +86,7 @@ For this lab, we'll use the `root` compartment.
 
 
 
-## STEP 2: Create an Object Store Auth Token ##
+## **Step 2:** Create an Object Store Auth Token ##
 
 To load data from the OCI object store, you need to create an Auth Token for your object store account. The
 communication between your Autonomous Database and the object store relies on this Auth Token and username/password authentication.
@@ -117,7 +117,7 @@ communication between your Autonomous Database and the object store relies on th
 
 
 
-## STEP 3: Create Object Store Credentials in your Autonomous Database ##
+## **Step 3:** Create Object Store Credentials in your Autonomous Database ##
 
 Now that you have created an object store Auth Token, its time to store the credentials of the object store in ADW instance.
 
@@ -168,7 +168,7 @@ Go back to your ADW instance via the menu.
 your ADW instance now.  
 
 
-## STEP 4: Copy Data from Object Store to Autonomous Database Tables ##
+## **Step 4:** Copy Data from Object Store to Autonomous Database Tables ##
 Before data is copied, the tables and objects need to be created in ADW.  In this lab you will create the target objects.
 
 1. Download the SQL script to create the tables for your ADB instance **[here](files/adw-loading.sql)**.  Open up the file in notepad from your desktop.   _(Remember to click the back button to return to this window)_ This script will be used to create the tables and constraints.

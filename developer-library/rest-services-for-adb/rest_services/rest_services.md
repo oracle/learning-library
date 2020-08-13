@@ -27,7 +27,7 @@ You have several development interfaces available, including:
 
 In this lab you will use the SQL Developer Web browser-based tool, connect to your Autonomous Database and REST enable tables and views and/or develop custom RESTful Services based on your SQL and PL/SQL code.
 
-## Step 1 Create a user for Application development
+## **Step 1:**Create a user for Application development
 
 It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
@@ -69,7 +69,7 @@ https://k1jMIXNumLettersvd3-DBNAME.adb.ap-CITY-1.oraclecloudapps.com/ords/got/si
 where *DBNAME* is the name of your database, *CITY* is the region you have chosen and *k1jMIXNumLettersvd3* will be your unique system-assigned identifier
 ![](../../images/SQLDevWeb-1b.png)
 
-## Step 2 Build a simple GET handler
+## **Step 2:**Build a simple GET handler
 
 1. Using the SQL Developer worsheet create a test table
 
@@ -199,7 +199,7 @@ With this privilege in place try to access *test* again:
 
 *Note* If you are logged in as THOR to SQLDeveloper via your browser you are authenticated. You used the role 'SQL Developer' which is an ORDS role assigned to any Database User Authenticated session. Try a different browser, or use a REST client like Insomnia from Google.
 
-## Step 3 Register an OAUTH Client application
+## **Step 3:**Register an OAUTH Client application
 This topic explains how to register your applications (called "third-party" applications here) to access a REST API.
 
 OAuth 2.0 is a standard Internet protocol that provides a means for HTTP servers providing REST APIs to give limited access to third party applications on behalf of an end user.
@@ -274,7 +274,7 @@ After an access token has been acquired, the client application must remember th
  if the Authorization header is omitted, then the status *401 Unauthorized* is returned instead.
 
 ## Conclusion
- In this Lab, you had an opportunity to get an introduction to REST services.
+ In this lab, you had an opportunity to get an introduction to REST services.
 
 ## Acknowledgements
 

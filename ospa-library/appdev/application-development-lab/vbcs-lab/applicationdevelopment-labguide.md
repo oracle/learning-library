@@ -199,7 +199,7 @@ NOTE: For this exercise you will need three data files (Product.csv, ProductOrde
 
 2. Select business objects, if you don’t see the navigator, click the **Expand Navigator** icon in the upper-left corner. ![](./media/image74.png)
 
-    - If you don't have any Business Objects already you'll see the following **You don't have any business objects defined yet** image; click on the **+ Business Object** button.
+    - If you don't have any Business Objects already you will see the following **You don't have any business objects defined yet** image; click on the **+ Business Object** button.
     
         ![](./media/vbcs_no_biz_objects.png)
 
@@ -663,7 +663,7 @@ In exercise 2 you created three business objects and uploaded data to the embedd
 
 3. Add a new Web Application
 
-    First, you'll create a web application with two features; displaying a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
+    First, you will create a web application with two features; displaying a list of all products that a manager/franchisee might order, and a page showing specifics about a chosen product.
     
     If you don’t have any Web Applications yet; click the **+ Web Application** button
     

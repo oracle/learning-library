@@ -4,13 +4,13 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)# ReservedIP Practice - Using Reserved Public IP 
+[Prerequisites](#Prerequisites)# ReservedIP Practice - Using Reserved Public IP 
   
 ## Table of Contents
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Sign in to OCI Console and create reserved public IP](#practice-1-sign-in-to-oci-console-and-create-reserved-public-ip)
 
@@ -30,7 +30,7 @@ A public IP address is an IPv4 address that is reachable from the internet. If a
 
 Certain types of resources in your tenancy are designed to be directly reachable from the internet and therefore automatically come with a public IP address. For example: a NAT gateway or a public load balancer. Other types of resources are directly reachable only if you configure them to be.
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 

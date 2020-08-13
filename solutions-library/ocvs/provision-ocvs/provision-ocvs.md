@@ -22,7 +22,7 @@ As a system administrator or application developer:
 2. A virtual cloud network with a recommended CIDR size of /20.
 3. A CIDR block for VMWare workload that does not overlap with the VCN CIDR.
 
-## STEP 1: Create an SDDC
+## **Step 1:** Create an SDDC
 
 1.  Sign in to the OCI console and open the navigation menu by clicking on the hamburger menu icon on the top left of the screen.
 
@@ -87,7 +87,7 @@ More information about Compartments and Policies is provided in the OCI Identity
 
     ![](./images/100_11.png " ")
 
-## STEP 2: Configure connectivity to the internet through NAT Gateway
+## **Step 2:** Configure connectivity to the internet through NAT Gateway
 
 Since the SDDC is sittng in a private subnet, to allow it to communicate with the internet, we will need a NAT Gateway. 
 
@@ -105,7 +105,7 @@ Since the SDDC is sittng in a private subnet, to allow it to communicate with th
 
     ![](./images/100_11_1.png " ")
 
-## STEP 3: Configure connectivity to Oracle Services Network
+## **Step 3:** Configure connectivity to Oracle Services Network
 
 1. To connect to the Oracle services network we would need a **Service Gateway (SGW)**. We will create one using the **Configure connectivity to Oracle Services Network** wizard. Click on that wizard to begin.
 
@@ -117,7 +117,7 @@ Since the SDDC is sittng in a private subnet, to allow it to communicate with th
 
 3. Review the resources that will be created within the VCN: a SGW, a route table with a route rule for service gateway and a network security group that allows access to all OCI services in the region. Click on **Apply Configuration**. You will get a confirmation that the changes have been applied. Now, click on **Close**.
 
-## STEP 4: Create a Public Subnet to host the Bastion server
+## **Step 4:** Create a Public Subnet to host the Bastion server
 
 We will now create a public subnet in the same VCN, as the SDDC, to host a Bastion server. We need this jump server to access the SDDC.
 
@@ -146,7 +146,7 @@ Go to **Networking** and select **Virtual Cloud Networks**. Make sure that you a
 
 We still have to update the route rules for this subnet, but we will do that while we wait for our Bastion host to come up. So, let us go and create the bastion host. We will return to this public subnet, in a bit.
 
-## STEP 5: Create a bastion host to access your SDDC
+## **Step 5:** Create a bastion host to access your SDDC
 
 1. Return to the navigation menu and under **Core Infrastructure**, click on **Compute** and then on **Instances**.
 
@@ -182,7 +182,7 @@ We still have to update the route rules for this subnet, but we will do that whi
 
 **Upon the creation of this instance, a user name and an initial password will be generated for you. They will be available on the details screen of the newly launched instance. You must create a new password upon logging into the instance for the first time.**
 
-## STEP 6: Create an Internet Gateway
+## **Step 6:** Create an Internet Gateway
 
 Upon creation, the bastion server will have to communicate with the internet. For this, the public subnet will need an **Internet Gateway**.
 
@@ -210,7 +210,7 @@ Upon creation, the bastion server will have to communicate with the internet. Fo
 
 You have successfully created an Internet Gateway. Now, let us attach it to the public subnet where your bastion resides.
     
-## STEP 7: Attach the Internet Gateway to the public subnet
+## **Step 7:** Attach the Internet Gateway to the public subnet
 
 We will now modify the route rules for the public subnet to direct the traffic through the internet gateway that you just created.
 
@@ -234,7 +234,7 @@ We will now modify the route rules for the public subnet to direct the traffic t
 
     ![](./images/100_11_13.png " ")
 
-## STEP 8: Update security list to allow Remote Desktop connection
+## **Step 8:** Update security list to allow Remote Desktop connection
 
 1. We will now open port 3389 in the security list attached to the public subnet. Go back to the previous page and select **Security Lists** from the Resources panel.
 
@@ -260,7 +260,7 @@ We will now modify the route rules for the public subnet to direct the traffic t
 
 The bastion host is now ready to accept remote desktop connections. 
 
-## STEP 9: Configure Connectivity from VMWare private subnet to our public subnet
+## **Step 9:** Configure Connectivity from VMWare private subnet to our public subnet
 
 1. We will now navigate back to the SDDC. Click on the hamburger icon, and under **Solutions and Platform**, click on **VMware Solution** and select the SDDC that you provisioned.
 
@@ -295,7 +295,7 @@ The bastion host is now ready to accept remote desktop connections.
     ![](./images/100_40_9.png " ")
 
 
-## STEP 10: Access the SDDC using the Bastion
+## **Step 10:** Access the SDDC using the Bastion
 
 1. Under **Core Infrastructure**, click on **Compute** and then on **Instances**.
 

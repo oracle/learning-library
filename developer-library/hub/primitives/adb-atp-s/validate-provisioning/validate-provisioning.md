@@ -8,7 +8,7 @@ This template creates the following Oracle Cloud resources :
 
 Complete the following steps to validate the resources created.
 
-## STEP 1 : Validate Oracle Autonomous Transaction Processing
+## **Step 1:** Validate Oracle Autonomous Transaction Processing
 
 1. Open the **Navigation Menu** on the top-left. Under **Database**, click **Autonomous Transaction Processing**.
 

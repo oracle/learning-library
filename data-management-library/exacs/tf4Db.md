@@ -133,7 +133,7 @@ $ git commit -m "This is to commit changes made by ${myInitial}"
 
 Once you are happy with your work. You will **push** the commit in your branch to your new GitHub repo. This allows other people to see the changes you've made. If they're approved by the repository's owner, the changes can then be merged into the master branch.
 
-To push changes onto a new branch on GitHub, you'll want to run **[git push](http://git-scm.com/docs/git-push) origin yourbranchname**. GitHub will automatically create the branch for you on the remote repository:
+To push changes onto a new branch on GitHub, you will want to run **[git push](http://git-scm.com/docs/git-push) origin yourbranchname**. GitHub will automatically create the branch for you on the remote repository:
 
 ````
 <copy>git push origin ${myInitial}Branch1</copy>

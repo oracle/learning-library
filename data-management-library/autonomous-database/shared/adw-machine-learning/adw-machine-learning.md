@@ -1,6 +1,6 @@
 # Simple Introduction to Machine Learning Algorithms (DBMS\_PREDICTIVE\_ANALYTICS)
 
-## **Introduction**
+## Introduction
 
 In this lab, you will be using the Oracle Machine Learning (OML) notebook application provided with Autonomous Data Warehouse Cloud (ADWC) to explore some samples of the *DBMS\_PREDICTIVE\_ANALYTICS* functionality. DBMS\_PREDICTIVE\_ANALYTICS provides a set of easy-to-use machine learning procedures to simplify the machine learning process.
 

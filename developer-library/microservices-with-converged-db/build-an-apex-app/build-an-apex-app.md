@@ -52,7 +52,7 @@ In this step, you will create a new APEX app based on a file that contains a sma
 
     ![](images/click-sql-commands.png)
 
-3. Enter the following code into the SQL Commands window, then click **Run** to execute the code. Once complete, you'll have a new table named ORDER_ITEMS that you can use to store the data.
+3. Enter the following code into the SQL Commands window, then click **Run** to execute the code. Once complete, you will have a new table named ORDER_ITEMS that you can use to store the data.
 
     ```
     <copy>
@@ -105,7 +105,7 @@ In this step, you will create a new APEX app based on a file that contains a sma
 
     ![](images/click-load-data.png)
 
-9.  When the data load finishes, you'll see a success message letting you know that 50 rows of data were inserted into the table. Click the **Create Application** button to create an application on top of the ORDER_ITEMS table.
+9.  When the data load finishes, you will see a success message letting you know that 50 rows of data were inserted into the table. Click the **Create Application** button to create an application on top of the ORDER_ITEMS table.
 
     ![](images/click-create-application.png)
 

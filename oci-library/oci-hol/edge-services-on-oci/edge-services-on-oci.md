@@ -30,7 +30,7 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -45,7 +45,7 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## Step 1: Sign in to OCI Console and create VCN
+## **Step 1:** Sign in to OCI Console and create VCN
 
 
 * **Tenant Name:** {{Cloud Tenant}}
@@ -98,7 +98,7 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
 
 10. Click **Add Ingress Rule** at the bottom.
 
-## Step 2: Create Public Private SSH Key Pair, two compute instances and install web server
+## **Step 2:** Create Public Private SSH Key Pair, two compute instances and install web server
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
      ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
@@ -312,7 +312,7 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
 
     **Note down the Public IP addresses of both compute.**
 
-## Step 3: Create Traffic Management Policy
+## **Step 3:** Create Traffic Management Policy
 
 We will now  create a global Failover traffic management policy for this web application, where we will use one of the two computes as primary and the second one as secondary
 
@@ -398,7 +398,7 @@ We will now  create a global Failover traffic management policy for this web app
 
     ![](./../edge-services-on-oci/images/DNS_009.PNG " ")
 
-## Step 4: Failover Test for Traffic Management Policy
+## **Step 4:** Failover Test for Traffic Management Policy
 
 We will now do a failover test of the policy just created. We will STOP Webserver1 and test if the healt check is updated, and the traffic is diverted to webserver2.
 
@@ -443,7 +443,7 @@ We will now do a failover test of the policy just created. We will STOP Webserve
     ![](./../edge-services-on-oci/images/DNS_015.PNG " ")
 
 
-## Step 5: Delete the resources
+## **Step 5:** Delete the resources
 
 1. Switch to  OCI console window.
 

@@ -32,7 +32,7 @@ Part 1 of Lab100 is optional. This section outlines how to configure an On-Premi
 ## Part 1. Capturing a Snapshot of Third Party OS Commerce Application
 
 
-### Step 1: Download VirtualBox and Import Ubuntu Instance
+### **Step 1:** Download VirtualBox and Import Ubuntu Instance
 If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/P2EwRTj2PxXxG52U8XrFCeLZsb_P9wha2RDef5bYz9E/n/orasenatdecanational01/b/OsCommerce_ova_file/o/osCommerceDemo.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
 
 ![](./images/1.png "")
@@ -55,7 +55,7 @@ If you you would like to increase the desktop view of the VirtualBox, click on t
 
 ![](./images/6.png "")
 
-### Step 2: Install and Setup LAMP (Linux, Apache, MySQL, PHP) & SSH
+### **Step 2:** Install and Setup LAMP (Linux, Apache, MySQL, PHP) & SSH
 **Verify Internet Connection**
 
 Before installing any of the packages on the Ubuntu image on VirtualBox, make sure that you are connected to the public internet. Shut down the virtual machine, then disable/turn off any VPN applications/programs, then start up the Ubuntu Virtual machine. This will allow the Ubuntu Virtual Machine to download and install Linux packages.
@@ -161,7 +161,7 @@ sudo invoke-rc.d iptables-persistent save
 ```
 ![](./images/8.png "")
 
-### Step 3: OSCommerce Setup
+### **Step 3:** OSCommerce Setup
 **Download OSCommerce**
 
 Make a temporary folder named “tmp” where you will download osCommerce to. Download the zip and extract:
@@ -202,8 +202,8 @@ sudo chmod 644 /var/www/html/catalog/includes/configure.php
 sudo chmod 644 /var/www/html/catalog/admin/includes/configure.php
 ```
 
-### Step 4: Configure osCommerce for End User Use
-Type localhost/catalog/admin in the address bar of the firefox browser you had open earlier. You'll need to log in with the admin username and password that you entered when setting up your osCommerce Online Store Settings. After logging in you'll be redirected to a page that looks similar to the second photo below.
+### **Step 4:** Configure osCommerce for End User Use
+Type localhost/catalog/admin in the address bar of the firefox browser you had open earlier. You'll need to log in with the admin username and password that you entered when setting up your osCommerce Online Store Settings. After logging in you will be redirected to a page that looks similar to the second photo below.
 ![](./images/13.png "")
 ![](./images/14.png "")
 
@@ -221,7 +221,7 @@ Go to “Categories/Products” then “Hardware”, click ‘Oracle Hardware’
 Navigate to localhost/catalog/index.php. This is what you should see as a final product:
 ![](./images/18.png "")
 
-### Step 5: Export .Ova File From VirtualBox & Extract VMDK
+### **Step 5:** Export .Ova File From VirtualBox & Extract VMDK
 
 From VirtualBox, shut down the osCommerce image (quitting out will also do this). Export the appliance from VirtualBox. Copy as seen in the image and set the file location for the .ova export. Keep in mind of the directory you are exporting to. Export will take about 5 minutes.
 
@@ -237,7 +237,7 @@ You should expect to see a .vmdk file after it unzips.
 
 ## Part 2. Bringing Snapshot to the Cloud
 
-### Step 1: Create a Virtual Cloud Network (VCN)
+### **Step 1:** Create a Virtual Cloud Network (VCN)
 **Note: If you so choose it may make sense to organize resources in a dedicated “OSCommerce” compartment. This is at the customer’s discretion, but if so choose Identity->Compartments->Create Compartment. This will be the compartment where all resources for the lab will be housed.**
 
 Login to your Oracle Cloud tenancy and in the top left hamburger menu you will find
@@ -268,7 +268,7 @@ For production instances **never** open up all traffic via 0.0.0.0/0 on a given 
 ![](./images/Ingress.png "")
 ![](./images/26.png "")
 
-### Step 2: Create Object Storage Bucket
+### **Step 2:** Create Object Storage Bucket
 From the top left hamburger menu, expand the list and find “Object Storage.” Select Object
 Storage from the secondary list and choose "create bucket." Enter a name for the bucket and click create Bucket with default settings for storage tier and encryption.
 
@@ -276,7 +276,7 @@ Storage from the secondary list and choose "create bucket." Enter a name for the
 ![](./images/28.png "")
 ![](./images/29.png "")
 
-### Step 3: Upload VMDK File to Bucket & Create PAR
+### **Step 3:** Upload VMDK File to Bucket & Create PAR
 Select the bucket you created and then click the blue bottom within Objects named “Upload Objects.” Click “select files” and then locate the .vmdk file created previously from the unzipped .ova.
 
 **Note: This step can take a significant amount of time depending on your internet speed. In rare instances upload has taken over an hour, but typically this is much quicker.**
@@ -295,7 +295,7 @@ Copy the pre-authenticated request URL. This will be used later when creating th
 
 ## Part 3: Create Custom Image and Instance
 
-### Step 1: Import the image
+### **Step 1:** Import the image
 From the top left hamburger menu, locate “Compute” and select “Custom Images” from the
 drop down.Click the blue button and select "Import Image"
 
@@ -306,7 +306,7 @@ Select which compartment the image will be created in (if dedicated compartment 
 
 ![](./images/37.png "")
 
-### Step 2: Create Instance with Custom Image
+### **Step 2:** Create Instance with Custom Image
 
 Click "Compute" -> "Instances." Click “Create Instance”, then “Change Image Source”, then “Custom Images”, and select the osCommerce custom image.
 
@@ -329,7 +329,7 @@ Press ‘Enter’ key for default file location. For Mac users, most likely, you
 open . ~/.ssh
 ```
 
-### Step 3: Connect to Instance and Validate that it's Online
+### **Step 3:** Connect to Instance and Validate that it's Online
 After the instance has been created, open terminal on your local machine and run this command to connect via SSH:
 ```
 ssh –i <private_key_name> oscommerce@<public-ip-address>
@@ -463,7 +463,7 @@ sudo service vncserver start
 
 **Connect to your VNC Desktop**
 
-To test your VNC server, you'll need to use a client that supports VNC connections over SSH tunnels. If you are using Windows, you could use TightVNC, RealVNC, or UltraVNC. Mac OS X users can use the built-in Screen Sharing, or can use a cross-platform apps like RealVNC, or VNCViewer. For this lab, we chose to use VNCViewer.
+To test your VNC server, you will need to use a client that supports VNC connections over SSH tunnels. If you are using Windows, you could use TightVNC, RealVNC, or UltraVNC. Mac OS X users can use the built-in Screen Sharing, or can use a cross-platform apps like RealVNC, or VNCViewer. For this lab, we chose to use VNCViewer.
 
 First, we need to create an SSH connection on your local computer that securely forwards to the localhost connection for VNC. Open a new terminal window and input this command:
 

@@ -16,7 +16,7 @@ You'll perform your queries on the Star Schema Benchmark (SSB) sample data. This
 * Have completed the previous lab **Provisioning Autonomous Transaction Processing**.
 
 
-## STEP 1: Navigate to the Instance's Details Page ##
+## **Step 1:** Navigate to the Instance's Details Page ##
 1. Sign in to the Oracle Cloud. 
 2. Click the menu icon to expand the menu on the left edge of the screen.
 3. Click **Autonomous Transaction Processing**.
@@ -33,8 +33,8 @@ You'll perform your queries on the Star Schema Benchmark (SSB) sample data. This
     [Description of the illustration atp_instance.png](files/atp_instance.txt)
 
 
-## STEP 2: Run a Simple Query ##
-In the next steps, you'll run a few queries in SQL Developer Web on the SSB sample data. You'll measure the effects in Performance Hub.
+## **Step 2:** Run a Simple Query ##
+In the next steps, you will run a few queries in SQL Developer Web on the SSB sample data. You'll measure the effects in Performance Hub.
 
 1. Click the **Performance Hub** button. It may take a few seconds for Performance Hub to draw open for the first time.
 2. You'll notice three areas as Performance Hub opens. They all appear as clean slates the first time you open Performance Hub.
@@ -86,7 +86,7 @@ order by count(*);
 12. Notice there is slight activity due to your query.
 
 
-## STEP 3: Run a Demanding Query ##
+## **Step 3:** Run a Demanding Query ##
 A more-demanding query will reveal lots of activity in Performance Hub. Like with any troublesome query, Performace Hub is a great tool to drill down and investigate where time and resources are spent.
 
 1. Navigate back to the SQL Developer Web tab.
@@ -125,7 +125,7 @@ order by d_year, p_brand1;
 
     [Description of the illustration RemoveFilter.png](files/RemoveFilter.txt)
 
-8. Scroll down to the **SQL ID** area. Here you'll find a listing of individual queries.
+8. Scroll down to the **SQL ID** area. Here you will find a listing of individual queries.
 9. Click on your query. 
 
     ![](img/SQL_ID.png " ")
@@ -140,7 +140,7 @@ order by d_year, p_brand1;
 
     [Description of the illustration SQL_Details.png](files/SQL_Details.txt)
 
-13. Scroll down. As you scroll, you'll notice statistics for your query indicating where time and resources are spent.
+13. Scroll down. As you scroll, you will notice statistics for your query indicating where time and resources are spent.
 
     ![](img/Statistics.png " ")
 

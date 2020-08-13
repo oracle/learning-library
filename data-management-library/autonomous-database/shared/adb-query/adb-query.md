@@ -1,6 +1,6 @@
 # Query Data in External Files
 
-## **Introduction**
+## Introduction
 
 In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Object Storage directly without loading them to your database.
 

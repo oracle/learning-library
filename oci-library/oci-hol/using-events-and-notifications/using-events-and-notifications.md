@@ -7,55 +7,13 @@ The Oracle Cloud Infrastructure Notifications service broadcasts messages  to di
 The Notifications service enables you to set up communication channels for publishing messages using topics  and subscriptions . When a message is published to a topic, the Notifications service sends the message to all of the topic's subscriptions.
 In this lab we will verify notifications when a compute instance is launched and deleted.
 
-**Some Key points:**
-
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%.*
-
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-**Cloud Tenant Name**
-
-**User Name**
-
-**Password**
-
-**Compartment Name (Provided Later)**
-
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
-
-### Pre-Requisites
-
-1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-
-3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-
-4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-
-5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
-
-## Step 1: Sign in to OCI Console and configure Notification and Event
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
-
+## **Step 1:** Sign in to OCI Console and configure Notification and Event
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
 
     ![](./../grafana/images/Grafana_015.PNG " ")
 
-2. First we will create a Notification topic and subscribe to this topic. From OCI Services menu,Click **Notifications** under **Application Integration**.
+2. First we will create a Notification topic and subscribe to this topic. From OCI Services menu, click **Notifications** under **Application Integration**.
 
 3. Click **Create Topic** and fill out the dialog box:
 
@@ -73,9 +31,9 @@ In this lab we will verify notifications when a compute instance is launched and
 
 6. Click **Create**.
 
-7. Subscription details screen will be displayed with subscription status showig **Pending**.
+7. Subscription details screen will be displayed with subscription status showing **Pending**.
 
-8. Check the email account you specifed and click the verification link for this subscription. Switch back to OCI console window and verify the subscription status chanegd to **Active**. You may need to refresh your browser.
+8. Check the email account you specified and click the verification link for this subscription. Switch back to OCI console window and verify the subscription status changed to **Active**. You may need to refresh your browser.
 
 9. You are now subscribed to a Notification topic. Next we will configure Events that will publish messages to this Notification topic.
 
@@ -95,7 +53,7 @@ In this lab we will verify notifications when a compute instance is launched and
     Under **Actions**
 
     - **ACTION TYPE**: Notifications
-    - **NOTIFICATIONS COMPARTMENT**: Choose your compartment 
+    - **NOTIFICATIONS COMPARTMENT**: Choose your compartment
     - **TOPIC**: Choose the topic created earlier
 
 12. Click **Create Rule**.
@@ -105,7 +63,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 We have now configured Notification service and tied events to it with a specific compartment. When a new compute instance is launched or terminated an email notification will be sent to the email address specified.
 
-## Step 2: Create VCN 
+## **Step 2:** Create VCN
 
 1. From the OCI Services menu, under **Networking**, click **Virtual Cloud Networks**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and click **Start VCN Wizard**.
 
@@ -124,30 +82,30 @@ We have now configured Notification service and tied events to it with a specifi
 
 4. Verify all the information and  Click **Create**.
 
-5. This will create a VCN with followig components.
+5. This will create a VCN with following components.
 
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
 6. Click **View Virtual Cloud Network** to display your VCN details.
 
-              
-## Step 3: Create compute instance and verify notification
 
-1. From OCI services menu, Click **Instances** under **Compute**. 
+## **Step 3:** Create compute instance and verify notification
+
+1. From OCI services menu, Click **Instances** under **Compute**.
 
 2. Click **Create Instance**. Fill out the dialog box:
 
-      - **Name your instance**: Enter a name 
+      - **Name your instance**: Enter a name
       - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
       - **Availability Domain**: Select availability domain
-      - **Instance Type**: Select Virtual Machine 
-      - **Instance Shape**: Select VM shape 
+      - **Instance Type**: Select Virtual Machine
+      - **Instance Shape**: Select VM shape
 
       **Under Configure Networking**
       - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN 
-      - **Subnet Compartment:** Choose your compartment. 
-      - **Subnet:** Choose the Public Subnet under **Public Subnets** 
+      - **Virtual cloud network**: Choose the VCN
+      - **Subnet Compartment:** Choose your compartment.
+      - **Subnet:** Choose the Public Subnet under **Public Subnets**
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
 
@@ -164,12 +122,11 @@ We have now configured Notification service and tied events to it with a specifi
 
 4. Switch to your email account and verify an event indicating compute instance launch was received.
 
-5. Wait for Instance to be in **Running** state. 
+5. Wait for Instance to be in **Running** state.
 
 6. Switch to your email account and verify an event indicating compute instance create was received.
 
-
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 1. Switch to  OCI console window.
 
@@ -185,7 +142,7 @@ We have now configured Notification service and tied events to it with a specifi
 
 5. Switch to your email account and verify an event indicating compute instance terminate was received.
 
-6. Once the compute instance is fully terminted another email notification will arrive.
+6. Once the compute instance is fully terminated another email notification will arrive.
 
 7. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will appear.
 
@@ -200,14 +157,14 @@ We have now configured Notification service and tied events to it with a specifi
 10. From OCI Services menu, under **Application Integration**, click **Event Service**.
 
 11. Click your Rule name and Click **Delete**. In the dialog box type **DELETE** and click **Delete**.
- 
+
 ## Acknowledgements
 *Congratulations! You have successfully completed the lab.*
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Yaisah Granillo, June 2020
+- **Last Updated By/Date** - Tom McGinn, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

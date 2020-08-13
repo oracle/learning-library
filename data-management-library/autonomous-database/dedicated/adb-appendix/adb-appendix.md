@@ -194,7 +194,7 @@ To access a GUI via VNC, do the following:
 
 ##  Finding private IP address of your Autonomous Exadata infrastructure (AEI)
 
-### Step 1: Locate the SCAN hostname of your AEI
+### **Step 1:** Locate the SCAN hostname of your AEI
 
 - Go to your Autonomous Database Console and open the details page of any ADB instance you have already provisioned on this AEI. Click the DB Connection button.
     ![](./images/dbconnection2.png " ")
@@ -203,7 +203,7 @@ To access a GUI via VNC, do the following:
     ![](./images/hostname1.png " ")
 
 
-### Step 2: Deploy and ssh into your developer client VM
+### **Step 2:** Deploy and ssh into your developer client VM
 
 - Next, deploy any linux VM in the same VCN hosting your Autonomous Exadata Infrastructure (AEI).
 
@@ -221,7 +221,7 @@ To access a GUI via VNC, do the following:
     </copy>
     ````
 
-### Step 3: Query your VCN's DNS service to locate IP address of AEI Cluster
+### **Step 3:** Query your VCN's DNS service to locate IP address of AEI Cluster
 
 - Once you are ssh'd into a client VM, simply run nslookup on the scan-host name your picked out from step 1 above.
 

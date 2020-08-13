@@ -138,7 +138,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 
 
-## Step 1:Connect to Graph Server 
+## **Step 1:**Connect to Graph Server 
 
 For connecting to graph server, open a terminal in VNC and execute below steps as oracle user.
 
@@ -148,7 +148,7 @@ For connecting to graph server, open a terminal in VNC and execute below steps a
 </copy>
 ````
 
-## Step 2: Start Graph server
+## **Step 2:** Start Graph server
 ````
 <copy>
 ./start-server
@@ -161,7 +161,7 @@ For connecting to graph server, open a terminal in VNC and execute below steps a
 The PGX server is now ready to accept requests.
 Now that the server is started, will keep this window open and will proceed to start the client now.
 
-## Step 3:Connect to Graph Client
+## **Step 3:**Connect to Graph Client
 
 The Graph Shell uses JShell, which means the shell needs to run on Java 11 or later. In our case the installation is completed, the shell executables can be found in /u01/graph/oracle-graph-client-20.1.0/bin after server installation or <\INSTALL\_DIR>/bin after client installation.
 

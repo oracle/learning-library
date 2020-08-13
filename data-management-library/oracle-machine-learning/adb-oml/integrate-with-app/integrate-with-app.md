@@ -34,7 +34,7 @@ This lab assumes you have completed the following labs:
 - Create a Machine Learning Model
 - Migrate ML Model to ATP
 
-## Step 1: Prepare data for the lab in ATP
+## **Step 1:** Prepare data for the lab in ATP
 
 1.  If you are already logged in as **ml_user** in SQL Developer Web, proceed to load the data.
 
@@ -137,7 +137,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/007.png  " ")
 
-## Step 2: Import the APEX Application
+## **Step 2:** Import the APEX Application
 
 1.  To navigate to the ATP APEX application, switch to the ATP service console in browser. Select **Development** and then select **Oracle APEX**.
 
@@ -211,7 +211,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/030.png  " ")
 
-## Step 3: Run the application and review on-the-fly prediction/scoring
+## **Step 3:** Run the application and review on-the-fly prediction/scoring
 
 1.  Select Customer Walk-in from the menu. Select **Lastname**, and then **Customer Id**. Note that the credit score prediction and the probability of that estimate calculations are done as data is queried.
 
@@ -271,7 +271,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/045.png  " ")
 
-## Step 4: Expose the ml model as a REST end point so any application can call it
+## **Step 4:** Expose the ml model as a REST end point so any application can call it
 
 1.  Select the **Home** button from the menu at the bottom of the screen. (Note: If you do not see the menu bar at the bottom of the page, switch to Oracle APEX tab which was opened earlier in the browser.)
 

@@ -9,7 +9,7 @@ This lab assumes you have already completed the following labs:
 - Register for Free Tier
 - Create SSH Keys
 
-## Step 1: Create the VCN
+## **Step 1:** Create the VCN
 
 1. Open the navigation menu. Under **Core Infrastructure**, go to **Networking** and click **Virtual Cloud Networks**.
 
@@ -47,7 +47,7 @@ This lab assumes you have already completed the following labs:
 
 
 
-## Step 2: Create the DB system
+## **Step 2:** Create the DB system
 
 1. Open the navigation menu. Under **Database**, click **Bare Metal, VM, and Exadata**.
 

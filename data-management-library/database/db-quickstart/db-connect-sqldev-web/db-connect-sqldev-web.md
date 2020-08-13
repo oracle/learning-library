@@ -16,7 +16,7 @@ In this lab, you will connect to the database using SQL Developer Web, a browser
 
 -   This lab requires completion of the 2 prior labs in this workshop: **Get a Free Trial** and **Provision an Autonomous Database**, in the Contents menu on the right.
 
-## STEP 1: Connect with SQL Developer Web
+## **Step 1:** Connect with SQL Developer Web
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your Autonomous Data Warehouse or Autonomous Transaction Processing console.
 1. In your database's details page, click the **Tools** tab.

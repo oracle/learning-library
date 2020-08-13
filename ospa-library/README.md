@@ -2,7 +2,7 @@
 
 ![](img/ospa-learning-library.png " ")
 
-The Oracle Sales And Partner Academy (OSPA) is where you'll find workshops and hands on labs related to all products within Oracle.  The labs you find here may be related to Oracle Learning Plans or specific training events delivered around the globe.  You'll find helpful resources for anything from Infrastructure to Applications and everything in between.    
+The Oracle Sales And Partner Academy (OSPA) is where you will find workshops and hands on labs related to all products within Oracle.  The labs you find here may be related to Oracle Learning Plans or specific training events delivered around the globe.  You'll find helpful resources for anything from Infrastructure to Applications and everything in between.    
 
 Select a link below to get your training started with OSPA.
 

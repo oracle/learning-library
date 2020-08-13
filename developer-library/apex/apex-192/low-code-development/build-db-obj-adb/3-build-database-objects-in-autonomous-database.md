@@ -223,7 +223,7 @@ In this step, you will learn how to create an Entity Relationship Diagram (ERD) 
 
 ## **Step 4:** Create a new table and add it to the data model
 
-In this step, you will use SQL Developer Web to create a new table. Then you'll learn how to edit an existing table and add it to the ERD created in the previous step.
+In this step, you will use SQL Developer Web to create a new table. Then you will learn how to edit an existing table and add it to the ERD created in the previous step.
 
 In the original napkin design, there was a table called To Dos. However, the Quick SQL script (used in step 1) did not include this table. Below you will recreate the TO Dos table with a relationship to Team Members, and Tasks.
 

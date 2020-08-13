@@ -35,7 +35,7 @@ In this lab we will deploy Redis in Master-Slave mode (similar to below) though 
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -50,7 +50,7 @@ In this lab we will deploy Redis in Master-Slave mode (similar to below) though 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## Step 1: Sign in to OCI Console and create VCN
+## **Step 1:** Sign in to OCI Console and create VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -83,7 +83,7 @@ In this lab we will deploy Redis in Master-Slave mode (similar to below) though 
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
                     
-## Step 2: Create ssh keys, two compute instances and install Redis
+## **Step 2:** Create ssh keys, two compute instances and install Redis
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -247,7 +247,7 @@ Next we will ssh into the **first compute instance**. In git-bash Enter Command:
 
 **We now have redis installed on two compute instances. Next we will configure the two instances in Master-Slave mode and verify the configuration**
 
-## Step 3: Configure Redis Master Slave mode
+## **Step 3:** Configure Redis Master Slave mode
 
 In this section we will configure first compute instance as Master and second compute instance as Slave.Once configured we will verify it.
 
@@ -308,7 +308,7 @@ In this section we will configure first compute instance as Master and second co
 **We have installed and configued Redis in Master-Slave mode using two compute instance in different Availability domains. Next we will update security list rules to ensure the two instances can communicate with each other Ensure both your ssh sessions are open**
 
 
-## Step 4: Configure Security Rules and verify deployment
+## **Step 4:** Configure Security Rules and verify deployment
 
 Redis is listening on port 6379, thus we need to allow access to the Redis Master node from slave node by adding security list rule on the VCN. We will then need to set firewall rules on the redis instance itself to allow access from Redis slave node.
 
@@ -407,7 +407,7 @@ Redis is listening on port 6379, thus we need to allow access to the Redis Maste
 
 **NOTE:** We will not be implementing this best practices in this lab.
 
-## Step 5: Security Best Practices
+## **Step 5:** Security Best Practices
 
 In this section we will review some of the security best practices recommendations.
 
@@ -455,7 +455,7 @@ address.
 
 **These are some basic security recommendations. Next we will delete the resources created.**
 
-## Step 6: Delete the resources
+## **Step 6:** Delete the resources
 
 1. Switch to  OCI console window.
 

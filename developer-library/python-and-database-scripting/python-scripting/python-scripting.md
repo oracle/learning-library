@@ -26,7 +26,7 @@ This lab assumes you have completed the following labs:
 * Lab: Generate SSH Key
 * Lab: Environment Setup using Marketplace Image
 
-## Step 1: Install Python
+## **Step 1:** Install Python
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
@@ -56,7 +56,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![](./images/p_installPython.jpg " ")
 
-## Step 2: Add a Sample Schema in your Database
+## **Step 2:** Add a Sample Schema in your Database
 
 1.  Switch to the `oracle` user using the sudo command.
 
@@ -119,7 +119,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
     </copy>
     ````
 
-## Step 3: Install Python Oracle Module and Connect to a Database
+## **Step 3:** Install Python Oracle Module and Connect to a Database
 
 cx\_Oracle is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
@@ -165,7 +165,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 
     ![](./images/p_python-3.png " ")
 
-## Step 4: The Python Interpreter
+## **Step 4:** The Python Interpreter
 
 There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
@@ -221,7 +221,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-2.png " " )
 
-## Step 5: Connect to the Oracle Database
+## **Step 5:** Connect to the Oracle Database
 
 1.  Review the connection credentials.
 
@@ -466,7 +466,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Any cx\_Oracle installation can connect to older and newer Oracle Database versions. By checking the Oracle Database and client versions numbers, the application can make use of the best Oracle features available.
 
-## Step 6: Connection Pooling
+## **Step 6:** Connection Pooling
 
 1.  Connection pooling
 
@@ -708,7 +708,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     and add calls to **time.sleep(1)** in the code, for example in the query loop. Then look at the way the threads execute. Use **drcp\_query.sql** to monitor the pool's behavior.
 
-## Step 7: Fetching Data
+## **Step 7:** Fetching Data
 
 1. A simple query
 
@@ -962,7 +962,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
 
-## Step 8: Binding Data
+## **Step 8:** Binding Data
 
 Bind variables enable you to re-execute statements with new data values, without the overhead of reparsing the statement. Bind variables improve code reusability, and can reduce the risk of SQL injection attacks.
 
@@ -1327,7 +1327,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     The gettype() and newobject() methods can also be used to bind PL/SQL Records and Collections.
 
-## Step 9: PL/SQL
+## **Step 9:** PL/SQL
 
 PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
 
@@ -1440,7 +1440,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
     246
     ````
 
-## Step 10: Type Handlers
+## **Step 10:** Type Handlers
 
 1.  Basic output type handler
 
@@ -1708,7 +1708,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
 
     ![](./images/step10.3-typeinput.png " ")
 
-## Step 11: LOBs
+## **Step 11:** LOBs
 
 Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes.
 
@@ -1804,7 +1804,7 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     </copy>
     ````
 
-## Step 12: Rowfactory functions
+## **Step 12:** Rowfactory functions
 
 Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects.
 
@@ -1877,7 +1877,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     ![](./images/step12.1-rowfactory.png " ")
 
-## Step 13: Subclassing Connections and Cursors
+## **Step 13:** Subclassing Connections and Cursors
 
 1. Subclassing connections
 
@@ -2190,7 +2190,7 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
 
 ## Conclusion
 
-In this Lab, you had an opportunity to try out connecting Python to the Oracle Database.
+In this lab, you had an opportunity to try out connecting Python to the Oracle Database.
 You have learned how to:
 * Create connections
 * Use cx\_Oracle connection pooling and Database Resident Connection Pooling

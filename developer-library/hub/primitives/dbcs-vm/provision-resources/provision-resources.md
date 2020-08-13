@@ -6,7 +6,7 @@ In the following steps, you will provision a single instance DBCS on OCI using t
 
 
 
-## Pre-requisites
+## Prerequisites
 
 Assumpt you have already prepared the following:
 

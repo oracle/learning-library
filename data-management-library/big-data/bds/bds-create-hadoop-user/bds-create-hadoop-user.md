@@ -20,7 +20,7 @@ In this lab, you will map the private IP address of the **first master node** to
 ### What Do You Need?
 This lab assumes that you have successfully completed all the labs in the **Contents** menu on the right.
 
-## STEP 1: Gather Information About the Cluster
+## **Step 1:** Gather Information About the Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -36,7 +36,7 @@ This lab assumes that you have successfully completed all the labs in the **Cont
 
   ![](./images/mn0-private-ip.png " ")
 
-## STEP 2: Map the Private IP Address of the First Master Node to a Public IP Address
+## **Step 2:** Map the Private IP Address of the First Master Node to a Public IP Address
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first master node** to a new public IP address.
 
@@ -89,7 +89,7 @@ In this step, you will set three variables using the **`export`** command. The v
   ![](./images/mn0-reserved-public-ip.png " ")
 
 
-## STEP 3: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## **Step 3:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
 The Kerberos Distribution Center (KDC) is running on the cluster's first master node. In this lab, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
@@ -127,7 +127,7 @@ _If you are already connected to your cluster's first master node using the Open
     ![](./images/traininmn0-connected.png " ")
 
 
-## STEP 4: Create the **`training`** Administrator Kerberos Principal
+## **Step 4:** Create the **`training`** Administrator Kerberos Principal
 
 In this step, you will create a new Kerberos principal named **`training`**. Identities in Kerberos are called principals. Every user and service that uses the Kerberos authentication protocol requires a principal to uniquely identify itself. There are user principals and service principals. User principal names, or UPNs, represent regular users such as **`training`**.
 
@@ -159,7 +159,7 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
 
     ![](./images/addprinc-training.png " ")
 
-## STEP 5: Create the **`training`** Linux OS Administrator User
+## **Step 5:** Create the **`training`** Linux OS Administrator User
 
 Create the **`training`** Linux administrator user and the OS group **`supergroup`**. Assign **`training`** the **`supergroup`** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
 
@@ -198,7 +198,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
 
     ![](./images/id-training.png " ")
 
-## STEP 6: Access HDFS Using the New **`training`** Administrator User
+## **Step 6:** Access HDFS Using the New **`training`** Administrator User
 
 Log into any of the Big Data Service nodes such as the **first master node**, get a Kerberos ticket for the **`training`** user, and then perform a file listing of HDFS:
 
@@ -222,7 +222,7 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
 
     ![](./images/no-ticket.png " ")
 
-## STEP 7: Add the **`training`** User to Hue (optional)
+## **Step 7:** Add the **`training`** User to Hue (optional)
 
 In this step, you log into Hue as an administrator and add the **`training`** user as an administrator. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 

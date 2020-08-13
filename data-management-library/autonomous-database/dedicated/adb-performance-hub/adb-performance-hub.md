@@ -18,7 +18,7 @@ As an adminstrator,
 - A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
 - Successful completion of [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
 
-## STEP 1: Log in to the Oracle Cloud Developer image and start the order entry workload
+## **Step 1:** Log in to the Oracle Cloud Developer image and start the order entry workload
 
 To complete this lab it is mandatory that you have a developer client image configured with swingbench, an autonomous dedicated database instance with the wallet uploaded to the dev client. Follow instructions in [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
 
@@ -55,7 +55,7 @@ To complete this lab it is mandatory that you have a developer client image conf
 
 
 
-## STEP 2: Analyzing workloads with Performance Hub
+## **Step 2:** Analyzing workloads with Performance Hub
 
 As you continue to run your swingbench workload, you can analyze the transactions that are running on the database with the cloud based Performance Analyzer. From the main ATP console, select *Performance Hub*.
     ![](./images/scalinginp.jpeg " ")

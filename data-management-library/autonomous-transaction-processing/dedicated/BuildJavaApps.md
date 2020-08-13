@@ -37,7 +37,7 @@ As an application developer,
 
 ## Steps
 
-### STEP 1: Download sample java application
+### **Step 1:** Download sample java application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** and **Instances** from the hamburger menu top left
 
@@ -103,7 +103,7 @@ tar xzfv ojdbc8-full.tar.gz
 ```
 
 
-### STEP 2: Transfer database wallet to developer client
+### **Step 2:** Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and click on **Autonomous Transaction Processing** from top left menu
 ![](./images/800/atpd1.png)
@@ -137,7 +137,7 @@ sudo scp -i /Path/to/your/private_ssh_key /Path/to/your/downloaded_wallet opc@pu
 
 - Windows users: Use a scp client such as winSCP to move your wallet to the client machine
 
-### STEP 3: Run your java application**
+### **Step 3:** Run your java application**
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder
 

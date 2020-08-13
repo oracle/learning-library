@@ -100,7 +100,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
 
 
-## STEP 1: Connect to Graph Server and Client
+## **Step 1:** Connect to Graph Server and Client
 
 **The graph server has already been setup for you. For more information on the graph server setup see the "Want to learn more section" of this lab.**
 
@@ -127,26 +127,25 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     ![](./images/IMGG4.PNG)
 
 3. Make a JDBC connection to the database, run the below at the jshell prompt.
+   
     ````
     <copy>
     /open /u01/script/graph_startup/03_graphload.jsh
     </copy>
     ````
 
-## STEP 2: Create Graph
+## **Step 2:** Create Graph
 
 **For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. The SQL has been provided as reference.**
 
 1. We have created the views for the use of orders and order_items as multiple edge tables using below commands.
     ````
-    <copy>
     Create or replace view co_edge as select * from orders;
     Create or replace view oc_edge as select * from orders;
     Create or replace view os_edge as select * from orders;
     Create or replace view so_edge as select * from orders;
     Create or replace view op_edge as select * from order_items;
     Create or replace view po_edge as select * from order_items;
-    </copy>
     ````
 
     ![](./images/IMGG6.PNG)
@@ -154,7 +153,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 2. We used a property graph query language [PGQL](http://pgql-lang.org) DDL to define and populate the graph.  The statement is as follows:
 
     ````
-    <copy>CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
+    CREATE PROPERTY GRAPH OE_SAMPLE_GRAPH
     VERTEX TABLES (
     customers KEY (CUSTOMER_ID) LABEL CUSTOMERS
     PROPERTIES(CUSTOMER_ID, EMAIL_ADDRESS, FULL_NAME),
@@ -198,14 +197,12 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
       LABEL PRODUCT_IN_ORDER
       PROPERTIES (LINE_ITEM_ID)
       )
-      </copy>
     ````
 3. The above PQGL query is saved as sql file (CreatePropertyGraph.sql) and stored in path /u01/graph and is run at jshell prompt.
 
     ````
-    <copy>
     pgql.prepareStatement(Files.readString(Paths.get("/u01/graph/CreatePropertyGraph.sql"))).execute();
-    </copy>
+
     ````
 
 4. The Graph Server kit includes the necessary components (a server application and JShell client) that will execute the above CREATE PROPERTY GRAPH statement and create the graph representation.
@@ -221,12 +218,10 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 5. Create a convenience function which prepares, executes, and prints the result of a PGQL statement
 
     ````
-    <copy>
     Consumer&lt;String&gt; query = q -> { try(var s = pgql.prepareStatement(q)) { s.execute(); s.getResultSet().print(); } catch(Exception e) { throw new RuntimeException(e); } }
-    </copy>
     ````
 
-## STEP 3: Querying graph using PGQL
+## **Step 3:** Querying graph using PGQL
 
 1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
@@ -318,7 +313,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG15.PNG)
 
-## STEP 4: Load the graph into memory and publish it.
+## **Step 4:** Load the graph into memory and publish it.
 
 1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
     ````
@@ -379,7 +374,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG21.PNG)
 
-## STEP 5: Visualize the Graph
+## **Step 5:** Visualize the Graph
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 

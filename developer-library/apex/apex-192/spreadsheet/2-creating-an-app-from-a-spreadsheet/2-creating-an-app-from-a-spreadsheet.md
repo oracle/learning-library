@@ -1,6 +1,6 @@
 # Create an App from a Spreadsheet
 
-## **Introduction**
+## Introduction
 
 In this lab, you will learn how to create an APEX App on top of data imported from a spreadsheet. To simplify the lab, you will use sample data that's built into APEX. However, the sequence will be the same when uploading your own data.
 

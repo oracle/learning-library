@@ -9,7 +9,7 @@
   This lab assumes you have successfully completed the previous Labs (Lab 1 through Lab 7).
 
 
-## STEP 1: Start Graph Server and Client Shell
+## **Step 1:** Start Graph Server and Client Shell
 
 Skip the following if you completed the Create Graph Lab, and the Graph Server and client are up:
 
@@ -53,7 +53,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   *Note: If you have any questions in this Step, check Lab 7, Step 2, Step 3, for more information.*
 
 
-## STEP 2: Load Graph into Memory
+## **Step 2:** Load Graph into Memory
 
 1. Check to see which graphs have been loaded into the graph server.
 
@@ -138,7 +138,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
   Now we can query this graph and run some analyses on it.
 
-## STEP 3: Pattern Matching
+## **Step 3:** Pattern Matching
 
   PGQL Query is convenient for detecting specific patterns.
 
@@ -163,7 +163,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $8 ==> PgqlResultSetImpl[graph=Customer_360,numResults=1]
     ```
 
-## STEP 4: Detection of Cycles
+## **Step 4:** Detection of Cycles
 
   Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
 
@@ -211,7 +211,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   ![](../../customer_360_analysis/images/detection2.jpg)
 
 
-## STEP 5: Influential Accounts
+## **Step 5:** Influential Accounts
 
   1. Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
 
@@ -250,7 +250,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $13 ==> PgqlResultSetImpl[graph=sub-graph_4,numResults=6]
     ```
 
-## STEP 6: Community Detection
+## **Step 6:** Community Detection
 
   Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
 
@@ -340,7 +340,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   In this case, account `xxx-yyy-201` (John's account), `xxx-yyy-202`, `xxx-yyy-203`, and `xxx-yyy-204` form one partition, account `xxx-zzz-211` is a parition, and account `xxx-zzz-212` is a partition, by the SCC Kosaraju algorithm.
 
 
-## STEP 7: Recommendation
+## **Step 7:** Recommendation
 
   Lastly let's use Personalized PageRank to find stores that John may purchase, from the information of what stores people (connected to John) made purchases from. While PageRank measures relative importance of each vertex within the graph, Personalized PageRank measures its relative importance *with regards to a specific vertex you define*.
 
@@ -455,7 +455,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
     In this case, John is more likely to purchase from Asia Books and Kindle Store.
 
-## STEP 8: Publish the Graph for use with the visualization component
+## **Step 8:** Publish the Graph for use with the visualization component
 
   1. Run the following to publish the graph while still in the JShell.
    Publish the customer_360 graph, so that other sessions , e.g. the GraphViz webapp can use it

@@ -12,7 +12,7 @@ Watch the video below for an overview on how to register Target Database Using P
 
 ## Steps
 
-### Step 1: Create a Private Endpoint
+### **Step 1:** Create a Private Endpoint
 If your DB system has a private IP address, you need to create a private endpoint for it prior to registering it with Oracle Data Safe. You can create private endpoints on the Data Safe page in OCI. Be sure to create the private endpoint in the same tenancy and VCN as your database. The private IP address does not need to be on the same subnet as your database, although, it does need to be on a subnet that can communicate with the database. You can create a maximum of one private endpoint per VCN.
 
 - From your database's Console in OCI, obtain the name of the virtual cloud network (VCN) on which your database resides. You can find the name on the DB System Information tab.
@@ -46,7 +46,7 @@ A private endpoint is provisioned in the customer VCN (the VCN that you selected
 
 ![](./images/dbsec/datasafe/register_pe/private-endpoint-view.png " ")
 
-### Step 2: Update the Related Security List and Network Security Group
+### **Step 2:** Update the Related Security List and Network Security Group
 
 After creating the private endpoint and before registering the DB system with Oracle Data Safe, you need to update the related security list and network security group (if implemented) for your database VCN to allow traffic from the private endpoint IP address to the DB system. This step is required so that Oracle Data Safe can connect to your DB system. The following diagram illustrates an example of how to configure a security list.
 
@@ -58,7 +58,7 @@ After creating the private endpoint and before registering the DB system with Or
 
 ![](./images/dbsec/datasafe/register_pe/private-ip-nsg2.png " ")
 
-### Step 3: Register a ExaCS DB using a Private IP
+### **Step 3:** Register a ExaCS DB using a Private IP
 
 You can manually register DB systems (with public or private IP addresses) with Oracle Data Safe in the Oracle Data Safe Console. When you register a DB system with a private IP address, you are required to select a private endpoint and enter the database's private IP address and Oracle Cloud Identifier (OCID).
 

@@ -108,7 +108,7 @@ This selector will instruct your load balancer to only route traffic to the blue
 
   ![](images/400/12.png)
 
-- In the product catalog application, you'll see that the title now indicates which color the twitter feed pod is that is serving our application. Of course it is currently a blue pod, as we haven't yet deployed the new (green) version of our application. Let's do that now, but leave this tab open, as we will come back to it a few more times to verify which color deployment is live.
+- In the product catalog application, you will see that the title now indicates which color the twitter feed pod is that is serving our application. Of course it is currently a blue pod, as we haven't yet deployed the new (green) version of our application. Let's do that now, but leave this tab open, as we will come back to it a few more times to verify which color deployment is live.
 
   ![](images/400/13.png)
 

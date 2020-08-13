@@ -23,7 +23,7 @@ As an OCI account administrator with network resource privileges,
 - An Oracle Cloud Infrastructure account with privileges to create users, IAM policies and networks.
 - Since this is the starting point to building your dedicated autonomous database platform, an admin account is recommended.
 
-## STEP 1: Create compartments, groups, users and IAM policies
+## **Step 1:** Create compartments, groups, users and IAM policies
 For separation of duties Oracle recommends a fleet administrator provision the exadata infrastucture and container databases while the database users simply become consumers of these resources and provision their databases on it. 
 
 We will use the following IAM structure in line with the bare minimum isolation recommended,
@@ -98,7 +98,7 @@ We will use the following IAM structure in line with the bare minimum isolation 
 
       
 
-## STEP 2: Layout a secure network for the database and application infrastructure
+## **Step 2:** Layout a secure network for the database and application infrastructure
 
 Setting up the right network upfront is important since you cannot reverse most aspects of your network without completely destroying and rebuilding it. While your network administrators are  ultimately responsible for choosing the right network topology as per corporate network guidelines, here's a best practice recommendation for setting up a secure network for your database and applications.
 
@@ -117,7 +117,7 @@ We will also follow these security guidelines as we build the network,
 
 For simplicity, only two subnets are being created here - a private subnet for exadata and a public network for everything else. In practice, multiple subnetworks may be tiered to host webservers, app servers, VPN servers in perimeter networks etc. 
 
-## STEP 3: Login to  OCI as a network admin or a fleet admin
+## **Step 3:** Login to  OCI as a network admin or a fleet admin
 
 - Create a VCN in *fleetCompartment* with CIDR block 10.0.0.0/16 which provide for 64k IP addresses for the various subnets within this network.
     ![create_VCN](./images/create_VCN.png " ")

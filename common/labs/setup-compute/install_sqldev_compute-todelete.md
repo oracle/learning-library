@@ -9,7 +9,7 @@ Oracle Cloud Infrastructure Marketplace offers a <a href="https://cloudmarketpla
 
 This Lab assumes you have a VNC Server installed on your Compute Instance and a VNC Viewer installed on your laptop
 
-## Step 1: Install SQL Developer
+## **Step 1:** Install SQL Developer
 
 1. Open a VNC Viewer using *localhost:1* as the address of the VNC Server
 ![./images/tigervnc-viewer.png]()

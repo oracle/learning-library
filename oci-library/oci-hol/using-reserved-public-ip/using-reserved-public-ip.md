@@ -30,7 +30,7 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -44,7 +44,7 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Sign in to OCI console and create reserved Public IP
+## **Step 1:** Sign in to OCI console and create reserved Public IP
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
@@ -94,7 +94,7 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
     ![](./../using-reserved-public-ip/images/RESERVEDIP_HOL0020.PNG " ")
 
-## Step 2: Assign reserved public IP to first compute instance
+## **Step 2:** Assign reserved public IP to first compute instance
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -229,7 +229,7 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
 We successfully ssh into the compute instance using the reserved public IP. Next we will use the same Public IP and assign it to a different Compute instance
 
-## Step 3: Un assign Reserved Public IP and assign it to a new compute instance
+## **Step 3:** Un assign Reserved Public IP and assign it to a new compute instance
 
 1. Navigate to VNIC details page in OCI console window. Click **IP Addresses**, then **Edit** under the Action icon.
 
@@ -255,7 +255,7 @@ Reserved Public IP will be unassigned). Click **Update**.
 
 This demonstrated how to use Reserved IP address functionality in OCI to access different compute instances.
 
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 1. Switch to  OCI console window.
 

@@ -35,7 +35,7 @@ As an OCI account administrator with network resource privileges,
 
 ## Steps
 
-### STEP 1: Create compartments, groups, users and IAM policies
+### **Step 1:** Create compartments, groups, users and IAM policies
 For separation of duties Oracle recommends a fleet administrator provision the exadata infrastucture and container databases while the database users simply become consumers of these resources and provision their databases on it. 
 
 ​	
@@ -138,7 +138,7 @@ wget --no-check-certificate --content-disposition https://github.com/oracle/lear
 ```
 
 
-### STEP 2: Layout a secure network for the database and application infrastructure
+### **Step 2:** Layout a secure network for the database and application infrastructure
 
 
  Setting up the right network upfront is important since you cannot reverse most aspects of your network without completely destroying and rebuilding it. While your network administrators are  ultimately responsible for choosing the right network topology as per corporate network guidelines, here's a best practice recommendation for setting up a secure network for your database and applications

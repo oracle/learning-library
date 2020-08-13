@@ -28,7 +28,7 @@ Faster software development has become a competitive advantage for companies. Th
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
-### Pre-Requisites
+### Prerequisites
 
 1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
    
@@ -43,7 +43,7 @@ Faster software development has become a competitive advantage for companies. Th
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## Step 1: Sign in to OCI Console and create VCN
+## **Step 1:** Sign in to OCI Console and create VCN
 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
@@ -248,7 +248,7 @@ Faster software development has become a competitive advantage for companies. Th
 
     Copy and save the content of the file. 
 
-## Step 3: Install Jenkins, Configure Jenkins Master instance and create Jenkins Slave instance
+## **Step 3:** Install Jenkins, Configure Jenkins Master instance and create Jenkins Slave instance
 
 1. Swtich to git bash widnow with ssh session to the compute instance, Enter commands: (Install Jenkins).
 
@@ -468,7 +468,7 @@ Faster software development has become a competitive advantage for companies. Th
 
 ***We have now successfully deployed Jenkins master and slave nodes on OCI.*** 
 
-## Step 4: Delete the resources
+## **Step 4:** Delete the resources
 
 **NOTE:**  As a practice user will need to figure out any errors encountered during deletion of resources.
 

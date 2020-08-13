@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "Creating a Resource Manager Stack",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Resource Manager",
+            "filename": "./../../resource-manager/resource-manager.md"
+        }
+    ]
+}

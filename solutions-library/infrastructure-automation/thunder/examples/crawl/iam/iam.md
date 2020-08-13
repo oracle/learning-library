@@ -29,7 +29,7 @@ __*Add users to the Sandbox_Engineer group to experiment in the sandbox compartm
     * Tenancy_ReadOnly
     * Sandbox_Engineer
 
-* **5 users.. (__*optional*__, you'll probably want to add your own users to the groups)**
+* **5 users.. (__*optional*__, you will probably want to add your own users to the groups)**
     * Root\_IAMAdminManagers which will be added in the Root\_IAMAdminManagers group
     * User\_IAMManagers which will be added in the User\_IAMManagers group
     * Tenancy\_NetSecAdmins which will be added in the Tenancy\_NetSecAdmins group

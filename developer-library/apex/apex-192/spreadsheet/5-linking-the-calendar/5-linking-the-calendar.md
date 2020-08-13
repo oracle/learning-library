@@ -1,6 +1,6 @@
 # Improve the Calendar
 
-## **Introduction**
+## Introduction
 In this lab, you will learn how to improve a Calendar and link an existing page (Calendar) to a modal form page.
 
 ## **STEP 1** - Improving the Calendar

@@ -7,7 +7,7 @@ This 15-minute lab walks you through creating an application based on existing t
 * Access to an instance of Oracle ATP.
 * Complete the previous lab **Provisioning Autonomous Transaction Processing**.
 
-## STEP 1: Access Application Express (APEX) ##
+## **Step 1:** Access Application Express (APEX) ##
 1. Sign in to the Oracle Cloud. 
 2. Click the menu icon to expand the menu on the left edge of the screen.
 3. Click **Autonomous Transaction Processing**.
@@ -35,8 +35,8 @@ This 15-minute lab walks you through creating an application based on existing t
     ![](img/section1/image5.png " ")
 
 
-## STEP 2: Create a Workspace for a New User ##
-If this is your first time entering APEX, you'll need to create a workspace. Otherwise, skip to the next section.
+## **Step 2:** Create a Workspace for a New User ##
+If this is your first time entering APEX, you will need to create a workspace. Otherwise, skip to the next section.
 
 1. Click the **Create Workspace** button.
 2. Identify a user for the new workspace. Remember this information so you can log in later:
@@ -48,7 +48,7 @@ If this is your first time entering APEX, you'll need to create a workspace. Oth
     ![](img/section1/image7.png " ")
 
 
-## STEP 3: Log into your Workspace ##
+## **Step 3:** Log into your Workspace ##
 If you're signed in as an existing user, skip to the next section. Otherwise if you're a new user or signed in as Admin, follow these steps.
 
 1. Click on the link within the success message {easiest technique} OR Click on the Admin user (top right), click **Sign Out**, and then click **Return to Sign In Page**.
@@ -70,7 +70,7 @@ If you're signed in as an existing user, skip to the next section. Otherwise if 
     ![](img/section1/image12.png " ")
 
 
-## STEP 4: nstall Sample Tables to Create Tables and View ## 
+## **Step 4:** nstall Sample Tables to Create Tables and View ## 
 
 1. From the main menu, select **SQL Workshop**, select **Utilities**, click **Sample Datasets**.
 
@@ -95,7 +95,7 @@ If you're signed in as an existing user, skip to the next section. Otherwise if 
     ![](img/section2/image4.png " ")
 
 
-## STEP 5: Use the Create Application Wizard to Build Your App 
+## **Step 5:** Use the Create Application Wizard to Build Your App 
 
 1. Create an app.
     * In the App Builder menu, click **App Builder**.

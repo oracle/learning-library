@@ -7,7 +7,7 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
 * Register cloud account
 * Generate SSH Keys
 
-## STEP 1: Create the Customer_360 user
+## **Step 1:** Create the Customer_360 user
 
 1. Login as the Admin user in SQLDevWeb of the newly cerated ADB Free Tier instance.
 
@@ -49,7 +49,7 @@ This lab walks you through the steps to get started with SQL Developer Web. You 
   *Note: The `IDENTIFIED BY` clause specifies the password (“Welcome1_C360”)*
 
 
-## STEP 2: Enable SQLDevWeb for Customer_360
+## **Step 2:** Enable SQLDevWeb for Customer_360
 
   1. Now provide SQLDevWeb access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA)
   for details.

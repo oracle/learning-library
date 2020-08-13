@@ -17,7 +17,7 @@ A Utility node generally contains utilities used for accessing the cluster. Maki
 
 Before you can access CM and Hue on the utility nodes using a web browser, you must also open the ports associated with both services. You do this by adding an ingress rule to a security list for each service. You will do this in **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**. See [Define Security Rules](https://docs.oracle.com/en/cloud/paas/big-data-service/user/configure-security-rules-network.html#GUID-42EDCC75-D170-489E-B42F-334267CE6C92).
 
-In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster utility nodes, and then you'll pass that information to the **`oci network`** command that you will use to map the private IP addresses of the utility nodes to two new public IP addresses. Finally, you learn how to edit an existing public IP address.
+In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which is a web browser-based terminal accessible from the **Oracle Cloud Console**. You'll gather some information about your network and your cluster utility nodes, and then you will pass that information to the **`oci network`** command that you will use to map the private IP addresses of the utility nodes to two new public IP addresses. Finally, you learn how to edit an existing public IP address.
 
 ### Objectives
 
@@ -32,7 +32,7 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 
-## STEP 1: Gather Information About the Cluster
+## **Step 1:** Gather Information About the Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -48,7 +48,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
   ![](./images/private-ips.png " ")
 
-## STEP 2: Map the Private IP Address of the First Utility Node to a Public IP Address
+## **Step 2:** Map the Private IP Address of the First Utility Node to a Public IP Address
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
@@ -107,7 +107,7 @@ In this step, you will set three variables using the **`export`** command. The v
 
   ![](./images/reserved-public-ip.png " ")
 
-## STEP 3: Map the Private IP Address of the Second Utility Node to a Public IP Address
+## **Step 3:** Map the Private IP Address of the Second Utility Node to a Public IP Address
 
 In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **second utility node** to a new public IP address.
 
@@ -149,7 +149,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
     ![](./images/reserved-public-ip-3.png " ")
 
 
-## STEP 4: Map the Private IP Address of the Cloud SQL Node to a Public IP Address
+## **Step 4:** Map the Private IP Address of the Cloud SQL Node to a Public IP Address
 
 In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **Cloud SQL node** to a new public IP address.
 
@@ -182,7 +182,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
 
       ![](./images/list-public-ip.png " ")
 
-## STEP 5: Edit a Public IP Address
+## **Step 5:** Edit a Public IP Address
 
 In this step, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 

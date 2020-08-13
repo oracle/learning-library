@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for JSON lab . You can connect an Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQLDeveloper.
+This lab walks you through the steps of setting up the environment for JSON lab . You can connect an Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQLDeveloper.
 
 ### Prerequisites
 
@@ -45,7 +45,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 ### Want to learn more
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
   
-## Step 1: Connect to your Instance
+## **Step 1:** Connect to your Instance
 ### Oracle Cloud Shell
 1. Open Oracle Cloud Shell by clicking on the Cloud Shell icon in the top right corner. 
 
@@ -102,7 +102,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
 8. Click Open to begin your session with the instance.
 
-## Step 2: Set your Oracle Environment
+## **Step 2:** Set your Oracle Environment
 1. Open the Oracle Cloud Shell by clicking on the icon next to the reigon name. 
 
     ![](./images/oracleshell.png " ")
@@ -145,7 +145,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     ````
     ![](./images/json3.png " ")
 
-## Step 3: Connect to SqlDeveloper
+## **Step 3:** Connect to SqlDeveloper
 
 1. Download SqlDeveloper for your device.[https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html). You will also need JDK 11 which can be downloaded here [https://www.oracle.com/java/technologies/javase-jdk11-downloads.html](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 

@@ -29,7 +29,7 @@ As a developer, DBA or DevOps user,
     - To deploy a dev client compute image, refer to [Lab 5](?lab=lab-5-configuring-development-system).
 
 
-## STEP 1: Connect to development client instance and verify OCI CLI version
+## **Step 1:** Connect to development client instance and verify OCI CLI version
 
 - To ensure OCI-CLI installed is the correct version needed for ATP-Dedicated database, lets ssh into the dev client host and check version.
     
@@ -43,7 +43,7 @@ As a developer, DBA or DevOps user,
 
 
 
-## STEP 2: Configure OCI CLI
+## **Step 2:** Configure OCI CLI
 
 - This step describes the required configuration for the CLI and includes optional configurations that enable you to extend CLI functionality. 
 
@@ -80,7 +80,7 @@ As a developer, DBA or DevOps user,
     - *Enter a name for your key [oci_api_key]*: Press Return key
     - *Enter a passphrase for your private key (empty for no passphrase)*: Press Return key
     
-## STEP 3: Add public key to Oracle Cloud Infrastructure
+## **Step 3:** Add public key to Oracle Cloud Infrastructure
 
 - Now that you have a private / public key combo, you must add it to OCI Console:
 
@@ -116,7 +116,7 @@ As a developer, DBA or DevOps user,
 
     ![](./images/OCISetupAutocomplete.png " ")
 
-## STEP 4: Interacting with Oracle Autonomous Database
+## **Step 4:** Interacting with Oracle Autonomous Database
 
 - Now that you have setup OCI CLI, let us now look at examples of using Autonomous Transaction Processing Database. 
 

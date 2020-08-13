@@ -33,7 +33,7 @@ Log into your Enterprise Manager VM using the Public IP of your EM instance and 
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## Step 1: Inventory & Usage Details
+## **Step 1:** Inventory & Usage Details
 
 ### Overview
 
@@ -76,7 +76,7 @@ Explore these features to get a good handle on Inventory and Usage Details
 
   ![](images/c94cba301516e0ea135b3e9cb66e12cc.png " ")
 
-## Step 2: One Time Database Comparison
+## **Step 2:** One Time Database Comparison
 
 ### Overview
 
@@ -166,7 +166,7 @@ You should see the comparison definition you created in this page.
 
 In this step, you learned steps to compare two database targets to determine configuration differences. This one-time database (or any Enterprise Manager managed targets) comparison will help you quickly determine specific configuration changes when compared with reference configuration. This is very ideal for troubleshooting any target configuration parameters.
 
-## Step 3: Database Configuration Drift Management
+## **Step 3:** Database Configuration Drift Management
 
 ### Overview
 
@@ -291,7 +291,7 @@ Under the target compared column, you will see few icons. The icons that appear 
 
 In this step, you learned about continuous configuration drift monitoring of database targets against a reference target for initialization parameters using customized configuration monitoring template. This can be customized to align with your policies. By establishing a configuration drift definition, you can continuously monitor any configuration changes that can be potentially secure risk and remediate the drift immediately.
 
-## Step 4: Database and Host Security Compliance
+## **Step 4:** Database and Host Security Compliance
 
 ### Overview
 

@@ -18,7 +18,7 @@ This lab assumes you have completed the following labs:
 
 
 ## Conclusion
- In this Lab, you used SQL Developer and Data Pump to migrate a database to the Oracle Autonomous Database.
+ In this lab, you used SQL Developer and Data Pump to migrate a database to the Oracle Autonomous Database.
 
 ## Acknowledgements
 

@@ -122,7 +122,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 Please proceed to the next lab.
 
-## Step 3: Populating ADW Database with Seed Data
+## **Step 3:** Populating ADW Database with Seed Data
 
 1. Ensure your ADW instance is available:
   ![](./images/adw-available.png " ")

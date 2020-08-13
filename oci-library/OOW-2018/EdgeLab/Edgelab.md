@@ -5,7 +5,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Setup Windows 10 VM](#practice-1-setup-windows-10-vm)
 
@@ -30,7 +30,7 @@ OCI DNS has advanced traffic management capabilities to steer DNS traffic across
 
 In this lab, we will learn how to use OCI DNS Traffic Management service to ensure high availability of your web applications through detection of endpoint health and diverting your traffic accordingly. 
 
-## Pre-Requisites 
+## Prerequisites 
 
 Each attendee would be provided with a set of credentials for Oracle Cloud Infrastructure. The credentials will include 
 

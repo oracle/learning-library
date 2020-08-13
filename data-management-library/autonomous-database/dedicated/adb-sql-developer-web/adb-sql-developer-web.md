@@ -20,7 +20,7 @@ As an developer or DBA,
 - A pre-provisioned autonomous database with admin access.
 - A pre-provisioned developer client machine with network access to database.
 
-## STEP 1: Access OCI autonomous database console and get URL for sql developer web cosole
+## **Step 1:** Access OCI autonomous database console and get URL for sql developer web cosole
 
 - Login to your Oracle Cloud Infrastructure account and navigate to the console page of your dedicated autonomous database. 
     ![access_db_console](./images/access_db_console.png " ")
@@ -32,7 +32,7 @@ As an developer or DBA,
 - Save the URL some place while you work on the next step to access your developer client machine over VNC.
 
 
-## STEP 2: Create a VNC connection to developer client VM and access sqldevweb console 
+## **Step 2:** Create a VNC connection to developer client VM and access sqldevweb console 
 
 - Since your autonomous database in a private network, you cannot access it with the URL above unless you are on a machine that has a network path to your database subnet. 
 
@@ -72,7 +72,7 @@ As an developer or DBA,
 - Alternatively, you may also access the SQLDevWeb console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
 
 
-## STEP 3: Access the Performance Hub through SQL Developer Web Console
+## **Step 3:** Access the Performance Hub through SQL Developer Web Console
 
 - The SQL Developer Web home page provides quick links on the right to some of its key features, including the Performance Hub. 
 

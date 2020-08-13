@@ -1,6 +1,6 @@
 # Monitoring Your Autonomous Database Instance using the Cloud Console
 
-## **Introduction**
+## Introduction
 
 In this lab, you will explore the monitoring capabilities available for your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) database.
 

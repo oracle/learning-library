@@ -36,9 +36,9 @@ This lab assumes you have completed the following labs:
 * Lab: Python Programming
 
 
-## Step 1: Download HERE archive world sample data
+## **Step 1:** Download HERE archive world sample data
 
-We need to download the HERE (Formerly NAVTEQ) archive, a sample geographical dataset available from the Oracle Technology Network website: http://www.oracle.com/technetwork/middleware/mapviewer/downloads/navteq-lic-168395.html. Download the World Sample Data Bundle.
+You will need to download the HERE (Formerly NAVTEQ) archive, a sample geographical dataset available from the Oracle Technology Network website: http://www.oracle.com/technetwork/middleware/mapviewer/downloads/navteq-lic-168395.html. Download the World Sample Data Bundle.
 **Note:** The World Sample Data Bundle (world_sample_q114.zip) is 1.5 GB.
 
 1. Extract the World Sample Bundle in the directory /home/opc/labs/python
@@ -79,7 +79,7 @@ GRANT READ, WRITE ON DIRECTORY world_dumpfile_dir TO world_sample;
 
 **Note:** If the world sample zip file creates a different directory name than *world_sample_q114*, please modify the CREATE DIRECTORY statement above
 
-## Step 2: Edit the two SQL files and run load_sample_data.sql from SQL*Plus:
+## **Step 2:** Edit the two SQL files and run load_sample_data.sql from SQL*Plus:
 
 1. The SQL files *cln_sample_data.sql* and *load_sample_data.sql* need to be edited:
 
@@ -143,7 +143,7 @@ SQL>> @load_sample_data
 There are 3745011 rows inserted in to the table NTC_MAP_WATER_AREA table.
 
 
-## Step 3: Points in a Polygon
+## **Step 3:** Points in a Polygon
 
 Two-dimensional points are elements composed of two ordinates, X and Y, often corresponding to longitude and latitude. Line strings are composed of one or more pairs of points that define line segments. Polygons are composed of connected line strings that form a closed ring, and the area of the polygon is implied. For example, a point might represent a building location, a line string might represent a road or flight path, and a polygon might represent a state, city, zoning district, or city block.
 ![](./images/geom_type.gif)
@@ -184,7 +184,7 @@ con.close()
 ````   
 ![](p_worldSample-PointsInPolygon.png)
 
-## Step 4: Finding Nearest Neighbours
+## **Step 4:** Finding Nearest Neighbours
 
 Find the 5 nearest major cities to the The Chocolate Lily Bed and Breakfast (latitude -36.93, longitude 144.34)
 
@@ -213,7 +213,7 @@ con.close()
 ![](p_worldSample-NearestNeighbour.png)
 
 
-## Step 5: Display Points on a Map with PYTHON
+## **Step 5:** Display Points on a Map with PYTHON
 
 Python allows for displaying geo-coordinates on a map. To illustrate this capability, we will use the Python’s Basemap library and the list of points generated in the Points in Polygon exercise completed in Step 2.
 
@@ -391,7 +391,7 @@ cur.close()
 con.close()
 </copy>
 ````
-## Step 6: Load JSON data into a table using PYTHON
+## **Step 6:** Load JSON data into a table using PYTHON
 It is likely that rather than writing one JSON row at a time to the database, you will want to load many JSON records at once. In this example we will leverage Oracle External Tables functionality to do this.
 
 In the following section we will create a new JSON external table that points to a JSON document and query the records from Python’s shell.
@@ -477,7 +477,7 @@ for row in rv:
 ![](./images/p_pythQuery-14.png)
 ## Conclusion
 
-In this Lab you had an opportunity to try out connecting Python in the Oracle Database.
+In this lab you had an opportunity to try out connecting Python in the Oracle Database.
 The guide shows the Developer how to use the Python Interpreter to interact with the Oracle Database through the Python API. We start by introducing Python and then review its installation requirements and tools required to run the demo. TThe Python API cx_Oracle is an open source Python package that Oracle contributes to. It is used to access an Oracle Database from Python.
 The second part of the guide goes through a number of demo cases available through the Python API, including a simple Hello World application, and retrieving records from the Oracle Database using the cursor technology. There is a module on working with JSON data: loading the records to the database and querying them.
 An additional lab on using Python with Spatial data is also available elsewhere in this module.

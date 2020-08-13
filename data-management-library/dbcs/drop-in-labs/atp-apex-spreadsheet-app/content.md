@@ -11,7 +11,7 @@ Rather than trying to email a spreadsheet to gather information from different p
 * Complete the previous lab **Provisioning Autonomous Transaction Processing**.
 
 
-## STEP 1: Access Application Express (APEX) ##
+## **Step 1:** Access Application Express (APEX) ##
 1. Sign in to the Oracle Cloud. 
 2. Click the menu icon to expand the menu on the left edge of the screen.
 3. Click **Autonomous Transaction Processing**.
@@ -39,8 +39,8 @@ Rather than trying to email a spreadsheet to gather information from different p
     ![](img/section1/image5.png " ")
 
 
-## STEP 2: Create a Workspace for a New User ##
-If this is your first time entering APEX, you'll need to create a workspace. Otherwise, skip to the next section.
+## **Step 2:** Create a Workspace for a New User ##
+If this is your first time entering APEX, you will need to create a workspace. Otherwise, skip to the next section.
 
 1. Click the **Create Workspace** button.
 2. Identify a user for the new workspace. Remember this information so you can log in later:
@@ -52,7 +52,7 @@ If this is your first time entering APEX, you'll need to create a workspace. Oth
     ![](img/section1/image7.png " ")
 
 
-## STEP 3: Log into your Workspace ##
+## **Step 3:** Log into your Workspace ##
 If you're signed in as an existing user, skip to the next section. Otherwise if you're a new user or signed in as Admin, follow these steps.
 
 1. Click on the link within the success message {easiest technique} OR Click on the Admin user (top right), click **Sign Out**, and then click **Return to Sign In Page**.
@@ -74,7 +74,7 @@ If you're signed in as an existing user, skip to the next section. Otherwise if 
     ![](img/section1/image12.png " ")
 
 
-## STEP 4: Create an App from a Spreadsheet ##
+## **Step 4:** Create an App from a Spreadsheet ##
 1. Log in and create a new app.
     * Log into your workspace.
     * Click **App Builder**.
@@ -123,7 +123,7 @@ If you're signed in as an existing user, skip to the next section. Otherwise if 
     ![](img/section2/image9.png " ")
 
 
-## STEP 5: Improve the Report and Form
+## **Step 5:** Improve the Report and Form
 1. Sort the interactive report.
     * Click **Spreadsheet**.
     * Click **Actions**, select **Data**, select **Sort**.

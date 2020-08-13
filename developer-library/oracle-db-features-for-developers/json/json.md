@@ -1,8 +1,10 @@
 # Oracle Database 19c JSON Documents
 
-## **Introduction**
+## Introduction
 
-This workshop aims to help you understanding JSON data and how you can use SQL and PL/SQL with JSON data stored in Oracle Database.  This lab takes approximately 20 minutes.
+This lab will explore JSON data and how you can use SQL and PL/SQL against JSON data stored in Oracle Database 19c.  
+
+Estimated Lab Time:  30 minutes
 
 ### About JSON in the Oracle Database
 
@@ -24,28 +26,45 @@ This lab assumes you have completed the following labs:
 
 ### Lab User Schema
 
-For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
+For this lab we will use the *Order Entry (OE)* sample schema.
 
 ## **Step 1**: Environment Preparation
 
 Grant Required Privileges to the OE user.
 
-1.  Login to the instance using ssh.  We recommend using the Oracle Cloud Shell.
+1.  If you aren't already logged in, login to the instance using ssh.  If you are already logged in as the *opc* user, skip to Step 4.
 
     ````
-    ssh -i yourkeyname opc@<Your Compute Instance Public IP Address>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-2.  Connect to the **ORCLPDB** pluggable database, as SYSDBA.
-
+2.  Switch to the oracle user
     ````
     <copy>
     sudo su - oracle
+    </copy>
+    ````
+    ![](./images/sudo-oracle.png " ")
+
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+    ![](./images/oraenv.png " ")
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
+
+    ````
+    <copy>
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
 
-    ![](./images/step1.1-sqllogin.png " " )
+    ![](./images/sqlplus.png " ")
 
 3.  Grant **OE** user some privileges required for the tasks we will execute in this lab.
 

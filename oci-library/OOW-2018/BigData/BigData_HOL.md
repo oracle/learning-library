@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Deploy your Cloudera environment](#practice-1-deploy-your-cloudera-environment)
 
@@ -25,7 +25,7 @@ Cloudera on Oracle Cloud Infrastructure is a joint solution that combines the fl
 In this lab, attendees will manage a Cloudera Enterpise Data Hub on OCI and use TeraSort, a popular benchmark used to measure MapReduce performance of an Apache™ Hadoop® cluster.  The data contained in this presentation details performance of YARN scheduled TeraSort jobs on Cloudera Enterprise Data Hub running on OCI.
 
 
-## Pre-Requisites 
+## Prerequisites 
 
 * OCI account: If you don't have an OCI account, you can sign up for a free trial [here](https://cloud.oracle.com/trial)
 
@@ -35,7 +35,7 @@ In this lab, attendees will manage a Cloudera Enterpise Data Hub on OCI and use 
 
 ## Practice 1: Deploy your Cloudera environment
 
-1. The Terraform module mentioned on pre-requisites section speed up the process of deploying a Cloudera cluster in OCI. For this HOL we used the development module described [here](https://github.com/oracle-quickstart/oci-cloudera/)
+1. The Terraform module mentioned on Prerequisites section speed up the process of deploying a Cloudera cluster in OCI. For this HOL we used the development module described [here](https://github.com/oracle-quickstart/oci-cloudera/)
 
 This is for small implementations. This deployment consists of five instances:
 

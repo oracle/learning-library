@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre Requisites](#pre-requisites)
+[Pre Requisites](#Prerequisites)
 
 [Sign in to OCI Console and create VCN](#sign-in-to-oci-console-and-create-vcn)
 

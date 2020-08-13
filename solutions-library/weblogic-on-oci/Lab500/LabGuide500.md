@@ -6,7 +6,7 @@ DataPump will be used to migrate the database from on-premises to OCI.
 
 DataPump export function creates a DDL + data dump of the user schema, which is then transfered over to the target database where the DataPump import function is used to create the schema and import the data.
 
-## Step 1: Get a shell inside the database container with the following command:
+## **Step 1:** Get a shell inside the database container with the following command:
 
 ```
 <copy>

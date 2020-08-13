@@ -3,7 +3,7 @@
 
 ## Introduction
 
-## Step 1: A Customer Purchase Order History
+## **Step 1:** A Customer Purchase Order History
 
 1. Connect to Database
     ````
@@ -26,7 +26,7 @@
     ````
     ![](./images/IMG4.PNG " ")
 
-## Step 2: Customers windows shopping history (through online)
+## **Step 2:** Customers windows shopping history (through online)
 
 1. Connect to **Database**
     ````
@@ -47,7 +47,7 @@ select * from orders_ext_hive o INNER JOIN customer_hive_ext c on o.customer_id=
 ````
 ![](./images/IMG5.PNG)
 
-## Step 3: Customer who ordered some specific products
+## **Step 3:** Customer who ordered some specific products
 
 
 1. Connect to **Database**

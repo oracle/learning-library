@@ -25,7 +25,7 @@ You also need privileges to create Exadata Infrastructure
 In this section you will be provisioning a database using the cloud console.
 ## Steps
 
-### STEP 1: Create an Exadata Cloud Service Infrastructure
+### **Step 1:** Create an Exadata Cloud Service Infrastructure
 
 **Login to your OCI account as a database user**
 

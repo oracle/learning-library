@@ -40,7 +40,7 @@ Note that Terraform loads these files in alphabetically order and, as they are d
 
 
 ### Run the example:
-First, be certain you've created the necessary IAM policies. At a minimum, you'll need a user that is an Administrator or, more preferably, a create a policy for a different user able to manage orm-stacks and orm-jobs.
+First, be certain you've created the necessary IAM policies. At a minimum, you will need a user that is an Administrator or, more preferably, a create a policy for a different user able to manage orm-stacks and orm-jobs.
 For step-by-step instuctions, please read the [Resource Manager HOL](https://github.com/oracle/learning-library/tree/master/oci-library/DevOps/Resource_Manager/Resource_Manager_HOL.md). 
 
 ## Contributing

@@ -6,7 +6,7 @@ Our application data in stored in an Oracle Database, that runs as a Database Cl
 
 We want our Python web micro service to connect to our Oracle Database, retrieve information about the employees in Human Resources (HR) sample schema, and calculate a promotion or a salary increase.
 
-## Step 1: Get Database Host and Service
+## **Step 1:** Get Database Host and Service
 
 Connect to the DB System you created on OCI, called [Your Initials]-DB. 
 
@@ -32,7 +32,7 @@ The complete name of the host server has the same format (all small caps) - we w
 [Your Initials]-host.sub[Number].[Your Initials]vcn.oraclevcn.com
 ````
 
-## Step 2: Prepare Sample Schema and Data
+## **Step 2:** Prepare Sample Schema and Data
 
 Connect to the pluggable database and verify HR schema is available.
 
@@ -82,7 +82,7 @@ JOB_HISTORY
 7 rows selected.
 ````
 
-## Step 3: Connect to Oracle Database from Python
+## **Step 3:** Connect to Oracle Database from Python
 
 Back on our development environment, let's connect our Python microservice to our Oracle Database. This enhancement requires [cx_Oracle](https://oracle.github.io/python-cx_Oracle/) extension module.
 
@@ -185,7 +185,7 @@ A: Because you need to open port 1521 in your VCN.
 Q: Why does Wercker run the build successfully if the application returns an error?
 A: Because we didn't build a test unit to verify the database connection. One reason to implement Test Driven Development (TDD) with CI/CD.
 
-## Step 4: Open Ports and Test Database Connection
+## **Step 4:** Open Ports and Test Database Connection
 
 Access your VCN details in Oracle Cloud console. Click on hamburger menu ≡, then Networking > **Virtual Cloud Networks**.
 
@@ -273,7 +273,7 @@ git commit -a -m "Add database connection unit test"
 git push
 ````
 
-## Step 5: Oracle Instant Client on Docker Container
+## **Step 5:** Oracle Instant Client on Docker Container
 
 We have [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client.html) installed on the development machine, but not on the build environment. Remember, our development environment is the Compute Instance on OCI with **Oracle Linux Server 7.7**, based on Cloud Developer Image. Our build, and future deployment environment, is a Docker image with **Debian GNU/Linux 10 (buster)** with Python 3, we get from Docker Hub, called **python:3.7**.
 
@@ -320,7 +320,7 @@ git commit -a -m "Add Oracle Instant Client"
 git push
 ````
 
-## Step 6: Web Publish Employees Table
+## **Step 6:** Web Publish Employees Table
 
 Now we can add new features to our HR application. First feature will list all employees, whit their salary and commission. Add this new function with routing in promotion.py. 
 
@@ -387,7 +387,7 @@ git commit -a -m "Fix long line problem"
 git push
 ````
 
-## Step 7: Add New Features to Web Service
+## **Step 7:** Add New Features to Web Service
 
 Add one more feature that calculates an increase to all employees salary with a percentage.
 

@@ -1,7 +1,7 @@
 
 # Loading Data into an Autonomous Database Instance
 
-## **Introduction**
+## Introduction
 
 In this lab, you will upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
 

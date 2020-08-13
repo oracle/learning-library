@@ -15,7 +15,7 @@ This lab assumes you have completed the following labs:
 - Lab 4:  Environment setup
 - Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-## Step 1: Customers who ordered products from specific Geo location   
+## **Step 1:** Customers who ordered products from specific Geo location   
 
    ````
     <copy>
@@ -34,7 +34,7 @@ This lab assumes you have completed the following labs:
    **Note:** Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
 
-## Step 2: Find all customers who purchased an items tagged with a specific UPC
+## **Step 2:** Find all customers who purchased an items tagged with a specific UPC
 
   ````
     <copy>
@@ -53,7 +53,7 @@ This lab assumes you have completed the following labs:
    [UPC, short form for  Universal Product Code, is a type of code printed on retail product packaging to aid in identifying a particular item. It consists of two parts – the machine-readable barcode, which is a series of unique black bars, and the unique 12-digit number beneath it.]
 
 
-## Step 3: Find the customers who all are purchased a specific products
+## **Step 3:** Find the customers who all are purchased a specific products
 
   **3a) Based on PONumber**
   ````
@@ -120,7 +120,7 @@ This lab assumes you have completed the following labs:
     
   **Notes:** The JSON\_TABLE operator uses a set of JSON path expressions to map content from a JSON document into columns in the view. Once the contents of the JSON document have been exposed as columns, all of the power of SQL can be brought to bear on the content of JSON document.
 
-## Step 4: How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
+## **Step 4:** How Many orders were done by a customer with minimum 7 quantity and unit price minimum 25$ in each order
    For this , we will create two views as below:
     
   ````
@@ -210,7 +210,7 @@ This lab assumes you have completed the following labs:
 
    **Notes** The above statements show how, once the relational views have been created, the full power of SQL can now be applied to JSON content, without requiring any knowledge of the structure of the JSON or how to manipulate JSON using SQL.
 
-## Step 5: Customer Purchase History Details 
+## **Step 5:** Customer Purchase History Details 
 **5a) With PRETTY**
     
 

@@ -13,31 +13,31 @@ At the end of this lab, you will have a simulated 'on-premises' environment runn
 - Oracle Cloud Infrastructure account, with proper credentials to create resources</br>
   <a href="https://www.oracle.com/cloud/free/" target="_blank">https://www.oracle.com/cloud/free/</a>
 
-## Step 1: Launch the Workshop Marketplace stack
+## **Step 1:** Launch the Workshop Marketplace stack
 
 - Navigate to <a href="https://cloudmarketplace.oracle.com/marketplace/listing/82173888" target="_blank">Workshop Environment Marketplace Stack</a>
 
-- Click **Get App**
+- 1.1. Click **Get App**
 
   <img src="./images/get-app.png"  width="100%">
 
-- Sign in to your Oracle Cloud Infrastructure Account
+- 1.2. Sign in to your Oracle Cloud Infrastructure Account
 
   <img src="./images/sign-in.png"  width="50%">
 
-- Choose a compartment
+- 1.3. Choose a compartment
 
   <img src="./images/wls-workshop-mp1.png"  width="100%">
 
-- Accept the Terms and Conditions and click **Launch**
+- 1.4. Accept the Terms and Conditions and click **Launch**
 
   <img src="./images/wls-workshop-mp2.png"  width="100%">
 
-- Click **Next**
+- 1.5. Click **Next**
 
   <img src="./images/next.png"  width="70%">
 
-- Paste your **SSH public key**
+- 1.6. Paste your **SSH public key**
 
    To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer.
 
@@ -58,7 +58,7 @@ At the end of this lab, you will have a simulated 'on-premises' environment runn
    ```
    **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI)
 
-- Click **Next** and then **Create**
+- 1.7. Click **Next** and then **Create**
 
   <img src="./images/job-running.png"  width="100%">
 
@@ -66,7 +66,7 @@ It will take about 1 to 2 minutes to create the stack. When the job finishes, yo
 
   <img src="./images/job-output.png"  width="100%">
 
-## Step 2:  Check the local environment is up and running
+## **Step 2:**  Check the local environment is up and running
 
 It will take another 4 to 5 minutes for all the services to come online.
 
@@ -82,7 +82,7 @@ It shows statistics of riders of the Tour de France stored in the database, and 
 
   <img src="./images/localhost-simpledb-app.png" width="100%">
 
-## Step 3: Log in to the 'on-premises' environment
+## **Step 3:** Log in to the 'on-premises' environment
 
 Most of the work will be done from the simulated on-premises environment deployed in the compute instance on OCI.
 
@@ -93,13 +93,13 @@ ssh opc@<public-ip>
 ```
 Replace the `<public-ip>` with the IP provided in the output of the provisioning job.
 
-## Step 4: Create a SSH key
+## **Step 4:** Create a SSH key
 
 We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources. 
 
 We'll create a SSH key pair in the default folder
 
-- Once on the compute instance on OCI, switch to the oracle user:
+- 4.1. Once on the compute instance on OCI, switch to the oracle user:
 
 ```bash
 <copy>
@@ -107,7 +107,7 @@ sudo su - oracle
 </copy>
 ```
 
-- Create the SSH keypair
+- 4.2. Create the SSH keypair
 
 ```bash
 <copy>
@@ -116,7 +116,7 @@ ssh-keygen
 ```
 and just hit `Enter` (default) for all the prompts
 
-- You will find two files `id_rsa` and `id_rsa.pub` inside the folder `~/.ssh/` or `/home/oracle/.ssh/`
+- 4.3. You will find two files `id_rsa` and `id_rsa.pub` inside the folder `~/.ssh/` or `/home/oracle/.ssh/`
 
    `id_rsa` is the private key, which should never be shared, and will be required to connect to any OCI resource provisioned with the corresponding public key `id_rsa.pub`
 

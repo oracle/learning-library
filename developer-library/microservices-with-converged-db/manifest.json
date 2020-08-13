@@ -25,12 +25,12 @@
         "filename": "./data-centric-microservices-helidon/data-centric-microservices-helidon.md"
       },
       {
-        "title": "Lab 5: Scaling The Application",
-        "filename": "./scaling/scaling.md"
+        "title": "Lab 5: Polyglot Microservices",
+        "filename": "./review-polyglot-code-ha-setup/review-polyglot-code-ha-setup.md"
       },
       {
-        "title": "Lab 6: Polyglot Microservices",
-        "filename": "./review-polyglot-code-ha-setup/review-polyglot-code-ha-setup.md"
+        "title": "Lab 6: Scaling The Application",
+        "filename": "./scaling/scaling.md"
       },
       {
         "title": "Lab 7: Create an APEX App to Make Sense of the Data",

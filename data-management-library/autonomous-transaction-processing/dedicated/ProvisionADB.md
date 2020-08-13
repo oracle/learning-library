@@ -29,7 +29,7 @@ As a database user, DBA or application developer,
 In this section you will be provisioning a dedicated autonomous database using the cloud console.
 ## Steps
 
-### STEP 1: Create an Autonomous Transaction Processing Database
+### **Step 1:** Create an Autonomous Transaction Processing Database
 
 **Login to your OCI account as a database user**
 

@@ -4,7 +4,7 @@
 Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add some more detail here)
 
 
-## Step 1:  Create Purchase Order Table
+## **Step 1:**  Create Purchase Order Table
 1. Connect to **database**
     ````
     <copy>
@@ -52,7 +52,7 @@ Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add 
     ![](./images/IMG11.PNG)    
 
 
-## Step 2:  Products with mode of purchase is COD
+## **Step 2:**  Products with mode of purchase is COD
 
 1. Connect to **Database**
     ````
@@ -69,7 +69,7 @@ Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add 
     ![](./images/IMG12.PNG)
 
 
-## Step 3:  Products ordered from a specific GEO location
+## **Step 3:**  Products ordered from a specific GEO location
 
 
 1. Connect to **Database**
@@ -90,7 +90,7 @@ Want to load the data into Oracle?  Perform some simple ETL  (Kay - need to add 
 ![](./images/IMG13.PNG)
 
 
-## Step 4:  Customer purchase history details
+## **Step 4:**  Customer purchase history details
 
 1. Connect to **Database**
   ````

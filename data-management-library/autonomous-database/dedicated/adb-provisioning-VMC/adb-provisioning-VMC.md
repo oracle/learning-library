@@ -26,7 +26,7 @@ Watch the video below for step by step directions on creating an Autonomous VM C
 
 [](youtube:MDe9y3spjdI)
 
-## STEP 1: Create an Autonomous VM Cluster on your Exadata Cloud@Customer infrastructure.
+## **Step 1:** Create an Autonomous VM Cluster on your Exadata Cloud@Customer infrastructure.
 
 *Login to your OCI account as a fleet administrator*
 

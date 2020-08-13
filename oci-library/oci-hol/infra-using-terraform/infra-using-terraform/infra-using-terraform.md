@@ -9,7 +9,7 @@ Estimated Time: 30-45 minutes
 - We recommend using Chrome or Edge as the browser.
 - You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
-### Pre-Requisites
+### Prerequisites
 
 - Prerequisites
 - Lab 1: Generate SSH Keys - Cloud Shell

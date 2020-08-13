@@ -21,7 +21,7 @@ As a database user, a DBA, or an application developer,
 
 ## Steps
 
-### STEP 1: Connect to developer cloud client desktop over VNC
+### **Step 1:** Connect to developer cloud client desktop over VNC
 
 
 First, we shh into the dev client and invoke the VNC server that comes pre-installed.
@@ -77,7 +77,7 @@ Connect to your VNC desktop and provide the password you changed on the host ear
 You should now see a linux desktop in your VNC window.
 
 
-### STEP 2: Download and install Swingbench
+### **Step 2:** Download and install Swingbench
 
 We will start with downloading and installing Swingbench in a developer client virtual machine provisioned in [Lab 4](?lab=lab-4-configure-development-system-for-use).
 
@@ -118,7 +118,7 @@ Use instructions below to update drivers if needed, else move on to transfer DB 
 
         Note: Do not modify the launcher directory or the existing swingbench.jar. 
 
-### STEP 3: Build and setup sample swingbench schema
+### **Step 3:** Build and setup sample swingbench schema
 
 Now that you have installed swingbench, the next step is to build the sample Order Entry schema in the database. 
 
@@ -180,7 +180,7 @@ Administrator Password: Your admin password
 ![](./images/swingbench/oewizard_install9.png " ")
 
 
-### STEP 4: Start Load generator on Exadata Cloud Service database
+### **Step 4:** Start Load generator on Exadata Cloud Service database
 
 - Start the swinbench load generator on your Developer cloud image
 

@@ -8,7 +8,7 @@ Navigate to [https://github.com](https://github.com/) and create an account.
 
 Fork [vltabacaru/orcl-ws-cicd](https://github.com/vltabacaru/orcl-ws-cicd) project in your account. It creates a copy of this repository in your account [Your Username]/orcl-ws-cicd. In your repository, click on **Clone or download**, and copy the URL in your notes text file. It looks like https://github.com/[Your Username]/orcl-ws-cicd.git.
 
-## Step 1: Remote Desktop vs. Command Line
+## **Step 1:** Remote Desktop vs. Command Line
 
 Get the Public IP address of the Compute Instance from Oracle Cloud console, and save it in your notes text file.
 
@@ -67,7 +67,7 @@ sudo ./xRDP_config.sh
 
 When completed, this script installs and configures Remote Desktop on your Compute Instance for user **oracle** with password **WelcomePTS#2019**.
 
-## Step 2: OCI CLI and Kubectl
+## **Step 2:** OCI CLI and Kubectl
 
 **OCI CLI** is already installed on our development Compute Instance, we can check the version.
 
@@ -104,7 +104,7 @@ sudo yum install -y kubectl
 
 Now OCI CLI and Kubectl are installed.
 
-## Step 3: Git Client
+## **Step 3:** Git Client
 
 GitHub uses Git version control systems (VCS) to handle the collaboration workflow. This allows developers to create a local copy of the project, makes changes, and merge them back into the central repository.
 
@@ -168,7 +168,7 @@ Config Git to save credentials for 8 hours.
 git config --global credential.helper 'cache --timeout 28800'
 ````
 
-## Step 4: Start Application Development
+## **Step 4:** Start Application Development
 
 Make a local clone on the development machine of the GitHub repository you forked.
 
@@ -230,7 +230,7 @@ git push
 
 If all is good, you should see promotion.py file in your forked repository at https://github.com/[Your Username]/orcl-ws-cicd. Refresh the page, and click on the file to see the contents.
 
-## Step 5: Implement Automated Testing
+## **Step 5:** Implement Automated Testing
 
 For automated testing, we will use three Python tools:
 

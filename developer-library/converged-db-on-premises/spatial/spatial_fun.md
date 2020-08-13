@@ -13,7 +13,7 @@ This lab assumes you have completed the following labs:
 - Lab 3:  Create Compute instance 
 - Lab 4:  Environment setup
 
-## Step 1: Find the five customers closest to the warehouse whose warehouse name  is 'Ferndale Facility'
+## **Step 1:** Find the five customers closest to the warehouse whose warehouse name  is 'Ferndale Facility'
 
 ````
     <copy>
@@ -36,7 +36,7 @@ Notes:
 -	The SDO\_NN operator returns the SDO_NUM\_RES value of the customers from the CUSTOMERS table who are closest to warehouse 3. The first argument to SDO\_NN (c.cust-geo-location in the example above) is the column to search. The second argument to SDO\_NN (w.wh\_geo\_location in the example above) is the location you want to find the neighbors nearest to. No assumptions should be made about the order of the returned results. For example, the first row returned is not guaranteed to be the customer closest to warehouse 3. If two or more customers are an equal distance from the warehouse, then either of the customers may be returned on subsequent calls to SDO\_NN.
 - When using the SDO\_NUM\_RES parameter, no other constraints are used in the WHERE clause. SDO\_NUM\_RES takes only proximity into account. For example, if you added a criterion to the WHERE clause because you wanted the five closest female customers, and four of the five closest customers are male, the query above would return one row. This behavior is specific to the SDO-NUM-RES parameter, and its results may not be what you are looking for. You will learn how to find the five closest female customers in the discussion of query 3.
 
-## Step 2: Find the five customers closest to warehouse named 'Livonia Facility'and put the results in order of distance
+## **Step 2:** Find the five customers closest to warehouse named 'Livonia Facility'and put the results in order of distance
 
 ````
     <copy>
@@ -55,7 +55,7 @@ customers c WHERE w.WAREHOUSE_NAME = 'Livonia Facility' AND sdo_nn (c.cust_geo_l
 - The ORDER BY DISTANCE clause ensures that the distances are returned in order, with the shortest distance first.
 
 
-## Step 3: Find the five female customers closest to warehouse named 'Livonia Facility', put the results in order of distance, and give the distance in miles
+## **Step 3:** Find the five female customers closest to warehouse named 'Livonia Facility', put the results in order of distance, and give the distance in miles
 
 ````
     <copy>
@@ -81,7 +81,7 @@ ORDER BY distance_in_miles;
 - The ORDER BY DISTANCE\_IN\_MILES clause ensures that the distances are returned in order, with the shortest distance first and the distances measured in miles.
 
 
-## Step 4: Find all the customers within 100 miles of warehouse named 'Livonia Facility'
+## **Step 4:** Find all the customers within 100 miles of warehouse named 'Livonia Facility'
 
 ````
     <copy>
@@ -100,7 +100,7 @@ c.GENDER FROM warehouses w,              customers c WHERE   w.WAREHOUSE_NAME = 
 - The DISTANCE parameter used within the SDO\_WITHIN\_DISTANCE operator specifies the distance value; in this example it is 100.
 - The UNIT parameter used within the SDO\_WITHIN\_DISTANCE operator specifies the unit of measure of the DISTANCE parameter. The default unit is the unit of measure associated with the data. For longitude and latitude data, the default is meters; in this example, it is miles.
 
-## Step 5: Find all the customers within 100 miles of warehouse named 'Livonia Facility', put the results in order of distance, and give the distance in miles.
+## **Step 5:** Find all the customers within 100 miles of warehouse named 'Livonia Facility', put the results in order of distance, and give the distance in miles.
 
 ````
     <copy>
@@ -124,7 +124,7 @@ ORDER BY distance_in_miles;
 - The UNIT parameter used within the SDO\_GEOM.SDO\_DISTANCE parameter specifies the unit of measure of the distance computed by the SDO\_GEOM.SDO\_DISTANCE function. The default unit is the unit of measure associated with the data. For longitude and latitude data, the default is meters. In this example it is miles.
 - The ORDER BY DISTANCE\_IN\_MILES clause ensures that the distances are returned in order, with the shortest distance first and the distances measured in miles.
 
-## Step 6: Find all the customers customers inside 30min drive time polygons  
+## **Step 6:** Find all the customers customers inside 30min drive time polygons  
 ````
     <copy>
 select customer_id, warehouse_name

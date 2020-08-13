@@ -28,7 +28,7 @@ This lab assumes you have completed the following labs:
 
 In this section, you will be provisioning an ADWC database and an ATP database using the cloud console.
 
-## Step 1: Create an ADW Instance
+## **Step 1:** Create an ADW Instance
 
 First, we are going to create an ADW Instance.
 
@@ -69,7 +69,7 @@ First, we are going to create an ADW Instance.
 
 You now have created your first ADW instance. Now, we are going to work on very similar steps to create an ATP Database.
 
-## Step 2: Create an ATP Instance
+## **Step 2:** Create an ATP Instance
 
 1.  Click the hamburger menu and select Autonomous Transaction processing.
 
@@ -107,7 +107,7 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
 You now have created your first ATP instance.
 
-## Step 3: Download the Credentials Wallet
+## **Step 3:** Download the Credentials Wallet
 
 1.  Click the hamburger menu and navigate to the **ADW Instance** you created in Step 1.
 
@@ -133,7 +133,7 @@ You now have created your first ATP instance.
 
     ![](./images/029.png  " ")
 
-## Step 4: Download Files to Use in Lab 2
+## **Step 4:** Download Files to Use in Lab 2
 
 1.  Click the link below to download the install file.
 
@@ -143,7 +143,7 @@ You now have created your first ATP instance.
 
     ![](./images/060.png  " ")
 
-## Step 5: Create a Bucket ADW and Upload Your Data
+## **Step 5:** Create a Bucket ADW and Upload Your Data
 
 1.  Click the hamburger menu, scroll down, and select Object Storage.
 
@@ -199,7 +199,7 @@ You now have created your first ATP instance.
 
     ![](./images/049.png  " ")
 
-## Step 6: Log in to SQL Developer Web
+## **Step 6:** Log in to SQL Developer Web
 
 1.  Next, we will log into the SQL Developer Web. Start by navigating to the ADW Instance page and clicking on **Service Console**.
 
@@ -221,7 +221,7 @@ You now have created your first ATP instance.
 
     ![](./images/053.png  " ")
 
-## Step 7: Create a Database Credential for Your Users
+## **Step 7:** Create a Database Credential for Your Users
 
 1.  Once you log into SQL Developer Web from your *ADW Instance*, your screen should look like the following:
 
@@ -253,7 +253,7 @@ You now have created your first ATP instance.
 
     Now you are ready to load data from the Object Store.
 
-## Step 8: Loading Data Using dbms\_cloud.copy\_data package
+## **Step 8:** Loading Data Using dbms\_cloud.copy\_data package
 
 1.  First, create your table. Enter the following in the SQL Developer Web.
 

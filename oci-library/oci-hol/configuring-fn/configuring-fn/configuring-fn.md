@@ -5,14 +5,14 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 Estimated Time: 60 minutes
 
-**Some Key points:**
+### Key Points
 - We recommend using Chrome or Edge as the broswer.
 - You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
-### Pre-Requisites
+### Prerequisites
 
-- Prerequisites
-- Lab 1: Generate SSH Keys - Cloud Shell
+- Free Trial, LiveLabs or Paid Oracle Cloud account
+- Lab: Generate SSH Keys - Cloud Shell
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
 2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)

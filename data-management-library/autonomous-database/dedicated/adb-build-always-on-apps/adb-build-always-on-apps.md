@@ -23,7 +23,7 @@ As an adminstrator,
 - A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
 
-## STEP 1: Download and install Swingbench
+## **Step 1:** Download and install Swingbench
 
 - We will start with downloading and installing Swingbench in a developer client virtual machine provisioned in  [Lab 5](?lab=lab-5-configuring-development-system).
 
@@ -91,7 +91,7 @@ Unless you have already moved the wallet to your Dev Client machine in an earlie
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. The wallet will be downloaded to your downloads directory.
 
 
-## STEP 2: Build and setup sample swingbench schema
+## **Step 2:** Build and setup sample swingbench schema
 
 - Now that you have installed swingbench, the next step is to build the sample Order Entry schema in the database. 
 
@@ -180,7 +180,7 @@ Unless you have already moved the wallet to your Dev Client machine in an earlie
     </copy>
     ```
 
-## STEP 3: Setup TAC parameters and run workload
+## **Step 3:** Setup TAC parameters and run workload
 
 There are at least 2 options to run your swingbench workload.
 
@@ -222,7 +222,7 @@ There are at least 2 options to run your swingbench workload.
 
 That is it. You are now ready to fire up your transactional workload.
 
-## STEP 4: Simulate a failover event and observe workload
+## **Step 4:** Simulate a failover event and observe workload
 
 - Fire up your workload and confirm all users are connected. Wait a few seconds while the charts load up.
     ![](./images/TAC4.png " ")

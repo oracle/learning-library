@@ -29,7 +29,7 @@ While you are working on the challenge, think about the following questions:
 
 ## Steps
 
-### Step 1: Sign in to the Oracle Data Safe Console for your region
+### **Step 1:** Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -44,7 +44,7 @@ While you are working on the challenge, think about the following questions:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Step 2: Use the Data Discovery wizard to discover sensitive data
+### **Step 2:** Use the Data Discovery wizard to discover sensitive data
 
 - To access the Data Discovery wizard, click the **Home** tab, and then click **Data Discovery**.
 
@@ -84,7 +84,7 @@ While you are working on the challenge, think about the following questions:
 
 - If the job is successful, the **Detail** column states Data discovery job finished successfully, and you can click **Continue**. Otherwise, you need to click **Back** or **Exit** and investigate the issue.
 
-### Step 3: Review and fine tune your sensitive data model
+### **Step 3:** Review and fine tune your sensitive data model
 
 - On the **Non-Dictionary Referential Relationships** page, you are presented with a list of potential non-dictionary (application level) referential relationships that Data Discovery found by using column name patterns and column data patterns. Do the following:
   - To view all of the columns, move the **Expand All** slider to the right. Data Discovery found some potentially sensitive columns (non-dictionary referential relationships) in the `HR` schema.
@@ -110,7 +110,7 @@ The sensitive type is **Healthcare Provider** and the discovered sensitive colum
 > **Tip:**<br>
 To quickly locate a sensitive column, enter the name or part of the name in the search box.
 
-### Step 4: Modify your search for sensitive data and re-run the data discovery job
+### **Step 4:** Modify your search for sensitive data and re-run the data discovery job
 
 Suppose that you're missing some sensitive columns in your sensitive data model. While working in the Data Discovery wizard, you can backtrack to reconfigure and rerun the data discovery job. You can repeat the process as many times as you need until you feel that your sensitive data model is accurate. Try the following:
 
@@ -133,7 +133,7 @@ Because you chose to not discover non-dictionary referential relationships, the 
 
 - To view the newly discovered sensitive columns, click **View newly discovered sensitive columns only**. Notice that Data Discovery found additional sensitive columns.
 
-### Step 5: View the Sensitive Data Discovery report and analyze the report data
+### **Step 5:** View the Sensitive Data Discovery report and analyze the report data
 
 - Scroll down and click **Report** at the bottom right corner of the screen.<br>
 The report shows you a chart that compares sensitive categories. You can also view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns. The table at the bottom of the report displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts.
@@ -164,7 +164,7 @@ The report shows you a chart that compares sensitive categories. You can also vi
   - Scroll down, and under **Discovery Reports**, click **Data Discovery**.
   - Click your sensitive data model to open the report.
 
-### Step 6: View your sensitive data model in the Library
+### **Step 6:** View your sensitive data model in the Library
 - Click the **Library** tab.
 - Click **Sensitive Data Models**.<br>
 The Sensitive Data Models page is displayed, listing the sensitive data models to which you have access.
@@ -182,7 +182,7 @@ For each sensitive data model, you can view information about when your sensitiv
 > **Note:**<br>
 Keep your sensitive data model so that later you can use it for masking sensitive data in **Masking Lab 4 - Configure a Variety of Masking Formats with Oracle Data Safe**.
 
-### Step 7: Download your sensitive data model
+### **Step 7:** Download your sensitive data model
 - Select the check box for your sensitive data model.
 - Click **Download**.
 Your sensitive data model is downloaded to your browser.

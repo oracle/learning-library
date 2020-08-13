@@ -4,7 +4,7 @@
 
 ## Hands-On Labs
 
-We recommend you to read the following guide before begin with the labs activities. There are some pre-requisites that you must satisfy in order to proceed with the workshop.
+We recommend you to read the following guide before begin with the labs activities. There are some Prerequisites that you must satisfy in order to proceed with the workshop.
 Please read them very carefuly in order to avoid issues during the labs session.
 
 ****
@@ -44,7 +44,7 @@ These are some of the concerns that the CISO and security team members have shar
 - CISO compliants about the lack of visibility into cloud and on-prem infrastructure, inability to respond to governance requirements in a timely manner, and slow detection and response to threats.
 - Security managers must deal with an increasing number of events and capacity to respond to threats that might lead to data breach or expose company assets, and the time wasted on investigations and researches with dead end because of the lack of automated tools and a lack of talent and resources.
 
-### Pre-requisites
+### Prerequisites
 
 Before you start the labs you should have:
 - Your Oracle Cloud Account Sign In credentials (user name and password).

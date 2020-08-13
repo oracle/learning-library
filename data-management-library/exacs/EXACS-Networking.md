@@ -26,7 +26,7 @@ As an OCI account administrator with network resource privileges,
 
 ## Steps
 
-### STEP 1: Create compartments, groups, users and IAM policies
+### **Step 1:** Create compartments, groups, users and IAM policies
 
 We will use the following IAM structure in line with the bare minimum isolation recommended. 
 
@@ -118,7 +118,7 @@ You may alternatively choose to grant 'MANAGE all-resources' privileges to users
 You now have the users, groups and compartments setup to provision an Exadata Cloud Service database system
 
 
-### STEP 2: Layout a secure network for the database and application infrastructure
+### **Step 2:** Layout a secure network for the database and application infrastructure
 
 If you are new to cloud Networking concepts, please refer to the OCI network documentation to get an understanding of VCNs, Subnets, Security lists, routers, gateways etc.
 

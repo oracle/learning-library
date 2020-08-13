@@ -6,7 +6,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Creating Virtual Cloud Network](#practice-1-creating-virtual-cloud-network)
 
@@ -29,7 +29,7 @@ The following provides an overview of a simple Public Load Balancer:
 
 ![](media/Public-Load-Balancer.png)
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
 - To sign in to the Console, you need the following:

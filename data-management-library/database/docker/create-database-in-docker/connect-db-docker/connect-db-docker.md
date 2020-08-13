@@ -1,7 +1,7 @@
 # Connect to an Oracle Database in a Docker Container
 ## Before You Begin
 
-This lab walks you through the steps to connect to an Oracle Database running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you'll connect using Oracle SQL Developer.
+This lab walks you through the steps to connect to an Oracle Database running in a Docker container on an Oracle Cloud Compute instance. You can connect the Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
 
 ### What Do You Need?
 

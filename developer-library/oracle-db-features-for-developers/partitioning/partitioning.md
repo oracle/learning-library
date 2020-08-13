@@ -1,10 +1,17 @@
 # Hybrid Partitioning
 
-## **Introduction**
+## Introduction 
+In this lab, you will explore Hybrid Partitioning, a new feature introduced in Oracle Database 19c.
+
+Estimated Lab Time:  30 minutes
+
+## About Partitioning
 
 Partitioning can provide tremendous benefit to a wide variety of applications by improving performance, manageability, and availability. It is not unusual for partitioning to greatly improve the performance of certain queries or maintenance operations. Moreover, partitioning can greatly simplify common administration tasks.
 
 Partitioning also enables database designers and administrators to solve some difficult problems posed by cutting-edge applications. Partitioning is a key tool for building multi-terabyte systems or systems with extremely high availability requirements.
+
+## About Hybrid Partitioning
 
 The Hybrid Partition Tables feature extends Oracle Partitioning by enabling partitions to reside in both Oracle Database segments and in external files and sources. This feature significantly enhances the functionality of partitioning for Big Data SQL where large portions of a table can reside in external partitions.
 
@@ -34,13 +41,13 @@ This lab assumes you have completed the following labs:
 
 ## **Step 1**: Create External Directories
 
-0.  Login to the instance using Oracle Cloud Shell and ssh.
+1.  Login to the instance using Oracle Cloud Shell and ssh.
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the *opc* user). These folders will be used later as a location for some external partitions.
+2.  This lab uses the Sales History sample schema (SH). Create two new folders on disk (using the *opc* user). These folders will be used later as a location for some external partitions.
 
     ````
     <copy>
@@ -55,20 +62,35 @@ This lab assumes you have completed the following labs:
 
     ![](./images/step1.1-shschema.png " ")
 
-2.  Connect to the ORCLPDB as SYS.
+2.  Now, switch to the oracle user
+    ````
+    <copy>
+    sudo su - oracle
+    </copy>
+    ````
+    ![](./images/sudo-oracle.png " ")
+
+3.  Set your oracle environment.  When prompted enter **[ORCL]**
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORACLE_SID = [ORCL] ? ORCL
+    The Oracle base remains unchanged with value /u01/app/oracle
+    ````
+    ![](./images/oraenv.png " ")
+
+4.  Use SQLPlus to connect to the **PDB01** Pluggable database as SYS.
 
     ````
     <copy>
-	sudo su - oracle
-    . oraenv
-    ORCL
     sqlplus sys/Ora_DB4U@localhost:1521/orclpdb as SYSDBA
     </copy>
     ````
 
-    ![](./images/step1.2-connectassys.png " ")
+    ![](./images/sqlplus.png " ")
 
-3.  Create two external directories and grant access to the SH user.
+5.  Create two external directories and grant access to the SH user.
 
     ````
     <copy>
@@ -84,7 +106,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/step1.3-grantaccess.png " ")
 
-4.  Grant additional privileges to SH user.
+6.  Grant additional privileges to SH user.
 
     ````
     <copy>
@@ -310,7 +332,7 @@ You will copy and then redefine a table (maintaining application transparency). 
     ````
     <copy>
     sqlplus sh/Ora_DB4U@localhost:1521/orclpdb
-    <copy>
+    </copy>
     ````
 
     ````
@@ -757,7 +779,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
 ## Conclusion
 
-In this Lab, you had an opportunity to try out Hybrid Partitioning.
+In this lab, you had an opportunity to try out Hybrid Partitioning.
 
 Oracle hybrid partitioned tables combine classical internal partitioned tables with Oracle external partitioned tables to form a more general partitioning called hybrid partitioned tables.
 
@@ -772,9 +794,9 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 
 ## **Acknowledgements**
 
-- **Author** -
-- **Contributors** - Anoosha Pilli, Product Manager, Dylan McLeod, LiveLabs QA Intern, DB Product Management
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Author** - Valentin Tabacaru, Database Product Management, Oracle PTS
+- **Contributors** - Troy Anthony, Anoosha Pilli,  Dylan McLeod
+- **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

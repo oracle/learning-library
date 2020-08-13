@@ -37,7 +37,7 @@ Configure a secure connection from your development system to your dedicated aut
 
 ## Steps
 
-### STEP 1: Provision a OCI Marketplace Developer Client image instance
+### **Step 1:** Provision a OCI Marketplace Developer Client image instance
 
 We start with deploying a pre-configured client machine instance from the OCI marketplace
 
@@ -107,7 +107,7 @@ Ensure the public IP address button is selected. You would need to ssh into this
 <br>
 <br>
 
-### STEP 2: Download and transfer DB wallet to client machine
+### **Step 2:** Download and transfer DB wallet to client machine
 
 
 Let's first download the DB wallet to your local machine (laptop) and then scp / sftp it to the developer client machine.
@@ -169,7 +169,7 @@ Older versions of windows may need to install an SFTP client on their local mach
     ```
 
 
-### STEP 3: Connect to dev client desktop over VNC
+### **Step 3:** Connect to dev client desktop over VNC
 
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
@@ -223,7 +223,7 @@ Connect to your VNC desktop and provide the password you changed on the host ear
 If all goes well, you should now see a linux desktop in your VNC window.
 
 
-### STEP 4: Connect to your autonomous DB using SQL Developer, SQLCL and SQL Plus
+### **Step 4:** Connect to your autonomous DB using SQL Developer, SQLCL and SQL Plus
 
 In your VNC session, invoke SQL Developer from the top left Applications menu as shown below
 

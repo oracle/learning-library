@@ -142,7 +142,7 @@ Last login: Fri Jan 31 08:38:28 UTC 2020
 
 All files for the starter database have now been removed. 
 
-## Step 2: Copy the Password File to the Cloud host 
+## **Step 2:** Copy the Password File to the Cloud host 
 
 1. Copy the following command, change the (xxx.xxx.xxx.xxx) to the on-premise host public ip.
 
@@ -213,7 +213,7 @@ Database is administrator managed
 
 
 
-## Step 3: Copying the wallet file to the Cloud host. 
+## **Step 3:** Copying the wallet file to the Cloud host. 
 
 Make sure that `$ORACLE_HOME/network/admin/sqlnet.ora` contains the following line wallet file location is defined as `ENCRYPTION_WALLET_LOCATION` parameter in sqlnet.ora 
 
@@ -258,7 +258,7 @@ cwallet.sso                                                                     
 
 
 
-## Step 4: Configure Static Listeners 
+## **Step 4:** Configure Static Listeners 
 
 A static listener is needed for initial instantiation of a standby database. The static listener enables remote connection to an instance while the database is down in order to start a given instance. See MOS 1387859.1 for additional details.  A static listener for Data Guard Broker is optional. 
 
@@ -353,7 +353,7 @@ The command completed successfully
 
 
 
-## Step 5: TNS Entries for Redo Transport 
+## **Step 5:** TNS Entries for Redo Transport 
 
 1. From on-premise side, switch as **oracle** user, edit the tnsnames.ora
 
@@ -471,7 +471,7 @@ sysctl: reading key "net.ipv6.conf.lo.stable_secret"
 
 
 
-## Step 6: Instantiate the Standby Database 
+## **Step 6:** Instantiate the Standby Database 
 
 The standby database can be created from the active primary database.
 
@@ -645,7 +645,7 @@ Recovery Manager complete.
 
 
 
-## Step 7: Clear all online and standby redo logs 
+## **Step 7:** Clear all online and standby redo logs 
 
 1. From cloud side, connect database as sysdba.
 
@@ -702,7 +702,7 @@ SQL>
 
 
 
-## Step 8: Configure Data Guard broker
+## **Step 8:** Configure Data Guard broker
 
 1. Copy the following command.
 

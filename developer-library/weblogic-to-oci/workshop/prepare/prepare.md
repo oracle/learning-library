@@ -4,51 +4,51 @@
 
 In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure from the Marketplace.
 
-## Step 1: Create a **Vault**
+## **Step 1:** Create a **Vault**
 
-- Go to **Security -> Vault**
+- 1.1. Go to **Security -> Vault**
 
    <img src="./images/prereq-vault1.png" width="50%">
 
-- Make sure you are in the compartment where you want to deploy WebLogic
+- 1.2. Make sure you are in the compartment where you want to deploy WebLogic
 
-- Click **Create Vault**
+- 1.3. Click **Create Vault**
 
    <img src="./images/prereq-vault2.png"  width="100%">
 
-- Name the vault `WebLogic Vault` or a name of your choosing. Make sure the `private` option is **not checked** and click **Create Vault**
+- 1.4. Name the vault `WebLogic Vault` or a name of your choosing. Make sure the `private` option is **not checked** and click **Create Vault**
 
    <img src="./images/prereq-vault3.png" width="80%">
 
-## Step 2: Create a **Key** in the vault
+## **Step 2:** Create a **Key** in the vault
 
-- Once the vault is provisioned, click the vault
+- 2.1. Once the vault is provisioned, click the vault
 
    <img src="./images/prereq-vault4.png" width="100%">
 
-- then click **Create Key**
+- 2.2. then click **Create Key**
 
    <img src="./images/prereq-key1.png" width="100%">
 
-- name the key `WebLogicKey` or a name of your choosing and click **Create Key**
+- 2.3. name the key `WebLogicKey` or a name of your choosing and click **Create Key**
 
    <img src="./images/prereq-key2.png" width="80%">
 
-## Step 3: Create a **Secret** for the WebLogic admin password
+## **Step 3:** Create a **Secret** for the WebLogic admin password
 
-- Once the key is provisioned, click **Secrets**
+- 3.1. Once the key is provisioned, click **Secrets**
 
    <img src="./images/prereq-secret1.png" width="60%">
 
-- then **Create Secret**
+- 3.2. then **Create Secret**
 
   <img src="./images/prereq-secret2.png" width="80%">
 
-- Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**
+- 3.3. Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**
 
   <img src="./images/prereq-secret3.png" width="100%">
 
-- Click the `WebLogicAdminPassword` **Secret** you just created and make a note of its **OCID**
+- 3.4. Click the `WebLogicAdminPassword` **Secret** you just created and make a note of its **OCID**
 
    <img src="./images/prereq-secret4.png" width="100%">
 

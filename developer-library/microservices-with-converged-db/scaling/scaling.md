@@ -16,15 +16,15 @@ This lab will show how the application can be scaled at the application and data
 
 This lab assumes that you have already completed labs 1 through 4.
 
-## **STEP 1**: Setup: Install the k6 load testing tool and start and external load balancer for the Order service
+## **STEP 1**:  Install the k6 load testing tool and start an external load balancer for the Order service
 
-1. To install the k6 tool.
+1. Install the k6 tool (takes less than a second).
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
     ```
 
-![](images/install-k6.png " ")
+   ![](images/install-k6.png " ")
 
 2. Start an external load balancer for the order service.
 
@@ -32,41 +32,41 @@ This lab assumes that you have already completed labs 1 through 4.
     <copy>cd $MSDATAWORKSHOP_LOCATION/order-helidon; kubectl create -f ext_order_service.yaml -n msdataworkshop</copy>
     ```
 
-    Repeatedly view the service until the external IP address has been allocated.  Make a note of the IP address.
+    Repeatedly view the ext-order LoadBalancer service.  Make note of the external IP address.
 
     ```
     <copy>services</copy>
     ```
 
-![](images/ext-order-address.png " ")
+    ![](images/ext-order-address.png " ")
 
-   Set the LB environment variable to the external IP address of the ext-order service.
+    Set the LB environment variable to the external IP address of the ext-order service. Replace 123.123.123.123 in the following command with the external IP address.
 
     ```
     <copy>export LB='123.123.123.123'</copy>
     ```
 
-## **STEP 2**: Load Test and Scale the Application Tier
+## **STEP 2**: Load test and scale the application tier
 
-1. Execute a test with 30 virtual users by executing the following command.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 30</copy>
-    ```
-
-   Note the median response time for the requests and the request rate.
-
-![](images/30vus1replica.png " ")
-
-2. Execute a test with 60 virtual users by executing the following command.
+1.  Execute a test with 20 virtual users by executing the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 20</copy>
     ```
 
-   Note the median response time for the requests and the request rate.  Note how the response time has degraded and the request rate has not improved.
+    Note the average response time for the requests and the request rate.
 
-![](images/60vus1replica.png " ")
+    ![](images/20vus1replica.png " ")
+
+2. Execute a test with 40 virtual users by executing the following command.
+
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 40</copy>
+    ```
+
+   Note the average response time for the requests and the request rate.  Note how the response time has degraded and the request rate has not improved.
+
+   ![](images/40vus1replica.png " ")
 
 3. Scale to 2 service replicas.
 
@@ -82,27 +82,27 @@ This lab assumes that you have already completed labs 1 through 4.
 
    Note there are now two order-helidon replicas.  Keep polling until both replicas are ready.
 
-![](images/2replicas.png " ")
+   ![](images/2replicas.png " ")
 
-4. Execute the test again with 60 virtual users by executing the following command.
+4. Execute the test again with 40 virtual users by executing the following command.
+
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 40</copy>
+    ```
+
+   Note the average response time for the requests.  Throughput has increased and response time has returned to normal.
+
+   ![](images/40vus2replica.png " ")
+
+5. Execute a final test with 60 virtual users by executing the following command.
 
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
     ```
 
-   Note the median response time for the requests.  Throughput has increased and response time has returned to normal.
+   Note the average response time for the requests and the request rate.  Note how the response time has degraded and the request rate has not improved.
 
-![](images/60vus2replica.png " ")
-
-5. Execute a final test with 90 virtual users by executing the following command.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 90</copy>
-    ```
-
-   Note the median response time for the requests and the request rate.  Note how the response time has degraded and the request rate has not improved.
-
-![](images/90vus2replica.png " ")
+    ![](images/60vus2replica.png " ")
 
 6. Scale to 3 Replicas.
 
@@ -118,45 +118,70 @@ This lab assumes that you have already completed labs 1 through 4.
 
    Note there are now three order-helidon replicas.  Keep polling until all replicas are ready.
 
-![](images/3replicas.png " ")
+    ![](images/3replicas.png " ")
 
-7. Reexecute the test with 90 virtual users by executing the following command.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 90</copy>
-    ```
-
-  Note the median response time for the requests and the request rate.  Note how the response time is still degraded and the request rate has not improved.
-
-![](images/90vus3replica1dbocpu.png " ")
-
-## **STEP 3**: Load Test and Scale the Database Tier
-
-1. Scale the Order DB ATP database to 2 OCPUs.
-
-![](images/ScaleTo2dbocpuScreen1.png " ")
-
-![](images/ScaleTo2dbocpuScreen2.png " ")
-
-   Waiting until the scaling has completed (Lifecycle State: Available).
-
-![](images/ScaleTo2dbocpuScreen3.png " ")
-
-2. Reexecute the test with 90 virtual users by executing the following command.
+7. Re-execute the test with 60 virtual users by executing the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 90</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
+    ```
+
+  Note the median response time for the requests and the request rate.  Note how the response time is still degraded and the request rate has not improved significantly.
+
+   ![](images/60vus3replica1dbocpu.png " ")
+
+## **STEP 3**: Load test and scale the database tier
+
+1. To scale the Order DB ATP database to 2 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+
+   ![](images/35-open-atp-menu.png " ")
+
+2. Click **Scale Up/Down** and enter 2 in the OCPU field. Click **Update**.
+
+   ![](images/ScaleTo2dbocpuScreen1.png " ")
+
+   ![](images/ScaleTo2dbocpuScreen2.png " ")
+
+3. Wait until the scaling has completed (Lifecycle State: Available).
+
+   ![](images/ScaleTo2dbocpuScreen3.png " ")
+
+4. Re-execute the test with 60 virtual users by executing the following command.
+
+    ```
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
     ```
 
    Note the median response time for the requests and the request rate.  Throughput has increased and response time has improved.
 
-![](images/90vus3replica2dbocpu.png " ")
+   ![](images/60vus3replica2dbocpu.png " ")
 
+## **STEP 4**: Scale down the application and database tiers
 
+1. To scale the Order DB ATP database down to 1 OCPUs, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+
+   ![](images/35-open-atp-menu.png " ")
+
+2. Click **Scale Up/Down** and enter 1 in the OCPU field. Click **Update**.
+
+   ![](images/ScaleTo1dbocpuScreen1.png " ")
+
+   ![](images/ScaleTo1dbocpuScreen2.png " ")
+
+3. Wait until the scaling has completed (Lifecycle State: Available).
+
+   ![](images/ScaleTo1dbocpuScreen3.png " ")
+
+4. Scale the order-helidon service back to 1 replica.
+
+    ```
+    <copy>kubectl scale deployment.apps/order-helidon --replicas=1 -n msdataworkshop</copy>
+    ```
 
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Avaiability Architecture; Curtis Dinkel, Maximum Avaiability Architecture; Rena Granat, Maximum Avaiability Architecture;
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
+* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 

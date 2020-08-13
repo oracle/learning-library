@@ -20,7 +20,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 [](youtube:zpASc1xvKOY)
 
 
-## STEP 1: Create a Cluster
+## **Step 1:** Create a Cluster
 There are many options when creating a cluster. You will need to understand the sizing requirements based on your use case and performance needs. In this lab, you will create a small testing and development cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
 Your simple HA cluster will have the following profile:
@@ -115,7 +115,7 @@ Create the cluster as follows:
 
     ![](./images/status-creating.png " ")
 
-## STEP 2: Monitor the Cluster Creation
+## **Step 2:** Monitor the Cluster Creation
 
 The process of creating the cluster takes approximately one hour to complete; however, you can monitor the cluster creation progress as follows:
 
@@ -179,7 +179,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
   ![](./images/cluster-active.png " ")  
 
-## STEP 3: Review Locations of Services in the Cluster
+## **Step 3:** Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
 

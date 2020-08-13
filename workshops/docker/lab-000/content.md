@@ -14,7 +14,7 @@ To learn more about this workshop please watch the video below.
 
 - Bookmark this page for future reference.
 
-- Click on the URL to create your <a class="trial-link" href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_PDMK180212P00140:Docker_HOL&SC=:ex:tb:::RC_PDMK180212P00140:Docker_HOL&pcode=PDMK180212P00140" target="_trial">Free Tier Account</a> and complete all the required steps. When you complete the registration process you'll receive a Free Tier account.  
+- Click on the URL to create your <a class="trial-link" href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_PDMK180212P00140:Docker_HOL&SC=:ex:tb:::RC_PDMK180212P00140:Docker_HOL&pcode=PDMK180212P00140" target="_trial">Free Tier Account</a> and complete all the required steps. When you complete the registration process you will receive a Free Tier account.  
 - The Free Tier account contains services you can use for an unlimited time plus a $300 credit that grants you access to a wide range of Oracle Cloud services for 30 days, including Analytics, Compute, and Container Engine for Kubernetes and much more.
 - Follow the link above, enter your **email address** and follow the steps to create your cloud account.  *Please Note:  New email accounts on popular email providers (google, yahoo, etc) created in the last 24 hours will trigger an alert and require you to call support to confirm your account*
 

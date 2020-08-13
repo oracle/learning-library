@@ -10,7 +10,7 @@ Unified Auditing is enabled by default. You can audit the several types of activ
 
 [Objectives](#objectives)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Benefits of the Unified Audit Trail](#benefits-of-the-unified-audit-trail)
 
@@ -29,7 +29,7 @@ We will do the following:
 * Enable the policy and apply audit settings to one or more users
 * View the generated audit records
 
-## Pre-Requisites
+## Prerequisites
 
 * The lab requires an Oracle Public Cloud account with Autonomous Transaction Processing Cloud Service.
 

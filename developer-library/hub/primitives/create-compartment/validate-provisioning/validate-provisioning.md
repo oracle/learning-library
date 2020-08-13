@@ -8,7 +8,7 @@ This solution creates the following Oracle Cloud resources :
 
 Complete the following steps to validate the resources created.
 
-## STEP 1 : Validate Compartment
+## **Step 1:** Validate Compartment
 
 1. Open the **Navigation Menu** on the top-left. Under **Governance and Administration**, click **Identity** -> **Compartments**.
 

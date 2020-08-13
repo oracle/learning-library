@@ -74,7 +74,7 @@ jQuery makes it easy to select elements, traverse the DOM tree, and make changes
 
     ![](images/navigation-bar.png)
 
-    As you'll see, the navigation bar is made up of a `ul` element that has multiple `li` elements with links.
+    As you will see, the navigation bar is made up of a `ul` element that has multiple `li` elements with links.
 
     Execute the following code to add a class to the second `li` in the `ul`.
 
@@ -108,7 +108,7 @@ In this step, you will create basic regular event listeners and then learn why s
 
     After running the code, try clicking the images. You should see the 'You clicked an image!' message in the console.
 
-    Next, click the `Go` button in the search bar of the report, then try clicking the images again. The message does not appear anymore because the rows have been replaced with new elements that do not have the event bindings from before. In the next step, you'll use event delegation to fix this issue.
+    Next, click the `Go` button in the search bar of the report, then try clicking the images again. The message does not appear anymore because the rows have been replaced with new elements that do not have the event bindings from before. In the next step, you will use event delegation to fix this issue.
 
 2.  Execute the following code to add a single event handler to the report. This event handler will listen for click events on images further down in the DOM tree.
 

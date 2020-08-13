@@ -62,22 +62,22 @@ In some circumstances, you may receive a separate Oracle Cloud email and in that
 As that may not always be available, we will next go through how to access Oracle Cloud should someone have not gotten that link, or it’s not available
 
 ## To Access the Oracle Cloud
-#### Step 1: Enter URL **http://cloud.oracle.com/en_US/sign-in** into your browser and a dialog box like Figure 5 appears.
+#### **Step 1:** Enter URL **http://cloud.oracle.com/en_US/sign-in** into your browser and a dialog box like Figure 5 appears.
 
 ![](media/984.png)
 *<p align="center">Figure 5: Cloud Account Sign In</p>*
 
-#### Step 2: Enter the Tenancy Name  orasenatdhubsblue02 into the account dialog box
+#### **Step 2:** Enter the Tenancy Name  orasenatdhubsblue02 into the account dialog box
 ![](media/3fc10ea927f5a2648b0dbb9dfd257d7a.png)
 *<p align="center">Figure 6: Enter Tenancy Name</p>*
 
-#### Step 3: Choose Sign in with Oracle SSO
+#### **Step 3:** Choose Sign in with Oracle SSO
 
 ![](media/beeaddbd466fb83fe3f12d61bdcbaa63.png)
 
 *<p align="center">Figure 7: Oracle SSO Login</p>*
 
-#### Step 4: Enter your standard SSO credentials
+#### **Step 4:** Enter your standard SSO credentials
 
 ![](media/572bdb0971a2d56b2888d1ae4ef829f7.png)
 
@@ -166,7 +166,7 @@ throughput test as it may impact your ability to perform labs later
 
 
 ### HOL Activity - Oracle Cloud My Services Dashboard
-16. Finally, go ahead and select the **Go to My Dashboard** button from the upper right of the FAQs page and you'll see the     Oracle Cloud My Services Dashboard of services available to this tenancy. The individual services tiles can be used as the starting point for other Hands-on-Labs courses.
+16. Finally, go ahead and select the **Go to My Dashboard** button from the upper right of the FAQs page and you will see the     Oracle Cloud My Services Dashboard of services available to this tenancy. The individual services tiles can be used as the starting point for other Hands-on-Labs courses.
 
 ![](media/771677f37f566d187ec6686095018421.png)
 *<p align="center">Figure 17: Oracle Cloud Services Dashboard</p>*

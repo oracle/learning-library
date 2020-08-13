@@ -9,7 +9,7 @@ This chapter includes the following sections:
   * Load Sales Administration Package Example
 
 
-## Step 1:  Introduction
+## **Step 1:**  Introduction
 This section provides an introduction to automating data integration using packages in Oracle Data Integrator.
 
 1. Automating Data Integration Flows
@@ -37,7 +37,7 @@ Refer to *Working with Scenarios* in the *Oracle Fusion Middleware Developer's G
 
 In the lab *Deploying Integrated Applications*, you will generate the *LOAD\_SALES\_ADMINISTRATION* scenario from a package and run this scenario from Oracle Data Integrator Studio.
 
-## Step 2: Load Sales Administration Package Example
+## **Step 2:** Load Sales Administration Package Example
 This section contains the following topics:
   * Purpose
   * Developments Provided with Oracle Data Integrator
@@ -142,7 +142,7 @@ The resulting sequence appears in the Package diagram as shown:
   ![](./images/sales_admin_package.png)   
   5.  From the File main menu, select **Save**. The package is now ready to be executed.
 
-## Step 3: Executing Your Development
+## **Step 3:** Executing Your Development
 This section describes how to execute the Load Sales Administration Package you have just created and the mappings Load TRG\_CUSTOMER and Load TRG\_SALES you have created in the lab *Working with Mappings*. This section also describes how to follow the execution and how to interpret the execution results.
 This chapter includes the following sections:
   * Executing the Load Sales Administration Package
@@ -171,7 +171,7 @@ To view the execution results of the Load Sales Administration Package:
 
   ![](./images/load_package_session_log.png)
 
-## Step 4: Reviewing your Results
+## **Step 4:** Reviewing your Results
 **Interpreting the Results of the Load TRG\_CUSTOMER Session Step**
 This section describes how to determine the invalid records detected by the Load TRG\_ CUSTOMER mapping. These are the records that do not satisfy the constraints and have been rejected by the flow control of the Load TRG\_CUSTOMER mapping.
 This section includes the following topics:

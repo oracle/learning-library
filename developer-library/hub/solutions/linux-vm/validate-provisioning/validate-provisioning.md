@@ -7,7 +7,7 @@ Complete the following steps to validate the resources created.
 
 ## Validation Steps
 
-## STEP 1 : Validate Connectivity to the Linux VM
+## **Step 1:** Validate Connectivity to the Linux VM
 
 You connect to a running instance by using a Secure Shell (SSH) connection. Most Linux distributions include an SSH client by default. For Windows, you can download a free SSH client called PuTTY from [http://www.putty.org](http://www.putty.org).
 

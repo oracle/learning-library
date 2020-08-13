@@ -18,11 +18,11 @@ Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
 
 - Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
 
-## Step 1: Installing WebLogic Deploy Tooling
+## **Step 1:** Installing WebLogic Deploy Tooling
 
 ### If you were using Docker:
 
-- If you were in the Database container to perform the previous steps of database migration, exit the database container with 
+- 1.1. If you were in the Database container to perform the previous steps of database migration, exit the database container with 
 
    ```bash
    <copy>
@@ -31,7 +31,7 @@ Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
    ```
    You should be back on your local computer shell prompt
 
-- Get into the **WebLogic** docker container with the following command:
+- 1.2. Get into the **WebLogic** docker container with the following command:
 
   ```bash
   <copy>
@@ -45,7 +45,7 @@ You should already be in the 'on-premises' environment logged in as the `oracle`
 
 ### Then:
 
-- run the `install_wdt.sh` script
+- 1.3. run the `install_wdt.sh` script
 
   ```bash
   <copy>
@@ -72,7 +72,7 @@ You should already be in the 'on-premises' environment logged in as the `oracle`
   ```
   </details>
 
-## Step 2: Discover the on-premises domain
+## **Step 2:** Discover the on-premises domain
 
 <details><summary>View the <code>discover_domain.sh</code> script</summary>
 
@@ -120,7 +120,7 @@ It also takes care of the manual extraction of applications that may be present 
 
 Applications found under `ORACLE_HOME` will have a path that includes `@@ORACLE_HOME@@` and **will not be included in the archive file**. They need to be extracted manually. The script takes care of this and injects those applications in the `source.zip` file while replacing the path in the `source.yaml` file.
 
-- run the `discover_domain.sh` script
+- 2.1. run the `discover_domain.sh` script
 
   ```bash
   <copy>
@@ -218,7 +218,7 @@ Extracting those files and updating paths in the model file...
 
 </details>
 
-## Step 3: Edit the `source.yaml` file
+## **Step 3:** Edit the `source.yaml` file
 
 The extracted `source.yaml` file looks like the following
 
@@ -343,7 +343,7 @@ appDeployments:
 
 ```
 
-- Edit the `source.yaml` file to remove the entire `domainInfo` section and the `topology` section.
+- 3.1. Edit the `source.yaml` file to remove the entire `domainInfo` section and the `topology` section.
 
   ```bash
   <copy>
@@ -391,7 +391,7 @@ appDeployments:
 
   ```
 
-- Edit each of the 3 `Target` names for `resources` and `appDeployments` from `cluster` (the name of the cluster on-premises) to `nonjrf_cluster` (the name of the cluster on the OCI domain):
+- 3.2. Edit each of the 3 `Target` names for `resources` and `appDeployments` from `cluster` (the name of the cluster on-premises) to `nonjrf_cluster` (the name of the cluster on the OCI domain):
 
   * `resources->JDBCSystemResource->JDBCConnection->Target`
   * `appDeployments->Application->SimpleDB->Target`
@@ -430,7 +430,7 @@ appDeployments:
               Target: nonjrf_cluster # <---
   ```
 
-  - finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
+  - 3.3. finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
 
   The new JDBC connection string should be:
   
@@ -475,9 +475,9 @@ appDeployments:
 
   **Important Note**: if when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers
 
-- Save the `source.yaml` file by typing `CTRL+x` then `y`
+- 3.4 Save the `source.yaml` file by typing `CTRL+x` then `y`
 
-## Step 4: Edit the `source.properties` file
+## **Step 4:** Edit the `source.properties` file
 
   ```bash
   <copy>
@@ -495,9 +495,9 @@ appDeployments:
   SecurityConfig.NodeManagerPasswordEncrypted=
   ```
 
-- Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
+- 4.1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
 
-- Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./weblogic-to-oci/weblogic/env` file under `DS_PASSWORD`).
+- 4.2. Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./weblogic-to-oci/weblogic/env` file under `DS_PASSWORD`).
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
@@ -507,9 +507,9 @@ appDeployments:
   JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
   ```
 
-- Save the file with `CTRL+x` and `y`
+- 4.3. Save the file with `CTRL+x` and `y`
 
-## Step 5: Update the WebLogic domain on OCI
+## **Step 5:** Update the WebLogic domain on OCI
 
 The `update_domain.sh` script updates the target domain.
 
@@ -537,7 +537,7 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
 **Note:** the url uses the `t3` protocol which is only accessible through the internal admin server port, which is `9071` on the latest WebLogic Marketplace stack, for older provisioning of the stack, the port may be `7001`
 
-- Edit the `update_domain.sh` script to provide the `TARGET_WLS_ADMIN` **WebLogic Admin Server public IP**
+- 5.1. Edit the `update_domain.sh` script to provide the `TARGET_WLS_ADMIN` **WebLogic Admin Server public IP**
 
   ```bash
   <copy>
@@ -546,7 +546,7 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
   ```
   Edit and then save with `CTRL+x` and `y`
 
-- Run the `update_domain.sh` script
+- 5.2. Run the `update_domain.sh` script
 
   You will be prompted to provide the `weblogic admin password` which is `welcome1`
 
@@ -790,15 +790,15 @@ updateDomain.sh completed successfully (exit code = 0)
 
 ### You're done!
 
-### We can go check that the app deployed properly
+## Step 6. Check that the app deployed properly
 
-- Go to the WebLogi Admin console at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console
+- 6.1. Go to the WebLogi Admin console at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console
 
-- Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
+- 6.2. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
 
   <img src="./images/oci-deployments.png" width="100%">
 
-- Go to the SimpleDB application URL, which is the Load Balancer IP gathered on Lab step 4 with the route `/SimpleDB/` like:
+- 6.3. Go to the SimpleDB application URL, which is the Load Balancer IP gathered on Lab step 4 with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
   <img src="./images/oci-simpledb-app.png" width="100%">

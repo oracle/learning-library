@@ -24,7 +24,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 [](youtube:Q6hxMaAPghI)
 
-## STEP 1: Choosing ADW or ATP from the Services Menu
+## **Step 1:** Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -49,7 +49,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Region.png " ")
 
-## STEP 2: Creating the ADB instance
+## **Step 2:** Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 

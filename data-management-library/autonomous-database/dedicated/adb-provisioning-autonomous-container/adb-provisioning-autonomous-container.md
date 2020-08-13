@@ -18,7 +18,7 @@ Watch the video below for an overview of creating an Autonomous Container Databa
 
 [](youtube:IAjCCZUO67M)
 
-## STEP 1: Create an Autonomous Container Database (ACD)
+## **Step 1:** Create an Autonomous Container Database (ACD)
 
 *Login to your OCI account as a fleet administrator*
 

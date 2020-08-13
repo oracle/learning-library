@@ -33,7 +33,7 @@ A web service is a collection of open protocols and standards used for exchangin
 
 Web services based on REST Architecture are known as RESTful web services. These web services uses HTTP methods to implement the concept of REST architecture. A RESTful web service usually defines a URI, Uniform Resource Identifier a service, which provides resource representation such as JSON and set of HTTP Methods.
 
-## Step 1: Download Postman
+## **Step 1:** Download Postman
    
  1. Download the Postman.
     -  [Click here to download Postman](https://www.postman.com/downloads/)
@@ -72,7 +72,7 @@ Web services based on REST Architecture are known as RESTful web services. These
 5. Click on the **Submit** button, Postman return the HTTP 200 after successfully adding the product in oracle database.
 
 
-## Step 2: Using HTTP GET method.
+## **Step 2:** Using HTTP GET method.
     
 1. Open a new tab
 
@@ -91,7 +91,7 @@ Web services based on REST Architecture are known as RESTful web services. These
 
   ![](./images/nodejs-postman5a.png " ")
 
-## Step 3: Using HTTP POST Method
+## **Step 3:** Using HTTP POST Method
     
 
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL http://&lt;localhost&gt;:3001/products/13.
@@ -127,7 +127,7 @@ Web services based on REST Architecture are known as RESTful web services. These
 
    
         
-## Step 4: Verify product details by using HTTP GET method.  
+## **Step 4:** Verify product details by using HTTP GET method.  
     
 ![](./images/nodejs-postman9a.png " ")
 
