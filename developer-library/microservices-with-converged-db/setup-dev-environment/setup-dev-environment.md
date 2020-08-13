@@ -171,7 +171,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     - Repository Name: `<firstname.lastname>/msdataworkshop`
 	  - Access: `Public`
 
-  Make sure that access is marked as `public`.  Add the repository name to your `msdataworkshop.properties` file.
+  Make sure that access is marked as `public`.  Add the repository name to the appropriate portion of the `DOCKER_REGISTRY` property in your `msdataworkshop.properties` file and complete the remaining edits to the `DOCKER_REGISTR`Y property."
 
   ![](images/22-create-repo.png " ")
 

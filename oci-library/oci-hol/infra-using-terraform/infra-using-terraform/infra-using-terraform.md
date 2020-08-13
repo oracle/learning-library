@@ -5,7 +5,7 @@ In this lab we will use pre-configured terraform scripts to deploy VCN, Compute 
 
 Estimated Time: 30-45 minutes
 
-**Some Key points:**
+**Key points:**
 - We recommend using Chrome or Edge as the browser.
 - You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
@@ -187,7 +187,7 @@ Estimated Time: 30-45 minutes
     </copy>
     ```
 
-7. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID enter the information the appropiate information. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
+7. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID enter the information the appropriate information. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
 
     ![](images/Terraform_024.png " ")
 
@@ -289,7 +289,7 @@ Estimated Time: 30-45 minutes
     </copy>
     ```
 
-10. The enviornment is now set. Next we will download a terraform file (.tf) file that will be used to create VCN, Compute instance, block volume and attach block volume to compute instance. We will download this file in **/home/opc** directory. Enter the following command.
+10. The environment is now set. Next we will download a terraform file (.tf) file that will be used to create VCN, Compute instance, block volume and attach block volume to compute instance. We will download this file in **/home/opc** directory. Enter the following command.
 
     ```
     <copy>
@@ -317,7 +317,7 @@ Estimated Time: 30-45 minutes
 
     ![](images/Terraform_028.png " ")
 
-12. To see the deloyment plan enter the following command.
+12. To see the deployment plan enter the following command.
 
     ```
     <copy>

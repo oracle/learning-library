@@ -45,12 +45,8 @@ To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
   ```
-<<<<<<< HEAD
- <copy>cd ~ ; curl -sL https://tinyurl.com/yyzwwdpn --output master.zip ; unzip master.zip ; rm master.zip</copy>
-=======
  <copy>cd ~ ; curl -sL https://tinyurl.com/y4wyehcw --output master.zip ; unzip master.zip ; rm master.zip</copy>
->>>>>>> upstream/master
-   ```
+  ```
 
   You should now see **msdataworkshop-master** in your root directory.
 
@@ -151,7 +147,7 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
 
      ![](images/jaeger_address_prop.png)
 
-     *Make sure that you add the jaeger-query EXTERNAL-IP address and NOT the CLUSTER-IP.*
+     *Make sure that you add the jaeger-query EXTERNAL-IP address and NOT the CLUSTER-IP and that you prefix with `http://`.*
 
      Complete the insert, save your changes, and close vi with the commands `ESC` and `:x` and `ENTER`
 
@@ -189,7 +185,7 @@ The jaeger-query is a loadbalancer exposing an EXTERNAL-IP and runs on port 80. 
     folder.
 
     ```
-    <copy>$MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/frontend-helidon</copy>
     ```
 
 2.  Run `maven` to build the package using the following command. Since this is

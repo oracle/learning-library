@@ -3,29 +3,12 @@
 ## Introduction
 Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-Service platform, built on enterprise-grade Oracle Cloud Infrastructure and powered by the Fn Project open source engine. Use Oracle Functions (sometimes abbreviated to just Functions) when you want to focus on writing code to meet business needs. You don't have to worry about the underlying infrastructure because Oracle Functions will ensure your app is highly-available, scalable, secure, and monitored. With Oracle Functions, you can deploy your code, call it directly or trigger it in response to events, and get billed only for the resources consumed during the execution.
 
-**Some Key points:**
+**Key points:**
 
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%*
+*We recommend using Chrome or Edge as the browser.
 
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
+*You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-    **Cloud Tenant Name**
-
-    **User Name**
-
-    **Password**
-
-    **Compartment Name (Provided Later)**
-
-    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
 ### Prerequisites
 
@@ -40,11 +23,6 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 ## **Step 1:** Sign in to OCI Console and create a VCN
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
 
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
@@ -66,7 +44,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 5. Verify all the information and  Click **Create**.
 
-6. This will create a VCN with followig components.
+6. This will create a VCN with following components.
    
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
@@ -206,14 +184,14 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 5. When asked for **Do you want to generate a new RSA key pair?** answer Y. For the rest of the question accept default by pressing Enter.
     ![](./../deploying-oci-streaming-service/images/Stream_005.PNG " ")
 
-6. **oci setup config** also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls. Switch to ssh session to compute instance, to display the conent of API key Enter command :
+6. **oci setup config** also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls. Switch to ssh session to compute instance, to display the content of API key Enter command :
     ```
     <copy>
     cat ~/.oci/oci_api_key_public.pem
     </copy>
     ```
 
-7. Hightligh and copy the content from ssh session. Switch to OCI Console, Click Human icon followed by your user name. In user details page Click **Add Public Key**. In the dialg box paste the public key content and Click **Add**.
+7. Highlight and copy the content from ssh session. Switch to OCI Console, Click Human icon followed by your user name. In user details page Click **Add Public Key**. In the dialog box paste the public key content and Click **Add**.
 
     ![](./../deploying-oci-streaming-service/images/Stream_006.PNG " ")
 
@@ -223,7 +201,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 8. Next we need to generate an Auth token its an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance. 
    
-    In OCI console Click the user icon (top right)  then **User settings**. Under Resrouces Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**.
+    In OCI console Click the user icon (top right)  then **User settings**. Under Resources Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**.
     ![](./../autonomous-data-warehouse/images/ADW_005.PNG " ")
 
     ![](./../autonomous-data-warehouse/images/ADW_006.PNG " ")
@@ -232,7 +210,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
     **Do not close the window without saving the token as it can not be retrieved later**.
 
-10. Nex install Dcoker, Enter command:
+10. Next install Docker, Enter command:
     ```
     <copy>
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -337,9 +315,9 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
     </copy>
     ```
 
-20. Switch to OCI Cosole. From OCI Services Meneu, Click **Compartments** under **Identity**. 
+20. Switch to OCI Console. From OCI Services Menu, Click **Compartments** under **Identity**. 
 
-21. Locate your compartment and click the name. Copy the OCID of the compartment just as was done for User and Tenancy. Also note down youe region name
+21. Locate your compartment and click the name. Copy the OCID of the compartment just as was done for User and Tenancy. Also note down your region name
 
 22. Switch back to ssh session to compute instance. Configure the new context with the OCID of the compartment you want to own deployed functions. Enter Command;
 
@@ -403,10 +381,10 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
     For example: ansh81vru1zp/jdoe@acme.com
  
-28. When prompted for a password, enter the auth token generated ealier.
+28. When prompted for a password, enter the auth token generated earlier.
     ![](./../configuring-fn/images/Fn_001.PNG " ")
 
-29. Next we will create our fist applicaiton. Login to OCI console. Under OCI serverices menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**.
+29. Next we will create our fist application. Login to OCI console. Under OCI services menu, click  **Solutions and Platform**, click **Developer Services** and then **Functions**.
 
 30. Click **Create Application** and fill out the dialog box:
 
@@ -419,7 +397,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 31. Next we will create our first function. In the ssh session to compute instance, Enter command;
 
-    **NOTE: 'FUNCTION_NAME' below shoudl be what you created in above step*
+    **NOTE: 'FUNCTION_NAME' below should be what you created in above step*
 
     ```
     <copy>
@@ -472,7 +450,7 @@ Congratulations! You've just created, deployed, and invoked your first function 
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
-3. Locate first compute instance, Click Action icon and then **Terminat**.
+3. Locate first compute instance, Click Action icon and then **Terminate**.
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
@@ -492,6 +470,7 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead
 - **Last Updated By/Date** - Yaisah Granillo, May 2020
 
 ## See an issue?
