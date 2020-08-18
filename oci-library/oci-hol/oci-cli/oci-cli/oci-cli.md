@@ -16,7 +16,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-    This will list all availability domains in the current region.  Make note of one of the availability domain names.  It should look something like this `nESu:US-ASHBURN-AD-1`.  You will use this in a future step.
+    This will list all availability domains in the current region.  Make note of one of the availability domain names. It should look something like this `nESu:US-ASHBURN-AD-1`. You will use this in a future step.
 
     ![](images/CLI_008.png " ")
 
@@ -28,7 +28,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-3. Return to the OCI Console and navigate to Identity -> Compartments.  Copy the OCID of the assigned compartment.
+3. Return to the OCI Console and navigate to Identity -> Compartments. Copy the OCID of the assigned compartment.
 
     ![](images/CLI_009.png " ")
 
@@ -42,7 +42,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-5. Create a new virtual cloud network with a unique CIDR block.  You will need the OCID of your compartment.
+5. Create a new virtual cloud network with a unique CIDR block. You will need the OCID of your compartment.
 
     ```
     <copy>
@@ -110,7 +110,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-12. Create an Internet Gateway.  You will need the OCID of your VCN and Compartment.
+12. Create an Internet Gateway. You will need the OCID of your VCN and Compartment.
 
     ```
     <copy>
@@ -128,7 +128,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-14. Next, we will update the default route table with a route to the internet gateway.  First, you will need to locate the OCID of the default route table.
+14. Next, we will update the default route table with a route to the internet gateway. First, you will need to locate the OCID of the default route table.
 
     ```
     <copy>
@@ -148,7 +148,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
     ![](images/CLI_017.png " ")
 
-    *Note: When updating route tables or security lists you cannot insert a single rule.  You must ``update`` with the entire set of rules.  The prompt shown in the screenshot above illustrates this point.*
+    *Note: When updating route tables or security lists you cannot insert a single rule. You must ``update`` with the entire set of rules. The prompt shown in the screenshot above illustrates this point.*
 
     *Note: Use QUERY to find Oracle Linux Image ID, then launch a compute instance.*
 

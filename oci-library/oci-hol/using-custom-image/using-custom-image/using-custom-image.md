@@ -34,7 +34,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
-## **STEP 2**: Create compute instance
+## **STEP 2**: Create a compute instance
 
 1. Go to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
@@ -86,23 +86,23 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 8.  Wait for Instance to be in **Running** state. In Cloud Shell Terminal, enter:
 
     ```
-    <copy>cd .ssh</copy>
+    <copy>cd ~/.ssh</copy>
     ```
-5.  Enter **ls** and verify your SSH key file exists.
+9.  Enter **ls** and verify your SSH key file exists.
 
-6.  SSH into your compute instance:
+10.  SSH into your compute instance:
     ```
     <copy>ssh -i <sshkeyname> opc@<PUBLIC_IP_OF_COMPUTE></copy>
     ```
 
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command.
 
-7.  Enter 'yes' when prompted for security message, and enter your passphrase.
+11.  Enter 'yes' when prompted for security message, and enter your passphrase.
 
      ![](images/Custom_Image_0010.PNG " ")
      ![](images/Custom_Image_0011.PNG " ")
 
-8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
+12.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
 ## **STEP 3**: Install httpd on compute instance and create custom image
 

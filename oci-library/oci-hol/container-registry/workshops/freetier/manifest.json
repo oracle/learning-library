@@ -15,7 +15,7 @@
         },
         {
             "title": "Lab 2: Create Docker registry in OCI",
-            "filename": "../../container-registry.md"
+            "filename": "../../container-registry/container-registry.md"
         }
     ]
 }
