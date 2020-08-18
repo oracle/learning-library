@@ -3,7 +3,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "This lab walks you through the steps to...",
+            "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
             "filename": "./intro/intro.md"
         },
         {
@@ -14,7 +14,17 @@
         {
             "title": "Build a DB System",
             "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
-            "filename": "./setup/livelabs-setup.md"
+            "filename": "./setup/setup-compute.md"
+        },
+        {
+            "title": "Clusterware and Fencing",
+            "description": "This lab walks you through clusterwarwe reconfigurations and node fencing.",
+            "filename": "./clusterware/test_gi.md"
+        },
+        {
+            "title": "Fast Application Notification",
+            "description": "This lab examines FAN events.",
+            "filename": "./clusterware/fan_callouts.md"
         }
     ]
 }
