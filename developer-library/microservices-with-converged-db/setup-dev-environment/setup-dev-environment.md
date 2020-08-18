@@ -27,7 +27,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 1. To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
-    ```
+   ```
    <copy>cd ~ ; curl -sL https://tinyurl.com/yyvf9bpk --output master.zip ; unzip master.zip ; rm master.zip</copy>
    ```
 
