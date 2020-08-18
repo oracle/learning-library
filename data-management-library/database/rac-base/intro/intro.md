@@ -14,6 +14,7 @@ Watch the video below for an overview of Oracle RAC.
 
 [](youtube:CbIGJs_eNtI)
 
+
 ## Oracle RAC
 
 Oracle RAC provides:
