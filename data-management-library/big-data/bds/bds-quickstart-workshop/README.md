@@ -1,16 +1,16 @@
 # Welcome to the Getting Started with Oracle Big Data Service Hands-on Workshop!
 
-The labs in this workshop walk you through all the steps to get started using Oracle Big Data Service (BDS).
+The **Getting Started with Oracle Big Data Service (BDS) workshop** is a series of step-by-step labs that guide you through the process of setting up a simple environment and creating a small BDS cluster. You'll also explore with adding Cloud SQL to the cluster, accessing the cluster from the public internet, using Cloudera Manager and Hue to access the cluster, and creating a Hadoop administrator user.
 
 ## Access the Labs Using Our Web Interface
-<!-- Add the link to the top level of your HOL folder -->
 
-**[Click here](https://lauranserhal.github.io/learning-library/data-management-library/big-data/bds/bds-quickstart-workshop)** to use our easy to navigate HTML format.
+
+**[Click here](https://oracle.github.io/learning-library/data-management-library/big-data/bds/bds-quickstart-workshop)** to use our easy to navigate HTML format.
 
 
 ## Access the Labs on the Repo
-<!-- Add local links to the content.md files in your project -->
-Alternatively, you can follow the labs on this repo:
+
+Alternatively, you can follow the individual workshop labs on this repo:
 
 - [Introduction to Oracle Big Data Service](../bds-quickstart-workshop/intro.md)
 - [Setup the BDS Environment](../bds-getting-started/bds-getting-started.md)

@@ -6,8 +6,8 @@ In this lab, you will learn how to create a Highly-Available (HA) Cloudera Distr
 
 ### Objectives
 
-* Learn how to create an HA Hadoop cluster using BDS and OCI.
-* Learn how to monitor the cluster creation.
+* Create an HA Hadoop cluster using BDS and OCI.
+* Monitor the cluster creation.
 
 ### What Do You Need?
 

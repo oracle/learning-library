@@ -1,12 +1,10 @@
 # Oracle Database Github
 
-
 The industry’s leading database continues to deliver leading-edge innovations, including machine learning, to enable self-driving data management. This enterprise-proven, database cloud service is designed to support mixed workloads through any deployment strategy, on premises or in the cloud. Experience the power of the next-generation database with unmatched performance, ease, and flexibility by clicking on one of our hands-on workshops.
 
 
-
 ## Workshops
-Click [here](http://bit.ly/golivelabs) to access DB content.
+Click [here](http://bit.ly/golivelabs) to access database workshops on LiveLabs.
 
 
 ## Get an Oracle Cloud Trial Account for Free!

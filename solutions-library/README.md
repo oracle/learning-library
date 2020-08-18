@@ -1,8 +1,10 @@
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
+
 # Oracle Solutions Learning Library
 
 Welcome! 
 
-Click [here](http://bit.ly/golivelabs) to access solutions content.
+Click [here](http://bit.ly/golivelabs) to access solutions workshops.
 
 
 ## Get an Oracle Cloud Trial Account for Free!

@@ -6,8 +6,8 @@ In this lab, you will learn how to maintain the new cluster that you created in 
 
 ### Objectives
 
-* Learn how to maintain your cluster.
-* Learn how to add Oracle Cloud SQL to your cluster.
+* Maintain your cluster.
+* Add Oracle Cloud SQL to your cluster.
 
 ### What Do You Need?
 

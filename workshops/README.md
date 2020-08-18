@@ -1,10 +1,17 @@
-![](common-content/images/nahandson-title.png)
----
-# Workshop Catalog
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
+
+# Oracle North America Workshops
+
+Click [here](http://bit.ly/golivelabs) to access these workshops on LiveLabs.
 
 
-| Title | Location | Desc |
-| ----- | -------- | ---- |
-| Autonomous Data Warehouse Test Drive Workshop | [journey4-adwc](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=582) | This workshop walks you through all the steps to get started using the Oracle Autonomous Data Warehouse Cloud (ADWC). You will provision a new ADWC database, load data from the object store and troubleshoot data loads, query external data residing on the object store, manage an ADWC instance, scale an ADWC instance, and use Oracle Machine Learning notebooks.  It also covers how to visualize data with Oracle Data Visualization Desktop and how to integrate data with Oracle Data Integration Platform Cloud. |
-| Container Native Development with OKE | [container-native-development-with-oke](https://oracle.github.io/learning-library/workshops/container-native-development-with-oke) | This workshop will walk you through the process of moving an existing application into a containerized CI/CD pipeline and deploying it to a managed Kubernetes service in the Oracle Public Cloud. |
-| Oracle Autonomous API Platform Cloud Service Tutorials | [api-platform](./api-platform/) | Hands-on tutorials that focus on the design, implementation and management of APIs|
+## Get an Oracle Cloud Trial Account for Free!
+If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
+- $300 of free credits good for up to 3500 hours of Oracle Cloud usage
+- Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
+- Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
+
+Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

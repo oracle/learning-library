@@ -21,9 +21,9 @@ In this lab, you will use the **Oracle Cloud Infrastructure Cloud Shell**, which
 
 ### Objectives
 
-* Learn how to gather information about the cluster.
-* Learn how to map the private IP address of a node to a public IP address.
-* Learn how to edit a public IP address using both the **Oracle Cloud Console** and the OCI Command Line Interface (CLI).
+* Gather information about the cluster.
+* Map the private IP address of a node to a public IP address.
+* Edit a public IP address using both the **Oracle Cloud Console** and the OCI Command Line Interface (CLI).
 
 ### What Do You Need?
 

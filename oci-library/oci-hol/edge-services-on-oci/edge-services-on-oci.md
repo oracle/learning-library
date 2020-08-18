@@ -6,27 +6,14 @@ OCI DNS has advanced traffic management capabilities to steer DNS traffic across
 
 In this lab, we will learn how to use OCI DNS Traffic Management service to ensure high availability of your web applications through detection of endpoint health and diverting your traffic accordingly.
 
-**Some Key points:**
+**Key points:**
 
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%.*
+*We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%.*
 
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
+- All screen shots are examples ONLY.
 
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
+- You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-    **Cloud Tenant Name**
-
-    **User Name**
-
-    **Password**
-
-    **Compartment Name (Provided Later)**
 
     **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
@@ -45,24 +32,18 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
 6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## **Step 1:** Sign in to OCI Console and create VCN
-
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
+## Step 1: Sign in to OCI Console and create VCN
 
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](./../grafana/images/Grafana_015.PNG " ")
 
 
-2. From the OCI Services menu,Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Start VCN Wizard**.
+2. From the OCI Services menu, Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from the drop down menu on the left part of the screen under Networking and Click **Start VCN Wizard**.
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 4. Fill out the dialog box:
 
@@ -75,7 +56,7 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
 
 5. Verify all the information and Click **Create**.
 
-6. This will create a VCN with followig components.
+6. This will create a VCN with following components.
 
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
@@ -94,42 +75,36 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
       - **SOURCE PORT RANGE:** ALL
       - **DESTINATION PORT RANGE:** 80
 
-    ![](./../oci-quick-start/images/Customer_Lab_002.PNG " ")
+    ![](./../edge-services-on-oci/images/Customer_Lab_002.PNG " ")
 
 10. Click **Add Ingress Rule** at the bottom.
 
-## **Step 2:** Create Public Private SSH Key Pair, two compute instances and install web server
+## Step 2: Create Public Private SSH Key Pair, two compute instances and install web server
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL006.PNG " ")
-
-2. Enter command 
+1. In Cloud Shell Terminal enter command:
     ```
     <copy>
     ssh-keygen
     </copy>
     ```
-    **HINT:** You can swap between OCI window, git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon. 
-
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL007.PNG " ")
 
 3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL008.PNG " ")
+    ![](./../edge-services-on-oci/images/RESERVEDIP_HOL007.PNG " ")
 
 4. You should now have the Public and Private keys:
 
-    /C/Users/ PhotonUser/.ssh/id\_rsa (Private Key)
+    /home/PhotonUser/.ssh/<sshkeyname\> (Private Key)
 
-    /C/Users/PhotonUser/.ssh/id\_rsa.pub (Public Key)
+    /home/PhotonUser/.ssh/<sshkeyname\>.pub (Public Key)
 
-    **NOTE:** id\_rsa.pub will be used to create 
-    Compute instance and id\_rsa to connect via SSH into compute instance.
+    **NOTE:** The public key will be used to create 
+    Compute instance and the private key will be used to connect via SSH into compute instance.
 
     **HINT:** Enter command 
     ```
     <copy>
-    cd /C/Users/PhotonUser/.ssh (No Spaces) 
+    cd /home/PhotonUser/.ssh (No Spaces) 
     </copy>
     ```
     and then 
@@ -140,86 +115,91 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
     ```
     to verify the two files exist. 
 
-5. In git-bash Enter command  
+5. In Cloud Shell Terminal Enter command  
     ```
     <copy>
-    cat /C/Users/PhotonUser/.ssh/id_rsa.pub
+    cat /home/PhotonUser/.ssh/<sshkeyname>.pub
     </copy>
     ```
     , highlight the key and copy 
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL009.PNG " ")
+    ![](./../edge-services-on-oci/images/RESERVEDIP_HOL008.PNG " ")
 
-6. Click the apps icon, launch notepad and paste the key in Notepad (as backup).
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0010.PNG " ")
+6. Launch notepad and paste the key in Notepad (as backup).
 
 7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
 
-8. Click **Create Instance**. Fill out the dialog box:
+8. Click **Create Instance**. Enter a name for your instance and select the compartment you used earlier to create your VCN. Select Show **Shape, Network, and Storage Options.**
 
-      - **Name your instance**: Enter a name 
-      - **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
-      - **Availability Domain**: Select availability domain
-      - **Instance Type**: Select Virtual Machine 
-      - **Instance Shape**: Select VM shape 
+    ![](./../edge-services-on-oci/images/RESERVEDIP_HOL009.PNG " ")
 
-      **Under Configure Networking**
-      - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN 
-      - **Subnet Compartment:** Choose your compartment. 
-      - **Subnet:** Choose the Public Subnet under **Public Subnets** 
-      - **Use network security groups to control traffic** : Leave un-checked
-      - **Assign a public IP address**: Check this option
+Leave **Image or Operating System** and **Availability Domain** as the default values.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+Scroll down to **Shape** and click **Change Shape**.
 
-      - **Boot Volume:** Leave the default
-      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+![](./../edge-services-on-oci/images/RESERVEDIP_HOL0010.PNG " ")
 
-9. Click **Create**.
+Select **Virtual Machine** and **VM.Standard.E2.1**. Click **Select Shape**.
+
+![](./../edge-services-on-oci/images/RESERVEDIP_HOL0011.PNG " ")
+
+- Scroll down to the section labelled **Configure Networking** and select the following:
+
+    - **Virtual Cloud Network Compartment**: Choose the compartment you created your VCN in
+    - **Virtual Cloud Network**: Choose the VCN you created in step 1
+    - **Subnet Compartment**: Choose the compartment you created your VCN in
+    - **Subnet**: Choose the Public Subnet under **Public Subnets** (it should be named Public subnet-NameOfVCN) 
+    - **Use Network Security Groups to Control Traffic**: Leave un-checked
+    - **Assign a Public IP Address**: Check this option
+
+    ![](./../edge-services-on-oci/images/RESERVEDIP_HOL0012.PNG " ")
+
+    - **Boot Volume**: Leave the default
+    - **Add SSH Keys**: Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier.
+
+    *Ensure when you are pasting that you paste one line*
+
+8. Click **Create**.
 
     **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1  OR choose a different AD
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0011.PNG " ")
+    ![](./../edge-services-on-oci/images/RESERVEDIP_HOL0013.PNG " ")
 
-10. Repeat Steps to launch a second Compute instance and note down its public IP address.
+9. Repeat Steps to launch a second Compute instance and note down its public IP address.
 
-11. Wait for Instances to be in **Running** state. In git-bash Enter Command:
+10. Wait for Instances to be in **Running** state. In Cloud Shell Terminal Enter Command:
     
     ```
     <copy>
-    cd /C/Users/PhotonUser/.ssh
+    cd /home/PhotonUser/.ssh
     </copy>
     ```
-12. Enter **ls** and verify id_rsa file exists
+11. Enter **ls** and verify your ssh key file exists
 
-13.  ssh to **first** compute instance. Enter command:
+12.  ssh to **first** compute instance. Enter command:
             
     ```
     <copy>
     bash
-    ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
+    ssh -i <sshkeyname> opc@<PUBLIC_IP_OF_COMPUTE>
     </copy>
     ```
-    **NOTE:** User name is ‘opc’.
 
     **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command
 
-14. Enter 'Yes' when prompted for security message.
+13. Enter 'Yes' when prompted for security message.
 
-    ![](./../oci-quick-start/images/RESERVEDIP_HOL0014.PNG " ")
+    ![](./../edge-services-on-oci/images/RESERVEDIP_HOL0014.PNG " ")
  
-15. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt
+14. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt
 
-16. Launch a second git-bash window using above steps and connect via SSH into the second Compute instance (using the same steps as above. 
+15. Launch a second window and connect via SSH into the second Compute instance (using the same steps as above. 
 
-    **HINT:** You can swap between the OCI window, git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon 
-
-    ![](./../oci-fundamentals-lab/images/OCI_Fundamentals_001.PNG " ")
+    ![](./../edge-services-on-oci/images/EDGE_SERVICES.PNG " ")
 
     **HINT:** Ensure to use the IP address of the second Compute instance in the SSH command.
 
-17. Bring up  SSH session for the first Compute instance and install a Web server, Enter Commands: (Install Apache HTTP Server).
+16. Bring up  SSH session for the first Compute instance and install a Web server, Enter Commands: (Install Apache HTTP Server).
     ```
     <copy>
     sudo yum -y install httpd 
@@ -262,7 +242,7 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
     ```
     (create index.html file. The content of the file will be displayed when the web server is accessed.)
 
-18. Bring up the SSH session for the second Compute instance and repeat commands:(Install Apache HTTP Server)
+17. Bring up the SSH session for the second Compute instance and repeat commands:(Install Apache HTTP Server)
 
     ```
     <copy>
@@ -306,13 +286,11 @@ In this lab, we will learn how to use OCI DNS Traffic Management service to ensu
     ```
     (create index.html file. The content of the file will be displayed when the web server is accessed.)
 
-19. Switch back to OCI Console window.
-
     We now have two Compute instances with Web servers installed and a basis index.html file. 
 
-    **Note down the Public IP addresses of both compute.**
+    **Note down the Public IP addresses of both compute instances.**
 
-## **Step 3:** Create Traffic Management Policy
+## Step 3: Create Traffic Management Policy
 
 We will now  create a global Failover traffic management policy for this web application, where we will use one of the two computes as primary and the second one as secondary
 
@@ -335,7 +313,7 @@ We will now  create a global Failover traffic management policy for this web app
     - **ANSWER POOL NAME** : Provide a name (such as Webserver1-Pool)
     - **NAME** : Provide a name (such as Webserver1)
     - **TYPE** : A
-    - **RDATA** : IP address of first compute (first web server)
+    - **RDATA** : IP address of first compute instance (first web server)
 
     ![](./../edge-services-on-oci/images/DNS_003.PNG " ")
 
@@ -345,7 +323,7 @@ We will now  create a global Failover traffic management policy for this web app
     - **ANSWER POOL NAME** : Provide a name (such as Webserver2-Pool)
     - **NAME** : Provide a name (such as Webserver2)
     - **TYPE** : A
-    - **RDATA** : IP address of second compute (second web server)
+    - **RDATA** : IP address of second compute instance (second web server)
 
 
     **Pool Priority**
@@ -398,7 +376,7 @@ We will now  create a global Failover traffic management policy for this web app
 
     ![](./../edge-services-on-oci/images/DNS_009.PNG " ")
 
-## **Step 4:** Failover Test for Traffic Management Policy
+## Step 4: Failover Test for Traffic Management Policy
 
 We will now do a failover test of the policy just created. We will STOP Webserver1 and test if the healt check is updated, and the traffic is diverted to webserver2.
 
@@ -423,7 +401,7 @@ We will now do a failover test of the policy just created. We will STOP Webserve
 8. In the details panel, you can notice some key details.
 
       - Targets: define the end points
-      - Vantage Points: Current vantage points for health check. They are automatically chosen here and can be modified based on your customers geogrpahical area
+      - Vantage Points: Current vantage points for health check. They are automatically chosen here and can be modified based on your customers geographical area
       - History of Health Check results updated every 30 seconds interval 
 
     ![](./../edge-services-on-oci/images/DNS_012.PNG " ")
@@ -443,13 +421,13 @@ We will now do a failover test of the policy just created. We will STOP Webserve
     ![](./../edge-services-on-oci/images/DNS_015.PNG " ")
 
 
-## **Step 5:** Delete the resources
+## Step 5: Delete the resources
 
 1. Switch to  OCI console window.
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
-3. Locate first compute instance, Click Action icon and then **Terminat**. 
+3. Locate first compute instance, Click Action icon and then **Terminate**. 
 
     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
 
@@ -477,6 +455,7 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
+- **Contributors** - Kamryn Vinson, QA Engineer Lead
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
 ## See an issue?

@@ -6,19 +6,13 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 Estimated Time: 60 minutes
 
 ### Key Points
-- We recommend using Chrome or Edge as the broswer.
+- We recommend using Chrome or Edge as the browser.
 - You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
 
 ### Prerequisites
 
 - Free Trial, LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Keys - Cloud Shell
-
-1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 ## **Step 1**: Create a Virtual Cloud Network
 
@@ -59,7 +53,7 @@ Estimated Time: 60 minutes
     * Service gateway (SG)
 
 6. Click **View Virtual Cloud Network** to display your VCN details.
-              
+
     ![](images/HAApplication_006.png " ")
 
     ![](images/Function_003.png " ")
@@ -97,8 +91,8 @@ Estimated Time: 60 minutes
     ![](images/Function_004.png " ")
 
     - **Boot Volume:** Leave the default
-    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier. 
-    
+    - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier.
+
     *Ensure when you are pasting that you paste one line*
 
     ![](images/HAApplication_012.png " ")
@@ -125,7 +119,7 @@ Estimated Time: 60 minutes
 7.  To ssh into the compute instance enter the following command replacing SSH-KEY-NAME with the name of your ssh key and replacing PUBLIC-IP-OF-COMPUTE1 with the IP address of the compute instance you created.
 
     *Note: Your SSH-KEY-NAME name should NOT end in .pub*
-            
+
     ```
     <copy>
     ssh -i SSH-KEY-NAME opc@PUBLIC-IP-OF-COMPUTE-1
@@ -138,7 +132,7 @@ Estimated Time: 60 minutes
 8.  Enter 'Yes' when prompted for security message.
 
     ![](images/Function_006.png " ")
- 
+
 9. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
     ![](images/Function_007.png " ")
@@ -187,7 +181,7 @@ Estimated Time: 60 minutes
     </copy>
     ```
 
-7. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID enter the appropiate information. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
+7. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID enter the appropriate information. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
 
     ![](images/Terraform_024.png " ")
 
@@ -207,8 +201,8 @@ Estimated Time: 60 minutes
 
 ## **Step 4**: Install Docker
 
-1. Next we need to generate an Auth token its an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance. 
-   
+1. Next we need to generate an Auth token its an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
+
     In OCI console Click the user icon (top right)  then **User settings**. Under **Resources** Click **Auth Token**, then **Generate Token**. In the pop up window provide a description then click **Generate Token**.
     ![](images/Function_008.png " ")
 
@@ -295,7 +289,7 @@ Estimated Time: 60 minutes
     View Docker images.
     ```
     <copy>
-    docker images 
+    docker images
     </copy>
     ```
 
@@ -364,7 +358,7 @@ Estimated Time: 60 minutes
 
     ![](images/Function_039.png " ")
 
-5. Next we will create our first applicaiton. Under the OCI services menu, click **Solutions and Platform**, click **Developer Services** and then **Functions**.
+5. Next we will create our first application. Under the OCI services menu, click **Solutions and Platform**, click **Developer Services** and then **Functions**.
 
 6. Click **Create Application** and fill out the dialog box.
 
@@ -490,7 +484,7 @@ Estimated Time: 60 minutes
     ![](images/Function_048.png " ")
 
     ![](images/Function_049.png " ")
- 
+
 11. When prompted for a password paste your auth token into the shell and press enter.
 
 12. Next we will create our first function.
@@ -526,7 +520,7 @@ Estimated Time: 60 minutes
 
     ![](images/Function_032.png " ")
 
-    *Note: You can also Confirm that the hello-java image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**.* 
+    *Note: You can also Confirm that the hello-java image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**.*
 
 15.  Now lets invoke your first function. Enter the following command.
 
@@ -535,7 +529,7 @@ Estimated Time: 60 minutes
     fn invoke WorkshopFunctionApplication hello-java
     </copy>
     ```
-    
+
 16. Verify "Hello World!" message is displayed.
 
     ![](images/Function_050.png " ")
@@ -586,4 +580,4 @@ Congratulations! You have successfully completed the lab.
 - **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Jaden McElvey, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

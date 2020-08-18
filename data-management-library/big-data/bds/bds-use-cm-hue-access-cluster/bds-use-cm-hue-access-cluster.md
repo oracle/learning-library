@@ -13,8 +13,8 @@ In this lab, you will learn how to access CM and Hue directly in a web browser.
 
 ### Objectives
 
-* Learn how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.
-* Learn how to add ingress rules to the default security rule that enables you to access both CM and Hue.
+* Use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.
+* Add ingress rules to the default security rule that enables you to access both CM and Hue.
 
 ### What Do You Need?
 

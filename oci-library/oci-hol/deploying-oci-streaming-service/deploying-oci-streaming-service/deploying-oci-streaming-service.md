@@ -4,109 +4,30 @@
 
 In this lab, we will create a compute instance, download a script to configure streaming service, publish and consume messages. The Oracle Cloud Infrastructure Streaming service provides a fully managed, scalable, and durable storage solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming can be used for messaging, ingesting high-volume data such as application logs, operational telemetry, web Click-stream data, or other use cases in which data is produced and processed continually and sequentially in a publish-subscribe messaging model.
 
-## **Step 1**: Sign in to OCI Console and create VCN
+## **STEP 1**: Download Script to configure Streaming service and Publish messages
 
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
-
-1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
-
-    ![](images/Grafana_015.PNG " ")
-
-
-2. From the OCI Services menu, Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from the drop down menu on the left part of the screen under Networking and Click **Start VCN Wizard**.
-
-    **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
-
-3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
-
-4. Fill out the dialog box:
-
-     - **VCN NAME**: Provide a name
-     - **COMPARTMENT**: Ensure your compartment is selected
-     - **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
-     - **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
-     - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
-     - Click **Next**
-
-5. Verify all the information and  Click **Create**.
-
-6. This will create a VCN with the following components.
-
-    *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
-
-7. Click **View Virtual Cloud Network** to display your VCN details.
-
-## **Step 2**: Create compute instance
-
-1. Go to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
-
-2. Click Create Instance. Fill out the dialog box:
-
-      - **Name your instance**: Enter a name
-      - **Choose an operating system or image source**: Click **Change Image Source**. In the new window, Click **Oracle Images** Choose **Oracle Cloud Developer Image**. Scroll down, Accept the Agreement and Click **Select Image**
-
-        ![](images/Stream_009.PNG " ")
-
-      - **Availability Domain**: Select availability domain
-      - **Instance Type**: Select Virtual Machine
-      - **Instance Shape**: Select VM shape
-
-      **Under Configure Networking**
-      - **Virtual cloud network compartment**: Select your compartment
-      - **Virtual cloud network**: Choose the VCN
-      - **Subnet Compartment:** Choose your compartment.
-      - **Subnet:** Choose the Public Subnet under **Public Subnets**
-      - **Use network security groups to control traffic** : Leave un-checked
-      - **Assign a public IP address**: Check this option
-
-        ![](images/RESERVEDIP_HOL0011.PNG " ")
-
-      - **Boot Volume:** Leave the default
-      - **Add SSH Keys:** Choose **Paste SSH Keys** and paste the Public Key saved earlier.
-
-3. Click **Create**.
-
-4.  Wait for Instance to be in **Running** state. In Cloud Shell Terminal enter command:
-
-    ```
-    <copy>cd .ssh</copy>
-    ```
-
-5.  Enter **ls** and verify your SSH Key file exists.
-
-6.  Enter command:
-    ```
-    <copy>bash</copy>
-    ```
-    ```
-    <copy>ssh -i <sshkeyname> opc@<PUBLIC_IP_OF_COMPUTE></copy>
-    ```
-
-    **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command.
-
-7.  Enter 'yes' when prompted for security message.
-     ![](images/RESERVEDIP_HOL0014.PNG " ")
-
-8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
-
-## **Step 3**: Download Script to configure Streaming service and Publish messages
-
-1. In ssh session to compute instance, configure OCI CLI, Enter command:
+1. In Oracle Cloud Shell, configure OCI CLI:
     ```
     <copy>
     oci setup config
     </copy>
     ```
 
-2. Accept the default directory location. For user's OCID switch to OCI Console window. Click Human Icon and then your user name. In the user details page Click **copy** to copy the OCID. **Also note down your region name as shown in OCI Console window**. Paste the OCID in ssh session.
+    ![](images/oci-cli-config.png)
+
+2. Accept the default directory location. For user's OCID switch to OCI Console window. Click your person icon in the upper right, and select your user name. In the user details page Click **copy** to copy the OCID. **Also note down your region name as shown in OCI Console window**. Paste the user OCID into Cloud Shell.
+
      ![](images/Stream_004.PNG " ")
 
-3. Repeat the step to find tenancy OCID (Human icon followed by Clicking Tenancy Name). Paste the Tenancy OCID in ssh session to compute instance followed by providing your region name (us-ashburn-1, us-phoenix-1 etc).
+3. Repeat the step to find tenancy OCID (person icon followed by selecting Tenancy Name). Paste the Tenancy OCID in Cloud Shell. Then enter the string that matches your region (us-ashburn-1, us-phoenix-1, etc).
 
-4. When asked for **Do you want to generate a new RSA key pair?** answer Y. For the rest of the questions accept default by pressing Enter.
-     ![](images/Stream_005.PNG " ")
+4. When asked for **Do you want to generate a new API Signing RSA key pair?** answer Y.
 
-5. **oci setup config** also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls. Switch to ssh session to compute instance, to display the conent of API key Enter command:
+5. Enter a passphrase you can remember.
+
+5. When asked **Do you want to write your passphrase to the config file?** answer y.
+
+5. **oci setup config** also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls. Switch to ssh session to compute instance, to display the content of API key Enter command:
 
     ```
     <copy>
@@ -114,17 +35,17 @@ In this lab, we will create a compute instance, download a script to configure s
     </copy>
     ```
 
-6. Hightligh and copy the content from ssh session. Switch to OCI Console, Click Human icon followed by your user name. In user details page Click **Add Public Key**. In the dialg box paste the public key content and Click **Add**.
+6. Highlight and copy the content from ssh session. Switch to OCI Console, Click Human icon followed by your user name. In user details page Click **Add Public Key**. In the dialog box paste the public key content and Click **Add**.
 
      ![](images/Stream_006.PNG " ")
 
-     ![](images/Stream_007.PNG " ")
+     ![](images/add-public-api-key.png)
 
 7. Download and Install pip utility which will be used to install additional software. Enter command:
 
     ```
     <copy>
-    sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     </copy>
     ```
 
@@ -132,7 +53,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
     ```
     <copy>
-    sudo python get-pip.py
+    python get-pip.py
     </copy>
     ```
 
@@ -140,7 +61,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
     ```
     <copy>
-    sudo pip install virtualenv
+    pip install virtualenv
     </copy>
     ```
 
@@ -148,7 +69,6 @@ In this lab, we will create a compute instance, download a script to configure s
 
     ```
     <copy>
-    bash
     virtualenv <Environment_Name>
     </copy>
     ```
@@ -160,7 +80,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
     ```
     <copy>
-    cd /home/opc/stream_env/bin
+    cd ~/stream_env/bin
     </copy>
     ```
 
@@ -178,13 +98,13 @@ In this lab, we will create a compute instance, download a script to configure s
     </copy>
     ```
 
-     ![](images/Stream_008.PNG " ")
+     ![](images/install-stream.png)
 
 11. Now download the main script file though first we will remove the existing file, Enter Command:
 
     ```
     <copy>
-    cd /home/opc
+    cd ~
     </copy>
     ```
 
@@ -204,7 +124,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
     ```
     <copy>
-    cd /home/opc/stream_env/lib/python2.7/site-packages/oci/streaming/
+    cd ~/stream_env/lib/python2.7/site-packages/oci/streaming/
     </copy>
     ```
 
@@ -220,13 +140,12 @@ In this lab, we will create a compute instance, download a script to configure s
     </copy>
     ```
 
-13. Our setup is now ready. Before running the script switch to OCI Console window, from the main menu Click **Compartments** under **Identity**. Click your compartment name and copy the OCID of the compartment. (Just as was done for user OCID earlier).
+13. Our setup is now ready. Before running the script switch to OCI Console window, from the main menu click **Identity** -> **Compartments**. Select your compartment name and copy the OCID of the compartment.
 
-14. Switch to ssh session and run the script, Enter command:
+14. In Cloud Shell, enter:
 
     ```
     <copy>
-    bash
     python ~/stream_example.py <COMPARTMENT_OCID>
     </copy>
     ```
@@ -237,7 +156,9 @@ In this lab, we will create a compute instance, download a script to configure s
 
 15. Follow the prompts of the script. The script will create Streaming service called **SdkExampleStream**. It will publish 100 messages, create 2 groups on the compute and read those messages. Finally it will delete the streaming service. **You will be prompted to hit enter after verifying each step**.
 
-## **Step 4**: Delete the resources
+  ![](images/delete-stream.png)
+
+## **STEP 2**: Delete the resources
 
 1. Switch to OCI console window.
 

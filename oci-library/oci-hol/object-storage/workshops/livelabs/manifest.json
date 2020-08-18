@@ -10,8 +10,8 @@
           "filename": "./../../../intro/intro.md"
       },
       {
-          "title": "Lab 1: Identity Access Management",
-          "filename": "./../../object-storage.md"
+          "title": "Lab 1: Create an Object Storage Service",
+          "filename": "./../../object-storage/object-storage.md"
       }
     ]
 }

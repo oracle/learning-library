@@ -1,4 +1,4 @@
-# Scaling The Application
+# Scaling the Application
 ## Introduction
 
 This lab will show how the application can be scaled at the application and database tiers to maintain optimal performance.
@@ -48,27 +48,17 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 2**: Load test and scale the application tier
 
-1.  Execute a test with 20 virtual users by executing the following command.
+1.  Execute a load test by executing the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 20</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```
 
-    Note the average response time for the requests and the request rate.
+    Note the request rate.
 
-    ![](images/20vus1replica.png " ")
+    ![](images/perf1replica.png " ")
 
-2. Execute a test with 40 virtual users by executing the following command.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 40</copy>
-    ```
-
-   Note the average response time for the requests and the request rate.  Note how the response time has degraded and the request rate has not improved.
-
-   ![](images/40vus1replica.png " ")
-
-3. Scale to 2 service replicas.
+2. Scale to 2 service replicas.
 
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=2 -n msdataworkshop</copy>
@@ -84,27 +74,17 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/2replicas.png " ")
 
-4. Execute the test again with 40 virtual users by executing the following command.
+3. Execute the load test again by executing the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 40</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```
 
    Note the average response time for the requests.  Throughput has increased and response time has returned to normal.
 
-   ![](images/40vus2replica.png " ")
+   ![](images/perf2replica.png " ")
 
-5. Execute a final test with 60 virtual users by executing the following command.
-
-    ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
-    ```
-
-   Note the average response time for the requests and the request rate.  Note how the response time has degraded and the request rate has not improved.
-
-    ![](images/60vus2replica.png " ")
-
-6. Scale to 3 Replicas.
+4. Scale to 3 Replicas.
 
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=3 -n msdataworkshop</copy>
@@ -120,15 +100,15 @@ This lab assumes that you have already completed labs 1 through 4.
 
     ![](images/3replicas.png " ")
 
-7. Re-execute the test with 60 virtual users by executing the following command.
+5. Execute the load test again by executing the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```
 
   Note the median response time for the requests and the request rate.  Note how the response time is still degraded and the request rate has not improved significantly.
 
-   ![](images/60vus3replica1dbocpu.png " ")
+   ![](images/perf3replica.png " ")
 
 ## **STEP 3**: Load test and scale the database tier
 
@@ -146,15 +126,15 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/ScaleTo2dbocpuScreen3.png " ")
 
-4. Re-execute the test with 60 virtual users by executing the following command.
+4. Execute the load test by executing the following command.
 
     ```
-    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh 60</copy>
+    <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```
 
-   Note the median response time for the requests and the request rate.  Throughput has increased and response time has improved.
+   Note the request rate.  Throughput has increased.
 
-   ![](images/60vus3replica2dbocpu.png " ")
+   ![](images/perf3replica2dbocpu.png " ")
 
 ## **STEP 4**: Scale down the application and database tiers
 
@@ -168,11 +148,7 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/ScaleTo1dbocpuScreen2.png " ")
 
-3. Wait until the scaling has completed (Lifecycle State: Available).
-
-   ![](images/ScaleTo1dbocpuScreen3.png " ")
-
-4. Scale the order-helidon service back to 1 replica.
+3. Scale the order-helidon service back to 1 replica.
 
     ```
     <copy>kubectl scale deployment.apps/order-helidon --replicas=1 -n msdataworkshop</copy>

@@ -16,7 +16,7 @@
         },
         {
             "title": "Lab 2: Configuring NAT Gateway for Private Compute Instance",
-            "filename": "./../../nat-gateway.md"
+            "filename": "./../../nat-gateway/nat-gateway.md"
         }
     ]
 }

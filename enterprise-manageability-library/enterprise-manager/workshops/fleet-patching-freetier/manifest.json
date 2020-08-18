@@ -1,0 +1,37 @@
+{
+  "tutorials": [
+    {
+         "title": "Prerequisites",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+     },
+    {
+      "title": "Introduction",
+      "description": "Introduction to Automated Database Patching at Scale with Fleet Maintenance Workshop",
+      "filename": "./../../intro/intro-fleet-patching.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "Setup compute instance running EM 13.3 with pre-configured database targets using Terraform script and Resource Manager",
+      "publisheddate": "7/16/2020",
+      "filename": "./../../setup-compute/setup-compute.md"
+    },
+    {
+      "title": "Lab 3: Automated Database Patching at Scale with Fleet Maintenance",
+      "description": "This lab walks you through the steps needed with Fleet Maintenance to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
+      "publisheddate": "7/16/2020",
+      "filename": "./../../em-fleet-maintenance-patching/em-fleet-maintenance-patching.md"
+    },
+    {
+      "title": "Appendix: Frequently Asked Questions (FAQ)",
+      "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
+      "publisheddate": "8/12/2020",
+      "filename": "./../../faq/faq.md"
+    }
+  ]
+}

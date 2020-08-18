@@ -1,0 +1,37 @@
+{
+  "tutorials": [
+    {
+         "title": "Prerequisites",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+     },
+    {
+      "title": "Introduction",
+      "description": "Introduction to Database Performance Management Workshop",
+      "filename": "./../../intro/intro-find-fix-validate.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "Setup compute instance running EM 13.3 with pre-configured database targets using Terraform script and Resource Manager",
+      "publisheddate": "7/16/2020",
+      "filename": "./../../setup-compute/setup-compute.md"
+    },
+    {
+      "title": "Lab 3: Database Performance Management: Find-Fix-Validate",
+      "description": "The objective is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud",
+      "publisheddate": "7/16/2020",
+      "filename": "./../../em-find-fix-validate/em-find-fix-validate.md"
+    },
+    {
+      "title": "Appendix: Frequently Asked Questions (FAQ)",
+      "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
+      "publisheddate": "8/12/2020",
+      "filename": "./../../faq/faq.md"
+    }
+  ]
+}
