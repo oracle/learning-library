@@ -12,17 +12,17 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
         },
         {
-            "title": "Build a DB System",
+            "title": "Lab 2: Build a DB System",
             "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
             "filename": "./setup/setup-compute.md"
         },
         {
-            "title": "Clusterware and Fencing",
+            "title": "Lab 3: Clusterware and Fencing",
             "description": "This lab walks you through clusterwarwe reconfigurations and node fencing.",
             "filename": "./clusterware/test_gi.md"
         },
         {
-            "title": "Fast Application Notification",
+            "title": "Lab 4: Fast Application Notification",
             "description": "This lab examines FAN events.",
             "filename": "./clusterware/fan_callouts.md"
         }
