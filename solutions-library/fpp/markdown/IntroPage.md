@@ -44,35 +44,34 @@ For many more details and an extensive review of FPP, please see the '*Oracle Fl
 
 1. [How to install your FPP server](01-createrhps.md)
 2. [How to create your first FPP client](02-addrhpc.md)
-
-### Section 2 - Creating Gold Images and Workingcopies
-
+  
+### Section 2 - Creating Gold Images and Workingcopies. 
+  
 3. [How to create your first FPP gold 'Image' (GI Home)](03-importgiimage.md)
 4. [How to deploy your first GI home from your new gold Image](04-addgiwc.md)
 8. [How to create (import) a DB image](08-importdbimage.md)
 9. [How to deploy (add) a new DB workingcopy](09-adddbwc.md)
-
-### Section 3 - Patching - GI and DB
-
+  
+### Section 3 - Patching - GI and DB. 
+  
 5. [How to patch your GI using your new GI home](05-movegihome.md)
 7. [How to patch your DB ](07-patchdb.md)
-
-
-### Section 4 - Upgrades - GI and DB
-
+  
+### Section 4 - Upgrades - GI and DB.  
+  
 10. [How to upgrade your GI (18.6 to 19.5)](10-upgradegi.md)
 11. [How to upgrade your DB (12.1 to 19.4)](11-upgradedb.md)
-
-### Section 5 - Misc Topics
-
+  
+### Section 5 - Misc Topics  
+  
 99. [How to use Vagrant to create a test/demo FPP lab](OracleFPP_Vagrant/99-FPPonVagrant.md)
 6. [Quick example of using FPP's Command-line Help](06-onlinehelp.md)
-
+  
 
 We hope you find these guides helpful and a productive start for your new FPP framework.
-
+  
 Simply click on the links above for the details of the HowTo of your interest.
-
+  
 
 
 

@@ -1,4 +1,4 @@
-#This is the Dev git home for the RAC Pack's 
+#This is the new git home for the RAC Pack's 
 #[FPP Online Tutorials](markdown/IntroPage.md)
 
 
