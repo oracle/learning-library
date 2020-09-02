@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Create a Virtual Machine Instance Using Oracle Cloud Infrastructure Compute",
+            "description": "Learn how to create a Virtual Machine (VM) instance using Oracle Cloud Infrastructure (OCI) Compute Service. Before you can create a VM, you'll create a Virual Cloud Network (VCN).",
+            "filename": "content.md"
+        }
+    ]
+}

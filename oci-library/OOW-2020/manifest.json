@@ -1,0 +1,8 @@
+{
+    "tutorials": [
+        {   
+	    "title": "Mushop and Rancher Lab",         
+            "filename": "./OKE-Rancher/OKE-Rancher_HOL.md"
+        }
+    ]
+}

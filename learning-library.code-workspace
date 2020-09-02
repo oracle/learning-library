@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "learning-library",
+			"path": "."
+		},
+		{
+			"path": "../../../../Volumes/BREVM/github/developer-library/goldengate/goldengateforbigdata/golden-gate-for-big-data-workshop/images/All"
+		},
+		{
+			"path": "../GGMicroservices/images"
+		},
+		{
+			"path": "../GGMicroservices/Scripts"
+		}
+	],
+	"settings": {}
+}

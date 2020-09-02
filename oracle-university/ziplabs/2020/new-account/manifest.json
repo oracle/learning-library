@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Access an Oracle Cloud Free Tier Account",
+            "description": "Learn how to get an Oracle Cloud Free Tier account and signing in.",
+            "filename": "content.md"
+        }
+    ]
+}

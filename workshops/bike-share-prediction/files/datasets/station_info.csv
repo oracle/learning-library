@@ -1,0 +1,451 @@
+"TIMESTAMP","STATION_ID","STATION_NAME","LAT","LON","REGION_ID","NEIGHBORHOOD","TOTALDOCKS","BOROUGH","BOROUGHCODE"
+20-FEB-09,402,"Broadway & E 22 St",40.7403432,-73.98955109,71,"Flatiron District",39,"Manhattan",1
+20-FEB-09,444,"Broadway & W 24 St",40.7423543,-73.98915076,71,"Flatiron District",52,"Manhattan",1
+20-FEB-09,466,"W 25 St & 6 Ave",40.74395411,-73.99144871,71,"Flatiron District",35,"Manhattan",1
+20-FEB-09,491,"E 24 St & Park Ave S",40.74096374,-73.98602213,71,"Flatiron District",53,"Manhattan",1
+20-FEB-09,465,"Broadway & W 41 St",40.75513557,-73.98658032,71,"Theater District",39,"Manhattan",1
+20-FEB-09,477,"W 41 St & 8 Ave",40.75640548,-73.9900262,71,"Theater District",59,"Manhattan",1
+20-FEB-09,500,"Broadway & W 51 St",40.76228826,-73.98336183,71,"Theater District",52,"Manhattan",1
+20-FEB-09,244,"Willoughby Ave & Hall St",40.69196035,-73.96536851,71,"Clinton Hill",31,"Brooklyn",3
+20-FEB-09,258,"DeKalb Ave & Vanderbilt Ave",40.68940747,-73.96885458,71,"Clinton Hill",23,"Brooklyn",3
+20-FEB-09,275,"Washington Ave & Greene Ave",40.68650065,-73.96563307,71,"Clinton Hill",19,"Brooklyn",3
+20-FEB-09,313,"Washington Ave & Park Ave",40.69610226,-73.96751037,71,"Clinton Hill",23,"Brooklyn",3
+20-FEB-09,354,"Emerson Pl & Myrtle Ave",40.69363137,-73.96223558,71,"Clinton Hill",23,"Brooklyn",3
+20-FEB-09,364,"Lafayette Ave & Classon Ave",40.68900443,-73.96023854,71,"Clinton Hill",27,"Brooklyn",3
+20-FEB-09,365,"Fulton St & Grand Ave",40.68223166,-73.9614583,71,"Clinton Hill",31,"Brooklyn",3
+20-FEB-09,366,"Clinton Ave & Myrtle Ave",40.693261,-73.968896,71,"Clinton Hill",33,"Brooklyn",3
+20-FEB-09,384,"Fulton St & Washington Ave",40.683048,-73.964915,71,"Clinton Hill",31,"Brooklyn",3
+20-FEB-09,399,"Lafayette Ave & St James Pl",40.68851534,-73.9647628,71,"Clinton Hill",27,"Brooklyn",3
+20-FEB-09,3049,"Cambridge Pl & Gates Ave",40.68488,-73.96304,71,"Clinton Hill",18,"Brooklyn",3
+20-FEB-09,146,"Hudson St & Reade St",40.71625008,-74.0091059,71,"Tribeca",39,"Manhattan",1
+20-FEB-09,152,"Warren St & Church St",40.71473993,-74.00910627,71,"Tribeca",29,"Manhattan",1
+20-FEB-09,248,"Laight St & Hudson St",40.72185379,-74.00771779,71,"Tribeca",23,"Manhattan",1
+20-FEB-09,249,"Harrison St & Hudson St",40.71870987,-74.0090009,71,"Tribeca",27,"Manhattan",1
+20-FEB-09,257,"Lispenard St & Broadway",40.71939226,-74.00247214,71,"Tribeca",39,"Manhattan",1
+20-FEB-09,276,"Duane St & Greenwich St",40.71748752,-74.0104554,71,"Tribeca",25,"Manhattan",1
+20-FEB-09,309,"Murray St & West St",40.7149787,-74.013012,71,"Tribeca",41,"Manhattan",1
+20-FEB-09,320,"Leonard St & Church St",40.717571,-74.005549,71,"Tribeca",39,"Manhattan",1
+20-FEB-09,328,"Watts St & Greenwich St",40.72405549,-74.00965965,71,"Tribeca",23,"Manhattan",1
+20-FEB-09,417,"Barclay St & Church St",40.71291224,-74.01020234,71,"Tribeca",23,"Manhattan",1
+20-FEB-09,82,"St James Pl & Pearl St",40.71117416,-74.00016545,71,"Two Bridges",27,"Manhattan",1
+20-FEB-09,408,"Market St & Cherry St",40.71076228,-73.99400398,71,"Two Bridges",23,"Manhattan",1
+20-FEB-09,2009,"Catherine St & Monroe St",40.71117444,-73.99682619,71,"Two Bridges",35,"Manhattan",1
+20-FEB-09,120,"Lexington Ave & Classon Ave",40.68676793,-73.95928168,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,289,"Monroe St & Classon Ave",40.6845683,-73.95881081,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,344,"Monroe St & Bedford Ave",40.6851443,-73.95380904,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,372,"Franklin Ave & Myrtle Ave",40.69454609,-73.95801365,71,"Bedford-Stuyvesant",27,"Brooklyn",3
+20-FEB-09,373,"Willoughby Ave & Walworth St",40.69331716,-73.95381995,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,396,"Lefferts Pl & Franklin Ave",40.68034242,-73.95576894,71,"Bedford-Stuyvesant",25,"Brooklyn",3
+20-FEB-09,409,"DeKalb Ave & Skillman St",40.6906495,-73.95643107,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,436,"Hancock St & Bedford Ave",40.68216564,-73.95399026,71,"Bedford-Stuyvesant",27,"Brooklyn",3
+20-FEB-09,437,"Macon St & Nostrand Ave",40.68098339,-73.95004798,71,"Bedford-Stuyvesant",24,"Brooklyn",3
+20-FEB-09,3041,"Kingston Ave & Herkimer St",40.67890679,-73.94142771,71,"Bedford-Stuyvesant",24,"Brooklyn",3
+20-FEB-09,3042,"Fulton St & Utica Ave",40.6794268,-73.9298911,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3043,"Lewis Ave & Decatur St",40.6814598,-73.934903,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3044,"Albany Ave & Fulton St",40.6800105,-73.938475,71,"Bedford-Stuyvesant",27,"Brooklyn",3
+20-FEB-09,3046,"Marcus Garvey Blvd & Macon St",40.682601,-73.938037,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3047,"Halsey St & Tompkins Ave",40.6823687,-73.944118,71,"Bedford-Stuyvesant",21,"Brooklyn",3
+20-FEB-09,3048,"Putnam Ave & Nostrand Ave",40.68402,-73.94977,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3050,"Putnam Ave & Throop Ave",40.6851532,-73.94111,71,"Bedford-Stuyvesant",21,"Brooklyn",3
+20-FEB-09,3052,"Lewis Ave & Madison St",40.686312,-73.935775,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,3053,"Marcy Ave & Lafayette Ave",40.6900815,-73.947915,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,3054,"Greene Ave & Throop Ave",40.6894932,-73.942061,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3055,"Greene Ave & Nostrand Ave",40.6883337,-73.950916,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,3056,"Kosciuszko St & Nostrand Ave",40.69072549,-73.95133465,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,3057,"Kosciuszko St & Tompkins Ave",40.69128258,-73.9452416,71,"Bedford-Stuyvesant",18,"Brooklyn",3
+20-FEB-09,3058,"Lewis Ave & Kosciuszko St",40.69237074,-73.93705428,71,"Bedford-Stuyvesant",24,"Brooklyn",3
+20-FEB-09,3059,"Pulaski St & Marcus Garvey Blvd",40.6933982,-73.939877,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3060,"Willoughby Ave & Tompkins Ave",40.69425403,-73.94626915,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3061,"Throop Ave & Myrtle Ave",40.69622937,-73.94371094,71,"Bedford-Stuyvesant",21,"Brooklyn",3
+20-FEB-09,3062,"Myrtle Ave & Marcy Ave",40.69539817,-73.94954908,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,3063,"Nostrand Ave & Myrtle Ave",40.69527008,-73.95238108,71,"Bedford-Stuyvesant",20,"Brooklyn",3
+20-FEB-09,3064,"Myrtle Ave & Lewis Ave",40.69681963,-73.93756926,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,3066,"Tompkins Ave & Hopkins St",40.69957608,-73.94708417,71,"Bedford-Stuyvesant",18,"Brooklyn",3
+20-FEB-09,3179,"Park Ave & Marcus Garvey Blvd",40.698617,-73.941342,71,"Bedford-Stuyvesant",23,"Brooklyn",3
+20-FEB-09,3241,"Monroe St & Tompkins Ave",40.686203,-73.944694,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,3249,"Verona Pl & Fulton St",40.68035608,-73.9476791,71,"Bedford-Stuyvesant",19,"Brooklyn",3
+20-FEB-09,310,"State St & Smith St",40.68926942,-73.98912867,71,"Boerum Hill",36,"Brooklyn",3
+20-FEB-09,395,"Bond St & Schermerhorn St",40.68807003,-73.98410637,71,"Boerum Hill",30,"Brooklyn",3
+20-FEB-09,143,"Clinton St & Joralemon St",40.69239502,-73.99337909,71,"Brooklyn Heights",24,"Brooklyn",3
+20-FEB-09,157,"Henry St & Atlantic Ave",40.69089272,-73.99612349,71,"Brooklyn Heights",23,"Brooklyn",3
+20-FEB-09,216,"Columbia Heights & Cranberry St",40.70037867,-73.99548059,71,"Brooklyn Heights",23,"Brooklyn",3
+20-FEB-09,314,"Cadman Plaza West & Montague St",40.69383,-73.990539,71,"Brooklyn Heights",39,"Brooklyn",3
+20-FEB-09,322,"Clinton St & Tillary St",40.696192,-73.991218,71,"Brooklyn Heights",31,"Brooklyn",3
+20-FEB-09,391,"Clark St & Henry St",40.69760127,-73.99344559,71,"Brooklyn Heights",31,"Brooklyn",3
+20-FEB-09,406,"Hicks St & Montague St",40.69512845,-73.99595065,71,"Brooklyn Heights",34,"Brooklyn",3
+20-FEB-09,407,"Henry St & Poplar St",40.700469,-73.991454,71,"Brooklyn Heights",37,"Brooklyn",3
+20-FEB-09,3180,"Brooklyn Bridge Park - Pier 2",40.69878,-73.99712,71,"Brooklyn Heights",31,"Brooklyn",3
+20-FEB-09,3242,"Schermerhorn St & Court St",40.69102926,-73.99183363,71,"Brooklyn Heights",39,"Brooklyn",3
+20-FEB-09,295,"Pike St & E Broadway",40.71406667,-73.99293911,71,"Chinatown",24,"Manhattan",1
+20-FEB-09,296,"Division St & Bowery",40.71413089,-73.9970468,71,"Chinatown",35,"Manhattan",1
+20-FEB-09,355,"Bayard St & Baxter St",40.71602118,-73.99974372,71,"Chinatown",43,"Manhattan",1
+20-FEB-09,361,"Allen St & Hester St",40.71605866,-73.99190759,71,"Chinatown",43,"Manhattan",1
+20-FEB-09,412,"Forsyth St & Canal St",40.7158155,-73.99422366,71,"Chinatown",29,"Manhattan",1
+20-FEB-09,308,"St James Pl & Oliver St",40.71307916,-73.99851193,71,"Civic Center",27,"Manhattan",1
+20-FEB-09,330,"Reade St & Broadway",40.71450451,-74.00562789,71,"Civic Center",39,"Manhattan",1
+20-FEB-09,386,"Centre St & Worth St",40.71494807,-74.00234482,71,"Civic Center",43,"Manhattan",1
+20-FEB-09,387,"Centre St & Chambers St",40.71273266,-74.0046073,71,"Civic Center",39,"Manhattan",1
+20-FEB-09,398,"Atlantic Ave & Furman St",40.69165183,-73.9999786,71,"Columbia St",31,"Brooklyn",3
+20-FEB-09,217,"Old Fulton St",40.70277159,-73.99383605,71,"DUMBO",39,"Brooklyn",3
+20-FEB-09,414,"Pearl St & Anchorage Pl",40.70281858,-73.98765762,71,"DUMBO",24,"Brooklyn",3
+20-FEB-09,2000,"Front St & Washington St",40.70255088,-73.98940236,71,"DUMBO",30,"Brooklyn",3
+20-FEB-09,232,"Cadman Plaza E & Tillary St",40.69597683,-73.99014892,71,"Downtown Brooklyn",23,"Brooklyn",3
+20-FEB-09,261,"Johnson St & Gold St",40.69474881,-73.98362464,71,"Downtown Brooklyn",27,"Brooklyn",3
+20-FEB-09,278,"Concord St & Bridge St",40.69766564,-73.98476437,71,"Downtown Brooklyn",19,"Brooklyn",3
+20-FEB-09,321,"Cadman Plaza E & Red Cross Pl",40.69991755,-73.98971773,71,"Downtown Brooklyn",27,"Brooklyn",3
+20-FEB-09,323,"Lawrence St & Willoughby St",40.69236178,-73.98631746,71,"Downtown Brooklyn",39,"Brooklyn",3
+20-FEB-09,390,"Duffield St & Willoughby St",40.69221589,-73.9842844,71,"Downtown Brooklyn",31,"Brooklyn",3
+20-FEB-09,392,"Jay St & Tech Pl",40.695065,-73.987167,71,"Downtown Brooklyn",35,"Brooklyn",3
+20-FEB-09,3232,"Bond St & Fulton St",40.68962189,-73.98304269,71,"Downtown Brooklyn",31,"Brooklyn",3
+20-FEB-09,83,"Atlantic Ave & Fort Greene Pl",40.68382604,-73.97632328,71,"Fort Greene",62,"Brooklyn",3
+20-FEB-09,119,"Park Ave & St Edwards St",40.69608941,-73.97803415,71,"Fort Greene",19,"Brooklyn",3
+20-FEB-09,239,"Willoughby St & Fleet St",40.69196566,-73.9813018,71,"Fort Greene",31,"Brooklyn",3
+20-FEB-09,241,"DeKalb Ave & S Portland Ave",40.68981035,-73.97493121,71,"Fort Greene",23,"Brooklyn",3
+20-FEB-09,242,"Carlton Ave & Flushing Ave",40.697787,-73.973736,71,"Fort Greene",23,"Brooklyn",3
+20-FEB-09,243,"Fulton St & Rockwell Pl",40.688226,-73.979382,71,"Fort Greene",31,"Brooklyn",3
+20-FEB-09,245,"Myrtle Ave & St Edwards St",40.69327018,-73.97703874,71,"Fort Greene",23,"Brooklyn",3
+20-FEB-09,262,"Washington Park",40.6917823,-73.9737299,71,"Fort Greene",24,"Brooklyn",3
+20-FEB-09,274,"Lafayette Ave & Fort Greene Pl",40.68691865,-73.976682,71,"Fort Greene",31,"Brooklyn",3
+20-FEB-09,324,"DeKalb Ave & Hudson Ave",40.689888,-73.981013,71,"Fort Greene",51,"Brooklyn",3
+20-FEB-09,353,"S Portland Ave & Hanson Pl",40.68539567,-73.97431458,71,"Fort Greene",27,"Brooklyn",3
+20-FEB-09,397,"Fulton St & Clermont Ave",40.68415748,-73.96922273,71,"Fort Greene",27,"Brooklyn",3
+20-FEB-09,416,"Cumberland St & Lafayette Ave",40.68753406,-73.97265183,71,"Fort Greene",31,"Brooklyn",3
+20-FEB-09,419,"Carlton Ave & Park Ave",40.69580705,-73.97355569,71,"Fort Greene",23,"Brooklyn",3
+20-FEB-09,297,"E 15 St & 3 Ave",40.734232,-73.986923,71,"Gramercy",27,"Manhattan",1
+20-FEB-09,325,"E 19 St & 3 Ave",40.73624527,-73.98473765,71,"Gramercy",35,"Manhattan",1
+20-FEB-09,461,"E 20 St & 2 Ave",40.73587678,-73.98205027,71,"Gramercy",39,"Manhattan",1
+20-FEB-09,497,"E 17 St & Broadway",40.73704984,-73.99009296,71,"Gramercy",59,"Manhattan",1
+20-FEB-09,503,"E 20 St & Park Ave",40.73827428,-73.98751968,71,"Gramercy",29,"Manhattan",1
+20-FEB-09,3260,"Mercer St & Bleecker St",40.72706363,-73.99662137,71,"Greenwich Village",31,"Manhattan",1
+20-FEB-09,161,"LaGuardia Pl & W 3 St",40.72917025,-73.99810231,71,"Greenwich Village",35,"Manhattan",1
+20-FEB-09,252,"MacDougal St & Washington Sq",40.73226398,-73.99852205,71,"Greenwich Village",33,"Manhattan",1
+20-FEB-09,253,"W 13 St & 5 Ave",40.73543934,-73.99453948,71,"Greenwich Village",55,"Manhattan",1
+20-FEB-09,254,"W 11 St & 6 Ave",40.73532427,-73.99800419,71,"Greenwich Village",31,"Manhattan",1
+20-FEB-09,335,"Washington Pl & Broadway",40.72903917,-73.99404649,71,"Greenwich Village",27,"Manhattan",1
+20-FEB-09,336,"Sullivan St & Washington Sq",40.73047747,-73.99906065,71,"Greenwich Village",36,"Manhattan",1
+20-FEB-09,345,"W 13 St & 6 Ave",40.73649403,-73.99704374,71,"Greenwich Village",35,"Manhattan",1
+20-FEB-09,357,"E 11 St & Broadway",40.73261787,-73.99158043,71,"Greenwich Village",27,"Manhattan",1
+20-FEB-09,369,"Washington Pl & 6 Ave",40.73224119,-74.00026394,71,"Greenwich Village",35,"Manhattan",1
+20-FEB-09,382,"University Pl & E 14 St",40.73492695,-73.99200509,71,"Greenwich Village",36,"Manhattan",1
+20-FEB-09,267,"Broadway & W 36 St",40.75097711,-73.98765428,71,"Midtown",57,"Manhattan",1
+20-FEB-09,362,"Broadway & W 37 St",40.75172632,-73.98753523,71,"Midtown",57,"Manhattan",1
+20-FEB-09,457,"Broadway & W 58 St",40.76695317,-73.98169333,71,"Midtown",39,"Manhattan",1
+20-FEB-09,468,"Broadway & W 56 St",40.7652654,-73.98192338,71,"Midtown",59,"Manhattan",1
+20-FEB-09,469,"Broadway & W 53 St",40.76344058,-73.98268129,71,"Midtown",57,"Manhattan",1
+20-FEB-09,472,"E 32 St & Park Ave",40.7457121,-73.98194829,71,"Midtown",41,"Manhattan",1
+20-FEB-09,474,"5 Ave & E 29 St",40.7451677,-73.98683077,71,"Midtown",39,"Manhattan",1
+20-FEB-09,484,"W 44 St & 5 Ave",40.75500254,-73.98014437,71,"Midtown",44,"Manhattan",1
+20-FEB-09,485,"W 37 St & 5 Ave",40.75038009,-73.98338988,71,"Midtown",39,"Manhattan",1
+20-FEB-09,486,"Broadway & W 29 St",40.7462009,-73.98855723,71,"Midtown",39,"Manhattan",1
+20-FEB-09,498,"Broadway & W 32 St",40.74854862,-73.98808416,71,"Midtown",30,"Manhattan",1
+20-FEB-09,523,"W 38 St & 8 Ave",40.75466591,-73.99138152,71,"Midtown",51,"Manhattan",1
+20-FEB-09,526,"E 33 St & 5 Ave",40.74765947,-73.98490707,71,"Midtown",39,"Manhattan",1
+20-FEB-09,540,"Lexington Ave & E 29 St",40.74311555,-73.98215353,71,"Midtown",30,"Manhattan",1
+20-FEB-09,546,"E 30 St & Park Ave S",40.74444921,-73.98303529,71,"Midtown",38,"Manhattan",1
+20-FEB-09,3235,"E 41 St & Madison Ave",40.75216528,-73.97992194,71,"Midtown",31,"Manhattan",1
+20-FEB-09,164,"E 47 St & 2 Ave",40.75323098,-73.97032517,71,"Midtown",47,"Manhattan",1
+20-FEB-09,228,"E 48 St & 3 Ave",40.7546011,-73.97187886,71,"Midtown",55,"Manhattan",1
+20-FEB-09,281,"Grand Army Plaza & Central Park S",40.7643971,-73.97371465,71,"Midtown",57,"Manhattan",1
+20-FEB-09,305,"E 58 St & 3 Ave",40.76095756,-73.96724467,71,"Midtown",33,"Manhattan",1
+20-FEB-09,359,"E 47 St & Park Ave",40.75510267,-73.97498696,71,"Midtown",53,"Manhattan",1
+20-FEB-09,385,"E 55 St & 2 Ave",40.75797322,-73.96603308,71,"Midtown",29,"Manhattan",1
+20-FEB-09,440,"E 45 St & 3 Ave",40.75255434,-73.97282625,71,"Midtown",32,"Manhattan",1
+20-FEB-09,441,"E 52 St & 2 Ave",40.756014,-73.967416,71,"Midtown",35,"Manhattan",1
+20-FEB-09,454,"E 51 St & 1 Ave",40.75455731,-73.96592976,71,"Midtown",35,"Manhattan",1
+20-FEB-09,455,"1 Ave & E 44 St",40.75001986,-73.96905301,71,"Midtown",39,"Manhattan",1
+20-FEB-09,456,"E 53 St & Madison Ave",40.7597108,-73.97402311,71,"Midtown",35,"Manhattan",1
+20-FEB-09,516,"E 47 St & 1 Ave",40.75206862,-73.96784384,71,"Midtown",31,"Manhattan",1
+20-FEB-09,520,"W 52 St & 5 Ave",40.75992262,-73.97648516,71,"Midtown",39,"Manhattan",1
+20-FEB-09,522,"E 51 St & Lexington Ave",40.75714758,-73.97207836,71,"Midtown",51,"Manhattan",1
+20-FEB-09,2023,"E 55 St & Lexington Ave",40.75968085,-73.97031366,71,"Midtown",36,"Manhattan",1
+20-FEB-09,3223,"E 55 St & 3 Ave",40.75899656,-73.96865398,71,"Midtown",54,"Manhattan",1
+20-FEB-09,3233,"E 48 St & 5 Ave",40.75724568,-73.97805914,71,"Midtown",39,"Manhattan",1
+20-FEB-09,3243,"E 58 St & 1 Ave",40.75892386,-73.96226227,71,"Midtown",29,"Manhattan",1
+20-FEB-09,229,"Great Jones St",40.72743423,-73.99379025,71,"NoHo",23,"Manhattan",1
+20-FEB-09,467,"Dean St & 4 Ave",40.68312489,-73.97895137,71,"Park Slope",34,"Brooklyn",3
+20-FEB-09,2022,"E 60 St & York Ave",40.759107,-73.959223,71,"Upper East Side",33,"Manhattan",1
+20-FEB-09,3131,"E 68 St & 3 Ave",40.7671284,-73.96224618,71,"Upper East Side",31,"Manhattan",1
+20-FEB-09,3132,"E 59 St & Madison Ave",40.76350532,-73.97109243,71,"Upper East Side",35,"Manhattan",1
+20-FEB-09,3134,"3 Ave & E 62 St",40.76312584,-73.96526895,71,"Upper East Side",51,"Manhattan",1
+20-FEB-09,3135,"E 75 St & 3 Ave",40.77112927,-73.95772297,71,"Upper East Side",41,"Manhattan",1
+20-FEB-09,3139,"E 72 St & Park Ave",40.77118288,-73.96409422,71,"Upper East Side",43,"Manhattan",1
+20-FEB-09,3140,"1 Ave & E 78 St",40.77140426,-73.9535166,71,"Upper East Side",55,"Manhattan",1
+20-FEB-09,3141,"1 Ave & E 68 St",40.76500525,-73.95818491,71,"Upper East Side",59,"Manhattan",1
+20-FEB-09,3144,"E 81 St & Park Ave",40.77677702,-73.9590097,71,"Upper East Side",46,"Manhattan",1
+20-FEB-09,3145,"E 84 St & Park Ave",40.77862688,-73.95772073,71,"Upper East Side",45,"Manhattan",1
+20-FEB-09,3147,"E 85 St & 3 Ave",40.77801203,-73.95407149,71,"Upper East Side",39,"Manhattan",1
+20-FEB-09,3156,"E 72 St & York Ave",40.76663814,-73.95348296,71,"Upper East Side",39,"Manhattan",1
+20-FEB-09,3157,"East End Ave & E 86 St",40.77518615,-73.94446054,71,"Upper East Side",27,"Manhattan",1
+20-FEB-09,3231,"E 67 St & Park Ave",40.7678008,-73.96592081,71,"Upper East Side",39,"Manhattan",1
+20-FEB-09,3238,"E 80 St & 2 Ave",40.7739139,-73.95439535,71,"Upper East Side",37,"Manhattan",1
+20-FEB-09,327,"Vesey Pl & River Terrace",40.7153379,-74.01658354,71,"Battery Park City",39,"Manhattan",1
+20-FEB-09,363,"West Thames St",40.70834698,-74.01713445,71,"Battery Park City",49,"Manhattan",1
+20-FEB-09,426,"West St & Chambers St",40.71754834,-74.01322069,71,"Battery Park City",30,"Manhattan",1
+20-FEB-09,2008,"Little West St & 1 Pl",40.70569254,-74.01677685,71,"Battery Park City",24,"Manhattan",1
+20-FEB-09,3002,"South End Ave & Liberty St",40.711512,-74.015756,71,"Battery Park City",25,"Manhattan",1
+20-FEB-09,2006,"Central Park S & 6 Ave",40.76590936,-73.97634151,71,"Central Park",49,"Manhattan",1
+20-FEB-09,3137,"5 Ave & E 73 St",40.77282817,-73.96685276,71,"Central Park",31,"Manhattan",1
+20-FEB-09,3160,"Central Park West & W 76 St",40.77896784,-73.97374737,71,"Central Park",39,"Manhattan",1
+20-FEB-09,3163,"Central Park West & W 68 St",40.7734066,-73.97782542,71,"Central Park",43,"Manhattan",1
+20-FEB-09,3165,"Central Park West & W 72 St",40.77579377,-73.97620574,71,"Central Park",51,"Manhattan",1
+20-FEB-09,3168,"Central Park West & W 85 St",40.78472675,-73.96961715,71,"Central Park",31,"Manhattan",1
+20-FEB-09,116,"W 17 St & 8 Ave",40.74177603,-74.00149746,71,"Chelsea",39,"Manhattan",1
+20-FEB-09,168,"W 18 St & 6 Ave",40.73971301,-73.99456405,71,"Chelsea",47,"Manhattan",1
+20-FEB-09,212,"W 16 St & The High Line",40.74334935,-74.00681753,71,"Chelsea",28,"Manhattan",1
+20-FEB-09,334,"W 20 St & 7 Ave",40.74238787,-73.99726235,71,"Chelsea",31,"Manhattan",1
+20-FEB-09,379,"W 31 St & 7 Ave",40.749156,-73.9916,71,"Chelsea",42,"Manhattan",1
+20-FEB-09,388,"W 26 St & 10 Ave",40.74971775,-74.00295035,71,"Chelsea",35,"Manhattan",1
+20-FEB-09,434,"9 Ave & W 18 St",40.74317449,-74.00366443,71,"Chelsea",27,"Manhattan",1
+20-FEB-09,435,"W 21 St & 6 Ave",40.74173969,-73.99415556,71,"Chelsea",47,"Manhattan",1
+20-FEB-09,446,"W 24 St & 7 Ave",40.74487634,-73.99529885,71,"Chelsea",39,"Manhattan",1
+20-FEB-09,453,"W 22 St & 8 Ave",40.74475148,-73.99915362,71,"Chelsea",39,"Manhattan",1
+20-FEB-09,458,"11 Ave & W 27 St",40.751396,-74.005226,71,"Chelsea",31,"Manhattan",1
+20-FEB-09,459,"W 20 St & 11 Ave",40.746745,-74.007756,71,"Chelsea",49,"Manhattan",1
+20-FEB-09,462,"W 22 St & 10 Ave",40.74691959,-74.00451887,71,"Chelsea",47,"Manhattan",1
+20-FEB-09,470,"W 20 St & 8 Ave",40.74345335,-74.00004031,71,"Chelsea",37,"Manhattan",1
+20-FEB-09,482,"W 15 St & 7 Ave",40.73935542,-73.99931783,71,"Chelsea",39,"Manhattan",1
+20-FEB-09,490,"8 Ave & W 33 St",40.751551,-73.993934,71,"Chelsea",59,"Manhattan",1
+20-FEB-09,492,"W 33 St & 7 Ave",40.75019995,-73.99093085,71,"Chelsea",49,"Manhattan",1
+20-FEB-09,494,"W 26 St & 8 Ave",40.74734825,-73.99723551,71,"Chelsea",35,"Manhattan",1
+20-FEB-09,496,"E 16 St & 5 Ave",40.73726186,-73.99238967,71,"Chelsea",47,"Manhattan",1
+20-FEB-09,505,"6 Ave & W 33 St",40.74901271,-73.98848395,71,"Chelsea",36,"Manhattan",1
+20-FEB-09,509,"9 Ave & W 22 St",40.7454973,-74.00197139,71,"Chelsea",36,"Manhattan",1
+20-FEB-09,3255,"8 Ave & W 31 St",40.75058535,-73.99468482,71,"Chelsea",19,"Manhattan",1
+20-FEB-09,3258,"W 27 St & 10 Ave",40.75018156,-74.00218427,71,"Chelsea",37,"Manhattan",1
+20-FEB-09,3259,"9 Ave & W 28 St",40.74937024,-73.99923384,71,"Chelsea",27,"Manhattan",1
+20-FEB-09,3263,"Cooper Square & E 7 St",40.7292365,-73.99086803,71,"East Village",59,"Manhattan",1
+20-FEB-09,150,"E 2 St & Avenue C",40.7208736,-73.98085795,71,"East Village",31,"Manhattan",1
+20-FEB-09,236,"St Marks Pl & 2 Ave",40.7284186,-73.98713956,71,"East Village",39,"Manhattan",1
+20-FEB-09,237,"E 11 St & 2 Ave",40.73047309,-73.98672378,71,"East Village",39,"Manhattan",1
+20-FEB-09,285,"Broadway & E 14 St",40.73454567,-73.99074142,71,"East Village",51,"Manhattan",1
+20-FEB-09,293,"Lafayette St & E 8 St",40.73020661,-73.99102628,71,"East Village",55,"Manhattan",1
+20-FEB-09,301,"E 2 St & Avenue B",40.72217444,-73.98368779,71,"East Village",37,"Manhattan",1
+20-FEB-09,326,"E 11 St & 1 Ave",40.72953837,-73.98426726,71,"East Village",27,"Manhattan",1
+20-FEB-09,393,"E 5 St & Avenue C",40.72299208,-73.97995466,71,"East Village",31,"Manhattan",1
+20-FEB-09,403,"E 2 St & 2 Ave",40.72502876,-73.99069656,71,"East Village",31,"Manhattan",1
+20-FEB-09,428,"E 3 St & 1 Ave",40.72467721,-73.98783413,71,"East Village",31,"Manhattan",1
+20-FEB-09,432,"E 7 St & Avenue A",40.72621788,-73.98379855,71,"East Village",29,"Manhattan",1
+20-FEB-09,433,"E 13 St & Avenue A",40.72955361,-73.98057249,71,"East Village",39,"Manhattan",1
+20-FEB-09,438,"St Marks Pl & 1 Ave",40.72779126,-73.98564945,71,"East Village",31,"Manhattan",1
+20-FEB-09,445,"E 10 St & Avenue A",40.72740794,-73.98142006,71,"East Village",42,"Manhattan",1
+20-FEB-09,266,"Avenue D & E 8 St",40.72368361,-73.97574813,71,"East Village",24,"Manhattan",1
+20-FEB-09,302,"Avenue D & E 3 St",40.72082834,-73.97793172,71,"East Village",23,"Manhattan",1
+20-FEB-09,339,"Avenue D & E 12 St",40.72580614,-73.97422494,71,"East Village",24,"Manhattan",1
+20-FEB-09,394,"E 9 St & Avenue C",40.72521311,-73.97768752,71,"East Village",32,"Manhattan",1
+20-FEB-09,411,"E 6 St & Avenue D",40.72228087,-73.97668709,71,"East Village",23,"Manhattan",1
+20-FEB-09,259,"South St & Whitehall St",40.70122128,-74.01234218,71,"Financial District",39,"Manhattan",1
+20-FEB-09,260,"Broad St & Bridge St",40.70365182,-74.01167797,71,"Financial District",35,"Manhattan",1
+20-FEB-09,304,"Broadway & Battery Pl",40.70463334,-74.01361706,71,"Financial District",33,"Manhattan",1
+20-FEB-09,315,"South St & Gouverneur Ln",40.70355377,-74.00670227,71,"Financial District",29,"Manhattan",1
+20-FEB-09,337,"Old Slip & Front St",40.7037992,-74.00838676,71,"Financial District",37,"Manhattan",1
+20-FEB-09,351,"Front St & Maiden Ln",40.70530954,-74.00612572,71,"Financial District",39,"Manhattan",1
+20-FEB-09,415,"Pearl St & Hanover Square",40.7047177,-74.00926027,71,"Financial District",42,"Manhattan",1
+20-FEB-09,427,"Bus Slip & State St",40.701907,-74.013942,71,"Financial District",47,"Manhattan",1
+20-FEB-09,534,"Water - Whitehall Plaza",40.70255065,-74.0127234,71,"Financial District",31,"Manhattan",1
+20-FEB-09,195,"Liberty St & Broadway",40.70905623,-74.01043382,71,"Financial District",45,"Manhattan",1
+20-FEB-09,264,"Maiden Ln & Pearl St",40.70706456,-74.00731853,71,"Financial District",27,"Manhattan",1
+20-FEB-09,279,"Peck Slip & Front St",40.707873,-74.00167,71,"Financial District",36,"Manhattan",1
+20-FEB-09,306,"Cliff St & Fulton St",40.70823502,-74.00530063,71,"Financial District",17,"Manhattan",1
+20-FEB-09,319,"Fulton St & Broadway",40.711066,-74.009447,71,"Financial District",33,"Manhattan",1
+20-FEB-09,360,"William St & Pine St",40.70717936,-74.00887308,71,"Financial District",39,"Manhattan",1
+20-FEB-09,376,"John St & William St",40.70862144,-74.00722156,71,"Financial District",43,"Manhattan",1
+20-FEB-09,3182,"Yankee Ferry Terminal",40.686931,-74.016966,71,"Governors Island",42,"Manhattan",1
+20-FEB-09,3254,"Soissons Landing",40.69231661,-74.01486576,71,"Governors Island",29,"Manhattan",1
+20-FEB-09,3096,"Union Ave & N 12 St",40.71924,-73.95242,71,"Greenpoint",39,"Brooklyn",3
+20-FEB-09,3102,"Driggs Ave & Lorimer St",40.72179134,-73.9504154,71,"Greenpoint",27,"Brooklyn",3
+20-FEB-09,3105,"N 15 St & Wythe Ave",40.724055,-73.955736,71,"Greenpoint",24,"Brooklyn",3
+20-FEB-09,3106,"Driggs Ave & N Henry St",40.72325,-73.94308,71,"Greenpoint",19,"Brooklyn",3
+20-FEB-09,3107,"Bedford Ave & Nassau Ave",40.72311651,-73.95212324,71,"Greenpoint",39,"Brooklyn",3
+20-FEB-09,3108,"Nassau Ave & Russell St",40.72557,-73.94434,71,"Greenpoint",24,"Brooklyn",3
+20-FEB-09,3110,"Meserole Ave & Manhattan Ave",40.72708584,-73.95299117,71,"Greenpoint",27,"Brooklyn",3
+20-FEB-09,3109,"Banker St & Meserole Ave",40.72606,-73.95621,71,"Greenpoint",31,"Brooklyn",3
+20-FEB-09,3112,"Milton St & Franklin St",40.72906,-73.95779,71,"Greenpoint",33,"Brooklyn",3
+20-FEB-09,3113,"Greenpoint Ave & Manhattan Ave",40.73026,-73.95394,71,"Greenpoint",27,"Brooklyn",3
+20-FEB-09,3115,"India St & Manhattan Ave",40.73232194,-73.9550858,71,"Greenpoint",34,"Brooklyn",3
+20-FEB-09,3116,"Huron St & Franklin St",40.73266,-73.95826,71,"Greenpoint",35,"Brooklyn",3
+20-FEB-09,3118,"McGuinness Blvd & Eagle St",40.73555,-73.95284,71,"Greenpoint",30,"Brooklyn",3
+20-FEB-09,72,"W 52 St & 11 Ave",40.76727216,-73.99392888,71,"Hell's Kitchen",39,"Manhattan",1
+20-FEB-09,423,"W 54 St & 9 Ave",40.76584941,-73.98690506,71,"Hell's Kitchen",39,"Manhattan",1
+20-FEB-09,447,"8 Ave & W 52 St",40.76370739,-73.9851615,71,"Hell's Kitchen",31,"Manhattan",1
+20-FEB-09,448,"W 37 St & 10 Ave",40.75660359,-73.9979009,71,"Hell's Kitchen",31,"Manhattan",1
+20-FEB-09,449,"W 52 St & 9 Ave",40.76461837,-73.98789473,71,"Hell's Kitchen",31,"Manhattan",1
+20-FEB-09,450,"W 49 St & 8 Ave",40.76227205,-73.98788205,71,"Hell's Kitchen",59,"Manhattan",1
+20-FEB-09,478,"11 Ave & W 41 St",40.76030096,-73.99884222,71,"Hell's Kitchen",31,"Manhattan",1
+20-FEB-09,479,"9 Ave & W 45 St",40.76019252,-73.9912551,71,"Hell's Kitchen",31,"Manhattan",1
+20-FEB-09,480,"W 53 St & 10 Ave",40.76669671,-73.99061728,71,"Hell's Kitchen",27,"Manhattan",1
+20-FEB-09,495,"W 47 St & 10 Ave",40.76269882,-73.99301222,71,"Hell's Kitchen",25,"Manhattan",1
+20-FEB-09,508,"W 46 St & 11 Ave",40.76341379,-73.99667444,71,"Hell's Kitchen",24,"Manhattan",1
+20-FEB-09,513,"W 56 St & 10 Ave",40.768254,-73.988639,71,"Hell's Kitchen",27,"Manhattan",1
+20-FEB-09,514,"12 Ave & W 40 St",40.76087502,-74.00277668,71,"Hell's Kitchen",52,"Manhattan",1
+20-FEB-09,515,"W 43 St & 10 Ave",40.76009437,-73.99461843,71,"Hell's Kitchen",35,"Manhattan",1
+20-FEB-09,525,"W 34 St & 11 Ave",40.75594159,-74.0021163,71,"Hell's Kitchen",39,"Manhattan",1
+20-FEB-09,529,"W 42 St & 8 Ave",40.7575699,-73.99098507,71,"Hell's Kitchen",41,"Manhattan",1
+20-FEB-09,2021,"W 45 St & 8 Ave",40.75929124,-73.98859651,71,"Hell's Kitchen",43,"Manhattan",1
+20-FEB-09,3236,"W 42 St & Dyer Ave",40.75898481,-73.99379969,71,"Hell's Kitchen",33,"Manhattan",1
+20-FEB-09,476,"E 31 St & 3 Ave",40.74394314,-73.97966069,71,"Kips Bay",47,"Manhattan",1
+20-FEB-09,507,"E 25 St & 2 Ave",40.73912601,-73.97973776,71,"Kips Bay",39,"Manhattan",1
+20-FEB-09,537,"Lexington Ave & E 24 St",40.74025878,-73.98409214,71,"Kips Bay",39,"Manhattan",1
+20-FEB-09,174,"E 25 St & 1 Ave",40.7381765,-73.97738662,71,"Kips Bay",30,"Manhattan",1
+20-FEB-09,527,"E 33 St & 2 Ave",40.744023,-73.976056,71,"Kips Bay",59,"Manhattan",1
+20-FEB-09,528,"2 Ave & E 31 St",40.74290902,-73.97706058,71,"Kips Bay",39,"Manhattan",1
+20-FEB-09,536,"1 Ave & E 30 St",40.74144387,-73.97536082,71,"Kips Bay",29,"Manhattan",1
+20-FEB-09,2012,"E 27 St & 1 Ave",40.739445,-73.976806,71,"Kips Bay",36,"Manhattan",1
+20-FEB-09,3119,"Vernon Blvd & 50 Ave",40.74232744,-73.95411749,71,"Long Island City",45,"Queens",4
+20-FEB-09,3120,"Center Blvd & Borden Ave",40.74161,-73.96044,71,"Long Island City",20,"Queens",4
+20-FEB-09,3121,"Jackson Ave & 46 Rd",40.74524768,-73.94733276,71,"Long Island City",27,"Queens",4
+20-FEB-09,3122,"48 Ave & 5 St",40.74436329,-73.95587325,71,"Long Island City",31,"Queens",4
+20-FEB-09,3123,"31 St & Thomson Ave",40.74469738,-73.93540375,71,"Long Island City",27,"Queens",4
+20-FEB-09,3124,"46 Ave & 5 St",40.74731,-73.95451,71,"Long Island City",27,"Queens",4
+20-FEB-09,3125,"45 Rd & 11 St",40.74708586,-73.94977234,71,"Long Island City",23,"Queens",4
+20-FEB-09,3126,"44 Dr & Jackson Ave",40.74718234,-73.9432635,71,"Long Island City",34,"Queens",4
+20-FEB-09,3127,"9 St & 44 Rd",40.74966,-73.9521,71,"Long Island City",35,"Queens",4
+20-FEB-09,3128,"21 St & 43 Ave",40.75052534,-73.94594845,71,"Long Island City",23,"Queens",4
+20-FEB-09,3129,"Queens Plaza North & Crescent St",40.75110165,-73.94073717,71,"Long Island City",31,"Queens",4
+20-FEB-09,3130,"21 St & Queens Plaza North",40.75325964,-73.94335788,71,"Long Island City",31,"Queens",4
+20-FEB-09,3221,"47 Ave & 31 St",40.743,-73.93561,71,"Long Island City",27,"Queens",4
+20-FEB-09,265,"Stanton St & Chrystie St",40.72229346,-73.99147535,71,"Lower East Side",35,"Manhattan",1
+20-FEB-09,291,"Madison St & Montgomery St",40.713126,-73.984844,71,"Lower East Side",20,"Manhattan",1
+20-FEB-09,307,"Canal St & Rutgers St",40.71427487,-73.98990025,71,"Lower East Side",31,"Manhattan",1
+20-FEB-09,311,"Norfolk St & Broome St",40.7172274,-73.98802084,71,"Lower East Side",31,"Manhattan",1
+20-FEB-09,312,"Allen St & Stanton St",40.722055,-73.989111,71,"Lower East Side",31,"Manhattan",1
+20-FEB-09,331,"Pike St & Monroe St",40.71173107,-73.99193043,71,"Lower East Side",27,"Manhattan",1
+20-FEB-09,332,"Cherry St",40.71219906,-73.97948148,71,"Lower East Side",24,"Manhattan",1
+20-FEB-09,340,"Madison St & Clinton St",40.71269042,-73.98776323,71,"Lower East Side",27,"Manhattan",1
+20-FEB-09,342,"Columbia St & Rivington St",40.71739973,-73.98016555,71,"Lower East Side",29,"Manhattan",1
+20-FEB-09,349,"Rivington St & Ridge St",40.71850211,-73.98329859,71,"Lower East Side",23,"Manhattan",1
+20-FEB-09,350,"Clinton St & Grand St",40.71559509,-73.9870295,71,"Lower East Side",28,"Manhattan",1
+20-FEB-09,356,"Bialystoker Pl & Delancey St",40.71622644,-73.98261206,71,"Lower East Side",23,"Manhattan",1
+20-FEB-09,400,"Pitt St & Stanton St",40.71926081,-73.98178024,71,"Lower East Side",15,"Manhattan",1
+20-FEB-09,401,"Allen St & Rivington St",40.72019576,-73.98997825,71,"Lower East Side",42,"Manhattan",1
+20-FEB-09,410,"Suffolk St & Stanton St",40.72066442,-73.98517977,71,"Lower East Side",35,"Manhattan",1
+20-FEB-09,473,"Rivington St & Chrystie St",40.72110063,-73.9919254,71,"Lower East Side",38,"Manhattan",1
+20-FEB-09,502,"Henry St & Grand St",40.714215,-73.981346,71,"Lower East Side",30,"Manhattan",1
+20-FEB-09,531,"Forsyth St & Broome St",40.71893904,-73.99266288,71,"Lower East Side",39,"Manhattan",1
+20-FEB-09,341,"Stanton St & Mangin St",40.71782143,-73.97628939,71,"Lower East Side",19,"Manhattan",1
+20-FEB-09,167,"E 39 St & 3 Ave",40.7489006,-73.97604882,71,"Murray Hill",45,"Manhattan",1
+20-FEB-09,501,"FDR Drive & E 35 St",40.744219,-73.97121214,71,"Murray Hill",43,"Manhattan",1
+20-FEB-09,517,"Pershing Square South",40.751581,-73.97791,71,"Murray Hill",59,"Manhattan",1
+20-FEB-09,518,"E 39 St & 2 Ave",40.74780373,-73.9734419,71,"Murray Hill",39,"Manhattan",1
+20-FEB-09,519,"Pershing Square North",40.751873,-73.977706,71,"Murray Hill",61,"Manhattan",1
+20-FEB-09,343,"Clinton Ave & Flushing Ave",40.69794,-73.96986848,71,"Navy Yard",23,"Brooklyn",3
+20-FEB-09,2001,"Sands St & Navy St",40.699773,-73.979927,71,"Navy Yard",15,"Brooklyn",3
+20-FEB-09,2005,"Railroad Ave & Kay Ave",40.70531194,-73.97100056,71,"Navy Yard",12,"Brooklyn",3
+20-FEB-09,251,"Mott St & Prince St",40.72317958,-73.99480012,71,"Nolita",27,"Manhattan",1
+20-FEB-09,144,"Nassau St & Navy St",40.69839895,-73.98068914,71,"Vinegar Hill",19,"Brooklyn",3
+20-FEB-09,418,"Front St & Gold St",40.70224,-73.982578,71,"Vinegar Hill",23,"Brooklyn",3
+20-FEB-09,430,"York St & Jay St",40.7014851,-73.98656928,71,"Vinegar Hill",27,"Brooklyn",3
+20-FEB-09,3256,"Pier 40 - Hudson River Park",40.72771408,-74.01129574,71,"SoHo",22,"Manhattan",1
+20-FEB-09,128,"MacDougal St & Prince St",40.72710258,-74.00297088,71,"SoHo",30,"Manhattan",1
+20-FEB-09,151,"Cleveland Pl & Spring St",40.72210379,-73.99724901,71,"SoHo",33,"Manhattan",1
+20-FEB-09,268,"Howard St & Centre St",40.71910537,-73.99973337,71,"SoHo",27,"Manhattan",1
+20-FEB-09,303,"Mercer St & Spring St",40.72362738,-73.99949601,71,"SoHo",31,"Manhattan",1
+20-FEB-09,347,"Greenwich St & W Houston St",40.728846,-74.008591,71,"SoHo",35,"Manhattan",1
+20-FEB-09,377,"6 Ave & Canal St",40.72243797,-74.00566443,71,"SoHo",45,"Manhattan",1
+20-FEB-09,2010,"Grand St & Greene St",40.72165481,-74.00234737,71,"SoHo",39,"Manhattan",1
+20-FEB-09,504,"1 Ave & E 16 St",40.73221853,-73.98165557,71,"Stuyvesant Town",45,"Manhattan",1
+20-FEB-09,2003,"1 Ave & E 18 St",40.73381219,-73.98054421,71,"Stuyvesant Town",39,"Manhattan",1
+20-FEB-09,487,"E 20 St & FDR Drive",40.73314259,-73.97573881,71,"Stuyvesant Town",36,"Manhattan",1
+20-FEB-09,545,"E 23 St & 1 Ave",40.736502,-73.97809472,71,"Stuyvesant Town",27,"Manhattan",1
+20-FEB-09,3161,"W 76 St & Columbus Ave",40.78018397,-73.97728533,71,"Upper West Side",59,"Manhattan",1
+20-FEB-09,3170,"W 84 St & Columbus Ave",40.78499979,-73.97283406,71,"Upper West Side",35,"Manhattan",1
+20-FEB-09,3171,"Amsterdam Ave & W 82 St",40.78524672,-73.97667321,71,"Upper West Side",39,"Manhattan",1
+20-FEB-09,3172,"W 74 St & Columbus Ave",40.7785669,-73.97754961,71,"Upper West Side",27,"Manhattan",1
+20-FEB-09,3177,"W 84 St & Broadway",40.7867947,-73.977112,71,"Upper West Side",63,"Manhattan",1
+20-FEB-09,3226,"W 82 St & Central Park West",40.78275,-73.97137,71,"Upper West Side",45,"Manhattan",1
+20-FEB-09,422,"W 59 St & 10 Ave",40.770513,-73.988038,71,"Upper West Side",55,"Manhattan",1
+20-FEB-09,499,"Broadway & W 60 St",40.76915505,-73.98191841,71,"Upper West Side",36,"Manhattan",1
+20-FEB-09,530,"11 Ave & W 59 St",40.771522,-73.990541,71,"Upper West Side",36,"Manhattan",1
+20-FEB-09,3158,"W 63 St & Broadway",40.77163851,-73.98261428,71,"Upper West Side",31,"Manhattan",1
+20-FEB-09,3159,"W 67 St & Broadway",40.77492513,-73.98266566,71,"Upper West Side",31,"Manhattan",1
+20-FEB-09,3162,"W 78 St & Broadway",40.78339981,-73.98093133,71,"Upper West Side",39,"Manhattan",1
+20-FEB-09,3164,"Columbus Ave & W 72 St",40.7770575,-73.97898475,71,"Upper West Side",67,"Manhattan",1
+20-FEB-09,3166,"Riverside Dr & W 72 St",40.78057799,-73.98562431,71,"Upper West Side",41,"Manhattan",1
+20-FEB-09,3167,"Amsterdam Ave & W 73 St",40.77966809,-73.98093045,71,"Upper West Side",55,"Manhattan",1
+20-FEB-09,3169,"Riverside Dr & W 82 St",40.78720869,-73.98128127,71,"Upper West Side",39,"Manhattan",1
+20-FEB-09,3173,"Riverside Blvd & W 67 St",40.77750703,-73.98888588,71,"Upper West Side",39,"Manhattan",1
+20-FEB-09,3175,"W 70 St & Amsterdam Ave",40.77748046,-73.98288594,71,"Upper West Side",31,"Manhattan",1
+20-FEB-09,3176,"W 64 St & West End Ave",40.77452835,-73.98753759,71,"Upper West Side",43,"Manhattan",1
+20-FEB-09,3178,"Riverside Dr & W 78 St",40.78414472,-73.98362492,71,"Upper West Side",39,"Manhattan",1
+20-FEB-09,127,"Barrow St & Hudson St",40.73172428,-74.00674436,71,"West Village",31,"Manhattan",1
+20-FEB-09,223,"W 13 St & 7 Ave",40.73781509,-73.99994661,71,"West Village",33,"Manhattan",1
+20-FEB-09,238,"Bank St & Washington St",40.7361967,-74.00859207,71,"West Village",31,"Manhattan",1
+20-FEB-09,247,"Perry St & Bleecker St",40.73535398,-74.00483091,71,"West Village",20,"Manhattan",1
+20-FEB-09,284,"Greenwich Ave & 8 Ave",40.73901691,-74.00263761,71,"West Village",43,"Manhattan",1
+20-FEB-09,346,"Bank St & Hudson St",40.73652889,-74.00618026,71,"West Village",27,"Manhattan",1
+20-FEB-09,358,"Christopher St & Greenwich St",40.73291553,-74.00711384,71,"West Village",36,"Manhattan",1
+20-FEB-09,368,"Carmine St & 6 Ave",40.73038599,-74.00214988,71,"West Village",39,"Manhattan",1
+20-FEB-09,380,"W 4 St & 7 Ave S",40.73401143,-74.00293877,71,"West Village",39,"Manhattan",1
+20-FEB-09,383,"Greenwich Ave & Charles St",40.735238,-74.000271,71,"West Village",39,"Manhattan",1
+20-FEB-09,405,"Washington St & Gansevoort St",40.739323,-74.008119,71,"West Village",40,"Manhattan",1
+20-FEB-09,3065,"Union Ave & Wallabout St",40.70029511,-73.95032283,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,3067,"Broadway & Whipple St",40.7016657,-73.9437303,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,3068,"Humboldt St & Varet St",40.7031724,-73.940636,71,"Williamsburg",24,"Brooklyn",4
+20-FEB-09,3069,"Lorimer St & Broadway",40.70411791,-73.94818595,71,"Williamsburg",25,"Brooklyn",4
+20-FEB-09,3070,"McKibbin St & Manhattan Ave",40.70510918,-73.94407279,71,"Williamsburg",23,"Brooklyn",4
+20-FEB-09,3071,"Boerum St & Broadway",40.70538077,-73.94976519,71,"Williamsburg",19,"Brooklyn",4
+20-FEB-09,3072,"Leonard St & Boerum St",40.70583339,-73.94644578,71,"Williamsburg",24,"Brooklyn",4
+20-FEB-09,3073,"Division Ave & Hooper St",40.70691254,-73.95441667,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,3074,"Montrose Ave & Bushwick Ave",40.70767788,-73.94016171,71,"Williamsburg",31,"Brooklyn",4
+20-FEB-09,3075,"Division Ave & Marcy Ave",40.70708701,-73.95796783,71,"Williamsburg",33,"Brooklyn",4
+20-FEB-09,3076,"Scholes St & Manhattan Ave",40.70870368,-73.9448625,71,"Williamsburg",24,"Brooklyn",4
+20-FEB-09,3077,"Stagg St & Union Ave",40.70877084,-73.95095259,71,"Williamsburg",33,"Brooklyn",4
+20-FEB-09,3080,"S 4 St & Rodney St",40.70934,-73.95608,71,"Williamsburg",21,"Brooklyn",4
+20-FEB-09,3081,"Graham Ave & Grand St",40.711863,-73.944024,71,"Williamsburg",23,"Brooklyn",4
+20-FEB-09,3082,"Hope St & Union Ave",40.71167351,-73.95141312,71,"Williamsburg",25,"Brooklyn",4
+20-FEB-09,3083,"Bushwick Ave & Powers St",40.71247661,-73.94100005,71,"Williamsburg",30,"Brooklyn",4
+20-FEB-09,3086,"Graham Ave & Conselyea St",40.715143,-73.944507,71,"Williamsburg",25,"Brooklyn",4
+20-FEB-09,3087,"Metropolitan Ave & Meeker Ave",40.71413311,-73.95234386,71,"Williamsburg",30,"Brooklyn",4
+20-FEB-09,3088,"Union Ave & Jackson St",40.7160751,-73.952029,71,"Williamsburg",19,"Brooklyn",4
+20-FEB-09,3091,"Frost St & Meeker St",40.71764,-73.94882,71,"Williamsburg",31,"Brooklyn",4
+20-FEB-09,3094,"Graham Ave & Withers St",40.7169811,-73.94485918,71,"Williamsburg",18,"Brooklyn",4
+20-FEB-09,3095,"Graham Ave & Herbert St",40.71929301,-73.94500379,71,"Williamsburg",23,"Brooklyn",4
+20-FEB-09,3101,"N 12 St & Bedford Ave",40.72079821,-73.95484712,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,3103,"N 11 St & Wythe Ave",40.72153267,-73.95782357,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,282,"Kent Ave & S 11 St",40.70764494,-73.96841526,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,389,"Broadway & Berry St",40.71044554,-73.96525063,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,443,"Bedford Ave & S 9 St",40.70853074,-73.96408963,71,"Williamsburg",23,"Brooklyn",4
+20-FEB-09,460,"S 4 St & Wythe Ave",40.71285887,-73.96590294,71,"Williamsburg",23,"Brooklyn",4
+20-FEB-09,471,"Grand St & Havemeyer St",40.71286844,-73.95698119,71,"Williamsburg",31,"Brooklyn",4
+20-FEB-09,481,"S 3 St & Bedford Ave",40.71260486,-73.96264403,71,"Williamsburg",25,"Brooklyn",4
+20-FEB-09,532,"S 5 Pl & S 4 St",40.710451,-73.960876,71,"Williamsburg",43,"Brooklyn",4
+20-FEB-09,539,"Metropolitan Ave & Bedford Ave",40.71534825,-73.96024116,71,"Williamsburg",31,"Brooklyn",4
+20-FEB-09,2002,"Wythe Ave & Metropolitan Ave",40.716887,-73.963198,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,3016,"Kent Ave & N 7 St",40.72036775,-73.96165073,71,"Williamsburg",47,"Brooklyn",4
+20-FEB-09,3078,"Broadway & Roebling St",40.70924826,-73.96063149,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,3085,"Roebling St & N 4 St",40.71469,-73.95739,71,"Williamsburg",25,"Brooklyn",4
+20-FEB-09,3090,"N 8 St & Driggs Ave",40.71774592,-73.95600096,71,"Williamsburg",31,"Brooklyn",4
+20-FEB-09,3092,"Berry St & N 8 St",40.7190095,-73.95852515,71,"Williamsburg",27,"Brooklyn",4
+20-FEB-09,3093,"N 6 St & Bedford Ave",40.71745169,-73.95850939,71,"Williamsburg",28,"Brooklyn",4
+20-FEB-09,3183,"Exchange Place",40.7162469,-74.0334588,70,"Jersey City",30,"Jersey City",5
+20-FEB-09,3184,"Paulus Hook",40.7141454,-74.0335519,70,"Jersey City",14,"Jersey City",5
+20-FEB-09,3185,"City Hall",40.7177325,-74.043845,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3186,"Grove St PATH",40.71958612,-74.04311746,70,"Jersey City",42,"Jersey City",5
+20-FEB-09,3187,"Warren St",40.7211236,-74.03805095,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3188,"NJCU",40.7101087,-74.0858489,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3189,"West Side Light Rail",40.714402,-74.0887723,70,"Jersey City",14,"Jersey City",5
+20-FEB-09,3190,"Garfield Ave Station",40.71046702,-74.0700388,70,"Jersey City",14,"Jersey City",5
+20-FEB-09,3191,"Union St",40.7182113,-74.0836394,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3192,"Liberty Light Rail",40.7112423,-74.0557013,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3193,"Lincoln Park",40.7246051,-74.07840595,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3194,"McGinley Square",40.72533993,-74.06762213,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3195,"Sip Ave",40.73074263,-74.06378388,70,"Jersey City",38,"Jersey City",5
+20-FEB-09,3196,"Riverview Park",40.7443187,-74.0439909,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3198,"Heights Elevator",40.74871595,-74.0404433,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3199,"Newport Pkwy",40.7287448,-74.0321082,70,"Jersey City",14,"Jersey City",5
+20-FEB-09,3200,"MLK Light Rail",40.7111305,-74.0788855,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3201,"Dey St",40.737711,-74.066921,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3202,"Newport PATH",40.7272235,-74.0337589,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3203,"Hamilton Park",40.72759597,-74.04424731,70,"Jersey City",26,"Jersey City",5
+20-FEB-09,3206,"Hilltop",40.7311689,-74.0575736,70,"Jersey City",26,"Jersey City",5
+20-FEB-09,3207,"Oakland Ave",40.7376037,-74.0524783,70,"Jersey City",26,"Jersey City",5
+20-FEB-09,3209,"Brunswick St",40.7241765,-74.0506564,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3210,"Pershing Field",40.74267714,-74.05178863,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3211,"Newark Ave",40.72152515,-74.04630454,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3212,"Christ Hospital",40.73478582,-74.05044364,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3213,"Van Vorst Park",40.71848892,-74.04772663,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3214,"Essex Light Rail",40.7127742,-74.0364857,70,"Jersey City",22,"Jersey City",5
+20-FEB-09,3216,"Columbia Park",40.6970299,-74.0969366,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3217,"Bayside Park",40.69865054,-74.08207968,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3220,"5 Corners Library",40.73496102,-74.05950308,70,"Jersey City",18,"Jersey City",5
+20-FEB-09,3225,"Baldwin at Montgomery",40.7236589,-74.0641943,70,"Jersey City",14,"Jersey City",5
+20-FEB-09,3267,"Morris Canal",40.71241882,-74.03852552,70,"Jersey City",14,"Jersey City",5

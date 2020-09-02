@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Recommended Learning Assets](#recommended-learning-assets)
 
@@ -34,7 +34,7 @@ In this lab we will deploy Redis in Master-Slave mode (similar to below) though 
 
 ![]( img/Redis_014.PNG)
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 

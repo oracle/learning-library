@@ -1,1 +1,0 @@
-This image shows the Container tile and a popup menu with the Open Service Console option selected.

@@ -1,0 +1,1 @@
+This image shows the console, with the new service listed. To the right side of that service three dots are highlighted. These activate the action menu. The action menu is expanded, and the "Service Console" menu item is highlighted.

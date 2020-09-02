@@ -1,1 +1,0 @@
-This image shows the console, with the new service listed. To the side of that service, the action menu is expanded, and the "Service Console" menu item is highlighted.

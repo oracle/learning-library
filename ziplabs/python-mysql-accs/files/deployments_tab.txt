@@ -1,5 +1,0 @@
-This illustration shows part of the Deployments page. 
-The navigation pane displays the Deployments tab. The tab is selected and shows 0 in two fields: Service Bindings and User-defined Variables. 
-Two sections are next to the navigation pane:
-* The Launch Command section contains an icon to edit the command.
-* The Service Bindings section displays a blank area and a "No Service Bindings" message. The  Add button in the Service Bindings section is highlighted.

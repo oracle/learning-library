@@ -1,7 +1,0 @@
-This image shows the Activity section of the Service Console. On the left margin are links to the three pages of the Service console: Overview, Activity, and Administration. Activity is selected.
-
-The section has two tabs at the top of the page: Monitor and Monitored SQL. Monitored SQL is selected and highlighted with a red rectangle.
-
-Under the Monitor tab are three buttons: Show details, Download report, and Cancel execution. Show details is highlighted with a red rectangle.
-
-Under these buttons are a listing of SQL statements. In this example, there are three. Each listing contains a Duration property. The first has a duration of 6 seconds. The others are 1 second and two seconds. Therefore, the first appears to be the LOW database service. This entry is highlighted with a red rectangle. 

@@ -1,0 +1,23 @@
+{
+    "workshoptitle": "Creating Tables: Databases for Developers",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+          "title": "Introduction",
+          "filename": "./../../intro/intro.md"
+      },
+      {
+        "title": "Lab 1: Provision an ATP instance",
+        "filename": "../../../common/adb-provision-atp.md",
+        "type":"freetier"
+      },
+      {
+          "title": "Lab 2: Create Tables",
+          "filename": "../../creating-tables.md"
+      }
+    ]
+}

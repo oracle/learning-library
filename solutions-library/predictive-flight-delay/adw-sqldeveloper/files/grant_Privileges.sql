@@ -1,0 +1,21 @@
+GRANT
+  SELECT,
+  INSERT,
+  UPDATE,
+  DELETE
+ON
+  admin.INT_FLIGHTS_AIRCRAFT_WEATHER
+TO
+  omluser1;
+
+
+
+GRANT
+  SELECT,
+  INSERT,
+  UPDATE,
+  DELETE
+ON
+  admin.OAC_DATASET
+TO
+  omluser1;

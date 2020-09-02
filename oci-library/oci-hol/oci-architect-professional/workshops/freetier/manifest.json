@@ -1,0 +1,25 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+          "title": "Introduction",
+          "filename": "./../../intro/intro.md"
+      },
+      {
+          "title": "Lab 1: OCI Advanced session (Configuring Virtual Cloud Network Peering)",
+          "filename": "../../../oci-advanced/oci-advanced.md"
+      },
+      {
+          "title": "Lab 2: Configuring NAT Gateway for Private Compute Instance",
+          "filename": "../../../nat-gateway/nat-gateway.md"
+      },
+      {
+          "title": "Lab 3: Configuring Edge Services (DNS) in OCI",
+          "filename": "../../../edge-services-on-oci/edge-services-on-oci.md"
+      }
+    ]
+}

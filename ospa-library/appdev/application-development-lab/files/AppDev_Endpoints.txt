@@ -1,0 +1,12 @@
+Endpoints for App Dev Service Connections to Mama Maggy
+
+For testing in orasenatdhubsblue02
+
+
+Store (Metadata live)
+
+ https://ospa-class-of-se-orasenatdhubsblue02.builder.ocp.oraclecloud.com/ic/builder/rt/Mama_Maggy/live/resources/data/Store/describe
+
+Associate (Metadata live)
+
+ https://ospa-class-of-se-orasenatdhubsblue02.builder.ocp.oraclecloud.com/ic/builder/rt/Mama_Maggy/live/resources/data/Associate/describe

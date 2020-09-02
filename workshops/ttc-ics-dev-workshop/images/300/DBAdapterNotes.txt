@@ -1,1 +1,0 @@
-Select "Yes" to uptake the latest runtime features provided by the adapter.  Current version of the SOAP adapter provides TLSv1.2 support;  Ability to suppress timestamps for requests; Ignore timestamps on response.

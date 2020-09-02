@@ -1,0 +1,1 @@
+There are two boxes. On the left, the SQL ID box shows individual queries. There is only one query. It's highlighted with a red rectangle. On the right, a box for User Session.

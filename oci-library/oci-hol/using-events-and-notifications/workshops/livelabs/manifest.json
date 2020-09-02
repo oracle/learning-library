@@ -1,0 +1,18 @@
+{
+  "workshoptitle": "Using Events and Notifications",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+        {
+            "title": "Introduction and Overview",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Using Events and Notification",
+            "filename": "../../using-events-and-notifications/using-events-and-notifications.md"
+        }
+    ]
+}

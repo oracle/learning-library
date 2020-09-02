@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WizardConfig Name="JSON SODA Benchmark Wizard" Mode="InterActive" xmlns="http://www.dominicgiles.com/swingbench/wizard">
+    <WizardSteps RunnableStep="5">
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step0"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step1"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step2"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step3"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step4"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step5"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step6"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step7"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step8"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.json.Step9"/>
+    </WizardSteps>
+    <DataGenerationConfigurationFiles>
+        <DataGenerationConfigurationFile Version="1.0" Valid="Post">../sql/json.xml</DataGenerationConfigurationFile>
+    </DataGenerationConfigurationFiles>
+    <ExecutableClass>com.dom.benchmarking.swingbench.wizards.json.JSONGenerate</ExecutableClass>
+    <DefaultParameters>
+        <Parameter Value="false"/>
+        <Parameter Key="dbausername" Value="sys as sysdba"/>
+        <Parameter Key="connectionstring" Value="//oracle12c2/soe"/>
+        <Parameter Key="documentstorage" Value="VARCHAR"/>
+        <Parameter Key="operation" Value="create"/>
+        <Parameter Key="connectiontype" Value="thin"/>
+        <Parameter Key="datafile" Value=""/>
+        <Parameter Key="tablespace" Value="JSON"/>
+        <Parameter Key="documentparsing" Value="STANDARD"/>
+        <Parameter Key="username" Value="json"/>
+        <Parameter Value="false"/>
+        <Parameter Key="documentcompression" Value="NONE"/>
+        <Parameter Key="userexists" Value="true"/>
+        <Parameter Key="dbapassword" Value="welcome1"/>
+        <Parameter Key="password" Value="json"/>
+        <Parameter Key="output" Value="Verbose"/>
+        <Parameter Key="datatablespacesexists" Value="false"/>
+    </DefaultParameters>
+    <SupportedModels>
+        <Compression>
+            <SupportedCompression>No Compression</SupportedCompression>
+            <SupportedCompression>Advanced Compression</SupportedCompression>
+        </Compression>
+        <Partitioning>
+            <SupportedPartitioning>No Partitioning</SupportedPartitioning>
+        </Partitioning>
+        <Indexing>
+            <SupportedIndexing>All Indexes</SupportedIndexing>
+        </Indexing>
+    </SupportedModels>
+    <BenchmarkVersion>1.0</BenchmarkVersion>
+    <ValidatorClass>com.dom.benchmarking.swingbench.wizards.json.JSONValidator</ValidatorClass>
+    <SchemaDescription>
+        <TableList>
+            <ObjectName>PASSENGERCOLLECTION</ObjectName>
+        </TableList>
+        <IndexList/>
+        <SequenceList/>
+        <ViewList/>
+        <CodeList/>
+    </SchemaDescription>
+    <SQLScripts>
+        <InitilisationScripts>
+            <SQLScript Version="1.0" Valid="Post" Topic="createtablespace">../sql/json_createtablespace.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="createuser">../sql/json_createuser.sql</SQLScript>
+        </InitilisationScripts>
+        <PreDataGenerationScripts>
+            <SQLScript Version="1.0" Valid="Post" Topic="generic">../sql/json_createsequence.sql</SQLScript>
+        </PreDataGenerationScripts>
+        <PostDataGenerationScripts>
+            <SQLScript Version="1.0" Valid="Post" Topic="generic">../sql/json_analyzeschema.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="generic">../sql/json_rebuildsequence.sql</SQLScript>
+        </PostDataGenerationScripts>
+        <PurgeScripts>
+            <SQLScript Version="1.0" Valid="Post" Topic="droptablespace">../sql/json_droptablespace.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="dropuser">../sql/json_dropuser.sql</SQLScript>
+        </PurgeScripts>
+    </SQLScripts>
+</WizardConfig>

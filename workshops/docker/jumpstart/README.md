@@ -51,7 +51,7 @@ Once the infrastructure is provisioned you can access your enironment using `VNC
 ### Access Your Environment
 
 - Click **Launch Demo Lab**.
-   ![](images/000JumpStart/JS3.PNG)
+  ![](images/000JumpStart/JS3.PNG)
 
 - In 6 minutes the Oracle IaaS infrastructure including the Application already running and deployed will be available.
 
@@ -76,7 +76,7 @@ Using VNC Viewer to connect to your provisioned account.
 
 - Enter the connect string you were given and hit **Return**. (Example Shown below).
 
-**NOTE: Do NOT click the Sign In button**
+  **NOTE: Do NOT click the Sign In button**
 
   ![](images/000JumpStart/JS8.PNG)
 
@@ -122,75 +122,78 @@ Run some Docker commands to explore details about the installation and the Alpha
 
 - **Type** the following:
 
-```
-su - opc
-docker version
-```
+  ```
+  su - opc
+  docker version
+  ```
 
-This logs you into the `opc` user and shows the current Docker version (`18.03`)
+  This logs you into the `opc` user and shows the current Docker version (`18.03`)
 
-![](images/000JumpStart/JS17.PNG)
+  ![](images/000JumpStart/JS17.PNG)
 
 - **Type** the following to view the Docker containers that are running.
 
-```
-docker ps
-```
+  ```
+  docker ps
+  ```
 
   ![](images/000JumpStart/JS18.PNG)
 
-The output shows three containers running named:
-```
-alphaofficeui
-restclient
-twitterfeed
-``` 
-The unique container ID that docker assigns at runtime is shown along with the startup command and the networking ports that the containers have exposed. These are mapped to the HOST operating sytem's server ports for external consumption. The TwitterFeed Java application is running on port 9080, the RESTClient is on port 8002 and the AlphaOffice UI is on port 8085.
+  The output shows three containers running named:
 
-Docker uses a default network called `bridge` and assigns virtual IP addresses to each container. Any containers on the same network subnet can implicity see each other.
+  ```
+  alphaofficeui
+  restclient
+  twitterfeed
+  ```
+
+  The unique container ID that docker assigns at runtime is shown along with the startup command and the networking ports that the containers have exposed. These are mapped to the HOST operating sytem's server ports for external consumption. The TwitterFeed Java application is running on port 9080, the RESTClient is on port 8002 and the AlphaOffice UI is on port 8085.
+
+  Docker uses a default network called `bridge` and assigns virtual IP addresses to each container. Any containers on the same network subnet can implicity see each other.
 
 - **Type** the following:
 
-```
-docker network ls
-```
+  ```
+  docker network ls
+  ```
 
   ![](images/000JumpStart/JS19.PNG)
 
 - `docker inspect` displays the details associated with a particular container. Storage locations, storage volumes, storage types, networking subnet, IP address and much more. To get information on the `restclient` container, for example, **Type** the following:
 
-```
-docker inspect restclient
-```
+  ```
+  docker inspect restclient
+  ```
 
 - Scroll through the JSON output. 
 
   ![](images/000JumpStart/JS20.PNG)
 
-The output above shows the Creation Date, container status, The process ID (`2390`) on the HOST operating system, the path location on the HOST where container specific information is stored (`/var/lib/docker/...`), the type of storage overlay that Docker is using on the HOST opearating system (In this case, `overlay2`).
+  The output above shows the Creation Date, container status, The process ID (`2390`) on the HOST operating system, the path location on the HOST where container specific information is stored (`/var/lib/docker/...`), the type of storage overlay that Docker is using on the HOST opearating system (In this case, `overlay2`).
 
 - Take the PID (Process ID) of the `restclient` container and see what is running on the HOST (**In this example the process ID is 2390. Substitute your process ID <PID> in its place**).
 
 - **Type** the following:
 
-```
-ps -ef | grep <PID>
-```
+  ```
+  ps -ef | grep <PID>
+  ```
 
-A Node.js application `server.js` is running.
+  A Node.js application `server.js` is running.
 
-![](images/000JumpStart/JS20-2.PNG)
+  ![](images/000JumpStart/JS20-2.PNG)
 
 - Let's look at the `restclient` container and see what is running. **Type** the following sequence:
 
-```
-docker exec -it restclient bash
-ps -ef
-exit
-```
+  ```
+  docker exec -it restclient bash
+  ps -ef
+  exit
+  ```
+
 - Notice that the same application is running.
 
-![](images/000JumpStart/JS20-4.PNG)
+  ![](images/000JumpStart/JS20-4.PNG)
 
 - View the `restclient` inspection output. Notice the output shows the arbitrarily assigned hostname (You can give the container a hostname on startup if you want), and the HOST exposed network port (`8002`).
 
@@ -202,10 +205,11 @@ exit
 
  - **Cut and Paste** the following to get a list of all IP addresses from the current running containers:
 
- ```
- docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'
- ```
-Example output (your IP assignments may vary):
+   ```
+   docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'
+   ```
+
+  Example output (your IP assignments may vary):
 
   ![](images/000JumpStart/JS23.PNG)  
 
@@ -224,13 +228,13 @@ In this step, you make a couple of changes to the AlphaOfficeUI application. One
 
 Copy a background image file into the running AlphaOfficeUI container. This file is in the `/home/opc/AlphaOfficeSetup` directory.
 
-**NOTE:** Make sure you are still logged in as the `opc` user. You can check by typing `whoami`. If not, type `su - opc` to login as the opc user.
+  **NOTE:** Make sure you are still logged in as the `opc` user. You can check by typing `whoami`. If not, type `su - opc` to login as the opc user.
 
 - **Type or Cut and Paste** the following:
 
-```
-docker cp /home/opc/AlphaOfficeSetup/dark_blue.jpg alphaofficeui:/pipeline/source/public/Images
-```
+  ```
+  docker cp /home/opc/AlphaOfficeSetup/dark_blue.jpg alphaofficeui:/pipeline/source/public/Images
+  ```
 
   Example: `docker cp /home/opc/AlphaOfficeSetup/dark_blue.jpg alphaofficeui:/pipeline/source/public/Images`
 
@@ -240,39 +244,37 @@ Even though the original AlphaOfficeUI image could have been set up ahead of tim
 
 - Connect into the `alphaofficeui` container:
 
-```
-docker exec -it alphaofficeui bash
-```
+  ```
+  docker exec -it alphaofficeui bash
+  ```
 
 - **Type** the following:
 
-```
-apt-get update
-```
+  ```
+  apt-get update
+  ```
 
-![](images/000JumpStart/Picture200-28.png)
-
-
+  ![](images/000JumpStart/Picture200-28.png)
 
 - Verify the "**dark_blue.jpg**" file is in the container by **typing** the following:
 
-```
-ls /pipeline/source/public/Images
-```
+  ```
+  ls /pipeline/source/public/Images
+  ```
 
-![](images/000JumpStart/Picture200-28.1.png)
+  ![](images/000JumpStart/Picture200-28.1.png)
 
 #### **STEP 4c**: Edit the alpha.html file   
 
-- Edit the `alpha.html` file to fix a typo - Note, if you are unfamiliar with `vim`, you'll find information at this URL: [VIM](http://vimsheet.com). The commands are very similar to vi.
+- Edit the `alpha.html` file to fix a typo - Note, if you are unfamiliar with `vim`, you will find information at this URL: [VIM](http://vimsheet.com). The commands are very similar to vi.
 
-```
-vim /pipeline/source/public/alpha.html
-```
+  ```
+  vim /pipeline/source/public/alpha.html
+  ```
 
 - Fix the header title to read "**Alpha Office Product Catalog**". You can also change the body title to whatever you want:
 
-![](images/000JumpStart/Picture200-29.png)
+  ![](images/000JumpStart/Picture200-29.png)
 
 - Save the file and exit by hitting the **ESC** key and then holding the **SHIFT** key down and typing "**Z**" TWICE
 
@@ -280,21 +282,21 @@ vim /pipeline/source/public/alpha.html
 
 - **Type** the following:
 
-```
-vim /pipeline/source/public/css/alpha.css
-```
+  ```
+  vim /pipeline/source/public/css/alpha.css
+  ```
 
 - Change the background image reference to **dark_blue.jpg**
 
-![](images/000JumpStart/Picture200-30.png)
+  ![](images/000JumpStart/Picture200-30.png)
 
 - Save the file and exit by hitting the **ESC** key and then holding the **SHIFT** key down and typing "**Z**" TWICE
 
 - **Exit** out of the container:
 
-```
-exit
-```
+  ```
+  exit
+  ```
 
 #### **STEP 4e**: Commit a NEW Docker image
 
@@ -303,21 +305,21 @@ exit
 
 - **Type** the following:
 
-```
-docker commit alphaofficeui jumpstart/<image-name>
-```
+  ```
+  docker commit alphaofficeui jumpstart/<image-name>
+  ```
   
-- Example: `docker commit alphaofficeui jumpstart/alphaoffice-new`
+  Example: `docker commit alphaofficeui jumpstart/alphaoffice-new`
 
 - **Type** the following:
 
-```
-docker images
-```
+  ```
+  docker images
+  ```
 
- - The new image is available:
+- The new image is available:
 
-![](images/000JumpStart/Picture200-31.png)
+  ![](images/000JumpStart/Picture200-31.png)
 
 #### **STEP 4f**: Start a container based on your new image
 
@@ -325,14 +327,14 @@ docker images
 
 - **Type** the following:
 
-```
-docker stop alphaofficeui
-docker rm alphaofficeui
-```
+  ```
+  docker stop alphaofficeui
+  docker rm alphaofficeui
+  ```
 
-Start a container using your new Docker image.
+- Start a container using your new Docker image.
 
-- Let's take a look at what the docker **run** command options do:
+  Let's take a look at what the docker **run** command options do:
     - "-d" flag runs the container in the background
     - "--restart unless-stopped" Restarts the container if it goes down unexpectedly... UNLESS it is stopped manually
     - "--name" The name of the container will be "alphaofficeui"
@@ -340,27 +342,27 @@ Start a container using your new Docker image.
 
 - **Cut and Paste OR Type** the following:
 
-```
-docker run -d --restart unless-stopped --name=alphaofficeui -p=8085:8085 jumpstart/<image-name>
-```
+  ```
+  docker run -d --restart unless-stopped --name=alphaofficeui -p=8085:8085 jumpstart/<image-name>
+  ```
 
-- Example: `docker run -d --restart unless-stopped --name=alphaofficeui -p=8085:8085  jumpstart/alphaoffice-new`
+  Example: `docker run -d --restart unless-stopped --name=alphaofficeui -p=8085:8085  jumpstart/alphaoffice-new`
 
 - Verify the new container is running by **typing** the following:
 
-```
-docker ps
-```
+  ```
+  docker ps
+  ```
 
-![](images/000JumpStart/Picture200-32.png)
+  ![](images/000JumpStart/Picture200-32.png)
 
 - If your browser is still minimized then maximize it and refresh the AlphaOffice tab. If it's closed, then restart Firefox from the Desktop `Applications` tab and go to:
 
-```
-http://localhost:8085
-```
+  ```
+  http://localhost:8085
+  ```
 
-![](images/000JumpStart/Picture200-33.png)
+  ![](images/000JumpStart/Picture200-33.png)
 
 # Where do I go from here?
 
@@ -368,7 +370,7 @@ If you would like to experience a more in-depth look at how this Docker infrastr
 
 [Complete Docker Workshop](https://oracle.github.io/learning-library/workshops/docker/?version=Linux+Trial+Account&page=Intro.md&sourceType=:ex:tb:::RC_NAMK180927P00040:DockerDemoLab&SC=:ex:tb:::RC_NAMK180927P00040:DockerDemoLab&pcode=NAMK180927P00040)
 
-- **NOTE:** When the Lab's allotted time has expired (40 minutes) you will see the following:
+  **NOTE:** When the Lab's allotted time has expired (40 minutes) you will see the following:
 
   ![](images/000JumpStart/JS99.PNG)
 

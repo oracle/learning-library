@@ -39,8 +39,8 @@ labGuide.config(function ($mdThemingProvider) {
     $mdThemingProvider.alwaysWatchTheme(true);
 });
 
-labGuide.controller('labGuideController', ['$scope', '$http', '$mdSidenav', '$sanitize', '$sce', '$mdDialog', '$mdToast'
-    , function ($scope, $http, $mdSidenav, $sanitize, $sce, $mdDialog, $mdToast) {
+labGuide.controller('labGuideController', ['$scope', '$http', '$mdSidenav', '$sanitize', '$sce', '$mdDialog', '$mdToast', '$window'
+    , function ($scope, $http, $mdSidenav, $sanitize, $sce, $mdDialog, $mdToast, $window) {
 
       loadScript(primusJsUrl, () => {
         if(typeof Primus !== 'undefined') {
@@ -293,14 +293,7 @@ labGuide.controller('labGuideController', ['$scope', '$http', '$mdSidenav', '$sa
         };
 
         $scope.showOrHideInteractiveTour = function() {
-          if($scope.selection == 'interactive') {
-            $scope.selection = $scope.previousSelection;
-            $scope.previousSelection = 'interactive';
-          }
-          else {
-            $scope.previousSelection = $scope.selection;
-            $scope.selection = 'interactive';
-          }
+          $window.open($scope.interactive.src, "_interactive");
         };
 
         $scope.loadContent = function (page) {

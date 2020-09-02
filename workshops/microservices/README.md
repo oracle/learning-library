@@ -1,1 +1,0 @@
-Please visit the updated version of this workshop at: [https://oracle.github.io/learning-library/workshops/microservices-devops/](https://oracle.github.io/learning-library/workshops/microservices-devops/)

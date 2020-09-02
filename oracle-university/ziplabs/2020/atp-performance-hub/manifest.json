@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": " Using Performance Hub to Analyze Resource Demand from Queries",
+            "description": "Learn how to run a few queries in SQL Developer Web and monitor those queries through the Performance Hub. SQL Developer Web and Performance Hub are available for both Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP).",
+            "filename": "content.md"
+        }
+    ]
+}

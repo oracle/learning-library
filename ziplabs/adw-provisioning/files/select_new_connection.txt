@@ -1,1 +1,0 @@
-This image shows Oracle SQL Developer. In the Connections panel, Connections has been right-clicked, and in the pop-up dialog, New Connection is being selected.

@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Signing in to the Console](#practice-12-1-signing-in-to-the-console)
 
@@ -35,7 +35,7 @@ Container Engine for Kubernetes uses Kubernetes - the open-source system for aut
 ![](media/image1.png)
 
 
-## Pre-Requisites 
+## Prerequisites 
 
   - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
   - For this lab you will use _cloud.admin_ and <your-name@oracle.com> as the user name to demonstrate the scenarios.

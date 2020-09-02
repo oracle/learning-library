@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SwingBenchConfiguration xmlns="http://www.dominicgiles.com/swingbench/config">
+    <Name>"Template for SQL Builder"</Name>
+    <Comment>Remember to change the environment variable STATEMENTS_CONFIG_FILE to reflect the config file you have created.</Comment>
+    <Connection>
+        <UserName>soe</UserName>
+        <Password>enc(cw4Xx9RgsQA=)</Password>
+        <ConnectString>//oracle12cserver/orcl</ConnectString>
+        <DriverType>Oracle jdbc Driver</DriverType>
+        <Properties>
+            <Property Key="StatementCaching">50</Property>
+            <Property Key="FetchSize">20</Property>
+        </Properties>
+        <InitilizationCommands>
+            <Command>alter session force parallel query parallel 1</Command>
+        </InitilizationCommands>
+    </Connection>
+    <Load>
+        <NumberOfUsers>1</NumberOfUsers>
+        <MinDelay>0</MinDelay>
+        <MaxDelay>0</MaxDelay>
+        <InterMinDelay>0</InterMinDelay>
+        <InterMaxDelay>0</InterMaxDelay>
+        <QueryTimeout>120</QueryTimeout>
+        <MaxTransactions>-1</MaxTransactions>
+        <RunTime>0:0</RunTime>
+        <LogonGroupCount>1</LogonGroupCount>
+        <LogonDelay>0</LogonDelay>
+        <LogOutPostTransaction>false</LogOutPostTransaction>
+        <WaitTillAllLogon>false</WaitTillAllLogon>
+        <StatsCollectionStart>0:0</StatsCollectionStart>
+        <StatsCollectionEnd>0:0</StatsCollectionEnd>
+        <ConnectionRefresh>0</ConnectionRefresh>
+        <TransactionList>
+            <Transaction>
+                <Id>Statement Runner</Id>
+                <ShortName>SSR</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.benchmarks.statementrunner.SQLStatementRunner</ClassName>
+                <Weight>100</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+        </TransactionList>
+        <EnvironmentVariables>
+            <Variable Key="STATEMENTS_CONFIG_FILE">mysqlstatements.xml</Variable>
+            <Variable Key="STATEMENTS_RUN_MODE">serial_stepped</Variable>
+        </EnvironmentVariables>
+    </Load>
+    <Preferences>
+        <StartMode>manual</StartMode>
+        <Output>swingbench</Output>
+        <JumpToEvents>true</JumpToEvents>
+        <TimingsIncludeSleep>false</TimingsIncludeSleep>
+        <TimingsIn>milliseconds</TimingsIn>
+        <StatisticsLevel>full</StatisticsLevel>
+        <OutputFile>results.xml</OutputFile>
+        <AllowedErrorCodes>
+            <ErrorCode Type="ORA">4063</ErrorCode>
+        </AllowedErrorCodes>
+        <RefreshRate>1</RefreshRate>
+        <OverviewCharts>
+            <OverviewChart>
+                <Name>Transactions Per Minute</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Transactions Per Second</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Response Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>CPU</Name>
+                <MinimumValue>0.0</MinimumValue>
+                <MaximumValue>100.0</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Disk</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Users</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Database Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>DML</Name>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+        </OverviewCharts>
+    </Preferences>
+</SwingBenchConfiguration>

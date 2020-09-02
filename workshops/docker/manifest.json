@@ -1,51 +1,37 @@
 {
-    "workshop": {
-        "title": "Docker Workshop",
-        "description": "These labs will give you a basic understanding of Docker concepts and deployments",
-        "interactive":"https://launch.oracle.com/?docker-workshop",
-        "versions": [
-            {
-              "name": "Linux Trial Account",
-              "description": "Use Linux to develop and deploy with Docker and perform this workshop",
-              "imageUrl": "https://oracle.github.io/learning-library/workshops/common-content/images/common/linux.png"
-            }
-        ],
-        "labs": [
-            {
-                "number": "0",
-                "filename": "Intro.md",
-                "title": "Introduction",
-                "description": "Obtain an Oracle Cloud Trial Account",
-                "labels": {"version": "Linux Trial Account"}
-            },
-            {
-                "number": "1",
-                "filename": "Intro-virtual.md",
-                "title": "VIRTUAL WORKSHOP VERSION ONLY",
-                "description": "Obtain an Oracle Cloud Trial Account",
-                "labels": {"version": "Linux Trial Account"}
-            },
-            {
-                "number": "050",
-                "filename": "Linux050.md",
-                "title": "Lab 050: Cloud Infrastructure Configuration",
-                "description": "Setting up the Infrastructure to support a Compute Instance running Docker",
-                "labels": {"version": "Linux Trial Account"}
-            },
-            {
-                "number": "100",
-                "filename": "Linux100.md",
-                "title": "Lab 100: Docker Introduction",
-                "description": "Concepts, commands and a simple deployment",
-                "labels": {"version": "Linux Trial Account"}
-            },
-            {
-                "number": "200",
-                "filename": "Linux200.md",
-                "title": "Linux Lab 200: AlphaOffice Deployment",
-                "description": "Multi-container Application deployment using a Database",
-                "labels": {"version": "Linux Trial Account"}
-            }
-        ]
-    }
+    "tutorials": [
+        
+        {         
+            "title": "Docker Workshop",
+            "description": "Introduction to the workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "./lab-000/content.md"
+        },
+        {         
+            "title": "Lab 050: Cloud Infrastructure Configuration",
+            "description": "Setting up the Infrastructure to support a Compute Instance running Docker",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "./Linux050.md"
+        },
+        {         
+            "title": "Lab 100: Docker Introduction",
+            "description": "Concepts, commands and a simple deployment",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "./Linux100.md"
+        },
+        {         
+            "title": "Lab 200: AlphaOffice Deployment",
+            "description": "Multi-container Application deployment using a Database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "./Linux200.md"
+        }
+    ]
 }

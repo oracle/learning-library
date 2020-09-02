@@ -1,0 +1,7 @@
+#sudo -u opc  -c printf '%s\n' 'Oracle123' 'Oracle123' n | vncpasswd
+echo "Oracle123" | vncpasswd -f > /tmp/VNCpasswd
+mkdir /home/opc/.vnc	
+chown -R opc:opc /home/opc/.vnc
+mv /tmp/VNCpasswd /home/opc/.vnc/passwd
+chown -R opc:opc /home/opc/.vnc
+chmod 0600 /home/opc/.vnc/passwd

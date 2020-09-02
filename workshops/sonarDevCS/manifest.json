@@ -1,0 +1,50 @@
+{
+    "workshop": {
+        "title": "Automated Code Inspection",
+        "description": "This workshop will walk you through application lifecycle management with embedded code review using SonarQube. It will showcase how SonarQube can save time and improve code quality directly inside the agile development process.",
+        "theme": "default",
+        "interactive":"https://launch.oracle.com/?",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "README.md",
+                "title": "Getting Started",
+                "description": "Request a Trial Account."
+
+            },
+            {
+                "number": "50",
+                "filename": "LabGuide050.md",
+                "title": "Lab 050: Setup",
+                "description": "Setup trial account and provision Developer Cloud Service. Create compartment, VCN and instance in OCI."
+
+            },
+            {
+                "number": "100",
+                "filename": "LabGuide100.md",
+                "title": "Lab 100: Configure Developer Cloud Service",
+                "description": "Create project in Developer Cloud Service, clone project from Git repo and configure project to run build jobs."
+
+            },
+            {
+                "number": "200",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200: Configure SonarQube Server",
+                "description": "Deploying SonarQube server in Compute Instance, connecting it to Developer Cloud Service and then running analysis on the project to check for potential issues and bug."
+
+            },
+            {
+                "number": "300",
+                "filename": "LabGuide300.md",
+                "title": "Lab 300: Fix Issues in the Code",
+                "description": "Look for issues identified in SonarQube, create a issue in Developer Cloud Service and resolve issue using built in git."
+            },
+            {
+                "number": "400",
+                "filename": "LabGuide400.md",
+                "title": "Lab 400: Deploy Microservice to Cloud",
+                "description": "Deploy the fixed code as a webservice inside a Docker container to cloud."
+            }
+        ]
+    }
+}

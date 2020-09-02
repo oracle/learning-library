@@ -1,0 +1,33 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+      {
+          "title": "Introduction",
+          "filename": "./../../intro/intro.md"
+      },
+      {
+          "title": "Lab 1: Using Ansible with OCI modules to manage infrastructure",
+          "filename": "../../../ansible-with-oci-modules/ansible-with-oci-modules.md"
+      },
+      {
+          "title": "Lab 2: Resource Manager",
+          "filename": "../../../resource-manager/resource-manager.md"
+      },
+      {
+          "title": "Lab 3: Create Docker registry in OCI",
+          "filename": "../../../container-registry/container-registry.md"
+      },
+      {
+          "title": "Lab 4: Deploying OCI Streaming Service",
+          "filename": "../../../deploying-oci-streaming-service/deploying-oci-streaming-service.md"
+      },
+      {
+          "title": "Lab 5: Using Events and Notification",
+          "filename": "../../../using-events-and-notifications/using-events-and-notifications.md"
+      }
+    ]
+}

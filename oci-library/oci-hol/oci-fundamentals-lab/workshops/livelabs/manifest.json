@@ -1,0 +1,22 @@
+{
+    "workshoptitle": "High Availability Applications Using Load Balancers",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+
+        {
+            "title": "Lab 2: Generate SSH Key - Cloud Shell",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Lab 3: Deploy HA Application using Load Balancers",
+            "filename": "../../deploy-ha-lb/deploy-ha-lb.md"
+        }
+    ]
+}

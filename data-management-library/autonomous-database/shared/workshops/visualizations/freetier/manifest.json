@@ -1,0 +1,49 @@
+{
+    "tutorials": [
+      {
+           "title": "Prerequisites",
+           "description": "Get a Free Trial",
+           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+       },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../intro/intro-ziplab.md"
+        },
+        {
+            "title": "Lab 1: Provision an ADW Instance",
+            "description": "Provision a new ADW instance and connect to the database",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/29/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adb-provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 2: Explore SQL Developer Web",
+            "description": "Explore SQL Developer Web",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adb-sqldevweb/adb-sqldevweb.md"
+        },
+        {
+            "title": "Lab 3: Loading Data",
+            "description": "Load data into ADB",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adb-loading/adb-loading.md"
+        },
+        {
+            "title": "Lab 4: Visualizing Your Data",
+            "description": "Create Rich Data Visualizations",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../../../adw-visualizations/adw-visualizations.md"
+        }
+    ]
+}

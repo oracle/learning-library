@@ -4,7 +4,13 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)# ReservedIP Practice - Using Reserved Public IP 
+  
+## Table of Contents
+
+[Overview](#overview)
+
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Sign in to OCI Console and create reserved public IP](#practice-1-sign-in-to-oci-console-and-create-reserved-public-ip)
 
@@ -20,15 +26,11 @@
 
 ## Overview
 
-Oracle Cloud Infrastructure Reserved Public IP service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Reserved Public IP service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos.
+A public IP address is an IPv4 address that is reachable from the internet. If a resource in your tenancy needs to be directly reachable from the internet, it must have a public IP address. Depending on the type of resource, there might be other requirements.
 
-With Reserved Public IP, you can safely and securely store or retrieve data directly from the internet or from within the cloud platform. Reserved Public IP offers multiple management interfaces that let you easily manage storage at scale.
+Certain types of resources in your tenancy are designed to be directly reachable from the internet and therefore automatically come with a public IP address. For example: a NAT gateway or a public load balancer. Other types of resources are directly reachable only if you configure them to be.
 
-Reserved Public IP is a regional service and is not tied to any specific compute instance. You can access data from anywhere inside or outside the context of the Oracle Cloud Infrastructure
-
-The purpose of this lab is to give you an overview of the Reserved Public IP Service and an example scenario to help you understand how the service works.
-
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
@@ -56,7 +58,7 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
 - **Create in Compartment:** Has the correct compartment
 
-- **Name:** Enter easy to re¬member name
+- **Name:** Set the name to *VCN-ReservedIP*
 
 - **Create Virtual Cloud Network Plus Related Resources:** Select this option.
 
@@ -64,113 +66,70 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
 - Click **Close**
 
+**NOTE:** The option to "Create Virtual Cloud Network Plus Related Resources" may not be a selectable option in more recent versions of the UI. If this option is not available, create a subnet with parameters as specified in the picture below after you create this VCN. You will need the subnet when creating the Compute instance.
+
 ![]( img/RESERVEDIP_HOL003.PNG)
 ![]( img/RESERVEDIP_HOL004.PNG)
 
-5. From **Networking** screen click **Public IPs** , then **Create Resrved Public IP** and Fill out the dialog box:
+5. From **Networking** screen click **Public IPs** , then **Create Reserved Public IP** and Fill out the dialog box:
 
 - **COMPARTMENT:** Ensure correct compartment is selected
-- **NAME:** Provide a name (optional)
+- **NAME:** *MyReservedIP*
 
 - Click **Create Reserved Public IP**
 
-![]( img/RESERVEDIP_HOL005.PNG)
+![]( img/createRIP1.png)
 
 ## Practice 2: Assign reserved public IP to first compute instance
 
-1. Open built in Git bash application and generate ssh keys
+1. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
 
-2. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
+2. Click Create Instance. Fill out the dialog box:
 
-![]( img/RESERVEDIP_HOL006.PNG)
+- **Name:** *instanceRIP* 
 
-3. Enter command 
-```
-ssh-keygen
-```
-**HINT:** You can swap between OCI window, 
-git-bash sessions and any other application (Notepad, etc.) by clicking the Switch Window icon 
+- Click on the *Show Shape, Network and Storage Options* link.
 
-![]( img/RESERVEDIP_HOL007.PNG)
-
-4. Press Enter When asked for ‘Enter File in which to save the key’, ‘Created Directory, ‘Enter passphrase’, and ‘Enter Passphrase again.
-
-![]( img/RESERVEDIP_HOL008.PNG)
-
-5. You should now have the Public and Private keys:
-
-/C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
-
-/C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
-
-**NOTE:** id_rsa.pub will be used to create 
-Compute instance and id_rsa to connect via SSH into compute instance.
-
-**HINT:** Enter command (No Spaces)
-```
-cd /C/Users/PhotonUser/.ssh
-```
-and then 
-```
-ls
-```
-to verify the two files exist. 
-
-6. In git-bash Enter command  
-```
-cat /C/Users/PhotonUser/.ssh/id_rsa.pub 
-```
-highlight the key and copy 
-
-![]( img/RESERVEDIP_HOL009.PNG)
-
-7. Click the apps icon, launch notepad and paste the key in Notepad (as backup)
-
-![]( img/RESERVEDIP_HOL0010.PNG)
-
-8. Switch to the OCI console. From OCI servies menu, Click **Instances** under **Compute** 
-
-9. Click Create Instance. Fill out the dialog box:
-
-- **Name:** Enter a name 
-
-- **Availability Domain:** Select the first available domain.(usually AD1)
+- **Availability Domain:** The default should be fine.
 
 - **Image Operating System:** For the image, we recommend using the Latest Oracle Linux available.
 
 - **Choose Instance Type:** Select Virtual Machine
 
-- **Choose Instance Shape:** Select VM.Standard.E.2.1
+- **Choose Instance Shape:** Select VM.Standard.E.2.1.Micro
 
 - **Configure Boot Volume:** Leave the default
 
-- **Add SSH Keys:** Choose ‘Paste SSH Keys’ and paste the Public Key saved earlier.
-
 - **Virtual Cloud Network Compartment:** Choose your compartment
 
-- **Virtual Cloud Network:** Select the VCN you created in the previous section. 
+- **Virtual Cloud Network:** *VCN-ReservedIP
 
 - **Subnet Compartment:** Choose your compartment. 
 
 - **Subnet:** Choose the first Subnet
 
+- Click on *Assign a public IP address*
+
+- **Add SSH Keys:** Use the SSH key *id_rsa.pub* that you created earlier in this set of labs.
+
 10. Click **Create**
 
 ![]( img/RESERVEDIP_HOL0011.PNG)
 
-11. Once the instance is in Running state, click Instance name
+11. Wait for the instance to be in the Running state
 
 12. In the instance detail page Click **Attached VNICs** and then VNIC name
 
-![]( img/RESERVEDIP_HOL0012.PNG)
+![]( img/vnic1.png)
 
 13. In VNIC detail page Click Action icon and then **Edit**
 
-![]( img/RESERVEDIP_HOL0013.PNG)
+![]( img/vnic2.png)
 
 14. In the dialog box under Public IP Address choose
 RESERVED PUBLIC IP, from the drop down list select
 the Reserved Public IP created earlier. Click **Update**
+![]( img/vnic3.png)
 
 15. Note down the Public IP address.
 
@@ -178,88 +137,70 @@ the Reserved Public IP created earlier. Click **Update**
 
 ## Practice 3: ssh to compute instance using Reserved Public IP
 
-1. In git-bash Enter Command
+1. Open a terminal window and use the following command to shh into your instance:
 ```
- cd /C/Users/PhotonUser/.ssh
+ssh opc@<your-reserved-IP>
 ```
-2. Then 
-```ls
-```
-and verify id_rsa file exists
-
-3. Enter command 
-```
-ssh –i id_rsa opc@<PUBLIC_IP_OF_COMPUTE_INSTANCE>
-```
-**NOTE:** User name is opc
-
-**HINT:** If ‘Permission denied error’ is seen, ensure you are using ‘-i’ in the ssh command
-
-4. Enter ‘Yes’ when prompted for security message
-
-![]( img/RESERVEDIP_HOL0014.PNG)
  
-5. Verify opc@<COMPUTE_INSTANCE_NAME(reserved-ip-instance1 in this case) appears on the prompt
+2. Verify *opc@instancerip1* appears on the prompt
 
-***We successfully ssh into the compute instance using the reserved public IP. Next we will use the same Public IP and assign it to a different Compute instance***
+***We successfully connected to the compute instance using ssh and the reserved public IP. Next we will use the same Public IP and assign it to a different Compute instance***
 
 ## Practice 4: Un assign Reserved Public IP
 
 1. From OCI services menu, Click **Instances** under Compute, Click your instance name
 
-2. In the instance detail page Click **Attached VNICs**, and  then VNIC name
+2. In the instance detail page Click **Attached VNICs** and then click on the *instanceRIP* name/link.
+![]( img/vnic1.png)
 
-3. In VNIC detail page Click Action icon and then **Edit**
+3. In VNIC detail page, click the *IP Addresses* link on the left side of the screen. Click the *Action* icon and then **Edit**
+![]( img/vnic2.png)
 
 4. In the dialog box under Public IP Address choose 
 **NO PUBLIC IP** (Note the Warning message indicating
 Reserved Public IP will be unassigned) . Click **Update**
-
-![]( img/RESERVEDIP_HOL0015.PNG)
+![]( img/vnic5.png)
 
 ***Reserved Public IP has now been un-assigned from this compute instance. Next we will create a new compute instance and assign this same Public IP to it.***
 
 ## Practice 5: Create a second compute instance and assign the same Reserved Public IP
 
-1. From OCI servies menu, Click **Instances** under Compute 
+1. From OCI servies menu, Click **Instances** under *Compute* 
 
-2. Fill out th dialog box as done earlier to create second compute instance
+2. Click the *Create Instance* button. Fill out the dialog box as done earlier to create second compute instance. Set the **Name** to *instanceRIP2* for clarity's sake.
 
 3. Once the instance is in Running state, click Instance name
 
 4. In the instance detail page Click **Attached VNICs**, and then VNIC name
 
-5. In VNIC detail page Click Action icon and then **Edit**
+5. In VNIC detail page Click the *IP Addresses* link nder the Resources sectionm on the left side of the page. Click the Action icon and then **Edit**
 
-6. In the dialog box under Public IP Address choose 
-RESERVED PUBLIC IP, from the drop down list select 
-the Reserved Public IP created earlier. Click **Update**
+6. In the dialog box under Public IP Address choose *RESERVED PUBLIC IP*, from the drop down list select the Reserved Public IP created earlier. Click **Update**
+![]( img/vnic6.png)
 
-7. In git-bash type cd /C/Users/PhotonUser/.ssh
+7. Be sure that you disconnected your ssh session from earlier in this lab.
 
-8. Enter 
+8. Open a terminal and SSH into the public IP address (it is proabbley still in your terminal's command history if you haven't closed your terminal.
 ```
-ls
-``` 
-and verify id_rsa file exists
-
-9. Enter Command:
- ```
- ssh -o GlobalKnownHostsFile=/dev/null -o  UserKnownHostsFile=/dev/null  –i id_rsa opc@<PUBLIC_IP_OF_COMPUTE_INSTANCE>
+ssh opc@<your public IP>
 ```
-**NOTE:** We are specifying additional options since this sameIP was used for a different compute instance earlier.
 
-10. Enter ‘Yes’ when prompted for security message
+**NOTE**
+You may get an error like the following:
+![]( img/error1.png)
+This is cause by the fact that ssh maintains a file called *known_hosts* to keep track of its prior ssh connections.
 
-11. Verify opc@<COMPUTE_INSTANCE_NAME> 
-(reserved-ip-instance2 in this case) appears at the 
-prompt
+If you get this error, edit the known_hosts file in your .ssh directory and remove the line that has the same IP address as your reserved IP address:
+![]( img/error2.png)
+
+9. Verify opc@<COMPUTE_INSTANCE_NAME> 
+(reserved-ip-instance2 in this case) appears at the prompt
 
 ## Practice 6: Delete the resources
 
 1. Switch to  OCI console window
 
-2. If your Compute instance is not displayed, From OCI services menu Click Instances under Compute
+2. If your Compute instance is not displayed, From OCI services menu Click *Instances* under *Compute*
 
 3. Locate first compute instance, Click Action icon and then **Terminat** 
 
@@ -271,8 +212,7 @@ prompt
 
 5. Repeat steps to delete the second compute instance
 
-6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
-appear.
+6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will appear.
 
 7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
 
@@ -281,5 +221,8 @@ appear.
 8. From OCI services menu Click **Networking**, then **Public IPs**, locate the Reserved Public IP you created. Click Action icon and then **Terminate**
 
 ![]( img/RESERVEDIP_HOL0019.PNG)
+
+**NOTE**
+You may get error messages about not being able to delete a VCN due to its reliance on a subnet. If that happens, simply look at the subnets within a VNC and delete them first, then you can delete the entire VCN.
 
 ***Congratulations! You have successfully completed Using Reserved Public IP address lab. In this lab you created a VCN, Reserved a Public IP, Created 2 compute instances and assigned the same Public IP to both the instance one at a time.  This lab demonstrated the option of using one IP to ssh or point to different compute instance***

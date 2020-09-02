@@ -1,0 +1,36 @@
+{
+    "tutorials": [
+      {
+          "number": "0",
+          "filename": "Intro.md",
+          "title": "Introduction",
+          "description": "Introduction to Building Packer images on OCI"
+      },
+
+      {
+          "number": "100",
+          "filename": "Lab100.md",
+          "title": "Lab 100: Cloud Infrastructure Configuration",
+          "description": "Build resources in your Trial Account"
+      },
+      {
+          "number": "200",
+          "filename": "Lab200.md",
+          "title": " Lab 200: Exploring OCI",
+          "description": "OCI overview and OCID gathering"
+      },
+      {
+          "number": "300",
+          "filename": "Lab300.md",
+          "title": " Lab 300: Basic Concepts of Packer",
+          "description": "Simple file-upload, Package Installation and Labeling"
+      },
+      {
+          "number": "400",
+          "filename": "Lab400.md",
+          "title": " Lab 400: Full Docker Developer Image Build",
+          "description": "Build a Image complete with Desktop, Services and Docker"
+      }
+
+    ]
+}

@@ -1,0 +1,112 @@
+---
+# Copyright (c) 2018, 2019 Oracle and/or its affiliates.
+# This software is made available to you under the terms of the GPL 3.0 license or the Apache 2.0 license.
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Apache License v2.0
+# See LICENSE.TXT for details.
+
+- name: Create a compute instance pool and launch instances
+  hosts: localhost
+  tasks:
+    - import_tasks: setup.yaml
+
+    - name: Create a new basic compute instance configuration that has launch_details and VNIC configuration
+      oci_instance_configuration:
+        compartment_id: "{{instance_compartment}}"
+        name: "{{instance_configuration_name}}"
+        instance_details:
+          instance_type: "compute"
+          launch_details:
+              compartment_id: "{{instance_compartment}}"
+              create_vnic_details:
+                assign_public_ip: True
+                display_name: "{{instance_display_name}}"
+              display_name: "{{instance_display_name}}"
+              shape: "{{instance_shape}}"
+              source_details:
+                source_type: "image"
+                image_id: "{{instance_image}}"
+              metadata:
+                  ssh_authorized_keys: "{{ lookup('file',  my_test_public_key ) }}"
+              freeform_tags:
+                role: webserver
+      register: result
+
+    - name: Print instance configuration details
+      debug:
+        msg: "Created a new instance configuration {{ result.instance_configuration }}"
+
+    - set_fact:
+        instance_configuration_id: "{{result.instance_configuration.id }}"
+
+
+    - name: Create a new instance pool from this instance configuration
+      oci_instance_pool:
+        name: "{{instance_pool_name}}"
+        compartment_id: "{{instance_compartment}}"
+        instance_configuration_id: "{{instance_configuration_id}}"
+        # launch 2 instances when pool is created
+        size: 2
+        placement_configurations:
+            - availability_domain: "{{instance_ad}}"
+              primary_subnet_id: "{{instance_subnet_id}}"
+      register: result
+
+    - set_fact:
+        instance_pool_id: "{{result.instance_pool.id}}"
+
+    - name: Print instance pool details
+      debug:
+        msg: "Created a new instance {{ result.instance_pool }}"
+
+    - name: Get instance details of instances in the instance pool
+      oci_instance_pool_instances_facts:
+        compartment_id: "{{instance_compartment}}"
+        id: "{{instance_pool_id}}"
+      register: result
+    - name: Print details of instances in the new instance pool
+      debug:
+        msg: "Instances in instance pool {{instance_pool_id}} are {{ result.instance_pool_instances }}"
+
+    - name: Get the first instance from the pool
+      set_fact:
+        instance_id: "{{result.instance_pool_instances[0].id}}"
+
+    - name: Get the VNIC attachment details of that instance
+      oci_vnic_attachment_facts:
+        compartment_id: "{{ instance_compartment }}"
+        instance_id: "{{ instance_id }}"
+      register: result
+
+    - name: Get details of the VNIC of that VNIC attachment
+      oci_vnic_facts:
+        id: "{{ result.vnic_attachments[0].vnic_id }}"
+      register: result
+    - set_fact:
+        instance_public_ip: "{{result.vnic.public_ip}}"
+
+    - name: Print the public ip of the newly launched instance
+      debug:
+        msg: "Public IP of launched instance {{ instance_public_ip }}"
+
+    - name: Wait (upto 5 minutes) for port 22 to become open
+      wait_for:
+        port: 22
+        host: '{{ instance_public_ip }}'
+        state: started
+        delay: 10
+      vars:
+        ansible_connection: local
+
+    - name: Attempt a ssh connection to the newly launced instance
+      # Use "opc" user as this is an OL image
+      # Disable SSH's strict host key checking just for this one command invocation
+      command: ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" -i {{ my_test_private_key }} opc@{{ instance_public_ip }} uname -a
+      retries: 3
+      delay: 5
+      register: result
+      until: result.rc == 0
+
+    - name: Print SSH response from launched instance
+      debug:
+        msg: "SSH response from instance -> {{ result.stdout_lines }}"

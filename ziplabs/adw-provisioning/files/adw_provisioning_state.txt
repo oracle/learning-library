@@ -1,1 +1,0 @@
-This image shows the console with the new data warehouse listed. The value shown in the State field has changed from "Provisioning" to "Available".

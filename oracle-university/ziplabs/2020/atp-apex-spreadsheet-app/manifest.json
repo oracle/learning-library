@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Creating an APEX Application from a Spreadsheet for ATP",
+            "description": "Learn how to upload a spreadsheet into an Oracle database table, and then create an application based on this new table. You will then play with the Interactive Report and improve the attached form. Lastly, you will add a Calendar page and then link it to the existing form page. This lab is written for Autonomous Transaction Processing (ATP), but may also be completed in Autonomous Data Warehouse (ADW).",
+            "filename": "content.md"
+        }
+    ]
+}

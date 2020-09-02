@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Creating an APEX Application from Existing Tables for ATP",
+            "description": "Learn how to create an application based on existing tables in your Oracle Database. Go from zero to hero in a ridiculously short period of time! This lab is written for Autonomous Transaction Processing (ATP), but may also be completed in Autonomous Data Warehouse (ADW)",
+            "filename": "content.md"
+        }
+    ]
+}

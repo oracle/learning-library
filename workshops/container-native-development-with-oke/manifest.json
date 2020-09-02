@@ -1,61 +1,54 @@
 {
-    "workshop": {
-        "title": "Container Native Development",
-        "description": "How to create a CI/CD pipeline and deploy to a managed Kubernetes environment using Wercker.",
-        "theme": "default",
-        "interactive":"https://launch.oracle.com/?container-native-development",
-        "labs": [
-            {
-                "number": "0",
-                "filename": "Intro.md",
-                "title": "Read Me First",
-                "description": "Step-by-step workshop instructions",
-                "labels": {"version": "Virtual Box"}
-            },
-            {
-                "number": "100",
-                "filename": "LabGuide100.md",
-                "title": "Lab 100: Containerize Your Java Microservice",
-                "description": "Use Wercker to automatically build your application and package it as a Docker image"
-            },
-            {
-                "number": "200",
-                "filename": "LabGuide200.md",
-                "title": "Lab 200: Automate Deployment to Kubernetes",
-                "description": "Use Wercker to set up a managed Kubernetes cluster and deploy to it"
+    "tutorials": [
+        {
+            "number": "0",
+            "filename": "Intro.md",
+            "title": "Read Me First",
+            "description": "Step-by-step workshop instructions",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "12/02/2020",
+            "contentid": "12nnnn"
+        },
+        {         
+            "title": "Lab 100: Containerize Your Java Microservice",
+            "description": "Use Wercker to automatically build your application and package it as a Docker image",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "05/02/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide100.md"
+        },
+        {         
+            "title": "Lab 200: Automate Deployment to Kubernetes",
+            "description": "Use Wercker to set up a managed Kubernetes cluster and deploy to it",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/22/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide200.md"
+        },
+        {         
+            "title": "Lab 300: Make a Bug Fix to Your Java Microservice",
+            "description": "Go from code change to production using Wercker",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "05/02/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide300.md"
+        },
+        {         
+            "title": "Lab 400: Kubernetes Blue/Green Deployments",
+            "description": "Stage your new version without disrupting the current deployment",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "05/02/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide400.md"
+        },
+        {         
+            "title": "Lab 500: (Optional) Extend Your Application with a Function",
+            "description": "Install Fn in Kubernetes and Deploy a Function",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/22/2020",
+            "contentid": "12nnnn",
+            "filename": "LabGuide500.md"
+        }
 
-            },
-            {
-                "number": "300",
-                "filename": "LabGuide300.md",
-                "title": "Lab 300: Make a Bug Fix to Your Java Microservice",
-                "description": "Go from code change to production using Wercker"
-            },
-            {
-                "number": "400",
-                "filename": "LabGuide400.md",
-                "title": "Lab 400: Kubernetes Blue/Green Deployments",
-                "description": "Stage your new version without disrupting the current deployment"
-            },
-            {
-                "number": "500",
-                "filename": "LabGuide500.md",
-                "title": "Lab 500: (Optional) Extend Your Application with a Function",
-                "description": "Install Fn in Kubernetes and Deploy a Function"
-            },
-            {
-                "number": "1000",
-                "filename": "ManualCleanUp.md",
-                "title": "Cloud Environment Post Workshop Cleanup",
-                "description": "Reset your cloud environment by removing the Cloud Instances, Networking, etc. created during the workshop"
-            },
-            {
-                "number": "1100",
-                "filename": "NetworkSecurity.md",
-                "title": "Appendix: Network Security Best Practices",
-                "description": "How to configure OCI network rules for production-ready securty"
-            }
-
-        ]
-    }
+    ]
 }

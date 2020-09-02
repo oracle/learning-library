@@ -1,0 +1,37 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to EBS lift and shift",
+            "filename": "./README.md"
+        },
+        {
+            "title": "Lab 1: Sign Up for Free Trial",
+            "description": "Sign Up for Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 2: Preparing Your Tenancy for Oracle E-Business Suite",
+            "description": "Preparing Your Tenancy for Oracle E-Business Suite",
+            "filename": "./prepare/prepare.md"
+        },
+        {
+            "title": "Lab 3: Oracle E-Business Suite Cloud Manager Deployment and Configuration",
+            "description": "Oracle E-Business Suite Cloud Manager Deployment and Configuration",
+            "filename": "./deploy/deploy.md"
+        },
+        {
+            "title": "Lab 4: Provision Your Oracle E-Business Suite Environment",
+            "description": "Provision Your Oracle E-Business Suite Environment",
+            "filename": "./provision/provision.md"
+        },
+        {
+            "title": "Lab 5: Clone Your Oracle E-Business Suite Environment",
+            "description": "Clone Your Oracle E-Business Suite Environment",
+            "filename": "./clone/clone.md"
+        }
+     ]
+}
+
+
+

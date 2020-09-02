@@ -1,1 +1,0 @@
-This illustration shows the BookRestService application listed in the Applications tab of the Oracle Application Container Cloud Service console. It contains details of the applications such as Version, Last Deployed On, Memory, Runtime, Created On, Instances, and the URL.

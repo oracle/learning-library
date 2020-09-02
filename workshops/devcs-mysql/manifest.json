@@ -1,0 +1,22 @@
+{
+    "workshop": {
+        "title": "DevOps and Infrastructure as Code ",
+        "description": "These labs will give you a basic understanding of Develope Cloud Service infrastrusture concepts and deployments",
+        "interactive":"https://launch.oracle.com/?devcs-mysql-workshop",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "Intro.md",
+                "title": "Introduction",
+                "description": "Obtain an Oracle Cloud Trial Account"
+            },
+            {
+                "number": "100",
+                "filename": "Lab100.md",
+                "title": "Lab 100: Infratructure as Code",
+                "description": "Setting up the Infrastructure using Developer Cloud Service to provision a Compute Instance running MYSQL"
+
+            }
+        ]
+    }
+}

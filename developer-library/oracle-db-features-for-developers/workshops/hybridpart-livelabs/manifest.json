@@ -1,0 +1,31 @@
+{
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },{
+            "title": "Introduction",
+            "description": "About the New features for Developers Workshop",
+            "filename": "../../intro/intro.md"
+          },
+        {
+            "title": "Lab 1: Environment Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/verify-setup-19c-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Sample Schema Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 3: Hybrid Partitioning",
+            "description": "Hybrid Partition Tables",
+            "publisheddate": "4/05/2020",
+            "filename": "../../partitioning/partitioning.md"
+        }
+    ]
+}

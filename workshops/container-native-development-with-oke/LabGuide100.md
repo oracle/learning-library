@@ -10,16 +10,16 @@ You will take on 2 personas during the workshop. The **Lead Developer Persona**
 
 During this lab, you will take on the **Lead Developer Persona** and work on containerizing your existing Java application. You will set up Wercker to monitor your application's source code repository for commits and automatically trigger a build, test, and package pipeline, which will result in a Docker image of your application that is ready to be deployed.
 
-**_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
-## Objectives
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+### Objectives
 
 **Containerize Your Java Application and Automate Building and Packaging**
 
-- Create Wercker Application
+
   - Fork Java Application on GitHub
   - Create a Wercker account
-  - Create Wercker application
+  - Create Wercker Application
 - Create and Run Wercker Pipelines
   - Configure Pipelines and Workflow in Wercker
   - Define Wercker Build Pipeline
@@ -27,7 +27,7 @@ During this lab, you will take on the **Lead Developer Persona** and work on con
   - Define Wercker Publish Pipeline
   - Validate Workflow Execution
 
-## Required Artifacts
+### Required Artifacts
 
 For this lab you will need a Github account. Use the following link to set one up:
 
@@ -41,7 +41,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
 - From any browser, go to:
 
-    [https://github.com/derekoneil/twitter-feed-oke](https://github.com/derekoneil/twitter-feed-oke)
+    [https://github.com/chipbaber/twitter-feed-oke](https://github.com/chipbaber/twitter-feed-oke)
 
 - Click **Fork** in the upper right hand corner of the browser. **Sign in** if prompted.
 
@@ -144,6 +144,7 @@ For this lab you will need a Github account. Use the following link to set one u
 - In the **Edit new file** input box, **paste** the following:
 
     ```yaml
+    <copy>
     #Use OpenJDK base docker image from dockerhub and open the application port on the docker container
     box:
       id: openjdk:8
@@ -158,6 +159,7 @@ For this lab you will need a Github account. Use the following link to set one u
         - script:
             name: maven build
             code: mvn clean assembly:assembly
+      </copy>
     ```
 
 - You should have **14 lines** of YAML in the editor:
@@ -198,22 +200,22 @@ For this lab you will need a Github account. Use the following link to set one u
 
   ```
   Key:              Value:
-  DOCKER_USERNAME   <your-tenancy-name>/<your-oracle-cloud-username>
+  DOCKER_USERNAME   <your-tenancy-namespace>/<your-oracle-cloud-username>
   DOCKER_REGISTRY   iad.ocir.io
-  DOCKER_REPO       <your-tenancy-name>/twitter-feed
+  DOCKER_REPO       <your-tenancy-namespace>/twitter-feed
   ```
 
   ![](images/LabGuide100-ff28ad1b.png)
 
   **NOTES**:
 
-  - Replace `<your-tenancy-name>` and `<your-oracle-cloud-username>` in the variable values with the specific tenancy name and username for your cloud account.
+  - Replace `<your-tenancy-namespace>` and `<your-oracle-cloud-username>` in the variable values with the specific tenancy name and username for your cloud account.
 
   ![](images/LabGuide100-9f627c8b.png)
 
-  - Your tenancy name can be found under the User menu in the OCI Console:
+  - Your tenancy namespace can be found under the **User menu** in the OCI Console navbar, click **Tenancy** and then look for **Object Storage Namespace**.
 
-  ![](images/500/LabGuide500-e51e6a21.png)
+  ![](images/100/step6/Lab100-step1-1.png)
 
   - Your Oracle Cloud username is the email address that you used when you created your trial account
 
@@ -230,6 +232,7 @@ For this lab you will need a Github account. Use the following link to set one u
 - After the definition of the build pipeline, **paste** the following YAML:
 
     ```yaml
+    <copy>
     #Push the docker image with our built and tested application to the Oracle Container Registry
     push-release:
       steps:
@@ -242,6 +245,7 @@ For this lab you will need a Github account. Use the following link to set one u
             working-dir: /pipeline/source
             ports: 8080
             cmd: sh target/bin/start
+    </copy>
     ```
 
   ![](images/100/LabGuide100-0274b607.png)
@@ -262,7 +266,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
   ![](images/100/30.png)
 
-- Once the workflow finishes, you'll see that the `build` pipeline was successfully completed, but that the `push-release` pipeline ended in an error. This is what we expected. In fact, if you click on the **push-release** pipeline that failed, you will see the `Anonymous users are only allowed read access on public repos` error message, indicating our lack of an authentication token. Let's move on to the next lab so we can log in to OCI, set up our Kubernetes infrastructure, and generate that token.
+- Once the workflow finishes, you will see that the `build` pipeline was successfully completed, but that the `push-release` pipeline ended in an error. This is what we expected. In fact, if you click on the **push-release** pipeline that failed, you will see the `Anonymous users are only allowed read access on public repos` error message, indicating our lack of an authentication token. Let's move on to the next lab so we can log in to OCI, set up our Kubernetes infrastructure, and generate that token.
 
   ![](images/100/LabGuide100-a6bd0f55.png)
 
@@ -270,4 +274,4 @@ For this lab you will need a Github account. Use the following link to set one u
 
   **NOTE**: If you receive an error message that says `Tenant with name XYZ not found`, don't worry. Your cloud account may be in a different region than we specified in the environment variable above. We will correct that in the next lab, once we log in to the OCI console.
 
-**You are now ready to move to the next lab: [Lab 200](LabGuide200.md)**
+**You are now ready to move to the next lab: Lab 200**

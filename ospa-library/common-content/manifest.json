@@ -1,0 +1,15 @@
+{
+    "workshop": {
+        "title": "Touch the Cloud Series: Common Content",
+        "description": "All your common content across workshops",
+        "theme": "default",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "Home.md",
+                "title": "Home",
+                "description": "Welcome to Touch The Cloud Common Content"
+            }
+        ]
+    }
+}

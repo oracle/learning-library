@@ -1,20 +1,17 @@
-# Workshop Catalog
+[![](../common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
+
+# Oracle North America Workshops
+
+Click [here](http://bit.ly/golivelabs) to access these workshops on LiveLabs.
 
 
-## Workshops and Hands-on-labs
+## Get an Oracle Cloud Trial Account for Free!
+If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
+- $300 of free credits good for up to 3500 hours of Oracle Cloud usage
+- Credits can be used on all eligible Cloud Platform and Infrastructure services for the next 30 days
+- Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
-| Title | Location | Desc |
-| ----- | -------- | ---- |
-| New Data Lake (Big Data) Workshop | [journey2-new-data-lake](https://oracle.github.io/learning-library/workshops/journey2-new-data-lake) | Hands-on Labs showing you how to build a data lake from a variety of file and streaming sources. You will learn how to execute real-time and batch processing with Oracle’s managed Hive, Spark, Kafka and Object Storage services in the cloud. |
-| Autonomous Data Warehouse Test Drive Workshop | [journey4-adwc](https://oracle.github.io/learning-library/workshops/journey4-adwc) | This workshop walks you through all the steps to get started using the Oracle Autonomous Data Warehouse Cloud (ADWC). You will provision a new ADWC database, load data from the object store and troubleshoot data loads, query external data residing on the object store, manage an ADWC instance, scale an ADWC instance, and use Oracle Machine Learning notebooks.  It also covers how to visualize data with Oracle Data Visualization Desktop and how to integrate data with Oracle Data Integration Platform Cloud. |
-| Cloud Native and DevOps Workshop (CaNDO workshop) | [CaNDO](https://github.com/oracle/learning-library/tree/master/workshops/cloud-native-devops-workshop) | Set of small hands-on labs focused on the development of applications with Developer Cloud Service, Application Container Cloud Service, Java Cloud Service, Wercker and Container Cloud Service |
-| DevOps Cloud Native Microservices | [microservices-devops](https://github.com/oracle/learning-library/tree/master/workshops/microservices/) | This workshop will walk you through the Software Development Lifecycle (SDLC) for a Cloud Native project that will create and use several Microservices. Throughout our journey we will assume roles inside a ficticous company. |
-| DevOps Cloud Native Microservices-MySQL | [microservices-mysql](https://github.com/oracle/learning-library/tree/master/workshops/microservices-mysql/) | This workshop will walk you through the Software Development Lifecycle (SDLC) for a Cloud Native project that will create and use several Microservices, including a microservice accessing a MySQL DB. Throughout our journey, we will assume roles inside a fictitious company perform the actions of each persona as we progress through the DevOps lifecycle.|
-| DevOps Starter Kit | [ttc-dev-ops-starter-kit](https://oracle.github.io/learning-library/workshops/ttc-dev-ops-starter-kit/) | Hands-on-labs that will walk you through using some of the AppDev services found in the Oracle Trial Cloud Account, while applying DevOps principles. |
-| iPaaS to Build a Quote to Order Process | [ttc-quote-to-order](https://oracle.github.io/learning-library/workshops/ttc-quote-to-order/) | Hands-on-labs that will use Integration PaaS Services to build a Quote to Order Process |
-| JCS Pipeline using Oracle Stack Manager | [jcs-devops](https://oracle.github.io/learning-library/workshops/jcs-devops/) | Hands-on-labs showing a Software Development Lifecycle using the Oracle Developer Cloud Services, Java Cloud Service and Oracle Stack Manager.|
-| DevOps Automation Using Chef and Jenkins | [chefjenkins-devops](https://oracle.github.io/learning-library/workshops/chefjenkins-devops/) | Hands-on-labs showing how to build an automated Software Development Lifecycle (SDLC) pipeline using the Oracle cloud and third party tools. The workshop leverages Developer Cloud Service, Jenkins, Oracle Cloud Orchestrations, and Chef|
-| Database Cloud Serivces Workshop | [dbcs](https://oracle.github.io/learning-library/workshops/dbcs/) | Hands-on-labs that will give you a basic understanding of the Oracle Database Cloud Service and many of the capabilities around administration and database development.|
-| Database Cloud Serivces In-Memory Workshop | [dbcs-in-memory](./dbcs-in-memory/) | Hands-on-labs that will guide you through the basic configuration of the In-Memory column store (IM column store), as well as illustrating the benefits of its key features.|
-|Oracle Big Data Prep-BI Cloud Services Workshop | [bdpcs-bics](./bdpcs-bics/) | Hands-on-labs workshop that focuses on LOB user preparation, discovery, and reporting on spreadsheet data using the Big Data Preparation Cloud Service and BI Cloud Service|
-|Oracle Autonomous API Platform Cloud Service Tutorials | [api-platform](./api-platform/) | Hands-on tutorials that focus on the design, implementation and management of APIs|
+Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

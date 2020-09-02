@@ -1,1 +1,0 @@
-This image shows the index page of the employee client. It contains the Cloud Employee App title and the People section. The People section contains a text box and a drop-down list beside the Search, Home, and Add New buttons. Two employee record cards are displayed.

@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Creating Virtual Cloud Network](#practice-1-creating-virtual-cloud-network)
 
@@ -29,7 +29,7 @@ Following is a topology that we are going to create during the Hands on lab.
  ![](img/image001.png)
 
 
-## Pre-Requisites 
+## Prerequisites 
 
 - Oracle Cloud Infrastructure account credentials (Tenant ID, Username and Password)
 - SSH Keys

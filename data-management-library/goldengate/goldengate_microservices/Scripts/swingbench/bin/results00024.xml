@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Results xmlns="http://www.dominicgiles.com/swingbench">
+    <Overview>
+        <BenchmarkName>"Order Entry (PLSQL) V2"</BenchmarkName>
+        <Comment>Version 2 of the SOE Benchmark running in the database using PL/SQL</Comment>
+        <TimeOfRun>Feb 14, 2019 8:24:35 PM</TimeOfRun>
+        <TotalRunTime>0:01:00</TotalRunTime>
+        <TotalLogonTime>0:00:05</TotalLogonTime>
+        <TotalCompletedTransactions>4967</TotalCompletedTransactions>
+        <TotalFailedTransactions>57</TotalFailedTransactions>
+        <AverageTransactionsPerSecond>82.78</AverageTransactionsPerSecond>
+        <MaximumTransactionRate>4894</MaximumTransactionRate>
+    </Overview>
+    <Configuration>
+        <NumberOfUsers>2</NumberOfUsers>
+        <MinimumInterThinkTime>0</MinimumInterThinkTime>
+        <MaximumInterThinkTime>0</MaximumInterThinkTime>
+        <MinimumIntraThinkTime>0</MinimumIntraThinkTime>
+        <MaximumIntraThinkTime>0</MaximumIntraThinkTime>
+        <ConnectString>//localhost:1521/oggoow182.oracle.com</ConnectString>
+        <TimingsIn>milliseconds</TimingsIn>
+        <WaitTillAllLogon>true</WaitTillAllLogon>
+        <Driver>oracle.jdbc.pool.OracleDataSource</Driver>
+    </Configuration>
+    <DMLResults>
+        <SelectStatements>49855</SelectStatements>
+        <InsertStatements>10506</InsertStatements>
+        <UpdateStatements>5218</UpdateStatements>
+        <DeleteStatements>0</DeleteStatements>
+        <CommitStatements>6262</CommitStatements>
+        <RollbackStatements>57</RollbackStatements>
+    </DMLResults>
+    <TransactionResults>
+        <Result id="Customer Registration">
+            <AverageResponse>19.838532110091744</AverageResponse>
+            <MinimumResponse>6</MinimumResponse>
+            <MaximumResponse>220</MaximumResponse>
+            <TenthPrecentile>9</TenthPrecentile>
+            <TwentiethPercentile>11</TwentiethPercentile>
+            <ThirtiethPercentile>13</ThirtiethPercentile>
+            <FortiethPrecentile>15</FortiethPrecentile>
+            <FiftythPercentile>16</FiftythPercentile>
+            <SixtiethPercentile>18</SixtiethPercentile>
+            <SeventiethPercentile>20</SeventiethPercentile>
+            <EightiethPercentile>23</EightiethPercentile>
+            <NinetiethPercentile>30</NinetiethPercentile>
+            <TransactionCount>545</TransactionCount>
+            <FailedTransactionCount>38</FailedTransactionCount>
+            <RollbackCount>0</RollbackCount>
+        </Result>
+        <Result id="Update Customer Details">
+            <AverageResponse>1.2997601918465227</AverageResponse>
+            <MinimumResponse>1</MinimumResponse>
+            <MaximumResponse>27</MaximumResponse>
+            <TenthPrecentile>1</TenthPrecentile>
+            <TwentiethPercentile>1</TwentiethPercentile>
+            <ThirtiethPercentile>1</ThirtiethPercentile>
+            <FortiethPrecentile>1</FortiethPrecentile>
+            <FiftythPercentile>1</FiftythPercentile>
+            <SixtiethPercentile>1</SixtiethPercentile>
+            <SeventiethPercentile>1</SeventiethPercentile>
+            <EightiethPercentile>1</EightiethPercentile>
+            <NinetiethPercentile>1</NinetiethPercentile>
+            <TransactionCount>417</TransactionCount>
+            <FailedTransactionCount>0</FailedTransactionCount>
+            <RollbackCount>0</RollbackCount>
+        </Result>
+        <Result id="Browse Products">
+            <AverageResponse>9.753355704697986</AverageResponse>
+            <MinimumResponse>1</MinimumResponse>
+            <MaximumResponse>166</MaximumResponse>
+            <TenthPrecentile>1</TenthPrecentile>
+            <TwentiethPercentile>2</TwentiethPercentile>
+            <ThirtiethPercentile>3</ThirtiethPercentile>
+            <FortiethPrecentile>3</FortiethPrecentile>
+            <FiftythPercentile>4</FiftythPercentile>
+            <SixtiethPercentile>6</SixtiethPercentile>
+            <SeventiethPercentile>11</SeventiethPercentile>
+            <EightiethPercentile>16</EightiethPercentile>
+            <NinetiethPercentile>22</NinetiethPercentile>
+            <TransactionCount>1788</TransactionCount>
+            <FailedTransactionCount>0</FailedTransactionCount>
+            <RollbackCount>0</RollbackCount>
+        </Result>
+        <Result id="Order Products">
+            <AverageResponse>57.53846153846154</AverageResponse>
+            <MinimumResponse>8</MinimumResponse>
+            <MaximumResponse>15479</MaximumResponse>
+            <TenthPrecentile>16</TenthPrecentile>
+            <TwentiethPercentile>20</TwentiethPercentile>
+            <ThirtiethPercentile>22</ThirtiethPercentile>
+            <FortiethPrecentile>24</FortiethPrecentile>
+            <FiftythPercentile>27</FiftythPercentile>
+            <SixtiethPercentile>29</SixtiethPercentile>
+            <SeventiethPercentile>32</SeventiethPercentile>
+            <EightiethPercentile>36</EightiethPercentile>
+            <NinetiethPercentile>44</NinetiethPercentile>
+            <TransactionCount>1183</TransactionCount>
+            <FailedTransactionCount>19</FailedTransactionCount>
+            <RollbackCount>0</RollbackCount>
+        </Result>
+        <Result id="Process Orders">
+            <AverageResponse>11.177215189873417</AverageResponse>
+            <MinimumResponse>1</MinimumResponse>
+            <MaximumResponse>68</MaximumResponse>
+            <TenthPrecentile>1</TenthPrecentile>
+            <TwentiethPercentile>1</TwentiethPercentile>
+            <ThirtiethPercentile>1</ThirtiethPercentile>
+            <FortiethPrecentile>1</FortiethPrecentile>
+            <FiftythPercentile>9</FiftythPercentile>
+            <SixtiethPercentile>11</SixtiethPercentile>
+            <SeventiethPercentile>15</SeventiethPercentile>
+            <EightiethPercentile>18</EightiethPercentile>
+            <NinetiethPercentile>26</NinetiethPercentile>
+            <TransactionCount>316</TransactionCount>
+            <FailedTransactionCount>0</FailedTransactionCount>
+            <RollbackCount>0</RollbackCount>
+        </Result>
+        <Result id="Browse Orders">
+            <AverageResponse>8.705</AverageResponse>
+            <MinimumResponse>1</MinimumResponse>
+            <MaximumResponse>73</MaximumResponse>
+            <TenthPrecentile>1</TenthPrecentile>
+            <TwentiethPercentile>1</TwentiethPercentile>
+            <ThirtiethPercentile>1</ThirtiethPercentile>
+            <FortiethPrecentile>1</FortiethPrecentile>
+            <FiftythPercentile>1</FiftythPercentile>
+            <SixtiethPercentile>8</SixtiethPercentile>
+            <SeventiethPercentile>11</SeventiethPercentile>
+            <EightiethPercentile>16</EightiethPercentile>
+            <NinetiethPercentile>22</NinetiethPercentile>
+            <TransactionCount>600</TransactionCount>
+            <FailedTransactionCount>0</FailedTransactionCount>
+            <RollbackCount>0</RollbackCount>
+        </Result>
+        <Result id="Sales Rep Query">
+            <AverageResponse>1.728813559322034</AverageResponse>
+            <MinimumResponse>1</MinimumResponse>
+            <MaximumResponse>37</MaximumResponse>
+            <TenthPrecentile>1</TenthPrecentile>
+            <TwentiethPercentile>1</TwentiethPercentile>
+            <ThirtiethPercentile>1</ThirtiethPercentile>
+            <FortiethPrecentile>1</FortiethPrecentile>
+            <FiftythPercentile>1</FiftythPercentile>
+            <SixtiethPercentile>1</SixtiethPercentile>
+            <SeventiethPercentile>1</SeventiethPercentile>
+            <EightiethPercentile>1</EightiethPercentile>
+            <NinetiethPercentile>1</NinetiethPercentile>
+            <TransactionCount>118</TransactionCount>
+            <FailedTransactionCount>0</FailedTransactionCount>
+            <RollbackCount>0</RollbackCount>
+        </Result>
+    </TransactionResults>
+    <BenchmarkMetrics>
+        <TPSReadings>1550175875562, 0,1550175876562, 0,1550175877563, 0,1550175878563, 0,1550175879564, 0,1550175880564, 0,1550175881564, 0,1550175882565, 45,1550175883565, 72,1550175884566, 95,1550175885566, 91,1550175886566, 127,1550175887567, 126,1550175888567, 118,1550175889567, 137,1550175890568, 82,1550175891568, 42,1550175892568, 130,1550175893569, 176,1550175894569, 143,1550175895569, 152,1550175896570, 170,1550175897570, 171,1550175898570, 143,1550175899570, 144,1550175900571, 180,1550175901571, 118,1550175902571, 151,1550175903572, 145,1550175904572, 129,1550175905572, 141,1550175906573, 169,1550175907573, 89,1550175908573, 38,1550175909573, 0,1550175910574, 0,1550175911574, 0,1550175912574, 0,1550175913575, 0,1550175914575, 0,1550175915575, 0,1550175916576, 0,1550175917576, 0,1550175918577, 0,1550175919577, 0,1550175920578, 0,1550175921578, 0,1550175922578, 0,1550175923578, 58,1550175924579, 77,1550175925579, 102,1550175926579, 142,1550175927579, 160,1550175928580, 164,1550175929580, 186,1550175930580, 180,1550175931580, 141,1550175932581, 135,1550175933581, 132,1550175934581, 93,</TPSReadings>
+    </BenchmarkMetrics>
+</Results>
+rics>
+</Results>

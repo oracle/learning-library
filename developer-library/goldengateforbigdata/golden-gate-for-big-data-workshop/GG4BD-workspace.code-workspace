@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../GGMicroservices"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../learning-library"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "GG4BigData"
+	}
+}

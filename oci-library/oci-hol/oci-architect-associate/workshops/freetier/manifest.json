@@ -1,0 +1,37 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+          "title": "Introduction",
+          "filename": "./../../intro/intro.md"
+      },
+      {
+          "title": "Lab 1: OCI Quick Start",
+          "filename": "../../../oci-quick-start/oci-quick-start.md"
+      },
+      {
+          "title": "Lab 2: Generate SSH Key - Cloud Shell",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+      },
+      {
+          "title": "Lab 3: Deploy HA Application using Load Balancers",
+          "filename": "../../../oci-fundamentals-lab/deploy-ha-lb/deploy-ha-lb.md"
+      },
+      {
+          "title": "Lab 4: Configuring File System Storage",
+          "filename": "../../../file-storage-service/file-storage-service.md"
+      },
+      {
+          "title": "Lab 5: Identity and Access Management",
+          "filename": "../../../identity-access-management/identity-access-management.md"
+      },
+      {
+          "title": "Lab 6: Deploying and configuring Autonomous Data Warehouse",
+          "filename": "../../../autonomous-data-warehouse/autonomous-data-warehouse.md"
+      }
+    ]
+}

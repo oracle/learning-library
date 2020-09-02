@@ -1,0 +1,15 @@
+{
+  "workshoptitle": "Create SSH Keys and Login to Oracle Cloud",
+    "tutorials": [
+        {
+            "title": "Lab: Generate SSH Key Using Oracle Cloud Shell",
+            "description": "Generate SSH Key",
+            "filename": "generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Lab: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "filename": "../cloud-login/cloud-login.md"
+        }
+    ]
+}

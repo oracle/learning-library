@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "Using Events and Notifications",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Using Events and Notification",
+            "filename": "../../using-events-and-notifications/using-events-and-notifications.md"
+        }
+    ]
+}

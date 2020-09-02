@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "Auditing in an Autonomous Database",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
+          "title": "Introduction",
+          "filename": "../../intro/intro.md"
+      },
+      {
+          "title": "Lab 1: Auditing in Autonomous Database",
+          "filename": "./../../auditing-in-autonomous-database/auditing-in-autonomous-database.md"
+      }
+    ]
+}

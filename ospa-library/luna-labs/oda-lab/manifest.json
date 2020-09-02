@@ -1,0 +1,8 @@
+{
+    "tutorials": [
+        {            
+            "title": "Oracle Digital Assistant",
+            "filename": "./oda-labguide.md"
+        }
+    ]
+}

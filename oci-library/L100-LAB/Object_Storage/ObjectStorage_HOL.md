@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Sign in to OCI Console and Create Object Storage Bucket ](#practice-1-sign-in-to-oci-console-and-create-object-storage-bucket)
 
@@ -27,7 +27,7 @@ Object Storage is a regional service and is not tied to any specific compute ins
 
 The purpose of this lab is to give you an overview of the Object Service and an example scenario to help you understand how the service works.
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
@@ -58,31 +58,29 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
 ## Practice-2: Upload Object and create pre authenticated link
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
+1. **Windows**: Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
 ![]( img/OBJECT-STORAGE004.PNG)
-
-2. Change directory to the Downloads folder Enter command:
+Change directory to the Downloads folder Enter command:
 ```
 $ cd /c/Users/PhotonUser/Downloads/**
 ```
 ![]( img/OBJECT-STORAGE005.PNG)
 
-3. Create a sample file, Enter command:
+- **Mac / Linux**: Open a terminal window and navigate to your home directory.
+
+2. Create a sample file, Enter command:
 ```
 touch samplefile
 ```
-This should create a file by the name"samplefile" in the Downloads folder
+This should create a file by the name"samplefile" in the current folder
 
 4. Switch to OCI window and click the Bucket Name.
-
-**HINT:** You can swap between OCI window and any other application(git-bash etc) by clicking switch window
-![]( img/OBJECT-STORAGE006.PNG)
 
 5. Bucket detail window should be visible. Click **Upload Object**
 ![]( img/OBJECT-STORAGE007.PNG)
 
-6. Click on Upload Object > Browse > This PC > Downloads. You should see the sample file created earlier
+6. Click on *Upload Object* and then browse to where you created your *samplefile* moments ago.
 
 7. Select the file, then click **Upload Object** in the Dialog box.
 
@@ -92,7 +90,7 @@ Authenticated Request**. This will create a web
 link that can be used to access the object 
 Without requiring any additional authentication.
 
-![]( img/OBJECT-STORAGE008.PNG)
+![]( img/PreAuth1.png)
 
 9. Fill out the dialog box:
 
@@ -111,9 +109,9 @@ Without requiring any additional authentication.
 11. Click **Copy** to copy the link
 
 **NOTE:** The link must be copied and saved once the window is closed the link can not be retrieved again. 
+![]( img/PreAuth2.png)
 
 12. Click **Close**
-![]( img/OBJECT-STORAGE010.PNG)
 
 13. Open a new browser window and paste Pre-Authenticated link. 
 ![]( img/OBJECT-STORAGE011.PNG)

@@ -1,0 +1,139 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction to ADB Dedicated",
+            "description": "Introduction to ADB Dedicated",
+            "filename": "../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Prepare Private Network for OCI Implementation",
+            "description": "Preparing your private network in the Oracle Cloud Infrastructure",
+            "filename": "./../adb-network-prepare/adb-network-prepare.md"
+        },
+        {
+            "title": "Lab 2: Provisioning Autonomous Exadata Infrastructure in a private OCI network",
+            "description": "Provisioning Exadata Infrastructure for Autonomous DB in OCI",
+            "filename": "./../adb-provisioning-exadata/adb-provisioning-exadata.md"
+        },
+        {
+            "title": "Lab 3: Provisioning Exadata Infrastructure for ADB on Exadata Cloud@Customer",
+            "description": "Provisioning Exadata Infrastructure for Autonomous DB on ExaC@C",
+            "filename": "./../adb-provisioning-exaC@C/adb-provisioning-exaC@C.md"
+        },
+        {
+            "title": "Lab 4: Provisioning a VM Cluster for ADB on Exadata Cloud@Customer",
+            "description": "Provisioning a VM Cluster for Autonomous DB on ExaC@C",
+            "filename": "./../adb-provisioning-VMC/adb-provisioning-VMC.md"
+        },
+        {
+            "title": "Lab 5: Provisioning an Autonomous Container Database",
+            "description": "Provisioning an Autonomous Container Database",
+            "filename": "./../adb-provisioning-autonomous-container/adb-provisioning-autonomous-container.md"
+        },
+        {
+            "title": "Lab 6: Provisioning databases",
+            "description": "Provisioning databases on your dedicated Autonomous Infrastructure",
+            "filename": "./../adb-provisioning-databases/adb-provisioning-databases.md"
+        },
+        {
+            "title": "Lab 7: Configuring a Development System",
+            "description": "Configuring a development system for use with your dedicated autonomous database",
+            "filename": "./../adb-configure-dev-client/adb-configure-dev-client.md"
+        },
+        {
+            "title": "Lab 8: Configuring VPN into private ATP network",
+            "description": "Configuring VPN connectivity into your private ATP network",
+            "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
+        },
+        {
+            "title": "Lab 9: Build and Deploy Node.js Application",
+            "description": "Building and deploying node.js application stacks on dedicated autonomous infrastructure",
+            "filename": "./../adb-build-and-deploy-nodejs/adb-build-and-deploy-nodejs.md"
+        },
+        {
+            "title": "Lab 10: Build Python Application Stacks",
+            "description": "Building and deploying Python application stacks on dedicated autonomous infrastructure",
+            "filename": "./../adb-build-python-apps/adb-build-python-apps.md"
+        },
+        {
+            "title": "Lab 11: Build Java Application Stacks",
+            "description": "Building and deploying Java application stacks on dedicated autonomous infrastructure",
+            "filename": "./../adb-build-java-apps/adb-build-java-apps.md"
+        },
+        {
+            "title": "Lab 12: Using CLI commands",
+            "description": "Using CLI commands to work with your Autonomous databases",
+            "filename": "./../adb-using-cli-commands/adb-using-cli-commands.md"
+        },
+        {
+            "title": "Lab 13: SQL Developer Web Console",
+            "description": "Using sql*developer web console",
+            "filename": "./../adb-sql-developer-web/adb-sql-developer-web.md"
+        },
+        {
+            "title": "Lab 14: Build Apex Application",
+            "description": "Building Apex application on dedicated autonomous database",
+            "filename": "./../adb-build-apex-apps/adb-build-apex-apps.md"
+        },
+        {
+            "title": "Lab 15: Migrate with Data Pump",
+            "description": "Migrating to Dedicated ATP using Data Pump",
+            "filename": "./../atp-data-pump-migration/atp-data-pump-migration.md"
+        },
+        {
+            "title": "Lab 16: Oracle Goldengate Replication",
+            "description": "Live migration to ATP-Dedicated using Oracle Goldengate replication",
+            "filename": "./../atp-goldengate-replication/atp-goldengate-replication.md"
+        },
+        {
+            "title": "Lab 17: Build Always On Applications",
+            "description": "Building Always-On applications on the autonomous database",
+            "filename": "./../adb-build-always-on-apps/adb-build-always-on-apps.md"
+        },
+        {
+            "title": "Lab 18: Managing Database Performance",
+            "description": "Managing database performance with Performance Hub",
+            "filename": "./../adb-performance-hub/adb-performance-hub.md"
+        },
+        {
+            "title": "Lab 19: Zero Downtime Scaling",
+            "description": "Zero downtime scaling",
+            "filename": "./../adb-scaling/adb-scaling.md"
+        },
+        {
+            "title": "Lab 20: Protect Data With Database Vault",
+            "description": "Protecting your data with Database Vault",
+            "filename": "./../adb-vault/adb-vault.md"
+        },
+        {
+            "title": "Lab 21: Recover Errors Using Flashback Recovery",
+            "description": "Recovering from user errors using flashback recovery",
+            "filename": "./../adb-flashback-recovery/adb-flashback-recovery.md"
+        },
+        {
+            "title": "Lab 22: OCI Notification Service",
+            "description": "Setting up DB event notifications using OCI Notification service",
+            "filename": "./../adb-event-notifications/adb-event-notifications.md"
+        },
+        {
+            "title": "Lab 23: Oracle Analytics Cloud",
+            "description": "Connect OAC with Dedicated database",
+            "filename": "./../adb-connect-oac/adb-connect-oac.md"
+        },
+        {
+            "title": "Lab 24: Automatic Indexing",
+            "description": "Automatic Indexing .",
+            "filename": "./../adb-automatic-indexing/adb-automatic-indexing.md"
+        },
+        {
+            "title": "Lab 25: Move to ADB",
+            "description": "Move to ADB",
+            "filename": "./../adb-mv2adb/MV2ADB.md"
+        },
+        {
+            "title": "Appendix",
+            "description": "Common tools for windows Users Finding the IP address of your AEI Cluster.",
+            "filename": "./../adb-appendix/adb-appendix.md"
+        }
+    ]
+}

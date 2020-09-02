@@ -1,0 +1,17 @@
+# Nodes
+101 type:customer name:"John" age:10 location:"Boston"
+102 type:customer name:"Mary" gender:"F"
+103 type:customer name:"Jill" location:"Boston"
+104 type:customer name:"Todd" student:true
+201 type:account account_no:"xxx-yyy-201" balance:1500
+202 type:account account_no:"xxx-yyy-202" balance:200
+203 type:account account_no:"xxx-yyy-203" balance:2100
+204 type:account account_no:"xxx-yyy-204" balance:100
+
+# Edges
+201 -> 101 :owned_by since:"2015-10-04"
+202 -> 102 :owned_by since:"2012-09-13"
+203 -> 103 :owned_by since:"2016-02-04"
+204 -> 104 :owned_by since:"2018-01-05"
+103 -> 104 :parent_of
+

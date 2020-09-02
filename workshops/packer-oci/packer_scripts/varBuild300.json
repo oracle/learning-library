@@ -1,0 +1,52 @@
+{
+ "_comment": "You can find all the base images for OCI here...https://docs.cloud.oracle.com/iaas/images/ ",
+ "_comment": "we will be using CentOS, so select the one in the Datacenter youre building in... ",
+ "_comment": "ca-toronto-1   ocid1.image.oc1.ca-toronto-1.aaaaaaaa5lcszaeld2nl2zo7g3plaxwufz43sftcmuxeimql7kgcczupvn7a",
+ "_comment": "eu-frankfurt-1  ocid1.image.oc1.eu-frankfurt-1.aaaaaaaay5zmocfjtqjwsdr2vhwcopc32rcz764lsc76crhv2blbyr6azlqq",
+ "_comment": "uk-london-1  ocid1.image.oc1.uk-london-1.aaaaaaaaz72xqji2opx4dtfmhtlmckna7wg4xr4a2aagh2uywbswhe2vrrja",
+ "_comment": "us-ashburn-1  ocid1.image.oc1.iad.aaaaaaaaqghm4ftzm2jpwwlcau6hd56josqwm6yvxefvsn25lgmjlchaiuxa",
+ "_comment": "us-phoenix-1  ocid1.image.oc1.phx.aaaaaaaac5s4dvvtwglae24mbxvfp4fh3ug6ywmlvime2dw62qrjxw3b6fmq",
+    
+"builders": [
+    {
+      "user_ocid":"{{user `my.user_ocid`}}",
+      "tenancy_ocid":"{{user `my.tenancy_ocid`}}",
+      "fingerprint":"{{user `my.fingerprint`}}",
+      "availability_domain": "{{user `my.availability_domain`}}",
+      "region": "{{user `my.region`}}",
+      "base_image_ocid": "{{user `my.base_image_ocid`}}",
+      "compartment_ocid": "{{user `my.compartment_ocid`}}",
+      "subnet_ocid": "{{user `my.subnet_ocid`}}",
+      "image_name": "Build300",
+      "shape": "VM.Standard2.2",
+      "ssh_username": "opc",
+      "ssh_password": "welcome1",
+      "key_file":"~/.oci/packer_api_key.pem",
+      "type": "oracle-oci"
+    }
+  ],
+  
+  
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 3",
+	      "sudo -u root echo 'varBuild300' > .ImageID",
+	      "sudo -u root yum install -y git xclip wget zip"
+ 	     ]
+    },
+    {
+        "type": "file",
+        "source": "SharedCentOS/selinux_config",
+        "destination": "/tmp/selinux_config"
+     },
+     {
+      "type": "shell",
+      "inline": [
+        "sudo -u root cp /tmp/selinux_config /etc/selinux/config"
+       ]
+    }
+  ]
+}
+

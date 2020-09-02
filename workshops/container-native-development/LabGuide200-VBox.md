@@ -10,8 +10,8 @@ You will take on 2 personas during the workshop. The **Lead Developer Persona**
 
 During this lab, you will take on the **DevOps Engineer Persona**. You will provision a Kubernetes cluster and all of the infrastructure that it requires using Terraform. Terraform will provision the Virtual Cloud Network, Load Balancers, Kubernetes Master and Worker instances, and etcd instance required to support your cluster.
 
-**_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 **Automate Deployment to Kubernetes**
@@ -52,7 +52,7 @@ This version of the lab guides requires the use of an Oracle-provided VirtualBox
 
   ![](images/studentguide/vbox02.png)
 
-- Once the import is complete, you'll see a summary of the Virtual Box image. _Make Note_ of the **password** in the **Description** panel. The password is needed if the Linux Image goes into screen saver mode.
+- Once the import is complete, you will see a summary of the Virtual Box image. _Make Note_ of the **password** in the **Description** panel. The password is needed if the Linux Image goes into screen saver mode.
 
   ![](images/studentguide/vbox03.png)
 

@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                Markdown
+                <button type="button" id="download_md" class="btn btn-primary float-right">Download MD
+                    File</button>
+                <button type="button" id="view_md_template" class="btn btn-primary float-right">View MD
+                    Template</button>
+                <input type="file" id="upload_md" accept=".md" hidden />
+                <button type="button" id="import_md" class="btn btn-primary float-right">Import MD</button>
+            </div>
+            <div class="card-body">
+                <div id="shortcuts">
+                    <button type="button" class="btn btn-primary" id="btn_h1" accesskey="1"
+                        title="Select the text in the textbox and click this button to make it a h1 element. Shortcut: Alt + 1">h1</button>
+                    <button type="button" class="btn btn-primary" id="btn_h2" accesskey="2"
+                        title="Select the text in the textbox and click this button to make it a h2 element. Shortcut: Alt + 2">h2</button>
+                    <button type="button" class="btn btn-primary" id="btn_h3" accesskey="3"
+                        title="Select the text in the textbox and click this button to make it a h3 element. Shortcut: Alt + 3">h3</button>
+                    <button type="button" class="btn btn-primary" id="btn_icon" accesskey="4"
+                        title="Click this button to add an inline image or icon. Shortcut: Alt + 4">icon</button>
+                    <button type="button" class="btn btn-primary" id="btn_image" accesskey="5"
+                        title="Click this button to add an image with image description link. If you don't want image description, replace the text within quotes with space. Shortcut: Alt + 5">image</button>
+                    <button type="button" class="btn btn-primary" id="btn_link" accesskey="6"
+                        title="Select the text in the textbox and click this button to make it an HREF. Shortcut: Alt + 6">link</button>
+                    <button type="button" class="btn btn-primary" id="btn_bold" accesskey="7"
+                        title="Select the text in the textbox and click this button to make it bold. Shortcut: Alt + 7">bold</button>
+                    <button type="button" class="btn btn-primary" id="btn_italics" accesskey="8"
+                        title="Select the text in the textbox and click this button to italicize it. Shortcut: Alt + 8">italics</button>
+                    <button type="button" class="btn btn-primary" id="btn_ul" accesskey="9"
+                        title="Select the text in the textbox and click this button to make it an unordered list. Shortcut: Alt + 9">ul</button>
+                    <button type="button" class="btn btn-primary" id="btn_ol" accesskey="0"
+                        title="Select the text in the textbox and click this button to make it an ordered list. Note: The ordered list number always appears as 1 by default. The HTML file still renders correctly even if all the ordered list entires have number as 1. Shortcut: Alt + 0">ol</button>
+                    <button type="button" class="btn btn-primary" id="btn_indent" accesskey="-"
+                        title="Select the text in the textbox and click this button to indent it. Shortcut: Alt + -">indent</button>
+                    <button type="button" class="btn btn-primary" id="btn_code" accesskey="="
+                        title="Select the text in the textbox and click this button to make it look like code. Shortcut: Alt + =">code</button>
+                    <button type="button" class="btn btn-primary" id="btn_codeblock" accesskey="`"
+                        title="Select the text in the textbox and click this button to add the text in a codeblock. Shortcut: Alt + `">codeblock</button>
+                    <!--<button type="button" class="btn btn-primary" id="btn_template">template</button>-->
+                </div>
+                <textarea id="mdBox" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div id="rightBox" class="card">
+            <div class="card-header">
+                HTML Preview
+                <button type="button" id="preview_from_home" class="btn btn-primary float-right">Preview in
+                    HTML</button>
+                <form class="float-right">
+                    <input type="checkbox" id="show_images">
+                    <label class="checkbox-inline" id="show_images_label">Show Images</label>
+                    <input type="checkbox" id="simple_view" checked>
+                    <label class="checkbox-inline" id="simple_view_label">Simple View</label>
+                </form>
+            </div>
+            <div type="button" id="btn_image_files" class="btn btn-primary" title="Click here to upload images">[No
+                image uploaded for preview]</div>
+            <input type="file" id="image_files" name="image_files[]" class="btn-preview btn" accept="image/*" multiple
+                hidden />
+
+        </div>
+    </div>
+</div>

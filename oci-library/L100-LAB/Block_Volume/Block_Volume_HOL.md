@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Creating Block Volume](#practice-1-creating-block-volume)
 
@@ -16,12 +16,12 @@
 
 The Oracle Cloud Infrastructure Block Volume service lets you dynamically provision and manage block storage volumes . You can create, attach, connect and move volumes as needed to meet your storage and application requirements. Once attached and connected to an instance, you can use a volume like a regular hard drive. Volumes can also be disconnected and attached to another instance without the loss of data.
 
-## Pre-Requisites 
+## Prerequisites 
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
 - To sign in to the Console, you need the following:
   -  Tenant, User name and Password
-  -  URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
+  -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
   -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11 
 
 ## Practice 1: Creating Block Volume
@@ -30,10 +30,10 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 1. Navigate to the Menu and click on **Block Storage**.
 
-2. In Bock Volume service, click on **Create Block Volume** and provide the following details:
+2. In Block Volume service, click on **Create Block Volume** and provide the following details:
 
-   - **Compartment:** Your Compartment Name
-   - **Name:** A user-friendly name or description.
+   - **Name:** BV-DEMO
+   - **Compartment:** Demo
    - **Availability Domain:** It must be the same as the AD you choose for your instance.
    - **Size**: Please choose **50 GB**. 
    - **Backup Policy**: **Gold**
@@ -48,9 +48,9 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
     - **Gold Policy**: The gold policy includes daily incremental backups. These backups are retained for seven days. This policy also includes weekly incremental backups that run on Sunday and are retained for four weeks. Also includes monthly incremental backups, run on the first day of the month, retained for twelve months, and a full backup, run yearly on January 1st. Full backups are retained for five years.
 
-3. Leave the tags options as it is and click on **Create Block Volume**. The volume will be ready to attach once its icon no longer lists it as **PROVISIONING** in the volume list.
+3. Leave the encryption and tags options as their default values and click on **Create Block Volume**. The volume will be ready to attach once its icon no longer lists it as **PROVISIONING** in the volume list.
    
-   ![](media/image001.png)
+   ![](media/Create1.png)
    ![](media/image002.png)
    ![](media/image003.png)
 
@@ -62,18 +62,20 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
    -  **Paravirtualized** Paravirtualized attachments are now an option when attaching volumes to VM instances. For VM instances launched from Oracle-Provided Images, you can select this option for Linux-based images published. Once you attach a volume using the paravirtualized attachment type, it is ready to use, you do not need to run any additional commands. However, due to the overhead of virtualization, this reduces the maximum IOPS performance for larger block volumes, see [Paravirtualized Attachment Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#paraPerf) for more information.
 
-2. Go to the Compute instance Menu, and navigate to the VM instance you created before and click on the **Attach Block Volume** button.
+2. Go to the Compute instance Menu, and navigate to the VM instance you created before and click on the **Attached Block Volumes** link.
 
-    ![](media/image004.png)
+    ![](media/attached1.png)
 
-3. Select the volume created from the drop down menu and choose the following options: 
+3. Click on the **Attach Block Volume** button.
+
+4. Select the volume created from the drop down menu and choose the following options: 
    
    - **Attachement mode:** iSCSI
    - **Block Volume:** Select the volume created
    - **Device Path:** Select `/dev/oracleoci/oraclevdb`
-   - Cick **Attach**
+   - Click **Attach**
  
-   ![](media/image005.png)
+   ![](media/Attached2.png)
 
 4. Once the volume is attached, you can click on the ellipsis and then click **iSCSI Command and Information link.** 
 

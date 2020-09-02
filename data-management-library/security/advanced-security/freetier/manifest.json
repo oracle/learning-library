@@ -1,0 +1,86 @@
+{
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description":"Understand what Advanced Security is and what it can do",
+            "publisheddate": "06/30/2020",
+            "filename":"../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Getting Connected to the lab environment",
+            "description":"How to get connected to the workshop environment",
+            "publisheddate": "06/30/2020",
+            "filename":"../intro/get-connected.md"
+        },
+        {
+            "title": "Lab 3: TDE - Allow DB Restore",
+            "description":"Create a restore point which will enable you to repeat all the labs if desired",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/allowdbrestore.md"
+        },
+        {
+            "title": "Lab 4: TDE - Create Keystore",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/createkeystore.md"
+        },
+        {
+            "title": "Lab 5: TDE - Create Master Key",
+            "description":"Create the initial TDE master key",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/createmasterkey.md"
+        },
+        {
+            "title": "Lab 6: TDE - Create Auto-login Wallet",
+            "description":"Create an auto-login wallet so you dont have to manually open the wallet on DB restart",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/createautologin.md"
+        },
+        {
+            "title": "Lab 7: TDE - Encrypt Existing Tablespace",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/encryptexistingtablespace.md"
+        },
+        {
+            "title": "Lab 8: TDE - Encrypt New Tablespace",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/encrypttablespace.md"
+        },
+        {
+            "title": "Lab 9: TDE - Re-Key Master Key",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/rekeymasterkey.md"
+        },
+        {
+            "title": "Lab 10: TDE - View Keystore",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/viewkeystore.md"
+        },
+        {
+            "title": "Lab 11: TDE - Restore Before TDE (Optional)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../tde/restorebeforetde.md"
+        },
+        {
+            "title": "Lab 12: Data Redaction - Redact EMPLOYEESEARCH DATA",
+            "description":"This lab will walk you through how to enable Database Vault for the workshop image",
+            "publisheddate": "06/30/2020",
+            "filename":"../data-redaction/redact.md"
+        }
+    ]
+}

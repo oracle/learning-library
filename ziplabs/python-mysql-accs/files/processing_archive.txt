@@ -1,1 +1,0 @@
-This illustration shows a part of the Create Application dialog box after the user clicks the Create button. It shows the Create Application title, the Processing Archive message, the Java SE icon, and the name of the application (EmployeeService).

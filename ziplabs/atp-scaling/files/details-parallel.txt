@@ -1,5 +1,0 @@
-This image shows the details popup window. There is an "x" all the way to the right to close this window.
-
-The window has three tabs: Overview, Plan Statistics, and Parallel. Parallel is selected.
-
-Under the tabs are columns for statistics about how queries execute. These are: Parallel Server, Database Time, Activity %, IO Requests, IO Bytes, and Buffer Gets. Below, we can see how the current request is broken across 4 servers, each contributing about 25% of the activity for the query.

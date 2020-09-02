@@ -1,2 +1,0 @@
-This illustration shows a Firefox window. It displays two information messages:
-"Table Employee created successfully" and "New records created successfully."

@@ -1,0 +1,3 @@
+#!/bin/sh
+cd `dirname "$0"`
+java -cp ../launcher LauncherBootstrap -executablename results2pdf results2pdf $*

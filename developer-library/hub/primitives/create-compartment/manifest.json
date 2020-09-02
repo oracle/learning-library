@@ -1,0 +1,22 @@
+{
+    "tutorials": [
+        {
+            "title": "Create a Compartment",
+            "description":"Create a Compartment",
+            "publisheddate": "01/15/2020",
+            "filename":"./about-this/about-this.md"
+        },
+        {
+            "title": "Provision Resources",
+            "description":"Provision Resources",
+            "publisheddate": "01/15/2020",
+            "filename":"./provision-resources/provision-resources.md"
+        },
+        {
+            "title": "Validate Provisioning",
+            "description":"Validate Provisioning",
+            "publisheddate": "01/15/2020",
+            "filename":"./validate-provisioning/validate-provisioning.md"
+        }
+    ]
+}

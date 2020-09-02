@@ -6,7 +6,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Creating Virtual Cloud Network with Public and Private Subnets](#practice-1-creating-virtual-cloud-networks-with-public-and-private-subnets)
 
@@ -25,7 +25,7 @@ accessible only from the on-premises network or bastion hosts in public subnets.
 
 With the recent enhancements on our virtual networking platform, you can now enable outbound Internet access from your private instances using a new feature ‘NAT Gateway’. A NAT  gateway gives cloud resources without public IP addresses access to the internet without exposing those resources to incoming internet connections.
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - Access to Oracle Cloud Infrastructure account

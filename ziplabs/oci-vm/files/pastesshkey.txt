@@ -1,6 +1,0 @@
-This image shows the SSH Keys section of the Launch Instance form.
-
-At the top of the image is the SSH Keys section title, followed by two radio
-buttons labeled "Choose SSH Key Files" and "Paste SSH Keys" (which is selected). 
-Underneath is the public key text field, in which an SSH public key has been 
-pasted, and the field is highlighted by a red box.

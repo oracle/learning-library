@@ -1,0 +1,27 @@
+{
+    "workshop": {
+        "title": "Autonomous Data Warehouse Auto Scaling Demo Workshop",
+        "description": "This workshop will show you how to get started with Oracle Autonomous Data Warehouse  in the Oracle Public Cloud.",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "README.md",
+                "title": "Read Me First",
+                "description": "Autonomous Data Warehouse Auto Scaling Demo - Workshop"
+            },
+            {
+                "number": "1",
+                "filename": "LabGuide100.md",
+                "title": "Lab 100:Auto Scale ADW Demo",
+                "description": "Autonomous Data Warehouse Auto Scaling Demo"
+            },
+			{
+                "number": "2",
+                "filename": "LabGuide200.md",
+                "title": "Lab 200:Auto Scale ADW Demo Setup",
+                "description": "Building your first Autonomous Data Warehouse Auto Scaling Demo"
+            }
+
+        ]
+    }
+}

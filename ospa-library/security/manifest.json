@@ -1,0 +1,28 @@
+{
+  "workshop": {
+    "title": "Oracle ClassOf SE 2019",
+    "description":
+      "Welcome to the **Oracle Cloud Security** Hand-on Labs. We will walk you through the process of managing user ids, on-boarding and monitoring third party applications, create policies, run reports and monitor OCI.",
+    "theme": "default",
+    "labs": [
+      {
+        "number": "0",
+        "filename": "README.md",
+        "title": "Getting Started",
+        "description": "Set up your environment"
+      },
+      {
+        "number": "50",
+        "filename": "LAB1_IDCS.md",
+        "title": "Lab 1: Oracle Identity Cloud Service",
+        "description": "Learn how to manage your enterprise user ids life cycle"
+      },
+      {
+        "number": "100",
+        "filename": "LAB2_CASB.md",
+        "title": "Lab 2: Oracle CASB Cloud Service",
+        "description": "Learn how to secure your apps and infrastructure with Oracle CASB Cloud Service"
+      }
+    ]
+  }
+}

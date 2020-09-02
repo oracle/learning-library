@@ -1,13 +1,14 @@
 # Virtual Cloud Network - VCN
 
+## The lab is now redunant and should not be used as part of the Test Drive day. Use the [VCN](../VCN/VCN_HOL.md) lab instead
+
 ## Table of Contents
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Create a Virtual Cloud Network](#practice-1-create-a-virtual-cloud-network)
-
 
 ## Overview
 
@@ -15,12 +16,12 @@ When you work with Oracle Cloud Infrastructure, one of the first steps is to set
 
 **Note:** *Some of the UIs might look a little different than the screen shots included in the instructions, but you can still use the instructions to complete the hands-on labs.*
 
-## Pre-Requisites 
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
   - To sign in to the Console, you need the following:
   -  Tenant, User name and Password
-  -  URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
+  -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
   -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11 
 
 ## Practice 1: Create a Virtual Cloud Network

@@ -1,0 +1,68 @@
+{
+    "workshop": {
+        "title": "Autonomous Transaction Processing: Self-Guided Hands-On Workshop",
+        "description": "This workshop will show you how to use Oracle Autonomous Transaction Processing in the Oracle Public Cloud.",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "README.md",
+                "title": "Read Me First",
+                "description": "Autonomous Transaction Processing dedicated self-guided hands-on Workshop overview"
+            },
+            {
+                "number": "1",
+                "filename": "LabGuide100ProvisioningExadataInfrastructureforAutonomousDBinOCI.md",
+                "title": "Lab 1: Preparing your private data center in the Oracle Cloud Infrastructure",
+                "description": "Preparing your private data center in the Oracle Cloud Infrastructure"
+            },
+            {
+                "number": "2",
+                "filename": "LabGuide200ProvisioningExadataInfrastructureforAutonomousDBinOCI.md",
+                "title": "Lab 2: Provisioning Exadata Infrastructure for Autonomous DB in OCI",
+                "description": "Provisioning Exadata Infrastructure for Autonomous DB in OCI"
+            },
+            {
+                "number": "3",
+                "filename": "LabGuide300ProvisioninganAutonomousContainerDatabase.md",
+                "title": "Lab 3: Provisioning an Autonomous Container Database",
+                "description": "Provisioning an Autonomous Container Database"
+            },
+            {
+                "number": "4",
+                "filename": "LabGuide400ProvisioningdatabasesonyourdedicatedAutonomousInfrastructure.md",
+                "title": "Lab 4: Provisioning databases on your dedicated Autonomous Infrastructure",
+                "description": "Provisioning databases on your dedicated Autonomous Infrastructure"
+            },
+            {
+                "number": "5",
+                "filename": "LabGuide500ConnectingadeveloperclienttoanAutonomousDatabase.md",
+                "title": "Lab 5: Connecting a developer client to an Autonomous Database",
+                "description": "Connecting a developer client to an Autonomous Database"
+            },
+            {
+                "number": "6",
+                "filename": "LabGuide600Buildinganddeployingnode.jsapplicationstacksondedicatedautonomousinfrastructure.md",
+                "title": "Lab 6: Building and deploying node.js application stacks on dedicated autonomous infrastructure",
+                "description": "Building and deploying node.js application stacks on dedicated autonomous infrastructure"
+            },
+            {
+                "number": "7",
+                "filename": "LabGuide700BuildinganddeployingPythonapplicationstacksondedicatedautonomousinfrastructure.md",
+                "title": "Lab 7: Building and deploying Python application stacks on dedicated autonomous infrastructure",
+                "description": "Building and deploying Python application stacks on dedicated autonomous infrastructure"
+            },
+            {
+                "number": "8",
+                "filename": "LabGuide800BuildinganddeployingJavaapplicationstacksondedicatedautonomousinfrastructure.md",
+                "title": "Lab 8: Building and deploying Java application stacks on dedicated autonomous infrastructure",
+                "description": "Building and deploying Java application stacks on dedicated autonomous infrastructure"
+            },
+            {
+                "number": "9",
+                "filename": "LabGuide900UsingCLIcommandstoworkwithyourAutonomousdatabases.md",
+                "title": "Lab 9: Using CLI commands to work with your Autonomous databases",
+                "description": "Using CLI commands to work with your Autonomous databases"
+            }
+        ]
+    }
+}

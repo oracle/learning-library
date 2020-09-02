@@ -1,0 +1,46 @@
+{
+    "tutorials": [
+        {
+            "title": "Workshop Overview",
+            "description":"Workhop Overview",
+            "publisheddate": "04/15/2020",
+            "filename":"./../intro/intro.md"
+        },
+        {
+            "title": "Lab 0: Connect to HOL image",
+            "description":"Setup the Lab Environment",
+            "publisheddate": "04/15/2020",
+            "filename":"./../hol-setup/hol-setup.md"
+        },
+        {
+            "title": "Lab 1: Create 19c target",
+            "description":"Install software and create a new 19c database",
+            "publisheddate": "04/15/2020",
+            "filename":"./../install-create-target/install-create-target.md"
+        },
+        {
+            "title": "Lab 2: Auto Upgrade to 19c",
+            "description":"Upgrade using the new AutoUpgrade tool",
+            "publisheddate": "04/15/2020",
+            "filename":"./../autoupgrade/autoupgrade.md"
+        },
+        {
+            "title": "Lab 3: Full Transportable to 19c",
+            "description":"Upgrade using Full Transportable Tablespaces",
+            "publisheddate": "04/15/2020",
+            "filename":"./../full-transportable/full-transportable.md"
+        },
+        {
+            "title": "Lab 4: Unplug and Plug to 19c",
+            "description":"Upgrade using unplugging a PDB from the old version and plug it into a new version",
+            "publisheddate": "04/15/2020",
+            "filename":"./../pluggable-db/pluggable-db.md"
+        },
+        {
+            "title": "Lab 5: MV2ADB to 19c ADB",
+            "description":"Upgrade to 19c on Oracle Autonomous Database cloud using MV2ADB",
+            "publisheddate": "04/15/2020",
+            "filename":"./../mv2adb-upgrade/mv2adb-upgrade.md"
+        }
+    ]
+}

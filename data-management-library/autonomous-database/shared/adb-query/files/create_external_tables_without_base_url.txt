@@ -1,0 +1,233 @@
+/* Specify the URL that you copied from your files in OCI Object Storage in the define base_URL line below*/
+/* change idthydc0kinr to your real namespace. The name is case-sensitive. */
+/* change ADWCLab to your real bucket name. The name is case-sensitive. */
+/* change us-phoenix-1 to your real region name. The name is case-sensitive. */
+/* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'CHANNELS_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/chan_v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true'),
+    column_list => 'CHANNEL_ID NUMBER,
+	CHANNEL_DESC VARCHAR2(20),
+	CHANNEL_CLASS VARCHAR2(20),
+	CHANNEL_CLASS_ID NUMBER,
+	CHANNEL_TOTAL VARCHAR2(13),
+	CHANNEL_TOTAL_ID NUMBER'
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'COUNTRIES_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/coun_v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true'),
+    column_list => 'COUNTRY_ID NUMBER ,
+	COUNTRY_ISO_CODE CHAR(2) ,
+	COUNTRY_NAME VARCHAR2(40) ,
+	COUNTRY_SUBREGION VARCHAR2(30) ,
+	COUNTRY_SUBREGION_ID NUMBER ,
+	COUNTRY_REGION VARCHAR2(20) ,
+	COUNTRY_REGION_ID NUMBER ,
+	COUNTRY_TOTAL VARCHAR2(11) ,
+	COUNTRY_TOTAL_ID NUMBER ,
+	COUNTRY_NAME_HIST VARCHAR2(40)'
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'CUSTOMERS_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/cust1v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS'),
+    column_list => 'CUST_ID NUMBER ,
+	CUST_FIRST_NAME VARCHAR2(20) ,
+	CUST_LAST_NAME VARCHAR2(40) ,
+	CUST_GENDER CHAR(1) ,
+	CUST_YEAR_OF_BIRTH NUMBER(4,0) ,
+	CUST_MARITAL_STATUS VARCHAR2(20),
+	CUST_STREET_ADDRESS VARCHAR2(40) ,
+	CUST_POSTAL_CODE VARCHAR2(10) ,
+	CUST_CITY VARCHAR2(30) ,
+	CUST_CITY_ID NUMBER ,
+	CUST_STATE_PROVINCE VARCHAR2(40) ,
+	CUST_STATE_PROVINCE_ID NUMBER ,
+	COUNTRY_ID NUMBER ,
+	CUST_MAIN_PHONE_NUMBER VARCHAR2(25) ,
+	CUST_INCOME_LEVEL VARCHAR2(30),
+	CUST_CREDIT_LIMIT NUMBER,
+	CUST_EMAIL VARCHAR2(50),
+	CUST_TOTAL VARCHAR2(14) ,
+	CUST_TOTAL_ID NUMBER ,
+	CUST_SRC_ID NUMBER,
+	CUST_EFF_FROM DATE,
+	CUST_EFF_TO DATE,
+	CUST_VALID VARCHAR2(1)'
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'SUPPLEMENTARY_DEMOGRAPHICS_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/dem1v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true'),
+    column_list => 'CUST_ID NUMBER ,
+	EDUCATION VARCHAR2(21),
+	OCCUPATION VARCHAR2(21),
+	HOUSEHOLD_SIZE VARCHAR2(21),
+	YRS_RESIDENCE NUMBER,
+	AFFINITY_CARD NUMBER(10,0),
+	BULK_PACK_DISKETTES NUMBER(10,0),
+	FLAT_PANEL_MONITOR NUMBER(10,0),
+	HOME_THEATER_PACKAGE NUMBER(10,0),
+	BOOKKEEPING_APPLICATION NUMBER(10,0),
+	PRINTER_SUPPLIES NUMBER(10,0),
+	Y_BOX_GAMES NUMBER(10,0),
+	OS_DOC_SET_KANJI NUMBER(10,0),
+	COMMENTS VARCHAR2(4000)'
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'PRODUCTS_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/prod1v3.dat',
+    format => json_object('delimiter' value '|', 'quote' value '^', 'ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true'),
+    column_list => 'PROD_ID NUMBER(6,0) ,
+	PROD_NAME VARCHAR2(50) ,
+	PROD_DESC VARCHAR2(4000) ,
+	PROD_SUBCATEGORY VARCHAR2(50) ,
+	PROD_SUBCATEGORY_ID NUMBER ,
+	PROD_SUBCATEGORY_DESC VARCHAR2(2000) ,
+	PROD_CATEGORY VARCHAR2(50) ,
+	PROD_CATEGORY_ID NUMBER ,
+	PROD_CATEGORY_DESC VARCHAR2(2000) ,
+	PROD_WEIGHT_CLASS NUMBER(3,0) ,
+	PROD_UNIT_OF_MEASURE VARCHAR2(20),
+	PROD_PACK_SIZE VARCHAR2(30) ,
+	SUPPLIER_ID NUMBER(6,0) ,
+	PROD_STATUS VARCHAR2(20) ,
+	PROD_LIST_PRICE NUMBER(8,2) ,
+	PROD_MIN_PRICE NUMBER(8,2) ,
+	PROD_TOTAL VARCHAR2(13) ,
+	PROD_TOTAL_ID NUMBER ,
+	PROD_SRC_ID NUMBER,
+	PROD_EFF_FROM DATE,
+	PROD_EFF_TO DATE,
+	PROD_VALID VARCHAR2(1)'
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'PROMOTIONS_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/prom1v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true'),
+    column_list => 'PROMO_ID NUMBER(6,0) ,
+	PROMO_NAME VARCHAR2(30) ,
+	PROMO_SUBCATEGORY VARCHAR2(30) ,
+	PROMO_SUBCATEGORY_ID NUMBER ,
+	PROMO_CATEGORY VARCHAR2(30) ,
+	PROMO_CATEGORY_ID NUMBER ,
+	PROMO_COST NUMBER(10,2) ,
+	PROMO_BEGIN_DATE DATE ,
+	PROMO_END_DATE DATE ,
+	PROMO_TOTAL VARCHAR2(15) ,
+	PROMO_TOTAL_ID NUMBER '
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'SALES_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/sale1v3.dat,&base_URL/dmsal_v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true'),
+    column_list => 'PROD_ID NUMBER ,
+	CUST_ID NUMBER ,
+	TIME_ID DATE ,
+	CHANNEL_ID NUMBER ,
+	PROMO_ID NUMBER ,
+	QUANTITY_SOLD NUMBER(10,2) ,
+	AMOUNT_SOLD NUMBER(10,2)'
+ );
+end;
+/
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'TIMES_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/time_v3.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true'),
+    column_list => 'TIME_ID DATE ,
+	DAY_NAME VARCHAR2(9) ,
+	DAY_NUMBER_IN_WEEK NUMBER(1,0) ,
+	DAY_NUMBER_IN_MONTH NUMBER(2,0) ,
+	CALENDAR_WEEK_NUMBER NUMBER(2,0) ,
+	FISCAL_WEEK_NUMBER NUMBER(2,0) ,
+	WEEK_ENDING_DAY DATE ,
+	WEEK_ENDING_DAY_ID NUMBER ,
+	CALENDAR_MONTH_NUMBER NUMBER(2,0) ,
+	FISCAL_MONTH_NUMBER NUMBER(2,0) ,
+	CALENDAR_MONTH_DESC VARCHAR2(8) ,
+	CALENDAR_MONTH_ID NUMBER ,
+	FISCAL_MONTH_DESC VARCHAR2(8) ,
+	FISCAL_MONTH_ID NUMBER ,
+	DAYS_IN_CAL_MONTH NUMBER ,
+	DAYS_IN_FIS_MONTH NUMBER ,
+	END_OF_CAL_MONTH DATE ,
+	END_OF_FIS_MONTH DATE ,
+	CALENDAR_MONTH_NAME VARCHAR2(9) ,
+	FISCAL_MONTH_NAME VARCHAR2(9) ,
+	CALENDAR_QUARTER_DESC CHAR(7) ,
+	CALENDAR_QUARTER_ID NUMBER ,
+	FISCAL_QUARTER_DESC CHAR(7) ,
+	FISCAL_QUARTER_ID NUMBER ,
+	DAYS_IN_CAL_QUARTER NUMBER ,
+	DAYS_IN_FIS_QUARTER NUMBER ,
+	END_OF_CAL_QUARTER DATE ,
+	END_OF_FIS_QUARTER DATE ,
+	CALENDAR_QUARTER_NUMBER NUMBER(1,0) ,
+	FISCAL_QUARTER_NUMBER NUMBER(1,0) ,
+	CALENDAR_YEAR NUMBER(4,0) ,
+	CALENDAR_YEAR_ID NUMBER ,
+	FISCAL_YEAR NUMBER(4,0) ,
+	FISCAL_YEAR_ID NUMBER ,
+	DAYS_IN_CAL_YEAR NUMBER ,
+	DAYS_IN_FIS_YEAR NUMBER ,
+	END_OF_CAL_YEAR DATE ,
+	END_OF_FIS_YEAR DATE '
+ );
+end;
+/
+
+
+begin
+ dbms_cloud.create_external_table(
+    table_name =>'COSTS_EXT',
+    credential_name =>'OBJ_STORE_CRED',
+    file_uri_list =>'<file_uri_base>/costs.dat',
+    format => json_object('ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true'),
+    column_list => 'PROD_ID NUMBER ,
+	TIME_ID DATE ,
+	PROMO_ID NUMBER ,
+	CHANNEL_ID NUMBER ,
+	UNIT_COST NUMBER(10,2) ,
+	UNIT_PRICE NUMBER(10,2) '
+ );
+end;
+/

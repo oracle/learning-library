@@ -1,0 +1,40 @@
+{
+    "tutorials": [
+      {
+        "title": "Introduction",
+        "filename": "./workshop-intro/workshop-intro.md"
+      },
+      {
+        "title": "Sign Up for a Free Trial",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Setup OCI, OKE, ATP and Cloud Shell",
+        "filename": "./setup-dev-environment/setup-dev-environment.md"
+      },
+      {
+        "title": "Lab 2: Build the GitHub code and deploy the microservices",
+        "filename": "./build-code-deploy-microservices/build-code-deploy-microservices.md"
+      },
+      {
+        "title": "Lab 3: Setup database connection secrets, tables, and AQ messaging",
+        "filename": "./setup-atp-connectivity-data-and-messaging/setup-atp-connectivity-data-and-messaging.md"
+      },
+      {
+        "title": "Lab 4: Data-centric microservices walkthrough with Helidon MP",
+        "filename": "./data-centric-microservices-helidon/data-centric-microservices-helidon.md"
+      },
+      {
+        "title": "Lab 5: Polyglot Microservices",
+        "filename": "./review-polyglot-code-ha-setup/review-polyglot-code-ha-setup.md"
+      },
+      {
+        "title": "Lab 6: Scaling the Application",
+        "filename": "./scaling/scaling.md"
+      },
+      {
+        "title": "Lab 7: Create an APEX App to Make Sense of the Data",
+        "filename": "./build-an-apex-app/build-an-apex-app.md"
+      }
+    ]
+}

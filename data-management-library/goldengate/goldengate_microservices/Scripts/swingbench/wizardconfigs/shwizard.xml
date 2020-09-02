@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<WizardConfig Mode="InterActive" Name="Sales History Install Wizard" xmlns="http://www.dominicgiles.com/swingbench/wizard">
+   <WizardSteps RunnableStep="5">
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step0"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step1"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step2"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step3"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step4"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step5"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step6"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step7"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.shdg.Step8"/>
+   </WizardSteps>
+   <DataGenerationConfigurationFiles>
+      <DataGenerationConfigurationFile Version="1.0" Valid="Post">../sql/sh.xml</DataGenerationConfigurationFile>
+   </DataGenerationConfigurationFiles>
+   <ExecutableClass>com.dom.benchmarking.swingbench.wizards.shdg.SalesHistoryGenerate</ExecutableClass>
+   <ValidatorClass>com.dom.benchmarking.swingbench.wizards.shdg.SalesHistoryValidator</ValidatorClass>
+   <DefaultParameters>
+      <Parameter Key="dbapassword" Value="welcome1"/>
+      <Parameter Key="connectiontype" Value="thin"/>
+      <Parameter Key="tablespace" Value="SH"/>
+      <Parameter Key="datafile" Value=""/>
+      <Parameter Key="dbausername" Value="sys as sysdba"/>
+      <Parameter Key="connectionstring" Value="//oraclelinux/orcl"/>
+      <Parameter Key="username" Value="sh"/>
+      <Parameter Key="scale" Value="0.1"/>
+      <Parameter Key="password" Value="sh"/>
+   </DefaultParameters>
+   <SupportedModels>
+      <Compression>
+         <SupportedCompression>No Compression</SupportedCompression>
+         <SupportedCompression>Advanced Compression</SupportedCompression>
+      </Compression>
+      <Partitioning>
+         <SupportedPartitioning>No Partitioning</SupportedPartitioning>
+         <SupportedPartitioning>Range Partitioning</SupportedPartitioning>
+      </Partitioning>
+      <Indexing>
+         <SupportedIndexing>All Indexes</SupportedIndexing>
+         <SupportedIndexing>Primary Keys Only</SupportedIndexing>
+         <SupportedIndexing>No Indexes</SupportedIndexing>
+      </Indexing>
+   </SupportedModels>
+   <SchemaDescription>
+      <TableList>
+         <ObjectName>COUNTRIES</ObjectName>
+         <ObjectName>CHANNELS</ObjectName>
+         <ObjectName>CUSTOMERS</ObjectName>
+         <ObjectName>PROMOTIONS</ObjectName>
+         <ObjectName>PRODUCTS</ObjectName>
+         <ObjectName>SUPPLEMENTARY_DEMOGRAPHICS</ObjectName>
+         <ObjectName>SALES</ObjectName>
+         <ObjectName>TIMES</ObjectName>
+      </TableList>
+      <ViewList></ViewList>
+      <SequenceList></SequenceList>
+      <IndexList>
+         <ObjectName>CUSTOMERS_MARITAL_BIX</ObjectName>
+         <ObjectName>CUSTOMERS_YOB_BIX</ObjectName>
+         <ObjectName>CUSTOMERS_GENDER_BIX</ObjectName>
+         <ObjectName>PRODUCTS_PROD_STATUS_BIX</ObjectName>
+         <ObjectName>PRODUCTS_PROD_SUBCAT_IX</ObjectName>
+         <ObjectName>PRODUCTS_PROD_CAT_IX</ObjectName>
+         <ObjectName>SALES_PROD_BIX</ObjectName>
+         <ObjectName>SALES_CUST_BIX</ObjectName>
+         <ObjectName>SALES_CHANNEL_BIX</ObjectName>
+         <ObjectName>SALES_PROMO_BIX</ObjectName>
+      </IndexList>
+      <CodeList></CodeList>
+   </SchemaDescription>
+   <SQLScripts>
+    <InitilisationScripts>
+         <SQLScript Version="1.0" Valid="Post" Topic="createtablespace">../sql/shdg_createtablespace.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createuser">../sql/shdg_createuser.sql</SQLScript>
+      </InitilisationScripts>
+      <PreDataGenerationScripts>
+         <VariableList>
+            <Variable>
+               <Key>usecompression</Key>
+               <Value></Value>
+            </Variable>
+         </VariableList>
+         <SQLScript Version="1.0" Valid="Post" Topic="dropuserobjects" Labels="No Partitioning">../sql/shdg_drop.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="dropuserobjects" Labels="Range Partitioning">../sql/shdg_drop_range.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createtables" Labels="No Partitioning">../sql/shdg_tables.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createtables" Labels="No Partitioning">../sql/shdg_createloadviews.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createtables" Labels="Range Partitioning">../sql/shdg_tablesrange.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="generic">../sql/shdg_timedimension.sql</SQLScript>
+      </PreDataGenerationScripts>
+      <PostDataGenerationScripts>
+         <VariableList>
+            <Variable>
+               <Key>parallelism</Key>
+               <Value>2</Value>
+            </Variable>
+            <Variable>
+               <Key>indextablespace</Key>
+               <Value>SH</Value>
+            </Variable>
+            <Variable>
+               <Key>parallelclause</Key>
+               <Value>parallel 2</Value>
+            </Variable>
+            <Variable>
+               <Key>logging</Key>
+               <Value>nologging</Value>
+            </Variable>
+            <Variable>
+               <Key>username</Key>
+               <Value>SH</Value>
+            </Variable>
+         </VariableList>
+         <SQLScript Version="1.0" Valid="Post" Topic="generic" Labels="Range Partitioning">../sql/shdg_mergepartitions.sql</SQLScript>
+      	 <SQLScript Version="1.0" Valid="Post" Topic="generic" Labels="Range Partitioning">../sql/shdg_tidyup.sql</SQLScript>
+      	 <SQLScript Version="1.0" Valid="Post" Topic="generic" Labels="No Partitioning">../sql/shdg_drop_load_views.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="generic">../sql/shdg_analyzeschema2.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="All Indexes,No Partitioning">../sql/shdg_indexes.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="All Indexes,Range Partitioning">../sql/shdg_indexes_part.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="Primary Keys Only,All Indexes,No Partitioning">../sql/shdg_indexes_pk.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="Primary Keys Only,All Indexes,Range Partitioning">../sql/shdg_indexes_part_pk.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="No Indexes,Range Partitioning">../sql/shdg_indexes_none.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="No Indexes,No Partitioning,Range Partitioning">../sql/shdg_createconstraints.sql</SQLScript>
+      	 <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="All Indexes,No Partitioning,Range Partitioning">../sql/sh_dgcreateconstraints_with_indexes.sql</SQLScript>
+      	 <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="All Indexes,No Partitioning,Range Partitioning">../sql/shdg_modify_indexes.sql</SQLScript>
+      </PostDataGenerationScripts>
+      <PurgeScripts>
+         <SQLScript Version="1.0" Valid="Post" Topic="droptablespace">../sql/shdg_droptablespace.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="dropuser">../sql/shdg_dropuser.sql</SQLScript>
+      </PurgeScripts>
+   </SQLScripts>
+</WizardConfig>

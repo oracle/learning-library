@@ -6,7 +6,7 @@
 
 [Basic HPC Architecture](#basic-hpc-architecture)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Setup Windows 10 VM](#practice-1-setup-windows-10-vm)
 
@@ -34,7 +34,7 @@ High Performance Computing and storage in the cloud can be very confusing and it
 <img width="800" alt="image001" src="https://raw.githubusercontent.com/oci-hpc/oci-hpc-ref-arch/master/images/HPC_architecture1.png">
 
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) with available service limit for Bare Metal Shapes.
 

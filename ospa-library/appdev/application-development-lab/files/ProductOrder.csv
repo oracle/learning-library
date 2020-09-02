@@ -1,0 +1,5 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,associate,orderDate,orderStatus,actionDate
+1,2019-05-16T19:54:48,2019-05-16T19:54:48.005,dsmith@mamamaggy.com,dsmith@mamamaggy.com,1,2019-05-01T07:00:00,Complete,2019-05-16T07:00:00
+2,,,,,2,2019-05-02T09:00:00,Complete,2019-05-15T07:00:00
+3,,,,,1,2019-05-05T08:00:00,Complete,2019-05-14T10:00:00
+4,,,,,4,2019-05-05T13:00:00,Complete,2019-05-16T08:00:00

@@ -1,1 +1,0 @@
-This image shows the Oracle Container Cloud Service Services page, with the navigation bar expandedand the Services title selected. The Services page contains a row of pagination buttons, a previous button, and a next button. A table shows the Actions, ID, and Name columns for the available container images. Each row has a Deploy button, Edit button and Remove button.

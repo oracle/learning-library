@@ -6,7 +6,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Creating Virtual Cloud Network](#practice-1-creating-virtual-cloud-network)
 
@@ -25,16 +25,16 @@ A load balancer improves resource utilization, facilitates scaling, and helps en
 
 The Load Balancing service enables you to create a public or private load balancer within your VCN. A public load balancer has a public IP address that is accessible from the internet. A private load balancer has an IP address from the hosting subnet, which is visible only within your VCN. You can configure multiple listeners for an IP address to load balance transport Layer 4 and Layer 7 (TCP and HTTP) traffic. Both public and private load balancers can route data traffic to any backend server that is reachable from the VCN.
 
-The following provide an overview of a simple Public Load Balancer:
+The following provides an overview of a simple Public Load Balancer:
 
 ![](media/Public-Load-Balancer.png)
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
 - To sign in to the Console, you need the following:
   -  Tenant, User name and Password
-  -  URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
+  -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
   -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
 ## Practice-1: Creating Virtual Cloud Network
@@ -43,73 +43,101 @@ The following provide an overview of a simple Public Load Balancer:
 2. Click **Create Virtual Cloud Network** 
 
    - **Name:** *VCN-WEB*
-   - Select *Create Virtual Cloud Plus Related Resources*
-   - Click *Create Virtual Cloud Network*
-
-    **Note:** This option is the quickest way to get a working cloud network in the fewest steps.
+   - **Select** *Create Virtual Cloud Network Only*
+   - **CIDR Block:** *10.0.0.0/16*
+   - Click the *Create Virtual Cloud Network* button.
 
 3. Create the following Security List:
 
    - **Security List Name:** *LB-Security-List*
-   - Remove all the Ingress and Egress Rules of the *LB-Security-List*
+   - Remove all the Ingress and Egress Rules of the *LB-Security-List* (there shouldn't be any).
    - Click *Create Security List* 
 
     ![](media/image1.png)
 
+4. Create another Security List:
+   - **Security List Name:** *Web-Security-List*
+   - Click on **Additonal Ingress Rule** and enter:
+       - **Source Type:** *CIDR*
+       - **Source CIDR:** *0.0.0.0/0*
+       - **IP Protocol:** *TCP*
+       - **Destination Port Range:** *22*
+   - Click on **Additional Egress Rule** and enter:
+       - **Destination Type:** *CIDR*
+       - **Destination CIDR:** *0.0.0.0/0*
+       - **IP Protocol:** *All Protocols*
+   - Click *Create Security List* 
 
-4. Create the following Route Table:
+     ![](media/image17.png)
+     ![](media/image18.png)
 
-   - **Route Table Name:** *LB-Route-Table*
-   - **Target Type:** *Internet Gateway*
-   - **Destination CIDR Block:** *0.0.0.0/0*
+4. Create the following Internet Gateway:
+
+   - **Name:** *Internet-Gateway*
+   - Click *Create Internet Gateway*
+
+    ![](media/image16.png)
+
+5. Create the following Route Table:
+
+   - **Route Table Name:** *Route-Table*
+   - Click on the **+ Additional Route Rule** button
+     - **Target Type:** *Internet Gateway*
+     - **Destination CIDR Block:** *0.0.0.0/0*
    - **Target Internet Gateway:** *Select your Internet Gateway*
 
     ![](media/image2.png)
 
-5. Find your Subnets and edit by clicking on the action button and then click **Edit**. Enter the following parameters:
+   - Press the **Create Route Table** button.
 
-   - For **AD1** subnet make the changes:
-     	- **Name:** *LB-Subnet-1*
-     	- **Route Table:** *LB-Route-Table*
-     	- **Security List:** *LB-Security-List*
+6. Create a LB Subnet and edit by clicking on **Create Subnet**. Enter the following parameters:
+
+   - **Name:** *lb-subnet*
+   - **Subnet Type:** *Regional (Recommended)*
+   - **CIDR Block:** *10.0.1.0/24*
+   - **Route Table:** *Route-Table*
+   - **Subnet Access:** *Public Subnet*
+   - **DHCP Options:** *Default DHCP Options for VCN-WEB**
+   - **Security List:** *LB-Security-List*
 
     ![](media/image3.png)
-
-   - For **AD2** subnet, make the changes:
-     	- **Name:** *LB-Subnet-2*
-     	- **Route Table:** *LB-Route-Table*
-     	- **Security List:** *LB-Security List*
-
     ![](media/image4.png)
 
-
-   - For **AD3** subnet change ONLY the Name:
-     	- **Name:** *Web-Servers*
+7. Create a Web Subnet to host your webservers by clicking on **Create Subnet**. Enter the following parameters:
+   
+   - **Name:** *web-subnet*
+   - **Subnet Type:** *Regional (Recommended)*
+   - **CIDR Block:** *10.0.2.0/24*
+   - **Route Table:** *Route-Table*
+   - **Subnet Access:** *Public Subnet*
+   - **DHCP Options:** *Default DHCP Options for VCN-WEB**
+   - **Security List:** *Web-Security-List*
 
     ![](media/image5.png)
-
-    Your subnets will be similar to this picture:
-    
     ![](media/image6.png)
+
+    - Press the **Create Subnet** button.
 
 ## Practice-2: Creating two Web Servers
 
 You will create two web servers that will work as backend servers for your Public Load Balancer.
 
-1. Launch two Instances with the following configuration:
+1. Create two Compute Instances with the following configuration:
 
    - **Name:** *Web-Server-1*
    - **Availability Domain:** *AD 3*
-   - **Shape:** *VM.Standard2.1*
+   - **Shape:** *VM.Standard.E2.1.Micro*
+   - **Subnet:** *web-subnet (Regional)* 
+   - Click the **Assign a public IP address** button
    - Enter your public SSH-Key
-   - Click Create
+   - Click the **Create** button.
 
-    Repeat the previous steps, but this time enter the name *Web-Server-2*
+    Repeat the previous steps, but this time enter the name **Web-Server-2** and select **AD 2**
 
     ![](media/image7.png)
 
 
-2. Connect to the Web Servers and run the following commands on both instances:
+2. Connect to the Web Servers using SSH and run the following commands on both instances:
 
     **Note**: For Oracle Linux VMs, the default username is **opc**.
 
@@ -143,73 +171,58 @@ You will create two web servers that will work as backend servers for your Publi
 
 ## Practice-3: Creating and Testing the Load Balancer
 
-**Note:** Your load balancer should always reside in different subnets than your application instances. This allows you to keep your application instances secured in private subnets, while allowing public Internet traffic to the load balancer in the public subnets.
-
-
-1. In the Cosole, click **Menu** --> **Networking** --> **Load Balancers**. Click **Create Load Balancer** and enter the following paremeters:
+1. In the Console, click **Menu** --> **Networking** --> **Load Balancers**. Click **Create Load Balancer** and enter the following paremeters:
 
    - **Name:** *LB-Web-Servers*
-   - **Shape:** *100Mbps*
-   - **Visibility:** *Create Public Load Balancer*
+   - **Visibility Type:** *Public Load Balancer*
+   - **Maximum Total Bandwidth:** *100Mbps*
    - **Virtual Cloud Network:** *VCN-WEB*
-   - **Subnet-1:** *LB-Subnet-1*
-   - **Subnet-2:** *LB-Subnet-2*
-   - **Protocol:** *HTTP*
-   - **Port:** *80*
-   - **Traffic Distribution Policy:** *Weighted Round Robin*
-   - Select **Choose a compute instance Private IP Address**
-   - Select **Instance Name:** *Web-Server-1*
-   - Click on **+Additional Backend:**
-   - Select **Instance Name:** *Web-Server-2*
-   - Click Create
+   - **Subnet:** *lb-subnet(regional)*
+   - Press the **Next Step** button
+   - **Load Balancing Policy:** *Weighted Round Robin*
+   - Press the **Add  Backends** button
+   - Select both web servers
+   ![](media/addBackends1.png)
+   - Press the **Next Step** button
+   - Click the **HTTP** option and ensure the port is set to **80**.
+   - Press the **Create Load Balancer** button.
 
-    ![](media/image8.png)
-    ![](media/image9.png)
-
-    **Note:** When a load balancer is created, you're assigned a public IP address to which you route all incoming traffic. The IP address is highly available, meaning it is available from both subnets that you specified. Note that it is only active in one subnet at a time.
+    **Note:** When a load balancer is created, you're assigned a public IP address to which you route all incoming traffic. The IP address is highly available across ADs.
+![](media/lbdetails1.png)
 
 2. Update the **LB-Security-List** to allow Internet Traffic to the Listener. Go to your VCN details page and perform the following tasks:
 
     - Click **Security Lists**
     - Click on the **LB-Security-List**. This displays the details of the LB Security List
-    - Click **Edit All Rules**
-  
-3. Under **Allow Rules for Ingress**, click **+ Another Ingress Rule** and Enter the following ingress rule: 
+    - Click **Add Ingress Rules** and enter:
+      - **Source CIDR:** *0.0.0.0/0*
+      - **IP Protocol:** *TCP*
+      - **Destination Port Range:** *80*
+      - Click *Add Ingress Rules*
+        ![](media/image13.png)
+
+3. On the left side click on  **Egress Rules**, click **Add Egress Rules** and Enter the following egress rule: 
 
     - **Source CIDR:** *0.0.0.0/0*
-    - **IP Protocol:** *TCP*
-    - **Destination Port Range:** *80*
-    - Click Save Security List Rules
+    -  **IP Protocol:** *All Protocols*
+    - Click *Add Egress Rules*
 
-4. Under **Allow Rules for Egress**, click **+ Another Egress Rule** and Enter the following egress rule: 
+        ![](media/image19.png)
 
-    - **Source CIDR:** *0.0.0.0/0*
-    - **IP Protocol:** *All Protocols*
-    - Click Save Security List Rules
-
-    ![](media/image13.png)
-
-5. Update the **Default Security List** to allow traffic from Load Balancer to your Web-Servers. Go to your VCN details page and perform the following tasks:
+4. Update the **Web Security List** to allow traffic from Load Balancer to your Web-Servers. Go to your VCN details page and perform the following tasks:
 
     - Click **Security Lists**
-    - Click on the **Default-Security-List**. This displays the details of the Default Security List
-    - Click **Edit All Rules**
+    - Click on the **Web-Security-List**. This displays the details of the Web Security List
+    - Click **Add Ingress Rules** and enter:
+      -  **Source CIDR:** *10.0.1.0/24*
+      - **IP Protocol:** *TCP*
+      - **Destination Port Range:** *80*
+      - Click *Add Ingress Rules*
+        ![](media/image10.png)
 
-6. Under **Allow Rules for Ingress**, click **+ Another Ingress Rule** and Enter the following ingress rule: 
-
-    - **Source CIDR:** *10.0.0.0/24*
-    - **IP Protocol:** *TCP*
-    - **Destination Port Range:** *80*    
-  
-7. Click **+ Another Ingress Rule** and Enter the following ingress rule: 
-    - **Source CIDR:** *10.0.1.0/24*
-    - **IP Protocol:** *TCP*
-    - **Destination Port Range:** *80*
-    - Click **Save Security List Rules**
-
-    ![](media/image10.png)
-
-8. Test the functionality of the load balancer by navigating to its public IP address on a web browser.
+5. Test the functionality of the load balancer by navigating to its public IP address on a web browser.
+    
+    **Note:** This might take a few minutes to work as LB will perform a health check after enable the Security Rules. 
 
     `http://<Public-IP-Address>`
 

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SwingBenchConfiguration xmlns="http://www.dominicgiles.com/swingbench/config">
+    <Name>"JSON Benchmark"</Name>
+    <Comment>Simple JSON CRUD workload based on passenger airport entry</Comment>
+    <Connection>
+        <UserName>json</UserName>
+        <Password>enc(J2k1txUC4BU=)</Password>
+        <ConnectString>//tpc12server/soe</ConnectString>
+        <DriverType>Oracle jdbc Driver</DriverType>
+        <Properties>
+            <Property Key="FetchSize">20</Property>
+            <Property Key="StatementCaching">50</Property>
+            <Property Key="MaximumTxRetries">2</Property>
+        </Properties>
+    </Connection>
+    <Load>
+        <NumberOfUsers>16</NumberOfUsers>
+        <MinDelay>0</MinDelay>
+        <MaxDelay>0</MaxDelay>
+        <InterMinDelay>0</InterMinDelay>
+        <InterMaxDelay>0</InterMaxDelay>
+        <QueryTimeout>120</QueryTimeout>
+        <MaxTransactions>-1</MaxTransactions>
+        <RunTime>0:0</RunTime>
+        <LogonGroupCount>1</LogonGroupCount>
+        <LogonDelay>1</LogonDelay>
+        <LogOutPostTransaction>false</LogOutPostTransaction>
+        <WaitTillAllLogon>true</WaitTillAllLogon>
+        <StatsCollectionStart>0:0</StatsCollectionStart>
+        <StatsCollectionEnd>0:0</StatsCollectionEnd>
+        <ConnectionRefresh>0</ConnectionRefresh>
+        <TransactionList>
+            <Transaction>
+                <Id>Insert New Passenger</Id>
+                <ShortName>INP</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.benchmarks.JSON.InsertNewPassenger</ClassName>
+                <Weight>30</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Get Passenger Via Key</Id>
+                <ShortName>GPK</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.benchmarks.JSON.GetPassengerDetails</ClassName>
+                <Weight>100</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Update Passenger Via Key</Id>
+                <ShortName>UPK</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.benchmarks.JSON.UpdatePassengerDetails</ClassName>
+                <Weight>50</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Remove Passenger Via Key</Id>
+                <ShortName>RPK</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.benchmarks.JSON.RemovePassengerDetails</ClassName>
+                <Weight>2</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+        </TransactionList>
+        <EnvironmentVariables>
+            <Variable Key="SOE_NLSDATA_LOC">data/nls.txt</Variable>
+            <Variable Key="SOE_NAMESDATA_LOC">data/names.txt</Variable>
+        </EnvironmentVariables>
+    </Load>
+    <Preferences>
+        <StartMode>manual</StartMode>
+        <Output>swingbench</Output>
+        <JumpToEvents>true</JumpToEvents>
+        <TimingsIncludeSleep>false</TimingsIncludeSleep>
+        <TimingsIn>milliseconds</TimingsIn>
+        <StatisticsLevel>full</StatisticsLevel>
+        <OutputFile>results.xml</OutputFile>
+        <Charts DefaultChart="Overview">
+            <Chart>
+                <Name>DML Operations Per Minute</Name>
+                <Autoscale>true</Autoscale>
+                <MaximumValue>-1.0</MaximumValue>
+                <Logarithmic>false</Logarithmic>
+            </Chart>
+            <Chart>
+                <Name>Transaction Response Time</Name>
+                <Autoscale>true</Autoscale>
+                <MaximumValue>-1.0</MaximumValue>
+                <Logarithmic>true</Logarithmic>
+            </Chart>
+            <Chart>
+                <Name>Transactions Per Minute</Name>
+                <Autoscale>true</Autoscale>
+                <MaximumValue>-1.0</MaximumValue>
+                <Logarithmic>false</Logarithmic>
+            </Chart>
+        </Charts>
+        <AllowedErrorCodes>
+            <ErrorCode Type="ORA">4063</ErrorCode>
+        </AllowedErrorCodes>
+        <RefreshRate>1</RefreshRate>
+        <OverviewCharts>
+            <OverviewChart>
+                <Name>Transactions Per Minute</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Transactions Per Second</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Database Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Users</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Disk</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>CPU</Name>
+                <MinimumValue>0.0</MinimumValue>
+                <MaximumValue>100.0</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Response Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>DML</Name>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+        </OverviewCharts>
+    </Preferences>
+</SwingBenchConfiguration>

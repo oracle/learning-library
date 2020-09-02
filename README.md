@@ -1,41 +1,47 @@
-![](common/images/customer.logo.png)
+[![](common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
 ---
-# ORACLE Learning Library #
+# Build, test and deploy applications on Oracle's Cloud! #
+LiveLabs is a place to explore Oracle's products and services using labs designed to enhance your experience building and deploying applications on the Cloud and On-Premises.   Our library of assets covers everything from how to provision the world's first autonomous database to setting up a webserver on our world class Generation 2 infrastructure, machine learning and much more.  Use your existing Oracle Cloud account, a Free Tier account or a LiveLabs Cloud Account to build, test, and deploy applications on Oracle's Cloud. 
 
-Note: Content in the README is under development
+### How do I get started? ###
+Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are being added daily, please visit frequently for new content.
 
-## Introduction ##
+Click [here](http://bit.ly/golivelabs)
 
-Oracle Cloud is the industry’s broadest and most integrated public cloud. It offers best-in-class services across software as a service (SaaS), platform as a service (PaaS), and infrastructure as a service (IaaS), and even lets you put Oracle Cloud in your own data center. Oracle Cloud helps organizations drive innovation and business transformation by increasing business agility, lowering costs, and reducing IT complexity. The workshop content shows different aspects of Application Development in the cloud with different set of Oracle Cloud Services.
+## Featured Workshops
 
+### Developers
+- [Oracle's Converged Database](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
+- [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631) 
+- [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
+- [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)
+- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
 
-## Repository Folder Structure ##
+### Autonomous Database
+- [Analyzing your Data with ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
+- [Autonomous Database Quick Start](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=582)
+- [Machine Learning on ADB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=560)  
 
-The following directories are contained within this repository:
+### OCI
+- [Get Started with OCI Core Services](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=648)
+- [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
 
-**/articles** 
-- This folder will contain interesting Articles on Oracle Technology
+### Database 19c
+- [Database 19c New Features for Developers](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=636)
+- [Multitenant Fundamentals](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=573)
+- [Database In-Memory](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=566)
 
-**/common** 
-- This folder contains common images and assets used by content in other folders
-
-**/oci-library** 
-- This folder contains OCI Hands-on-Labs
-
-**/templates** 
-- This folder contains templates used for Articles and Workshops
-
-**/workshops** 
-- This folder will contain subfolders, each with documentation for individual workshops. The documentation is always in Markdown Format.
-
-**/ziplabs
-----This folder will contain subfolders, each with documentation for individual zip Labs in Markdown Format. Oracle Zip Labs are short 10-20 minute labs that guide users through a sequence of steps to accomplish a specific task using Oracle Cloud services.
-
+### Enterprise Manager
+- [Enterprise Manager](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
+- [Multitenant Lifecycle Management](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)
 
 
 ## [Contributing](CONTRIBUTING.md)
-Pull Requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.
+Pull requests are currently not being accepted. See [CONTRIBUTING](CONTRIBUTING.md) for details.  To get your workshop featured on this page, please contact Kay Malcolm or Tom McGinn.
 
 ## [License](LICENSE.md)
-Copyright (c) 2014, 2016 Oracle and/or its affiliates
+Copyright (c) 2014, 2020 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

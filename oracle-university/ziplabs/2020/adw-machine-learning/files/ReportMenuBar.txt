@@ -1,0 +1,1 @@
+This image zooms in on the Report menu bar. It contains a serios of icons for changing the report type. Currently selected is to the option to display the output in table format. Other options include the ability to display a bar chard, pie chart, line graph, scatter plot, or to download the report.

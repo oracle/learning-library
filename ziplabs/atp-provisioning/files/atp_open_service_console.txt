@@ -1,1 +1,0 @@
-This image zooms in to show the buttons in the current window. From left to right the buttons are: DB Connection, Service Concole, Scale Up/Down, Stop, and Actions. The actions button is expandable to reveal more options. Service Console is highlighted with a red rectangle.

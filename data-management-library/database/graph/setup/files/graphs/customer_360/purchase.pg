@@ -1,0 +1,20 @@
+# Nodes
+301 type:merchant name:"Apple Store"
+302 type:merchant name:"PC Paradise"
+303 type:merchant name:"Kindle Store"
+304 type:merchant name:"Asia Books"
+305 type:merchant name:"ABC Travel"
+
+# Edges
+201 -> 301 :purchased amount:800
+201 -> 302 :purchased amount:15
+202 -> 301 :purchased amount:150
+202 -> 302 :purchased amount:20
+202 -> 304 :purchased amount:10
+203 -> 301 :purchased amount:350
+203 -> 302 :purchased amount:20
+203 -> 303 :purchased amount:15
+204 -> 303 :purchased amount:10
+204 -> 304 :purchased amount:15
+204 -> 305 :purchased amount:450
+

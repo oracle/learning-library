@@ -6,7 +6,7 @@ October 18, 2018
 # Lab 10: Mastering DevOps in the Oracle Cloud
 </td></tr><table>
 
-# Rapid Application Devlopment with Oracle Autonomous Database
+# Mastering DevOps in the Oracle Cloud
 
 DevOps is an organizational philosophy that allows for rapid delivery of products using agile practices, tools and infrastructure. DevOps focuses on the ability of developers and IT Operations  staff to leverage cloud resources to rapidly deploy infrastructure and PaaS services such that personnel bottlenecks is no longer an issue for delivering applications internally. DevOps practices can be adopted by anyone in an organization that wishes to participate in a changing culture of agility and collaboration.
 
@@ -22,8 +22,8 @@ Two docker images are provided here to give you a jumpstart on developing applic
 **README files with usage directions and example scripts have been added to each language folder in the image and are also listed below**
 
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github Oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 
 
 ## **Download Docker image**

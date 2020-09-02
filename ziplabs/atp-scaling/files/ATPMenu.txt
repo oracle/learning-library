@@ -1,1 +1,0 @@
-This image shows the cloud console for ATP, with the new service listed. Each row is a service, and each column is a property. The first property listed is Name, which in the case of our new service is "atpxweek". The name is clickable. This is highlighted with a red box.

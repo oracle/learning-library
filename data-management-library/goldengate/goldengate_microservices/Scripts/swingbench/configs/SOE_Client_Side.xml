@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SwingBenchConfiguration xmlns="http://www.dominicgiles.com/swingbench/config">
+    <Name>Order Entry (jdbc)</Name>
+    <Comment>Simple Order Entry benchmark using client side jdbc calls</Comment>
+    <Connection>
+        <UserName>soe</UserName>
+        <Password>enc(cw4Xx9RgsQA=)</Password>
+        <ConnectString>//oraclelinux/orcl</ConnectString>
+        <DriverType>Oracle jdbc Driver</DriverType>
+        <Properties>
+            <Property Key="StatementCaching">120</Property>
+            <Property Key="FetchSize">20</Property>
+        </Properties>
+    </Connection>
+    <Load>
+        <NumberOfUsers>4</NumberOfUsers>
+        <MinDelay>0</MinDelay>
+        <MaxDelay>0</MaxDelay>
+        <QueryTimeout>55</QueryTimeout>
+        <MaxTransactions>-1</MaxTransactions>
+        <RunTime>0:0</RunTime>
+        <LogonGroupCount>1</LogonGroupCount>
+        <LogonDelay>0</LogonDelay>
+        <LogOutPostTransaction>false</LogOutPostTransaction>
+        <WaitTillAllLogon>false</WaitTillAllLogon>
+        <StatsCollectionStart>0:0</StatsCollectionStart>
+        <StatsCollectionEnd>0:0</StatsCollectionEnd>
+        <ConnectionRefresh>0</ConnectionRefresh>
+        <TransactionList>
+            <Transaction>
+                <Id>Customer Registration</Id>
+                <ShortName>NCR</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.NewCustomerProcess</ClassName>
+                <Weight>20</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Update Customer Details</Id>
+                <ShortName>UCD</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.UpdateCustomerDetails</ClassName>
+                <Weight>10</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Browse Products</Id>
+                <ShortName>BP</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.BrowseProducts</ClassName>
+                <Weight>90</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Order Products</Id>
+                <ShortName>OP</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.NewOrderProcess</ClassName>
+                <Weight>50</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Process Orders</Id>
+                <ShortName>PO</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.ProcessOrders</ClassName>
+                <Weight>5</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Browse Orders</Id>
+                <ShortName>BO</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.BrowseAndUpdateOrders</ClassName>
+                <Weight>15</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Sales Rep Query</Id>
+                <ShortName>SQ</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.SalesRepsOrdersQuery</ClassName>
+                <Weight>2</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Warehouse Query</Id>
+                <ShortName>WQ</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.WarehouseOrdersQuery</ClassName>
+                <Weight>1</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Warehouse Activity Query</Id>
+                <ShortName>WA</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.transactions.WarehouseActivityQuery</ClassName>
+                <Weight>1</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+        </TransactionList>
+        <EnvironmentVariables>
+            <Variable Key="SOE_PRODUCTSDATA_LOC">data/productids.txt</Variable>
+            <Variable Key="SOE_NAMESDATA_LOC">data/names.txt</Variable>
+            <Variable Key="SOE_NLSDATA_LOC">data/nls.txt</Variable>
+        </EnvironmentVariables>
+    </Load>
+    <Preferences>
+        <StartMode>manual</StartMode>
+        <Output>swingbench</Output>
+        <JumpToEvents>true</JumpToEvents>
+        <TimingsIncludeSleep>false</TimingsIncludeSleep>
+        <TimingsIn>milliseconds</TimingsIn>
+        <StatisticsLevel>simple</StatisticsLevel>
+        <OutputFile>results_clientside.xml</OutputFile>
+        <AllowedErrorCodes/>
+        <RefreshRate>2</RefreshRate>
+        <OverviewCharts>
+            <OverviewChart>
+                <Name>Transactions Per Minute</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Transactions Per Second</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Response Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>CPU</Name>
+                <MinimumValue>0.0</MinimumValue>
+                <MaximumValue>100.0</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Disk</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Users</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Database Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>DML</Name>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+        </OverviewCharts>
+    </Preferences>
+</SwingBenchConfiguration>

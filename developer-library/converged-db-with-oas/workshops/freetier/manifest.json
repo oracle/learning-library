@@ -1,0 +1,68 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to Converged Database with Oracle Analytics Server",
+            "description": "Introduction to Converged Database Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../intro/intro.md"
+        }, 
+        {         
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {         
+            "title": "Lab 2: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {            
+            "title": "Lab 3: Create Compute Instance",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-marketplaceoci-freetier.md"
+        },
+        {         
+            "title": "Lab 4: Environment Setup",
+            "description": "Connect to OAS Instance",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../oas-environment-setup/oas-environment-setup.md"
+        },
+        {         
+            "title": "Lab 5: Data Visualization",
+            "description": "OAS Data Visualization",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../data-visualizations/data-visualizations.md"
+        },    
+        {         
+            "title": "Lab 6: Augmented Analytics",
+            "description": "OAS Augmented Analytics",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../augmented-analytics/augmented-analytics.md"
+        },
+        {         
+            "title": "Lab 7: Predictive Analytics",
+            "description": "OAS Predictive Analytics",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../predictive-analytics/predictive-analytics.md"
+        }
+        
+
+    ]
+}

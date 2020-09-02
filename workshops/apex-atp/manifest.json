@@ -1,0 +1,28 @@
+{
+    "tutorials": [
+        {
+            "title": "Workshop Overview",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/apex-192/low-code-development/workshop-intro/intro.md"
+        },
+        {
+          "title": "Sign Up for Free Trial",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Create an APEX Workspace",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/apex-192/low-code-development/create-apex-ws/1-create-an-apex-workspace.md"
+        },
+		    {
+            "title": "Lab 2: Create an APEX App from a Spreadsheet",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/apex-192/low-code-development/create-app-spreadsheet/2-create-an-app-from-a-spreadsheet.md"
+        },
+		    {
+            "title": "Lab 3: Build Database Objects in Autonomous Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/apex-192/low-code-development/build-db-obj-adb/3-build-database-objects-in-autonomous-database.md"
+        },
+		    {
+            "title": "Lab 4: Create and Modify an APEX Application",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/apex-192/low-code-development/create-modify-apex-app/4-create-and-modify-an-apex-app.md"
+        }
+    ]
+}

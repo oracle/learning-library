@@ -1,0 +1,27 @@
+{
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/create-apex-workspace/create-apex-workspace.md"
+    },
+    {
+      "title": "Lab Introduction and Setup",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/0-lab-intro-and-setup/content.md"
+    },
+    {
+
+      "title": "Lab 1: JavaScript Basics",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/1-javascript-basics/content.md"
+    },
+    {
+
+      "title": "Lab 2: Adding JavaScript to APEX Apps",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/2-adding-javascript-to-apex-apps/content.md"
+    },
+    {
+
+      "title": "Lab 3: Working with the DOM and jQuery",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/3-working-with-the-dom-and-jquery/content.md"
+    }
+  ]
+}

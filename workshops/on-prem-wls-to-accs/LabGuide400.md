@@ -5,8 +5,8 @@ Updated: 08/08/2018
 
 This lab focuses on how to use Oracle Database Cloud Service and Oracle Java Cloud Service to complete the migration of your on-premises Oracle WebLogic Server environment to Oracle Cloud. 
 Oracle AppToCloud saves you the tedious and error-prone task of manually migrating all of your existing Oracle WebLogic Server environments to Oracle Cloud. Create an Oracle Java Cloud Service instance that's linked to your existing AppToCloud artifacts in Oracle Cloud Infrastructure Object Storage Classic, and then perform an import to deploy all of your Java EE applications and resources to the new instance.
-**_To log issues_**, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 - Exporting a WebLogic Server Domain to Oracle Cloud

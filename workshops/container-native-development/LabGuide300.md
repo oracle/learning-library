@@ -8,10 +8,10 @@ This is the third of several labs that are part of the **Oracle Public Cloud Con
 
 You will take on 2 personas during the workshop. The **Lead Developer Persona** will be responsible for configuring the parts of the automated build and deploy process that involve details about the application itself. The **DevOps Engineer Persona** will configure the parts of the automation involving the Kubernetes infrastructure. To containerize and automate the building and deploying of this application you will make use of Wercker Pipelines for CI/CD, Docker Hub for a container registry, and Terraform for provisioning a Kubernetes cluster on Oracle Cloud Infrastructure.
 
-During this lab, you will take on the **Lead Developer Persona** and work on fixing a bug found in Java microservice that you deployed to Kubernetes in the previous lab. You will make a code change that fixes the bug, commit the code to GitHub, and observe the execution of the build and deploy workflow that is managing your application. Then you'll test the application to verify that the bug fix was successful.
+During this lab, you will take on the **Lead Developer Persona** and work on fixing a bug found in Java microservice that you deployed to Kubernetes in the previous lab. You will make a code change that fixes the bug, commit the code to GitHub, and observe the execution of the build and deploy workflow that is managing your application. Then you will test the application to verify that the bug fix was successful.
 
-**_To log issues_**, click here to go to the [GitHub oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
-
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 **Make a Bug Fix to Your Java Microservice**

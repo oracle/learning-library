@@ -1,0 +1,28 @@
+{
+    "tutorials": [
+      {
+           "title": "Prerequisites",
+           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+       },
+        {
+            "title": "Introduction",
+            "filename": "./../../../intro/intro-ziplab.md"
+        },
+        {
+            "title": "Lab 1: Provision an ADW Instance",
+            "filename": "./../../../adb-provision/adb-provision.md"
+        },
+        {
+            "title": "Lab 2: Explore SQL Developer Web",
+            "filename": "./../../../adb-sqldevweb/adb-sqldevweb.md"
+        },
+        {
+            "title": "Lab 3: Loading Data",
+            "filename": "./../../../adb-loading/adb-loading.md"
+        },
+        {
+            "title": "Lab 4: Monitoring",
+            "filename": "./../../../adw-managing-monitoring/adw-managing-monitoring.md"
+        }
+    ]
+}

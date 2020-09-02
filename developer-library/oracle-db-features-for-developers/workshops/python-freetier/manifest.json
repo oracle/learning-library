@@ -1,0 +1,42 @@
+{
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },{
+            "title": "Introduction",
+            "description": "About the New features for Developers Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../../intro/intro.md"
+          },
+        {
+            "title": "Lab 1: Generate SSH Key - Cloud Shell",
+            "description": "Generate SSH Key",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {            
+            "title": "Lab 2: Environment Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
+        },
+        {            
+            "title": "Lab 3: Sample Schema Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "3/24/2020",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 4: Python and the Oracle DB",
+            "description": "Python",
+            "publisheddate": "4/05/2020",
+            "filename": "../../python/python.md"
+        }
+    ]
+}

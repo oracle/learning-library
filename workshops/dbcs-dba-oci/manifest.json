@@ -1,58 +1,34 @@
 {
-    "workshop": {
-        "title": "Database Cloud Services Workshop for OCI",
-        "description": "These labs will give you a basic understanding of the Oracle Database Cloud Service and many of the capabilities around administration and database development.  The labs will walk you through creating and accessing a new Database Cloud Service instance.  You will explore some common use cases for moving your data from on-premises to the cloud.  Next, you will use the Oracle Database Cloud Backup Module and RMAN to backup your on-premise data to the Oracle Public Cloud and then recover lost data.  Lastly, you will deploy an APEX application and adjust the firewall rules to support access to the application from the Internet using your browser, smart phone or tablet.",
-        "interactive":"https://launch.oracle.com/?dbcs_dba",
-        "versions": [
-           {
-            "name": "Self-Guided",
-            "description": "Individual self-guided learning",
-            "imageUrl": "https://oracle.github.io/learning-library/workshops/common-content/images/common/Self-Service.png"
-          }
-        ],
-        "labs": [
-            {
-                "number": "10",
-                "filename": "SG-intro.md",
-                "title": "Self Guided Introduction",
-                "description": "Step-by-step workshop instructions",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "30",
-                "filename": "SG-setup-terraform.md",
-                "title": "Setup workshop using Terraform",
-                "description": "Step-by-step setup instructions to setup the workshop using Terraform",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "100",
-                "filename": "SG-100.md",
-                "title": "Lab 100: Introduction",
-                "description": "Create and access a Database Cloud Instance",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "200",
-                "filename": "SG-200.md",
-                "title": "Lab 200: Cloud Migration",
-                "description": "Explore some common use cases for moving your data from on-premise to the cloud",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "300",
-                "filename": "SG-300.md",
-                "title": "Lab 300: DBCS Maintenance",
-                "description": "Perform some common DBA tasks such as setting up security access and scaling out your instance.",
-                "labels": {"version": "Self-Guided"}
-            },
-            {
-                "number": "400",
-                "filename": "SG-400.md",
-                "title": "Lab 400: Using the Oracle Command Line Interface (CLI) to manage DBCS Instances",
-                "description": "Install and configure Oracle CLI, and perform various DBA tasks with CLI",
-                "labels": {"version": "Self-Guided"}
-            }
-        ]
-    }
+  "tutorials": [
+      {
+        "title": "Database Cloud Services Workshop for OCI Lab Introduction",
+        "description": "Introduction to the workshop",
+        "publisheddate": "1/31/2020",
+        "filename": "README.md"
+      },
+      {
+        "title": "Lab 1: Introduction and Setup",
+        "description": "Create services and setup account for workshop",
+        "publisheddate": "1/31/2020",
+        "filename": "1.md"
+      },
+      {
+        "title": "Lab 2: Zero Downtime Database Migration",
+        "description": "Use a simple automated one button approach to move your oracle database to the Oracle Cloud",
+        "publisheddate": "1/31/2020",
+        "filename": "2.md"
+      },
+      {
+        "title": "Lab 3: Tablespace, Schema and Table Migration Use Cases",
+        "description": "Explore some common use cases for moving your data from on-premise to the cloud",
+        "publisheddate": "1/31/2020",
+        "filename": "3.md"
+      },
+      {
+        "title": "Lab 4: Data Recovery using the Command Line Interface to manage DBCS instances",
+        "description": "Recover lost data and use the Command Line Interface (CLI) to manage instances",
+        "publisheddate": "1/31/2020",
+        "filename": "4.md"
+      }
+    ]
 }

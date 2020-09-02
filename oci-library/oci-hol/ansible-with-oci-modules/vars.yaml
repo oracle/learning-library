@@ -1,0 +1,38 @@
+---
+quad_zero_route: "0.0.0.0/0"
+TCP_protocol: "6"
+SSH_port: "22"
+http_port: 80
+
+vcn_name: "demotestvcn"
+vcn_cidr_block: "10.0.0.0/16"
+vcn_dns_label: "demotestvcn"
+
+ig_name: "demointernetgatewayformytestvcn"
+
+route_table_name: "demoroutetable"
+# route all internet access to our Internet Gateway
+route_table_rules:
+  - cidr_block: "{{ quad_zero_route }}"
+    network_entity_id: "{{ ig_id }}"
+
+
+subnet_cidr: "10.0.0.48/28"
+subnet_name: "demotestsubnet"
+subnet_dns_label: "demotestsubnet"
+
+securitylist_name: "demosecuritylist"
+
+instance_shape: "{{ lookup('env', 'SAMPLE_INSTANCE_SHAPE') | default('VM.Standard2.1', true) }}"
+instance_display_name: "instance_pool_demo_instance"
+instance_pool_name: demo_instance_pool
+instance_configuration_name: demo_instance_configuration
+
+#########################################
+# Tenancy specific configuration
+# *Note* - Override the following variables based on your tenancy
+# or set a valid value for the corresponding environment variable
+#########################################
+instance_compartment: "{{ lookup('env', 'compartment_ocid') }}"
+# provide an "OL" image
+instance_image: "{{ lookup('env', 'image_ocid') }}"

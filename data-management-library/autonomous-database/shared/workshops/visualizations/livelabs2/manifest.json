@@ -1,0 +1,34 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "./../../../intro/intro-ziplab.md"
+        },
+        {
+            "title": "Lab 1: Provision an ADW Instance",
+            "description": "Provision a new ADW instance and connect to the database",
+            "filename": "./../../../adb-provision/adb-provision-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Working with Free Sample Data Sets",
+            "description": "Explore SQL Developer Web",
+            "filename": "./../../../adb-sqldevweb/adb-sqldevweb.md"
+        },
+        {
+            "title": "Lab 3: Loading Data",
+            "description": "Load data into ADB",
+            "filename": "./../../../adb-loading/adb-loading.md"
+        },
+        {
+            "title": "Lab 4: Visualizing Your Data",
+            "description": "Create Rich Data Visualizations",
+            "filename": "./../../../adw-visualizations/adw-visualizations.md"
+        }
+    ]
+}

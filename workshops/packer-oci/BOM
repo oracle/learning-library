@@ -1,0 +1,29 @@
+
+Cloud username / password
+Cloud Tenancy Name (myTenantName)
+
+Things that you will create along the way:
+
+o  packerkey ssh pair (packerkey and packerkey.pub)
+o  packer_api_key rsa pair  (packer_api_key.pem and packer_api_key_public.pem)
+
+o  Compartment
+o  VCN 
+o  Subnet
+* Add rules to security list
+
+Client image IP address
+
+Here is a list of the pieces you will collect, specific to your OCI cloud tenant:
+
+o api user ocid 
+o tenancy ocid
+o base image ocid 
+o compartment ocid 
+o subnet ocid
+o fingerprint
+o availability domain
+o region 
+
+o base image ocid (CentOS 7 in ashburn is: "ocid1.image.oc1.iad.aaaaaaaarsu56scul4muz3sqbptvykipy2rn6re3wzdjvncgcpgqt5cp3wja")
+  Find all the base images for OCI here...https://docs.cloud.oracle.com/iaas/images/

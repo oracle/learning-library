@@ -1,0 +1,21 @@
+{
+    
+    "tutorials": [
+        {            
+            "title": "Getting Started",
+            "filename": "./gettingstarted.md"
+        },
+
+        {            
+            "title": "Visual Builder Cloud Service",
+            "filename": "./vbcs-lab/applicationdevelopment-labguide.md"
+        },
+
+        {            
+            "title": "Digital Assistant",
+            "filename": "./oda-lab/oda-labguide.md"
+        }
+
+    ]
+}
+

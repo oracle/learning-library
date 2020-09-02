@@ -4,7 +4,7 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Deploy your Cloudera environment](#practice-1-deploy-your-cloudera-environment)
 
@@ -25,17 +25,17 @@ Cloudera on Oracle Cloud Infrastructure is a joint solution that combines the fl
 In this lab, attendees will manage a Cloudera Enterpise Data Hub on OCI and use TeraSort, a popular benchmark used to measure MapReduce performance of an Apache™ Hadoop® cluster.  The data contained in this presentation details performance of YARN scheduled TeraSort jobs on Cloudera Enterprise Data Hub running on OCI.
 
 
-## Pre-Requisites 
+## Prerequisites 
 
 * OCI account: If you don't have an OCI account, you can sign up for a free trial [here](https://cloud.oracle.com/trial)
 
-* Terraform configuration: That's all detailed [here](https://github.com/cloud-partners/oci-prerequisites)
+* Terraform configuration: That's all detailed [here](https://github.com/oracle-quickstart/oci-cloudera)
 
 >NOTE: The free trial only has the Ashburn region enabled by default. Depending on what Terraform modules you're going to deploy, you may need to enable other regions. Similarly, the default quotas are pretty low, so you might need to request increases.
 
 ## Practice 1: Deploy your Cloudera environment
 
-1. The Terraform module mentioned on pre-requisites section speed up the process of deploying a Cloudera cluster in OCI. For this HOL we used the development module described [here](https://github.com/cloud-partners/oci-cloudera/tree/master/development)
+1. The Terraform module mentioned on Prerequisites section speed up the process of deploying a Cloudera cluster in OCI. For this HOL we used the development module described [here](https://github.com/oracle-quickstart/oci-cloudera/)
 
 This is for small implementations. This deployment consists of five instances:
 
@@ -45,7 +45,7 @@ This is for small implementations. This deployment consists of five instances:
 
 This environment provides a much higher HDFS storage capacity, along with a compute and memory resources for use with a variety of big data workloads. This environment is not a good fit for users who want high availability.
 
->NOTE: You can find all the modules [here](https://github.com/cloud-partners/oci-cloudera)
+>NOTE: You can find all the modules [here](https://github.com/oracle-quickstart/oci-cloudera)
 Also, please modify the script `startup.sh` and look for the `MAIN CLUSTER CONFIGURATION` section - this is which you can input your contact information, and set up the Cloudera Manager credentials prior to deployment - those credentials will be used on Practice-3
 
 ## Practice 2: Cloudera Enterprise Data Hub on OCI 

@@ -23,8 +23,8 @@ The Autonomous cloud service takes it a step further. It is self managing, self 
 ![](./images/800/Picture300.png)
 
 
-To **log issues**, click [here](https://github.com/cloudsolutionhubs/autonomous-transaction-processing/issues/new) to go to the github oracle repository issue submission form.
-
+### See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 ## Objectives
 
 - To build a docker container running node.js microservice
@@ -38,9 +38,9 @@ To **log issues**, click [here](https://github.com/cloudsolutionhubs/autonomous-
 - Install node.js on your laptop
 - Download the **instantclient-basic-linux.x64-12.1.0.2.0.zip** from Oracle OTN [here](https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)
 - Docker installed on your local machine. If you do not have docker please follow this [Mac User link](https://docs.docker.com/docker-for-mac/install/), [Windows User link](https://docs.docker.com/docker-for-windows/install/) and install docker
-- Create a folder and clone git repository to your local machine 
+- Create a folder and download this repository
 ```
-git clone https://github.com/cloudsolutionhubs/ATPDocker.git
+$ wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/workshops/autonomous-transaction-processing/scripts/800/ATPDocker.zip?raw=true
 ```
 
 Note: Note there are two Docker files in the repository. That’s because we have two different applications–ATPnodeapp and aOne. Both of these are node.js applications which mimic as microservices in our case.
@@ -55,7 +55,7 @@ Provision ATP instance and download secure connectivity credentials file.
 
 Refer to labs <a href="./LabGuide100ProvisionAnATPDatabase.md" target="_blank">LabGuide1.md</a> and <a href="./LabGuide200SecureConnectivityAndDataAccess.md" target="_blank">LabGuide2.md</a> to provision and download the secure connectivity credentials file.
 
-- NOTE: If you wish to deploy aOne app, you would need to connect to your database using SQL Developer and run the [create_schema](https://github.com/cloudsolutionhubs/ATPDocker/blob/master/aone/create_schema.sql) script in the default admin schema or create a suitable user schema for the application.
+- NOTE: If you wish to deploy aOne app, you would need to connect to your database using SQL Developer and run the [create_schema](https://github.com/oracle/learning-library/tree/master/autonomous-database/workshops/atp-s/scripts/800/create_schema.sql) script in the default admin schema or create a suitable user schema for the application.
 
 Unzip and store the wallet in same folder as your application under /wallet_NODEAPPDB2. This folder is copied into your container image when you run the docker file.
 
