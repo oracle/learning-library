@@ -1,6 +1,6 @@
 # Lab 1 -  GG initial setp 
 
-![](./images/image110_1.png)
+![](./images/image200_1.png)
 
 ## Want to learn more:
 

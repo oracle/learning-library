@@ -6,7 +6,7 @@ process ‘rhbase’ will read the remote trail files, create the HBase tables a
 
 Lab Architecture
 
-![](./images/image501_1.png)
+![](./images/image200_1.png)
 
 Time to Complete -
 Approximately 30 minutes

@@ -2,7 +2,7 @@
 
 Lab Architecture
 
-![](./images/image300_1.png)
+![](./images/image200_1.png)
 
 ## Introduction
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat

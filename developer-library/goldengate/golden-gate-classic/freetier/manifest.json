@@ -8,7 +8,7 @@
       {
            "title": "Lab2 One way replication Oracle to mySQL",
            "description": "One way replication Oracle to mySQL",
-           "filename": "../gg-classic-workshop-lab2-oneway-oracle-to-mysql-replicationl/gg-classic-workshop-lab2-oneway-oracle-to-mysql-replicationl.md"
+           "filename": "../gg-classic-workshop-lab2-oneway-oracle-to-mysql-replicationl/gg-classic-workshop-lab2-oneway-oracle-to-mysql-replication.md"
        },
         {
             "title": "Lab 3 One way replication mySQL to Oracle",
@@ -23,7 +23,7 @@
         {
             "title": "Lab 5 GG Column Conversions",
             "description": "Lab 5 GG Column Conversions",
-            "filename": "../gg-classic-workshop-lab5-ogg-column-conversions/gg-classic-workshop-lab5-ogg-column-conversions.md.md"
+            "filename": "../gg-classic-workshop-lab5-ogg-column-conversions/gg-classic-workshop-lab5-ogg-column-conversions.md"
         }      
     ]
 }

@@ -7,7 +7,7 @@ process ‘rhive’ will read the trail file, create the Hive tables, write the 
 
 Lab Architecture
 
-![](./images/image401_1.png)
+![](./images/image200_1.png)
 
 Time to Complete -
 Approximately 30 minutes
