@@ -3,27 +3,27 @@
       {
           "title": "Lab 1 GG Initial setup",
           "description": "GG Initial setup",
-          "filename": "../gg-classic-lab1-ogg-env-initial-setup/gg-classic-lab1-ogg-env-initial-setup.md"
+          "filename": "../ggbd-workshop-lab1-installation/ggbd-workshop-lab1-installation.md"
       },
       {
            "title": "Lab2 One way replication Oracle to mySQL",
            "description": "One way replication Oracle to mySQL",
-           "filename": "../gg-classic-workshop-lab2-oneway-oracle-to-mysql-replicationl/gg-classic-workshop-lab2-oneway-oracle-to-mysql-replicationl.md"
+           "filename": "../ggbd-workshop-lab2-mysql-to-mysql/ggbd-workshop-lab2-mysql-to-mysql.md"
        },
         {
             "title": "Lab 3 One way replication mySQL to Oracle",
             "description": "One way replication mySQL to Oracle",
-            "filename": "../gg-classic-workshop-lab3-one-way-replication-mysql-to-oracle/gg-classic-workshop-lab3-one-way-replication-mysql-to-oracle.md"
+            "filename": "../ggbd-workshop-lab3-mysql-to-hdfs/ggbd-workshop-lab3-mysql-to-hdfs.md"
         },
         {
             "title": "Lab 4 GG HA / Active-Active replication",
             "description": "Lab 4 GG HA / Active-Active replication",
-            "filename": "../gg-classic-lab4-active-active-replication/gg-classic-lab4-active-active-replication.md"
+            "filename": "../ggbd-workshop-lab4-mysql-to-hive/ggbd-workshop-lab4-mysql-to-hive.md"
         },
         {
             "title": "Lab 5 GG Column Conversions",
             "description": "Lab 5 GG Column Conversions",
-            "filename": "../gg-classic-workshop-lab5-ogg-column-conversions.md/gg-classic-workshop-lab5-ogg-column-conversions.md.md"
+            "filename": "../ggbd-workshop-lab5-mysql-to-hbase/ggbd-workshop-lab5-mysql-to-hbase.md"
         }      
     ]
 }
