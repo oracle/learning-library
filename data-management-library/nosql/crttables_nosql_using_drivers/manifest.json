@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Oracle Hands-On Labs",
+    "tutorials": [
+        {
+            "title": "Use Java to Get Started with Tables in Oracle NoSQL Database Cloud Service",
+            "description": "This 15-minute tutorial walks you through the steps to connect to Oracle NoSQL Database Cloud Service and do basic table level operations using a sample application. ",
+            "filename": "content.md",
+            "type": "Java"
+        },
+        {
+            "title": "Use Python to Get Started with Tables in Oracle NoSQL Database Cloud Service",
+            "description": "This 15-minute tutorial walks you through the steps to connect to Oracle NoSQL Database Cloud Service and do basic table level operations using a sample application. ",
+            "filename": "content.md",
+              "type": "Python"
+        },
+        {
+            "title": "Use Go to Get Started with Tables in Oracle NoSQL Database Cloud Service",
+            "description": "This 15-minute tutorial walks you through the steps to connect to Oracle NoSQL Database Cloud Service and do basic table level operations using a sample application. ",
+            "filename": "content.md",
+              "type": "Go"
+        },
+        {
+            "title": "Use Node.js to Get Started with Tables in Oracle NoSQL Database Cloud Service",
+            "description": "This 15-minute tutorial walks you through the steps to connect to Oracle NoSQL Database Cloud Service and do basic table level operations using a sample application. ",
+            "filename": "content.md",
+              "type": "Node.js"
+        }
+    ]
+}
