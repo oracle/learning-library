@@ -1,16 +1,17 @@
 # Introduction
 
+## About this Workshop
 This workshop is for Java Developers looking to start building applications with Micronaut and Oracle Cloud with Autonomous Database. The workshop features several labs that walk you through the
 steps to get going with Micronaut, Helidon, and Oracle Cloud.
 
 Estimated Workshop Time: 120 minutes
 
-### About Micronaut
+### About Micronaut and Helidon
 
 Micronaut is an innovative new server side Java technology that precomputes your framework infrastructure at compilation time. Micronaut can be combined with GraalVM Native Image to build native applications
 that utilize very little memory and resources thanks to its reflection free nature.
 
-Micronaut also includes a persistence framework called Micronaut Data that precomputes your SQL queries at compilation name making it a great fit for working with Autonmous Database.
+Micronaut also includes a persistence framework called Micronaut Data that precomputes your SQL queries at compilation name making it a great fit for working with Autonomous Database.
 
   <!-- [Video](youtube:zNKxJjkq0Pw) -->
 
@@ -21,12 +22,13 @@ Helidon is an Oracle implementation of MicroProfile specification and is used in
 This 2-hour lab walks you through the steps to use Micronaut, Micronaut Data
 and Oracle Cloud to connected to an Oracle Database.
 
-Lab: Generate SSH Keys
-Lab: Provision OCI Resources (OCI VM, VCN and Autonomous Database)
-Lab: Build an app with Micronaut and Micronaut Data
-Lab: Call a Helidon services from Micronaut
-Lab: Deploy your app on an Oracle Cloud VM
-Lab: Terminate and Destroy OCI Resources
+- Lab: Generate SSH Keys
+- Lab: Provision OCI Resources (OCI VM, VCN and Autonomous Database)
+- Lab: Get setup to develop a Micronaut application locally
+- Lab: Build an app with Micronaut and Micronaut Data
+- Lab: Call a Helidon services from Micronaut
+- Lab: Deploy your app on an Oracle Cloud VM
+- Lab: Terminate and Destroy OCI Resources
 
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account

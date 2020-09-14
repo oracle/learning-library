@@ -30,7 +30,11 @@ Download the native image binary (this is needed for deployment to cloud)
 
 Run the native image (if you are using a Linux environment):
 
-`./helidon-mp-service`
+```
+wget -O helidon-mp-service https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/helidon-mp-service
+chmod +x helidon-mp-service
+./helidon-mp-service
+```
 
 _non Linux environment:_
   - Get the application from github: `git clone https://github.com/tomas-langer/helidon-hol-example.git`
@@ -42,7 +46,7 @@ This will open the application on port `8081`
 We can verify this application works by exercising the following endpoints:
 
 - `curl -i http://localhost:8081/vaccinated/Dino` - this is our "business" endpoint and should return `true`
-- `curl -i http://localhost:8080/health` - returns health status (MicroProfile health format)
+- `curl -i http://localhost:8081/health` - returns health status (MicroProfile health format)
 - `curl -H 'Accept: application/json' http://localhost:8081/metrics` - returns metrics (MicroProfile metrics format)
 - `curl -i http://localhost:8081/openapi` - returns OpenAPI yaml service description (MicroProfile OpenAPI specification)
 
@@ -131,7 +135,7 @@ public class PetHealthService implements PetHealthOperations {
 
 Key aspects of this example include:
 
-* The class is annotated with `@Singleton` and `@Recoverable`, the latter of which is used to define the api that contains the methods that will trigger fallback behaviour.
+* The class is annotated with `@Singleton` and `@Recoverable`, the latter of which is used to define the api that contains the methods that will trigger fallback behavior.
 * An inner interface called `PetHealthClient` is defined that uses Micronaut's support for [declarative clients HTTP clients](https://docs.micronaut.io/latest/guide/index.html#clientAnnotation). The `@Client` interface is used to specify a named service called `pet-health` which will be used to perform the communication. This client is injected into the constructor of the `PetHealthService` and is used to make the call to the Helidon service.
 
 Micronaut includes comprehensive support for different [service discovery](https://docs.micronaut.io/latest/guide/index.html#serviceDiscovery) strategies. You could configure Micronaut to use a Service Discovery server or discovery services via Kubernetes using the name `pet-health`.

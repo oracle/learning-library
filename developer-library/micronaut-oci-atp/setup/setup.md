@@ -1,7 +1,7 @@
 # Setup for Local Development
 
 ## Introduction
-In this lab you are going to get setup to develop a Micronaut application locally that communicates with an Autonomous Datatabase instance.
+In this lab you are going to get setup to develop a Micronaut application locally that communicates with an Autonomous Database instance.
 
 Estimated Lab Time: 10 minutes
 
@@ -18,7 +18,7 @@ In this lab you will:
 
 ## **STEP 1**: Create DB Schema
 
-1. Click on the Cloud Shell button to start a Cloud Shell intance:
+1. Click on the Cloud Shell button to start a Cloud Shell instance:
 
    ![Open Cloud Shell](images/cloudshell.png)
 
@@ -26,7 +26,6 @@ In this lab you will:
 
     ```
     <copy>
-    bash
     wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
     chmod +x setup.sh
     ./setup.sh
@@ -38,7 +37,7 @@ In this lab you will:
 
 The Oracle Autonomous Database uses an extra level of security in the form of a wallet containing access keys for your new Database.
 
-To connect locally you need download and configure the ATP Wallet locally.
+To connect locally you need to download and configure the ATP Wallet locally.
 
 1. In the OCI Console, click on the burger menu and select 'Autonomous Transaction Processing' under 'Oracle Database'.
 
@@ -68,7 +67,6 @@ To connect locally you need download and configure the ATP Wallet locally.
 
     ```
     <copy>
-    bash
     unzip /path/to/Wallet_mnociatp.zip -d /tmp/wallet
     </copy>
     ```
@@ -84,7 +82,6 @@ To connect locally you need download and configure the ATP Wallet locally.
 
     ```
     <copy>
-    bash
     mn create-app example-atp --features oracle,data-jdbc
     cd example-atp
     </copy>
@@ -95,7 +92,6 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 2. If you do not have the Micronaut CLI installed and are running on Linux or OS X you can alternatively `curl` and `unzip`:
 
     ```
-    bash
     curl https://launch.micronaut.io/example-atp.zip\?features\=oracle,data-jdbc -o example-atp.zip
     unzip example-atp.zip -d example-atp
     cd example-atp
@@ -119,7 +115,7 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
 2. To configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
 
-It is recommended to never to hard code passwords in configuration so using an environment variable is the preferred approach.
+It is recommended to never hard code passwords in configuration so using an environment variable is the preferred approach.
 
 In addition you should also set an environment variable called `TNS_ADMIN` to the location of your wallet created in Step 2.
 

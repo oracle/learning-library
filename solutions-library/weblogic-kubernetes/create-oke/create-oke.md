@@ -1,54 +1,47 @@
 # Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI) #
 
 ## Introduction
-
-Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your container applications to the cloud. Use the Container Engine for Kubernetes (sometimes abbreviated OKE) when your development team wants to reliably build, deploy, and manage cloud-native applications. You specify the compute resources that your applications require, and OKE provisions them on an Oracle Cloud Infrastructure in an existing OCI tenancy.
-
 This lab shows you the way the **Quick Start** feature creates and configures all the necessary resources for a three node Kubernetes cluster. All the nodes will be deployed in different availability domains to ensure high availability.
-
-During this lab, you will Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI).
 
 Estimated Lab Time: 15 minutes
 
+### About OKE
+Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your container applications to the cloud. A Kubernetes cluster is a group of nodes. The nodes are the machines running applications. Each node can be a physical machine or a virtual machine. The node's capacity (its number of CPUs and amount of memory) is defined when the node is created. You can access Container Engine for Kubernetes to define and create Kubernetes clusters using the Console and the REST API. You can access the clusters you create using the Kubernetes command line (kubectl), the Kubernetes Dashboard, and the Kubernetes API.
+
 ### Objectives
-- Open the OCI console.
 - Create Compartment
-- Create a policy.
-- Create an OKE cluster.
-- OCI Cloud Shell
+- Create a policy
+- Create an OKE cluster
+- Startup OCI Cloud Shell
 - Configure kubectl
 - Set up the RBAC policy for the OKE cluster
 
 ### Prerequisites
 
-- You should already have completed Introduction before beginning this lab.
-- You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
+* An Oracle Paid or LiveLabs Cloud account.
+* Google Chrome browser (preferred)
+* Lab: Prerequisites
 
-### Administrative Notes
-- Works better with the Chrome browser.
-
-## **STEP 1**: Open the OCI console   
-
-  1.  If you already opened the OCI console you can proceed step 2. Otherwise, open the OCI console.
-
-## **STEP 2**: Create a Compartment for your Kubernetes nodes
+## **STEP 1**: Create a Compartment for your Kubernetes nodes
 
 Compartments are used to isolate resources within your OCI tenant. Role-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
 
-  1. Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Identity** section of the menu, click **Compartments**
+  1.  Login to Oracle Cloud
+   
+  2. Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Identity** section of the menu, click **Compartments**
 
     ![](images/001.png " ")
 
-  2. If you have a **Demo** compartment already, _**SKIP THIS STEP**_. Otherwise, Click **Create Compartment**
+  3. If you have a **Demo** compartment already, _**SKIP THIS STEP**_. Otherwise, Click **Create Compartment**
 
     ![](images/002.png " ")
 
-  3. In the **Name** field, enter `Demo`. Enter a description of your choice. In the **Parent Compartment** field, ensure that the `root` compartment is selected (it will have the same name as your Oracle Cloud Account). Click **Create Compartment**.
+  4. In the **Name** field, enter `Demo`. Enter a description of your choice. In the **Parent Compartment** field, ensure that the `root` compartment is selected (it will have the same name as your Oracle Cloud Account). Click **Create Compartment**.
 
     ![](images/003.png " ")
 
 
-## **STEP 3**: Create a policy 
+## **STEP 2**: Create a policy 
 A service policy allows OKE to create resources in your tenancy, such as compute. An OKE resource policy or policies let you specify which groups in your tenancy can perform certain tasks with the OKE API.
 
 Optionally, create more resource policies if you want to control which groups can access different parts of the OKE service.
@@ -61,17 +54,17 @@ Optionally, create more resource policies if you want to control which groups ca
 
   ![alt text](images/005.policies.png " ")
 
-Enter the following:
+    Enter the following:
 
-- **Name:** A unique name for the policy. The name must be unique across all policies in your tenancy. You cannot change this later.
-- **Description:** A user friendly description.
-- **Policy Versioning:** Select **Keep Policy Current**. It ensures that the policy stays current with any future changes to the service's definitions of verbs and resources.
-- **Statement:** A policy statement. It MUST be: `allow service OKE to manage all-resources in tenancy`.
-- **Tags:** Don't apply tags.
+    - **Name:** A unique name for the policy. The name must be unique across all policies in your tenancy. You cannot change this later.
+    - **Description:** A user friendly description.
+    - **Policy Versioning:** Select **Keep Policy Current**. It ensures that the policy stays current with any future changes to the service's definitions of verbs and resources.
+    - **Statement:** A policy statement. It MUST be: `allow service OKE to manage all-resources in tenancy`.
+    - **Tags:** Don't apply tags.
 
 3.  Click **Create**.
 
-![alt text](images/006.create.oke.policy.png)
+  ![alt text](images/006.create.oke.policy.png)
 
 ## **STEP 3**: Create an OKE cluster 
 
@@ -89,17 +82,17 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
   ![alt text](images/009.quick.1.png)
 
-Select **Quick Create** to create a new cluster with the default settings, along with new network resources for the new cluster.
+4. Select **Quick Create** to create a new cluster with the default settings, along with new network resources for the new cluster.
 
-The Create Virtual Cloud Network panel shows the network resources that will be created for you by default, namely a VCN, two load balancer subnets, and three worker node subnets.
+  The Create Virtual Cloud Network panel shows the network resources that will be created for you by default, namely a VCN, two load balancer subnets, and three worker node subnets.
 
-Specify the following configuration details on the Cluster Creation page:
-- **Name**: The name of the cluster. Leave the default value.
-- **Compartment**: The name of the compartment. Leave the default value.
-- **Kubernetes version**: The version of Kubernetes. **Select 15.7 or lower** (Don't select version 16 even if it is default version; please select version 15 in such cases.)
-- **Choose Visibility Type**: Is the cluster going to be routable or not. Select Public.
-- **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select the available *VM.Standard2.1*.
-- **Number of nodes**: The number of worker nodes to create. Leave the default value, *3*
+5. Specify the following configuration details on the Cluster Creation page:
+      - **Name**: The name of the cluster. Leave the default value.
+      - **Compartment**: The name of the compartment. Leave the default value.
+      - **Kubernetes version**: The version of Kubernetes. **Select 15.7 or lower** (Don't select version 16 even if it is default version; please select version 15 in such cases.)
+      - **Choose Visibility Type**: Is the cluster going to be routable or not. Select Public.
+      - **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select the available *VM.Standard2.1*.
+      - **Number of nodes**: The number of worker nodes to create. Leave the default value, *3*
 
 
 4.  Click **Next** to review the details you entered for the new cluster.
@@ -139,27 +132,27 @@ Your Cloud Shell comes with the OCI CLI pre-authenticated, so there’s no setup
 
   ![alt text](images/022.ocishell.access.config.png)
 
-A dialog appears which contains the customized OCI command that you need to execute, to create a Kubernetes configuration file.
+  A dialog appears which contains the customized OCI command that you need to execute, to create a Kubernetes configuration file.
 
 2.  Select the **Copy** link to copy the `oci ce...` command to Cloud Shell, then close the configuration dialog before you paste the command into the terminal.
 
   ![alt text](images/023.ocishell.config.dialog.png)
-For example, the command looks like the following:
-```bash
-$ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.THIS_IS_EXAMPLE_DONT_COPY_PASTE_FROM_HERE --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0
-New config written to the Kubeconfig file /home/peter_nagy/.kube/config
-```
-Now check that `kubectl` is working, for example, using the `get node` command:
-```bash
-$ kubectl get node
-NAME        STATUS   ROLES   AGE    VERSION
-10.0.10.2   Ready    node    117m   v1.15.7
-10.0.10.3   Ready    node    116m   v1.15.7
-10.0.10.4   Ready    node    117m   v1.15.7
-```
+3. For example, the command looks like the following:
+  ```bash
+  $ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.THIS_IS_EXAMPLE_DONT_COPY_PASTE_FROM_HERE --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0
+  New config written to the Kubeconfig file /home/peter_nagy/.kube/config
+  ```
+4. Now check that `kubectl` is working, for example, using the `get node` command:
+  ```
+  bash
+  $ <copy>kubectl get node</copy>
+  NAME        STATUS   ROLES   AGE    VERSION
+  10.0.10.2   Ready    node    117m   v1.15.7
+  10.0.10.3   Ready    node    116m   v1.15.7
+  10.0.10.4   Ready    node    117m   v1.15.7
+  ```
 3.  If you see the node's information, then the configuration was successful.
-
-![alt text](images/024.ocishell.config.complete.png)
+  ![alt text](images/024.ocishell.config.complete.png)
 
 ## **STEP 6**:  Set up the RBAC policy for the OKE cluster 
 
@@ -167,7 +160,7 @@ In order to have permission to access the Kubernetes cluster, you need to author
 
 1.  In the Console, select your OCI user name and select User Settings. On the user details page, you will find the user OCID. Select Copy and paste it temporarily in a text editor.
 
-![alt text](images/010.user.ocid.png)
+  ![alt text](images/010.user.ocid.png)
 
 2.  Then execute the role binding command using your user OCID:
   ```
@@ -175,18 +168,18 @@ In order to have permission to access the Kubernetes cluster, you need to author
   kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=<YOUR_USER_OCID>
   </copy>
   ```
-For example:
-```bash
-$ kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=ocid1.user.oc1..AGAIN_THIS_IS_EXAMPLE
-clusterrolebinding.rbac.authorization.k8s.io/my-cluster-admin-binding created
-```
+
+  For example:
+  ```bash
+  $ kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=ocid1.user.oc1..AGAIN_THIS_IS_EXAMPLE
+  clusterrolebinding.rbac.authorization.k8s.io/my-cluster-admin-binding created
+  ```
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Sasanka Abeysinghe, August 2020
+* **Author** - Sasanka Abeysinghe, August 2020
+* **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

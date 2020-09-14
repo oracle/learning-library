@@ -3,24 +3,26 @@
 
 ## Introduction
 
-Thus far on our journey from On-premises WebLogic Server to Oracle Container Engine for Kubernetes, we have created Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI).
-
-An operator is an application-specific controller that extends Kubernetes to create, configure, and manage instances of complex applications. The Oracle WebLogic Server Kubernetes Operator (the "operator") simplifies the management and operation of WebLogic domains and deployments.
-
 This lab demonstrates how to Install and configure the operator.
 
+So far on our journey from on-premises WebLogic Server to Oracle Container Engine for Kubernetes, we have created Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI).
+
+### About Operators
+An operator is an application-specific controller that extends Kubernetes to create, configure, and manage instances of complex applications. The Oracle WebLogic Server Kubernetes Operator (the "operator") simplifies the management and operation of WebLogic domains and deployments.
+
+
 ### Objectives
-- Clone the operator repository to a Cloud Shell instance.
-- Prepare the environment.
-- Install the operator using Helm.
+- Clone the operator repository to a Cloud Shell instance
+- Prepare the environment
+- Install the operator using Helm
 
 
 ### Prerequisites
+* An Oracle Paid or LiveLabs Cloud account.
+* Google Chrome browser (preferred)
+* Lab: Prerequisites
+* Lab: OKE on OCI
 
-- You should already have completed labs 1 before beginning this lab.
-
-### Administrative Notes
-- Works better with the Chrome browser.
 
 ## **STEP 1**: Clone the operator repository to a Cloud Shell instance  
 
@@ -66,10 +68,7 @@ Kubernetes distinguishes between the concept of a user account and a service acc
   <copy>helm repo add stable https://kubernetes-charts.storage.googleapis.com/</copy>
   ```
 ## **STEP 3**: Install the operator using Helm 
-1.  Before you execute the operator `helm` install, make sure that you are in the operator's local Git repository folder.
-  ```
-  <copy>cd ~/weblogic-kubernetes-operator/</copy>
-  ```
+
 Use the **helm install** command to install the operator Helm chart. As part of this, you must specify a "release" name for their operator.
 
 You can override the default configuration values in the operator Helm chart by doing one of the following:
@@ -81,12 +80,15 @@ Using the last option, simply define overriding values using the `--set` option.
 
 Note the values:
 
-- **name**: The name of the resource.
-- **namespace**: Where the operator is deployed.
+* **name**: The name of the resource.
+* **namespace**: Where the operator is deployed.
 - **image**: The prebuilt operator 2.5.0 image, available on the public Docker hub.
 - **serviceAccount**: The service account required to run the operator.
 - **domainNamespaces**: The namespaces where WebLogic domains are deployed in order to control them. Note, the WebLogic domain is not deployed yet, so this value will be updated when namespaces are created for WebLogic deployment.
-
+1.  Before you execute the operator `helm` install, make sure that you are in the operator's local Git repository folder.
+  ```
+  <copy>cd ~/weblogic-kubernetes-operator/</copy>
+  ```
 2.  Execute the following `helm install`:
   ```
   <copy>helm install sample-weblogic-operator \
@@ -127,9 +129,8 @@ The WebLogic Server Kubernetes Operator has been installed.
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Sasanka Abeysinghe, August 2020
+* **Author** - Sasanka Abeysinghe, August 2020
+* **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

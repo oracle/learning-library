@@ -26,7 +26,7 @@ In this lab you will:
 
 1. The first step is to define entity classes that can be used to read data from database tables.
 
-    Using your favourite IDE create a new class under `src/main/java/example/atp/domain` that looks like the following:
+    Using your favorite IDE create a new class under `src/main/java/example/atp/domain` that looks like the following:
 
     ```java
     package example.atp.domain;
@@ -229,11 +229,11 @@ public interface PetRepository extends PageableRepository<Pet, UUID> {
 }
 ```
 
-Take note of the `list` method that returns the DTO. This method will again be implemented for you at compilation time, but this time instead of retrieving all the columns of the `Pet` column it will only rereive the `name` column and any other columns you may define.
+Take note of the `list` method that returns the DTO. This method will again be implemented for you at compilation time, but this time instead of retrieving all the columns of the `Pet` column it will only retrieve the `name` column and any other columns you may define.
 
 The `findByName` method is also interesting as it uses another important feature of Micronaut Data which is the `@Join` annotation which allows you to [specify join paths](https://micronaut-projects.github.io/micronaut-data/latest/guide/#joinQueries) so that you retrieve exactly the data you need via database joins resulting in much more efficient queries.
 
-With the data repositories in place let's move on exposing REST endpoints.
+With the data repositories in place let's move on to exposing REST endpoints.
 
 ## **STEP 3**: Expose Micronaut Controllers as REST endpoints
 
@@ -399,7 +399,7 @@ The rest of the example demonstrates saving a few entities using the [saveAll](h
 
 Notice that `javax.transaction.Transactional` is declared on the method which ensures that Micronaut Data wraps the execution of the `init` method in a JDBC transaction that is rolled back if anything goes wrong during the execution of the method.
 
-If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL loggin:
+If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL logging:
 
 ```xml
 <logger name="io.micronaut.data.query" level="debug" />

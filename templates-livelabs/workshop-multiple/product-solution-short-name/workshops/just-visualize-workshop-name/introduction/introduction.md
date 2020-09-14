@@ -27,7 +27,7 @@ In this lab, you will:
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* Item no 1
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
 *This is the "fold" - below items are collapsed by default*
