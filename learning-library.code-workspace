@@ -14,5 +14,7 @@
 			"path": "../GGMicroservices/Scripts"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "learning-library"
+	}
 }
