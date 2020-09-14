@@ -21,8 +21,8 @@ Approximately 60 minutes
 ![](./images/terminal2.png)
 
 1. Oracle source table.
-   a) Connect to the PDBEAST database as the user "tpc".
-   b) Execute the following DML to create the source table:
+Connect to the PDBEAST database as the user "tpc".
+Execute the following DML to create the source table:
       drop table wshop_funcs;
       create table wshop_funcs (
         row_number    	number(3,0),
@@ -42,11 +42,11 @@ Approximately 60 minutes
       ); 
 
 2. MySQL target table.
-   a) Connect to the MySQL database as the user "tpc".
-      i. mysql -u tpc -p@Oracle1@
-   b) Execute the following DML to create the target tables:
+Connect to the MySQL database as the user "tpc".
+mysql -u tpc -p@Oracle1@
+Execute the following DML to create the target tables:
       use tpc;
-	drop table wshop_funcs;
+    	drop table wshop_funcs;
       create table wshop_funcs (
         srow_number       	numeric(3,0),
         srow_text		    varchar(55),
@@ -88,23 +88,23 @@ Approximately 60 minutes
       commit;
 
 3. Oracle data capture
-   a. Edit the parameter file for the ETPC Integrated Extract.
-   b. Add the following table statement:
-      i. table pdbeast.tpc.wshop_funcs, TOKENS (
+Edit the parameter file for the ETPC Integrated Extract.
+Add the following table statement:
+table pdbeast.tpc.wshop_funcs, TOKENS (
            TKN-EXTLAG-MSEC = @GETENV ("LAG", "MSEC"),
            TKN-SRC-DBNAME = @GETENV ("DBENVIRONMENT", "DBNAME"),
            TKN-SRC-DBVERSION = @GETENV ("DBENVIRONMENT", "DBVERSION"),
            TKN-TXN-CSN = @GETENV ("TRANSACTION", "CSN")
          );
-   c. Save and close the file.
-   d. When using wildcards, where do table statements like the one above need to be placed?
-   e. Do you need to exclude the table from being captured via the wildcards? (If so, did you do this?)
+Save and close the file.
+When using wildcards, where do table statements like the one above need to be placed?
+Do you need to exclude the table from being captured via the wildcards? (If so, did you do this?)
 
 4. MySQL data apply
-   a. Edit the parameter file for the RTPC Coordinated Replicat.
-   b. Add the following map statements, specifying thread "10" for the data apply:
-      i. -- Execute a query against a lookup table to get the city and state for the
-         -- incoming zip code
+Edit the parameter file for the RTPC Coordinated Replicat.
+Add the following map statements, specifying thread "10" for the data apply:
+Execute a query against a lookup table to get the city and state for the
+incoming zip code
         MAP pdbeast.tpc.cust_zip, TARGET tpc.cust_city_state,
          SQLEXEC (ID ZIPLKUP, 
            QUERY 'select zip_city, zip_state from tpc.zip_lookup where zip = ?',
@@ -113,7 +113,7 @@ Approximately 60 minutes
                  cust_city = ZIPLKUP.zip_city,
                  cust_state = ZIPLKUP.zip_state
         )
-     ii. MAP pdbeast.tpc.wshop_funcs, TARGET tpc.wshop_funcs,
+MAP pdbeast.tpc.wshop_funcs, TARGET tpc.wshop_funcs,
            colmap (usedefaults,
 		           srow_number = row_number,
                    srow_text = row_text,
@@ -128,23 +128,26 @@ Approximately 60 minutes
                    src_db_version = @TOKEN ("TKN-SRC-DBVERSION"),
                    src_txn_csn = @TOKEN ("TKN-TXN-CSN")
          )	 
-	 iii. Set the Replicat to insert all data into the table tpc.wshop_funcs, no matter the 
+Set the Replicat to insert all data into the table tpc.wshop_funcs, no matter the 
 	      source operation.
-   c. Save and close the file.		
+Save and close the file.		
 
  5. Start OGG and generate data
-   a) Start the OGG environment:
-      i. Oracle: 
+
+Start the OGG environment:
+
+Oracle: 
 start etpc
        start pmysql  
-	  ii. MySQL: start rtpc
-   b) Verify all OGG Groups are running.
-   c) Generate data  
-      i. In the window connected to the database server:
-		 1) Login to the PDBEAST database as the user "tpc"
-		    A) sqlplus tpc@pdbeast
-			B) When prompted enter the password: Oracle
-		 2) Execute the following:
+
+MySQL: start rtpc
+Verify all OGG Groups are running.
+Generate data  
+In the window connected to the database server:
+Login to the PDBEAST database as the user "tpc"
+sqlplus tpc@pdbeast
+When prompted enter the password: Oracle
+Execute the following:
 		    DECLARE
               v_MainLoop     NUMBER(3);
               v_Txt          VARCHAR2(25);
@@ -179,30 +182,24 @@ start etpc
               END;
               /
 			  
-6. Verify data has been replicated.
-   a. Use the GGSCI "send report" command to generate stats for the rtpc Coordinated Replicat.
-   b. View the report file to validate sqlexec execution are data apply stats.
-   c. Connect to the MySQL database as the user "tpc".
-      i. mysql -u tpc -p@Oracle1@
-   d. View the data in the tpc.cust_city_state table.
-   e. View the data in the tpc.wshop_funcs table.
+Verify data has been replicated.
+Use the GGSCI "send report" command to generate stats for the rtpc Coordinated Replicat.
+View the report file to validate sqlexec execution are data apply stats.
+Connect to the MySQL database as the user "tpc".
+mysql -u tpc -p@Oracle1@
+View the data in the tpc.cust_city_state table.
+View the data in the tpc.wshop_funcs table.
    
- 7. Shutdown all Extracts and Replicats.
+ 1. Shutdown all Extracts and Replicats.
 
-**End of Lab 5 - You may proceed to the next Lab**
-
-**Optional:** only if VNC is available
-
-You can also see the HBase data created by GG from Hue:
-
-Open a Browser window> http://127.0.0.1:8888/ Login to Hue: cloudera/cloudera
+**End of Lab 5 - You have completed the GoldenGate Classic Workshop**
 
 ## Acknowledgements
 
-  * Authors ** - Brian Elliott
-  * Contributors ** - Brian Elliott
+  * Authors ** - Brian Elliott, Zia Khan
+  * Contributors ** - Brian Elliott, Zia Khan
   * Team ** - Data Integration Team
-  * Last Updated By/Date ** - Brian Elliott, August 2020
+  * Last Updated By/Date ** - Brian Elliott, September 2020
  
  ## See an issue?
 
