@@ -11,9 +11,44 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Oracle Fusion ERP Analytics",
+            "title": "Lab 1: Oracle Fusion ERP Analytics",
             "publisheddate": "08/18/2020",
             "filename": "../../fusion-analytics/fusion-analytics.md"
+        },
+        {
+            "title": "Lab 2: Introduction to Essbase",
+            "publisheddate": "09/03/2020",
+            "filename": "../../intro-essbase/intro-essbase.md"
+        },
+        {
+            "title": "Lab 3: Essbase on OCI",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-oci/essbase-oci.md"
+        },
+        {
+            "title": "Lab 4: Essbase Features: Basic",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-basic/essbase-basic.md"
+        },
+        {
+            "title": "Lab 5: Essbase Features: Advanced",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-advanced/essbase-advanced.md"
+        },
+        {
+            "title": "Lab 6: Essbase and ADW",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-adw/essbase-adw.md"
+        },
+        {
+            "title": "Lab 7: Scenario Management",
+            "publisheddate": "09/03/2020",
+            "filename": "../../scenario/scenario.md"
+        },
+        {
+            "title": "Lab 8: Essbase and Data Visualization",
+            "publisheddate": "09/03/2020",
+            "filename": "../../essbase-dv/essbase-dv.md"
         }
      ]
 }

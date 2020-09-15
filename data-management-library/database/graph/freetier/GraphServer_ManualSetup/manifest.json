@@ -1,0 +1,54 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Register for a Free Tier account",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename":"../../setup/setup_always_free.md"
+        },
+        {
+            "title": "Lab 1: Create SSH Keys",
+            "description":"Create SSH Keys",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Setup ADB Shared Free Tier Instance",
+            "description":"Setup an Always Free autonomous database instance",
+            "filename":"./files/adb-provision.md"
+        },
+        {
+            "title": "Lab 3: Setup Compute Instance",
+            "description":"Setup a compute instance",
+            "filename":"./files/c360_create_compute_ft.md"
+        },
+        {
+            "title": "Lab 4: Create and enable a user in SQLDeveloper Web",
+            "description":"Create a user and enable SQLDeveloper Web for that user",
+            "filename":"./files/c360_sqldevweb_create_enable_user_ft.md"
+        },
+        {
+            "title": "Lab 5: Create and populate tables",
+            "description":"Create and populate tables with the Customer 360 dataset",
+            "filename":"./files/c360_create_tables_ft.md"
+        },
+        {
+            "title": "Lab 6: Create the graph",
+            "description":"Create the Customer 360 graph",
+            "filename":"./files/c360_create_graph_ft.md"
+        },
+        {
+            "title": "Lab 7: Graph Query and Analysis with JShell",
+            "description":"Graph Query and Analysis with JShell on the Free Tier compute",
+            "filename":"./files/customer_360_jshell_ft.md"
+        },
+        {
+            "title": "Lab 8: Graph Visualization",
+            "description":"Graph Query and Visualization of the Customer 360 data on the Free Tier compute",
+            "filename":"./files/customer_360_graphviz_ft.md"
+        }
+    ]
+}

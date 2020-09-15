@@ -406,3 +406,12 @@ Check the failover policy overview, the master node’s heath-check status shoul
 However, if you go to your domain name - public1.oscommercesite.com, your website should still be running (after 30 seconds) since we configured a failover.
 
 Thus we can set up disaster recovery for your app in OCI easily and avoid single point of failure.
+
+## Acknowledgements
+* **Author** - Oladipupo Akinade, Saurabh Salunkhe
+* **Adapted for Cloud by** -  Saurabh Salunkhe, Oladipupo Akinade
+* **Last Updated By/Date** - Saurabh Salunkhe, September 2020
+
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

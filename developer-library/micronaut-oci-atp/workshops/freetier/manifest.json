@@ -28,19 +28,23 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 4: Build the Micronaut Application",
+            "title": "Lab 4: Create the Micronaut Application",
+            "filename": "../../create/create.md"
+        },
+        {
+            "title": "Lab 5: Build the Micronaut Application",
             "filename": "../../micronaut/micronaut.md"
         },
         {
-            "title": "Lab 5: Helidon Service",
+            "title": "Lab 6: Call a Helidon Service",
             "filename": "../../helidon/helidon.md"
         },
         {
-            "title": "Lab 6: Deploy the Micronaut Application",
+            "title": "Lab 7: Deploy the Micronaut Application",
             "filename": "../../deploy/deploy.md"
         },
         {
-            "title": "Lab 7: Terminate and Destroy the OCI Resources",
+            "title": "Lab 8: Terminate and Destroy the OCI Resources",
             "filename": "../../destroy/destroy.md"
         }
     ]

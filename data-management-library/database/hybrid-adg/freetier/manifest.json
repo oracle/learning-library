@@ -74,14 +74,3 @@
         }
     ]
 }
-
-CREATE USER smithj IDENTIFIED BY Pwd4#_Smithj5;
-
-CREATE TABLE customers ( customer_id number(10) NOT NULL, customer_name varchar2(50) NOT NULL, city varchar2(50));
-
-Reads the mv2adb cfg file. 
-Connects to source database as system user
-Executes the expdp utlity from source DB RDBMS HOME, exports the SCHEMAS OR FULL export and stores the export dump temporary at DUMP_FILES
-Invokes oci-cli to move the export dmp files to OCI Object store bucket (OCI_BUCKET)
-Connects to ADB DB , creates the OBJECT STORE Credential to access the OCI Object store.
-Executes the impdp utility from ICHOME , connects to the ADB DB as admin schema , reads the dump files from OCI object store bucket , performs SCHEMA / FULL import on the ADB DB. 

@@ -1,1 +1,0 @@
-This image shows the console with the new ATP instance listed. The value shown in the State field has changed from "Provisioning" to "Available". A red box highlights the Name field for the ATP instance you just created. It's the first box on the left..

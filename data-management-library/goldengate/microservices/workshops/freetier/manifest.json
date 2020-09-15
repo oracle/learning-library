@@ -1,0 +1,58 @@
+{
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        }, 
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+          "title": "Lab 1: Installation",
+          "description": "Introduction to GGBD",
+          "filename": "../../installation/installation.md"
+      },
+      {
+           "title": "Lab 2: ServiceManager",
+           "filename": "../../servicemanager/servicemanager.md"
+       },
+        {
+            "title": "Lab 3: MySQL to HDFS",
+            "description": "mysql-to-hdfs",
+            "filename": "../../mysql-to-hdfs/mysql-to-hdfs.md"
+        },
+        {
+            "title": "Lab 4: MySQL to Hive",
+            "description": "Lab 4 GGBD mysql-to-hive",
+            "filename": "../../mysql-to-hive/mysql-to-hive.md"
+        },
+        {
+            "title": "Lab 5: MySQL to HBase",
+            "description": "Lab 5 GGBD mysql-to-hbase",
+            "filename": "../../mysql-to-hbase/mysql-to-hbase.md"
+        },
+        {
+            "title": "Lab 6: MySQL to Kafka",
+            "description": "Lab 6 GGBD mysql-to-Kafka",
+            "filename": "../../mysql-to-kafka/mysql-to-kafka.md"
+        },
+        {
+            "title": "Lab 7: MySQL to Cassandra",
+            "description": "Lab 7 GGBD mysql-to-Cassandra",
+            "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
+        },
+        {
+            "title": "Lab 8: Appendix",
+            "description": "Lab 8 GGBD Appendix",
+            "filename": "../../lab8-appendix/lab8-appendix.md"
+        },
+        {
+            "title": "Lab 9: MySQL to Oracle (Optional)",
+            "description": "Lab 9 GGBD mysql-to-oracle",
+            "filename": "../../lab9-mysql-to-oracle/lab9-mysql-to-oracle.md"
+        }
+        
+    ]
+}

@@ -1,0 +1,38 @@
+{
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
+      "filename": "./../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Verify Setup",
+      "description": "Verify compute instance is setup and EM 13.3 with pre-configured database targets are up",
+      "publisheddate": "9/09/2020",
+      "filename": "./../../verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 2: Setup SSH Tunnel",
+      "description": "Setup SSH port forwarding ",
+      "publisheddate": "9/11/2020",
+      "filename": "./../../setup-ssh-forwarding/setup-ssh-forwarding.md"
+    },
+    {
+      "title": "Lab 3: Automated Database Upgrade at Scale with Fleet Maintenance",
+      "description": "This lab walks you through the steps needed with Fleet Maintenance to automate upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
+      "publisheddate": "7/16/2020",
+      "filename": "./../../em-fleet-maintenance-upgrade/em-fleet-maintenance-upgrade-livelabs.md"
+    },
+    {
+      "title": "Appendix: Frequently Asked Questions (FAQ)",
+      "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
+      "publisheddate": "8/12/2020",
+      "filename": "./../../faq/faq.md"
+    }
+  ]
+}

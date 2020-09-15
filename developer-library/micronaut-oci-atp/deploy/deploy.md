@@ -14,54 +14,55 @@ In this lab you will:
 * Upload the application distribution and wallet to an OCI VM
 * Run your application on the OCI VM
 
-## **STEP**:  Deploy Micronaut Application to OCI
+## **STEP 1**:  Deploy Micronaut Application to OCI
 
 ### Deploy (From Local To VM)
 
 1. Before deploying, ensure the wallet exists on the VM by running the snippet produced by `setup.sh` that looks similar to:
 
     ```
-    bash
     # run on local machine to push to VM
     <copy>
-    scp -i ~/.ssh/id_oci -r /tmp/wallet opc@[VM IP Address]:/tmp/wallet
+    scp -i ~/.ssh/id_rsa -r /tmp/wallet opc@[VM IP Address]:/tmp/wallet
     </copy>
     ```
 
-2. Build JAR with:
+  Note that the command above refers to the directory where you extracted the wallet to (in this case `/tmp/wallet`). If you extracted to a different location you will need to alter the command appropriately.  
+
+2. Build a runnable JAR file with:
 
     ```
-    bash
     # run on local machine
     <copy>
     ./gradlew assemble
     </copy>
     ```
 
-3. Push JAR to VM with the snippet produced by *setup.sh* that looks similar to this:
+3. Push the runnable JAR file to VM with the snippet produced by *setup.sh* that looks similar to this:
 
     ```
-    bash
     # run on local machine to push to VM
     <copy>
-    scp -i ~/.ssh/id_oci -r build/libs/example-atp-0.1-all.jar opc@[VM IP Address]:/app/application.jar
+    ssh -i ~/.ssh/id_rsa opc@$[VM IP Address] sudo mkdir /app
+    ssh -i ~/.ssh/id_rsa opc@$[VM IP Address] sudo chown opc /app
+    scp -i ~/.ssh/id_rsa -r build/libs/example-atp-0.1-all.jar opc@[VM IP Address]:/app/application.jar
     </copy>
     ```
 
-4. Push Helidon native image to the VM:
+  Note that it is important that you copy the JAR file that ends with `-all.jar` which represents the runnable JAR file.  
+
+4. Push the Helidon native image to the VM:
 
     ```
-    bash
     # run on local machine to push to VM, from the directory that contains downloaded native image
     <copy>
-    scp -i ~/.ssh/id_oci ./helidon-mp-service opc@[VM IP Address]:/app/helidon-mp-service
+    scp -i ~/.ssh/id_rsa ./helidon-mp-service opc@[VM IP Address]:/app/helidon-mp-service
     </copy>
     ```
 
 5. Run the Helidon application on the VM:
 
     ```
-    bash
     # run on VM to start Helidon application
     <copy>
     ./app/helidon-mp-service
@@ -72,7 +73,6 @@ In this lab you will:
 
     ```
     <copy>
-    bash
     # run on VM to start Micronaut application
     export MICRONAUT_OCI_DEMO_PASSWORD=[Your atp_wallet_password]
     export TNS_ADMIN=/tmp/wallet

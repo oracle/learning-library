@@ -1,21 +1,26 @@
 # Low Code, Microservice Mobile Development
 
 ## Before You Begin
-### Objectives
-- Create a Mobile Application.
-- Access the REST services you deployed in Lab 300 on OKE.
-- Deploy the mobile application to your phone (Android based).
 
 ### Introduction
 
 In this lab you will use Oracle Visual Builder which is a cloud-based software development Platform as a Service (PaaS) and a hosted environment for your application development infrastructure. It provides an open-source standards-based solution to develop, collaborate on, and deploy applications within Oracle Cloud. You will build on the previous labs using the REST points exposed by the AlphaOffice application to OKE in Lab 300.
 
-*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[](youtube:X-B180moN-k)
+Estimated time: 45 minutes
+
+### Objectives
+- Create a Mobile Application.
+- Access the REST services you deployed in Lab 300 on OKE.
+- Deploy the mobile application to your phone (Android based).
+
+### Prerequisites
+- Successful completion of Lab 3 and creation of a REST service for products.
 
 ### Required Artifacts
-
 - Use Chrome browser works best in it
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[](youtube:X-B180moN-k)
 
 ## **STEP 1**: Configure Visual Builder Studio to create Mobile App
 

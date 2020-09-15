@@ -1,9 +1,11 @@
 # Manage a Docker Container
-## Before You Begin
+## Introduction
 
 This lab walks you through the steps to manage your Docker container, including stopping and restarting the container and reviewing container logs.
 
-### What Do You Need?
+Estimated Lab Time: 5 minutes
+
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
@@ -75,9 +77,10 @@ Congratulations! You have completed this workshop. Oracle has also provided buil
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, March 2020
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Last Updated By/Date** - Kamryn Vinson, September 2020
+
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

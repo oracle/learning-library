@@ -1,43 +1,43 @@
 {
     "tutorials": [
         {
-          "title": "Workshop Overview",
-          "filename":"./workshop-intro/intro.md"
-        },
-        {
-          "title": "Lab 1: Sign Up for Free Trial",
+          "title": "Prerequisites",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
-          "title": "Lab 2: Create SSH Keys",
+          "title": "Introduction",
+          "filename":"./workshop-intro/intro.md"
+        },
+        {
+          "title": "Lab 1: Create SSH Keys",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
         },
         {
-          "title": "Lab 3: Setup Network and Compute Instance",
+          "title": "Lab 2: Setup Network and Compute Instance",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-freetier.md"
         },
 		    {
-          "title": "Lab 4: Setup Docker on an Oracle Compute Instance",
+          "title": "Lab 3: Setup Docker on an Oracle Compute Instance",
           "filename": "./setup-docker-compute/setup-docker-compute.md"
         },
 		    {
-          "title": "Lab 5: Build an Oracle Database Docker Image",
+          "title": "Lab 4: Build an Oracle Database Docker Image",
           "filename": "./build-db-docker/build-db-docker.md"
         },
 		    {
-          "title": "Lab 6: Start a Docker Container",
+          "title": "Lab 5: Start a Docker Container",
           "filename": "./start-db-docker/start-db-docker.md"
         },
         {
-          "title": "Lab 7: Add an Ingress Rule to your VCN",
+          "title": "Lab 6: Add an Ingress Rule to your VCN",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/add-ingress-rule/add-ingress-rule.md"
         },
         {
-          "title": "Lab 8: Connect to Oracle Database in a Docker Container",
+          "title": "Lab 7: Connect to Oracle Database in a Docker Container",
           "filename": "./connect-db-docker/connect-db-docker.md"
         },
         {
-          "title": "Lab 9: Manage a Docker Container",
+          "title": "Lab 8: Manage a Docker Container",
           "filename": "./manage-docker-container/manage-docker-container.md"
         }
     ]
