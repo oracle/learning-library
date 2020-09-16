@@ -1,4 +1,4 @@
-# Lab 1 -  GG initial setp 
+# Lab 1 -  GoldenGate Initial setp 
 
 ![](./images/image200_1.png)
 
@@ -51,12 +51,7 @@ Oracle GoldenGate offers high-performance, fault-tolerant, easy-to-use, and flex
 
 This workshop is only for learning and testing purposes. None of the files from the labs should be used in a production environment. 
 
-## Prereqs (Completed by Oracle Team prior to Labs)
-
-## Steps
-
 In this lab, these repreqs will prepare GoldenGate for this Workshop. 
-
 
 **Prereqs (Completed by Oracle Team prior to Labs)**
 
@@ -155,9 +150,9 @@ When prompted enter the password: Oracle1
 @database.sql
 Each PDB in the database (pdbeast and pdbwest) will now contain a TPC schema with seeded tables.
 
-1. Enter "exit" to logout as the "oracle" user.
+4. Enter "exit" to logout as the "oracle" user.
 
-2. Test connectivity to MySQL by executing the commands:
+5. Test connectivity to MySQL by executing the commands:
 sudo service mysqld start
 sudo mysql -u ggadmin -p@Oracle1@
 create database tpc;
@@ -175,16 +170,16 @@ There should be 14 tables in the tpc database.
 
 **GoldenGate for Oracle**
 	
-8. start a second session
+6. start a second session
 
-6. Switch to the "oracle" user.
+7. Switch to the "oracle" user.
 sudo su – oracle
 export OGG_HOME=/u01/app/oracle/product/19.1.0/gg
 
-7. Go to the $OGG_HOME location
+8. Go to the $OGG_HOME location
 cd $OGG_HOME
 
-8. Start ggsci and execute the following commands:
+9. Start ggsci and execute the following commands:
 
 ./ggsci
 create subdirs
@@ -194,19 +189,19 @@ exit
 
 **GoldenGate for mySQL**
 
-9. Mysql -uroot -pData1Integration!
+10. Mysql -uroot -pData1Integration!
 CREATE USER 'ggrep'@'localhost' IDENTIFIED BY '@Oracle1@';
 GRANT ALL PRIVILEGES ON * . * TO 'ggrep'@'localhost';
 
 >mysql\q
 
-10. Go to the "oggmysql" directory.
+11. Go to the "oggmysql" directory.
 cd /u01/app/oracle/product/19.1.0/oggmysql
 
-11. Set the environment variable OGG_HOME to this directory.
+12. Set the environment variable OGG_HOME to this directory.
 export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
 
-12. Start GGSCI and execute the following commands:
+13. Start GGSCI and execute the following commands:
 create subdirs
 dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
 This validates remote connectivity to the MySQL Database for capture.
@@ -214,24 +209,24 @@ dblogin sourcedb tpc@localhost:3306, userid ggrep, password @Oracle1@
 This validates remote connectivity to the MySQL Database for apply.
 exit
 	
-13.  Enter "exit" twice to close the connection to the database machine.
+14.  Enter "exit" twice to close the connection to the database machine.
 
-2.  Shutdown the MySQL database.
+15.  Shutdown the MySQL database.
 
 Sudo su -
     a) sudo service mysqld stop
 
 Shutdown the Oracle database.
 
-15. Switch to the oracle user.
+16. Switch to the oracle user.
     a) sudo su – oracle / Data1Integration!
 
-16. Shutdown the Oracle database and listener.
+17. Shutdown the Oracle database and listener.
     a) sqlplus / as sysdba
 	   i) shutdown immediate
 	   ii) exit
 
-17. Enter "exit" twice to close the connection to the database machine.
+18. Enter "exit" twice to close the connection to the database machine.
 
 
 **You have completed Lab 1 - You may proceed to the next Lab**

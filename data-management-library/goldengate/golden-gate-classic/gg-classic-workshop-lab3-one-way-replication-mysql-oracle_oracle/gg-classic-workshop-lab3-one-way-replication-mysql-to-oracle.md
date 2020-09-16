@@ -13,19 +13,18 @@ Replication from relational source to a relational target using GoldenGate
 Time to Complete -
 Approximately 60 minutes
 
-
 ## STEPS-
-
-## Done by Student:
 
 1. Open a terminal session
 
 ![](./images/terminal2.png)
 
-1. Oracle data capture
+**Oracle data capture**
+
 2. To configure the Oracle Integrated Extract:
 Execute the GGSCI command: edit param etpc
-Enter the following settings:
+3. Enter the following settings:
+
 	       extract etpc
           exttrail ./dirdat/et
           useridalias oggcapture
@@ -33,27 +32,35 @@ Enter the following settings:
           ddloptions report
           warnlongtrans 60m, checkinterval 15m
           table pdbeast.tpc.*;
-Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
+4. Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
 Add the parameter that will cause Integrated Extract to encrypt its OGG Trail files.
-Save and close the file.
+5. Save and close the file.
    
-2. Data transmission to MySQL
+Data transmission to MySQL
+
 This is not technically required because the OGG and MySQL installations are on the same machine. However, if data is being transmitted over a LAN/WAN an Extract Data Pump is required.
 To configure the Oracle to MySQL Extract Data Pump:
-Execute the GGSCI command: edit param pmysql
-Enter the following settings:
+6. Execute the GGSCI command: edit param pmysql
+
+7. Enter the following settings:
+
   	      extract pmysql
           rmthost localhost, mgrport 8809
           rmttrail ./dirdat/rt
           reportcount every 120 seconds, rate
           table pdbeast.tpc.*;
-Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
-Save and close the file.
+8. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
+9. Save and close the file.
 	  
-3. Oracle data apply
+**Oracle data apply**
+
 To configure the Parallel Replicat:
-Execute the GGSCI command: edit param rtpc
+
+10. Execute the GGSCI command 
+edit param rtpc
+
 Enter the following settings:
+
 	      replicat rtpc
           useridalias ggapplywest
           map_parallelism 3
@@ -62,14 +69,20 @@ Enter the following settings:
 		  ddloptions report
           reportcount every 120 seconds, rate
           map pdbeast.tpc.*, target pdbwest.tpc.*;
-   Add the parameters to auto-tune the number of Appliers; with a minimum of 3 and a maximum of 12.
-Save and close the file.
+   Add the parameters to auto-tune the number of Appliers; with a minimum of 3 and a maximum of 12
 
-4. MySQL data apply
+11. Save and close the file.
+
+12. MySQL data apply
 To configure the Coordinated Replicat in the MySQL OGG environment:
-Execute the GGSCI command: edit param rtpc
-Enter the following settings:
-	       replicat rtpc
+
+13. Execute the GGSCI command
+  
+edit param rtpc
+
+14. Enter the following settings:
+	       
+         replicat rtpc
            targetdb tpc@db-ora19-mysql:3306, useridalias ggapply
            reportcount every 120 seconds, rate
            usededicatedcoordinationthread
@@ -84,42 +97,64 @@ Enter the following settings:
            map pdbeast.tpc.products, target "tpc"."products", thread (20);
            map pdbeast.tpc.products_description, target "tpc"."products_description", thread (20);
            map pdbeast.tpc.products_to_categories, target "tpc"."products_to_categories", thread (20);
-Enter "MAP" statements for the following:
+14. Enter "MAP" statements for the following
+
 Operations for the table "tpc.orders" are to be applied by thread 1.
+
 Operations for the table "tpc.orders_products" and to be ranged across threads 2, 3, and 4.
+
 Operations for the table "tpc.orders_status_history" are to be ranged across threads 6 and 7.
 Save and close the file.
 	
-1. Enable schema level supplemental logging in source.
-To enable schema level supplemental logging in the source Oracle PDB:
-Execute the GGSCI commands:
+15. Enable schema level supplemental logging in source.
+
+16. To enable schema level supplemental logging in the source Oracle PDB:
+17. Execute the GGSCI commands
+
 dblogin useridalias oggcapture
 add schematrandata pdbeast.tpc
 		  
-1. Create the OGG replication Groups
+18. Create the OGG replication Groups
 Create the OGG Groups by executing the following commands:
-Oracle Integrated Extract:
-dblogin useridalias oggcapture
-add extract etpc, integrated tranlog, begin now
+
+**Oracle Integrated Extract:**
+
+19. dblogin useridalias oggcapture
+
+20. add extract etpc, integrated tranlog, begin now
+
 register extract etpc, database, container (*)
+
 add exttrail ./dirdat/et, extract etpc, megabytes 250
-Oracle Extract Data Pump:
-add extract pmysql, exttrailsource ./dirdat/et
-add rmttrail ./dirdat/rt, extract pmysql, megabytes 250
-Oracle Parallel Apply
-dblogin useridalias ggapplywest
-add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint
 
-MySQL Coordinated Replicat
-dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep
-add replicat rtpc, coordinated, exttrail ./dirdat/rt
+**Oracle Extract Data Pump:**
 
-1. Start OGG and generate data
+21. add extract pmysql, exttrailsource ./dirdat/et
+
+22. add rmttrail ./dirdat/rt, extract pmysql, megabytes 250
+
+**Oracle Parallel Apply**
+
+23. dblogin useridalias ggapplywest
+
+24. add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint
+
+**MySQL Coordinated Replicat**
+
+25. dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep
+
+26. add replicat rtpc, coordinated, exttrail ./dirdat/rt
+
+27. Start OGG and generate data
 Start the OGG environment:
+
 Oracle: start er *   
+
 MySQL: start er *
-Verify all OGG Groups are running.
+
+28. Verify all OGG Groups are running.
 Generate data
+
 In the window connected to the database server:
 Change to the "/Test_Software/Scripts/Oracle/orderentry" directory.
 Login to the database as the user "tpc"

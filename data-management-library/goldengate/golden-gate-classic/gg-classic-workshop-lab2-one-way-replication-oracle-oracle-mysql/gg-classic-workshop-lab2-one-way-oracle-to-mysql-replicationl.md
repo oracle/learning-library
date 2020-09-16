@@ -33,83 +33,95 @@ Oracle: ggschema pdbeast.ggadmin
 MySQL: ggschema ggadmin
 Set the CHECKPOINTTABLE parameter
 
-## MySQL
+**MySQL**
 
-sudo service mysqld start
+4. sudo service mysqld start
 
-export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
-dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
-ADD CHECKPOINTTABLE ggadmin.ggchkpoint
+5. export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
+6. dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
+7. ADD CHECKPOINTTABLE ggadmin.ggchkpoint
 MySQL: checkpointtable ggadmin.ggchkpoint
-Set the WALLETLOCATION parameter to the disk location in step 1.
-Oracle: WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet
-MySQL: WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet
-Save and close the files.
+8. Set the WALLETLOCATION parameter to the disk location in step 1.
 
-3. Start the GoldenGate Software Command Interpreter in both windows.
+**Oracle:**
 
-4. OGG Credential Store
+9.  WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet
+
+**MySQL:**
+10. WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet
+11. Save and close the files.
+
+12. Start the GoldenGate Software Command Interpreter in both windows.
+
+13. OGG Credential Store
+
 In GGSCI, create the OGG Credential Store by executing the command: 
 add credentialstore
 Add OGG database user credentials into each credential store.
 
-Oracle
-alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture
-alter credentialstore add user ggadmin@pdbeast password Oracle1 alias ggapplyeast
-alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest
-       
-MySQL
-alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture
-alter credentialstore add user ggrep password @Oracle1@ alias ggapply
+**Oracle**
 
-1. OGG Master Key and Wallet
+14. alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture
+15. alter credentialstore add user ggadmin@pdbeast password Oracle1 alias ggapplyeast
+16. alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest
+       
+**MySQL**
+17. alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture
+18. alter credentialstore add user ggrep password @Oracle1@ alias ggapply
+
+19. OGG Master Key and Wallet
+
 In the Oracle GGSCI, create the OGG Wallet.
 Command: CREATE WALLET 
- ____________________________________   
-Add the OGG Masterkey to the wallet.
-Oracle: add masterkey
-Verify the Master Key and Wallet from the MySQL GGSCI instance.
-dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
-MySQL: open wallet
-MySQL: info masterkey
-Oracle: open wallet
-Oracle: info masterkey
 
-GGSCI (ogg-ggbd) 5> info masterkey
+20. Add the OGG Masterkey to the wallet.
+Oracle: add masterkey
+21. Verify the Master Key and Wallet from the MySQL GGSCI instance.
+22. dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
+**MySQL:** open wallet
+23. MySQL: info masterkey
+**Oracle:** 
+24. open wallet
+25. Oracle: info masterkey
+
+26. GGSCI (ogg-ggbd) 5> info masterkey
 Masterkey Name: OGG_DEFAULT_MASTERKEY
 
-Version         Creation Date                   Status
-1.               2020-09-10T15:22:28.000+00:00   Current
+Version         Creation Date                            Status
+2020-09-10T15:22:28.000+00:00   Current
    
-6. OGG Replicat Checkpoint Table
+27. OGG Replicat Checkpoint Table
 alter pluggable database PDBEAST open;
 alter pluggable database PDBWEST open;
 
-In GGSCI, create the OGG Replicat Checkpoint Table by executing the commands:
-Oracle
-Connect to the target database: dblogin useridalias ggapplywest
-Create the table: add checkpointtable pdbwest.ggadmin.ggchkpoint
+28. In GGSCI, create the OGG Replicat Checkpoint Table by executing the commands:
 
-Mysql
-Connect to the target database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply
-Create the table: add checkpointtable	
+**Oracle**
+29. Connect to the target database: dblogin useridalias ggapplywest
+30. Create the table: add checkpointtable pdbwest.ggadmin.ggchkpoint
 
-1. OGG Heartbeat
+**Mysql**
+31. Connect to the target database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply
+32. Create the table: add checkpointtable	
+
+33. OGG Heartbeat
 In GGSCI, create and activate OGG Integrated Heartbeat
 Oracle
-Connect to the PDBEAST tenant: dblogin useridalias ggapplyeast
-Create the heartbeat source: add heartbeattable		
-Connect to the PDBWEST tenant: dblogin useridalias ggapplywest
-Create the heartbeat target: add heartbeattable, targetonly
+34. Connect to the PDBEAST tenant: dblogin useridalias ggapplyeast
+35. Create the heartbeat source: add heartbeattable		
+36. Connect to the PDBWEST tenant: dblogin useridalias ggapplywest
+37. Create the heartbeat target: add heartbeattable, targetonly
 
-MySQL
-Connect to the ggadmin database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias oggcapture
-Create the heartbeat target: add heartbeattable, targetonly
+**MySQL**
+38. Connect to the ggadmin database: dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias oggcapture
+39. Create the heartbeat target: add heartbeattable, targetonly
 		  
-1. OGG Manager
+OGG Manager
 To configure the OGG Manager process in both the Oracle and MySQL OGG environments:
-Execute the GGSCI command: edit param mgr
-For Oracle, enter the following settings:
+
+40. Execute the GGSCI command: edit param mgr
+
+41. For Oracle, enter the following settings:
 	      port 15000
           dynamicportlist 15001-15025
           purgeoldextracts ./dirdat/*, usecheckpoints, minkeepdays 1
@@ -121,7 +133,7 @@ For Oracle, enter the following settings:
           autorestart er *, RETRIES 12, WAITMINUTES 5, RESETMINUTES 60
           startupvalidationdelay 2
 
-For MySQL, enter the following settings:	
+42. For MySQL, enter the following settings:	
 	      port 16000
           dynamicportlist 16001-16025
           purgeoldextracts ./dirdat/*, usecheckpoints, minkeepdays 1
@@ -133,9 +145,9 @@ For MySQL, enter the following settings:
           lagcriticalminutes 20
           autorestart er *, RETRIES 12, WAITMINUTES 5, RESETMINUTES 60
           startupvalidationdelay 2
-In each of the parameter files, add comments to describe each setting and what it does.
-Save and close the file.
-Start the OGG Manager
+43. In each of the parameter files, add comments to describe each setting and what it does.
+44. Save and close the file.
+45. Start the OGG Manager
 Oracle: start mgr
 MySQL: start mgr
 
