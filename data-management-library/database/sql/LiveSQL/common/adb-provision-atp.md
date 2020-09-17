@@ -55,6 +55,8 @@ Estimated time: 5 minutes
 
 6. Click **Create Autonomous Database**.
 
+  <if type=["freetier","alwaysfree"]>*Note: if Always Free resources are not available, you can try another region, or if you are using a Free Trial, deselect Always Free and try again.*</if>
+
 8. Continue when the status changes from:
 
     ![](images/status-provisioning.png)

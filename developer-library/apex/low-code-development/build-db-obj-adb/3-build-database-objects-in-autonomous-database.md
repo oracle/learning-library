@@ -337,7 +337,7 @@ In the original napkin design, there was a table called To Dos. However, the Qui
 This completes this workshop. At this point you know how to use Quick SQL to generate database objects using a SQL shorthand. You also know how to use SQL Developer Web to maintain database objects and generate ERDs. Click on ***Lab 3: Create and Modify an APEX Application*** to create a new APEX application that will utilize the database objects you created.
 
 ## Acknowledgements
-* **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
+* **Author** - Salim Hlayel, Principle Product Manager
 * **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 

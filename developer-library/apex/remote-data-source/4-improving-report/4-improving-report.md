@@ -145,7 +145,7 @@ The report contains the Dollar Exchange Rate and Relative Exchange Rate columns.
     - **Column Label:** enter **Difference %**
     - **Format Mask:** select **5,234.10**
     - **Computation Expression:** enter the following.
-    
+
     ```
     <copy>
     (I - F) * 100 / F
@@ -178,7 +178,7 @@ This completes Lab 4. In this lab you learnt how to utilize a SQL query as the b
 
 ## **Acknowledgements**
 
- - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 

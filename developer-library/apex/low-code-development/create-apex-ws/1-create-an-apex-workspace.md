@@ -84,7 +84,7 @@ Within your new database, APEX is not yet configured. Therefore, when you first 
 This completes this lab. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. Click on **Lab 2: Create an APEX App from a Spreadsheet** to build an APEX application in your workspace.
 
 ## Acknowledgements
-- **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 

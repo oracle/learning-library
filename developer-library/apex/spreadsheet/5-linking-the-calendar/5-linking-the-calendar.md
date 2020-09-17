@@ -112,7 +112,7 @@ You now know how to create an application by uploading a file, enhancing the pag
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  David Peake, Consulting Member of Technical Staff
+ - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## See an issue?

@@ -22,6 +22,18 @@ There is a recording of the instructor going through this lab here:
 
 In this step, you sign in to the Oracle Cloud Infrastructure console using your credentials.
 
+1. Go to [cloud.oracle.com](https://cloud.oracle.com).
+
+    ![](images/cloud-login-1.png " ")
+
+2. Click **Sign in to Cloud**.
+
+    ![](images/cloud-login-2.png " ")
+
+4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+
+    ![](images/cloud-login-tenant.png " ")
+
 1. Open a supported browser and go to the Console URL:  [https://oracle.com](https://oracle.com).
 
 2. Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
@@ -113,7 +125,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
    c) In the **New User** dialog box, enter the following:
 
-      - **Name:** Enter a unique name or email address for the new user. 
+      - **Name:** Enter a unique name or email address for the new user.
       _This value is the user's login name for the Console and it must be unique across all other users in your tenancy._
       - **Description:** Enter a description. For example, New `oci user`.
       - **Email:** I recommend using a personal email address to which you have access (GMail, Yahoo, etc).
@@ -146,19 +158,25 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 8. Sign in as the new user using a different web browser or an incognito window.
 
-   a) Go to [https://oracle.com](https://oracle.com).
+    a) Open a supported browser and go to the Console URL:  [https://oracle.com](https://oracle.com).
 
-   b) Enter the Tenant name, if prompted.
+    b) Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
 
-   c) This time, you will sign in using **local credentials box** with the user you created. Note that the user you created is not part of the Identity Cloud Services.
+    ![Main Sign-in page]( images/img001.png " ")
 
-   d) Enter the password that you copied.
+   c) Enter the name of your tenancy (aka your account name, not your user name), then click on the **Next** button.
+
+   ![Enter tenancy name]( images/img002.png " ")
+
+   d) This time, you will sign in using **local credentials box** with the user you created. Note that the user you created is not part of the Identity Cloud Services.
+
+   e) Enter the password that you copied.
 
       ![Enter your password]( images/image014.png " ")
 
    **Note:** _Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture._
 
-   e) Set the new password to _Welc0me2*bmcs_. Click **Save New Password**.
+   f) Set the new password to _Welc0me2*bmcs_. Click **Save New Password**.
       ![Set the new password]( images/image015.png " ")
 
 9. Verify user permissions

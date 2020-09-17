@@ -35,7 +35,7 @@ This completes Lab 1. You now know how to install a sample dataset. [Click here 
 
 ## **Acknowledgements**
 
- - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - LiveLabs QA Team (Arabella Yao, Product Manager Intern | Dylan McLeod, QA Intern)
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 

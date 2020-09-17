@@ -1,16 +1,20 @@
 # Low Code Development with APEX and DevCS CI/CD
 
 ## Before You Begin
-- Successful completion of Lab 300 and creation of a REST service for products.
+
+### Introduction
+
+In this lab you will create a new APEX workspace and appliction using a file upload, and then reference the Product Catalog REST Endpoint in your APEX application.  When finished, you will leverage DevCS to clone the APEX application.
+
+Estimated time: 30 minutes
 
 ### Objectives
 - Log into OCI tenancy.
 - Develop an APEX Application leveraging microservice REST Endpoint.
 - Use DevCS CI/CD to push APEX changes from Development to Production.
 
-### Introduction
-
-In this lab you will create a new APEX workspace and appliction using a file upload, and then reference the Product Catalog REST Endpoint in your APEX application.  When finished, you will leverage DevCS to clone the APEX application.
+### Prerequisites
+- Successful completion of Lab 3 and creation of a REST service for products.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:RWjzYN3PpdM)
@@ -31,11 +35,11 @@ In this lab you will create a new APEX workspace and appliction using a file upl
 
 3. Enter your **Cloud Account Name** in the input field and click the **Next** button.  *NOTE: this is NOT your email. This is the name of your tenancy noted in the email you received during signup. Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud.*
 
-![](../images/common/cloud-login-tenant.png " ")   
+  ![](../images/common/cloud-login-tenant.png " ")   
 
 4. Enter your username (this may be your email address) and password and click on **Sign In**. 
     
-![](../images/common/username.png " ")  
+  ![](../images/common/username.png " ")  
 
 ## **STEP 2:** Create an API Gateway to Access the REST Service
 

@@ -2,18 +2,15 @@
 
 ## Introduction
 
-This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. The rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
+This lab walks you through the steps of setting up the environment for property graph. You will then get to run queries and publish your graph. In the rest of the lab you will get a chance to use GraphViz and explore visualizing your graph.
 
-Estimated Lab Time: 30 Minutes
+*Estimated Lab Time:* 30 Minutes
 
-### Before You Begin
-
-**What Do You Need?**
-
+### Prerequisites
 This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
+  - Lab: Generate SSH Key
+  - Lab: Setup Compute Instance
+  - Lab: Start Database and Application
 
 ### Overview of Oracle Graph
 
@@ -32,7 +29,6 @@ Every Oracle Database now includes both property graph and RDF graph data models
 - 50+ Graph algorithms
 - Support for graph visualization
 
-
 Customers use Property Graphs in fraud analytics, vulnerability analysis, recommendation systems, and more.
 
 **RDF Graph database includes:**
@@ -49,7 +45,6 @@ Here is are two videos that talk more about Oracle Graph.
 
 [](youtube:-DYVgYJPbQA)
 [](youtube:zfefKdNfAY4)
-
 
 ### Introduction to Property Graph
 
@@ -70,13 +65,11 @@ A property graph consists of a set of objects or vertices, and a set of arrows o
 - A text label that describes the relationship between the two vertices
 - A collection of properties
 
-
 The following figure illustrates a very simple property graph with two vertices and one edge. The two vertices have identifiers 1 and 2. Both vertices have properties name and age. The edge is from the outgoing vertex 1 to the incoming vertex 2. The edge has a text label knows and a property type identifying the type of relationship between vertices 1 and 2.
 
 ![](./images/IMGG1.PNG)
 
 Figure: Simple Property Graph Example
-
 
 **A very brief note on PGQL**
 
@@ -84,21 +77,19 @@ The [pgql-lang.org](pgql-lang.org) site and specification [pgql-land.org/spec/1.
 
 The general structure of a PGQL query is
 
+````
 SELECT (select list) FROM (graph name) MATCH (graph pattern) WHERE (condition)
-
+````
 
 PGQL provides a specific construct known as the MATCH clause for matching graph patterns. A graph pattern matches vertices and edges that satisfy the given conditions and constraints.
-() indicates a vertex variable
 
-  -an undirected edge, as in (source)-(dest)
-
--> an outgoing edge from source to destination
-
-<- an incoming edge from destination to source
-
+````
+()  indicates a vertex variable
+-   an undirected edge, as in (source)-(dest)
+->  an outgoing edge from source to destination
+<-  an incoming edge from destination to source
 []  indicates an edge variable
-
-
+````
 
 ## **Step 1:** Connect to Graph Server and Client
 
@@ -127,7 +118,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
     ![](./images/IMGG4.PNG)
 
 3. Make a JDBC connection to the database, run the below at the jshell prompt.
-   
+
     ````
     <copy>
     /open /u01/script/graph_startup/03_graphload.jsh
@@ -362,7 +353,6 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 
     ![](./images/IMGG20.PNG)
 
-
 6. List the 10 customers who had the most product purchases in common with customer 202, see definition of qStr above or just enter qStr in the shell to see its content
 
     ````
@@ -560,11 +550,10 @@ This graph shell is implemented on top of the Java Shell tool (JShell).
 
 The graph shell automatically connects to a PGX instance (either remote or embedded depending on the --base_url command-line option) and creates a PGX session.
 
-
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,2 +1,0 @@
-This image shows the Oracle Cloud Account page. On this page you sign in to your Oracle Cloud Account. The page contains a field to enter your cloud account name.
-Under that field, is the Next button.

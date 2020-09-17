@@ -1,20 +1,21 @@
 # Oracle JSON
 
 ## Introduction
+This lab is setup into multiple steps.
+-  In the first step you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer.
+-  The second step has already been completed but has been included for reference. This step creates the schema.
+-  The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document.
+-  The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
 
-This lab is setup into multiple steps. In the first step you will setup the environment for JSON lab. In this lab, you will connect using Oracle SQL Developer. The second step has already been completed but has been included for reference. This step creates the schema. The third step walks you through the steps of inserting and updating JSON data. We can use standard database APIs to insert or update JSON data. We can also work directly with JSON data contained in file-system files by creating an external table that exposes it to the database. You will add a row to our JSON table using insert query and then the Oracle SQL function json\_mergepatch to update specific portions of a JSON document. The final section of this lab walks you through modules where we will see improvements in the simplicity of querying JSON documents using SQL. We will also see materialized views query rewriting has been enhanced so that queries with JSON\_EXISTS, JSON\_VALUE and other functions can utilize a materialized view created over a query that contains a JSON\_TABLE function.
-
-Estimated Lab Time: 20 Minutes
+*Estimated Lab Time:* 20 Minutes
 
 ### Prerequisites
-
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
 - Lab: Start Database and Application
-- Note :  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
-  
+***Note:***  All scripts for this lab are stored in the /u01/workshop/json folder and are run as the oracle user.
 
 ### About Oracle JSON
 
@@ -75,7 +76,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
     ````
 
 5. Open sqlplus as the user appjson
-   
+
     ````
     <copy>
        sqlplus appjson/Oracle_4U@JXLPDB
@@ -107,7 +108,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 2. This statement creates a very simple table, PURCHASE\_ORDER. The table has a column PO\_DOCUMENT of type CLOB. The IS JSON constraint is applied to the column PO\_DOCUMENT, ensuring that the column can store only well formed JSON documents. In Oracle there is no dedicated JSON data type. JSON documents are stored in the database using standard Oracle data types such as VARCHAR2, CLOB and BLOB. In order to ensure that the content of the column is valid JSON data, a new constraint IS JSON, is provided that can be applied to a column. This constraint returns TRUE if the content of the column is well-formed, valid JSON and FALSE otherwise. This first statement in this module creates a table which will be used to contain JSON documents.
 
     ````
-    create table PURCHASE_ORDER 
+    create table PURCHASE_ORDER
     (
     ID RAW(16) NOT NULL,
 	DATE_LOADED  TIMESTAMP(6) WITH TIME ZONE,
@@ -143,7 +144,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
       ````
 
 4. The following statement copies the JSON documents from the dump file into the PURCHASE\_ORDER table.
-   
+
     ````
     insert into PURCHASE_ORDER
     select SYS_GUID(), SYSTIMESTAMP, JSON_DOCUMENT
@@ -445,8 +446,8 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

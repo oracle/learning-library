@@ -12,7 +12,7 @@ Estimated Time: 10 minutes
 
 ### What Do You Need?
 
-* An Oracle Cloud paid account, a LiveLabs account or free trial. 
+* An Oracle Cloud paid account, a LiveLabs account or free trial.
 * An APEX Workspace and application
 
 ## **Step 1** - Adding Columns to the Report.
@@ -187,7 +187,7 @@ You now know how to enhance report and list of value queries to display related 
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
 

@@ -12,7 +12,7 @@ Estimated Time: 5 minutes
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account, a LiveLabs account or free trial. 
+- An Oracle Cloud paid account, a LiveLabs account or free trial.
 - An APEX Workspace and application
 
 ## **Step 1** - Adding Columns to the Report.
@@ -168,7 +168,7 @@ You now know how to change a URL value to be a link to a separate browser tab or
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 

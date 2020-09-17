@@ -1,12 +1,6 @@
 # Kubernetes REST Service Deployment
 
 ## Before You Begin
-### Objectives
-- Verify Kubernetes Cluster up and running.
-- Find Deployed REST Services URLs.
-- Verify REST Services deployed in Lab 300.
-- Test REST services.
-- Simulate Pod failure and REST service recovery.
 
 ### Introduction
 
@@ -14,12 +8,20 @@ Thus far on our journey from a monolithic application to microservices, we have 
 
 During this lab, you will verify REST Services deployed in Lab 300 via Kubernetes Dashboard.
 
+Estimated time: 20 minutes
+
+### Objectives
+- Verify Kubernetes Cluster up and running.
+- Find Deployed REST Services URLs.
+- Verify REST Services deployed in Lab 300.
+- Test REST services.
+- Simulate Pod failure and REST service recovery.
+
+### Prerequisites
+- Successful completion of Labs 1 and 2
+
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:FPN_ggM1f3c
 [](youtube:FPN_ggM1f3c)
-
-## Required Artifacts
-
-- You should already have completed labs 50, 100, and 200 before beginning this lab.
 
 - **Works better with the Chrome browser**.
 

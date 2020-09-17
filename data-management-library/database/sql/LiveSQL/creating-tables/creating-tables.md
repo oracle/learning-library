@@ -40,6 +40,8 @@ create table <table_name> (
     );</copy>
     ```
 
+    ![](images/create-table-toys.png)
+
 2. Viewing Table Information
 
     The data dictionary stores information about your database. You can query this to see which tables it contains. There are three key views with this information:
@@ -57,6 +59,8 @@ create table <table_name> (
     ```
 
     The other columns display details of the properties of each table.
+
+    ![](images/view-table-info.png)
 
 3. **Try It!**
 
@@ -113,11 +117,13 @@ create table <table_name> (
     <copy>create table toys_iot (
       toy_id   integer primary key,
       toy_name varchar2(100)
-    ) organization index;
+    ) organization index;</copy>
+    ```
 
     You can find IOT in the data dictionary by looking at the column IOT_TYPE. This will return IOT if the table is index-organized:
 
-    select table_name, iot_type
+    ```
+    <copy>select table_name, iot_type
     from   user_tables
     where  table_name = 'TOYS_IOT';</copy>
     ```
@@ -139,7 +145,8 @@ create table <table_name> (
     The query afterwards should return the following row:
 
     ```
-    TABLE_NAME   IOT_TYPE   
+    TABLE_NAME   IOT_TYPE
+    ----------   --------
     BRICKS_IOT   IOT
     ```
 
@@ -269,6 +276,7 @@ create table <table_name> (
 
     ```
     TABLE_NAME    PARTITIONED   
+    -----------   -----------
     BRICKS_HASH   YES  
     ```
 

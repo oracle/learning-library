@@ -104,9 +104,9 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/linux-compute-step3-9.png " ")
 1. You will notice that 3 objects were created.  Your instance has a private IP address and a public IP address.  Copy the public IP address, you will need it to connect to your instance.
 ![Image alt text](images/db19c-freetier-step1-12.png " ")
-1.  Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step-3-10.png " ")
+1.  Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step3-10.png " ")
 2.  The compute instance you created should be listed. Note the public IP address.
-![Image alt text](images/linux-compute-step-3-11.png " ")     
+![Image alt text](images/linux-compute-step3-11.png " ")     
 
 ## **STEP 5**: Connect to your instance
 

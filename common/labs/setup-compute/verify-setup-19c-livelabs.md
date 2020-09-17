@@ -141,14 +141,19 @@ Once you deploy your compute instance, tail the log to determine when the databa
     SQL> <copy>exit
     </copy>
     ````
-2. Type exit again to *switch back to the opc user*.  Verify that you are now the opc user using the whoami command.
-   
+2. Type exit again to *switch back to the opc user*.  
     ```
     <copy>
     exit
+    </copy>
+    ```
+3. Verify that you are now the **opc** user using the *whoami* command.  
+    ```
+    <copy>
     whoami
     </copy>
     ```
+
     ![](./images/whoami.png " ")
     
 You may now *proceed to the next lab*.  

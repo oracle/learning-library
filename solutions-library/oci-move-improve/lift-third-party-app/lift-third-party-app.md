@@ -519,9 +519,9 @@ You may now **proceed to the next lab**.
 * Oracle VirtualBox [link](https://www.oracle.com/virtualization/virtualbox/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Adapted for Cloud by** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Kay Malcolm, August 2020
+* **Author** - Mitsu Mehta, Oladipupo Akinade, Saurabh Salunkhe
+* **Adapted for Cloud by** -  Mitsu Mehta, Oladipupo Akinade
+* **Last Updated By/Date** - Saurabh Salunkhe, September 2020
 
 
 ## See an issue?

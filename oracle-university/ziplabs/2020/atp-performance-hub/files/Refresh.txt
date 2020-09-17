@@ -1,1 +1,0 @@
-In the top-right corner, the Refresh button is highlighted. Below it is a timeline showing long-term activity. There is a large spike in activity coming in. Within this timeline is a draggable window which specifies the time to zoom in on.

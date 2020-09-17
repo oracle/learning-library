@@ -2,36 +2,44 @@
     "tutorials": [
         {
             "number": "0",
-            "filename": "./lab-000/content.md",
-            "title": "Read Me First",
+            "filename": "README.md",
+            "title": "Introduction",
             "description": "Step-by-step workshop instructions",
             "partnumber": "Ennnnn_01",
             "publisheddate": "12/02/2020",
             "contentid": "12nnnn"
         },
         {         
-            "title": "Lab 100: Pull the Docker image for the WebLogic and push to Oracle Cloud Infrastructure Registry (OCIR)",
-            "description": "The Oracle Cloud Infrastructure Registry to push the WebLogic Server Docker Image",
+            "title": "Lab 1: Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)",
+            "description": "Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)",
             "partnumber": "Ennnnn_01",
             "publisheddate": "10/31/2019",
             "contentid": "12nnnn",
-            "filename": "./lab-100/content.md"
+            "filename": "setup.oke.ocishell.md"
         },
         {         
-            "title": "Lab 200: Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)",
-            "description": "Use OKE to build, deploy, and manage cloud-native applications",
+            "title": "Lab 2: Install and configure the operator",
+            "description": "Install and configure the operator",
             "partnumber": "Ennnnn_01",
             "publisheddate": "10/31/2019",
             "contentid": "12nnnn",
-            "filename": "./lab-200/content.md"
+            "filename": "install.operator.ocishell.md"
         },
         {         
-            "title": "Lab 300: Prepare the WebLogic Kubernetes Operator environment",
-            "description": "How to run WebLogic clusters on the Oracle Cloud Infrastructure Container Engine for Kubernetes",
+            "title": "Lab 3: Install and configure Traefik",
+            "description": "Install and configure Traefik",
             "partnumber": "Ennnnn_01",
             "publisheddate": "10/31/2019",
             "contentid": "12nnnn",
-            "filename": "./lab-300/content.md"
+            "filename": "install.traefik.ocishell.md"
+        },
+        {         
+            "title": "Lab 4: Deploy a WebLogic domain",
+            "description": "Deploy a WebLogic domain",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "10/31/2019",
+            "contentid": "12nnnn",
+            "filename": "deploy.weblogic_short.ocishell.md"
         }
 
     ]

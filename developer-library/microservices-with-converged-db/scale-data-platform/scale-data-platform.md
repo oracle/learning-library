@@ -13,7 +13,7 @@ Next paragraph of background information
 
 ### What Do You Need?
 
-* Item no 1.
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account.
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
 ## Section 1 title

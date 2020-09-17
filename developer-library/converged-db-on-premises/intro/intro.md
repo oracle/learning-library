@@ -1,7 +1,7 @@
 # Introduction
 
 ## About Oracle's Converged Database
-The Oracle Database converges support for multiple data models and workloads into a single database, while supporting popular development tools and techniques like events and REST interfaces. As opposed to using multiple single purpose databases for each data type, using a converged database results in a **unified data tier**, enabling real-time analytics and machine learning on production data. 
+The Oracle Database converges support for multiple data models and workloads into a single database, while supporting popular development tools and techniques like events and REST interfaces. As opposed to using multiple single purpose databases for each data type, using a converged database results in a **unified data tier**, enabling real-time analytics and machine learning on production data.
 
 ![](images/single-vs-converged.png " ")
 
@@ -26,7 +26,7 @@ You will also download Oracle SQL Developer to help execute the programs associa
 - Oracle SQL Developer client
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
-Estimated Workshop Time:  2.5 hours
+*Estimated Workshop Time:*  2.5 hours
 
 *Please proceed to the first lab.*
 
@@ -45,5 +45,3 @@ Feel free to share with your colleagues.
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-
-
