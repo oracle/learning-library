@@ -20,7 +20,7 @@ In this lab we will load data in MySQL database ‘ggsource’, GG extract proce
 ## Steps
 If at a terminal session:
 
-su - ggadmin
+<copy>su - ggadmin</copy>
 
 User ID: ggadmin
 Password:  oracle
@@ -38,18 +38,18 @@ Review the overview notes on the following screen, then select Q to quit. These 
 **Step3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
   ````
-  view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+  <copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
   view these files, same as in previous lab:
-  /u01/gg4mysql/dirprm/mgr.prm
-  /u01/gg4mysql/dirprm/extmysql.prm
-  /u01/gg4mysql/dirprm/pmpmysql.prm
+  <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+  <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+  <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 
-  view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby
+  <copy>view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
 
-  view /u01/gg4hadoop123010/dirprm/rcass.prm
+  <copy>view /u01/gg4hadoop123010/dirprm/rcass.prm</copy>
 
-  view /u01/gg4hadoop123010/dirprm/rcass.properties
+  <copy>view /u01/gg4hadoop123010/dirprm/rcass.properties</copy>
   ````
 
 **Step4:** Start the GG manager process on both the source and target. Start two terminal sessions and connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
@@ -58,28 +58,100 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
   ![](./images/f2.png" ")
 
+  <copy>startcass</copy>
+
 **Step6:** Open another ssh session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
   ![](./images/f3.png" ")
+
+<copy>cd /u01/gg4mysql</copy>
+
+<copy>./ggsci</copy>
+
+<copy>info all</copy>	
+
+<copy>start mgr</copy>	
+
+<copy>info all</copy>
+
 
 **Step7:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
   ![](./images/f4.png" ")
 
+  <copy>cd /u01/gg4hadoop123010</copy>
+
+<copy>./ggsci</copy>
+
+<copy>info all</copy>
+	
+<copy>start mgr</copy>	
+
+<copy>info all</copy>	
+
+<copy>exit</copy> 
+
+
 **Step8:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
 
   ![](./images/f5.png" ")
 
+<copy>cd /u01/gg4hadoop123010</copy>
+
+<copy>./ggsci</copy>
+
+<copy>info all</copy>
+	
+<copy>start mgr</copy>	
+
+<copy>info all</copy>	
+
+<copy>exit</copy> 
+
+
 **Step9:** Now that the source side is setup, let us configure GG on the target side (for Cassandra).
+
+
 
 **Step10:** In the GG for Hadoop session, you will need to modify the Cassandra properties by removing the ‘---‘ from the highlighted values:
 
   ![](./images/f6.png" ")
   ![](./images/f7.png" ")
 
+  
+<copy>cd /u01/gg4hadoop123010</copy>
+
+<copy>cd dirprm</copy>
+
+<copy>vi rcass.properties</copy>
+
+<copy>---cassandra</copy>
+
+<copy>---CREATE,ADD,DROP</copy>
+
+
+
+
+
+
 **Step11:** Now create and start the Cassandra replicat process:
 
   ![](./images/f8.png" ")
+
+  <copy>cd ..</copy>
+
+<copy>./ggsci	</copy>
+
+<copy>info all</copy>		
+
+<copy>obey ./dirprm/create_cassandra_replicat.oby</copy>	
+
+<copy>info all</copy>	
+
+<copy>start rcass</copy>	
+
+<copy>info all</copy>
+
 
 **Step12:** Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
 
@@ -87,9 +159,13 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 
   ![](./images/f9.png" ")
 
+  <copy>createcasskeyspace</copy>
+
 **Step13:** Let us check to see if any tables exist in the ggtarget2cass Cassandra keyspace. The expected result is an error “unconfigured table …” – since the tables have not been created by GG yet. That will be done when GG encounters the first transaction for a new table.
 
   ![](./images/f10.png" ")
+
+  <copy>createcasskeyspace</copy>
 
 **Step14:** We will load some data on the MySQL database ‘ggsource’ and GG will extract the data, create the Cassandra tables, and write the data to the Cassandra target tables.
 
@@ -97,24 +173,42 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 
   ![](./images/f11.png" ")
 
+  <copy>mysqlselect</copy>
+
+<copy>loadsource</copy>
+
+<copy>mysqlselect</copy>
+
+
 **Step16:** Starting with GG version 12.3.0.1.0, GG automatically creates the Cassandra tables. Let us take a look at the contents of the tables:
 
   ![](./images/f12.png" ")
   ![](./images/f13.png" ")
 
+<copy>cassselect</copy>
+
 **Step17:** Now we will apply some changes to the source database
 
   ![](./images/f14.png" ")
+
+  <copy>dmlsource</copy>
 
 **Step18:** Next we will do a count of the Cassandra tables to see if the changes were applied as expected. You can also do a cassselect to see all the data
 
   ![](./images/f15.png" ")
   ![](./images/f16.png" ")
 
+  <copy>casscount</copy> 
+
+
 **Step19:** Let us confirm using GG to see statistics about data that was replicated In a GG Home for Hadoop session
 
   ![](./images/f17.png" ")
   ![](./images/f18.png" ")
+
+  <copy>./ggsci</copy>
+<copy>stats rcass total</copy> 
+
 
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rcass’ read the remote trail files, created the Cassandra tables and wrote the data to those tables.

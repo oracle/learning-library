@@ -9,8 +9,8 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 *Estimated Lab Time*:  30 minutes
 
 #### Lab Architecture
-
-  ![](./images/image200_1.png" ")
+ ![](./images/image200_1.png " ")
+  
 
 ### Objectives
 - Explore replication from relational source to a relational target using GoldenGate
@@ -43,11 +43,11 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 1. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ````
-    view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby
-    view /u01/gg4mysql/dirprm/mgr.prm
-    view /u01/gg4mysql/dirprm/extmysql.prm
-    view /u01/gg4mysql/dirprm/pmpmysql.prm
-    view /u01/gg4mysql/dirprm/repmysql.prm
+    <copy>view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby</copy>
+    <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+    <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+    <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+    <copy>view /u01/gg4mysql/dirprm/repmysql.prm</copy>
     ````
 
 2. Go to the GG Home for MySQL by typing *ggmysql*
