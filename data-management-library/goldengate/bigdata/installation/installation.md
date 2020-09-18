@@ -39,21 +39,11 @@ integration architectures to big data systems without impacting the performance 
 
 ## **STEP 1**: Login in to Instance
 
-**Access image via Live Lab**
-
-1. Open terminal from desktop by double clicking on the icon
-
-  ![](./images/terminal2.png " ")
-
-2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.   
-
-## **STEP 2**:  Install GoldenGate using Menu
-
-**Note - This step has already been completed by LiveLabs**
+**Access image via Live Lab Marketplace**
 
  Follow the steps below to install GoldenGate, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-1. Open terminal from desktop by double clicking on the icon
+1. Open terminal from Linux desktop by double clicking on the Terminal icon
 
   ![](./images/terminal2.png" ")
 
@@ -71,7 +61,7 @@ Follow these instructions to install GoldenGate for Big Data
 ## **STEP 3**:Performing the Install
 
 1.  Review the overview notes on the following screen, then select **Q** to quit. 
-      ![](./images/labmenu_opt1.png" ")
+      ![](./images/labmenu_opt1.png)
 
   These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
@@ -92,7 +82,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka
-* **Last Updated By/Date** - Meghana Banka, September 2020
+* **Last Updated By/Date** - Brian Elliott, September 2020
 
 
 ## See an issue?
