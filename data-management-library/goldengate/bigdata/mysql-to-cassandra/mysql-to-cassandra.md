@@ -30,6 +30,8 @@ Setting up the Environment For Connection to Cassandra using Goldengate.
     
 **Step1:** If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
+<copy>labmenu</copy>
+
 The following Lab Menu will be displayed
 
   ![](./images/lab7menu.png)
@@ -39,12 +41,15 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
 **Step3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-  ````
+  
   <copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
   view these files, same as in previous lab:
+
   <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+
   <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+
   <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 
   <copy>view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
@@ -199,13 +204,13 @@ NOTE: If you re-run this lab later, you can run ‘dropcasskeyspace’ to drop t
 
   <copy>casscount</copy> 
 
-
 **Step19:** Let us confirm using GG to see statistics about data that was replicated In a GG Home for Hadoop session
 
   ![](./images/f17.png)
   ![](./images/f18.png)
 
   <copy>./ggsci</copy>
+  
 <copy>stats rcass total</copy> 
 
 

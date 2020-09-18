@@ -40,10 +40,15 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 Optionally view these files, same as in previous lab:
 
 <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+
 <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+
 <copy>view  /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+
 <copy>view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby</copy>
+
 <copy>view /u01/gg4hadoop123010/dirprm/rhive.prm</copy>
+
 <copy>view /u01/gg4hadoop123010/dirprm/rhive.properties</copy>
 
 

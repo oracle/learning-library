@@ -26,7 +26,8 @@ Estimated Lab Time:  60 minutes
 
   ![](./images/terminal2.png)
 
-2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
+2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
+  **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
 
     <copy>su – ggadmin</copy>
     Password = oracle
@@ -44,15 +45,16 @@ Review the overview notes on the following screen
 
 ## **2**:  Review
 The step above copied the GoldenGate configuration files to the GG Home directories, under ./dirprm.
-1. Review the content of each of these files to explore how GoldenGate is being configured.
 
- <copy>./view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+Review the content of each of these files to explore how GoldenGate is being configured.
+
+<copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
 Optionally view these files, same as in previous lab:
 
-<copy>./view/u01/gg4mysql/dirprm/mgr.prm</copy>
+<copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
 
-<copy>./view/u01/gg4mysql/dirprm/extmysql.prm</copy>
+<copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
 
 <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 
@@ -115,6 +117,7 @@ Optionally view these files, same as in previous lab:
 <copy>start pmphadop</copy>	
 
 <copy>start *</copy>
+
 <copy>info all</copy>
 
   ![](./images/e4.png " ")
@@ -170,7 +173,9 @@ Optionally view these files, same as in previous lab:
 ![](./images/e10.png " ")
 
 <copy>./ggsci</copy>
+
 <copy>start rkafka</copy>
+
 <copy>info all</copy>
 
 

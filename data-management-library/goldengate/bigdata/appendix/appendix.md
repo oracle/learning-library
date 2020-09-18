@@ -34,7 +34,7 @@ Aliases have been created for this workshop, so that you can focus on GG functio
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Meghana Banka, September 2020
+* **Last Updated By/Date** - Brian Elliott, September 2020
 
 
 ## See an issue?

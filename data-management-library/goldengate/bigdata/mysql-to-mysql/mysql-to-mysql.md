@@ -49,11 +49,14 @@ Execute the alias
 1. Review the content of each of these files to explore how GoldenGate is being configured.
 
     <copy>view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby</copy>
+
     <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+
     <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+
     <copy>view /u01/gg4mysql/dirprm/repmysql.prm</copy>
-    ````
 
 2. Go to the GG Home for MySQL by typing *ggmysql*
 
@@ -123,11 +126,11 @@ Password = oracle
    ![](./images/a5.png " ")
    ![](./images/a6.png " ")
 
-<copy>Mysqlselect</copy>
+<copy>mysqlselect</copy>
 
 <copy>loadsource</copy>
 
-<copy>Mysqlselect</copy>
+<copy>mysqlselect</copy>
 
 
 2. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
