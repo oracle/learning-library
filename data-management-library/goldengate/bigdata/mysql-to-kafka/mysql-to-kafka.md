@@ -212,6 +212,7 @@ Optionally view these files, same as in previous lab:
 **Step15:** Next we’ll apply more DML to the source, then we’ll consume the emp topic, and see the additional data get appended to the topic. Run this from another session, since the consumetopic command runs in the foreground, and outputs the results. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
 ![](./images/e13.png " ")
+
 <copy>consumetopic gg2kafka_json.emp
 
 **Step16:** Now go back to the previous session, and run the DML script:
