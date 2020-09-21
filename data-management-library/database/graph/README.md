@@ -27,8 +27,9 @@ Click on one of our workshops below to access the content.
 - [Customer 360 Analysis](https://oracle.github.io/learning-library/data-management-library/database/graph/livelabs/)  
 Note: This assumes you have completed the setup steps and have an environment up and running with Docker. The use case is included in the workshop accessible from the setup link above. 
 
-### Tutorial: Setup a property graph environment in Always Free Tier (ADB and Compute)
-- [Setup with AF Tier](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/)
+### Tutorial: Setup a property graph environment in Always Free Tier (AF Autonomous Database and Compute)
+- [Setup on AF Tier: Manual deployment](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/GraphServer_ManualSetup/)
+- [Setup on AF Tier: Deploy OCI Marketplace image](https://oracle.github.io/learning-library/data-management-library/database/graph/freetier/GraphServer_MarketplaceImage)
 
 ## RDF/Semantic Graph Workshops
 

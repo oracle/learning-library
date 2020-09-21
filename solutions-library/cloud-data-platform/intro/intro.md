@@ -10,7 +10,7 @@ Autonomous-Driven & AI-Infused** workshop. This workshop will walk you through t
 
 You will take on 2 Personas during the workshop. The **Data Scientist Persona** will prepare the data for training and validating the machine learning models and apply those models in order to predict the future demand. The **Business Analyst Persona** will also build and apply Machine Learning models using Oracle Analytics Cloud service without writing a single line of code.
 
-This workshop covers Oracle’s portfolio of cloud services related to databases, analytics, machine learning, data science and low-code app development. It’s a complete solution that ties it all together using integration, security, management and monitoring. The solution begins with provisioning a Autonomous Data warehouse (ADW), loading warehouse inventory data and sales/demographic data into it. Delve into the fascinating realm of AI/ML and predict warehouse Inventory based on transactions, customer buying patterns and demographics using ML models developed with Oracle Machine Learning (OML). Build a simple application using Oracle Application Express (APEX). Expose data insights to applications via API’s created using Oracle Restful Data Services (ORDS). Merge multiple datasets and visualize data using Oracle Analytics cloud (OAC). Integrate a Digital Assistant into the solution to consume predictive analysis using Natural Language Processing (NLP). Learn how to analyze data from Fusion ERP using Oracle Analytics for Applications (OAX). Get a taste of MOLAP (Multidimensional online analytical processing) while building cubes using Oracle Essbase. Secure data using Oracle Data Safe and monitor the entire solution using Oracle Management Cloud (OMC).
+This workshop covers Oracle’s portfolio of cloud services related to databases, analytics, machine learning, data science and low-code app development. It’s a complete solution that ties it all together using integration, security, management and monitoring. The solution begins with provisioning an Autonomous Data warehouse (ADW), loading warehouse inventory data and sales/demographic data into it. Delve into the fascinating realm of AI/ML and predict warehouse Inventory based on transactions, customer buying patterns and demographics using ML models developed with Oracle Machine Learning (OML). Build a simple application using Oracle Application Express (APEX). Expose data insights to applications via API’s created using Oracle Restful Data Services (ORDS). Merge multiple datasets and visualize data using Oracle Analytics cloud (OAC). Integrate a Digital Assistant into the solution to consume predictive analysis using Natural Language Processing (NLP). Learn how to use Oracle Cloud Infrastructure Data Science for fraud protection. Secure data using Oracle Data Safe and monitor the entire solution using Oracle Management Cloud (OMC).
 
 Here is an example of that Cloud Data Platform Architecture which can be extended with further Oracle services such as federation through Identity Cloud Service (IDCS) and Oracle Integration Cloud (OIC):
 
@@ -18,14 +18,18 @@ Here is an example of that Cloud Data Platform Architecture which can be extende
 
 **Note**: This lab is intended to be a comprehensive full cloud showcase. As such, it is assumed a user going through this workshop will be provisioning resources and creating users from scratch. If you decide to use existing infrastructure or resources, be aware and keep note of your namings so resources don't overlap and conflict. 
 
-**Note**: Additionally, as much as possible, do not stray away from the naming conventions used for resources in this worshop. You may run into errors if you do.
+**Note**: Additionally, as much as possible, do not stray away from the naming conventions used for resources in this workshop. You may run into errors if you do.
 
 ### Objectives
 - Provision an Autonomous Data Warehouse (ADW) Instance
 - Build an Oracle Application Express (APEX) App
 - Create Machine Learning Models within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
 - Visualize Data and Prediction Models in Oracle Analytics Cloud (OAC)
-- Bonus: Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
+- Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
+- Use OCI Data Science Platform for Fraud Protection
+- Use Oracle Data Safe to secure data
+- Monitor entire solution using Oracle Management Cloud (OMC)
+
 
 
 ### Required Artifacts
@@ -40,7 +44,7 @@ Please proceed to the next lab (right pane).
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributors** - LiveLabs QA Team (Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist, Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Jess Rein, Cloud Engineer, June 2020
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, August 2020
 
 
 ## See an issue?

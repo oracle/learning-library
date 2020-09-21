@@ -40,12 +40,17 @@
             "filename": "../../oda-with-apex-api/oda-with-apex-api.md"
         },
 	{
-            "title": "Lab 7: Oracle Data Safe",
+            "title": "Lab 7: Oracle Cloud Infrastructure Data Science for Fraud Protection",
+            "publisheddate": "02/24/2020",
+            "filename": "../../data-science/data-science.md"
+        },
+	{
+            "title": "Lab 8: Oracle Data Safe",
             "publisheddate": "02/24/2020",
             "filename": "../../data-safe/data-safe.md"
         },
 	{
-            "title": "Lab 8: Using Oracle Management Cloud (OMC) to Monitor ADW",
+            "title": "Lab 9: Using Oracle Management Cloud (OMC) to Monitor ADW",
             "publisheddate": "02/24/2020",
             "filename": "../../omc-adw/omc-adw.md"
         }

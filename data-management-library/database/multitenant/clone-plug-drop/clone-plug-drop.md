@@ -9,9 +9,10 @@ Estimated time: 2 - 3 hours
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier, LiveLabs or Paid account
-* Oracle Cloud Compute instance running Database 19c
-* SSH Keys
+This lab assumes you have:
+- An Oracle Free Tier, Paid or LiveLabs Cloud account
+- Completed Setup Compute or Verify Setup lab
+
 
 ## Step 0: Run the Multitenant Setup Scripts
 
@@ -20,7 +21,7 @@ The next steps will download the files needed for the rest of the workshop and c
 1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
 
 
-2.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+2.  Copy the following commands into your terminal.  These commands download files needed to run the lab.
 
     Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
 
@@ -49,14 +50,14 @@ The next steps will download the files needed for the rest of the workshop and c
 
     ![](./images/step0.2-setupscript2.png " ")
 
-5.  The cloud shell terminal disconnects the session after 20 minutes of inactivity. **Reconnect** to cloud shell. Run the following commands to login in to your instance and check the progress of the script.
+5.  *For Cloud Shell Users Only:*  The cloud shell terminal disconnects the session after 20 minutes of inactivity. **Reconnect** to cloud shell. Run the following commands to login in to your instance and check the progress of the script.
 
     ````
     <copy>cd .ssh</copy>
     ````
 
     ````
-    <copy>ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address<copy>
+    <copy>ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address</copy>
     ````
 
     ````
@@ -84,31 +85,25 @@ The tasks you will accomplish in this step are:
 - Create a pluggable database **PDB2** in the container database **CDB1**
 
 1. All scripts for this lab are stored in the labs/multitenant folder and are run as the oracle user. Let's navigate to the path now.
-
     ````
-    <copy>ls</copy>
-    ````
-
-    ````
-    <copy>sudo su - oracle</copy>
-    ````
-
-    ````
-    <copy>cd /home/oracle/labs/multitenant</copy>
+    <copy>
+    sudo su - oracle
+    cd /home/oracle/labs/multitenant
+    </copy>
     ````
 
 2.  Set your oracle environment and connect to **CDB1**.
 
     ````
     <copy>. oraenv</copy>
-    ````
-
-    ````
-    <copy>CDB1</copy>
+    CDB1
     ````
     
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>
+    sqlplus /nolog
+    connect sys/oracle@localhost:1523/cdb1 as sysdba
+    </copy>
     ````
 
     ````
@@ -171,19 +166,20 @@ The tasks you will accomplish in this step are:
 6. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.
 
     ````
-    <copy>grant sysdba to pdb_admin;</copy>
+    <copy>grant sysdba to pdb_admin;
+    create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
+    alter database default tablespace Users;
+    grant create table, unlimited tablespace to pdb_admin;
+
+    </copy>
     ````
     
     ````
-    <copy>create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;</copy>
-    ````
+    <copy>create tablespace users datafile size 20M autoextend on next 1M maxsize unlimited segment space management auto;
+    alter database default tablespace Users;
+    grant create table, unlimited tablespace to pdb_admin;
 
-    ````
-    <copy>alter database default tablespace Users;</copy>
-    ````
-
-    ````
-    <copy>grant create table, unlimited tablespace to pdb_admin;</copy>
+    </copy>
     ````
 
    ![](./images/grantsysdba.png " ")
@@ -197,15 +193,10 @@ The tasks you will accomplish in this step are:
 8. Create a table **MY_TAB** in **PDB2**.
 
     ````
-    <copy>create table my_tab(my_col number); </copy>
-    ````
-
-    ````
-    <copy>insert into my_tab values (1); </copy>
-    ````
-
-    ````
-    <copy>commit;</copy>
+    <copy>create table my_tab(my_col number); 
+    insert into my_tab values (1);
+    commit;
+    </copy>
     ````
 
    ![](./images/createtable.png " ")
@@ -276,11 +267,10 @@ The tasks you will accomplish in this step are:
 3. Create a pluggable database **PDB3** from the read only database **PDB2**.
 
     ````
-    <copy>create pluggable database PDB3 from PDB2;</copy>
-    ````
+    <copy>create pluggable database PDB3 from PDB2;
+    alter pluggable database PDB3 open force;
 
-    ````
-    <copy>alter pluggable database PDB3 open force;</copy>
+    </copy>
     ````
 
     ````

@@ -2,7 +2,7 @@
 ## Welcome to Oracle Enterprise and Cloud Manageability Workshops
 
 ### Enterprise Manager Workshops
-Execute EM workshops in [LiveLabs](http://bit.ly/golivelabs)!  Click to begin!
+Execute EM workshops in [LiveLabs Click to begin!](http://bit.ly/golivelabs)  
 
 - [Enterprise Manager Fundamentals - 5 hr](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=574)
     - [Multitenant Lifecycle Management - 60 min](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=656)

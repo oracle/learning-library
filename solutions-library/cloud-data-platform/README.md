@@ -12,7 +12,10 @@ Click [here](http://bit.ly/golivelabs) to access this workshop on LiveLabs.
 - Build an Oracle Application Express (APEX) App
 - Create Machine Learning Models within the Autonomous Data Warehouse (ADW) Instance by using the Oracle Machine Learning Tool (OML)
 - Visualize Data and Prediction Models in Oracle Analytics Cloud (OAC)
-- Bonus: Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
+- Integrate a 3rd Party Web App and Oracle Digital Assistant (ODA) Chatbot
+- Use OCI Data Science Platform for Fraud Protection
+- Use Oracle Data Safe to secure data
+- Monitor entire solution using Oracle Management Cloud (OMC)
 
 ### Workshop Overview
 
@@ -22,7 +25,7 @@ Oracle offers a complete portfolio of products, services, and differentiated cap
 This is the first of several labs that are part of the **Oracle’s Cloud Data Platform
 Autonomous-Driven & AI-Infused** workshop. This workshop will walk you through the process of using the Autonomous Data Warehouse for storing analytical datasets and applying Machine Learning models in order to learn the correlation between different attributes and predict the future demand while leveraging Application Express to create a simple application as well as link to a 3rd party web app. These features will also be integrated through the bonus use of a chatbot that you can interact with using natural language.
 
-You will take on 2 Personas during the workshop. The **Data Scientist Persona** will prepare the data for training and validating the machine learning models and apply those models in order to predict the future demand. The **Business Analyst Persona** will also build and apply Machine Learning models using Oracle Analytics Cloud service without writing a single line of code. During the workshop, you will get exposure to Oracle Autonomous Data Warehouse (ADW), Oracle Machine Learning tool (OML), Oracle Analytics Cloud Service (OAC), Oracle Application Express (APEX), Oracle Rest Data Service (ORDS), and the Oracle Digital Assistant (ODA) chatbot.
+You will take on 2 Personas during the workshop. The **Data Scientist Persona** will prepare the data for training and validating the machine learning models and apply those models in order to predict the future demand. The **Business Analyst Persona** will also build and apply Machine Learning models using Oracle Analytics Cloud service without writing a single line of code. During the workshop, you will get exposure to Oracle Autonomous Data Warehouse (ADW), Oracle Machine Learning tool (OML), Oracle Analytics Cloud Service (OAC), Oracle Application Express (APEX), Oracle Rest Data Service (ORDS), and the Oracle Digital Assistant (ODA) chatbot. Learn how to use Oracle Cloud Infrastructure Data Science for fraud protection. Secure data using Oracle Data Safe and monitor the entire solution using Oracle Management Cloud (OMC).
 
 Here is an example of that Cloud Data Platform Architecture which can be extended with further Oracle services such as federation through Identity Cloud Service (IDCS) and Oracle Integration Cloud (OIC):
 

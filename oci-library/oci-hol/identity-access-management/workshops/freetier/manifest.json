@@ -7,7 +7,7 @@
       },
       {
           "title": "Introduction",
-          "filename": "./../../../intro/intro.md"
+          "filename": "./../../intro/intro.md"
       },
       {
           "title": "Lab 1: Identity Access Management",

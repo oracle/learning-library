@@ -31,7 +31,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 -   Additionally, feel free to explore ODA's capabilities by clicking on this link: [ODA Overview](https://www.oracle.com/application-development/cloud-services/digital-assistant/)
 
 
-## Part 0. Provisioning a Digital Assistant Instance
+## **Step 0:** Provisioning a Digital Assistant Instance
 
 1. Inside of the OCI Console, click on the top left menu icon.
 
@@ -68,9 +68,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 9. Note: feel free to learn more about Oracle Digital Assistant (ODA) by clicking on the following text link: [ODA Overview](https://www.oracle.com/application-development/cloud-services/digital-assistant/)
 
 
-## Part 1. Creating a Skill in Digital Assistant
-
-### **Step 1:** Re-sign in to your Oracle Cloud Account.
+## **Step 1:** Re-sign in to your Oracle Cloud Account.
 
 1. After selecting Service Console, you will be prompted to enter your Cloud Tenant Name.  Here, enter your **Cloud Account Name** associated with your account.  Note: This is not your username, this is the name of your cloud tenancy.
 
@@ -80,7 +78,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
     ![](./images/8.png " ")
 
-### **Step 2:** Import a Digital Assistant Skill
+## **Step 2:** Import a Digital Assistant Skill
 
 1. Once you are signed in, you will be taken to the Oracle Digital Assistant home page.  To begin, click the top left hamburger menu.
 
@@ -104,9 +102,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
     
 7. Your digital assistant is now imported! You are now ready to implement your APEX APIs.
 
-## Part 2. Implement REST APIs into Digital Assistant to access data from ADW
-
-### **Step 1:** Add REST API URLs to Digital Assistant Code
+## **Step 3:** Add REST API URLs to Digital Assistant Code
 
 1. After clicking your skill, navigate to the **Flows** tab on the left menu.
 
@@ -132,7 +128,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
     ![](./images/15.png " ")
 
-### **Step 3:** Test API Calls in Digital Assistant Conversation Flow
+## **Step 4:** Test API Calls in Digital Assistant Conversation Flow
 
 1. To test the APIs you just implemented, click on the Skill Tester('Play') button on the bottom left of the side menu.
 
@@ -156,7 +152,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributors** - Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Last Updated By/Date** - Jess Rein, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 

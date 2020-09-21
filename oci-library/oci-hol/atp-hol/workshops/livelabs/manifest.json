@@ -1,0 +1,19 @@
+{
+  "workshoptitle": "Dynamic Scaling Autonomous Transacation Processing Cloud Service",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction and Overview",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 2: Configuring Dynamic CPU Scaling in Autonomous Transaction Processing Service",
+            "filename": "./../../atp-hol/atp-hol.md",
+            "type": "livelabs"
+        }
+    ]
+}

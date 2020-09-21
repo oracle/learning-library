@@ -1,0 +1,19 @@
+{
+    "workshoptitle": "Auditing in an Autonomous Database",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+      {
+          "title": "Introduction and Overview",
+          "filename": "../../intro/intro.md"
+      },
+      {
+          "title": "Lab 1: Auditing in Autonomous Database",
+          "filename": "./../../auditing-in-autonomous-database/auditing-in-autonomous-database.md",
+          "type": "livelabs"
+      }
+    ]
+}

@@ -16,78 +16,36 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## **Step 1:** Prepare Terraform
+## **Step 1:** Prepare your terraform script for execution
 
-1. Login to the Oracle Cloud
+Terraform provides a reusable process for creating infrastructure.  In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.  This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
-2. To run our Terraform folder in the cloud, we will take advantage of OCI resource manager. It is a cloud service for executing terraform jobs without having to install anything locally. In order for resource manager to create resources for you, it needs to know a few key credentials on the OCI console.
+1.  There are two options for running the the workshop labs.  One uses the always free services (compute and ATP) and the other uses non-free services.  You may wish to use the always free version, but if you are already using your always free version, or multiple users are running the workshop in a single tenancy you will need to use the non-free version.  Download either the [free terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf-free.zip) or the [non-free terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf.zip).
 
-3. Click on the profile icon in the top right. Then click into the tenancy link.
-
-  ![](images/004.png " ")
-
-4. Copy the **Object Storage Namespace** in your notes.
-
-  ![](images/005.png " ")
-
-## **Step 2:** Prepare your terraform script for execution
-
-This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
-
-1. Download the terraform zip file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf.zip).  Then unzip it.
-
-2. Now create a private key (id\_rsa) and a public key (id\_rsa.pub). The public key is used when you are prompted for a SSH key when you create services, and the matching private key is used to access those services after creation. (eg: Cloud Developer Image).  Enter this in a command shell or terminal window.  By default the key is stored in the .ssh folder.  You can save elsewhere by specifying the path.
-
-  ````
-  <copy>ssh-keygen -b 2048 -t rsa</copy>
-  ````
-  ![](images/006.png " ")
-
-3.  Now open the ssh\_keys folder and note that it is empty. This is because we need to add our private key.
-
-  ![](images/007.png " ")
-
-4. Go to the location of your private key, then copy and paste it into your ssh\_keys folder.  Be sure the name is id_rsa (default when creating ssh keys).  This file name is used in the terraform script elsewhere.
-
-  ![](images/008.png " ")
-
-5. Now rezip your folder and remove the original zip.
-
-  ![](images/009.png " ")
-
-## **Step 3:** Create a Resource Manager Stack
-
-Terraform provides a reusable process for creating infrastructure.  In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.
-
-1. On the OCI console, click on the hamburger menu upper left and scroll down to **Solutions and Platform**. Hover over **Resource Manager** and click on **Stacks**.
+2. Log into the Oracle Cloud and on the OCI console, click on the hamburger menu upper left and scroll down to **Solutions and Platform**. Hover over **Resource Manager** and click on **Stacks**.
 
    ![](images/010.png " ")
 
-2. Make sure the **Compartment** on the left side says root. If not, then change it to root. Then, click **Create Stack**.
+3. Make sure the **Compartment** on the left side says root. If not, then change it to root. Then, click **Create Stack**.
 
   ![](images/011.png " ")
 
-3. Click on **Browse** and find the zipped **python4dev.zip** file. Then, you can give your **Stack** a name (or accept default), like **python4dev**. You can also give a description if you'd like, but it is not necessary. Make sure you are still in the root compartment, and using Terraform version 0.11.x. Then click **Next**.
+4. Click on **Browse** and find the zipped **python4atp-tf-free.zip** or **python4atp-tf.zip** file if using the non-free version. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
 
   ![](images/012.png " ")
 
-4. You will see a list of variables that will be used.  Start by entering your **vncpasswd** password value.  Save it for when logging in later.
-
-  ![](images/046.png " ")
-
-5. Next locate the **SSH\_PUBLIC\_KEY** variable and paste the public ssh key you created earlier in the given field.
+5. There are two required variables - **VNC password** and **Database password**.  Enter these noting that the database password must confirm to rules noted on the screen.  All other variables are defaulted in.  **IF others are running this workshop at the same time in the same tenancy you also need to make the database name and the object storage bucket unique**.  Otherwise select Next.
 
   ![](images/013.png " ")
 
-6. Next, populate the **OBJ\_STORE\_NAMESPACE** field with the **Object Storage Namespace** credential you saved earlier. Then click **Next**.
+
+8. Click **create**.  Note the screen will freeze for a few seconds before returning..be patient.
 
   ![](images/014.png " ")
 
-7. Finally, review your variables and make sure everything looks good. Then click **create**.  Note the screen will freeze for a few seconds before returning..be patient.
-
   ![](images/015.png " ")
 
-## **Step 4:** Create OCI Resources in Resource Manager
+## **Step 2:** Create OCI Resources in Resource Manager
 
 1. Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
@@ -111,7 +69,13 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/020.png " ")
 
-## **Step 5:** Prepare to Load Data
+  ![](images/004.png " ")
+
+6.  The job will take several minutes.  When it is complete scroll to the bottom of the log and note the IP address of the compute instance (copy this) and the private key.  Although we will not need the private key in this workshop, if you do need to access the compute image with ssh you will need this key.
+
+  ![](images/005.png " ")
+
+## **Step 3:** Prepare to Load Data
 
 1. Generate an Auth Token.  Navigate to **Identity** > **Users**.  
 
@@ -161,7 +125,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/032.png " ")
 
-## **Step 6:** Log into SQL Developer and Load Data into userid Alpha.
+## **Step 4:** Log into SQL Developer and Load Data into userid Alpha.
 
 1. Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Database** section, select **Autonomous Transaction Processing**.
 
@@ -289,25 +253,17 @@ END;
 
   ![](images/045.png " ")
 
-## **Step 7:** Connect to your Marketplace Developer Image
+## **Step 5:** Connect to your Marketplace Developer Image
 
 For more information about the Marketplace Developer Image [click here](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).
 
-1. Click on the hamburger menu, and navigate to **Core Infrastructure**. Hover over **Compute** and click on **Instances**.
+1. You will connect to your VNC image using VNC.  If you don't already have vnc viewer you can download it [here](https://www.realvnc.com/en/connect/download/viewer/).
 
-  ![](images/047.png " ")
-
-2. Locate your running image to identify the IP address. **If you cannot see your instance, make sure you are in the python4dev compartment.  You will first need to reboot the image to access the port 5901**.  Click on the menu on the far right to reboot.
-
-  ![](images/048.png " ")
-
-3. After the image has rebooted open a vnc viewer session.  If you don't already have vnc viewer you can download it [here](https://www.realvnc.com/en/connect/download/viewer/).
-
-4. Enter **&lt;your image IP&gt;:5901** into the browser and then press Enter.
+2. The IP address of the compute image is noted at the end of the stack apply job (previous step).  You can also obtain the IP address through the console (menu upper left - compute - select compute image).  Enter **&lt;your image IP&gt;:5901** into the browser and then press Enter.
 
   ![](images/049.png " ")
 
-5. Enter the **vncpasswd** and log in.  You will need to click through some screens initially.  Take the defaults.
+3. Enter the **vncpasswd** and log in.  You will need to click through some screens initially.  Take the defaults.
 
   ![](images/050.png " ")
 

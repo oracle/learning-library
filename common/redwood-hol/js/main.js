@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Suresh Mohan
-Last updated: 07-Aug-2020
-Version: 20.1.8
+Last updated: 25-Aug-2020
+Version: 20.1.9
 */
 
 "use strict";
@@ -180,7 +180,7 @@ function createShortNameFromTitle(title) {
         return "ErrorTitle";
     }
     const removeFromTitle = ["-a-", "-in-", "-of-", "-the-", "-to-", "-an-", "-is-", "-your-", "-you-", "-and-", "-from-", "-with-"];
-    const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*"];
+    const folderNameRestriction = ["<", ">", ":", "\"", "/", "\\\\", "|", "\\?", "\\*", "&"];
     let shortname = title.toLowerCase().replace(/ /g, '-').trim().substr(0, 50);
     $.each(folderNameRestriction, function(i, value) {
         shortname = shortname.replace(new RegExp(value, 'g'), '');

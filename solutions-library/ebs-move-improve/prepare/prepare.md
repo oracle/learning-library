@@ -3,7 +3,7 @@
 ## Introduction
 In this 30 mins exercise, you will prepare your tenancy for Oracle E-Business Suite. 
 
-Before starting this lab, please make sure to record your trial user name and password to Tenancy\_Admin\_User and Tenancy_Admin_Password in your Key-Data.txt file for ease of access.
+Before starting this lab, please make sure to record your trial user name and password to Tenancy\_Admin\_User and Tenancy\_Admin\_Password in your Key-Data.txt file for ease of access.
 
 ## Step 1. Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 
@@ -41,7 +41,7 @@ Before starting this lab, please make sure to record your trial user name and pa
 
         ii. Last Name: Enter Administrator
 
-        iii. User Name: Enter ebscm.admin
+        iii. User Name: Enter ebscm.admin@example.com
 
         iv. Email: Use the same email addressed you used when registering.
 
@@ -105,6 +105,8 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 9. Select **Confidential Application**. This takes you to the Add Confidential Application page.
 
+![](./images/CreateConfidentialApp.png " ")
+
 10. On the Details screen, enter the following:
 
     a. **Name**: Enter ``Oracle E-Business Suite Cloud Manager``
@@ -112,6 +114,8 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
     b. **Description**: Enter a description.
 
     c. Click **Next**.
+
+![](./images/Name_Description.png " ")
 
 11. On the Client screen:
 
@@ -127,21 +131,27 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     c. **Redirect URL**: ``<Cloud_Manager_URL>/cm/auth/callback``
 
-    See value for <Cloud_Manager_URL> in key-data.txt file.
+        i. Example: https://myebscm.ebshol.org:443/cm/auth/callback
 
     d. **Logout URL**: Leave this field empty.
 
     e. **Post-Logout Redirect URL**: ``<Cloud_Manager_URL>/cm/ui/index.html?root=login``
 
+        i. Example: https://myebscm.ebshol.org:443/cm/ui/index.html?root=login
+
     f. Select the **Introspect** option for **Allowed Operations**.
+
+    ![](./images/ClientConfig_P1.png " ")
 
     g. Under **Grant the client access to Identity Cloud Service Admin APIs**:
 
         i. Click Add.
 
-        ii. Select Identity Domain Administrator and Me in the pop-up window.
+        ii. Select Authenticator Client and Me in the pop-up window.
 
         iii. Click Add again.
+
+    ![](./images/ClientConfig_P2.png " ")
 
     h. Click **Next**.
     

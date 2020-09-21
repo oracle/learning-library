@@ -1,9 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Provisioning Autonomous Transaction Processing",
-            "description": "Get started using the Oracle Autonomous Transaction Processing (ATP) on Oracle Infrastructure Cloud (OCI). You will provision a new ATP database. Later you may connect to the database using Oracle SQL Developer or SQL Developer Web.",
-            "filename": "content.md"
-        }
-    ]
-}

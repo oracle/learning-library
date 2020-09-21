@@ -3,16 +3,18 @@
 ## Introduction
 Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-Service platform, built on enterprise-grade Oracle Cloud Infrastructure and powered by the Fn Project open source engine. Use Oracle Functions (sometimes abbreviated to just Functions) when you want to focus on writing code to meet business needs. You don't have to worry about the underlying infrastructure because Oracle Functions will ensure your app is highly-available, scalable, secure, and monitored. With Oracle Functions, you can deploy your code, call it directly or trigger it in response to events, and get billed only for the resources consumed during the execution.
 
-Estimated Time: 60 minutes
-
-### Key Points
-- We recommend using Chrome or Edge as the browser.
-- You will be asked to record some information during this workshop. It is recommended that you paste the information into a text file when prompted.
+Estimated Time: 75 minutes
 
 ### Prerequisites
 
-- Free Trial, LiveLabs or Paid Oracle Cloud account
-- Lab: Generate SSH Keys - Cloud Shell
+1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
+2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+4. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+5. [Connecting to a Compute Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+6. Free Trial, LiveLabs or Paid Oracle Cloud account
+7. Lab 1: Generate SSH Keys - Cloud Shell
+
 
 ## **Step 1**: Create a Virtual Cloud Network
 
@@ -63,7 +65,7 @@ Estimated Time: 60 minutes
 
     ![](images/HAApplication_008.png " ")
 
-2. Click **Create Instance**. Enter a name for your workshop and the compartment you used earlier to create your VCN. Select **Show Shape, Network and Storage Options**.
+2. Click **Create Instance**. Enter a name for your instance and select the compartment you used earlier to create your VCN. Select **Show Shape, Network and Storage Options**.
 
     ![](images/HAApplication_009.png " ")
 
@@ -75,7 +77,7 @@ Estimated Time: 60 minutes
 
     ![](images/HAApplication_013.png " ")
 
-    Select **Virtual Machine** and **VM.Standar2.1**. Click **Select Shape**.
+    Select **Virtual Machine** and **VM.Standard2.1**. Click **Select Shape**.
 
     ![](images/HAApplication_014.png " ")
 
@@ -161,11 +163,10 @@ Estimated Time: 60 minutes
 
     ![](images/Terraform_020.png " ")
 
-3. Next you will need to gather some information so that you can configure oci. First you will need your user OCID. Go to your profile page by clicking the icon in the top right and then click your username. Then click the copy button to copy your user OCID. Record your OCID in a text file because you will need it later.
-
+3. Next you will need to gather some information so that you can configure oci. First you will need your user OCID. Click the icon in the top right and click your username. Copy your user OCID. Record your OCID in a text file.
     ![](images/Terraform_021.png " ")
 
-4. Next you will need to get your tenancy OCID. Click the icon in the top right and then your tenancy. Then click the copy button to copy your tenancy OCID. Record your tenancy OCID because you will need it later.
+4. Next you will need to get your tenancy OCID. Click the icon in the top right and then your tenancy. Copy your tenancy OCID. Record your tenancy OCID because you will need it later.
 
     ![](images/Terraform_022.png " ")
 
@@ -326,7 +327,7 @@ Estimated Time: 60 minutes
 
     ![](images/Function_041.png " ")
 
-3. Type "FunctionApplicationPolicies" into the name section and type "Allow functions to work" in the description section. Click the **+ Another Statement**. Scroll down to the Policy statements section.
+3. Type "FunctionApplicationPolicies" into the name section and type "Allow functions to work" in the description section. Scroll down to the Policy statements section. Click the **+ Another Statement**. 
 
     ![](images/Function_042.png " ")
 
@@ -354,11 +355,10 @@ Estimated Time: 60 minutes
 
     ![](images/Function_044.png " ")
 
-4. From the OCI services menu click **Function** under **Developer Services**.
+4. Next we will create our first application. 
 
+5. From the OCI services menu click **Functions** under **Developer Services**.
     ![](images/Function_039.png " ")
-
-5. Next we will create our first application. Under the OCI services menu, click **Solutions and Platform**, click **Developer Services** and then **Functions**.
 
 6. Click **Create Application** and fill out the dialog box.
 
@@ -549,7 +549,7 @@ Congratulations! You've just created, deployed, and invoked your first function 
 
     ![](images/Function_034.png " ")
 
-4. From the OCI services menu click **Function** under **Developer Services**.
+4. From the OCI services menu click **Functions** under **Developer Services**.
 
     ![](images/Function_039.png " ")
 
@@ -577,7 +577,8 @@ Congratulations! You have successfully completed the lab.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead, Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Jaden McElvey, August 2020
+- **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead | Arabella Yao, Product Manager Intern, DB Product Management)
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+## See an issue?  
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

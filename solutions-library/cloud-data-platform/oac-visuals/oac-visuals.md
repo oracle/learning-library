@@ -26,9 +26,7 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
 -   To learn more about Oracle Analytics Cloud (OAC), feel free to explore the capabilities by clicking on this link: [OAC Overview](https://www.oracle.com/business-analytics/analytics-cloud.html)
 
 
-## Part 1. Visualize results in OAC
-
-### **STEP 1**: Create a Project
+## **STEP 1**: Create a Project
 
 1. From Oracle Analytics Cloud, click on the hamburger menu icon and click on **Data**. 
 
@@ -39,7 +37,7 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
     ![](./images/1.png " ")
 
 
-### **STEP 2**: Create a Visualization
+## **STEP 2**: Create a Visualization
 
 1. If you don't see all the columns, expand **Master_Table** on the left with the **small arrow** in order to see all the columns in the data set.
 

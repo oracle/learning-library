@@ -13,9 +13,8 @@ Watch the video below to get an overview of joins using Database In-Memory.
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 * Lab: Enabling In-Memory
 * Lab: Querying the IMC
 

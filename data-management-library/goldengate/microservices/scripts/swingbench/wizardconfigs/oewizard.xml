@@ -1,0 +1,197 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<WizardConfig Mode="InterActive" Name="Oracle Entry Install Wizard" xmlns="http://www.dominicgiles.com/swingbench/wizard">
+   <WizardSteps RunnableStep="5">
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step0"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step1"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step2"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step3"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step4"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step5"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step6"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step7"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step8"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.soedg.Step9"/>
+   </WizardSteps>
+   <DataGenerationConfigurationFiles>
+      <DataGenerationConfigurationFile Version="2.0" Valid="Pre">../sql/soe.xml</DataGenerationConfigurationFile>
+      <DataGenerationConfigurationFile Version="2.0" Valid="Post">../sql/soe2.xml</DataGenerationConfigurationFile>
+   </DataGenerationConfigurationFiles>
+   <ExecutableClass>com.dom.benchmarking.swingbench.wizards.soedg.OrderEntryGenerate</ExecutableClass>
+   <DefaultParameters>
+      <Parameter Key="datatablespacesexists" Value="true"/>
+      <Parameter Key="password" Value="soe"/>
+      <Parameter Key="username" Value="soe"/>
+      <Parameter Key="datafile" Value=""/>
+      <Parameter Key="userexists" Value="true"/>
+      <Parameter Key="connectionstring" Value="//oraclelinux/orcl"/>
+      <Parameter Key="connectiontype" Value="thin"/>
+      <Parameter Key="onlydropuser" Value="false"/>
+      <Parameter Key="operation" Value="create"/>
+      <Parameter Key="tablespace" Value="SOE"/>
+      <Parameter Key="dbausername" Value="sys as sysdba"/>
+      <Parameter Key="dbapassword" Value="welcome1"/>
+      <Parameter Key="output" Value="Verbose"/>
+   </DefaultParameters>
+    <SupportedModels>
+        <Compression>
+            <SupportedCompression>No Compression</SupportedCompression>
+            <SupportedCompression>Advanced Compression</SupportedCompression>
+        </Compression>
+        <Partitioning>
+            <SupportedPartitioning>No Partitioning</SupportedPartitioning>
+            <SupportedPartitioning>Hash Partitioning</SupportedPartitioning>
+        </Partitioning>
+        <Indexing>
+            <SupportedIndexing>No Indexes</SupportedIndexing>
+            <SupportedIndexing>Primary Keys Only</SupportedIndexing>
+            <SupportedIndexing>All Indexes</SupportedIndexing>
+        </Indexing>
+    </SupportedModels>
+   <BenchmarkVersion>2.0</BenchmarkVersion>
+   <ValidatorClass>com.dom.benchmarking.swingbench.wizards.soedg.OrderEntryValidator</ValidatorClass>
+   <SchemaDescription>
+      <TableList>
+         <ObjectName>ORDERS</ObjectName>
+         <ObjectName>ORDER_ITEMS</ObjectName>
+         <ObjectName>CUSTOMERS</ObjectName>
+         <ObjectName>WAREHOUSES</ObjectName>
+         <ObjectName>ORDERENTRY_METADATA</ObjectName>
+         <ObjectName>INVENTORIES</ObjectName>
+         <ObjectName>PRODUCT_INFORMATION</ObjectName>
+         <ObjectName>PRODUCT_DESCRIPTIONS</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">ADDRESSES</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">CARD_DETAILS</ObjectName>
+      </TableList>
+      <IndexList>
+         <ObjectName>PRD_DESC_PK</ObjectName>
+         <ObjectName>PROD_NAME_IX</ObjectName>
+         <ObjectName>PRODUCT_INFORMATION_PK</ObjectName>
+         <ObjectName>PROD_SUPPLIER_IX</ObjectName>
+         <ObjectName>PROD_CATEGORY_IX</ObjectName>
+         <ObjectName>INVENTORY_PK</ObjectName>
+         <ObjectName>INV_PRODUCT_IX</ObjectName>
+         <ObjectName>INV_WAREHOUSE_IX</ObjectName>
+         <ObjectName>ORDER_PK</ObjectName>
+         <ObjectName>ORD_SALES_REP_IX</ObjectName>
+         <ObjectName>ORD_CUSTOMER_IX</ObjectName>
+         <ObjectName>ORD_ORDER_DATE_IX</ObjectName>
+         <ObjectName>ORD_WAREHOUSE_IX</ObjectName>
+         <ObjectName>ORDER_ITEMS_PK</ObjectName>
+         <ObjectName>ITEM_ORDER_IX</ObjectName>
+         <ObjectName>ITEM_PRODUCT_IX</ObjectName>
+         <ObjectName>WAREHOUSES_PK</ObjectName>
+         <ObjectName>WHS_LOCATION_IX</ObjectName>
+         <ObjectName>CUSTOMERS_PK</ObjectName>
+         <ObjectName>CUST_EMAIL_IX</ObjectName>
+         <ObjectName>CUST_ACCOUNT_MANAGER_IX</ObjectName>
+         <ObjectName Version="2.0" Valid="Pre">CUST_LNAME_IX</ObjectName>
+         <ObjectName Version="2.0" Valid="Pre">CUST_UPPER_NAME_IX</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">CUST_FUNC_LOWER_NAME_IX</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">ADDRESS_PK</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">ADDRESS_CUST_IX</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">CARD_DETAILS_PK</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">CARDDETAILS_CUST_IX</ObjectName>
+      </IndexList>
+      <SequenceList>
+         <ObjectName>CUSTOMER_SEQ</ObjectName>
+         <ObjectName>ORDERS_SEQ</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">ADDRESS_SEQ</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">LOGON_SEQ</ObjectName>
+         <ObjectName Version="2.0" Valid="Post">CARD_DETAILS_SEQ</ObjectName>
+      </SequenceList>
+      <ViewList>
+         <ObjectName>PRODUCTS</ObjectName>
+         <ObjectName>PRODUCT_PRICES</ObjectName>
+      </ViewList>
+      <CodeList>
+         <ObjectName>ORDERENTRY</ObjectName>
+      </CodeList>
+   </SchemaDescription>
+   <SQLScripts>
+      <InitilisationScripts>
+         <SQLScript Version="1.0" Valid="Post" Topic="createtablespace">../sql/soedgcreatetablespace.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createuser">../sql/soedgcreateuser.sql</SQLScript>
+      </InitilisationScripts>
+      <PreDataGenerationScripts>
+         <VariableList>
+            <Variable>
+               <Key>compress</Key>
+               <Value/>
+            </Variable>
+            <Variable>
+               <Key>partitioncount</Key>
+               <Value>32</Value>
+            </Variable>
+            <Variable>
+               <Key>intervalrange</Key>
+               <Value>1000000</Value>
+            </Variable>
+            <Variable>
+               <Key>intervalmax</Key>
+               <Value>1000001</Value>
+            </Variable>
+         </VariableList>
+         <SQLScript Version="2.0" Valid="Pre" Topic="dropuserobjects">../sql/soedgdrop.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="dropuserobjects">../sql/soedgdrop2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Pre" Topic="createtables" Labels="No Partitioning">../sql/soedgcreatetables.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Pre" Topic="createtables" Labels="Hash Partitioning">../sql/soedgcreatepartitionedtables.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createtables" Labels="No Partitioning">../sql/soedgcreatetables2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createtables" Labels="Hash Partitioning">../sql/soedgcreatetableshash2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createtables" Labels="Composite Partitioning">../sql/soedgcreatetablescomposite2.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="createviews">../sql/soedgviews.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="generic">../sql/soedgsqlset.sql</SQLScript>
+      </PreDataGenerationScripts>
+      <PostDataGenerationScripts>
+         <VariableList>
+            <Variable>
+               <Key>parallelism</Key>
+               <Value>2</Value>
+            </Variable>
+            <Variable>
+               <Key>indextablespace</Key>
+               <Value>SOE</Value>
+            </Variable>
+            <Variable>
+               <Key>parallelclause</Key>
+               <Value>parallel 2</Value>
+            </Variable>
+            <Variable>
+               <Key>logging</Key>
+               <Value>nologging</Value>
+            </Variable>
+            <Variable>
+               <Key>analyzedegree</Key>
+               <Value>2</Value>
+            </Variable>
+            <Variable>
+               <Key>instancecount</Key>
+               <Value>1</Value>
+            </Variable>
+            <Variable>
+               <Key>username</Key>
+               <Value>SOE</Value>
+            </Variable>
+         </VariableList>
+         <SQLScript Version="2.0" Valid="Pre">../sql/soedganalyzeschema.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post">../sql/soedganalyzeschema2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Pre">../sql/soedgconstraints.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createconstraints" Labels="No Indexes,No Partitioning,Hash Partitioning,Composite Partitioning">../sql/soedgconstraints_none_2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createconstraints" Labels="All Indexes,No Partitioning,Hash Partitioning,Composite Partitioning">../sql/soedgconstraints2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createconstraints" Labels="Primary Keys Only,No Partitioning,Hash Partitioning,Composite Partitioning">../sql/soedgconstraints_pk_2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Pre">../sql/soedgindexes.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createindexes" Labels="No Indexes,No Partitioning,Hash Partitioning,Composite Partitioning">../sql/soedgindexes_none_2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createindexes" Labels="All Indexes,No Partitioning,Hash Partitioning,Composite Partitioning">../sql/soedgindexes2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post" Topic="createindexes" Labels="Primary Keys Only,No Partitioning,Hash Partitioning,Composite Partitioning">../sql/soedgindexes_pk_2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Pre">../sql/soedgsequences.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post">../sql/soedgsequences2.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Pre">../sql/soedgpackage.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post">../sql/soedgpackage2_header.sql</SQLScript>
+         <SQLScript Version="2.0" Valid="Post">../sql/soedgpackage2_body.sql</SQLScript>
+         <SQLScript>../sql/soedgsetupmetadata.sql</SQLScript>
+      </PostDataGenerationScripts>
+      <PurgeScripts>
+         <SQLScript Version="1.0" Valid="Post" Topic="droptablespace">../sql/soedroptablespace.sql</SQLScript>
+         <SQLScript Version="1.0" Valid="Post" Topic="dropuser">../sql/soedropuser.sql</SQLScript>
+      </PurgeScripts>
+   </SQLScripts>
+</WizardConfig>

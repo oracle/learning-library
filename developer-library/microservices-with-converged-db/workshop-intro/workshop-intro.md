@@ -14,6 +14,9 @@ You will create a highly scalable application that relies on Oracle Container En
 
 Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Provision a DevCS Instance](?lab=lab-1-setup-oci,-oke,-atp-cloud-shell).
 
+If you need any help please join the databasehome.slack.com (#microservices) channel.
+
+
 ## Want to Learn More?
 
 * [Multitenant Database – Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)

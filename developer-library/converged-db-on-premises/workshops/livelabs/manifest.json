@@ -1,0 +1,60 @@
+{
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "About the New features for Developers Workshop",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Verify Compute Instance",
+      "description": "Verify Setup of compute instance running 19c using Terraform script and Resource Manager",
+      "filename": "https://raw.githubusercontent.com/rfontcha/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 2: Setup SSH Tunnel",
+      "description": "Setup SSH port forwarding",
+      "publisheddate": "9/11/2020",
+      "filename": "https://raw.githubusercontent.com/rfontcha/learning-library/master/common/labs/setup-ssh-forwarding/setup-ssh-forwarding.md"
+    },
+    {
+      "title": "Lab 3: Start Database and Application",
+      "description": "Connect to Schema",
+      "filename": "../../setup/setup-livelabs.md"
+    },
+    {
+      "title": "Lab 4: NODE.JS",
+      "description": "NODE.JS Lab",
+      "filename": "../../nodejs/nodejs-livelabs.md"
+    },
+    {
+      "title": "Lab 5: JSON",
+      "description": "JSON Lab",
+      "filename": "../../json/json-livelabs.md"
+    },
+    {
+      "title": "Lab 6: XML",
+      "description": "XML Lab",
+      "filename": "../../xml/xml-livelabs.md"
+    },
+    {
+      "title": "Lab 7: Spatial",
+      "description": "Spatial Lab",
+      "filename": "../../spatial/spatial-livelabs.md"
+    },
+    {
+      "title": "Lab 8: Graph",
+      "description": "Graph Lab",
+      "filename": "../../graph/graph-livelabs.md"
+    },
+    {
+      "title": "Lab 9: Cross Data Types",
+      "description": "Labs that leverage data types across schemas",
+      "filename": "../../crossdatatype/crossdatatype-livelabs.md"
+    }
+  ]
+}

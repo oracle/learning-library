@@ -1,0 +1,154 @@
+# Copyright (c) 2018, 2020, Oracle Corporation and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
+# The version of this inputs file.  Do not modify.
+version: create-weblogic-sample-domain-inputs-v1
+
+# Port number for admin server
+adminPort: 7001
+
+# Name of the Admin Server
+adminServerName: admin-server
+
+# Unique ID identifying a domain.
+# This ID must not contain an underscope ("_"), and must be lowercase and unique across all domains
+# in a Kubernetes cluster.
+domainUID: sample-domain1
+
+# Determines which WebLogic Servers the operator will start up
+# Legal values are "NEVER", "IF_NEEDED", or "ADMIN_ONLY"
+serverStartPolicy: IF_NEEDED
+
+# Cluster name
+clusterName: cluster-1
+
+# Number of managed servers to generate for the domain
+configuredManagedServerCount: 5
+
+# Number of managed servers to initially start for the domain
+initialManagedServerReplicas: 2
+
+# Base string used to generate managed server names
+managedServerNameBase: managed-server
+
+# Port number for each managed server
+managedServerPort: 8001
+
+# Boolean indicating if production mode is enabled for the domain
+productionModeEnabled: true
+
+# WebLogic Server Docker image that the operator uses to start the domain.
+#
+# The create domain scripts generate a WebLogic Server Docker image with a domain home in it.
+# By default, the scripts tag the generated WebLogic server Docker image as either
+# `domain-home-in-image` or `domain-home-in-image-wdt` based on the `domainHomeImageBuildPath`
+# property, and use it to set the `image` element in the generated domain YAML file.
+#
+# If this property is set, the create domain scripts will use the value specified, instead of the
+# default value, to tag the generated image and set the `image` in the domain YAML file.
+#
+# A unique value is required for each domain that is created using the scripts.
+#
+# If you are running the sample scripts from a machine that is remote to the Kubernetes cluster where
+# the domain is going to be running, you need to set this property to the image name that is intended
+# to be used in a registry local to that Kubernetes cluster. You also need to push the `image` to
+# that registry before starting the domain using the `kubectl create -f` or `kubectl apply -f` command.
+# See README.md for more help.
+image: iad.ocir.io/aurablocks9/weblogic:latest
+
+# Image pull policy
+# Legal values are "IfNotPresent", "Always", or "Never"
+imagePullPolicy: Always
+
+# Name of the Kubernetes secret to access the Docker Store to pull the WebLogic Server Docker image
+# The presence of the secret will be validated when this parameter is enabled.
+#imagePullSecretName: secret1
+
+# Name of the Kubernetes secret for the Admin Server's username and password
+# The name must be lowercase.
+# If not specified, the value is derived from the domainUID as <domainUID>-weblogic-credentials
+weblogicCredentialsSecretName: sample-domain1-weblogic-credentials
+
+# Whether to include server .out to the pod's stdout.
+# The default is true.
+includeServerOutInPodLog: true
+
+# Specifies whether the log home is stored on the persistent volume.
+# If set to true, then you must specify the 'logHome', 'persistentVolumeClaimName'
+# and 'domainPVMountPath' properties.
+# The default is false.
+logHomeOnPV: false
+
+# The in-pod location for domain log, server logs, server out, and node manager log files
+# If not specified, the value is derived from the domainUID as /shared/logs/<domainUID>
+# This parameter is required if 'logHomeOnPV' is true.
+# Otherwise, it is ignored.
+logHome: /shared/logs/domain1
+
+# An (optional) in-pod location for data storage of default and custom file stores.
+# If not specified or the value is either not set or empty (e.g. dataHome: "") then the
+# data storage directories are determined from the WebLogic domain home configuration.
+#dataHome:
+
+# Port for the T3Channel of the NetworkAccessPoint
+t3ChannelPort: 30012
+
+# Public address for T3Channel of the NetworkAccessPoint.  This value should be set to the
+# kubernetes server address, which you can get by running "kubectl cluster-info".  If this
+# value is not set to that address, WLST will not be able to connect from outside the
+# kubernetes cluster.
+#t3PublicAddress: 
+
+# Boolean to indicate if the channel should be exposed as a service
+exposeAdminT3Channel: false
+
+# NodePort to expose for the admin server
+adminNodePort: 30701
+
+# Boolean to indicate if the adminNodePort will be exposed
+exposeAdminNodePort: true
+
+# Name of the domain namespace
+namespace: sample-domain1-ns
+
+# Java Option for WebLogic Server
+javaOptions: -Dweblogic.StdoutDebugEnabled=false
+
+# Name of the persistent volume claim
+# If not specified, the value is derived from the domainUID as <domainUID>-weblogic-sample-pvc
+# This parameter is required if 'logHomeOnPV' is true.
+# Otherwise, it is ignored.
+persistentVolumeClaimName: domain1-weblogic-sample-pvc
+
+# Mount path of the domain persistent volume.
+# This parameter is required if 'logHomeOnPV' is true.
+# Otherwise, it is ignored.
+domainPVMountPath: /shared
+
+# Base WebLogic binary image used to build the WebLogic domain image
+# The operator requires WebLogic Server 12.2.1.3.0 with patch 29135930 applied.
+# The WebLogic Docker image, `weblogic:12.2.1.3`, has all the necessary patches applied.
+# Refer to [WebLogic Docker images](../../../../../site/weblogic-docker-images.md) for details on how
+# to obtain or create the image.
+# See README.md for more help.
+domainHomeImageBase: iad.ocir.io/aurablocks9/domain-home-in-image:12.2.1.4-dev-200117
+
+# Location of the WebLogic "domain home in image" Docker image sample in the
+# `https://github.com/oracle/docker-images.git` project.
+# If not specified, use "./docker-images/OracleWebLogic/samples/12213-domain-home-in-image".
+# Another possible value is "./docker-images/OracleWebLogic/samples/12213-domain-home-in-image-wdt",
+# which uses WDT, instead of WLST, to generate the domain configuration.
+domainHomeImageBuildPath: ./docker-images/OracleWebLogic/samples/12213-domain-home-in-image
+
+# Uncomment and edit value(s) below to specify the maximum amount of 
+# compute resources allowed, and minimum amount of compute resources 
+# required for each server pod.
+# These are optional.                
+# Please refer to the kubernetes documentation on Managing Compute
+# Resources for Containers for details.
+#
+# serverPodMemoryRequest: "64Mi"
+# serverPodCpuRequest: "250m"
+# serverPodMemoryLimit: "1Gi"
+# serverPodCpuLimit: "1000m"
+

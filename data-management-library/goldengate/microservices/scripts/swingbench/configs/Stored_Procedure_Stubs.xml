@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SwingBenchConfiguration xmlns="http://www.dominicgiles.com/swingbench/config">
+    <Name>User Defined Stored Procedures</Name>
+    <Comment>Configuration used to call used defined code in PL/SQL</Comment>
+    <Connection>
+        <UserName>soe</UserName>
+        <Password>enc(cw4Xx9RgsQA=)</Password>
+        <ConnectString>//localhost/orcl</ConnectString>
+        <DriverType>Oracle jdbc Driver</DriverType>
+    </Connection>
+    <Load>
+        <NumberOfUsers>25</NumberOfUsers>
+        <MinDelay>10</MinDelay>
+        <MaxDelay>100</MaxDelay>
+        <QueryTimeout>0</QueryTimeout>
+        <MaxTransactions>0</MaxTransactions>
+        <RunTime>0:0</RunTime>
+        <LogonGroupCount>1</LogonGroupCount>
+        <LogonDelay>0</LogonDelay>
+        <LogOutPostTransaction>false</LogOutPostTransaction>
+        <WaitTillAllLogon>false</WaitTillAllLogon>
+        <StatsCollectionStart>0:0</StatsCollectionStart>
+        <StatsCollectionEnd>0:0</StatsCollectionEnd>
+        <ConnectionRefresh>0</ConnectionRefresh>
+        <TransactionList>
+            <Transaction>
+                <Id>Stored Procedure 1</Id>
+                <ShortName>SP1</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.storedprocedures.StoredProcedure1</ClassName>
+                <Weight>33</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Stored Procedure 2</Id>
+                <ShortName>SP2</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.storedprocedures.StoredProcedure2</ClassName>
+                <Weight>33</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Stored Procedure 3</Id>
+                <ShortName>SP3</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.storedprocedures.StoredProcedure3</ClassName>
+                <Weight>33</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Stored Procedure 4</Id>
+                <ShortName>SP4</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.storedprocedures.StoredProcedure4</ClassName>
+                <Weight>33</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Stored Procedure 5</Id>
+                <ShortName>SP5</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.storedprocedures.StoredProcedure5</ClassName>
+                <Weight>33</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Stored Procedure 6</Id>
+                <ShortName>SP6</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.storedprocedures.StoredProcedure6</ClassName>
+                <Weight>33</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+        </TransactionList>
+    </Load>
+    <Preferences>
+        <StartMode>manual</StartMode>
+        <Output>swingbench</Output>
+        <JumpToEvents>true</JumpToEvents>
+        <TimingsIncludeSleep>false</TimingsIncludeSleep>
+        <TimingsIn>milliseconds</TimingsIn>
+        <StatisticsLevel>simple</StatisticsLevel>
+        <OutputFile>results.xml</OutputFile>
+        <AllowedErrorCodes/>
+        <RefreshRate>1</RefreshRate>
+        <OverviewCharts>
+            <OverviewChart>
+                <Name>Transactions Per Minute</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Transactions Per Second</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Response Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>CPU</Name>
+                <MinimumValue>0.0</MinimumValue>
+                <MaximumValue>100.0</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Disk</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Users</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Database Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>DML</Name>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+        </OverviewCharts>
+    </Preferences>
+</SwingBenchConfiguration>

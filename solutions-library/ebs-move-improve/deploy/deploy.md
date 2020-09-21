@@ -31,33 +31,23 @@ You will now create a Resource Manager Stack that will perform the following tas
 
 * Configure Oracle E-Business Suite Cloud Manager to work with your OCI Tenancy
 
-1. In the Oracle Cloud Infrastructure console navigation menu, select **Resource Manager** and then click **Stacks**.
+1. In the Oracle Cloud Infrastructure console navigation menu, under **Solutions and Platform** select **Marketplace** and then click **Applications**.
 
-![](./images/1.png "")
+![](./images/findMarketplaceApplication.png " ")
 
-2. In the **Compartment** drop-down list on the left side of your screen, select your root compartment.
+2. Find and click **Oracle E-Business Suite Cloud Manager Stack for Demos**.
 
-![](./images/2.png "")
+3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-for-Demos-<date>``` is selected.
 
-3. Click **Create Stack**.
+4. In the Compartment drop-down list, select the parent compartment of the compartment where the Oracle E-Business Suite Cloud Manager Compute instance will be deployed. For example, mycompanytenancy(root).
 
-![](./images/3.png "")
+![](./images/Compartment&Terms.png " ")
 
-4. In the Create Stack dialog box:
+5. Review and accept the Terms of Use.
 
-    a. Click the Browse link to upload the Terraform zip file (found at ``Desktop/HOL-EBS/Resource Manager/deploy-configure-EBS-CM.zip``).
+6. Click Launch Stack.
 
-    b. Enter ``deploy-ebscm-hol-stack`` in the NAME field.
-
-    c. Enter a description.
-
-    d. Verify the target compartment (and change if necessary). 
-
-    e. Click **Next**.
-
-![](./images/4.png "")
-
-5. On the Configure Variables screen, enter the following values:
+7. On the Configure Variables screen, enter the following values:
 
     a. Resource Prefix: ``ebshol``
 
@@ -69,7 +59,7 @@ You will now create a Resource Manager Stack that will perform the following tas
 
     e. Make sure **Create New REST API key** is selected
 
-    ![](./images/5.png "")
+    ![](./images/5.png " ")
 
     f. Enter ``myebscm.ebshol.org`` for Server host for EBS Cloud Manager Login URL
 
@@ -81,7 +71,7 @@ You will now create a Resource Manager Stack that will perform the following tas
 
     j. Choose the availability domain that ends in **-1** from the list under **EBS Cloud Manager Availability Domain**.
 
-    ![](./images/6.png "")
+    ![](./images/6.png " ")
 
     k. Leave Custom CIDR Ranges unchecked
 
@@ -89,31 +79,31 @@ You will now create a Resource Manager Stack that will perform the following tas
 
     m. Enter the values from ``KeyData.txt`` file - **IDCS Client ID**, **IDCS Client Secret** and **IDCS Client Tenant** under the IDCS Details section as shown       in the screen below.
 
-    ![](./images/7.png "")
+    ![](./images/7.png " ")
 
-6. On the Review screen, verify the information and click **Create**.
+8. On the Review screen, verify the information and click **Create**.
 
-![](./images/8.png "")
+![](./images/8.png " ")
 
-7. This takes you to the Stack Details page for your newly created stack. On this page, click the Terraform Actions drop-down list and select **Apply**.
+9. This takes you to the Stack Details page for your newly created stack. On this page, click the Terraform Actions drop-down list and select **Apply**.
 
-![](./images/9.png "")
+![](./images/9.png " ")
 
-8. In the Apply dialog window, leave the default settings as-is and click **Apply**.
+10. In the Apply dialog window, leave the default settings as-is and click **Apply**.
 
-![](./images/10.png "")
+![](./images/10.png " ")
 
-9. On the Job Details page, you will see the job status which will cycle through **Accepted, In Progress**, and **Succeeded**.
+11. On the Job Details page, you will see the job status which will cycle through **Accepted, In Progress**, and **Succeeded**.
 
-![](./images/11.png "")
+![](./images/11.png " ")
 
 ``After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.``
 
-10. On the **Application Information** tab you will find the details related to the EBS Cloud Manager instance and Load balancer.
+12. On the **Application Information** tab you will find the details related to the EBS Cloud Manager instance and Load balancer.
 
-![](./images/12.png "")
+![](./images/12.png " ")
 
-11. Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``Key-Data.txt``. These variables are needed for the remainder of the procedures in this lab.
+13. Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``Key-Data.txt``. These variables are needed for the remainder of the procedures in this lab.
 
 ## Step 3. Log in to Oracle E-Business Suite Cloud Manager
 
@@ -135,7 +125,7 @@ Edit the local ``hosts`` file on your laptop and add an entry.
     
    v. Find the **file hosts**
 
-   ![](./images/13.png "")
+   ![](./images/13.png " ")
 
    vi. In the hosts file, scroll down to the end of the content.
 
@@ -155,11 +145,11 @@ Edit the local ``hosts`` file on your laptop and add an entry.
 
 Using the Login URL generated previously, log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials as found in your ``Key-Data.txt`` file.
 
-![](./images/14.png "")
+![](./images/14.png " ")
 
 Once logged in, you are on the **Environments page**.
 
-![](./images/15.png "")
+![](./images/15.png " ")
 
 You may now proceed to the next lab.
 

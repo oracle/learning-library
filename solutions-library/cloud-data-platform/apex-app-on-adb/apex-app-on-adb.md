@@ -30,9 +30,7 @@ Watch this video to learn more about Autonomous Database.
 -   Additionally, to see an example of what kind of sites and apps are possible to quickly create with APEX, check out a showcase by clicking on this link: [Built with APEX](https://www.builtwithapex.com/)
 
 
-## Part 1. Provisioning an ADW Instance
-
-### **STEP 1**: Create an ADW Instance
+## **STEP 1**: Create an ADW Instance
 
 1. If after logging in, you are taken to the screen below, click on **Infrastructure Dashboard**.  If you do not see the screen below when you login, skip this step and move on to the next step below.
 
@@ -72,7 +70,7 @@ Watch this video to learn more about Autonomous Database.
 
     ![](./images/Part_1_Step_2_6.png " ")
 
-### **STEP 2**: Download the Connection Wallet
+## **STEP 2**: Download the Connection Wallet
 As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW service console. In this case, we will be showing you how to download the wallet file from the instance's details page. This wallet file can be used with a local version of software such as SQL Developer as well as others. It will also be used later in the lab so make note of where it is stored.
 
 1. Go back to the Oracle Cloud Console and open the Instances screen. Find your database, click the action menu and select **DB Connection**.
@@ -88,9 +86,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/10.png " ")
 
-## Part 2. Creating an App with APEX
-
-### **STEP 1**: Access APEX
+## **STEP 3**: Access APEX
 
 1. From the Autonomous Data Warehouse instance details page, click on **Service Console**.
 
@@ -108,7 +104,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_1_4.png " ")
 
-### **STEP 2**: Create a Workspace and User
+## **STEP 4**: Create a Workspace and User
 
 1. You will now be on the Welcome page. Click **Create Workspace**.
 
@@ -124,7 +120,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_2_2.png " ")
 
-### **STEP 3**: Sign in as the New User
+## **STEP 5**: Sign in as the New User
 
 1. After your Workspace is created, sign out of ADMIN by clicking **ADMIN**.
 
@@ -142,7 +138,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_3_4.png " ")
 
-### **STEP 4**: Load Data through APEX
+## **STEP 6**: Load Data through APEX
 
 1. Click on **SQL Workshop**.
 
@@ -207,7 +203,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 You have now changed the data type for the Date of Sale column from a Date to a Timestamp.  When the data was loaded into APEX, this column was automatically configured as a Date data type, only including the calendar date of the sale.  When we switch this column to a Timestamp data type, we not only get the calendar date of the sale, but also the time of day that the sale occurred. This will come into play when we run our Machine Learning models in Lab 200.
 
 
-### **STEP 5**: Create an App in APEX
+## **STEP 7**: Create an App in APEX
 
 1. You will download another data file from this workshop to create your APEX app. You can download it by clicking on the following text link: [Download ApexApp.sql here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8WEdglMP5bCOZLKBK5hMGY4-mnnSh7ZbzJMPn0lCh6Y/n/c4u03/b/solutions-library/o/ApexApp.sql). Then, open your browser window again back to the APEX page.
 
@@ -239,7 +235,7 @@ You have now changed the data type for the Date of Sale column from a Date to a 
 
 Congratulations. You have created an app!
 
-### **STEP 6**: Test the App
+## **STEP 8**: Test the App
 
 1. Let's begin to test the app. Click on **Run Application**.
 

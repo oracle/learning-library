@@ -25,7 +25,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 ### Extra Resources
 -   To learn more about Oracle Analytics Cloud (OAC), feel free to explore the capabilities by clicking on this link: [OAC Overview](https://www.oracle.com/business-analytics/analytics-cloud.html)
 
-## Part 0. Create an OAC Instance (*ONLY* if you do not already have one)
+## **Step 0:** Create an OAC Instance (*ONLY* if you do not already have one)
 
 -   *Note*: If you already have an OAC instance provisioned, please skip "Part 0" and proceed to "Part 1" of this lab guide.
 
@@ -55,9 +55,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
    ![](./images/0g.png " ")
 
-## Part 1. Navigate to an OAC Instance
-
-### **STEP 1**: Go to the Analytics Cloud Instance Page
+## **STEP 1**: Navigate to an OAC Instance
 
 1. If you are not already signed in, sign in to cloud.oracle.com with your account credentials as done in the previous labs.
 
@@ -73,10 +71,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/0g.png " ")
 
-
-## Part 2. Connect OAC to ADW
-
-### **STEP 1**: Connect OAC to ADW
+## **STEP 2**: Connect OAC to ADW
 
 1. In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Connection** in the popped menu.
 
@@ -106,10 +101,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/0k.png " ")
 
-
-## Part 3. Import Datasets from ADW to OAC
-
-### **STEP 1**: Configure a Database Connection
+## **STEP 3**: Configure a Database Connection
 
 1. In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -123,7 +115,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/3.png " ")
 
-### **STEP 2**: Import the Datasets to OAC
+## **STEP 4**: Import the Datasets to OAC
 
 Now we will import the following tables to OAC: 
 > OOW\_DEMO\_STORES, OOW\_DEMO\_REGIONS, OOW\_DEMO\_ITEMS, and OOW\_DEMO\_SALES_HISTORY
@@ -152,7 +144,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 6. You are done with adding the first table. 
 
-### **STEP 3**: Add Additional Datasets
+## **STEP 5**: Add Additional Datasets
 
 1. Repeat "Part 3 STEP 1" and "Part 3 STEP 2" for the remaining 3 tables mentioned above
 > (OOW\_DEMO\_REGIONS, OOW\_DEMO\_ITEMS, and OOW\_DEMO\_SALES\_HISTORY tables ).
@@ -165,9 +157,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/10.png " ")
 
-## Part 4. Create a Data Flow
-
-### **STEP 1**: Add and Join the Datasets
+## **STEP 6**: Add and Join the Datasets
 
 1. First, navigate back to the Oracle Analytics Cloud home page. Once you are back on the home page, click on **Create**, then on **Data Flow** to create a new data flow. 
 
@@ -227,7 +217,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 15. Now the 4 Data Sets have been joined.
 
-### **STEP 2**: Select Columns
+## **STEP 7**: Select Columns
 
 1. Since we are done adding the Join steps, click on the **Circled Plus** button again and then on **Select Columns** to help finalize the columns we want to keep.
 
@@ -242,7 +232,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 4. We are done with selecting our columns. 
 
-### **STEP 3**: Rename Columns
+## **STEP 8**: Rename Columns
 
 1. Let's rename some columns. Click on the **Circled Plus** button again and then on **Rename Columns** to help finalize the columns we want.
 
@@ -260,7 +250,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 6. We are done renaming columns. 
 
-### **STEP 4**: Add Columns
+## **STEP 9**: Add Columns
 
 1. Let's finish constructing our master table by adding columns. Do this by clicking on the **Circled Plus** button again and then on **Add Columns** to help finalize the columns.
 

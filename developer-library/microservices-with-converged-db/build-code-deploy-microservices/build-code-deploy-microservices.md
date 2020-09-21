@@ -28,12 +28,9 @@ You will also clone a GitHub repository.
 
 2. Source the `.bashrc` file with the following command.
 
-   ```
+  ```
   <copy>source ~/.bashrc</copy>
-   ```
-
-  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
-
+  ```
 
 ## **STEP 2**: Build and push the Docker images
 
@@ -74,7 +71,8 @@ You will also clone a GitHub repository.
    ```
       <copy>source ~/.bashrc</copy>
    ```
-      ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
+      
+  ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
 3.  Change directory into `/frontend-helidon` folder:
 
@@ -119,7 +117,7 @@ You will also clone a GitHub repository.
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
 8. Check that the load balancer service is running, and write down the external IP
-    address and port.
+    address and port. 
 
     ```
     <copy>kubectl get services --all-namespaces</copy>

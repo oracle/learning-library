@@ -1,0 +1,38 @@
+{
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
+      "filename": "./../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Verify Setup",
+      "description": "Verify compute instance is setup and EM 13.3 with pre-configured database targets are up",
+      "publisheddate": "9/09/2020",
+      "filename": "./../../verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 2: Setup SSH Tunnel",
+      "description": "Setup SSH port forwarding",
+      "publisheddate": "9/11/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-ssh-forwarding/setup-ssh-forwarding.md"
+    },
+    {
+      "title": "Lab 3: Database Configuration and Compliance Management",
+      "description": "This lab provides an overview of Configuration and Compliance Management features in. It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
+      "publisheddate": "7/16/2020",
+      "filename": "./../../em-configuration-compliance-management/em-configuration-compliance-management-livelabs.md"
+    },
+    {
+      "title": "Appendix: Frequently Asked Questions (FAQ)",
+      "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
+      "publisheddate": "8/12/2020",
+      "filename": "./../../faq/faq.md"
+    }
+  ]
+}

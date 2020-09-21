@@ -1,0 +1,89 @@
+{
+    "workshop": {
+        "title": "GoldenGate For BigData Workshop",
+        "description": "These labs will give you a basic understanding of Goldengate for Bigdata Handlers.",
+        "interactive":"https://launch.oracle.com/?dbcs",
+        "versions": [
+          {
+            "name": "Instructor Led",
+            "description": "An in-person workshop with an Oracle instructor",
+            "imageUrl": "https://oracle.github.io/learning-library/workshops/common-content/images/common/Instructor Led.png"
+          },
+          {
+            "name": "Self-Guided",
+            "description": "Individual self-guided learning",
+            "imageUrl": "https://oracle.github.io/learning-library/workshops/common-content/images/common/Self-Service.png"
+          }
+        ],
+        "labs": [
+            {
+                "number": "1",
+                "filename": "GGBDWorkshop_GG4BD_110.md",
+                "title": "README First",
+                "description": "Step-by-step workshop instructions",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+                "number": "2",
+                "filename": "GGBDWorkshop_GG4BD_210.md",
+                "title": "Lab 100: Provision Golden Gate for Big Data",
+                "description": "Steps ",
+                "labels": {"version": "Instructor Led"}
+            },
+           
+            {
+                "number": "3",
+                "filename": "GGBDWorkshop_GG4BD_310.md",
+                "title": "Lab 3 – MySQL --> HDFS (delimited text format)",
+                "description": "lab",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+                "number": "4",
+                "filename": "GGBDWorkshop_GG4BD_410.md",
+                "title": "Lab 4 – MySQL --> Hive (Avro format)",
+                "description": "lab 400",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+                "number": "5",
+                "filename": "GGBDWorkshop_GG4BD_510.md",
+                "title": "Lab 5: MySQL --> HBase",
+                "description": "lab",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+                "number": "6",
+                "filename": "GGBDWorkshop_GG4BD_610.md",
+                "title": "Lab 6 – MySQL --> Kafka (Json format)",
+                "description": "lab",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+                "number": "7",
+                "filename": "GGBDWorkshop_GG4BD_710.md",
+                "title": "Lab 7: MySQL --> Cassandra",
+                "description": "lab",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+                "number": "8",
+                "filename": "GGBDWorkshop_GG4BD_910.md",
+                "title": "Lab 8: Appendix A – Handler Configuration Properties",
+                "description": "lab",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+                "number": "9",
+                "filename": "GGBDWorkshop_GG4BD_910.md",
+                "title": "Lab 9 - MySQL to Oracle using JDBC",
+                "labels": {"version": "Instructor Led"}
+            },
+            {
+           
+            },
+            {
+        
+        ]
+    }
+}

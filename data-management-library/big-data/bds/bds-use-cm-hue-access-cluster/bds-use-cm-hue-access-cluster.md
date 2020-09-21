@@ -133,6 +133,7 @@ In this step, you will use CM to access the cluster. In an HA-cluster, CM runs o
 
     ![](./images/roles-table.png " ")
 
+
     **Note:**    
     You can hover over any icon in the table to display the name of the service or gateway.
 
@@ -153,6 +154,7 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
     ```
     https://<ip-address>:8888
     ```
+
     **Note:**    
     In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **second utility node** in your cluster, **`traininun1`**, which you created in the previous lab.
 
@@ -164,11 +166,11 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
 
 3. On the Hue Login screen, enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**.
 
-**Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
+    **Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
 
-  ![](./images/hue-login-page.png " ")
+    ![](./images/hue-login-page.png " ")
 
-  The **Hue Editor** page is displayed.
+    The **Hue Editor** page is displayed.
 
   ![](./images/hue-home-page.png " ")
 
@@ -200,6 +202,6 @@ In this step, you will use Hue to access the cluster. In an HA-cluster, Hue runs
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, August 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

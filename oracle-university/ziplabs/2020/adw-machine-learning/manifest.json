@@ -1,9 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Getting Started With Oracle Machine Learning Notebooks",
-            "description": "Get started with the Oracle Machine Learning (OML) notebook application provided through ADW. This browser-based application provides a web interface to run SQL queries and scripts, which can be grouped together within a notebook.",
-            "filename": "content.md"
-        }
-    ]
-}

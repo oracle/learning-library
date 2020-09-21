@@ -7,11 +7,11 @@
       },
       {
           "title": "Introduction",
-          "filename": "./../../../intro/intro.md"
+          "filename": "./../../intro/intro.md"
       },
       {
           "title": "Lab 1: Create an Object Storage Service",
-          "filename": "./../../object-storage/object-storage.md"
+          "filename": "./../../object-storage.md"
       }
     ]
 }

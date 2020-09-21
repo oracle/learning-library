@@ -23,13 +23,16 @@ Benefits with Fleet Maintenance:
 - You have completed:
     - Lab: Generate SSH Keys
     - Lab: Environment Setup
-- EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
-    - e.g: *https://111.111.111.111:7803/em*  
 - OMS super-user Credentials:
-      - Username: **sysman**
-      - password: **welcome1**
+    - Username: **sysman**
+    - password: **welcome1**
+- EM13c Host Public IP address
+- OMS Console URL:
+````
+<copy>https://<EM13c Host Public IP address>:7803/em</copy>
+e.g: https://111.888.111.888:7803/em
+````
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -51,7 +54,7 @@ Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g
   ````
 
 ### Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
+Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -520,9 +523,10 @@ Where:
 * Force Listener registration and confirm that it is now servicing “*finance.subnet.vcn.oraclevcn.com*”
 
 ````
-<copy>sqlplus '/as sysdba'
+<copy>sqlplus '/as sysdba'<<EOF
 alter system register;
-exit</copy>
+EOF
+</copy>
 ````
 * Check status of LISTENER\_1525
 
@@ -555,13 +559,10 @@ Thank you!
 
 ## Acknowledgements
   - **Authors**
-      - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+      - Rene Fontcha, Master Principal Solutions Architect, NA Technology
       - Shefali Bhargava, Oracle Enterprise Manager Product Management
-  - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Platform Specialist, NA Technology
+  - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
   - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Refer to the FAQ at the bottom of the right-hand menu. While you cannot use the normal Oracle Support channel to raise a ticket for getting technical support, the vibrant [Enterprise Manager Community Forum](https://community.oracle.com/community/groundbreakers/enterprise_manager) stands to help.
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

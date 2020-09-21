@@ -312,7 +312,6 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
      ![](images/RESERVEDIP_HOL0017.PNG " ")
 
-
 5. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will
 appear.
 

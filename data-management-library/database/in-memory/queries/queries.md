@@ -12,9 +12,8 @@ Watch a preview video of querying the In-Memory Column Store
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 * Lab: Enabling In-Memory
 
 

@@ -35,7 +35,8 @@ You will need the following in order to complete this workshop:
 
 ## Setup Lab Workstation
 
-In this section, you will prepare your workstation with the required files for the hands-on lab exercises. Your instructor will provide you a USB flash drive or use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mAWDPAT5jDjg34fUnSHtu-u_ztJ0_D9igCl1Bpoi7_E/n/orasenatdecanational01/b/EBS-Folder/o/EBSHOL-EBS.zip) link to download the files.
+In this section, you will prepare your workstation with the required files for the hands-on lab exercises. 
+Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mAWDPAT5jDjg34fUnSHtu-u_ztJ0_D9igCl1Bpoi7_E/n/orasenatdecanational01/b/EBS-Folder/o/EBSHOL-EBS.zip) link to download the files.
 
 Proceed to the appropriate section, depending on your workstation operating system:
 
@@ -46,38 +47,29 @@ Using a Windows Workstation
 
 1. Create a folder named HOL-EBS on the desktop of your workstation.
 
-2. Perform either step (a) or (b):
+2. From the download link
 
-    a. Plug in the USB flash drive into your workstation.
+    a. Download the HOL zip file.
 
-    b. If you are using the download link:
-
-        i. Download the HOL zip file into a temporary location (such as in \Documents\HOL-Download).
-
-        ii. Unzip the files.
-
-3. Open Windows Explorer and navigate to the mounted USB flash drive or unzipped HOL files.
-
-4. Copy the directory HOL-EBS and all files from the USB flash drive or temporary unzipped file location and paste to the Desktop\HOL-EBS folder on your workstation.
+    b. Open Windows Explorer and nagivate to the downloaded zip file. 
+        
+    c. Move the zip file to your folder Desktop/HOL-EBS 
+        
+    d. Unzip the files.
 
 Using a Mac Workstation
 
 1. Create a folder named HOL-EBS on the desktop of your workstation.
 
-2. Perform either step (a) or (b):
+2. From the download link:
 
-    a. Plug in the USB flash drive into your workstation.
+   a. Download the HOL zip file.
 
-    b. If you are using the download link:
-
-        i. Download the HOL zip file into a temporary location (such as in /Documents/HOL-Download).
-
-        ii. Unzip the files.
+    b. Open Finder and nagivate to the downloaded zip file. 
         
-3. Open Finder and navigate to the mounted USB flash drive or unzipped HOL files.
-
-4. Copy the directory HOL-EBS and all files from the USB flash drive of temporary unzipped file location and paste to the Desktop/HOL-EBS folder on your workstation.
-
+    c. Move the zip file to your folder Desktop/HOL-EBS 
+        
+    d. Unzip the files. 
 
 ## Review and Open Hands-On Lab Files
 The following table describes the directories and files that were copied to the Desktop\HOL-EBS directory on your workstation:
@@ -85,46 +77,17 @@ The following table describes the directories and files that were copied to the 
 Table S-1
 | Name          | Description       | 
 | ------------- |:-------------:|
-| /documents/EBS-HOL-Workbook-January-2020.pdf     | A digital copy of this workbook, Introduction to Oracle E-Business Suite Cloud Manager Hands-On Lab. |
+| /Documents/EBS-HOL-Workbook-June-2020.pdf     | A digital copy of this workbook, Introduction to Oracle E-Business Suite Cloud Manager Hands-On Lab. |
 | /documents/Key-Data.txt      | The document used to capture key data items needed throughout the lab.     |
-| /artifacts/oci-api-keys      | Keys used to authenticate API calls to Oracle Cloud Infrastructure.
+| /artifacts/terraform/Deploy-And-Configure-EBS-CM.zip    | Set of Terraform scripts which automate the creation of the infrastructure required to deploy Oracle E-Business Suite Cloud Manager. |
 | /artifacts/ssh-keys    | Keys used to establish an SSH session with Oracle E-Business Suite Cloud Manager Compute instance. |
-| /artifacts/terraform     | Set of Terraform scripts which automate the creation of the infrastructure required to deploy Oracle E-Business Suite Cloud Manager.|
-
-## Terminology
-
-The following terms are commonly employed in Oracle E-Business Suite cloud operations and used throughout our documentation:
-
-**Availability Domain** – One or more data centers located within a region.
-
-**Bucket** – A logical container used by Object Storage for storing your data and files. A bucket can contain an unlimited number of objects.
-
-**Compartments** – Allows you to organize and control access to your cloud resources. A compartment is a collection of related resources (such as instances, virtual cloud networks, block volumes) that can be accessed only by certain groups.
-
-**Oracle E-Business Suite Cloud Backup Module** – The Oracle E-Business Suite Cloud Backup Module is a stand-alone tool that interviews the user to establish settings, and then uses those settings to back up an Oracle E-Business Suite environment to Oracle Cloud Infrastructure Object Storage.
-
-**Oracle E-Business Suite Cloud Manager** - Oracle E-Business Suite Cloud Manager is a graphical user interface used for creating, managing, and configuring Oracle E-Business Suite environments on Oracle Cloud Infrastructure. Oracle E-Business Suite Cloud Manager can be used with the Oracle E-Business Suite Cloud Backup Module to lift and shift or clone environments from on-premises to Oracle Cloud Infrastructure.
-
-**EBS Cloud Manager infrastructure** – Virtual network resources, compute resources, and policies required to run EBS Cloud Manager on Oracle Cloud Infrastructure.
-
-**EBS Sandbox Virtual Cloud Network (VCN)** – Networking and compute resources required to run EBS on Oracle Cloud Infrastructure. The EBS Sandbox VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle E-Business Suite on OCI.
-
-**Oracle Cloud Infrastructure Load Balancing Service** - The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address, and provisioned bandwidth.
-
-**Oracle Cloud Infrastructure (OCI)** – Combines the elasticity and utility of public cloud with the granular control, security, and predictability of on-premises infrastructure to deliver high-performance, high availability, and cost-effective infrastructure services.
-
-**Region** – Oracle Cloud Infrastructure are hosted in regions, which are located in different metropolitan areas. Regions are completely independent of other regions and can be separated by vast distances – across countries or even continents. Generally, you would deploy an application in the region where it is most heavily used, since using nearby resources is faster than using distant resources.
-
-**Tenancy** – When you sign up for Oracle Cloud Infrastructure, Oracle creates a tenancy for your company, which is a secure and isolated partition within Oracle Cloud Infrastructure where you can create, organize, and administer your cloud resources.
-
-**Virtual Cloud Network (VCN)** – A virtual version of a traditional network – including subnets, route tables, and gateways – on which your instances run. A cloud network resides within a single region, but can cross multiple availability domains.
 
 ## Workshop Overview
 
 The following figure (W-1) outlines the workshop architecture.
 Figure W-1: Workshop Architecture
 
-![](./images/1.png "")
+![](./images/1.png " ")
 
 This workshop uses the following components:
 
@@ -151,19 +114,36 @@ This workshop uses the following components:
 The following figure (W-2) describes the exercises that you will perform in this workshop.
 Figure W-2: Storyboard
 
-![](./images/2.png "")
+![](./images/2.png " ")
 
-## Accounts for Hands-On Lab Exercises
+## Appendix
+### Terminology
 
-The following table provides a list of user names, personas, and related roles that will be used throughout the hands-on lab.
+The following terms are commonly employed in Oracle E-Business Suite cloud operations and used throughout our documentation:
 
-Table W-1: User Names and Personas
+**Availability Domain** – One or more data centers located within a region.
 
-| User Name          | Application       |  Description |
-| ------------- |:-------------:|:-------------:|
-|  < trial user name> | OCI service console login | An IT administrator in your organization responsible for managing the EBS environments|
+**Bucket** – A logical container used by Object Storage for storing your data and files. A bucket can contain an unlimited number of objects.
 
-You may now proceed to the next lab.
+**Compartments** – Allows you to organize and control access to your cloud resources. A compartment is a collection of related resources (such as instances, virtual cloud networks, block volumes) that can be accessed only by certain groups.
+
+**Oracle E-Business Suite Cloud Backup Module** – The Oracle E-Business Suite Cloud Backup Module is a stand-alone tool that interviews the user to establish settings, and then uses those settings to back up an Oracle E-Business Suite environment to Oracle Cloud Infrastructure Object Storage.
+
+**Oracle E-Business Suite Cloud Manager** - Oracle E-Business Suite Cloud Manager is a graphical user interface used for creating, managing, and configuring Oracle E-Business Suite environments on Oracle Cloud Infrastructure. Oracle E-Business Suite Cloud Manager can be used with the Oracle E-Business Suite Cloud Backup Module to lift and shift or clone environments from on-premises to Oracle Cloud Infrastructure.
+
+**EBS Cloud Manager infrastructure** – Virtual network resources, compute resources, and policies required to run EBS Cloud Manager on Oracle Cloud Infrastructure.
+
+**EBS Sandbox Virtual Cloud Network (VCN)** – Networking and compute resources required to run EBS on Oracle Cloud Infrastructure. The EBS Sandbox VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle E-Business Suite on OCI.
+
+**Oracle Cloud Infrastructure Load Balancing Service** - The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address, and provisioned bandwidth.
+
+**Oracle Cloud Infrastructure (OCI)** – Combines the elasticity and utility of public cloud with the granular control, security, and predictability of on-premises infrastructure to deliver high-performance, high availability, and cost-effective infrastructure services.
+
+**Region** – Oracle Cloud Infrastructure are hosted in regions, which are located in different metropolitan areas. Regions are completely independent of other regions and can be separated by vast distances – across countries or even continents. Generally, you would deploy an application in the region where it is most heavily used, since using nearby resources is faster than using distant resources.
+
+**Tenancy** – When you sign up for Oracle Cloud Infrastructure, Oracle creates a tenancy for your company, which is a secure and isolated partition within Oracle Cloud Infrastructure where you can create, organize, and administer your cloud resources.
+
+**Virtual Cloud Network (VCN)** – A virtual version of a traditional network – including subnets, route tables, and gateways – on which your instances run. A cloud network resides within a single region, but can cross multiple availability domains.
 
 ## Acknowledgements
 

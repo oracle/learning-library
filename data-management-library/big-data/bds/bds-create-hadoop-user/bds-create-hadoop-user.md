@@ -47,13 +47,13 @@ In this step, you will set three variables using the **`export`** command. The v
 2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
     ```
-    $ <copy>export DISPLAY_NAME=<i>"traininmn0-public-ip"</i></copy>
+    $ <copy>export DISPLAY_NAME="traininmn0-public-ip"</copy>
     ```
 
 3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.   
 
     ```
-    $ <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
+    $ <copy>export SUBNET_OCID="subnet-ocid"</copy>
     ```
     **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab.
 
@@ -65,7 +65,7 @@ In this step, you will set three variables using the **`export`** command. The v
 4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
     ```
-    $ <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
+    $ <copy>export PRIVATE_IP="ip-address"</copy>
     ```
   **Note:** In the preceding command, substitute **_`ip-address`_** with your first master node's private IP address.
 
@@ -95,9 +95,10 @@ The Kerberos Distribution Center (KDC) is running on the cluster's first master 
 
 Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab,  we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH.
 
+ ```
+<b>$</b> <copy>ssh –i private_key username@public-ip-address</copy>
 ```
-<copy>ssh –i private_key username@public-ip-address</Copy>
-```
+
 **Note:** For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
 
@@ -306,6 +307,6 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 * **Authors:**
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, August 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

@@ -27,9 +27,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 -   To learn more about Oracle REST Data Services (ORDS), feel free to explore the capabilities by clicking on this link: [ORDS Documentation](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.4/index.html)
 
 
-## Part 1. Enable ORDS
-
-### **STEP 1**: Access Your APEX App
+## **STEP 1**: Access Your APEX App
 
 1. Navigate to and click on **Oracle APEX** from the development page of your ADW instance service console.
 
@@ -39,7 +37,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/4.png " ")
 
-### **STEP 2**: Enable Oracle Restful Data Services (ORDS)
+## **STEP 2**: Enable Oracle Restful Data Services (ORDS)
 
 1. Click on **SQL Workshop** and then on **RESTful Services**.
 
@@ -53,9 +51,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/7.png " ")
 
-## Part 2. Import and Create APIs
-
-### **STEP 1**: Import APIs
+## **STEP 3**: Import APIs
 
 1. Click on **Import**. 
 
@@ -78,7 +74,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
     ![](./images/10new.png " ")
 
 
-### **STEP 2**: Create APIs
+## **STEP 4**: Create APIs
 
 1. Click on **warehouseAPI** to show the API template list.
 
@@ -109,7 +105,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/14new.png " ")
 
-### **STEP 3**: Check and Test APIS
+## **STEP 5**: Check and Test APIS
 
 1. You have now imported and created various RESTful APIs with APEX. 
 
@@ -129,9 +125,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/18.png " ")
 
-## Part 3. Use HTML Web Page to Consume APIs
-
-### **STEP 1**: Copy API URLs
+## **STEP 6**: Copy API URLs
 
 1. Under **warehouseAPI**, click on the **stores** API and copy the **Full URL** and paste it into a separate notes file (i.e. Notepad, Microsoft Word, Apple Notes, etc.) to be used later.
 
@@ -153,7 +147,7 @@ product/trendingProductAPI/{store_add}
 
    ![](./images/17v3.png " ")
 
-### **STEP 2**: Add API URLs to Web Page Code
+## **STEP 7**: Add API URLs to Web Page Code
 
 1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SM0gd1zQgGI-O7fL3k3fUTP2zjsH7L6AEjc0WS_ckDk/n/c4u03/b/solutions-library/o/WebPage.zip).
 
@@ -171,7 +165,7 @@ product/trendingProductAPI/{store_add}
 
 6. Once you have replaced the two URLs, you must resave the file. (Note: Make sure that you keep the .js file type when you save the file in your text editor. Also, be sure that when you are saving the updated file, you are replacing the original file in the **WebPage** folder.)
 
-### **STEP 3**: Test API Calls on Web Page
+## **STEP 8**: Test API Calls on Web Page
 
 1. You have now implemented your API URLs from APEX into the code for the HTML Web Page, so your APIs are ready to be consumed!
 

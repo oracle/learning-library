@@ -59,7 +59,7 @@ In this step, you will set three variables using the **`export`** command. The v
 2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
       ```
-    <b>$</b> <copy>export DISPLAY_NAME=<i>"display-name"</i></copy>
+    <b>$</b> <copy>export DISPLAY_NAME="display-name"</copy>
       ```
 
     **Note:** In the preceding command, substitute **_`display-name`_** with a descriptive name of your choice.
@@ -72,7 +72,7 @@ In this step, you will set three variables using the **`export`** command. The v
 3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.   
 
       ```
-    <b>$</b> <copy>export SUBNET_OCID=<i>"subnet-ocid</i>"</copy>
+    <b>$</b> <copy>export SUBNET_OCID="subnet-ocid"</copy>
       ```
     **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab.
 
@@ -84,7 +84,7 @@ In this step, you will set three variables using the **`export`** command. The v
 4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
       ```
-    <b>$</b> <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
+    <b>$</b> <copy>export PRIVATE_IP="ip-address"</copy>
       ```
   **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address.
 
@@ -123,7 +123,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
   2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the second utility node that you want to map to a public IP address.
 
     ```
-    <b>$</b> <copy>export PRIVATE_IP=<i>"ip-address"</i></copy>
+    <b>$</b> <copy>export PRIVATE_IP="ip-address"</copy>
     ```
 
     **Note:** In the preceding command, substitute the **_`ip-address`_** shown with your own second utility node's private IP address that you identified in **STEP 1** of this lab.
@@ -213,7 +213,7 @@ In this step, you will learn how to edit a public IP address using both the **Cl
 6. For example, you can delete a public IP address using the OCI CLI command as follows:
 
     ```
-    $ oci network public-ip delete --public-ip-id value
+    <b>$</b> <copy>oci network public-ip delete --public-ip-id value</copy>
     ```
     **Note:** The `value` for **``--public-ip-id``** in the preceding command is displayed in the output returned when you ran the **`oci network`** command in this lab; however, the actual name of the field is **`"id"`**. Substitute `value` with the actual value of the `"id"` field.
 
@@ -241,6 +241,6 @@ In this step, you will learn how to edit a public IP address using both the **Cl
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, August 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

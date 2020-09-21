@@ -155,7 +155,7 @@ Go to [lab 2 of this workshop](?lab=lab-2-defining-new-data-structures) to creat
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Robbie Ruppel, Functional Lead, Oracle LiveLabs
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
 

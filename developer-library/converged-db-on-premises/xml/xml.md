@@ -1,19 +1,22 @@
 # Oracle XML
 
 ## Introduction
+There are several steps within this lab.
+-  The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer.
+-  The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable.
+-  The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document. The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database.
 
-There are several steps within this lab. The first step walks you through the steps of setting up the environment for XML lab . You can connect Oracle Database instance using any client you wish. In this lab, you will connect using Oracle SQL Developer. The second step shows different ways to query XML data. XQuery is a very general and expressive language, and SQL/XML functions XMLQuery, XMLTable, XMLExists, and XMLCast combine that power of expression and computation with the strengths of SQL. We can query XMLType data, possibly decomposing the resulting XML into relational data using function XMLTable. The third set of steps you will get to insert and update XML contents. We can update XML content or replace either the entire contents of a document or only particular parts of a document.
-The ability to perform partial updates on XML documents is very powerful, particularly when we make small changes to large documents, as it can significantly reduce the amount of network traffic and disk input-output required to perform the update. The Oracle UPDATEXML function allows us to update XML content stored in Oracle Database. The last step you will look at various sample queries and functions within XML.
+-  The last step you will look at various sample queries and functions within XML.
 
-Estimated Lab Time: 15 Minutes
+*Estimated Lab Time:* 15 Minutes
 
-### Before You Begin
-
+### Prerequisites
 This lab assumes you have completed the following labs:
 - Lab: Generate SSH Key
 - Lab: Setup Compute Instance
 - Lab: Start Database and Application
-- Note :  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
+
+***Note:***  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
 
 ### About Oracle XML
 
@@ -68,7 +71,7 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
     ````
 
 5. Open SQLPlus as the user appjson
-   
+
     ````
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB
@@ -343,8 +346,8 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start
-* **Last Updated By/Date** - David Start, Product Manager, Database Product Management, July 2020
+* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

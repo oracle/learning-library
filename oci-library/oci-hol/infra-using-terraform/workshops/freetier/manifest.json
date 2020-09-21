@@ -14,7 +14,7 @@
         },
         {         
             "title": "Lab 2: Deploying Infrastructure using Terraform",
-            "filename": "./../../infra-using-terraform.md"
+            "filename": "./../../infra-using-terraform/infra-using-terraform.md"
         }
     ]
 }

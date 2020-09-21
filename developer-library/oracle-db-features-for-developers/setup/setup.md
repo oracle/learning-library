@@ -12,9 +12,11 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the opc user*.  Run a *whoami* to ensure the value *opc* comes back.  If you are stil the oracle user, type the **exit** command to return back to opc)
 
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    ```
+    whoami
+    ```
 
     ````
-    whoami   
     <copy>
     cd /home/opc/
 
@@ -42,7 +44,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     ````
     ![](./images/oraenv.png " " )
 
-3.  Install the Sample Schemas by running the script below. 
+3.  Install the Sample Schemas by running the script below. Accept the default SID *ORCL* when prompted.
 
     ````
     <copy>

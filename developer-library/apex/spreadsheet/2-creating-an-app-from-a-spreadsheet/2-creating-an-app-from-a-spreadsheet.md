@@ -82,11 +82,11 @@ The Data Load wizard has created a new table and populated that table with the r
 
 ## **Summary**
 
-You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes. 
+You now know how to create an application from a spreadsheet by either dragging and dropping a file or loading sample data for training purposes.
 
 ## **Acknowledgements**
 
- - **Author** -  David Peake, Consulting Member of Technical Staff
+ - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 

@@ -13,9 +13,8 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
 
 ## Step 0: Download the Lab Files
 
@@ -49,7 +48,7 @@ This lab assumes you have completed the following labs:
     ````
     ![](./images/ssbexists.png " ") 
 
-2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
+2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expected.  The script should finish with 1 error*
 
     ````
     <copy>

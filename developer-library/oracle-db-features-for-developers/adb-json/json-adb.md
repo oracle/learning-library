@@ -202,7 +202,7 @@ Note: Remember to replace ***&YourGeoNameUsername*** with the username of your a
       begin   
         UTL_HTTP.SET_WALLET('');
 
-        t_http_req:= utl_http.begin_request('https://secure.geonames.org/countryInfoJSON?formatted=true&' || 'lang=en&' || 'country=ES&' || 'username=&YourGeoUsername&' || 'style=full','GET','HTTP/1.1');
+        t_http_req:= utl_http.begin_request('https://secure.geonames.org/countryInfoJSON?formatted=true&' || 'lang=en&' || 'country=countryCode&' || 'username=&YourGeoUsername&' || 'style=full','GET','HTTP/1.1');
         UTL_HTTP.SET_HEADER(t_http_req, 'User-Agent', 'Mozilla/4.0');
         t_http_resp:= utl_http.get_response(t_http_req);
         UTL_HTTP.read_text(t_http_resp, t_response_text);

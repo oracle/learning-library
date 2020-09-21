@@ -28,13 +28,13 @@
             "title": "Lab 3A: Environment Setup",
             "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
             "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-livelabs.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-custom-freetier.md"
         },
         {            
             "title": "Lab 3B: Sample Schema Setup",
-            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "description": "Samle Schema Setup",
             "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/setup/setup.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/database-setup/setup_sample_schema.md"
         },
         {            
             "title": "Lab 4: Location-Based Analysis Using Spatial",

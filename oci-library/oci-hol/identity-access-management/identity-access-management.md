@@ -4,6 +4,8 @@
 
 Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets you control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. The purpose of this lab is to give you an overview of the IAM Service components and an example scenario to help you understand how they work together.
 
+Estimated time: 30 minutes
+
 There is a recording of the instructor going through this lab here:
 
 [](youtube:wQU9mb9yX7o)
@@ -19,6 +21,18 @@ There is a recording of the instructor going through this lab here:
 ## **STEP 1**: Signing in to the Console
 
 In this step, you sign in to the Oracle Cloud Infrastructure console using your credentials.
+
+1. Go to [cloud.oracle.com](https://cloud.oracle.com).
+
+    ![](images/cloud-login-1.png " ")
+
+2. Click **Sign in to Cloud**.
+
+    ![](images/cloud-login-2.png " ")
+
+4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+
+    ![](images/cloud-login-tenant.png " ")
 
 1. Open a supported browser and go to the Console URL:  [https://oracle.com](https://oracle.com).
 
@@ -42,9 +56,10 @@ In this step, you sign in to the Oracle Cloud Infrastructure console using your 
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
-1. From the menu, select Identity and Compartments. Click on the blue **Create Compartment** button to create a sub-compartment.
+1. From the menu, select **Identity** and **Compartments**. Click on the blue **Create Compartment** button to create a sub-compartment.
 
    ![Create a compartment]( images/img005.png " ")
+   ![Create a compartment]( images/img009.png " ")
 
 2. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
 
@@ -59,8 +74,10 @@ A user's permissions to access services comes from the _groups_ to which they be
 We'll create a user, a group, and a security policy to understand the concept.
 
 1. Sign in to the console, on the **Menu** click **Identity**, then select **Groups**.
+   ![Create a group]( images/img0010.png " ")
 
 2. Click **Create Group**.
+   ![]( images/img0011.png " ")
 
 3. In the **Create Group** dialog box, enter the following:
 
@@ -70,7 +87,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
    ![Create Group]( images/image005.png " ")
 
-4. Your new group is displayed.
+4. Click on your new group to display it. Your new group is displayed.
 
    ![New group is shown]( images/image006.png " ")
 
@@ -84,6 +101,7 @@ We'll create a user, a group, and a security policy to understand the concept.
    NOTE: You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Demo***. If you do, and you still don't see the sub-compartment, ***Refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.
 
    c) After you have selected the **Demo** compartment, click **Create Policy**.
+      ![]( images/img0012.png " ")
 
    d) Enter a unique **Name** for your policy (For example, "Policy-for-oci-group") **Note that the name can NOT contain spaces.**
 
@@ -101,14 +119,16 @@ We'll create a user, a group, and a security policy to understand the concept.
 6. Create a New User
 
    a) On the **Menu** click **Identity**, and then click **Users**.
+      ![]( images/img0013.png " ")
 
    b) Click **Create User**.
 
    c) In the **New User** dialog box, enter the following:
 
-      - **Name:** Enter a unique name or email address for the new user. I recommend using a personal email address to which you have access (GMail, Yahoo, etc).
+      - **Name:** Enter a unique name or email address for the new user.
       _This value is the user's login name for the Console and it must be unique across all other users in your tenancy._
       - **Description:** Enter a description. For example, New `oci user`.
+      - **Email:** I recommend using a personal email address to which you have access (GMail, Yahoo, etc).
 
       ![New user form]( images/img008.png " ")
 
@@ -138,19 +158,25 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 8. Sign in as the new user using a different web browser or an incognito window.
 
-   a) Go to [https://oracle.com](https://oracle.com).
+    a) Open a supported browser and go to the Console URL:  [https://oracle.com](https://oracle.com).
 
-   b) Enter the Tenant name, if prompted.
+    b) Click on the portrait icon in the top-right section of the browser window, then click on the **Sign in to Cloud** link.
 
-   c) This time, you will sign in using **local credentials box** with the user you created. Note that the user you created is not part of the Identity Cloud Services.
+    ![Main Sign-in page]( images/img001.png " ")
 
-   d) Enter the password that you copied.
+   c) Enter the name of your tenancy (aka your account name, not your user name), then click on the **Next** button.
+
+   ![Enter tenancy name]( images/img002.png " ")
+
+   d) This time, you will sign in using **local credentials box** with the user you created. Note that the user you created is not part of the Identity Cloud Services.
+
+   e) Enter the password that you copied.
 
       ![Enter your password]( images/image014.png " ")
 
    **Note:** _Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture._
 
-   e) Set the new password to _Welc0me2*bmcs_. Click **Save New Password**.
+   f) Set the new password to _Welc0me2*bmcs_. Click **Save New Password**.
       ![Set the new password]( images/image015.png " ")
 
 9. Verify user permissions
@@ -159,19 +185,21 @@ We'll create a user, a group, and a security policy to understand the concept.
 
    b) Try to select any compartment from the left menu.
 
-   c) The message “**You don’t have access to this compartment**” appears. This is normal as you did not add the user to the group where you associated the policy.
+   c) The message “**You don’t have permission to view these resources**” appears. This is normal as you did not add the user to the group where you associated the policy.
       ![Error message can be ignored]( images/image016.png " ")
 
    d) Sign out of the Console.
 
 10. Add User to a Group
 
-      a) Sign in back with the ***admin*** account.
+      a) Sign back in with the ***admin*** account.
       b) From the **Users** list, click the user account that you just created (for example, `user01`)  to go to the user details page.
+         ![]( images/image019.png " ")
 
       c) Under the **Resources** menu on the left, click **Groups.**
 
       d) Click **Add User to Group**.
+         ![]( images/image020.png " ")
 
       e) From the **GROUPS** drop-down list, select the **oci-group** that you created.
 
@@ -182,7 +210,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 11. Verify user permissions when a user belongs to a specific group
 
-      a) Sign in with the local user01 account you created. Remember to use the latest password you assigned to this user.
+      a) Sign in with the local user01 account you created. Remember to use the latest password you assigned to this user (_Welc0me2*bmcs_).
 
       b) Go to the **Menu** click **Compute** and **Instances**.
 
@@ -194,7 +222,8 @@ We'll create a user, a group, and a security policy to understand the concept.
 
       e) Go to the **Menu** click **Identity** and select **Groups.**
 
-      f) The message **“You don’t have access to these resources”** appears. This is expected, since your user has no permission to modify groups. (Note: You may instead get the "An unexpected error occurred" message instead. That is also fine.)
+      f) The message **“Authorization failed or requested resource not found”** appears. This is expected, since your user has no permission to modify groups. (Note: You may instead get the "An unexpected error occurred" message instead. That is also fine.)
+         ![]( images/image021.png " ")
 
       g) Sign out.
 
@@ -204,8 +233,8 @@ We'll create a user, a group, and a security policy to understand the concept.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
-- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Tom McGinn, July 2020
+- **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, August 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

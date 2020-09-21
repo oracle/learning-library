@@ -29,7 +29,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
 
 ### What Do You Need?
 
-- An Oracle Cloud paid account, LiveLabs account or free trial. 
+- An Oracle Cloud paid account, LiveLabs account or free trial.
 - An APEX Workspace
 
 ## **Step 1** - Open Quick SQL
@@ -247,11 +247,11 @@ At this stage you have created a list of SQL statements. However, you first need
     *{Note: If you do not see 217 statements processed then return to Quick SQL and click _Generate SQL_, resave the script and then run it again. If you do not see 217 successful, then review the errors displayed in Feedback within the results.}*
 
 ## **Summary**
-You now know how to utilize Quick SQL to build complex data structures, complete with sample data. 
+You now know how to utilize Quick SQL to build complex data structures, complete with sample data.
 
 ## **Acknowledgments**
 
-- **Author** - David Peake, Sr. Principal Product Manager, Oracle Database
+- **Author** - Salim Hlayel, Principle Product Manager
 - **Contributors** - Oracle LiveLabs Team (Robbie Ruppel, Functional Lead; Marilyn Isabella Kessinger, QA Intern; Arabella Yao, Product Manager Intern)
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, June 2020
 

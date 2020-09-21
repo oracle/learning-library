@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<WizardConfig Mode="InterActive" Name="Calling Circle Wizard" xmlns="http://www.dominicgiles.com/swingbench/wizard">
+   <WizardSteps RunnableStep="5">
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step0"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step1"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step2"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step3"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step4"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step5"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step6"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step7"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step8"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step9"/>
+      <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.cc.Step10"/>
+   </WizardSteps>
+   <DataGenerationConfigurationFiles>
+    <DataGenerationConfigurationFile/>
+   </DataGenerationConfigurationFiles>
+   <ExecutableClass>com.dom.benchmarking.swingbench.wizards.cc.CCGenerate</ExecutableClass>
+   <ValidatorClass>com.dom.benchmarking.swingbench.wizards.cc.CCValidator</ValidatorClass>
+   <SchemaDescription>
+      <TableList>
+         <ObjectName>PACKAGESLOTS</ObjectName>
+         <ObjectName>PACKAGECLIS</ObjectName>
+         <ObjectName>DIALCODES</ObjectName>
+         <ObjectName>CUSTKEYS</ObjectName>
+         <ObjectName>CUSTCLIS</ObjectName>
+         <ObjectName>CUSTACCOUNTS</ObjectName>
+         <ObjectName>CC_PARAMS</ObjectName>
+         <ObjectName>CALLPACKAGES</ObjectName>
+      </TableList>
+      <ViewList></ViewList>
+      <SequenceList>
+         <ObjectName>DCSEQ</ObjectName>
+         <ObjectName>CPSEQ</ObjectName>
+         <ObjectName>CCSEQ9</ObjectName>
+         <ObjectName>CCSEQ8</ObjectName>
+         <ObjectName>CCSEQ7</ObjectName>
+         <ObjectName>CCSEQ6</ObjectName>
+         <ObjectName>CCSEQ5</ObjectName>
+         <ObjectName>CCSEQ4</ObjectName>
+         <ObjectName>CCSEQ3</ObjectName>
+         <ObjectName>CCSEQ2</ObjectName>
+         <ObjectName>CCSEQ1</ObjectName>
+         <ObjectName>CCSEQ0</ObjectName>
+         <ObjectName>CCSEQ</ObjectName>
+         <ObjectName>CASEQ9</ObjectName>
+         <ObjectName>CASEQ8</ObjectName>
+         <ObjectName>CASEQ7</ObjectName>
+         <ObjectName>CASEQ6</ObjectName>
+         <ObjectName>CASEQ5</ObjectName>
+         <ObjectName>CASEQ4</ObjectName>
+         <ObjectName>CASEQ3</ObjectName>
+         <ObjectName>CASEQ2</ObjectName>
+         <ObjectName>CASEQ1</ObjectName>
+         <ObjectName>CASEQ0</ObjectName>
+         <ObjectName>CASEQ</ObjectName>
+      </SequenceList>
+      <IndexList>
+         <ObjectName>PS_PK</ObjectName>
+         <ObjectName>PC_PK</ObjectName>
+         <ObjectName>DC_U1</ObjectName>
+         <ObjectName>DC_PK</ObjectName>
+         <ObjectName>DC_N1</ObjectName>
+         <ObjectName>CP_PK</ObjectName>
+         <ObjectName>CC_U1</ObjectName>
+         <ObjectName>CC_PK</ObjectName>
+         <ObjectName>CA_U1</ObjectName>
+         <ObjectName>CA_PK</ObjectName>
+      </IndexList>
+      <CodeList>
+         <ObjectName>CCMISCPKG</ObjectName>
+         <ObjectName>CCMISCPKG</ObjectName>
+         <ObjectName>CCDATAPKG</ObjectName>
+         <ObjectName>CCDATAPKG</ObjectName>
+         <ObjectName>CCAPPPKG</ObjectName>
+         <ObjectName>CCAPPPKG</ObjectName>
+         <ObjectName>CP1</ObjectName>
+         <ObjectName>CP2</ObjectName>
+         <ObjectName>CP3</ObjectName>
+         <ObjectName>CP4</ObjectName>
+         <ObjectName>CP5</ObjectName>
+         <ObjectName>CP6</ObjectName>
+         <ObjectName>CP7</ObjectName>
+         <ObjectName>CP8</ObjectName>
+         <ObjectName>CP9</ObjectName>
+         <ObjectName>CP10</ObjectName>
+      </CodeList>
+   </SchemaDescription>
+   <DefaultParameters>
+      <Parameter Key="dbapassword" Value="manager"/>
+      <Parameter Key="password" Value="cc"/>
+      <Parameter Key="scale" Value="1"/>
+      <Parameter Key="dbausername" Value="sys as sysdba"/>
+      <Parameter Key="tablespace" Value="ccdata"/>
+      <Parameter Key="operation" Value="create"/>
+      <Parameter Key="directories" Value="data/"/>
+      <Parameter Key="connectionstring" Value="//oraclelinux/orcl"/>
+      <Parameter Key="username" Value="cc"/>
+      <Parameter Key="tablespace" Value="ccdata"/>
+      <Parameter Key="connectiontype" Value="thin"/>
+   </DefaultParameters>
+</WizardConfig>

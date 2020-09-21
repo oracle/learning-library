@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Created-By: 1.4.2_15 (Sun Microsystems Inc.)
-

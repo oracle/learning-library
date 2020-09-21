@@ -1,4 +1,0 @@
-oJDBCDriver = oracle.jdbc.OracleDriver
-oJDBCURL = jdbc:oracle:thin:@//dbsec-lab:1522/pdb1
-oJDBCUser = employeesearch_prod
-oJDBCPassword = Oracle123

@@ -1,0 +1,168 @@
+<project name="Swingbench Launcher" default="swingbench" basedir=".">
+
+    <property name="base.dir" value="${basedir}/.."/>
+
+    <property name="etc.dir" value="${base.dir}/etc"/>
+    <property name="lib.dir" value="${base.dir}/lib"/>
+    <property name="log.dir" value="${base.dir}/log"/>
+
+    <path id="base.class.path">
+        <pathelement path="${etc.dir}"/>
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    </path>
+    
+    <jvmargset id="base.jvm.args">
+      	<jvmarg line="-Xmx1024m"/>
+      	<jvmarg line="-Xms512m"/>
+	<!--<jvmarg line="-Djava.util.logging.config.file=log.properties"/>-->
+   </jvmargset>
+	
+	<jvmargset id="datagenerator.jvm.args">
+      	<jvmarg line="-Xmx2048m"/>
+      	<jvmarg line="-Xms512m"/>
+	</jvmargset>
+
+    <target name="swingbench">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.SwingBench"
+                usesystemin="false"
+                minimizedWindowTitle="Swingbench"
+                displayMinimizedWindow="true"
+                disposeMinimizedWindow="true">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="base.jvm.args"/>
+        </launch>
+    </target>
+    <target name="minibench">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.MiniBench" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="base.jvm.args"/>
+        </launch>
+    </target>
+    <target name="results2pdf">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.results.ParseResults" usesystemin="true">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="base.jvm.args"/>
+        </launch>
+    </target>
+    <target name="charbench">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.CharBench" usesystemin="true">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="base.jvm.args"/>
+        </launch>
+    </target>
+    <target name="charbenchbg">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.CharBench" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="base.jvm.args"/>
+        </launch>
+    </target>
+    <target name="ccwizard">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.wizards.Wizard" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+        </launch>
+    </target>
+    <target name="oewizard">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.wizards.Wizard" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="datagenerator.jvm.args"/>
+        </launch>
+    </target>
+    <target name="shwizard">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.wizards.Wizard" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="datagenerator.jvm.args"/>
+        </launch>
+    </target>
+    <target name="tpcdswizard">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.wizards.Wizard" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="datagenerator.jvm.args"/>
+        </launch>
+    </target>
+    <target name="bmcompare">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.BMCompare" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+        </launch>
+    </target>
+    <target name="sbutil">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.utilities.SBUtil" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+        </launch>
+    </target>
+    <target name="coordinator">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.coordinator.Coordinator" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+        </launch>
+    </target>
+    <target name="clusteroverview">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.clusteroverview.ClusterOverview" usesystemin="false">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+        </launch>
+    </target>
+    <target name="SQLWorkloadEditor">
+        <mkdir dir="${log.dir}" />
+        <launch classname="com.dom.benchmarking.swingbench.sqleditor.SQLWorkloadEditor"
+                usesystemin="false"
+                minimizedWindowTitle="SQLWorkloadEditor"
+                displayMinimizedWindow="true"
+                disposeMinimizedWindow="true">
+            <classpath refid="base.class.path"/>
+            <syspropertyset>
+                <sysproperty key="log.dir" file="${log.dir}"/>
+            </syspropertyset>
+            <jvmargset refid="base.jvm.args"/>
+        </launch>
+    </target>
+</project>

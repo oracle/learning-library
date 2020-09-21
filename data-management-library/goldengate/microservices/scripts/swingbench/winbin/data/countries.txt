@@ -1,0 +1,80 @@
+Alabama
+Arizona
+California (Northern)
+California (Southern)
+Colorado
+Connecticut
+Florida
+Georgia
+Illinois
+Indiana
+Iowa
+Kansas
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Missouri
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Pennsylvania (Eastern)
+Rhode Island
+South Dakota
+Texas
+Utah
+Vermont
+Washington
+Wisconsin
+Brazil
+Mexico
+Austria
+Belgium
+Bulgaria
+Czech Republic
+Denmark
+Estonia
+Finland
+France
+Germany
+Hungary
+Ireland
+Israel
+Italy
+Latvia
+Lithuania
+Norway
+Poland
+Portugal
+Romania
+Russia
+Scotland
+Slovak Republic
+Slovenia
+Spain
+Sweden
+Switzerland
+The Netherlands
+Ukraine
+United Kingdom
+China
+Hong Kong
+India
+Indonesia
+Japan
+Korea
+Malaysia
+Philippines
+Singapore
+Taiwan
+Thailand
+Vietnam

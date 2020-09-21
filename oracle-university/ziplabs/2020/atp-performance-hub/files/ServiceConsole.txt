@@ -1,1 +1,0 @@
-On the left edge of the ATP Service Console are links to navigate to one of four pages: Overview, Activity, Administration, and Development. Development is highlighted. The main page shows four big buttons for development options: Oracle Application Express, SQL Developer Web, Oracle ML SQL Notebooks, Download Oracle Instant Client. SQL Developer Web is highlighted.

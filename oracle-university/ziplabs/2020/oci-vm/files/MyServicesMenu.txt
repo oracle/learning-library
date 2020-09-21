@@ -1,7 +1,0 @@
-This image shows the expanded Oracle Cloud My Services Menu. The menu expands on the left edge of the screen after clicking the menu icon. 
-
-Two top-level menu items are shown: Dashboard and Services.
-
-The Services menu item is expanded to reveal sub-categories: Autonomous Data Warehouse, Autonomous Transaction Processing, Compute, and Database. Compute is moused over.
-
-A red box outlines the menu icon, Services, and Compute. 

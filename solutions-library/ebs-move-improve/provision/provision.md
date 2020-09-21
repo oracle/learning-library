@@ -7,7 +7,7 @@ In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your Key-Data.txt file.
 2. Log in with your Oracle Identity Cloud Service credentials.
 
-![](./images/1.png "")
+![](./images/1.png " ")
 
 ## Part 2. Provision an Environment Using One-Click Provisioning
 1. On the Oracle E-Business Suite Cloud Manager Environments page, click Provision Environment and select One-Click.
@@ -20,7 +20,7 @@ In this 45 mins lab, we will use the One-Click Provisioning feature of Oracle E-
 
  c) EBS Version: 12.2.9
 
- d) DB Version: 12.1.0.2
+ d) DB Version: 19.0.0.0
 
 3. Click Submit
 
@@ -36,7 +36,7 @@ You can check the status of the activity to provision the environment in the Act
 
 2. On the Load Balancers page, you will find a load balancer named ebsholenv1-lbaas. Obtain the public IP address of this load balancer and record this in your Key-Data.txt file.
 
-![](./images/2.png "")
+![](./images/2.png " ")
 
 3. Edit the local hosts file on your laptop and add an entry.
 

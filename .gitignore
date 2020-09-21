@@ -11,4 +11,5 @@ workshops/archive/journey1-self-service-bi/DVData/CitiBikeOffline.zip.002
 data-management-library/autonomous-database/autonomous-data-warehouse/images/400/substitution_variable.jpg
 GitHub Oracle Learning Library Clone - Shortcut.lnk
 data-management-library/autonomous-database/autonomous-data-warehouse_PRIOR TO SQLDEV WEB STREAMLINING.zip
- 
+.idea/ 
+*.iml

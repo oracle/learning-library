@@ -71,7 +71,7 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 - [oracle.com/enterprisemanager](https://www.oracle.com/enterprise-manager/)
 
 ## Acknowledgements
-- **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
+- **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava - Enterprise Manager Product Management
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
