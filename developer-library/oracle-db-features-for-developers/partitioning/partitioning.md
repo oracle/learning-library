@@ -1,6 +1,6 @@
 # Hybrid Partitioning
 
-## Introduction 
+## Introduction
 In this lab, you will explore Hybrid Partitioning, a new feature introduced in Oracle Database 19c.
 
 Estimated Lab Time:  30 minutes
@@ -52,9 +52,9 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     sudo mkdir -p /u01/External/sales_1998
-	sudo mkdir -p /u01/External/sales_1999
+	  sudo mkdir -p /u01/External/sales_1999
 
-	sudo chown -R oracle:oinstall /u01/External
+	  sudo chown -R oracle:oinstall /u01/External
 
     ls -al /u01/External
     </copy>

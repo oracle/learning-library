@@ -25,6 +25,31 @@
             "title": "Lab 4: Fast Application Notification",
             "description": "This lab examines FAN events.",
             "filename": "./clusterware/fan_callouts.md"
+        },
+        {
+            "title": "Lab 5: Install Sample Schema",
+            "description": "This lab walks you through installing the sample schema.",
+            "filename": "./services/setup.md"
+        },
+        {
+            "title": "Lab 6: Services",
+            "description": "This lab walks you through some of the characteristics of database services.",
+            "filename": "./services/services.md"
+        },
+        {
+            "title": "Lab 7: SQL and PL/SQl - Sequences",
+            "description": "This lab walks you through the use of sequences in a RAC database.",
+            "filename": "./sql/racsql.md"
+        },
+        {
+            "title": "Lab 8: Parallel Execution ",
+            "description": "This lab illustrates parallel execution.",
+            "filename": "./sql/parallelexecution.md"
+        },
+        {
+            "title": "Lab 9: Oracle Scheduler ",
+            "description": "This lab walks you through the use of Oracle Scheduler in a RAC database.",
+            "filename": "./sql/scheduler.md"
         }
     ]
 }
