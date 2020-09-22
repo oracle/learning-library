@@ -16,7 +16,7 @@ Approximately 60 minutes
 
 ## STEPS-
 
-1. Open a terminal session
+Open a terminal session
 
 ![](./images/terminal2.png)
 
