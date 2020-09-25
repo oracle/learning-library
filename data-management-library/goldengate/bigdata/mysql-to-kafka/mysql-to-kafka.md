@@ -27,7 +27,8 @@ Estimated Lab Time:  60 minutes
   ![](./images/terminal2.png)
 
 2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
-  **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
+  
+  **Note: Please Use ‘ggadmin’ USER FOR ALL THE LABS**
 
     <copy>su – ggadmin</copy>
     Password = oracle
@@ -52,11 +53,15 @@ Review the content of each of these files to explore how GoldenGate is being con
 
 Optionally view these files, same as in previous lab:
 
+<copy> cd /u01/gg4mysql/dirprm</copy>
+
 <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
 
 <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
 
 <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+
+<copy> cd /u01/gg4hadoop/dirprm</copy>
 
 <copy>view /u01/gg4hadoop123010/dirprm/create_kafka_replicat.oby</copy>
 
@@ -132,6 +137,8 @@ Optionally view these files, same as in previous lab:
 <copy>cd dirprm</copy>
 
 <copy>vi rkafka.properties</copy>
+
+<copy> Remove "--" from below</copy>
 
 <copy>---kafka</copy>
 

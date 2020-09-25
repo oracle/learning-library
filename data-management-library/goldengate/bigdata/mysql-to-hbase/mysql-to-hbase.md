@@ -45,11 +45,15 @@ Review the overview notes on the following screen, then select Q to quit.
 
 Optionally view these files, same as in previous lab:
 
+<copy> cd /u01/gg4mysql/dirprm</copy>
+
 <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
 
 <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
 
 <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+
+<copy> cd /u01/gg4hadoop/dirprm</copy>
 
 <copy>view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby</copy>
 
@@ -127,11 +131,11 @@ Optionally view these files, same as in previous lab:
 
 <copy>vi rhbase.properties</copy>
 
+**Remove "--" below**
+
 <copy>---hbase</copy>
 
 <copy>---cf</copy>
-
-
 
 **Step10:** Now create and start the HBase replicat process:
 
@@ -206,7 +210,7 @@ You can also see the HBase data created by GG from Hue:
 
 Open a Browser window>
 
-[HUE - Click here](http://127.0.0.1:8888) 
+[HUE - Click here](http://quickstart.cloudera:8888) 
 
 Login to HUE: cloudera/cloudera
 

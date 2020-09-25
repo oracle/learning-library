@@ -44,7 +44,12 @@ The following Lab Menu will be displayed,
 
 (Is already done in the env script for this workshop)
 
-<copy> vi  /dirprm/create_hdfs_replicat.oby</copy>
+
+<copy>cd /u01/gg4mysql/dirprm</copy>
+
+<copy> view /dirprm/create_hdfs_replicat.oby</copy>
+
+<copy>cd /u01/gg4hadoop/dirprm</copy>
 
 <copy> view /u01/gg4hadoop123010/dirprm/rhdfs.prm</copy>
 
@@ -118,6 +123,8 @@ The following Lab Menu will be displayed,
 
 <copy> vi rhdfs.properties</copy>
 
+**Remove "--" below**
+
 <copy> ---hdfs</copy>
 
 <copy> ---/user/ggtarget/hdfs</copy>
@@ -152,8 +159,7 @@ The following Lab Menu will be displayed,
 
   ![](./images/B9.png)
 
-**12:** Now that GG processes have been created and started on both the source and target, let us take a look at what is in the HDFS directory – it should be empty. Then we will load some data on the MySQL database
-‘ggsource’ and GG will extract and write it to the HDFS target. GG will create a subdirectory for each table in the base directory /user/ggtarget.
+**12:** Now that GG processes have been created and started on both the source and target, let us take a look at what is in the HDFS directory – it should be empty. Then we will load some data on the MySQL database ‘ggsource’ and GG will extract and write it to the HDFS target. GG will create a subdirectory for each table in the base directory /user/ggtarget.
 
 **13:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
 
@@ -212,7 +218,7 @@ You may now *proceed to the next lab*.
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 You can also see the files created by GG from Hue:
 
-[HUE - Click here](http://127.0.0.1:8888) 
+[HUE - Click here](http://quickstart.cloudera:8888) 
 
 Login to Hue: cloudera/cloudera
 Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…

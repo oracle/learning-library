@@ -45,13 +45,13 @@ integration architectures to big data systems without impacting the performance 
 
 1. Open terminal from Linux desktop by double clicking on the Terminal icon
 
-  ![](./images/terminal2.png" ")
+  ![](./images/terminal2.png)
 
 2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
-    ```` 
+  
     <copy>su – ggadmin</copy>
     Password = oracle
-    ````
+   
 
 3. The following Lab Menu will be displayed
 

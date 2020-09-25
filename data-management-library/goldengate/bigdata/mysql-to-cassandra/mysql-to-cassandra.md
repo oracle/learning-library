@@ -41,7 +41,8 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
 **Step3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
-  
+  <copy> cd /u01/gg4mysql/dirprm</copy>
+
   <copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
   view these files, same as in previous lab:
@@ -52,22 +53,21 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
   <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
 
+<copy> cd /u01/gg4hadoop/dirprm</copy>
+
   <copy>view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
 
   <copy>view /u01/gg4hadoop123010/dirprm/rcass.prm</copy>
 
   <copy>view /u01/gg4hadoop123010/dirprm/rcass.properties</copy>
-  ````
 
 **Step4:** Start the GG manager process on both the source and target. Start two terminal sessions and connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-**Step5:** First task is to start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done with this lab.
-
-  ![](./images/f2.png)
+**Step5:** First task is to start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done
 
   <copy>startcass</copy>
 
-**Step6:** Open another ssh session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+**Step6:** Open another ssh session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql
 
   ![](./images/f3.png)
 
@@ -86,7 +86,7 @@ Review the overview notes on the following screen, then select Q to quit. These 
 
   ![](./images/f4.png)
 
-  <copy>cd /u01/gg4hadoop123010</copy>
+<copy>cd /u01/gg4hadoop123010</copy>
 
 <copy>./ggsci</copy>
 

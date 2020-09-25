@@ -39,11 +39,15 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 
 Optionally view these files, same as in previous lab:
 
+<copy>cd /u01/gg4mysql/dirprm</copy>
+
 <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
 
 <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
 
 <copy>view  /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+
+<copy>cd /u01/gg4hadoop/dirprm</copy>
 
 <copy>view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby</copy>
 
@@ -124,6 +128,8 @@ Open Terminal Session2 /
 <copy> cd dirprm</copy>
 
 <copy> vi rhive.properties</copy>
+
+**Remove "--" below**
 
 <copy> ---hdfs</copy>
 
@@ -225,7 +231,7 @@ You may now *proceed to the next lab*.
 You can also see the Hive data created by GG from Hue:
 
 Open a Browser window>
-[HUE - Click here](http://127.0.0.1:8888) 
+[HUE - Click here](http://quickstart.cloudera:8888) 
 
 Login to Hue: cloudera/cloudera
 

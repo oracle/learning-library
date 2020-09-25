@@ -48,6 +48,8 @@ Execute the alias
 
 1. Review the content of each of these files to explore how GoldenGate is being configured.
 
+<copy>cd /u01/gg4mysql/dirprm</copy>
+
     <copy>view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby</copy>
 
     <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
