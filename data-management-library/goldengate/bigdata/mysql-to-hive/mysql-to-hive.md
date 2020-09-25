@@ -35,6 +35,8 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 
 **2:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
+<copy>cd /u01/gg4mysql</copy>
+
 <copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
 Optionally view these files, same as in previous lab:
@@ -56,7 +58,7 @@ Optionally view these files, same as in previous lab:
 <copy>view /u01/gg4hadoop123010/dirprm/rhive.properties</copy>
 
 
-**3:** Start the GG manager process on both the source and target. Start two putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+**3:** Start the GG manager process on both the source and target. **Start two terminal sessions**, connect to ggadmin/oracle (then click **Q** to get to a prompt). Keep these sessions open for the rest of this lab.
 
 Open Terminal Session1 / 
 
@@ -66,7 +68,7 @@ Open Terminal Session2 /
 
 <copy>su -ggadmin</copy>  pwd = oracle
 
-**4:** In the first session, go to the GG Home for MySQL, and start the manager process. You can cd to the directory:
+**4:** In the first session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
 
  ![](./images/c2.png)
 
@@ -80,7 +82,7 @@ Open Terminal Session2 /
 
 <copy> info all</copy>
 
-**5:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+**5:** In the second session, go to the **GG Home for Hadoop**, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
   ![](./images/c3.png)
 
@@ -95,7 +97,7 @@ Open Terminal Session2 /
 
 <copy> exit</copy>
 
-**6:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
+**6:** In the **GG for MySQL ggsci session**, we will create and start the GG extract process:
 
   ![](./images/c4.png)
   ![](./images/c5.png)
@@ -119,7 +121,7 @@ Open Terminal Session2 /
 
 **7:** Now that the source side is setup, let us configure GG on the target side (Hive Avro format).
 
-**8:** In the GG for Hadoop session, you will need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
+**8:** In the **GG for Hadoop session**, you will need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
 
   ![](./images/c6.png)
 
@@ -173,7 +175,7 @@ Open Terminal Session2 /
 **10:** Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on
 the MySQL database ‘ggsource’ and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory /user/ggtarget/hive/data.
 
-**Step11:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+**Step11:** **Start a new session**, connect to ggadmin/oracle (then click Q to get to a prompt):
 
   ![](./images/c8.png)
 

@@ -36,7 +36,7 @@ For the Lab terminal session:
 
 The following Lab Menu will be displayed,
 
-**1:** select R to reset the lab environment, then select **3** to begin Lab3.
+**1:** select **R** to reset the lab environment, then select **3** to begin Lab3.
 
 **2:** Review the overview notes on the following screen, then select Q to quit. These online notes have been provided to can cut/paste file names to another session, to avoid typos.
 
@@ -58,7 +58,7 @@ The following Lab Menu will be displayed,
 
 **4:**Start the GG manager process on both the source and target. Start two putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-**5:** In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+**5:** In the first session, go to the **GG Home for MySQL**, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
   ![](images/b3.png)
 
@@ -75,7 +75,7 @@ The following Lab Menu will be displayed,
 <copy> info all</copy>	
 
 
-**6:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can cd to the directory:
+**6:** In the second session, go to the **GG Home for Hadoop**, and start the manager process. You can cd to the directory:
 
   ![](images/b4.png)
 
@@ -92,7 +92,7 @@ The following Lab Menu will be displayed,
 <copy> exit</copy>
 
 
-**7:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
+**7:** In the **GG for MySQL ggsci session**, we will create and start the GG extract process:
 
   ![](./images/b5.png)
   ![](./images/b6.png)
@@ -115,7 +115,7 @@ The following Lab Menu will be displayed,
 
 **8:** Now that the source side is setup, let us configure GG on the target side (HDFS).
 
-**9:** In the GG for Hadoop session, you will need to modify the HDFS properties by removing the ‘---‘ from the highlighted values:
+**9:** In the **GG for Hadoop session**, you will need to modify the HDFS properties by removing the ‘---‘ from the highlighted values:
 
   ![](./images/b7.png)
 
