@@ -8,7 +8,7 @@ In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
   ![](./images/image110_1.png)
 
-### About Oracle GoldenGate for Big DAta
+### About Oracle GoldenGate for Big Data
 
 #### KEY FEATURES
 
@@ -47,7 +47,9 @@ integration architectures to big data systems without impacting the performance 
 
   ![](./images/terminal2.png" ")
 
-2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
+2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
+
+**Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
     ```` 
     <copy>su – ggadmin</copy>
     Password = oracle
@@ -58,7 +60,7 @@ integration architectures to big data systems without impacting the performance 
   ![](./images/labmenu_opt1.png" ")
 Follow these instructions to install GoldenGate for Big Data
 
-## **STEP 3**:Performing the Install
+## **STEP 3**: Performing the Install
 
 1.  Review the overview notes on the following screen, then select **Q** to quit. 
       ![](./images/labmenu_opt1.png)
