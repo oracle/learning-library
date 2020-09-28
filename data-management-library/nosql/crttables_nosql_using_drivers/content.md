@@ -51,6 +51,7 @@ After you sign up for an Oracle NoSQL Database Cloud Service account, you can ea
 1. Copy the HelloWorld.java application to an editor of your choice. You use this application to connect to Oracle NoSQL Database Cloud Service.
 You can access the [JavaAPI Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html) to reference Java classes, methods, and interfaces included in this sample application.
 ```
+<copy>
 import java.io.File;
 import oracle.nosql.driver.NoSQLHandle;
 import oracle.nosql.driver.NoSQLHandleConfig;
@@ -174,6 +175,7 @@ public class HelloWorld {
         System.out.println("Table " + tableName + " has been dropped");
     }
 }
+</copy>
 ```
 2. In the `generateNoSQLHandle` method, update the appropriate Oracle Cloud Infrastructure region.
 3. In the `generateNoSQLHandle` method, update the parameters of the `SignatureProvider` constructor with the   following values.
@@ -188,6 +190,7 @@ public class HelloWorld {
  1. Copy the code given below to an editor of your choice. You use this program to connect to Oracle NoSQL Database Cloud Service and create a simple NoSQL Table.
 You can access the [Python API Reference Guide](https://nosql-python-sdk.readthedocs.io/en/latest/api.html) to reference Python classes, methods, and interfaces included in this sample application.
  ```
+ <copy>
  import os
 
 from borneo import (Regions, NoSQLHandle, NoSQLHandleConfig, PutRequest,
@@ -255,6 +258,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    </copy>
  ```
  2. In the `get_connection` method, set the following values:
     * OCID of the tenancy.
@@ -273,6 +277,7 @@ if __name__ == "__main__":
   1. Copy the code given below to an editor of your choice. You use this program to connect to Oracle NoSQL Database Cloud Service and create a simple NOSQL Table.
  You can access the [online godoc](https://godoc.org/github.com/oracle/nosql-go-sdk/nosqldb) to reference Go classes, types, and methods included in this sample application.
   ```
+  <copy>
   package main
 
 import (
@@ -467,6 +472,7 @@ func main() {
     return
   }
   fmt.Println("Dropped table ", tableName) }
+  </copy>
   ```
   2. Set the following values under `case "cloud":` in the `createClient` function:
       * Region identifier
@@ -483,6 +489,7 @@ func main() {
    1. Copy the code given below to an editor of your choice. You use this application to connect to Oracle NoSQL Database Cloud Service.
   You can access the [Node.js API Reference Guide](https://oracle.github.io/nosql-node-sdk/index.html) to reference Node.js classes, events, and global objects.
    ```
+   <copy>
    'use strict';
 
 const NoSQLClient = require('oracle-nosqldb').NoSQLClient;
@@ -585,6 +592,7 @@ async function readARecord(handle, pk) {
         'id' : pk
     })
 }
+</copy>
    ```
    2. In the function `doHelloWorld`, replace **'your-service-region'** with the appropriate Oracle Cloud Infrastructure region. For example:
 
@@ -609,12 +617,14 @@ Note: This section is required only if you want to execute the example using OCI
 2. Create an OCI configuration file named `config` and place it in the above directory.
 3. Open the `config` file and add the following code in it, and replace the placeholder values with actual values.
 ```
+<copy>
 [DEFAULT]
 tenancy=ocid1.tenancy.oc1..<unique_ID>
 user=ocid1.user.oc1..<unique_ID>
 fingerprint=<fingerprint of your public key>
 key_file=~/.oci/oci_api_key.pem
 pass_phrase=<optional passphrase>
+</copy>
 ```
 
 **Note:** This is the `DEFAULT` profile. The OCI configuration file can contain several profiles.
@@ -626,25 +636,46 @@ pass_phrase=<optional passphrase>
     * The passphrase used for the key, if it is encrypted.
   <if type="Java">  
 5. In the `HelloWorld.java` program, in the `generateNoSQLHandle` method, update the `SignatureProvider` parametrized constructor as described below.
-    * If using the `DEFAULT` profile with the `config file` in default location `~/.oci/config`.
-`SignatureProvider ap = new SignatureProvider();`
-    * If using non-default profile `TEST` with the `config file` in default location `~/.oci/config`.
- `SignatureProvider ap = new SignatureProvider("TEST");`
-    * If using non-default profile `DEV` with the `config file` at non-default location such as `/home/users/config`
-`SignatureProvider ap = new SignatureProvider("/home/users/config","DEV");`
+    * If using the `DEFAULT` profile with the `config file` in default location `~/.oci/config`
+    ```
+    <copy>
+    SignatureProvider ap = new SignatureProvider();
+    </copy>
+
+     ```
+    * If using non-default profile `TEST` with the `config file` in default location `~/.oci/config`
+```
+<copy>
+SignatureProvider ap = new SignatureProvider("TEST");
+</copy>
+
+```
+  * If using non-default profile `DEV` with the `config file` at non-default location such as `/home/users/config`
+```
+
+<copy>
+SignatureProvider ap = new SignatureProvider("/home/users/config","DEV");
+</copy>
+
+```
 6. Save the `HelloWorld.java` application.
 </if>
 
 <if type="Python">  
 5. In the `HelloWorld.py` program, in the `get_connection` method, update the `SignatureProvider` parametrized constructor as described below.
-        If using the `DEFAULT` profile with the `config` file in default location `~/.oci/config`.
+  * If using the `DEFAULT` profile with the `config` file in default location `~/.oci/config`.
+```
+<copy>
+  provider = SignatureProvider()
+  </copy>
+```
+* If using non-default profile `myprofile` with the `config` file in non-default location.
+```
+<copy>
+provider = SignatureProvider(config_file='myconfigfile', profile_name='myprofile')
+</copy>
+```
 
-         `provider = SignatureProvider()`
-
-        If using non-default profile `myprofile` with the `config` file in non-default location.
-
-         `provider = SignatureProvider(config_file='myconfigfile',
-                                    profile_name='myprofile')`
 6. Save the `HelloWorld.py` application.
 </if>
 
@@ -654,26 +685,29 @@ pass_phrase=<optional passphrase>
  `useConfigFile := true`
 6. Provide appropriate parameters for `iam.NewSignatureProviderFromFile` method:
 
-    If using the `DEFAULT` profile with the `config` file in default location `~/.oci/config`.
+  * If using the `DEFAULT` profile with the `config` file in default location `~/.oci/config`.
+```
+    <copy>sp, err := iam.NewSignatureProviderFromFile("~/.oci/config", "", "", compartmentID)</copy>
+```
+* If using non-default profile `TEST` with the `config` file in default location `~/.oci/config`.
+```
+  <copy>sp, err := iam.NewSignatureProviderFromFile("~/.oci/config", "TEST", "", compartmentID)</copy>
+```
+* If using non-default profile `DEV` with the `config` file at non-default location such as`/home/users/config`.
+```
+  <copy>sp, err := iam.NewSignatureProviderFromFile("/home/users/config", "DEV", "", compartmentID)</copy>
+```
 
-      `sp, err := iam.NewSignatureProviderFromFile("~/.oci/config", "", "", compartmentID)`
-
-    If using non-default profile `TEST` with the `config` file in default location `~/.oci/config`.
-
-      `sp, err := iam.NewSignatureProviderFromFile("~/.oci/config", "TEST", "", compartmentID)`
-
-    If using non-default profile `DEV` with the `config` file at non-default location such as`/home/users/config`
-
-      `sp, err := iam.NewSignatureProviderFromFile("/home/users/config", "DEV", "", compartmentID)`
 7. Save the `quickstart.go` program.
 </if>
 
 <if type="Node.js">  
 5. In the `HelloWorld.js` program, in the `getConnection` function, modify the code as described below:
 
-    If using the `DEFAULT` profile with the `config` file in default location `~/.oci/config`, you need not provide authentication details explicitly. Therefore, comment the following lines of code in the `HelloWorld.js` program.
+  * If using the `DEFAULT` profile with the `config` file in default location `~/.oci/config`, you need not provide authentication details explicitly. Therefore, comment the following lines of code in the `HelloWorld.js` program.
 
 ```
+<copy>
      /* auth: {
         iam: {
             tenantId: 'your-tenancy-OCID',
@@ -683,25 +717,30 @@ pass_phrase=<optional passphrase>
             passphrase: 'passphrase-used-to-create-your-private-key'
         }
     } */
+    </copy>
 ```
-    If using non-default profile `TEST` with the config file in default location `~/.oci/config`.
+  * If using non-default profile `TEST` with the config file in default location `~/.oci/config`.
 ```
+<copy>
      auth: {
         iam: {
           profileName: 'TEST'
         }
     }
+    </copy>
 ```
-    If using non-default profile `DEV` with the `config` file at non-default location such as `/home/users/config`
+  * If using non-default profile `DEV` with the `config` file at non-default location such as `/home/users/config`
 ```
+<copy>
      auth: {
         iam: {
           configFile: '/home/users/config',
           profileName: 'DEV'
         }
     }
+    </copy>
 ```
-6. 
+6.
 Save the `HelloWorld.js` program.
 </if>
 
@@ -709,9 +748,12 @@ Save the `HelloWorld.js` program.
 <if type="Java">  
 1. Open the Command Prompt.
 2. Build the `HelloWorld.java` application.
+```
+<copy>
+   javac -cp oracle-nosql-java-sdk-X.X.X/lib/* HelloWorld.java
+</copy>
 
-   `javac -cp oracle-nosql-java-sdk-X.X.X/lib/* HelloWorld.java`  
-
+```
 **Note:** Update `oracle-nosql-java-sdk-X.X.X` with the Java driver version number that you have downloaded.
 
 For Example:
@@ -719,8 +761,13 @@ For Example:
 `javac -cp oracle-nosql-java-sdk-5.2.9/lib/* HelloWorld.java`
 
 3. Execute the `HelloWorld.java` application.
+```
 
-`java -cp ".:oracle-nosql-java-sdk-X.X.X/lib/*" HelloWorld`
+<copy>
+java -cp ".:oracle-nosql-java-sdk-X.X.X/lib/*" HelloWorld
+</copy>
+
+```
 
 **Note:** Update `oracle-nosql-java-sdk-X.X.X` with the Java driver version number that you have downloaded.
 
@@ -730,6 +777,7 @@ For Example:
 
 Expected Output:
 ```
+<copy>
     Using region: oracle.nosql.driver.Region@14ae5a5
     Creating table HelloWorldTable
     Waiting for HelloWorldTable to become active
@@ -739,6 +787,7 @@ Expected Output:
     Dropping table HelloWorldTable
     Waiting for HelloWorldTable to be dropped
     Table HelloWorldTable has been dropped
+    </copy>
 ```
 **Note:** In the `main` method, you can remove the method calls you don't want to execute. For example, if you want to create a table, write the rows and read those rows but don't want to drop the table, you can remove the `dropTable(handle)` method call before building the application.
 </if>
@@ -750,12 +799,14 @@ Expected Output:
 
 Expected Output:
 ```
+<copy>
 Connecting to the Oracle NoSQL Cloud Service
 Creating table: create table if not exists hello_world (id integer, content JSON,  primary key(id))
 Wrote record:
     {'id': 1, 'content': {'hello': 'world'}}
 Read record:
     {'id': 1, 'content': {'hello': 'world'}}
+    </copy>
 ```
 </if>
 <if type="Go">  
@@ -773,6 +824,7 @@ Read record:
 
 Expected Output:
 ```
+<copy>
 Created table  go_quick_start
 Put row: map[id:12345 test_data:This is a sample string of test data]
 result: {"readKB":0,"writeKB":1,"readUnits":0,"existingVersion":null,"existingValue":null,"version":"rO0ABXcsABU0XG/CPt1KFpeLA0xx6KY/AAAAAC9lq0cBAwAAAAsAAAABAAAEjAV5Rpc=","generatedValue":null}
@@ -780,6 +832,7 @@ Got row: {"id":12345,"test_data":"This is a sample string of test data"}
 Deleted key: {"id":12345}
 result: {"readKB":1,"writeKB":1,"readUnits":2,"existingVersion":null,"existingValue":null,"success":true}
 Dropped table  go_quick_start
+</copy>
 ```
 </if>
 <if type="Node.js">  
@@ -791,16 +844,17 @@ Dropped table  go_quick_start
 
 Expected Output:
 ```
+<copy>
 Create table: CREATE TABLE IF NOT EXISTS hello_world (id LONG, content JSON, PRIMARY KEY(id))
 Wrote a record with primary key 1
 Successfully read the record: {"id":1,"content":{"hello":"world"}}
-
+</copy>
 ```
 **Note:** You can modify the program as per your requirement. For example, if you want to create a table, write the rows and read those rows but don't want to drop the table, you can delete the code to drop the table before building the application.
 </if>
 ## Want to Learn More?
-[About Oracle NoSQL Database Cloud Service](https://docs.oracle.com/pls/topic/lookup?ctx=cloud&id=CSNSD-GUID-88373C12-018E-4628-B241-2DFCB7B16DE8)
+* [About Oracle NoSQL Database Cloud Service](https://docs.oracle.com/pls/topic/lookup?ctx=cloud&id=CSNSD-GUID-88373C12-018E-4628-B241-2DFCB7B16DE8)
 
-[Oracle NoSQL Database Cloud Service page](https://cloud.oracle.com/en_US/nosql)
+* [Oracle NoSQL Database Cloud Service page](https://cloud.oracle.com/en_US/nosql)
 
-[Java API Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html)
+* [Java API Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html)
