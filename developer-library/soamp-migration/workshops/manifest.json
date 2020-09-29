@@ -7,13 +7,13 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },{
             "title": "Introduction",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../intro/intro.md"
+            "publisheddate": "29/09/2020",
+            "filename": "../intro/intro.md"
         },
         {
-            "title": "Lab 1: Setup the demo on-premises environment",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../on-prems-env/on-prems-env.md"
+            "title": "Lab 1: Setup the Network for your OCI Account",
+            "publisheddate": "29/09/2020",
+            "filename": "../network-setup/network-setup.md"
         },
         {
             "title": "Lab 1 Option A: Setup an on-premises environment with the Workshop Marketplace stack",
