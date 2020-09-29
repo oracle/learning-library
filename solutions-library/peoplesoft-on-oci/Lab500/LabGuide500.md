@@ -1,25 +1,20 @@
-# Lab 500 : Reviewing and updating a Topology
+# Lab 500 : Subscribing to PeopleSoft Download Channels
 
 ## Introduction
-Time: 10 mins
+
+Time: Depends upon download speed and number of subscribed channels.  Around 60 mins for this example. 
 
 ## Part 1
 
-1.	Navigate to Dashboard | Topology | PUM Fulltier topology. This topology will be used to create a new environment. 
+1.	Navigate to Cloud Manager Dashboard -> Repository -> Download Subscriptions.
+
+2.	Go to the Unsubscribed tab.
+
+3.	On a download channel of your choice, click on the related actions menu and click Subscribe. E.g., HCM_92_Linux.
+ Monitor the Logs page to check for progress. 
 
 ![](./images/1.png "")
 
-2.	Review the nodes and update the Shapes.  Click Full Tier node and select a shape that is available in your AD 2. 
-In this case, select VM.Standard2.1 or VM.Standard2.2. 
-Review the available shapes in your AD as explained in Lab 100.
+4. Go to subscribed tab and you can now see HCM_92_Linux progress status. This takes 1+ hour to complete. Make sure you refresh the page to check the current progress. Proceed to next Lab only when you see a green check as the status as shown in the picture.
 
-![](./images/2.png "")
-
-3.	Delete the Windows node from the topology. Click ‘Delete’ on the page shown below and save the topology. 
-
-![](./images/3.png "")
-
-4.	When you are ready, Click Save. The topology should now look as shown below.
-
-![](./images/4.png "")
-
+![](./images/s.png "")

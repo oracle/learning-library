@@ -1,68 +1,57 @@
-# PeopleSoft Migration to Oracle Cloud Infrastructure 
+# PeopleSoft Migration to Oracle Cloud Infrastructure (OCI)
 
 ## Introduction
-In this hands on lab, you will be able to bring up and configure a Cloud Manager instance in your tenancy, and provision a new PeopleSoft environment.  
+In this hands-on lab, the users are provided with step-by-step instructions on setting up a user group, creating and adding users to a group, and creating a compartment and respective policies in the **Oracle Cloud Infrastructure (OCI)**. Subsequently, this guide instructs how to install the Cloud Manager 11 using Marketplace. The final section provides the steps to provision a PeopleSoft Environment followed by some simple hands-on exercises for you to get familiar with the system.
 
-The lab can be divided into the following sections:
-
-Readme: Review the Prerequisites and set up your workstation/laptop 
+The lab is divided into the following sections:
 
 ## Overview of Labs
 
-Lab 100: Setup OCI and Review VM shapes available in your account/tenancy.
+**Lab 100**: Setting up Oracle Cloud Infrastructure.  
 
-Lab 200: Download and run the automation package to configure your tenancy, and deploy Cloud Manager. The automation will:
+**Lab 200**: Creating Identity and Access Management (IAM) resources.  
 
-	a. Create a user
-	b. Create a group
-	c. Create a compartment
-	d. Create a OCI policy, 
-	e. Create network resources – VCN and subnets
-	f. Subscribe to the Cloud Manager Marketplace image
-	g. Create Cloud Manager instance 
-	h. Bootstrap install Cloud Manager application
+**Lab 300**: Provisioning the Peoplesoft Cloud Manager using Marketplace.  
 
-Lab 300: Configure Cloud Manager Settings 
+**Lab 400**: Configuring Cloud Manager Settings.  
 
-Lab 400: Subscribe to PeopleSoft Download Channels 
+**Lab 500**: Subscribing to PeopleSoft Download Channels.   
 
-Lab 500: Review and Update a Topology
+**Lab 600**: Reviewing and Updating a Topology.  
 
-Lab 600: Create a new Environment template
+**Lab 700**: Creating a new Environment template.  
 
-Lab 700: Create Environment in Peoplesoft
-
-An additional Lab - IAM Best Practices is added. This lab guides you how to create compartments, users, policies once we log into the OCI console.
+**Lab 800**: Creating Environment in Peoplesoft.  
 
 ## Time duration
 
-Review Lab 600 for details on the resources created by deployment automation. This session should take about 90 minutes approximately. 
+**Lab 100** - 10 mins   
+**Lab 200** - 20 mins   
+**Lab 300** - 30 mins configuration + 1 hour waiting   
+**Lab 400** - 10 mins   
+**Lab 500** - 5 mins configuration + maximum 3 hours waiting   
+**Lab 600** - 5 mins   
+**Lab 700** - 10 mins   
+**Lab 800** - 15 mins configuration + 1.5 hours waiting   
 
-Lab 400, when you subscribe to download channels, time taken for downloads to complete depends on network speed and the number of subscribed download channels. If only one application channel and one PeopleTools channel with only the latest patch is subscribed, then downloads should complete in about 60 to 90 minutes depending on the download speed. 
 
-Lab500, 600, 700, should take you approximately 60 to 75 minutes, you will be able to create a Topology, an Environment Template and provision a new PeopleSoft environment.
-
-
-## Reviewing Pre-requisistes
+## Reviewing Prerequisite
 
 1. User already has a tenancy with Administrator user access. 
 
-2. My Oracle Support credentials
+2. My Oracle Support credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to configure Cloud Manager.
 
-3. Minimum resources in Home region of the tenancy:
+3. User should bring their own workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances. 
 
-	a. 4 x VM shapes (VM.Standard2.2 or VM.Standard2.1, VM.StandardE2.2 or VM.StandardE2.1)
+4. User has access to a workstation/laptop with the following installed:
 
-	b. 1 TB block storage
+    a. If you have a windows machine, please download Git Bash for Windows from here: https://git-scm.com/download/win  
 
-4. User brings their own Windows workstation/laptop to access OCI console, PSFT Cloud Manager and provisioned instances. 
+    b. User must have admin privileges on their laptop to update the **etc/hosts** file to add URL/IP address for PSFT Cloud Manager. Please let the team know if you can't get this access.
 
-5. User has access to a Windows workstation/laptop with the following installed:
+    **NOTE: If you don't have admin privileges in your local machine, please make sure to follow the "Windows VM Compute" Lab during Lab 300 before starting Part 6. You can use the windows compute to follow this Workshop. Please also make sure to install Git Bash in Windows Compute.**
 
-	a. Git Bash for Windows - https://git-scm.com/download/win 
+    You will also need to install **Remote Desktop Connection** in your local machine from this [link](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps).
 
-	b. A web browser to connect to OCI web console and Cloud Manager PIA – Firefox or Chrome recommended.
-
-	c. User must have admin privileges on windows laptop to update the ETC/Hosts file to be able to add URL/IP address for PSFT Cloud Manager.
-
-
+    c. A web browser to connect to OCI web console and Cloud Manager PIA – Firefox or Chrome recommended.
+	

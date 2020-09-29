@@ -2,55 +2,60 @@
     "tutorials": [
         {
             "title": "Overview",
-            "publisheddate": "07/18/2020",
+            "publisheddate": "09/21/2020",
             "filename": "./README.md"
         },
         {
             "title": "Lab 100: Preparing OCI tenancy",
-            "publisheddate": "07/18/2020",
+            "publisheddate": "09/21/2020",
             "filename": "./Lab100/LabGuide100.md"
         },
         {
-            "title": "Lab: IAM Best Practices",
-            "publisheddate": "07/18/2020",
+            "title": "Lab 200: Creating IAM resources",
+            "publisheddate": "09/21/2020",
             "filename": "./IAM Lab - Best Practices/LabGuide-IAM.md"
         },
         {
-            "title": "Lab 200: Setting up Cloud Manager",
-            "publisheddate": "07/18/2020",
+            "title": "Lab 300: Provisioning Peoplesoft Cloud Manager from Marketplace",
+            "publisheddate": "09/21/2020",
             "filename": "./Lab200/LabGuide200.md"
         },
         {
-            "title": "Lab 300: Configure Cloud Manager Settings",
-            "publisheddate": "07/18/2020",
+            "title": "Lab 400: Configuring Cloud Manager Settings",
+            "publisheddate": "09/21/2020",
             "filename": "./Lab300/LabGuide300.md"
         },
         {
-            "title": "Lab 400: Subscribing to PeopleSoft Download Channels",
-            "publisheddate": "07/18/2020",
-            "filename": "./Lab400/LabGuide400.md"
-        },
-        {
-            "title": "Lab 500: Reviewing and updating a Topology",
-            "publisheddate": "07/18/2020",
+            "title": "Lab 500: Subscribing to PeopleSoft Download Channels",
+            "publisheddate": "09/21/2020",
             "filename": "./Lab500/LabGuide500.md"
         },
-
         {
-            "title": "Lab 600: Creating new Environment Template",
-            "publisheddate": "07/18/2020",
+            "title": "Lab 600: Reviewing and updating a Topology",
+            "publisheddate": "09/21/2020",
             "filename": "./Lab600/LabGuide600.md"
         },
 
         {
-            "title": "Lab 700: Creating Environment in PeopleSoft",
-            "publisheddate": "07/18/2020",
+            "title": "Lab 700: Creating new Environment Template",
+            "publisheddate": "09/21/2020",
             "filename": "./Lab700/LabGuide700.md"
         },
+
         {
-            "title": "Additional Lab: Provision Environments with Windows Clients",
-            "publisheddate": "07/18/2020",
+            "title": "Lab 800: Creating Environment in PeopleSoft",
+            "publisheddate": "09/21/2020",
+            "filename": "./Lab800/LabGuide800.md"
+        },
+        {
+            "title": "Additional Lab: Provisioning Environments with Windows Clients",
+            "publisheddate": "09/21/2020",
             "filename": "./Additional Lab/AdditionalLab.md"
+        },
+        {
+            "title": "Windows Compute Instance",
+            "publisheddate": "09/21/2020",
+            "filename": "./Lab200/WindowsVMCompute/WindowsLab.md"
         }
 
      ]

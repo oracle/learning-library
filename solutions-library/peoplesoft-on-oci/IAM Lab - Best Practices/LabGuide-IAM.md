@@ -1,8 +1,8 @@
-# Lab : IAM Practice - Identity and Access Management
+# Lab 200: Creating Identity and Access Management (IAM) resources.  
 
 ## Introduction
 
-Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets you control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. The purpose of this lab is to give you an overview of the IAM Service components and an example scenario to help you understand how they work together.
+Oracle Cloud Infrastructure (OCI) Identity and Access Management (IAM) Service lets you control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. The purpose of this lab is to give you an overview of the IAM Service components and an example scenario to help you understand how they work together.
 
 ## Prerequisites
 
@@ -12,11 +12,11 @@ Oracle Cloud Infrastructure Identity and Access Management (IAM) Service lets yo
 
         1. Tenant, User name and Password
         2. URL for the Console: https://oracle.com
-        3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
+        3. Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
 
-## **Step 1:** Signing in to the Console
+## **Part 1:** Signing in to the Console
 
-Console Overview
+**Console Overview**  
 In this, you sign in to the Oracle Cloud Infrastructure console using your credentials.
 
 1.	Open a supported browser and go to the Console URL: https://oracle.com.
@@ -27,264 +27,177 @@ In this, you sign in to the Oracle Cloud Infrastructure console using your crede
 
 3.	Enter the name of your tenancy (aka your account name, not your user name), then click on the Next button.
 
-![](./images/2.png "")
+<img src=./images/2.png width=600 height=500 />
 
-4.	Oracle Cloud Infrastructure is integrated with Identity Cloud Services, you will see a screen validating your Identity Provider. Enter your username and password. Click Sign In.
+4.	Oracle Cloud Infrastructure is integrated with Identity Cloud Services. You will see a screen validating your Identity Provider. Click **Continue**. Enter your username and password and click **Sign In**. 
 
-![](./images/3.png "")
+<img src=./images/signin1.png width=600 height=500 />
+
+<img src=./images/3.png width=600 height=500 />
 
 5.	When you sign in to the Console, the dashboard is displayed.
 
-![](./images/4.png "")
+<img src=./images/homepage.png width=800 height=700 />
 
-## **Step 2:** Creating Compartments
+## **Part 2:** View Service Limit.
 
-Compartments Overview:
-A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
+During the workshop, you might face problems related to service limit. 
+Please check if you have enough resource availability in your Availability Domain or change the Availability Domain to 1/2/3 as per the resource availability. 
 
-1.	From the menu, select Identity and Compartments. Click on the blue Create Compartment button to create a sub-compartment.
+1. To check the service limit, navigate to the three-line menu on the top left and click on **Governance -> Limits, Quotas, and Usage**.
 
-![](./images/5.png "")
+   <img src=./images/slimit.png width=800 height=700 />
 
-2.	Name the compartment Demo and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue Create Compartment button when ready.
+2. Click on **Scope** and select AD-1 or AD-2 or AD-3 depending on which availability domain you want to see the service limit. 
 
-![](./images/6.png "")
+   <img src=./images/scope.png width=500 height=300 />
+
+3. Scroll down the list, and you will see all the resources available and usage. For example, in the below case, all my available resources are used.
+
+![](./images/available.png "")
+
+## **Part 3:** Creating Compartments
+
+**Compartments Overview:**
+
+A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie, when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
+
+1.	Click on the three-line menu, which is on the top left of the console. Scroll down till the bottom of the menu, click on **Identity -> Compartments**. Click on the blue **Create Compartment** button to create a sub-compartment.
+
+<img src=./images/compartmentn.png width=600 height=500 />
+
+<img src=./images/createcompartment.png width=600 height=500 />
+
+2.	Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment button** when ready.
+
+<img src=./images/compartment.png width=600 height=500 />
 
 3.	You have just created a compartment for all of your work in this Test Drive.
 
-## **Step 3:** Managing Users, Groups and Policies to Control Access
+## **Step 4:** Managing Users, Groups, and Policies to Control Access
 
-Security Overview
-A user's permissions to access services comes from the groups to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
+**Security Overview:** 
+
+A user's permissions to access services come from the groups to which they belong. Policies define the permissions for a group Policies explain what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups.
 
 We'll create a user, a group, and a security policy to understand the concept.
 
-1.	Sign in to the console, on the Menu click Identity, then select Groups.
+1.	After signing in to the console, click on the three-line menu on the top left. Click on **Identity -> Groups**.
 
-2.	Click Create Group.
+![](./images/group.png "")
+
+2.	Click **Create Group**.
 
 3.	In the Create Group dialog box, enter the following:
 
-        1. Name: Enter a unique name for your group such as "oci-group” Note that the group name cannot contain spaces.
-        2. Description: Enter a description (for example, “New group for oci users”).
+        1. Name: Enter a unique name for your group, such as "oci-group” Note that the group name cannot contain spaces.
+
+        2. Description: Enter a description (for example, “New group for OCI users”).
+
         3. Click Submit.
 
-![](./images/7.png "")
+![](./images/creategroup.png "")
 
 4.	Your new group is displayed.
 
-![](./images/8.png "")
+   <img src=./images/newgroup.png width=700 height=500 />
 
-5.	Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to compartment Demo to members or group oci-group:
+5.	Now, let’s create a security policy that gives your group permissions in your assigned Compartment. In this case, we will create a policy that permits users belonging to group **oci-group to provision Peoplesoft Cloud Manager in Compartment Demo**:
 
-    a) On the Menu click Identity, and then click Policies.
+    a) Click on the three-line Menu button on the top left. Click on **Identity -> Policies**.
 
-    b) On the left side, select Demo compartment. 
+    ![](./images/policyn.png "")    
 
-![](./images/9.png "")
+    b) On the left side, navigate to **COMPARTMENT** and select **root compartment**. 
 
-```
-NOTE: You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment Demo. If you do, and you still don't see the sub-compartment, Refresh your browser. Sometimes your browser caches the compartment information and does not update its internal cache.
-```
+    ![](./images/compartmentselect.png "")
 
-    c) After you have selected the Demo compartment, click Create Policy.
-    d) Enter a unique Name for your policy (For example, "Policy-for-oci-group") Note that the name can NOT contain spaces.
+    c) After you have selected the root compartment, click **Create Policy**.
+
+    d) Enter a unique Name for your policy (For example, "**Policy-for-oci-group**"). Note that the **name can NOT contain spaces**.
+
     e) Enter a Description (for example, "Policy for OCI Group").
+
     f) Enter the following Statement:
+    
     ```
     Allow group oci-group to manage all-resources in compartment Demo
-    ```
-    g) Click Create.
+    Allow group oci-group to read all-resources in tenancy
+    Allow group oci-group to manage App-catalog-listing in tenancy
+    ```  
 
-![](./images/10.png "")
+    ![](./images/policy.png "")    
+
+    g) Click **Create**.
 
 
-6. Create a New User
+6. Create a **New User**
    
-    a) On the Menu click Identity, and then click Users.
+    a) Click on three-line menu on top left, and click on **Identity -> Users**.
 
-    b) Click Create User.
+    b) Click **Create User**.
 
-    c) In the New User dialog box, enter the following:
+    c) Select IAM user. 
 
-        **Name:** Enter a unique name or email address for the new user. I recommend using a personal email address to which you have access (GMail, Yahoo, etc). This value is the user's login name for the Console and it must be unique across all other users in your tenancy.
-        **Description:** Enter a description. For example, New oci user.
+    ![](./images/UserTypeIAM.png "")    
 
-![](./images/11.png "")
+    d) In the New User dialog box, enter the following:
 
-    d) Click Create.
+        Name: Enter a unique name. This user should have a unique name in the tenancy.
 
+        Description: Enter a description - For example, New OCI user.
 
-7.	Set a Temporary Password for the newly created User
+        Email: Enter your email ID and confirm it. Please make sure not to use the same email ID. Email ID has to be unique in the tenancy. If you don't have another email ID, you can leave it blank.
 
-    a) From the list of users, click on the user that you created to display its details.
-    b) Click Create/Reset Password.
+    ![](./images/createuser.png "")
 
-    ![](./images/12.png "")
-
-    c) In the dialog, click Create/Reset Password.
-
-    ![](./images/13.png "")
-
-    d) The new one-time password is displayed.
-
-    ![](./images/14.png "")
-
-    e) Click the Copy link and then click Close. Make sure to copy this password to your notepad.
-
-    f) Click Sign Out from the user menu and log out of the admin user account completely.
-
-    ![](./images/15.png "")
+    e) Click **Create**.
 
 
-8.	Sign in as the new user using a different web browser or an incognito window.
+7.	Set a **Temporary Password** for the newly created User
 
-    a) Go to https://oracle.com.
+    a) After the user is created, you can see the user details.
 
-    b) Enter the Tenant name, if prompted.
+    b) Click **Create/Reset Password**.
 
-    c) This time, you will sign in using local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
+    <img src=./images/userdetail.png width=600 height=400 />
 
-    d) Enter the password that you copied.
+    c) In the dialog, click **Create/Reset Password**.
 
-    ![](./images/16.png "")
+    <img src=./images/13.png width=600 height=100 />
+
+    d) The new one-time password is displayed. Click the **Copy button** and then click Close. Make sure to copy this password to your notepad.
+    
+    <img src=./images/newpassword.png width=600 height=400 />
+
+    e) Scroll down and click on **Add User to Group**.
+
+    ![](./images/scrolladdgroup.png "")
+
+    f) Select the group you just created, and click on **Add**.
+
+    <img src=./images/adduser.png width=500 height=400 />
+
+    g) Click on **top-right icon button** and **Sign out** of the admin user account.
+
+    ![](./images/signout.png "")
+
+    This time, you will sign in using the local credentials box with the user you created. Note that the user you created is not part of the Identity Cloud Services.
+
+    h) Enter the username **User01** and password that you copied.
+
+    ![](./images/signin.png "")
 
     ```
     Note: Since this is the first-time sign-in, the user will be prompted to change the temporary password, as shown in the screen capture.
     ```
 
-    e) Set the new password to Welc0me2*bmcs. Click Save New Password. 
+    i) Set the new password to **Psft@1234**. Click on **Save New Password**. 
 
-    ![](./images/17.png "")
-
-
-9.	Verify user permissions
-
-    a) Go to the Menu click Compute and Instances.
-
-    b) Try to select any compartment from the left menu.
-
-    c) The message “You don’t have access to this compartment” appears. This is normal as you did not add the user to the group where you associated the policy. 
-
-    ![](./images/18.png "")
-
-    d) Sign out of the Console.
+    <img src=./images/17.png width=700 height=500 />
 
 
-10.	Add User to a Group
-
-    a) Sign in back with the admin account. 
-    
-    b) From the Users list, click the user account that you just created (for example, user01) to go to the user details page.
-
-    c) Under the Resources menu on the left, click Groups.
-
-    d) Click Add User to Group.
-
-    e) From the GROUPS drop-down list, select the oci-group that you created.
-
-    f) Click Add. 
-
-    ![](./images/19.png "")
-
-    g) Sign out of the Oracle Cloud website.
-
-
-11.	Verify user permissions when a user belongs to a specific group
-
-    a) Sign in with the local user01 account you created. Remember to use the latest password you assigned to this user.
-
-    b) Go to the Menu click Compute and Instances.
-
-    c) Select compartment Demo from the list of compartments on the left.
-
-    ![](./images/20.png "")
-
-    d) There is no message related to permissions and you are allowed to create new instances
-
-    e) Go to the Menu click Identity and select Groups.
-
-    f) The message “You don’t have access to these resources” appears. This is expected, since your user has no permission to modify groups. (Note: You may instead get the "An unexpected error occurred" message instead. That is also fine.)
-
-    g) Sign out.
-
-
-## **Step 4:** Creating a VCN
-
-1.	On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard.
-
-![](./images/VCN1.png "")
-
-2.	Select VCN with Internet Connectivity, and then click Start Workflow.
-
-![](./images/VCN2.png "")
-
-3.	Complete the following fields:
-
-Field |	Vaue
------ | ----
-VCN NAME |	OCI_HOL_VCN
-COMPARTMENT	| Choose the Demo compartment you created in the Identity Lab
-VCN CIDR BLOCK |	10.0.0.0/16
-PUBLIC SUNBET CIDR BLOCK |	10.0.2.0/24
-PRIVATE SUBNET CIDR BLOCK |	10.0.1.0/24
-USE DNS HOSTNAMES IN THIS VCN |	Checked
-
-4.	Your screen should look similar to the following:
-
-![](./images/VCN3.png "")
-
-5.	Press the Next button at the bottom of the screen.
-
-6.	Review your settings to be sure they are correct. 
-
-![](./images/VCN4.png "")
-
-7.	Press the Create button to create the VCN. I will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
-
-![](./images/VCN5.png "")
-
-8.	Once you see that the creation is complete (see previous screenshot), click on the View Virtual Cloud Network button.
-
-### Summary
-This VCN will contain all of the other assets that you will create during this set of labs. In real-world situations, you would create multiple VCNs based on their need for access (which ports to open) and who can access them
-
-
-## **Step 5:** Creating a new subnet
-
-1.	Navigate to Menu -> Networking -> Virtual Cloud Networks.  Set the Compartment to ‘PSFT_Lab’.  Click on the existing VCN "OCI_HOL_VCN". 
-
-![](./images/subnet1.png "")
-
-2.	Click on Create Subnet button to add a new subnet. Use default route table, and default DHCP options. Use 10.0.8.0/24 as the CIDR for subnet. 
-
-![](./images/subnet2.png "")
-
-Attribute | Value
---------- | -----
-Name|	MySubnet
-Subnet Type	| Availability Domain-specific
-Availability Domain	| AD 3
-CIDR Block| 	10.0.8.0/24
-Route Table	 | Default Route Table for labnet
-Subnet Access| 	Public Subnet
-DNS Resolution|	Enable Use DNS hostnames in this SUBNET
-Security List	|Add two security lists using the button + Additional Security List as shown in below screenshot - 1. cm_sec 2. Default Security List for labnet
-
-![](./images/subnet3.png "")
-
-3.	Click Create Subnet.  The newly created subnet will be as shown 
-
-![](./images/subnet4.png "")
-
-
-## **Step 6:** Create Windows Instance
-
-In this lab exercise, Windows node was removed from the topology to keep the provisioning process short and simple.  If you want to provision Windows instances as part of an environment at a later point in time, you can do so easily. 
-
-
-
-
+    You are now logged in as local user: **User01**
 
 
 
