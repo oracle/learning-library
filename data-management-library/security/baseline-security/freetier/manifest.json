@@ -1,0 +1,101 @@
+{
+    "tutorials": [
+        {
+            "title": "DBSAT Overview",
+            "description":"DBEE Overview",
+            "publisheddate": "06/30/2020",
+            "filename":"../dbsat/intro.md"
+        },
+        {
+            "title": "DBSAT : Lab1(Install DBSAT)",
+            "description":"How to get connected to the workshop environment",
+            "publisheddate": "06/30/2020",
+            "filename":"../dbsat/labs/Install_DBSAT.md"
+        },
+        {
+            "title": "DBSAT : Lab2(Collect)",
+            "description":"This lab will walk you through how to enable Database Vault for the workshop image",
+            "publisheddate": "06/30/2020",
+            "filename":"../dbsat/labs/CollectorReporter_DBSAT.md"
+        },
+        {
+            "title": "DBSAT : Lab3(Report)",
+            "description":"This lab will walk you through how to enable Database Vault for the workshop image",
+            "publisheddate": "06/30/2020",
+            "filename":"../dbsat/labs/JSON_Report_DBSAT.md"
+        },
+        
+        {
+            "title": "DBSAT : Lab4(Discover Sensitive Data)",
+            "description":"In this lab you will create a realm to protect sensitve data in an application schema",
+            "publisheddate": "06/30/2020",
+            "filename":"../dbsat/labs/Discoverer_DBSAT.md"
+        },
+        {
+            "title": "DBSAT : Lab5(Advance Disover)",
+            "description":"In this lab you will configure Database Vault to verify a users session factors before allowing access to sensitive data",
+            "publisheddate": "07/01/2020",
+            "filename":"../dbsat/labs/Discoverer_Adv_DBSAT.md"
+        },
+        {
+            "title": "Network Encryption Overview",
+            "description":"In this lab you will learn how to use simulation mode to test you Database Vault policies ",
+            "publisheddate": "07/01/2020",
+            "filename":"../network-encryption/intro.md"
+        },
+        {
+            "title": "Network Encryption : Lab1(Native Network Encryption)",
+            "description":"Learn how to leverage the Operations Control feature of Database Vault to protect pluggable databases from container admins",
+            "publisheddate": "07/01/2020",
+            "filename":"../network-encryption/Native_Network_Encryption/network.md"
+        },
+        {
+            "title": "Privilege Analysis Overview",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../privilege-analysis/intro.md"
+        },
+        {
+            "title": "Privilege Analysis : Lab1(Setup)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../privilege-analysis/Simple_PA_Lab/pa.md"
+        },
+        {
+            "title": "Unified Auditing Overview",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../unified-auditing/intro.md"
+        },
+        {
+            "title": "Unified Auditing : Lab1 (First Steps)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../unified-auditing/First_Steps/lab1.md"
+        },
+        {
+            "title": "Unified Auditing : Lab2 (Audit NonApp Usage)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../unified-auditing/Audit_EmpSearch_Usage/lab2.md"
+        },
+        {
+            "title": "Unified Auditing : Lab3 (Audit DB_Role)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../unified-auditing/Audit_DB_Role/lab3.md"
+        },
+        {
+            "title": "Unified Auditing : Lab4 (Audit DataPump)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../unified-auditing/Audit_DataPump/lab4.md"
+        },
+        {
+            "title": "Unified Auditing : Lab5 (Enable Mixed Mode Auditing)",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../unified-auditing/.Unified_Auditing/Enable_Mixed_Mode_Auditing/lab5.md"
+        }
+    ]
+}

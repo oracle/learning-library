@@ -1,0 +1,32 @@
+{
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description":"Understand what Database Vault is and what it can do",
+            "publisheddate": "06/30/2020",
+            "filename":"../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Environment Setup",
+            "description":"How to provision the workshop environment and connect to it",
+            "publisheddate": "06/30/2020",
+            "filename":"../../setup-compute/setup-compute.md"
+        },
+        {
+            "title": "Lab 3: Database Vault",
+            "description":"This lab will walk you through how to enable Database Vault for the workshop image",
+            "publisheddate": "06/30/2020",
+            "filename":"../../dbv/dbv.md"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+  "workshoptitle": "Lift and Shift On-premises EBS to OCI",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to EBS lift and shift",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Preparing Your Tenancy for Oracle E-Business Suite",
+            "description": "Preparing Your Tenancy for Oracle E-Business Suite",
+            "filename": "../../prepare/prepare.md"
+        },
+        {
+            "title": "Lab 2: Oracle E-Business Suite Cloud Manager Deployment and Configuration",
+            "description": "Oracle E-Business Suite Cloud Manager Deployment and Configuration",
+            "filename": "../../deploy/deploy.md"
+        },
+        {
+            "title": "Lab 3: Provision Your Oracle E-Business Suite Environment",
+            "description": "Provision Your Oracle E-Business Suite Environment",
+            "filename": "../../provision/provision.md"
+        },
+        {
+            "title": "Lab 4: Clone Your Oracle E-Business Suite Environment",
+            "description": "Clone Your Oracle E-Business Suite Environment",
+            "filename": "../../clone/clone.md"
+        }
+     ]
+}
+
+
+

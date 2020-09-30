@@ -12,16 +12,13 @@ Estimated Lab Time: 30 minutes
 
 ### Prerequisites
 
-* Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
-* To sign in to the Console, you need the following:
-* Tenant, User name and Password
-* URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
-* Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+
 
 ## **STEP 1**: Select Cost Analysis
 
-Under Top Left “Hamburger Menu” we can select from the Governance and Administration Tab,
-The Account Management Tab which opens up the Cost Analysis Options
+1. Click the **Hamburger Menu** on the top left
+2. Select from the Governance and Administration Tab.  The Account Management Tab which opens up the Cost Analysis Options
 
   ![](./images/Step1.png " ")
 
@@ -29,25 +26,25 @@ The Account Management Tab which opens up the Cost Analysis Options
 
 ## **STEP 2**: Cost Analysis Options
 
-Under this view, there is the possibility to create specific filters from different time periods, reports
-And also grouping dimensions, with different values, for example Availability Domain, Compartment, Service, etc
+1. Under this view, there is the possibility to create specific filters from different time periods, reports
+2. Explore grouping dimensions, with different values, for example Availability Domain, Compartment, Service, etc
 
-![](./images/Step3.png " ")
-![](./images/Step4.png " ")
+  ![](./images/Step3.png " ")
+  ![](./images/Step4.png " ")
 
 ## **STEP 3**: Overview of the Cost Analysis Diagram
 
-Below we would be able to see a detailed overview of the Cost Analysis Diagram, and in detail which service generated which costs:
-![](./images/Step5.png " ")
+1. Below we would be able to see a detailed overview of the Cost Analysis Diagram, and in detail which service generated which costs:
+  ![](./images/Step5.png " ")
 
-This concludes the lab.
+This concludes this lab.
 
 ## Learn More
 * [Cost Analysis](https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm)
 
 ## Acknowledgements
-* **Authors/Contributors** - Harshit Kumar, Constantin Sebe
+* **Authors/Contributors** - Harshit Kumar, Constantin Sebe, EMEA Hub Sales
 * **Last Updated By/Date** - Harshit Kumar, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

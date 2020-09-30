@@ -9,7 +9,7 @@ This is the third of several labs that are part of the **Oracle Public Cloud Con
 During this lab, you will take on the **Lead Developer Persona** and work on fixing a bug found in Java microservice that you deployed to Kubernetes in the previous lab. You will make a code change that fixes the bug, commit the code to GitHub, and observe the execution of the build and deploy workflow that is managing your application. Then you will test the application to verify that the bug fix was successful.
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 ### Objectives
 
 **Make a Bug Fix to Your Java Microservice**

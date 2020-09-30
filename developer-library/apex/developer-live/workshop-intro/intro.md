@@ -58,7 +58,8 @@ Total estimated time: 55 minutes
 
 If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
 
-### Create Your APEX Workspace 
+<if type="freetier">
+### Create Your APEX Workspace
 
 
 1. Log into your Oracle Cloud account.        
@@ -136,6 +137,7 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 12. On the APEX Workspace log in page, enter **``SecretPassw0rd``** for the password, check the **Remember workspace and username** checkbox, and then click **Sign In**.
 
     ![](images/log-in-to-workspace.png " ")
+</if>
 
 ## Downloads
 
@@ -155,8 +157,8 @@ You may proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Salim Hlayel, APEX Product Management
-- **Contributors** - Arabella Yao, Dylan McLeod, Jaden McElvey, LiveLabs QA
-- **Last Updated By/Date** - Tammy Bednar, Product Management, Aug 2020
+- **Contributors** - Arabella Yao, Dylan McLeod, Jaden McElvey, LiveLabs QA, Tammy Bednar, Product Management
+- **Last Updated By/Date** - Tom McGinn, September 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

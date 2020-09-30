@@ -8,20 +8,16 @@ Estimated Lab Time: 30 minutes
 
 ### Prerequisites
 
-* Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
-* To sign in to the Console, you need the following:
-* Tenant, User name and Password
-* URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
-* Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 ## **STEP 1**: Navigate Budget
-Open the navigation menu. Under **Governance and Administration**, go to **Account Management** and click **Budgets**.
+1. Open the navigation menu. Under **Governance and Administration**, go to **Account Management** and click **Budgets**.
 
-All the billing and cost management related option are available under account management part of the Oracle Cloud Infrastructure console.
- ![](./images/budget.png " ")
+2. All the billing and cost management related option are available under account management part of the Oracle Cloud Infrastructure console.
+  ![](./images/budget.png " ")
 
 ## **STEP 2**: Create budgets
-Click **Create Budget** at the top of the budgets list. The Create Budget dialog is displayed.
+1. Click **Create Budget** at the top of the budgets list. The Create Budget dialog is displayed.
 
   ![](./images/createbudget.png " ")
 
@@ -32,11 +28,12 @@ Click **Create Budget** at the top of the budgets list. The Create Budget dialog
     - Select a target cost-tracking tag key.
     - Enter a value for the cost-tracking tag.
 
-In this workshop we have selected **Budget Scope** as Compartment.
-
-  *Note: While the budget tracks spending in the specified target compartment, but you need to have permissions to manage budgets in the root compartment of the tenancy to create and use budgets.*
+3. In this workshop we have selected **Budget Scope** as Compartment.
 
   ![](./images/budgetscreenshot1.1.png " ")
+  *Note: While the budget tracks spending in the specified target compartment, but you need to have permissions to manage budgets in the root compartment of the tenancy to create and use budgets.*
+
+  
 
 ## **STEP 4**: Enter budget name
 1. Enter a name for your budget in the **Name** text field. The name can only contain alphanumeric characters, dashes, and the underscore character, and can’t begin with a number.
@@ -44,12 +41,13 @@ In this workshop we have selected **Budget Scope** as Compartment.
   ![](./images/budgetscreenshot1.2.png " ")
 
 ## **STEP 5**: Select the Target for your budget
-Select The compartment that you want to create the budget for, from the Target Compartment drop-down list. Root compartment has been selected for this workshop, you can choose the compartment you want to set budget.
+1. Select The compartment that you want to create the budget for, from the Target Compartment drop-down list. 
+2. The root compartment has been selected for this workshop, you can choose the compartment you want or have been assigned to set budget.
 
  ![](./images/budgetscreenshot1.3.png " ")
 
 ## **STEP 6**: Set monthly amount for you budget
-Enter a monthly amount for your budget in the **Monthly Budget Amount** field. The minimum allowed value for your monthly budget is   1; the maximum allowed value is 999,999,999,999.
+1. Enter a monthly amount for your budget in the **Monthly Budget Amount** field. The minimum allowed value for your monthly budget is   1; the maximum allowed value is 999,999,999,999.
   ![](./images/budgetscreenshot1.png " ")
 
 ## **STEP 7**: Configure your alert rule
@@ -93,11 +91,11 @@ You may now *proceed to the next lab*.
 
 ## Learn More
 
-* [Budget](https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/budgetsoverview.htm)
+* [Oracle Cloud Budget](https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/budgetsoverview.htm)
 
 ## Acknowledgements
-* **Authors/Contributors** - Harshit Kumar, Constantin Sebe
+* **Authors/Contributors** - Harshit Kumar, Constantin Sebe, EMEA Hub Sales
 * **Last Updated By/Date** - Harshit Kumar, September 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

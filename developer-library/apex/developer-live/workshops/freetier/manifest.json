@@ -2,10 +2,11 @@
     "tutorials": [
         {
           "title": "Prerequisites",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Introduction",
+            "type": "freetier",
             "filename":"../../workshop-intro/intro.md"
         },
         {
@@ -13,7 +14,6 @@
             "filename": "../../../spreadsheet/2-creating-an-app-from-a-spreadsheet/2-creating-an-app-from-a-spreadsheet.md"
         },
         {
-      
             "title": "Lab 2: Improve the Faceted Search",
             "filename": "../../../spreadsheet/3-improving-the-faceted-search/3-improving-the-faceted-search.md"
         },

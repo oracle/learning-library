@@ -1,0 +1,27 @@
+{
+    "workshoptitle": "High Performance Compute - Introductory Workshop",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Provision HPC Cluster from Oracle MarketPlace Image",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../Lab100/Lab100.md"
+        },
+        {
+            "title": "Lab 2: Use OCI CLI commands and Terraform to work with HPC",
+            "filename": "../../Lab200/Lab200.md"
+        },
+        {
+            "title": "Lab 3-1: Run OpenFoam projects in HPC cluster",
+            "filename": "../../Lab300-1/Lab300-1.md"
+        },
+        {
+            "title": "Lab 3-2: Run OpenFoam project in Standard VM on OCI",
+            "filename": "../../Lab300-2/Lab300-2.md"
+        }
+    ]
+}

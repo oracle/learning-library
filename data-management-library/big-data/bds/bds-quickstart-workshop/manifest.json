@@ -1,6 +1,11 @@
 {
     "tutorials": [
       {
+         "title": "Prerequisites",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
           "title": "Introduction to Oracle Big Data Service (BDS)",
           "description": "Introduction to Oracle Big Data Service",
           "filename": "./intro.md"

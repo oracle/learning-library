@@ -1,6 +1,6 @@
 ![](../../../images/banner_DBSAT.PNG)
 
-# [Lab] Discover Sensitive Data
+# Discover Sensitive Data
 
 ## **1. Database Sensitive Data Assessment - Discoverer**
 
@@ -8,19 +8,28 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
 <br><br>
 
 - Open a SSH session on your DBSec-Lab VM as Oracle User
-
+````
+<copy>
         sudo su - oracle
 
+</copy>
+````
 - Go to the scripts directory
-
+````
+<copy>
         cd $DBSEC_HOME/workshops/Database_Security_Labs/DBSAT/dbsat22/Discover/conf
-        
-- Copy the provided sample_dbsat.config, make the copy writable and open it for editing
 
+</copy>
+````        
+- Copy the provided sample_dbsat.config, make the copy writable and open it for editing
+````
+<copy>
         cp sample_dbsat.config dbsat.config
         chmod +w dbsat.config
         vi dbsat.config
-        
+
+</copy>
+````        
 2. You should see this:
 
         ...
@@ -37,10 +46,13 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
     - Sensitive Categories and related risk level
  
 - Change the following parameters to:
-
+````
+<copy>
         DB_PORT = 1522
         DB_SERVICE_NAME = pdb1
 
+</copy>
+````
     ![](../images/DBSAT_007.PNG)
  
     ---
@@ -51,13 +63,19 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
 - Save the file and go back to the shell
 
 - Let’s give it a try. Go back to the terminal and change directory to the dbsat home:
-
+````
+<copy>
         cd ../..   
 
+</copy>
+````
 - Execute the DBSAT discoverer :
-
+````
+<copy>
         ./dbsat discover -c Discover/conf/dbsat.config pdb1_dbsat
-        
+ 
+</copy>
+````       
 - Pass **DBSAT_ADMIN** as the username and **Oracle123** as the password.
 
     ![](../images/DBSAT_008.PNG)
@@ -67,17 +85,23 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
 - A file named pdb1_dbsat_report.zip is created in the directory (/home/oracle/dbsat/)
 
 - Unzip the file and check the contents by opening the HTML report in firefox
-
+````
+<copy>
         unzip pdb1_dbsat_report.zip
-        
+
+</copy>
+````        
 - This is the output you should get:
 
     ![](../images/DBSAT_009.PNG)
 
 - For the purpose of this lab, and as we are not using a desktop environment, copy the html file to the glassfish server directory by executing the script. This will make the html report accessible by your laptop browser.
-
+````
+<copy>
         ../Use_Glassfish_Webserver.sh
-    
+
+</copy>
+````    
     This script will copy the html report to the glassfish webserver to make it easier for you to see the report.
 
 - This is the output:

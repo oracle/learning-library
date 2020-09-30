@@ -11,22 +11,21 @@
       "filename": "./../../intro/intro.md"
     },
     {
-      "title": "Lab 1: Verify Setup",
-      "description": "Verify compute instance is setup and EM 13.3 with pre-configured database targets are up",
-      "publisheddate": "9/09/2020",
-      "filename": "./../../verify-compute/verify-compute.md"
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
     },
     {
-      "title": "Lab 2: Setup SSH Tunnel",
-      "description": "Setup SSH port forwarding ",
-      "publisheddate": "9/11/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-ssh-forwarding/setup-ssh-forwarding.md"
+      "title": "Lab 2: Environment Setup",
+      "description": "Verify compute instance is setup and EM 13.3 with pre-configured database targets are up",
+      "publisheddate": "9/09/2020",
+      "filename": "./../../setup-compute/verify-compute.md"
     },
     {
       "title": "Lab 3: Automated Database Patching at Scale with Fleet Maintenance",
       "description": "This lab walks you through the steps needed with Fleet Maintenance to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
       "publisheddate": "7/16/2020",
-      "filename": "./../../em-fleet-maintenance-patching/em-fleet-maintenance-patching-livelabs.md"
+      "filename": "./../../em-fleet-maintenance-patching/em-fleet-maintenance-patching.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",

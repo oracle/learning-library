@@ -13,24 +13,38 @@ In this exercise, you will learn how to execute DBSAT collector. DBSAT collector
 
 - Open a SSH session on your DBSec-Lab VM as Oracle User
 
+````
+<copy>
+
         sudo su - oracle
+</copy>
+````
 
 - Go to the scripts directory
 
+````
+<copy>
         cd $DBSEC_HOME/workshops/Database_Security_Labs/DBSAT/dbsat22
-
+</copy>
+````
  - Let's start by examining all DBSAT execution parameters. Please type:
 
+````
+<copy>
         ./dbsat
-
+</copy>
+````
 - You'll see this:
 
     ![](../images/DBSAT_002.PNG)
        
 - Let’s run dbsat to collect data from the pdb1 PDB
 
+````
+<copy>
         ./dbsat collect dbsat_admin@pdb1 pdbhol
-
+</copy>
+````
 
 - When prompted, enter **Oracle123** as the password
     
@@ -60,8 +74,11 @@ In this exercise, you will learn how to execute the dbsat reporter. DBSAT report
 
 - Let’s run dbsat to analyze data from the pdbhol file
 
+````
+<copy>
         ./dbsat report pdbhol
-        
+</copy>
+````        
     ---
     **NOTE:** You do not need to include the .zip extension
     
@@ -77,7 +94,11 @@ In this exercise, you will learn how to execute the dbsat reporter. DBSAT report
 
 - Let’s unzip the file to view the reports
 
+````
+<copy>
         unzip pdbhol_report.zip
+</copy>
+````
 
 - This is the output you should get:
 
@@ -85,8 +106,12 @@ In this exercise, you will learn how to execute the dbsat reporter. DBSAT report
 
 - For the purpose of this lab, and as we are not using a desktop environment, copy the html file to the glassfish server directory by executing the script. This will make the html report accessible by your laptop browser.
 
+````
+<copy>
          ../Use_Glassfish_Webserver.sh
-    
+</copy>
+````
+
     This script will copy the html report to the glassfish webserver to make it easier for you to see the report.
     
 - This is the output:

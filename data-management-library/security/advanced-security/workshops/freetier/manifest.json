@@ -1,0 +1,39 @@
+{
+    "workshoptitle": "Oracle Advanced Security",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description":"Understand what Advanced Security is and what it can do",
+            "publisheddate": "06/30/2020",
+            "filename":"../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Environment Setup",
+            "description":"How to provision the workshop environment and connect to it",
+            "publisheddate": "06/30/2020",
+            "filename":"../../setup-compute/setup-compute.md"
+        },
+        {
+            "title": "Lab 3: Transparent Data Encryption",
+            "description":"Create a restore point which will enable you to repeat all the labs if desired",
+            "publisheddate": "07/01/2020",
+            "filename":"../../tde/tde.md"
+        },
+        {
+            "title": "Lab 4: Data Redaction",
+            "description":"In this lab you can see how to disable Database Vault.",
+            "publisheddate": "07/01/2020",
+            "filename":"../../data-redaction/redact.md"
+        }
+    ]
+}

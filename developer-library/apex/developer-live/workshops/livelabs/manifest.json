@@ -1,0 +1,56 @@
+{
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+      {
+          "title": "Introduction",
+          "filename":"../../workshop-intro/intro.md"
+      },
+      {
+        "title": "Lab 1: Create an APEX Workspace",
+        "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
+      },
+      {
+          "title": "Lab 2: Create an App from a Spreadsheet",
+          "filename": "../../../spreadsheet/2-creating-an-app-from-a-spreadsheet/2-creating-an-app-from-a-spreadsheet.md"
+      },
+      {
+          "title": "Lab 3: Improve the Faceted Search",
+          "filename": "../../../spreadsheet/3-improving-the-faceted-search/3-improving-the-faceted-search.md"
+      },
+      {
+          "title": "Lab 4: Improve the Report and Form",
+          "filename": "../../../spreadsheet/4-improving-the-report-and-form/4-improving-the-report-and-form.md"
+      },
+      {
+          "title": "Lab 5: Link the Calendar",
+          "filename": "../../../spreadsheet/5-linking-the-calendar/5-linking-the-calendar.md"
+      },
+      {
+          "title": "Lab 6: Defining New Data Structures",
+          "filename": "../../../proof-of-concept/quick-sql/using-quick-sql.md"
+      },
+      {
+          "title": "Lab 7: Creating the Application",
+          "filename": "../../../proof-of-concept/create-app/create-app.md"
+      },
+      {
+          "title": "Lab 8: Regenerating the Application",
+          "filename": "../../../proof-of-concept/regen-app/regen-app.md"
+      },
+      {
+          "title": "Lab 9: Improving Tasks",
+          "filename": "../../../proof-of-concept/improving-tasks/improving-tasks.md"
+      },
+      {
+          "title": "Lab 10: Improving To Dos",
+          "filename": "../../../proof-of-concept/improving-todos/improving-todos.md"
+      },
+      {
+          "title": "Lab 11: Improving Links",
+          "filename": "../../../proof-of-concept/improving-links/improving-links.md"
+      }
+    ]
+}

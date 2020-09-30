@@ -5,7 +5,7 @@
 This lab will get you started with the Oracle Cloud VMware Service. In this lab, you will provision an Oracle Cloud VMware stack including the Oracle Cloud Infrastructure resources needed to host the solution.
 
 <!---### See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.-->
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.-->
 
 To log issues, go to this [Confluence](https://confluence.oraclecorp.com/confluence/display/NOCSH/5.+Oracle+Cloud+VMware+Solution%3A+Training+Registration+and+Tracking) page.
 

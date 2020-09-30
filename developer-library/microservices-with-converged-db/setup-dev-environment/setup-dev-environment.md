@@ -84,8 +84,8 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
       ![](images/29-create-oke-wizard.png " ")
 
-8. Change the name of the cluster to `msdataworkshopcluster`, accept all the other
-    defaults, and click **Next** to review the cluster settings.
+
+8. Change the name of the cluster to `msdataworkshopcluster`, accept all the other defaults, and click **Next** to review the cluster settings.
 
 
 9. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
@@ -109,9 +109,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   Run the `createATPPDBs.sh` script.
 
-    ```
-    <copy>./createATPPDBs.sh</copy>
-    ```
+  ```
+  <copy>./createATPPDBs.sh</copy>
+  ```
+
+
    Notice creation of the ORDERDB and INVENTORYDB PDBs.
 
 
@@ -169,13 +171,11 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   For example `./dockerLogin.sh user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
 
 
-8.  Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
+8. Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
 
     ```
     <copy>docker images </copy>
     ```
-
-    ![](images/cc56aa2828d6fef2006610c5df4675bb.png " ")
 
 
 ## **STEP 6**: Access OKE from the Cloud Shell
@@ -210,4 +210,4 @@ You may now proceed to the next lab.
 
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

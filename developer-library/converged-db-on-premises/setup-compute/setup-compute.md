@@ -79,7 +79,7 @@ You may now proceed to Step 2 (skip Step 1B).
 
 ## **Step 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
+- Ingress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
 
 If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
 
@@ -207,7 +207,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
   ![](./images/em-cloudshell.png " ")
 
-2.  If you didn't jot down your comput instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP address for your instance.
 4.  Enter the command below to login to your instance.    
     ````
@@ -383,4 +383,4 @@ If you have other compute instances you are not using, you can go to those insta
 * **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

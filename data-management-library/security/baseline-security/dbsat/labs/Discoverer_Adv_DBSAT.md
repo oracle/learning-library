@@ -33,16 +33,26 @@ You will learn how to:
 
 - Open a SSH session on your DBSec-Lab VM as Oracle User
 
-        sudo su - oracle
+````
+<copy>
 
+        sudo su - oracle
+</copy>
+````
 - Go to the scripts directory
+````
+<copy>
 
         cd $DBSEC_HOME/workshops/Database_Security_Labs/DBSAT/dbsat22/Discover/conf
-
+</copy>
+````
 - Create a file called `exclude.ini`
+````
+<copy>
 
         vi exclude.ini
-
+</copy>
+````
 - Paste the copied value and you should see this:
 
    ![](../images/dbsat22-sdd-exclude-ini.png)
@@ -50,27 +60,39 @@ You will learn how to:
 - Save the file by typing `:wq!`
 
 - Open the dbsat.config file and set the parameter `EXCLUSION_LIST_FILE = exclude.ini`
+````
+<copy>
 
         vi Discover/conf/dbsat.config
-
+</copy>
+````
    ![](../images/dbsat22-sdd-dbsat-config-exclude.png)
 
 - Save the file
 
 - Rerun DBSAT Discoverer. Append `_v2` to the filename. .
+````
+<copy>
 
         ./dbsat discover -c Discover/conf/dbsat.config pdb1_dbsat_v2
 
-
+</copy>
+````
 - Unzip the file
+````
+<copy>
 
         unzip orcl_dbsat_v2_report.zip
 
-
+</copy>
+````
 - For the purpose of this lab, and as we are not using a desktop environment, copy the html file to the glassfish server directory by executing the script. This will make the html report accessible in the glassfish application server and make it reacheable by your laptop browser.
+````
+<copy>
 
         . ../Use_Glassfish_Webserver.sh
-    
+</copy>
+````    
     This script will copy the html report to the glassfish webserver to make it easier for you to see the report.
 
     
@@ -109,31 +131,49 @@ You will learn how to:
 - Let’s make a DBSAT Discoverer run just for the HR schema and exclude tables with less than 11 rows. This will exclude the `JOB_HISTORY` table. Search the report for the `JOB_HISTORY` table (hint: Schema view > Table Summary) to validate that it has 10 rows.
 
 - Edit the configuration file and add change the following variables:
+````
+<copy>
 
         vi Discover/conf/dbsat.config
-
+</copy>
+````
 - Set `SCHEMAS_SCOPE = HR` and `MINROWS = 11`
 
 - You should see this:
+````
+<copy>
 
       ![](../images/dbsat22-sdd-schema-scope-min-rows.png)
-
+</copy>
+````
 - Save the file and run again. Append **v3** to the filename.
+````
+<copy>
 
         ./dbsat discover -c Discover/conf/dbsat.config pdb1_dbsat_v3
-
+</copy>
+````
 - Unzip the file
+````
+<copy>
 
         unzip pdb1_dbsat_v3_report.zip
-        
+ </copy>
+````       
 - Make the file available using Glassfish:
+````
+<copy>
 
         . ../Use_Glassfish_Webserver.sh
-
+</copy>
+````
 - Open the following link in your browser:
+````
+<copy>
 
         http://<public_ip>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_v3_discover.html
-
+</copy>
+````
 - You should see a smaller report focused just on the `HR` schema and that excludes the `JOB_HISTORY` table.
 
     ![](../images/dbsat22-sdd-hr-min-rows.png)
@@ -145,6 +185,8 @@ You will learn how to:
 - Let's start by adding some sample data to work with in the next exercise. For that you will create the schema `FINACME` and insert some sample _Company Financial Information_.
 
 - Carefully copy/paste the code below. Make sure that all statements execute successfully.
+````
+<copy>
 
         conn system/Oracle123@pdb1 
         drop user finacme cascade;
@@ -163,9 +205,12 @@ You will learn how to:
                  tax_payer_id number(12),
                  comp_profit number(20),
                  fy_end_date date );
-
+</copy>
+````
 - Insert some records 
-    
+````
+<copy>
+   
         begin 
             for i in 1..100 loop 
                 insert into finacme.company_data values (i, 'Company '||initcap(dbms_random.string('A', 10)) , 'California', 'San Francisco','CA','90000'+i,'19442350012'+i, i+23440003, sysdate-i); 
@@ -173,17 +218,24 @@ You will learn how to:
         end; 
         / 
         commit;
-    
+</copy>
+````    
 - Let’s gather table statistics 
-        
+````
+<copy>
+       
         exec dbms_stats.gather_table_stats('FINACME','COMPANY_DATA');
-
+</copy>
+````
 - Check the data to validate everything is ok.
+````
+<copy>
 
     set pages 120 
     set lines 150 
     select * from finacme.company_data;
-
+</copy>
+````
 - Type `exit`
 
 - You are all set now!
@@ -195,10 +247,13 @@ DBSAT uses pattern files and the regexes that are there defined to find sensitiv
 
 - To get you familiarized with what a pattern file is, open the `sensitive_en.ini` 
 file that is inside the Discover/conf directory.
+````
+<copy>
 
         chmod +w Discover/conf/sensitive_en.ini 
         vi Discover/conf/sensitive_en.ini
-
+</copy>
+````
 - You'll see this:
 
     ![](../images/dbsat22-sdd-pattern-file.png)
@@ -233,9 +288,12 @@ file that is inside the Discover/conf directory.
     ---
 
 - Let’s have a second look at the dbsat.config file. Scroll to the bottom of the file and see:
+````
+<copy>
 
         vi Discover/conf/dbsat.config
-
+</copy>
+````
     ![](../images/dbsat22-sdd-sensitive-categories.png)
 
 - As you can see, DBSAT includes out-of-the-box, 19 Sensitive Categories:
@@ -271,48 +329,73 @@ file that is inside the Discover/conf directory.
 - Let’s create a **new Sensitive Category** – `Financial Info – Company Data` – and revert other parameters.
 
 - Edit dbsat.config and add a new Sensitive Category to the bottom of the file - `Financial Info – Company Data = Medium Risk`
+````
+<copy>
 
         vi Discover/conf/dbsat.config
-
+</copy>
+````
 - Add the new Sensitive Category. You should see this:
 
     ![](../images/dbsat22-sdd-new-category.png)
 
 - Let’s revert some parameters back to the original values to get more data in the report: 
+````
+<copy>
 
         SCHEMAS_SCOPE = ALL 
         MINROWS = 1 
         EXCLUSION_LIST_FILE =
-
+</copy>
+````
 - Save `dbsat.config` file.
 
 - Now let’s add a `PROFIT` sensitive type to the new `Financial Info – Company Data` category. Edit the `sensitive_en.ini` file:
+````
+<copy>
 
         vi  Discover/conf/sensitive_en.ini
-
+</copy>
+````
 - And add a the new **Sensitive Type** to the file as shown below.
+````
+<copy>
 
         # Financial Info - Company Data
         [PROFIT] 
         COL_NAME_PATTERN = ^(?!.*(NON)).*PROFIT 
         COL_COMMENT_PATTERN = ^(?!.*(NON)).*PROFIT 
         SENSITIVE_CATEGORY = Financial Info - Company Data
-
+</copy>
+````
 - Save the file and run again. Append **v4** to the filename. 
+````
+<copy>
 
         ./dbsat discover -c Discover/conf/dbsat.config pdb1_dbsat_v4
-
+</copy>
+````
 - Unzip the report file make it available using Glassfish.
+````
+<copy>
 
         unzip pdb1_dbsat_v4_report.zip
+        </copy>
+````
+````
+<copy>
 
         . ../Use_Glassfish_Webserver.sh
-
+</copy>
+````
 
 - Go to your web browser and open:
+````
+<copy>
 
         http://<public_ip>:8080/hr_prod_pdb1/dbsat/pdb1_dbsat_v4_discover.html
-
+</copy>
+````
 - You should see this:
 
     ![](../images/dbsat22-sdd-new-category-in-summary.png)

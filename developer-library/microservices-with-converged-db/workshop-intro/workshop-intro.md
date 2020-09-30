@@ -14,6 +14,8 @@ You will create a highly scalable application that relies on Oracle Container En
 
 Click on [Sign Up For a Free Trial](?lab=sign-up-for-free-trial) to get your Oracle Free Trial. If you already have an Oracle Free Trial or Paid account, you can proceed to [Lab 1: Provision a DevCS Instance](?lab=lab-1-setup-oci,-oke,-atp-cloud-shell).
 
+Access a complete walkthrough video of this lab [here](https://tinyurl.com/helidonoracledb-msdataworkshop). 
+
 If you need any help please join the databasehome.slack.com (#microservices) channel.
 
 
@@ -31,4 +33,4 @@ If you need any help please join the databasehome.slack.com (#microservices) cha
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. Please include the workshop name and lab in your request.
