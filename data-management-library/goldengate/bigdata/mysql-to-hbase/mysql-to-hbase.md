@@ -21,17 +21,18 @@ process ‘rhbase’ will read the remote trail files, create the HBase tables a
 ## STEPS
 For the Lab terminal session:
 
-**Step1:** If at a terminal session:
+**Step1:** Open a terminal session locally
 
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
-<copy>sudo su - ggadmin</copy>.
+Use Public IP allocated from LiveLabs
 
-User ID: ggadmin
-Password:  oracle
-
-or
+**Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
     
+    <copy>sudo su – ggadmin</copy>
+    Password = oracle
+    
+
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
 **Step2:** The following Lab Menu will be displayed, 

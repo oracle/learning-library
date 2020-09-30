@@ -25,7 +25,6 @@ For the Lab:
 
 If at a terminal session:
 
-
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
 

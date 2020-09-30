@@ -43,23 +43,22 @@ integration architectures to big data systems without impacting the performance 
 
  Follow the steps below to install GoldenGate, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-1. Open terminal from Linux desktop by double clicking on the Terminal icon
+   
+1.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
+
+Open a terminal session locally
 
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
-or 
-
-  ![](./images/terminal2.png" ")
-
-2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
+Use Public IP allocated from LiveLabs
 
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
     
-    <copy>su – ggadmin</copy>
+    <copy>sudo su – ggadmin</copy>
     Password = oracle
     
 
-3. The following Lab Menu will be displayed
+1. The following Lab Menu will be displayed
 
   ![](./images/labmenu_opt1.png" ")
 Follow these instructions to install GoldenGate for Big Data

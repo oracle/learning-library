@@ -21,27 +21,25 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 
 ## **STEP 1**: Login to the Terminal
 
-1. Open terminal from desktop
-
+1. Open a terminal session locally
 
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
-or
-
-  ![](./images/terminal2.png " ")
-
-2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
+Use Public IP allocated from LiveLabs
 
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
+    
+    <copy>sudo su – ggadmin</copy>
+    Password = oracle
+     
 
-<copy>su – ggadmin</copy>
-Password = oracle
+**Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
 
 Execute the alias 
 
 <copy>‘labmenu’</copy>
 
-3. At the prompt, type  ‘labmenu’ to display the lab.
+1. At the prompt, type  ‘labmenu’ to display the lab.
 
   ![](./images/a_labmenu2.png " ")
 

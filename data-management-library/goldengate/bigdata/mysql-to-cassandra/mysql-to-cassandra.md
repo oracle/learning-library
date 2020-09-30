@@ -24,7 +24,13 @@ If at a terminal session:
 
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
-<copy>sudo su - ggadmin</copy>
+Use Public IP allocated from LiveLabs
+
+**Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
+    
+    <copy>sudo su – ggadmin</copy>
+    Password = oracle
+    
 
 User ID: ggadmin
 Password:  oracle
