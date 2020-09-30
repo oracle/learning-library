@@ -45,6 +45,10 @@ integration architectures to big data systems without impacting the performance 
 
 1. Open terminal from Linux desktop by double clicking on the Terminal icon
 
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
+
+or 
+
   ![](./images/terminal2.png" ")
 
 2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  

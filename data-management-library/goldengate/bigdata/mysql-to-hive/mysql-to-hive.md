@@ -22,7 +22,9 @@ For the Lab terminal session:
 
 use ggadmin/oracle to log into your new Lab4
 
-<copy> su -ggadmin</copy>
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
+
+<copy>sudo su -ggadmin</copy>
 password = oracle
 
 Setting up the Environment For MySQL.

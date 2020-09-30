@@ -19,10 +19,12 @@ Estimated Lab Time:  60 minutes
 * Lab: MySQL to MySQL
 
 
-
 ## **STEP 1**: Login to the Terminal
 
 1. Open terminal from desktop by double clicking on the icon
+
+
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
   ![](./images/terminal2.png)
 
@@ -30,7 +32,7 @@ Estimated Lab Time:  60 minutes
   
   **Note: Please Use ‘ggadmin’ USER FOR ALL THE LABS**
 
-    <copy>su – ggadmin</copy>
+    <copy>sudo su – ggadmin</copy>
     Password = oracle
 
    Display the Lab Menu by typing the alias **labmenu**. The following lab menu will be displayed.

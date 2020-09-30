@@ -21,7 +21,12 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 
 ## **STEP 1**: Login to the Terminal
 
-1. Open terminal from desktop by double clicking on the icon
+1. Open terminal from desktop
+
+
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
+
+or
 
   ![](./images/terminal2.png " ")
 

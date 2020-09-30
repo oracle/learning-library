@@ -22,7 +22,9 @@ In this lab we will load data in MySQL database ‘ggsource’, GG extract proce
 ## Steps
 If at a terminal session:
 
-<copy>su - ggadmin</copy>
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
+
+<copy>sudo su - ggadmin</copy>
 
 User ID: ggadmin
 Password:  oracle

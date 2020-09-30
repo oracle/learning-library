@@ -23,7 +23,9 @@ For the Lab terminal session:
 
 **Step1:** If at a terminal session:
 
-<copy>su - ggadmin</copy>.
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
+
+<copy>sudo su - ggadmin</copy>.
 
 User ID: ggadmin
 Password:  oracle
