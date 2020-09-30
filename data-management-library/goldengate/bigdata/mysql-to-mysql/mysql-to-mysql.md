@@ -31,9 +31,6 @@ Use Public IP allocated from LiveLabs
     
     <copy>sudo su – ggadmin</copy>
     Password = oracle
-     
-
-**Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
 
 Execute the alias 
 
@@ -101,6 +98,8 @@ processes:
 
 <copy> info all</copy>
 
+<copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
+
 <copy> start extmysql</copy>
 
 <copy>info all</copy>	
@@ -124,7 +123,7 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
 
 1. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
 
-<copy>su – ggadmin</copy>
+<copy>sudo su – ggadmin</copy>
 
 Password = oracle
 

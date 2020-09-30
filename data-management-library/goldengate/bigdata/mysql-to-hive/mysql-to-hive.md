@@ -64,11 +64,11 @@ Optionally view these files, same as in previous lab:
 
 Open Terminal Session1 / 
 
-<copy>su -ggadmin</copy>  pwd = oracle
+<copy>sudo su -ggadmin</copy>  pwd = oracle
 
 Open Terminal Session2 / 
 
-<copy>su -ggadmin</copy>  pwd = oracle
+<copy>sudo su -ggadmin</copy>  pwd = oracle
 
 **4:** In the first session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
 

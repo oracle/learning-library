@@ -138,7 +138,7 @@ Optionally view these files, same as in previous lab:
 
 <copy>vi rkafka.properties</copy>
 
-<copy> Remove "--" from below</copy>
+<copy>Remove "--" from below</copy>
 
 <copy>---kafka</copy>
 
@@ -146,7 +146,7 @@ Optionally view these files, same as in previous lab:
 
 <copy>---json</copy>
 
-<copy>:wq</copy>
+<copy>:wq!</copy>
 
 
 **Step10:** Now create the Kafka replicat process:
@@ -226,21 +226,21 @@ Optionally view these files, same as in previous lab:
 
 ![](./images/e14.png " ")
 
-<copy>dmlsource</copy>
+dmlsource
 
 **Step17:** Now go back to the session running ‘consumetopic gg2kafka_json.emp’, you should see the new messages written to the emp topics. Scroll up to see "op-type" "U" or "D". For Updates, GG will write the before and after image of the operation
 
 ![](./images/e15.png " ")
 
-<copy>consumetopic gg2kafka_json.emp</copy> 
+consumetopic gg2kafka_json.emp
 
 **Step18:** Let’s confirm that GG replicated the data that it captured. In the GG for Hadoop home
 
 ![](./images/e16.png " ")
 
-<copy>./ggsci</copy>
 
-<copy>stats rkafka total</copy>
+
+stats rkafka total
 
 ## Summary
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.

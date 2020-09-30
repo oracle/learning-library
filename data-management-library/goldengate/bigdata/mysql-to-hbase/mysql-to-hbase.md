@@ -68,7 +68,7 @@ Optionally view these files, same as in previous lab:
 
 **Step4:** Start the GG manager process on both the source and target. **Start two terminal sessions**, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-<copy>su – ggadmin</copy>
+<copy>sudo su – ggadmin</copy>
   	pwd = oracle in each session
 
 
