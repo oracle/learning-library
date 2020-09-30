@@ -31,13 +31,13 @@ Data Replication is a essential part of your efforts and tasks when you are migr
 
 - The source database can be any Oracle database version 11.2.0.4 or higher with atleast one application schema that you wish to replicate to an autonomous database in OCI. For the purpose of this lab, you may provision a 12.2.0.1 DBCS instance in your compartment in OCI and configure it as source. 
 
-- The ATP Dedicated database instance you provisioned in [Lab 4](?lab=lab-4-provisioning-databases) can be used as a target database in this lab. Since this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target atp-d instance using sql*plus or sql developer client. Refer [Lab 5](?lab=lab-5-configuring-development-system) or [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp) to setup a jump server or setup VPN respectively. 
+- The ATP Dedicated database instance you provisioned in [Lab 7](?lab=lab-7-provisioning-databases) can be used as a target database in this lab. Since this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target atp-d instance using sql*plus or sql developer client. Refer [Lab 8](?lab=lab-8-configuring-development-system) or [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp) to setup a jump server or setup VPN respectively. 
 
-    *Note: You cannot complete this lab without setting up access to your ATPD instance. Therefore, [Lab 5](?lab=lab-5-configuring-development-system) or [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp) are a pre-requisite to completing this lab as instructed.*
+    *Note: You cannot complete this lab without setting up access to your ATPD instance. Therefore, [Lab 8](?lab=lab-8-configuring-development-system) or [Lab 9](?lab=lab-9-configuring-vpn-into-private-atpp) are a pre-requisite to completing this lab as instructed.*
 
     - The Golden Gate software is going to be deployed on a linux server in a public network which has access to both the source database and the target database via the Goldengate marketplace image in OCI.
 
-## **Step 1:** Provision a Goldengate Microservice from OCI Marketplace
+## STEP 1: Provision a Goldengate Microservice from OCI Marketplace
 
 - Connect to your OCI tenancy and select *Marketplace* from top left menu.
 
@@ -68,7 +68,7 @@ Data Replication is a essential part of your efforts and tasks when you are migr
 
 - Your Goldengate instance should be ready in a few minutes and we will come back to configure it. 
 
-## **Step 2:** Configure the source database
+## STEP 2: Configure the source database
 
 It is assumed that you either have an Oracle 12c database configured as source or know how to provision a 12c DBCS instance in OCI.
 
@@ -119,11 +119,11 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
 
     The source database is all set. Next, lets setup the target ATPD instance.
 
-## **Step 3:** Configure the target ATP Dedicated database
+## STEP 3: Configure the target ATP Dedicated database
 
 - Connect to the ATPD database service intance you created earlier as user *admin*.
 
-    *Note: You will need to be VPN'd into the network or VNC to a jump server. Refer to Lab 5 and Lab 6.*
+    *Note: You will need to be VPN'd into the network or VNC to a jump server. Refer to Lab 8 and Lab 9.*
 
 - First, lets unlock the goldengate user that comes pre-created in ATP-D.
 
@@ -152,7 +152,7 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
     ````
 That is it! Your target DB is now ready.
 
-## **Step 4:** Configure Goldengate service
+## STEP 4: Configure Goldengate service
 - By now, your Goldengate service instance must be deployed. On your OCI console navigate to *Compute* from top left menu and *choose your compartment*.
 
 - Click on your Goldengate compute instance to get to the details page that looks as follows.
@@ -367,5 +367,6 @@ Hurray! You have completed the replication setup. To test, simply connect to you
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

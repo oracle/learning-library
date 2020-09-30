@@ -19,15 +19,15 @@ As an adminstrator,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account.
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 2](?lab=lab-2-provisioning-exadata).
-- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
 
 
-## **Step 1:** Download and install Swingbench
+## STEP 1: Download and install Swingbench
 
-- We will start with downloading and installing Swingbench in a developer client virtual machine provisioned in  [Lab 5](?lab=lab-5-configuring-development-system).
+- We will start with downloading and installing Swingbench in a developer client virtual machine provisioned in  [Lab 8](?lab=lab-8-configuring-development-system).
 
-- Connect to your developer client machine via VNC. Detailed instructions are provided in [Lab 2](?lab=lab-2-provisioning-exadata).
+- Connect to your developer client machine via VNC. Detailed instructions are provided in [Lab 8](?lab=lab-8-configuring-development-system).
   
     *The remainder of this lab assumes you are connected to the image through VNC Viewer and are operating from the image itself and not your local machine (except if noted).*
 
@@ -72,7 +72,7 @@ As an adminstrator,
 ### Transfer DB Wallet to swingbench client machine
 Unless you have already moved the wallet to your Dev Client machine in an earlier lab follow these steps.
 
-- Create a VNC connection to your machine following steps in [Lab 2](?lab=lab-2-provisioning-exadata).
+- Create a VNC connection to your machine following steps in [Lab 8](?lab=lab-8-configuring-development-system).
 - Open up firefox in your VNC terminal from the Applications menu on the top left.
    -  Once Firefox is open go to *cloud.oracle.com*
 
@@ -91,7 +91,7 @@ Unless you have already moved the wallet to your Dev Client machine in an earlie
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. The wallet will be downloaded to your downloads directory.
 
 
-## **Step 2:** Build and setup sample swingbench schema
+## STEP 2: Build and setup sample swingbench schema
 
 - Now that you have installed swingbench, the next step is to build the sample Order Entry schema in the database. 
 
@@ -180,7 +180,7 @@ Unless you have already moved the wallet to your Dev Client machine in an earlie
     </copy>
     ```
 
-## **Step 3:** Setup TAC parameters and run workload
+## STEP 3: Setup TAC parameters and run workload
 
 There are at least 2 options to run your swingbench workload.
 
@@ -222,7 +222,7 @@ There are at least 2 options to run your swingbench workload.
 
 That is it. You are now ready to fire up your transactional workload.
 
-## **Step 4:** Simulate a failover event and observe workload
+## STEP 4: Simulate a failover event and observe workload
 
 - Fire up your workload and confirm all users are connected. Wait a few seconds while the charts load up.
     ![](./images/TAC4.png " ")
@@ -267,5 +267,5 @@ That is it. You are now ready to fire up your transactional workload.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

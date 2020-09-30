@@ -14,13 +14,13 @@ As an adminstrator,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account.
-- A pre-provisioned instance of Oracle Developer Client image configured with Swingbench in an application subnet. Refer to [Lab 15](?lab=lab-15-build-always-on-applications).
-- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
-- Successful completion of [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
+- A pre-provisioned instance of Oracle Developer Client image configured with Swingbench in an application subnet. Refer to [Lab 18](?lab=lab-18-build-always-on-applications).
+- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
+- Successful completion of [Lab 8](?lab=lab-8-configuring-development-system) and [Lab 18](?lab=lab-18-build-always-on-applications).
 
-## **Step 1:** Log in to the Oracle Cloud Developer image and start the order entry workload
+## STEP 1: Log in to the Oracle Cloud Developer image and start the order entry workload
 
-To complete this lab it is mandatory that you have a developer client image configured with swingbench, an autonomous dedicated database instance with the wallet uploaded to the dev client. Follow instructions in [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
+To complete this lab it is mandatory that you have a developer client image configured with swingbench, an autonomous dedicated database instance with the wallet uploaded to the dev client. Follow instructions in [Lab 8](?lab=lab-8-configuring-development-system) and [Lab 18](?lab=lab-18-build-always-on-applications).
 
 *The remainder of this lab assumes you are connected to the image through VNC Viewer and are operating from the image itself and not your local machine.*
 
@@ -55,7 +55,7 @@ To complete this lab it is mandatory that you have a developer client image conf
 
 
 
-## **Step 2:** Analyzing workloads with Performance Hub
+## STEP 2: Analyzing workloads with Performance Hub
 
 As you continue to run your swingbench workload, you can analyze the transactions that are running on the database with the cloud based Performance Analyzer. From the main ATP console, select *Performance Hub*.
     ![](./images/scalinginp.jpeg " ")
@@ -95,5 +95,6 @@ The main Performance Hub page should display. This page has 3 sections.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

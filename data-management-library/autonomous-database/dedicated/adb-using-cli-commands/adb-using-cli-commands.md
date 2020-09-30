@@ -26,10 +26,10 @@ As a developer, DBA or DevOps user,
 
     *Note:* 
     - The OCI Marketplace 'Developer Cloud Image' is pre-configured with many client tools and drivers including OCI command line interface.
-    - To deploy a dev client compute image, refer to [Lab 5](?lab=lab-5-configuring-development-system).
+    - To deploy a dev client compute image, refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
 
-## **Step 1:** Connect to development client instance and verify OCI CLI version
+## STEP 1: Connect to development client instance and verify OCI CLI version
 
 - To ensure OCI-CLI installed is the correct version needed for ATP-Dedicated database, lets ssh into the dev client host and check version.
     
@@ -43,7 +43,7 @@ As a developer, DBA or DevOps user,
 
 
 
-## **Step 2:** Configure OCI CLI
+## STEP 2: Configure OCI CLI
 
 - This step describes the required configuration for the CLI and includes optional configurations that enable you to extend CLI functionality. 
 
@@ -80,7 +80,7 @@ As a developer, DBA or DevOps user,
     - *Enter a name for your key [oci_api_key]*: Press Return key
     - *Enter a passphrase for your private key (empty for no passphrase)*: Press Return key
     
-## **Step 3:** Add public key to Oracle Cloud Infrastructure
+## STEP 3: Add public key to Oracle Cloud Infrastructure
 
 - Now that you have a private / public key combo, you must add it to OCI Console:
 
@@ -116,7 +116,7 @@ As a developer, DBA or DevOps user,
 
     ![](./images/OCISetupAutocomplete.png " ")
 
-## **Step 4:** Interacting with Oracle Autonomous Database
+## STEP 4: Interacting with Oracle Autonomous Database
 
 - Now that you have setup OCI CLI, let us now look at examples of using Autonomous Transaction Processing Database. 
 
@@ -293,5 +293,6 @@ These are a handful of examples on using the OCI CLI REST interface to work with
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

@@ -17,10 +17,10 @@ As a database security admin,
 
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account.
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 2](?lab=lab-2-provisioning-exadata).
-- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
 
-## **Step 1:** Set up Application Schema and Users
+## STEP 1: Set up Application Schema and Users
 Oracle Database vault comes pre-installed with your Autonomous database on dedicated infrastructure. In this lab we will enable Database Vauly (DV), add required user accounts and create a DV realm to secure a set of user tables from priviledged user access. 
 
 Our implementation scenario looks as follow,
@@ -56,7 +56,7 @@ The table should however be available to the application user (app). Note that w
     </copy>
     ````
 
-## **Step 2:** Configure and enable Database Vault
+## STEP 2: Configure and enable Database Vault
 We start with creating the two DV user accounts - DV Owner and DV Account Manager. The dv_owner account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, the user 'admin' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
 
 - Create the Database Vault owner and account manager users as shown below.
@@ -112,7 +112,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
     ````
     ![](./images/verifyDV.png " ")
 
-## **Step 3:** Create security Realms and add schema objects
+## STEP 3: Create security Realms and add schema objects
 Next we create a 'Realm', add objects to it and define access rules for the realm.
 
 - Let's create a realm to secure HR.EMPLOYEES table from ADMIN and HR (table owner) and grant access to APPUSER only.
@@ -148,7 +148,7 @@ As Database Vault Owner, execute the following PL/SQL statements:
     ![](./images/realm1.png " ")
     ![](./images/realm2.png " ")
 
-## **Step 4:** Create Audit Policy to Capture Realm Violations
+## STEP 4: Create Audit Policy to Capture Realm Violations
 You may also want to capture an audit trail of unauthorized access attempts to your realm objects. Since the Autonomous Database includes Unified Auditing, we will create a policy to audit database vault activities. For more information on Unified Auditing, refer to the [Database Security Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/introduction-to-auditing.html).
 
 - Create an audit policy to capture realm violations.
@@ -171,7 +171,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
     *Note: The default 'admin' account in ADB has access to all objects in the database, but realm objects are now protected from admin access. In fact, even the table owner HR does not have access to this table. Only APPUSER has access.*
 
-## **Step 5:** Review realm violation audit trail
+## STEP 5: Review realm violation audit trail
 
 - We can query the audit trail to generate a basic report of realm access violations. 
 
@@ -211,5 +211,6 @@ As Database Vault owner, execute:
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

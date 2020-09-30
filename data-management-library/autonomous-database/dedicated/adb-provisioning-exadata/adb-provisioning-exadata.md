@@ -20,7 +20,7 @@ Watch the video below for an overview of creating an Autonomous Container Databa
 
 [](youtube:0iL-zyMziOM)
 
-## **Step 1:** Deploy your Autonomous Exadata Infrastructure (AEI)
+## STEP 1: Deploy your Autonomous Exadata Infrastructure (AEI)
 
 *Login to your OCI account as a fleet administrator*
 
@@ -60,5 +60,5 @@ You also have two options for selecting the license type for the database contai
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

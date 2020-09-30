@@ -194,7 +194,7 @@ To access a GUI via VNC, do the following:
 
 ##  Finding private IP address of your Autonomous Exadata infrastructure (AEI)
 
-### **Step 1:** Locate the SCAN hostname of your AEI
+### Step 1: Locate the SCAN hostname of your AEI
 
 - Go to your Autonomous Database Console and open the details page of any ADB instance you have already provisioned on this AEI. Click the DB Connection button.
     ![](./images/dbconnection2.png " ")
@@ -203,7 +203,7 @@ To access a GUI via VNC, do the following:
     ![](./images/hostname1.png " ")
 
 
-### **Step 2:** Deploy and ssh into your developer client VM
+### Step 2: Deploy and ssh into your developer client VM
 
 - Next, deploy any linux VM in the same VCN hosting your Autonomous Exadata Infrastructure (AEI).
 
@@ -221,7 +221,7 @@ To access a GUI via VNC, do the following:
     </copy>
     ````
 
-### **Step 3:** Query your VCN's DNS service to locate IP address of AEI Cluster
+### Step 3: Query your VCN's DNS service to locate IP address of AEI Cluster
 
 - Once you are ssh'd into a client VM, simply run nslookup on the scan-host name your picked out from step 1 above.
 
@@ -250,5 +250,5 @@ You now have the 3 SCAN IP's of your AEI cluster. Once your network admin adds t
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

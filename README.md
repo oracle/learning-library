@@ -44,4 +44,4 @@ Copyright (c) 2014, 2020 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

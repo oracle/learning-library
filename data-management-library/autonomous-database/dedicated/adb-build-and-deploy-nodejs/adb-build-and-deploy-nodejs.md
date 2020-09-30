@@ -18,13 +18,13 @@ As an application developer,
 
 - An Oracle Cloud Infrastructure account.
 
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
-- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
+- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
 
 - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
-## **Step 1:** Instance Setup
+## STEP 1: Instance Setup
 
 - Login to your Oracle Cloud Infrastructure account select *Compute* —>  *Instances* from top left menu.
     ![](./images/Compute1.png " ")
@@ -53,7 +53,7 @@ As an application developer,
 
   - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-## **Step 2:** Download sample Node.js Application
+## STEP 2: Download sample Node.js Application
 
 - Once you ssh into your developer client machine you can download a sample node.js application to folder /home/opc using the following command,
 
@@ -71,7 +71,7 @@ As an application developer,
 
 Now that you have a sample application setup, lets get your database's secure wallet for connectivity.
 
-## **Step 3:** Transfer database wallet to developer client
+## STEP 3: Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from the menu.
     ![](./images/atpd1.png " ")
@@ -100,7 +100,7 @@ Now that you have a sample application setup, lets get your database's secure wa
     ```
     ![](./images/atpd5.png " ")
 
-## **Step 4:** Run your node.js application
+## STEP 4: Run your node.js application
 
 Now that you have copied the database wallet to your development host, lets configure some env. variables and database authentication file to connect your node.js app to the database.
 
@@ -180,5 +180,5 @@ And finally, lets edit the dbconfig.js file in /home/opc/ATPDnode/ATPDnode-maste
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

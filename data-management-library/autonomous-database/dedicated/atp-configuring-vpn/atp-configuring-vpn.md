@@ -33,7 +33,7 @@ The following illustration shows a network topology that can be used to provide 
 - For detailed instructions on network setup for an dedicated autonomous DB infrastructure, refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
 
-## **Step 1:** Launch a CentOS VM for the OpenVPN server
+## STEP 1: Launch a CentOS VM for the OpenVPN server
 
 - Login to the Oracle Cloud Infrastructure using your tenancy, userId and password. 
 
@@ -58,7 +58,7 @@ The following illustration shows a network topology that can be used to provide 
 
 -  Click Create and within a few minutes your CentOS server will be ready with a public IP for ssh access.
 
-## **Step 2:** Install and Configure OpenVPN Server
+## STEP 2: Install and Configure OpenVPN Server
 
 -   SSH into centOS vm and download the openVPN rpm package.
 
@@ -120,7 +120,7 @@ The following illustration shows a network topology that can be used to provide 
 
 Note: Once you have applied your changes, click *Save Settings* once again. Then, *Update Running Server* to push your new configuration to the OpenVPN server.
 
-## **Step 3:** Install OpenVPN Client
+## STEP 3: Install OpenVPN Client
 
 -   Launch your OpenVPN Access Server Client UI at *https://Your\_VPN\_Server\_Public\_IP:943* and download the OpenVPN client for your platforms.
     ![](./images/openvpn_client.png " ")
@@ -138,14 +138,14 @@ Note: Once you have applied your changes, click *Save Settings* once again. Then
 You may also setup your VPN server with multiple users. Follow the OpenVPN configuration guide to setup additional users.
 
 
-## **Step 4:** Connect SQL Developer to your dedicated ATP database
+## STEP 4: Connect SQL Developer to your dedicated ATP database
 
 - Launch SQL Developer and connect using the downloaded credentials wallet as shown below.
 
     *Note: Your SQL Developer version needs to be 18.3 or higher to connect to a cloud database using a wallet.*
         ![](./images/atpd_conn.png " ")
     
-- Follow detailed instructions on downloading your database credentials wallet refer to [Lab 4](?lab=lab-4-provisioning-databases) 
+- Follow detailed instructions on downloading your database credentials wallet refer to [Lab 8](?lab=lab-8-configuring-development-system) 
 
 - You may also connect to APEX or SQL Developer Web directly from your local browser. Simply get the URL from the console and launch in a browser window.
     ![](./images/atpd_application_apex.png " ")
@@ -158,5 +158,6 @@ You may also setup your VPN server with multiple users. Follow the OpenVPN confi
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

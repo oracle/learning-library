@@ -20,21 +20,21 @@ As a database user, DBA or application developer,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
-- A pre-provisioned dedicated autonomous database instance. Refer [Lab 4](?lab=lab-4-provisioning-databases) on how provision an ATP database
-- A pre-provisioned Oracle Developer Client compute image. efer [Lab 5](?lab=lab-5-configure-dev-client) on how provision a developer client
+- A pre-provisioned dedicated autonomous database instance. Refer [Lab 7](?lab=lab-7-provisioning-databases) on how provision an ATP database
+- A pre-provisioned Oracle Developer Client compute image. efer [Lab 8](?lab=lab-8-configuring-development-system) on how provision a developer client
 - VNC Viewer or other suitable VNC client on your local laptop
 
 
-## **Step 1:** Download and install Swingbench
+## STEP 1: Download and install Swingbench
 
-The Oracle Cloud Infrastructure Marketplace provides a pre-configured developer client image that come with database drivers for Java, node.js, python and other popular languages. Instructions to install and use this developer client are provided in [Lab 5](?lab=lab-5-configure-dev-client)
+The Oracle Cloud Infrastructure Marketplace provides a pre-configured developer client image that come with database drivers for Java, node.js, python and other popular languages. Instructions to install and use this developer client are provided in [Lab 8](?lab=lab-8-configuring-development-system)
 
 Please provision a developer client image and connect it to your autonomous database instance before proceeding with the rest of this lab.
 
 
 Let's ssh into the dev client and download the swingbench application in the /home/opc folder
 
-Mac users can ssh using command below in terminal while Windows users may use powershell or an ssh client as explained in [Lab 5](?lab=lab-5-configure-dev-client)
+Mac users can ssh using command below in terminal while Windows users may use powershell or an ssh client as explained in [APPENDIX](?lab=appendix)
 
 ````
 $ ssh -i <[ath-to-key-file]> opc@<ip-address-of-dev-client>
@@ -59,7 +59,7 @@ This will create a folder /home/opc/swingbench and unzip contents in there. Opti
 Thats all it takes to install this app. 
 
 
-## **Step 2:** Deploy swingbench schema without indexes
+## STEP 2: Deploy swingbench schema without indexes
 
 Assuming you have uploaded your database wallet and can connect to your autonomous database via sql*plus or sqlcl, you are now ready to deploy the swingbench schema.
 
@@ -92,7 +92,7 @@ Replace parameters DB-wallet-file-name, TNS_service and DB-admin-passwd to match
 The time required to build the soe schema depends on the degree of parallelism available on the database instance and the size of the schema. Above we've chosen a 1 GB schema which should take less than 15 mins in most cases
 
 
-## **Step 3:** Enable Automatic Indexing
+## STEP 3: Enable Automatic Indexing
 
 Once the schema is build you may now go ahead and enable automatic indexing. First, lets ensure there are no indexes. Connect to your autonomous database as 'admin' using SQL*Developer or any SQL Client
 
@@ -134,11 +134,11 @@ The Automatic Indexing Settings page is where you can,
  ![](./images/EM3.png " ")
 
 
-## **Step 4:** Run workload and observe automatic index creation
+## STEP 4: Run workload and observe automatic index creation
 
 Next, lets fire up swingbench and simulate an OLTP order-entry workload.
 
-Open an ssh tunnel from your laptop into the developer client machine. Step by step instructions on setting up an ssh tunnel and opening a VNC connection to your developer client image are provided in [Lab 2](?lab=lab-2-configure-dev-client)
+Open an ssh tunnel from your laptop into the developer client machine. Step by step instructions on setting up an ssh tunnel and opening a VNC connection to your developer client image are provided in [Lab 8](?lab=lab-8-configuring-development-system)
 
 ````
 $ ssh -N -L 5901:127.0.0.1:5901 -i ~/<key-file> opc@<IP-address-of-dev-client>
@@ -182,5 +182,5 @@ This view shows all auto indexing activities incuding statements used for index 
 - **Contributors** - Kris Bhanushali, Govardhanan Ramachandran
 - **Last Updated By/Date** - Kris Bhanushali, May 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

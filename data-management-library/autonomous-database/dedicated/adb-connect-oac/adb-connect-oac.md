@@ -16,12 +16,12 @@ As a LOB user
 
 ### Required Artifacts
 
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
-- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
 - A pre-provisioned Oracle Analytics Cloud instance. Refere [Here](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acoci/create-services.html#GUID-D2F03D22-95FB-45C8-AB94-928AE4E167AB) to create Oracle Analytics Cloud.
 - VNC Viewer or other suitable VNC client on your local laptop
 
-## **Step 1:** Download DB wallet to local machine
+## STEP 1: Download DB wallet to local machine
 
 Let's first download the DB wallet to your local machine (laptop) and then scp / sftp it to the developer client machine.
 
@@ -29,7 +29,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
 
 - From your local browser, navigate to OCI console.
 
-- On the ATP console, select the dedicated ATP instance provisioned in [Lab 4](?lab=lab-4-provisioning-databases).
+- On the ATP console, select the dedicated ATP instance provisioned in [Lab 7](?lab=lab-7-provisioning-databases).
     ![](./images/doneprovision.png " ")
 
 - Click on  *DB Connection* to open up Database Connection pop-up window.
@@ -49,7 +49,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. 
 
 
-## **Step 2:** Connect to dev client desktop over VNC
+## STEP 2: Connect to dev client desktop over VNC
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -105,7 +105,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 
   - If all goes well, you should now see a linux desktop in your VNC window.
 
-## **Step 3:** Download, install and configure Remote Data Gateway
+## STEP 3: Download, install and configure Remote Data Gateway
 
 1. Download OAC Data Gateway 5.6.0+ from [Here](https://www.oracle.com/middleware/technologies/oac-downloads.html)
 
@@ -222,7 +222,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
     ![](./images/RDC-installer13.png " ")
 
 
-## **Step 4:** Configure Remote Data Connectivity and connect Autonomous Database Dedicated to Oracle Analytics Cloud
+## STEP 4: Configure Remote Data Connectivity and connect Autonomous Database Dedicated to Oracle Analytics Cloud
 
 
 
@@ -292,5 +292,5 @@ To further explore Oracle Analytics Cloud you can visit our blogs [Here](https:/
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

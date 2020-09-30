@@ -19,10 +19,10 @@ As a database admin or user,
 
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
-## **Step 1:** Download sample data pump export file from Oracle Learning Library github repo
+## STEP 1: Download sample data pump export file from Oracle Learning Library github repo
 
 - Use the following command from your mac / PC to download a sample schema dump from OLL.
 
@@ -32,7 +32,7 @@ As a database admin or user,
     </copy>
     ```
     
-## **Step 2:** Create an object storage bucket and upload dump
+## STEP 2: Create an object storage bucket and upload dump
 
 - Login to your OCI account with your user credentials.
 
@@ -48,7 +48,7 @@ As a database admin or user,
 - Upload nodeapp.dmp downloaded from OLL.
     ![upload-dmp](./images/upload-dmp.png " ")
 
-## **Step 3:** General an authentication token for your user account
+## STEP 3: General an authentication token for your user account
 
 - Assuming you are logged into your OCI account, navigate to the user details page from the top right menu item as shown below.
     ![get-token1](./images/get-token1.png " ")
@@ -60,7 +60,7 @@ As a database admin or user,
     ![get-token3](./images/get-token3.png " ")
 
 
-## **Step 4:** Setup Object Store user credentials in your target autonomous database
+## STEP 4: Setup Object Store user credentials in your target autonomous database
 
 - Now that we have the credentials token, lets setup the target database to read from object store and import data.
 
@@ -68,9 +68,9 @@ As a database admin or user,
 
     **TWO ways to do this:**
 
-1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
-2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 5](?lab=lab-5-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 6.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
+2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 8](?lab=lab-8-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 8.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
 
 Here, we will use a local SQL Developer to demonstate the steps needed to setup object store credentials.
 
@@ -94,7 +94,7 @@ Here, we will use a local SQL Developer to demonstate the steps needed to setup 
 
 - Ensure the pl/sql procedure executed successfully from the log message.
 
-## **Step 5:** Import data from object store using impdp utility
+## STEP 5: Import data from object store using impdp utility
 
 - If all went well so far, proceed to ssh into your developer client machine and run the data pump import command.
 
@@ -166,5 +166,6 @@ You may now connect to your autonomous database using a SQL client and validate 
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## See an issue or have feedback?  
+Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
