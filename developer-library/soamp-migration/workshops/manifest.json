@@ -33,12 +33,12 @@
         {
             "title": "Lab 3: Provision the WebLogic infrastructure",
             "publisheddate": "07/30/2020",
-            "filename": "../../../provision-wls/provision-wls.md"
+            "filename": "../provision-soamp/provision-soamp.md"
         },
         {
             "title": "Lab 4: Provision the Database on OCI",
             "publisheddate": "07/30/2020",
-            "filename": "../../../provision-app-db/provision-app-db.md"
+            "filename": "../provision-app-db/provision-app-db.md"
         },
         {
             "title": "Lab 5: Gather Information about the DB VM on OCI",
