@@ -32,18 +32,18 @@ Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of da
 
     **Password:** **welcome1**
 
-    ![](./images/login.png)
+    ![](./images/login.png " ")
 
 2. You should see the home page
 
-    ![](./images/home.png)
+    ![](./images/home.png " ")
 
 
 ## **Step 2:** Version
 
 1. Click on the drop-down menu in the upper right-hand corner of the
 screen.
-    ![](./images/about.png)
+    ![](./images/about.png " ")
 
 2. Click on the **About** menu item and make sure the current version of the product is showing as
 
@@ -53,7 +53,7 @@ screen.
 
     **Superset Version0.17.0**
 
-    ![](./images/version.png)
+    ![](./images/version.png " ")
 
 3. Click **Done**
 
@@ -62,11 +62,11 @@ screen.
 1. Again, click on the drop-down menu in the upper right-hand corner of the
 screen but this time click on **System Settings**
 
-    ![](./images/systemsetdropdown.png)
+    ![](./images/systemsetdropdown.png " ")
 
 2. Verify all the connections to ZooKeeper and Spark are set as below.
 
-    ![](./images/systemsettings.png)
+    ![](./images/systemsettings.png " ")
 
 ## **Step 4:** User Management
 
@@ -78,18 +78,18 @@ User**:
 2. Confirm the password and then click on **Create**, verify that the new
 user got created and **Save**
 
-    ![](./images/addUser.png)
+    ![](./images/addUser.png " ")
 
 ## **Step 5:** Catalog
 
 
 1. Click on the Catalog menu on the top right-hand corner of the home page:
 
-    ![](./images/catalog.png)
+    ![](./images/catalog.png " ")
 
     Notice there are no resources currently available.
 
-    ![](./images/emptycatalog.png)
+    ![](./images/emptycatalog.png " ")
 
 2. Navigate back to the **Home** page again
 
@@ -99,19 +99,19 @@ user got created and **Save**
 1. click on Import in **Distributed Intelligence for IOT** region and see the message the it
 was imported **Successfully**.
 
-    ![](./images/homeimport.png)
+    ![](./images/homeimport.png " ")
 
 2. Go to the **Catalog** page. At the bottom right corner of the page click
 on the drop down to **Show 25** resource
 
-    ![](./images/show25.png)
+    ![](./images/show25.png " ")
 
 3. Verify that **14 of 14 Resources** have been imported into the catalog.
 All the resource imported should be tagged with **IOT Sample, IOT**
 
     The tags help identify the category of each resource.
 
-    ![](./images/resourcesimported.png)
+    ![](./images/resourcesimported.png " ")
 
 ## **Step 7:** Show Me (Nav Bar)
 
@@ -120,7 +120,7 @@ on the left **Show Me** nav bar to hide all the resources. All the
 resources in the **Show Me** nav bar should now be unchecked and you
 should see **0 of 0 Resources** in the main page
 
-    ![](./images/hideallresources.png)
+    ![](./images/hideallresources.png " ")
 
 
     We can now check individual resource types and only see them listed in
@@ -131,7 +131,7 @@ the main page.
 1. Click on the **Connections** on the left nav bar and verify that only
 two types of connections are visible
 
-    ![](./images/twoConnections.png)
+    ![](./images/twoConnections.png " ")
 
 
 2. Click on the **LocalMySQLDB** connection. This is a connection to the
@@ -139,7 +139,7 @@ local MySQL database. We are going to use this connection later in the
 lab. Verify that it is the **Connection Type** of **Generic Database**
 then click **Next**
 
-    ![](./images/localmysqldb.png)
+    ![](./images/localmysqldb.png " ")
 
 3. Verify the following:
 
@@ -151,14 +151,14 @@ then click **Next**
 **Successful**. Click on **Cancel** button. Do not save this connection
 here
 
-    ![](./images/testDBConnection.png)
+    ![](./images/testDBConnection.png " ")
 
 5. Now click on the **LocalKafka** connection. This is a different type of
 a connection to the local Kafka environment. We are going to use this
 connection and the topics later in the lab. Verify that it is the
 **Connection Type** of **Kafka** then click **Next**
 
-    ![](./images/localkafka.png)
+    ![](./images/localkafka.png " ")
 
 6. You should see the **Edit Connection** screen for **Type:Kafka**. Verify
 that **Zookeepers** is running in the local server **localhost**.
@@ -168,7 +168,7 @@ all the other settings as default and click on **Test connection** and
 make sure the connection is Successful. Click on **Cancel** button. Do
 not save this kafka connection
 
-    ![](./images/editKafkaConnection.png)
+    ![](./images/editKafkaConnection.png " ")
 
 ## **Step 9:** Streams
 
@@ -177,7 +177,7 @@ not save this kafka connection
 **Streams** instead and verify that only **VendingMachineStream** is
 visible
 
-    ![](./images/streamsvisible.png)
+    ![](./images/streamsvisible.png " ")
 
 2. Click on the **VendingMachineStream** and verify the **Source Details**,
 **Parameter File** and **Type** and the **Shape** for this stream.
@@ -192,19 +192,19 @@ constant stream of data. Do NOT make any changes to any sections here at this ti
 Verify the file format as **CSV** and that the **Loop** flag is turned
 on. Click **Next**
 
-    ![](./images/vmStreamDetails.png)
-    ![](./images/vmEditStream1.png)
+    ![](./images/vmStreamDetails.png " ")
+    ![](./images/vmEditStream1.png " ")
 
 5. Verify the settings in the **Data Format** screen then click **Next**
 
-    ![](./images/vmeditstream2.png)
+    ![](./images/vmeditstream2.png " ")
 
 6. In the **Shape** page **Infer Shape** should be selected which means
 that the fields and types are inferred from the source csv file. Verify
 the field name and types then click **Cancel** then close (**X**) out
 the following screen
 
-    ![](./images/vmEditStream3.png)
+    ![](./images/vmEditStream3.png " ")
 
 ## **Step 10:** References
 
@@ -214,23 +214,23 @@ the following screen
 1. On the left nav bar make sure **References** are checked only. On the
 main screen only **MachineDetails** should be visible.
 
-    ![](./images/referencesvisible.png)
+    ![](./images/referencesvisible.png " ")
 
 2. Click on the **MachineDetails**. Verify that all the param settings then
 click on **Edit** to the right of **Source Type Parameters: Database
 Table**. Do NOT edit any sections at this time.
 
-    [](./images/editMachineDetails1.png)
+    [](./images/editMachineDetails1.png " ")
 
 3. In the **Source Details** note that **Connection** is set to
 **LocalMySQLDB** as we saw earlier in the lab. Click **Next**
 
-    ![](./images/editMachineDetails2.png)
+    ![](./images/editMachineDetails2.png " ")
 
 4. In the **Shape** page notice that all the table columns and their types,
 (i.e. shape) are all set correctly. Do not save, click **Cancel**
 
-    ![](./images/editmachinedetails3.png)
+    ![](./images/editmachinedetails3.png " ")
 
 5. In the next page click on 'X' and exit.
 
@@ -244,19 +244,19 @@ screen only **NotifyMaintenance** and **ReplenishAlert** targets should
 be visible. Click on the **NotifyMaintenance.** Do NOT edit any sections
 at this time
 
-    ![](./images/targetsVisible.png)
+    ![](./images/targetsVisible.png " ")
 
 2. In the **Type Properties** page make sure the target name and type are
 set correctly as **NotifyMaintenance** and **Kafka** and click **Next**
 
-    ![](./images/editTarget1.png)
+    ![](./images/editTarget1.png " ")
 
 3. In the **Target Details** page notice the **Connection** is set to
 **LocalKafka** as we saw earlier with the **Topic name** as
 **HighTempMachines**. Make sure the **Data Format** for this topic is
 set **JSON**. Notice there are other data formats like csv and avro
 
-    ![](./images/edittarget2.png)
+    ![](./images/edittarget2.png " ")
 
 4. In the next page make sure the **Create nested json object** is checked
 and click **Next**.
@@ -265,7 +265,7 @@ and click **Next**.
 i.e., shape are all set correctly (about 19 fields). Do not save, click
 **Cancel**
 
-    ![](./images/edittarget3.png)
+    ![](./images/edittarget3.png " ")
 
 6. In the next page click on 'X' and exit.
 

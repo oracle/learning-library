@@ -15,7 +15,7 @@ GoldenGate Stream Analytics is a runtime event processing framework that runs on
 ## Architecture Overview
 In this workshop we are going to use streaming data from a file in the file system, then enrich the stream using GeoSpatial, Contextual (database tables) and ML Models, run analysis on the data and finally send that data to Kafka topics.  All the components in this workshop reside in a single node instance.
 
-![](./introduction/images/osaarchitecture.png)
+![](./introduction/images/osaarchitecture.png " ")
 
 ## Workshop Details
 There are four labs in GoldenGate Stream Analytics workshop.  We recommend following these labs in sequence from Lab 1 to Lab 4.

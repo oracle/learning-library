@@ -23,111 +23,111 @@ At each stage of the Lab 3 you can refer back to this appendix to compare your p
 ## GetCustomerDetails Stage
 **New Query**
 
-![](./images/orderstreamstage2.png)
+![](./images/orderstreamstage2.png " ")
 
 **Name Query**
 
-![](./images/orderstreamstage3.png)
+![](./images/orderstreamstage3.png " ")
 
 **Add a Source**
 
-![](./images/getcustomerdetails2.png)
+![](./images/getcustomerdetails2.png " ")
 
 **New Stage added**
 
-![](./images/getcustomerdetails3.png)
+![](./images/getcustomerdetails3.png " ")
 
 **Correlation**
 
-![](./images/getcustomerdetails4.png)
+![](./images/getcustomerdetails4.png " ")
 
 **Query added**
 
-![](./images/getcustomerdetails5.png)
+![](./images/getcustomerdetails5.png " ")
 
 
 ## GetLatLongFromZipCode Stage
 
 **New Lat-Long from Zip stage**
 
-![](./images/getlatlongfromzipcode.png)
+![](./images/getlatlongfromzipcode.png " ")
 
 ## FilterCustomers Stage
 
 **Add new filter customer stage**
 
-![](./images/filtercustomers.png)
+![](./images/filtercustomers.png " ")
 
 **Select a Pattern**
 
-![](./images/geofilterpattern.png)
+![](./images/geofilterpattern.png " ")
 
 **Geo Filter Visualization**
 
-![](./images/geofiltervisual.png)
+![](./images/geofiltervisual.png " ")
 
 ## GetProductDetails Stage
 
 **Add new Product Details Stage**
 
-![](./images/getproductdetails.png)
+![](./images/getproductdetails.png " ")
 
 **Product Details Stage Added**
 
-![](./images/getproductdetails2.png)
+![](./images/getproductdetails2.png " ")
 
 
 ## SegmentCustomers Stage
 
 **Use Formula to add Column**
 
-![](./images/discountoffered.png)
+![](./images/discountoffered.png " ")
 
 
 **Rename Column**
 
-![](./images/newaddedfields.png)
+![](./images/newaddedfields.png " ")
 
 **Define Rules**
 
-![](./images/goldcustomers.png)
+![](./images/goldcustomers.png " ")
 
 
 ## RealtimeRevenue Stage
 
 **Real Time Revenue Visualization**
 
-![](./images/revenuebycustomersegment.png)
+![](./images/revenuebycustomersegment.png " ")
 
 
 **Add Summary**
 
-![](./images/rtrvenuesummaries.png)
+![](./images/rtrvenuesummaries.png " ")
 
 **Rename Column**
 
-![](./images/rtrvenuesummariesrename.png)
+![](./images/rtrvenuesummariesrename.png " ")
 
 
 ## GetCustomer Stage
 
-![](./images/getcustomer.png)
+![](./images/getcustomer.png " ")
 
 
 ## LikelyBuyersByTypeAndZip Stage
 
 
 
-![](./images/likelybuyersbytypeandzip.png)
+![](./images/likelybuyersbytypeandzip.png " ")
 
 
 **Likely Buyers Stage added**
 
-![](./images/likelybuyersbytypeandzipgroups.png)
+![](./images/likelybuyersbytypeandzipgroups.png " ")
 
 **Likely Buyers Visualization**
 
-![](./images/likelybuyersbytypeandzipvisual.png)
+![](./images/likelybuyersbytypeandzipvisual.png " ")
 
 ## Learn More
 
