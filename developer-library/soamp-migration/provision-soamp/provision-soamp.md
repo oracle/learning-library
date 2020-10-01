@@ -19,7 +19,8 @@ In this lab you will:
 For this lab, you need to have prepared the OCI tenancy with:
 
 - Putty
-- SSH Public-Private Key pair 
+- SSH Public-Private Key pair
+- WinSCP (optional)
 
 
 ## **STEP 1:** Provision the stack through the Marketplace
@@ -168,7 +169,7 @@ or can Select `VM StandardE2.1` if working on trial instance
 
 34. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  <img src="./images/provision-26.png" width="100%">
+  <img src="./images/provision-19.png" width="100%">
 
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu. 
@@ -181,12 +182,71 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 2. Make a note of the **Load Balancer IP** for later use.
 
-You can not copy/paste the **FMW Console** URL in your browser yet as it have a private IP you need to connect the bastion host public IP through putty and ssh the private IP of SOA instance and then create a tunnel till your local machine and then explore the provisioned SOA domain. You should find that there are few applications in **deployments** and a data sources in the **service->datasources** menu
+**Note:** You can not copy/paste the **FMW Console** URL in your browser yet as it has a private IP, you need to connect the bastion host public IP through putty and ssh the private IP of SOA instance and then create a tunnel till your local machine and then you can explore the provisioned SOA domain. You should find that there are few applications in **deployments** and a data sources in the **service->datasources** menu
 
 
 ## **STEP 3:** Connect your FMW Console URL's of Private SOA Instance using Bastion Host through Putty.
 
+1. Once the stack is completed check if the SOA compute node is successfully created under compute instance go to 
+**Main menu -> Compute -> Instances**
 
+
+  <img src="./images/provision-20-connectinstance.png" width="50%">
+
+2. You should see the public IP of the **SOAMP3-bastion-instance** as `193.xxx.xxx.xx` and can see private IP of **SOAMP3-soa-0** on the right side of the page when you click on the instance as `10.x.x.x`
+
+   <img src="./images/provision-21-connectinstance.png" width="100%">
+
+**Note:** you must be see the different public and private IP's as those are unique for everyone, kindly use those and not the above one which we have used for this lab.
+
+3. open **putty** app , and put the public IP of bastion host in the **Host Name (or IP address)** as `193.xxx.xxx.xx` (put your bastion host public IP) and put **Port** as `22`,and name the **Saved Sessions** which you can remember must put your private key at your bastion host so that you can ssh to your private SOA instance using putty
+
+   <img src="./images/provision-22-connectinstance.png" width="100%">
+
+4. go to **Connection -> SSH -> Auth** and browse the .ppk key (corresponding to the public key you have used while Provisioning SOAMP) 
+
+   <img src="./images/provision-23-connectinstance.png" width="100%">
+
+5. then go to **Connection -> Data** and put **Auto login username** as `OPC` (which is defualt for all the oracle compute instances)
+
+<img src="./images/provision-24-connectinstance.png" width="100%">
+
+6. then go to **Connection -> SSH -> Tunnels**
+create a tunnel from your local to bastion host to Private SOA Instance, So that you can access FMW Url’s at your local machine
+put **Source port** as `7002`
+    **Destination** as `10.x.x.x:7002` (put your soa instance private IP)
+and then click **Add** button
+
+<img src="./images/provision-25-connectinstance.png" width="100%">
+
+7. Now you can save all the details in the session and click on **Open** button, and make sure your are not on VPN while login to putty
+
+<img src="./images/provision-22-connectinstance.png" width="100%">
+
+8.Now place your private key in home location of your bastion host,
+it is mandatory to connect to your soa instance private IP
+
+**Note:** you can use either use **WinSCP** to copy the privateKey (.ppk is different form privateKey) in your bastion host or you can use `vim` command to create a file and write the privateKey content and then save.
+
+   <img src="./images/provision-27-connectinstance.png" width="100%">
+
+9. Now try to access your Private SOA instance IP `10.x.x.x` using ssh command  `ssh -i privateKey opc@10.x.x.x` , now you can see you are logged in to your `opc@soamp3-soa-0` instance
+
+<img src="./images/provision-28-connectinstance.png" width="100%">
+
+10. > Once your SOA private instance is tunneled you can access or open web browser and paste local host links like :- 
+`https://localhost:7002/console`  ,  `https://localhost:7002/em`
+ Console Link (make sure you are not on VPN or Proxy and your putty session is active) 
+
+and provide your WebLogic username password which you have provided during SOAMP provisioning and check if you are able to access all the links properly , for this lab `username : weblogic` and `password : WELcome##123` 
+
+**Note:** For using other ports like B2B , SB , e.t.c you have to add the ingress rules in the Private Subnet Security Lists to access them from public Internet.
+
+<img src="./images/provision-29-connectinstance.png" width="100%">
+
+11. go to **SOA -> soa-infra** you can see some pre deployed example applications, and check the server health.
+
+<img src="./images/provision-30-connectinstance.png" width="100%">
 
 ## Acknowledgements
 
