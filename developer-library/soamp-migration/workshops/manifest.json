@@ -31,7 +31,7 @@
             "filename": "../../../prepare/prepare.md"
         },
         {
-            "title": "Lab 3: Provision the WebLogic infrastructure",
+            "title": "Lab 3: Provision the SOAMP infrastructure",
             "publisheddate": "07/30/2020",
             "filename": "../provision-soamp/provision-soamp.md"
         },
