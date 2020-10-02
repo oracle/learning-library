@@ -55,7 +55,6 @@ Use Public IP allocated from LiveLabs
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
     
     <copy>sudo su – ggadmin</copy>
-    Password = oracle
     
 
 1. The following Lab Menu will be displayed

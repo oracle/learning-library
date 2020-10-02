@@ -48,7 +48,7 @@ The following Lab Menu will be displayed,
 (Is already done in the env script for this workshop)
 
 
-<copy>cd /u01/gg4mysql/dirprm</copy>
+<copy>cd /u01/gg4hadoop/dirprm</copy>
 
 <copy> view /dirprm/create_hdfs_replicat.oby</copy>
 
@@ -132,9 +132,9 @@ The following Lab Menu will be displayed,
 
 <copy> ---/user/ggtarget/hdfs</copy>
 
-<copy> ---.csv</copy>
-
 <copy> ---delimitedtext</copy>
+
+<copy> ---.csv</copy>
 
 <copy>:wq!</copy>
 
@@ -155,10 +155,12 @@ The following Lab Menu will be displayed,
 
 <copy> start rhdfs</copy>	
 
+**Note: You might have to run "info all" several times before the status changes to running**
+
 <copy> info all</copy>
 
 
-**11:** ADD REPLICAT RUNNING 
+**11:** Replicat is now running
 
   ![](./images/B9.png)
 

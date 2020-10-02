@@ -30,13 +30,8 @@ Use Public IP allocated from LiveLabs
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
     
     <copy>sudo su – ggadmin</copy>
-    Password = oracle
 
-Execute the alias 
-
-<copy>‘labmenu’</copy>
-
-1. At the prompt, type  ‘labmenu’ to display the lab.
+1. At the prompt, type  ‘labmenu’ to display the labmenu IF not at the labmenu.
 
   ![](./images/a_labmenu2.png " ")
 
@@ -115,17 +110,16 @@ processes:
 <copy>info all</copy>
 
 
-
-
 ## **STEP 4**: Load Data into Source Database
 
 Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
 
-1. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.)
+1. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.
 
 <copy>sudo su – ggadmin</copy>
 
-Password = oracle
+**Q**  to exit out of the LabMenu
+
 
    ![](./images/a5.png " ")
    ![](./images/a6.png " ")
@@ -137,9 +131,9 @@ Password = oracle
 <copy>mysqlselect</copy>
 
 
-2. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
+1. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
 
-3. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
+2. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
 
     ![](./images/a7.png " ")
 

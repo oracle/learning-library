@@ -4,7 +4,7 @@
 
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicatprocess ‘rhive’ will read the trail file, create the Hive tables, write the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and /user/ggtarget/hive/schema/*
 
-*Estimated Lab Time*:  30 minutes
+*Estimated Lab Time*:  60 minutes
 
 #### Lab Architecture
 
@@ -25,13 +25,12 @@ use ggadmin/oracle to log into your new Lab4
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
 <copy>sudo su -ggadmin</copy>
-password = oracle
 
 Setting up the Environment For MySQL.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 
-**Step1:** The following Lab Menu will be displayed, select R to reset the lab environment, then select option **4**
+**Step1:** The following Lab Menu will be displayed, select **R** to reset the lab environment, then select option **4**
 
   ![](./images/lab4menu.png)
 
@@ -68,7 +67,7 @@ Open Terminal Session1 /
 
 Open Terminal Session2 / 
 
-<copy>sudo su -ggadmin</copy>  pwd = oracle
+<copy>sudo su -ggadmin</copy>  
 
 **4:** In the first session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
 
@@ -200,25 +199,37 @@ the MySQL database ‘ggsource’ and GG will extract and write it to the Hive t
 
 **13:** Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let us take a look at the contents of the tables:
 
-  ![](./images/c10.png)
-  ![](./images/c11.png)
+**14:**
 
-  <copy> hiveselect</copy>
+Open a Browser window from your local machine: 
 
-**14:** Also take a look at the Avro schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
+HUE allows you to access the data from a URL -
 
-  ![](./images/c12.png)
+**HUE:**
 
-  
-<copy> cd dirdef</copy>
+(http://YourPublicIPAddress:8888)
 
-<copy> ls –lrt </copy>
+Login to Hue: cloudera/cloudera
 
-<copy> hivecatavscv</copy>
+1-	Click on Query, Editor, Select Hive
 
 
-In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
-/user/ggtarget/hive/schema
+  ![](./images/c21.png)
+
+2-	Pull down on Database selection, and select ggtarget2hive_avro
+
+3-	Then hover the mouse over the emp table, and click the ‘preview sample data’ –small grey icon Hue screens:
+
+![](./images/c22.png)
+
+![](./images/c23.png)
+
+![](./images/c24.png)
+
+![](./images/c25.png)
+
+
+**15:** Let’s confirm that GG replicated the data that it captured. In a GG Home for Hadoop session:
 
   ![](./images/c18.png)
   ![](./images/c19.png)
@@ -228,20 +239,11 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 <copy>stats rhive total</copy>
 
 
+In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
+/user/ggtarget/hive/schema
+
+
 You may now *proceed to the next lab*.
-
-**Optional:** Only if VNC is available
-
-You can also see the Hive data created by GG from Hue:
-
-Open a Browser window>
-[HUE - Click here](http://quickstart.cloudera:8888) 
-
-Login to Hue: cloudera/cloudera
-
-1-	Click on Query Editor, Hive
-2-	Pull down on Database selection, and select ggtarget2hive_avro
-3-	Then hover the mouse over the emp table, and click the ‘preview sample data’ –small grey icon Hue screens:
 
 ## Learn More
 

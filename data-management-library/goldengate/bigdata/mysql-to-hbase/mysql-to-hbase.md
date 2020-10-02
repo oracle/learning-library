@@ -208,15 +208,23 @@ In summary, you loaded data in MySQL database ‘ggsource’, GG extract process
 
 You may now *proceed to the next lab*.
 
-**Optional:** only if VNC is available
+**14:**
 
-You can also see the HBase data created by GG from Hue:
+Open a Browser window from your local machine: 
 
-Open a Browser window>
+HUE allows you to access the data from a URL -
 
-[HUE - Click here](http://quickstart.cloudera:8888) 
+**HUE:**
 
-Login to HUE: cloudera/cloudera
+(http://YourPublicIPAddress:8888)
+
+Login to Hue: cloudera/cloudera
+
+  ![](./images/d20.png)
+
+  ![](./images/d21.png)
+
+You may now *proceed to the next lab*.
 
 ## Learn More
 
