@@ -1,0 +1,29 @@
+{
+    "tutorials": [
+      {
+          "title": "Lab 1 GG Initial setup",
+          "description": "GG Initial setup",
+          "filename": "../ggbd-workshop-lab1-installation/ggbd-workshop-lab1-installation.md"
+      },
+      {
+           "title": "Lab2 One way replication Oracle to mySQL",
+           "description": "One way replication Oracle to mySQL",
+           "filename": "../ggbd-workshop-lab2-mysql-to-mysql/ggbd-workshop-lab2-mysql-to-mysql.md"
+       },
+        {
+            "title": "Lab 3 One way replication mySQL to Oracle",
+            "description": "One way replication mySQL to Oracle",
+            "filename": "../ggbd-workshop-lab3-mysql-to-hdfs/ggbd-workshop-lab3-mysql-to-hdfs.md"
+        },
+        {
+            "title": "Lab 4 GG HA / Active-Active replication",
+            "description": "Lab 4 GG HA / Active-Active replication",
+            "filename": "../ggbd-workshop-lab4-mysql-to-hive/ggbd-workshop-lab4-mysql-to-hive.md"
+        },
+        {
+            "title": "Lab 5 GG Column Conversions",
+            "description": "Lab 5 GG Column Conversions",
+            "filename": "../ggbd-workshop-lab5-mysql-to-hbase/ggbd-workshop-lab5-mysql-to-hbase.md"
+        }      
+    ]
+}

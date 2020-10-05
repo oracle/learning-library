@@ -46,7 +46,7 @@
       "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
     },
     {
-      "title": "Lab 9: MySQL to Oracle (Optional)",
+      "title": "Lab 8: MySQL to Oracle (Optional)",
       "description": "Lab 9 GGBD mysql-to-oracle",
       "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
     },

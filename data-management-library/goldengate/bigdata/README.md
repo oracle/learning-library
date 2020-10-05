@@ -16,7 +16,7 @@ The GoldenGate for Big Data Workshop is designed to introduce replication capabi
 
 ## Workshop architecture
 
-![](images/100/image110_1.png)
+![](images/100/image110_1.png " ")
 
 
 ## Workshop Details

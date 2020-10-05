@@ -10,122 +10,275 @@ process ‘rhdfs’ will read the remote trail files, and write the data to the 
 
 #### Lab Architecture
 
-  ![](./images/image300_1.png" ")
+  ![](./images/image300_1.png " ")
 
 ### Objectives
 - Explore GoldenGate replication from **MySQL to HDFS**
-
-
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Lab: Installation
 
 ## STEPS
+
 For the Lab:
 
 If at a terminal session:
 
-'> su - ggadmin
+````
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
-User and Password:
-
-User ID: ggadmin
-Password:  oracle
+````
+````
+<copy>>sudo su - ggadmin</copy>
+````
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 For the Lab terminal session:
 
-  ![](./images/lab3menu.png" ")
+  ![](./images/lab3menu.png " ")
 
 The following Lab Menu will be displayed,
 
-**Step1:** select R to reset the lab environment, then select **3** to begin Lab3.
+**1:** select **R** to reset the lab environment, then select **3** to begin Lab3.
 
-**Step2:** Review the overview notes on the following screen, then select Q to quit. These online notes have been provided to can cut/paste file names to another session, to avoid typos.
+**2:** Review the overview notes on the following screen, then select Q to quit. These online notes have been provided to can cut/paste file names to another session, to avoid typos.
 
-**Step3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
+**3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. 
 
-  ````
-  view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby 
-  view these files, same as in previous lab:
-      /u01/gg4mysql/dirprm/mgr.prm 
-      /u01/gg4mysql/dirprm/extmysql.prm 
-      /u01/gg4mysql/dirprm/pmpmysql.prm
+(Is already done in the env script for this workshop)
 
-  view /u01/gg4hadoop123010/dirprm/
-    create_hdfs_replicat.oby 
+````
+<copy>cd /u01/gg4hadoop/dirprm</copy>
+````
+````
+<copy> view /dirprm/create_hdfs_replicat.oby</copy>
+````
+````
+<copy>cd /u01/gg4hadoop/dirprm</copy>
+````
+````
+<copy> view /u01/gg4hadoop123010/dirprm/rhdfs.prm</copy>
+````
+````
+<copy> view /u01/gg4hadoop123010/dirprm/rhdfs.properties</copy>
+````
 
-  view /u01/gg4hadoop123010/dirprm/rhdfs.prm
+**4:**Start the GG manager process on both the source and target. Start two putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
-  view /u01/gg4hadoop123010/dirprm/rhdfs.properties
-  ````
+**5:** In the first session, go to the **GG Home for MySQL**, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
-**Step4:**Start the GG manager process on both the source and target. Start two putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+  ![](images/b3.png " ")
 
-**Step5:** In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+````
+<copy> cd /u01/gg4mysql</copy>
+````
+````
+<copy> pwd</copy>
+````
+````
+<copy>./ggsci</copy>
+````
+````
+<copy> info all</copy>
+````
+````
+<copy> start mgr</copy>		
+ ````
+ ````
+<copy> info all</copy>	
+````
 
-  ![](images/b3.png" ")
-
-**Step6:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+**6:** In the second session, go to the **GG Home for Hadoop**, and start the manager process. You can cd to the directory:
 
   ![](images/b4.png " ")
 
-**Step7:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
+````
+<copy> cd /u01/ gg4hadoop123010</copy>
+````
+````
+<copy>./ggsci</copy>
+````
+````
+<copy> info all</copy>	 
+````
+````
+<copy> start mgr</copy>		
+````
+````
+<copy> info all</copy>	 
+````
+````
+<copy> exit</copy>
+````
 
-  ![](./images/b5.png" ")
-  ![](./images/b6.png" ")
+**7:** In the **GG for MySQL ggsci session**, we will create and start the GG extract process:
 
-**Step8:** Now that the source side is setup, let us configure GG on the target side (HDFS).
+  ![](./images/b5.png " ")
+  ![](./images/b6.png " ")
 
-**Step9:** In the GG for Hadoop session, you will need to modify the HDFS properties by removing the ‘---‘ from the highlighted values:
+<copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
-  ![](./images/b7.png" ")
+````
+<copy> info all</copy>	
+ ````
+ ````
+<copy> start extmysql</copy>
+````
+````
+<copy> info all</copy>	
+````
+````
+<copy> start pmphadop</copy>	
+````
+````
+<copy> start *</copy>
+````
+````
+<copy> info all</copy> 
+````
 
-**Step10:** Now create and start the HDFS replicat process:
+**8:** Now that the source side is setup, let us configure GG on the target side (HDFS).
 
-  ![](./images/b8.png" ")
+**9:** In the **GG for Hadoop session**, you will need to modify the HDFS properties by removing the ‘---‘ from the highlighted values:
 
-**Step11:** ADD REPLICAT RUNNING 
-  ![](./images/B9.png" ")
+  ![](./images/b7.png " ")
 
-**Step12:** Now that GG processes have been created and started on both the source and target, let us take a look at what is in the HDFS directory – it should be empty. Then we will load some data on the MySQL database
-‘ggsource’ and GG will extract and write it to the HDFS target. GG will create a subdirectory for each table in the base directory /user/ggtarget.
+````
+<copy> cd dirprm</copy>
+````
+````
+<copy> vi rhdfs.properties</copy>
+````
+**Remove "--" below**
 
-**Step13:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+````
+<copy> ---hdfs</copy>
+````
+````
+<copy> ---/user/ggtarget/hdfs</copy>
+````
+````
+<copy> ---delimitedtext</copy>
+````
+````
+<copy> ---.csv</copy>
+````
+````
+<copy>:wq!</copy>
+````
 
-  ![](./images//b10.png" ")
-  ![](./images/b11.png" ")
+**10:** Now create and start the HDFS replicat process:
+
+  ![](./images/b8.png " ")
+
+````
+<copy> cd ..</copy>
+````
+````
+<copy>./ggsci</copy>	 
+````
+````
+<copy> info all</copy>		
+````
+````
+<copy> obey ./dirprm/create_hdfs_replicat.oby</copy>	
+````
+````
+<copy> info all</copy>	
+````
+````
+<copy> start rhdfs</copy>	
+````
+**Note: You might have to run "info all" several times before the status changes to running**
+
+````
+<copy> info all</copy>
+````
+
+**11:** Replicat is now running
+
+  ![](./images/B9.png " ")
+
+**12:** Now that GG processes have been created and started on both the source and target, let us take a look at what is in the HDFS directory – it should be empty. Then we will load some data on the MySQL database ‘ggsource’ and GG will extract and write it to the HDFS target. GG will create a subdirectory for each table in the base directory /user/ggtarget.
+
+**13:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+
+  ![](./images//b10.png " ")
+  ![](./images/b11.png " ")
+
+````
+<copy> hdfsls</copy>
+````
+````
+<copy> mysqlselect</copy>
+````
+````
+<copy> loadsource</copy>
+````
+````
+<copy> mysqlselect</copy>
+````
+````
+<copy> hdfsls</copy>
+````
+````
+<copy> dmlsource</copy>
+````
+````
+<copy> hdfscat</copy> 
+````
 
 In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhdfs’ read the remote trail file, and wrote the data to the HDFS target directory
 /user/ggtarget/hdfs/*.
 
-**Step14:** Let us confirm that GG replicated the data that it captured. Go back to the MySQL ggsci session and execute the following commands to see what data GG has processed, and do the same in the Hadoop ggsci session:
+**14:** Let us confirm that GG replicated the data that it captured. Go back to the MySQL ggsci session and execute the following commands to see what data GG has processed, and do the same in the Hadoop ggsci session:
 
-**Step15:** In MySQL ggsci session window:
+**15:** In MySQL ggsci session window:
 
-  ![](./images/b12.png" ")
+  ![](./images/b12.png " ")
 
-  ![](./images/b13.png" ")
+  ![](./images/b13.png " ")
 
-**Step16:** In Hadoop ggsci session window:
+````
+<copy>./ggsci</copy>
+````
+````
 
-  ![](./images/b14.png" ")
+<copy> stats extmysql total</copy>
+````
 
-  ![](./images/b15.png" ")
+**16:** In Hadoop ggsci session window:
 
-You may now *proceed to the next lab*.
+  ![](./images/b14.png " ")
 
-**Optional:**  Only if VNC is available
+  ![](./images/b15.png " ")
+
+````
+<copy>./ggsci</copy>
+````
+````
+<copy> stats rhdfs total</copy>
+````
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 You can also see the files created by GG from Hue:
 
-[HUE - Click here](http://127.0.0.1:8888) 
+**HUE -**
+
+(http://yourlocalipaddress]:8888) 
 
 Login to Hue: cloudera/cloudera
 Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
+
+![](./images/b19.png " ")
+/user/ggtarget/hdfs…
+![](./images/b16.png " ")
+![](./images/b17.png " ")
+![](./images/b18.png " ")
+
+You may now *proceed to the next lab*.
 
 ## Learn More
 
@@ -134,7 +287,7 @@ Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Meghana Banka, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?

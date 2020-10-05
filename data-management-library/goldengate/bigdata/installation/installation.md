@@ -6,9 +6,9 @@ In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
 *Estimated Lab Time*:  15 minutes
 
-  ![](./images/image110_1.png" ")
+  ![](./images/image110_1.png " ")
 
-### About Oracle GoldenGate for Big DAta
+### About Oracle GoldenGate for Big Data
 
 #### KEY FEATURES
 
@@ -39,36 +39,39 @@ integration architectures to big data systems without impacting the performance 
 
 ## **STEP 1**: Login in to Instance
 
-*From Kay, Brian, how am I supposed to even get to my instance?  Do i Login to the Cloud?  What is my IP address?    
-
-## **STEP 2**:  Install GoldenGate using Menu
+**Access image via Live Lab Marketplace**
 
  Follow the steps below to install GoldenGate, or optionally you can select “I” from the Lab Menu below to auto-install GG.
 
-1. Open terminal from desktop by double clicking on the icon
+   
+1.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
 
-  ![](./images/terminal2.png" ")
+Open a terminal session locally
+````
+<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
+````
+Use Public IP allocated from LiveLabs
 
-2.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  *Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS*
-    ```` 
-    <copy>su – ggadmin</copy>
-    Password = oracle
+**Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
+    ````
+    <copy>sudo su – ggadmin</copy>
     ````
 
-3. The following Lab Menu will be displayed
+1. The following Lab Menu will be displayed
 
   ![](./images/labmenu_opt1.png" ")
 Follow these instructions to install GoldenGate for Big Data
 
-## **STEP 3**:Performing the Install
+## **STEP 3**: Performing the Install
 
-1.  Review the overview notes on the following screen, then select **Q** to quit. 
-      ![](./images/labmenu_opt1.png" ")
+1.  **Select Option 1** 
+   
+Review the overview notes on the following screen, then select **Q** to quit. 
+      ![](./images/labmenu_opt1.png " ")
 
   These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-2. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
-
+1. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
 **Optional**  (Do not select Auto-install if you already installed GG manually)
 
@@ -78,7 +81,6 @@ Congratulations, GoldenGate for Big Data is now installed. You can proceed to th
 
 You may now *proceed to the next lab*.
 
-
 ## Learn More
 
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
@@ -86,7 +88,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka
-* **Last Updated By/Date** - Meghana Banka, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?
