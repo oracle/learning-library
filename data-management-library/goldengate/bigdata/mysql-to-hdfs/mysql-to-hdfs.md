@@ -25,12 +25,13 @@ For the Lab:
 
 If at a terminal session:
 
+````
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
 
-
+````
+````
 <copy>>sudo su - ggadmin</copy>
-
-Password:  oracle
+````
 
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 For the Lab terminal session:
@@ -47,17 +48,21 @@ The following Lab Menu will be displayed,
 
 (Is already done in the env script for this workshop)
 
-
+````
 <copy>cd /u01/gg4hadoop/dirprm</copy>
-
+````
+````
 <copy> view /dirprm/create_hdfs_replicat.oby</copy>
-
+````
+````
 <copy>cd /u01/gg4hadoop/dirprm</copy>
-
+````
+````
 <copy> view /u01/gg4hadoop123010/dirprm/rhdfs.prm</copy>
-
+````
+````
 <copy> view /u01/gg4hadoop123010/dirprm/rhdfs.properties</copy>
-
+````
 
 **4:**Start the GG manager process on both the source and target. Start two putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
 
@@ -65,35 +70,47 @@ The following Lab Menu will be displayed,
 
   ![](images/b3.png " ")
 
+````
 <copy> cd /u01/gg4mysql</copy>
-
+````
+````
 <copy> pwd</copy>
-
+````
+````
 <copy>./ggsci</copy>
-
+````
+````
 <copy> info all</copy>
-
+````
+````
 <copy> start mgr</copy>		
- 
+ ````
+ ````
 <copy> info all</copy>	
-
+````
 
 **6:** In the second session, go to the **GG Home for Hadoop**, and start the manager process. You can cd to the directory:
 
   ![](images/b4.png " ")
 
+````
 <copy> cd /u01/ gg4hadoop123010</copy>
-
+````
+````
 <copy>./ggsci</copy>
-
+````
+````
 <copy> info all</copy>	 
-
+````
+````
 <copy> start mgr</copy>		
-
+````
+````
 <copy> info all</copy>	 
-
+````
+````
 <copy> exit</copy>
-
+````
 
 **7:** In the **GG for MySQL ggsci session**, we will create and start the GG extract process:
 
@@ -102,19 +119,24 @@ The following Lab Menu will be displayed,
 
 <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
-
+````
 <copy> info all</copy>	
- 
+ ````
+ ````
 <copy> start extmysql</copy>
-
+````
+````
 <copy> info all</copy>	
-
+````
+````
 <copy> start pmphadop</copy>	
-
+````
+````
 <copy> start *</copy>
-
+````
+````
 <copy> info all</copy> 
-
+````
 
 **8:** Now that the source side is setup, let us configure GG on the target side (HDFS).
 
@@ -122,43 +144,57 @@ The following Lab Menu will be displayed,
 
   ![](./images/b7.png " ")
 
+````
 <copy> cd dirprm</copy>
-
+````
+````
 <copy> vi rhdfs.properties</copy>
-
+````
 **Remove "--" below**
 
+````
 <copy> ---hdfs</copy>
-
+````
+````
 <copy> ---/user/ggtarget/hdfs</copy>
-
+````
+````
 <copy> ---delimitedtext</copy>
-
+````
+````
 <copy> ---.csv</copy>
-
+````
+````
 <copy>:wq!</copy>
-
+````
 
 **10:** Now create and start the HDFS replicat process:
 
   ![](./images/b8.png " ")
 
+````
 <copy> cd ..</copy>
-
+````
+````
 <copy>./ggsci</copy>	 
-
+````
+````
 <copy> info all</copy>		
-
+````
+````
 <copy> obey ./dirprm/create_hdfs_replicat.oby</copy>	
-
+````
+````
 <copy> info all</copy>	
-
+````
+````
 <copy> start rhdfs</copy>	
-
+````
 **Note: You might have to run "info all" several times before the status changes to running**
 
+````
 <copy> info all</copy>
-
+````
 
 **11:** Replicat is now running
 
@@ -171,22 +207,27 @@ The following Lab Menu will be displayed,
   ![](./images//b10.png " ")
   ![](./images/b11.png " ")
 
+````
 <copy> hdfsls</copy>
-
+````
+````
 <copy> mysqlselect</copy>
-
+````
+````
 <copy> loadsource</copy>
-
+````
+````
 <copy> mysqlselect</copy>
-
+````
+````
 <copy> hdfsls</copy>
-
-
+````
+````
 <copy> dmlsource</copy>
-
-
+````
+````
 <copy> hdfscat</copy> 
-
+````
 
 In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhdfs’ read the remote trail file, and wrote the data to the HDFS target directory
@@ -241,7 +282,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?

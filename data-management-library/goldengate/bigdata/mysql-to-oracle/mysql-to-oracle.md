@@ -140,7 +140,7 @@ select 'salaries        table -> '|| count(1) from employees.salaries;
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?

@@ -23,14 +23,15 @@ In this lab we will load data in MySQL database ‘ggsource’. The GG extract p
 
 1. Open a terminal session locally
 
+````
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
-
+````
 Use Public IP allocated from LiveLabs
 
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
-    
-    <copy>sudo su – ggadmin</copy>
-
+````    
+<copy>sudo su – ggadmin</copy>
+````
 1. At the prompt, type  ‘labmenu’ to display the labmenu IF not at the labmenu.
 
   ![](./images/a_labmenu2.png " ")
@@ -43,28 +44,35 @@ Use Public IP allocated from LiveLabs
 
 1. Review the content of each of these files to explore how GoldenGate is being configured.
 
+````
 <copy>cd /u01/gg4mysql/dirprm</copy>
-
-    <copy>view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby</copy>
-
-    <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
-
-    <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
-
-    <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
-
-    <copy>view /u01/gg4mysql/dirprm/repmysql.prm</copy>
-
+````
+````
+<copy>view /u01/gg4mysql/dirprm/create_mysql_gg_procs.oby</copy>
+````
+````
+<copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+````
+````
+<copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+````
+````
+<copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+````
+````
+<copy>view /u01/gg4mysql/dirprm/repmysql.prm</copy>
+````
 2. Go to the GG Home for MySQL by typing *ggmysql*
 
+````
 <copy>ggmysql</copy>
-
+````
     or
-
+````
 <copy> cd /u01/gg4mysql</copy>
-
+````
 <copy> pwd</copy> 
-
+````
 
 ## **STEP 3**: Start GoldenGate Processes
 
@@ -72,75 +80,92 @@ Use Public IP allocated from LiveLabs
 
   ![](./images/a_2.png " ")
   ![](./images/a3.png " ")
-
+````
 <copy> cd /u01/gg4mysql</copy>
-
+````
+````
 <copy> pwd</copy> 
-
+````
+````
 <copy> ls -l ggsci</copy>
-
+````
 2. Login to ggsci (GG command line interface), to create and start the GG extract, pump and replicat
 processes:
 
   ![](./images/a4.png " ")
 
-  
+````  
 <copy>./ggsci</copy>
-
+````
+````
 <copy> info all</copy>
-	 
+````
+````
 <copy> start mgr</copy>	
-
+````
+````
 <copy> info all</copy>
-
+````
+````
 <copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
-
+````
+````
 <copy> start extmysql</copy>
-
+````
+````
 <copy>info all</copy>	
-
+````
+````
 <copy>start pmpmysql</copy>	
-
+````
+````
 <copy>info all</copy>	
-
+````
+````
 <copy>start repmysql</copy>	
-
+````
+````
 <copy>start * </copy>
-
+````
+````
 <copy>info all</copy>
-
-
+````
 ## **STEP 4**: Load Data into Source Database
 
 Now that the GoldenGate extract, pump and replicat processes are running, next you’ll run a script to load data into the ggsource MySQL database.
 
 1. Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt), and execute the following commands. (We’ve provided aliases to avoid errors, and focus on GoldenGate, rather than MySQL or Hadoop commands.
 
+````
 <copy>sudo su – ggadmin</copy>
-
+````
 **Q**  to exit out of the LabMenu
 
 
    ![](./images/a5.png " ")
    ![](./images/a6.png " ")
 
+````
 <copy>mysqlselect</copy>
-
+````
+````
 <copy>loadsource</copy>
-
+````
+````
 <copy>mysqlselect</copy>
-
+````
 
 1. At this point GoldenGate should have replicated all the data from database ggsource to database ggtarget, for all 3 tables. The rows should match. Let’s confirm that from within GoldenGate.
 
 2. Go back to the session where you have ./ggsci running, and execute the following commands to see what data GG has processed.
 
     ![](./images/a7.png " ")
-
+````
 <copy>stats extmysql total</copy>
-
+````
+````
 <copy> stats repmysql total</copy>
-    
+````
 
 4.  The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 
@@ -161,7 +186,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?
