@@ -1,18 +1,32 @@
-# Migrating the WebLogic domain
+# Migrating the SOA domain
 
 ## Introduction: 
 
-Migrating a WebLogic domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
+Migrating a SOA domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
+After you have prepared your source and target environments for the migration, you can transition your production system from old deployment to new deployment.
 
-We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on OCI.
+We'll use manual process to migrate the domain from on-premises and re-deploy it on OCI.
 
-Estimated Lab Time: 15 min
+**Deploying, Undeploying, and Redeploying SOA Composite Applications**
+Oracle SOA Suite uses the SCA standard as a way to assemble service components into a SOA composite application. You can deploy, undeploy, and redeploy SOA composite applications.
+
+SOA composite applications consist of the following:
+
+Service components such as Oracle Mediator for routing, BPEL processes for orchestration, human tasks for workflow approvals, business rules for designing business decisions, and complex event processing for queries of event streams
+
+Binding components (services and references) for connecting SOA composite applications to external services, applications, and technologies
+
+These components are assembled together into a SOA composite application. This application is a single unit of deployment that greatly simplifies the management and lifecycle of SOA applications.
+
+
+
+Estimated Lab Time: 45 min
 
 ### About Product/Technologies
 
-**WebLogic Deploy Tooling** is an open source tool found on Github at [https://github.com/oracle/weblogic-deploy-tooling](https://github.com/oracle/weblogic-deploy-tooling)
+You can use Fusion Middleware Control, Oracle JDeveloper, or the command line to deploy, undeploy, or redeploy a SOA application.
 
-Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
+Migration with manual process consists in 3 steps:
 
 - Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
 
@@ -866,8 +880,8 @@ Making sure you use `https` as scheme and the proper case for `/SimpleDB`
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, August 2020
+ - **Author** - Akshay Saxena, September 2020
+ - **Last Updated By/Date** - Akshay Saxena, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

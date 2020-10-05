@@ -42,6 +42,10 @@ In this lab, you will:
 
 You may proceed to the next lab.
 
+## Documentation
+
+[here]https://docs.oracle.com/en/cloud/paas/soa-cloud/liftshift/migration-side-side-upgrade-soa-mp.html#GUID-6F77D620-0962-43A4-A503-A70E706C3D02
+
 ## Acknowledgements
 
  - **Author** - Akshay Saxena, September 2020
