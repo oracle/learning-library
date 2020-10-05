@@ -33,7 +33,7 @@ For the local machine environment, you will need:
 
 Choose the option that best suits your needs:
 
-A. [Setup the on-premises environment using Marketplace image (15min)](?lab=lab-1-option-setup-on-premises-environment)
+A. [Setup the on-premises environment using Marketplace image (15min)](?lab=lab-1-option-a-setup-on-premises-environment)
 
 B. [Setup the on-premises environment using Docker (45min)](?lab=lab-1-option-b-setup-local-(on-premises))
 

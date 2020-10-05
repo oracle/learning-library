@@ -18,12 +18,12 @@
         {
             "title": "Lab 1 Option A: Setup an on-premises environment with the Workshop Marketplace stack",
             "publisheddate": "10/01/2020",
-            "filename": "../../../on-prems-env-mp/on-prems-env-mp.md"
+            "filename": "../on-prems-env-mp/on-prems-env-mp.md"
         },
         {
-            "title": "Lab 1 Option B: Setup a local (on-premises) environment with Docker",
-            "publisheddate": "10/01/2020",
-            "filename": "../../../on-prems-env-docker/on-prems-env-docker.md"
+            "title": "Lab 1 Option B: Setup a local (on-premises) environment with Oracle VM",
+            "publisheddate": "10/05/2020",
+            "filename": "../on-prems-env-local/on-prems-env-local.md"
         },
         {
             "title": "Lab 2: Setup the Network for your OCI Account",
