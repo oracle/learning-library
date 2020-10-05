@@ -1,6 +1,6 @@
 # Setup the demo 'on-premises' environment
 
-## Introduction: 
+## Introduction
 
 For this migration workshop, we need an environment to migrate *from*.
 
@@ -11,7 +11,9 @@ We're offering 2 ways to provision this environment:
 
 Both paths provide a pre-packaged 'on-premises' simulated environment which includes an Application Database and a WebLogic domain including 2 web applications and a datasource to connect to the database.
 
-The Marketplace image deployment is simpler and faster, while the Docker environment provides a way to more realistically simulate an 'on-premises' environment as it runs on your local machine. 
+The Marketplace image deployment is simpler and faster, while the Docker environment provides a way to more realistically simulate an 'on-premises' environment as it runs on your local machine.
+
+Estimated Lab Time: 15 to 30 minutes depending on path chosen.
 
 ### Objectives
 
@@ -38,6 +40,8 @@ A. [Setup the on-premises environment using Marketplace image (15min)](?lab=lab-
 B. [Setup the on-premises environment using Docker (30min)](?lab=lab-1-option-b-setup-local-(on-premises))
 
 *When you are done with the workshop, you should tear down the 'on-premises' environment.*
+
+You may proceed to the next lab.
 
 ### Disclaimer
 

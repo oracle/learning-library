@@ -2,14 +2,14 @@
 
 ## Introduction
 
-In this lab, we'll look at scaling a WebLogic domain provisioned with the Marketplace. 
+In this lab, we'll look at scaling a WebLogic domain provisioned with the Marketplace.
 
 There are 2 ways to scale a domain:
 
 - Change the shape of the WebLogic Server VM to increase or reduce OCPU counts or memory
 - Add or remove node by editing the Resource Manager stack
 
-Estimated Lab Time: 20min
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -50,9 +50,9 @@ For this lab you need:
 
   <img src="./images/scale-tf-apply.png" width="70%">
 
-The new job will update the number of nodes, reverting any manual shape change to the originally provisioned shape. Servers will be restarted and new nodes will join the cluster if there was one defined, unless the **Do not update domain** was checked.
+  The new job will update the number of nodes, reverting any manual shape change to the originally provisioned shape. Servers will be restarted and new nodes will join the cluster if there was one defined, unless the **Do not update domain** was checked.
 
-The load balancer is also updated to take new nodes into account.
+  The load balancer is also updated to take new nodes into account.
 
 7. Go check the Admin Console under **Environment -> Servers** to verify an server was added
 
@@ -80,7 +80,9 @@ The load balancer is also updated to take new nodes into account.
 
   <img src="./images/scale-compute-edit-shape2.png" width="70%">
 
-You will be prompted to reboot the instance. The WebLogic servers will be restarted on reboot.
+  You will be prompted to reboot the instance. The WebLogic servers will be restarted on reboot.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 

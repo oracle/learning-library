@@ -25,11 +25,11 @@ Estimated Lab Time: 2 hours
 - An OCI account with proper priviledge to access the object stortage in OCI
 
 
-## **Step 1:** Start the On-Premise Oracle Database
+## **STEP 1:** Start the On-Premise Oracle Database
 
 If your lab local database in the VM is not running for some reason (it should be).
 
-1. Log in as user **oracle**. Open a terminal. 
+1. Log in as user **oracle**. Open a terminal.
 
 2. Startup the listener.
 
@@ -72,8 +72,6 @@ If your lab local database in the VM is not running for some reason (it should b
       [oracle@dbhost ~]$ 
       ```
 
- 
-
 3. Startup database
 
       ```
@@ -102,12 +100,9 @@ If your lab local database in the VM is not running for some reason (it should b
       [oracle@dbhost ~]$
       ```
 
+## **STEP 2:** Download the Cloud Backup Module
 
-
-
-## **Step 2:** Download the Cloud Backup Module
-
-1. You can download the backup module from [Oracle Cloud Backup Downloads](https://www.oracle.com/database/technologies/oracle-cloud-backup-downloads.html). 
+1. You can download the backup module from [Oracle Cloud Backup Downloads](https://www.oracle.com/database/technologies/oracle-cloud-backup-downloads.html).
 
    Click *All Supported Platforms*, Accept the license agreement, and provide your OTN user name and password when prompted. Then download the ZIP file that contains the installer (**opc_installer.zip**) to your system. For example, the download file under the /home/oracle/Downloads directory.
 
@@ -144,8 +139,6 @@ If your lab local database in the VM is not running for some reason (it should b
       oci_installer  opc_installer  readme.txt
       ```
 
-   
-
 3. The **oci\_installer** directory contain the Oracle Database Cloud Backup Module for OCI, the **opc\_installer** directory contain the Oracle Database Cloud Backup Module for OCI Classic. In the following steps we will use Oracle Cloud Infrastructure, so cd into the **oci\_installer** directory.
 
       ```
@@ -153,8 +146,6 @@ If your lab local database in the VM is not running for some reason (it should b
       [oracle@dbhost oci_installer]$ ls
       oci_install.jar  oci_readme.txt
       ```
-
-   
 
 4. Check your JDK version is JDK 1.7 or above.
 
@@ -165,10 +156,9 @@ If your lab local database in the VM is not running for some reason (it should b
       OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
       ```
 
+## **STEP 3:** Prepare SSH Keys Pairs
 
-## **Step 3:** Prepare SSH Keys Pairs
-
-For the Oracle Database Backup Cloud Service, you need to have the identifiers and credentials below.  You will need an OCI user able to call APIs with these credentials.  
+For the Oracle Database Backup Cloud Service, you need to have the identifiers and credentials below.  You will need an OCI user able to call APIs with these credentials.
 
    - RSA key pair in PEM format (minimum 2048 bits).
    - Fingerprint of the public key.
@@ -190,7 +180,6 @@ For the Oracle Database Backup Cloud Service, you need to have the identifiers a
       </copy>
       ```
 
-
 3. Ensure that only you can read the private key file:
 
       ```
@@ -198,7 +187,6 @@ For the Oracle Database Backup Cloud Service, you need to have the identifiers a
       chmod go-rwx ~/.oci/oci_api_key.pem
       </copy>
       ```
-
 
 4. Generate the public key:
 
@@ -230,17 +218,14 @@ For the Oracle Database Backup Cloud Service, you need to have the identifiers a
    ![](./images/image-20200410092352601.png " ")
    ![](./images/image-20200410092545424.png " ")
 
-
 8. Paste the content of oci\_api\_key\_public.pem copied earlier and click **Add**. A new finger print will be generated. Compare the fingerprint in the output of config file to the one in OCI console window and make sure they match.
-   ![](./images/image-20200410092732073.png " ")    
+   ![](./images/image-20200410092732073.png " ")
 
 To see more information about generating the keys and finding your OCIDs, refer to [API Signing Key](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
 
+## **STEP 4:** Install the Backup Module
 
-
-## **Step 4:** Install the Backup Module
-
-Run the installer, **oci\_install.jar** to install the backup module. This example shows how the installer automatically downloads the Oracle Database Cloud Backup Module for OCI for your operating system, creates a wallet that contains Oracle Database Backup Cloud Service identifiers and credentials, creates the backup module configuration file, and downloads the library necessary for backups and restores to Oracle Cloud Infrastructure.  Provide the required parameters in one line, with each parameter preceded by a hyphen and followed by its value. 
+Run the installer, **oci\_install.jar** to install the backup module. This example shows how the installer automatically downloads the Oracle Database Cloud Backup Module for OCI for your operating system, creates a wallet that contains Oracle Database Backup Cloud Service identifiers and credentials, creates the backup module configuration file, and downloads the library necessary for backups and restores to Oracle Cloud Infrastructure.  Provide the required parameters in one line, with each parameter preceded by a hyphen and followed by its value.
 
 The following table lists the required and some optional parameters.
 
@@ -291,11 +276,11 @@ It also downloads cwallet.sso an Oracle wallet that securely stores Oracle Objec
       cwallet.sso  cwallet.sso.lck
       ```
 
-## **Step 5:** Prepare the on premise database
+## **STEP 5:** Prepare the on premise database
 Now, We will set the database to Archivelog mode. Creat a user in the pdb and create a new table for testing the backup and recover.
 
 1. Start a SQL*Plus session
-  
+
       ```  
       $ <copy>sqlplus / as sysdba</copy>
       ```
@@ -398,9 +383,7 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       [oracle@dbhost oci_installer]$ 
       ```
 
-
-
-## **Step 6:** Configure RMAN to support Cloud Backups
+## **STEP 6:** Configure RMAN to support Cloud Backups
 
    Before we can do backups to the Cloud storage location in your account, you need to configure a number of RMAN properties. These properties define:
 
@@ -411,8 +394,6 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
 - Setting backup optimization to ON so that RMAN will not do unnecessary transfers to and from the cloud. (e.g. If a backup file is already present and has not had any changes before a “new” backup is performed, this file will not be dealt with, saving time).
 - Setting a compression level for the files going to/from the cloud.
 - Configuring the `sbt_tape` device as the default for all backups.
-
-
 
 1. Connect RMAN to the local database using ```rman target /```
 
@@ -429,7 +410,6 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       RMAN>    
       ```
 
-
 2. Commands in RMAN can be run in blocks so you can do a sequence all at once. Copy and Paste from the entire run block as shown below:
 
       ```
@@ -445,8 +425,6 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       }
       </copy>
       ```
-
-   
 
 3. Hit Enter and the parameters will be set to the following:
 
@@ -492,7 +470,6 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       RMAN> 
       ```
 
-
 4. You can verify the changes in RMAN by typing **show all;**
 
       ```
@@ -523,9 +500,7 @@ Now, We will set the database to Archivelog mode. Creat a user in the pdb and cr
       RMAN>   
       ```
 
-
-
-## **Step 7:** Backup the On Premise Database
+## **STEP 7:** Backup the On Premise Database
 
 For backup and recovery we could always run the following sequence of commands from a shell script or an RMAN run block, but we’ll be copying and pasting each individual command in sequence so you’ll get a better feel for what is going on.
 
@@ -540,8 +515,6 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       
       RMAN>
       ```
-
-   
 
 2. Copy and Paste the backup command
 
@@ -656,8 +629,6 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
 
    *NOTE: If for some reason your backup does not finish properly because of network issues, there is a way to clean up the partial backup files and retry. This is documented in the Appendix at the end of this lab*.
 
-
-
 3. When creating a backup, the file chunks are placed in a user defined object storage buck **db\_backups** in the compartmet, or it will use a system generated container called oracle-data-storage-xxx. We can verify the backup actually went to the cloud once the backup command has completed.
 
    Using RMAN, you can verify the backup files by typing: **list backup summary;**
@@ -684,8 +655,6 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       RMAN> 
       ```
 
-    
-
 4. Enter the following command at the RMAN prompt**:**
 
       ```
@@ -696,8 +665,6 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       RMAN>
       ```
 
-​    
-
 5. Open a browser and login in to the OCI Console. Click the main menu and select **Object Storage**, Click the **Object Storage**.
    ![](./images/image-20200410112406052.png " ")
 
@@ -707,8 +674,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
 7. In the bucket, you can see the file\_chunks of the backup set. 
    ![](./images/image-20200410113002589.png " ")
 
-
-## **Step 8:** Query and Exit
+## **STEP 8:** Query and Exit
 
 1. Open up a new terminal window and connect to the **johnsmith** schema in the local **orclpdb** container database.
 
@@ -728,8 +694,6 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       SQL> 
       ```
 
-   
-
 2. There is a table called **mstars** in the schema. Query the table to see the records.
 
       ```
@@ -745,8 +709,6 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       SQL> 
       ```
 
-​    
-
 3. Drop the table and exit out of sqlplus
 
       ```
@@ -760,8 +722,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       [oracle@dbhost ~]$ 
       ```
 
-
-## **Step 9:** Restore and Recover the Database to a Point in Time
+## **STEP 9:** Restore and Recover the Database to a Point in Time
 
 We now need to restore the database to the point in time before the **mstar** table was accidentally deleted (:> The backup files stored in cloud will be used.
 
@@ -798,8 +759,6 @@ We now need to restore the database to the point in time before the **mstar** ta
       RMAN> 
       ```
 
-   
-
 3. We need to set the de-encryption password we set when encrypting and backing up the database.
 
       ```
@@ -809,8 +768,6 @@ We now need to restore the database to the point in time before the **mstar** ta
       
       RMAN>
       ```
-
-​    
 
  The following steps will bring the entire database to a point where media recovery can occur. This of course takes the database offline. If you had multiple PDBs in the database and only needed to recover data in one PDB while leaving the others on-line, you could use the steps to only close the PDB, restore and recover the PDB to the restore point. It takes a little longer using this method, so in this lab we’ll recover the entire database.
 
@@ -829,8 +786,6 @@ We now need to restore the database to the point in time before the **mstar** ta
       }
       </copy>
       ```
-
-​    
 
 5. Hit Enter and the commands will be executed:
 
@@ -901,7 +856,6 @@ We now need to restore the database to the point in time before the **mstar** ta
       RMAN> 
       ```
 
-
 6. Once the script completes, go back to the terminal window you used to connect with sqlplus and re-connect back into the **orclpdb** container as **johnsmith/johnsmith** and query to see if the **mstars** table has been recovered.
 
       ```
@@ -929,8 +883,6 @@ We now need to restore the database to the point in time before the **mstar** ta
       SQL> 
       ```
 
-
-
 ## Appendix
 
 In case your backup does not complete properly you can clean up the partial backupset and rerun the backup. You may have to wait a few minutes after the backup failure before the partial backup files can be deleted.
@@ -943,7 +895,7 @@ In case your backup does not complete properly you can clean up the partial back
       ```
 
 - Rerun the backup.
-  
+
       ```
       <copy>
       backup as compressed backupset tag 'onprem' database plus archivelog;
@@ -952,7 +904,7 @@ In case your backup does not complete properly you can clean up the partial back
 
 You may now proceed to the next lab.
 
-## Acknowledgments 
+## Acknowledgments
 
 - **Author** - Minqiao Wang, Database Product Management, PTS China - April 2020
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer

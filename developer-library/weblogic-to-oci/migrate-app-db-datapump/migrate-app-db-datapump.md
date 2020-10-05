@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to migrate the 'on-premises' application database to the database provisioned on OCI using Datapump.
 
-Estimated Lab Time: 10 min
+Estimated Lab Time: 10 minutes
 
 ### About Product/Technology
 
@@ -97,7 +97,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 ```
 </details>
 
-## **STEP 3:** Export the Source Database
+## **STEP 2:** Export the Source Database
 
 1. Run the `datapump_export.sh` script:
 
@@ -113,61 +113,11 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 
 
 
-## **STEP 2:** Edit the `datapump_import.sh` script
+## **STEP 3:** Edit the `datapump_import.sh` script
 
-Once the schema and data was exported, we'll import it into the OCI DBaaS database.
+Once the schema and data are exported, we'll import it into the OCI DBaaS database.
 
-First, we'll need to edit the `datapump_import.sh` script to target the OCI database.
-
-<details><summary>View the <code>datapump_import.sh</code> script</summary>
-
-```bash
-BASTION_IP=
-TARGET_DB_HOST=
-TARGET_DB_PORT=1521
-TARGET_DB_PDB=pdb
-TARGET_DB_DOMAIN=nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
-TARGET_DB_USER=system
-TARGET_DB_PWD=YpdCNR6nua4nahj8__
-DB_LOCAL_PORT=1523
-
-echo "Removing old files if they exist..."
-ssh -J opc@${BASTION_IP} opc@${TARGET_DB_HOST} "[[ -d '/home/opc/export' ]] && sudo rm -rf /home/opc/export"
-
-echo "Move the export files over to the DB HOST..."
-scp -o ProxyCommand="ssh -W %h:%p opc@${BASTION_IP}" -r ~/datapump/export opc@${TARGET_DB_HOST}:/home/opc/export
-
-echo "Changing ownership of the files..."
-ssh -J opc@${BASTION_IP} opc@${TARGET_DB_HOST} "sudo chown -R oracle:oinstall /home/opc/export && sudo rm -rf /home/oracle/export && sudo mv /home/opc/export /home/oracle/"
-
-# create ssh tunnel to DB port to talk to the DB from local
-ssh -M -S sql-socket -fnNT -L ${DB_LOCAL_PORT}:${TARGET_DB_HOST}:${TARGET_DB_PORT} opc@${BASTION_IP} cat -
-ssh -S sql-socket -O check opc@${BASTION_IP}
-
-echo "Creating import dir on OCI DB host..."
-IMPORT_DIRNAME=import
-echo "DROP DIRECTORY ${IMPORT_DIRNAME};" | sqlplus system/${TARGET_DB_PWD}@localhost:${DB_LOCAL_PORT}/${TARGET_DB_PDB}.${TARGET_DB_DOMAIN}
-echo "CREATE DIRECTORY ${IMPORT_DIRNAME} AS '/home/oracle/export/';" | sqlplus system/${TARGET_DB_PWD}@localhost:${DB_LOCAL_PORT}/${TARGET_DB_PDB}.${TARGET_DB_DOMAIN}
-
-echo "Import Datapump dump..."
-impdp system/${TARGET_DB_PWD}@localhost:${DB_LOCAL_PORT}/${TARGET_DB_PDB}.${TARGET_DB_DOMAIN} DIRECTORY=${IMPORT_DIRNAME} schemas=RIDERS
-# note: this first attempt will fail because the user doesn't have quota on the tablespace USERS 
-
-# alter the user RIDERS to give it quota on USERS tablespace
-echo "ALTER USER RIDERS QUOTA 100M ON USERS;" | sqlplus system/${TARGET_DB_PWD}@localhost:${DB_LOCAL_PORT}/${TARGET_DB_PDB}.${TARGET_DB_DOMAIN}
-
-# then run the import again
-echo "Import Datapump dump..."
-impdp system/${TARGET_DB_PWD}@localhost:${DB_LOCAL_PORT}/${TARGET_DB_PDB}.${TARGET_DB_DOMAIN} DIRECTORY=${IMPORT_DIRNAME} schemas=RIDERS
-
-echo "Closing ssh tunnel..."
-# force kill the tunnel as the exit function doesn't always clean it up properly
-ps aux | grep ssh | grep -v "grep" | awk '{print $2}' | xargs kill -9
-rm sql-socket
-
-echo "Done!"
-```
-</details>
+First, we'll need to edit the `datapump_import.sh` script to target the OCI database found in the datapump folder.
 
 1. Open the script in an editor. We'll use the popular `nano` editor:
 
@@ -195,7 +145,7 @@ echo "Done!"
 
 4. Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. 
 
-      If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com` if you followed the defaults in this lab.
+      If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
       <img src="./images/provision-db-27-connection2.png" width="70%">
 
@@ -215,12 +165,14 @@ echo "Done!"
 The import script runs in 4 phases:
 
 - It copies the files over to the OCI DB node
-- then runs the `impdp` import command once. 
-You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace. 
+- then runs the `impdp` import command once.
+You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace.
 - the script then edits the `RIDERS` user tablespace quota
 - and re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
 The database is now migrated to OCI.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 

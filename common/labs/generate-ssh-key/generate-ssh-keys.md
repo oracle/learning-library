@@ -43,8 +43,6 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](./images/cloudshell-ssh-keygen.png " ")
 
-    ![](./images/cloudshell-ssh-keygen-2.png " ")
-
 3.  Examine the two files that you just created.
 
     ````

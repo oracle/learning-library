@@ -23,7 +23,7 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 
 If you already have a cloud account, skip to **STEP 2**.
 
-1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://www.oracle.com/cloud/free).
+1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
 2.  Click on the **Start for free** button and enter the appropriate information to begin.
        ![](images/signup-for-freetier.png " ")
 3.  You will be presented with a registration page.
@@ -59,15 +59,15 @@ If you already have a cloud account, skip to **STEP 2**.
 
 ## **STEP 2**: Sign in to Your Account
 
-If you've signed out of the Oracle Cloud, use these steps to sign back in. 
+If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com) and click the **View Accounts** button.
 
-    ![](images/cloud-login-1-new.png " ")
+    ![](images/cloud-oracle.png " ")
 
 2. Click **Sign in to Cloud**.
 
-    ![](images/cloud-login-2-new.png " ")
+    ![](images/signin-to-cloud.png " ")
 
 3. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 

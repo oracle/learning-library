@@ -1,8 +1,8 @@
 /*
 Author: Ashwin Agarwal
-Contributors: Tom McGinn, Suresh Mohan
-Last updated: 21-Sep-2020
-Version: 20.2.18
+Contributors: Tom McGinn, Suresh Mohan, Jon Russell
+Last updated: 5-Oct-2020
+Version: 20.2.23
 */
 
 
@@ -29,7 +29,7 @@ body {
     padding: 0;
     font-family: "Oracle Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     padding-top: 64px;
-    font-size: 16px;
+    font-size: 14px; /* JR: reduce from 16px */
     line-height: 1.5;
 }
 
@@ -220,9 +220,9 @@ a:active {
 }
 
 .hol-Nav-title {
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 24px;
+    padding: 16px;  /* JR: reduce from 20px */
+    font-size: 18px;  /* JR: reduce from 20px */
+    /* font-weight: 24px; JR: removed as next line is duplicate */
     font-weight: 700;
 }
 
@@ -275,8 +275,8 @@ a:active {
 
 .hol-Nav-list > li {
     margin: 0;
-    padding: 18px;
-    font-size: 15px;
+    padding: 16px; /* JR: reduce from 18px */
+    font-size: 15px;  /* JR: reduce from 15px */
     padding-left: 36px;
     border-top: 1px solid rgba(0, 0, 0, .1);
 }
@@ -555,7 +555,7 @@ h2.minus {
     background-color: #FCFBFA;
     border-radius: 4px;
     padding: 12px 20px;
-    font-size: 24px;
+    font-size: 20px; /* JR: reduce from 24px */
     line-height: 32px;
     cursor: pointer;
     margin: 16px -16px;
@@ -622,6 +622,7 @@ table {
 th {
     font-weight: 700;
     padding: 8px 16px;
+    white-space: nowrap; /* JR: added to fix table head auto-width */
     background-color: #E6E3E0;
     border: 1px solid #D9D4D0;
 }
@@ -631,27 +632,34 @@ td {
     border: 1px solid #D9D4D0;
 }
 
+td ul,li {
+  padding-left: 10px;
+}
+
 em {
     color: #C74634;
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px; /* JR: reduce from 18px - TM: 16px */
     line-height: 1.5;
     margin: 0;
-    margin-bottom: 28px;
+    margin-bottom: 18px; /* JR: reduce from 28px */
 }
 
 ul {
+    font-size: 16px; /* JR: added */
     margin: 0;
     margin-bottom: 24px;
     padding: 0;
-    padding-left: 24px;
+    padding-left: 48px; /* JR: increase from 24px */
 }
 
 li {
+    font-size: 16px; /* JR: added */
     margin: 0;
     margin-bottom: 8px;
+    /* margin-left: 6px; /* JR: added */
     padding: 0;
 }
 
@@ -669,18 +677,18 @@ h6 {
 
 h1 {
     font-weight: 900;
-    font-size: 40px;
+    font-size: 28px;  /* JR: reduce from 40px */
     line-height: 48px;
-    margin-bottom: 16px;
-    margin-top: 10px;
+    margin-bottom: 10px;  /* JR: reduce from 16px */
+    margin-top: 0px; /* TM: reduced from 10px to 0px */
     margin-left: -1px;
 }
 
 h2 {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 40px;
-    margin-bottom: 20px;
+    font-size: 20px; /* JR: reduce from 24px */
+    line-height: 30px; /* TM: reduce from 40px */
+    margin-bottom: 10px;  /* JR: reduce from 20px */
     margin-top: 36px;
     margin-left: -11px;
     /* background-color: #FCFBFA; */
@@ -689,38 +697,38 @@ h2 {
 }
 
 h2:first-of-type {
-    margin-top: 0px;
+    margin-top: -10px; /* TM: reduced from 0 to -10 */
 }
 
 h2:not(.plus):not(.minus) {
     font-weight: 600;
-    font-size: 26px;
+    font-size: 20px; /* JR: reduce from 26px */
 }
 
 h3 {
     font-weight: 450;
-    font-size: 22px;
-    line-height: 40px;
-    margin-bottom: 20px;
+    font-size: 18px;  /* JR: reduce from 22px */
+    line-height: 20px;  /* JR: reduce from 40px */
+    margin-bottom: 10px;  /* JR: reduce from 20px */
 }
 
 h4 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 14px; /* TM: reduced from 18px to 14px */
     line-height: 28px;
     margin-bottom: 14px;
 }
 
 h5 {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px; /* TM: reduced from 18px to 14px */
     line-height: 28px;
     margin-bottom: 14px;
 }
 
 h6 {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px; /* TM: reduced from 18px to 14px */
     line-height: 28px;
     margin-bottom: 14px;
 }
@@ -750,7 +758,9 @@ pre {
 
 pre {
     margin-top: 20px;
-    margin-right: .4rem;
+    /*margin-right: .4rem;*/
+    /*margin-right: 20%;*/
+    max-width: 80%; /* TM: Increased right margin */
     margin-bottom: 25px;
     /* margin-left: 25px; */
     border: solid 2px #dedad6;
@@ -805,6 +815,8 @@ blockquote {
     display: none;
 }
 
+/* Table of Contents */
+
 .toc {
     position: relative;
     padding-top: 14px;
@@ -819,6 +831,14 @@ blockquote {
 
 .toc ul:last-of-type {
     margin-bottom: 2px;
+}
+
+.toc li {
+    font-size: 14px;
+}
+
+.hol-Nav-list > li {
+    font-size: 14px;
 }
 
 #leftNav-toc {
@@ -894,11 +914,12 @@ blockquote {
     border-left: 3px solid #AE562C;
 }
 
-
+/* Copy and code blocks */
 
 pre code span.copy-code {
     font-weight: 700;
     font-size: 16px;
+        padding-right: 40px;
 }
 
 pre .copy-button {
@@ -935,111 +956,7 @@ pre .copy-button:hover {
     display: block;
 }
 
-@media (min-width: 1140px) {
-    figure>img,
-    img,
-    canvas,
-    iframe,
-    video,
-    select,
-    textarea {
-        max-width: 65%;
-    }
-}
-
-
-@media (max-width: 1140px) {
-    #contentBox {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
-    figure>img,
-    img,
-    canvas,
-    iframe,
-    video,
-    select,
-    textarea {
-        max-width: 85%;
-    }
-
-    .hol-Nav-list > li {
-        padding-left: 21px;
-    }
-
-    p, body, .hol-Header-logo, pre, pre code span.copy-code {
-        font-size: 15px;
-    }
-
-    h2.plus, h2.minus {
-        font-size: 20px;
-    }
-
-    #leftNav-toc.open, #leftNav.open {
-        width: 240px;
-    }
-
-    .hol-Header-wrap {
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-}
-
-@media (max-width: 768px) {
-    p, body, .hol-Header-logo, pre, pre code span.copy-code {
-        font-size: 13px;
-    }
-
-    h2.plus, h2.minus {
-        font-size: 20px;
-    }
-
-    th, td {
-        padding: 4px 8px;
-    }
-
-    .hol-Header-wrap {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .hol-Header-wrap {
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-
-    #leftNav-toc.open, #leftNav.open {
-        width: 180px;
-    }
-
-    #contentBox {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    figure>img,
-    img,
-    canvas,
-    iframe,
-    video,
-    select,
-    textarea {
-        max-width: 100%;
-    }
-
-    .hol-Nav-list > li {
-        padding-left: 21px;
-    }
-
-    .toc ul {
-        padding-left: 2px;
-        margin-bottom: 6px;
-    }
-    #tutorial-title {
-        display: contents;
-    }
-}
+/* QA report */
 
 #qa-report {
     z-index: 60;
@@ -1076,12 +993,247 @@ pre .copy-button:hover {
     margin-bottom: 12px;
 }
 
-.format-error {
+#contentBox .format-error {
     border: solid 3px blue;
-    padding: 20px;
+    padding: 10px;
 }
 
-.error {
+#contentBox .error {
     border: solid 3px red;
-    padding: 20px;
+    padding: 10px;
+}
+
+.major-error {
+    color: red;
+}
+
+.minor-error {
+    color: blue;
+}
+
+#qa-report small {
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) { /* TM: changed from 1140 to small laptop 1024 */
+    figure>img,
+    img,
+    canvas,
+    iframe,
+    video,
+    select,
+    textarea {
+        max-width: 75%; /* TM: Increased from 65% */
+    }
+}
+
+
+@media (max-width: 1024px) { /* TM: changed from 1140 to small laptop 1024 */
+    #contentBox {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    figure>img,
+    img,
+    canvas,
+    iframe,
+    video,
+    select,
+    textarea {
+        max-width: 75%;
+    }
+
+    .hol-Nav-list > li {
+        padding: 15px;
+        padding-left: 28px;
+    }
+
+    .toc .toc-item {
+        padding-bottom: 6px;
+    }
+
+    .toc {
+        padding-top: 10px;
+    }
+
+    #qa-report {
+        width: 220px;
+    }
+
+    p, body, .hol-Header-logo, pre, pre code span.copy-code {
+        font-size: 15px;
+    }
+
+    h2.plus, h2.minus {
+        font-size: 20px;
+    }
+
+    #leftNav-toc.open, #leftNav.open {
+        width: 240px;
+    }
+
+    .hol-Header-wrap {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 768px) {  /* Tablets and iPads */
+    #qa-report {
+        display: none
+    }
+
+    .format-error, .error {
+        padding: initial;
+        border:initial;
+    }
+
+    h1 {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 0px;
+        margin-bottom: 12px;
+    }
+
+    p, body, pre, pre code span.copy-code {
+        font-size: 10.5px;
+        margin-bottom: 12px;
+    }
+
+    ul, li, ol {  /* JR - fix for mobile */
+    	font-size: 10.5px;
+    	padding-left: 10px;
+    }
+
+    h2.plus, h2.minus, h2:not(.plus):not(.minus) {
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 8px;
+    }
+
+    h4, h5, h6 {
+        font-size: 11px;
+        line-height: 14px;
+        margin-bottom: 4px;
+    }
+
+    th, td {
+        padding: 4px 8px;
+    }
+
+    .hol-Header-wrap {
+        margin-left: 2px;
+        margin-right: 8px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .hol-Header-button {
+        min-height: 20px;
+        min-width: 30px;
+        padding: 7px;
+        margin-left: 2px;
+
+    }
+
+    .hol-Header-logo:before {
+        margin-right: 8px;
+        background-size: 27px;
+        width: 27px;
+        height: 18px;
+    }
+
+    .hol-Header-logo {
+        padding-left: 0px;
+        font-size: 12px;
+        margin-right: 32px;
+    }
+
+    #leftNav-toc.open, #leftNav.open {
+        width: 150px;
+    }
+
+    #contentBox {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    figure>img,
+    img,
+    canvas,
+    iframe,
+    video,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+
+    .hol-Nav-list {
+        padding-left: 0px;
+    }
+
+    .hol-Nav-list > li {
+        padding: 8px;
+        padding-left: 21px;
+        font-size: 9.5px;
+    }
+
+    .toc .toc-item {
+        font-size: 9px;
+        padding-bottom: 4px;
+    }
+
+    .toc {
+        padding-top: 4px;
+    }
+
+    .arrow {
+        font-size: 14px;
+    }
+
+    .toc ul {
+        padding-left: 2px;
+        margin-bottom: 2px;
+    }
+
+    #tutorial-title {
+        display: contents;
+    }
+
+    .hol-ToggleRegions {
+        margin-bottom: 11px;
+        font-size: 11px;
+        line-height: 12px;
+        font-weight: 600;
+        padding: 9px 11px;
+        min-width: auto;
+    }
+
+    #livelabs {
+        right: 10px;
+        background-size: 28px;
+        height: 28px;
+        width: 28px;
+    }
+
+    #tutorial-title {
+        display: none;
+    }
+
+    pre .copy-button {
+        font-size: 9px;
+        min-width: auto;
+    }
+
+    .arrow {
+        margin-left: -16px;
+    }
 }

@@ -1,6 +1,6 @@
 # Provision the Application Database on OCI with DBaaS
 
-## Introduction: 
+## Introduction
 
 This lab with guide you through provisioning a Application Database
 
@@ -16,13 +16,13 @@ In this lab you will:
 
 ## **STEP 1:** Create a Security List for the database subnet
 
-Before we can provision the Application Database, we need to provision a **private subnet** for the **Database System** with appropriate **Security Lists** to open up the required ports: 
-- port 1521 for the database, 
+Before we can provision the Application Database, we need to provision a **private subnet** for the **Database System** with appropriate **Security Lists** to open up the required ports:
+- port 1521 for the database,
 - port 22 for SSH.
 
 In this section we will create a Security List for the WebLogic subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port) and SSH port 22.
 
-1. Go to **Networking -> Virtual CLoud Network** in the compartment where WebLogic was provisioned.
+1. Go to **Networking -> Virtual Cloud Network** in the compartment where WebLogic was provisioned.
 
   <img src="./images/provision-db-1.png" width="50%">
 
@@ -52,7 +52,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-5-ingress1521.png" width="70%">
 
-8. Click **Additional Ingress Rule** and enter `0.0.0.0/0` for the **Source CIDR** and enter `22` for the **Destination Port Range** to authorize SSH from outside (through the bastion host) 
+8. Click **Additional Ingress Rule** and enter `0.0.0.0/0` for the **Source CIDR** and enter `22` for the **Destination Port Range** to authorize SSH from outside (through the bastion host)
 
   <img src="./images/provision-db-6-ingress22.png" width="70%">
 
@@ -170,19 +170,19 @@ In this section we will create a Security List for the WebLogic subnet to be abl
     </copy>
     ```
 
-    This is found in the `env` file under `DB_PWD` in the `weblogic-to-oci/weblogic` folder
-
   <img src="./images/provision-db-23-creds.png" width="70%">
 
 16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**, and click **Create DB System**
 
   <img src="./images/provision-db-24.png" width="100%">
 
-This will usually take up to 40 minutes to provision.
+  This will usually take up to 40 minutes to provision.
 
   <img src="./images/provision-db-25.png" width="100%">
 
 To save some time, you can proceed to starting the DB migration lab while the DB is provisioning if you wish, however you will need the DB fully provisioned and you will need to gather the DB information before you can finish the migration.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 

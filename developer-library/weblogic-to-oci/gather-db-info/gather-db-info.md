@@ -1,10 +1,10 @@
 # Gather Database information
 
-## Introduction: 
+## Introduction
 
 This lab with guide you through getting useful information regarding a Database provisioned on OCI
 
-Estimated Lab Time: 5 min
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
@@ -29,6 +29,8 @@ Once the database system is provisioned, under the **Database System -> details*
 3. Copy the **DB connection string** for later use
 
   <img src="./images/provision-db-27-connection2.png" width="70%">
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

@@ -39,13 +39,13 @@ Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of da
 ## Available Resources and definitions
 1. Click on the **Home** page and **Import** the **Retail** example
 
-    ![](./images/importretail.png)
+    ![](./images/importretail.png " ")
 
     We will be using the following resources for this lab.  Make sure they have all been imported. 
 2.  Click on the **Retail Sample** tag link next to any of the resources.  
 3.  See that the grey menu bar on top includes **Retail Sample** and that there are **10 of 15 Resources** visible in the main page
 
-    ![](./images/verifyimportedretail.png)
+    ![](./images/verifyimportedretail.png " ")
 
 ## Available Sources for Lab 3 Pipeline
     You need to create a pipeline that includes about 17 stages and resources.  Before you create a new pipeline make sure the resources below have all been imported.  Also make sure that in the catalog page all the connections that you use in the pipeline have the correct connections in the existing streams and DB sources.  Understand the properties for each resource and use them to create your pipeline.  For Streams for example you can double click on each stream in the catalog page and see its properties.  For the visualization resources below, you can click on the properties on the right part of the screen as you mouse over each resource.  Do not edit any of these resources as you will need them for this lab:
@@ -88,13 +88,13 @@ Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of da
 
 1. Start by selecting **Pipeline** from the **Create New Item** drop down in the Catalog page.  Make sure you select the appropriate Stream for this pipeline.  Name the pipeline **RetailPromotions:**
 
-    ![](./images/createnewpipeline.png)
+    ![](./images/createnewpipeline.png " ")
 
-    ![](./images/retailpromotionsname.png)
+    ![](./images/retailpromotionsname.png " ")
 
 2. Once you have created the pipeline you should see stream of data coming from the **OrderStream** in the **Live Output:**
 
-![](./images/orderstreamstage.png)
+![](./images/orderstreamstage.png " ")
 
 Now that we have the order history we would like to enrich this data with the customer details from the database.  
 

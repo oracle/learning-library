@@ -10,22 +10,26 @@
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
             "filename": "../../introduction/introduction.md"
         },
+        {         
+            "title": "Lab 1: Generate SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
         {
-            "title": "Lab 1: Provision HPC Cluster from Oracle MarketPlace Image",
+            "title": "Lab 2: Provision HPC Cluster from Oracle Marketplace Image",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../Lab 100/lab100_hpc.md"
+            "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 2: Use OCI CLI commands and Terraform to work with HPC",
-            "filename": "../../Lab 200/HPC-CLI.md"
+            "title": "Lab 3: Use OCI CLI commands and Terraform to work with HPC",
+            "filename": "../../cli-terraform/cli-terraform.md"
         },
         {
-            "title": "Lab 3-1: Run OpenFoam projects in HPC cluster",
-            "filename": "../../Lab 300/Lab 3-1.md"
+            "title": "Lab 4-1: Run OpenFoam projects in HPC cluster",
+            "filename": "../../openfoam-hpc/openfoam-hpc.md"
         },
         {
-            "title": "Lab 3-2: Run OpenFoam project in Standard VM on OCI",
-            "filename": "../../Lab 300/Lab 3-2.md"
+            "title": "Lab 4-2: Run OpenFoam project in Standard VM on OCI",
+            "filename": "../../openfoam-vm/openfoam-vm.md"
         }
     ]
 }

@@ -49,11 +49,11 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com).
 
-    ![](images/cloud-login-1.png " ")
+    ![](images/cloud-oracle.png " ")
 
 2. Click **View Accounts** to bring up a menu.  Click **Sign in to Cloud**.
 
-    ![](images/cloud-login-2.png " ")
+    ![](images/signin-to-cloud.png " ")
 
 4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
@@ -72,7 +72,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Last Updated By/Date** 
+- **Last Updated By/Date**
     - [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
     - Kay Malcolm, Database Product Management, June 2020
 

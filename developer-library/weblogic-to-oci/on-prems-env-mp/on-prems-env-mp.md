@@ -1,12 +1,12 @@
 # Setup an 'on-premises' environment using the workshop image.
 
-## Introduction: 
+## Introduction
 
-This lab walks you through setting up an environment to simulate an established on-premises environment, using a Compute instance on OCI deployed through the marketplace. 
+This lab walks you through setting up an environment to simulate an established on-premises environment, using a Compute instance on OCI deployed through the marketplace.
 
 At the end of this lab, you will have a simulated 'on-premises' environment running with an Oracle 12c Database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
 
-Estimated Lab Time: 15 min
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -54,11 +54,13 @@ For this lab you need:
   <img src="./images/ssh-key.png"  width="50%">
 
    To output the public key information, use the following command from your local machine:
+
    ```
    <copy>
    cat ~/.ssh/id_rsa.pub
    </copy>
    ```
+
    Copy the output of the command (the whole multi-line output) and paste it in the form field for SSH key in the form
 
    the output will look something like this:
@@ -66,13 +68,14 @@ For this lab you need:
    ```bash
    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlkF23qLyfimJ9Vp4D9psp7bDOB8JvtY/pfYzFxIA2E4v6or+XhvMW5RDhX9Ba54zQNNDLvwUhStdXKkiMXJtEQJarFn45pGy/lyUQKFJolAdHBrXJsg5XWn4DxCFeQUQe1szVfmwDLAktAS14r5g76h3CcA8Kk/cNVqevxVChyejuuOdtAMoriIC8uKV+535qPs/GMiu0zR9aW4w1VodL5eHnXjqdgp8Fr21dVUVQ6of+s/ws0zlQUwghrNguDUqlggzG2mpLBHExypxCrJYmsb05uYjjqVlC3YCatj4nJTIHKLCFiYVY/b8AFkqwXV9EYlja5bjTmunM847dcR8H oracle@ad753161734c
    ```
+
    **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI)
 
 7. Click **Next** and then **Create**
 
   <img src="./images/job-running.png"  width="100%">
 
-It will take about 1 to 2 minutes to create the stack. 
+  It will take about 1 to 2 minutes to create the stack.
 
 8. When the job finishes, you can find the Public IP address of the instance at the bottom of the logs, or in the **Output** area. Make a note of this information.
 
@@ -137,6 +140,8 @@ We'll create a SSH key pair in the default folder
     Note this key will be the default SSH key from the instance used for the on-premises environment.
 
 **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 

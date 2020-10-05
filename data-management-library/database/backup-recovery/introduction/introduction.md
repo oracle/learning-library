@@ -1,10 +1,10 @@
 # Oracle Database Backup Service to OCI #
 
-## Introduction 
+## Introduction
 
 Oracle Database Backup Service (ODBS) is a backup-as-a-service offering that enables customers to store their backups securely in the Oracle cloud. ODBS provides a transparent, scalable, efficient, and elastic cloud storage platform for Oracle database backups. The client side Oracle Database Cloud Backup Module which is used with Recovery Manager (RMAN) transparently handles the backup and restore operations.
 
-In this workshop, you will learn how to backup and recover your on-premise database to the OCI. 
+In this workshop, you will learn how to backup and recover your on-premise database to the OCI.
 
 Estimated Lab Time: 2 hours
 
@@ -22,8 +22,7 @@ Estimated Lab Time: 2 hours
 - An OCI account with proper priviledge to access the object storage in OCI.
 - OCIDs for tenancy, user and compartment
 
-
-## Access the labs 
+## Access the labs
 
 - Use **Lab Contents** menu on your right to access the labs.
     - If the menu is not displayed, click the menu button ![](./images/menu-button.png) on the top right  make it visible.
@@ -32,6 +31,8 @@ Estimated Lab Time: 2 hours
 - From the menu, click on the lab that you like to proceed with. 
 
 - You may close the menu by clicking ![](./images/menu-close.png)
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

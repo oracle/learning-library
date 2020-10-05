@@ -23,11 +23,11 @@ A pipeline is a type of workflow made up of multiple stages such as query stage,
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 ## **Step 1:** Pipelines
- 
+
 
 1. In the left nav bar of the **Catalog** page make sure **Pipelines** is checked and see that only the **VendingMachineManagement** pipeline is visible
 
-    ![](./images/vmmvisible.png)
+    ![](./images/vmmvisible.png " ")
 
 
 2. Open the **VendingMachineManagement** pipeline and see the live data streaming in the **Live Output** region at the bottom of the screen.
@@ -57,7 +57,7 @@ make sure it has been highlighted with color blue.
 Stay on the first stage **VendingMachineStream** with **Live Output** paused and
 understand the fields that are shown in the **Live Output**
 
- ![](./images/openvmmpipelinepauseit.png)
+ ![](./images/openvmmpipelinepauseit.png " ")
 
 
 This data comes from a csv file as streaming data that we saw in the previous lab. It could very well have come from a kafka topic, GoldenGate or JMS.
@@ -95,17 +95,17 @@ Machine_ID and vm_id.
 selected **Now** to indicate that we are interested in the live data as it
 comes in
 
-    ![](./images/getvmdetails.png)
+    ![](./images/getvmdetails.png " ")
 
-3. We created the **GetVendingMachineDetails** by highlighting the **VendingMachine** Stage and with a right mouse click 
- 
+3. We created the **GetVendingMachineDetails** by highlighting the **VendingMachine** Stage and with a right mouse click
+
 4. We then selected **Add a Stage** and then a **Query**
-   
-   ![](./images/addquerystage.png)
+
+   ![](./images/addquerystage.png " ")
 5. Named the Query
 **GetVendingMachineDetails** and added a description
 
-    ![](./images/ggvmd_querystage.png)
+    ![](./images/ggvmd_querystage.png " ")
 6. Once the Stage got
 created we edited it in the top right pane joining the two sources using
 **Add a Source** and selected the **Machine Details** and adding the
@@ -118,7 +118,7 @@ stages in the next lab.
 
 1. Click on the Visualizations tab. In this tab we can see the location of the vending machines with an arrow indicating its location within a geonarea. We were able to create this with the **Geo Spatial** type of graph from the drop down menu
 
-   ![](./images/getvmmdetailsvisual.png)
+   ![](./images/getvmmdetailsvisual.png " ")
 
 
 ## **Step 6:** EightyPercentOfMaxInv Stage
@@ -126,14 +126,14 @@ stages in the next lab.
 
 1. Highlight the **EightyPercentOfMaxInv** stage and Pause the data.  In this stage we are calculating 80% of the maximum inventory for each machine.  
 2. After adding the stage as a query stage with name and description we clicked on the **<em>fx</em>** icon in the middle right part of the screen and filled out the formula:
-   
+
     **=0.8*max_inventory**
 3. Then clicked the checkmark to the left of the formula
-   
-    ![](./images/addformula.png)
+
+    ![](./images/addformula.png " ")
     You will get a chance to add stages in the next lab.  In this lab just examine the formula we used with mouse over the new added column **EightyPercentOfMaxInv** and see the formula.  Again, we created this formula for this stage by using **<em>fx</em>** which gave us an additional column.  Notice the left bottom part of the screen identifies which columns are **user-defined** by an empty box and which ones are part of the stream by a green color box
 
-    ![](./images/eightypercentmaxinvent.png)
+    ![](./images/eightypercentmaxinvent.png " ")
 
 
 ## **Step 7:** ReplenishRules Stage
@@ -141,10 +141,10 @@ stages in the next lab.
 1. Click on the **ReplenishRules** stage and Pause the data stream to learn this stage. This is a **Rule Stage** where we get to define a rule setting Replenish to **Yes** if Inventory level is less than 80% of maximum inventory level.  Effectively we are setting a **Replenish** flag based on a minimum amount of inventory in each machine.
 
 2. Notice the difference between the **Match All** and **Match Any** is the same as **And** and a **Or** condition in a query
-   
-    ![](./images/replenishrules.png)
 
-    ![](./images/replenishrules2.png)
+    ![](./images/replenishrules.png " ")
+
+    ![](./images/replenishrules2.png " ")
 
 ## **Step 8:** ReplenishOnly Stage
 
@@ -157,13 +157,13 @@ stages in the next lab.
 ## **Step 9:** ReplenishAlert Stage
 
 
-1. Now click on the **ReplenishAlert** stage and Pause. 
+1. Now click on the **ReplenishAlert** stage and Pause.
 2. In this stage we are adding a target stage that we have defined for a kafka topic **replenishAlerts**
-   
-   ![](./images/replenishTarget.png)
+
+   ![](./images/replenishTarget.png " ")
 3. The fields in the topic have been predefined but we could have easily defined the necessary fields for our new target or even edited the existing target.  Notice that in this stage we mapped the existing data from our stream **Output Stream Property** to the topic fields **Target Property** as appropriate
 
-    ![](./images/replenishTargetFields.png)
+    ![](./images/replenishTargetFields.png " ")
 
 
 ## **Step 10:** ReplenishStats Stage
@@ -172,15 +172,15 @@ stages in the next lab.
 
 2. We added a **Query Group -Stream** stage where we added two summaries with the **COUNT** of all **Replenish** and then did a **Group by** **city** and another summary with **Group by** **business_name**
 
-    ![](./images/replenishstats.png)
+    ![](./images/replenishstats.png " ")
 
 
 ## **Step 11:** Visualization
 
 1. Click on the **Visualizations** tab and see the statistics in a pie chart for each group by.
 2. Here we clicked on **Add A Visualization** and selected what type of chart we wanted to create, then filled out what we wanted to use for **Measure** and **Group**.  In the next lab you will get to create visualizations for a new scenario
-   
-    ![](./images/replenishvisual.png)
+
+    ![](./images/replenishvisual.png " ")
 
 
     The next stage is in a parallel branch of the pipeline where we are interested to get data on machines that are not functioning properly.
@@ -189,7 +189,7 @@ stages in the next lab.
 
 1. Click on the **ErrorsInVMS** stage and Pause.  In this stage we would like to filter out all machines that are working correctly because they do not require any maintenance.  
 2. Click on the **<em>Filters</em>** tab and see the query condition:
-   
+
     **ErrorCode not equals 0**
 
 
@@ -197,8 +197,8 @@ stages in the next lab.
 
 1. Click on the **ErrorStats** stage and Pause the stream.  The is a **Guery-Group Stream**  stage where we like to get some statistics on number of malfunctioning machines by description and also by what city they occur in.
 2. First we add a summary with **COUNT** of **ErrorCode** and then **Group by** **ErrorDescription**.  Next we add another summary with **COUNT** of **ErrorCode** and then **Group by** **city**
-   
-    ![](./images/errorstats.png)
+
+    ![](./images/errorstats.png " ")
 
 ## **Step 14:** Visualization
 
@@ -225,7 +225,7 @@ stages in the next lab.
 1. Finally click on the **AverageTempMalfunction** stage and Pause.  
 2. In this stage we are interested in the Average temperature of malfunctioning machines, so we defined a query stage and added **<em>Summaries</em>** with the **AVG** - **Temp_Level** of all the machines and then **Group by** the type of machine which is identified by the  **Machine_ID**.
 
-    ![](./images/avgtempmalfunction.png)
+    ![](./images/avgtempmalfunction.png " ")
 
 ## **Step 18:** Visualization
 1. Click on this tab to view the bar chart for the average temperature of all machines that malfunctioned by type.
@@ -244,4 +244,3 @@ stages in the next lab.
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-

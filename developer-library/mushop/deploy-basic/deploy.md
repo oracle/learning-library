@@ -30,6 +30,44 @@ In this lab, you will:
 ## **STEP 1**: title
 
 Step 1 opening paragraph.
+ This is a Terraform configuration that deploys the MuShop basic sample application on Oracle Cloud Infrastructure and is designed to run using only the Always Free tier resources.
+
+The repository contains the application code as well as the Terraform code to create a Resource Manager stack, that creates all the required resources and configures the application on the created resources. To simplify getting started, the Resource Manager Stack is created as part of each release
+
+The steps below guide you through deploying the application on your tenancy using the OCI Resource Manager.
+
+    Download the latest mushop-basic-stack-latest.zip file.
+    Login to Oracle Cloud Infrastructure to import the stack
+
+        Home > Solutions & Platform > Resource Manager > Stacks > Create Stack
+
+    Upload the mushop-basic-stack-latest.zip file that was downloaded earlier, and provide a name and description for the stack
+    Configure the stack
+        Database Name - You can choose to provide a database name (optional)
+        Node Count - Select if you want to deploy one or two application instances.
+        SSH Public Key - (Optional) Provide a public SSH key if you wish to establish SSH access to the compute node(s).
+    Review the information and click Create button.
+
+        The upload can take a few seconds, after which you will be taken to the newly created stack
+
+    On Stack details page, click on Terraform Actions > Apply
+
+All the resources will be created, and the URL to the load balancer will be displayed as lb_public_url as in the example below.
+
+    The same information is displayed on the Application Information tab
+
+Outputs:
+        
+        autonomous_database_password = <generated>
+        
+        comments = The application URL will be unavailable for a few minutes after provisioning, while the application is configured
+        
+        dev = Made with ❤ by Oracle A-Team
+        
+        lb_public_url = http://xxx.xxx.xxx.xxx
+        
+
+    The application is being deployed to the compute instances asynchronously, and it may take a couple of minutes for the URL to serve the application.
 
 1. Sub step 1
 

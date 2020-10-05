@@ -4,7 +4,7 @@
 
 In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure from the Marketplace.
 
-Estimated Lab Time: 5 min
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
@@ -21,7 +21,7 @@ For this lab you will need:
 
 - An OCI account with a Compartment created
 
-## **STEP 1:** Create a **Vault**
+## **STEP 1:** Create a Vault
 
 1. Go to **Security -> Vault**
 
@@ -29,7 +29,7 @@ For this lab you will need:
 
 2. Make sure you are in the compartment where you want to deploy WebLogic
 
-3. Click **Create Vault**
+3. Click Create Vault
 
    <img src="./images/prereq-vault2.png"  width="100%">
 
@@ -37,7 +37,7 @@ For this lab you will need:
 
    <img src="./images/prereq-vault3.png" width="80%">
 
-## **STEP 2:** Create a **Key** in the vault
+## **STEP 2:** Create a Key in the vault
 
 1. Once the vault is provisioned, click the vault
 
@@ -51,7 +51,7 @@ For this lab you will need:
 
    <img src="./images/prereq-key2.png" width="80%">
 
-## **STEP 3:** Create a **Secret** for the WebLogic admin password
+## **STEP 3:** Create a Secret for the WebLogic admin password
 
 1. Once the key is provisioned, click **Secrets**
 
@@ -70,6 +70,8 @@ For this lab you will need:
    <img src="./images/prereq-secret4.png" width="100%">
 
 That is all that's needed to get started.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 
