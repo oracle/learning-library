@@ -296,7 +296,7 @@ Optionally view these files, same as in previous lab:
 
 ````
 <copy>stats rkafka total</copy>
-
+````
 ## Summary
 In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rkafka’ read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 

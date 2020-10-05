@@ -241,10 +241,13 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 
   ![](./images/b13.png " ")
 
-
+````
 <copy>./ggsci</copy>
+````
+````
 
 <copy> stats extmysql total</copy>
+````
 
 **16:** In Hadoop ggsci session window:
 
@@ -252,10 +255,12 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 
   ![](./images/b15.png " ")
 
+````
 <copy>./ggsci</copy>
-
+````
+````
 <copy> stats rhdfs total</copy>
-
+````
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 You can also see the files created by GG from Hue:

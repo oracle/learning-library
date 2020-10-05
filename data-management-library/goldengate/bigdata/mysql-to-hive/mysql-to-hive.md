@@ -21,11 +21,12 @@ In this lab we will load data in MySQL database ‘ggsource’, GG extract proce
 For the Lab terminal session:
 
 use ggadmin/oracle to log into your new Lab4
-
+````
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
-
+````
+````
 <copy>sudo su -ggadmin</copy>
-
+````
 Setting up the Environment For MySQL.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
