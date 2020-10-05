@@ -6,15 +6,68 @@ In this lab, we will use the One-Click Provisioning feature of Oracle E-Business
 Estimated Lab Time: 45 minutes
 
 ### Objectives
+* Log into EBS Cloud Manager and Provision E-0Business Suite enviornment
 * Enable and Set Oracle E-Business Suite Account Passwords
 * Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 ### Prerequisites
+* Cloud Manager Instance provisioned
 * Cloud Manager Admin credentials
-* Cloud Manager Application variables in ``key-data.txt`` file.
+* Cloud Manager Application variables in ``key-data.txt`` file. This is found in the .zip file you were provided to begin the lab.
 
-## **Step 1:** Log in to EBS Cloud Manager
-1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your ``key-data.txt`` file.
+## **Step 1:** Log in to Oracle E-Business Suite Cloud Manager
+
+Before logging into the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
+
+Follow the instructions below to perform this configuration:
+
+Edit the local ``hosts`` file on your laptop and add an entry.
+
+**For Windows users**
+
+  1. Navigate to Notepad in your start menu.
+
+  2. Hover over Notepad, right-click, and select the option **Run as Administrator**.
+
+  3. In Notepad, navigate to ``File > Open``.
+
+  4. Browse to ``C:\\Windows\System32\drivers\etc``
+
+  5. Find the **file hosts**
+
+      ![](./images/2.png " ")
+
+  6. In the hosts file, scroll down to the end of the content.
+
+  7. Add the following entry to the very end of the file: ``<lb_public_ip> myebscm.ebshol.org``
+
+  8. Save the file.
+
+**For Mac users**
+
+  1. Open a Terminal Window.
+
+  2. Enter the following command:
+
+    ```
+    <copy>
+    $ sudo vi /etc/hosts
+    </copy>
+    ```
+
+  This will then require your local computer password to edit the file. Enter and you should see a screen similar to the one shown below.
+
+  3. Type 'i' to edit the file.
+
+  4. Go to the last line and add the following entry as show below: ``<lb_public_ip> myebscm.ebshol.org``
+
+  5. Once you have finished editing the file hit 'esc' and type ':wq' to save and exit.
+
+  ![](./images/5.png " ")
+
+1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your ``key-data.txt`` file. 
+
+  (The same one that you just recorded in your hosts file example: https://myebscm.livelabs1.com)
 
 2. Log in with your Cloud Manager Admin credentials.
 

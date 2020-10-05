@@ -8,20 +8,22 @@ Estimated Lab Time: 2 minutes
 
 ## **STEP**: Destroy
 
-The `terraform destroy` command is used to destroy the Terraform-managed infrastructure. All resources will be terminated.
+1. The `terraform destroy` command is used to destroy the Terraform-managed infrastructure. All resources will be terminated.
 
-```
-$ terraform destroy
-```
+    ```
+    $ terraform destroy
+    ```
 
-![](.././images/terminal/term08.png)
+    ![](.././images/terminal/term08.png)
 
-![](.././images/terminal/term09.png)
+    ![](.././images/terminal/term09.png)
 
+*You can proceed to the next lab…*
 
 ## Acknowledgements
 
 - **Author** - [Frédéric Descamps](https://lefred.be)
+- **Contributors** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Frédéric Descamps, September 2020
 
 ## See an issue?

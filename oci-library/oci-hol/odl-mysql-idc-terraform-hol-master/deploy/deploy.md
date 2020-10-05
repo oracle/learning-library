@@ -8,53 +8,56 @@ Estimated Lab Time: 5 minutes
 
 ## **STEP 1**: Environment Initialization 
 
-The `terraform init` command is used to initialize a working directory containing Terraform configuration files. 
+1. The `terraform init` command is used to initialize a working directory containing Terraform configuration files. 
 This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. 
 
-💡 It is safe to run this command multiple times.
+    💡 It is safe to run this command multiple times.
 
 
-```
-$ terraform init
-```
+    ```
+    $ terraform init
+    ```
 
-![](.././images/terminal/term01.png)
+    ![](.././images/terminal/term01.png)
 
-⚠️ verify that you are in the correct directory (the one cloned from GitHub where you created the `terraform.tfvars` file.
+    ⚠️ verify that you are in the correct directory (the one cloned from GitHub where you created the `terraform.tfvars` file.
 
 ## **STEP 2**: Execution Plan
 
-The `terraform plan` command is used to create an execution plan. Terraform will determine what actions are necessary to achieve the desired 
+1. The `terraform plan` command is used to create an execution plan. Terraform will determine what actions are necessary to achieve the desired 
 state specified in the configuration files. In our case, a VCN, gateways, compute instances, firewall rules, ... all should be planned:
 
-```
-$ terraform plan
-```
+    ```
+    $ terraform plan
+    ```
 
-![](.././images/terminal/term02.png)
+    ![](.././images/terminal/term02.png)
 
-💡 You can see how many operations are required: new resources, changed resources and resource to destroy.
+    💡 You can see how many operations are required: new resources, changed resources and resource to destroy.
 
 ## **STEP 3**: Deployment
 
-It's finally time to deploy our code to Oracle Cloud Infrastructure. We use `terraform apply`, this is the command used to apply the changes required to reach 
+1. It's finally time to deploy our code to Oracle Cloud Infrastructure. We use `terraform apply`, this is the command used to apply the changes required to reach 
 the desired state of the configuration (see `terraform plan`).
 
-```
-$ terraform apply
-``` 
+    ```
+    $ terraform apply
+    ``` 
 
-![](.././images/terminal/term03.png)
+    ![](.././images/terminal/term03.png)
 
-💡 While the deployment is happening, you can verify in OCI Dashboard, the creation of the compute instances:
+2. While the deployment is happening, you can verify in OCI Dashboard, the creation of the compute instances:
 
-![](.././images/gui/07.png)
+    ![](.././images/gui/07.png)
 
-![](.././images/gui/08.png)
+    ![](.././images/gui/08.png)
+
+*You can proceed to the next lab…*
 
 ## Acknowledgements
 
 - **Author** - [Frédéric Descamps](https://lefred.be)
+- **Contributors** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Frédéric Descamps, September 2020
 
 ## See an issue?

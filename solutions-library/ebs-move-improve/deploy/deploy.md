@@ -192,7 +192,7 @@ Edit the local ``hosts`` file on your laptop and add an entry.
 
     ```
     <copy>
-    $ sudo vi /etc/hosts
+    sudo vi /etc/hosts
     </copy>
     ```
 

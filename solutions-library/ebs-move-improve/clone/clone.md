@@ -93,7 +93,7 @@ Estimated Lab Time: 15 minutes
 
         ```
         <copy>
-        $ sudo vi /etc/hosts
+        sudo vi /etc/hosts
         </copy>
         ```
 

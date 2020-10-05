@@ -8,34 +8,36 @@ Estimated Lab Time: 10 minutes
 
 ## **STEP 1**: SSH to Bastion Host
 
-To connect to the bastion host, we use ssh with the user **opc** on the public IP and the ssh key you created earliers.
+1. To connect to the bastion host, we use ssh with the user **opc** on the public IP and the ssh key you created earliers.
 
-💡 The public IP was returned by `terraform apply` and is also available on OCI's Dashboard when checking the Compute Instances.
+    💡 The public IP was returned by `terraform apply` and is also available on OCI's Dashboard when checking the Compute Instances.
 
-![](.././images/terminal/term04.png)
+    ![](.././images/terminal/term04.png)
 
 ## **STEP 2**: MySQL Shell
 
-MySQL Shell is an advanced client and code editor for MySQL Server. It also allows you to manage a MySQL InnoDB Cluster via the [AdminAPI](https://dev.mysql.com/doc/dev/mysqlsh-api-python/8.0/group___admin_a_p_i.html).
+1. MySQL Shell is an advanced client and code editor for MySQL Server. It also allows you to manage a MySQL InnoDB Cluster via the [AdminAPI](https://dev.mysql.com/doc/dev/mysqlsh-api-python/8.0/group___admin_a_p_i.html).
 
-When connected to the bastion host, you can use MySQL Shell (`mysqlsh`) with the `clusteradmin` user on one of the private IPs for your cluster nodes (see `terraform appy`'s output):
+2. When connected to the bastion host, you can use MySQL Shell (`mysqlsh`) with the `clusteradmin` user on one of the private IPs for your cluster nodes (see `terraform appy`'s output):
 
-![](.././images/terminal/term05.png)
+    ![](.././images/terminal/term05.png)
 
-⚠️ please use your IPs, they should be in the range `10.0.1.0/24`.
+    ⚠️ please use your IPs, they should be in the range `10.0.1.0/24`.
 
 ## **STEP 3**: MySQL InnoDB Cluster - Status
 
-You can now check the status of the cluster or the router, using `cluster.status()` and `cluster.listRouters()`:
+1. You can now check the status of the cluster or the router, using `cluster.status()` and `cluster.listRouters()`:
 
-![](.././images/terminal/term06.png)
+    ![](.././images/terminal/term06.png)
 
-![](.././images/terminal/term07.png)
+    ![](.././images/terminal/term07.png)
 
+*You can proceed to the next lab…*
 
 ## Acknowledgements
 
 - **Author** - [Frédéric Descamps](https://lefred.be)
+- **Contributors** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Frédéric Descamps, September 2020
 
 ## See an issue?
