@@ -47,15 +47,15 @@ integration architectures to big data systems without impacting the performance 
 1.  Change to the ggadmin user.  When prompted, enter the password *oracle*.  
 
 Open a terminal session locally
-
+````
 <copy>$ ssh opc@xxx.xxx.xx.xx</copy>
-
+````
 Use Public IP allocated from LiveLabs
 
 **Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
-    
+    ````
     <copy>sudo su – ggadmin</copy>
-    
+    ````
 
 1. The following Lab Menu will be displayed
 
@@ -88,7 +88,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka
-* **Last Updated By/Date** - Brian Elliott, September 2020
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
 
 ## See an issue?
