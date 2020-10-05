@@ -112,11 +112,22 @@ In this section we will create a Security List for the SOA subnet to be able to 
 
 1. go to the main menu and then open **VCN -> SOAMP1VCN -> Security Lists -> Security List for Private Subnet-SOAMP1VCN** 
 
-<img src="./images/provision-db-23-sl.png" width="100%">
+<img src="./images/provision-15-sl.png" width="100%">
 
 2. Click on **Add Ingress Rules** and add below ingress rules to allow all the WebLogic port and allow accessing the DB ports.
 
-<img src="./images/provision-db-24-sl.png" width="100%">
+<img src="./images/provision-16-sl.png" width="100%">
+
+
+3. Click **Next** and then verify all the details and click **Create**
+
+  <img src="./images/provision-17.png" width="100%">
+
+4. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
+
+  <img src="./images/provision-19.png" width="100%">
+
+
 
 
 

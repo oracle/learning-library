@@ -154,16 +154,7 @@ or can Select `VM StandardE2.1` if working on trial instance
   <img src="./images/provision-14-advanced.png" width="70%">
 
 
-31. Once you got all the port details then go to the main menu and open VCN in new tab (open link in new tab) then go to **VCN -> SOAMP1VCN -> Security Lists -> Security List for Private Subnet-SOAMP1VCN** 
-
-<img src="./images/provision-15-sl.png" width="100%">
-
-32. Click on **Add Ingress Rules** and add below ingress rules to allow all the WebLogic port and allow accessing the DB ports.
-
-<img src="./images/provision-16-sl.png" width="100%">
-
-
-33. Click **Next** and then verify all the details and click **Create**
+31. Once you got all the port details click **Next** and then verify all the details and click **Create**
 
   <img src="./images/provision-17.png" width="100%">
 
