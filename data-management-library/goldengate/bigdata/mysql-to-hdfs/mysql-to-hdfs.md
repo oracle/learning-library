@@ -216,17 +216,23 @@ In summary, we loaded data in MySQL database ‘ggsource’, GG extract process 
 <copy> stats rhdfs total</copy>
 
 
-You may now *proceed to the next lab*.
-
-**Optional:**  Only if VNC is available
-
 The stats command displays the statistics of the data that GoldenGate processed (grouped by insert/update/deletes). Counts should match between source and target.
 You can also see the files created by GG from Hue:
 
-[HUE - Click here](http://quickstart.cloudera:8888) 
+**HUE -**
+
+(http://yourlocalipaddress]:8888) 
 
 Login to Hue: cloudera/cloudera
 Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hdfs…
+
+![](./images/b19.png)
+/user/ggtarget/hdfs…
+![](./images/b16.png)
+![](./images/b17.png)
+![](./images/b18.png)
+
+You may now *proceed to the next lab*.
 
 ## Learn More
 
