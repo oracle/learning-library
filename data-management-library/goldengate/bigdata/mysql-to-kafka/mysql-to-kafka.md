@@ -7,7 +7,7 @@ Estimated Lab Time:  60 minutes
 
 #### Lab Architecture
 
-![](./images/image601_1.png)
+![](./images/image601_1.png " ")
 
 
 ### Objectives
@@ -87,7 +87,7 @@ Optionally view these files, same as in previous lab:
 <copy>info all</copy>
 
 
-  ![](./images/e2.png)
+  ![](./images/e2.png " ")
 
  **3** In the second session, go to the GG Home for Hadoop, and start the manager process. You can cd to the directory:
 

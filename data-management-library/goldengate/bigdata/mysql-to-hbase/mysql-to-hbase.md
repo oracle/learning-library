@@ -9,7 +9,7 @@ process ‘rhbase’ will read the remote trail files, create the HBase tables a
 
 #### Lab Architecture
 
-  ![](./images/image501_1.png)
+  ![](./images/image501_1.png " ")
 
 ### Objectives
 - Explore GoldenGate replication from **MySQL to HBase**
@@ -39,7 +39,7 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 **select R** to reset the lab environment, then select **5**.
 Review the overview notes on the following screen, then select Q to quit. 
 
-  ![](./images/d_labmenu5.png)
+  ![](./images/d_labmenu5.png " ")
 
 **Step3:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
@@ -74,7 +74,7 @@ Optionally view these files, same as in previous lab:
 
 **Step5:** In the first session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
 
-  ![](./images/d2.png)
+  ![](./images/d2.png " ")
 
 <copy>cd /u01/gg4mysql</copy>
 
@@ -91,7 +91,7 @@ Optionally view these files, same as in previous lab:
 
 **Step6:** In a second session, go to the **GG Home for Hadoop**, and start the manager process. You can cd to the directory:
 
-  ![](./images/d3.png)
+  ![](./images/d3.png " ")
 
 <copy>cd /u01/gg4hadoop123010</copy>
 
@@ -108,8 +108,8 @@ Optionally view these files, same as in previous lab:
 
 **Step7:** In the **GG for MySQL ggsci session**, we will create and start the GG extract process:
 
-  ![](./images/d4.png)
-  ![](./images/d5.png)
+  ![](./images/d4.png " ")
+  ![](./images/d5.png " ")
 
 <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
@@ -129,7 +129,7 @@ Optionally view these files, same as in previous lab:
 
 **Step9:** In the **GG for Hadoop session**, you will need to modify the HBase properties by removing the ‘---‘ from the highlighted values:
 
-  ![](./images/d6.png)
+  ![](./images/d6.png " ")
 
 <copy>cd dirprm</copy>
 
@@ -143,8 +143,8 @@ Optionally view these files, same as in previous lab:
 
 **Step10:** Now create and start the HBase replicat process:
 
-![](./images/d7.png)
-![](./images/d8.png)
+![](./images/d7.png " ")
+![](./images/d8.png " ")
 
 <copy>cd .. </copy>
 
@@ -165,7 +165,7 @@ Optionally view these files, same as in previous lab:
 
 **Step12:** **Start a new session**, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-  ![](./images/d9.png)
+  ![](./images/d9.png " ")
 
 <copy>listhbasetables</copy>
 
@@ -180,9 +180,9 @@ Optionally view these files, same as in previous lab:
 
 **Step13:** Starting with GG version 12.2.0.1.1, GG automatically creates the HBase tables. Let us take a look at the contents of the tables
 
-  ![](./images/d10.png)
+  ![](./images/d10.png " ")
 
-  ![](./images/d11.png)
+  ![](./images/d11.png " ")
 
 <copy>selecthbasetable ggtarget2hbase:dept</copy>
 
@@ -195,8 +195,8 @@ Optionally view these files, same as in previous lab:
 
 **Step14:** Let us confirm that GG replicated the data that it captured. In a **GG Home for Hadoop session:**
 
-  ![](./images/d12.png)
-  ![](./images/d13.png)
+  ![](./images/d12.png " ")
+  ![](./images/d13.png " ")
 
 <copy>./ggsci</copy>	
 
@@ -220,9 +220,9 @@ HUE allows you to access the data from a URL -
 
 Login to Hue: cloudera/cloudera
 
-  ![](./images/d20.png)
+  ![](./images/d20.png " ")
 
-  ![](./images/d21.png)
+  ![](./images/d21.png " ")
 
 You may now *proceed to the next lab*.
 

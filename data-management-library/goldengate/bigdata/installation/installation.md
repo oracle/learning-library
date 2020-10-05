@@ -6,7 +6,7 @@ In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
 *Estimated Lab Time*:  15 minutes
 
-  ![](./images/image110_1.png)
+  ![](./images/image110_1.png " ")
 
 ### About Oracle GoldenGate for Big Data
 
@@ -67,7 +67,7 @@ Follow these instructions to install GoldenGate for Big Data
 1.  **Select Option 1** 
    
 Review the overview notes on the following screen, then select **Q** to quit. 
-      ![](./images/labmenu_opt1.png)
+      ![](./images/labmenu_opt1.png " ")
 
   These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 

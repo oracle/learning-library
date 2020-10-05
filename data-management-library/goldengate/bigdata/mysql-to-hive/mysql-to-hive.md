@@ -8,7 +8,7 @@ In this lab we will load data in MySQL database ‘ggsource’, GG extract proce
 
 #### Lab Architecture
 
-  ![](./images/image401_1.png)
+  ![](./images/image401_1.png " ")
 
 ### Objectives
 - Explore GoldenGate replication from **MySQL to Hive**
@@ -32,7 +32,7 @@ If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘
 
 **Step1:** The following Lab Menu will be displayed, select **R** to reset the lab environment, then select option **4**
 
-  ![](./images/lab4menu.png)
+  ![](./images/lab4menu.png " ")
 
 **2:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
 
@@ -71,7 +71,7 @@ Open Terminal Session2 /
 
 **4:** In the first session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
 
- ![](./images/c2.png)
+ ![](./images/c2.png " ")
 
  <copy> pwd</copy>
 
@@ -85,7 +85,7 @@ Open Terminal Session2 /
 
 **5:** In the second session, go to the **GG Home for Hadoop**, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
-  ![](./images/c3.png)
+  ![](./images/c3.png " ")
 
 <copy> cd /u01/gg4hadoop123010</copy>
 
@@ -100,8 +100,8 @@ Open Terminal Session2 /
 
 **6:** In the **GG for MySQL ggsci session**, we will create and start the GG extract process:
 
-  ![](./images/c4.png)
-  ![](./images/c5.png)
+  ![](./images/c4.png " ")
+  ![](./images/c5.png " ")
 
 <copy> obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
 
@@ -124,7 +124,7 @@ Open Terminal Session2 /
 
 **8:** In the **GG for Hadoop session**, you will need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
 
-  ![](./images/c6.png)
+  ![](./images/c6.png " ")
 
   <copy>cd /u01/gg4hadoop123010</copy>
 
@@ -155,7 +155,7 @@ Open Terminal Session2 /
 
 **9:** Now create and start the Hive replicat process:
 
-  ![](./images/c7.png)
+  ![](./images/c7.png " ")
 
 <copy> cd .. </copy>
 
@@ -178,7 +178,7 @@ the MySQL database ‘ggsource’ and GG will extract and write it to the Hive t
 
 **Step11:** **Start a new session**, connect to ggadmin/oracle (then click Q to get to a prompt):
 
-  ![](./images/c8.png)
+  ![](./images/c8.png " ")
 
 <copy> hivels</copy>
 
@@ -194,7 +194,7 @@ the MySQL database ‘ggsource’ and GG will extract and write it to the Hive t
 
 **12:** There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. You will notice that a new directory has been created for each table in the data directory.
 
-  ![](./images/c9.png)
+  ![](./images/c9.png " ")
 
 
 **13:** Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let us take a look at the contents of the tables:
@@ -214,25 +214,25 @@ Login to Hue: cloudera/cloudera
 1-	Click on Query, Editor, Select Hive
 
 
-  ![](./images/c21.png)
+  ![](./images/c21.png " ")
 
 2-	Pull down on Database selection, and select ggtarget2hive_avro
 
 3-	Then hover the mouse over the emp table, and click the ‘preview sample data’ –small grey icon Hue screens:
 
-![](./images/c22.png)
+![](./images/c22.png " ")
 
-![](./images/c23.png)
+![](./images/c23.png " ")
 
-![](./images/c24.png)
+![](./images/c24.png " ")
 
-![](./images/c25.png)
+![](./images/c25.png " ")
 
 
 **15:** Let’s confirm that GG replicated the data that it captured. In a GG Home for Hadoop session:
 
-  ![](./images/c18.png)
-  ![](./images/c19.png)
+  ![](./images/c18.png " ")
+  ![](./images/c19.png " ")
 
   <copy>./ggsci</copy>
 
