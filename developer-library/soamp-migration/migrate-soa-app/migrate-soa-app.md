@@ -38,53 +38,46 @@ Migration with manual process consists in 3 steps:
 
 In this lab, you will:
 
-- Install WebLogic Deploy Tooling on the source WebLogic domain
-- Discover the source domain
-- Edit the source domain model file
-- Edit the source domain property file
-- Update the target domain on OCI
-- Check migration was successful
+- Discover the source SOA Suite Environment and test the source code
+- Prepare Your Source for Migration/Side-by-Side Upgrade    
+- Prepare Your Target Environment
+- Test Your Target Environment
+- Transition from Old Deployment to New Deployment
+- Reconfigure Configuration Parameters and Tune in Oracle SOA Suite on Marketplace
+- Check migration was successful by testing your code in SOAMP
 
 ### Prerequisites
 
 To run this lab, you need to:
 
 - Have setup the demo 'on-premises' environment to use as the source domain to migrate
-- Have deployed a WebLogic on OCI domain using the marketplace
-- Have migrated the Application database from the source environment to OCI
+- Have deployed a SOA on OCI domain using the marketplace
+- (optional) SOAP UI for unit test the code
 
-## **STEP 1:** Installing WebLogic Deploy Tooling
+## **STEP 1:** Discover the source SOA Suite Environment and test the source code
 
-### Using the Docker 'on-premises' environment:
+### Using the local 'on-premises' environment:
 
-1. If you were in the Database container to perform the previous steps of database migration, exit the database container with 
+1. Start SOA 12.2.1.3 VM, wait until it is succesfully started and then check all the required applications.
 
-    ```bash
-    <copy>
-    exit
-    </copy>
-    ```
-    You should be back on your local computer shell prompt
+<img src="./images/oci-deployments.png" width="100%">
 
-2. Get into the **WebLogic** docker container with the following command:
+2. Click on `SOA and Comapct Domain` on the VM desktop and run `Start soa_domain Admin Server` and `Start soa_domain SOA Server` one by one in sequnce.
 
-    ```bash
-    <copy>
-    docker exec -it weblogic-to-oci_wls_admin_1 /bin/bash
-    </copy>
-    ```
+<img src="./images/oci-deployments.png" width="100%">
 
-3. run the `install_wdt.sh` script
+3. Once the domains are started open mozilla web browserr and select `http://localhost:7001/em'
+to open the EM console, use `usename:weblogic`  , `password:welcome1`
+    
+<img src="./images/oci-deployments.png" width="100%">
+   
+4. Now click on top right button and go to `SOA_Domain -> SOA-Infra` and click on `Deployed Composites`
 
-    ```bash
-    <copy>
-    cd ~/wdt
-    ./install_wdt.sh
-    </copy>
-    ```
+<img src="./images/oci-deployments.png" width="100%">
 
-    This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
+5. Now search the composite `IWSProj3[1.0]` which we are using for migration in this lab.
 
+<img src="./images/oci-deployments.png" width="100%">
 ### Using the demo Workshop Marketplace image
 
 
