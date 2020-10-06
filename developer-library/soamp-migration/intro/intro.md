@@ -20,6 +20,8 @@ In this lab, you will:
 - Provision a new target SOA Suite Instance on OCI with the Marketplace (both using public and private subnet)
 - Migrate the source SOA Suite On-prmises to target SOA Suite on OCI Marketplace
 
+**Note:** This lab will showcase only migration of one applicatoin/project, for complete migration of SOA oprem to SOAMP kindly take a reference from `Documentation Reference` section below.
+
 
 ### Prerequisites
 
@@ -42,7 +44,7 @@ In this lab, you will:
 
 You may proceed to the next lab.
 
-## Documentation
+## Documentation Reference
 
 [here]https://docs.oracle.com/en/cloud/paas/soa-cloud/liftshift/migration-side-side-upgrade-soa-mp.html#GUID-6F77D620-0962-43A4-A503-A70E706C3D02
 

@@ -14,8 +14,7 @@ In this lab you will:
 
 - Launch a demo Marketplace image
 - Check that the services are up and running
-- Log into the instance
-- Create a SSH key pair
+
 
 ### Prerequisites
 
@@ -90,66 +89,21 @@ It will take about 1 to 2 minutes to create the stack.
 
 *It will take another 4 to 5 minutes for all the services to come online.*
 
-The console will be available at `http://PUBLIC-IP:7002/console` (replace `PUBLIC_IP` with the Compute instance public IP) and the WebLogic admin user is `weblogic` with password `welcome1`
+Connect to the RDP from your local machine using `Public_IP` and user `opc` 
+you need to click on `SOA and Compact Domain` on the VM desktop and run `Start soa_domain Admin Server` and `Start soa_domain SOA Server` one by one in sequence.
 
-  <img src="./images/localhost-admin-console.png"  width="100%">
+Once the domains are started open mozilla web browser and select `http://localhost:7001/em'
+to open the EM console, use `usename:weblogic`  , `password:welcome1`
 
-The **SimpleDB** application will be running at `http://PUBLIC-IP:7003/SimpleDB/` (substitute `PUBLIC-IP` with the public IP of the instance). It may take a minute or 2 after the admin console is up for the SimpleDB app to be running.
+<img src="./migrate-soa-app/images/oci-deployments.png" width="100%">
 
-It shows statistics of riders of the Tour de France stored in the database, and looks like this:
+<img src="./images/10-localhost-admin-console.png"  width="100%">
 
-  <img src="./images/localhost-simpledb-app.png" width="100%">
-
-You may proceed to next steps while the environment is coming up, but make sure it is up before proceeding to the next lab.
-
-## **STEP 3:** Log in to the 'on-premises' environment
-
-*Most of the work will be done from the simulated on-premises environment deployed in the compute instance on OCI.*
-
-1. To log into the instance, use:
-
-    ```bash
-    ssh opc@<public-ip>
-    ```
-    Replace the `<public-ip>` with the IP provided in the output of the provisioning job.
-
-2. You will be prompted to add this IP to the list of known hosts. Enter `yes`
-
-## **STEP 4:** Create a SSH key
-
-*We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources. *
-
-We'll create a SSH key pair in the default folder
-
-1. Once on the compute instance on OCI, switch to the oracle user:
-
-    ```bash
-    <copy>
-    sudo su - oracle
-    </copy>
-    ```
-
-2. Create the SSH keypair
-
-    ```bash
-    <copy>
-    ssh-keygen
-    </copy>
-    ```
-    and just hit `Enter` (default) for all the prompts
-
-3. You will find two files `id_rsa` and `id_rsa.pub` inside the folder `~/.ssh/` or `/home/oracle/.ssh/`
-
-    `id_rsa` is the private key, which should never be shared, and will be required to connect to any OCI resource provisioned with the corresponding public key `id_rsa.pub`
-
-    Note this key will be the default SSH key from the instance used for the on-premises environment.
-
-**Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 
 ## Acknowledgements
 
- - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, August 2020
+ - **Author** - Akshay Saxena, September 2020
+ - **Last Updated By/Date** - Akshay Saxena, September 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

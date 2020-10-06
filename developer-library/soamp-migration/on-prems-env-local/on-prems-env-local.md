@@ -57,7 +57,7 @@ and then select the `Integration_12.2.1.3.0_OTN.ova` file and then click on next
 
 <img src="./images/provision-vm.png"  width="100%">
 
-4. once the import is successfull , click on Start button to start your SOA 12.2.1.3 environment. 
+4. Once the import is successfull , click on Start button to start your SOA 12.2.1.3 environment. 
 default username: oracle / root
 password: oracle
 
