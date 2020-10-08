@@ -42,7 +42,7 @@ For this lab you need:
 
   <img src="./images/4-soa-workshop-mp1.png"  width="100%">
 
-5. Click **Next** if you want (optional) can provide  name and description
+5. Click **Next** or if you want can provide  name and description (optional)
 
   <img src="./images/5-next.png"  width="70%">
 
@@ -52,25 +52,14 @@ For this lab you need:
 
   <img src="./images/6-ssh-key.png"  width="50%">
 
-   To output the public key information, use the following command from your local machine: or you can generate a key pair
-   ```
-   <copy>
-   cat ~/.ssh/id_rsa.pub
-   </copy>
-   ```
-   Copy the output of the command (the whole multi-line output) and paste it in the form field for SSH key in the form
-
-   the output will look something like this:
-
-   ```bash
-   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCDECqTo6JfSGWkXfF6pkMBySZWt1jfDU0
+   `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCDECqTo6JfSGWkXfF6pkMBySZWt1jfDU0
    lAzgTDVfgTaR8YVS7d6sYVv9pU8dohqUZN7jPdbbeDCfm8EiCZMNkdB8Zbyn29P
    COV192DKWd2hzYnr6jbVrbdwp7Izqap9G5nocvZ1KtE5g9HEmqVRFg4RPSeMmY/
    hInaRNRAB73fZNglqnVtkrju0sUoDcRPYskrIc4QpRv2luTTC4Byjsz0cULXsuz
    z4k8suaGFVsxfANuriiKOpDXktMXNkYPb8ymm5UCi4ywHd5uv3wqhqkCdBPPeyI
-   lm6dTfDGrLrUQUhjHhVGEaPazYCk0k/M3BWQCfu9t63t4WnBIOU3xrPf9
+   lm6dTfDGrLrUQUhjHhVGEaPazYCk0k/M3BWQCfu9t63t4WnBIOU3xrPf9`
+
    
-   ```
    **Note:** you can use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI), so you need the cooresponding .ppk file also.
 
 7. Click **Next** and then **Create**

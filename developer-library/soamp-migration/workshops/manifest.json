@@ -43,15 +43,10 @@
         {
             "title": "Lab 5: Migrate the SOA Application",
             "publisheddate": "10/06/2020",
-            "filename": "/../migrate-soa-app/migrate-soa-app.md"
+            "filename": "../migrate-soa-app/migrate-soa-app.md"
         },
         {
-            "title": "Lab 6 (Optional): Scale the SOA domain",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../scale-wls/scale-wls.md"
-        },
-        {
-            "title": "Lab 7: Tear down the environment",
+            "title": "Lab 6: Tear down the environment",
             "publisheddate": "07/30/2020",
             "filename": "../../../tear-down/tear-down.md"
         }

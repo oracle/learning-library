@@ -126,8 +126,91 @@ to open the EM console, use `usename:weblogic`  , `password:welcome1`
 
 ## **STEP 2:** Prepare Your Source for Migration/Side-by-Side Upgrade
 
+You have to migrate the Integrated Development Environment (IDE) projects and export or capture needed artifacts from the source environment to prepare your source for migration//side-by-side upgrade
+
+Migrate IDE projects (11G or 12c) to the 12c IDE that matches the Oracle SOA Suite on Marketplace version ,i.e. 12.2.1.4 for SOA.
+
+### Using the local 'on-premises' environment:
+
+1. Open the Jdeveleoper 12.2.1.3 and select `IWSApplication` and open the Project 'IWSProj3` and click on deploy
+
+<img src="./images/8-jdev-1.png" width="100%">
+
+2. Select `Generate SAR File` and click `Next` button
+
+<img src="./images/9-jdev-2.png" width="100%">
+
+3. Review and click `Next` button
+
+<img src="./images/10-jdev-3.png" width="100%">
+
+4. Review and click `Finish` button
+
+<img src="./images/11-jdev-4.png" width="100%">
+
+5. Let the code build successfully 
+
+<img src="./images/12-jdev-5.png" width="100%">
+
+6. Open your Jdeveloper 12.2.1.4 and create a new SOA Application (with same application name as source Jdev `IWSApplication`)
+
+<img src="./images/13-jdev1224-1.png" width="100%">
+
+7. Name you default project and click `Next` button
+
+<img src="./images/14-jdev1224-2.png" width="100%">
+
+8. Select `Empty Composite` and click `Finish` button
+
+<img src="./images/15-jdev1224-3.png" width="100%">
+
+9. Click on `File -> Import`
+
+<img src="./images/16-jdev1224-4.png" width="100%">
+
+10. Select `SOA Archive Into SOA Project` and click `OK` button
+
+<img src="./images/17-jdev1224-5.png" width="100%">
+
+11. Name the project as same as in source environmant `IWSProj3` and click `Next` button
+
+<img src="./images/18-jdev1224-6.png" width="100%">
+
+12. Click on `Browse` button and go to the location where you have deployed your Jdeveloper 12.2.1.3 project on step 4 (usually the location is`C:\JDeveloper\mywork\IWSApplication\IWSProj3\Deploy`)and select the 'sca_IWSProj3.jar' and click on `Next` button
+
+<img src="./images/19-jdev1224-7.png" width="100%">
+
+13. Review and click on `Finish` button 
+
+<img src="./images/20-jdev1224-8.png" width="100%">
+
+14. Let the 12.2.1.3 code migrate to Jdev 12.2.1.4 
+
+<img src="./images/21-jdev1224-9.png" width="100%">
+
+15. Repeat the steps 1  2 , 3 , 4 to deploy the code as `SAR File` with 12.2.1.4 version
+
+<img src="./images/8-jdev-1.png" width="100%">
+
+<img src="./images/9-jdev-2.png" width="100%">
+
+<img src="./images/10-jdev-3.png" width="100%">
+
+<img src="./images/11-jdev-4.png" width="100%">
+
+### Using the demo Workshop Marketplace image
+
+1. You have to repeat the same steps as `local on-premises' environment` as the Jdeveleoper 12.2.1.3 and Jdeveloper 12.2.1.4 are present on the desktop of the local SOA environment marketplace RDP.
+
+<img src="./images/22-SOA-local-RDP.png" width="100%">
 
 ## **STEP 3:** Prepare Your Target Environment
+
+Prepare your target environment by importing or recreating all the configurations of your source. This will ensure successful deployment of the target Oracle SOA Suite on Marketplace instance.
+
+1. Connect to your SOAMP compute instance using putty (as you have learned in Lab 4 ## **STEP 3:** Connect your FMW Console URL's of Private SOA Instance using Bastion Host through Putty.)
+
+
 
   
 ## **STEP 4:** Test Your Target Environment
