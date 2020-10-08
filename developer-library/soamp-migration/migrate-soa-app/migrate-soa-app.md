@@ -28,11 +28,11 @@ You can use Fusion Middleware Control, Oracle JDeveloper, or the command line to
 
 Migration with manual process consists in 3 steps:
 
-- Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
+- Convert the SOA code version from 12.2.1.3 to 12.2.1.4 by redeploying it in Jdeveloper 12.2.1.4 .
 
-- Edit the the **model** file and **variable** file to target the new infrastructure on OCI.
+- Create the same directory structure used in source SOA code in the target SOAMP server .
 
-- Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
+- Deploy the code with 12.2.1.4 version in SOAMP server.
 
 ### Objectives
 
@@ -41,9 +41,7 @@ In this lab, you will:
 - Discover the source SOA Suite Environment and test the source code
 - Prepare Your Source for Migration/Side-by-Side Upgrade    
 - Prepare Your Target Environment
-- Test Your Target Environment
 - Transition from Old Deployment to New Deployment
-- Reconfigure Configuration Parameters and Tune in Oracle SOA Suite on Marketplace
 - Check migration was successful by testing your code in SOAMP
 
 ### Prerequisites
@@ -210,21 +208,74 @@ Prepare your target environment by importing or recreating all the configuration
 
 1. Connect to your SOAMP compute instance using putty (as you have learned in Lab 4 ## **STEP 3:** Connect your FMW Console URL's of Private SOA Instance using Bastion Host through Putty.)
 
+2. Create the same folder structure as `/tmp/soa/out` `/tmp/soa/out1` in the SOAMP server 
+ use command `mkdir` to create above folders and `chmod 777` to change its permissions. 
 
-
+<img src="./images/23-SOAMP-server.png" width="100%">
   
-## **STEP 4:** Test Your Target Environment
+
+## **STEP 4:** Transition from Old Deployment to New Deployment
+
+1. Once you are connected to your SOAMP server , open open `SOA EM` console in the local browser
+'http://localhost:7002/em' and provide the credentials.
+
+<img src="./images/24-SOAMP-deployment-1.png" width="100%">
 
 
-## **STEP 5:** Transition from Old Deployment to New Deployment
+2. Navigate to **SOA Domain -> SOA -> soa-infra**
+
+<img src="./images/25-SOAMP-deployment-2.png" width="100%">
+
+3. Click on **Deployed Composites**
+
+<img src="./images/26-SOAMP-deployment-3.png" width="100%">
+
+4. Select `Archive is on the machine` option and click in **Choose File** button and the navigate to the folder location `C:\JDeveloper\mywork\IWSApplication\IWSProj3\deploy`and select `sca_IWSProj3.jar` file then click on open
+
+<img src="./images/27-SOAMP-deployment-4.png" width="100%">
+
+5. Click **Next** button
+
+<img src="./images/28-SOAMP-deployment-5.png" width="100%">
+
+6. Select `SOA Folder` as `default` and click **Next** button
+
+<img src="./images/29-SOAMP-deployment-6.png" width="100%">
+
+7. Select `Default Revision` as `Deploy as default revision` review all the information and then click on **Deploy** button
+
+<img src="./images/30-SOAMP-deployment-7.png" width="100%">
+
+8. Wait until you get the message `Deployment Succeeded` and click **Close** button
+
+<img src="./images/31-SOAMP-deployment-8.png" width="100%">
+
+9. Check the deployed project in `Dashboard` 
+
+<img src="./images/32-SOAMP-deployment-9.png" width="100%">
 
 
-## **STEP 6:** Reconfigure Configuration Parameters and Tune in Oracle SOA Suite on Marketplace
+## **STEP 5:** Check migration was successful by testing your code in SOAMP
 
+1. Open putty connect to your SOAMP instance and place any `xyz.xml` file or create any `xyz.xml` file in `/tmp/soa/out` folder and chenge its permission by `chmod 777`.
 
-## **STEP 7:** Check migration was successful by testing your code in SOAMP
+<img src="./images/33-SOAMP-testing-1.png" width="100%">
 
+2. Wait for few seconds until the `xyz.xml` will disappear from the folder as it is been polled by the service which you have deployed. 
 
+<img src="./images/35-SOAMP-testing-3.png" width="100%">
+
+3. Go to folder location `/tmp/soa/out1` and you can see a new file with name `File_1` is created by the soa service.
+
+<img src="./images/36-SOAMP-testing-4.png" width="100%">
+
+4. you can check the `Flow Instances` of the project with one `FlowID` generated
+
+<img src="./images/37-SOAMP-testing-5.png" width="100%">
+
+5. Click on `FlowID` and see the `Audit Trail` the see the logs.
+
+<img src="./images/38-SOAMP-testing-6.png" width="100%">
 
 
 ## Acknowledgements
