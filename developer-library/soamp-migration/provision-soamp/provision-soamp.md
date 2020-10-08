@@ -12,14 +12,14 @@ In this lab you will:
 
 - Provision SOA Server on Oracle Cloud Infrastructure via the Marketplace offering
 - Gather information for further steps
-- Connect your FMW Console URL's of Private SOA Instance using Bastion Host through Putty
+- Connect to the Fusion Middleware console of the SOA Suite installation through the bastion host.
 
 ### Prerequisites
 
-For this lab, you need to have prepared the OCI tenancy with:
+For this lab, you need:
 
-- Putty
-- SSH Public-Private Key pair
+- A SSH Public-Private Key pair
+- A SSH client like Putty on Windows
 - WinSCP (optional)
 
 
@@ -192,15 +192,15 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 3. open **putty** app , and put the public IP of bastion host in the **Host Name (or IP address)** as `193.xxx.xxx.xx` (put your bastion host public IP) and put **Port** as `22`,and name the **Saved Sessions** which you can remember must put your private key at your bastion host so that you can ssh to your private SOA instance using putty
 
-   <img src="./images/provision-22-connectinstance.png" width="100%">
+   <img src="./images/provision-22-connectinstance.png" width="70%">
 
 4. go to **Connection -> SSH -> Auth** and browse the .ppk key (corresponding to the public key you have used while Provisioning SOAMP) 
 
-   <img src="./images/provision-23-connectinstance.png" width="100%">
+   <img src="./images/provision-23-connectinstance.png" width="70%">
 
 5. then go to **Connection -> Data** and put **Auto login username** as `OPC` (which is defualt for all the oracle compute instances)
 
-<img src="./images/provision-24-connectinstance.png" width="100%">
+   <img src="./images/provision-24-connectinstance.png" width="70%">
 
 6. then go to **Connection -> SSH -> Tunnels**
 create a tunnel from your local to bastion host to Private SOA Instance, So that you can access FMW Url’s at your local machine
@@ -208,11 +208,11 @@ put **Source port** as `7002`
     **Destination** as `10.x.x.x:7002` (put your soa instance private IP)
 and then click **Add** button
 
-<img src="./images/provision-25-connectinstance.png" width="100%">
+    <img src="./images/provision-25-connectinstance.png" width="70%">
 
 7. Now you can save all the details in the session and click on **Open** button, and make sure your are not on VPN while login to putty
 
-<img src="./images/provision-22-connectinstance.png" width="100%">
+    <img src="./images/provision-22-connectinstance.png" width="70%">
 
 8.Now place your private key in home location of your bastion host,
 it is mandatory to connect to your soa instance private IP

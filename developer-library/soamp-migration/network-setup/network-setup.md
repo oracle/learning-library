@@ -1,8 +1,8 @@
-# Network setup for you OCI
+# Network setup
 
 ## Introduction: 
 
-This lab with guide you through how to setup Compartments and Virtual CLoud Network (VCN) with relevant policies (optional) for cloud environment (tenancy)
+This lab with guide you through how to setup Compartments and Virtual Cloud Network (VCN) with the required policies for cloud environment (tenancy)
 Estimated Lab Time: 20 min
 
 ### Objectives
@@ -52,7 +52,9 @@ A **Public Subnet** with it's security lists **Default Security List for SOAMP1V
 
   <img src="./images/Provision-VCN-pic7.png" width="100%">
 
- ## **STEP 3:** Create the Policies (Optional)
+
+## **STEP 3:** Create the Policies (Optional)
+
 We need to create the **Policies** i.e. A document that specifies who can access which resources, and how. Access is granted at the group and compartment level, which means you can write a policy that gives a group a specific type of access within a specific compartment, or to the tenancy itself.
 
 1. Go to the menu button and select **Identity -> Policies** anf then click on **Create Policy** button.

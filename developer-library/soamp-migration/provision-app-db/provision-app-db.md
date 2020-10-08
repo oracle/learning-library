@@ -71,15 +71,15 @@ or you can copy below public key
 
 11. Click **Next**
 
-12. Name the Database `SOAMP2DB` or like the database on-premises (required for proper migration)
+12. Name the Database `SOAMP2DB`
 
 13. Select the **Database version** `12.2`
 
-14. Name the **PDB** `PDB1` or as it is on premises
+14. Name the **PDB** `PDB1`
 
-15. Enter and confirm the **SYS Database password** or as it is on-premises: 
+15. Enter and confirm the **SYS Database password**: 
 
-you can create your own password followed all instructions or you can copy below
+    you can create your own password followed all instructions or you can copy below
 
     ```
     <copy>
@@ -89,38 +89,64 @@ you can create your own password followed all instructions or you can copy below
 
   <img src="./images/provision-db-20-dbdetails.png" width="70%">
 
-16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**, or optionally you can select **Enable automatic backups** for the period of `60 days` and scheduling `Anytime` and click **Create DB System**
+16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**
+
+17. Optionally you can select **Enable automatic backups** for the period of `60 days` and scheduling `Anytime` and 
 
   <img src="./images/provision-db-21.png" width="100%">
 
-This will usually take up to 40 minutes to provision,
-you have to wait until the sttus changes from `provisioning` to `Available`.
+18. Click **Create DB System**
+
+  This will usually take up to 40 minutes to provision.
 
   <img src="./images/provision-db-22.png" width="100%">
 
 
-## **STEP 2:** Create a Security List for the database and soa subnet
+## **STEP 2:** Create a Security List for the database and SOA subnet
 
 Before we can provision the SOAMP Instance, we need to provision a **private subnet** for the **SOA Instance** with appropriate **Security Lists** to open up the required ports: 
-- port 1521 for the database, 
-- port 22 for SSH.
-- 7001-7004 for SOA weblogic
-- 9001-9004 for weblogic internal ports
 
-In this section we will create a Security List for the SOA subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port),SSH port 22 and weblogic ports 7001-7004 , 9001-9004 to communicate to SOA instance.
+  - port 1521 for the database
+  - port 22 for SSH
+  - 7001-7004 for SOA weblogic
+  - 9001-9004 for weblogic internal ports
+
+In this section we will create a Security List for the SOA subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port), SSH port 22 and weblogic ports 7001-7004 , 9001-9004 to communicate to SOA instance.
+
+1. Go to **Networking -> Virtual Cloud Networks**
+
+  <img src="./images/vcn.png" width="50%">
+
+2. Select the VCN you created earlier (`SOAMP1VCN`)
+
+3. Click **Security Lists**
+
+  <img src="./images/sec-lists.png" width="70%">
+
+4. Click **Security List for Private Subnet-SOAMP1VCN** 
+
+  <img src="./images/provision-db-23-sl.png" width="100%">
+
+5. Click on **Add Ingress Rules**
+
+6. Add the ingress rules below to allow all the WebLogic port and allow accessing the DB ports.
+
+  <img src="./images/provision-db-24-sl.png" width="100%">
 
 
-1. go to the main menu and then open **VCN -> SOAMP1VCN -> Security Lists -> Security List for Private Subnet-SOAMP1VCN** 
+## **STEP 3:** Check the status of the database provisioning
 
-<img src="./images/provision-db-23-sl.png" width="100%">
+Before you can proceed to the next lab, you need to check that the DB has been fully provisioned
 
-2. Click on **Add Ingress Rules** and add below ingress rules to allow all the WebLogic port and allow accessing the DB ports.
+1. Go to **Oracle Databases -> BM, VM, Exadata**
 
-<img src="./images/provision-db-24-sl.png" width="100%">
+2. Make sure you are in the correct Compartment.
 
+3. Check the status of the database is `Available` or wait until it is before proceeding to the next lab.
 
+  <img src="./images/db-available.png" width="70%">
 
-To save some time, you can proceed to starting the`Lab 1 Option A: Setup an on-premises environment with the Workshop Marketplace stack` lab to setup the source SOA on-premimse environment while the DB is provisioning if you wish, however you will need the DB fully provisioned and you will need to gather the DB information before you can start the SOAMP instance provisioning.
+You may proceed to the next lab.
 
 ## Acknowledgements
 

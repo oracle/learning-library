@@ -1,4 +1,4 @@
-# Setup a local (on-premises) environment using Docker
+# Setup a local (on-premises) environment using Virtual Box
 
 ## Introduction: 
 
@@ -6,14 +6,14 @@ This lab will walk you through setting up a local SOA Suite environment to simul
 
 At the end of this lab, you will have a local environment running with an Oracle SOA Suite 12.2.1.3 VM and a SOA Suite 12.2.1.4 quick start with Jdev 12.2.1.4.
 
-Estimated Lab Time: 30 min
+Estimated Lab Time: 30 min to 1h+ depending on internet speed for download
 
 ### Objectives
 
 In this lab you will:
 
-- Install the Oracle VM Virtual Box
-- Download the SOA Suite 12.2.1.3 .ova windows file.
+- Install Oracle Virtual Box
+- Download the SOA Suite 12.2.1.3 .ova VM image file.
 - Startup Oracle VM Virtual Box demo environment
 - Prepare your VM box with downloaded soa suite 12.2.1.3 .ova file
 - Install the SOA Suite 12.2.1.4 quick start on your local machine
@@ -21,60 +21,71 @@ In this lab you will:
 ### Prerequisites
 
 To run this lab, you will need :
-- oracle account to download the files from OTN
-- 25 GB Storage
-- minimum 16 GB RAM
+- An oracle account to download the files from Oracle Technical Network (OTN)
+- 25 GB of local storage available
+- A minimum of 16 GB of RAM
+- A minimum of 4 CPUs
 
-## **STEPS:**
+## **STEP 1:** Download the SOA Suite 12.2.1.3 VM image
 
-### **On Windows**
+1. Download the SOA Suite 12.2.1.3 .ova image file from 
 
-*Make sure you followed the installation instructions to setup the VM*
+    [https://www.oracle.com/middleware/technologies/vmsoa-v122130.html](https://www.oracle.com/middleware/technologies/vmsoa-v122130.html)
 
-1. Install the Oracle VM Virtual Box, 
-go to below site :
-download the installer `Windows`  `Windows Installer`
+    Download the file `Integration_12.2.1.3.0_OTN.ova (16.36 GB)`
 
-[here](https://www.oracle.com/in/virtualization/technologies/vm/downloads/virtualbox-downloads.html)
-
-<img src="./images/download-vm.png"  width="100%">
+    <img src="./images/download-soa12213-ova.png"  width="70%">
 
 
-2. Download the SOA Suite 12.2.1.3 .ova windows file,
-go to below site :
-download the file `Integration_12.2.1.3.0_OTN.ova (16.36 GB)`
+## **STEP 2:** Import the OVA image into Virtual Box
 
-[here](https://www.oracle.com/middleware/technologies/vmsoa-v122130.html)
+1. Start Oracle VM Virtual Box 
 
-<img src="./images/download-soa12213-ova.png"  width="100%">
+2. Go to **File -> Import Appliance**
 
-**Note:** you can choose installer platform accordig to your system for ex: Mac ubantu , linux ,e,t,c
+    <img src="./images/provision-vm.png"  width="100%">
 
-3. Start Oracle VM Virtual Box demo environment and prepare your VM box with downloaded soa suite 12.2.1.3 .ova file
-go to **File -> Import Appliance**,
-and then select the `Integration_12.2.1.3.0_OTN.ova` file and then click on next
+3. Select the `Integration_12.2.1.3.0_OTN.ova` file 
+
+4. Click on **next**
+
+    This may take several minutes
+
+## **STEP 3:** Start the SOA 12.2.1.3 VM
+
+Once the import is successfull
+
+1. Click on the **Start** button to start your SOA 12.2.1.3 environment. 
+
+2. Login to the VM with:
+
+    - username: `oracle`
+    - password: `oracle`
+
+## **STEP 4:** Install SOA Suite 12.2.1.4 quick start
+
+1. Go to 
+    [https://www.oracle.com/in/middleware/technologies/soasuite/downloads.html](https://www.oracle.com/in/middleware/technologies/soasuite/downloads.html)
 
 
-<img src="./images/provision-vm.png"  width="100%">
+2. Click the `Download` button in front of `SOA Suite` product
 
-4. Once the import is successfull , click on Start button to start your SOA 12.2.1.3 environment. 
-default username: oracle / root
-password: oracle
+    *note: You need an Oracle OTN account and be logged in, in order to reach the site*
 
-5. Install the SOA Suite 12.2.1.4 quick start on your local machine,
-go to   `Download` button in front of `SOA Suite` product
+    <img src="./images/download-soa-12214.png"  width="100%">
 
-[here](https://www.oracle.com/in/middleware/technologies/soasuite/downloads.html)
+3. Select the following items in the list:
 
-<img src="./images/download-soa-12214.png"  width="100%">
+    - `V983385-01_1of2.zip`
+    - `V983385-01_2of2.zip`
+    
+    <img src="./images/download-quickstart.png"  width="100%">
 
-6. select only `V983385-01_1of2.zip` `V983385-01_2of2.zip` as we are using only SOA Quick Start for this lab.
-and select your platform and click on download.
+4. Select your platform
 
-<img src="./images/download-quickstart.png"  width="100%">
+5. Click on **Download**
 
-7. check both the SOA Suite versions 
-SOA Suite 12.2.1.3 VM and SOA Suite 12.2.1.4 local installation are working properly and j developer for both the versions are working fine.
+6. Run both the SOA Suite versions SOA Suite 12.2.1.3 VM and SOA Suite 12.2.1.4 local installation are working properly and j developer for both the versions are working fine.
 
 
 ## Acknowledgements

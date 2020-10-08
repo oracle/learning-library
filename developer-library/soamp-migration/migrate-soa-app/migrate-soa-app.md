@@ -3,11 +3,16 @@
 ## Introduction: 
 
 Migrating a SOA domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
-After you have prepared your source and target environments for the migration, you can transition your production system from old deployment to new deployment.
+Once source and target environments are ready for migration, you can transition your production system from on-premises deployment to OCI deployment.
 
-We'll use manual process to migrate the domain from on-premises and re-deploy it on OCI.
+We'll use a manual process to migrate the domain from on-premises and re-deploy on OCI.
+
+Estimated Lab Time: 45 min
+
+### About Product/Technologies
 
 **Deploying, Undeploying, and Redeploying SOA Composite Applications**
+
 Oracle SOA Suite uses the SCA standard as a way to assemble service components into a SOA composite application. You can deploy, undeploy, and redeploy SOA composite applications.
 
 SOA composite applications consist of the following:
@@ -17,12 +22,6 @@ Service components such as Oracle Mediator for routing, BPEL processes for orche
 Binding components (services and references) for connecting SOA composite applications to external services, applications, and technologies
 
 These components are assembled together into a SOA composite application. This application is a single unit of deployment that greatly simplifies the management and lifecycle of SOA applications.
-
-
-
-Estimated Lab Time: 45 min
-
-### About Product/Technologies
 
 You can use Fusion Middleware Control, Oracle JDeveloper, or the command line to deploy, undeploy, or redeploy a SOA application.
 
