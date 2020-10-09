@@ -39,7 +39,7 @@ This lab will show you how to access an EDQ instance using Apache Guacamole and 
     ![](images/weblogic_3.png)
 
 
-## **Optional:** EDQ Start Script
+### **Optional:** EDQ Start Script
 
 1. Right click on Home screen and select "Open Terminal".
 
