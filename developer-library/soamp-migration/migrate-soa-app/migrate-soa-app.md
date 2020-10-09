@@ -217,7 +217,7 @@ Prepare your target environment by importing or recreating all the configuration
 ## **STEP 4:** Transition from Old Deployment to New Deployment
 
 1. Once you are connected to your SOAMP server , open open `SOA EM` console in the local browser
-'http://localhost:7002/em' and provide the credentials.
+'https://localhost:7002/em' and provide the credentials.
 
 <img src="./images/24-SOAMP-deployment-1.png" width="100%">
 
@@ -230,7 +230,7 @@ Prepare your target environment by importing or recreating all the configuration
 
 <img src="./images/26-SOAMP-deployment-3.png" width="100%">
 
-4. Select `Archive is on the machine` option and click in **Choose File** button and the navigate to the folder location `C:\JDeveloper\mywork\IWSApplication\IWSProj3\deploy`and select `sca_IWSProj3.jar` file then click on open
+4. Select `Archive is on the machine` option and click in **Choose File** button and the navigate to the folder location `C:\JDeveloper\mywork\IWSApplication\IWSProj3\deploy` and select `sca_IWSProj3.jar` file then click on open
 
 <img src="./images/27-SOAMP-deployment-4.png" width="100%">
 
@@ -246,7 +246,9 @@ Prepare your target environment by importing or recreating all the configuration
 
 <img src="./images/30-SOAMP-deployment-7.png" width="100%">
 
-8. Wait until you get the message `Deployment Succeeded` and click **Close** button
+8. You can see `Processing Deploy` Deployment in progress message and wait until you get the message `Deployment Succeeded` and click **Close** button
+
+<img src="./images/31-SOAMP-deployment-8.a.png" width="100%">
 
 <img src="./images/31-SOAMP-deployment-8.png" width="100%">
 
@@ -257,31 +259,42 @@ Prepare your target environment by importing or recreating all the configuration
 
 ## **STEP 5:** Check migration was successful by testing your code in SOAMP
 
-1. Open putty connect to your SOAMP instance and place any `xyz.xml` file or create any `xyz.xml` file in `/tmp/soa/out` folder and chenge its permission by `chmod 777`.
+1. Open putty connect to your SOAMP instance 
 
-<img src="./images/33-SOAMP-testing-1.png" width="100%">
+<img src="./images/33-SOAMP-testing-1.png" width="100%"> 
 
-2. Wait for few seconds until the `xyz.xml` will disappear from the folder as it is been polled by the service which you have deployed. 
+2. Navigate to the folder `/home/opc/tmp/soa/out`.
+
+<img src="./images/34-SOAMP-testing-2.png" width="100%">
+
+3. Place any `xyz.xml` file or create any `xyz.xml` file in `/tmp/soa/out` folder with the help of `VI` editor and save the file by typing `wq!` command
 
 <img src="./images/35-SOAMP-testing-3.png" width="100%">
 
-3. Go to folder location `/tmp/soa/out1` and you can see a new file with name `File_1` is created by the soa service.
+<img src="./images/36-SOAMP-testing-4.a.png" width="100%">
+
+4. Wait for few seconds until the `xyz.xml` will disappear from the folder as it is been polled by the service which you have deployed. 
 
 <img src="./images/36-SOAMP-testing-4.png" width="100%">
 
-4. you can check the `Flow Instances` of the project with one `FlowID` generated
+5. Go to folder location `/tmp/soa/out1` and you can see a new file with name `File_1` is created by the soa service. (too see the file content you need to change the permisison of the file from root user `sudo su -` 
+then go to the file location and type `chmod 777 <File name>` then type `cat <File name>`)
+
+<img src="./images/36-SOAMP-testing-4.b.png" width="100%">
+
+6. you can check the `Flow Instances` of the project with one `FlowID` generated
 
 <img src="./images/37-SOAMP-testing-5.png" width="100%">
 
-5. Click on `FlowID` and see the `Audit Trail` the see the logs.
+5. Click on `FlowID` and see the `Audit Trail` and the relevant logs.
 
 <img src="./images/38-SOAMP-testing-6.png" width="100%">
 
 
 ## Acknowledgements
 
- - **Author** - Akshay Saxena, September 2020
- - **Last Updated By/Date** - Akshay Saxena, September 2020
+ - **Author** - Akshay Saxena, October 2020
+ - **Last Updated By/Date** - Akshay Saxena, October 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
