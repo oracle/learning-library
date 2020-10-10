@@ -37,23 +37,18 @@
         },
         {
             "title": "Lab 4: Provision the SOAMP infrastructure",
-            "publisheddate": "09/30/2020",
+            "publisheddate": "10/05/2020",
             "filename": "../provision-soamp/provision-soamp.md"
         },
         {
             "title": "Lab 5: Migrate the SOA Application",
-            "publisheddate": "10/06/2020",
-            "filename": "/../migrate-soa-app/migrate-soa-app.md"
+            "publisheddate": "10/09/2020",
+            "filename": "../migrate-soa-app/migrate-soa-app.md"
         },
         {
-            "title": "Lab 6 (Optional): Scale the SOA domain",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../scale-wls/scale-wls.md"
-        },
-        {
-            "title": "Lab 7: Tear down the environment",
-            "publisheddate": "07/30/2020",
-            "filename": "../../../tear-down/tear-down.md"
+            "title": "Lab 6: Tear down the environment",
+            "publisheddate": "10/07/2020",
+            "filename": "../tear-down/tear-down.md"
         }
      ]
 }
