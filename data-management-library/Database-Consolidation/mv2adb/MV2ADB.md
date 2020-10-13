@@ -1,4 +1,4 @@
-# Consolidate Workloads to Autonomous Database using MV2ADB
+# Consolidate Workloads to Autonomous Database using MV2ADB tool
 ## Introduction
 Move to Autonomous Database (MV2ADB) is a tool, which migrates data from an "on premises" database to Autonomous Database Cloud utilizing Oracle Data Pump. Data Pump lets you Import your data into Autonomous Database using Data Pump Dump Files which are residing on Oracle Cloud Infrastructure Object Storage.
 The MV2ADB tool is able to automatically take a data pump export, push it to OCI Object Storage, then it automatically imports it into the Autonomous Database using Data Pump in one command.
