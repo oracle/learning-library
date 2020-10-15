@@ -50,16 +50,6 @@ Estimated Lab Time: 15min
 
     This will take several minutes.
 
-4. Go to **Networking -> Virtual Cloud Networks** 
-
-5. Select the `SOAMP1VCN` VCN  (or whatever VCN name you have provided)
-
-6. Select the private subnet and public subnet that was created automatically `Private Subnet-SOAMP1VCN` and `Public Subnet-SOAMP1VCN` sequentially 
-
-7. Click **Terminate** respectively
-
-    Note you won't be able to proceed until the DB System itself has been terminated.
-
 ## **STEP 3:** Tear down the SOA environment
 
 *You need to terminate the DB subnet before you can tear down the SOA deployment as Resource Manager will not be able to clean up the VCN until the DB subnet is removed.
@@ -77,6 +67,18 @@ Estimated Lab Time: 15min
 5. Click **Delete Stack**
 
   <img src="./images/delete-stack-soamp.png"  width="50%">
+
+## **STEP 4:** Tear down VCN
+
+1. Go to **Networking -> Virtual Cloud Networks** 
+
+2. Select the `SOAMP1VCN` VCN  (or whatever VCN name you have provided)
+
+3. Click **Terminate**
+
+  Note you won't be able to proceed until the DB System and the SOA stack have been terminated.
+
+You're done.
 
 ## Acknowledgements
 

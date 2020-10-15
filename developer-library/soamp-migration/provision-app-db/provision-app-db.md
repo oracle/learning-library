@@ -24,7 +24,7 @@ In this lab you will:
 
   <img src="./images/provision-db-11.png" width="100%">
 
-3. Make sure you are in the **Compartment** where you created the DB subnet, and name your **Database System**
+3. Make sure you are in the **SOAMPCompartment** and name your **Database System**
 
   <img src="./images/provision-db-12.png" width="100%">
 
@@ -38,26 +38,13 @@ In this lab you will:
 
 6. Select **Logical Volume Manager** 
 
-  <img src="./images/provision-db-15-ogi.png" width="70%">
+  <img src="./images/db-lvm.png" width="70%">
 
 7. Keep defaults for **Storage**
 
   <img src="./images/provision-db-16-storage.png" width="70%">
 
-8. **Upload** the **SSH public key** created earlier during prerequisites
-or you can copy below public key
-
-    The key created by me can be found in the folder `./ssh-keys/key-pair/publicKey.pub`
-
-    **ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCDECqTo6JfSGWkXfF6
-    pkMBySZWt1jfDU0lAzgTDVfgTaR8YVS7d6sYVv9pU8dohqUZN7jPdbbe
-    DCfm8EiCZMNkdB8Zbyn29PCOV192DKWd2hzYnr6jbVrbdwp7Izqap9G5
-    nocvZ1KtE5g9HEmqVRFg4RPSeMmY/hInaRNRAB73fZNglqnVtkrju0sU
-    oDcRPYskrIc4QpRv2luTTC4Byjsz0cULXsuzz4k8suaGFVsxfANuriiK
-    OpDXktMXNkYPb8ymm5UCi4ywHd5uv3wqhqkCdBPPeyIlm6dTfDGrLrUQ
-    UhjHhVGEaPazYCk0k/M3BWQCfu9t63t4WnBIOU3xrPf9**
-
-    If using the marketplace image, just use the **Paste SSH Keys** and get the key  inside the 'on-premises' environment with:
+8. Add your **SSH public key** 
 
   <img src="./images/provision-db-17-ssh.png" width="70%">
 
@@ -67,15 +54,22 @@ or you can copy below public key
 
 10. Select the **Virtual cloud network** `SOAMP1VCN`, the **Client subnet** `Private Subnet-SOAMP1VCN(regional)` and set a **Hostname prefix** of `soamp2db`
 
-  <img src="./images/provision-db-19-net.png" width="70%">
+  <img src="./images/db-network.png" width="70%">
 
 11. Click **Next**
 
 12. Name the Database `SOAMP2DB`
 
-13. Select the **Database version** `12.2`
+  <img src="./images/db-name.png" width="70%">
+
+13. Select the **Database version** `19c`
+
+  <img src="./images/db-version.png" width="70%">
 
 14. Name the **PDB** `PDB1`
+
+  <img src="./images/db-pdbname.png" width="70%">
+
 
 15. Enter and confirm the **SYS Database password**: 
 
@@ -87,7 +81,7 @@ or you can copy below public key
     </copy>
     ```
 
-  <img src="./images/provision-db-20-dbdetails.png" width="70%">
+  <img src="./images/db-password.png" width="70%">
 
 16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**
 
@@ -102,36 +96,6 @@ or you can copy below public key
   <img src="./images/provision-db-22.png" width="100%">
 
 
-## **STEP 2:** Create a Security List for the database and SOA subnet
-
-Before we can provision the SOAMP Instance, we need to provision a **private subnet** for the **SOA Instance** with appropriate **Security Lists** to open up the required ports: 
-
-  - port 1521 for the database
-  - port 22 for SSH
-  - 7001-7004 for SOA weblogic
-  - 9001-9004 for weblogic internal ports
-
-In this section we will create a Security List for the SOA subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port), SSH port 22 and weblogic ports 7001-7004 , 9001-9004 to communicate to SOA instance.
-
-1. Go to **Networking -> Virtual Cloud Networks**
-
-  <img src="./images/vcn.png" width="50%">
-
-2. Select the VCN you created earlier (`SOAMP1VCN`)
-
-3. Click **Security Lists**
-
-  <img src="./images/sec-lists.png" width="70%">
-
-4. Click **Security List for Private Subnet-SOAMP1VCN** 
-
-  <img src="./images/provision-db-23-sl.png" width="100%">
-
-5. Click on **Add Ingress Rules**
-
-6. Add the ingress rules below to allow all the WebLogic port and allow accessing the DB ports.
-
-  <img src="./images/provision-db-24-sl.png" width="100%">
 
 
 ## **STEP 3:** Check the status of the database provisioning

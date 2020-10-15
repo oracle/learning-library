@@ -52,6 +52,8 @@ For this lab you need:
 
   The image will work on a VM shape but will be very slow. It is highly recommended to use a Bare Metal shape such as BM.Standard.E3.128 or BM.Standard.E2.x
 
+  Make sure the shape you chose is available in your tenancy.
+
   <img src="./images/5-instance-shape.png"  width="70%">
 
 7. Browse to your **SSH Public Key**
@@ -70,7 +72,7 @@ For this lab you need:
 
 8. When the job finishes, you can find the Public IP address of the instance at the bottom of the logs, or in the **Output** area. Make a note of this information.
 
-  <img src="./images/9-job-output.png"  width="100%">
+  <img src="./images/outputs-mp-demo.png"  width="100%">
 
 ## **STEP 2:** Connect to the demo environment
 
@@ -84,23 +86,41 @@ Connect to the instance using your RDP Client (examples are using Microsoft Remo
 
 2. Connect, using username `oracle` and password `oracle`
 
+3. If you have issues with display sizing, edit the connection and go to `Display` settings to adjust screen size.
+
 ## **STEP 3:** Launch the SOA domain
 
 1. Click on `SOA and Compact Domain` on the VM desktop
 
-    <img src="./images/10-localhost-admin-console.png"  width="100%">
+    <img src="./images/soa-desktop.png"  width="100%">
 
 2. Run the `Start soa_domain Admin Server` script
-3. Run the `Start soa_domain SOA Server` script
+
+    <img src="./images/soa-admin.png"  width="100%">
+
+3. Wait for the admin server to be running. This will take 2-3 minutes.
+
+    You will see state changed to `RUNNING` in the logs 
+
+    <img src="./images/soa-admin-running.png"  width="100%">
+
+4. Run the `Start soa_domain SOA Server` script
+
+    <img src="./images/soa-soa.png"  width="100%">
 
 ## **STEP 4:** Check the local environment is up and running
 
-1. Once the domains are started open the firefox web browser and select `http://localhost:7001/em'
+1. Once the domains are started open the firefox web browser and select the bookmark for EM, which points to `http://localhost:7001/em'
 to open the EM console
+
 
 2. Login using usename `weblogic`, and password `welcome1`
 
-  <img src="./images/deployed-composite.png" width="100%">
+  <img src="./images/em-login.png" width="100%">
+
+3. Check that the admin server and SOA domain are running (other domains will not be running and that is normal)
+
+  <img src="./images/soa-desktop-em-status.png" width="100%">
 
 
 

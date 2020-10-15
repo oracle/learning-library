@@ -27,11 +27,11 @@ You can use Fusion Middleware Control, Oracle JDeveloper, or the command line to
 
 Migration with manual process consists in 3 steps:
 
-- Convert the SOA code version from 12.2.1.3 to 12.2.1.4 by redeploying it in Jdeveloper 12.2.1.4 .
+- Convert the SOA code version from 12.2.1.3 to 12.2.1.4 by redeploying it in JDeveloper 12.2.1.4 .
 
-- Create the same directory structure used in source SOA code in the target SOAMP server .
+- Create the same directory structure used in source SOA code in the target SOA server .
 
-- Deploy the code with 12.2.1.4 version in SOAMP server.
+- Deploy the code with 12.2.1.4 version in SOA server.
 
 ### Objectives
 
@@ -41,7 +41,7 @@ In this lab, you will:
 - Prepare Your Source for Migration/Side-by-Side Upgrade    
 - Prepare Your Target Environment
 - Transition from Old Deployment to New Deployment
-- Check migration was successful by testing your code in SOAMP
+- Check that the migration was successful by testing your code in SOA
 
 ### Prerequisites
 
@@ -49,246 +49,351 @@ To run this lab, you need to:
 
 - Have setup the demo 'on-premises' environment to use as the source domain to migrate
 - Have deployed a SOA on OCI domain using the marketplace
-- (optional) SOAP UI for unit test the code
 
-## **STEP 1:** Discover the source SOA Suite Environment and test the source code
+## **STEP 1:** Discover the source SOA Suite Environment
 
-### Using the local 'on-premises' environment:
+1. Open the Firefox web browser to [`http://localhost:7001/em`](http://localhost:7001/em)
+to open the EM console for the on-premises environment, 
 
-1. Start SOA 12.2.1.3 VM, wait until it is succesfully started and then check all the required applications.
+    - usename `weblogic`
+    - password `welcome1`
 
-<img src="./images/1-vm.png" width="100%">
+    <img src="./images/3-open-console.png" width="100%">
 
-2. Click on `SOA and Comapct Domain` on the VM desktop and run `Start soa_domain Admin Server` and `Start soa_domain SOA Server` one by one in sequence.
+2. Click the menu icon
 
-<img src="./images/2-start-server.png" width="100%">
+    <img src="./images/menu.png" width="80%">
 
-3. Once the domains are started open mozilla web browser and select `http://localhost:7001/em'
-to open the EM console, use `usename:weblogic`  , `password:welcome1`
-    
-<img src="./images/3-open-console.png" width="100%">
-   
-4. Now click on top right button and go to `SOA_Domain -> SOA -> SOA-Infra` and click on `Deployed Composites`
+3. Now click on top right button and go to **SOA_Domain -> SOA -> SOA-Infra**
 
-<img src="./images/4-open-project.png" width="100%">
+    <img src="./images/4-open-project.png" width="100%">
 
-5. Now search the composite `IWSProj3[1.0]` which we are using for migration in this lab.
+4. Then click the **Deployed Composites** tab
 
-<img src="./images/5-deployed-composite.png" width="100%">
+    <img src="./images/deployed-composites.png" width="100%">
 
-6. For unit testing as per the code we need to place any .xml file in /tmp/soa/out folder or you can create the same folder structure.
+5. Search for the composite **IWSProj3[1.0]** used for migration in this lab.
 
-<img src="./images/6-unit-test-1.png" width="100%">
+    <img src="./images/5-deployed-composite.png" width="100%">
 
-7. Place or create any `xyz.xml` file under the mentioned folder or create the same folder structure
+    This application is a simple file movement composite which moves a test XML file from the `/tmp/soa/out` folder to the `/tmp/soa/out1` folder.
 
-<img src="./images/7-unit-test-2.png" width="100%">
+    The XML needs to be a valid XML file.
 
+## **STEP 2:** Test the application
 
-### Using the demo Workshop Marketplace image
+For testing, we'll place a test XML file in the `/tmp/soa/out` folder, wait 5 to 10 seconds to see the file be removed from the `/tmp/soa/out/` folder and move to the `/tmp/soa/out1` folder as `File_1.txt` 
 
-1. Go to the OCI console and to your SOA local marketplace instance open the instanc using RDP.
-Connect to the RDP from your local machine using `Public_IP` and user `opc` 
-you need to click on `SOA and Compact Domain` on the VM desktop and run `Start soa_domain Admin Server` and `Start soa_domain SOA Server` one by one in sequence.
 
-Once the domains are started open mozilla web browser and select `http://localhost:7001/em'
-to open the EM console, use `usename:weblogic`  , `password:welcome1
+1. Create the necessary folders:
 
-<img src="./images/1-vm.png" width="100%">
+    ```
+    mkdir -p /tmp/soa/out
+    mkdir -p /tmp/soa/out1
+    chmod -R 777 /tmp/soa/
+    ```
 
-2. Click on `SOA and Comapct Domain` on the VM desktop and run `Start soa_domain Admin Server` and `Start soa_domain SOA Server` one by one in sequence.
+2. Copy the test file into the `/tmp/soa/out/` folder
 
-<img src="./images/2-start-server.png" width="100%">
+    ```
+    cd /tmp/soa/out
+    cp /u01/training/OrderSample.OSB.xml ./
+    ```
 
-3. Once the domains are started open mozilla web browser and select `http://localhost:7001/em'
-to open the EM console, use `usename:weblogic`  , `password:welcome1`
-    
-<img src="./images/3-open-console.png" width="100%">
-   
-4. Now click on top right button and go to `SOA_Domain -> SOA -> SOA-Infra` and click on `Deployed Composites`
+3. Check the file is in the `/tmp/soa/out` folder
 
-<img src="./images/4-open-project.png" width="100%">
+    ```
+    ls -lh
+    ```
 
-5. Now search the composite `IWSProj3[1.0]` which we are using for migration in this lab.
+4. Wait 5 to 10sec and check the file is now gone:
 
-<img src="./images/5-deployed-composite.png" width="100%">
+    ```
+    ls -lh
+    ```
 
-6. For unit testing as per the code we need to place any .xml file in /tmp/soa/out folder or you can create the same folder structure.
+5. Check the file `File_1.xml` was created in the `/tmp/soa/out1` folder:
 
-<img src="./images/6-unit-test-1.png" width="100%">
+    ```
+    cd /tmp/soa/out1
+    ls -lah
+    ```
 
-7. Place or create any `xyz.xml` file under the mentioned folder or create the same folder structure
+    It should show 
 
-<img src="./images/7-unit-test-2.png" width="100%">
+    ```
+    File_1.xml
+    ```
 
-## **STEP 2:** Prepare Your Source for Migration/Side-by-Side Upgrade
+## **STEP 2:** Prepare Your Source for Migration (Side-by-Side Upgrade)
 
-You have to migrate the Integrated Development Environment (IDE) projects and export or capture needed artifacts from the source environment to prepare your source for migration//side-by-side upgrade
+In this step we will migrate the application to version 12.2.1.4 which is the target SOA version, from 12.2.1.3 which is the current version.
 
-Migrate IDE projects (11G or 12c) to the 12c IDE that matches the Oracle SOA Suite on Marketplace version ,i.e. 12.2.1.4 for SOA.
+In order to achieve this, you need to:
 
-### Using the local 'on-premises' environment:
+* open the application in JDeveloper 12.2.1.3.
+* deploy the application as a SAR file
+* open JDeveloper 12.2.1.4
+* create a new project in JDeveloper 12.2.1.4
+* import the SAR file generated in JDeveloper 12.2.1.3 
+* let the import wizard migrate the code to 12.2.1.4
+* Deploy the application with JDeveloper 12.2.1.4 as a SAR file
 
-1. Open the Jdeveleoper 12.2.1.3 and select `IWSApplication` and open the Project 'IWSProj3` and click on deploy
+*If you used the local VirtualBox VM, you downloaded JDeveloper 12.2.1.4 as part of the SOA Suite Quickstart 12.2.1.4.*
 
-<img src="./images/8-jdev-1.png" width="100%">
+*If you are using the Markletplace demo image, both 12.2.1.3 and 1.2.2.14 JDeveloper version are available on the desktop*
 
-2. Select `Generate SAR File` and click `Next` button
+<img src="./images/soa-local-rdp.png" width="70%">
 
-<img src="./images/9-jdev-2.png" width="100%">
+1. Open the Jdeveloper 12.2.1.3 on the on-premises desktop
 
-3. Review and click `Next` button
+    <img src="./images/jdev12213.png" width="100%">
 
-<img src="./images/10-jdev-3.png" width="100%">
+2. In the Application tab, select **IWSApplication**
 
-4. Review and click `Finish` button
+    <img src="./images/open-iwsapplication.png" width="40%">
 
-<img src="./images/11-jdev-4.png" width="100%">
+3. Right click on the Project **IWSProj3**
 
-5. Let the code build successfully 
+    <img src="./images/iwsproj3.png" width="40%">
 
-<img src="./images/12-jdev-5.png" width="100%">
+4. Select **Deploy -> Deploy IWSProj3...**
 
-6. Open your Jdeveloper 12.2.1.4 and create a new SOA Application (with same application name as source Jdev `IWSApplication`)
+    <img src="./images/deploy-iwsproj3a.png" width="70%">
 
-<img src="./images/13-jdev1224-1.png" width="100%">
+5. Select **Generate SAR File** and click **Next**
 
-7. Name you default project and click `Next` button
+    <img src="./images/deploy-iwsproj3b.png" width="70%">
 
-<img src="./images/14-jdev1224-2.png" width="100%">
+6. Review and click **Next**
 
-8. Select `Empty Composite` and click `Finish` button
+    <img src="./images/deploy-iwsproj3c.png" width="70%">
 
-<img src="./images/15-jdev1224-3.png" width="100%">
+7. Review and click **Finish**
 
-9. Click on `File -> Import`
+    <img src="./images/deploy-iwsproj3d.png" width="70%">
 
-<img src="./images/16-jdev1224-4.png" width="100%">
+8. Let the code build successfully 
 
-10. Select `SOA Archive Into SOA Project` and click `OK` button
+    <img src="./images/compilecode12213.png" width="100%">
 
-<img src="./images/17-jdev1224-5.png" width="100%">
+9. Open Jdeveloper 12.2.1.4
 
-11. Name the project as same as in source environmant `IWSProj3` and click `Next` button
+    If you use the marketplace environment, JDeveloper 12.2.1.4 is on the desktop, click the icon and click **Run** and **OK** to use the full dev suite.
 
-<img src="./images/18-jdev1224-6.png" width="100%">
+    Otherwise, open the JDeveloper 12.2.1.4 you installed as part of the SOA Quickstart 12.2.1.4 locally
 
-12. Click on `Browse` button and go to the location where you have deployed your Jdeveloper 12.2.1.3 project on step 4 (usually the location is`C:\JDeveloper\mywork\IWSApplication\IWSProj3\Deploy`)and select the 'sca_IWSProj3.jar' and click on `Next` button
 
-<img src="./images/19-jdev1224-7.png" width="100%">
+10. Create a new SOA Application 
 
-13. Review and click on `Finish` button 
+    <img src="./images/j12214a.png" width="50%">
 
-<img src="./images/20-jdev1224-8.png" width="100%">
+11. Select **SOA Application** in the template list
 
-14. Let the 12.2.1.3 code migrate to Jdev 12.2.1.4 
+    <img src="./images/j12214b.png" width="70%">
 
-<img src="./images/21-jdev1224-9.png" width="100%">
+12. Set **IWSApplication** for Application Name, and click **Next**
 
-15. Repeat the steps 1  2 , 3 , 4 to deploy the code as `SAR File` with 12.2.1.4 version
+    <img src="./images/j12214c.png" width="70%">
 
-<img src="./images/8-jdev-1.png" width="100%">
+13. Keep the default Project Name, and click **Next**
 
-<img src="./images/9-jdev-2.png" width="100%">
+    <img src="./images/j12214d.png" width="70%">
 
-<img src="./images/10-jdev-3.png" width="100%">
+14. Select **Empty Composite**, and click **Finish**
 
-<img src="./images/11-jdev-4.png" width="100%">
+    <img src="./images/j12214e.png" width="70%">
 
-### Using the demo Workshop Marketplace image
+15. Click on **File -> Import**
 
-1. You have to repeat the same steps as `local on-premises' environment` as the Jdeveleoper 12.2.1.3 and Jdeveloper 12.2.1.4 are present on the desktop of the local SOA environment marketplace RDP.
+    <img src="./images/j12214f.png" width="35%">
 
-<img src="./images/22-SOA-local-RDP.png" width="100%">
+16. Select **SOA Archive Into SOA Project** and click **OK**
+
+    <img src="./images/j12214g.png" width="50%">
+
+17. Name the project as same as in source environmant **IWSProj3** and click **Next**` button**
+
+    <img src="./images/j12214h.png" width="70%">
+
+18. Click on **Browse**
+
+    <img src="./images/j12214i.png" width="70%">
+
+19. Go to the location where you have deployed your Jdeveloper 12.2.1.3 project.
+
+    - On the marketplace environment, it will be under `/u02/training/SOAJdevProjects/IWSApplication/IWSProj3/deploy`
+
+    - On your local machine it usualy would be under `JDEVELOPER_FOLDER/mywork/IWSApplication/IWSProj3/deploy`
+
+
+20. Select the **sca_IWSProj3.jar** and click on **Open** button
+
+    <img src="./images/j12214j.png" width="70%">
+
+21. Review and click on **Finish** 
+
+    <img src="./images/j12214k.png" width="70%">
+
+22. Let the 12.2.1.3 code migrate to Jdev 12.2.1.4 
+
+    <img src="./images/21-jdev1224-9.png" width="100%">
+
+We can now deploy the upgraded project as a SAR file
+
+23. Right click the **IWSProj3** project
+
+    <img src="./images/iwsproj3.png" width="40%">
+
+24. Select **Deploy -> Deploy IWSProj3...**
+
+    <img src="./images/j12214l.png" width="70%">
+
+25. Select **Generate SAR file** and click **Finish**
+
+    <img src="./images/j12214m.png" width="70%">
+
+26. Wait until the code compiles successfully
+
+    <img src="./images/compilecode12214.png" width="70%">
 
 ## **STEP 3:** Prepare Your Target Environment
 
 Prepare your target environment by importing or recreating all the configurations of your source. This will ensure successful deployment of the target Oracle SOA Suite on Marketplace instance.
 
-1. Connect to your SOAMP compute instance using putty (as you have learned in Lab 4 ## **STEP 3:** Connect your FMW Console URL's of Private SOA Instance using Bastion Host through Putty.)
+1. Connect to your SOA on OCI compute instance via the bastion host
 
-2. Create the same folder structure as `/tmp/soa/out` `/tmp/soa/out1` in the SOAMP server 
- use command `mkdir` to create above folders and `chmod 777` to change its permissions. 
+    In the terminal window where you opened the tunnel earlier, in the on-premises environment use:
 
-<img src="./images/23-SOAMP-server.png" width="100%">
-  
+    ```
+    <copy>
+    ssh -o ProxyCommand="ssh -W %h:%p opc${BASTION_IP}" opc@${REMOTEHOST}
+    </copy>
+    ```
 
-## **STEP 4:** Transition from Old Deployment to New Deployment
+2. Once on the target server, create the folder structure needed by the application:
 
-1. Once you are connected to your SOAMP server , open open `SOA EM` console in the local browser
-'https://localhost:7002/em' and provide the credentials.
+    ```
+    <copy>
+    mkdir -p /tmp/soa/out
+    mkdir -p /tmp/soa/out1
+    chmod -R 777 /tmp/soa/
+    </copy>
+    ```
 
-<img src="./images/24-SOAMP-deployment-1.png" width="100%">
+## **STEP 4:** Re-deploy the upgraded application on the target SOA domain
+
+1. Once you are connected to your SOAMP server , open `SOA EM` console in the local browser
+in the on-premises environment at [https://localhost:7002/em](https://localhost:7002/em) and provide the credentials.
+
+2. You might see a browser warning because the SSL security is using a self-signed certificate. Go through the steps to confirm the exception:
+
+    <img src="./images/firefox-ssl1.png" width="50%">
+
+    <img src="./images/firefox-ssl2.png" width="50%">
+
+    <img src="./images/soamp-deployment-1.png" width="100%">
+
+3. Login with the credential from provisioning
+
+    - username: `weblogic`
+    - password: `welcome1`
+
+2. Click the menu icon
+
+    <img src="./images/menu.png" width="80%">
+
+3. Now click on top right button and go to **SOA_Domain -> SOA -> SOA-Infra**
+
+    <img src="./images/nav-composite.png" width="40%">
+
+4. Then click the **Deployed Composites** tab
+
+    <img src="./images/deployed-composites.png" width="100%">
+
+5. Click **Deploy**
+
+    <img src="./images/deploy.png" width="70%">
+
+6. Select the **Archive is on the machine...** option
+
+    <img src="./images/deploy2.png" width="70%">
 
 
-2. Navigate to **SOA Domain -> SOA -> soa-infra**
+7. Click **Browse** and the navigate to the folder location of the upgraded 12.2.14 Application 
 
-<img src="./images/25-SOAMP-deployment-2.png" width="100%">
+    - if you used the local VirtualBox VM, it would be in:
+        `JDEVELOPER_FOLDER\mywork\IWSApplication\IWSProj3\deploy` 
+        
+    - If you used the marketplace environment, it is under `/u02/oracle/developer/mywork/IWSApplication/IWSProj3/`
 
-3. Click on **Deployed Composites**
+    <img src="./images/filepath.png" width="70%">
 
-<img src="./images/26-SOAMP-deployment-3.png" width="100%">
-
-4. Select `Archive is on the machine` option and click in **Choose File** button and the navigate to the folder location `C:\JDeveloper\mywork\IWSApplication\IWSProj3\deploy` and select `sca_IWSProj3.jar` file then click on open
-
-<img src="./images/27-SOAMP-deployment-4.png" width="100%">
-
-5. Click **Next** button
-
-<img src="./images/28-SOAMP-deployment-5.png" width="100%">
-
-6. Select `SOA Folder` as `default` and click **Next** button
-
-<img src="./images/29-SOAMP-deployment-6.png" width="100%">
-
-7. Select `Default Revision` as `Deploy as default revision` review all the information and then click on **Deploy** button
-
-<img src="./images/30-SOAMP-deployment-7.png" width="100%">
-
-8. You can see `Processing Deploy` Deployment in progress message and wait until you get the message `Deployment Succeeded` and click **Close** button
-
-<img src="./images/31-SOAMP-deployment-8.a.png" width="100%">
-
-<img src="./images/31-SOAMP-deployment-8.png" width="100%">
-
-9. Check the deployed project in `Dashboard` 
-
-<img src="./images/32-SOAMP-deployment-9.png" width="100%">
+8. Select the `sca_IWSProj3.jar` file then click on **Open**
 
 
-## **STEP 5:** Check migration was successful by testing your code in SOAMP
+9. Click **Next**
 
-1. Open putty connect to your SOAMP instance 
+    <img src="./images/deploy2.png" width="70%">
 
-<img src="./images/33-SOAMP-testing-1.png" width="100%"> 
 
-2. Navigate to the folder `/home/opc/tmp/soa/out`.
+10. Select **SOA Folder** as **default** and click **Next**
 
-<img src="./images/34-SOAMP-testing-2.png" width="100%">
+    <img src="./images/deploy4.png" width="100%">
 
-3. Place any `xyz.xml` file or create any `xyz.xml` file in `/tmp/soa/out` folder with the help of `VI` editor and save the file by typing `wq!` command
+12. Review all the information and then click **Deploy**
 
-<img src="./images/35-SOAMP-testing-3.png" width="100%">
+    <img src="./images/deploy5.png" width="100%">
 
-<img src="./images/36-SOAMP-testing-4.a.png" width="100%">
+8. You can see **Processing Deploy** Deployment in progress message and wait until you get the message **Deployment Succeeded** and click **Close** button
 
-4. Wait for few seconds until the `xyz.xml` will disappear from the folder as it is been polled by the service which you have deployed. 
+    <img src="./images/deploy6.png" width="100%">
 
-<img src="./images/36-SOAMP-testing-4.png" width="100%">
+9. Check the deployed project in **Dashboard** 
 
-5. Go to folder location `/tmp/soa/out1` and you can see a new file with name `File_1` is created by the soa service. (too see the file content you need to change the permisison of the file from root user `sudo su -` 
-then go to the file location and type `chmod 777 <File name>` then type `cat <File name>`)
+    <img src="./images/soamp-deployment-9.png" width="100%">
 
-<img src="./images/36-SOAMP-testing-4.b.png" width="100%">
 
-6. you can check the `Flow Instances` of the project with one `FlowID` generated
+## **STEP 5:** Check the application on the target SOA domain
 
-<img src="./images/37-SOAMP-testing-5.png" width="100%">
+1. Get back in the terminal where you SSH'ed to the target instance 
 
-5. Click on `FlowID` and see the `Audit Trail` and the relevant logs.
+2. Navigate to the folder `/tmp/soa/out`
 
-<img src="./images/38-SOAMP-testing-6.png" width="100%">
+    ```
+    cd /tmp/soa/out
+    ```
 
+3. We'll select an XML file from the target server to use as demo, and copy it into the `/tmp/soa/out/` folder
+
+    ```
+    sudo cp /etc/firewalld/direct.xml /tmp/soa/out
+    ```
+
+4. Wait 5 to 10 seconds to check that the file disappeared from the folder as it is been polled by the service which you have deployed. 
+
+    ```
+    ls -l
+    ```
+
+5. Go to destination folder `/tmp/soa/out1` and you can see a new file with name `File_1.xml` is created by the soa service.
+
+    ```
+    cd /tmp/soa/out1
+    ls -l
+    ```
+
+    <img src="./images/success.png" width="70%">
+
+6. you can check the **Flow Instances** of the project with one **FlowID** generated
+
+    <img src="./images/soamp-testing-5.png" width="100%">
+
+5. Click on **FlowID** and see the **Audit Trail** and the relevant logs.
+
+    <img src="./images/soamp-testing-6.png" width="100%">
+
+You may proceed to the next lab
 
 ## Acknowledgements
 

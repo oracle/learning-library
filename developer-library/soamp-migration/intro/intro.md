@@ -5,7 +5,7 @@
 This lab will walk you through the process of migrating an existing 'on-premises' SOA Suite to SOA Suite on Marketplace for Oracle Cloud Infrastructure. SOA Suite on Marketplace, SOA Cloud Service, and MFT Cloud Service can be migrated manually following these steps. Side-by-side upgrade from one version to another follows the same process. 
 
 Attached below is a sample architecture of the final solution:
-![](./images/Migration-Architecture.png)
+![](./images/architecture.png)
 
 Estimated Lab Time: 90min.
 
@@ -21,16 +21,15 @@ In this workshop, you will:
 - Upgrade the SOA on-premises application to be migrated to the latest version
 - Migrate the upgraded SOA on-premises application to SOA Suite on OCI
 
-**Note:** This lab will only showcase migration of one application. For a complete guide to migrate SOA to SOA on OCI refer to the `Learn More` section below.
+**Note:** This lab will only showcase migration of one application. For a complete guide to migrate SOA to SOA on OCI refer to the **Learn More** section below.
 
 
 ### Prerequisites
 
 *In order to run this workshop you need:*
 
-* A Mac OS X, Windows or Linux machine
 * A private/public SSH key-pair
-* Firefox browser
+* Firefox browser (recommended as Chrome security may prevent you from loading HTTPS self-signed certificates)
 * An OCI account
 * A Compartment in the tenancy with `manage all-resources` permission to provision the resources
 * A SSH key pair to connect to provisioned instances
