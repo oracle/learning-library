@@ -1,0 +1,81 @@
+#!/bin/expect
+
+set PW "ToBeUpdated_DBAdmPwd"
+set DBHOST "ToBeUpdated_DBSystemIP"
+set SRVNAME "ToBeUpdated_DBSrv"
+set DBNAME "ToBeUpdated_DBName"
+set Prompt "\[#$%>\]"
+set timeout 60
+
+spawn env LANG=C java -jar ords.war setup --database ${DBNAME}
+
+expect {
+    -re "Enter the name of the database server \\\[.*\\\]:" {
+        send -- "${DBHOST}\n"
+    }
+}
+
+expect {
+    -glob "Enter the database listen port \\\[1521\\\]:" {
+        send -- "\n"
+        exp_continue
+    }
+    -glob "Enter 1 to specify the database service name, or 2 to specify the database SID \\\[1\\\]:" {
+        send -- "\n"
+    }
+}
+
+expect {
+    -re "Enter the database service name \\\[.*\\\]:" {
+        send -- "${SRVNAME}\n"
+    }
+    "Enter the database service name:" {
+        send -- "${SRVNAME}\n"
+    }
+}
+
+expect {
+    -glob "Enter 1 if you want to verify/install Oracle REST Data Services schema or 2 to skip this step \\\[1\\\]:" {
+        send -- "\n"
+        exp_continue
+    }
+    -glob "Enter the database password for ORDS_PUBLIC_USER:" {
+        send -- "${PW}\n"
+        exp_continue
+    }
+    -glob "Confirm password:" {
+        send -- "${PW}\n"
+        exp_continue
+    }
+    -glob "Enter the database password for SYS AS SYSDBA:" {
+        send -- "${PW}\n"
+        exp_continue
+    }
+    -glob "Confirm password:" {
+        send -- "${PW}\n"
+        exp_continue
+    }
+    -glob "Enter the default tablespace for ORDS_METADATA \\\[SYSAUX\\\]:" {
+        send -- "\n"
+        exp_continue
+    }
+    -glob "Enter the temporary tablespace for ORDS_METADATA \\\[TEMP\\\]:" {
+        send -- "\n"
+        exp_continue
+    }
+    -glob "Enter the default tablespace for ORDS_PUBLIC_USER \\\[SYSAUX\\\]:" {
+        send -- "\n"
+        exp_continue
+    }
+    -glob "Enter the temporary tablespace for ORDS_PUBLIC_USER \\\[TEMP\\\]:" {
+        send -- "\n"
+        exp_continue
+    }
+    -glob "If using Oracle Application Express or migrating from mod_plsql then you must enter 1 \\\[1\\\]:" {
+        send "2\n"
+        exp_continue
+    }
+    -glob "Enter 1 if you wish to start in standalone mode or 2 to exit \\\[1\\\]:" {
+        send "2\n"
+    }
+}
