@@ -1,0 +1,44 @@
+{
+    "workshoptitle": "Migrate a Tomcat application to Oracle Cloud Infrastructure",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },{
+            "title": "Introduction",
+            "publisheddate": "10/06/2020",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Setup the Demo On-Premises Environment Using Docker",
+            "publisheddate": "10/06/2020",
+            "filename": "../../on-prems-env-docker/on-prems-env-docker.md"
+        },
+        {
+            "title": "Lab 2: Deploy Tomcat on OCI with ATP",
+            "publisheddate": "10/06/2020",
+            "filename": "../../deploy-tomcat/deploy-tomcat.md"
+        },
+        {
+            "title": "Lab 3: Migrate the On-Premises Database to Autonomous Database",
+            "publisheddate": "10/06/2020",
+            "filename": "../../migrate-db/migrate-db.md"
+        },
+        {
+            "title": "Lab 4: Migrate the Tomcat Application",
+            "publisheddate": "10/06/2020",
+            "filename": "../../migrate-app/migrate-app.md"
+        },
+        {
+            "title": "Lab 5: Scaling the Tomcat Cluster",
+            "publisheddate": "10/06/2020",
+            "filename": "../../scale/scale.md"
+        },
+        {
+            "title": "Lab 6: Tear Down the Workshop",
+            "publisheddate": "10/06/2020",
+            "filename": "../../tear-down/tear-down.md"
+        }
+     ]
+}

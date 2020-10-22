@@ -1,0 +1,43 @@
+{
+    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "include": {"define_channels_local_table": "../../data-load/files/define_channels_local_table.sql",
+                "load_data": "../../data-load/files/load_data.sql",
+                "query_tables": "../../data-load/files/query_tables.sql"},
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Provision an Instance",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../provision/provision.md"
+        },
+        {
+            "title": "Lab 2: Setup the Environment",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 3: Load Data into an Instance",
+            "filename": "../../data-load/data-load.md"
+        },
+        {
+            "title": "Lab 4: Query Data",
+            "filename": "../../query/query.md"
+        },
+        {
+            "title": "Lab 5: Analyze Data",
+            "filename": "../../analyze/analyze.md"
+        },
+        {
+            "title": "Lab 6: Visualize Data",
+            "filename": "../../visualize/visualize.md"
+        }
+    ]
+}

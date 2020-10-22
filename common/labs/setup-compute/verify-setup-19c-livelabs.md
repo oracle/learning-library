@@ -141,14 +141,19 @@ Once you deploy your compute instance, tail the log to determine when the databa
     SQL> <copy>exit
     </copy>
     ````
-2. Type exit again to *switch back to the opc user*.  Verify that you are now the opc user using the whoami command.
-   
+2. Type exit again to *switch back to the opc user*.  
     ```
     <copy>
     exit
+    </copy>
+    ```
+3. Verify that you are now the **opc** user using the *whoami* command.  
+    ```
+    <copy>
     whoami
     </copy>
     ```
+
     ![](./images/whoami.png " ")
     
 You may now *proceed to the next lab*.  
@@ -156,7 +161,7 @@ You may now *proceed to the next lab*.
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 1. Can't login to instance
 2. Invalid public key
 3. Limits Exceeded
@@ -193,4 +198,4 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

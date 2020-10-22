@@ -1,21 +1,26 @@
 # Low Code, Microservice Mobile Development
 
 ## Before You Begin
-### Objectives
-- Create a Mobile Application.
-- Access the REST services you deployed in Lab 300 on OKE.
-- Deploy the mobile application to your phone (Android based).
 
 ### Introduction
 
 In this lab you will use Oracle Visual Builder which is a cloud-based software development Platform as a Service (PaaS) and a hosted environment for your application development infrastructure. It provides an open-source standards-based solution to develop, collaborate on, and deploy applications within Oracle Cloud. You will build on the previous labs using the REST points exposed by the AlphaOffice application to OKE in Lab 300.
 
-*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
-[](youtube:X-B180moN-k)
+Estimated time: 45 minutes
+
+### Objectives
+- Create a Mobile Application.
+- Access the REST services you deployed in Lab 300 on OKE.
+- Deploy the mobile application to your phone (Android based).
+
+### Prerequisites
+- Successful completion of Lab 3 and creation of a REST service for products.
 
 ### Required Artifacts
-
 - Use Chrome browser works best in it
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
+[](youtube:X-B180moN-k)
 
 ## **STEP 1**: Configure Visual Builder Studio to create Mobile App
 
@@ -350,5 +355,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
 - **Last Updated By/Date** - 
 - **Workshop Expiration Date** - May 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.     
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.     

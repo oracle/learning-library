@@ -1,7 +1,0 @@
-This image shows the expanded OCI Menu. The menu expands on the left edge of the screen after clicking the menu icon. 
-
-There is one top-level menu categories visible: Core Infrastructure. Under the Core Infrastructure heading are options for Compute, Block Storage, Object Storage, File Storage, and Networking.
-
-The Compute menu item is selected and expanded to reveal another menu. This menu includes options for Instances, Instance Configurations, Instance Pools, Autoscaling Configurations, Custom Images, Boot Volumes, and Boot Volume Backups. The mouse hovers over Instances.
-
-A red box outlines the menu icon, Compute, and Instances. 

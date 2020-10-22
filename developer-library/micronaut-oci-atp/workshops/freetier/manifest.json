@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Building Java Cloud Applications with Micronaut and OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -11,36 +12,29 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Login to Oracle Cloud",
-            "description": "Login to Oracle Cloud",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/01/2020",
-            "contentid": "12nnnn",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
-        },
-        {
-            "title": "Lab 2: Generate SSH Key",
+            "title": "Lab 1: Generate SSH Keys",
             "description": "Generate SSH Key",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/01/2020",
-            "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 3: Provision the OCI Resources",
+            "title": "Lab 2: Provision the OCI Resources",
             "description": "Provision the OCI resources",
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 4: Setup Your Environment",
+            "title": "Lab 3: Setup Your Environment",
             "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 4: Create the Micronaut Application",
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 5: Build the Micronaut Application",
             "filename": "../../micronaut/micronaut.md"
         },
         {
-            "title": "Lab 6: Helidon Service",
+            "title": "Lab 6: Call a Helidon Service",
             "filename": "../../helidon/helidon.md"
         },
         {

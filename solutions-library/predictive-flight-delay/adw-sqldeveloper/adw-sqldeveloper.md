@@ -64,7 +64,7 @@ Start SQL Developer and create a connection for your database using the default 
 
 ### **STEP 1**: Download the Data File to Your Local Computer
 
-For this lab, you will need a data file. Click [here](./files/flights_aircraft_weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport.
+For this lab, you will need a data file. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wTrKIm51wzGkoN_J2R2erJBy96xvsQ7oZB4wn9hPP3s/n/c4u03/b/labfiles/o/flights_aircraft_weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport.
 
 ### **STEP 2**: Load the Data File to the ADW Instance using SQL Developer Data Import Wizard**
 
@@ -119,5 +119,7 @@ On Step 2 of the Import Wizard, you control the import method and parameters. Le
 - **Author** - NATD Solution Engineering - Austin Hub (Joowon Cho)
 - **Last Updated By/Date** - Joowon Cho, Solutions Engineer, May 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request. 

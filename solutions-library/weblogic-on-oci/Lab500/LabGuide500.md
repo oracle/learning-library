@@ -59,7 +59,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 
 The output will look like
 
-  <img src="./images/migrate-db-1.png" width="100%">
+  ![](./images/migrate-db-1.png)
 
 
 ## Step 4) `datapump_import.sh` script

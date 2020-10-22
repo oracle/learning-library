@@ -11,10 +11,9 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
   - Tenant, User name and Password
-  - URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
   - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
-## **STEP 1**: Creating a Web Server on a Compute Instance
+## **STEP 1**: Creating <if type="freetier">a Web Server on </if>a Compute Instance
 
 Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
 
@@ -23,40 +22,71 @@ Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instance
 
 An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
 
-1. Navigate to the **Compute** tab and click **Create Instance**. We will launch a VM instance for this lab.
+1. Navigate to the **Compute** tab and select **Instances**.
 
-2. The Create Compute Instance wizard will launch. Set the name of the server to *Web-Server*. Click on the *Show Shape, Networking, Storage Options* link to expand that area of the page.
+<if type="livelabs">
+2. Select the Compartment that you were assigned when the reservation was created.
+
+  ![](images/create-compute-livelabs-1.png)
+</if>
+
+2. Then click **Create Instance**. We will launch a VM instance for this lab.
+
+3. The Create Compute Instance wizard will launch.
+    <if type="freetier">Enter *Web-Server* as the name of the server. Click on the *Show Shape, Networking, Storage Options* link to expand that area of the page.</if>
+    <if type="livelabs">Enter your username + *-Instance* as the name of the server.</if>
+
+    <if type="freetier">
     ![Create step 1](images/Create1.png " ")
+    </if>
+    <if type="livelabs">
+    ![](images/create-compute-livelabs-2.png)
+    </if>
 
-3. Most of the defaults are perfect for our purposes. However, you will need to scroll down to the Configure Networking area of the page and select the *Assign a public IP address* option.
-    ![Create step 2](images/Create2.png " ")
+<if type="livelabs">
+4. Click *Change Shape* to choose a VM shape.
+
+    ![](images/create-compute-livelabs-3.png)
+
+5. Select *Intel Skylake*, then select **VM.Standard.2.1** as the shape, and click **Select Shape**.
+
+    ![](images/create-compute-livelabs-4.png)</if>
+
+3. In the Networks section, most of the defaults are perfect for our purposes. However, you will need to scroll down to the Configure Networking area of the page and select the *Assign a public IP address* option.
+
+    <if type="freetier">
+    ![Create step 2](images/Create2.png " ")</if>
+
+    <if type="livelabs">
+    ![](images/create-compute-livelabs-4b.png)</if>
 
     ***NOTE:*** *You need a public IP address so that you can SSH into the running instance later in this lab.*
 
 4. Scroll down to the SSH area of the page. Choose SSH key that you created earlier in ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
 
+    ![](images/create-compute-livelabs-5.png)
+
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
-5. Once the instance state changes to Running, you can SSH to the Public IP address of the instance.
+5. Once the instance state changes to Running, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
 
-    ![Create step 3](images/Create3.png " ")
+    <if type="freetier">
+    ![Create step 3](images/Create3.png " ")</if>
 
-## **STEP 2**: Connect to the instance and install Apache HTTP Server
+    <if type="livelabs">
+    ![](images/compute-livelabs-running/png)</if>
 
-1. To connect to the instance, you can use `Terminal` if you are using MAC or `Gitbash` if you are using Windows. On your terminal or gitbash enter the following command:
+## **STEP 2**: Connect to the instance <if type="freetier">and install Apache HTTP Server</if>
+
+1. To connect to the instance, use Cloud Shell and enter the following command:
 
     **Note:** For Oracle Linux VMs, the default username is **opc**
 
     ```
-    <copy>ssh opc@&lt;public_ip_address&gt;</copy>
+    <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
-    If you have a different path for your SSH key enter the following:
-
-    ```
-    <copy>ssh -i &lt;path_to_private_ssh_key&gt; opc@&lt;public_ip_address&gt;</copy>
-    ```
-
+<if type="freetier">    
 2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. SSH into the Linux instance and run following commands:
 
     *Note: Apache HTTP Server is an open-source web server developed by the Apache Software Foundation. The Apache server hosts web content, and responds to requests for this content from web browsers such as Chrome or Firefox.*
@@ -132,13 +162,18 @@ If you are unable to see the webserver on your browser, possible scenarios inclu
   - `# sudo netstat -tulnp | grep httpd` (an httpd service should be listening on the port 80, if it’s a different port, open up that port on your VCN SL)
 
 - Your company VPN is blocking traffic
+</if>
+
+*You have completed this lab, you may proceed to the next one.*
 
 ## Acknowledgements
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Tom McGinn, July 2020
+- **Last Updated By/Date** - Tom McGinn, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

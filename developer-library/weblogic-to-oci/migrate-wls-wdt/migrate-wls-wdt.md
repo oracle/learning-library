@@ -1,23 +1,21 @@
-# Migrating the WebLogic domain
+# Migrating the WebLogic Domain
 
-## Introduction: 
+## Introduction
 
 Migrating a WebLogic domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
 
 We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on OCI.
 
-Estimated Lab Time: 15 min
+Estimated Lab Time: 15 minutes
 
 ### About Product/Technologies
 
 **WebLogic Deploy Tooling** is an open source tool found on Github at [https://github.com/oracle/weblogic-deploy-tooling](https://github.com/oracle/weblogic-deploy-tooling)
 
-Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
+Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
 
 - Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
-
 - Edit the the **model** file and **variable** file to target the new infrastructure on OCI.
-
 - Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
 
 ### Objectives
@@ -39,11 +37,11 @@ To run this lab, you need to:
 - Have deployed a WebLogic on OCI domain using the marketplace
 - Have migrated the Application database from the source environment to OCI
 
-## **STEP 1:** Installing WebLogic Deploy Tooling
+## **STEP 1:** Installing WebLogic deploy tooling
 
-### Using the Docker 'on-premises' environment:
+### Using the docker 'on-premises' environment:
 
-1. If you were in the Database container to perform the previous steps of database migration, exit the database container with 
+1. If you were in the Database container to perform the previous steps of database migration, exit the database container with
 
     ```bash
     <copy>
@@ -71,7 +69,7 @@ To run this lab, you need to:
 
     This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
 
-### Using the demo Workshop Marketplace image
+### Using the demo workshop marketplace image
 
 
 You should already be in the 'on-premises' environment logged in as the `oracle` user.
@@ -87,59 +85,8 @@ You should already be in the 'on-premises' environment logged in as the `oracle`
 
     This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`
 
-<details><summary>View the <code>install_wdt.sh</code> script</summary>
-
-  ```bash
-  WLSDT_VERSION=1.7.3
-  # download the zip archive of the tool from Github
-  curl -LO https://github.com/oracle/weblogic-deploy-tooling/releases/download/weblogic-deploy-tooling-${WLSDT_VERSION}/weblogic-deploy.zip 
-  
-  # unzip and cleanup
-  unzip weblogic-deploy.zip
-  rm weblogic-deploy.zip
-
-  # make the scripts executable
-  chmod +x weblogic-deploy/bin/*.sh
-  ```
-  </details>
 
 ## **STEP 2:** Discover the on-premises domain
-
-<details><summary>View the <code>discover_domain.sh</code> script</summary>
-
-```bash
-# default to JRF domain which filters out JRF libraries and applications
-# If the domain is not JRF, the content would not be present so filterign it out will not make a difference
-DOMAIN_TYPE=JRF
-
-# clean up before starting
-rm source.* || echo "clean startup"
-
-echo "Discovering the source domain..."
-weblogic-deploy/bin/discoverDomain.sh \
-    -oracle_home $MW_HOME \
-    -domain_home $DOMAIN_HOME \
-    -archive_file source.zip \
-    -model_file source.yaml \
-    -variable_file source.properties \
-    -domain_type $DOMAIN_TYPE
-
-# This part insures that applications that are under the ORACLE_HOME are also extracted.
-# by default WDT does not extract applications under the ORACLE_HOME as it is not following current best practices. However in older versions of WLS, this was common.
-
-if [[ "$(cat source.yaml | grep '@@ORACLE_HOME@@' | wc -l)" != "0" ]]; then
-    echo "Some of the application files are located within the ORACLE_HOME and won't be extracted by WDT"
-    echo "Extracting those files and updating paths in the model file..."
-    rm -rf ./wlsdeploy/
-    mkdir -p ./wlsdeploy/applications;
-    cp $(cat source.yaml | grep '@@ORACLE_HOME@@' | sed "s|.*: '@@ORACLE_HOME@@\(.*\)'|${ORACLE_HOME}\1|") ./wlsdeploy/applications/;
-    zip -r source.zip ./wlsdeploy;
-    rm -rf ./wlsdeploy/
-    sed -i "s|@@ORACLE_HOME@@|wlsdeploy\/applications|g;" source.yaml
-fi
-```
-
-</details>
 
 The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate 3 files:
 
@@ -536,15 +483,15 @@ appDeployments:
 
 1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`
 
-2. Enter the JDBC Connection password for the `RIDERS` user pdb (this is can be found in the `./weblogic-to-oci/weblogic/env` file under `DS_PASSWORD`).
+2. Enter the JDBC Connection password for the `RIDERS` user pdb: `Nge29v2rv#1YtSIS#`
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
   the resulting file should look like:
 
-  ```yaml
-  JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
-  ```
+    ```yaml
+    JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
+    ```
 
 3. Save the file with `CTRL+x` and `y`
 
@@ -560,29 +507,17 @@ The `update_domain.sh` script updates the target domain.
 
 - and finally runs the `update_domain_as_oracle_user.sh` through SSH to update the WebLogic domain on OCI with the edited source files.
 
-`update_domain_as_oracle_user.sh` script:
-```bash
-weblogic-deploy/bin/updateDomain.sh \
--oracle_home $MW_HOME \
--domain_home $DOMAIN_HOME \
--model_file source.yaml \
--variable_file source.properties \
--archive_file source.zip \
--admin_user weblogic \
--admin_url t3://$(hostname -i):9071
-```
-
 The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling** script `updateDomain.sh` online, by providing the `-admin_url` flag.
 
 **Note:** the url uses the `t3` protocol which is only accessible through the internal admin server port, which is `9071` on the latest WebLogic Marketplace stack, for older provisioning of the stack, the port may be `7001`
 
 1. Edit the `update_domain.sh` script 
 
-  ```bash
-  <copy>
-  nano update_domain.sh
-  </copy>
-  ```
+    ```bash
+    <copy>
+    nano update_domain.sh
+    </copy>
+    ```
 2. Provide the `TARGET_WLS_ADMIN` 
     This is the **WebLogic Admin Server public IP** gather previously.
   
@@ -859,15 +794,18 @@ updateDomain.sh completed successfully (exit code = 0)
 5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioing, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
-Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
+    Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
 
   <img src="./images/oci-simpledb-app.png" width="100%">
 
+You may proceed to the next lab.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

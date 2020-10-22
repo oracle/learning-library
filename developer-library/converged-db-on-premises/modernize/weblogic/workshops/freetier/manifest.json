@@ -1,0 +1,38 @@
+{
+    "workshoptitle": "Oracle Weblogic and Helidon Workshop",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to Weblogic and Helidon",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Prepare Setup",
+            "description": "How to download your ORM stack and update security rules for an existing VCN",
+            "publisheddate": "09/28/2020",
+            "filename": "../../prepare-setup/prepare-setup.md"
+        },
+        {
+            "title": "Lab 3: Environment Setup",
+            "description": "How to provision the workshop environment and connect to it",
+            "publisheddate": "06/30/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+        },
+        {
+            "title": "Lab 4: Weblogic and Helidon",
+            "description": "Weblogic and Helidon Lab",
+            "publisheddate": "08/10/2020",
+            "filename": "../../weblogic-helidon/weblogic-helidon.md"
+        }
+    ]
+}

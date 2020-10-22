@@ -1,1 +1,0 @@
-This image shows the page for your Oracle Cloud Account sign in. The dialog contains two fields: User Name and Password. Your Cloud account name (or tenancy) is shown above these field. The page also shows the Sign In button below these fields.

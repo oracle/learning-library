@@ -9,7 +9,7 @@ Join Oracle's ***Wim Coekaerts***, *senior vice president of software developmen
 
 ## Workshop Description
 The Database Configuration and Compliance Management is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
-- This Workshop VM comes preinstalled with Enterprise Manager 13.3 and Oracle Database targets - 18.3, 18.8 and 19.7
+- This Workshop VM comes preinstalled with Enterprise Manager 13.4 Release Update 5 and Oracle Database targets - 18.3, 18.8 and 19.7
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
 ### Applicable Enterprise Manager Management Packs
@@ -22,6 +22,7 @@ Oracle Database Compliance and Drift Management including configuration and secu
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
 - Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
+- Host security compliance using custom compliance standard
 
 ## Additional Workshop Supported Use Cases
 
@@ -72,7 +73,9 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Contributors** - Dave Le Roy, Harish Niddagatta - Enterprise Manager Product Management
-- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

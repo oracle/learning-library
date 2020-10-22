@@ -1,5 +1,6 @@
 {
-  "tutorials": [
+    "workshoptitle": "Building a Proof-of-Concept for Oracle Autonomous Cloud Services",
+    "tutorials": [
     {
       "title": "Prerequisites",
       "filename": "../../../common/1-sign-up-apex/1-sign-up-apex.md"

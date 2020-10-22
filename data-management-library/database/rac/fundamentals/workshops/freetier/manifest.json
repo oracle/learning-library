@@ -1,0 +1,65 @@
+{
+    "workshoptitle": "RAC Fundamentals",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+         {
+            "title": "Introduction",
+            "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Build a DB System",
+            "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
+            "filename": "../../setup/setup-compute.md"
+        },
+        {
+            "title": "Lab 3: Clusterware and Fencing",
+            "description": "This lab walks you through clusterwarwe reconfigurations and node fencing.",
+            "filename": "../../clusterware/test_gi.md"
+        },
+        {
+            "title": "Lab 4: Fast Application Notification",
+            "description": "This lab examines FAN events.",
+            "filename": "../../clusterware/fan_callouts.md"
+        },
+        {
+            "title": "Lab 5: Install Sample Schema",
+            "description": "This lab walks you through installing the sample schema.",
+            "filename": "../../services/setup.md"
+        },
+        {
+            "title": "Lab 6: Services",
+            "description": "This lab walks you through some of the characteristics of database services.",
+            "filename": "../../services/services.md"
+        },
+        {
+            "title": "Lab 7: SQL and PL/SQL - Sequences",
+            "description": "This lab walks you through the use of sequences in a RAC database.",
+            "filename": "../../sql/racsql.md"
+        },
+        {
+            "title": "Lab 8: Parallel Execution ",
+            "description": "This lab illustrates parallel execution.",
+            "filename": "../../sql/parallelexecution.md"
+        },
+        {
+            "title": "Lab 9: Oracle Scheduler ",
+            "description": "This lab walks you through the use of Oracle Scheduler in a RAC database.",
+            "filename": "../../sql/scheduler.md"
+        },
+        {
+            "title": "Lab 10: PL/SQL Packages",
+            "description": "This lab walks you through the use of UTL packages in a cluster.",
+            "filename": "../../sql/utl_file_test.md"
+        }
+    ]
+}

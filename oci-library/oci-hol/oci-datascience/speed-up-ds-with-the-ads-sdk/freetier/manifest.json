@@ -1,0 +1,45 @@
+{
+      "workshoptitle": "Speed Up Data Science with the Accelerated Data Science SDK",
+      "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Data Science Service",
+            "filename": "./../../common/odsc-intro.md"
+        },
+        {
+            "title": "Lab 1: Configure the Data Science Service",
+            "description": "Configure the tenancy to work with the Data Science service.",
+            "filename": "./../../common/orm-solution-hub-setup.md"
+        },
+        {
+            "title": "Lab 2: Create a Project",
+            "description": "Create a project to contain the Data Science Notebooks.",
+            "filename": "./../../common/project-setup.md"
+        },
+        {
+            "title": "Lab 3: Create a Notebook Session",
+            "description": "Create a Notebook Session and launch it.",
+            "filename": "./../../common/notebook-setup.md"
+        },
+        {
+            "title": "Lab 4: Accelerated Data Science SDK",
+            "description": "Introduction to the Accelerated Data Science SDK.",
+            "filename": "./../../common/ads-intro.md"
+        },
+        {
+            "title": "Lab 5: Binary Classification Model",
+            "description": "Learn about ADS using a binary classification model.",
+            "filename": "./../binary-classification-attrition.md"
+        },
+        {
+            "title": "Lab 6: Shutting Down a Notebook Session",
+            "description": "Deactivate or terminate a notebook session.",
+            "filename": "./../../common/notebook-shutdown.md"
+        }
+    ]
+}

@@ -1,1 +1,0 @@
-This image shows the page for your Oracle Cloud Account sign in. The page reflects the Cloud account name. Below are two fields: "User Name or Email" and "Password". The Sign In button below these fields.

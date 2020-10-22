@@ -15,23 +15,23 @@
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
       },
       {
-          "title": "Lab 2: Identity and Access Management",
-          "filename": "../../../identity-access-management/identity-access-management.md"
-      },
-      {
-          "title": "Lab 3: Virtual Cloud Networks",
+          "title": "Lab 2: Virtual Cloud Networks",
+          "type": "livelabs",
           "filename": "../../../virtual-cloud-networks/virtual-cloud-networks.md"
       },
       {
-          "title": "Lab 4: Create a Compute Service",
+          "title": "Lab 3: Create a Compute Service",
+          "type": "livelabs",
           "filename": "../../../compute-service/compute-service.md"
       },
       {
-          "title": "Lab 5: Block Volume",
+          "title": "Lab 4: Block Volume",
+          "type": "livelabs",
           "filename": "../../../block-volume/block-volume.md"
       },
       {
-          "title": "Lab 6: Object Storage",
+          "title": "Lab 5: Object Storage",
+          "type": "livelabs",
           "filename": "../../../../object-storage/object-storage.md"
       }
     ]

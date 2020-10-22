@@ -1,4 +1,5 @@
 {
+    "workshoptitle":"Automatic Indexing in DB19c",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -7,17 +8,11 @@
         },{
             "title": "Introduction",
             "description": "About the New features for Developers Workshop",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/01/2020",
-            "contentid": "12nnnn",
             "filename": "../../intro/intro.md"
           },
         {
             "title": "Lab 1: Generate SSH Key - Cloud Shell",
             "description": "Generate SSH Key",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/01/2020",
-            "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
         },
         {

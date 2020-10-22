@@ -1,5 +1,6 @@
 {
-  "tutorials": [
+    "workshoptitle": "Building an App using a Remote Data Source for Oracle Autonomous Cloud Services",
+    "tutorials": [
     {
       "title": "Introduction",
       "filename": "../../0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"

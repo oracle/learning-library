@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Create a Compute Service",
     "tutorials": [
       {
           "title": "Prerequisites",
@@ -16,6 +17,7 @@
       },
       {
           "title": "Lab 2: Create a Compute Service",
+          "type": "livelabs",
           "filename": "./../../compute-service.md"
       }
     ]

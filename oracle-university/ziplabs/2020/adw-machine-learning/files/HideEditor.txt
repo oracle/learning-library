@@ -1,1 +1,0 @@
-This image zooms in on the command buttons for the SQL paragraph. The Run This Paragraph button is the first in the row. The second button is Hide editor. It's highlighted with a red box.

@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Oracle Integration SOA Fundamentals",
+    "tutorials": [
+
+        {
+            "title": "Introduction",
+            "description": "This is an intro and prerequisites for using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+             "filename": "./introduction.md"
+        },
+        {
+            "title": "Lab 1: Integration with Service Oriented Architecture",
+            "description": "Service Orientated architecture.",
+            "filename": "./1-integration-with-soa.md"
+        },
+        {
+            "title": "Lab 2: Develop SOA composite for Validating Payment",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "./2-build-composite-for-validate-payment.md"
+        },
+        {
+            "title": "Lab 3: Register the Validate payment to Service Bus",
+            "filename": "./3-register-the-composite-to-service-bus.md"
+        },
+        {
+            "title": "Lab 4: REST-api enabled the Validate Payment",
+            "filename": "./4-rest-api-the-composite.md"
+        } 
+    ]
+}

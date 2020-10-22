@@ -1,0 +1,52 @@
+{
+  "workshoptitle": "Oracle Data Integrator 12c",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction to ODI",
+      "description": "Introduction to ODI",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Key",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Provision ADB and Link to ODI",
+      "filename": "../../odi-adb-provision/odi-adb-provision.md"
+    },
+    {
+      "title": "Lab 3: Create an ODI Instance",
+      "filename": "../../setup-odi-rep/setup-odi-rep.md"
+    },
+    {
+      "title": "Lab 4: Getting Started",
+      "filename": "../../odi12c-lab/odi12c-lab.md"
+    },
+    {
+      "title": "Lab 5: Work with Mappings - 1",
+      "filename": "../../odi12c-mappings-1/odi12c-mappings-1.md"
+    },
+    {
+      "title": "Lab 6: Work with Mappings - 2",
+      "filename": "../../odi12c-mappings-2/odi12c-mappings-2.md"
+    },
+    {
+      "title": "Lab 7: Implementing Data Quality Control",
+      "filename": "../../odi12c-data-quality-control/odi12c-data-quality-control.md"
+    },
+    {
+      "title": "Lab 8: Work with Packages",
+      "filename": "../../odi12c-packages/odi12c-packages.md"
+    },
+    {
+      "title": "Lab 9: Deploying Integrated Applications ",
+      "filename": "../../odi12c-production/odi12c-production.md"
+    }
+  ]
+}

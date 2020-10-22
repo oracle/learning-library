@@ -1,0 +1,36 @@
+{
+    "workshoptitle": "Introduction to Cloud Native",
+    "tutorials": [{
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys - Cloud Shell",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Lab 2: Setup Cloud Environment",
+            "filename": "../../setup-cloud-env/setup-cloud-env.md"
+        },
+        {
+            "title": "Lab 3: Autonomous Microservice Data Structure Configuration",
+            "filename": "../../autonomous-microservice-data-structure-configuration/autonomous-microservice-data-structure-configuration.md"
+        },
+        {
+            "title": "Lab 4: Building, Containerizing Java REST Services",
+            "filename": "../../containerizing-java-services/containerizing-java-services.md"
+        },
+        {
+            "title": "Lab 5: Kubernetes REST Service Deployment",
+            "filename": "../../kubernetes-rest-service-deployment/kubernetes-rest-service-deployment.md"
+        },
+        {
+            "title": "Lab 6: Configuring Functions",
+            "filename": "./../../configuring-fn/configuring-fn.md"
+        }
+    ]
+}

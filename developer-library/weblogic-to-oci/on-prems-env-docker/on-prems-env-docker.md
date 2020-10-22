@@ -1,12 +1,12 @@
-# Setup a local (on-premises) environment using Docker
+# Setup a Local (On-Premises) Environment Using Docker
 
-## Introduction: 
+## Introduction
 
-This lab will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine. 
+This lab will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
 
 At the end of this lab, you will have a local environment running with an Oracle 12c Database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
 
-Estimated Lab Time: 30 min
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -15,7 +15,7 @@ In this lab you will:
 - Get the Docker environment files
 - Startup the Docker-based 'on-premises' demo environment
 - Check that the environment is running properly
-- Create a SSH key pair to communicate with the OCI services.
+- Create an SSH key pair to communicate with the OCI services.
 
 
 ### Prerequisites
@@ -43,7 +43,7 @@ To run this lab, you will need:
 
 *Make sure you followed the installation instructions to setup Docker as root and:*
 
-1. If you don't have a `oracle` user, create it an add it to a `oracle` group with:
+1. If you don't have an `oracle` user, create it an add it to a `oracle` group with:
 
     ```bash
     <copy>
@@ -98,6 +98,13 @@ You can also download the code [here](https://objectstorage.us-ashburn-1.oraclec
     </copy>
     ```
 
+    If you do not have wget installed, you can download through your browser, or install wget with 
+    ```
+    <copy>
+    brew install wget
+    </copy>
+    ```
+
 2. Unzip the files with:
 
     ```bash
@@ -112,11 +119,9 @@ You can also download the code [here](https://objectstorage.us-ashburn-1.oraclec
 
 1. Download the code [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ufHAcuj6M4xpPsqYVmHBsSA7vFUiAsx7GF_gZMB9hyo/n/ocisateam/b/images/o/weblogic-to-oci.zip)
 
-2. Unzip the file with your prefered tool 
+2. Unzip the file with your preferred tool 
 
 3. Open a terminal and get into the unzipped folder
-
-</details>
 
 ## **STEP 2:** Agree to the terms of the private docker images
 
@@ -155,7 +160,6 @@ This repository makes use of Oracle docker images which are licensed and need to
     </copy>
     ```
 
-
 ## **STEP 3:** Start the local environment
 
 *Startup the local environment stack that will simulate our 'on-premises' environment*
@@ -165,10 +169,11 @@ This repository makes use of Oracle docker images which are licensed and need to
     ```
     <copy>
     cd weblogic-to-oci
+    docker-compose build --no-cache
     docker-compose up -d
     </copy>
     ```
-    
+
     This step can take several minutes because some images need to be built. 
 
 2. On linux or Windows, Docker permission may cause issues so run:
@@ -178,7 +183,6 @@ This repository makes use of Oracle docker images which are licensed and need to
     docker exec -it --user=root weblogic-to-oci_oracledb_1 /bin/chown 54321:54321 ~/.ssh
     </copy>
     ```
-
 
 ### Troubleshooting
 
@@ -200,19 +204,19 @@ The weblogic container waits for the database to be ready, and the schemas to be
 
 2. To check status of the initialization, you can check if the `weblogic-to-oci_oracledbinit_1` container has finished running by running:
 
-```
-<copy>
-docker ps
-</copy>
-```
-The following output shows the init container has terminated and the system should be ready:
-```
-CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS                PORTS                                                                          NAMES
-bf43e3bd5a78        weblogic-to-oci_oracledb    "/bin/sh -c '/bin/ba…"   7 days ago          Up 7 days (healthy)   127.0.0.1:1521->1521/tcp, 127.0.0.1:5000->5000/tcp, 5500/tcp                   weblogic-to-oci_oracledb_1
-38bcbb1555b8        weblogic-to-oci_wls_admin   "/u01/oracle/startNM…"   7 days ago          Up 7 days             127.0.0.1:7001->7001/tcp, 127.0.0.1:7003->7003/tcp, 127.0.0.1:7005->7005/tcp   weblogic-to-oci_wls_admin_1
-```
+    ```
+    <copy>
+    docker ps
+    </copy>
+    ```
+    The following output shows the init container has terminated and the system should be ready:
+    ```
+    CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS                PORTS                                                                          NAMES
+    bf43e3bd5a78        weblogic-to-oci_oracledb    "/bin/sh -c '/bin/ba…"   7 days ago          Up 7 days (healthy)   127.0.0.1:1521->1521/tcp, 127.0.0.1:5000->5000/tcp, 5500/tcp                   weblogic-to-oci_oracledb_1
+    38bcbb1555b8        weblogic-to-oci_wls_admin   "/u01/oracle/startNM…"   7 days ago          Up 7 days             127.0.0.1:7001->7001/tcp, 127.0.0.1:7003->7003/tcp, 127.0.0.1:7005->7005/tcp   weblogic-to-oci_wls_admin_1
+    ```
 
-If you see a container called `weblogic-to-oci_oracledbinit`, this means the initialization is still ongoing.
+    If you see a container called `weblogic-to-oci_oracledbinit`, this means the initialization is still ongoing.
 
 3. To troubleshoot problems in the setup, check the logs in the docker containers with:
 
@@ -228,24 +232,23 @@ If you see a container called `weblogic-to-oci_oracledbinit`, this means the ini
     </copy>
     ```
 
-Before proceeding, make sure the local environment has been deployed properly and is running. 
+    Before proceeding, make sure the local environment has been deployed properly and is running. 
 
-![](./images/localhost-admin-console.png)
+    ![](./images/localhost-admin-console.png)
 
+    The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/)
 
-The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/)
+    It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
-It shows statistics of riders of the Tour de France stored in the database, and looks like this:
+    ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
 
-![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
+## **STEP 5:** Create an SSH key
 
-## **STEP 5:** Create a SSH key
-
-*We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
+*We'll need an SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
 
 Since we'll be running all our commands from docker containers, a folder has been mounted on the `~/.ssh/` folder inside both containers, so that it is shared and also accessible from the outside.
 
-We'll create a SSH key pair in this folder
+We'll create an SSH key pair in this folder
 
 1. Get inside the Oracle Database container:
 
@@ -255,7 +258,7 @@ We'll create a SSH key pair in this folder
     </copy>
     ```
 
-2. Create the SSH keypair
+2. Create the SSH key pair
 
     ```bash
     <copy>
@@ -268,16 +271,20 @@ We'll create a SSH key pair in this folder
 
     `id_rsa` is the private key, which should never be shared, and will be required to connect to any OCI resource provisioned with the corresponding public key `id_rsa.pub`
 
-    Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you will need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`
+    Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you would need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`
 
-**Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
+    **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 
-**Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
+    **Note:** If you're using a firewall and your instance is not local, make sure the ports for WebLogic (7001-7005) are open to be able to test the environment.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

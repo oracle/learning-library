@@ -9,13 +9,16 @@ The objective of this lab is to become familiar with on-premise and Oracle Cloud
 - You have completed:
     - Lab: Generate SSH Keys
     - Lab: Environment Setup
-- EM Instance Public IP address
 - SSH Private Key to access the host via SSH
-- OMS Console URL: *https://``<Replace with your EM13c VM Instance Public IP>``:7803/em*.
-    - e.g: *https://111.111.111.111:7803/em*  
 - OMS super-user Credentials:
-      - Username: **sysman**
-      - password: **welcome1**
+    - Username: **sysman**
+    - password: **welcome1**
+- EM13c Host Public IP address
+- OMS Console URL:
+````
+<copy>https://<EM13c Host Public IP address>:7803/em</copy>
+e.g: https://111.888.111.888:7803/em
+````
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
@@ -40,7 +43,7 @@ Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g
   ````
 
 ### Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
+Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -363,7 +366,7 @@ Details about newly published statistics can be found if you navigate **Schema**
 ## **Step 5:** Database Workload Replay
 
 1. Create a Replay Task
-You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.  
+You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.
 
 ````
 <copy>sudo su - oracle</copy>
@@ -380,11 +383,11 @@ You need to open two SSH sessions to your dedicated VM host as user "opc" using 
 4. Connect to sales database and create indexes. (indexes are already created, just need to make them visible)
 
 ````
-<copy>sqlplus system/welcome1@oltp
+<copy>sqlplus system/welcome1@oltp <<EOF
 alter index dwh_test.DESIGN_DEPT_TAB2_IDX1 visible;
 alter index dwh_test.DISTRIBUTION_DEPT_TAB2_IDX visible;
 alter index dwh_test.OUTLETS_TAB3_IT_IDX visible;
-exit</copy>
+EOF</copy>
 ````
 
 5. We have already performed the capture and stored it in
@@ -402,8 +405,9 @@ cd RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
 6. Connect to as sysdba and grant become user to system on all containers
 
 ````
-<copy>sqlplus sys/welcome1 as sysdba
-grant become user to system container=all;</copy>
+<copy>sqlplus sys/welcome1 as sysdba <<EOF
+grant become user to system container=all;
+EOF</copy>
 ````
 
 7. Connect to system create a directory object to locate the capture and preprocess the capture
@@ -588,5 +592,7 @@ Thank You!
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

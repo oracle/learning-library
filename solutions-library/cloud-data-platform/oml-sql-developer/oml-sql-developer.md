@@ -1,10 +1,5 @@
 # Oracle Machine Learning (OML) and SQL Developer
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
 ## Introduction
 
 This lab walks you through the steps to make an OML user and use SQL Developer as an interface to the ADW instance for granting user privileges. Then you will use OML to run a SQL script to generate machine learning models.
@@ -86,7 +81,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/sqlw3.png " ")
 
-7. Let's grant this user some privileges. Copy and paste the following SQL query into the **[Worksheet]** section: 
+7. Let's grant this user some privileges. Copy and paste the following SQL query into the **[Worksheet]** section:
 ```
 <copy>
 GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, READ ANY TABLE, SELECT ANY TABLE, UNDER ANY TABLE, UPDATE ANY TABLE TO TESTUSER
@@ -140,7 +135,7 @@ GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP AN
 
 5. Now we have to run the scripts in the ML Notebook. Some notebooks may take longer to run than others. In particular, the "build glm model" script block will likely take up to 10 minutes to fully run. This is an important step in building the ML model, so be sure to be patient and wait until this script completely finishes each code block.
 
-6. Select the "Run all Paragraphs" button at the top of the screen, highlighted in the image below. You should see output messages at the end of code blocks indicating the time taken to complete running the code. There should be no **outdated** tags at the end of these output messages. This is how you will confirm that each code block runs successfully at the end of running the entire notebook. 
+6. Select the "Run all Paragraphs" button at the top of the screen, highlighted in the image below. You should see output messages at the end of code blocks indicating the time taken to complete running the code. There should be no **outdated** tags at the end of these output messages. This is how you will confirm that each code block runs successfully at the end of running the entire notebook.
 
     ![](./images/24.png " ")
 
@@ -180,8 +175,7 @@ GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP AN
 - **Contributors** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Jess Rein, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-
-
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.
