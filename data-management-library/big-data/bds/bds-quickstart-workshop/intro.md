@@ -33,12 +33,12 @@ Watch our short video that explains key features in Oracle Big Data Service:
 - **Lab 5:** Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
 - **Lab 6:** Create a Hadoop Administrator User
 
-**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
+**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu.**
 
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account or a training account whose details were given to you by an Oracle instructor.
 
-**You are all set to begin the labs! Please click Lab 1: Setup the BDS Environment in the Contents menu on the right.**
+**You are all set to begin the labs! Please click Lab 1: Setup the BDS Environment in the Contents menu.**
 
 ## Want to Learn More About Oracle Big Data Service?
 
@@ -55,8 +55,11 @@ Use these links to get more information about BDS and OCI:
 ## Acknowledgements
 
 * **Authors:**
-    * Martin Gubar, Director, Oracle Big Data Product Management
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Last Updated By/Date:** Lauran Serhal, August 2020
+    * Martin Gubar, Director, Oracle Big Data Product Management
+* **Last Updated By/Date:** Lauran Serhal, October 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).  Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

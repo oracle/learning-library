@@ -1,8 +1,9 @@
 {
+  "workshoptitle": "Configuring Functions in OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Introduction",

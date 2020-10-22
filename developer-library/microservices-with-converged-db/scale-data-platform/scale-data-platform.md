@@ -13,7 +13,7 @@ Next paragraph of background information
 
 ### What Do You Need?
 
-* Item no 1.
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account.
 * Item no 2 with url - [URL Text](https://www.oracle.com).
 
 ## Section 1 title
@@ -75,5 +75,5 @@ Conclusion of section 2 here.
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help  using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request. 

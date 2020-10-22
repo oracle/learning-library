@@ -1,0 +1,10 @@
+{
+    "workshoptitle": "Developer LiveLabs on GitHub",
+    "tutorials": [
+        {
+            "title": "Welcome!",
+            "description": "This is the landing page for the oracle/learning-library repo",
+            "filename": "README.md"
+        }
+    ]
+}

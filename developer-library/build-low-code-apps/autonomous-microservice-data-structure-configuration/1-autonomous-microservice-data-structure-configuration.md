@@ -1,6 +1,13 @@
 # Autonomous Transaction Processing Data Structure Configuration
 
 ## Before You Begin
+
+### Introduction
+
+In this lab you will use your Oracle Cloud Trial Account to upload a Data Pump export file to Object Storage and leverage SQL Developer Web to import the Data Pump export file into an Autonomous Transaction Processing (ATP) Database.
+
+Estimated time: 30 minutes
+
 ### Objectives
 - Log into OCI tenancy.
 - Create an Oracle Cloud Infrastructure (OCI) Storage Bucket and Generate a User Authorization Token.
@@ -14,9 +21,8 @@
 	- Create ATP Database user.
 	- Create required tables.
 
-### Introduction
-
-In this lab you will use your Oracle Cloud Trial Account to upload a Data Pump export file to Object Storage and leverage SQL Developer Web to import the Data Pump export file into an Autonomous Transaction Processing (ATP) Database.
+### Prerequisites
+- An Oracle Cloud account, Free Trail, Livelab or Paid account
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:vo_doCpX0KQ)
@@ -29,20 +35,20 @@ In this lab you will use your Oracle Cloud Trial Account to upload a Data Pump e
 
     [https://www.oracle.com/](https://www.oracle.com/)
 
-  ![](../images/common/login-screen.png " ")
+      ![](../images/common/login-screen.png " ")
 
 2. Click the icon in the upper right corner.  Click on **Sign in to Cloud** at the bottom of the drop down.   
 
-  ![](../images/common/signup.png " ")   
+      ![](../images/common/signup.png " ")   
 
 3. Enter your **Cloud Account Name** in the input field and click the **Next** button.  *NOTE: this is NOT your email. This is the name of your tenancy noted in the email you received during signup. Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud.*
 
-![](../images/common/cloud-login-tenant.png " ")   
+      ![](../images/common/cloud-login-tenant.png " ")   
 
 4. Enter your username (this may be your email address) and password and click on **Sign In**. 
     
 
-![](../images/common/username.png " ")  
+      ![](../images/common/username.png " ")  
 
 ## **STEP 2:** Create User Auth Token, Storage Bucket and Upload Data Pump export file.
 
@@ -319,5 +325,7 @@ This step is optional and can be done in both the Product and User ATP instances
 - **Last Updated By/Date** -
 - **Workshop Expiration Date** - May 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

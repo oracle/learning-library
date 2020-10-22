@@ -20,13 +20,13 @@ Estimated Time: 75 minutes
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select the compartment assigned to you from the drop down menu on the left side of the screen(you may need to scroll down to see the dropdown) and Click **Start VCN Wizard**.
 
-    ![](images/HAApplication_001.png " ")
+    ![](images/HAApplication_001.png)
 
     *NOTE: Ensure the correct Compartment is selected under COMPARTMENT list*
 
 2. Choose **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
-    ![](images/HAApplication_002.png " ")
+    ![](images/HAApplication_002.png)
 
 3. Fill out the dialog box:
 
@@ -37,13 +37,13 @@ Estimated Time: 75 minutes
     - **Private Subnet CIDR Block**: Provide a CIDR block (10.0.2.0/24)
     - Click **Next**
 
-    ![](images/Function_001.png " ")
+    ![](images/Function_001.png)
 
-    ![](images/HAApplication_004.png " ")
+    ![](images/HAApplication_004.png)
 
 4. Verify all the information and  Click **Create**.
 
-    ![](images/Function_002.png " ")
+    ![](images/Function_002.png)
 
 5. This will create a VCN with the following components.
 
@@ -56,30 +56,30 @@ Estimated Time: 75 minutes
 
 6. Click **View Virtual Cloud Network** to display your VCN details.
 
-    ![](images/HAApplication_006.png " ")
+    ![](images/HAApplication_006.png)
 
-    ![](images/Function_003.png " ")
+    ![](images/Function_003.png)
 
 ## **Step 2**: Create and Connect to a Compute Instances
 1. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
 
-    ![](images/HAApplication_008.png " ")
+    ![](images/HAApplication_008.png)
 
 2. Click **Create Instance**. Enter a name for your instance and select the compartment you used earlier to create your VCN. Select **Show Shape, Network and Storage Options**.
 
-    ![](images/HAApplication_009.png " ")
+    ![](images/HAApplication_009.png)
 
-    ![](images/Terraform_013.png " ")
+    ![](images/Terraform_013.png)
 
     Leave **Image or Operating System** and **Availability Domain** as the default values.
 
     Scroll down to **Shape** and click **Change Shape**.
 
-    ![](images/HAApplication_013.png " ")
+    ![](images/HAApplication_013.png)
 
     Select **Virtual Machine** and **VM.Standard2.1**. Click **Select Shape**.
 
-    ![](images/HAApplication_014.png " ")
+    ![](images/HAApplication_014.png)
 
     Scroll down to the section labeled **Configure Networking** select the following.
 
@@ -90,14 +90,14 @@ Estimated Time: 75 minutes
     - **Use Network Security Groups to Control Traffic** : Leave un-checked
     - **Assign a Public IP Address**: Check this option
 
-    ![](images/Function_004.png " ")
+    ![](images/Function_004.png)
 
     - **Boot Volume:** Leave the default
     - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key you created in Cloud Shell earlier.
 
     *Ensure when you are pasting that you paste one line*
 
-    ![](images/HAApplication_012.png " ")
+    ![](images/HAApplication_012.png)
 
 3. Click **Create**.
 
@@ -105,7 +105,7 @@ Estimated Time: 75 minutes
 
 4.  Wait for the instance to have the **Running** status. Note down the Public IP of the instance. You will need this later.
 
-    ![](images/Function_005.png " ")
+    ![](images/Function_005.png)
 
 5.  Launch the Cloud Shell if it is not running.  When running, enter the command below.
 
@@ -133,11 +133,11 @@ Estimated Time: 75 minutes
 
 8.  Enter 'Yes' when prompted for security message.
 
-    ![](images/Function_006.png " ")
+    ![](images/Function_006.png)
 
 9. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-    ![](images/Function_007.png " ")
+    ![](images/Function_007.png)
 
 ## **Step 3**: Install and Configure OCI CLI
 1. Install OCI CLI on the compute instance by entering the following command. When prompted for the install directory press enter(leave default). When prompted for the oci executable directory press enter(leave default). When prompted for the OCI script directory press enter(leave default). When prompted to install optional packages press enter(leave default). When prompted to update your $PATH enter `Y`.
@@ -148,9 +148,9 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Terraform_018.png " ")
+    ![](images/Terraform_018.png)
 
-    ![](images/Terraform_019.png " ")
+    ![](images/Terraform_019.png)
 
 2. Check that OCI CLI is installed by entering the following command.
 
@@ -161,18 +161,18 @@ Estimated Time: 75 minutes
     ```
     *NOTE: Version should be minimum 2.5.X (3/23/2019)*
 
-    ![](images/Terraform_020.png " ")
+    ![](images/Terraform_020.png)
 
 3. Next you will need to gather some information so that you can configure oci. First you will need your user OCID. Click the icon in the top right and click your username. Copy your user OCID. Record your OCID in a text file.
-    ![](images/Terraform_021.png " ")
+    ![](images/Terraform_021.png)
 
 4. Next you will need to get your tenancy OCID. Click the icon in the top right and then your tenancy. Copy your tenancy OCID. Record your tenancy OCID because you will need it later.
 
-    ![](images/Terraform_022.png " ")
+    ![](images/Terraform_022.png)
 
 5. Next you will need to get your region identifier. Click your region and then click manage regions. Then copy your region identifier and record it.
 
-    ![](images/Terraform_023.png " ")
+    ![](images/Terraform_023.png)
 
 6. Next we will configure OCI CLI. Enter the following command.
 
@@ -184,7 +184,7 @@ Estimated Time: 75 minutes
 
 7. When prompted for a location for your config press enter to choose the default location. When prompted for your user OCID, tenancy OCID, and region ID enter the appropriate information. When asked if you want to generate a new RSA key pair enter `Y`. For all other prompts press enter to accept the default.
 
-    ![](images/Terraform_024.png " ")
+    ![](images/Terraform_024.png)
 
 8. The `oci setup config` command also generated an API key. We will need to upload this API key into our OCI account for authentication of API calls.
 
@@ -196,29 +196,29 @@ Estimated Time: 75 minutes
 
 9. Highlight and copy the content from the oracle cloud shell. Click the human icon followed by your user name. Then scroll down and click **API Keys**. In your user details page click **Add Public Key**. In the dialog box paste the public key content and click **Add**.
 
-    ![](images/Terraform_025.png " ")
+    ![](images/Terraform_025.png)
 
-    ![](images/Terraform_026.png " ")
+    ![](images/Terraform_026.png)
 
 ## **Step 4**: Install Docker
 
 1. Next we need to generate an Auth token its an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
 
     In OCI console Click the user icon (top right)  then **User settings**. Under **Resources** Click **Auth Token**, then **Generate Token**. In the pop up window provide a description then click **Generate Token**.
-    ![](images/Function_008.png " ")
+    ![](images/Function_008.png)
 
 2.  Click **Copy** and save the token in Notepad.
 
     *Note: Do not close the window without saving the token as it can not be retrieved later.*
 
-3. Next install **yum-utils** with the following command.
+3. Using your Cloud Shell, connected to your compute instance, install **yum-utils** with the following command.
     ```
     <copy>
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
     </copy>
     ```
 
-    ![](images/Function_009.png " ")
+    ![](images/Function_009.png)
 
 4. Enter the following command to add the Docker repo.
 
@@ -228,19 +228,29 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_010.png " ")
+    ![](images/Function_010.png)
 
-5. Enter the following command to install Docker. When prompted respond with `y`.
+5. Use nano or vi to edit the local `docker-ce.repo` file:
 
     ```
-    <copy>
-    sudo yum install docker-ce docker-ce-cli containerd.io
-    </copy>
+    <copy>nano /etc/yum.repos.d/docker-ce.repo</copy>
     ```
 
-    ![](images/Function_012.png " ")
+6. Replace the `baseurl` for `[docker-ce.repo]` with `https://download.docker.com/linux/centos/7/$basearch/stable`:
 
-6. Enter the following command to enable Docker.
+    ![](images/edit-docker-repo.png)
+
+    Save the file.
+
+7. Install the docker-engine:
+
+    ```
+    <copy>sudo yum install docker-engine -y</copy>
+    ```
+
+    ![](images/docker-installed.png)
+
+8. Enter the following command to enable Docker.
 
     ```
     <copy>
@@ -248,9 +258,9 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_013.png " ")
+    ![](images/Function_013.png)
 
-7. Enter the following command to start Docker.
+9. Enter the following command to start Docker.
 
     ```
     <copy>
@@ -258,9 +268,9 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_014.png " ")
+    ![](images/Function_014.png)
 
-8. Enable the opc user to use Docker with the following command.
+10. Enable the opc user to use Docker with the following command.
 
     ```
     <copy>
@@ -268,9 +278,9 @@ Estimated Time: 75 minutes
     </copy>
     ```  
 
-    ![](images/Function_015.png " ")
+    ![](images/Function_015.png)
 
-9. Docker is installed and the opc user is enabled to use Docker. Logout and log back in to the compute instance. Enter the following command.
+11. Docker is installed and the opc user is enabled to use Docker. Logout and log back in to the compute instance. Enter the following command.
 
     ```
     <copy>
@@ -294,7 +304,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_016.png " ")
+    ![](images/Function_016.png)
 
     Verify the docker version.
     ```
@@ -303,7 +313,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_017.png " ")
+    ![](images/Function_017.png)
 
     Launch the standard hello-world Docker image as a container.
 
@@ -313,7 +323,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_018.png " ")
+    ![](images/Function_018.png)
 
     You may want to minimize the oracle cloud shell for the next step, but don't close it because you will need it again later.
 
@@ -321,15 +331,15 @@ Estimated Time: 75 minutes
 
 1. From the OCI services menu click **Policies** under **Identity**.
 
-    ![](images/Function_040.png " ")
+    ![](images/Function_040.png)
 
 2. Make sure that the compartment you created your VCN in is selected and then click **Create Policy**.
 
-    ![](images/Function_041.png " ")
+    ![](images/Function_041.png)
 
-3. Type "FunctionApplicationPolicies" into the name section and type "Allow functions to work" in the description section. Scroll down to the Policy statements section. Click the **+ Another Statement**. 
+3. Type "FunctionApplicationPolicies" into the name section and type "Allow functions to work" in the description section. Scroll down to the Policy statements section. Click the **+ Another Statement**.
 
-    ![](images/Function_042.png " ")
+    ![](images/Function_042.png)
 
     Copy and paste the following as your first policy statement.
 
@@ -349,16 +359,16 @@ Estimated Time: 75 minutes
 
     Click **Create**.
 
-    ![](images/Function_043.png " ")
+    ![](images/Function_043.png)
 
     Verify that your policy has been added to the policy list.
 
-    ![](images/Function_044.png " ")
+    ![](images/Function_044.png)
 
-4. Next we will create our first application. 
+4. Next we will create our first application.
 
 5. From the OCI services menu click **Functions** under **Developer Services**.
-    ![](images/Function_039.png " ")
+    ![](images/Function_039.png)
 
 6. Click **Create Application** and fill out the dialog box.
 
@@ -369,15 +379,15 @@ Estimated Time: 75 minutes
 
     Click **Create**.
 
-    ![](images/Function_030.png " ")
+    ![](images/Function_030.png)
 
 7. Scroll down and click on **Getting Started**.
 
-    ![](images/Function_045.png " ")
+    ![](images/Function_045.png)
 
     Scroll down until you see these commands.
 
-    ![](images/Function_051.png " ")
+    ![](images/Function_051.png)
 
 ## **Step 6**: Configure and Invoke a Function
 
@@ -397,7 +407,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_019.png " ")
+    ![](images/Function_019.png)
 
 3. Confirm that the Fn CLI has been installed.
     ```
@@ -406,7 +416,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_020.png " ")
+    ![](images/Function_020.png)
 
 4. Next create the new Fn Project CLI context. `CONTEXT-NAME` below can be a name that you can choose. For this workshop `CONTEXT-NAME` will be test-fn.
 
@@ -415,7 +425,7 @@ Estimated Time: 75 minutes
     fn create context CONTEXT-NAME --provider oracle
     </copy>
     ```
-    ![](images/Function_021.png " ")
+    ![](images/Function_021.png)
 
 5. Specify that the Fn Project CLI is to use the new context.
 
@@ -425,7 +435,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_022.png " ")
+    ![](images/Function_022.png)
 
 6. Configure the new context with the api-url endpoint to use when calling the OCI API. Replace REGION-IDENTIFIER with your region identifier.
 
@@ -435,7 +445,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_026.png " ")
+    ![](images/Function_026.png)
 
     *For example: fn update context api-url https://functions.us-ashburn-1.oraclecloud.com*
 
@@ -447,7 +457,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_028.png " ")
+    ![](images/Function_028.png)
 
 8. Scroll down on the **Getting Started** section of your function application. Copy and paste command 3 into the oracle cloud shell.
 
@@ -455,9 +465,9 @@ Estimated Time: 75 minutes
 
     `fn update context oracle.compartment-id [COMPARTMENT-OCID]`.
 
-    ![](images/Function_046.png " ")
+    ![](images/Function_046.png)
 
-    ![](images/Function_025.png " ")
+    ![](images/Function_025.png)
 
 9. Copy and paste command 4 into the oracle cloud shell.
 
@@ -469,9 +479,9 @@ Estimated Time: 75 minutes
 
     *Note: [REGION-CODE] indicates the registry location. Region codes are listed at https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#regional-availability*
 
-    ![](images/Function_047.png " ")
+    ![](images/Function_047.png)
 
-    ![](images/Function_027.png " ")
+    ![](images/Function_027.png)
 
 10. Copy and paste command 6 into the oracle cloud shell.
 
@@ -481,9 +491,9 @@ Estimated Time: 75 minutes
 
     *Note: If your tenancy is federated your username will be in the format of oracleidentitycloudservice/[USERNAME].*
 
-    ![](images/Function_048.png " ")
+    ![](images/Function_048.png)
 
-    ![](images/Function_049.png " ")
+    ![](images/Function_049.png)
 
 11. When prompted for a password paste your auth token into the shell and press enter.
 
@@ -500,7 +510,7 @@ Estimated Time: 75 minutes
     * a /src directory containing source files and directories for the hello-java function*
     * a Maven configuration file called pom.xml that specifies the dependencies required to compile the function*
 
-    ![](images/Function_031.png " ")
+    ![](images/Function_031.png)
 
 13. Change the directory to the hello-java directory created in the previous step.
 
@@ -518,7 +528,7 @@ Estimated Time: 75 minutes
     </copy>
     ```
 
-    ![](images/Function_032.png " ")
+    ![](images/Function_032.png)
 
     *Note: You can also Confirm that the hello-java image has been pushed to Oracle Cloud Infrastructure Registry by logging in to the console. Under **Solutions and Platform**, go to **Developer Services** and click **Registry**.*
 
@@ -532,44 +542,44 @@ Estimated Time: 75 minutes
 
 16. Verify "Hello World!" message is displayed.
 
-    ![](images/Function_050.png " ")
+    ![](images/Function_050.png)
 
 Congratulations! You've just created, deployed, and invoked your first function using Oracle Functions!
 
 ## **Step 7**: Delete the Resources
 1. From the OCI services menu click **Instances** under **Compute**.
 
-    ![](images/HAApplication_008.png " ")
+    ![](images/HAApplication_008.png)
 
 2. Locate the compute instance you created, click the action icon and then click **Terminate**.
 
-    ![](images/Function_033.png " ")
+    ![](images/Function_033.png)
 
 3. Make sure **Permanently Delete the Attached Boot Volume** is checked. Click **Terminate Instance**. Wait for the instance to fully terminate.
 
-    ![](images/Function_034.png " ")
+    ![](images/Function_034.png)
 
 4. From the OCI services menu click **Functions** under **Developer Services**.
 
-    ![](images/Function_039.png " ")
+    ![](images/Function_039.png)
 
 5. Locate your function application and then click **Delete**.
 
-    ![](images/Function_037.png " ")
+    ![](images/Function_037.png)
 
 6. When prompted follow the instructions and enter `DELETE NAME-OF-APPLICATION`.
 
-    ![](images/Function_038.png " ")
+    ![](images/Function_038.png)
 
 7. From the OCI services menu click **Virtual Cloud Networks** under **Networking**, the list of all VCNs will appear.
 
-    ![](images/HAApplication_001.png " ")
+    ![](images/HAApplication_001.png)
 
 8. Locate your VCN, click action icon and then click **Terminate**. Click **Terminate All** in the confirmation window. Click **Close** once the VCN is deleted.
 
-    ![](images/Function_035.png " ")
+    ![](images/Function_035.png)
 
-    ![](images/Function_036.png " ")
+    ![](images/Function_036.png)
 
 Congratulations! You have successfully completed the lab.
 
@@ -577,8 +587,12 @@ Congratulations! You have successfully completed the lab.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead | Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Kamryn Vinson, August 2020
+- **Contributors**
+    - Kallol Chaudhuri, Principal Technology Solutions Architect
+    - Oracle LiveLabs QA Team (Jaden McElvey, Technical Lead | Arabella Yao, Product Manager Intern, DB Product Management)
+- **Last Updated By/Date** - Tom McGinn, October 2020
 
-## See an issue?  
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through provisioning the WebLogic Infrastructure by leveraging the OCI Marketplace image. 
+This lab walks you through provisioning the WebLogic Infrastructure by leveraging the OCI Marketplace image.
 
-Estimated Lab Time: 20 min
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -18,13 +18,13 @@ In this lab you will:
 For this lab, you need to have prepared the OCI tenancy with:
 
 - A Vault
-- A Key 
+- A Key
 - A Secret for the WebLogic Admin passord
 
 
 ## **STEP 1:** Provision the stack through the Marketplace
 
-1. Go to **Solutions and Platforms** 
+1. Go to **Solutions and Platforms**
 
   <img src="./images/provision-1.png" width="50%">
 
@@ -115,12 +115,12 @@ For this lab, you need to have prepared the OCI tenancy with:
   <img src="./images/provision-17-vcn-name.png" width="70%">
 
 17. **Keep the default** VCN CIDR block as-is.
-   
+
   <img src="./images/provision-18-vcn-cidr.png" width="70%">
 
    Note: If you were to migrate from an on-premises domain connected via VPN or FastConnect, you would want to make sure the CIDR block does not conflict with the local network.
 
-18. **Keep the defaults for subnets** as-is: 
+18. **Keep the defaults for subnets** as-is:
 
    The stack will create the subnets for us.
 
@@ -158,8 +158,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
   <img src="./images/provision-26.png" width="100%">
 
-
-Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu. 
+Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
 ## **STEP 2:** Gather the necessary WebLogic stack information
 
@@ -173,10 +172,14 @@ You can copy/paste the **WebLogic Admin Console URL** in your browser and explor
 
 While the WebLogic instances are provisioning, it's possible to move forward with the Application Database provisioning as soon as the VCN is provisioned.
 
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

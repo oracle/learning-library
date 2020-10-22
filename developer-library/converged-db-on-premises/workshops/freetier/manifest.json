@@ -1,59 +1,60 @@
 {
-    "tutorials": [
-        {
-            "title": "Prerequisites",
-            "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        }, {
-            "title": "Introduction",
-            "description": "Introduction",
-            "filename": "../../intro/intro.md"
-        },
-        {
-            "title": "Lab 1: Generate SSH Key - Cloud Shell",
-            "description": "Generate SSH Key",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
-        },
-        {
-            "title": "Lab 2: Setup Compute Instance",
-            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
-            "filename": "../../setup-compute/setup-compute.md"
-        },
-        {
-            "title": "Lab 3: Start Database and Application",
-            "description": "Connect to Schema",
-            "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 4: NODE.JS",
-            "description": "NODE.JS Lab",
-            "filename": "../../nodejs/nodejs.md"
-        },
-        {
-            "title": "Lab 5: JSON",
-            "description": "JSON Lab",
-            "filename": "../../json/json.md"
-        },
-        {
-            "title": "Lab 6: XML",
-            "description": "XML Lab",
-            "filename": "../../xml/xml.md"
-        },
-        {
-            "title": "Lab 7: Spatial",
-            "description": "Spatial Lab",
-            "filename": "../../spatial/spatial.md"
-        },
-        {
-            "title": "Lab 8: Graph",
-            "description": "Graph Lab",
-            "filename": "../../graph/graph.md"
-        },
-        {
-            "title": "Lab 9: Cross Data Types",
-            "description": "Labs that leverage data types across schemas",
-            "filename": "../../crossdatatype/crossdatatype.md"
-        }
-
-    ]
+  "workshoptitle":"Oracle Converged Database for Developers",  
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Setup Compute Instance",
+      "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+      "filename": "../../setup-compute/setup-compute.md"
+    },
+    {
+      "title": "Lab 3: Start Database and Application",
+      "description": "Connect to Schema",
+      "filename": "../../setup/setup.md"
+    },
+    {
+      "title": "Lab 4: NODE.JS",
+      "description": "NODE.JS Lab",
+      "filename": "../../nodejs/nodejs.md"
+    },
+    {
+      "title": "Lab 5: JSON",
+      "description": "JSON Lab",
+      "filename": "../../json/json.md"
+    },
+    {
+      "title": "Lab 6: XML",
+      "description": "XML Lab",
+      "filename": "../../xml/xml.md"
+    },
+    {
+      "title": "Lab 7: Spatial",
+      "description": "Spatial Lab",
+      "filename": "../../spatial/spatial.md"
+    },
+    {
+      "title": "Lab 8: Graph",
+      "description": "Graph Lab",
+      "filename": "../../graph/graph.md"
+    },
+    {
+      "title": "Lab 9: Cross Data Types",
+      "description": "Labs that leverage data types across schemas",
+      "filename": "../../crossdatatype/crossdatatype.md"
+    }
+  ]
 }

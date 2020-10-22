@@ -1,9 +1,0 @@
-
-WALLET_LOCATION =
-   (SOURCE =
-     (METHOD = FILE)
-     (METHOD_DATA =
-       (DIRECTORY = /home/oracle/DBSecLab/workshops/Database_Security_Labs/Network_Encryption/Advanced_Labs/mywallet)
-     )
-   )
-

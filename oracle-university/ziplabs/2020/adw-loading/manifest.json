@@ -1,9 +1,0 @@
-{
-    "tutorials": [
-        {
-            "title": "Loading Data into ADW",
-            "description": "Learn how to get data from external databases and load it into the Oracle Autonomous Data Warehouse (ADW) on Oracle Cloud Infrastructure (OCI)",
-            "filename": "content.md"
-        }
-    ]
-}

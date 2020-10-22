@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Advanced Low Code - Oracle APEX on Autonomous Database",
     "tutorials": [{
             "title": "Prerequisites",
             "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"

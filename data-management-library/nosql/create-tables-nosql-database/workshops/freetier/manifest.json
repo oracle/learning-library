@@ -1,0 +1,23 @@
+{
+    "workshoptitle": "Get Started with Tables in Oracle NoSQL Database Cloud Service",
+    "tutorials": [
+        {
+          "title": "Prerequisites",
+          "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+          "title": "Introduction",
+          "description": "This is the inroduction to the lab",
+          "filename":"../../introduction/introduction.md"
+        },
+        {
+          "title": "Lab 1: Create an API Signing Key and SDK CLI Configuration File",
+          "filename":"../../create-api-signing-keys/create-api-signing-keys.md"
+        },
+		    {
+          "title": "Lab 2: Run the Sample NoSQL Application",
+          "filename": "../../run-sample-application/run-sample-application.md"
+        }
+    ]
+}

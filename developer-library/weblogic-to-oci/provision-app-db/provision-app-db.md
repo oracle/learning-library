@@ -1,8 +1,8 @@
 # Provision the Application Database on OCI with DBaaS
 
-## Introduction: 
+## Introduction
 
-This lab with guide you through provisioning a Application Database
+This lab with guide you through provisioning a Application Database.
 
 Estimated Lab Time: 30-35 min including ~25-30 min provisioning time.
 
@@ -14,15 +14,15 @@ In this lab you will:
 - Create a private subnet for the Application Database
 - Provision the Application Database as a Database VM.
 
-## **STEP 1:** Create a Security List for the database subnet
+## **STEP 1:** Create a security List for the database subnet
 
-Before we can provision the Application Database, we need to provision a **private subnet** for the **Database System** with appropriate **Security Lists** to open up the required ports: 
-- port 1521 for the database, 
+Before we can provision the Application Database, we need to provision a **private subnet** for the **Database System** with appropriate **Security Lists** to open up the required ports:
+- port 1521 for the database,
 - port 22 for SSH.
 
 In this section we will create a Security List for the WebLogic subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port) and SSH port 22.
 
-1. Go to **Networking -> Virtual CLoud Network** in the compartment where WebLogic was provisioned.
+1. Go to **Networking -> Virtual Cloud Network** in the compartment where WebLogic was provisioned.
 
   <img src="./images/provision-db-1.png" width="50%">
 
@@ -52,7 +52,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-5-ingress1521.png" width="70%">
 
-8. Click **Additional Ingress Rule** and enter `0.0.0.0/0` for the **Source CIDR** and enter `22` for the **Destination Port Range** to authorize SSH from outside (through the bastion host) 
+8. Click **Additional Ingress Rule** and enter `0.0.0.0/0` for the **Source CIDR** and enter `22` for the **Destination Port Range** to authorize SSH from outside (through the bastion host)
 
   <img src="./images/provision-db-6-ingress22.png" width="70%">
 
@@ -96,7 +96,7 @@ In this section we will create a Security List for the WebLogic subnet to be abl
 
   <img src="./images/provision-db-9-subnet7.png" width="70%">
 
-## **STEP 3:** Provision the Database System
+## **STEP 3:** Provision the Database system
 
 1. Go to **Database -> Bare Metal, VM and Exadata**
 
@@ -170,24 +170,26 @@ In this section we will create a Security List for the WebLogic subnet to be abl
     </copy>
     ```
 
-    This is found in the `env` file under `DB_PWD` in the `weblogic-to-oci/weblogic` folder
-
   <img src="./images/provision-db-23-creds.png" width="70%">
 
 16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**, and click **Create DB System**
 
   <img src="./images/provision-db-24.png" width="100%">
 
-This will usually take up to 40 minutes to provision.
+  This will usually take up to 40 minutes to provision.
 
   <img src="./images/provision-db-25.png" width="100%">
 
 To save some time, you can proceed to starting the DB migration lab while the DB is provisioning if you wish, however you will need the DB fully provisioned and you will need to gather the DB information before you can finish the migration.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

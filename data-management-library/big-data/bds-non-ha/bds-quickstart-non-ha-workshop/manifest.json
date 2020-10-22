@@ -1,0 +1,52 @@
+{
+  "workshoptitle": "Getting Started with Oracle Big Data Service (non-HA)",
+    "tutorials": [
+      {
+         "title": "Prerequisites",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
+          "title": "Introduction to Oracle Big Data Service (BDS)",
+          "description": "Introduction to Oracle Big Data Service",
+          "filename": "./intro.md"
+      }
+      ,
+      {
+            "title": "Lab 1: Set Up the BDS Environment",
+            "description": "This lab walks you through the required and optional tasks to setup your Big Data Service environment before you can create clusters.",
+            "filename": "./../bds-setup-environment/bds-setup-environment.md"
+      }
+      ,
+      {
+            "title": "Lab 2: Create a BDS Hadoop Cluster",
+            "description": "This lab walks you through how to create a BDS Highly Available (HA) Hadoop cluster.",
+            "filename": "./../bds-create-cluster/bds-create-cluster.md"
+      }
+      ,
+      {
+            "title": "Lab 3: Add Oracle Cloud SQL to the Cluster",
+            "description": "This lab shows you how to add Oracle Cloud SQL to your BDS cluster.",
+            "filename": "./../bds-add-cloud-sql/bds-add-cloud-sql.md"
+      }
+      ,
+      {
+            "title": "Lab 4: Access a BDS Node Using a Public IP Address",
+            "description": "This lab shows you how to map a node's private IP address to a public IP address",
+            "filename": "./../bds-access-utility-node/bds-access-utility-node.md"
+        }
+        ,
+        {
+              "title": "Lab 5:  Use Cloudera Manager and Hue to Access a BDS Cluster",
+              "description": "This lab shows you how to use Cloudera Manager (CM) and Hue to access a Big Data Service (BDS) cluster.",
+              "filename": "./../bds-use-cm-hue-access-cluster/bds-use-cm-hue-access-cluster.md"
+          }
+          ,
+          {
+              "title": "Lab 6:  Create a Hadoop Administrator User",
+              "description": "This lab shows you how to create a Hadoop Administrator(superuser) that will have full access to all the data and metadata on the cluster.",
+              "filename": "./../bds-create-hadoop-user/bds-create-hadoop-user.md"
+            }
+
+           ]
+}

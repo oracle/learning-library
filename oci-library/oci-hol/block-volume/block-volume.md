@@ -16,8 +16,6 @@ This video provides an overview of creating and attaching Oracle Cloud Infrastru
   -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
   -  Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11
 
-
-
 ## **STEP 1**: Create a Block Volume
 
 A common usage of Block Volume is adding storage capacity to an Oracle Cloud Infrastructure instance. Once you have launched an instance and set up your cloud network, you can create a block storage volume through the Console or API. Once created, you attach the volume to an instance using a volume attachment. Once attached, you connect to the volume from your instance's guest OS using iSCSI or paravirtualized mode. The volume can then be mounted and used by your instance.
@@ -26,8 +24,12 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 2. In Block Volume service, click on **Create Block Volume** and provide the following details:
 
+    <if type="freetier">
      - **Name:** BV-DEMO
-     - **Compartment:** Demo
+     - **Compartment:** Demo</if>
+     <if type="livelabs">
+     - **Name:** username-BV
+     - **Compartment:** username-compartment</if>
      - **Availability Domain:** It must be the same as the AD you choose for your instance.
      - **Size**: Please choose **50 GB**.
      - **Backup Policy**: **Gold**
@@ -44,9 +46,16 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 3. Leave the encryption and tags options as their default values and click on **Create Block Volume**. The volume will be ready to attach once its icon no longer lists it as **PROVISIONING** in the volume list.
 
+   <if type="freetier">
    ![](images/Create1.png " ")
    ![](images/image002.png " ")
    ![](images/image003.png " ")
+   </if>
+   <if type="livelabs">
+   ![](images/create-livelabs.png)
+   ![](images/create-livelabs-prov.png)
+   ![](images/create-livelabs-avail.png)
+   </if>
 
 ## **STEP 2**: Attaching a Block Volume to an instance
 
@@ -58,7 +67,10 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 2. Go to the Compute instance Menu, and navigate to the VM instance you created before and click on the **Attached Block Volumes** link.
 
-    ![](images/attached1.png " ")
+    <if type="freetier">
+    ![](images/attached1.png " ")</if>
+    <if type="livelabs">
+    ![](images/livelabs-attach.png)</if>
 
 3. Click on the **Attach Block Volume** button.
 
@@ -69,15 +81,21 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
      - **Device Path:** Select `/dev/oracleoci/oraclevdb`
      - Click **Attach**
 
-   ![](images/Attached2.png " ")
+   <if type="freetier">
+   ![](images/Attached2.png " ")</if>
+   <if type="livelabs">
+   ![](images/livelabs-attach-block.png)</if>
 
 5. Once the volume is attached, you can click on the ellipsis and then click **iSCSI Command and Information link.**
 
-    ![](images/image006.png " ")
+    <if type="freetier">
+    ![](images/image006.png " ")</if>
+    <if type="livelabs">
+    ![](images/livelabs-iscsi-link.png)</if>
 
 6. Connect to the instance through SSH and **run the iSCSI ATTACH COMMANDS**.Click on **COPY** to copy all attach commands run all these commands by pasting it in the terminal:
 
-    ![](images/image007.png " ")
+    ![](images/iscsi-commands.png " ")
     ![](images/image008.png " ")
 
 7. Once the disk is attached, you can run the following commands to format the disk and mount it.
@@ -94,8 +112,11 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
      ```
      # <copy>sudo mount /dev/oracleoci/oraclevdb /mnt/disk1</copy>
      ```
+     ```
+     # <copy>df -h</copy>
+     ```
 
-    ![](images/image009.png " ")
+    ![](images/format-mount.png " ")
 
     **Note** When mounting a storage volume for the first time, you can format the storage volume and create a single, primary partition that occupies the entire volume by using fdisk command (Caution: Using fdisk to format the disk deletes any data on the disk).
 
@@ -104,7 +125,9 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Tom McGinn, July 2020
+- **Last Updated By/Date** - Tom McGinn, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

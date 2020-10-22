@@ -130,6 +130,22 @@ Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Produ
 Version 19.7.0.0.0
 [oracle@dbstby ~]$ 
 ```
+If the `OPEN_MODE` is **READ ONLY**, you can run the following command in sqlplus as sysdba, then check the `open_mode` again, you can see the `OPEN_MODE` is **READ ONLY WITH APPLY** now.
+```
+SQL> alter database recover managed standby database cancel;
+
+Database altered.
+
+SQL> alter database recover managed standby database using current logfile disconnect;
+
+Database altered.
+
+SQL> select open_mode,database_role from v$database;
+
+OPEN_MODE	     DATABASE_ROLE
+-------------------- ----------------
+READ ONLY WITH APPLY PHYSICAL STANDBY
+```
 
 4. From cloud side, connect as testuser to orclpdb. Check if the test table and record has replicated to the standby.
 
@@ -252,17 +268,6 @@ DGMGRL> validate database ORCL_nrt1d4
     orcl_nrt1d4:  YES            
     Validating static connect identifier for the primary database orcl...
     The static connect identifier allows for a connection to database "orcl".
-
-  Current Log File Groups Configuration:
-    Thread #  Online Redo Log Groups  Standby Redo Log Groups Status       
-              (orcl)                  (orcl_nrt1d4)                        
-    1         3                       2                       Insufficient SRLs
-
-  Future Log File Groups Configuration:
-    Thread #  Online Redo Log Groups  Standby Redo Log Groups Status       
-              (orcl_nrt1d4)           (orcl)                               
-    1         3                       0                       Insufficient SRLs
-    Warning: standby redo logs not configured for thread 1 on orcl
 
 DGMGRL> 
 ```

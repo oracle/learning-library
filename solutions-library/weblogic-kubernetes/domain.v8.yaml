@@ -1,0 +1,127 @@
+# Copyright 2017, 2019, Oracle Corporation and/or its affiliates. All rights reserved.
+
+# Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+#
+# This is an example of how to define a Domain resource.  Please read through the comments which explain
+# what updates are needed.
+#
+apiVersion: "weblogic.oracle/v8"
+kind: Domain
+metadata:
+  # Update this with the `domainUID` of your domain:
+  name: sample-domain1
+  # Update this with the namespace your domain will run in:
+  namespace: sample-domain1-ns
+  labels:
+    weblogic.resourceVersion: domain-v2
+    # Update this with the `domainUID` of your domain:
+    weblogic.domainUID: sample-domain1
+
+spec:
+  # This parameter provides the location of the WebLogic Domain Home (from the container's point of view).
+  # Note that this might be in the image itself or in a mounted volume or network storage.
+  domainHome: /u01/oracle/user_projects/domains/sample-domain1
+
+  # If the domain home is inside the Docker image, set this to `true`, otherwise set `false`:
+  domainHomeInImage: true
+
+  # Update this with the name of the Docker image that will be used to run your domain:
+  #image: "YOUR_OCI_REGION_CODE.ocir.io/YOUR_TENANCY_NAME/weblogic-operator-tutorial:latest"
+  #image: "fra.ocir.io/johnpsmith/weblogic-operator-tutorial:latest"
+  image: "iad.ocir.io/weblogick8s/weblogic-operator-tutorial-store:1.0"
+
+  # imagePullPolicy defaults to "Always" if image version is :latest
+  imagePullPolicy: "Always"
+
+  # If credentials are needed to pull the image, uncomment this section and identify which
+  # Secret contains the credentials for pulling an image:
+  #imagePullSecrets:
+  #- name: ocirsecret
+
+  # Identify which Secret contains the WebLogic Admin credentials (note that there is an example of
+  # how to create that Secret at the end of this file)
+  webLogicCredentialsSecret:
+    # Update this with the name of the secret containing your WebLogic server boot credentials:
+    name: sample-domain1-weblogic-credentials
+
+  # If you want to include the server out file into the pod's stdout, set this to `true`:
+  includeServerOutInPodLog: true
+
+  # If you want to use a mounted volume as the log home, i.e. to persist logs outside the container, then
+  # uncomment this and set it to `true`:
+  # logHomeEnabled: false
+  # The in-pod name of the directory to store the domain, node manager, server logs, and server .out
+  # files in.
+  # If not specified or empty, domain log file, server logs, server out, and node manager log files
+  # will be stored in the default logHome location of /shared/logs/<domainUID>/.
+  # logHome: /shared/logs/domain1
+
+  # serverStartPolicy legal values are "NEVER", "IF_NEEDED", or "ADMIN_ONLY"
+  # This determines which WebLogic Servers the Operator will start up when it discovers this Domain
+  # - "NEVER" will not start any server in the domain
+  # - "ADMIN_ONLY" will start up only the administration server (no managed servers will be started)
+  # - "IF_NEEDED" will start all non-clustered servers, including the administration server and clustered servers up to the replica count
+  serverStartPolicy: "IF_NEEDED"
+#  restartVersion: "applicationV2"
+  serverPod:
+    # an (optional) list of environment variable to be set on the servers
+    env:
+    - name: JAVA_OPTIONS
+      value: "-Dweblogic.StdoutDebugEnabled=false"
+    - name: USER_MEM_ARGS
+      value: "-Xms64m -Xmx256m "
+#    nodeSelector:
+#      licensed-for-weblogic: true
+
+    # If you are storing your domain on a persistent volume (as opposed to inside the Docker image),
+    # then uncomment this section and provide the PVC details and mount path here (standard images
+    # from Oracle assume the mount path is `/shared`):
+    # volumes:
+    # - name: weblogic-domain-storage-volume
+    #   persistentVolumeClaim:
+    #     claimName: domain1-weblogic-sample-pvc
+    # volumeMounts:
+    # - mountPath: /shared
+    #   name: weblogic-domain-storage-volume
+
+  # adminServer is used to configure the desired behavior for starting the administration server.
+  adminServer:
+    # serverStartState legal values are "RUNNING" or "ADMIN"
+    # "RUNNING" means the listed server will be started up to "RUNNING" mode
+    # "ADMIN" means the listed server will be start up to "ADMIN" mode
+    serverStartState: "RUNNING"
+    adminService:
+      channels:
+       # Update this to set the NodePort to use for the Admin Server's default channel (where the
+       # admin console will be available):
+       - channelName: default
+         nodePort: 30701
+       # Uncomment to export the T3Channel as a service
+       #- channelName: T3Channel
+#    serverPod:
+#      nodeSelector:
+#        wlservers2: true
+#  managedServers:
+#  - serverName: managed-server1
+#    serverPod:
+#      nodeSelector:
+#        wlservers1: true
+#  - serverName: managed-server2
+#    serverPod:
+#      nodeSelector:
+#        wlservers1: true
+#  - serverName: managed-server3
+#    serverPod:
+#      nodeSelector:
+#        wlservers2: true
+  # clusters is used to configure the desired behavior for starting member servers of a cluster.
+  # If you use this entry, then the rules will be applied to ALL servers that are members of the named clusters.
+  clusters:
+  - clusterName: cluster-1
+    serverStartState: "RUNNING"
+    replicas: 2
+  # The number of managed servers to start for any unlisted clusters
+  # replicas: 1
+  #
+#  configOverrides: jdbccm
+#  configOverrideSecrets: [dbsecret]

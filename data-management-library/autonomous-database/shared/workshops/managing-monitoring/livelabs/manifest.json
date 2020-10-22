@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Managing and Monitoring",
     "tutorials": [
         {
             "title": "Introduction",
@@ -16,7 +17,7 @@
             "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
-        {         
+        {
             "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
             "partnumber": "Ennnnn_01",

@@ -6,7 +6,7 @@ Migrating a WebLogic domain is equivalent to re-deploying the applications and r
 
 We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on OCI.
 
-**WebLogic Deploy Tooling** is an open source tool found on Github at <a href="https://github.com/oracle/weblogic-deploy-tooling" target="_blank">https://github.com/oracle/weblogic-deploy-tooling</a>
+**WebLogic Deploy Tooling** is an open source tool found on Github at [https://github.com/oracle/weblogic-deploy-tooling](https://github.com/oracle/weblogic-deploy-tooling)
 
 Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
 
@@ -786,10 +786,10 @@ updateDomain.sh completed successfully (exit code = 0)
 
 - Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
 
-  <img src="./images/oci-deployments.png" width="100%">
+  ![](./images/oci-deployments.png)
 
 - Go to the SimpleDB application URL, which is the Load Balancer IP gathered on step [3.2) Gather the necessary WebLogic stack information](#3-2-gather-the-necessary-weblogic-stack-information) with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
-  <img src="./images/oci-simpledb-app.png" width="100%">
+  ![](./images/oci-simpledb-app.png)
 

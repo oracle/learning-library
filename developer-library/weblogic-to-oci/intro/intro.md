@@ -1,13 +1,13 @@
-# Migrate WebLogic to Oracle Cloud Infrastructure
+# Introduction
 
-## Introduction
+## About Workshop
 
-This lab will walk you through the process of migrating an existing 'on-premises' WebLogic domain to WebLogic for Oracle Cloud Infrastructure. The WebLogic domain we'll migrate contains a couple Java applications and a datasource connecting to a database that will be migrated along the WebLogic domain. 
+This lab will walk you through the process of migrating an existing 'on-premises' WebLogic domain to WebLogic for Oracle Cloud Infrastructure. The WebLogic domain we'll migrate contains a couple Java applications and a datasource connecting to a database that will be migrated along the WebLogic domain.
 
 Attached below is a sample architecture of the final solution:
-![](./images/architecture.png)
+![](./images/Architecture.png)
 
-Estimated Lab Time: 80min to 120min depending on the path chosen.
+Estimated Lab Time: 80 to 120 minutes depending on the path chosen.
 
 ### Objectives
 
@@ -32,6 +32,23 @@ In this lab, you will:
 * Firefox browser
 * A OCI account with a Compartment setup
 
+If you are not an administrator on your tenancy, you must insure that the following policies have been set for you:
+
+```
+<copy>
+Allow group MyGroup to manage dynamic-groups in tenancy
+Allow group MyGroup to manage policies in tenancy
+Allow group MyGroup to manage volume-family in tenancy
+Allow group MyGroup to manage instance-family in tenancy
+
+Allow group MyGroup to inspect tenancies in tenancy
+Allow group MyGroup to use secret-family in tenancy
+Allow group MyGroup to use tag-namespaces in tenancy
+
+Allow group MyGroup to manage all-resources in compartment MyCompartment
+</copy>
+```
+
 You may proceed to the next lab.
 
 ## Acknowledgements
@@ -39,5 +56,7 @@ You may proceed to the next lab.
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

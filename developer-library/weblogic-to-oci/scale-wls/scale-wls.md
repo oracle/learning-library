@@ -1,15 +1,15 @@
-# Optional: Scaling the Weblogic domain
+# Optional: Scaling the Weblogic Domain
 
 ## Introduction
 
-In this lab, we'll look at scaling a WebLogic domain provisioned with the Marketplace. 
+In this lab, we'll look at scaling a WebLogic domain provisioned with the Marketplace.
 
 There are 2 ways to scale a domain:
 
 - Change the shape of the WebLogic Server VM to increase or reduce OCPU counts or memory
 - Add or remove node by editing the Resource Manager stack
 
-Estimated Lab Time: 20min
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -50,9 +50,9 @@ For this lab you need:
 
   <img src="./images/scale-tf-apply.png" width="70%">
 
-The new job will update the number of nodes, reverting any manual shape change to the originally provisioned shape. Servers will be restarted and new nodes will join the cluster if there was one defined, unless the **Do not update domain** was checked.
+  The new job will update the number of nodes, reverting any manual shape change to the originally provisioned shape. Servers will be restarted and new nodes will join the cluster if there was one defined, unless the **Do not update domain** was checked.
 
-The load balancer is also updated to take new nodes into account.
+  The load balancer is also updated to take new nodes into account.
 
 7. Go check the Admin Console under **Environment -> Servers** to verify an server was added
 
@@ -80,12 +80,16 @@ The load balancer is also updated to take new nodes into account.
 
   <img src="./images/scale-compute-edit-shape2.png" width="70%">
 
-You will be prompted to reboot the instance. The WebLogic servers will be restarted on reboot.
+  You will be prompted to reboot the instance. The WebLogic servers will be restarted on reboot.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

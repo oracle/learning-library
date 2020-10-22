@@ -1,16 +1,20 @@
 # Low Code Development with APEX and DevCS CI/CD
 
 ## Before You Begin
-- Successful completion of Lab 300 and creation of a REST service for products.
+
+### Introduction
+
+In this lab you will create a new APEX workspace and appliction using a file upload, and then reference the Product Catalog REST Endpoint in your APEX application.  When finished, you will leverage DevCS to clone the APEX application.
+
+Estimated time: 30 minutes
 
 ### Objectives
 - Log into OCI tenancy.
 - Develop an APEX Application leveraging microservice REST Endpoint.
 - Use DevCS CI/CD to push APEX changes from Development to Production.
 
-### Introduction
-
-In this lab you will create a new APEX workspace and appliction using a file upload, and then reference the Product Catalog REST Endpoint in your APEX application.  When finished, you will leverage DevCS to clone the APEX application.
+### Prerequisites
+- Successful completion of Lab 3 and creation of a REST service for products.
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:RWjzYN3PpdM)
@@ -31,11 +35,11 @@ In this lab you will create a new APEX workspace and appliction using a file upl
 
 3. Enter your **Cloud Account Name** in the input field and click the **Next** button.  *NOTE: this is NOT your email. This is the name of your tenancy noted in the email you received during signup. Do NOT click the Sign-In button, this will take you to Single Sign-On, not the Oracle Cloud.*
 
-![](../images/common/cloud-login-tenant.png " ")   
+  ![](../images/common/cloud-login-tenant.png " ")   
 
 4. Enter your username (this may be your email address) and password and click on **Sign In**. 
     
-![](../images/common/username.png " ")  
+  ![](../images/common/username.png " ")  
 
 ## **STEP 2:** Create an API Gateway to Access the REST Service
 
@@ -449,5 +453,7 @@ Steve has been using spreadsheets to create product forecasts.  He will take one
 - **Last Updated By/Date** - 
 - **Workshop Expiration Date** - May 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

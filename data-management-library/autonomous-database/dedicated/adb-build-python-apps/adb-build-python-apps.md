@@ -18,17 +18,17 @@ As an application developer,
 ### Required Artifacts
 
    - An Oracle Cloud Infrastructure account.
-   - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
-   - A pre-provisioned dedicated autonomous database instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
+   - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+   - A pre-provisioned dedicated autonomous database instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
    - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
 
-## **Step 1:** Instances Setup
+## STEP 1: Instances Setup
 
 - Login to your Oracle Cloud Infrastructure account and select *Compute* —> *Instances* from top left menu.
     ![](./images/Compute1.png " ")
 
-- Select the right Oracle Developer Cloud image you created in [Lab 5](?lab=lab-5-configuring-development-system).
+- Select the right Oracle Developer Cloud image you created in [Lab 8](?lab=lab-8-configuring-development-system).
 
 - Copy the public IP address of the instance in a note pad. 
     ![](./images/Compute2.png " ")
@@ -51,7 +51,7 @@ As an application developer,
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-## **Step 2:** Download sample python application
+## STEP 2: Download sample python application
 
 - In your developer client ssh session,
 
@@ -78,7 +78,7 @@ As an application developer,
     ```
 
 
-## **Step 3:** Transfer database wallet to developer client
+## STEP 3: Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from menu.
     ![](./images/atpd1.png " ")
@@ -109,7 +109,7 @@ As an application developer,
     ![](./images/atpd5.png " ")
 
 
-## **Step 4:** Run your python application
+## STEP 4: Run your python application
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder.
 
@@ -178,5 +178,7 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

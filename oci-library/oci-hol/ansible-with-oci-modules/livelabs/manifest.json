@@ -16,8 +16,12 @@
             "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
+        {
+            "title": "Lab 2: Generate SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+          },
         {         
-            "title": "Lab 2: Using Ansible with OCI modules to manage infrastructure",
+            "title": "Lab 3: Using Ansible with OCI modules to manage infrastructure",
             "filename": "./../../ansible-with-oci-modules/ansible-with-oci-modules.md"
         }
     ]

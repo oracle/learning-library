@@ -1,1 +1,0 @@
-This image shows the Compartment dropdown menu. Under the Scope Category is a heading for Compartment. Under compartment is a dropdown menu where the user can select from a list of compartments. The compartment selected is (root).

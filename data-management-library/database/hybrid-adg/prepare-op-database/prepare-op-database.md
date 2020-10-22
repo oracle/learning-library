@@ -565,19 +565,19 @@ SQL>
 6. Create 4 standby log group.
 
 ```
-SQL> alter database add standby logfile '/u01/app/oracle/oradata/ORCL/srl_redo01.log' size 1024M;
+SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo01.log' size 1024M;
 
 Database altered.
 
-SQL> alter database add standby logfile '/u01/app/oracle/oradata/ORCL/srl_redo02.log' size 1024M;
+SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo02.log' size 1024M;
 
 Database altered.
 
-SQL> alter database add standby logfile '/u01/app/oracle/oradata/ORCL/srl_redo03.log' size 1024M;
+SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo03.log' size 1024M;
 
 Database altered.
 
-SQL> alter database add standby logfile '/u01/app/oracle/oradata/ORCL/srl_redo04.log' size 1024M;
+SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo04.log' size 1024M;
 
 Database altered.
 
@@ -585,10 +585,10 @@ SQL> select group#,thread#,bytes from v$standby_log;
 
     GROUP#    THREAD#	   BYTES
 ---------- ---------- ----------
-	 1	    0 1073741824
-	 2	    0 1073741824
-	 3	    0 1073741824
-	 7	    0 1073741824
+	 1	    1 1073741824
+	 2	    1 1073741824
+	 3	    1 1073741824
+	 7	    1 1073741824
 
 SQL> 
 ```
