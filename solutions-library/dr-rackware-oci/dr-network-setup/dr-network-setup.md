@@ -6,7 +6,7 @@ Estimated Lab Time 45-60 minutes
 
 
 ### Objectives
-- 
+- Deploy Terraform to setup necessary architechture for DR
 
 ### Prerequisites
 1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l1ytoY8pby813IG_wdmHvlnG-32rWlsj1wql1mFqyYFmzywCPxvTrwAMh8TaMFOT/n/c4u03/b/solutions-library/o/DR-ORDS-RW.zip) to your local machine.
@@ -73,59 +73,67 @@ Estimated Lab Time 45-60 minutes
 4. Make sure to create a public bucket in object storage. Then upload apex.zip and the ords.war file to the bucket.
     The apex.zip file can be downloaded using the following link [apex](https://www.oracle.com/tools/downloads/apex-downloads.html). 
     The ords.war file can be downloaded using the following link [ords](https://www.oracle.com/database/technologies/appdev/rest-data-services-downloads.html)
-    ![](rackwaresaleplay/Objectstorage.PNG)
+        ![](rackwaresaleplay/Objectstorage.PNG)
     
 5. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
     
     1. Import the zip file into the stack 
-     ![](./images/ResourceManager.PNG)
+        ![](./images/ResourceManager.PNG)
     
     2. Input the configuration for the instances.
-    ![](./images/ResourceManager-Input-Basic.PNG)
+        ![](./images/ResourceManager-Input-Basic.PNG)
     
     3. Input the configuration for the vcn.
-    ![](./images/ResourceManager-Network.PNG)
+        ![](./images/ResourceManager-Network.PNG)
     
     4. Copy your public and private key. Make sure you are using the correct format.
-    ![](./images/ResourceManager-Keys.PNG)
+        ![](./images/ResourceManager-Keys.PNG)
     
     5. Input the configuration for the object storage.
-    ![](./images/ResourceManager-ObjectStorage.PNG)
+        ![](./images/ResourceManager-ObjectStorage.PNG)
     
     6. Review 
-    ![](./images/ResourceManager-Review.PNG)
+        ![](./images/ResourceManager-Review.PNG)
     
-    ## Step 1: Plans
+    ## **Step 1:** Plans
 
     1.  Select plan from the dropdown menu.
-    ![](./images/ResourceManager-Plan-2.PNG)
+        ![](./images/ResourceManager-Plan-2.PNG)
     
     2.  Make sure everything looks okay and then proceed
-    ![](./images/ResourceManager-Plan-3.PNG)
+        ![](./images/ResourceManager-Plan-3.PNG)
     
     3.  Wait until the icon to turn green.
-    ![](./images/ResourceManager-Plan-4.PNG)
+        ![](./images/ResourceManager-Plan-4.PNG)
     
-    ## Step 2: Apply
+    ## **Step 2:** Apply
     
     1.  Select plan from the dropdown menu.
-    ![](./images/ResourceManager-Apply-1.PNG)
+        ![](./images/ResourceManager-Apply-1.PNG)
     
     2.  Wait unitl the icon to turn green.
-    ![](./images/ResourceManager-Apply-2.PNG)
+        ![](./images/ResourceManager-Apply-2.PNG)
 
-    ## Step 3: Destroy
-6.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
+    ## **Step 3:** Destroy
+    1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
 
-    1.  Select destroy from the dropdown menu.
-    ![](./images/ResourceManager-Destroy.PNG)
+    2.  Select destroy from the dropdown menu.
+        ![](./images/ResourceManager-Destroy.PNG)
     
-    2.  Wait unitl the icon to turn green.
-    ![](./images/ResourceManager-Destroy-2.PNG)
+    3.  Wait unitl the icon to turn green.
+        ![](./images/ResourceManager-Destroy-2.PNG)
+
+You may now **proceed to the next lab.**
 
 ## Troubleshooting
    A possible issue you make face is not having enough resources. Test to make sure 
    that you can create a drg manual in both regions you want to deploy the resources
    in.
 
-### End
+## Acknowledgements
+- **Author** - Saul Chavez
+- **Last Updated by/date** Will Bullock, October 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
