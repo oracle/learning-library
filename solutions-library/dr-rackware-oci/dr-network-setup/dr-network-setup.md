@@ -78,7 +78,7 @@ Estimated Lab Time 45-60 minutes
 5. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
     
     1. Import the zip file into the stack 
-    ![](./images/ResourceManager.PNG)
+     ![](./images/ResourceManager.PNG)
     
     2. Input the configuration for the instances.
     ![](./images/ResourceManager-Input-Basic.PNG)
@@ -95,7 +95,7 @@ Estimated Lab Time 45-60 minutes
     6. Review 
     ![](./images/ResourceManager-Review.PNG)
     
-    ### Plans
+    ## Step 1: Plans
 
     1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Plan-2.PNG)
@@ -106,7 +106,7 @@ Estimated Lab Time 45-60 minutes
     3.  Wait until the icon to turn green.
     ![](./images/ResourceManager-Plan-4.PNG)
     
-    ### Apply
+    ## Step 2: Apply
     
     1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Apply-1.PNG)
@@ -114,7 +114,7 @@ Estimated Lab Time 45-60 minutes
     2.  Wait unitl the icon to turn green.
     ![](./images/ResourceManager-Apply-2.PNG)
 
-    ### Destroy
+    ## Step 3: Destroy
 6.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
 
     1.  Select destroy from the dropdown menu.
