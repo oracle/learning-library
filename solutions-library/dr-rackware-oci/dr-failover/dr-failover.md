@@ -68,3 +68,11 @@ Estimated Lab Time: 30-45 minutes
     ![](./images/hat2.PNG)
     
 **Congratulations! If you see the change reflected in the new instance, you have successfully created a Disaster Recovery setup using RackWare on OCI!**
+
+## Acknowledgements
+- **Author** - Will Bullock
+- **Last Updated by/date** Will Bullock, October 2020
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
