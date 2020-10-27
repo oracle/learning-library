@@ -34,7 +34,7 @@ Use the following **[guide](https://www.rackwareinc.com/rackware-rmm-oracle-mark
 1. Start by navigating to the RackWare GUI and loging in with your RackWare admin credentials.
     ![](./images/gui.PNG)  
 
-2.Under **DR** on the left-hand side select **Policies** and click the **+** button.
+2. Under **DR** on the left-hand side select **Policies** and click the **+** button.
     ![](./images/dr-pol.PNG)
 
 3. Enter a name and a frequency for syncing your machines. The rest of the fields are optional. Click **Create**.
