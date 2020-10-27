@@ -76,53 +76,53 @@ Estimated Lab Time 45-60 minutes
         ![](rackwaresaleplay/Objectstorage.PNG)
     
 ## **Step 1:** Create Stack    
-    1. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
-    
-    2. Import the zip file into the stack 
-        ![](./images/ResourceManager.PNG)
-    
-    3. Input the configuration for the instances.
-        ![](./images/ResourceManager-Input-Basic.PNG)
-    
-    4. Input the configuration for the vcn.
-        ![](./images/ResourceManager-Network.PNG)
-    
-    5. Copy your public and private key. Make sure you are using the correct format.
-        ![](./images/ResourceManager-Keys.PNG)
-    
-    6. Input the configuration for the object storage.
-        ![](./images/ResourceManager-ObjectStorage.PNG)
-    
-    7. Review 
-        ![](./images/ResourceManager-Review.PNG)
-    
-  ## **Step 2:** Plans
+1. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
 
-    1.  Select plan from the dropdown menu.
-        ![](./images/ResourceManager-Plan-2.PNG)
-    
-    2.  Make sure everything looks okay and then proceed
-        ![](./images/ResourceManager-Plan-3.PNG)
-    
-    3.  Wait until the icon to turn green.
-        ![](./images/ResourceManager-Plan-4.PNG)
-    
-  ## **Step 3:** Apply
-    
-    1.  Select plan from the dropdown menu.
-        ![](./images/ResourceManager-Apply-1.PNG)
-    
-    2.  Wait unitl the icon to turn green.
-        ![](./images/ResourceManager-Apply-2.PNG)
+2. Import the zip file into the stack 
+    ![](./images/ResourceManager.PNG)
 
-  ## **Step 4:** Destroy
-    1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
+3. Input the configuration for the instances.
+    ![](./images/ResourceManager-Input-Basic.PNG)
 
-    2.  Select destroy from the dropdown menu.
-        ![](./images/ResourceManager-Destroy.PNG)
-    
-    3.  Wait unitl the icon to turn green.
-        ![](./images/ResourceManager-Destroy-2.PNG)
+4. Input the configuration for the vcn.
+    ![](./images/ResourceManager-Network.PNG)
+
+5. Copy your public and private key. Make sure you are using the correct format.
+    ![](./images/ResourceManager-Keys.PNG)
+
+6. Input the configuration for the object storage.
+    ![](./images/ResourceManager-ObjectStorage.PNG)
+
+7. Review 
+    ![](./images/ResourceManager-Review.PNG)
+
+## **Step 2:** Plans
+
+1.  Select plan from the dropdown menu.
+    ![](./images/ResourceManager-Plan-2.PNG)
+
+2.  Make sure everything looks okay and then proceed
+    ![](./images/ResourceManager-Plan-3.PNG)
+
+3.  Wait until the icon to turn green.
+    ![](./images/ResourceManager-Plan-4.PNG)
+
+## **Step 3:** Apply
+
+1.  Select plan from the dropdown menu.
+    ![](./images/ResourceManager-Apply-1.PNG)
+
+2.  Wait unitl the icon to turn green.
+    ![](./images/ResourceManager-Apply-2.PNG)
+
+## **Step 4:** Destroy
+1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
+
+2.  Select destroy from the dropdown menu.
+    ![](./images/ResourceManager-Destroy.PNG)
+
+3.  Wait unitl the icon to turn green.
+    ![](./images/ResourceManager-Destroy-2.PNG)
 
 You may now **proceed to the next lab.**
 
