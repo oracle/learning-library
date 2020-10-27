@@ -75,27 +75,28 @@ Estimated Lab Time 45-60 minutes
     The ords.war file can be downloaded using the following link [ords](https://www.oracle.com/database/technologies/appdev/rest-data-services-downloads.html)
         ![](rackwaresaleplay/Objectstorage.PNG)
     
-5. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
+## **Step 1:** Create Stack    
+    1. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
     
-    1. Import the zip file into the stack 
+    2. Import the zip file into the stack 
         ![](./images/ResourceManager.PNG)
     
-    2. Input the configuration for the instances.
+    3. Input the configuration for the instances.
         ![](./images/ResourceManager-Input-Basic.PNG)
     
-    3. Input the configuration for the vcn.
+    4. Input the configuration for the vcn.
         ![](./images/ResourceManager-Network.PNG)
     
-    4. Copy your public and private key. Make sure you are using the correct format.
+    5. Copy your public and private key. Make sure you are using the correct format.
         ![](./images/ResourceManager-Keys.PNG)
     
-    5. Input the configuration for the object storage.
+    6. Input the configuration for the object storage.
         ![](./images/ResourceManager-ObjectStorage.PNG)
     
-    6. Review 
+    7. Review 
         ![](./images/ResourceManager-Review.PNG)
     
-    ## **Step 1:** Plans
+  ## **Step 2:** Plans
 
     1.  Select plan from the dropdown menu.
         ![](./images/ResourceManager-Plan-2.PNG)
@@ -106,7 +107,7 @@ Estimated Lab Time 45-60 minutes
     3.  Wait until the icon to turn green.
         ![](./images/ResourceManager-Plan-4.PNG)
     
-    ## **Step 2:** Apply
+  ## **Step 3:** Apply
     
     1.  Select plan from the dropdown menu.
         ![](./images/ResourceManager-Apply-1.PNG)
@@ -114,7 +115,7 @@ Estimated Lab Time 45-60 minutes
     2.  Wait unitl the icon to turn green.
         ![](./images/ResourceManager-Apply-2.PNG)
 
-    ## **Step 3:** Destroy
+  ## **Step 4:** Destroy
     1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
 
     2.  Select destroy from the dropdown menu.
