@@ -57,8 +57,8 @@ Estimated Lab Time: 30-45 minutes
     ![](./images/pr-role.PNG)
 
 ## **Step 3:** Verify the APEX application changes in the new Instance
-1. Navigate to the new APEX instance through a web browser i.e. https://<target-public-ip>:8888/ords/drpdb
-2. Login with the same workspace & admin credentials created in step 3 & 5 of **Lab Guide 200**
+1. Navigate to the new APEX instance through a web browser i.e. https://\<target-public-ip>:8888/ords/drpdb
+2. Login with the same workspace & admin credentials created in step 3 & 5 of the lab **Configure APEX instance for DR**
     ![](./images/login.PNG)
 3. Select the **App Builder** icon.
     ![](./images/app-build.PNG)
