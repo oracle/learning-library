@@ -1,4 +1,4 @@
-# DR RackWare Deployment on OCI
+# Disaster Recovery RackWare Deployment on OCI
 
 ## Introduction
 Welcome to this workshop where we will deploy the RackWare Migration Manager (RMM) on OCI as a Disaster Recovery solution.
