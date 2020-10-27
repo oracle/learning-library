@@ -1,12 +1,13 @@
-# Disaster Recovery with ORDS
-
-Disaster Recovery Network and connectivity setup
-=======================================================
-
+# Disaster Recovery Network and Connectivity Setup
+## Introduction
 This solution provides a Network Architecture deployment to demonstrate Disaster Recovery scenario across 2 regions [ examples are geared towards region Montreal & Toronto and can be used for any OCI regions].
 
+Estimated Lab Time 45-60 minutes
 
-## Quickstart Deployment
+
+### Objectives
+- 
+
 ### Prerequisites
 1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l1ytoY8pby813IG_wdmHvlnG-32rWlsj1wql1mFqyYFmzywCPxvTrwAMh8TaMFOT/n/c4u03/b/solutions-library/o/DR-ORDS-RW.zip) to your local machine.
 
