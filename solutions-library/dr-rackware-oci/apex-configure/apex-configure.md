@@ -5,12 +5,12 @@ This lab configures an APEX instance to deploy a simple APEX application that ca
 Estimated Lab Time: 10-15 minutes
 
 ### Objectives
--Connect to the APEX instance
--Create a workspace
--Install the sample application
+- Connect to the APEX instance
+- Create a workspace
+- Install the sample application
 
 ### Prerequisites
--Successful completion of the first lab in this workshop
+- Successful completion of the first lab in this workshop
 
 ## **Step 1:** Create an APEX Workspace & Sample Application in the source instance
 1. Navigate to the APEX instance through a web browser i.e https://\<public-ip>:8888/ords/drpdb and select **Administration Services** from the bottom of the page.
