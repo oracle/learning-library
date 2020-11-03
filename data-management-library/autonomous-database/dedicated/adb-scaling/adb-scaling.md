@@ -15,14 +15,14 @@ As an adminstrator,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account.
-- A pre-provisioned instance of Oracle Developer Client image configured with Swingbench in an application subnet. Refer to [Lab 15](?lab=lab-15-build-always-on-applications).
-- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
-- Successful completion of [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
+- A pre-provisioned instance of Oracle Developer Client image configured with Swingbench in an application subnet. Refer to [Lab 18](?lab=lab-18-build-always-on-applications).
+- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
+- Successful completion of [Lab 8](?lab=lab-8-configuring-development-system) and [Lab 18](?lab=lab-18-build-always-on-applications).
 
 
-## **Step 1:** Log in to the Oracle Cloud Developer image and start the order entry workload
+## STEP 1: Log in to the Oracle Cloud Developer image and start the order entry workload
 
-To complete this lab its mandatory you have a developer client image configured with swingbench, an autonomous dedicated database instance with the wallet uploaded to the dev client. Follow instructions in [Lab 5](?lab=lab-5-configuring-development-system) and [Lab 15](?lab=lab-15-build-always-on-applications).
+To complete this lab its mandatory you have a developer client image configured with swingbench, an autonomous dedicated database instance with the wallet uploaded to the dev client. Follow instructions in [Lab 8](?lab=lab-8-configuring-development-system) and [Lab 18](?lab=lab-18-build-always-on-applications).
 
 *The remainder of this lab assumes you are connected to the image through VNC Viewer and are operating from the image itself and not your local machine.*
 
@@ -57,7 +57,7 @@ To complete this lab its mandatory you have a developer client image configured 
 
 
 
-## **Step 2:** Scale up the OCPUs in your autonomous database service
+## STEP 2: Scale up the OCPUs in your autonomous database service
 
 Now, lets scale the autonomous database you created in previous labs from 1 OCPU to 2 or more while swingbench continues running. You should see the transactions/sec numbers start changing as your database is scaling. Please note that this is also highly influenced by the connection service your are using with the *-cs* parameter. In the statement above we are using the *\_tp* service, but while you are experimenting, stop and start swingbench with a different service, such as *\_low*, or *\_high* to see what differences you observe.
 
@@ -78,5 +78,8 @@ Now, lets scale the autonomous database you created in previous labs from 1 OCPU
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, April 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

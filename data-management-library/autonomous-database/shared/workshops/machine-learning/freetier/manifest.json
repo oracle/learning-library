@@ -1,4 +1,5 @@
 {
+    "workshoptitle": "Simple Introduction to Machine Learning Algorithms",
     "tutorials": [
       {
            "title": "Prerequisites",
@@ -34,7 +35,7 @@
             "filename": "./../../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
-            "title": "Lab 4: Building a Simple Machine Learning Algorithm",
+            "title": "Lab 4: Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "partnumber": "Ennnnn_01",
             "publisheddate": "03/10/2020",

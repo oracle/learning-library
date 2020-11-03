@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Oracle Essbase is a business analytics solution that uses a proven, flexible, best-in-class architecture for analysis, reporting, and collaboration. Essbase delivers instant value and greater productivity for your business users, analysts, modelers, and decision-makers, across all lines of business within your organization.
+This lab provides an introduction to Oracle Essbase and how it can be used to enhance business analytics and data management. Through this lab, you will understand the overall Essbase architecture, as well as perform the prerequisites for the subsequent Essbase labs in this workshop.
 
-Oracle Essbase helps you to build your company’s cloud strategy efficiently by avoiding data and business process fragmentation. Oracle Essbase can be easily deployed on Oracle Cloud Infrastructure, which can then be widely used to solve simple to complex business analytics use cases across all industries. It is designed to help you model business performance levels and deliver what-if analyses for varying conditions. Using Oracle Identity Cloud Service, Essbase can utilize enterprise-wide user profiles to work and integrate with Oracle Cloud.
+Estimated Lab Time: 15 minutes.
 
 ### Objectives
 
@@ -12,15 +12,13 @@ Oracle Essbase helps you to build your company’s cloud strategy efficiently by
 * Understanding the Essbase architecture
 * Installing Smart View and Cube Designer plugins
 
-### Required Artifacts
+### Prerequisites
 
 This lab will require the following -
 
-1. An Oracle public cloud tenancy where you have the resources available to provision an ATP instance with 1 OCPU, an Essbase instance with 1 OCPU.
+* An Oracle public cloud tenancy where you have the resources available to provision an ATP instance with 1 OCPU, an Essbase instance with 1 OCPU.
 
-2. [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
-
-3. The estimated time to complete this lab is 15 minutes.
+* [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
 
 
 ## **Step 1:** Features of Oracle Essbase
@@ -53,7 +51,7 @@ While doing financial analysis the number of reports developed are as follows:
 * Current year actual, budget , forecast data
 * Customer sales by region            
 * Current year actual and budget data
-* Monthly product development reports 
+* Monthly product development reports
 * Details of company cost structures
 * Write back for what-if analysis
 
@@ -79,7 +77,7 @@ With the above stated benefits, it’s certainly worthwhile to understand the ni
 
 Note: The steps going forward will have to followed in a Windows operating system
 
-## **Step 4:** Installing Smartview Plugin 
+## **Step 4:** Installing Smart View Plugin
 
 #### Smart View Prerequisites
 1. The latest release of Smart View
@@ -89,7 +87,7 @@ Note: The steps going forward will have to followed in a Windows operating syste
 
 **Note: You must use .NET Framework 4.5 if you are installing Smart View from Essbase without saving the installer locally.**
 
-#### Installation Steps 
+#### Installation Steps
 1. Navigate to [link](https://www.oracle.com/middleware/technologies/epm-smart-view-downloads.html) to download latest Smart View for office.
 2. On the Smart View download page on Oracle Technology Network, click Download Now, and then click Accept License Agreement. If the Oracle sign-in page is displayed, then sign in with your Oracle user name (usually your email address) and password.
 3. Follow the steps for your browser to download the .zip file, and save it to a folder on your computer.
@@ -98,17 +96,16 @@ Note: The steps going forward will have to followed in a Windows operating syste
 9. If you are upgrading an installation of Smart View, then the installer defaults to the folder where you previously installed Smart View.
 10. When the installation is complete, click OK.
 
-You may now proceed to the next lab.
+You may proceed to the next lab.
 
 
 ## Acknowledgements
 
 * Author - NATD Cloud Engineering - Bangalore Analytics (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
 * Reviewed by - Ashish Jain, Product Management
-* Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
+* Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?  
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.
-
-
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

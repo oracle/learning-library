@@ -23,59 +23,54 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 - We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%
 
-## **STEP 1**: Sign in to OCI Console and Create Object Storage Bucket
+## **STEP 1**: Create Object Storage Bucket
 
-1. Sign in using your tenant name, user name and password.
-
-2. From the OCI Services menu, click **Object Storage**.
+1. From the OCI Services menu, click **Object Storage**.
   ![](images/OBJECT-STORAGE001.PNG " ")
 
 3. Click **Create Bucket**.
-  ![](images/OBJECT-STORAGE012.PNG " ")
+
+  <if type="freetier">
+  ![](images/OBJECT-STORAGE012.PNG " ")</if>
+  <if type="livelabs">
+  ![](images/livelabs-create-bucket-1.png)</if>
   **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
-  
 
 4. Fill out the dialog box:
 
-    - Bucket Name: Provide a name (Test-Bucket in this lab)
+    - Bucket Name: Provide a name
     - Storage Tier: STANDARD
 
 5.  Click **Create Bucket**
-  ![](images/OBJECT-STORAGE013.PNG " ")
+
+  <if type="freetier">
+  ![](images/OBJECT-STORAGE013.PNG " ")</if>
+  <if type="livelabs">
+  ![](images/livelabs-create-bucket-2.png)</if>
 
 ## **STEP 2**: Upload Object and create pre authenticated link
 
-1. **Windows**: Click the Apps icon in the toolbar and select Git-Bash to open a terminal window.
-
-  ![](images/OBJECT-STORAGE004.PNG " ")
-
-  Change directory to the Downloads folder Enter command:
-
-    ```
-    $ <copy>cd /c/Users/PhotonUser/Downloads/**</copy>
-    ```
-
-    ![](images/OBJECT-STORAGE005.PNG " ")
-
-2. **Mac / Linux**: Open a terminal window and navigate to your home directory.
-
-  Create a sample file, Enter command:
-
-    ```
-    <copy>touch samplefile</copy>
-    ```
-
-  This should create a file by the name "samplefile" in the current folder
+1. Download this file to your local PC: <a href="files/sample-file.txt" download="sample-text" target="_blank">sample-file.txt</a>.
 
 3. Switch to OCI window and click the Bucket Name.
-  ![](images/OBJECT-STORAGE014.PNG " ")
+
+  <if type="freetier">
+  ![](images/OBJECT-STORAGE014.PNG " ")</if>
+  <if type="livelabs">
+  ![](images/livelabs-click-bucket-name.png)</if>
 
 4. Bucket detail window should be visible. Click **Upload**
-  ![](images/OBJECT-STORAGE007.PNG " ")
 
-5. Click on *Upload* and then browse to where you created your *samplefile* moments ago.
+  <if type="freetier">
+  ![](images/OBJECT-STORAGE007.PNG " ")</if>
+  <if type="livelabs">
+  ![](images/livelabs-upload-object.png)</if>
 
-6. Select the file, then click **Upload** in the Dialog box.
+5. Click on *Upload* and then browse to where you created your *sample-file.txt* moments ago.
+
+  ![](images/upload-sample-file.png)
+
+6. Select the file, then click **Upload** in the Dialog box, then click **Close**.
 
 7. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
@@ -102,20 +97,17 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 12. Open a new browser window and paste Pre-Authenticated link.
   ![](images/OBJECT-STORAGE011.PNG " ")
 
-13.  An option to download the file will appear.
+13. As this is a text file, it will open in your browser page.
 
-  **NOTE:** Do NOT download the file as due to space restrictions it is not allowed for the purpose of this lab.
-
-  ***You have uploaded an object to Object Storage bucket, created a pre-authenticated link and successfully accessed the object. The Pre-Authenticated link can be shared with
-  other users to provide them access to the object.
-  Multiple objects of any size can be uploaded to the bucket and shared across teams/users.***
 
 ## Acknowledgements
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Kamryn Vinson, August 2020
+- **Last Updated By/Date** - Tom McGinn, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

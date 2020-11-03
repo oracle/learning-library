@@ -54,7 +54,7 @@ Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g
   ````
 
 ### Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
+Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -238,7 +238,7 @@ When a Gold Image is created for the first time, its first version is created as
 
 This step verifies if the image can be used to patch a specified database target. This is done by comparing the bug fixes available in the current Oracle home of the database target and the image. In effect this check is run to identify patch conflicts.
 
-* Review and execute below emcli command:  
+* Review and execute below emcli command:
 ````
 <copy>emcli db_software_maintenance -checkApplicability -image_id="A5F3D8523BDF635BE0531A00000AA55B" -target_list=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database</copy>
 ````
@@ -322,7 +322,7 @@ Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\
 <copy>emcli db_software_maintenance -createSoftwareImage -input_file="data:/home/oracle/fleet/sidb19c_tier1.inp"</copy>
 ````
 
-**OR**  
+**OR**
 ````
 <copy>sh add_image_version197_tier1_sidb_x64.sh</copy>
 ````
@@ -363,13 +363,13 @@ Navigate to “***Targets >> All Targets***” and type in “Orasidb19c\_home1\
 
 ````
 <copy>emcli db_software_maintenance -performOperation -name="deploy197" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=finance.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy197_finance.inp" -procedure_name_prefix="DEPLOY"</copy>
-````  
+````
 
-**OR**  
+**OR**
 
 ````
 <copy>sh deploy197_finance.sh</copy>
-````  
+````
 
 Where:
   - NEW\_ORACLE\_HOME\_LIST = Absolute path to the File System location where new Oracle Home will be deployed.
@@ -441,8 +441,8 @@ Once the deploy operation completes successfully. We are ready to run the final 
 <copy>sh update_finance.sh</copy>
 ````
 
-Where:  
-  - Name – Name of the operation. This is a logical name and should be kept unique  
+Where:
+  - Name – Name of the operation. This is a logical name and should be kept unique
   - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 
   ![](images/c1eb432957066af8ddc4062159d28f47.png " ")
@@ -463,7 +463,7 @@ Where:
 
 14. Clean up Database Finance
 
-* Review and execute the following command to cleanup finance in reportOnly mode  
+* Review and execute the following command to cleanup finance in reportOnly mode
 
 ````
 <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=finance.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
@@ -477,7 +477,7 @@ Where:
 
   ![](images/228ae0280ff2878bb4902cb263529bb9.png " ")
 
-* Review and execute the following command to cleanup finance  
+* Review and execute the following command to cleanup finance
 
 ````
 <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=finance.subnet.vcn.oraclevcn.com -workDir=/tmp</copy>
@@ -564,5 +564,7 @@ Thank you!
   - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
   - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

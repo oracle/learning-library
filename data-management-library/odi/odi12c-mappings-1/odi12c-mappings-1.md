@@ -1,6 +1,6 @@
-# Oracle Data Integrator 12c: Working with Mappings - 1
+# Work with Mappings - Part 1
 
-## Introduction to Working with Mappings
+## Introduction
 
 This chapter describes how to work with mappings in Oracle Data Integrator. The demonstration environment includes several example mappings. In this chapter you will learn how to create the following mappings:
 
@@ -67,7 +67,7 @@ The Load TRG\_CUSTOMER mapping uses the following data and transformations:
 | PHONE          | SRC\_CUSTOMER.PHONE                   | SRC\_CUSTOMER.PHONE     |
 | AGE            | SRC\_CUSTOMER.AGE                     | SRC\_CUSTOMER.AGE       |
 | AGE\_RANGE     | SRC\_AGE\_GROUP.AGE\_RANGE            | SRC\_AGE\_GROUP.AGE\_RANGE|
-| SALES\_PERS    | Concatenation of SRC\_SALES\_PERSON.FIRST\_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
+| SALES\_PERS    | Concatenation of SRC\_SALES\_PERSON.FIRST\_NAME and SRC\_SALES\_PERSON.LAST\_NAME in upper case | TRIM(SRC\_SALES\_PERSON.FIRST\_NAME) \|\| ' ' \|\| UPPER(TRIM(SRC\_SALES\_PERSON.LAST\_NAME)) |
 | CRE\_DATE      | Today's date                         | SYSDATE                 |
 | UPD\_DATE      | Today's date            | SYSDATE                 |
 
@@ -323,7 +323,7 @@ Finally click on TRG\_CUSTOMER datastore in the Mapping and in the Properties pa
 
 ## **Step 9:** Define the Data Loading Strategies (LKM)
 
-The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping's diagram. It proposes default Knowldege Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
+The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping's diagram. It proposes default Knowledge Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
 
 Loading Knowledge Modules (LKM) are used for loading strategies and Integration Knowledge Modules (IKM) are used for integration strategies.
 
@@ -357,7 +357,7 @@ To define the integration strategies:
 
 ## **Step 11:** Define the Data Control Strategy
 
-In the preceeding steps you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
+In the preceding steps you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 
 To define the data control strategy:
 
@@ -376,10 +376,16 @@ The Constraints tab appears as shown:
 
 The Load TRG\_CUSTOMER mapping is now ready to be run.
 
+You may proceed to the next lab.
+
+
 ## Acknowledgements
 
  - **Author** - Jayant Mahto, July 2020
- - **Last Updated By/Date** - Troy Anthony, June 25 2020
+ - **Contributors** - Troy Anthony
+ - **Last Updated By/Date** - Jayant Mahto, September 2020
 
- ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

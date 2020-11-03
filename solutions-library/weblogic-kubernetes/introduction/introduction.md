@@ -1,35 +1,51 @@
-# Migrating WebLogic Server to Kubernetes on OCI
+# Introduction
 
-## Introduction
+## About this Workshop
 
-This workshop explores the process of moving an existing on-premises WebLogic application into to a Kubernetes cluster in the Oracle  Cloud.
+This lab shows you how to deploy and run a WebLogic domain container-packaged web application on a Kubernetes cluster using [Oracle WebLogic Server Kubernetes Operator 3.0.0](https://github.com/oracle/weblogic-kubernetes-operator) (the "operator").
 
-[![Watch Workshop Overview](./images/youtube.png)](https://videohub.oracle.com/media/WLS+to+OKE+Overview+Video/1_z6ofm0s8)
+The sample web application is a simple JSP page which shows WebLogic Server domain MBean attributes to demonstrate operator features.
 
-Estimated Workshop Time: 40 minutes
+### About Product/Technology
 
-### About OCI Container Engine for Kubernetes (OKE)
-Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) is a fully-managed, scalable, and highly available service that you can use to deploy your containerized applications to the cloud. Use Container Engine for Kubernetes (sometimes abbreviated to just OKE) when your development team wants to reliably build, deploy, and manage cloud-native applications. You specify the compute resources that your applications require, and Container Engine for Kubernetes provisions them on Oracle Cloud Infrastructure in an existing OCI tenancy. 
+A WebLogic domain can be located either in a persistent volume (PV) or in a Docker image. There are advantages to both approaches, and sometimes there are technical limitations of various cloud providers that may make one approach better suited to your needs. See
+[Choose a model](https://oracle.github.io/weblogic-kubernetes-operator/userguide/managing-domains/choosing-a-model/).
 
-  
+This tutorial uses the Docker image with the WebLogic domain inside the image deployment. This means that all the artifacts and domain-related files are stored within the image. There is no central, shared domain folder from the pods. This is similar to the standard installation topology where you distribute your domain to different hosts to scale out Managed Servers. The main difference is that by using a container-packaged WebLogic domain, you don't need to use the pack/unpack mechanism to distribute domain binaries and configuration files between multiple hosts.
+
+![](images/architecture.png)
+
+In a Kubernetes environment, the operator ensures that only one Administration Server and multiple Managed Servers will run in the domain. An operator is an application-specific controller that extends Kubernetes to create, configure, and manage instances of complex applications. The Oracle WebLogic Server Kubernetes Operator simplifies the management and operation of WebLogic domains and deployments.
+
+Helm is a framework that helps you manage Kubernetes applications, and helm charts help you define and install Helm applications in a Kubernetes cluster.
+
+This tutorial has been tested on the Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE).
+
+[](youtube:yVdr4GmpxqY)
+
 ### Objectives
-* Create OKE on OCI
-* Install and configure the operator
-* Install and configure Traefik
+
+* Set up an Oracle Kubernetes Engine instance on the Oracle Cloud Infrastructure
+* Install the WebLogic Server Kubernetes Operator
+* Install a Traefik software load balancer
 * Deploy a WebLogic domain
+* Scale a WebLogic cluster
+* Update a deployed application by a rolling restart of the new image
+* Assign WebLogic pods to nodes (a scenario simulating a cluster spanning 2 data centers)](node.selector.ocishell.md)
 
+### Prerequisites
 
-### Prerequisites 
-* An Oracle Paid or LiveLabs Cloud account.
+An Oracle Paid or LiveLabs Cloud account.
 
-## Appendix:  Workshop Assumptions
-*Note:* This workshop is intended to be a comprehensive full cloud showcase. As such, it is assumed a user going through this workshop will be provisioning resources and creating users from scratch. If you decide to use existing infrastructure or resources, be aware and keep note of your namings so resources don't overlap and conflict.
+## Learn More
 
-*Note:* Additionally, as much as possible, do not stray away from the naming conventions used for resources in this worshop. You may run into errors if you do.
+* [WebLogic Kubernetes Operator Documentation](https://oracle.github.io/weblogic-kubernetes-operator)
 
 ## Acknowledgements
-* **Author** - Sasanka Abeysinghe, Senior Cloud Engineer, Oracle
-* **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
+* **Author** - Maciej Gruszka, Peter Nagy, September 2020
+* **Last Updated By/Date**
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

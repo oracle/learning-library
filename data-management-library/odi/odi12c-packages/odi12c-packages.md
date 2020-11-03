@@ -1,6 +1,6 @@
-# Oracle Data Integrator 12c: Working with Packages
+# Working with Packages - Part 1
 
-## Working with Packages
+## Introduction
 
 This chapter describes how to work with Packages in Oracle Data Integrator. The *Load Sales Administration* package is used as an example. An introduction to Packages and automating data integration between applications is provided.
 
@@ -217,7 +217,10 @@ The invalid records were saved into an error table and were not integrated into 
 ## Acknowledgements
 
  - **Author** - Jayant Mahto, July 2020
- - **Last Updated By/Date** - Troy Anthony, June 25 2020
+ - **Contributors** - Troy Anthony
+ - **Last Updated By/Date** - Jayant Mahto, September 2020
 
- ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

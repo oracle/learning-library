@@ -1,5 +1,5 @@
-
 {
+    "workshoptitle": "Migrate a WebLogic domain to Oracle Cloud Infrastructure",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -11,27 +11,27 @@
             "filename": "../../../intro/intro.md"
         },
         {
-            "title": "Lab 1: Setup the demo on-premises environment",
+            "title": "Lab 1: Setup the Demo On-Premises Environment",
             "publisheddate": "07/30/2020",
             "filename": "../../../on-prems-env/on-prems-env.md"
         },
         {
-            "title": "Lab 1 Option A: Setup an on-premises environment with the Workshop Marketplace stack",
+            "title": "Lab 1 Option A: Setup an On-Premises Environment with the Workshop Marketplace Stack",
             "publisheddate": "07/30/2020",
             "filename": "../../../on-prems-env-mp/on-prems-env-mp.md"
         },
         {
-            "title": "Lab 1 Option B: Setup a local (on-premises) environment with Docker",
+            "title": "Lab 1 Option B: Setup a Local (On-Premises) Environment with Docker",
             "publisheddate": "07/30/2020",
             "filename": "../../../on-prems-env-docker/on-prems-env-docker.md"
         },
         {
-            "title": "Lab 2: Prepare the OCI account",
+            "title": "Lab 2: Prepare the OCI Account",
             "publisheddate": "07/30/2020",
             "filename": "../../../prepare/prepare.md"
         },
         {
-            "title": "Lab 3: Provision the WebLogic infrastructure",
+            "title": "Lab 3: Provision the WebLogic Infrastructure",
             "publisheddate": "07/30/2020",
             "filename": "../../../provision-wls/provision-wls.md"
         },
@@ -51,19 +51,20 @@
             "filename": "../../../migrate-app-db-datapump/migrate-app-db-datapump.md"
         },
         {
-            "title": "Lab 7: Migrate the WebLogic domain",
+            "title": "Lab 7: Migrate the WebLogic Domain",
             "publisheddate": "07/30/2020",
             "filename": "../../../migrate-wls-wdt/migrate-wls-wdt.md"
         },
         {
-            "title": "Lab 8 (Optional): Scale the WebLogic domain",
+            "title": "Lab 8 (Optional): Scale the WebLogic Domain",
             "publisheddate": "07/30/2020",
             "filename": "../../../scale-wls/scale-wls.md"
         },
         {
-            "title": "Lab 9: Tear down the environment",
+            "title": "Lab 9: Tear down the Environment",
             "publisheddate": "07/30/2020",
-            "filename": "../../../tear-down/tear-down.md"
+            "filename": "../../../tear-down/tear-down.md",
+            "type": "dbcs"
         }
      ]
 }

@@ -1,1 +1,0 @@
-On the left edge of the ADW Service Console are links to navigate to one of four pages: Overview, Activity, Administration, and Development. Administration is highlighted. The main page shows four big buttons with options: Download Client Credentials (Wallet), Set Resource Management Rules, Set Administrator Password, Manage Oracle ML Users. Manage Oracle ML Users is highlighted.

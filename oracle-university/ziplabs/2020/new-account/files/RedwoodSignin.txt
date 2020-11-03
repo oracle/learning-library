@@ -1,1 +1,0 @@
-This image shows the cloud.oracle.com landing page. The button to Profile in the top right corner is highlighted.  It expands a menu.  The final option in this menu, Sign in to Cloud, is highlighted.

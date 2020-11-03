@@ -14,7 +14,7 @@ This lab assumes you have:
 - Completed Setup Compute or Verify Setup lab
 
 
-## Step 0: Run the Multitenant Setup Scripts
+## **Step 0:** Run the Multitenant Setup Scripts
 
 The next steps will download the files needed for the rest of the workshop and create a second set container databases and pluggable databases.
 
@@ -78,7 +78,7 @@ The next steps will download the files needed for the rest of the workshop and c
 
 *Note: Some commands throughout the rest of this lab may take 10-60 seconds to complete.*  
 
-## **Step 1:** Login and Create PDB
+## **STEP 1:** Login and Create PDB
 This section looks at how to login and create a new PDB.
 
 The tasks you will accomplish in this step are:
@@ -243,17 +243,18 @@ This section looks at how to clone a PDB.
 The tasks you will accomplish in this step are:
 - Clone a pluggable database **PDB2** into **PDB3**
 
-1. Connect to **CDB1**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
     <copy>sqlplus /nolog </copy>
     ````
+1. Connect to the container **CDB1**.
 
     ````
     <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
 
-2. Change **PDB2** to read only.
+2. Change the pluggable database **PDB2** to read only.
 
     ````
     <copy>alter pluggable database PDB2 open read only force;
@@ -321,11 +322,12 @@ This section looks at how to unplug a PDB.
 The tasks you will accomplish in this step are:
 - Unplug **PDB3** from **CDB1**
 
-1. Connect to **CDB1**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>sqlplus /nolog </copy>
     ````
+1. Connect to the container **CDB1**.
     
     ````
     <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
@@ -415,12 +417,12 @@ This section looks at how to plug in a PDB.
 The tasks you will accomplish in this step are:
 - Plug **PDB3** into **CDB2**
 
-1. Connect to **CDB2**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>sqlplus /nolog </copy>
     ````
-    
+1. Connect to the container **CDB2**.
     ````
     <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ````
@@ -544,11 +546,12 @@ This section looks at how to drop a pluggable database.
 The tasks you will accomplish in this step are:
 - Drop **PDB3** from **CDB2**
 
-1. Connect to **CDB2**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>sqlplus /nolog </copy>
     ````
+1. Connect to the container **CDB2**.
     
     ````
     <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
@@ -582,12 +585,12 @@ The tasks you will accomplish in this step are:
 - Create a gold copy of **PDB2** in **CDB1** as **GOLDPDB**
 - Clone **GOLDPDB** into **COPYPDB1** and **COPYPDB2** in **CDB2**
 
-1. Connect to **CDB1**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>sqlplus /nolog </copy>
     ````
-
+1. Connect to the container **CDB1**.
     ````
     <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
@@ -759,12 +762,12 @@ The tasks you will accomplish in this step are:
 
 [](youtube:djp-ogM71oE)
 
-1. Connect to **CDB1**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>sqlplus /nolog </copy>
     ````
-
+1. Connect to the container **CDB1**.
     ````
     <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ````
@@ -906,12 +909,12 @@ The tasks you will accomplish in this step are:
 - Create a hot clone **OE_REFRESH**` in the container database **CDB2** from the pluggable database **OE**
 - Refresh the **OE_REFRESH**` pluggable database.
 
-1. Connect to **CDB2**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>sqlplus /nolog </copy>
     ````
-
+1. Connect to the container **CDB2**.
     ````
     <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ````
@@ -1003,12 +1006,12 @@ The tasks you will accomplish in this step are:
 - Relocate the pluggable database **OE** from **CDB1** to **CDB2** with the load still running
 - Once **OE** is open the load should continue working.
 
-1. Change **CDB2** to use the listener **LISTCDB1**.
+1. Start SQL*Plus if you aren't already in a SQL*Plus session.
 
     ````
-    <copy>sqlplus /nolog</copy>
+    <copy>sqlplus /nolog </copy>
     ````
-
+1. Connect to the container **CDB2**.
     ````
     <copy>conn sys/oracle@localhost:1524/cdb2 as sysdba;</copy>
     ````
@@ -1109,7 +1112,9 @@ You may now proceed to the next lab.
 
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
 - **Contributors** -  David Start, Anoosha Pilli, Brian McGraw, Quintin Hill
-- **Last Updated By/Date** - Kay Malcolm, Product Manager, DB Product Management, June 2020
+- **Last Updated By/Date** - Kay Malcolm, Product Manager, DB Product Management, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

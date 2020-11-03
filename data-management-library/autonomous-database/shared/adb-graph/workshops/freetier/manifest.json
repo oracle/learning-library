@@ -1,0 +1,28 @@
+{
+    "workshoptitle": "Getting Started with Autonomous Graph",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "TPrerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts. ",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Workshop introduction and product overview.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Hello World",
+            "description": "Create a simple graph and learn how to navigate the user interface.",
+            "filename": "../../hello-world/hello-world.md"
+        },
+        {
+            "title": "Lab 2: Create a graph from the SH tables",
+            "filename": "../../create-graph-from-sh-tables/create-graph-from-sh-tables.md"
+        },
+        {
+            "title": "Lab 3: Analyze a Data Warehouse with Graph Algorithms",
+            "filename": "../../run-graph-algorithms-on-data-warehouse/run-graph-algorithms-on-data-warehouse.md"
+        }
+    ]
+}

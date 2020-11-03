@@ -1,13 +1,15 @@
 # Build the Oracle Database Docker Image
-## Before You Begin
 
-This lab walks you through the steps to build an Oracle Database Docker image on an Oracle Cloud compute instance.
-
-### Background
+## Introduction
 A Docker image contains all of the necessary code to execute an application for a host kernel. In this lab, you will create a Docker image for Oracle Database 19c.
 
-### What Do You Need?
+Estimated Lab Time: 15 minutes
 
+### Objectives
+This lab walks you through the steps to build an Oracle Database Docker image on an Oracle Cloud compute instance.
+
+
+### Prerequisites
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free)
 * SSH keys
 * Docker installed on an Oracle Cloud compute instance.
@@ -81,7 +83,7 @@ Choose the environment where you created your SSH Key.
 
   Download the zip file to this folder.
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/stLcOoar25AiY52XlpwYP2pie5XTvKw3uF-0qyewXoA/n/idq7tl4pseo1/b/bucket-20200622-1405/o/LINUX.X64_193000_db_home.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4tcV_zZFruaGi4wz-U6IERHuzwx2NqIcRJAnitcIE-jGAQfVccZXFk20FxKuIpvW/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
     ```
 
   ![](images/download_PAR.png " ")
@@ -196,8 +198,10 @@ Choose the environment where you created your SSH Key.
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
+* **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

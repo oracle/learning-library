@@ -1,10 +1,11 @@
 {
+  "workshoptitle": "Oracle Enterprise Manager - Multitenant Database Lifecycle Management",
   "tutorials": [
     {
-         "title": "Prerequisites",
-         "description": "Get a Free Trial",
-         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-     },
+      "title": "Prerequisites",
+      "description": "Get a Free Trial",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
     {
       "title": "Introduction",
       "description": "Introduction to Multitenant Database Lifecycle Management Workshop",
@@ -17,7 +18,7 @@
     },
     {
       "title": "Lab 2: Environment Setup",
-      "description": "Setup compute instance running EM 13.3 with pre-configured database targets using Terraform script and Resource Manager",
+      "description": "Setup compute instance running EM 13.4 with pre-configured database targets using Terraform script and Resource Manager",
       "publisheddate": "7/16/2020",
       "filename": "./../../setup-compute/setup-compute.md"
     },
@@ -25,7 +26,7 @@
       "title": "Lab 3: Multitenant Database Lifecycle Management",
       "description": "The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database",
       "publisheddate": "7/16/2020",
-      "filename": "./../../em-multitenant-lifecycle-automation/em-multitenant-lifecycle-automation.md"
+      "filename": "./../../em-multitenant-lifecycle-automation/em-multitenant-lifecycle-automation134.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",

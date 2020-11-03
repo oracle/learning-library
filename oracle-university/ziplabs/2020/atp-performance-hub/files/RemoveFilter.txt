@@ -1,1 +1,0 @@
-A graph shows average activity sessions by wait class. CPU is isolated. A list of filters appears above the graph. Each filter has an 'x' associated with it, which removes the filter. The 'x' for "Wait Class: CUP" is highlighted with a red rectangle.

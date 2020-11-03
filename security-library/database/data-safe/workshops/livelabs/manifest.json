@@ -1,0 +1,39 @@
+{
+  "workshoptitle": "Oracle Data Safe",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "description": "Prerequisites to run the Oracle Data Safe workshop in the LiveLabs tenancy.",
+          "filename": "./prerequisites.md"        },
+          {
+              "title": "Introduction",
+              "description": "This lab provides information about the Oracle Data Safe workshop.",
+              "filename": "../../introduction/introduction.md"
+            },
+            {
+              "title": "Lab 1: Provision and Register an Autonomous Database",
+              "description": "This lab shows you how to  provision an Autonomous Data Warehouse on Shared Exadata Infrastructure, load sample data into it, and register it with Oracle Data Safe.",
+              "filename": "../../provision-register-autonomous-database/provision-register-autonomous-database.md"
+            },
+            {
+              "title": "Lab 2: Provision Audit and Alert Policies",
+              "description": "This lab shows you how to provision audit and alert policies in Oracle Data Safe.",
+              "filename": "../../provision-audit-alert-policies/provision-audit-alert-policies.md"
+              },
+              {
+              "title": "Lab 3: Analyze Alerts and Audit Reports",
+              "description": "This lab shows you how to analyze alerts and audit reports in Oracle Data Safe.",
+              "filename": "../../analyze-alerts-audit-reports/analyze-alerts-audit-reports.md"
+              },
+              {
+              "title": "Lab 4: Assess Database Configurations and Users",
+              "description": "This lab shows you how to assess database configurations and users in your Autonomous Database by using the User Assessment feature in Oracle Data Safe.",
+              "filename": "../../assess-database-configurations-users/assess-database-configurations-users.md"
+              },
+              {
+              "title": "Lab 5: Discover and Mask Sensitive Data",
+              "description": "This lab shows you how to discover and mask sensitive data in Oracle Data Safe by using the Data Discovery and Data Masking features.",
+              "filename": "../../discover-mask-sensitive-data/discover-mask-sensitive-data.md"
+              }
+          ]
+      }

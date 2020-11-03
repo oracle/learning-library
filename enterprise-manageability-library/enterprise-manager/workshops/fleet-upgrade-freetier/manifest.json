@@ -1,10 +1,11 @@
 {
+  "workshoptitle": "Oracle Enterprise Manager - Automated Database Upgrade at Scale with Fleet Maintenance",
   "tutorials": [
     {
-         "title": "Prerequisites",
-         "description": "Get a Free Trial",
-         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-     },
+      "title": "Prerequisites",
+      "description": "Get a Free Trial",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
     {
       "title": "Introduction",
       "description": "Introduction to Automated Database Upgrade at Scale with Fleet Maintenance Workshop",
@@ -17,7 +18,7 @@
     },
     {
       "title": "Lab 2: Environment Setup",
-      "description": "Setup compute instance running EM 13.3 with pre-configured database targets using Terraform script and Resource Manager",
+      "description": "Setup compute instance running EM 13.4 with pre-configured database targets using Terraform script and Resource Manager",
       "publisheddate": "7/16/2020",
       "filename": "./../../setup-compute/setup-compute.md"
     },
@@ -25,7 +26,7 @@
       "title": "Lab 3: Automated Database Upgrade at Scale with Fleet Maintenance",
       "description": "This lab walks you through the steps needed with Fleet Maintenance to automate upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
       "publisheddate": "7/16/2020",
-      "filename": "./../../em-fleet-maintenance-upgrade/em-fleet-maintenance-upgrade.md"
+      "filename": "./../../em-fleet-maintenance-upgrade/em-fleet-maintenance-upgrade134.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",

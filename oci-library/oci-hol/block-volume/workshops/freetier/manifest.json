@@ -1,4 +1,5 @@
 {
+    "workshoptitle": "Create and Attach a Block Volume Service",
     "tutorials": [
       {
           "title": "Prerequisites",
@@ -11,6 +12,7 @@
       },
       {
           "title": "Lab 1: Create and Attach a Block Volume Service",
+          "type": "freetier",
           "filename": "./../../block-volume.md"
       }
     ]

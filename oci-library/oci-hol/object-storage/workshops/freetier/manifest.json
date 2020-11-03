@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Create an Object Storage Service",
     "tutorials": [
       {
           "title": "Prerequisites",
@@ -11,6 +12,7 @@
       },
       {
           "title": "Lab 1: Create an Object Storage Service",
+          "type": "freetier",
           "filename": "./../../object-storage.md"
       }
     ]

@@ -1,12 +1,6 @@
 # Kubernetes REST Service Deployment
 
 ## Before You Begin
-### Objectives
-- Verify Kubernetes Cluster up and running.
-- Find Deployed REST Services URLs.
-- Verify REST Services deployed in Lab 300.
-- Test REST services.
-- Simulate Pod failure and REST service recovery.
 
 ### Introduction
 
@@ -14,12 +8,20 @@ Thus far on our journey from a monolithic application to microservices, we have 
 
 During this lab, you will verify REST Services deployed in Lab 300 via Kubernetes Dashboard.
 
+Estimated time: 20 minutes
+
+### Objectives
+- Verify Kubernetes Cluster up and running.
+- Find Deployed REST Services URLs.
+- Verify REST Services deployed in Lab 300.
+- Test REST services.
+- Simulate Pod failure and REST service recovery.
+
+### Prerequisites
+- Successful completion of Labs 1 and 2
+
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:FPN_ggM1f3c
 [](youtube:FPN_ggM1f3c)
-
-## Required Artifacts
-
-- You should already have completed labs 50, 100, and 200 before beginning this lab.
 
 - **Works better with the Chrome browser**.
 
@@ -167,5 +169,7 @@ Now that our REST service is deployed to Kubernetes, let's build a user interfac
 - **Last Updated By/Date** - 
 - **Workshop Expiration Date** - May 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

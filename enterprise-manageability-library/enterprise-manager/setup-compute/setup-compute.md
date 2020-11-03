@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to setup a Resource Manager stack that will generate the Oracle Cloud objects needed to run this workshop.  This workshop requires a compute instance running Enterprise Manager 13c with monitored database targets and a Virtual Cloud Network (VCN).
 
+*Estimated Lab Time*: 30 minutes
+
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
 
@@ -26,7 +28,7 @@ Watch the end-to-end demonstration:
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+    - [emcc-mkplc-13.4-RU5-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fsWp1EI_Wr4KJfvHilXQUSU7GtmmO1puCA_PM9Rh1zjkLMwHegvgAIvTNhHlPl5J/n/natdsecurity/b/stack/o/emcc-mkplc-13.4-RU5-freetier.zip)
     - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2.  Save in your downloads folder.
@@ -38,7 +40,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-13.4-RU5-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
@@ -84,7 +86,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 - Egress rules for the following ports:  9851, 7803, 22          
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-  - [emcc-mkplc-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9pLAit-dYlCGrpnHDDXoXGbfrYsiH7AsyJPLjBRrH48/n/omcinternal/b/workshop-labs-files/o/emcc-mkplc-v3-freetier.zip)
+  - [emcc-mkplc-13.4-RU5-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fsWp1EI_Wr4KJfvHilXQUSU7GtmmO1puCA_PM9Rh1zjkLMwHegvgAIvTNhHlPl5J/n/natdsecurity/b/stack/o/emcc-mkplc-13.4-RU5-freetier.zip)
   - Packaged terraform instance creation script for creating network and instance running the Oracle Marketplace Image
 
 2. Save in your downloads folder.
@@ -96,7 +98,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
   ![](./images/em-create-stack.png " ")
 
-4. Select **My Configuration**, Click the **Browse** link and select the zip file ([emcc-mkplc-v3-freetier.zip) that you downloaded. Click **Select**.
+4. Select **My Configuration**, Click the **Browse** link and select the zip file (emcc-mkplc-13.4-RU5-freetier.zip) that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
@@ -287,7 +289,7 @@ This workshop requires a certain number of ports to be available.
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 - Availability Domain Mismatch
 - Limits Exceeded
 - Invalid public key
@@ -372,5 +374,7 @@ If you have other compute instances you are not using, you can go to those insta
 - **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

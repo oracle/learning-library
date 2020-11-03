@@ -24,13 +24,13 @@ Assumpt you have already prepared the following:
 
 ## Create a stack
 
-1. Login to OCI Console. Open the navigation menu. Under **Solutions and Platform**, go to **Resource Manager** and click **Stacks**.<img src="./img/image-20200216155401032.png" alt="image-20200216155401032 style=zoom:50%;" />
+1. Login to OCI Console. Open the navigation menu. Under **Solutions and Platform**, go to **Resource Manager** and click **Stacks**.![](./img/image-20200216155401032.png)
 
 2. Choose the correct **Region** and a **Compartment** you have permission to work in.![image-20200216155456705](./img/image-20200216155456705.png)
 
 3. Click **Create Stack**. In the **Create Stack** dialog, add your Terraform configuration (.zip) file which you prepared in advance. For example: *vcn-dbcsvm.zip*.
 
-   You can either drag and drop it onto the dialog's control or click **Browse** and navigate to the file location.<img src="./img/image-20200216155746846.png" alt="image-20200216155746846" style="zoom:50%;" />
+   You can either drag and drop it onto the dialog's control or click **Browse** and navigate to the file location.![](./img/image-20200216155746846.png)
 
 4. Accept the default **Working Directory**. Give a name of the stack or accept the default name. Verify the **Compartment** is corret. Click **Next**.![image-20200216160354204](./img/image-20200216160354204.png)
 

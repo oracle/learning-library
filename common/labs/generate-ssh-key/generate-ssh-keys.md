@@ -43,8 +43,6 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](./images/cloudshell-ssh-keygen.png " ")
 
-    ![](./images/cloudshell-ssh-keygen-2.png " ")
-
 3.  Examine the two files that you just created.
 
     ````
@@ -65,7 +63,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](images/copy-publickey-cloudshell.png " ")
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 2:  MacOS
 
@@ -104,7 +102,7 @@ You may now *proceed to the next lab* or paste it in the LiveLabs reservation pa
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 3:  Windows 10
 
@@ -157,7 +155,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
@@ -209,7 +207,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     *Note: If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.*
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 4b: Windows Versions - PuTTY
 
@@ -297,7 +295,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 5: SSH Keys for Linux
 
@@ -341,12 +339,14 @@ You may now *proceed to the next lab* or paste it in the LiveLabs reservation pa
 
     In case you're interested, click [here](https://www.ssh.com/ssh/key) for more details on SSH, a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 27, 2020
+* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, October 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

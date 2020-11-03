@@ -4,25 +4,19 @@
 
 Oracle Management Cloud (OMC) allows you to gain insight into your IT applications and infrastructure. In this lab, you will learn how to connect to and monitor your Oracle Autonomous Database (ADB) instances such as Oracle Autonomous Warehouse (ADW).
 
+Estimated Lab Time: 20 minutes.
+
 ### Objectives
 
 -   Learn how to provision an Oracle Management Cloud Instance
 -   Learn how to set up Autonomous Database Monitoring in OMC
 -   Learn how to navigate the out-of-the-box dashboards in OMC to gain insight into your databases
 
-### Required Artifacts
+### Prerequisites
 
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
--   The estimated time to complete this lab is 20 minutes.
 
-### Extra Resources
-
--   To learn more about Oracle Management Cloud, feel free to explore the capabilities by clicking on this link: [Oracle Management Cloud Documentation](https://docs.oracle.com/en/cloud/paas/management-cloud/index.html)
-
--   To learn more about monitoring Autonomous Databases in Oracle Management cloud, refer to this link: [Using Oracle Database Management for Autonomous Databases](https://docs.oracle.com/en/cloud/paas/management-cloud/mcdbm/introduction-oracle-database-management.html)
-
-
-## **Step 0:** Provision a Management Cloud Instance
+## **Step 0**: Provision a Management Cloud Instance
 
 1. Inside of the OCI (Oracle Cloud Infrastructure) Console, click on the top left menu icon.
 
@@ -39,7 +33,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 4. Once your region is selected, click on the **Create Instance** button.  Enter the instance information following the format below.  Make sure to include your own personal email to ensure that you have OMC Administrator access to your instance.  Once you have entered all of the necessary information, click **Create**.
 
     ![](./images/omc4.png " ")
-    
+
     ![](./images/omc5.png " ")
 
 5. You will see that once you click Create, your instance will be in a 'Provisioning' status.  This may take a couple of minutes for the instance to provision.
@@ -111,7 +105,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 3. Once you are in your instance, you will be brought to the OMC home page.  Navigate to the top left menu icon, and go to **Administration > Discovery > Cloud Discovery Profiles**.
 
     ![](./images/omc21.png " ")
-    
+
     ![](./images/omc22.png " ")
 
 4. On this page, select **+Add Profile** on the top right of the page.
@@ -125,7 +119,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 7. When you are finished entering in all fields, click **Start Discovery** in the top right corner of the window.
 
     ![](./images/omc24.png " ")
-    
+
 
 ## **STEP 3**: Validate Databases
 
@@ -156,23 +150,23 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 2. Select the pink **Database Management** page to view your full Database Fleet.  
 
     ![](./images/omc25b.png " ")
-    
+
     ![](./images/omc26.png " ")
 
 3. Using the global context menu at the top of the page, filter for your ADW by typing in the name of your database and then selecting the entity that matches.  Now, you should see open alerts and important performance statistics relating exclusively to your ADW instance.
 
     ![](./images/omc27.png " ")
-    
-4. Scroll down to the bottom of the page to see **Fleet Members**.  **Click** on the name of your database.  Here is where you can go to get more detailed information (Database Activity, Running SQL statements, etc) to understand on a surface-level what types of activities your database is performing. 
+
+4. Scroll down to the bottom of the page to see **Fleet Members**.  **Click** on the name of your database.  Here is where you can go to get more detailed information (Database Activity, Running SQL statements, etc) to understand on a surface-level what types of activities your database is performing.
 
     ![](./images/omc33.png " ")
-    
+
     ![](./images/omc33b.png " ")
 
 5. Now that you have your database selected, you can navigate to the side menu, and click on **Performance Hub**.  Here you're able to gain some deeper insights on ASH Analytics, SQL Monitoring, and DB Workloads to obtain a more thorough picture of what is happening behind the scenes in your database.  Explore the different visualizations on the page.
 
     ![](./images/omc34.png " ")
-    
+
     ![](./images/omc35.png " ")
 
 ## **STEP 5**: Infrastructure Monitoring
@@ -180,7 +174,7 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 1. On the left navigation menu, click on the **back** button until you can select **Monitoring**.
 
     ![](./images/omc36.png " ")
-    
+
     ![](./images/omc36b.png " ")
 
 2. Your ADW should still be selected in the global context menu from the previous section.  If it's not, filter for your retail database by typing the database name into the menu bar at the top as you did before.
@@ -188,22 +182,32 @@ Oracle Management Cloud (OMC) allows you to gain insight into your IT applicatio
 3. On this **Entities** page, navigate to the second tab **Performance Charts**.  You'll be able to see different metrics over a period of time and understand how your database resources are being utilized.  To change the amount of time you're viewing, use the time context in the top right corner.
 
     ![](./images/omc37.png " ")
-    
+
     ![](./images/omc38.png " ")
 
-4. Feel free to explore the other tabs (Performance Tables, Configuration, Related Entities) to gain an understanding of what sort of information is available in the Infrustructure Monitoring Suite.
+4. Feel free to explore the other tabs (Performance Tables, Configuration, Related Entities) to gain an understanding of what sort of information is available in the Infrastructure Monitoring Suite.
 
+You may proceed to the next lab.
 
 ## Summary
 
-In this lab, you provisioned a new Oracle Management Cloud instance, connected it to your Autonomous Database, and then navigated through the different views in OMC to understand how your database is being used. 
+In this lab, you provisioned a new Oracle Management Cloud instance, connected it to your Autonomous Database, and then navigated through the different views in OMC to understand how your database is being used.
 
-However, this was only the first step to monitoring your IT solution. In addition to Autonomous Databases, OMC has the ability to monitor a wide variety of different entity types - including products that are on-prem or from other cloud vendors. You can connect to these other resources and see how they interact with your database in order to gain a thorough understanding of what is happening in your IT estate and view any issues through a single pane of glass. 
+However, this was only the first step to monitoring your IT solution. In addition to Autonomous Databases, OMC has the ability to monitor a wide variety of different entity types - including products that are on-premises or from other cloud vendors. You can connect to these other resources and see how they interact with your database in order to gain a thorough understanding of what is happening in your IT estate and view any issues through a single pane of glass.
+
+## Learn More
+
+To learn more about Oracle Management Cloud, feel free to explore the capabilities by clicking on this link: [Oracle Management Cloud Documentation](https://docs.oracle.com/en/cloud/paas/management-cloud/index.html)
+
+To learn more about monitoring Autonomous Databases in Oracle Management cloud, refer to this link: [Using Oracle Database Management for Autonomous Databases](https://docs.oracle.com/en/cloud/paas/management-cloud/mcdbm/introduction-oracle-database-management.html)
 
 
 ## Acknowledgements
 
-- **Author** - NA Cloud Engineering - Austin (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah, Tanvi Varadhachary)
-- **Last Updated By/Date** - Philip Pavlov, Cloud Engineer, July 2020
+- **Author** - NA Cloud Engineering - Austin (Khader Mohiuddin, Jess Rein, Parshwa Shah, Tanvi Varadhachary)
+- **Last Updated By/Date** - Jess Rein, Cloud Engineer, September 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

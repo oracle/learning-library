@@ -18,6 +18,13 @@ To sign in to the Console, you need the following:
 
 ## **STEP 1**: Create Your VCN
 
+<if type="livelabs">
+You are running this workshop in a LiveLabs environment. Our LiveLabs environments use a pre-configured Virtual Cloud Network (VCN), so you will not create a VCN in this workshop. However, you can see how a VCN is created  in Oracle Cloud Infrastructure by watching this short video:
+
+ [](youtube:lxQYHuvipx8)
+ </if>
+
+<if type="freetier">
 To create a VCN on Oracle Cloud Infrastructure:
 
 1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard.
@@ -30,7 +37,7 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 3. Complete the following fields:
 
-    |                  **Field**              |    **Vaue**  |
+    |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
     |VCN NAME |OCI\_HOL\_VCN|
     |COMPARTMENT |  Choose the ***Demo*** compartment you created in the ***Identity and Access Management Lab***
@@ -53,6 +60,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     ![Workflow](images/workflow.png " ")
 
 7. Once you see that the creation is complete (see previous screenshot), click on the **View Virtual Cloud Network** button.
+</if>
 
 ### Summary
 
@@ -63,7 +71,9 @@ This VCN will contain all of the other assets that you will create during this s
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Tom McGinn, July 2020
+- **Last Updated By/Date** - Tom McGinn, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oci-networking). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

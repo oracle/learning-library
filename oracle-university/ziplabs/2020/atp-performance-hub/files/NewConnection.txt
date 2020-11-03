@@ -1,1 +1,0 @@
-This image shows the New / Select Database Connection dialog. Its fields are filled as described in the tutorial step associated with this image.

@@ -1,4 +1,4 @@
-# Provisioning Autonomous Database (ADW and ATP)
+# Provision ADB and Link to ODI
 
 ## Introduction
 
@@ -6,13 +6,13 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 *Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
+Estimated Lab Time:  10 minutes
+
 ### Objectives
 
--   Learn how to provision a new Autonomous Data Warehouse
+* Learn how to provision a new Autonomous Data Warehouse
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-### Required Artifacts
-
-The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
 ### Prerequisites
 
@@ -120,7 +120,6 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Picture100-32.png " ")
 
-Please proceed to the next lab.
 
 ## **Step 3:** Populating ADW Database with Seed Data
 
@@ -151,7 +150,7 @@ Please proceed to the next lab.
 
 8. Select all of the text and run it to create the users *ODI\_DEMO* and *ODI\_STAGING*
 
-9. Copy the contents of *Seed_data.sql* in to the worksheet, select the text and run to create tables and populate with seed data:
+9. Copy the contents of *Seed_data.sql* in to the worksheet, select the text and run to create tables and populate with seed data. The execution may take few minutes to complete (UI doesn't show any activity in the meantime). Check for messages in "Script Output" tab to make sure commit completed after the execution.
     ![](./images/seed-data.png " ")   
 
 ## Want to Learn More?
@@ -162,8 +161,11 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Troy Anthony, July 2020
 - **Contributors** - Jeffrey Malcolm Jr, Arabella Yao, June 2020
+- **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

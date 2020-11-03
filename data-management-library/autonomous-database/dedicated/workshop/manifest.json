@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Oracle Autonomous Database Dedicated Workshop",
     "tutorials": [
         {
             "title": "Introduction to ADB Dedicated",
@@ -16,119 +17,209 @@
             "filename": "./../adb-provisioning-exadata/adb-provisioning-exadata.md"
         },
         {
-            "title": "Lab 3: Provisioning Exadata Infrastructure for ADB on Exadata Cloud@Customer",
+            "title": "Lab 4: Provisioning Exadata Infrastructure for ADB on Exadata Cloud@Customer",
             "description": "Provisioning Exadata Infrastructure for Autonomous DB on ExaC@C",
             "filename": "./../adb-provisioning-exaC@C/adb-provisioning-exaC@C.md"
         },
         {
-            "title": "Lab 4: Provisioning a VM Cluster for ADB on Exadata Cloud@Customer",
+            "title": "Lab 5: Provisioning a VM Cluster for ADB on Exadata Cloud@Customer",
             "description": "Provisioning a VM Cluster for Autonomous DB on ExaC@C",
             "filename": "./../adb-provisioning-VMC/adb-provisioning-VMC.md"
         },
         {
-            "title": "Lab 5: Provisioning an Autonomous Container Database",
+            "title": "Lab 6: Provisioning an Autonomous Container Database",
             "description": "Provisioning an Autonomous Container Database",
             "filename": "./../adb-provisioning-autonomous-container/adb-provisioning-autonomous-container.md"
         },
         {
-            "title": "Lab 6: Provisioning databases",
+            "title": "Lab 7: Provisioning databases",
             "description": "Provisioning databases on your dedicated Autonomous Infrastructure",
             "filename": "./../adb-provisioning-databases/adb-provisioning-databases.md"
         },
         {
-            "title": "Lab 7: Configuring a Development System",
+            "title": "Lab 8: Configuring a Development System",
             "description": "Configuring a development system for use with your dedicated autonomous database",
             "filename": "./../adb-configure-dev-client/adb-configure-dev-client.md"
         },
         {
-            "title": "Lab 8: Configuring VPN into private ATP network",
+            "title": "Lab 9: Configure VPN Connectivity in your Exadata Network",
             "description": "Configuring VPN connectivity into your private ATP network",
             "filename": "./../atp-configuring-vpn/atp-configuring-vpn.md"
         },
         {
-            "title": "Lab 9: Build and Deploy Node.js Application",
+            "title": "Lab 10: Build and Deploy Node.js Application",
             "description": "Building and deploying node.js application stacks on dedicated autonomous infrastructure",
             "filename": "./../adb-build-and-deploy-nodejs/adb-build-and-deploy-nodejs.md"
         },
         {
-            "title": "Lab 10: Build Python Application Stacks",
+            "title": "Lab 11: Build Python Application Stacks",
             "description": "Building and deploying Python application stacks on dedicated autonomous infrastructure",
             "filename": "./../adb-build-python-apps/adb-build-python-apps.md"
         },
         {
-            "title": "Lab 11: Build Java Application Stacks",
+            "title": "Lab 12: Build Java Application Stacks",
             "description": "Building and deploying Java application stacks on dedicated autonomous infrastructure",
             "filename": "./../adb-build-java-apps/adb-build-java-apps.md"
         },
         {
-            "title": "Lab 12: Using CLI commands",
+            "title": "Lab 13: Using CLI commands",
             "description": "Using CLI commands to work with your Autonomous databases",
             "filename": "./../adb-using-cli-commands/adb-using-cli-commands.md"
         },
         {
-            "title": "Lab 13: SQL Developer Web Console",
+            "title": "Lab 14: SQL Developer Web Console",
             "description": "Using sql*developer web console",
             "filename": "./../adb-sql-developer-web/adb-sql-developer-web.md"
         },
         {
-            "title": "Lab 14: Build Apex Application",
+            "title": "Lab 15: Build Apex Application",
             "description": "Building Apex application on dedicated autonomous database",
             "filename": "./../adb-build-apex-apps/adb-build-apex-apps.md"
         },
         {
-            "title": "Lab 15: Migrate with Data Pump",
+            "title": "Lab 16: Migrate with Data Pump",
             "description": "Migrating to Dedicated ATP using Data Pump",
             "filename": "./../atp-data-pump-migration/atp-data-pump-migration.md"
         },
         {
-            "title": "Lab 16: Oracle Goldengate Replication",
+            "title": "Lab 17: Oracle Goldengate Replication",
             "description": "Live migration to ATP-Dedicated using Oracle Goldengate replication",
             "filename": "./../atp-goldengate-replication/atp-goldengate-replication.md"
         },
         {
-            "title": "Lab 17: Build Always On Applications",
+            "title": "Lab 18: Build Always On Applications",
             "description": "Building Always-On applications on the autonomous database",
             "filename": "./../adb-build-always-on-apps/adb-build-always-on-apps.md"
         },
         {
-            "title": "Lab 18: Managing Database Performance",
+            "title": "Lab 19: Managing Database Performance",
             "description": "Managing database performance with Performance Hub",
             "filename": "./../adb-performance-hub/adb-performance-hub.md"
         },
         {
-            "title": "Lab 19: Zero Downtime Scaling",
+            "title": "Lab 20: Zero Downtime Scaling",
             "description": "Zero downtime scaling",
             "filename": "./../adb-scaling/adb-scaling.md"
         },
         {
-            "title": "Lab 20: Protect Data With Database Vault",
+            "title": "Lab 21: Protect Data With Database Vault",
             "description": "Protecting your data with Database Vault",
             "filename": "./../adb-vault/adb-vault.md"
         },
         {
-            "title": "Lab 21: Recover Errors Using Flashback Recovery",
+            "title": "Lab 22: Recover Errors Using Flashback Recovery",
             "description": "Recovering from user errors using flashback recovery",
             "filename": "./../adb-flashback-recovery/adb-flashback-recovery.md"
         },
         {
-            "title": "Lab 22: OCI Notification Service",
+            "title": "Lab 23: OCI Notification Service",
             "description": "Setting up DB event notifications using OCI Notification service",
             "filename": "./../adb-event-notifications/adb-event-notifications.md"
         },
         {
-            "title": "Lab 23: Oracle Analytics Cloud",
+            "title": "Lab 24: Oracle Analytics Cloud",
             "description": "Connect OAC with Dedicated database",
             "filename": "./../adb-connect-oac/adb-connect-oac.md"
         },
         {
-            "title": "Lab 24: Automatic Indexing",
-            "description": "Automatic Indexing .",
+            "title": "Lab 25: Deploy OEM and connect ADB to OEM",
+            "description": "Deploy OEM and connect ADB to OEM",
+            "filename": "./../adb-oem/deploy OEM and connecting to ADB from OEM.md"
+        },
+        {
+            "title": "Lab 25-1: Automatic Indexing",
+            "description": "Automatic Indexing",
             "filename": "./../adb-automatic-indexing/adb-automatic-indexing.md"
         },
         {
-            "title": "Lab 25: Move to ADB",
+            "title": "Lab 25-2: Download AWR report from OEM",
+            "description": "Automatic Indexing .",
+            "filename": "./../adb-oem/download AWR report from OEM.md"
+        },
+        {
+            "title": "Lab 26: Move to ADB",
             "description": "Move to ADB",
             "filename": "./../adb-mv2adb/MV2ADB.md"
+        },
+        {
+            "title": "Lab 27: Data Safe with ATP-D",
+            "description": "Data Safe with ATP-D",
+            "filename": "./../adb-datasafe/datasafe.md"
+        },
+        {
+            "title": "Lab 27-1: Register a Target Database",
+            "description": "Register a Target Database",
+            "filename": "./../adb-datasafe/Register a Target Database.md"
+        },
+        {
+            "title": "Lab 27-2: Assess Database Configurations with Oracle Data Safe",
+            "description": "Security and User Assessment Lab 1",
+            "filename": "./../adb-datasafe/Assessment Lab 1.md"
+        },
+        {
+            "title": "Lab 27-3: Assess Users with Oracle Data Safe",
+            "description": "Security and User Assessment Lab 2",
+            "filename": "./../adb-datasafe/Assessment Lab 2.md"
+        },
+        {
+            "title": "Lab 27-4: Discover Sensitive Data with Oracle Data Safe",
+            "description": "Sensitive Data Discovery Lab 1",
+            "filename": "./../adb-datasafe/Discovery Lab 1.md"
+        },
+        {
+            "title": "Lab 27-5: Verify a Sensitive Data Model with Oracle Data Safe",
+            "description": "Sensitive Data Discovery Lab 2",
+            "filename": "./../adb-datasafe/Discovery Lab 2.md"
+        },
+        {
+            "title": "Lab 27-6: Update a Sensitive Data Model with Oracle Data Safe",
+            "description": "Sensitive Data Discovery Lab 3",
+            "filename": "./../adb-datasafe/Discovery Lab 3.md"
+        },
+        {
+            "title": "Lab 27-7: Create a Sensitive Type Category with Data Safe",
+            "description": "Sensitive Data Discovery Lab 4",
+            "filename": "./../adb-datasafe/Discovery Lab 4.md"
+        },
+        {
+            "title": "Lab 27-8: Discover and Mask Sensitive Data by Using Default Masking Formats in Data Safe",
+            "description": "Data Masking Lab 1",
+            "filename": "./../adb-datasafe/Masking Lab 1.md"
+        },
+        {
+            "title": "Lab 27-9: Explore Data Masking Results and Reports in Data Safe",
+            "description": "Data Masking Lab 2",
+            "filename": "./../adb-datasafe/Masking Lab 2.md"
+        },
+        {
+            "title": "Lab 27-10: Create a Masking Format in Data Safe",
+            "description": "Data Masking Lab 3",
+            "filename": "./../adb-datasafe/Masking Lab 3.md"
+        },
+        {
+            "title": "Lab 27-11: Configure a Variety of Masking Formats with Data Safe",
+            "description": "Data Masking Lab 4",
+            "filename": "./../adb-datasafe/Masking Lab 4.md"
+        },
+        {
+            "title": "Lab 27-12: Provision Audit and Alert Policies and Configure an Audit Trail in Data Safe",
+            "description": "Auditing and Reporting Lab 1",
+            "filename": "./../adb-datasafe/Auditing Lab 1.md"
+        },
+        {
+            "title": "Lab 27-13: Analyze Audit Data with Reports and Alerts in Data Safe",
+            "description": "Auditing and Reporting Lab 2",
+            "filename": "./../adb-datasafe/Auditing Lab 2.md"
+        },
+        {
+            "title": "Lab 27-14: Custom Audit Policies Audit Data in Data Safe",
+            "description": "Auditing and Reporting Lab 3",
+            "filename": "./../adb-datasafe/Auditing Lab 3.md"
+        },
+        {
+            "title": "Lab 28: Customer Controlled Database Encryption Keys",
+            "description": "Customer managed keys using OCI Vault Service",
+            "filename": "./../adb-kms/adb-kms.md"
         },
         {
             "title": "Appendix",

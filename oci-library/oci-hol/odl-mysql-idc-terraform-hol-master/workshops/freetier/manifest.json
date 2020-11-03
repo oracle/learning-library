@@ -1,0 +1,47 @@
+{
+    "workshoptitle": "Deploying MySQL InnoDB Cluster on OCI with Terraform",
+    "tutorials": [
+        {         
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "publisheddate": "07/30/2020",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Setup your Local and Oracle Cloud environment",
+            "publisheddate": "07/30/2020",
+            "filename": "./../../conf-vm/conf-vm.md"
+        },
+        {
+            "title": "Lab 2: Terraform",
+            "publisheddate": "09/29/2020",
+            "filename": "./../../terraform/terraform.md"
+        },
+        {
+            "title": "Lab 3: Terraform - Deployment",
+            "publisheddate": "09/29/2020",
+            "filename": "./../../deploy/deploy.md"
+        },
+        {
+            "title": "Lab 4: MySQL InnoDB Cluster",
+            "publisheddate": "09/29/2020",
+            "filename": "./../../idc/idc.md"
+        },
+        {
+            "title": "Lab 5: Destroy",
+            "publisheddate": "09/29/2020",
+            "filename": "./../../destroy/destroy.md"
+        },
+        {
+            "title": "Lab 6: Resource Manager - Stack",
+            "publisheddate": "09/29/2020",
+            "filename": "./../../stack/stack.md"
+        }
+     ]
+}

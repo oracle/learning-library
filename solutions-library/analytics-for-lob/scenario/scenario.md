@@ -4,6 +4,8 @@
 
 Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow, which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
 
+Estimated Lab Time: 15 minutes.
+
 ### Objectives
 
 To understand the following:
@@ -20,8 +22,6 @@ To understand the following:
 * An Oracle Public Cloud account-Essbase 19c instance with Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 * Smart View plugin enabled for Excel.
-
-The estimated time to complete this lab is 15 minutes.
 
 ## Overview – Understand Scenario
 
@@ -43,29 +43,29 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 1.	In the Essbase web interface, click Import.
 
-  ![](./images/image17_1.png "")
+    ![](./images/image17_1.png "")
 
 2.	Click Catalog.
 
-  ![](./images/image17_2.png "")
+    ![](./images/image17_2.png "")
 
 3.	Drill down into the Gallery, Cubes, and General folders. Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
 
-  ![](./images/image17_3.png "")
+    ![](./images/image17_3.png "")
 
 4.	Download the [Sample_Basic_Scenario.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SnwdapEvpeFJVEahs5vIqgjd-tPBAhSKXX8OluI_IQ4/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic_Scenario.xlsx) file. Select `Sample_Basic_Scenario.xlsx` and click Select.
 
 5.	Provide a unique name and click OK.
 
- ![](./images/image17_4.png "")
+    ![](./images/image17_4.png "")
 
- ![](./images/extrasmall_1.png "")
+    ![](./images/extrasmall_1.png "")
 
 ## **Step 2:** Creating a Scenario
 
-**Adding a Scenario to a sandbox-enabled cube**
+**Adding a Scenario to a Sandbox-Enabled Cube**
 
-* To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
+To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
 
 1.	In Essbase, login as a user with database update (or higher) permission to at least one application.
 
@@ -73,11 +73,11 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 3.	Click Create Scenario.
 
-  ![](./images/image17_5.png "")
+    ![](./images/image17_5.png "")
 
 4.	On the General Information tab, enter a scenario name and select a Priority (optional), Due Date, Application, and Database (cube). You will only see applications for which you have minimum database update permission.
 
-  ![](./images/image17_6.png "")
+    ![](./images/image17_6.png "")
 
 5.	Turn on Use Calculated Values if you want to merge calculated values to base values when running calculation scripts on scenarios.
 
@@ -93,19 +93,19 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 11.	Select Approver. Scenario user roles determine the workflow for the scenario.
 
-  ![](./images/image17_7.png "")
+    ![](./images/image17_7.png "")
 
 12.	Save your change.
 
 ## **Step 3:** Lightweight Sandboxes
 
-**Show that sandboxes are lightweight**  
+**Show that Sandboxes are lightweight**  
 
-* This exercise shows that creating sandboxes has little impact on resource usage such as disk space.
+This exercise shows that creating sandboxes has little impact on resource usage such as disk space.
 
 1. Connect to `Sample_Scenario_Basic` in Smart View analysis.
 
- ![](./images/image17_8.png "")
+    ![](./images/image17_8.png "")
 
 2. Create a private connection to your environment, `http://<MachineIP>/essbase/smartview` If you are not already connected, log in.
 
@@ -126,6 +126,7 @@ By default, all Sandboxes you create have the same values as the data loaded int
 ## **Step 4:**	Model Data
 
 As a scenario user, you can model data slices in your own scenario.
+
 1.	In Essbase, click Scenario.
 
 2.	On the Scenarios page, locate the scenario in which you want to model data.
@@ -134,25 +135,25 @@ As a scenario user, you can model data slices in your own scenario.
 
 4.	Make data changes and perform your what-if analysis in Smart View.
 
- ![](./images/image17_9.png "")
+    ![](./images/image17_9.png "")
 
-Or you can make use of [this excel file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). (Use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
+5. Or you can make use of [this excel file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). (Use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
 
- ![](./images/extrasmall_2.png "")
+    ![](./images/extrasmall_2.png "")
 
-5.	Open the Scenario Comparison file and create connection with Sample Scenario – Basic.
+6.	Open the Scenario Comparison file and create connection with Sample Scenario – Basic.
 
-6.	Change the data value for the sandbox member sb0 Actual and submit data.
+7.	Change the data value for the sandbox member sb0 Actual and submit data.
 
- ![](./images/image17_10.png "")
+    ![](./images/image17_10.png "")
 
-7. You will notice updated data will reflect only against sb0 dimension intersection.
+8. You will notice updated data will reflect only against sb0 dimension intersection.
 
 ## **Step 5:**	Scenario Workflow
 
 You can review a scenario using an optional approval workflow.
 
- ![](./images/imagenew.png "")
+  ![](./images/imagenew.png "")
 
 In the real use case, the scenario flow that we will simulate is:
 
@@ -179,13 +180,13 @@ Let’s start:
 
 3.	Select Actions->Submit, and enter a comment if needed
 
- ![](./images/image17_11.png "")
+    ![](./images/image17_11.png "")
 
-*Tip: If you don’t have an Approver assigned for the scenario, the action Submit will not be available.*
+    *Tip: If you don’t have an Approver assigned for the scenario, the action Submit will not be available.*
 
 4.	Highlight the scenario created previously, select Actions->Approve, and enter a comment if needed. (Consider yourself an approver).
 
- ![](./images/image17_12.png "")
+    ![](./images/image17_12.png "")
 
 5.	Login to the Essbase. (Consider yourself a participant).
 
@@ -193,20 +194,23 @@ Let’s start:
 
 7.	Select Actions->Apply
 
- ![](./images/image17_13.png "")
+    ![](./images/image17_13.png "")
 
 8. Download the file by clicking [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). Go to Smart View and retrieve data into the Comparison tab (make sure you have an active connection in the ‘Comparison’ tab to the same application you connected to while submitting the data)
 
- ![](./images/extrasmall_3.png "")
+    ![](./images/extrasmall_3.png "")
 
 9. You should see the changes have been applied to the Base.
+
+You may proceed to the next lab.
 
 ## Acknowledgements
 
 * Author - NATD Cloud Engineering - Bangalore Analytics (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
 * Reviewed by - Ashish Jain, Product Management
-* Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
+* Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?  
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

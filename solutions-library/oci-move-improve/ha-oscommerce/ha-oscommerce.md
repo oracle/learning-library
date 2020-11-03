@@ -406,3 +406,14 @@ Check the failover policy overview, the master node’s heath-check status shoul
 However, if you go to your domain name - public1.oscommercesite.com, your website should still be running (after 30 seconds) since we configured a failover.
 
 Thus we can set up disaster recovery for your app in OCI easily and avoid single point of failure.
+
+## Acknowledgements
+* **Author** - Oladipupo Akinade, Saurabh Salunkhe
+* **Adapted for Cloud by** -  Saurabh Salunkhe, Oladipupo Akinade
+* **Last Updated By/Date** - Saurabh Salunkhe, September 2020
+
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,10 +1,5 @@
 # Oracle Restful Data Services (ORDS) in APEX
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
 ## Introduction
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
@@ -53,7 +48,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ## **STEP 3**: Import APIs
 
-1. Click on **Import**. 
+1. Click on **Import**.
 
     ![](./images/8.png " ")
 
@@ -107,7 +102,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ## **STEP 5**: Check and Test APIS
 
-1. You have now imported and created various RESTful APIs with APEX. 
+1. You have now imported and created various RESTful APIs with APEX.
 
 2. Grab the **Full URL** of the regions API you just created and paste it into your browser and press the enter button.
 
@@ -195,6 +190,7 @@ product/trendingProductAPI/{store_add}
 - **Contributor** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.

@@ -14,6 +14,7 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 
 * A valid email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
+* Credit card (you will not be charged unless you elect to upgrade the account later.)
 
 ## **Step 1:** Create Your Free Trial Account
 
@@ -48,11 +49,11 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com).
 
-    ![](images/cloud-login-1.png " ")
+    ![](images/cloud-oracle.png " ")
 
 2. Click **View Accounts** to bring up a menu.  Click **Sign in to Cloud**.
 
-    ![](images/cloud-login-2.png " ")
+    ![](images/signin-to-cloud.png " ")
 
 4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
@@ -66,12 +67,15 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
   ![](images/oci-console-home-page.png " ")
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Last Updated By/Date** - Kay Malcolm, Database Product Management, June 2020
+- **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
+- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

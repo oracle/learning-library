@@ -1,9 +1,10 @@
 {
+  "workshoptitle": "JavaScript for APEX Developers",
   "tutorials": [
     {
       "title": "Introduction",
       "filename": "../../0-lab-intro-and-setup/intro.md"
-    }, {         
+    }, {
       "title": "Login to Oracle Cloud",
       "description": "Register for Free Tier Account",
       "partnumber": "Ennnnn_01",

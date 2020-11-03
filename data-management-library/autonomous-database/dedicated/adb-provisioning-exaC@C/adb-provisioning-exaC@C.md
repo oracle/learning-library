@@ -31,7 +31,7 @@ Watch the video below for step by step directions on creating an Autonomous Exad
 
 [](youtube:9gxoodkEaAU)
 
-## **Step 1:** Create the Oracle Exadata Cloud@Customer infrastructure.
+## STEP 1: Create the Oracle Exadata Cloud@Customer infrastructure.
 
 *Login to your OCI account as a fleet administrator*
 
@@ -81,7 +81,7 @@ If all of your inputs are valid, then the Infrastructure Details page appears. T
 You may now proceed to setup a VM Cluster Network to deployment your Autonomous VM Cluster later.
 
 
-## **Step 2:** Create a VM Cluster Network
+## STEP 2: Create a VM Cluster Network
 
 Navigate back to the Exadata Cloud@Customer console, select 'VM Cluster' from the left menu and click the blue 'Create VM Cluster' button 
 
@@ -142,7 +142,7 @@ The VM Cluster Network Details page is now displayed. Initially after creation, 
 Next, you may proceed to select a backup destination for your Autonomous Database backups
 
 
-## **Step 3:** Create a Backup Destination
+## STEP 3: Create a Backup Destination
 When you create autonomous  databases on  Exadata Cloud@Customer, you can specify a backup destination and enable automatic backups. You may chose to backup your databases to one of the following destinations
 
 1. OCI Object store
@@ -181,14 +181,14 @@ Click **Create Backup Destination** at the bottom of the page.
 
 You are now ready to download your configuration and send it to Oracle for validation and activation.
 
-## **Step 4:** Download Configuration Information
+## STEP 4: Download Configuration Information
 
 Navigate back to the Exadata Cloud@Customer console, select 'Exadata Infrastructure' from the left menu and select the Exadata Infrastructure your deployed above
 
 Click **Download Configuration** button on the top
 Your browser downloads a file containing the infrastructure configuration details. In the next step, you will need to provide this file to Oracle to activate your Exadata Infrastructure. When you provide the generated infrastructure configuration file to Oracle, ensure that it has not been altered in any way. Also, ensure that you do not edit the Oracle Exadata infrastructure after you download the configuration file and provide it to Oracle.
 
-## **Step 5:** Activate Exadata Infrastructure
+## STEP 5: Activate Exadata Infrastructure
 
 1. On the same console screen as Step 4, Click the **Activate** button at the top
 
@@ -206,5 +206,7 @@ After activation, the state of the Oracle Exadata infrastructure changes to **Ac
 - **Author** - Simon Law & Kris Bhanushali
 - **Last Updated By/Date** - Kris Bhanushali, July 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

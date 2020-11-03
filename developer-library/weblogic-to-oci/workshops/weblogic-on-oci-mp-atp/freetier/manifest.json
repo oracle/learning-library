@@ -1,0 +1,65 @@
+{
+    "workshoptitle": "Migrate a WebLogic domain to Oracle Cloud Infrastructure",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },{
+            "title": "Introduction",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Setup the Demo On-Premises Environment",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../on-prems-env/on-prems-env.md"
+        },
+        {
+            "title": "Lab 1 Option A: Setup an On-Premises Environment with the Workshop Marketplace Stack",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../on-prems-env-mp/on-prems-env-mp.md"
+        },
+        {
+            "title": "Lab 1 Option B: Setup a Local (On-Premises) Environment with Docker",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../on-prems-env-docker/on-prems-env-docker.md"
+        },
+        {
+            "title": "Lab 2: Prepare the OCI Account",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../prepare/prepare.md"
+        },
+        {
+            "title": "Lab 3: Provision the WebLogic Infrastructure",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../provision-wls/provision-wls.md"
+        },
+        {
+            "title": "Lab 4: Provision the ATP Database on OCI",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../provision-app-db-atp/provision-app-db-atp.md"
+        },
+        {
+            "title": "Lab 5: Migrate the Application Database",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../migrate-app-db-atp-datapump/migrate-app-db-atp-datapump.md"
+        },
+        {
+            "title": "Lab 6: Migrate the WebLogic Domain",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../migrate-wls-wdt-atp/migrate-wls-wdt-atp.md"
+        },
+        {
+            "title": "Lab 7 (Optional): Scale the WebLogic Domain",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../scale-wls/scale-wls.md"
+        },
+        {
+            "title": "Lab 8: Tear down the Environment",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../tear-down/tear-down.md",
+            "type": "atp"
+        }
+     ]
+}

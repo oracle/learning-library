@@ -1,0 +1,39 @@
+{
+  "workshoptitle": "DB Security - Unified Auditing",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Get a Free Trial",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Understand the architecture of this workshop and what it can do",
+      "publisheddate": "09/01/2020",
+      "filename": "../../intro/intro-unified-auditing.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "publisheddate": "09/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 3: Initialize Environment",
+      "description": "How to initialize and start all the workshop components",
+      "publisheddate": "10/14/2020",
+      "filename": "../../init-start-env/init-start-env.md"
+    },
+    {
+      "title": "Lab 4: Unified Auditing",
+      "description": "In this lab you can see how to leverage Oracle Unified Auditing",
+      "publisheddate": "10/20/2020",
+      "filename": "../../unified-auditing/unified-auditing.md"
+    }
+  ]
+}

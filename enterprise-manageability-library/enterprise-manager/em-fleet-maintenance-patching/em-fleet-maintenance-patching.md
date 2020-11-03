@@ -61,7 +61,7 @@ Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g
   ````
 
 ### Login to OMS Console
-Log into your Enterprise Manager VM using the Public IP of your EM instance and the super-user credentials as indicated above”
+Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
@@ -223,7 +223,7 @@ cat create_image_Tier2_sidb_x64.sh</copy>
 
   ![](images/e9091a9e1e04a1a988cb61d9171a483d.png " ")
 
-* Click on ‘CreateGoldImageProfile\_...’ run and review the steps performed.  
+* Click on ‘CreateGoldImageProfile\_...’ run and review the steps performed.
 
   ![](images/f30e3920a7a7e18e4bdfffa328e9d483.png " ")
 
@@ -261,7 +261,7 @@ as CURRENT is used to deploy the new Oracle Home.
 This step verifies if the image can be used to patch a specified database target. This is done by comparing the bug fixes available in the current Oracle home of the database target and the image. In effect this check is run to
 identify patch conflicts.
 
-* Review and execute below emcli command:  
+* Review and execute below emcli command:
 ````
 <copy>emcli db_software_maintenance -checkApplicability -image_id={Insert IMAGE ID from List available gold images} -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database > /home/oracle/applicability.out</copy>
  ````
@@ -311,7 +311,7 @@ Where:
 <copy>emcli db_software_maintenance -performOperation -name="deploy1810" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy1810_hr.inp" -procedure_name_prefix="DEPLOY"</copy>
 ````
 
-**OR**  
+**OR**
 
 ````
 <copy>sh deploy1810_hr.sh</copy>
@@ -352,9 +352,9 @@ Where:
 
 ````
 <copy>emcli db_software_maintenance -performOperation -name="Migrate Listener" -purpose=migrate_listener -target_type=oracle_database -target_list="hr.subnet.vcn.oraclevcn.com" -normal_credential="ORACLE:SYSMAN" -privilege_credential="ROOT:SYSMAN"</copy>
-````  
+````
 
-**OR**  
+**OR**
 
 ````
 <copy>sh migrate_listener_hr_update.sh</copy>
@@ -366,7 +366,7 @@ Where:
 
   ![](images/c90e201dd7b74e1dbe0cab82acafe6fa.png " ")
 
-* Review the Procedure Activity steps performed.  
+* Review the Procedure Activity steps performed.
 
   ![](images/91d2873ae19a8b7b53a5d31c842b5b9f.png " ")
 
@@ -391,7 +391,7 @@ Once the deploy operation completes successfully. We are ready to run the final 
 ````
 
 Where:
-  - Name – Name of the operation. This is a logical name and should be kept unique  
+  - Name – Name of the operation. This is a logical name and should be kept unique
   - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
 
   ![](images/8ddbd68dee0300c0223d11cc9407c08a.png " ")
@@ -400,7 +400,7 @@ Where:
 
   ![](images/7a784412472d166c3eb16a775dea578e.png " ")
 
-* Review the Procedure Activity steps performed  
+* Review the Procedure Activity steps performed
 
   ![](images/b47cafe1b4d1342e408c52e86f3102ce.png " ")
 
@@ -432,7 +432,7 @@ Once the database is updated, we will perform a rollback to 18.3
 
   ![](images/6999f44a0845085f3660f365bb24d7d3.png " ")
 
-* Review the Procedure Activity steps performed         
+* Review the Procedure Activity steps performed
 
   ![](images/6a12674bdf0e9535535b90cf043a1605.png " ")
 
@@ -471,7 +471,7 @@ Where:
 
   ![](images/05d8c8153c8c990ac80810fef434baa3.png " ")
 
-* Review and execute the following command to cleanup hr in reportOnly mode  
+* Review and execute the following command to cleanup hr in reportOnly mode
 ````
 <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp -reportOnly=true</copy>
 ````
@@ -484,7 +484,7 @@ Where:
 
   ![](images/9b5d405577571043afe9ead1fc723392.png " ")
 
-* Review and execute the following command to cleanup hr  
+* Review and execute the following command to cleanup hr
 ````
 <copy>emcli db_software_maintenance -performOperation -name="Cleanup old oracle homes" -purpose=CLEANUP_SOFTWARE -target_type=oracle_database -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -target_list=hr.subnet.vcn.oraclevcn.com -workDir=/tmp</copy>
 ````
@@ -501,7 +501,7 @@ Where:
 
   ![](images/1ffb1bc964b9ca980d6f6034d4882156.png " ")
 
-* Review the Procedure Activity steps performed        
+* Review the Procedure Activity steps performed
 
   ![](images/c2062c09719c5c4b41ceff3138b3d44e.png " ")
 
@@ -570,5 +570,7 @@ Thank you!
   - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
   - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

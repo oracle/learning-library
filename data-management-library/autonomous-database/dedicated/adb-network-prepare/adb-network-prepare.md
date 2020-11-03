@@ -23,7 +23,7 @@ As an OCI account administrator with network resource privileges,
 - An Oracle Cloud Infrastructure account with privileges to create users, IAM policies and networks.
 - Since this is the starting point to building your dedicated autonomous database platform, an admin account is recommended.
 
-## **Step 1:** Create compartments, groups, users and IAM policies
+## STEP 1: Create compartments, groups, users and IAM policies
 For separation of duties Oracle recommends a fleet administrator provision the exadata infrastucture and container databases while the database users simply become consumers of these resources and provision their databases on it. 
 
 We will use the following IAM structure in line with the bare minimum isolation recommended,
@@ -98,7 +98,7 @@ We will use the following IAM structure in line with the bare minimum isolation 
 
       
 
-## **Step 2:** Layout a secure network for the database and application infrastructure
+## STEP 2: Layout a secure network for the database and application infrastructure
 
 Setting up the right network upfront is important since you cannot reverse most aspects of your network without completely destroying and rebuilding it. While your network administrators are  ultimately responsible for choosing the right network topology as per corporate network guidelines, here's a best practice recommendation for setting up a secure network for your database and applications.
 
@@ -117,7 +117,7 @@ We will also follow these security guidelines as we build the network,
 
 For simplicity, only two subnets are being created here - a private subnet for exadata and a public network for everything else. In practice, multiple subnetworks may be tiered to host webservers, app servers, VPN servers in perimeter networks etc. 
 
-## **Step 3:** Login to  OCI as a network admin or a fleet admin
+## STEP 3: Login to  OCI as a network admin or a fleet admin
 
 - Create a VCN in *fleetCompartment* with CIDR block 10.0.0.0/16 which provide for 64k IP addresses for the various subnets within this network.
     ![create_VCN](./images/create_VCN.png " ")
@@ -176,6 +176,9 @@ Your network setup is now complete.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

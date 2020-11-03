@@ -20,7 +20,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you hav!e:
+This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Lab:  Generate SSH Keys
 
@@ -37,7 +37,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
    ![Image alt text](images/db19c-freetier-step1-3.png " ")
 5.  Enter the name for your VCN:  **livelabsvcn**.  Click **next**.
    ![Image alt text](images/db19c-freetier-step1-4.png " ")
-6. Inspect and then accept all default values in the Configure Variables screen and click **Next**. 
+6. Inspect and then accept all default values in the Configure Variables screen and click **Next**.
    ![Image alt text](images/db19c-freetier-step1-5.png " ")
 7.  Review your selections and click **Next**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
@@ -67,7 +67,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-17.png " ")  
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
-   
+
 ## **STEP 3**: Setup Compute Stack
 1.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**
 ![Create a stack](images/db19c-freetier-step1.png " ")
@@ -76,13 +76,13 @@ Now that your stack has been created, you will run an *apply* job to create the 
 
 4.  Enter the name for your Compute Stack:  **livelabslinux**.  Click **next**.
    ![Image alt text](images/linux-compute-step3-2.png " ")
-5. Fill in the following values for your new compute instance. 
+5. Fill in the following values for your new compute instance.
    - Compute Instance Display Name: Choose a name for your instance
    - Choose the VCN you created in the previous step
    - Choose a subnet from the drop down
-  
+
    ![Image alt text](images/linux-compute-step3-3.png " ")
-6.  Scroll down. 
+6.  Scroll down.
    - Check the Assign Public IP *(Note: This is VERY IMPORTANT, you will not be able to login to your instance without this)
    - Paste the public key you created in the earlier lab
    ![Image alt text](images/linux-compute-step3-4.png " ")
@@ -102,11 +102,11 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
 5. Once the apply job is complete, inspect the results.  
 ![Image alt text](images/linux-compute-step3-9.png " ")
-1. You will notice that 3 objects were created.  Your instance has a private IP address and a public IP address.  Copy the public IP address, you will need it to connect to your instance.
+6. You will notice that 3 objects were created.  Your instance has a private IP address and a public IP address.  Copy the public IP address, you will need it to connect to your instance.
 ![Image alt text](images/db19c-freetier-step1-12.png " ")
-1.  Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step-3-10.png " ")
-2.  The compute instance you created should be listed. Note the public IP address.
-![Image alt text](images/linux-compute-step-3-11.png " ")     
+7.  Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step3-10.png " ")
+8.  The compute instance you created should be listed. Note the public IP address.
+![Image alt text](images/linux-compute-step3-11.png " ")     
 
 ## **STEP 5**: Connect to your instance
 
@@ -115,7 +115,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 - Oracle Cloud Shell
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
-  
+
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
@@ -184,7 +184,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.  
 
-You may now *proceed to the next lab*. 
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 - **Author** - Kay Malcolm, Director, DB Product Management
@@ -192,4 +192,4 @@ You may now *proceed to the next lab*.
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
 ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

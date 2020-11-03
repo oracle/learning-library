@@ -1,4 +1,4 @@
-#Using Resource Manager to Provision Database Cloud Service on Bare Metal
+# Using Resource Manager to Provision Database Cloud Service on Bare Metal
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model.
 
@@ -24,26 +24,36 @@ Assumpt you have already prepared the following:
 
 ## Create a stack
 
-1. Login to OCI Console. Open the navigation menu. Under **Solutions and Platform**, go to **Resource Manager** and click **Stacks**.<img src="./img/image-20200216155401032.png" alt="image-20200216155401032 style=zoom:50%;" />
+1. Login to OCI Console. Open the navigation menu. Under **Solutions and Platform**, go to **Resource Manager** and click **Stacks**.
 
-2. Choose the correct **Region** and a **Compartment** you have permission to work in.![image-20200216155456705](./img/image-20200216155456705.png)
+   ![](./img/image-20200216155401032.png)
+
+2. Choose the correct **Region** and a **Compartment** you have permission to work in.
+
+   ![image-20200216155456705](./img/image-20200216155456705.png)
 
 3. Click **Create Stack**. In the **Create Stack** dialog, add your Terraform configuration (.zip) file which you prepared in advance. For example: *dbcs-baremetal.zip*.
 
-   You can either drag and drop it onto the dialog's control or click **Browse** and navigate to the file location.<img src="./img/image-20200216155746846.png" alt="image-20200216155746846" style="zoom:50%;" />
+   You can either drag and drop it onto the dialog's control or click **Browse** and navigate to the file location.
 
-4. Accept the default **Working Directory**. Give a name of the stack or accept the default name. Verify the **Compartment** is corret. Click **Next**.![image-20200314145509984](img/image-20200314145509984.png)
+   ![](./img/image-20200216155746846.png)
+
+4. Accept the default **Working Directory**. Give a name of the stack or accept the default name. Verify the **Compartment** is corret. Click **Next**.
+
+   ![image-20200314145509984](img/image-20200314145509984.png)
 
 5. The **Configure Variables** panel displays variables auto-populated from the Terraform file you uploaded. 
 
-   - Copy and paste the **Tenenacy** and **Compartment** ocid you collect before.
-   - Modify the **Region** you want the DBCS provision in, for example: *us-phoenix-1*. 
-   - Copy and paste all the content in the SSH public key file.
-   - Enter the adminstrator password of the database you will provision. For example: *Welcome_123#*
+      - Copy and paste the **Tenenacy** and **Compartment** ocid you collect before.
+      - Modify the **Region** you want the DBCS provision in, for example: *us-phoenix-1*. 
+      - Copy and paste all the content in the SSH public key file.
+      - Enter the adminstrator password of the database you will provision. For example: *Welcome_123#*
    
-![image-20200314150012677](img/image-20200314150012677.png)
+   ![image-20200314150012677](./img/image-20200314150012677.png)
    
-6. Click **Next** to Review the variables, and click **Create**.![image-20200216162457340](./img/image-20200216162457340.png)
+6. Click **Next** to Review the variables, and click **Create**.
+
+   ![image-20200216162457340](./img/image-20200216162457340.png)
 
 7. The stack is created.![image-20200314150149307](img/image-20200314150149307.png)
 
@@ -54,7 +64,7 @@ Assumpt you have already prepared the following:
 Running a plan job parses your Terraform configuration file and converts it into an execution plan listing resources and actions that will result when an apply job is run.
 
 1. In the **Stack Details** page, go to **Terraform Actions** and select **Plan**.![image-20200314150250302](img/image-20200314150250302.png)
-2. In the **Plan** dialog page, accept the default vaules and click **Plan**.<img src="img/image-20200314150334353.png" alt="image-20200314150334353" style="zoom:50%;" />
+2. In the **Plan** dialog page, accept the default vaules and click **Plan**.![](./img/image-20200314150334353.png)
 3. In the **Job Details** page, You can see the new job created with an initial state of "Accepted." Soon the status changes to "In Progress."![image-20200314150500412](img/image-20200314150500412.png)
 4. When the job is complete, you can review the execution plan or download the logs![image-20200314150549069](img/image-20200314150549069.png)
 

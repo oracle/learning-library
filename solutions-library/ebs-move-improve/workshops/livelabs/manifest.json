@@ -1,0 +1,30 @@
+{
+  "workshoptitle": "Lift and Shift On-premises EBS to OCI",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to EBS lift and shift",
+            "filename": "../../introductionLL/introduction.md"
+        },
+        {
+            "title": "Lab 1: Provision Your Oracle E-Business Suite Environment",
+            "description": "Provision Your Oracle E-Business Suite Environment",
+            "filename": "../../provisionLL/provision.md"
+        },
+        {
+            "title": "Lab 2: Clone Your Oracle E-Business Suite Environment",
+            "description": "Clone Your Oracle E-Business Suite Environment",
+            "filename": "../../clone/clone.md"
+        },
+        {
+            "title": "Teardown Your Oracle E-Business Suite Environments",
+            "description": "Teardown Your Oracle E-Business Suite Environments",
+            "filename": "../../teardownLL/teardownLL.md"
+        }
+    ]
+}

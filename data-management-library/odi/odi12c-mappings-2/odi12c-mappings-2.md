@@ -1,6 +1,6 @@
-# Oracle Data Integrator 12c: Working with Mappings - 2
+# Work with Mappings - Part 2
 
-## Introduction to Working with Mappings
+## Introduction
 
 This chapter describes how to work with mappings in Oracle Data Integrator. The demonstration environment includes several example mappings. In this chapter you will learn how to create the following mappings:
 
@@ -76,7 +76,7 @@ The Load TRG\_SALES mapping uses the following data and transformations:
 This section describes how to create the Load TRG\_SALES mapping. To create the Load TRG\_SALES mapping perform the following procedure:
 
   * Insert a Mapping
-  * Define the Target Datastor
+  * Define the Target Datastore
   * Define the Source Datastores
   * Define Joins between the Source Datastores
   * Define the Order Filter
@@ -263,7 +263,10 @@ The Load **TRG\_SALES** mapping is now ready to be executed.
 ## Acknowledgements
 
  - **Author** - Jayant Mahto, July 2020
- - **Last Updated By/Date** - Troy Anthony, June 25 2020
+ - **Contributors** - Troy Anthony
+ - **Last Updated By/Date** - Jayant Mahto, September 2020
 
- ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -6,40 +6,40 @@ Essbase users are familiar with performing data analysis using Smart View for Of
 
 *Note:* The Data Visualization service in Oracle Analytics Cloud provides a direct connection for Essbase
 
+Estimated Lab Time: 20 minutes.
+
 ### Objectives
 
 * Getting introduced to OAC-DV with Essbase as data-source
 * Understanding the connection process
 * Creating intuitive dashboards on top of Essbase cubes
 
-### Required Artifacts
+### Prerequisites
 
 This lab will require the following -
 
-  1.	An Oracle public cloud tenancy with OAC-DV & Essbase19c Instances of at least 1 OCPU up & running.
-
-  Approximate time to complete this lab is 20 minutes.
+*	An Oracle public cloud tenancy with OAC-DV & Essbase19c Instances of at least 1 OCPU up & running.
 
 
 ## **Step 1:** Create a Direct Connection in Data Visualizer
 
 1. In OAC, create a new connection.
 
-  ![](./images/image18_1.png "")
+    ![](./images/image18_1.png "")
 
 2. Select 'Oracle Essbase' as the connection type.
 
-  ![](./images/image18_2.png "")
+    ![](./images/image18_2.png "")
 
 3. In the DSN, use the Essbase 19c URL [updated if using DEMO SSL certs ] as below :
 http://essbaseip/essbase
 The username and password are for the Essbase server credentials. [ This user must be already added to the Essbase UI ]
 
-  ![](./images/image18_3.png "")
+    ![](./images/image18_3.png "")
 
 4. Once the credentials are verified the CONNECTION SUCCESS message gets displayed and we can find the connection in the “Connections” tab.
 
-  ![](./images/image18_4.png "")
+    ![](./images/image18_4.png "")
 
 ## **Step 2:** Essbase19c instances using DEMO CERTS
 
@@ -53,33 +53,41 @@ To disable the DEMO SSL certificate verification we need to open port 80 on Essb
 
 2.	Enter the IP of the Essbase Node VM and click on “Auth” as shown below to provide the ppk file for the login access to backend Essbase server.
 
-  ![](./images/image18_5.png "")
+    ![](./images/image18_5.png "")
 
 3.	Once we provide the corresponding SSH Private key file under “Auth” , click on OPEN.
 
-  ![](./images/image18_6.png "")
+    ![](./images/image18_6.png "")
 
 4.	Execute the below commands as given below
 
-  ``<copy> [opc@essbase-1 ~]$ sudo firewall-cmd --add-port=80/tcp --zone=public </copy>``
+    ```
+    <copy> sudo firewall-cmd --add-port=80/tcp --zone=public </copy>
+    ```
 
-To make this survive restarts of the firewall service.
+5. To make this survive restarts of the firewall service:
 
-  ``<copy> [opc@essbase-1 ~]$ sudo firewall-cmd --add-port=80/tcp --zone=public –permanent </copy>``
+    ```
+    <copy> sudo firewall-cmd --add-port=80/tcp --zone=public –permanent </copy>
+    ```
 
-  ``<copy> [opc@essbase-1 ~]$ sudo systemctl restart firewalld </copy>``
+    ```
+    <copy> sudo systemctl restart firewalld </copy>
+    ```
 
-  ``<copy> [opc@essbase-1 ~]$ sudo firewall-cmd --list-all </copy>``
+    ```
+    <copy> sudo firewall-cmd --list-all </copy>
+    ```
 
-  ![](./images/image18_7.png "")
+    ![](./images/image18_7.png "")
 
-5.  Enable the security list for the subnet where the Essbase Node VM resides to allow access to the port from a source network. This example enables access from the entire Internet. The quick start creates a virtual cloud network (VCN) named <prefix>-vcn, and a security list named <prefix>-app-security-list. Add an ingress rule as follows:
+6.  Enable the security list for the subnet where the Essbase Node VM resides to allow access to the port from a source network. This example enables access from the entire Internet. The quick start creates a virtual cloud network (VCN) named <prefix>-vcn, and a security list named <prefix>-app-security-list. Add an ingress rule as follows:
 
-  ![](./images/image18_8.png "")
+    ![](./images/image18_8.png "")
 
-6. Now replace the URL with “HTTP” from “HTTPS” in IDCS confidential application.
+7. Now replace the URL with “HTTP” from “HTTPS” in IDCS confidential application.
 
-  ![](./images/image18_9.png "")
+    ![](./images/image18_9.png "")
 
 ## **Step 3:** Create Data Sets from Essbase Cubes
 
@@ -87,15 +95,15 @@ After you create Essbase connections, you can use those connections to create da
 
 1.	On the Home page click Create and click Data Set.
 
-  ![](./images/image18_10.png "")
+    ![](./images/image18_10.png "")
 
 2.	In the Create Data Set dialog, select an existing Essbase connection.
 
-  ![](./images/image18_11.png "")
+    ![](./images/image18_11.png "")
 
 3.	In the Add Data Set page, double-click the Essbase cube that you want to use as a data set. Essbase cube details are displayed.
 
-  ![](./images/image18_12.png "")
+    ![](./images/image18_12.png "")
 
 4.	If required, you can edit the Description, and select an Alias value. If you select an alias value other than the default, then values from the selected alias table are displayed in visualizations that use this Essbase data set.
 
@@ -103,26 +111,25 @@ After you create Essbase connections, you can use those connections to create da
 
 6.	Now select “Create Project” option on the right-top of the screen.
 
-7.	Now add/drag-drop the corresponding fields from the left pane to the DV fields as below.
-[ In below visualization – we have fields “Profit_%”, “Total_Expenses”, “Profit” & “Sales” under Basic#1 [Measures] field & “Quarter” under Year field ]           
+7.	Now add/drag-drop the corresponding fields from the left pane to the DV fields as below. In below visualization – we have fields “Profit_%”, “Total_Expenses”, “Profit” & “Sales” under Basic#1 [Measures] field & “Quarter” under Year field      
 
-  ![](./images/image18_13.png "")
+    ![](./images/image18_13.png "")
 
-8.	Now we can quickly see the distribution of sales across different states as below using MAP visualization.
-[ Convert the default MAP BACKGROUND settings ]
+8.	Now we can quickly see the distribution of sales across different states as below using MAP visualization. Convert the default MAP BACKGROUND settings.
 
-  ![](./images/image18_14.png "")
+    ![](./images/image18_14.png "")
 
 9.	In the similar fashion we can visualize an intriguing analysis summary of data possesses by creating a canvas.
 
-  ![](./images/image18_15.png "")
+    ![](./images/image18_15.png "")
 
 ## Acknowledgements
 
 * Author - NATD Cloud Engineering - Bangalore Analytics (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
 * Reviewed by - Ashish Jain, Product Management
-* Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
+* Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?  
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
