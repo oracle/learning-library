@@ -10,7 +10,17 @@ Data profiling is a process of understanding the data in EDQ.The first step in i
 * Work with Frequency Profiler
 * Work with Record Duplication Profiler
 
-## **Step 1:** Quickstats Profiler
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Access and Configure EDQ
+
+## **STEP 1**: Quickstats Profiler
 1.	In the Project Browser right-click on “Processes” under your project, then select “New Process”
 
     ![](./images/image1200_25.png " ")
@@ -94,7 +104,7 @@ Data profiling is a process of understanding the data in EDQ.The first step in i
 
 17.	Click the “Back” icon in the "Results Browser" panel as many times as needed to return to the results of the “Quickstats Profiler”
 
-## **Step 2:** Frequency Profiler
+## **STEP 2**: Frequency Profiler
 1.	In the "Tool Palette" find the “Frequency Profiler” processor
 
     ![](./images/image1200_40.png " ") 
@@ -143,7 +153,7 @@ Data profiling is a process of understanding the data in EDQ.The first step in i
 
     By now, you will surely see that this dataset needs some fine tuning to make it usable for accurate analytics. For instance, 19.5% of the gender values above are blank.
 
-## **Step 3:** Record Completeness Profiler
+## **STEP 3**: Record Completeness Profiler
 
 1.	Now, Let’s explore record completeness profiler. In the “Profiling Tool Palette" find “Record Completeness” processor and “Record Duplication” processor; drag and drop each processor to the "Project Canvas"
 
@@ -187,11 +197,11 @@ Data profiling is a process of understanding the data in EDQ.The first step in i
 
 
 ## Acknowledgements
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, NA Technology, October 2020
 
- - **Author** - Ravi Lingam, September 2020
- - **Contributors** - Narayanan Ramakrishnan, Sri Vishnu Gullapalli
- - **Reviewer** - Sudip Bandyopadhyay, Winston Shirley
- - **Last Updated By/Date** - Sri Vishnu Gullapalli, September 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -4,11 +4,24 @@
 
 This chapter describes how to work with audit tools in Enterprise Data Quality. The demonstration environment includes several example on EDQ Audit tools. In this chapter you will learn how to create the following mappings:
 
-  * No Data Check
-  * Pattern Check
-  * List Check
+### Objectives
+* No Data Check
+* Pattern Check
+* List Check
+
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Access and Configure EDQ
+    - Lab: Data Profiling
+    - Lab: Reference Data
     
-## **Step 1:** No Data Check
+## **STEP 1:** No Data Check
 
 ### Auditing Data
 
@@ -51,7 +64,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 **Note: If desired, we can continue to develop this process using one or more of the end point output data stream triangles from the Processor by choosing “Data”, “No Data” or “All".**
 
-## **Step 2:** Pattern Check
+## **STEP 2**: Pattern Check
 
 1.	Now, find the “Pattern Check” processor in the Tool Palette. Drag and drop it into the canvas and rename it to “Zip Code in Right Format” by double clicking on processor.
 
@@ -81,7 +94,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
     Notice that there are 5362 Valid Records and 76 Invalid Records. That is, there are 76 records that fail the rule, that is they do not match the patterns “NNNNN” or “NNNNNpNNNN”.
 
-## **Step 3:** List Check
+## **STEP 3**: List Check
 
 1.	Return to the "Tool Palette" and find the “List Check” processor. Drag and drop it onto the "Project Canvas"
 
@@ -106,11 +119,11 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 We now have a better understanding of our data and its issues. Next step is create a process that will fix those issues.
 
 ## Acknowledgements
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, NA Technology, October 2020
 
- - **Author** - Ravi Lingam, September 2020
- - **Contributors** - Narayanan Ramakrishnan, Sri Vishnu Gullapalli
- - **Reviewer** - Sudip Bandyopadhyay, Winston Shirley
- - **Last Updated By/Date** - Sri Vishnu Gullapalli, September 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

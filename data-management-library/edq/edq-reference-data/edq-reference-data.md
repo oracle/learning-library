@@ -4,12 +4,26 @@
 
 This chapter describes how to work with reference data in Enterprise Data Quality. The demonstration environment includes importing and creating a reference data. In this chapter you will learn how to create the following:
 
-  * Generate Reference Data
-  * Copy Reference Data
+### Objectives
+* Generate Reference Data
+* Copy Reference Data
 
-## **Step 1:**  Generate Reference Data
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Access and Configure EDQ
+    - Lab: Data Profiling
+
+
+## **STEP 1**:  Generate Reference Data
     
 ### Generate Reference Data 
+
 We will take advantage of the results generated while we were profiling the data to create reference data that will be used later.
 
 1.	Click on the “Frequency Profile Country, DoB, and Gender” processor, then click on the "Gender" tab in the bottom left corner of the "Results Browser" panel
@@ -71,7 +85,7 @@ then click “Finish”
     ![](./images/image1200_66.png " ")
  
 
-## **Step 2:** Copy Reference Data
+## **STEP 2**: Copy Reference Data
 Now, we will copy reference data previously created into our project, which will be used in further labs. 
 
 1. Please download the Examples project from the link <a href='./images/Examples.dxi'> Examples.dxi </a>
@@ -107,11 +121,11 @@ Now, we will copy reference data previously created into our project, which will
 This Completes your lab on reference data. Let's use this reference data in our next lab.
 
 ## Acknowledgements
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, NA Technology, October 2020
 
- - **Author** - Ravi Lingam, September 2020
- - **Contributors** - Narayanan Ramakrishnan, Sri Vishnu Gullapalli
- - **Reviewer** - Sudip Bandyopadhyay, Winston Shirley
- - **Last Updated By/Date** - Sri Vishnu Gullapalli, September 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -8,8 +8,17 @@ This lab will show you how to access an EDQ instance using Apache Guacamole and 
 * Start EDQ Director
 * Create New Project
 * Create a Data Store and a Snapshot
+  
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
 
-## **Step 1:** Access an EDQ instance through Apache Guacamole
+## **STEP 1**: Access an EDQ instance through Apache Guacamole
 
 1. Obtain the Apache Guacamole URL, credentials from the instructor and login into it using any browser.
 
@@ -22,9 +31,16 @@ This lab will show you how to access an EDQ instance using Apache Guacamole and 
 
     ![](./images/browser_1.png " ")    
 
-4. Go to weblogic console and provide the login crendentials (weblogic/oraedq123).
+4. Go to weblogic console and provide the login credentials.
    
    **URL:** http://localhost:7001/console
+
+    ````
+   <copy>
+    username: weblogic
+    password: oraedq123
+   </copy>
+    ````
 
     ![](images/weblogic_1.png)
 
@@ -34,7 +50,7 @@ This lab will show you how to access an EDQ instance using Apache Guacamole and 
 
     ![](images/weblogic_2.png)
 
-6.  If you see EDQ server and Admin server are running, you are good to proceed further.
+1.  If you see EDQ server and Admin server are running, you are good to proceed further.
 
     ![](images/weblogic_3.png)
 
@@ -59,7 +75,7 @@ This script will approximately take 5-10 minutes to start the Node Manager, Webl
 Please login into weblogic console and check if all the EDQ services are up and running after 5 minutes.
 
 
-## **Step 2:** Start EDQ Director and Create new project in EDQ
+## **STEP 2**: Start EDQ Director and Create new project in EDQ
 
 1.	Open a web browser, go to EDQ Launchpad and click on “Director”.
 
@@ -75,15 +91,22 @@ Please login into weblogic console and check if all the EDQ services are up and 
 
     ![](./images/image1200_7.png)
 
-4.	EDQ director will appear on your screen. Provide the Director login credentials (weblogic/oraedq123).
+4.	EDQ director will appear on your screen. Provide the Director login credentials.
+
+    ````
+   <copy>
+    username: weblogic
+    password: oraedq123
+   </copy>
+    ````
 
     ![](./images/image1200_4.png)
 
-5. Take a moment to familiarize yourself with the Terminology of each of the four different areas of the Director application
+1. Take a moment to familiarize yourself with the Terminology of each of the four different areas of the Director application
 
     ![](./images/image1200_8.png)
 
-## **Step 3:** Create a New Project
+## **STEP 3**: Create a New Project
 1.	In the "Project Browser", right-click "Projects" and select "New Project…" to start the wizard 
 
     ![](./images/image1200_9.png)
@@ -101,7 +124,7 @@ Please login into weblogic console and check if all the EDQ services are up and 
 
 The “Exploring Customer Data” project now appears in the Projects list!
 
-## **Step 4:** Create a Data Store and a Snapshot
+## **STEP 4**: Create a Data Store and a Snapshot
 Now that we have created a project, the next step is creating a Data Store. A Data Store is a connection to a source of data, whether the data is stored in a database or in one or more files.
 1.	Expand the newly created project “Exploring Customer Data”, right click “Data Stores”, and select “New Data Store” to launch the wizard
 
@@ -114,13 +137,18 @@ Now that we have created a project, the next step is creating a Data Store. A Da
     ![](./images/image1200_13.png)
 
 5.	Provide the following data:
-    - Database host: **localhost**
-    - Port: **1521**
-    - Database name: **orcl.us.oracle.com**
-    - Name type: **Service**
-    - User name: **EDQ\_SRC**
-    - Password: **oraedq**
-    - Schema: 
+    ````
+   <copy>
+    Database host: localhost
+    Port: 1521
+    Database name: orcl.us.oracle.com
+    Name type: Service
+    User name: EDQ_SRC
+    Password: oraedq
+    Schema: 
+   </copy>
+    ````
+
 
 6.	Click on “Test…” button located on the bottom right corner
 
@@ -180,11 +208,11 @@ After a short delay, the Results Browser panel is populated. Taking the Snapshot
 Congratulations!  Now you have the environment to run the EDQ labs.   
 
 ## Acknowledgements
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, NA Technology, October 2020
 
- - **Author** - Ravi Lingam, September 2020
- - **Contributors** - Narayanan Ramakrishnan, Sri Vishnu Gullapalli
- - **Reviewer** - Sudip Bandyopadhyay, Winston Shirley
- - **Last Updated By/Date** - Sri Vishnu Gullapalli, September 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

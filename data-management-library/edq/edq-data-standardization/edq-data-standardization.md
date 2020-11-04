@@ -5,14 +5,28 @@ This lab describes how to implement data standardization and enhancement rules i
 
 You will be working on below EDQ components.
 
+### Objectives
 * Normalize Whitespace
 * Enhance from Map
 * Replace
 * Merge
 * Writer
 
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Access and Configure EDQ
+    - Lab: Data Profiling
+    - Lab: Reference Data
+    - Lab: Data Auditing
 
-## **Step 1:** Normalize Whitespace
+
+## **STEP 1:** Normalize Whitespace
 
 1.	Create a New Process under your project in the “Project Browser” by right-clicking on “Processes” and clicking “New Process…”
 
@@ -30,7 +44,7 @@ You will be working on below EDQ components.
 
 6.	Click the “Run” icon to start the process.
 
-## **Step 2:** Enhance from Map
+## **STEP 2:** Enhance from Map
 1.	Find the “Enhance from Map” processor from the “Tool Palette” (you can use the "Search" field, type "Enhance"). Drag and drop the processor to the "Process Canvas". Double click the “Enhance from Map” and rename it to “Country from City”
 
     ![](./images/image1200_91.png " ")
@@ -57,7 +71,7 @@ You will be working on below EDQ components.
 
     ![](./images/image1200_96.png " ")
 
-## **Step 3:** Replace
+## **STEP 3:** Replace
 
 1.	Go back to the “Tool Palette” and search for the “Replace” processor. Drag and drop the “Replace” processor to the “Project Canvas”. Rename “Replace” processor to “Standardize Country”.
 
@@ -77,7 +91,7 @@ You will be working on below EDQ components.
 
 5.	Click the “Run” icon to start the process
 
-## **Step 4:** Merge
+## **STEP 4:** Merge
 
 1.	Return to the “Tool Palette” and search for “Merge”. Drag and drop the “Merge Attributes” processor onto the “Project Canvas” and rename it to “Create Best Country Attribute”
 
@@ -95,7 +109,7 @@ We will use this to combine the “Country” and “Derived Country” columns 
 
 Notice how the two columns, “Country.Replaced” and “Derived Country” have now been merged to a single column “Best Country”
 
-## **Step 5:** Writer
+## **STEP 5:** Writer
 
 1.	In the “Tool Palette”, search for “Writer”. This processor enables an EDQ process to write data to different types of data stores, for example, Staged Data. Drag and drop the “Writer” to the right of the “Create Best Country Attribute” processor on the Project Canvas
 
@@ -128,12 +142,12 @@ Now, you can see the standardized data in the Result Browser by clicking on Writ
 
 
 ## Acknowledgements
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Sri Vishnu Gullapalli, NA Technology, October 2020
 
- - **Author** - Ravi Lingam, September 2020
- - **Contributors** - Narayanan Ramakrishnan, Sri Vishnu Gullapalli
- - **Reviewer** - Sudip Bandyopadhyay, Winston Shirley
- - **Last Updated By/Date** - Sri Vishnu Gullapalli, September 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
