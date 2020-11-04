@@ -1,0 +1,12 @@
+{
+    "workshoptitle": "Oracle Hands-On Labs",
+    "tutorials": [
+        {
+            "title": "Enable Disaster Recovery in Autonomous Database",
+            "description": "This 15-minute tutorial walks you through the steps to enable Disaster Recovery in Autonomous Database. ",
+            "filename": "content.md"
+
+        }
+
+    ]
+}
