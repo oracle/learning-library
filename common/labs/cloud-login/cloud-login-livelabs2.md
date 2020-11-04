@@ -13,11 +13,11 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
 1. Navigate to [oracle.com](http://www.oracle.com), Click on *View Account*, and Select *Create an Account*
 
-![](images/create-account-oracle-1.png " ")
+  ![](images/create-account-oracle-1.png " ")
 
 2. Fill out the form and click *Create Account*
 
-![](images/create-account-oracle-2.png " ")
+  ![](images/create-account-oracle-2.png " ")
 
 ## Step 1: **Request Workshop Reservation**
 1. Using your *Oracle Account Login* go to [LiveLabs 2.0](http://bit.ly/golivelabs) and click  ![](images/reserve.png) to request a reservation for this workshop.
@@ -40,11 +40,15 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
   ![](images/open-workshop.png " ")
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
 - **Contributors** - Kay Malcolm, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020 
+- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

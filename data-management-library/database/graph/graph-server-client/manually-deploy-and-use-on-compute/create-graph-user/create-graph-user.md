@@ -1,15 +1,19 @@
-# Lab 4 - Create and enable a graph user in SQLDeveloper Web
+# Create and enable a graph user in SQLDeveloper Web
 
 ## Introduction
-This lab walks you through the steps to get started with SQL Developer Web. You will learn how to create a user in SQL Developer Web and provide that user the access to SQL Develoepr Web.
+This lab walks you through the steps to get started with SQL Developer Web. You will learn how to create a user in SQL Developer Web and provide that user the access to SQL Developer Web.
 
-Estimated time: 3 minutes
+Estimated Lab Time: 5 minutes
 
-### Prerequisite
+### Objectives
+
+- Learn how to create a database user in SQLDeveloperWeb.
+
+### Prerequisites
 * A cloud account
 * Autonomous Database instance
 
-## **Step 1:** Create the Customer_360 user
+## **STEP 1:** Create the Customer_360 user
 
 1. Login as the Admin user in SQLDevWeb of the newly created ADB Free Tier instance.
 
@@ -17,7 +21,7 @@ Estimated time: 3 minutes
     
   ![](images/select_ATP.png " ")
 
-  In Autonomous Database Details page, click **Service Console**. Make sure your brower allow pop-up windows.
+  In Autonomous Database Details page, click **Service Console**. Make sure your browser allow pop-up windows.
 
   ![](images/ADB_console.png " ")
 
@@ -35,24 +39,24 @@ Estimated time: 3 minutes
 2. Now create the `CUSTOMER_360` user. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.  
     Note: Replace **<specify_a_password>** with a valid password string after copying and pasting the text below but **before executing** it in SQLDeveloperWeb.
 
-  ```
-  <copy>
-  CREATE USER customer_360 
-  IDENTIFIED BY <specify_a_password> 
-  DEFAULT TABLESPACE data 
-  TEMPORARY TABLESPACE temp 
-  QUOTA UNLIMITED ON data;  
+    ```
+    <copy>
+    CREATE USER customer_360 
+    IDENTIFIED BY <specify_a_password> 
+    DEFAULT TABLESPACE data 
+    TEMPORARY TABLESPACE temp 
+    QUOTA UNLIMITED ON data;  
 
-  GRANT connect, resource TO customer_360;
-  </copy>
-  ```
+    GRANT connect, resource TO customer_360;
+    </copy>
+    ```
 
   ![](images/ADB_SDW_CreateUser_C360.png " ")
 
   *Note: The `IDENTIFIED BY` clause specifies the password (“<specify_a_password>”)*
 
 
-## **Step 2:** Enable SQLDevWeb for Customer_360
+## **STEP 2:** Enable SQLDevWeb for Customer_360
 
   1. Now provide SQLDevWeb access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA)
   for details.
@@ -83,16 +87,16 @@ Estimated time: 3 minutes
   For details, see the ["Provide SQL Developer Web Access to Database Users"](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA) section in the documentation. 
 
 
-  You may now proceed to the next lab. 
+  *You may now proceed to the next lab.* 
   
-## Acknowledgements ##
+## Acknowledgements
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+- **Author** - Jayant Sharma, Product Manager, Spatial and Graph  
+- **Contributors** - Arabella Yao, Product Manager Intern, Database Management  
+  Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop
+- **Last Updated By/Date** - Jayant Sharma, October 2020
 
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management.  
-  Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-* **Last Updated By/Date** - Jayant Sharma, October 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

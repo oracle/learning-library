@@ -1,47 +1,63 @@
-# Lab 4 - Create and populate database tables
+# Create and Populate Database Tables
 
-## Overview
-In this lab you will create and populate database tables containing customer, account, purchase, and relationship data. You will then run some graph algorithms and queries and visualize the results in subsequent labs.
+## Introduction
 
-Estimated time: 2-3 minutes
+This lab will walk you through the steps to create and populate database tables containing customer, account, purchase, and relationship data. You will then run some graph algorithms and queries and visualize the results in subsequent labs.
 
-## **Step 1:** Load the data
+Estimated Lab Time: 2-3 minutes
 
-Connect to the database as "sys" user, and create a user, "customer_360".
+### Objectives
 
-```
-$ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
-```
+In this lab, you will:
+* Create and populate database tables
+* Run graph algorithms and queries and visualize the results
 
-At the SQL prompt enter:
-```
-<copy>
-@/graphs/customer_360/create_user.sql
-EXIT
-</copy>
-```
+### Prerequisites
 
-Connect to the database as the "customer_360" user, and create tables.
+* This lab assumes that you have successfully completed the lab - Setup Oracle Database in Docker
 
-```
-$ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>
-```
+## **STEP 1:** Load the data
 
-At the SQL prompt enter:
-```
-<copy>
-@/graphs/customer_360/create_tables.sql
-EXIT
-</copy>
-```
+1. Connect to the database as "sys" user, and create a user, "customer_360".
 
-Proceed to the next lab and create the graph. 
+    ```
+    $ <copy> docker exec -it oracle-db sqlplus sys/Welcome1@localhost:1521/orclpdb1 as sysdba</copy>
+    ```
+
+2. At the SQL prompt enter:
+
+    ```
+    <copy>
+    @/graphs/customer_360/create_user.sql
+    EXIT
+    </copy>
+    ```
+
+3. Connect to the database as the "customer_360" user, and create tables.
+
+    ```
+    $ <copy>docker exec -it oracle-db sqlplus customer_360/Welcome1@localhost:1521/orclpdb1</copy>
+    ```
+
+4. At the SQL prompt enter:
+
+    ```
+    <copy>
+    @/graphs/customer_360/create_tables.sql
+    EXIT
+    </copy>
+    ```
+
+You may now proceed to the next lab and create the graph.
 
 ## Acknowledgements ##
 
-- **Author** -  Jayant Sharma - Product Manager.
-- **Contributors** - Ryota Yamanaka.
+* **Author** -  Jayant Sharma, Product Manager
+* **Contributors** - Ryota Yamanaka
+* **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

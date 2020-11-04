@@ -26,7 +26,7 @@ Estimated Lab Time: 70 minutes
 Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST or even a file system.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.
 
 ### Objectives
-- Understand the Retail Promotions scenario 
+- Understand the Retail Promotions scenario
 - Create an extensive Pipeline
 - Run analytics on streaming data
 - Apply a Machine Learning model to streaming data
@@ -36,53 +36,48 @@ Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of da
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## Available Resources and definitions
+### Available Resources and definitions
 1. Click on the **Home** page and **Import** the **Retail** example
 
     ![](./images/importretail.png " ")
 
-    We will be using the following resources for this lab.  Make sure they have all been imported. 
+    We will be using the following resources for this lab.  Make sure they have all been imported.
 2.  Click on the **Retail Sample** tag link next to any of the resources.  
 3.  See that the grey menu bar on top includes **Retail Sample** and that there are **10 of 15 Resources** visible in the main page
 
     ![](./images/verifyimportedretail.png " ")
 
-## Available Sources for Lab 3 Pipeline
-    You need to create a pipeline that includes about 17 stages and resources.  Before you create a new pipeline make sure the resources below have all been imported.  Also make sure that in the catalog page all the connections that you use in the pipeline have the correct connections in the existing streams and DB sources.  Understand the properties for each resource and use them to create your pipeline.  For Streams for example you can double click on each stream in the catalog page and see its properties.  For the visualization resources below, you can click on the properties on the right part of the screen as you mouse over each resource.  Do not edit any of these resources as you will need them for this lab:
-### Streams: 
-**OrderStream:**  Includes customers order history
+### Available Sources for Lab 3 Pipeline
 
-### References: 
-**CustomerDetails:** Customers information such as name, address, their total web sales, store sales  and average discount
+You need to create a pipeline that includes about 17 stages and resources.  Before you create a new pipeline make sure the resources below have all been imported.  Also make sure that in the catalog page all the connections that you use in the pipeline have the correct connections in the existing streams and DB sources.  Understand the properties for each resource and use them to create your pipeline.  For Streams for example you can double click on each stream in the catalog page and see its properties.  For the visualization resources below, you can click on the properties on the right part of the screen as you mouse over each resource.  Do not edit any of these resources as you will need them for this lab:
 
-**ZipToLatLong:** Maps a given zip code to the corresponding Latitude and Longitude
+  * Streams:
+    - **OrderStream:**  Includes customers order history
 
-**ProductDetails:**  Product names, SKUs and Categories
+  * References:
+    - **CustomerDetails:** Customers information such as name, address, their total web sales, store sales  and average discount
+    - **ZipToLatLong:** Maps a given zip code to the corresponding Latitude and Longitude
+    - **ProductDetails:**  Product names, SKUs and Categories
 
-### Geo Fences:
-**CampaignRegions:** Includes the geographic location of where the promotions are being offered
+  * Geo Fences:
+    - **CampaignRegions:** Includes the geographic location of where the promotions are being offered
 
-### Predictive Models:
-**CustomerRedeemModel:** This is a Machine Learning model that can make a prediction whether a customer is likely to make a purchase based on the customer's web sales and store sales history
+  * Predictive Models:
+    - **CustomerRedeemModel:** This is a Machine Learning model that can make a prediction whether a customer is likely to make a purchase based on the customer's web sales and store sales history
 
-### Connections:
-**LocalMySQLDatabase:** Connection to the local SQL database that is available on the lab server
+  * Connections:
+    - **LocalMySQLDatabase:** Connection to the local SQL database that is available on the lab server
 
-**LocalKafka:** Kafka connection to the local Kafka node and topics that is on the lab server
+    - **LocalKafka:** Kafka connection to the local Kafka node and topics that is on the lab server
 
-### Targets:
-**RealtimeRevenueByCustomerType:** A Kafka topic that we will use as a target in this lab
+  * Targets:
+    - **RealtimeRevenueByCustomerType:** A Kafka topic that we will use as a target in this lab
+    - **PersistentPrediction:** A Kafka topic that we will use as a target in this lab
 
-**PersistentPrediction:** A Kafka topic that we will use as a target in this lab
-
-### Visualizations:
-**RevenueByCustomerSegment:** Visualization that we will use for this lab
-
-**LikelyBuyersByZipCode:** Visualization that we will use for this lab
-
-**LikelyBuyersByCustomerType:** Visualization that we will use for this lab
-
-
+  * Visualizations:
+    - **RevenueByCustomerSegment:** Visualization that we will use for this lab
+    - **LikelyBuyersByZipCode:** Visualization that we will use for this lab
+    - **LikelyBuyersByCustomerType:** Visualization that we will use for this lab
 
 ## **Step 1:** Create Pipeline
 
@@ -102,7 +97,7 @@ Now that we have the order history we would like to enrich this data with the cu
 
 1. Right mouse click on the **OrderStream** and add a **Query Stage**.  
 2. Name the query stage **GetCustomerDetails** and add a description.  
-3. On the details pane click on the **Add a Source** and pick **CustomerDetails** from the list. 
+3. On the details pane click on the **Add a Source** and pick **CustomerDetails** from the list.
 4. You should see **CustomerDetails** added to both pipeline and the details pane.  Notice the Correlation Conditions are shown.  Ignore the **Some sources are not correlated** error message.  This is because we are not done with the query conditions yet.  
 5. Pick **Match Any** condition because we would like to use an **or** condition.  For each field pick the appropriate value from the drop down shown in the Example below.  
 6. Make sure you create two query conditions as is explained below.  
@@ -110,7 +105,7 @@ Now that we have the order history we would like to enrich this data with the cu
 
     Note: Some of the parameters that come in from the streams have two values such as **after_PRODUCT_SKU** and **before_PRODUCT_SKU**.  These are events within a stream
 
-    An event is always before or after a time, and the stream is potentially infinite and ever-changing.  In simple terms a **before** value represents what was already in the stream and an **after** event is an update to that value.  In most of our queries we will have to make sure that we include both events. 
+    An event is always before or after a time, and the stream is potentially infinite and ever-changing.  In simple terms a **before** value represents what was already in the stream and an **after** event is an update to that value.  In most of our queries we will have to make sure that we include both events.
 
     Example:
 
@@ -123,7 +118,7 @@ Now that we have the order history we would like to enrich this data with the cu
     <em>Hint: You can find the Lab 3 screens in the Appendix section of this workshop.  Feel free to reference them to build your pipeline</em>
 
 8. At any time during design of a pipeline you can click on **Done** button on the top left to exist the pipeline and get back to the catalog.  All your changes will be saved.
- 
+
 ## **Step 3:** GetLatLongFromZipCode Stage
 
 In this stage we would like to map a customer’s zip code to an actual latitude and longitude.
@@ -174,13 +169,13 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 6. Rename the **Calc** to **DiscountOffered** using the right mouse click.
 
 7. Now right mouse click on the **GetProductDetails** stage and add a **Rule Stage**
-8. Name the new rule stage **SegmentCustomers** with the appropriate description. 
+8. Name the new rule stage **SegmentCustomers** with the appropriate description.
 
    In the **Rules** tab add three rules as follows:
 
 9. **GoldCustomers:**
 
-    If they have purchased ELECTRONICS AND the **storesales** (**Match All**) greater than $50 AND **storesales**  lower than or equal $900 
+    If they have purchased ELECTRONICS AND the **storesales** (**Match All**) greater than $50 AND **storesales**  lower than or equal $900
     Then offer them a $5 discount as **DiscountOffered** and set the **CustomerType** to **GOLD**
 
 10. **DiamondCustomers:**
@@ -195,7 +190,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 
     Note that all other customers are automatically segmented as **BRONZE**
 
-    <em>Feel free to compare your pipeline with the screen shots in the Appendix section.</em> 
+    <em>Feel free to compare your pipeline with the screen shots in the Appendix section.</em>
 
 
     We are going to use the data from this stage in two ways which is why we are going to create two branches out from this stage.  In the first branch we will do some analysis on the revenue generated by customer types, i.e, the revenue amount generated by each segment.
@@ -204,8 +199,8 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
     After we have segmented the customers we need to Filter out all the customers that don’t generate any revenue.  
 
 1. Begin by adding a **Query Stage** to the **SegmentCustomers** stage and name it **RealtimeRevenue**.  
-2. Use the **<em>Filters</em>** tab to query for: 
-   
+2. Use the **<em>Filters</em>** tab to query for:
+
     **after_REVENUE is not null**
 
 3. Then in the **Summaries** tab add a summary and do a **SUM** of all **after_REVENUE** to create a new field.
@@ -228,7 +223,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 
 
     **Scoring** stage allows you to use your own Machine Learning model that you have imported into GGSA.  
-5. Select the ML model **CustomerRedeemModel** that was imported from the dropdown and accept the default **Model Version**. 
+5. Select the ML model **CustomerRedeemModel** that was imported from the dropdown and accept the default **Model Version**.
 6. Now make sure to map all the **Model Property** to the appropriate **Pipeline Property** if they are not already done for you.
 
 7. Based on these model features the output columns are **RedeemPrediction**, **IgnoreProbability** and **RedeemProbability**.  
@@ -239,7 +234,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 1. Once again and from the **SegmentCustomers** stage we also like to define a parallel stage (to the **PredictBuyNoBuy** stage) so that we have access to the data in the previous stage by creating a query stage.  
 
 2. Right click on the **SegmentCustomers** stage and create a new query stage.  
-3. Name the new stage  **GetCustomer** 
+3. Name the new stage  **GetCustomer**
 4. Add description: **Correlates with previous stage to get back customer details.**.  
 5. Click **Save**
 
@@ -265,7 +260,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 
 
 1. From the **GetCustomer** stage add a new **Query Stage**
-2. Name the new stage **FilterLikelyBuyers** 
+2. Name the new stage **FilterLikelyBuyers**
 3. Add a description: **Removes customers who are unlikely to redeem the offer.**
 4. **Save**
 
@@ -275,8 +270,8 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 ## **Step 11:** PersistPredictionsToKafka Stage
 
     In the last stage we are interested in sending the data to a Kafka Target by mapping the topic params to the stream parameters.  Again the topic could be created before the pipeline is built or as the stage is being created.
-1. Create a new **Target Stage** 
-2. Name the new target stage **PersistPredictionsToKafka** 
+1. Create a new **Target Stage**
+2. Name the new target stage **PersistPredictionsToKafka**
 3. Add description: **Persists predictions to Kafka. Could also be persisted to database.**
 4. **Save**
 5. Select **PersistPrediction** topic from the dropdown and make sure the properties are all mapped properly.
@@ -311,8 +306,7 @@ You can compare your pipeline with the screen shots in the Appendix section.</em
 * **Contributors** - Shrinidhi Kulkarni, Solution Engineer
 * **Last Updated By/Date** - Hadi Javaherian, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-
-
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

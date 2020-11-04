@@ -1,89 +1,106 @@
-# Lab 6 - Create the Customer_360 graph from the tables
+# Create the Graph
 
 ## Introduction
 
-Now, the tables are created and populated with data. Let's create a graph representation of them.
+Now, the tables are created and populated with data. Let's create a Customer_360 graph representation of them.
 
 Estimated time: 5 minutes
 
-### Steps
-- Modify the graph server configuration to disable Transport Layer Security (TLS) / Secure Sockets Layer (SSL) for this lab
-- Check the JDBC URL and modify if needed
-- Modify a default grant setting for publishing a graph
-- Restart the graph server
-- Start a client (JShell) that connects to the server
+### Objectives
+
+Learn how to create a graph from relational data sources by:
+- Modifying the graph server configuration to disable Transport Layer Security (TLS) / Secure Sockets Layer (SSL) for this lab
+- Checking the JDBC URL and modify if needed
+- Modifying a default grant setting for publishing a graph
+- Restarting the graph server
+- Starting a client (JShell) that connects to the server
 - Setup a Property Graph Query Language (PGQL) connection to the database
-- Use PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
+- Using PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
 
+### Prerequisites
 
-## **Step 1:** Modify the graph server config file
+- This lab assumes you have successfully completed the lab - Create and populate tables.
+
+## **STEP 1:** Modify the graph server config file
 
 1. SSH into the compute instance where you installed the graph server.
-    First navigate to the folder where you created your SSH Keys. And connect using:
+
+  First navigate to the folder where you created your SSH Keys. And connect using:
+
     ```
     <copy>ssh -i &lt;private_key> opc@&lt;public_ip_for_compute></copy>
     ```
 
 2. Then edit the `/etc/oracle/graph/server.conf` file.
+
     ```
     <copy>vi /etc/oracle/graph/server.conf</copy>
     ```
 
-    Change the line  
+    Change the line
     ` "enable_tls": true,`
-    to  
-    ` "enable_tls": false,`  
+    to
+    ` "enable_tls": false,`
 
 3. Save the file and exit.
 
     ![](images/change_tls.png " ")
 
 4. Edit the Graph Server (PGX) config file.
-   ```
-   <copy>vi /etc/oracle/graph/pgx.conf</copy>
-   ```
-   Modify the line   
-   `"grant": "PGX_SESSION_GET_PUBLISHED_GRAPH"`  
-   to  
-   `"grant": "PGX_SESSION_ADD_PUBLISHED_GRAPH"`  
-   in the entry for `"pgx_role": "GRAPH_DEVELOPER"`.  
+
+    ```
+    <copy>vi /etc/oracle/graph/pgx.conf</copy>
+    ```
+
+   Modify the line
+   `"grant": "PGX_SESSION_GET_PUBLISHED_GRAPH"`
+   to
+   `"grant": "PGX_SESSION_ADD_PUBLISHED_GRAPH"`
+   in the entry for `"pgx_role": "GRAPH_DEVELOPER"`.
 
    Check the `"jdbc_url"` value in the `"pgx_realm"` entry and update it if necessary.
 
-## **Step 2:** Restart the graph server
+## **STEP 2:** Restart the graph server
 
-1. Starting with version 20.3 the Graph Server is started, stopped, or restarted with systemctl. 
+1. Starting with version 20.3 the Graph Server is started, stopped, or restarted with systemctl.
+
    Check it's status and restart or start it as follows.
-   ```
-   <copy>
-   systemctl status pgx
-   sudo systemctl restart pgx
-   </copy>
-   ```
 
-## **Step 3:** Start a client shell
+    ```
+    <copy>
+    systemctl status pgx
+    sudo systemctl restart pgx
+    </copy>
+    ```
 
-1. Once the graph server is up and running start a client shell to access it. This is based on `jshell` and requires JDK 11.  Version 20.3 also has a new authentication mechanism that requires a token to be used in all requests from the client to the graph server.  
-Albert Godfrind has written some utility scripts and Java methods that simplify the process. We will use his graph token shell utility in this workshop.  
-Download the code from his [Git repo](https://github.com/agodfrind/graph-token-shell) (https://github.com/agodfrind/graph-token-shell).  
-Copy it to the compute instance like you copied the ADB Wallet. e.g. on your machine
+## **STEP 3:** Start a client shell
 
-```
-<copy>scp -i private_key ~/Downloads/graph-token-shell.zip opc@public_ip_for_compute:/home/opc</copy>
-```
+1. Once the graph server is up and running start a client shell to access it. This is based on `jshell` and requires JDK 11.  Version 20.3 also has a new authentication mechanism that requires a token to be used in all requests from the client to the graph server.
+
+    Albert Godfrind has written some utility scripts and Java methods that simplify the process. We will use his graph token shell utility in this workshop.
+
+    Download the code from his [Git repo](https://github.com/agodfrind/graph-token-shell) (https://github.com/agodfrind/graph-token-shell).
+
+    Copy it to the compute instance like you copied the ADB Wallet. e.g. on your machine
+
+    ```
+    <copy>scp -i private_key ~/Downloads/graph-token-shell.zip opc@public_ip_for_compute:/home/opc</copy>
+    ```
 
 2. Unzip the shell utility you copied above on the compute instance that you ssh'd into.
 
-```
-<copy>unzip graph-token-shell.zip</copy>
-```
+    ```
+    <copy>unzip graph-token-shell.zip</copy>
+    ```
 
 3. Then start a client shell instance that connects to the server
+
     ```
     <copy>
     cd graph-token-shell
     ./opg-jshell --base_url http://localhost:7007 -u customer_360 -p Welcome1_C360</copy>
     ```
+
     You should see the following if the client shell starts up successfully.
 
     ```
@@ -96,14 +113,14 @@ Copy it to the compute instance like you copied the ADB Wallet. e.g. on your mac
     opg-jshell>
     ```
 
-## **Step 4:** Create the graph
+## **STEP 4:** Create the graph
 
 The username and password in the step above was just used to get an authentication token for the graph client. It does not set up a database connection. That will be done below in order to create a graph from the database tables.
 
 Enter the following sets of commands in the JShell.
 
-1. First setup the database connection. Enter the following into the JShell.  
-   
+1. First setup the database connection. Enter the following into the JShell.
+
     Replace *{db\_tns\_name}* with the appropriate database service name in the tnsnames.ora file of the wallet (e.g. `atpfinance_low`, if you follow the previous labs exactly).
     *Please refer back to Lab 4, Step 4, to check the content of `tnsnames.ora` file.*
 
@@ -207,7 +224,7 @@ Enter the following sets of commands in the JShell.
 
     ![](images/create_graph_2.png  " ")
 
-## **Step 5:** Check the newly created graph
+## **STEP 5:** Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the JShell.
 
@@ -245,17 +262,17 @@ Check that the graph was created. Copy, paste, and run the following statements 
     ```
 
     ![](images/check_graph.png " ")
-    
-    You may now *proceed to the next lab* (query and analyse the graph in JShell)
+
+You may now proceed to the next lab (query and analyse the graph in JShell.
 
 ## Acknowledgements
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+* **Author** - Jayant Sharma, Product Manager, Spatial and Graph
 
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management.  
-  Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
-
+* **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management
 - **Last Updated By/Date** - Jayant Sharma, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

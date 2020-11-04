@@ -1,20 +1,26 @@
-# Lab 7 - Query and Analyze the Customer 360 Graph
+# Graph Query and Analysis with JShell
 
-## Overview
-  This example shows how integrating multiple datasets and using a graph facilitate additional analytics and can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
+## Introduction
 
-  The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
+This example shows how integrating multiple datasets and using a graph facilitate additional analytics and can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
 
-  The following ER diagram depicts the relationships between the datasets.
-    ![ER Diagram of tables](images/c360_erDiagram.png " ")  
+The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
 
-  Estimated time: 10 minutes
+The following ER diagram depicts the relationships between the datasets.
+
+![ER Diagram of tables](images/c360_erDiagram.png " ")
+
+Estimated Lab Time: 10 minutes
+
+### Objectives
+
+- Learn how to query and analyze the Customer 360 graphs with the Graph Server and Client kit.
 
 ### Prerequisites
-  This lab assumes you have successfully completed the previous Labs (Lab 1 through Lab 6) and have the client JShell up and running.
 
+- This lab assumes you have successfully completed all the previous Labs (Lab 1 through Lab 6) and have the client JShell up and running.
 
-## **Step 1:** Load Graph into Memory
+## **STEP 1:** Load Graph into Memory
 
 1. Check to see which graphs have been loaded into the graph server.
 
@@ -28,6 +34,7 @@
     ```
 
 3. If it does *NOT* exist, then read it from the database.
+
     ```
     opg-jshell> session.getGraphs();
     $1 ==> {}
@@ -36,10 +43,8 @@
   The necessary steps are:
   ***Note: The following are not needed if you are continuing in the same client shell. If so all the foloowing variables will alreayd exist. If so then skip to Step 4.***
      - Set up the Java Database Connectivity (JDBC) connection. *Modify the URL for your instance*
-
-     For `{db_service}`, use database service name (e.g. atpfinance_high) from the tnsnames file in the ADB Wallet you downloaded when setting up your ADB instance.  
-     For `{wallet_location}`, specify the directory (e.g. /home/oracle/wallets) where you unzipped the downlaoded wallet in the compute instance.
-
+      For `{db_service}`, use database service name (e.g. atpfinance_high) from the tnsnames file in the ADB Wallet you downloaded when setting up your ADB instance.
+      For `{wallet_location}`, specify the directory (e.g. /home/oracle/wallets) where you unzipped the downlaoded wallet in the compute instance.
      - Specify a graph config.
      - Read the graph into memory.
 
@@ -94,18 +99,19 @@
     ```
 
 5. Load the graph. Can take 1-2 minutes depending on network bandwidth.
+
     ```
     opg-jshell> <copy>var graph = session.readGraphWithProperties(pgxConfig.get()) ;</copy>
     graph ==> PgxGraph[name=Customer_360,N=15,E=24,created=1591215633384]
     ```
 
-  Now we can query this graph and run some analyses on it.
+Now we can query this graph and run some analyses on it.
 
-## **Step 3:** Pattern Matching
+## **STEP 2:** Pattern Matching
 
-  PGQL Query is convenient for detecting specific patterns.
+PGQL Query is convenient for detecting specific patterns.
 
-  1. Find accounts that had an inbound and an outbound transfer, of over 500, on the same day. The PGQL query for this is:
+1. Find accounts that had an inbound and an outbound transfer, of over 500, on the same day. The PGQL query for this is:
 
     ```
     opg-jshell> <copy>graph.queryPgql(
@@ -126,11 +132,11 @@
     $8 ==> PgqlResultSetImpl[graph=Customer_360,numResults=1]
     ```
 
-## **Step 4:** Detection of Cycles
+## **STEP 3:** Detection of Cycles
 
-  Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
+Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
 
-  1. The first query could be expressed as:
+1. The first query could be expressed as:
 
     ```
     opg-jshell> <copy>graph.queryPgql(
@@ -150,7 +156,7 @@
 
   ![](images/detection.jpg)
 
-  1. The second query just adds one more transfer to the pattern (list) and could be expressed as:
+2. The second query just adds one more transfer to the pattern (list) and could be expressed as:
 
 
     ```
@@ -173,24 +179,23 @@
 
   ![](images/detection2.jpg)
 
+## **STEP 4:** Influential Accounts
 
-## **Step 5:** Influential Accounts
-
-  1. Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
+1. Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
 
     ```
     opg-jshell> <copy>var sg = graph.filter(new EdgeFilter("edge.label()='TRANSFER'")); </copy>
     sg ==> PgxGraph[name=sub-graph_4,N=6,E=8,created=1593647400468]
     ```
 
-  2. Run [PageRank Algorithm](https://docs.oracle.com/cd/E56133_01/latest/reference/analytics/algorithms/pagerank.html). PageRank Algorithm assigns a numeric weight to each vertex, measuring its relative importance within the graph.
+2. Run [PageRank Algorithm](https://docs.oracle.com/cd/E56133_01/latest/reference/analytics/algorithms/pagerank.html). PageRank Algorithm assigns a numeric weight to each vertex, measuring its relative importance within the graph.
 
     ```
     opg-jshell> <copy>analyst.pagerank(sg); </copy>
     $12 ==> VertexProperty[name=pagerank,type=double,graph=sub-graph_4]
     ```
 
-  3. Show the result.
+3. Show the result.
 
     ```
     opg-jshell> <copy>sg.queryPgql(
@@ -213,19 +218,20 @@
     $13 ==> PgqlResultSetImpl[graph=sub-graph_4,numResults=6]
     ```
 
-## **Step 6:** Community Detection
+## **STEP 5:** Community Detection
 
-  Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
+Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
 
-  1. The first step is to create a subgraph that only has the accounts and the transfers among them. This is done by creating and applying an edge filter (for edges with the lable "TRANSFER') to the graph.
+1. The first step is to create a subgraph that only has the accounts and the transfers among them. This is done by creating and applying an edge filter (for edges with the lable "TRANSFER') to the graph.
 
   Filter customers from the graph.
+
     ```
     opg-jshell> <copy>var sg = graph.filter(new EdgeFilter("edge.label()='TRANSFER'")); </copy>
     sg ==> PgxGraph[name=sub-graph_6,N=6,E=8,created=1593647669287]
-    ```  
+    ```
 
-  2. [Weakly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference/analytics/algorithms/wcc.html) (WCC) algorithm detects only one partition.
+2. [Weakly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference/analytics/algorithms/wcc.html) (WCC) algorithm detects only one partition.
 
     ```
     opg-jshell> <copy>var result = analyst.wcc(sg);</copy>
@@ -250,7 +256,8 @@
 
     In this case, all six accounts form one partition by the WCC algorithm.
 
-  3. Run a strongly connected components algorithm, SCC Kosaraju, instead.
+3. Run a strongly connected components algorithm, SCC Kosaraju, instead.
+
    [Strongly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) (SCC) algorithm detects three partitions.
 
     ```
@@ -258,7 +265,8 @@
     result ==> Partition[graph=sub-graph_6]
     ```
 
-  4. List partitions and number of vertices in each
+4. List partitions and number of vertices in each
+
     ```
     opg-jshell> <copy>sg.queryPgql(
     " SELECT a.SCC_KOSARAJU, COUNT(a) MATCH (a) GROUP BY a.SCC_KOSARAJU"
@@ -275,9 +283,10 @@
     $18 ==> PgqlResultSetImpl[graph=sub-graph_6,numResults=3]
     ```
 
-  4. List the other accounts in the same conneted component (partition) as John's account.
-   The partition (or component) id is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
-   *John's account_no is xxx-yyy-201 as shown in Lab 6.*
+5. List the other accounts in the same conneted component (partition) as John's account.
+
+  The partition (or component) id is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
+  *John's account_no is xxx-yyy-201 as shown in Lab 6.*
 
     ```
     opg-jshell> <copy>sg.queryPgql(
@@ -302,18 +311,17 @@
 
   In this case, account `xxx-yyy-201` (John's account), `xxx-yyy-202`, `xxx-yyy-203`, and `xxx-yyy-204` form one partition, account `xxx-zzz-211` is a parition, and account `xxx-zzz-212` is a partition, by the SCC Kosaraju algorithm.
 
+## **STEP 6:** Recommendation
 
-## **Step 7:** Recommendation
+Lastly let's use Personalized PageRank to find stores that John may purchase, from the information of what stores people (connected to John) made purchases from. While PageRank measures relative importance of each vertex within the graph, Personalized PageRank measures its relative importance *with regards to a specific vertex you define*.
 
-  Lastly let's use Personalized PageRank to find stores that John may purchase, from the information of what stores people (connected to John) made purchases from. While PageRank measures relative importance of each vertex within the graph, Personalized PageRank measures its relative importance *with regards to a specific vertex you define*.
-
-  1. Filter customers and merchants from the graph.
+1. Filter customers and merchants from the graph.
     ```
     opg-jshell> <copy>var sg = graph.filter(new EdgeFilter("edge.label()='PURCHASED'"));</copy>
     sg ==> PgxGraph[name=sub-graph_10,N=9,E=11,created=1593648023304]
     ```
 
-  2. Add reverse edges. Copy, paste, and execute both sets of code cnippets below.
+2. Add reverse edges. Copy, paste, and execute both sets of code cnippets below.
 
     ```
     opg-jshell> <copy>var cs = sg.&lt;Long&gt;createChangeSet();</copy>
@@ -360,7 +368,7 @@
 
   ![](images/recommendation2.jpg)
 
-  1. We will focus on the account no. xxx-yyy-201 (John's account) and run Personalized Page Rank (PPR).
+3. We will focus on the account no. xxx-yyy-201 (John's account) and run Personalized Page Rank (PPR).
 
     ```
     opg-jshell> <copy>sg.queryPgql("select id(a) match (a) where a.ACCOUNT_NO='xxx-yyy-201'").print();
@@ -374,7 +382,7 @@
     $26 ==> PgqlResultSetImpl[graph=anonymous_graph_12,numResults=1]
     ```
 
-  2. Copy, paste, and execute both sets of code snippets below.
+4. Copy, paste, and execute both sets of code snippets below.
 
     ```
     opg-jshell> <copy>var vertexSet = sg.&lt;Long&gt;createVertexSet();</copy>
@@ -390,7 +398,7 @@
     ppr ==> VertexProperty[name=pagerank,type=double,graph=anonymous_graph_12]
     ```
 
-  3. Show the result. (cf. [EXISTS and NOT EXISTS subqueries](https://pgql-lang.org/spec/1.3/#exists-and-not-exists-subqueriess))
+5. Show the result. (cf. [EXISTS and NOT EXISTS subqueries](https://pgql-lang.org/spec/1.3/#exists-and-not-exists-subqueriess))
 
     ```
     opg-jshell> <copy>sg.queryPgql(
@@ -418,21 +426,25 @@
 
     In this case, John is more likely to purchase from Asia Books and Kindle Store.
 
-## **Step 8:** Publish the Graph for use with the visualization component
+## **STEP 7:** Publish the Graph for use with the visualization component
 
-  1. Run the following to publish the graph while still in the JShell.
-   Publish the customer_360 graph, so that other sessions , e.g. the GraphViz webapp can use it
+1. Run the following to publish the graph while still in the JShell.
+
+   Publish the customer_360 graph, so that other sessions , e.g. the GraphViz webapp can use it.
+
     ```
     opg-jshell> <copy>graph.publish(VertexProperty.ALL, EdgeProperty.ALL) ;</copy>
     ```
 
-  You may now *proceed to the next Lab*.
+You may now proceed to the next Lab.
 
 ## Acknowledgements ##
 
-* **Author** -  Jayant Sharma, Product Manager, Spatial and Graph  
+* **Author** -  Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
 * **Last Updated By/Date** - Jayant Sharma, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

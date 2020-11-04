@@ -1,20 +1,26 @@
-# Lab 7 - Query and analyze the Customer 360 Graph #
+# Query and analyze the Customer 360 Graph #
 
-## Overview
+## Introduction
   This example shows how integrating multiple datasets and using a graph facilitate additional analytics and can lead to new insights. We will use three small datasets for illustrative purposes. The first contains accounts and account  owners. The second is purchases by the people who own those accounts. The third is transactions between these accounts.
 
   The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
+
+  Estimate Lab Time: 10 minutes
+
+### Objectives
+
+- Learn how to query and analyze graphs with the Graph Server and Client kit.
 
 ### Prerequisites
   This lab assumes you have successfully completed the previous Labs (Lab 1 through Lab 6).
 
 
-## **Step 1:** Start Graph Server and Client Shell
+## **STEP 1:** Start Graph Server and Client Shell
 
 Skip the following if you completed the Create Graph Lab, and the Graph Server and client are up:
 
 1. Open an SSH connection to the compute instance, Graph Server.
-  `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 4, Step 4).
+  `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 3, Step 4).
 
   Check that  the line  
   ` "enable_tls": true,`  
@@ -30,7 +36,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
   Proceed after the Graph Server has started and you see the notification `INFO: Starting ProtocolHandler ["http-nio-7007"]`
 
-3. Open a new SSH connection, if necessary, to the compute instance. `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 4, Step 4).  
+3. Open a new SSH connection, if necessary, to the compute instance. `su` to the `oracle` user (or whichever user deployed the Graph Server and client shell and was added to the oraclegraph group in Lab 3, Step 4).  
 
 4. Start the JShell in the Graph Server. Run command:
     ```
@@ -50,10 +56,10 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     opg-jshell>
     ```
 
-  *Note: If you have any questions in this Step, check Lab 7, Step 2, Step 3, for more information.*
+  *Note: If you have any questions in this Step, check Lab 6, Step 2, Step 3, for more information.*
 
 
-## **Step 2:** Load Graph into Memory
+## **STEP 2:** Load Graph into Memory
 
 1. Check to see which graphs have been loaded into the graph server.
 
@@ -85,7 +91,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     opg-jshell> <copy>var jdbcUrl = "jdbc:oracle:thin:@{db_service}?TNS_ADMIN={unzipped_wallet_location}";</copy>
     // example output: jdbcUrl ==> "jdbc:oracle:thin:@atpfinance_high?TNS_ADMIN=/home/oracle/wallets"
     ```
-    *If you have any questions in JDBC connection, please refer back to Lab 4, Step 4 for more information.*
+    *If you have any questions in JDBC connection, please refer back to Lab 3, Step 4 for more information.*
 
     ```
     opg-jshell> <copy>var user = "customer_360";</copy>
@@ -140,7 +146,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
   Now we can query this graph and run some analyses on it.
 
-## **Step 3:** Pattern Matching
+## **STEP 3:** Pattern Matching
 
   PGQL Query is convenient for detecting specific patterns.
 
@@ -165,7 +171,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $8 ==> PgqlResultSetImpl[graph=Customer_360,numResults=1]
     ```
 
-## **Step 4:** Detection of Cycles
+## **STEP 4:** Detection of Cycles
 
   Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
 
@@ -213,7 +219,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   ![](images/detection2.jpg)
 
 
-## **Step 5:** Influential Accounts
+## **STEP 5:** Influential Accounts
 
   1. Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
 
@@ -252,7 +258,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
     $13 ==> PgqlResultSetImpl[graph=sub-graph_4,numResults=6]
     ```
 
-## **Step 6:** Community Detection
+## **STEP 6:** Community Detection
 
   Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
 
@@ -342,7 +348,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
   In this case, account `xxx-yyy-201` (John's account), `xxx-yyy-202`, `xxx-yyy-203`, and `xxx-yyy-204` form one partition, account `xxx-zzz-211` is a parition, and account `xxx-zzz-212` is a partition, by the SCC Kosaraju algorithm.
 
 
-## **Step 7:** Recommendation
+## **STEP 7:** Recommendation
 
   Lastly let's use Personalized PageRank to find stores that John may purchase, from the information of what stores people (connected to John) made purchases from. While PageRank measures relative importance of each vertex within the graph, Personalized PageRank measures its relative importance *with regards to a specific vertex you define*.
 
@@ -457,7 +463,7 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
     In this case, John is more likely to purchase from Asia Books and Kindle Store.
 
-## **Step 8:** Publish the Graph for use with the visualization component
+## **STEP 8:** Publish the Graph for use with the visualization component
 
   1. Run the following to publish the graph while still in the JShell.
    Publish the customer_360 graph, so that other sessions , e.g. the GraphViz webapp can use it
@@ -467,11 +473,13 @@ Skip the following if you completed the Create Graph Lab, and the Graph Server a
 
   You may now *proceed to the next Lab*.
 
-## Acknowledgements ##
+## Acknowledgements
 
-* **Author** -  Jayant Sharma, Product Manager, Spatial and Graph  
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
-* **Last Updated By/Date** - Jayant Sharma, October 2020
+- **Author** -  Jayant Sharma, Product Manager, Spatial and Graph  
+- **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
+- **Last Updated By/Date** - Jayant Sharma, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

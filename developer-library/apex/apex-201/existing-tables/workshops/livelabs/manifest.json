@@ -1,0 +1,46 @@
+{
+  "workshoptitle": "Creating an App based on Existing Tables for Oracle Autonomous Cloud Service",
+  "tutorials": [
+    {
+        "title": "Prerequisites",
+        "description": "Login to Oracle Cloud",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
+    },
+    {
+      "title": "Create an APEX Workspace",
+      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
+    },
+    {
+      "title": "Lab 1: Installing Sample Tables",
+      "filename": "../../2-installing-sample-tables/2-installing-sample-tables.md"
+    },
+    {
+      "title": "Lab 2: Creating the Application",
+      "filename": "../../3-create-app/3-create-app.md"
+    },
+    {
+      "title": "Lab 3: Regenerating the App",
+      "filename": "../../4-regenerate-app/4-regenerate-app.md"
+    },
+    {
+      "title": "Lab 4: Improving the Dashboard",
+      "filename": "../../5-improving-dashboard/5-improving-dashboard.md"
+    },
+    {
+      "title": "Lab 5: Improving Projects",
+      "filename": "../../6-improving-projects/6-improving-projects.md"
+    },
+    {
+      "title": "Lab 6: Improving Milestones",
+      "filename": "../../7-improving-milestones/7-improving-milestones.md"
+    },
+    {
+      "title": "Lab 7: Improving Tasks",
+      "filename": "../8-improving-tasks/8-improving-tasks.md"
+    }
+  ]
+}

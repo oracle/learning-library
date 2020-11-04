@@ -16,13 +16,17 @@ Approximately 60 minutes
 
 ## STEPS-
 
-Open a terminal session
+## Step 1: - GoldenGate GoldenGate - Oracle Replication
+
+1. Open a terminal session
 
 ![](./images/terminal2.png)
 
-1. Oracle source table.
+2. Oracle source table.
+
 Connect to the PDBEAST database as the user "tpc".
-Execute the following DML to create the source table:
+
+3. Execute the following DML to create the source table:
       drop table wshop_funcs;
       create table wshop_funcs (
         row_number    	number(3,0),
@@ -40,11 +44,15 @@ Execute the following DML to create the source table:
         cust_zip             number(5,0),
         primary key (cust_id)
       ); 
+## Step 2: - GoldenGate GoldenGate - MySQL Target Replication
 
-2. MySQL target table.
+1. MySQL target table.
+
 Connect to the MySQL database as the user "tpc".
-mysql -u tpc -p@Oracle1@
-Execute the following DML to create the target tables:
+
+3. mysql -u tpc -p@Oracle1@
+
+4. Execute the following DML to create the target tables:
       use tpc;
     	drop table wshop_funcs;
       create table wshop_funcs (
@@ -87,23 +95,34 @@ Execute the following DML to create the target tables:
       insert into zip_lookup values (70117, 'New Orleans', 'LA');
       commit;
 
-3. Oracle data capture
-Edit the parameter file for the ETPC Integrated Extract.
-Add the following table statement:
+## Step 3: - GoldenGate GoldenGate - Oracle Data Capture
+
+Oracle data capture
+
+1. Edit the parameter file for the ETPC Integrated Extract.
+
+2. Add the following table statement:
 table pdbeast.tpc.wshop_funcs, TOKENS (
            TKN-EXTLAG-MSEC = @GETENV ("LAG", "MSEC"),
            TKN-SRC-DBNAME = @GETENV ("DBENVIRONMENT", "DBNAME"),
            TKN-SRC-DBVERSION = @GETENV ("DBENVIRONMENT", "DBVERSION"),
            TKN-TXN-CSN = @GETENV ("TRANSACTION", "CSN")
          );
-Save and close the file.
+
+3. Save and close the file.
+
 When using wildcards, where do table statements like the one above need to be placed?
 Do you need to exclude the table from being captured via the wildcards? (If so, did you do this?)
 
-4. MySQL data apply
-Edit the parameter file for the RTPC Coordinated Replicat.
-Add the following map statements, specifying thread "10" for the data apply:
-Execute a query against a lookup table to get the city and state for the
+## Step 4: - GoldenGate GoldenGate -MySQL Data Apply
+
+MySQL data apply
+
+1. Edit the parameter file for the RTPC Coordinated Replicat.
+
+2. Add the following map statements, specifying thread "10" for the data apply:
+
+3. Execute a query against a lookup table to get the city and state for the
 incoming zip code
         MAP pdbeast.tpc.cust_zip, TARGET tpc.cust_city_state,
          SQLEXEC (ID ZIPLKUP, 
@@ -128,19 +147,25 @@ MAP pdbeast.tpc.wshop_funcs, TARGET tpc.wshop_funcs,
                    src_db_version = @TOKEN ("TKN-SRC-DBVERSION"),
                    src_txn_csn = @TOKEN ("TKN-TXN-CSN")
          )	 
-Set the Replicat to insert all data into the table tpc.wshop_funcs, no matter the 
+
+4. Set the Replicat to insert all data into the table tpc.wshop_funcs, no matter the 
 	      source operation.
-Save and close the file.		
 
- 5. Start OGG and generate data
+5. Save and close the file.		
 
-Start the OGG environment:
 
-Oracle: 
+## Step 5: - GoldenGate GoldenGate - Start GoldenGate and Generate Data
+
+Start OGG and generate data
+
+1. Start the OGG environment:
+
+2. Oracle: 
 start etpc
        start pmysql  
 
-MySQL: start rtpc
+
+3. MySQL: start rtpc
 Verify all OGG Groups are running.
 Generate data  
 In the window connected to the database server:
@@ -182,26 +207,31 @@ Execute the following:
               END;
               /
 			  
-Verify data has been replicated.
-Use the GGSCI "send report" command to generate stats for the rtpc Coordinated Replicat.
-View the report file to validate sqlexec execution are data apply stats.
-Connect to the MySQL database as the user "tpc".
+4. Verify data has been replicated.
+
+5. Use the GGSCI "send report" command to generate stats for the rtpc Coordinated Replicat.
+
+6. View the report file to validate sqlexec execution are data apply stats.
+
+7. Connect to the MySQL database as the user "tpc".
 mysql -u tpc -p@Oracle1@
 View the data in the tpc.cust_city_state table.
 View the data in the tpc.wshop_funcs table.
    
- 1. Shutdown all Extracts and Replicats.
+8. Shutdown all Extracts and Replicats.
 
-**End of Lab 5 - You have completed the GoldenGate Classic Workshop**
+## Learn More
+
+* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
+* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
-  * Authors ** - Brian Elliott, Zia Khan
-  * Contributors ** - Brian Elliott, Zia Khan
-  * Team ** - Data Integration Team
-  * Last Updated By/Date ** - Brian Elliott, September 2020
- 
- ## See an issue?
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
   

@@ -1,10 +1,14 @@
-# Lab 3 - Provission a Free Tier Linux Compute Instance
+# Provision a Free Tier Linux Compute Instance
 
 ## Introduction
 
 This lab walks you through the steps to get started with setting up and connecting to a Linux compute instance on Oracle Cloud. You will also learn how to copy and deploy Graph Server and ADB Wallet on your compute instance.
 
-Estimated time: 5 minutes
+Estimated Lab Time: 15 minutes
+
+### Objectives
+
+- Learn how to provision an Always Free compute instance and deploy the Graph Server and Client kit.
 
 ### Prerequisites
 * Registered cloud account
@@ -12,7 +16,7 @@ Estimated time: 5 minutes
 
 *Note 1: Some of the UIs may look a little different from the screenshots in the instructions.*
 
-## **Step 1:** Create a Free Tier Virtual Machine
+## **STEP 1:** Create a Free Tier Virtual Machine
 
 An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
 
@@ -94,7 +98,7 @@ An Oracle Cloud Infrastructure Virtual Machine (VM) compute instance runs on the
 
     *Note 2: Make sure to enter your PC's IP address, not your LAN/Wifi's IP address.*
 
-## **Step 2:** Configure your Compute Instance, Download ADB Wallet
+## **STEP 2:** Configure your Compute Instance, Download ADB Wallet
 
 The [Property Graph Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/property-graph-overview-spgdg.html#GUID-FF149F69-574D-43B8-B888-4CCD019DAE56) describes the installation and configuration process in greater detail.
 
@@ -203,7 +207,7 @@ The steps are as follows:
     Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
 
-## **Step 3:** Download and Copy Graph Server, Copy ADB Wallet to the Linux Compute
+## **STEP 3:** Download and Copy Graph Server, Copy ADB Wallet to the Linux Compute
 
 Choose the environment where you created your SSH Key.
 
@@ -279,7 +283,7 @@ Choose the environment where you created your SSH Key.
     ```
     ![](images/copy_wallet.png " ")
 
-## **Step 4:** Deploy Graph Server and ADB Wallet
+## **STEP 4:** Deploy Graph Server and ADB Wallet
 
 1.  Now go back to the Terminal window which is connected (via SSH) to the compute instance as `opc`, enter **y** when prompted during installation.
 
@@ -398,14 +402,16 @@ Choose the environment where you created your SSH Key.
 
     Note the `addressname`, e.g. `atpgraph_low` that you will use later when connecting to the databases using JDBC.
 
-    You may now *proceed to the next lab*.
+    *You may now proceed to the next lab.*
 
 ## Acknowledgements ##
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management.  
+- **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+- **Contributors** - Arabella Yao, Product Manager Intern, Database Management.  
   Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
-* **Last Updated By/Date** - Jayant Sharma, October 2020
+- **Last Updated By/Date** - Jayant Sharma, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

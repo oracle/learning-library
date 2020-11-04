@@ -1,0 +1,32 @@
+{
+  "workshoptitle": "JavaScript for APEX Developers",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../0-lab-intro-and-setup/intro.md"
+    },
+    {
+      "title": "Lab 0: Setup",
+      "filename": "../../0-lab-intro-and-setup/setup.md"
+    },
+    {
+
+      "title": "Lab 1: JavaScript Basics",
+      "filename": "../../1-javascript-basics/content.md"
+    },
+    {
+
+      "title": "Lab 2: Adding JavaScript to APEX Apps",
+      "filename": "../../2-adding-javascript-to-apex-apps/content.md"
+    },
+    {
+
+      "title": "Lab 3: Working with the DOM and jQuery",
+      "filename": "../../3-working-with-the-dom-and-jquery/content.md"
+    }
+  ]
+}

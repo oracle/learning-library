@@ -1,18 +1,19 @@
 {
-    "tutorials": [ 
-        {         
-            "title": "Introduction",      
-            "description": "Introduction",      
+  "workshoptitle": "Oracle GoldenGate Stream Analytics",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction",
             "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Lab 1: Login and Navigation",
-            "description": "Login and Navigation",            
+            "description": "Login and Navigation",
             "filename": "../../ggsa-login-navigation/ggsa-login-navigation.md"
         },
         {
             "title": "Lab 2: Streaming IOT Data",
-            "description": "Streaming IOT Data",            
+            "description": "Streaming IOT Data",
             "filename": "../../ggsa-iot-stream/ggsa-iot-stream.md"
         },
         {
@@ -20,14 +21,14 @@
             "description": "Streaming Retail data",
             "filename": "../../ggsa-create-retail-pipeline/ggsa-create-retail-pipeline.md"
         },
-        {         
+        {
             "title": "Lab 4: Publishing Dashboards Import/Export",
-            "description": "Publishing Dashboards Import/Export",            
+            "description": "Publishing Dashboards Import/Export",
             "filename": "../../ggsa-publishing-export/ggsa-publishing-export.md"
         },
-        {         
+        {
             "title": "Appendix",
-            "description": "Appendix",            
+            "description": "Appendix",
             "filename": "../../appendix/appendix.md"
         }
     ]

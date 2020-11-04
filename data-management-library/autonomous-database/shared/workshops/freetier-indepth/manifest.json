@@ -57,7 +57,7 @@
             "filename": "./../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
-            "title": "Lab 10: Building a Simple Machine Learning Algorithm",
+            "title": "Lab 10: Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS).",
             "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "filename": "./../../adw-machine-learning/adw-machine-learning.md"
         }

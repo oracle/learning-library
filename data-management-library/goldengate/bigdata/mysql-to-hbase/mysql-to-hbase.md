@@ -1,4 +1,4 @@
-#   MySQL --> HBase
+# MySQL to HBase
 
 ## Introduction
 
@@ -15,272 +15,264 @@ process ‘rhbase’ will read the remote trail files, create the HBase tables a
 - Explore GoldenGate replication from **MySQL to HBase**
 
 ### Prerequisites
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Lab: Installation
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Deploy GoldenGate for Big Data
 
-## STEPS
-For the Lab terminal session:
+## **STEP 0:** Running your Lab
+### Login to Host using SSH Key based authentication
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - OS User – “*ggadmin*”.
 
-**Step 1:** Open a terminal session locally
+1. First login as “*opc*” using your SSH Private Key
 
-````
-<copy>$ ssh opc@xxx.xxx.xx.xx</copy>
-````
-Use Public IP allocated from LiveLabs
+2. Then sudo to “*ggadmin*”. E.g.
 
-**Note: PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS**
+    ```
+    <copy>sudo su - ggadmin</copy>
+    ```
 
-````
-    <copy>sudo su – ggadmin</copy>
-````
+ 3. Repeat the two steps above to create a second session. These two sessions will be used respectively for `source` and `target` execution tasks
+
 ## **STEP 1**: Explore GoldenGate Configuration  
-If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-**Step 2:** The following Lab Menu will be displayed, 
-**select R** to reset the lab environment, then select **5**.
+  ![](./images/labmenu_opt1.png " ")
 
-1. Review the overview notes on the following screen, then select Q to quit. 
+2. Select **R** to reset the lab environment, then select **5**
 
-  ![](./images/menu1006.png " ")
+3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 
-2. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+4. Review the content of each of these files to explore how GoldenGate is being configured.
 
-Optionally view these files, same as in previous lab:
+    ```
+    <copy> cd /u01/gg4mysql
+    view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+    ```
+    ```
+    <copy> cd /u01/gg4mysql/dirprm
+    view /u01/gg4mysql/dirprm/mgr.prm</copy>
+    ```
+    ```
+    <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+    ```
+    ```
+    <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+    ```
+    ```
+    <copy> cd /u01/gg4hadoop/dirprm
+    view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby</copy>
+    ```
+    ```
+    <copy>view /u01/gg4hadoop123010/dirprm/rhbase.prm</copy>
+    ```
+    ```
+    <copy>view /u01/gg4hadoop123010/dirprm/rhbase.properties</copy>
+    ```
 
-````
-<copy> cd /u01/gg4mysql</copy>
-````
-````
-<copy>view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
-````
-````
-<copy> cd /u01/gg4mysql/dirprm</copy>
-````
-````
-<copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
-````
-````
-<copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
-````
-````
-<copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
-````
-````
-<copy> cd /u01/gg4hadoop/dirprm</copy>
-````
-````
-<copy>view /u01/gg4hadoop123010/dirprm/create_hbase_replicat.oby</copy>
-````
-````
-<copy>view /u01/gg4hadoop123010/dirprm/rhbase.prm</copy>
-````
-````
-<copy>view /u01/gg4hadoop123010/dirprm/rhbase.properties</copy>
-````
-## **STEP 2**: GoldenGate Configuration
+Now we need to start the GG manager process on both the source and target. Keep these sessions open for the rest of this lab.
 
-1. Start the GG manager process on both the source and target. **Start two terminal sessions**, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
-
-````
-<copy>sudo su – ggadmin</copy>
-
-````
-2. In the first session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
+## **STEP 2**: GoldenGate Source Configuration
+1. In the first session, go to the **GG Home for MySQL**, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
   ![](./images/d2.png " ")
 
-````
-<copy>cd /u01/gg4mysql</copy>
-````
-````
-<copy>pwd</copy>
-````
-````
-<copy>./ggsci</copy>
-````
-````
-<copy>info all</copy>	 
-````
-````
-<copy>start mgr</copy>	
-````
-````
-<copy>info all</copy>
-````
+    ```
+    <copy> cd /u01/gg4mysql
+    ./ggsci</copy>
+    ```
+    ```
+    <copy> info all</copy>
+    ```
+    ```
+    <copy> start mgr</copy>		
+    ```
+    ```
+    <copy> info all</copy>
+    ```
 
-3. In a second session, go to the **GG Home for Hadoop**, and start the manager process. You can cd to the directory:
+2. In the second or `target` terminal session, go to the **GG Home for Hadoop**, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
   ![](./images/d3.png " ")
 
-````
-<copy>cd /u01/gg4hadoop123010</copy>
-````
-````
-<copy>./ggsci</copy>
-````
-````
-<copy>info all</copy>
-````
-````
-<copy>start mgr</copy>
-````
-````
-<copy>info all</copy>
-````
-````
-<copy>exit</copy>
-````
+    ```
+    <copy> cd /u01/gg4hadoop123010
+    ./ggsci</copy>
+    ```
+    ```
+    <copy> info all</copy>	 
+    ```
+    ```
+    <copy> start mgr</copy>		
+    ```
+    ```
+    <copy> info all</copy>	 
+    ```
+    ```
+    <copy> exit</copy>
+    ```
 
-4. In the **GG for MySQL ggsci session**, we will create and start the GG extract process:
+3. In the first or `source` terminal session (**GG for MySQL ggsci session**), we will create and start the GG extract process:
 
   ![](./images/d4.png " ")
   ![](./images/d5.png " ")
 
-````
-<copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
-````
-````
-<copy>info all</copy>	
-````
-````
-<copy>start extmysql</copy>	
-````
-````
-<copy>info all</copy>	
-````
-````
-<copy>start pmphadop</copy>
-````
-````
-<copy>info all</copy>
-````
+    ```
+    <copy>./ggsci</copy>
+    <copy>obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+    ```
+    ```
+    <copy>info all</copy>
+    ```
+    ```
+    <copy>start extmysql</copy>
+    ```
+    ```
+    <copy>info all</copy>
+    ```
+    ```
+    <copy>start pmphadop</copy>
+    ```
+    ```
+    <copy>info all</copy>
+    ```
 
 ## **STEP 3**: GoldenGate Target Configuration
 
-1. Now that the source side is setup, let us configure GG on the target side (HBase).
+Now that the source side is setup, let us configure GG on the target side (HBase).
 
-2. In the **GG for Hadoop session**, you will need to modify the HBase properties by removing the ‘---‘ from the highlighted values:
+1. In the **GG for Hadoop session**, you will need to modify the HBase properties by removing the `---` prefixes from the highlighted values:
 
   ![](./images/d6.png " ")
 
-````
-<copy>cd dirprm</copy>
-````
-````
-<copy>vi rhbase.properties</copy>
-````
-````
-**Remove "--" below**
-````
-````
-<copy>---hbase</copy>
-````
-````
-<copy>---cf</copy>
-````
+    ```
+    <copy>cd dirprm
+    vi rhbase.properties</copy>
+    ```
+
+2. Remove "---" from the items below as highlighted above
+
+    ```
+    ---hbase
+    ---cf
+    ```
 3. Now create and start the HBase replicat process:
 
-![](./images/d7.png " ")
-![](./images/d8.png " ")
+  ![](./images/d7.png " ")
+  ![](./images/d8.png " ")
 
-````
-<copy>cd .. </copy>
-````
-````
-<copy>./ggsci</copy>	
-````
-````
-<copy>info all</copy>	
-````
-````
-<copy>obey ./dirprm/create_hbase_replicat.oby</copy>	
-````
-````
-<copy>info all</copy>	
-````
-````
-<copy>start rhbase</copy>
-````
-````
-<copy>info all</copy>
-````
+    ```
+    <copy>cd ..
+    ./ggsci</copy>
+    ```
+    ```
+    <copy>info all</copy>
+    ```
+    ```
+    <copy>obey ./dirprm/create_hbase_replicat.oby</copy>
+    ```
+    ```
+    <copy>info all</copy>
+    ```
+    ```
+    <copy>start rhbase</copy>
+    ```
+    ```
+    <copy>info all</copy>
+    ```
 
-4. Now that GG processes have been created and started on both the source and target, let us take a look at what is in the HBase tables – they should be empty (they don’t even exist yet). We will load some data on the MySQL database ‘ggsource’ and GG will extract the data, create the HBase tables, and write the data to the HBase target tables.
+4. Now that GG processes have been created and started on both the source and target, let us take a look at what is in the HBase tables – they should be empty (they don’t even exist yet). We will load some data on the MySQL database `ggsource` and GG will extract the data, create the HBase tables, and write the data to the HBase target tables.
 
-5. connect to ggadmin/oracle (then click Q to get to a prompt):
+5. Start a new terminal session as `ggadmin`, then click **Q** to get to a prompt:
+
+6. Execute the following:
 
   ![](./images/d9.png " ")
 
-````
-<copy>listhbasetables</copy>
-````
-````
-<copy>mysqlselect</copy>
-````
-````
-<copy>loadsource</copy>
-````
-````
-<copy>mysqlselect</copy>
-````
+    ```
+    <copy>listhbasetables</copy>
+    ```
+    ```
+    <copy>mysqlselect</copy>
+    ```
+    ```
+    <copy>loadsource</copy>
+    ```
+    ```
+    <copy>mysqlselect</copy>
+    ```
 
-````
-<copy>listhbasetables</copy>
-````
+    ```
+    <copy>listhbasetables</copy>
+    ```
 
-**Starting with GG version 12.2.0.1.1, GG automatically creates the HBase tables. Let us take a look at the contents of the tables**
+    **Note:** Starting with GG version 12.2.0.1.1, GG automatically creates the HBase tables. Let us take a look at the contents of the tables
 
   ![](./images/d10.png " ")
-
   ![](./images/d11.png " ")
 
-````
-<copy>selecthbasetable ggtarget2hbase:dept</copy>
-````
-````
-<copy>counthbasetables</copy>
-````
-````
-<copy>dmlsource</copy>
-````
-````
-<copy>countbasetables</copy>
-````
+      ```
+      <copy>selecthbasetable ggtarget2hbase:dept</copy>
+      ```
+      ```
+      <copy>counthbasetables</copy>
+      ```
+      ```
+      <copy>dmlsource</copy>
+      ```
+      ```
+      <copy>countbasetables</copy>
+      ```
 
-## **STEP 4**: GoldenGate Target Replication
-
-1. Let us confirm that GG replicated the data that it captured. In a **GG Home for Hadoop session:**
+7. Let us confirm that GG replicated the data that it captured. In a **GG Home for Hadoop session:**
 
   ![](./images/d12.png " ")
   ![](./images/d13.png " ")
 
-````
-<copy>./ggsci</copy>	
-````
-````
-<copy>stats rhbase total</copy>
-````
+      ```
+      <copy>./ggsci</copy>
+      ```
+      ```
+      <copy>stats rhbase total</copy>
+      ```
 
-In summary, you loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
-‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhbase’ read the remote trail files, created the HBase tables and wrote the data to those tables.
+## **STEP 4**: GoldenGate Results using HUE
 
-You may now *proceed to the next lab*.
+1. Open a Browser window from your local machine to visualize data from HUE frontend application.
+    - URL
 
-## **STEP 5**: Explore Results in HUE
+    ```
+    <copy>http://<Your Host Public IP address>:8888</copy>
+    e.g: http://111.222.111.222:8888
+    ```
 
-1. Open a Browser window from your local machine: 
+    - Credentials: cloudera/cloudera
 
-HUE allows you to access the data from a URL -
+2. Click on *Data Browser > HBase > ggtarget2hbase:emp*
 
-**HUE:**
+3. Select Hamburger Menu
+4. Select Data Browser
+5. Select HBase
+![](./images/d20.png " ")
 
-(http://YourPublicIPAddress:8888)
+   ![](./images/d21.png " ")
 
-2. Login to Hue: cloudera/cloudera
+1. select ggtarget2hbase.dept
 
-  ![](./images/d20.png " ")
+   ![](./images/d22.png " ")
 
-  ![](./images/d21.png " ")
+   ![](./images/d23.png " ")
+
+## Summary
+In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
+`pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rhbase` read the remote trail files, created the HBase tables and wrote the data to those tables.
 
 You may now *proceed to the next lab*.
 
@@ -291,8 +283,10 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, October 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

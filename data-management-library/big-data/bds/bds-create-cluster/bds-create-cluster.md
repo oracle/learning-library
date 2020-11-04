@@ -11,7 +11,7 @@ In this lab, you will learn how to create a Highly-Available (HA) Cloudera Distr
 
 ### What Do You Need?
 
-This lab assumes that you have successfully completed **Lab 1: Setup the BDS Environment** in the **Contents** menu on the right.
+This lab assumes that you have successfully completed **Lab 1: Setup the BDS Environment** in the **Contents** menu.
 
 ### Video Preview
 
@@ -20,7 +20,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 [](youtube:zpASc1xvKOY)
 
 
-## **Step 1:** Create a Cluster
+## **STEP 1:** Create a Cluster
 There are many options when creating a cluster. You will need to understand the sizing requirements based on your use case and performance needs. In this lab, you will create a small testing and development cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
 Your simple HA cluster will have the following profile:
@@ -31,7 +31,7 @@ Your simple HA cluster will have the following profile:
   ![](./images/cluster-layout.png " ")
 
   **Note:**    
-  VM Standard Shapes offer the most flexibility. For example, you can increase the storage capacity for each node. For better performance and scalability, change the preceding specifications appropriately. Consider **DenseIO** shapes and **Bare Metal** shapes. **DenseIO** shapes are designed for large databases, big data workloads, and applications that require high-performance local storage. They include direct locally-attached NVMe-based SSDs. See [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense) in the Oracle Cloud Infrastructure documentation.
+  VM Standard Shapes offer the most flexibility. For example, you can increase the storage capacity for each node. For better performance and scalability, consider using **DenseIO** and **Bare Metal** shapes. **DenseIO** shapes are designed for large databases, big data workloads, and applications that require high-performance local storage. They include direct locally-attached NVMe-based SSDs. See [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense) in the Oracle Cloud Infrastructure (OCI) documentation.
 
 
 Create the cluster as follows:
@@ -40,7 +40,7 @@ Create the cluster as follows:
 
 2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** page.
 
-3. Under **Data & AI**, select **Big Data**.
+3. Under **Data and AI**, select **Big Data**.
 
    ![](./images/big-data.png " ")
 
@@ -61,19 +61,21 @@ Create the cluster as follows:
 6. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
     * **CHOOSE INSTANCE TYPE:** **`Virtual Machine`**.
-    * **CHOOSE MASTER/UTILITY NODE SHAPE:** **`VM.Standard2.4`**.
-    * **BLOCK STORAGE SIZE PER MASTER/UTILITY NODE (IN GB):** **`250 GB`**.
+    * **CHOOSE MASTER/UTILITY NODE SHAPE:** **`VM.Standard2.4`**. This is the minimum shape allowed for Master and Utility nodes.
+    * **BLOCK STORAGE SIZE PER MASTER/UTILITY NODE (IN GB):** **`250 GB`**.  
+    **Note:** If you have block storage size restrictions in your environment, you can choose **`150 GB`** (or larger) which is the minimum block storage size allowed for Master, Utility, and Worker nodes. For information on the supported cluster layout, shape, and storage, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D).
     * **NUMBER OF MASTER & UTILITY NODES** _READ-ONLY_ **:** Since you are creating an HA cluster, this field shows **4** nodes: **2** Master nodes and **2** Utility nodes. For a non-HA cluster, this field would show only **2** nodes: **1** Master node and  **1** Utility node.
 
     ![](./images/create-cluster-2.png " ")
 
-    **Note:** For information on the supported cluster layout, shape, and storage, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D).
 
 7. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
 
     * **CHOOSE INSTANCE TYPE:** **`Virtual Machine`**.
-    * **CHOOSE WORKER NODE SHAPE:** **`VM.Standard2.4`**.
-    * **BLOCK STORAGE SIZE PER WORKER NODE (IN GB):** **`750 GB`**.
+    * **CHOOSE WORKER NODE SHAPE:** **`VM.Standard2.4`**.  
+      **Note:** If you have shape restrictions in your environment, you can choose **`VM.Standard2.1`** which is the minimum allowed shape for Worker nodes.
+    * **BLOCK STORAGE SIZE PER WORKER NODE (IN GB):** **`750 GB`**.  
+      **Note:** If you have block storage size restrictions in your environment, you can choose **`150 GB`** (or larger) which is the minimum block storage size allowed for Master, Utility, and Worker nodes.
     * **NUMBER OF WORKER NODES:** **`3`**. This is the minimum allowed for a cluster.
 
     ![](./images/create-cluster-3.png " ")
@@ -115,7 +117,7 @@ Create the cluster as follows:
 
     ![](./images/status-creating.png " ")
 
-## **Step 2:** Monitor the Cluster Creation
+## **STEP 2:** Monitor the Cluster Creation
 
 The process of creating the cluster takes approximately one hour to complete; however, you can monitor the cluster creation progress as follows:
 
@@ -148,22 +150,15 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
    ![](./images/node-details-2.png " ")  
 
-
-3. To display the block storage attached to this node, in the **Resources** section on the left, click the **Attached Block Storage Volume** link.
-
-  **Note:** You can increase the amount of block storage that is available for each worker node in the cluster from within BDS. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. From the context menu, select **Add Block Storage**, and then follow the prompts. Don't add block storage from outside of BDS.
-
-   ![](./images/attached-block-volume.png " ")  
-
-4. Click the **Cluster Details** link in the breadcrumbs at the top of the page to re-display the **Cluster Details** page.
+3. Click the **Cluster Details** link in the breadcrumbs at the top of the page to re-display the **Cluster Details** page.
 
    ![](./images/cluster-details-breadcrumb.png " ")  
 
-5. In the **Resources** section on the left, click **Work Requests**.
+4. In the **Resources** section on the left, click **Work Requests**.
 
    ![](./images/cluster-details-page-3.png " ")  
 
-6. The **Work Requests** section on the page displays the status of the cluster creation and other details such as the **Operation**, **Status**, **% Complete**, **Accepted**, **Started**, and **Finished**. Click the **CREATE_BDS** name link in the **Operation** column.
+5. The **Work Requests** section on the page displays the status of the cluster creation and other details such as the **Operation**, **Status**, **% Complete**, **Accepted**, **Started**, and **Finished**. Click the **CREATE_BDS** name link in the **Operation** column.
 
    ![](./images/work-requests.png " ")
 
@@ -171,15 +166,18 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
    ![](./images/create-bds-page.png " ")
 
-7. Click the **Clusters** link in the breadcrumbs at the top of the page to re-display the **Clusters** page.
+6. Click the **Clusters** link in the breadcrumbs at the top of the page to re-display the **Clusters** page.
 
     ![](./images/breadcrumb.png " ")  
 
-8. Once the **`training-cluster`** cluster is created successfully, the status changes to **Active**.   
+7. Once the **`training-cluster`** cluster is created successfully, the status changes to **Active**.   
 
   ![](./images/cluster-active.png " ")  
 
-## **Step 3:** Review Locations of Services in the Cluster
+  **Note:**  
+  If you are using a Free Trial account to run this workshop, Oracle recommends that you delete the BDS cluster when you complete the workshop to avoid unnecessary charges.
+
+## **STEP 3:** Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
 
@@ -256,7 +254,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 
 **Note:** In **Lab 5, Use Cloudera Manager (CM) and Hue to Access a BDS Cluster**, you will use Cloudera Manager to view the roles, services, and gateways that are running on each node in the cluster.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Want to Learn More?
 
@@ -275,7 +273,9 @@ The process of creating the cluster takes approximately one hour to complete; ho
 * **Technical Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, September 2020
+* **Last Updated By/Date:** Lauran Serhal, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

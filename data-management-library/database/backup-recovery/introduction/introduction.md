@@ -1,6 +1,6 @@
-# Oracle Database Backup Service to OCI #
+# Introduction
 
-## Introduction
+## Oracle Database Backup Service
 
 Oracle Database Backup Service (ODBS) is a backup-as-a-service offering that enables customers to store their backups securely in the Oracle cloud. ODBS provides a transparent, scalable, efficient, and elastic cloud storage platform for Oracle database backups. The client side Oracle Database Cloud Backup Module which is used with Recovery Manager (RMAN) transparently handles the backup and restore operations.
 
@@ -19,18 +19,8 @@ Estimated Lab Time: 2 hours
 ### Prerequisites
 
 - An on-premise database version 11.2.0.4 or later
-- An OCI account with proper priviledge to access the object storage in OCI.
+- An OCI account with proper privileges to access the object storage in OCI.
 - OCIDs for tenancy, user and compartment
-
-## Access the labs
-
-- Use **Lab Contents** menu on your right to access the labs.
-    - If the menu is not displayed, click the menu button ![](./images/menu-button.png) on the top right  make it visible.
-
-
-- From the menu, click on the lab that you like to proceed with. 
-
-- You may close the menu by clicking ![](./images/menu-close.png)
 
 You may now proceed to the next lab.
 
@@ -40,5 +30,7 @@ You may now proceed to the next lab.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Minqiao Wang, Sep 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

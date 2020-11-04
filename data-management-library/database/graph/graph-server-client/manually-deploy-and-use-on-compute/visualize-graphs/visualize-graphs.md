@@ -1,17 +1,23 @@
-# Lab 8 - Customer 360 Graph Visualization#
+# Customer 360 Graph Visualization#
 
-## Overview
+## Introduction
 The results of the analyses done in the previous labs can easily be visualized using Graph Visualization feature.
 
 The following video provides an overview of the visualization component.
 [](youtube:zfefKdNfAY4)
+
+Estimated Lab Time: 5 minutes
+
+### Objectives
+
+- Learn how to execute PGQL graph queries and visualize the results.
 
 ### Prerequisites
 This lab assumes you have successfully completed Lab 7 and published the graph. It also assumes the Graph Visualization component is up and running on the compute instance on `public_ip_for_compute:7007/ui`.
 
 We will use the Graph Visualization component to explore the graph and run some PGQL queries.
 
-## **Step 1:** Setup
+## **STEP 1:** Setup
 
 1. Open the Graph Viz at `http://<public_ip_for_free_tier_compute>:7007/ui`. Replace `<public_ip_for_free_tier_compute>` with the one for your Graph Server compute instance.
 
@@ -21,15 +27,14 @@ We will use the Graph Visualization component to explore the graph and run some 
 ### Troubleshooting
 If you have a `Page Not Found` error, the graph you published at Lab 7 may expire. You can try to redo Lab 7 (only Step 0, 1, and 7) to publish the graph.
 
-## **Step 2:** Modify query
+## **STEP 2:** Modify query
 1. Modify the query to get the first 50 rows, i.e. change LIMIT 10 to LIMIT 50, and click Run.
 
     You should see a graph similar to the screenshot below.  
     ![Customer 360 graph](images/ADB_GViz_Show50Elements.png " ")
 
-## **Step 3:** Add highlights
-Now let's add some labels and other visual context. These are known as highlights.  
-Left-click on <a href="highlights.json" download="highlights.json" target="\_blank">this link</a> to download it.*
+## **STEP 3:** Add highlights
+Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OTVbKy72ORMs1G9b4MxctlEMkR88L3ncOFSFMZYyv57pWmKVlFRCp4MhDqjpCn6n/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
 
 1. Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder (i.e. either to `oracle-pg/graphs/customer_360`  or the folder where you just downloaded it) and choose the file named 'highlights.json' and click Open to load that.  
 ![Load highlights for graph](images/GraphVizLoadHighlights.png " ")
@@ -39,7 +44,7 @@ Left-click on <a href="highlights.json" download="highlights.json" target="\_bla
 
 
 
-## **Step 4:** Pattern matching with PGQL
+## **STEP 4:** Pattern matching with PGQL
 1. Next let's run a few PGQL queries.
 
     The [pgql-lang.org](http://pgql-lang.org) site and [Specification](http://pgql-lang.org/spec/1.2) are the best references for details and examples. For the purposes of this lab, however, here are minimal basics.
@@ -112,11 +117,14 @@ Click Run.
 
     ![Circular transfer A to B to C to A](images/ADB_GViz_ABCA_Transfer.png " ")
 
-## Acknowledgements ##
+*Congratulations! You have successfully completed the workshop*
+## Acknowledgements 
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai. 
-* **Last Updated By/Date** - Jayant Sharma, October 2020
+- **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+- **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai. 
+- **Last Updated By/Date** - Jayant Sharma, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

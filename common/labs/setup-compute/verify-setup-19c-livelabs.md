@@ -52,7 +52,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 4.  After successfully logging in, proceed to the *next Step* on the left hand menu.
 
-*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
 ### Windows using Putty
 
@@ -83,7 +83,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 8. Click Open to begin your session with the instance.
 
-*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
 ## **STEP 3**: Verify the ORCL database is up
 
@@ -132,22 +132,22 @@ Once you deploy your compute instance, tail the log to determine when the databa
     </copy>
     ````
     ![](./images/sqlplus.png " ")
-*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
 ## **STEP 4**: Exit SQLPLUS
 1.  Exit the sqlplus session.
 
-    ```` 
-    SQL> <copy>exit
-    </copy>
     ````
-2. Type exit again to *switch back to the opc user*.  
+    SQL> <copy>exit</copy>
+    ````
+2. Type exit again to *switch back to the opc user*.
+
     ```
-    <copy>
-    exit
-    </copy>
+    <copy>exit</copy>
     ```
+
 3. Verify that you are now the **opc** user using the *whoami* command.  
+
     ```
     <copy>
     whoami
@@ -155,13 +155,13 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ```
 
     ![](./images/whoami.png " ")
-    
+
 You may now *proceed to the next lab*.  
 
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 1. Can't login to instance
 2. Invalid public key
 3. Limits Exceeded
@@ -188,7 +188,7 @@ There may be several reasons why you can't login to the instance.  Here are some
 When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
 
 #### Tips for fixing for Issue #2
-- Go back to the registration page, delete your registraiton and recreate it ensuring you create and **copy/paste** your *.pub key into the registration page correctly. 
+- Go back to the registration page, delete your registraiton and recreate it ensuring you create and **copy/paste** your *.pub key into the registration page correctly.
 - Ensure you pasted the *.pub file into the window.
 
 

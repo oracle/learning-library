@@ -15,7 +15,7 @@ Introduction
 
 Lab 1 – Setup GoldenGate Classic
 
- 
+
 Lab 2 – MySQL ->  Oracle  unidirectional replication
   
 Lab 3 – Oracle ->  mySQL  unidirectional replication
@@ -61,22 +61,23 @@ Approximately 30 min
 
 ## Steps
 
-In this lab we will setup GoldenGate Classic
-
-**Step1:** 
-
 **Prereqs (Completed by Oracle Team prior to Labs)**
 
-mkdir /opt/Test_Software
-Downloaded the following software zip files to the "Software" folder:
+In this lab we will setup GoldenGate Classic
+
+
+**Step 1:** PreLab Configuration for Classic Lab
+
+1. mkdir /opt/Test_Software
+2. Downloaded the following software zip files to the "Software" folder:
    		OGG Classic v19.1.0.0.3 for MySQL on Linux x64
    		OGG Classic v19.1.0.0.4 for Oracle on Linux x64
    		Oracle Database v19.3.0.0.0 for Linux x64
    		Oracle Instant Client Basic v19.3.0.0.0 for Linux x64
 
-**Oracle**
+**ORACLE**
 
-Create pdbs
+3. Create pdbs
 
 PDBEAST
 
@@ -104,95 +105,113 @@ create pluggable database PDBWEST from oggoow191;
 alter pluggable database PDBWEST open;
 exit
 
-Install Mysql Workbench
+4. Install Mysql Workbench
 sudo yum install mysql-workbench-community
 Start Mysql Workbench to test
 /usr/bin/mysql-workbench –help
 
 Change to the “/opt/TestSoftware/Oracle" directory.
 
-Run the setup_database_for_ogg.sql script.
+5. Run the setup_database_for_ogg.sql script.
 create user c##ggadmin identified by Oracle1 default tablespace oggtbls_pdbwest quota unlimited on oggtbls_pdbwest profile ogg_profile;
 
 sqlplus / as sysdba @setup_database_for_ogg.sql
 The database will now contain two PDBs, PDBEAST and PDBWEST, and is configured for OGG replication.
 The common database user C##GGADMIN will be created, and the container user C##GGADMIN in PDBEAST and PDBWEST.
 
+**Step 2:** 
+
 **mySQL**
 
-CREATE USER 'ggadmin'@'localhost' IDENTIFIED BY '@Oracle1@';
+1. CREATE USER 'ggadmin'@'localhost' IDENTIFIED BY '@Oracle1@';
 GRANT ALL PRIVILEGES ON * . * TO 'ggadmin'@'localhost';
 
 
-**Step2:** Change to ggadmin
+**Step 3:** Change to ggadmin
 
-'>su – ggadmin
-Password = oracle
+'````
+<copy>sudo su – ggadmin</copy>
+````
 
+**PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS** 
 
-PLEASE USE ‘ggadmin’ USER FOR ALL THE LABS 
-
-
-## Done by Student:
+**Step 4:** Student Configuration for Classic Lab
 
 Open a terminal session
 
 ![](./images/terminal2.png)
 
-## STEPS -
+## STEPS -  Done by Student
 
 **Step1:**  Test connectivity for the OGG users:
-sqlplus c##ggadmin
+
+1. sqlplus c##ggadmin
 When prompted enter the password: Oracle1
-sqlplus c##ggadmin@pdbeast
+2. sqlplus c##ggadmin@pdbeast
 When prompted enter the password: Oracle1	
-sqlplus ggadmin@pdbwest
+3. sqlplus ggadmin@pdbwest
 When prompted enter the password: Oracle1
 		   
-2. Change to the "/opt/Test_Software/Scripts/Oracle/orderentry" directory
+4. Change to the "/opt/Test_Software/Scripts/Oracle/orderentry" directory
 su – oracle
 Password = Data1Integration!
 
-3. Run the following commands:
-sqlplus / as sysdba
-alter session set container=pdbeast;
-sqlplus / as sysdba @create_user.sql
-edit and chg to c##tpc
-grant all priviledges to c##tpc;
+Run the following commands:
 
-@create_user.sql
+5. sqlplus / as sysdba
+6. alter session set container=pdbeast;
+7. sqlplus / as sysdba @create_user.sql
+
+edit and chg to c##tpc
+
+8. grant all priviledges to c##tpc;
+
+9. @create_user.sql
+
 sqlplus / as sysdba
 alter session set container=pdbwest;
 @create_user.sql
-sqlplus c##tpc@pdbeast
+
+10. sqlplus c##tpc@pdbeast
 When prompted enter the password: Oracle1
 @database.sql
-sqlplus c##tpc@pdbwest
+11. sqlplus c##tpc@pdbwest
 When prompted enter the password: Oracle1
 @database.sql
+
 Each PDB in the database (pdbeast and pdbwest) will now contain a TPC schema with seeded tables.
 
-4. Enter "exit" to logout as the "oracle" user.
+12. Enter "exit" to logout as the "oracle" user.
 
-5. Test connectivity to MySQL by executing the commands:
-sudo service mysqld start
-sudo mysql -u ggadmin -p@Oracle1@
-create database tpc;
-create database ggadmin;
+
+## Step 3: - Conenctivity to Oracle environment using ggadmin
+
+Test connectivity to MySQL by executing the commands:
+
+1. sudo service mysqld start
+
+2. sudo mysql -u ggadmin -p@Oracle1@
+
+3. create database tpc;
+
+4.create database ggadmin;
 use tpc
-show tables;
+
+5. show tables;
+
 There should be 14 tables in the tpc database.
-exit;
 
-sudo mysql -u ggrep -p@Oracle1@
+5. exit;
+
+## Step 3: - Conenctivity to MySQL environment using ggrep
+
+1. sudo mysql -u ggrep -p@Oracle1@
 use tpc
-show tables;
+2. show tables;
 There should be 14 tables in the tpc database.
  exit;
 
-**Step2:** 
-
-**GoldenGate for Oracle**
+## Step 4: - GoldenGate GoldenGate for Oracle setup and configuration
 	
 1. start a second session
 
@@ -211,15 +230,15 @@ dblogin userid c##ggadmin@orcl, password Oracle1
 This validates remote connectivity to the Oracle Database.
 exit
 
-**Step3:**
-
-**GoldenGate for mySQL**
+## Step 5: - GoldenGate GoldenGate for MySQL setup and configuration
 
 1. Mysql -uroot -pData1Integration!
 CREATE USER 'ggrep'@'localhost' IDENTIFIED BY '@Oracle1@';
 GRANT ALL PRIVILEGES ON * . * TO 'ggrep'@'localhost';
 
->mysql\q
+````
+<copy>mysql\q</copy>
+````
 
 2. Go to the "oggmysql" directory.
 cd /u01/app/oracle/product/19.1.0/oggmysql
@@ -228,45 +247,47 @@ cd /u01/app/oracle/product/19.1.0/oggmysql
 export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql
 
 4. Start GGSCI and execute the following commands:
-create subdirs
-dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
+
+5. create subdirs
+6. dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@
+
 This validates remote connectivity to the MySQL Database for capture.
-dblogin sourcedb tpc@localhost:3306, userid ggrep, password @Oracle1@
+7. dblogin sourcedb tpc@localhost:3306, userid ggrep, password @Oracle1@
 This validates remote connectivity to the MySQL Database for apply.
 exit
 	
-5.  Enter "exit" twice to close the connection to the database machine.
+8.  Enter "exit" twice to close the connection to the database machine.
 
-6.  Shutdown the MySQL database.
+9.  Shutdown the MySQL database.
 
-Sudo su -
+10. sudo su -
     a) sudo service mysqld stop
 
-Shutdown the Oracle database.
+11. Shutdown the Oracle database.
 
-7. Switch to the oracle user.
+12. Switch to the oracle user.
     a) sudo su – oracle / Data1Integration!
 
-8. Shutdown the Oracle database and listener.
-    a) sqlplus / as sysdba
-	   i) shutdown immediate
-	   ii) exit
+13. Shutdown the Oracle database and listener.
+    sqlplus / as sysdba
+	  shutdown immediate
+	  exit
 
-9. Enter "exit" twice to close the connection to the database machine.
+14. Enter "exit" twice to close the connection to the database machine.
 
+You may now *proceed to the next lab*.
 
-**You have completed Lab 1 - You may proceed to the next Lab**
+## Learn More
+
+* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
+* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
-  * Authors ** - Brian Elliott
-  * Contributors ** - Brian Elliott
-  * Team ** - Data Integration Team
-  * Last Updated By - Brian Elliott, September 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-
-## Please submit an issue on our issues page:
-[issues](https://github.com/oracle/learning-library/issues) 
-
- We review it regularly.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

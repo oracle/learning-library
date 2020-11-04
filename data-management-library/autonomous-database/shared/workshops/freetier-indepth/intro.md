@@ -24,27 +24,21 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 - Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality
 
 ## Lab Breakdown
-- **Lab 1:** Log in to Oracle Cloud and access the Oracle Autonomous Data Warehouse console.
-- **Lab 2:** Provision your first Autonomous Data Warehouse.
-- **Lab 3:** Explore the provided sample data sets that come with your Autonomous Database.
-- **Lab 4:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
-- **Lab 5:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
-- **Lab 6:** Visualize your data using Oracle Analytics Desktop.
-- **Lab 7:** Use wallets for secure connections to the autonomous database.
-- **Lab 8:** Manage and monitor your autonomous Database.
-- **Lab 9:** Scale up your Oracle Autonomous Database service to have more CPUs.
-- **Lab 10:** Create Oracle Machine Learning SQL notebooks.
-- **Lab 11:** Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality.
+- **Lab 1:** Provision your first Autonomous Data Warehouse.
+- **Lab 2:** Explore the provided sample data sets that come with your Autonomous Database.
+- **Lab 3:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
+- **Lab 4:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
+- **Lab 5:** Visualize your data using Oracle Analytics Desktop.
+- **Lab 6:** Use wallets for secure connections to the autonomous database.
+- **Lab 7:** Manage and monitor your autonomous Database.
+- **Lab 8:** Scale up your Oracle Autonomous Database service to have more CPUs.
+- **Lab 9:** Create Oracle Machine Learning SQL notebooks.
+- **Lab 10:** Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality.
 
 **After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
 
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
-
-###Getting Help During This Workshop
-If you have a question during this workshop then use the <a href="https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary" target="\_blank">**Autonomous Data Warehouse Forum**</a> on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Autonomous Data Warehouse.
-
-Are you are completely new to the **Cloud Customer Connect**</a> forums? Visit our <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="\_blank">**Getting Started forum page**</a> to learn how to best leverage community resources.
 
 **You are all set; let's begin! Click Lab 1 in the Contents menu on the right.**
 
@@ -66,5 +60,7 @@ Use these links to get more information about Oracle Autonomous Database:
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, April 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

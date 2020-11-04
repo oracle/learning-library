@@ -1,11 +1,12 @@
-#Lab 5 -  Create the tables and insert data
+# Create and Populate Tables
 
 ## Introduction
-  In this lab, you are going to log in as user `customer_360`. You will learn how to clear previous tables, create new tables, and populate the tables with your data.  
-  You will create 7 tables (customer, account, merchant, owned_by, purchased, transfer, parent_of). The entity-relationship diagram for these tables is shown below.  
 
-  ![ER Diagram of tables](images/c360_erDiagram.png " ")  
+In this lab, you are going to log in as user `customer_360`. You will learn how to clear previous tables, create new tables, and populate the tables with your data.
 
+You will create 7 tables (customer, account, merchant, owned_by, purchased, transfer, parent_of). The entity-relationship diagram for these tables is shown below.
+
+![ER Diagram of tables](images/c360_erDiagram.png " ")
 
 Estimated time: 7 minutes
 
@@ -14,47 +15,56 @@ Estimated time: 7 minutes
 - Learn how to connect to your new Autonomous Database using SQL Developer Web
 - Learn how to create tables and insert data using SQL
 
-
 ### Prerequisites
-- This lab assumes you have successfully completed the previous lab (Lab 4).
 
-## **Step 1:** Log in to SQLDevWeb as user c360
+- This lab assumes you have successfully completed the lab - Create and enable a user in SQLDeveloper Web.
+
+## **STEP 1:** Log in to SQLDevWeb as user c360
+
 1. Open the correct URL for SQlDevWeb for the CUSTOMER_360 user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `c360`.
 
   ![](images/admin_url.png " ")
 
 2. Login as `CUSTOMER_360` using the password you entered when creating the user.
 
-*Note: Use the password you choose in Step 1.2 in Lab 4.*
+  *Note: Use the password you choose in Step 1.2 in Lab 4.*
 
   ![Login as Customer_360](images/ADB_SDW_LoginAsC360.png " ")
 
   ![Connected as Customer_360](images/ADB_SDW_ConnectedAsC360.png " ")
 
 ### Troubleshooting
-  If you receive a *Service Unavailable* error, it may be that the  `customer_360` account is locked.
-    ![](images/troubleshooting_login.png " ")
 
-  You can try the following steps:
-   1. Log in as ADMIN, enter and run the command in Worksheet:
+If you receive a *Service Unavailable* error, it may be that the  `customer_360` account is locked.
+
+![](images/troubleshooting_login.png " ")
+
+You can try the following steps:
+
+1. Log in as ADMIN, enter and run the command in Worksheet:
+
     ```
     <copy>select username, account_status from dba_users ;</copy>
     ```
 
-    In Query Result, check the account status of `CUSTOMER_360`. The status should be `OPEN`.
-    ![](images/troubleshoot_query_result.png " ")
+  In Query Result, check the account status of `CUSTOMER_360`. The status should be `OPEN`.
 
-    1. If the status is `LOCKED`, enter and run the command to unlock the user:
+  ![](images/troubleshoot_query_result.png " ")
+
+2. If the status is `LOCKED`, enter and run the command to unlock the user:
+
     ```
     <copy>alter user CUSTOMER_360 account unlock</copy>
     ```
 
-    1. Then, the status should change to `OPEN`. You can check again using command:
+3. Then, the status should change to `OPEN`. You can check again using command:
+
     ```
     <copy>select username, account_status from dba_users ;</copy>
     ```
 
-## **Step 2:** Drop existing tables if any
+## **STEP 2:** Drop existing tables if any
+
 1. To ensure a clean slate, drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.
 
     ```
@@ -70,9 +80,9 @@ Estimated time: 7 minutes
     </copy>
     ```
 
-    ![Drop existing tables](images/ADB_SDW_C360_DropTables.png " ")
+  ![Drop existing tables](images/ADB_SDW_C360_DropTables.png " ")
 
-## **Step 3:** Create and populate the Account table
+## **STEP 3:** Create and populate the Account table
 
 1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -97,9 +107,9 @@ Estimated time: 7 minutes
     </copy>
     ```
 
-![Create Account table](images/ADB_SDW_C360_CreateAccountTable.png " ")
+  ![Create Account table](images/ADB_SDW_C360_CreateAccountTable.png " ")
 
-## **Step 4:** Create and populate the Customer table
+## **STEP 4:** Create and populate the Customer table
 
 1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -124,9 +134,9 @@ Estimated time: 7 minutes
     </copy>
     ```
 
-![Create Customer table](images/ADB_SDW_C360_CreateCustomerTable.png " ")
+  ![Create Customer table](images/ADB_SDW_C360_CreateCustomerTable.png " ")
 
-## **Step 5:** Create and populate the Merchant table
+## **STEP 5:** Create and populate the Merchant table
 
 1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -150,9 +160,9 @@ Estimated time: 7 minutes
 
     ```
 
-    ![Create Merchant table](images/ADB_SDW_C360_CreateMerchantTable.png " ")
+  ![Create Merchant table](images/ADB_SDW_C360_CreateMerchantTable.png " ")
 
-## **Step 6:** Create and populate the Owned_By table
+## **STEP 6:** Create and populate the Owned_By table
 
 1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -172,9 +182,9 @@ Estimated time: 7 minutes
     </copy>
     ```
 
-    ![Create owned_by table](images/ADB_SDW_C360_CreateOwnedByTable.png " ")
+  ![Create owned_by table](images/ADB_SDW_C360_CreateOwnedByTable.png " ")
 
-## **Step 7:** Create and populate the Parent_Of table
+## **STEP 7:** Create and populate the Parent_Of table
 
 1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -190,9 +200,9 @@ Estimated time: 7 minutes
     </copy>
     ```
 
-    ![Create parent_of table](images/ADB_SDW_C360_CreateParentOfTable.png " ")
+  ![Create parent_of table](images/ADB_SDW_C360_CreateParentOfTable.png " ")
 
-## **Step 8:** Create and populate the Purchased table
+## **STEP 8:** Create and populate the Purchased table
 
 1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -221,7 +231,7 @@ Estimated time: 7 minutes
 
   ![Create purcahsed table](images/ADB_SDW_C360_CreatePurchasedTable.png " ")
 
-## **Step 9:** Create and populate the Transfer table
+## **STEP 9:** Create and populate the Transfer table
 
 1. Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -247,15 +257,18 @@ Estimated time: 7 minutes
     COMMIT;
     </copy>
     ```
-    ![Create transfer table](images/ADB_SDW_C360_CreateTransferTable.png " ")
 
-You may now *proceed to the next lab*
+  ![Create transfer table](images/ADB_SDW_C360_CreateTransferTable.png " ")
 
-## Acknowledgements ##
+You may now proceed to the next lab
 
-* **Author** - Jayant Sharma, Product Manager, Spatial and Graph.  
+## Acknowledgements
+
+* **Author** - Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop.
 * **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

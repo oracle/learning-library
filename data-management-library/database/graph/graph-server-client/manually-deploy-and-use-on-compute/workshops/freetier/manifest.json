@@ -1,4 +1,5 @@
 {
+    "workshoptitle":"Analyze and Visualize Property Graphs with Oracle Database",
     "tutorials": [
       {
           "title": "Prerequisites",
@@ -8,7 +9,7 @@
         {
             "title": "Introduction",
             "description": "Introduction",
-            "filename":"intro.md"
+            "filename":"../../intro/intro.md"
         },
         {
             "title": "Lab 1: Create SSH Keys",

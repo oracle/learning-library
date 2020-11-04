@@ -15,6 +15,8 @@ Approximately 60 minutes
 
 ## STEPS-
 
+## Step 1: - GoldenGate GoldenGate for Oracle Capture
+
 1. Open a terminal session
 
 ![](./images/terminal2.png)
@@ -73,14 +75,17 @@ Enter the following settings:
 
 11. Save and close the file.
 
-12. MySQL data apply
+
+## Step 2: - GoldenGate GoldenGate MySQL Data Apply
+
+1. MySQL data apply
 To configure the Coordinated Replicat in the MySQL OGG environment:
 
-13. Execute the GGSCI command
+2. Execute the GGSCI command
   
 edit param rtpc
 
-14. Enter the following settings:
+3. Enter the following settings:
 	       
          replicat rtpc
            targetdb tpc@db-ora19-mysql:3306, useridalias ggapply
@@ -97,7 +102,7 @@ edit param rtpc
            map pdbeast.tpc.products, target "tpc"."products", thread (20);
            map pdbeast.tpc.products_description, target "tpc"."products_description", thread (20);
            map pdbeast.tpc.products_to_categories, target "tpc"."products_to_categories", thread (20);
-14. Enter "MAP" statements for the following
+4. Enter "MAP" statements for the following
 
 Operations for the table "tpc.orders" are to be applied by thread 1.
 
@@ -106,22 +111,25 @@ Operations for the table "tpc.orders_products" and to be ranged across threads 2
 Operations for the table "tpc.orders_status_history" are to be ranged across threads 6 and 7.
 Save and close the file.
 	
-15. Enable schema level supplemental logging in source.
+5. Enable schema level supplemental logging in source.
 
-16. To enable schema level supplemental logging in the source Oracle PDB:
-17. Execute the GGSCI commands
+6. To enable schema level supplemental logging in the source Oracle PDB:
+
+7. Execute the GGSCI commands
 
 dblogin useridalias oggcapture
 add schematrandata pdbeast.tpc
 		  
-18. Create the OGG replication Groups
+8. Create the OGG replication Groups
 Create the OGG Groups by executing the following commands:
+
+## Step 3: - GoldenGate GoldenGate for Oracle Integrated Extract and Apply
 
 **Oracle Integrated Extract:**
 
-19. dblogin useridalias oggcapture
+1. dblogin useridalias oggcapture
 
-20. add extract etpc, integrated tranlog, begin now
+2. add extract etpc, integrated tranlog, begin now
 
 register extract etpc, database, container (*)
 
@@ -129,39 +137,46 @@ add exttrail ./dirdat/et, extract etpc, megabytes 250
 
 **Oracle Extract Data Pump:**
 
-21. add extract pmysql, exttrailsource ./dirdat/et
+3. add extract pmysql, exttrailsource ./dirdat/et
 
-22. add rmttrail ./dirdat/rt, extract pmysql, megabytes 250
+4. add rmttrail ./dirdat/rt, extract pmysql, megabytes 250
 
 **Oracle Parallel Apply**
 
-23. dblogin useridalias ggapplywest
+5. dblogin useridalias ggapplywest
 
-24. add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint
+6 . add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint
+
+## Step 4: - GoldenGate GoldenGate for non-Oracle coordinated Replicat
 
 **MySQL Coordinated Replicat**
 
-25. dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep
+1. dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep
 
-26. add replicat rtpc, coordinated, exttrail ./dirdat/rt
+2. add replicat rtpc, coordinated, exttrail ./dirdat/rt
 
-27. Start OGG and generate data
+3. Start OGG and generate data
 Start the OGG environment:
 
 Oracle: start er *   
 
 MySQL: start er *
 
-28. Verify all OGG Groups are running.
+4. Verify all OGG Groups are running.
 Generate data
+
 
 In the window connected to the database server:
 Change to the "/Test_Software/Scripts/Oracle/orderentry" directory.
 Login to the database as the user "tpc"
-sqlplus tpc@pdbeast
+
+5. sqlplus tpc@pdbeast
 When prompted enter the password: Oracle1
-At the SQL> prompt, enter: @gentrans.sql
+
+6. At the SQL> prompt, enter: @gentrans.sql
 Enter "100" at the prompt, and return.
+
+## Step 5: - GoldenGate GoldenGate - Verify Replication
 
 1. Verify data has been replicated
 Check that all OGG Groups remain running.			
@@ -172,14 +187,15 @@ For MySQL, use the ggsci command "info rtpc, detail" to see how many Replicats w
 On the database server:
 Login to PDBWEST as ggadmin: sqlplus ggadmin@pdbwest
 When prompted enter the password: Oracle1
-Execute the following query to see additional information about lag:  
+
+2. Execute the following query to see additional information about lag:  
       set heap on
       set wrap off
       set line 300
       column Extract format a9
       column Data_Pump format a10
       column Replicat format a9
-select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
+3. select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
        incoming_extract Extract
       extract (day from (incoming_extract_ts - incoming_heartbeat_ts))*24*60*60+
          extract (hour from (incoming_extract_ts - incoming_heartbeat_ts))*60*60+
@@ -205,11 +221,15 @@ select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
          extract (second from (heartbeat_received_ts - incoming_heartbeat_ts)) Total_Lag
       from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;
 
- 9. Replicate Oracle DDL 
+## Step 6: - GoldenGate GoldenGate - Replicate DDL
+
+1. Replicate Oracle DDL 
 On the database server:
-Login to PDBEAST as tpc: sqlplus tpc@pdbeast
+
+2. Login to PDBEAST as tpc: sqlplus tpc@pdbeast
 When prompted enter the password: Oracle1
-Execute the following:
+
+3. Execute the following:
 	       create table ddltest (
            cola number(15,0) not null,
            colb timestamp(6) not null,
@@ -226,17 +246,26 @@ Execute the following:
            update ddltest set colb=CURRENT_TIMESTAMP, colc='Row 3 update' where cola=3;
            delete from ddltest where cola=2;
            commit;
-View the Oracle Replicat report file to validate the DDL was applied.
+
+4. View the Oracle Replicat report file to validate the DDL was applied.
 Execute the GGSCI "stats" command to see information for the table ddltest
 stats rtpc, table pdbwest.tpc.ddltest 
 
- 10. Shutdown all Extracts and Replicats.
+ 5. Shutdown all Extracts and Replicats.
 
-**End of Lab 3 - You may proceed to the next Lab**
+You may now *proceed to the next lab*.
+
+## Learn More
+
+* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
+* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Brian Elliott, October 2020
 
-  * Authors ** - Brian Elliott, Zia Khan
-  * Contributors ** - Brian Elliott, Zia Khan
-  * Team ** - Data Integration Team
-  * Last Updated By/Date ** - Brian Elliott / September 2020
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+

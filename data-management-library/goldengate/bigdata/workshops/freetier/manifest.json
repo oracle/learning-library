@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Oracle GoldenGate for Big Data",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -11,43 +12,60 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Installation",
-      "description": "Introduction to GGBD",
-      "filename": "../../installation/installation.md"
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
     },
     {
-      "title": "Lab 2: MySQL to MySQL",
-      "description": "mysql-to-mySQL",
+      "title": "Lab 2: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+    {
+      "title": "Lab 4: Deploy GoldenGate for Big Data",
+      "description": "Deployment of GoldenGate for Big Data",
+      "filename": "../../deploy-gg-for-bd/deploy-gg-for-bd.md"
+    },
+    {
+      "title": "Lab 5: MySQL to MySQL",
+      "description": "GGBD mysql-to-mySQL",
       "filename": "../../mysql-to-mysql/mysql-to-mysql.md"
     },
     {
-      "title": "Lab 3: MySQL to HDFS",
-      "description": "mysql-to-hdfs",
+      "title": "Lab 6: MySQL to HDFS",
+      "description": "GGBD mysql-to-hdfs",
       "filename": "../../mysql-to-hdfs/mysql-to-hdfs.md"
     },
     {
-      "title": "Lab 4: MySQL to Hive",
-      "description": "Lab 4 GGBD mysql-to-hive",
+      "title": "Lab 7: MySQL to Hive",
+      "description": "GGBD mysql-to-hive",
       "filename": "../../mysql-to-hive/mysql-to-hive.md"
     },
     {
-      "title": "Lab 5: MySQL to HBase",
-      "description": "Lab 5 GGBD mysql-to-hbase",
+      "title": "Lab 8: MySQL to HBase",
+      "description": "mysql-to-hbase",
       "filename": "../../mysql-to-hbase/mysql-to-hbase.md"
     },
     {
-      "title": "Lab 6: MySQL to Kafka",
-      "description": "Lab 6 GGBD mysql-to-Kafka",
+      "title": "Lab 9: MySQL to Kafka",
+      "description": "GGBD mysql-to-Kafka",
       "filename": "../../mysql-to-kafka/mysql-to-kafka.md"
     },
     {
-      "title": "Lab 7: MySQL to Cassandra",
-      "description": "Lab 7 GGBD mysql-to-Cassandra",
+      "title": "Lab 10: MySQL to Cassandra",
+      "description": "GGBD mysql-to-Cassandra",
       "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
     },
     {
-      "title": "Lab 8: MySQL to Oracle (Optional)",
-      "description": "Lab 9 GGBD mysql-to-oracle",
+      "title": "Lab 11: MySQL to Oracle",
+      "description": "GGBD mysql-to-oracle",
       "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
     },
     {
