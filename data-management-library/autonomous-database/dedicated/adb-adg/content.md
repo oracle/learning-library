@@ -11,6 +11,14 @@ Every enterprise today needs to protect its data with high availability, data pr
 * Learn how to enable and disable Autonomous Data Guard
 * Learn how to switchover and failover from primary database to a standby database
 
+### Prerequisites
+
+* This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
+* Make sure you have completed the previous lab in the Contents menu on the right, **Provision Autonomous Database**, before you proceed with this lab.
+
+**Note:**  Autonomous Data Guard is not available with Oracle's Always Free databases.
+**Note:**  Autonomous Data Guard is available only in Autonomous Database instances 19c and above.
+
 ## Basic Disaster Recovery Terminology
 **Primary or Source Database**: The main database that is actively being used to read from, and write to, by a user or application.
 
@@ -33,13 +41,7 @@ After a failover, a new standby for your primary will automatically be provision
 The standby database is created in the same region as the primary database. For better resilience, the standby database is provisioned as follows:
 * In regions with more than one availability domain, the standby database is provisioned automatically in a different availability domain than the primary database.
 * In regions with a single availability domain, the standby database is provisioned automatically on a different physical machine than the primary database.
-### Prerequisites
 
-* This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-* Make sure you have completed the previous lab in the Contents menu on the right, **Provision Autonomous Database**, before you proceed with this lab.
-
-**Note:**  Autonomous Data Guard is not available with Oracle's Always Free databases.
-**Note:**  Autonomous Data Guard is available only in Autonomous Database instances 19c and above.
 
 ## STEP 1: Enable Autonomous Data Guard
 
@@ -94,10 +96,10 @@ Disabling Autonomous Data Guard terminates the standby database. If you later en
 ## Want to Learn More?
 For more information about Standby Databases, see the documentation  [About Standby Databases](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B).
 
-### Acknowledgements
+## Acknowledgements
 * Authors - Vandanadevi Rajamani, Database User Assistance; Nilay Panchal, ADB Product Management
 * Last Updated By/Date -Vandanadevi Rajamani/October 2020
 
-See an issue?
+## Need Help?
 
 Please submit feedback using this form. Please include the workshop name, lab and step in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the Feedback Comments section.
