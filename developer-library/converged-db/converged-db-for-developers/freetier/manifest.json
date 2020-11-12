@@ -1,0 +1,82 @@
+{
+    "workshoptitle": "Converged Database with WebLogic for Developers",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        }, 
+        {         
+            "title": "Introduction",
+            "description": "Login to Oracle Cloud",
+            "publisheddate": "11/02/2020",
+            "filename": "../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+          },
+        {            
+            "title": "Lab 2: Setup Compute Instance",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "publisheddate": "11/02/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
+        },
+        {         
+            "title": "Lab 3: Start Services ",
+            "description": "Start all services",
+            "publisheddate": "11/02/2020",
+            "filename": "../start-services/start-services.md"
+        },
+        {         
+            "title": "Lab 4: eSHOP Application ",
+            "description": "Launch eSHOP application",
+            "publisheddate": "11/02/2020",
+            "filename": "../eshop-application/eshop-application.md"
+        },
+        
+        {         
+            "title": "Lab 5: Data Type Demonstration Tool ",
+            "description": "Introduction to Data Type Demonstration Tool",
+            "publisheddate": "11/02/2020",
+            "filename": "../data-type-demonstration-tool/data-type-demonstration-tool.md"
+        },
+        {         
+            "title": "Lab 6: JSON ",
+            "description": "Introduction to JSON",
+            "publisheddate": "11/02/2020",
+            "filename": "../json/json.md"
+        },
+        {         
+            "title": "Lab 7: XML",
+            "description": "Introduction to XML",
+            "publisheddate": "11/02/2020",
+            "filename": "../xml/xml.md"
+        },
+        {         
+            "title": "Lab 8: SPATIAL",
+            "description": "Introduction to Spatial",
+            "publisheddate": "11/02/2020",
+            "filename": "../spatial/spatial.md"
+        },
+        {         
+            "title": "Lab 9: Cross Data Type ",
+            "description": "Introduction to Cross Data Type",
+            "publisheddate": "11/02/2020",
+            "filename": "../cross-data-type/cross-data-type.md"
+        },
+        {         
+            "title": "Lab 10: ORDS as Microservice",
+            "description": "Introduction to ORDS as microservice",
+            "publisheddate": "11/02/2020",
+            "filename": "../ords-as-microservice/ords-as-microservice.md"
+        }
+       
+
+        
+        
+
+
+    ]
+}
