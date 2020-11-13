@@ -19,9 +19,9 @@ Customer Benefits
 ## **Step 1:** Sign in to OCI Console
 You will need the following information to login to your account:
 
-- Tenant Name: {{Cloud Tenant}}
-- User Name: {{User Name}}
-- Password: {{Password}}
+- Tenant Name
+- User Name
+- Password
 
 This lab assumes you are a tenancy administrator. If you are not, request to the tenancy administrator to provide you the proper permission to manage DNS services, create and manage VCNs, create and manage instances. 
 
