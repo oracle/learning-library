@@ -50,7 +50,7 @@ Click **Insert Row**. The record is inserted into the table.
       * Click the table name, or
       * Click the action menu corresponding to the table name and select **View Details**.
      The Table Details page opens up. Click **Insert Row**.
-3. In the Insert Row window, select **Advanced JSON Input ** for **Entry Mode**.
+3. In the Insert Row window, select **Advanced JSON Input** for **Entry Mode**.
 4. Paste or upload the Record Definition in JSON format.
 5. Click **Insert Row**. The record is inserted into the table.
 
@@ -59,7 +59,7 @@ You can view Oracle NoSQL Database Cloud Service table details from the NoSQL co
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. From the Table Details page, you can view all table columns, indexes, rows, and metrics.
     * In the Table Details page, click **View Table DDL**. The View Table DDL window displays the table DDL statement.
     * You can select and copy the table DDL statement from the window. Click OK to close the window.
@@ -70,7 +70,7 @@ You can view Oracle NoSQL Database Cloud Service table details from the NoSQL co
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. In the Table Details page, select the Table Rows tab under Resources. By default, the query text is populated with a SQL query that will retrieve all the records from the table. You can modify this query with any valid SQL for Oracle NoSQL statement.
 4. Click the action menu corresponding to the row you wish to update, and select **Update Row**.
 5. Modify the values in Simple Input or Advanced JSON Input Updation Mode.
@@ -80,9 +80,9 @@ You can view Oracle NoSQL Database Cloud Service table details from the NoSQL co
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. In the Table Details page, select the Table Rows tab under Resources. By default, the query text is populated with a SQL query that will retrieve all the records from the table. You can modify this query with any valid SQL for Oracle NoSQL statement.
-4. Click the action menu corresponding to the row you wish to delete, and select **Delete**.
+4. Click the action menu corresponding to the row you wish to delete and select **Delete**.
 5. The Delete Row confirmation dialog opens. Click **Delete**. The row is deleted.
 
 ## **Option 5:** Modify the Time to Live (TTL) value of an Always Free table
@@ -90,35 +90,37 @@ You can update Time to Live (TTL) values for your Oracle NoSQL Database Cloud Se
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. The value of Time to Live (TTL) can be updated.
-   * To update the value of Time to Live (TTL), click the Edit link next to the Time to live (Days) field.
+      * To update the value of Time to Live (TTL), click the Edit link next to the Time to live (Days) field.
    ![](./images/EditTable_TTL.png)
-   * You can also update the value of Time to Live (TTL) by clicking the action menu corresponding to the table name you wish to change and select Edit default time to live.
+      * You can also update the value of Time to Live (TTL) by clicking the action menu corresponding to the table name you wish to change and select Edit default time to live.
    ![](./images/EditTable_DefaultTTL.png)
-   * Table Time to Live (Days): (optional) Specify the default expiration time for the rows in the table. After this time, the rows expire automatically, and are no longer available. The default value is zero, indicating no expiration time.
-   **Note**: Updating Table Time to Live (TTL) will not change the TTL value of any existing data in the table. The new TTL value will only apply to those rows that are added to the table after this value is modified and to the rows for which no overriding row-specific value has been supplied.
+      * Table Time to Live (Days): (optional) Specify the default expiration time for the rows in the table. After this time, the rows expire automatically and are no longer available. The default value is zero, indicating no expiration time.
+
+     **Note**: Updating Table Time to Live (TTL) will not change the TTL value of any existing data in the table. The new TTL value will only apply to those rows that are added to the table after this value is modified and to the rows for which no overriding row-specific value has been supplied.
 4. (Optional) To dismiss the changes, click **Cancel**.
 
 ## **Option 6:** Alter columns of an Always Free table
-You can alter the Always Free tables columns in two modes:
+You can alter the columns of the Always Free table in two modes:
     * **Simple Input Mode**: You can use this mode to alter the NoSQL Database Cloud Service table declaratively, that is, without writing a DDL statement.
     * **Advanced DDL Input Mode**: You can use this mode to alter the NoSQL Database Cloud Service table using a DDL statement.
 **Adding columns to an Always Free table - Simple Input mode**
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. In the Table Details page, select the **Columns** tab under **Resources**. You will see a list of all the columns added to the table.
 4. Click **Add Columns**. In the Add Columns window, select **Simple Input** for **Table Column Update Mode**.
 5. In the Columns section, enter column details:
-   ![](./images/EditTable_TTL.png)
+   ![](./images/add_col.png)
    * **Column Name**: Enter the column name.
    * **Type**: Select the data type for your column.
-   * **Precision**: This is applicable for TIMESTAMP typed columns only. Specify precision for timestamp values ranging from zero to nine. 0 is the minimum precision, and 9 is the maximum precision. When declaring a timestamp field, the precision is required.
+   * **Precision**: This is applicable for TIMESTAMP typed columns only. Specify precision for timestamp values ranging from zero to nine. 0 is the minimum precision, and 9 is the maximum precision. When declaring a timestamp field, precision is required.
   * **Size**: This is applicable for BINARY typed columns only. Specify the size in bytes to make the binary a fixed binary.
   * **Default Value**: (optional) Supply a default value for the column.
-**Note**: Default values can not be specified for binary and JSON data type columns.
+
+    **Note**: Default values can not be specified for binary and JSON data type columns.
   * **Value is Not Null**: Click this option to specify that a column must always have a value.
   * **+ Another Column**: Click this button to add more columns.
 
@@ -126,7 +128,7 @@ You can alter the Always Free tables columns in two modes:
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. In the Table Details page, select the **Columns** tab under **Resources**. You will see a list of all the columns added to the table.
 4. Click **Add Columns**. In the Add Columns window, select **Advanced DDL Input ** for **Table Column Update Mode**.
 5. Enter the update table DDL statement.
@@ -137,17 +139,17 @@ The new columns are added to the table.
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. In the Table Details page, select the **Columns** tab under **Resources**. You will see a list of all the columns added to the table.
 4. Click the action menu corresponding to the column you wish to delete and select **Delete**.
-In the Delete Column confirmation dialog, click **Delete** to confirm delete.
+In the Delete Column confirmation dialog, click **Delete** to confirm the delete.
 The column is deleted from the table.
 
 ## **Option 7:** Move an Always Free table to another compartment
 1. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Under Database, select **NoSQL Database**.
 2. The NoSQL console lists all the tables in the tenancy. To view table details, do either of the following:
       * Click the table name, or
-      * Click the action menu corresponding to the table name and select **View Details**.The Table Details page opens up.
+      * Click the action menu corresponding to the table name and select **View Details**. The Table Details page opens up.
 3. In the Table Details page, click **Move Table**.
 4. Alternatively, Click the action menu corresponding to the table name and select **Move table**.
 5. In the Move Resource to a Different Compartment window, modify the following values for the table:
