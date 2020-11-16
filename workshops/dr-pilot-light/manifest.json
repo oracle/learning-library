@@ -1,0 +1,27 @@
+{
+    "workshoptitle": "Disaster Recovery: Pilot Light - App & DB",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "This workshop will show you how to do Pilot Light DR on Oracle Cloud.",
+            "filename": "./introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Setup your Environment",
+            "filename": "./lab-1/lab-1.md"
+        },
+        {
+            "title": "Lab 2: Configure Failover & Recovery Backups",
+            "filename": "./lab-2/lab-2.md"
+        },
+        {
+            "title": "Lab 3: Simulate Disaster",
+            "filename": "./lab-3/lab-3.md"
+        }
+      ]
+}
