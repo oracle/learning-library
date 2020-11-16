@@ -58,10 +58,10 @@ When the standby database is being provisioned, the primary database status beco
 When provisioning completes, the **Peer State** field shows **Available**.
 ![](./images/adg_7.png)
 
-## Automatic Failover to a Standby Database
+## Automatic and Manual Failover options in case of a disaster
 In a disaster situation when the Primary becomes unavailable the Switchover button would turn to a Failover one. With ADG, an **Automatic Failover** is automatically triggered (no user action is needed) by the Autonomous Database when a user is unable to connect to their primary database for a few minutes. Since this is an automated action, the automatic failover is allowed to succeed only when you can guarantee that no data loss will occur.  In ADG, for automatic failover, RTO is 2 minutes and RPO is 0 minutes.
 
-In the rare case when your primary is down and automatic failover is unsuccessful, the user can trigger and perform a **Manual Failover**. During a manual failover, the system automatically recovers as much as data possible, minimizing any potential data loss; there may be a few seconds or minutes of data loss. You would usually only perform a manual failover in a true disaster scenario, accepting the few minutes of potential data loss to ensure getting your database back online as soon as possible.
+In the rare case when your primary is down and automatic failover is unsuccessful, the Switchover button will turn into a Failover button and the user can trigger and perform a **Manual Failover**. During a manual failover, the system automatically recovers as much as data possible, minimizing any potential data loss; there may be a few seconds or minutes of data loss. You would usually only perform a manual failover in a true disaster scenario, accepting the few minutes of potential data loss to ensure getting your database back online as soon as possible.
 For manual failover, the RTO is 2 minutes and RPO is 5 minutes.
 
 ## STEP  2: Test Switchover to a Standby Database
@@ -77,8 +77,9 @@ To perform a switchover, do the following:
 The database Lifecycle State changes to **Updating** and the Peer State field shows **Role Change in Progress**.
 
 When the switchover operation completes, Autonomous Data Guard does the following:
-* The Peer State field shows Available.
-* After Autonomous Data Guard completes the switchover operation you can see the time of the last switchover when you hover over the tooltip icon in the **Peer State** field.
+* The Primary database goes into the Available state and can be connected to for queries and updates.
+* The Peer State field will change to Available when the standby is ready. (The standby may go into a Provisioning state first, if necessary, without blocking operations on the Primary.)
+* You can see the time of the last switchover when you hover over the tooltip icon in the **Peer State** field.
 
 ## STEP  3: (Optional) Disable Autonomous Data Guard
 1. If you are not logged in to Oracle Cloud Console, log in and navigate into your Autonomous Database.
@@ -95,7 +96,8 @@ Note:
 Disabling Autonomous Data Guard terminates the standby database. If you later enable Autonomous Data Guard, the system creates a new standby database.
 
 ## Want to Learn More?
-For more information about Standby Databases, see the documentation  [About Standby Databases](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B).
+For more information about Standby Databases, see the documentation  [About Standby Databases](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B). To use OCI REST APIs to enable and use Autonomous Data Guard, See [Use the API](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-data-guard-api.html#GUID-3E4C0FA6-DE04-4F7F-A7AF-4C270870DCFF).
+
 
 ## Acknowledgements
 * Authors - Vandanadevi Rajamani, Database User Assistance; Nilay Panchal, ADB Product Management

@@ -1,0 +1,27 @@
+{
+    "workshoptitle": "Always Free Tables in Oracle NoSQL Database Cloud Service",
+    "tutorials": [
+        {
+          "title": "Prerequisites",
+          "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+          "title": "Introduction",
+          "description": "This is the inroduction to the lab",
+          "filename":"../../introduction/introduction.md"
+        },
+        {
+          "title": "Lab 1: Create an API Signing Key",
+          "filename":"../../create-api-signing-keys/create-api-signing-keys.md"
+        },
+		    {
+          "title": "Lab 2: Create an Always Free NoSQL Table",
+          "filename": "../../create-free-tbl/create-free-tbl.md"
+        },
+        {
+          "title": "Lab 3: Manage an Always Free NoSQL Table",
+          "filename": "../../manage-free-tbl/manage-free-tbl.md"
+        }
+    ]
+}
