@@ -1,10 +1,14 @@
-# Lab 8 -  Column Conversions
+# One Way Replication from MySql to Oracle
 
-### Introduction
-In this lab we will load data in and configure active-active for High Availability
+## Introduction
+
+This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
+In this lab we will load data in MySQL database ‘ggsource’. The GG extract process ‘extmysql’ will
+capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process
+‘pmpmysql’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repmysql’ will read the remote trail files, and apply the changes to the MySQL database ‘ggtarget’
 
 ### Objectives
-Active - Active Replication using GoldenGate
+Replication from relational source to a relational target using GoldenGate
 
 ### Prerequisites
 This lab assumes you have:
@@ -19,7 +23,7 @@ This lab assumes you have:
 Time to Complete -
 Approximately 60 minutes
 
-## **Step 1:** GoldenGate - Oracle Data Capture
+## **Step 1:** - GoldenGate for Oracle Capture
 
 1. Open a terminal session
 
@@ -32,64 +36,65 @@ Approximately 60 minutes
 <copy>sudo su - oracle</copy>
 ````
 
-1. Oracle data capture
+2. **Oracle data capture**
 
-To configure the Oracle Integrated Extract:
+3. To configure the Oracle Integrated Extract:
 Execute the GGSCI command: 
 
 ````
 <copy>edit param etpc</copy>
 ````
-Enter the following settings:
+4. Enter the following settings:
+
 ````
-	      <copy/>extract etpc
+	       <copy>extract etpc
           exttrail ./dirdat/et
           useridalias oggcapture
           reportcount every 120 seconds, rate
           ddloptions report
           warnlongtrans 60m, checkinterval 15m
           table pdbeast.tpc.*;</copy>
-````
 
-Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
+````
+5. Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
 Add the parameter that will cause Integrated Extract to encrypt its OGG Trail files.
 
-Save and close the file.
+6. Save and close the file.
    
-3. Data transmission to MySQL
+**Data transmission to MySQL**
+
 This is not technically required because the OGG and MySQL installations are on the same machine. However, if data is being transmitted over a LAN/WAN an Extract Data Pump is required.
 To configure the Oracle to MySQL Extract Data Pump:
 
-4. Execute the GGSCI command: 
+7. Execute the GGSCI command: 
 ````
 <copy>edit param pmysql</copy>
 ````
 
-5. Enter the following settings:
+8. Enter the following settings:
+
 ````
-	      <copy>extract pmysql
+  	      <copy>extract pmysql
           rmthost localhost, mgrport 8809
           rmttrail ./dirdat/rt
           reportcount every 120 seconds, rate
           table pdbeast.tpc.*;</copy>
 ````
-6. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
 
-7. Save and close the file.
+9. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
 
-## **Step 2:**  GoldenGate - Oracle Data Apply
+10. Save and close the file.
+	  
+**Oracle data apply**
 
-1. To configure the Parallel Replicat:
-Execute the GGSCI command: 
+To configure the Parallel Replicat:
 
-````
-<copy>./ggsci</copy>
-````
+11. Execute the GGSCI command 
 ````
 <copy>edit param rtpc</copy>
 ````
 
-2. Enter the following settings:
+12. Enter the following settings:
 ````
 	      <copy>replicat rtpc
           useridalias ggapplywest
@@ -99,40 +104,38 @@ Execute the GGSCI command:
 		  ddloptions report
           reportcount every 120 seconds, rate
           map pdbeast.tpc.*, target pdbwest.tpc.*;</copy>
-````
+````   
+   Add the parameters to auto-tune the number of Appliers; with a minimum of 3 and a maximum of 12
 
-3. Add the parameters to auto-tune the number of Appliers; with a minimum of 3 and a maximum of 12.
+13. Save and close the file.
 
-4. Save and close the file.
+## **Step 2:** - GoldenGate MySQL Data Apply
 
-## **Step 3:** GoldenGate - MySQL Data Apply
-
-1. MySQL data apply
+**MySQL data apply**
 
 To configure the Coordinated Replicat in the MySQL OGG environment:
 
+1. Execute the GGSCI command
 ````
 <copy>./ggsci</copy>
 ````
-
-2. Execute the GGSCI command: 
+  
 ````
 <copy>edit param rtpc</copy>
 ````
 
-3. Enter the following settings:
+2. Enter the following settings:
 
-````
-	       <copy>replicat rtpc
-           targetdb tpc@db-ora19-mysql:3306, useridalias ggapply
-           reportcount every 120 seconds, rate
-           usededicatedcoordinationthread
-		   map pdbeast.tpc.categories, target "tpc"."categories", thread (20);
-           map pdbeast.tpc.categories_description, target "tpc"."categories_description", thread (20);
-           map pdbeast.tpc.customers, target "tpc"."customers", thread (20);
-           map pdbeast.tpc.customers_info, target "tpc"."customers_info", thread (20);
-           map pdbeast.tpc.customers_lkup, target "tpc"."customers_lkup", thread (20);
-           map pdbeast.tpc.next_cust, target "tpc"."next_cust", thread (20);
+   ````     
+    <copy>replicat rtpc
+      targetdb tpc@db-ora19-mysql:3306, useridalias ggapply
+       reportcount every 120 seconds, rate     usededicatedcoordinationthread
+	     map pdbeast.tpc.categories, target "tpc"."categories", thread (20);
+       map pdbeast.tpc.categories_description, target "tpc"."categories_description", thread (20);
+       map pdbeast.tpc.customers, target "tpc"."customers", thread (20);
+       map pdbeast.tpc.customers_info, target "tpc"."customers_info", thread (20);
+       map pdbeast.tpc.customers_lkup, target "tpc"."customers_lkup", thread (20);
+         map pdbeast.tpc.next_cust, target "tpc"."next_cust", thread (20);
            map pdbeast.tpc.next_order, target "tpc"."next_order", thread (20);
            map pdbeast.tpc.orders_total, target "tpc"."orders_total", thread (20);
            map pdbeast.tpc.products, target "tpc"."products", thread (20);
@@ -140,19 +143,21 @@ To configure the Coordinated Replicat in the MySQL OGG environment:
            map pdbeast.tpc.products_to_categories, target "tpc"."products_to_categories", thread (20);</copy>
   ````
 
-4. Enter "MAP" statements for the following:
+3. Enter "MAP" statements for the following
 
 Operations for the table "tpc.orders" are to be applied by thread 1.
+
 Operations for the table "tpc.orders_products" and to be ranged across threads 2, 3, and 4.
+
 Operations for the table "tpc.orders_status_history" are to be ranged across threads 6 and 7.
 
-5. Save and close the file.
+4. Save and close the file.
 	
-6. Enable schema level supplemental logging in source.
+5. Enable schema level supplemental logging in source.
 
-To enable schema level supplemental logging in the source Oracle PDB:
+6. To enable schema level supplemental logging in the source Oracle PDB:
 
-Execute the GGSCI commands:
+7. Execute the GGSCI commands
 
 ````
 <copy>./ggsci</copy>
@@ -163,159 +168,206 @@ Execute the GGSCI commands:
 add schematrandata pdbeast.tpc</copy>
 ````
 		  
-1. Create the OGG replication Groups
+8. Create the OGG replication Groups
 
-Create the OGG Groups by executing the following commands:
-Oracle Integrated Extract:
+**Create the OGG Groups by executing the following commands**
+
+
+## **Step 3:** - GoldenGate for Oracle Integrated Extract and Apply
+
+1. **Oracle Integrated Extract:**
+````
+<copy>./ggsci</copy>
+````
+````
+<copy>dblogin useridalias oggcapture</copy>
+````
+
+````
+<copy>add extract etpc, integrated tranlog, begin now</copy>
+````
+
+````
+<copy>register extract etpc, database, container (*)</copy>
+````
+
+````
+<copy>add exttrail ./dirdat/et, extract etpc, megabytes 250</copy>
+````
+
+2. **Oracle Extract Data Pump:**
+
 ````
 <copy>./ggsci</copy>
 ````
 
 ````
-<copy>dblogin useridalias oggcapture
-add extract etpc, integrated tranlog, begin now
-register extract etpc, database, container (*)
-add exttrail ./dirdat/et, extract etpc, megabytes 250</copy>
+<copy>add extract pmysql, exttrailsource ./dirdat/et</copy>
 ````
 
-**Oracle Extract Data Pump**
-
 ````
-<copy>add extract pmysql, exttrailsource ./dirdat/et
-add rmttrail ./dirdat/rt, extract pmysql, megabytes 250</copy>
+<copy>add rmttrail ./dirdat/rt, extract pmysql, megabytes 250</copy>
 ````
 
-**Oracle Parallel Apply**
+3. **Oracle Parallel Apply**
 
-````
-<copy>dblogin useridalias ggapplywest
-add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
-````
-
-
-## **Step 4:** GoldenGate - MySQL Coordinated Replicat
-
-1. MySQL Coordinated Replicat
 ````
 <copy>./ggsci</copy>
 ````
+
+````
+<copy>dblogin useridalias ggapplywest</copy>
+````
+
+````
+<copy>add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
+````
+
+## **Step 4:** - GoldenGate for non-Oracle coordinated Replicat
+
+**MySQL Coordinated Replicat**
+
+````
+<copy>./ggsci</copy>
+````
+
 ````
 <copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggrep</copy>
 ````
+
 ````
 <copy>add replicat rtpc, coordinated, exttrail ./dirdat/rt</copy>
 ````
+
 1. Start OGG and generate data
 Start the OGG environment:
-````
-<copy>./ggsci</copy>
-````
-3. Oracle: 
-````
-<copy>start er *</copy>
-````  
 
-4. MySQL: 
 ````
 <copy>./ggsci</copy>
 ````
 
+2. **Oracle:** 
+
+````
+<copy>start er *</copy>
+````   
+
+3. **MySQL:** 
+
 ````
 <copy>start er *</copy>
 ````
 
-Verify all OGG Groups are running.
+4. Verify all OGG Groups are running.
 Generate data
+
 
 In the window connected to the database server:
 Change to the "/Test_Software/Scripts/Oracle/orderentry" directory.
 
-1. Login to the database as the user "tpc"
+5. Login to the database as the user "tpc"
 
 ````
 <copy>sqlplus tpc@pdbeast</copy>
 ````
-
 When prompted enter the password: Oracle1
 
-At the SQL> prompt, enter: 
+6. At the SQL> prompt, enter: 
+
 ````
 <copy>@gentrans.sql</copy>
 ````
 
 Enter "100" at the prompt, and return.
 
-## **Step 5:** GoldenGate - Verify Replication
+## **Step 5:** - GoldenGate - Verify Replication
 
-Verify data has been replicated
+1. Verify data has been replicated
+   
+Check that all OGG Groups remain running.			
 
-1. Check that all OGG Groups remain running.			
 For any STOPPED or ABEND groups, view their report file to find the error.
+
+````
+<copy>./ggsci</copy>
+````
+2. **view report xxxx**
 
 Use the ggsci "stats" command to see how many operations were processed by each Extract and Replicat.
 
-2. Use the ggsci "view report" command to see how many operations were processed per second by each Extract and Replicat.
+3. **stats xxxx total**
 
-3. For MySQL, use the ggsci command "info rtpc, detail" to see how many Replicats were spawned.
+Use the ggsci "view report" command to see how many operations were processed per second by each Extract and Replicat.
+
+For MySQL,
+
+4. use the ggsci command "info rtpc, detail" to see how many Replicats were spawned.
 
 ````
 <copy>info rtpc, detail</copy>
 ````
-4. On the database server:
 
-Login to PDBWEST as ggadmin: 
+On the database server:
+5. Login to PDBWEST as ggadmin: 
 ````
 <copy>sqlplus ggadmin@pdbwest</copy>
 ````
+
 When prompted enter the password: Oracle1
 
-5. Execute the following query to see additional information about lag:  
-````
+6. Execute the following query to see additional information about lag:  
+ ````
       <copy>set heap on
       set wrap off
       set line 300
       column Extract format a9
       column Data_Pump format a10
-      column Replicat format a9
-select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
-       , incoming_extract Extract
-       , extract (day from (incoming_extract_ts - incoming_heartbeat_ts))*24*60*60+
+      column Replicat format a9</copy>
+  ```` 
+  
+  7. Execute the following query 
+  ````
+   <copy>select to_char(incoming_heartbeat_ts,'DD-MON-YY HH24:MI:SSxFF') Source_HB_Ts
+       incoming_extract Extract
+      extract (day from (incoming_extract_ts - incoming_heartbeat_ts))*24*60*60+
          extract (hour from (incoming_extract_ts - incoming_heartbeat_ts))*60*60+
          extract (minute from (incoming_extract_ts - incoming_heartbeat_ts))*60+
          extract (second from (incoming_extract_ts - incoming_heartbeat_ts)) Extract_Lag
-       , incoming_routing_path Data_Pump
-       , extract (day from (incoming_routing_ts - incoming_extract_ts))*24*60*60+
+       incoming_routing_path Data_Pump
+       extract (day from (incoming_routing_ts - incoming_extract_ts))*24*60*60+
          extract (hour from (incoming_routing_ts - incoming_extract_ts))*60*60+
          extract (minute from (incoming_routing_ts - incoming_extract_ts))*60+
          extract (second from (incoming_routing_ts - incoming_extract_ts)) Data_Pump_Read_Lag
-       , incoming_replicat Replicat
-       , extract (day from (incoming_replicat_ts - incoming_routing_ts))*24*60*60+
+       incoming_replicat Replicat
+       extract (day from (incoming_replicat_ts - incoming_routing_ts))*24*60*60+
          extract (hour from (incoming_replicat_ts - incoming_routing_ts))*60*60+
          extract (minute from (incoming_replicat_ts - incoming_routing_ts))*60+
          extract (second from (incoming_replicat_ts - incoming_routing_ts)) Replicat_Read_Lag
-       , extract (day from (heartbeat_received_ts - incoming_replicat_ts))*24*60*60+
+       extract (day from (heartbeat_received_ts - incoming_replicat_ts))*24*60*60+
          extract (hour from (heartbeat_received_ts - incoming_replicat_ts))*60*60+
          extract (minute from (heartbeat_received_ts - incoming_replicat_ts))*60+
          extract (second from (heartbeat_received_ts - incoming_replicat_ts)) Replicat_Apply_Lag
-       , extract (day from (heartbeat_received_ts - incoming_heartbeat_ts))*24*60*60+
+       extract (day from (heartbeat_received_ts - incoming_heartbeat_ts))*24*60*60+
          extract (hour from (heartbeat_received_ts - incoming_heartbeat_ts))*60*60+
          extract (minute from (heartbeat_received_ts - incoming_heartbeat_ts))*60+
          extract (second from (heartbeat_received_ts - incoming_heartbeat_ts)) Total_Lag
       from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;</copy>
-````
+      ````
 
-## **Step 6:** GoldenGate - Replicate Oracle DDL
+## **Step 6:** - GoldenGate - Replicate DDL
 
-Replicate Oracle DDL 
+1. Replicate Oracle DDL 
+On the database server:
 
-1. On the database server:
-Login to PDBEAST as tpc: 
+2. Login to PDBEAST as tpc: 
 ````
 <copy>sqlplus tpc@pdbeast</copy>
 ````
+
 When prompted enter the password: Oracle1
-Execute the following:
-	       ````
+
+3. Execute the following:
+	 ````
          <copy>create table ddltest (
            cola number(15,0) not null,
            colb timestamp(6) not null,
@@ -332,20 +384,15 @@ Execute the following:
            update ddltest set colb=CURRENT_TIMESTAMP, colc='Row 3 update' where cola=3;
            delete from ddltest where cola=2;
            commit;</copy>
-````
+      ````
 
-2. View the Oracle Replicat report file to validate the DDL was applied.
-
-3. Execute the GGSCI "stats" command to see information for the table ddltest
-
-````
-<copy>./ggsci</copy>
-````
+4. View the Oracle Replicat report file to validate the DDL was applied.
+Execute the GGSCI "stats" command to see information for the table ddltest
 ````
 <copy>stats rtpc, table pdbwest.tpc.ddltest</copy>
 ```` 
 
-4. Shutdown all Extracts and Replicats.
+ 5. Shutdown all Extracts and Replicats.
 
 You may now *proceed to the next lab*.
 
@@ -354,11 +401,12 @@ You may now *proceed to the next lab*.
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration October 2020
+* **Author** - Brian Elliott, Data Integration November 2020
 * **Contributors** - Madhu Kumar
-* **Last Updated By/Date** - Brian Elliott, October 2020
+* **Last Updated By/Date** - Brian Elliott, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+

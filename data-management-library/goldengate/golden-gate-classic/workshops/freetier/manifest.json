@@ -12,58 +12,58 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Generate SSH Keys",
+      "title": "Generate SSH Keys",
       "description": "Generate SSH Key",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
     },
     {
-      "title": "Lab 2: Prepare Setup",
+      "title": "Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
       "publisheddate": "09/28/2020",
       "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
-      "title": "Lab 3: Environment Setup",
+      "title": "Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Initial Setup",
+      "title": "Initial GoldenGate Setup",
       "description": "gg_classic-workshop-lab4-ogg-env-initial-setup",
-      "filename": "../../gg-classic-workshop-lab4-ogg-env-initial-setup/gg-classic-workshop-lab4-ogg-env-initial-setup.md"
+      "filename": "../../env-initial-setup/env-initial-setup.md"
     },
     {
-      "title": "Lab 5: Replication Oracle to MySql",
+      "title": "Replication Oracle to MySql",
       "description": "Replication Oracle to MySql",
-      "filename": "../../gg-classic-workshop-lab5-one-way-oracle-to-mysql-replication/gg-classic-workshop-lab5-one-way-oracle-to-mysql-replication.md"
+      "filename": "../../one-way-oracle-to-mysql-replication/one-way-oracle-to-mysql-replication.md"
     },
     {
-      "title": "Lab 6: Replication MySql to Oracle",
+      "title": "Replication MySql to Oracle",
       "description": "MySql to Oracle replication",
-      "filename": "../../gg-classic-workshop-lab6-one-way-replication-mysql-to-oracle/gg-classic-workshop-lab6-one-way-replication-mysql-to-oracle.md"
+      "filename": "../../one-way-replication-mysql-to-oracle/one-way-replication-mysql-to-oracle.md"
     },
     {
-      "title": "Lab 7: Active Active Replication",
+      "title": "Active Active Replication",
       "description": "Bidirectional Active Active Replication",
-      "filename": "../../gg-classic-workshop-lab7-active-active-replication/gg-classic-workshop-lab7-active-active-replication.md"
+      "filename": "../../active-active-replication/active-active-replication.md"
     },
     {
-      "title": "Lab 8: Goldengate Column Conversions",
-      "description": "Lab 8:GoldenGate Column Conversions",
-      "filename": "../../gg-classic-workshop-lab8-ogg-column-conversions/gg-classic-workshop-lab8-ogg-column-conversions.md"
+      "title": "GoldenGate Column Conversions",
+      "description": "GoldenGate Column Conversions",
+      "filename": "../../column-conversions/column-conversions.md"
 
     },
     {
-      "title": "Lab 9a: Goldengate Non Oracle replication from PostpresSQL Lab 9a",
-      "description": "Lab 9a: Goldengate Non Oracle from PostpresSQL",
-      "filename": "../../gg-classic-workshop-lab9a - postgresql/gg-classic-workshop-lab9a - postgresql.md"
+      "title": "GoldenGate Installation of Oracle replication with PostgresSQL",
+      "description": "GoldenGate installation for PostgresSQL",
+      "filename": "../../postgres-installation/postgres-installation.md"
 
     },
     {
-      "title": "Lab 9b: Goldengate Non Oracle replication to PostpresSQL",
-      "description": "Lab 9b: Goldengate Non Oracle to PostpresSQL Lab",
-      "filename": "../../gg-classic-workshop-lab9b - postgresql/gg-classic-workshop-lab9b - postgresql.md"
+      "title": "GoldenGate One Way replication to PostgresSQL",
+      "description": "GoldenGate replication to PostpresSQL Lab",
+      "filename": "../../one-way-postgresql-to-postgresql-replication/one-way-postgresql-to-postgresql-replication.md"
     }
   ]
 }

@@ -1,4 +1,4 @@
-# Deploy GoldenGate for Classic
+# Deploy GoldenGate Classic
 
 ## Introduction
 
@@ -74,9 +74,9 @@ You may now *proceed to the next lab*.
 * [GoldenGate with PostgreSQL](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/using-oracle-goldengate-postgresql.html/")
 * 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration  October 2020
+* **Author** - Brian Elliott, Data Integration  November 2020
 * **Contributors** - Madhu Kumar
-* **Last Updated By/Date** - Brian Elliott, October 2020
+* **Last Updated By/Date** - Brian Elliott, November 2020
 
 
 ## See an issue?

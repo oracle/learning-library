@@ -1,4 +1,4 @@
-# Lab 7 -  active-active-replication
+# Active Active / HA-DR Replication with GoldenGate
 
 ### Introduction
 In this lab we will load data in and configure active-active for High Availability
@@ -32,7 +32,7 @@ Approximately 60 minutes
 <copy>sudo su - oracle</copy>
 ````
 
-1. Oracle data capture
+2. Oracle data capture
 
 To configure the Oracle Integrated Extract:
 Execute the GGSCI command: 
@@ -40,7 +40,7 @@ Execute the GGSCI command:
 ````
 <copy>edit param etpc</copy>
 ````
-Enter the following settings:
+3. Enter the following settings:
 ````
 	      <copy/>extract etpc
           exttrail ./dirdat/et
@@ -51,21 +51,21 @@ Enter the following settings:
           table pdbeast.tpc.*;</copy>
 ````
 
-Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
+4. Add the parameter that will cause Integrated Extract to capture DDL operations that are of mapped scope.
 Add the parameter that will cause Integrated Extract to encrypt its OGG Trail files.
 
-Save and close the file.
+5. Save and close the file.
    
-3. Data transmission to MySQL
+6. Data transmission to MySQL
 This is not technically required because the OGG and MySQL installations are on the same machine. However, if data is being transmitted over a LAN/WAN an Extract Data Pump is required.
 To configure the Oracle to MySQL Extract Data Pump:
 
-4. Execute the GGSCI command: 
+7. Execute the GGSCI command: 
 ````
 <copy>edit param pmysql</copy>
 ````
 
-5. Enter the following settings:
+8. Enter the following settings:
 ````
 	      <copy>extract pmysql
           rmthost localhost, mgrport 8809
@@ -73,9 +73,9 @@ To configure the Oracle to MySQL Extract Data Pump:
           reportcount every 120 seconds, rate
           table pdbeast.tpc.*;</copy>
 ````
-6. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
+9. Add the RMTHOST option that will cause the Extract Data Pump to encrypt data transmissions with the aes256 algorithm.
 
-7. Save and close the file.
+10. Save and close the file.
 
 ## **Step 2:**  GoldenGate - Oracle Data Apply
 
@@ -163,7 +163,7 @@ Execute the GGSCI commands:
 add schematrandata pdbeast.tpc</copy>
 ````
 		  
-1. Create the OGG replication Groups
+6. Create the OGG replication Groups
 
 Create the OGG Groups by executing the following commands:
 Oracle Integrated Extract:
@@ -178,14 +178,14 @@ register extract etpc, database, container (*)
 add exttrail ./dirdat/et, extract etpc, megabytes 250</copy>
 ````
 
-**Oracle Extract Data Pump**
+7. **Oracle Extract Data Pump**
 
 ````
 <copy>add extract pmysql, exttrailsource ./dirdat/et
 add rmttrail ./dirdat/rt, extract pmysql, megabytes 250</copy>
 ````
 
-**Oracle Parallel Apply**
+8. **Oracle Parallel Apply**
 
 ````
 <copy>dblogin useridalias ggapplywest
@@ -205,7 +205,7 @@ add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadm
 ````
 <copy>add replicat rtpc, coordinated, exttrail ./dirdat/rt</copy>
 ````
-1. Start OGG and generate data
+2. Start OGG and generate data
 Start the OGG environment:
 ````
 <copy>./ggsci</copy>
@@ -230,7 +230,7 @@ Generate data
 In the window connected to the database server:
 Change to the "/Test_Software/Scripts/Oracle/orderentry" directory.
 
-1. Login to the database as the user "tpc"
+5. Login to the database as the user "tpc"
 
 ````
 <copy>sqlplus tpc@pdbeast</copy>
@@ -313,7 +313,7 @@ Login to PDBEAST as tpc:
 ````
 <copy>sqlplus tpc@pdbeast</copy>
 ````
-When prompted enter the password: Oracle1
+2. When prompted enter the password: Oracle1
 Execute the following:
 	       ````
          <copy>create table ddltest (
@@ -334,9 +334,9 @@ Execute the following:
            commit;</copy>
 ````
 
-2. View the Oracle Replicat report file to validate the DDL was applied.
+3. View the Oracle Replicat report file to validate the DDL was applied.
 
-3. Execute the GGSCI "stats" command to see information for the table ddltest
+4. Execute the GGSCI "stats" command to see information for the table ddltest
 
 ````
 <copy>./ggsci</copy>
@@ -345,7 +345,7 @@ Execute the following:
 <copy>stats rtpc, table pdbwest.tpc.ddltest</copy>
 ```` 
 
-4. Shutdown all Extracts and Replicats.
+5. Shutdown all Extracts and Replicats.
 
 You may now *proceed to the next lab*.
 
@@ -354,9 +354,9 @@ You may now *proceed to the next lab*.
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration October 2020
+* **Author** - Brian Elliott, Data Integration November 2020
 * **Contributors** - Madhu Kumar
-* **Last Updated By/Date** - Brian Elliott, October 2020
+* **Last Updated By/Date** - Brian Elliott, November 2020
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
