@@ -105,8 +105,9 @@ For more information about Standby Databases, see the documentation  [About Stan
 
 ## Acknowledgements
 * Authors - Vandanadevi Rajamani, Database User Assistance; Nilay Panchal, ADB Product Management
-* Last Updated By/Date -Vandanadevi Rajamani/October 2020
+* Last Updated By/Date -Vandanadevi Rajamani/November 2020
 
 ## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a **New Discussion** or **Ask a Question**. Please include your workshop name and lab name. You can also include screenshots and attach files. Engage directly with the author of the workshop.
 
-Please submit feedback using this form. Please include the workshop name, lab and step in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the Feedback Comments section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
