@@ -36,6 +36,8 @@ Unforeseen database failures due to disasters can happen at any time. Autonomous
 
 If a disaster were to occur and your primary database is brought down, you can **"Failover"** to your standby database. A failover is a role change, switching from the primary database to the standby database when the primary is down and unavailable, while the standby is available. This has to happen fast so that both RTO and RPO are minimized.
 
+The failover from the Primary to the Standby is seamless and does not require downloading a new wallet or new URLs for available tools. You can continue to use existing wallets and URL endpoints for your tools ( [APEX](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-apex-about.html#GUID-F275EA9F-F9A4-4A72-B777-5548362FDDA5), [OML](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/omlug/get-started-oracle-machine-learning.html#GUID-2AEC56A4-E751-48A3-AAA0-0659EDD639BA), and [ORDS](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/20.3/qsord/index.html)).
+
 After a failover, a new standby for your primary will automatically be provisioned.
 
 Currently, the standby database is created in the same region as the primary database. For better resilience, the standby database is provisioned as follows:
