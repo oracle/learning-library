@@ -31,7 +31,7 @@ Estimated time: 15 minutes
 **Recovery Time Object (RTO)**: An organization's tolerance for the unavailability (or downtime) of a service after which business operations can be severely impacted, usually expressed in minutes. This should be as low as possible.
 
 ## How does Autonomous Data Guard Function?
-![](./images/primary_standby_db.png)
+![](./images/primary-standby-db.png)
 Autonomous Data Guard monitors the primary database and if the Autonomous Database instance goes down, then the standby instance assumes the role of the primary instance.
 
 Unforeseen database failures due to disasters can happen at any time. Autonomous Data Guard offers the highest level of protection for an enterprise's data availability and system performance requirements.
@@ -51,16 +51,16 @@ Currently, the standby database is created in the same region as the primary dat
 
 1. If you are not logged in to Oracle Cloud Console, log in and navigate to your Autonomous Database.
 2. Under **Autonomous Data Guard** section, click **Enable** to enable the Data Guard feature.
-![](./images/adg_1.png)
+![](./images/enable-adg.png)
 3. In the Enable Autonomous Data Guard dialog, click **Enable Autonomous Data Guard**.
-![](./images/adg_2.png)
+![](./images/confirm-adg.png)
 4. The Autonomous Database Lifecycle State changes to **Updating** and on the Details page, under **Autonomous Data Guard** the **Peer State** field shows **Provisioning**. Depending on the size of your primary database this may take several minutes.
-![](./images/adg_4.png)
-![](./images/adg_5.png)
+![](./images/adw-updating.png)
+![](./images/peer-provision.png)
 When the standby database is being provisioned, the primary database status becomes available and all database activities can continue as enabling Autonomous Data Guard is non-blocking.
-![](./images/adg_6.png)
+![](./images/adw-available.png)
 When provisioning completes, the **Peer State** field shows **Available**.
-![](./images/adg_7.png)
+![](./images/peer-available.png)
 
 ## Automatic and Manual Failover options in case of a disaster
 In a disaster situation when the Primary becomes unavailable the Switchover button would turn to a Failover one. With ADG, an **Automatic Failover** is automatically triggered (no user action is needed) by the Autonomous Database when a user is unable to connect to their primary database for a few minutes. Since this is an automated action, the automatic failover is allowed to succeed only when you can guarantee that no data loss will occur.  In ADG, for automatic failover, RTO is 2 minutes and RPO is 0 minutes.
@@ -75,31 +75,29 @@ The Oracle Cloud Infrastructure console shows a switchover link in the Peer Stat
 
 To perform a switchover, do the following:
 1. On the Details page, under **Autonomous Data Guard**, in the Peer State field, click **Switchover**.
-![](./images/adg_7a.png)
+![](./images/adg-switchover.png)
 2. In the Confirm Manual Switchover to Standby dialog, enter the database name and click **Confirm Manual Switchover to Standby**.
-![](./images/adg_9.png)
+![](./images/confirm-switchover.png)
 The database Lifecycle State changes to **Updating** and the Peer State field shows **Role Change in Progress**.
 
-When the switchover operation completes, Autonomous Data Guard does the following:
-* The Primary database goes into the Available state and can be connected to for queries and updates.
-* The Peer State field will change to Available when the standby is ready. (The standby may go into a Provisioning state first, if necessary, without blocking operations on the Primary.)
-* You can see the time of the last switchover when you hover over the tooltip icon in the **Peer State** field.
+  When the switchover operation completes, Autonomous Data Guard does the following:
+    * The Primary database goes into the Available state and can be connected to for queries and updates.
+    * The Peer State field will change to Available when the standby is ready. (The standby may go into a Provisioning state first, if necessary, without blocking operations on the Primary.)
+    * You can see the time of the last switchover when you hover over the tooltip icon in the **Peer State** field.
 
 ## STEP  3: (Optional) Disable Autonomous Data Guard
 1. If you are not logged in to Oracle Cloud Console, log in and navigate into your Autonomous Database.
 2. Under **Autonomous Data Guard** section, click **Disable** to disable the Autonomous Data Guard.
-![](./images/adg_7b.png)
+![](./images/adg-disable.png)
 
-In the Disable Autonomous Data Guard dialog, enter the Autonomous Database name to confirm that you want to disable Autonomous Data Guard for the instance. Click **Disable Autonomous Data Guard**.
-![](./images/adg_10.png)
+   In the Disable Autonomous Data Guard dialog, enter the Autonomous Database name to confirm that you want to disable Autonomous Data Guard for the instance. Click **Disable Autonomous Data Guard**.
+    ![](./images/confirm-disable.png)
 
-The database Lifecycle State changes to **Updating** and the Peer State field changes to **Terminating**.
-![](./images/adg_12.png)
+   The database Lifecycle State changes to **Updating** and the Peer State field changes to **Terminating**.
+    ![](./images/peer-terminate.png)
 
-Note:
+**Note:**
 Disabling Autonomous Data Guard terminates the standby database. If you later enable Autonomous Data Guard, the system creates a new standby database.
-
-You may now proceed to the next lab.
 
 ## Want to Learn More?
 For more information about Standby Databases, see the documentation  [About Standby Databases](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B). To use OCI REST APIs to enable and use Autonomous Data Guard, See [Use the API](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-data-guard-api.html#GUID-3E4C0FA6-DE04-4F7F-A7AF-4C270870DCFF).
