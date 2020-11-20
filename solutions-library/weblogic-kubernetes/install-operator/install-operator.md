@@ -48,7 +48,7 @@ Create the service account:
 ```
 Finally, add a stable repository to Helm, which will be needed later for 3rd party services.
 ```bash
-<copy>helm repo add stable https://kubernetes-charts.storage.googleapis.com/</copy>
+<copy>helm repo add traefik https://containous.github.io/traefik-helm-chart/</copy>
 ```
 ## **STEP 3**: Install the operator using Helm
 Before you execute the operator `helm` install, make sure that you are in the operator's local Git repository folder.
