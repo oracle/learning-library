@@ -21,7 +21,7 @@ Create a namespace for Traefik:
 Install the Traefik operator in the `traefik` namespace with the provided sample values:
 ```bash
 <copy>helm install traefik-operator \
-stable/traefik \
+traefik/traefik \
 --namespace traefik \
 --values kubernetes/samples/charts/traefik/values.yaml  \
 --set "kubernetes.namespaces={traefik}" \
