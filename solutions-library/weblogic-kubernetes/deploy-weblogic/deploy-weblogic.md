@@ -41,7 +41,7 @@ To update the operator, execute the following `helm upgrade` command:
 To update Traefik, execute the following `helm upgrade` command:
 ```bash
 <copy>helm upgrade traefik-operator \
-  stable/traefik \
+  traefik/traefik \
   --namespace traefik \
   --reuse-values \
   --set "kubernetes.namespaces={traefik,sample-domain1-ns}" \
