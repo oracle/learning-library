@@ -47,7 +47,6 @@ Estimated time: 1 hour
       - CHOOSE VISIBILITY TYPE: Public
       - SHAPE: Choose a VM shape
       - NUMBER OF NODES: 1
-      - KUBERNETES DASHBOARD ENABLED: Make sure flag is checked
 
 5. Click **Next** and Click "**Create Cluster**".
 
@@ -56,55 +55,7 @@ Estimated time: 1 hour
     ![](./../OKE/images/OKE_015.PNG " ")
 
 
-## **Step 2:** Check OCI CLI in Cloud Shell
-
-OCI Command Line comes preinstalled in Oracle Cloud Shell.
-
-1.  Check the installed version of OCI CLI.  Start up the Oracle Cloud Shell if it's not already running.
-
-    ```
-    <copy>
-    oci -v
-    </copy>
-    ```
-    to check OCI CLI version which should be 2.5.x or higher.
-
-
-## **Step 3:** Install Kubectl
-
-In this section we will install kubectl. You can use the Kubernetes command line tool kubectl to perform operations on a cluster you've created with Container Engine for Kubernetes.
-
-1. Switch to git-bash window, Enter commands:
-
-    ```
-    <copy>
-    mkdir -p $HOME/.kube
-    </copy>
-    ```
-    ```
-    <copy>
-    cd $HOME/.kube
-    </copy>
-    ```
-
-    ```
-    <copy>
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/windows/amd64/kubectl.exe
-    </copy>
-    ```
-
-    ![](./../OKE/images/OKE_004.PNG " ")
-
-2.  Wait for download to complete. Enter command
-
-    ```
-    <copy>
-    ls
-    </copy>
-    ```
-    and verify kubectl.exe file exists.
-
-## **Step 4:** Download get-kubeconfig.sh file and Initialize your environment
+## **Step 3:** Initialize your environment
 
 1. Switch to OCI console window and navigate to your cluster. In Cluster detail window, scroll down and click **Quick Start**, under **Resources**.
 Follow the steps under the **Quick Start** Section.
@@ -112,65 +63,50 @@ Follow the steps under the **Quick Start** Section.
 
 2. The **Quick Start** directions will direct you to copy and execute the following commands depicted below in your local terminal.
 
-    ![](./../OKE/images/OKE_006.PNG " ")
+## **Step 4:** Deploying a Sample Nginx App on Cluster Using kubectl
 
-## **Step 5:** Deploying a Sample Nginx App on Cluster Using kubectl
-
-1. In git bash window, change Directory to $HOME/.kube, Enter Command:
-    ```
-    <copy>
-    cd $HOME/.kube
-    </copy>
-    ```
-
-2. Create nginx deployment with three replicas,  Enter Command:
+1. Create nginx deployment with three replicas,  Enter Command:
     ```
     <copy>
     kubectl run nginx  --image=nginx --port=80 --replicas=3
     </copy>
     ```
 
-3. Get Deployment data, Enter Command:
+2. Get Kubernetes deployments, Enter Command:
     ```
     <copy>
     kubectl get deployments
     </copy>
     ```
 
-4. get PODs data, Enter command:
+3. Get Pods, Enter command:
     ```
     <copy>
     kubectl get pods -o wide
     </copy>
     ```
 
-    **NOTE:** You can see thse deployment using Kubernetes Dashboard under Deployment.
-
-    ![](./../OKE/images/OKE_010.PNG " ")
-
-5.  Create a service to expose the application. The cluster is integrated with the OCI Cloud Controller Manager (CCM). As a result, creating a service of type --type=LoadBalancer will expose the pods to the Internet using an OCI Load Balancer.In git-bash window Enter command:
+4.  Create a service to expose the application. The cluster is integrated with the OCI Cloud Controller Manager (CCM). As a result, creating a service of type --type=LoadBalancer will expose the pods to the Internet using an OCI Load Balancer.In git-bash window Enter command:
     ```
     <copy>
     kubectl expose deployment nginx --port=80 --type=LoadBalancer
     </copy>
     ```
 
-6. Switch to OCI console window. From OCI Services menu Click **Load Balancers** under Networking. A new OCI LB should be getting  provisioned (This is due to the command above).
+5. Switch to OCI console window. From OCI Services menu Click **Load Balancers** under Networking. A new OCI LB should be getting  provisioned (This is due to the command above).
 
     ![](./../OKE/images/OKE_S5P6.PNG " ")
 
-7. Once Load Balancer is Active, Click Load Balancer name and from Load Balancer details page note down its IP address.
+6. Once Load Balancer is Active, Click Load Balancer name and from Load Balancer details page note down its IP address.
 
     ![](./../OKE/images/OKE_012.PNG " ")
 
-8. open a new browser tab and enter URL  http://`<Load-Balancer-Public-IP>` (http://129.213.76.26 in this example). The Nginx welcome screen should be displayed.
+7. open a new browser tab and enter URL  http://`<Load-Balancer-Public-IP>` (http://129.213.76.26 in this example). The Nginx welcome screen should be displayed.
 
     ![](./../OKE/images/OKE_013.PNG " ")
 
 
-##  Step 6: Delete the resources
-
-### Delete Kubernetes nodes
+##  Step 5: Delete the resources
 
 1. In git-bash window Enter command:
 
@@ -223,7 +159,7 @@ Follow the steps under the **Quick Start** Section.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - LiveLabs QA Team (Arabella Yao, Product Manager Intern | Isa Kessinger, QA Intern)
-- **Last Updated By/Date** - Isa Kessinger, July 2020
+- **Last Updated By/Date** - Orlando Gentil, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
