@@ -21,7 +21,7 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -188,19 +188,13 @@ This lab assumes you have:
 
 ## **STEP 5**: Encrypt Existing Tablespace
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
-
-      ````
-      <copy>sudo su - oracle</copy>
-      ````
-
-2. Go to the scripts directory
+1. Go to the scripts directory
 
       ````
       <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Encrypt_Existing_Tablespace</copy>
       ````
 
-3. Use the Linux command, strings, to view the data in the data file, `empdata_prod.dbf` that is associated with the `EMPDATA_PROD` tablespace. This is an operating system command that bypasses the database to view the data. This is called a 'side-channel attack' because the database is unaware of it.
+2. Use the Linux command, strings, to view the data in the data file, `empdata_prod.dbf` that is associated with the `EMPDATA_PROD` tablespace. This is an operating system command that bypasses the database to view the data. This is called a 'side-channel attack' because the database is unaware of it.
 
       ````
       <copy>./01_Search_Strings_Plain_Text.sh</copy>
@@ -208,7 +202,7 @@ This lab assumes you have:
 
    ![](./images/tde-015.png " ")
 
-4. Next, encrypt the data by encrypting the entire tablespace:
+3. Next, encrypt the data by encrypting the entire tablespace:
 
       ````
       <copy>./02_Encrypt_Tablespace.sh</copy>
@@ -216,7 +210,7 @@ This lab assumes you have:
 
    ![](./images/tde-016.png " ")
 
-5. And finally, try the side-channel attack again
+4. And finally, try the side-channel attack again
 
       ````
       <copy>./03_Search_Strings_Encrypted.sh</copy>
@@ -224,7 +218,7 @@ This lab assumes you have:
 
    ![](./images/tde-017.png " ")
 
-6. You will see that all of the data is now encrypted!
+5. You will see that all of the data is now encrypted!
 
 ## **STEP 6**: Encyrpt All New Tablespaces
 

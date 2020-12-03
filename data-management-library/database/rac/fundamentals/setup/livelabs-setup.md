@@ -8,11 +8,11 @@ This lab will show you how to login to the cloud and setup your environment usin
 ## Step 1: Login and Create Stack using Resource Manager
 You will be using Terraform to create your database environment.
 
-1.  Click on the link below to download the zip file you need to build your enviornment.  
+1.  Click on the link below to download the zip file you need to build your environment.  
 
 **Needs to be modified to real link in LiveLabs env**
 
-- [db_system_rac_tf.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/ZXh_e55b1br-J15rq4zd5XFkDYKmFK_pBjjAUPU1Sro/n/lrojildid9yx/b/labtest_bucket/o/db_system_rac_tf.zip) - Packaged terraform DB system creation script
+- [db_system_rac_tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1H7dttoD_Yj7bVmn_9ANg44NKdRBdz_nmPpUkle5TQVRWSwBNEBy_F19ueqq0yxp/n/c4u03/b/data-management-library-files/o/db_system_rac_tf.zip) - Packaged terraform DB system creation script
 
 2.  Save in your local downloads folder.
 
@@ -26,9 +26,9 @@ You will be using Terraform to create your database environment.
 
     ![](./images/createstackpage.png " ")
 
-6.  Click the **Browse** button and select the zip file (db_system_rac_tf.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (db_system_rac_tf.zip) that you downloaded. Click **Select**.
 
-    ![](./images/createstack2.png " ")
+    ![](./images/zip-file.png " ")
 
 
     Enter the following information and accept all the defaults
@@ -65,7 +65,7 @@ You will be using Terraform to create your database environment.
 
     ![](./images/createstack3.png " ")
 
-    Enter the following information. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availbility Domain) and SSH Key.
+    Enter the following information. Some information may already be pre-populated.  Do not change the pre-populated info.  You will be updating Public Subnet, Display Name, AD (Availability Domain) and SSH Key.
 
     **Public Subnet ID**:  Enter the subnet ID based on your region.   The subnets are provided in Email 2
 
@@ -113,7 +113,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 ### Connecting via MAC or Windows CYGWIN Emulator
 1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -200,7 +200,7 @@ Congratulations!  Now you have the environment to run the RAC labs.
 ## Acknowledgements
 
 - **Author** - Troy Anthony, DB Product Management
-- **Last Updated By/Date** - Troy Anthony, DB Product Management, Aug 2020
+- **Last Updated By/Date** - Troy Anthony, August 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

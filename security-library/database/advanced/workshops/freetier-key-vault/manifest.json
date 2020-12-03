@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Part2 (Advanced) - OKV",
+  "workshoptitle": "DB Security - Key Vault",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -36,7 +36,7 @@
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
-      "title": "Lab 5: Oracle Key Vault (OKV)",
+      "title": "Lab 5: Key Vault (OKV)",
       "description": "In this lab you can see how to leverage Oracle Key Vault (OKV)",
       "publisheddate": "10/20/2020",
       "filename": "../../key-vault/key-vault.md"

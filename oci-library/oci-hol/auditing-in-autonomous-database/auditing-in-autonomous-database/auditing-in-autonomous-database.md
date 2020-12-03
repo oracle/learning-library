@@ -23,7 +23,8 @@ We will do the following:
 
 3. Click the hamburger menu at the upper right, and select **Autonomous Transaction Processing** under Oracle Database.
 
-4. Select your compartment. <if type="livelabs">Your compartment should begin with the username you logged in with. Do not select the root compartment. <if>Leave Transaction Processing selected. Click **Create Autonomous Database**.
+4. Select your compartment. <if type="livelabs">Your compartment should begin with the username you logged in with. Do not select the root compartment.
+</if>Leave Transaction Processing selected. Click **Create Autonomous Database**.
 
 5. Fill out the dialog box:
 

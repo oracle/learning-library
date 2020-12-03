@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Node.js Sample Application</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!--<link href="/css/sample-app.css" rel="stylesheet" type="text/css">-->
+    <script language="javascript">
+  	  function loginIDCS(){
+  		    alert('Logging in with Oracle Identity Cloud Service credentials!');
+  	  }
+  	  function doLogin(){
+  		    alert('Logging in to the Sample Application!');
+  		    //window.open('http://www.google.com.br');
+  		    window.location='/private/home';
+  	  }
+	  </script>
+  </head>
+
+  <body>
+    <header class="hol-Header" role="banner">
+        <div class="hol-Header-wrap">
+            <div class="hol-Header-logo"><span>IDCS - Node.js Integration Sample Application</span></div>
+            <div class="hol-Header-actions">
+                
+            </div>
+        </div>
+    </header>
+    
+    <div id="container">
+        <div id="leftNav">
+            <div id="toc">
+               
+               
+                {{#ifequals title 'Home'}}
+                  <a href="/myProfile">My Profile</a></br>
+                    <a href="/logout">Log Out</a></br>
+                {{else ifequals title 'My Profile'}}
+                  <a href="/home">Home</a></br>
+                  <a href="/logout">Log Out</a></br>
+                {{/ifequals}}
+     
+
+            </div>
+        </div>
+        <div id="contentBox">
+            <main class="hol-Content" id="module-content">
+
+              
+        
+             <h2>Welcome,&nbsp;{{user.displayName}}</h2>
+                  
+          
+              {{{body}}}
+
+           </main>
+          
+    </div>
+
+    <footer class="hol-Footer">
+        <a class="lightTextSmall" href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright &copy; 2020, Oracle and/or its affiliates. All rights reserved.</a>
+        <a class="hol-Footer-topLink" href="#top">Return to Top</a>
+        
+    </footer>
+</body>
+
+
+
+<!--
+  <body>
+    <table style="width: 100%;border-spacing:0px;">
+      <tbody>
+        <tr class="header">
+          <td style="width: 300px;" nowrap="nowrap">
+            <table style="width: 100%;padding:5px;border:0px solid white;">
+              <tbody>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td nowrap="nowrap">&nbsp;<font class="lightTextLarge">Node.js Sample Application</font>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>&nbsp;</td>
+          <td style="width: 300px;">
+            <table style="width: 100%;padding:5px;border:0px solid white;">
+              <tbody>
+                <tr>
+                  <td align="left"><font class="lightTextSmall">Welcome,&nbsp;{{user.displayName}}</font></td>
+                  <td align="right"><a href="/logout"><font
+
+                        class="lightTextLarge">Log Out</font></a>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr class="center">
+          <td style="width: 300px;" valign="top">
+            <table class="leftMenu">
+              <tbody>
+                <tr>
+                {{#ifequals title 'Home'}}
+                  <td><font class="notSelectedTextLarge">Home</font></td>
+                {{else}}
+                  <td><a href="/home"><font class="darkTextLarge">Home</font></a> </td>
+                {{/ifequals}}
+                </tr>
+                <tr>
+                  {{#ifequals title 'My Profile'}}
+                    <td><font class="notSelectedTextLarge">My Profile</font></td>
+                  {{else}}
+                    <td><a href="/myProfile"><font class="darkTextLarge">My Profile</font></a> </td>
+                  {{/ifequals}}
+                </tr>
+               
+                </tr>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td style="padding:15px;vertical-align:top;word-wrap:break-word;max-width: 300px">
+              {{{body}}}
+            </td>
+          <td style="width: 300px;">&nbsp; <span style="font-family: &quot;Source Sans Pro&quot;,sans-serif;"><br>
+            </span></td>
+        </tr>
+        <tr class="footer">
+          <td colspan="3" style="text-align: center;" nowrap="nowrap">
+            <a class="lightTextSmall" href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright &copy; 2019, Oracle and/or its affiliates. All rights reserved.</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  -->
+</html>

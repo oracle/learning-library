@@ -2,7 +2,7 @@
 
 const fetch = require("node-fetch");
 
-const ordsURL = "<URL_copied_from_APEX>";
+const ordsURL = "URL_COPIED_FROM_APEX";
 
 function getTasks(urlRequest, logger, callback) {
 logger.info(urlRequest);

@@ -207,7 +207,7 @@ Now that the source side is setup, let us configure GG on the target side (Hive 
     ```
     <copy> info all</copy>
     ```
-## **STEP 4**:GoldenGate Kafka Target
+## **STEP 4**:GoldenGate Hive Target
 
 Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on the MySQL database `ggsource` and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory `/user/ggtarget/hive/data`.
 

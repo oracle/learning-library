@@ -8,7 +8,7 @@ Estimated time: 45 minutes
 
 ### Objectives
 - Setup Visual Builder Studio Project and build job configuration
-- Create a Docker image and then deploy java REST application 
+- Create a Docker image and then deploy java REST application
 - Deploy Docker container to Oracle Kubernetes Engine
 
 ### Prerequisites
@@ -16,7 +16,7 @@ Estimated time: 45 minutes
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:uty6BgUWeeA)
-  
+
 ## **STEP 1**: Create Project and Setup Build VM
 1.  Navigate to Visual Builder Studio by selecting **Platform Services**->**Developer**
 
@@ -44,7 +44,7 @@ Estimated time: 45 minutes
 
   ![](images/45-2.png " ")
 
-7. Add required softwares to run build job with latest versions available, for **Docker, Kubectl, OCIcli, Python, SQLcl**. Click **Done**.
+7. Add required software to run build job with latest versions available, for **Docker, Kubectl, OCIcli, Python, SQLcl**. Click **Done**.
 
   ![](images/45-3.png " ")
 
@@ -120,7 +120,7 @@ Add **Git Repository** in your VBS Project
 
 5. Before we change the values in VBS Git, let's encode them into base64.
 
-  From ATP DBs created in lab 50, 
+  From ATP DBs created in lab 50,
 
   Values Required:
     ```
@@ -201,11 +201,11 @@ Add **Git Repository** in your VBS Project
 
   ![](images/img-4.png " ")
 
-    
+
 
   ![](images/img-5.png " ")
 
-12. Similarly, switch to **user-catalog.git**, edit app.yaml file, change the docker image name you care going to create in your job build. 
+12. Similarly, switch to **user-catalog.git**, edit app.yaml file, change the docker image name you care going to create in your job build.
 
   ![](images/50.png " ")
 
@@ -214,18 +214,18 @@ Add **Git Repository** in your VBS Project
     image: [region].ocir.io/[storage namespace]/user_catalog:{{BUILD_NUMBER}}
 
     ```
-    
+
     **Commit** the changes.
 
     ![](images/51.png " ")
 
-    
+
 14. Create a **Build Job**
 
     ***3.1. Creating Product-catalog JAVA REST service docker container***
 
 15. From left panel, click **Builds**. Create a new **job**.
- 
+
     ![](images/48-a.png " ")
 
 16. Enter a **Name**, select the template created earlier and click **Create**.
@@ -440,7 +440,7 @@ Add **Git Repository** in your VBS Project
       ![](images/49-6.png " ")
 
 
-42. Click **Save**. 
+42. Click **Save**.
 
 43. Click **Build Now**.
 
@@ -458,4 +458,4 @@ Add **Git Repository** in your VBS Project
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

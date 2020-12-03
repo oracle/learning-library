@@ -266,7 +266,12 @@ The stats command displays the statistics of the data that GoldenGate processed 
 
 2. Click on Hamburger Menu, File Browser then Navigate to `/user/ggtarget/hdfs…`
 
+
+
   ![](./images/b19.png " ")
+  
+  select **ggtarget2hdfs_csv.emp**
+
   ![](./images/b16.png " ")
   ![](./images/b17.png " ")
   ![](./images/b18.png " ")

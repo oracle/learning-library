@@ -20,7 +20,7 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -31,7 +31,7 @@ This lab assumes you have:
 | 2 | Analyze the workload caputred | 5 minutes |
 | 3 | (Optionnal) Drop the capture | <5 minutes |
 
-## **STEP 1**: Capture the workloard to analyze
+## **STEP 1**: Capture the workload to analyze
 
 1. Open a SSH session on your DBSec-Lab VM as Oracle User
 

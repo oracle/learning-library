@@ -48,7 +48,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-7.png " ")
 2. Select **Apply**
 ![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
+3. Inspect the apply job, accept all defaults and click **Apply**
 ![Image alt text](images/db19c-freetier-step1-9.png " ")
 4. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
@@ -96,7 +96,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-7.png " ")
 2. Select **Apply**
 ![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
+3. Inspect the apply job, accept all defaults and click **Apply**
 ![Image alt text](images/db19c-freetier-step1-9.png " ")
 4. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
@@ -123,7 +123,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ![](./images/cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP addresss for your instance.
+3.  On the instance homepage, find the Public IP address for your instance.
 
     ![](./images/linux-compute-step3-11.png " ")
 4.  Enter the command below to login to your instance.    
@@ -138,7 +138,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 

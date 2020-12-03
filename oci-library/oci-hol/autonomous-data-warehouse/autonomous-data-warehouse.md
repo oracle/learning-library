@@ -1,54 +1,20 @@
+<!-- Not tested -->
 # Deploying and configuring Autonomous Data Warehouse
 
 ## Introduction
 
 Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous database that scales elastically, delivers fast query performance and requires no database administration. In this hands on lab, we will walk through deploying an Autonomous Data Warehouse database and loading a table using a text file that is stored in object storage. The purpose of this lab is to get familiar with Oracle Autonomous Data Warehouse primitives. At the end of this lab, you will be familiar with launching an Autonomous Data Warehouse database, creating an object storage bucket and loading a table using a text file stored in object storage
 
-**Some Key points:**
-
-*We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%*
-
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-  
-    **Cloud Tenant Name**
-
-    **User Name**
-
-    **Password**
-
-    **Compartment Name (Provided Later)**
-
-    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
-
 ### Prerequisites
 
-1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-   
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-
-3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-
-4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-
-5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+* [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
+* [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+* [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+* [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+* [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
 ## **Step 1:** Sign in to OCI Console and create ADW instance
-
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
-
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](./../grafana/images/Grafana_015.PNG " ")
@@ -70,18 +36,18 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
       - Always Free: Leave Default
       - Choose database version: Leave Default
       - OCPU count: 1
-      - Auto Sclaing: Make sure flag is Un-checked
+      - Auto Scaling: Make sure flag is Un-checked
 
       Under **Create administrator credentials**
 
-      - Username: Provide a username 
+      - Username: Provide a username
       - Password: Provide a password (example Oracle123!!!!)
       - Confirm Password: Confirm the password provided
 
       Under **Choose network access**
 
-      - Allow secure accces from anywhere: Make sure this option is checked
-      - Confifure access conrol rules: Leave default (unchecked)
+      - Allow secure access from anywhere: Make sure this option is checked
+      - Configure access control rules: Leave default (unchecked)
 
       Under **Choose a license type**
 
@@ -97,13 +63,13 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
     ![](./../autonomous-data-warehouse/images/ADW_004.PNG " ")
 
-We now have a Autonomous Data Warehouse instance created. We have also downloaded the Client Credentials file. We will use this file when connecting to the database instance  using Sql Developer. Next we will create a Data file and use Object stroage to upload it to Database instance.
-              
+We now have a Autonomous Data Warehouse instance created. We have also downloaded the Client Credentials file. We will use this file when connecting to the database instance  using SQL Developer. Next we will create a Data file and use Object stroage to upload it to Database instance.
+
 ## **Step 2:** Create Auth token for the user connect to ADW and load data
 
 In this section we will generate auth token for the user of this lab. An Auth token is an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
 
-1. In OCI console Click the user icon (top right)  then **User settings**. Under Resrouces Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**.
+1. In OCI console Click the user icon (top right)  then **User settings**. Under Resources Click **Auth Token**, then **Generate Token**. In pop up window provide a description then Click **Generate Token**.
 
     ![](./../autonomous-data-warehouse/images/ADW_005.PNG " ")
     ![](./../autonomous-data-warehouse/images/ADW_006.PNG " ")
@@ -113,7 +79,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
 3. Note down your user name.
 
-    **Next we will connect to this ADW instane using SQL developer.**
+    **Next we will connect to this ADW instance using SQL developer.**
 
     **Screen shots for SQL developer are from 18.1.0 version**
 
@@ -130,13 +96,13 @@ In this section we will generate auth token for the user of this lab. An Auth to
       - Password: Password used at ADW instance creation
       - Save Password: Check the flag
       - Connection Type: Cloud PDB
-      - Configuration file: File that was dowloaded from ADW service console (Client credenitla zip file)
-      - Keystore password: Password you provided when downloading the client credentials file 
+      - Configuration file: File that was downloaded from ADW service console (Client credentials zip file)
+      - Keystore password: Password you provided when downloading the client credentials file
 
-      **NOTE:** If using SQL devleoper 18.2.0 or higher this field is not available and not required
+      **NOTE:** If using SQL developer 18.2.0 or higher this field is not available and not required
 
 
-      - Service: YOUR\_ADW\_INSTANCE\_NAME\_medium 
+      - Service: YOUR\_ADW\_INSTANCE\_NAME\_medium
       - Click **Save**
       - Click **Connect** and verify Successful connection
 
@@ -170,12 +136,12 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
       - Connection Name: Provide a name
       - Username: OCITEST
-      - Password:  P#ssw0rd12## 
+      - Password:  P#ssw0rd12##
       - Save Password: Check the flag
       - Connection Type: Cloud PDB
-      - Configuration file: File that was dowloaded from ADW service console (Client credenitla zip file)
-      - Keystore password: Password you provided when downloading the client credentials file (NOTE:If using SQL devleoper 18.2.0 or higher this field is not available and not required)
-      - Service: YOUR\_ADW\_INSTANCE\_NAME\_medium 
+      - Configuration file: File that was downloaded from ADW service console (Client credentials zip file)
+      - Keystore password: Password you provided when downloading the client credentials file (NOTE: If using SQL developer 18.2.0 or higher this field is not available and not required)
+      - Service: YOUR\_ADW\_INSTANCE\_NAME\_medium
       - Click **Save**
       - Click **Connect** and verify Successful connection
 
@@ -187,7 +153,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
     **NOTE:** No spaces in URL
 
-10. Using OCITEST user store your Object Storage credenitals. From the ADW-File.txt content copy and paste the commands under  
+10. Using OCITEST user store your Object Storage credentials. From the ADW-File.txt content copy and paste the commands under  
 /**** Set Definitions ****/ section. The commands will look like below
 
     **Begin**
@@ -226,7 +192,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
 14. Load data from file in Object Storage to newly created table.
 
-    **NOTE:** A data file with 1000s of records exists in OCI Object storage and we will use this file records to populate ADW From the ADW-File.txt content copy and paste the commands undrer  /**** DBMS ****/ section. The commands will look like below
+    **NOTE:** A data file with 1000s of records exists in OCI Object storage and we will use this file records to populate ADW From the ADW-File.txt content copy and paste the commands under  /**** DBMS ****/ section. The commands will look like below
 
     **begin**
 
@@ -246,7 +212,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
     ![](./../autonomous-data-warehouse/images/ADW_015.PNG " ")
 
-16. We will now query the table and veirfy the data Enter command:
+16. We will now query the table and verify the data Enter command:
     ```
     <copy>
     select * from channels;
@@ -255,7 +221,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
     ![](./../autonomous-data-warehouse/images/ADW_016.PNG " ")
 
-We have successfully deployed a Autonomous Data Warehouse instance,populated a table using a file stored in Object storage and successfully run a query against the table.
+We have successfully deployed a Autonomous Data Warehouse instance, populated a table using a file stored in Object storage and successfully run a query against the table.
 
 ## **Step 3:** Delete the resources
 
@@ -264,7 +230,7 @@ Delete Auth Token and Autonomous Data Warehouse
 1. Navigate to User Settings ,Click **Auth Token** and Click **Delete** for your Auth Token by Hovering your mouse over action icon (Three Dots).
     ![](./../autonomous-data-warehouse/images/ADW_017.PNG " ")
 
-2. Navigate to Autonomoud Data Warehouse menu, Hover over the action icon(Three dots) and Click **Terminate**.
+2. Navigate to Autonomous Data Warehouse menu, Hover over the action icon(Three dots) and Click **Terminate**.
     ![](./../autonomous-data-warehouse/images/ADW_018.PNG " ")
 
 ## Acknowledgements

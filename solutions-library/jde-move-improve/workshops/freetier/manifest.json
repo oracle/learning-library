@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Lift and Shift JDE to OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -8,33 +8,28 @@
         },
         {
             "title": "Introduction",
-            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "description": "Introduction to JDE move and improve",
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
-        },
-        {
-            "title": "Lab 2: Setup the Environment",
+            "title": "Lab 1: Set Up OCI for JDE Trial Edition Deployment",
+            "description": "Set Up OCI for JDE Trial Edition Deployment",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 2: Creating a Trial Edition Instance in OCI",
+            "description": "Creating a Trial Edition Instance in OCI",
+            "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
-        },
-        {
-            "title": "Lab 5: Analyze Data",
+            "title": "Lab 3: Connecting to JDE Trial Edition",
+            "description": "Connecting to JDE Trial Edition",
             "filename": "../../analyze/analyze.md"
         },
         {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
+            "title": "Lab 4: Teardown Your JDE Environment",
+            "description": "Teardown Your JDE Trial Edition Environment",
+            "filename": "../../teardown/teardown.md"
         }
     ]
 }

@@ -18,7 +18,7 @@ In this workshop you will create a `tasks` table, REST enabling it, and make the
 
 ![ORDS and APEX](./images/rest_arch.png)
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 15 minutes
 
 ## **STEP 1**: Create APEX Workspace
 

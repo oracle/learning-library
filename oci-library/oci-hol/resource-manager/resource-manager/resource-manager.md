@@ -15,7 +15,7 @@ In this lab, you will create configure identity access manager, create a resourc
 **Note:** You can skip the steps below if you are using an user with admin privileges. If this were a real production system, it's both more secure and practical to create additional groups with more granular permissions. For example, it is likely we'd need to create a development team group that can only use predefined stacks and run jobs against it (use-orm-stack and use-orm-job, respectively).
 [Check Best Practices for IAM](https://docs.cloud.oracle.com/iaas/Content/Security/Concepts/security_features.htm#IdentityandAccessManagementIAMService).
 
-If you are not the adminstrator, you have to request the admin to give you permissions to manage Resource Manager Stacks by creating the following IAM policies in a compartment of your choice with the following statements:
+If you are not the administrator, you have to request the admin to give you permissions to manage Resource Manager Stacks by creating the following IAM policies in a compartment of your choice with the following statements:
 
   - `Allow group <group_name> to manage orm-stacks in compartment <compartment_name>`
   - `Allow group <group_name> to manage orm-jobs in compartment <compartment_name>`
@@ -45,7 +45,7 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
  A Stack represents definitions for a collection of OCI resources within a specific compartment. With this in mind, we're going to configure a new stack in the compartment of your choice and name it "HA Load Balanced Simple Web App". As the stack's name suggests, its configuration files define the load balancing, networking, and compute resources to deploy the target architecture plus an HTTP server.
 
- Download [HA Load Balanced Simple Web App](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip) and save to your local machine.
+ Download [HA Load Balanced Simple Web App](https://objectstorage.us-phoenix-1.oraclecloud.com/p/9avXPYdf7I4aoZCsBrESnmoimx1ZlHD8neRL45HMNOnEwq2KWKeGYTz4aL9wSHWk/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip) and save to your local machine.
 
 1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stacks**.
 
@@ -53,7 +53,10 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
 
 2. Click **Create Stack**.
 
-      - **Select a Terraform Configuration (.zip) File to Upload:** Upload the zip file [orm-lbass-demo.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip)
+      - Select **My Configuration**, choose the **.ZIP FILE** button, click **Browse** link and select the terraform configuration zip file [orm-lbass-demo.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/p/9avXPYdf7I4aoZCsBrESnmoimx1ZlHD8neRL45HMNOnEwq2KWKeGYTz4aL9wSHWk/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip). Click **Select**.
+
+      ![](./images/zip-file.png) 
+      
       - **Name:** HA Load Balanced Simple Web App
       - **Description:** Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app application.
       - **Create in Compartment:** Select an existing compartment
@@ -65,6 +68,7 @@ Note in the output that there are two files, a private key: <<ssh-keyname>> and 
       - **Configure Variables:** Configure the variables for the infrastructure resources that this stack will create when you run the apply job for this execution plan.
         - **Select Load Balancer Shape:** 100Mbps
         - **Select Compute Shape:** VM.Standard2.1
+        - **Select Availability Domain:** <*Pick one Avaiability Domain*>
         - **SSH Key Configuration:** <*Enter the content of your public ssh key*>
       - **Virtual Cloud Network Configuration:** 
         - **Enter your VCN Name:** vcn01
@@ -136,7 +140,7 @@ As you often hear Terraform referred to as Infrastructure is Code, an optimal st
 **Important** This exercise requires some working experience with Git, and an account with gitlab.com.  You can set up a free account here:
 https://gitlab.com/users/sign_up
 
-1. In order to create a configuration source provider, you will need an **Access Token** for gitlab.com.  First you need to login to your GitLab Account and, once logged into gitlab.com, navigate to: https://gitlab.com/-/profile/personal_access_tokens.  Enter the following details:
+1. In order to create a configuration source provider, you will need an **Access Token** for gitlab.com.  First you need to login to your GitLab Account and, once logged into gitlab.com, navigate to: "https://gitlab.com/-/profile/personal_access_tokens".  Enter the following details:
 
     ![](./../resource-manager/images/ConfigSource01.png " ")
 
@@ -212,7 +216,7 @@ https://gitlab.com/users/sign_up
 - Download and extract the orm-lbass-demo.zip file: 
 
 ```
-# wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/u4g0srIXPIMJkmes0A8cBkfP8IthyGXLA1rU_zTmkw6296rG72-QUoxHw5EFzhm0/n/c4u03/b/oci-library/o/orm-lbass-demo.zip
+# wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/9avXPYdf7I4aoZCsBrESnmoimx1ZlHD8neRL45HMNOnEwq2KWKeGYTz4aL9wSHWk/n/ociobenablement/b/hol-files/o/orm-lbass-demo.zip
 # unzip orm-lbass-demo.zip
 ```
 

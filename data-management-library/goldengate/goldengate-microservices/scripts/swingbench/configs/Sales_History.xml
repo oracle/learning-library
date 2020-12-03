@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SwingBenchConfiguration xmlns="http://www.dominicgiles.com/swingbench/config">
+    <Name>Sales History</Name>
+    <Comment>Configuration file for the Sales History Benchmark</Comment>
+    <Connection>
+        <UserName>sh</UserName>
+        <Password>enc(+/OmZ0Ay0SY=)</Password>
+        <ConnectString>//oracle12c/orcl</ConnectString>
+        <DriverType>Oracle jdbc Driver</DriverType>
+        <Properties>
+            <Property Key="TcpNoDelay">true</Property>
+            <Property Key="FetchSize">20</Property>
+            <Property Key="StatementCaching">50</Property>
+            <Property Key="MaximumTxRetries">2</Property>
+        </Properties>
+        <InitilizationCommands>
+            <Command>alter session set sql_trace=false</Command>
+        </InitilizationCommands>
+    </Connection>
+    <Load>
+        <NumberOfUsers>16</NumberOfUsers>
+        <MinDelay>0</MinDelay>
+        <MaxDelay>0</MaxDelay>
+        <InterMinDelay>1000</InterMinDelay>
+        <InterMaxDelay>2000</InterMaxDelay>
+        <QueryTimeout>55</QueryTimeout>
+        <MaxTransactions>-1</MaxTransactions>
+        <RunTime>0:0</RunTime>
+        <LogonGroupCount>1</LogonGroupCount>
+        <LogonDelay>0</LogonDelay>
+        <LogOutPostTransaction>false</LogOutPostTransaction>
+        <WaitTillAllLogon>true</WaitTillAllLogon>
+        <StatsCollectionStart>0:0</StatsCollectionStart>
+        <StatsCollectionEnd>0:0</StatsCollectionEnd>
+        <ConnectionRefresh>0</ConnectionRefresh>
+        <TransactionList>
+            <Transaction>
+                <Id>Sales Rollup by Month and Channel</Id>
+                <ShortName>SRMC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.SalesRollupByMonth</ClassName>
+                <Weight>65</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Sales Rollup by Week and Channel</Id>
+                <ShortName>SRWC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.SalesRollupByWeek</ClassName>
+                <Weight>75</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Sales Cube by Month and Channel</Id>
+                <ShortName>SCMC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.SalesCubeByMonth</ClassName>
+                <Weight>60</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Sales Cube by Week and Channel</Id>
+                <ShortName>SCWC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.SalesCubeByWeek</ClassName>
+                <Weight>50</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Product Sales Cube and Rollup by Year</Id>
+                <ShortName>PSCR</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.ProductSalesRollupCube</ClassName>
+                <Weight>25</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Product Sales Cube and Rollup by Month</Id>
+                <ShortName>PMSCR</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.ProductMonthlySalesRollupCube</ClassName>
+                <Weight>20</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Sales Moving Average</Id>
+                <ShortName>SMA</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.SalesMovingAverage</ClassName>
+                <Weight>95</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Period to Period Sales Comparison</Id>
+                <ShortName>PPSC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.PeriodToPeriodComparison</ClassName>
+                <Weight>15</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Week to Week Sales Comparison</Id>
+                <ShortName>WWSC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.WeekToWeekComparison</ClassName>
+                <Weight>15</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Top Sales by Quarter</Id>
+                <ShortName>TSQ</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.TopSalesWithinQuarter</ClassName>
+                <Weight>55</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Top Sales by Week</Id>
+                <ShortName>TSW</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.TopSalesWithinWeek</ClassName>
+                <Weight>40</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Sales within Quarter by Country</Id>
+                <ShortName>SQC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.SalesByQuarterCountry</ClassName>
+                <Weight>75</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+            <Transaction>
+                <Id>Sales within Week by Country</Id>
+                <ShortName>SWC</ShortName>
+                <ClassName>com.dom.benchmarking.swingbench.dsstransactions.SalesByWeekCountry</ClassName>
+                <Weight>100</Weight>
+                <Enabled>true</Enabled>
+            </Transaction>
+        </TransactionList>
+    </Load>
+    <Preferences>
+        <StartMode>manual</StartMode>
+        <Output>swingbench</Output>
+        <JumpToEvents>true</JumpToEvents>
+        <TimingsIncludeSleep>false</TimingsIncludeSleep>
+        <TimingsIn>milliseconds</TimingsIn>
+        <StatisticsLevel>full</StatisticsLevel>
+        <OutputFile>results.xml</OutputFile>
+        <Charts DefaultChart="Overview"/>
+        <AllowedErrorCodes/>
+        <RefreshRate>1</RefreshRate>
+        <OverviewCharts>
+            <OverviewChart>
+                <Name>Transactions Per Minute</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Transactions Per Second</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Response Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>CPU</Name>
+                <MinimumValue>0.0</MinimumValue>
+                <MaximumValue>100.0</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Disk</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Users</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>false</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>Database Time</Name>
+                <MinimumValue>2.147483647E9</MinimumValue>
+                <MaximumValue>2.147483647E9</MaximumValue>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+            <OverviewChart>
+                <Name>DML</Name>
+                <Displayed>true</Displayed>
+            </OverviewChart>
+        </OverviewCharts>
+    </Preferences>
+</SwingBenchConfiguration>

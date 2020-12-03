@@ -27,7 +27,7 @@ Estimated Lab Time: 15 minutes
 
     ![](./images/latestActivity.png " ")
 
-    Once the environment has been destroyed, it will no longer appear on the Cloud Manager Environements page. 
+    Once the environment has been destroyed, it will no longer appear on the Cloud Manager Environments page. 
 
     You can repeat this step for all other EBS environments you wish to delete. 
 

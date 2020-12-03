@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-avdf-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s3vHAmu3qehcDwtf05Ird7vDadEl3qquxXsGqDn-fG2C4xl2A8F_JOxIefNKZ7ER/n/orasenatdpltsecitom02/b/workshop-labs-files/o/dbsec-avdf-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-avdf-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/dAx4xkp_yE_3Tmj7NKMnxdZ52oU0XU2-6gbbVYbwq4b31664xCkWI-ZRmyRq3Z19/n/natdsecurity/b/stack/o/dbsec-avdf-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -46,13 +46,16 @@ This workshop requires a certain number of ports to be available, a requirement 
 ## **STEP 3**: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
   -  Create Stack:  *Compute + Networking*
+    - Compute Instance Count (3): dbsec-lab, avs, and dbf
+    - Virtual Network Count (1): dbsec
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+    - Compute Instance Count (3): dbsec-lab, avs, and dbf
 
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

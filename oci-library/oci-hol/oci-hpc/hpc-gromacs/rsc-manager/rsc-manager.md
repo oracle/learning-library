@@ -12,7 +12,9 @@ In the OCI console, there is a Resource Manager available that will create all t
 
 2. Create a new stack: ![](./images/stack.png)
 
-3. Download the [zip file](https://github.com/oci-hpc/oci-hpc-runbook-gromacs/tree/master/Resources/gromacs-2020.1.zip) for terraform scripts and upload it into the stack.
+3. Download the [zip file](https://github.com/oci-hpc/oci-hpc-runbook-gromacs/tree/master/Resources/gromacs-2020.1.zip) for terraform scripts and Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file that you downloaded. Click **Select**.
+
+    ![](./images/zip-file.png " ")
 
 Move to the [Select Variables](https://github.com/oci-hpc/oci-hpc-runbook-gromacs/blob/master/Documentation/ResourceManager.md#select-variables) section to complete configuration of the stack.
 

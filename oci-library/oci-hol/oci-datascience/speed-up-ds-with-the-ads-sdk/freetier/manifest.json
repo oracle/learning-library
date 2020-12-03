@@ -19,12 +19,12 @@
         {
             "title": "Lab 2: Create a Project",
             "description": "Create a project to contain the Data Science Notebooks.",
-            "filename": "./../../common/project-setup.md"
+            "filename": "./../../common/project-setup-free-tier.md"
         },
         {
             "title": "Lab 3: Create a Notebook Session",
             "description": "Create a Notebook Session and launch it.",
-            "filename": "./../../common/notebook-setup.md"
+            "filename": "./../../common/notebook-setup-free-tier.md"
         },
         {
             "title": "Lab 4: Accelerated Data Science SDK",

@@ -1,0 +1,118 @@
+@font-face {
+	font-family: oracle-font; src: url('../font/UniversLTStd-Ex.ttf');
+}
+
+html {
+    height: 100%
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    min-width: 800px;
+    line-height: 150%;
+    font-weight: normal;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+.header{
+	background-color: black;
+	font-family: Arial, sans-serif;
+	font-size: larger;
+	height: 100px;
+	font-family: oracle-font;
+}
+
+.footer{
+	background-color: black;
+	font-family: Arial, sans-serif;
+	font-size: small;
+	text-align: center;
+	height: 50px;
+	font-family: oracle-font;
+}
+
+.center{
+	background-color: white;
+	font-family: Arial, sans-serif;
+	font-size: medium;
+	text-align: left;
+	height: 350px;
+	font-family: oracle-font;
+}
+
+.formfield{
+  height: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #a6a7aa;
+  background: #FFFFFF;
+  border: none;
+  box-shadow: none;
+  border-radius: 5;
+  padding-left: 15px;
+
+}
+
+form.customform button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+	border-radius: 5px;
+	padding: 8px 28px;
+}
+
+form.customform button:hover {
+    background-color: #555555;
+    color: white;
+}
+form.customform input {
+	border-radius: 5px;
+	width:250;
+	height:25px
+}
+
+
+.notSelectedTextLarge{
+	color: gray;
+	font-size:20px;
+	font-family: oracle-font;
+}
+
+.notSelectedTextSmall{
+	color: gray;
+	font-size:10x;
+	font-family: oracle-font;
+}
+
+
+.darkTextLarge{
+	color: black;
+	font-size:20px;
+	font-family: oracle-font;
+}
+
+.darkTextSmall{
+	color: black;
+	font-size:10x;
+	font-family: oracle-font;
+}
+
+.lightTextLarge{
+	color: white;
+	font-size:20px;
+	font-family: oracle-font;
+}
+
+.lightTextSmall{
+	color: white;
+	font-size:10px;
+	font-family: oracle-font;
+}

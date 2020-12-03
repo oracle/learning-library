@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Part2 (Advanced) - OLS",
+  "workshoptitle": "DB Security - Label Security",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -36,7 +36,7 @@
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
-      "title": "Lab 5: Oracle Label Security (OLS)",
+      "title": "Lab 5: Label Security (OLS)",
       "description": "In this lab you can see how to leverage Oracle Label Security (OLS)",
       "publisheddate": "10/20/2020",
       "filename": "../../label-security/label-security.md"

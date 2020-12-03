@@ -18,7 +18,7 @@ That is exactly what we are going to build.
 
 You can package related **Custom Components** together.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ## **STEP 1**: Create a Custom Component to integrate with backend services
 
@@ -32,7 +32,7 @@ Ready to create your **Custom Component** scaffolding.
 
     ```bash
     npx @oracle/bots-node-sdk init tasks-cc --component-name tasks
-      ```
+    ```
 
     Where `tasks-cc` is the name of the custom component module. And `tasks` is the name of our first custom component implementation.
 
@@ -87,12 +87,14 @@ Ready to create your **Custom Component** scaffolding.
 
 9. **Edit** the file `tasks.js` and **replace** the whole content with the following code or download it from [here](files/tasks.js) to download the customer component source code.
 
+    **IMPORTANT**: **Remember** to change the `URL_COPIED_FROM_APEX` with the **URL** copied on **APEX** in **Lab 2**.
+
     ```javascript
     "use strict";
 
     const fetch = require("node-fetch");
 
-    const ordsURL = "<URL_copied_from_APEX>";
+    const ordsURL = "URL_COPIED_FROM_APEX";
 
     function getTasks(urlRequest, logger, callback) {
     logger.info(urlRequest);
@@ -135,10 +137,6 @@ Ready to create your **Custom Component** scaffolding.
     };
     ```
 
-    **IMPORTANT**:
-
-    **Remember** to change the `<URL_copied_from_APEX>` with the **URL** copied on **APEX** in **Lab 2**.
-
     ![Copy URL from APEX](./images/apex_copy_url.png)
 
     It should look like this:
@@ -148,7 +146,7 @@ Ready to create your **Custom Component** scaffolding.
         "https://xxx-yyy.adb.region.oraclecloudapps.com/ords/tasks/oda/tasks/";
     ```
 
-10. Don't forget the **save** tasks.js file.
+   10.   Don't forget the **save** tasks.js file.
 
 ## **STEP 2**: Deploy the custom component
 

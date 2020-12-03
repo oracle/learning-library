@@ -93,9 +93,9 @@ In this step, you will set three variables using the **`export`** command. The v
 
 In this step, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
-Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab,  we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH.
+Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH.
 
- ```
+```
 <b>$</b> <copy>ssh –i private_key username@public-ip-address</copy>
 ```
 
@@ -112,35 +112,34 @@ _If you are already connected to your cluster's first master node using the Open
 
 1. To SSH into your cluster using your Windows PuTTYgen generated SSH key pair, start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 
-    + **Host Name (or IP address):** **`opc@master-node-0-ip-address`**.    
-      **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
-    + **Port:** **`22`**.
-    + **Connection type:** **`SSH`**.   
-    + **Saved Sessions:** A description of this ssh connection such as `ssh to traininmn0 on BDS cluster`.
+  + **Host Name (or IP address):** **`opc@master-node-0-ip-address`**.    
+    **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
+  + **Port:** **`22`**.
+  + **Connection type:** **`SSH`**.   
+  + **Saved Sessions:** A description of this ssh connection such as `ssh to traininmn0 on BDS cluster`.
 
-     ![](./images/putty-configuration-session.png " ")
+   ![](./images/putty-configuration-session.png " ")
 
 2. In the **Category** pane, expand **Connection**, expand **SSH**, and then click **Auth**. In the **Options controlling SSH authentication** section, in the **Private key file for authentication** section, click **Browse**. In the **Select private key file** window, select your **_private key_** that is associated with your cluster's **_public key_** that you used when your created your BDS cluster.    
 
-    ![](./images/putty-configuration-auth.png " ")
+  ![](./images/putty-configuration-auth.png " ")
 
 
 3. In the **Category** pane, select the **Session** parameter, and then click **Save** to save your session for easier future access. Your saved session is displayed in the **Saved Sessions** list.
 
-    **Note:** The next time you need to connect to this node, select the connection name from the **Saved Sessions** list, click **Load**, and then click **Open**.  
+  **Note:** The next time you need to connect to this node, select the connection name from the **Saved Sessions** list, click **Load**, and then click **Open**.  
 
-    ![](./images/session-saved.png " ")
+  ![](./images/session-saved.png " ")
 
 
 4. Click **Open** to start the ssh session. If this is your first time connecting to your first master node in the cluster, the following **PuTTY Security Alert** message box is displayed. Click **Yes**.
 
 
-    ![](./images/security-alert.png " ")
+  ![](./images/security-alert.png " ")
 
-     You are connected to the **`traininmn0`** master node.
+   You are connected to the **`traininmn0`** master node.
 
-    ![](./images/traininmn0-connected.png " ")
-
+  ![](./images/traininmn0-connected.png " ")
 
 
 ## **STEP 4:** Create the **`training`** Linux OS Administrator User
@@ -212,7 +211,6 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     ```
 
     ![](./images/hdfs-ls.png " ")
-
 
 
 ## **STEP 5:** Add the **`training`** User to Hue (optional)

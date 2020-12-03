@@ -1,13 +1,13 @@
 
-# Prerequisites for the Oracle Data Safe Workshop on the Free Tier
+# Prerequisites
 
 ## Introduction
 
-This lab describes the steps that you need to take prior to starting the Oracle Data Safe Workshop when using an Oracle Cloud Free Tier account. The steps assume that you are the tenancy administrator.
+This lab describes the steps that you need to take prior to starting the Oracle Data Safe Workshop when using the 30-day Free Trial for Oracle Cloud. The steps assume that you are the tenancy administrator.
 
-If you already have an Oracle Cloud Free Tier account, you can skip step 1.
+If you already have an Oracle Cloud account, you can skip step 1.
 
-**Note:** The Oracle Data Safe service is not available to you if your Free Tier trial period has ended and you are now using Always Free resources.
+**Note:** The Oracle Data Safe service is not available to you if your free trial period has ended and you are now using Always Free resources.
 
 Estimated Lab Time: 15 minutes
 
@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you'll:
 
-- Create your own free trial account
+- Create an Oracle Cloud account
 - Sign in to the Oracle Cloud Infrastructure Console with your account credentials
 - Enable Oracle Data Safe
 - Create a compartment
@@ -29,9 +29,9 @@ Be sure you have the following before starting:
 - Ability to receive SMS text verification (only if your email is not recognized)
 
 
-## **STEP 1**: Create Your Free Trial Account
+## **STEP 1**: Create an Oracle Cloud Account
 
-If you already have an Oracle Cloud Free Tier account, you can skip this step.
+If you already have an Oracle Cloud account, you can skip this step.
 
 1. In a browser, enter the following URL: `https://oracle.com/cloud/free`.
 
@@ -175,9 +175,10 @@ You are ready to begin the labs. Start with the [**Introduction**](?lab=introduc
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, October 15, 2020
+* **Last Updated By/Date** - Jody Glover, October 29, 2020
 
 
-## See an Issue?
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-Please submit feedback using this <a  href="https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1" >form</a>. Please include the **workshop name**, **lab**, and **step** in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

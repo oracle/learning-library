@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "The Essentials of Cloud Observability",
+    
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Setup the Environment",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 2: Enable Service Logs",
+            "filename": "../../infralog/infralog.md"
+        },
+        {
+            "title": "Lab 3: Create Custom Application Logs",
+            "filename": "../../applog/applog.md"
+        },
+        {
+            "title": "Lab 4: Search Your Logs",
+            "filename": "../../search/search.md"
+        },
+        {
+            "title": "Lab 5: Export Log Content to Object Storage",
+            "filename": "../../export/export.md"
+        }
+    ]
+}

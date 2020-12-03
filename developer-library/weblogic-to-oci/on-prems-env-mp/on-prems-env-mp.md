@@ -29,53 +29,53 @@ For this lab you need:
 
 1. Click **Get App**
 
-  <img src="./images/get-app.png"  width="100%">
+  <img src="../../../on-prems-env-mp/images/get-app.png"  width="100%">
 
 2. Sign in to your Oracle Cloud Infrastructure Account
 
-  <img src="./images/sign-in.png"  width="50%">
+  <img src="../../../on-prems-env-mp/images/sign-in.png"  width="50%">
 
 3. Choose a compartment
 
-  <img src="./images/wls-workshop-mp1.png"  width="100%">
+  <img src="../../../on-prems-env-mp/images/wls-workshop-mp1.png"  width="100%">
 
 4. Accept the Terms and Conditions and click **Launch**
 
-  <img src="./images/wls-workshop-mp2.png"  width="100%">
+  <img src="../../../on-prems-env-mp/images/wls-workshop-mp2.png"  width="100%">
 
 5. Click **Next**
 
-  <img src="./images/next.png"  width="70%">
+  <img src="../../../on-prems-env-mp/images/next.png"  width="70%">
 
 6. Paste your **SSH public key**
 
    To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer.
 
-  <img src="./images/ssh-key.png"  width="50%">
+  <img src="../../../on-prems-env-mp/images/ssh-key.png"  width="50%">
 
 7. Click **Next** and then **Create**
 
-  <img src="./images/job-running.png"  width="100%">
+  <img src="../../../on-prems-env-mp/images/job-running.png"  width="100%">
 
   It will take about 1 to 2 minutes to create the stack.
 
 8. When the job finishes, you can find the Public IP address of the instance at the bottom of the logs, or in the **Output** area. Make a note of this information.
 
-  <img src="./images/job-output.png"  width="100%">
+  <img src="../../../on-prems-env-mp/images/job-output.png"  width="100%">
 
 ## **STEP 2:**  Check the local environment is up and running
 
 *It will take another 4 to 5 minutes for all the services to come online.*
 
-The console will be available at `http://PUBLIC-IP:7001/console` (replace `PUBLIC_IP` with the Compute instance public IP) and the WebLogic admin user is `weblogic` with password `welcome1`
+1. The console will be available at `http://PUBLIC-IP:7001/console` (replace `PUBLIC_IP` with the Compute instance public IP) and the WebLogic admin user is `weblogic` with password `welcome1`
 
-  <img src="./images/localhost-admin-console.png"  width="100%">
+  <img src="../../../on-prems-env-mp/images/localhost-admin-console.png"  width="100%">
 
-The **SimpleDB** application will be running at `http://PUBLIC-IP:7003/SimpleDB/` (substitute `PUBLIC-IP` with the public IP of the instance). It may take a minute or 2 after the admin console is up for the SimpleDB app to be running.
+2. The **SimpleDB** application will be running at `http://PUBLIC-IP:7003/SimpleDB/` (substitute `PUBLIC-IP` with the public IP of the instance). It may take a minute or 2 after the admin console is up for the SimpleDB app to be running.
 
-It shows statistics of riders of the Tour de France stored in the database, and looks like this:
+3. It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
-  <img src="./images/localhost-simpledb-app.png" width="100%">
+  <img src="../../../on-prems-env-mp/images/localhost-simpledb-app.png" width="100%">
 
 You may proceed to next steps while the environment is coming up, but make sure it is up before proceeding to the next lab.
 
@@ -131,6 +131,6 @@ You may proceed to the next lab.
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

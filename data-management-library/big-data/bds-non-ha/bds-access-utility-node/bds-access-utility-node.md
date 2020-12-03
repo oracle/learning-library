@@ -58,47 +58,48 @@ In this step, you will set three variables using the **`export`** command. The v
 
 2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **_`display-name`_** is an optional descriptive name that will be attached to the reserved public IP address that will be created for you.
 
-      ```
+    ```
     <b>$</b> <copy>export DISPLAY_NAME="display-name"</copy>
-      ```
+    ```
 
     **Note:** In the preceding command, substitute **_`display-name`_** with a descriptive name of your choice. Press the **`[Enter]`** key to run the command.
 
     In our example, we will use **`traininun0-public-ip`** for the descriptive name.
 
-      ```
+    ```
     $ export DISPLAY_NAME="traininun0-public-ip"
-      ```
+    ```
 3. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it in the command line.
 
-      ```
+    ```
     <b>$</b> <copy>export SUBNET_OCID="subnet-ocid"</copy>
-      ```
+    ```
     **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab. Press the **`[Enter]`** key to run the command.  
 
     In our example, we replaced the **_``subnet-ocid``_** with our own **`subnet-ocid`**:
-      ```
+
+    ```
     $ export SUBNET_OCID="ocid1.subnet.oc1.iad.aaaaaaaa3mhu4yuaito4trodn4cywlv2ys3dtwj67cu26bs2gses4yd6gsea"
-      ```
+    ```
 
 4. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. The **`ip-address`** is the private IP address that is assigned to the node that you want to map.
 
-      ```
+    ```
     <b>$</b> <copy>export PRIVATE_IP="ip-address"</copy>
-      ```
+    ```
   **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address. Press the **`[Enter]`** key to run the command.
 
   In our example, we replaced the **_``ip-address``_** with the private IP address of our first utility node that we identified in **STEP 1** of this lab.
 
-      ```
+    ```
     $ export PRIVATE_IP="10.0.0.9"
-      ```
+    ```
 
 5.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line. Press the **`[Enter]`** key to run the command.
 
-      ```
+    ```
     <copy>oci network public-ip create --display-name $DISPLAY_NAME --compartment-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."compartment-id"'` --lifetime "RESERVED" --private-ip-id `oci network private-ip list --subnet-id $SUBNET_OCID --ip-address $PRIVATE_IP | jq -r '.data[] | ."id"'`</copy>
-      ```
+    ```
 6.  In the output returned, find the value for **ip-address** field. In our example, it's **`193.122.194.103`**. This is the new reserved public IP address that is mapped to the private IP address of your **first utility node**.
 
   ![](./images/output-un0-ip-address.png " ")
@@ -197,8 +198,8 @@ In this step, you will learn how to edit a public IP address using both the **Cl
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-    + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
-* **Last Updated By/Date:** Lauran Serhal, October 2020
+    + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
+* **Last Updated By/Date:** Lauran Serhal, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

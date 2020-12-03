@@ -1,0 +1,25 @@
+{
+      "workshoptitle": "Low Code Development with Oracle Autonomous Database",
+      "tutorials": [
+        {
+          "title": "Prerequisites",
+          "filename": "../../../common/1-sign-up-apex/1-sign-up-apex.md"
+        },
+        {
+            "title": "Introduction",
+            "filename":"../../workshop-intro/intro.md"
+        },
+		    {
+            "title": "Lab 1: Create an APEX App from a Spreadsheet",
+            "filename": "../../create-app-spreadsheet/2-create-an-app-from-a-spreadsheet.md"
+        },
+		    {
+            "title": "Lab 2: Build Database Objects in Autonomous Database",
+            "filename": "../../build-db-obj-adb/3-build-database-objects-in-autonomous-database.md"
+        },
+		    {
+            "title": "Lab 3: Create and Modify an APEX Application",
+            "filename": "../../create-modify-apex-app/4-create-and-modify-an-apex-app.md"
+        }
+    ]
+}

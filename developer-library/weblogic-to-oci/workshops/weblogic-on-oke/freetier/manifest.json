@@ -1,0 +1,69 @@
+{
+    "workshoptitle": "Migrate WebLogic to WebLogic on OKE",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },{
+            "title": "Introduction",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../intro/intro.md",
+            "type": "oke"
+        },
+        {
+            "title": "Lab 1: Setup the Demo On-Premises Environment",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../on-prems-env/on-prems-env.md"
+        },
+        {
+            "title": "Lab 1 Option A: Setup an On-Premises Environment with the Workshop Marketplace Stack",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../on-prems-env-mp/on-prems-env-mp.md"
+        },
+        {
+            "title": "Lab 1 Option B: Setup a Local (On-Premises) Environment with Docker",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../on-prems-env-docker/on-prems-env-docker.md"
+        },
+        {
+            "title": "Lab 2: Prepare the OCI Account",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../prepare/prepare.md",
+            "type": "oke"
+        },
+        {
+            "title": "Lab 3: Provision the WebLogic Infrastructure",
+            "publisheddate": "10/27/2020",
+            "filename": "../../../provision-wls-oke/provision-wls-oke.md"
+        },
+        {
+            "title": "Lab 4: Provision the Database on OCI",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../provision-app-db/provision-app-db.md",
+            "type": "oke"
+        },
+        {
+            "title": "Lab 5: Gather Information about the DB VM on OCI",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../gather-db-info/gather-db-info.md"
+        },
+        {
+            "title": "Lab 6: Migrate the Application Database",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../migrate-app-db-datapump/migrate-app-db-datapump.md",
+            "type": "oke"
+        },
+        {
+            "title": "Lab 7: Migrate the WebLogic Domain",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../migrate-wls-oke/migrate-wls-oke.md"
+        },
+        {
+            "title": "Lab 8: Tear down the Environment",
+            "publisheddate": "07/30/2020",
+            "filename": "../../../tear-down/tear-down.md",
+            "type": "dbcs"
+        }
+     ]
+}

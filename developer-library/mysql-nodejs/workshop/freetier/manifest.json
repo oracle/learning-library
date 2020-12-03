@@ -14,7 +14,7 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 2: Exploring and completing the Setup of the Cloud Environment",
+            "title": "Lab 2: Exploring and Completing the Setup of the Cloud Environment",
             "filename": "../../environment/environment.md"
         },
         {
@@ -22,11 +22,11 @@
             "filename": "../../import/import.md"
         },
         {
-            "title": "Lab 4: Build a Microservice and a Web frontend",
+            "title": "Lab 4: Build a Microservice and a Web Frontend",
             "filename": "../../frontend/frontend.md"
         },
         {
-            "title": "Lab 5: Next steps",
+            "title": "Lab 5: Next Steps",
             "filename": "../../next-steps/next-steps.md"
         }
 

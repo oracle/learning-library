@@ -48,7 +48,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-7.png " ")
 2. Select **Apply**
 ![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
+3. Inspect the apply job, accept all defaults and click **Apply**
 ![Image alt text](images/db19c-freetier-step1-9.png " ")
 4. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")

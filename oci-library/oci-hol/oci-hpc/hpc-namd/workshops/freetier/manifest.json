@@ -8,7 +8,7 @@
         {
             "title": "Introduction", 
             "description": "Brief Introduction on Oracle HPC",
-            "filename": "../../hpc-introduction/hpc-introduction.md"   
+            "filename": "../../intro/intro.md"   
         },
         {
             "title": "NAMD Introduction",

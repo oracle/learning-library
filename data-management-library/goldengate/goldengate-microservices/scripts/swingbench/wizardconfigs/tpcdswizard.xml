@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WizardConfig Name="TPC-DS Like Install Wizard" Mode="InterActive" xmlns="http://www.dominicgiles.com/swingbench/wizard">
+    <WizardSteps RunnableStep="5">
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step0"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step1"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step2"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step3"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step4"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step5"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step6"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step7"/>
+        <WizardStep SourceFile="com.dom.benchmarking.swingbench.wizards.tpcdslike.Step8"/>
+    </WizardSteps>
+    <DataGenerationConfigurationFiles>
+        <DataGenerationConfigurationFile Version="1.0" Valid="Post">../sql/tpcdsconfig.xml</DataGenerationConfigurationFile>
+    </DataGenerationConfigurationFiles>
+    <ExecutableClass>com.dom.benchmarking.swingbench.wizards.tpcdslike.TPCDSLikeGenerate</ExecutableClass>
+    <DefaultParameters>
+        <Parameter Key="datatablespacesexists" Value="false"/>
+        <Parameter Key="password" Value="tpcdslike"/>
+        <Parameter Key="userexists" Value="true"/>
+        <Parameter Key="dbausername" Value="sys as sysdba"/>
+        <Parameter Key="indextablespace" Value="TPCDSLikeIndexes"/>
+        <Parameter Key="username" Value="tpcdslike"/>
+        <Parameter Key="dbapassword" Value="changethispassword"/>
+        <Parameter Key="indexdatafile" Value=""/>
+        <Parameter Key="operation" Value="create"/>
+        <Parameter Key="connectionstring" Value="//tpc12server/tpc"/>
+        <Parameter Key="output" Value="Verbose"/>
+        <Parameter Key="datafile" Value=""/>
+        <Parameter Key="tablespace" Value="TPCDSLike"/>
+        <Parameter Key="connectiontype" Value="thin"/>
+        <Parameter Key="indextablespacesexists" Value="false"/>
+        <Parameter Key="scale" Value="0.1"/>
+    </DefaultParameters>
+    <SupportedModels>
+        <Compression>
+            <SupportedCompression>No Compression</SupportedCompression>
+        </Compression>
+        <Partitioning>
+            <SupportedPartitioning>No Partitioning</SupportedPartitioning>
+            <SupportedPartitioning>Interval Partitioning</SupportedPartitioning>
+        </Partitioning>
+        <Indexing>
+            <SupportedIndexing>All Indexes</SupportedIndexing>
+            <SupportedIndexing>Primary Keys Only</SupportedIndexing>
+            <SupportedIndexing>No Indexes</SupportedIndexing>
+        </Indexing>
+    </SupportedModels>
+    <BenchmarkVersion>1.0</BenchmarkVersion>
+    <ValidatorClass>com.dom.benchmarking.swingbench.wizards.tpcdslike.TPCDSLikeValidator</ValidatorClass>
+    <SchemaDescription>
+        <TableList>
+            <ObjectName>CALL_CENTER</ObjectName>
+            <ObjectName>CATALOG_PAGE</ObjectName>
+            <ObjectName>CATALOG_RETURNS</ObjectName>
+            <ObjectName>CATALOG_SALES</ObjectName>
+            <ObjectName>CUSTOMER</ObjectName>
+            <ObjectName>CUSTOMER_ADDRESS</ObjectName>
+            <ObjectName>CUSTOMER_DEMOGRAPHICS</ObjectName>
+            <ObjectName>DATE_DIM</ObjectName>
+            <ObjectName>HOUSEHOLD_DEMOGRAPHICS</ObjectName>
+            <ObjectName>INCOME_BAND</ObjectName>
+            <ObjectName>INVENTORY</ObjectName>
+            <ObjectName>ITEM</ObjectName>
+            <ObjectName>PROMOTION</ObjectName>
+            <ObjectName>REASON</ObjectName>
+            <ObjectName>SHIP_MODE</ObjectName>
+            <ObjectName>STORE</ObjectName>
+            <ObjectName>STORE_RETURNS</ObjectName>
+            <ObjectName>STORE_SALES</ObjectName>
+            <ObjectName>TIME_DIM</ObjectName>
+            <ObjectName>WAREHOUSE</ObjectName>
+            <ObjectName>WEB_PAGE</ObjectName>
+            <ObjectName>WEB_RETURNS</ObjectName>
+            <ObjectName>WEB_SALES</ObjectName>
+        </TableList>
+        <IndexList>
+            <ObjectName>CALL_CENTER_PK_IDX</ObjectName>
+            <ObjectName>CATALOG_PAGE_PK_IDX</ObjectName>
+            <ObjectName>CATALOG_RETURNS_PK_IDX</ObjectName>
+            <ObjectName>CATALOG_SALES_PK_IDX</ObjectName>
+            <ObjectName>CUSTOMER_PK_IDX</ObjectName>
+            <ObjectName>CA_ADDRESS_PK_IDX</ObjectName>
+            <ObjectName>CD_DEMO_PK_IDX</ObjectName>
+            <ObjectName>D_DATE_PK_IDX</ObjectName>
+            <ObjectName>HOUSEHOLD_DEMOGRAPHICS_PK_IDX</ObjectName>
+            <ObjectName>INCOME_BAND_PK_IDX</ObjectName>
+            <ObjectName>INVENTORY_NUK</ObjectName>
+            <ObjectName>ITEM_PK_IDX</ObjectName>
+            <ObjectName>PROMOTION_PK_IDX</ObjectName>
+            <ObjectName>REASON_PK_IDX</ObjectName>
+            <ObjectName>SHIP_MODE_PK_IDX</ObjectName>
+            <ObjectName>STORE_PK_IDX</ObjectName>
+            <ObjectName>STORE_RETURNS_PK_IDX</ObjectName>
+            <ObjectName>STORE_SALES_PK_IDX</ObjectName>
+            <ObjectName>TIME_DIM_PK_IDX</ObjectName>
+            <ObjectName>W_WAREHOUSE_PK_IDX</ObjectName>
+            <ObjectName>WEB_PAGE_PK_IDX</ObjectName>
+            <ObjectName>WEB_RETURNS_PK_IDX</ObjectName>
+            <ObjectName>WEB_SALES_PK_IDX</ObjectName>
+        </IndexList>
+        <SequenceList/>
+        <ViewList/>
+        <CodeList>
+            <ObjectName>PKG_TPCDS_TRANSACTIONS</ObjectName>
+        </CodeList>
+    </SchemaDescription>
+    <SQLScripts>
+        <InitilisationScripts>
+            <SQLScript Version="1.0" Valid="Post" Topic="createtablespace">../sql/tpcds_createtablespace.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="createindextablespace">../sql/tpcds_create_index_tablespace.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="createuser">../sql/tpcds_createuser.sql</SQLScript>
+        </InitilisationScripts>
+        <PreDataGenerationScripts>
+            <VariableList>
+                <Variable>
+                    <Key>compression</Key>
+                    <Value></Value>
+                </Variable>
+                <Variable>
+                    <Key>tablespace</Key>
+                    <Value>TPCDSLIKE</Value>
+                </Variable>
+            </VariableList>
+            <SQLScript Version="1.0" Valid="Post" Topic="dropuserobjects" Labels="No Partitioning">../sql/tpcds_droptables.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="createtables" Labels="No Partitioning">../sql/tpcds_createtables.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="createtables" Labels="Interval Partitioning">../sql/tpcds_create_partitioned_tables.sql</SQLScript>
+        </PreDataGenerationScripts>
+        <PostDataGenerationScripts>
+            <VariableList>
+                <Variable>
+                    <Key>parallelism</Key>
+                    <Value>2</Value>
+                </Variable>
+                <Variable>
+                    <Key>tablespace</Key>
+                    <Value>TPCDSLIKE</Value>
+                </Variable>
+                <Variable>
+                    <Key>indextablespace</Key>
+                    <Value>TPCDSLIKE_INDEXES</Value>
+                </Variable>
+                <Variable>
+                    <Key>parallelclause</Key>
+                    <Value>parallel 2</Value>
+                </Variable>
+                <Variable>
+                    <Key>logging</Key>
+                    <Value>nologging</Value>
+                </Variable>
+                <Variable>
+                    <Key>username</Key>
+                    <Value>TPCDSLIKE</Value>
+                </Variable>
+            </VariableList>
+            <SQLScript Version="1.0" Valid="Post" Topic="generic">../sql/tpcds_analyzeschema.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="createindexes" Labels="All Indexes,No Partitioning,Interval Partitioning">../sql/tpcds_indexes.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="createcode" Labels="All">../sql/tpcds_transactions_pkg.sql</SQLScript>
+        </PostDataGenerationScripts>
+        <PurgeScripts>
+            <SQLScript Version="1.0" Valid="Post" Topic="droptablespace">../sql/tpcds_droptablespace.sql</SQLScript>
+            <SQLScript Version="1.0" Valid="Post" Topic="dropuser">../sql/tpcds_dropuser.sql</SQLScript>
+        </PurgeScripts>
+    </SQLScripts>
+</WizardConfig>

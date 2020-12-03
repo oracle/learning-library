@@ -22,9 +22,10 @@ You need to download the stack package (zip file) and save it on your disk.
 
     ![](.././images/stack/02.png)
 
-2. Just drop here the zip file downloaded earlier:
+2. Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the stack_mysql_idc.zip zip file that you downloaded. Click **Select**.
 
-    ![](.././images/stack/04.png)
+    ![](.././images/zip-file.png " ")
+
 
 3. Now you need to fill some variables:
 

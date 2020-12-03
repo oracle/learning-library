@@ -85,7 +85,7 @@ From the download link:
 
   1. Download the hol zip file.
 
-  2. Open Windows Explorer and nagivate to the downloaded zip file.
+  2. Open Windows Explorer and navigate to the downloaded zip file.
 
   3. Move the zip file to your folder Desktop
 
@@ -97,7 +97,7 @@ From the download link:
 
   1. Download the hol zip file.
 
-  2. Open Finder and nagivate to the downloaded zip file.
+  2. Open Finder and navigate to the downloaded zip file.
 
   3. Move the zip file to your Desktop
 

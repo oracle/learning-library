@@ -1,0 +1,11 @@
+#!/bin/bash
+cd `dirname "$0"`
+
+# Check to see if any of the arguments is -bg (i.e. background the command).
+
+location=`echo $* | grep -c -- "-bg "`
+if [ $location != 0 ]; then
+	java -cp ../launcher LauncherBootstrap -executablename charbench charbenchbg $*
+else
+	java -cp ../launcher LauncherBootstrap -executablename charbench charbench $*
+fi

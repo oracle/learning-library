@@ -47,6 +47,11 @@
               "description": "This lab shows you how to create a Hadoop Administrator(superuser) that will have full access to all the data and metadata on the cluster.",
               "filename": "./../../bds-create-hadoop-user/bds-create-hadoop-user.md"
             }
-
+            ,
+            {
+            "title": "Lab 7: Clean up Resources Used in the Workshop (Optional)",
+            "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
+            "filename": "./../../bds-cleanup/bds-cleanup.md"
+            }
            ]
 }

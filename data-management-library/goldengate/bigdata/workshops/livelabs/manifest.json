@@ -1,0 +1,71 @@
+{
+  "workshoptitle": "Oracle GoldenGate for Big Data",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to GGBD",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "publisheddate": "09/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 3: Deploy GoldenGate for Big Data",
+      "description": "Deployment of GoldenGate for Big Data",
+      "filename": "../../deploy-gg-for-bd/deploy-gg-for-bd.md"
+    },
+    {
+      "title": "Lab 4: MySQL to MySQL",
+      "description": "GGBD mysql-to-mySQL",
+      "filename": "../../mysql-to-mysql/mysql-to-mysql.md"
+    },
+    {
+      "title": "Lab 5: MySQL to HDFS",
+      "description": "GGBD mysql-to-hdfs",
+      "filename": "../../mysql-to-hdfs/mysql-to-hdfs.md"
+    },
+    {
+      "title": "Lab 6: MySQL to Hive",
+      "description": "GGBD mysql-to-hive",
+      "filename": "../../mysql-to-hive/mysql-to-hive.md"
+    },
+    {
+      "title": "Lab 7: MySQL to HBase",
+      "description": "mysql-to-hbase",
+      "filename": "../../mysql-to-hbase/mysql-to-hbase.md"
+    },
+    {
+      "title": "Lab 8: MySQL to Kafka",
+      "description": "GGBD mysql-to-Kafka",
+      "filename": "../../mysql-to-kafka/mysql-to-kafka.md"
+    },
+    {
+      "title": "Lab 9: MySQL to Cassandra",
+      "description": "GGBD mysql-to-Cassandra",
+      "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
+    },
+    {
+      "title": "Lab 10: MySQL to Oracle",
+      "description": "GGBD mysql-to-oracle",
+      "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
+    },
+    {
+      "title": "Appendix",
+      "description": "GGBD Appendix",
+      "filename": "../../appendix/appendix.md"
+    }
+  ]
+}

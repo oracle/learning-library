@@ -22,7 +22,7 @@ In this section we will download sample Ansible resources and configure it to wo
 
 2. Ansible will use your CLI credentials to authenticate and authorize access to OCI.  You will need to configure details of which compartment, region and compute shape.  Modify the **env-vars** file to update these values.
 
-**NOTE:** You need to find your compartment OCID and your Avaiability Domaind ID. If running in Ashburn instead of Phoenix, just move the **#** to comment out the line for the region you are not using.
+**NOTE:** You need to find your compartment OCID and your Availability Domain ID. If running in Ashburn instead of Phoenix, just move the **#** to comment out the line for the region you are not using.
 
     ````
     <copy>
@@ -35,10 +35,10 @@ In this section we will download sample Ansible resources and configure it to wo
     <copy>
     # OCID of assigned compartment
     export compartment_ocid=[your compartment id goes here - without square brackets]
-   
+
     #Ashburn
     #export image_ocid=ocid1.image.oc1.iad.aaaaaaaayuihpsm2nfkxztdkottbjtfjqhgod7hfuirt2rqlewxrmdlgg75q
-    
+
     #Phoenix
     export image_ocid=ocid1.image.oc1.phx.aaaaaaaadtmpmfm77czi5ghi5zh7uvkguu6dsecsg7kuo3eigc5663und4za
 

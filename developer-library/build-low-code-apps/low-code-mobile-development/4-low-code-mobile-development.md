@@ -36,11 +36,11 @@ Estimated time: 45 minutes
 
     ![](images/step1/3.png " ")
 
-4. Click on **Create Enviornment**.
+4. Click on **Create environment**.
   
     ![](images/step1/4.png " ")
 
-5. Give the name of Enviornment,such as appDevApp.
+5. Give the name of environment,such as appDevApp.
   
     ![](images/step1/5.png " ")
 
@@ -52,7 +52,7 @@ Estimated time: 45 minutes
   
     ![](images/step1/7.png " ")
 
-8. It will take few seconds for enviornment to get ready, once it is ready click on **Designer** tab
+8. It will take few seconds for environment to get ready, once it is ready click on **Designer** tab
 
     ![](images/step1/8.png " ")
 

@@ -6,6 +6,8 @@ This example shows how integrating multiple datasets, using a graph, facilitates
 
 The combined dataset is then used to perform the following common graph query and analyses: pattern matching, detection of cycles, finding important nodes, community detection, and recommendation.
 
+Estimated Lab Time: 20 minutes
+
 ### Objectives
 
 In this lab, you will:
@@ -15,9 +17,67 @@ In this lab, you will:
 
 ### Prerequisites
 
-* This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker and have an environment up and running with Zeppelin at [http://localhost:8080](http://localhost:8080/) and the Graph Visualization component at [http://localhost:7007/ui/](http://localhost:7007/ui/).
+* This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker.
 
-## **STEP 1:** Graph query and analysis in Apache Zeppelin
+## **STEP 1:** Add ingress rules and verify setup environment
+
+1. On Oracle cloud homepage, click on the hamburger, navigate to **Networking** in Core Infrastucture section and click on **Virtual Cloud Networks**.
+
+  ![](./images/selectvcn.png)
+
+2. Select your compartment from the list and navigate to the vcn you created for this workshop earlier in lab 2.
+
+  ![](./images/clickvcn.png)
+
+3. In the vcn, under Resources, click on **Security Lists** to see the default security list for the compartment. Now, click on the Default Security List for your compartment.
+
+  ![](./images/securitylist.png)
+
+4. Select **Ingress Rule** under the resources in Default Security List for your compartment and click on **Add Ingress Rule**
+
+  ![](./images/addingressrule.png)
+
+5. Now let's add an ingress rules for the ports 7007 and 8080.
+
+   Fill in the following values for port 7007 and click on **Another Ingress Rule**.
+    - Source Type – CIDR
+    - Source CIDR – 0.0.0.0/0
+    - IP Protocol – TCP
+    - Source Port Range – All
+    - Destination Port Range - 7007
+
+  ![](./images/ingressrule1.png)
+
+  Fill in the following values for port 8080 and click on **Add Ingress Rule**.
+    - Source Type – CIDR
+    - Source CIDR – 0.0.0.0/0
+    - IP Protocol – TCP
+    - Source Port Range – All
+    - Destination Port Range - 8080
+
+  ![](./images/ingressrule2.png)
+
+  Now the ingress rules for ports 7007 and 8080 are added.
+
+  ![](./images/verifyportsadded.png)
+
+6. To verify the environment is up and running with Zeppelin, replace *your-instance-ip-address* with your instance IP address in the URL.
+
+    ```
+    http://your-instance-ip-address:8080
+    ```
+
+  ![Zeppelin Home Page](./images/ZeppelinHome.png)
+
+7. To verify the environment is up and running for Graph Visualization component , replace *your-instance-ip-address* with your instance IP address in the URL.
+
+    ```
+    http://your-instance-ip-address:7007/ui/
+    ```
+
+  ![GraphViz on startup](./images/GraphVizStartup.png)
+
+## **STEP 2:** Graph query and analysis in Apache Zeppelin
 
 1. Navigate to the Zeppelin in the browser and click on the "Customer 360" notebook link.
 
@@ -27,11 +87,15 @@ In this lab, you will:
 
   ![Customer 360 Notebook](./images/ZepCustomer360NB.png)
 
-## **STEP 2:** Graph visualization
+## **STEP 3:** Graph visualization
 
 Now we will use the Graph Visualization component to explore the graph and run some PGQL queries.
 
-1. Open the Graph Viz at [http://localhost:7007/ui/](http://localhost:7007/ui/)
+1. In URL, replace *your-instance-ip-address* with your instance IP address and open the Graph Viz at:
+
+    ```
+    http://your-instance-ip-address:7007/ui/
+    ```
 
   You should see a screen similar to the screenshot below.
 
@@ -45,13 +109,15 @@ Now we will use the Graph Visualization component to explore the graph and run s
 
 3. Now let's add some labels and other visual context. These are known as highlights.
 
-4. Click on the Load button under Highlights (on the right side of the screen).
+4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/o49GH8NXlnrwgfbWO9cDCq-zqhsFBHFNGRGM6uHwnEQkHUH5fo5X-u33SW4H_22J/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
 
-5. Browse to the `customer_360` folder in the repository that you cloned in Lab1. That is, to `oracle-pg/graphs/customer_360` and choose the file named 'highlights.json' and click Open to load that.
+5. Click on the Load button under Highlights (on the right side of the screen).
+
+6. Browse the `highlights.json` file, click Open to load that.
 
   ![Load highlights for graph](./images/GraphVizLoadHighlights.png)
 
-6. The graph should now look like
+7. The graph should now look like
 
   ![Customer 360 graph with highlights](./images/GraphVizWithHighlights.png)
 
@@ -130,9 +196,15 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 
   ![Circular transfer A to B to C to A](./images/GraphVizABCATxn.png)
 
-## **STEP 3:** Graph query and analysis in JShell
+## **STEP 4:** Graph query and analysis in JShell
 
-1. Start the JShell in the graph-client. Copy and paste the following command to do that.
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
+
+    ```
+    ssh -i ./your-key-name opc@your-instance-ip-address
+    ```
+
+2. Start the JShell in the graph-client. Copy and paste the following command to do that.
 
     ```
     <copy>docker exec -it graph-client opg-jshell -b http://graph-server:7007</copy>
@@ -150,7 +222,7 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
     opg-jshell>
     ```
 
-2. Check to see which graphs have been loaded into the graph server.
+3. Check to see which graphs have been loaded into the graph server.
 
     ```
     <copy>session.getGraphs();</copy>
@@ -160,7 +232,7 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 
   If the graph server loaded the graph from files the name will be 'Customer360-PG'. If the graph was loaded from the database it will be named 'Customer360_db'.
 
-3. Now get a handle to that graph so you and query and analyze it in your shell's session. Use the appropriate graph name, i.e. "Customer360-PG" or "Customer360_db".
+4. Now get a handle to that graph so you and query and analyze it in your shell's session. Use the appropriate graph name, i.e. "Customer360-PG" or "Customer360_db".
 
     ```
     <copy>var g = session.getGraph("Customer360-PG");</copy>
@@ -437,15 +509,26 @@ Lastly, let's use Personalized PageRank to find stores that John may purchase fr
     +--------------------------------------------+
     ```
 
+### Exit JShell
+
+1. To exit JShell, run the below exit command.
+
+    ```
+    <copy>
+    /exit
+    </copy>
+    ```
+
 You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager
-* **Contributors** - Ryota Yamanaka
+* **Contributors** - Ryota Yamanaka, Anoosha Pilli, Product Manager
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
+* **Lab Expiry Date** - November 30, 2021
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

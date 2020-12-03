@@ -38,7 +38,7 @@ In the span of a few minutes, the stacks provide vast majority components requir
 
 6. Click Terraform Actions/Apply
 
-Watch the 2 minute video below to watch the framework build out the free tier, _**Enterprise tier works exactly the same way**_ in a paid tenancy. In 5 Clicks you have an operational enviornment. Simple modifications of the *.tfvars files allow you to adapt the examples to your needs.
+Watch the 2 minute video below to watch the framework build out the free tier, _**Enterprise tier works exactly the same way**_ in a paid tenancy. In 5 Clicks you have an operational environment. Simple modifications of the *.tfvars files allow you to adapt the examples to your needs.
 
 [![Alt text](./images/lightning-video-thumbnail.png)](https://www.youtube.com/watch?v=T6iDGTWzEWk)
 

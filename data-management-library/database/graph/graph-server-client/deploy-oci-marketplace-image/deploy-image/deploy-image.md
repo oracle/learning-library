@@ -39,9 +39,9 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
     - Paste your public SSH key. This is used when you ssh into the provisioned compute later.
     - Choose an existing virtual cloud network.
     - Select a subnet compartment and subnet.
-    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you will have uploaded and unzipped the wallet.
+    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you will have uploaded and unzipped the wallet, e.g. `jdbc:oracle:thin:@atpfinance_low?TNS_ADMIN=/etc/oracle/graph/wallets`
 
-  ***Note: This JDBC URL is stored in a configuration whoch can be updated later if necessary.***
+  ***Note: This JDBC URL is stored in a configuration which can be updated later if necessary.***
 
   ![](images/ConfigureStackVariables_Sombrero203.png " ")
 
@@ -97,7 +97,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     If your SSH Keys are kept under `HOME/.ssh/` directory, run:
     ```
-    <copy>ssh opc@</copy>&lt;public_ip_address>
+    <copy>ssh opc@<public_ip_address></copy>
     ```
 
     If you have a different path for your SSH key, enter the following:
@@ -157,8 +157,8 @@ The steps are as follows:
     Open a new Terminal, navigate to the folder where you created your SSH Keys, and enter the following command:
 
     ```
-    ## copy the Wallet. Once again modify with correct values for your setup.
-    <copy>scp -i private_key ~/Downloads/ADB_Wallet_Zip opc@public_ip_for_compute:/home/opc</copy>
+    ## copy the wallet. Once again modify with correct values for your setup.
+    <copy>scp -i <private_key> ~/Downloads/<ADB_Wallet>.zip opc@<public_ip_for_compute>:/etc/oracle/graph/wallets</copy>
     ```
 
     ![](images/copy_wallet.png " ")
@@ -167,28 +167,13 @@ The steps are as follows:
 
 1.  Now go back to the Terminal window which is connected (via SSH) to the compute instance as `opc`.
 
-    Unzip the ADB wallet to the `wallets` directory. Modify the commands as appropriate for your environment and execute them as `opc`.
+    Unzip the ADB wallet to the `/etc/oracle/graph/wallets` directory. Modify the commands as appropriate for your environment and execute them as `opc`.
 
     ```
     <copy>
-    sudo mkdir /home/oraclegraph
-    sudo mkdir /home/oraclegraph/wallets
-    sudo chown opc /home/oraclegraph
-    sudo chown opc /home/oraclegraph/wallets
-    sudo chgrp oraclegraph /home/oraclegraph
-    sudo chgrp oraclegraph /home/oraclegraph/wallets
-    </copy>
-    ```
-
-    ```
-    <copy>
-    cd /home/oraclegraph/wallets
-    unzip /home/opc/&lt;ADB_Wallet>.zip</copy>
-    ```
-
-    ```
-    <copy>
-    sudo chgrp oraclegraph *
+    cd /etc/oracle/graph/wallets
+    unzip <ADB_Wallet>.zip
+    chgrp oraclegraph *
     </copy>
     ```
 
@@ -200,7 +185,7 @@ The steps are as follows:
 
     ```
     ## open the tnsnames and get the service name you will use later.
-    <copy>cat /home/oracle/wallets/tnsnames.ora</copy>
+    <copy>cat /etc/oracle/graph/wallets/tnsnames.ora</copy>
     ```
 
     ```

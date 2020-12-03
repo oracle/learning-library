@@ -62,6 +62,12 @@ To run this lab you need:
       </copy>
       ```
 
+      ```bash
+      <copy>
+      sudo su - oracle
+      </copy>
+      ```
+
 2. Get into the `/datapump` folder:
 
       ```
@@ -185,7 +191,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
     You can verify that the Fingerprint generated matches the fingerprint output of the config.
 
-5. Test your CLI
+5. Test your CLI: in the demo environment shell run:
 
     ```
     <copy>
@@ -258,7 +264,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
 4. Make sure you are in the right compartment and **click** the database you provisioned earlier to get to the details.
 
-5. **Enter** the name of the Autonomous Database as the `TARGET_DB_NAME` in the script, making sure it is in *lowercase*
+5. **Enter** the name of the Autonomous Database as the `TARGET_DB_NAME` in the script, making sure it is in *lowercase*. If you followed the naming conventions in this workshop, it should be `wlsatpdb`.
 
 6. **Copy** the **OCID**, and enter it as the `TARGET_DB_OCID` in the script
 
@@ -316,6 +322,8 @@ You may notice this 1st try imports the schema but fails at importing the data, 
 
 The database is now migrated to OCI, but we also need to setup the wallet on the WLS servers
 
+If the tunnel closing step reports failure, it is safe to ignore.
+
 ## **STEP 7:** Download the wallet on each WebLogic server
 
 There are 2 ways to download the wallet on to the target WebLogic servers:
@@ -356,12 +364,12 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     </copy>
     ```
 
-    *make sure to specify the proper domain name (here `nonjrf_domain`)*
+    *make sure to specify the proper domain name (here `nonjrf_domain`)* if you didn't follow the naming convention of this workshop
 
     If you provisioned in a *Private Subnet* set the variables:
     ```bash
     <copy>
-    export TARGET_WLS_SERVER=<IP of a WLS server>
+    export TARGET_WLS_SERVER=<Private IP of a WLS server>
     </copy>
     ```
     ```bash
@@ -417,7 +425,6 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     export WALLET_PASSWORD=<password of your choice>
     </copy>
     ```
-    Note that the password needs to match what is in the `source.properties` file, so make sure to edit that file with your own password.
     
     Then run the command:
     
@@ -427,7 +434,7 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     </copy>
     ```
 
-    *make sure to specify the proper domain name (here `nonjrf_domain`)*
+    *make sure to specify the proper domain name in the path (here `nonjrf_domain`)*
 
 You may proceed to the next lab.
 
@@ -437,6 +444,6 @@ You may proceed to the next lab.
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -21,7 +21,7 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: Transparent Data Encryption (TDE)
@@ -47,7 +47,7 @@ First of all, we need Oracle Key Vault to know about our database server. We do 
 
 1. Open a Web Browser at the URL `https://<OKV-VM_@IP-Public>`
 
-2. Login to Oracle Key Vault Web Console as `RESTADMIN` with the password `T06tron.`
+2. Login to Oracle Key Vault Web Console as *"RESTADMIN"* with the password *"T06tron."*
 
    ![](./images/okv-001.png " ")
 
@@ -176,7 +176,7 @@ Typically, the first thing that users will do is upload their existing Oracle Wa
 
    ![](./images/okv-013.png " ")
 
-6. Now, let's go back to the OKV Web Console (as `RESTADMIN` User) to have a look of these information
+6. Now, let's go back to the OKV Web Console (as *"RESTADMIN"* User) to have a look of these information
 
 7. Click on "**All Items**"
 
@@ -282,7 +282,7 @@ Once we have uploaded the Oracle Wallet files into OKV Server, we can migrate fr
 
    ![](./images/okv-022.png " ")
 
-10. Now, let's go back to the OKV Web Console (as `RESTADMIN` User) to have a look of these information
+10. Now, let's go back to the OKV Web Console (as *"RESTADMIN"* User) to have a look of these information
 
 11. Click on "**All Items**"
 
@@ -336,7 +336,7 @@ You must create a master key for the container database before continuing. Each 
 
    ![](./images/okv-025.png " ")
 
-5. Now, let's go back to the OKV Web Console (as `RESTADMIN` User) to have a look of these information
+5. Now, let's go back to the OKV Web Console (as *"RESTADMIN"* User) to have a look of these information
 
 6. Click on "**All Items**"
 

@@ -15,7 +15,7 @@ Estimated Time: 50 minutes
 * Create an application on the new data
 * Refine the application
 
-*Note: This lab assumes you are using Oracle APEX 20.1.*
+*Note: This lab assumes you are using Oracle APEX 20.2.*
 
 ### Labs
 

@@ -186,13 +186,13 @@ This repository makes use of Oracle docker images which are licensed and need to
 
 ### Troubleshooting
 
-If you get an error message like the following even though you are logged in, it usually means you have not accepted the *Terms and Condition* for the specific image.
+1. If you get an error message like the following even though you are logged in, it usually means you have not accepted the *Terms and Condition* for the specific image.
 
-```
-pull access denied for store/oracle/database-instantclient, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
-```
+    ```
+    pull access denied for store/oracle/database-instantclient, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+    ```
 
-Go to the appropriate registry and image page, and go through the acknowledgement steps.
+    Go to the appropriate registry and image page, and go through the acknowledgement steps.
 
 ## **STEP 4:**  Check the local environment is up and running
 
@@ -285,6 +285,6 @@ You may proceed to the next lab.
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

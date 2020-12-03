@@ -4,7 +4,7 @@
 ### Overview
 *Estimated Time to complete the workshop*: 30 minutes
 
-This workshop is a mini-lab within the FIRST PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities - for the complete workshop, please refer to the *Oracle Database Security - Part1 (Baseline)*.
+This workshop is the FIRST PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities - for the second workshop, please refer to the *DB Security Fundamentals*.
 
 Based on an OCI architecture, deployed in a few minutes with a simple internet connection, it allows you to test DB Security use cases in a complete environment already pre-configured by the Oracle Database Security Product Manager Team.
 
@@ -13,7 +13,7 @@ Now, you no longer need important resources on your PC (storage, CPU or memory),
 ### Components
 The complete architecture of the DB Security Hands-On Labs is as following:
 
-  ![](./images/dbseclab-v3-archi.png)
+  ![](./images/dbseclab-archi_202011.png "")
 
 It's composed of 4 VMs:
   - **DBSec-Lab VM** (mandatory for all workshops: Baseline and Advanced workshops)
@@ -38,7 +38,7 @@ The entire DB Security PMs Team wishes you an excellent workshop!
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, 2nd November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

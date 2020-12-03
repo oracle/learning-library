@@ -23,7 +23,7 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -83,19 +83,13 @@ This lab assumes you have:
 
 4. Click [**Search**]
 
-5. Open a SSH session on your DBSec-Lab VM as Oracle User
-
-      ````
-      <copy>sudo su - oracle</copy>
-      ````
-
-6. Go to the scripts directory
+5. Go back to your SSH session and go to the scripts directory
 
       ````
       <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Simple_Realm</copy>
       ````
 
-7. Run the command to view the details about the Glassfish session
+6. Run the command to view the details about the Glassfish session
 
       ````
       <copy>./01_query_employee_data.sh</copy>
@@ -103,7 +97,7 @@ This lab assumes you have:
 
    ![](./images/dv-003.png " ")
 
-8. Now, create the Realm
+7. Now, create the Realm
 
       ````
       <copy>./02_create_realm.sh</copy>
@@ -111,7 +105,7 @@ This lab assumes you have:
 
    ![](./images/dv-004.png " ")
 
-9. Add objects to the Realm to protect
+8. Add objects to the Realm to protect
 
       ````
       <copy>./03_add_objects_to_realm.sh</copy>
@@ -119,7 +113,7 @@ This lab assumes you have:
 
    ![](./images/dv-005.png " ")
 
-10. Make sure you have an authorized user in the realm. In this step, we will add `EMPLOYEESEARCH_PROD` as a realm authorized owner.
+9. Make sure you have an authorized user in the realm. In this step, we will add `EMPLOYEESEARCH_PROD` as a realm authorized owner.
 
       ````
       <copy>./04_add_auth_to_realm.sh</copy>
@@ -127,7 +121,7 @@ This lab assumes you have:
 
    ![](./images/dv-006.png " ")
 
-11. Re-execute the SQL query to show that SYS now receives the **insufficient privileges** error message
+10. Re-execute the SQL query to show that SYS now receives the **insufficient privileges** error message
 
       ````
       <copy>./05_query_employee_data.sh</copy>
@@ -135,7 +129,7 @@ This lab assumes you have:
 
    ![](./images/dv-007.png " ")
 
-12. When you have completed this lab, you can drop the Realm
+11. When you have completed this lab, you can drop the Realm
 
       ````
       <copy>./06_drop_realm.sh</copy>
@@ -151,19 +145,13 @@ This lab assumes you have:
 
 4. Click [**Search**]
 
-5. Open a SSH session on your DBSec-Lab VM as Oracle User
-
-      ````
-      <copy>sudo su - oracle</copy>
-      ````
-
-6. Go to the scripts directory
+5. Go back to your SSH session and go to the scripts directory
 
       ````
       <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Trusted_App_Path</copy>
       ````
 
-7. Next, run this query to view the session information associated with the Glassfish application
+6. Next, run this query to view the session information associated with the Glassfish application
 
       ````
       <copy>./01_query_employeesearch_usage.sh</copy>
@@ -171,7 +159,7 @@ This lab assumes you have:
 
    ![](./images/dv-019.png " ")
 
-8. Now, query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table as `SYS` to demonstrate it is accessible
+7. Now, query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table as `SYS` to demonstrate it is accessible
 
       ````
       <copy>./02_query_employeesearch.sh</copy>
@@ -179,7 +167,7 @@ This lab assumes you have:
 
    ![](./images/dv-020.png " ")
 
-9. Begin protecting the application credentials by creating a Database Vault Rule
+8. Begin protecting the application credentials by creating a Database Vault Rule
 
       ````
       <copy>./03_create_rule.sh</copy>
@@ -187,7 +175,7 @@ This lab assumes you have:
 
    ![](./images/dv-021.png " ")
 
-10. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set. If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches
+9. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set. If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches
 
     ````
     <copy>./04_create_rule_set.sh</copy>
@@ -195,7 +183,7 @@ This lab assumes you have:
 
    ![](./images/dv-022.png " ")
 
-11. Create a Command Rule on Connect to protect the `EMPLOYEESEARCH_PROD` user. You can only `CONNECT` AS `EMPLOYEESEARCH_PROD` if you match the Rule Set we created
+10. Create a Command Rule on Connect to protect the `EMPLOYEESEARCH_PROD` user. You can only `CONNECT` AS `EMPLOYEESEARCH_PROD` if you match the Rule Set we created
 
     ````
     <copy>./05_create_command_rule.sh</copy>
@@ -203,9 +191,9 @@ This lab assumes you have:
 
    ![](./images/dv-023.png " ")
 
-12. Go to your web browser and refresh a few times and run some queries by clicking [**Search**] and explore employee data
+11. Go to your web browser and refresh a few times and run some queries by clicking [**Search**] and explore employee data
 
-13. Go back to your terminal session and re-run our query of the application usage to verify that it still works.
+12. Go back to your terminal session and re-run our query of the application usage to verify that it still works.
 
     ````
     <copy>./06_query_employeesearch_usage.sh</copy>
@@ -213,7 +201,7 @@ This lab assumes you have:
 
    ![](./images/dv-024.png " ")
 
-14. Now, try to query the `DEMO_HR_EMPLOYEES` table as `SYS`... You should be blocked!
+13. Now, try to query the `DEMO_HR_EMPLOYEES` table as `SYS`... You should be blocked!
 
     ````
     <copy>./07_query_employeesearch.sh</copy>
@@ -221,7 +209,7 @@ This lab assumes you have:
 
    ![](./images/dv-025.png " ")
 
-15. Once you have successfully completed the lab, you can delete the `Command Rule`, `Rule Set`, and `Rule` from Database Vault
+14. Once you have successfully completed the lab, you can delete the `Command Rule`, `Rule Set`, and `Rule` from Database Vault
 
     ````
     <copy>./08_delete_trusted_path.sh</copy>
@@ -231,19 +219,13 @@ This lab assumes you have:
 
 ## **STEP 4**: Simulation Mode
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
-
-      ````
-      <copy>sudo su - oracle</copy>
-      ````
-
-2. Go to the scripts directory
+1. Go to the scripts directory
 
       ````
       <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Simulation_Mode</copy>
       ````
 
-3. First, query the simulation log to show that it has no current values
+2. First, query the simulation log to show that it has no current values
 
       ````
       <copy>./01_query_simulation_log.sh</copy>
@@ -251,7 +233,7 @@ This lab assumes you have:
 
    ![](./images/dv-008.png " ")
 
-4. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
+3. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
 
       ````
       <copy>./02_command_rule_sim_mode.sh</copy>
@@ -259,7 +241,7 @@ This lab assumes you have:
 
    ![](./images/dv-009.png " ")
 
-5. Execute a script to create some db connections and generate some log entries
+4. Execute a script to create some db connections and generate some log entries
 
       ````
       <copy>./03_run_queries.sh</copy>
@@ -267,7 +249,7 @@ This lab assumes you have:
 
    ![](./images/dv-010.png " ")
 
-6. Now, we query the simulation log again to see what new entries we have. Remember we created a command rule to simulate blocking user connections!
+5. Now, we query the simulation log again to see what new entries we have. Remember we created a command rule to simulate blocking user connections!
 
       ````
       <copy>./04_query_simulation_log.sh</copy>
@@ -277,7 +259,7 @@ This lab assumes you have:
 
    The log shows all the users who connected and would have been blocked by the rule. It also shows where they connected from and what client they used to connect
 
-7. Run this script to get a list of distinct usernames
+6. Run this script to get a list of distinct usernames
 
       ````
       <copy>./05_distinct_users_sim_log.sh</copy>
@@ -285,9 +267,9 @@ This lab assumes you have:
 
    ![](./images/dv-012.png " ")
 
-8. Although we only used Simulation mode on a `CONNECT` rule, we could have used this on a Realm to show what violations we would had
+7. Although we only used Simulation mode on a `CONNECT` rule, we could have used this on a Realm to show what violations we would had
 
-9. Before moving to the next lab, we will remove the command rule and clean out the log
+8. Before moving to the next lab, we will remove the command rule and clean out the log
 
       ````
       <copy>./06_purge_sim_log.sh</copy>
@@ -299,19 +281,13 @@ This lab assumes you have:
 
 ## **STEP 5**: Ops Control
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
-
-      ````
-      <copy>sudo su - oracle</copy>
-      ````
-
-2. Go to the scripts directory
+1. Go to the scripts directory
 
       ````
       <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Ops_Control</copy>
       ````
 
-3. Check the status of Database Vault and Operations Control
+2. Check the status of Database Vault and Operations Control
 
       ````
       <copy>./01_query_dv_status.sh</copy>
@@ -321,7 +297,7 @@ This lab assumes you have:
 
       **Note**: It is not yet configured!
 
-4. Next, we will run the same queries as both container admin, `SAL` as well as `DBA_DEBRA`
+3. Next, we will run the same queries as both container admin, `SAL` as well as `DBA_DEBRA`
 
       **Note**:
       - The query results are the same
@@ -339,7 +315,7 @@ This lab assumes you have:
 
    ![](./images/dv-015.png " ")
 
-5. Enable Database Vault 19c Operations Control and run the queries again. Notice who can and who cannot query the `EMPLOYEESEARCH_PROD` schema data now. SAL should no longer be able to access data.
+4. Enable Database Vault 19c Operations Control and run the queries again. Notice who can and who cannot query the `EMPLOYEESEARCH_PROD` schema data now. SAL should no longer be able to access data.
 
       ````
       <copy>./04_enable_ops_control.sh</copy>
@@ -366,7 +342,7 @@ This lab assumes you have:
    ![](./images/dv-018.png " ")
 
 
-6. When you are have completed this lab, disable Ops Control
+5. When you are have completed this lab, disable Ops Control
 
       ````
       <copy>./08_disable_ops_control.sh</copy>
@@ -377,19 +353,13 @@ This lab assumes you have:
 ## **STEP 6**: (Optional) Disabling Database Vault
 **Attention: DO NOT run this lab if you want perfoming Oracle Label Security labs later!**
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
-
-      ````
-      <copy>sudo su - oracle</copy>
-      ````
-
-2. Go to the scripts directory
+1. Go to the scripts directory
 
       ````
       <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Disable_Database_Vault</copy>
       ````
 
-3. Disable the pluggable database `PDB1`
+2. Disable the pluggable database `PDB1`
 
       ````
       <copy>./01_config_disable_dv_on_pdb.sh pdb1</copy>
@@ -399,7 +369,7 @@ This lab assumes you have:
 
    ![](./images/dv-027.png " ")
 
-4. Now, Disable Database Vault in the container database
+3. Now, Disable Database Vault in the container database
 
       ````
       <copy>./02_config_disable_dv_on_cdb.sh</copy>
@@ -409,7 +379,7 @@ This lab assumes you have:
 
       **Note**: To disable DB Vault, database will be rebooted!
 
-5. Now, Database Vault is disabled in the container database as well as `PDB1`!
+4. Now, Database Vault is disabled in the container database as well as `PDB1`!
 
 You may proceed to the next lab.
 

@@ -51,7 +51,7 @@ function is called again within a timeout of a few minutes the same Container
 with the same Node.js instance will be reused. If it isn't called for a few
 minutes a cleanup task will shut down.
 
-## **STEP 2:** Deploying and running the Function
+## **STEP 2:** Deploying and Running the Function
 
 To see this in effect you have to deploy this into an Fn application. Our setup
 created a function with the name `DemoApp`, which we will be using. No worries,
@@ -284,7 +284,7 @@ Compartment* `node-mysql`, *Function Application* `DemoApp` and *Function*
 
 With a click on *Create Rule* this rule becomes effective.
 
-## **STEP 6:** Upload a file and verify the data arrived
+## **STEP 6:** Upload a File and Verify the Data Arrived
 
 Navigate back to the Object Storage page in the Console and open the `import`
 Bucket. Click *Upload*. In the panel pick the `data1.json` file provided

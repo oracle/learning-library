@@ -1,5 +1,6 @@
 {
-    "tutorials": [
+  "workshoptitle": "Create an OCI VM Database",
+   "tutorials": [
       {
         "title": "Introduction",
         "filename": "introduction/intro.md"

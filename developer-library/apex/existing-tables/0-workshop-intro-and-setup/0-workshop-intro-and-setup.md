@@ -15,7 +15,7 @@ Estimated Time: 70 minutes
 * Learn how to manipulate regions and items
 * Learn how to define client-side interactivity declaratively
 
-*Note: This lab assumes you are using Oracle APEX 20.1.*
+*Note: This lab assumes you are using Oracle APEX 20.2.*
 
 ### Labs
 

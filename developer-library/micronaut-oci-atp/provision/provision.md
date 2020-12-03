@@ -29,9 +29,9 @@ In this lab you will:
 
    ![Create Stack button](images/create_stack_btn.png)
 
-4. Choose 'My Configuration', and upload the Terraform configuration zip either by browsing to the location locally where the zip exists or dragging and dropping the ZIP into the "Stack Configuration" pane:
+4. Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file. Click **Select**.
 
-   ![Stack Configuration - Step 1](images/stack_info_1.png)
+	![](./images/zip-file.png)
 
 5. You can optionally enter a name and description of the stack then then choose the compartment for the Stack, then click 'Next':
 
@@ -82,10 +82,10 @@ In this lab you will:
 
 2. The Terraform stack produces the following values which are available in the 'Outputs' tab:
 
-      * `atp_admin_password` - This is the adminstrative password of the Autonmous Database Instance
-      * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
-      * `atp_schema_password` - This is the schema password of the Autonmous Database Instance
-      * `atp_wallet_password` - This is the wallet password of the Autonmous Database Instance
+      * `atp_admin_password` - This is the administrative password of the Autonomous Database Instance
+      * `atp_db_ocid` - This is the unique OCID of the Autonomous Database Instance
+      * `atp_schema_password` - This is the schema password of the Autonomous Database Instance
+      * `atp_wallet_password` - This is the wallet password of the Autonomous Database Instance
       * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
       * `public_ip` - This is the public IP address from the Oracle Cloud Infrastructure address pool
       * `region` - This is the region where the instance is running

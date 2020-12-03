@@ -129,12 +129,12 @@ In this lab, a starter skill and a starter digital assistant are provided for yo
 
   ![](../images/clone-skill.png " ")
 
-6. In the **Create Clone** dialog, enter a value for **Display Name** using the form <your_initials>\_PizzaSkill.
+6. In the **Create Clone** dialog, enter a value for **Display Name** using the form <your_initials\>\_PizzaSkill.
   For example, if your initials are AB, you'd name the skill **AB\_PizzaSkill**.
 
 7. Click **Clone**.
 
-8. On the Skills dashboard page, select <your_initials>\_PizzaSkill to open it up in the designer.
+8. On the Skills dashboard page, select <your_initials\>\_PizzaSkill to open it up in the designer.
 
 **Clone the Starter Digital Assistant**
 
@@ -142,24 +142,17 @@ In this lab, a starter skill and a starter digital assistant are provided for yo
 2. Click **Development** and select **Digital Assistants**.
 3. Click the main menu icon again to collapse the side menu.
 4. In the skills dashboard, find the tile for **ODA\_HOL2019**, open its Options menu, and select **Clone**.
-5. In the **Create Clone** dialog, enter a value for **Display Name** using the form <your_initials>\_ODA\_HOL2019.
+5. In the **Create Clone** dialog, enter a value for **Display Name** using the form < your_initials>\_ODA\_HOL2019.
   For example, if your initials are AB, you'd name the skill AB\_ODA\_HOL2019.
 
 6. Click **Clone**.
-7. On the Digital Assistants dashboard page, select <your_initials>_ODA_HOL2019 to open it up in the designer.
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+7. On the Digital Assistants dashboard page, select < your_initials>\_ODA\_HOL2019 to open it up in the designer.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Marcie Samuelsen
+* **Contributors** -  Kamryn Vinson
+* **Last Updated By/Date** - Kamryn Vinson, October 2020
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

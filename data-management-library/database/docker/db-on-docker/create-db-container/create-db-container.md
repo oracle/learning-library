@@ -1,10 +1,6 @@
-# Create an Oracle Database Container
+# Create an Oracle Database Container and Schema
 
-## Before Your Begin
-
-This lab walks you through the steps to deploy an Oracle Database to Docker container.  This lab takes approximately XX minutes.
-
-### Lab Overview
+## Introduction
 
 One of the benefits of using Docker is quick and easy provisioning.  Oracle provides Docker images for its Standard and Enterprise Edition database.  In this lab you will explore more features of Docker and deploy a fully functional containerized version of the AlphaOffice application. The application is made up of the following four containers:
 
@@ -14,24 +10,26 @@ One of the benefits of using Docker is quick and easy provisioning.  Oracle prov
 
 You will use various Docker commands to setup, run and connect into containers. Concepts of Docker volumes, networking and intra-container communication will be used.
 
-### Prerequisites?
+Estimated Lab Time: 15 minutes.
+
+### Objectives
+
+- In this lab, you will walk through the steps to deploy an Oracle Database to Docker container.
+
+### Prerequisites
 
 * Create a docker hub [account](http://hub.docker.com)
-* Participant has completed the following labs:
-    - Login to Cloud/Register for Free Tier
-    - Create SSH Keys 
-    - Setup Compute Instance
-    - Docker Setup
+* Successfully have setup docker on compute instance
 
-## **Step 1:** Create an Oracle Database Container
+## **STEP 1:** Create an Oracle Database container
 
-0. Login to the instance using ssh
+1. Login to the instance using ssh.
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-1.  Verify your docker version
+2.  Verify your docker version.
 
     ````
     <copy>
@@ -39,7 +37,7 @@ You will use various Docker commands to setup, run and connect into containers. 
     docker version
     </copy>
     ````
-2.  Make sure you are in the /home/opc directory.  You will clone some setup scripts from git.
+3.  Make sure you are in the /home/opc directory.  You will clone some setup scripts from git.
     ````
     <copy>
     pwd
@@ -49,21 +47,24 @@ You will use various Docker commands to setup, run and connect into containers. 
      </copy>
     ````
 
-3.  Login with your Docker Hub credentials
+4.  Login with your Docker Hub credentials.
 
     ````
     <copy>
     docker login
-     </copy>
+    </copy>
     ````
+
     ![](images/section5step2.png " ")
-4.  There are database setup files that you cloned in an earlier step.   Ensure the listener has stopped.  Let's see how easy it is to deploy an Oracle Database to a docker container.  Issue the command below.  
- 
+
+5.  There are database setup files that you cloned in an earlier step.   Ensure the listener has stopped.  Let's see how easy it is to deploy an Oracle Database to a docker container.  Issue the command below.
+
     ````
     <copy>
     docker run -d -it --name orcl -h='oracledb-ao' -p=1521:1521 -p=5600:5600 -v /home/opc/AlphaOfficeSetup:/dbfiles wvbirder/database-enterprise:12.2.0.1-slim
     </copy>
     ````
+
     ![](images/section5step3.png " ")
 
     - -d runs the command in the background
@@ -72,40 +73,47 @@ You will use various Docker commands to setup, run and connect into containers. 
     - --name is the name of the container
     - v maps the directory where you downloaded the setup files to the /dbfiles directory inside the container
 
-## **Step 2:** Follow the progress of Container creation
+## **STEP 2:** Follow the progress of container creation
 
-5.  To watch the progress type the following command passing the name of the container:  orcl.  This takes time, **please be patient**.
+1.  To watch the progress type the following command passing the name of the container:  orcl.  This takes time, **please be patient**.
+
     ````
     <copy>
     docker logs --follow orcl
     </copy>
     ````
+
     ![](images/section5step4.png " ")
 
-6.  When the database creation is complete, you may see "The database is ready for use". *The instance creation may happen quickly and that message may scroll past*. Press control-c to continue.
+2.  When the database creation is complete, you may see "The database is ready for use". *The instance creation may happen quickly and that message may scroll past*. Press control-c to continue.
 
     ![](images/section5step4b.png " ")
 
 
-## **Step 3:** Create A Schema in Container Running Oracle Database and Login to EM Express
+## **STEP 3:** Create a schema in container running Oracle Database and login to EM Express
 
 1.  To create the schema we need to "login" to the container.  Type the following:
+
     ````
     <copy>
     docker exec -it orcl bash
-     </copy>
+    </copy>
     ````
-2.  Let's make sure the /dbfiles directory mapped earlier is writeable
+
+2.  Let's make sure the /dbfiles directory mapped earlier is writeable.
+
     ````
     <copy>
     cd /dbfiles
     touch xxx
     ls
-     </copy>
+    </copy>
     ````
+
     ![](images/section6step2.png " ")
 
-3.  Now run the sql scipt from inside the container using sqlplus
+3.  Now run the sql scipt from inside the container using sqlplus.
+
     ````
     <copy>
     sqlplus / as sysdba
@@ -113,35 +121,39 @@ You will use various Docker commands to setup, run and connect into containers. 
     exit
      </copy>
     ````
+
     ![](images/section6step3.png " ")
 
 4.  Now that our schema is created, let's login to Enterprise Manager Express.  Enter the address below into your browser.  If you've never downloaded flash player, you may need to install it and restart your browser.
+
     ````
     <copy>
     http://<Public IP Address>:5600/em
     </copy>
     ````
 
-5.  If prompted to enable Adobe Flash, click Allow.  Login using the credentials below.  Leave the container name field blank.  
+5.  If prompted to enable Adobe Flash, click Allow.  Login using the credentials below.  Leave the container name field blank.
+
     ````
     Username: sys
     Password: Oradoc_db1
     Check the "as SYSDBA" checkbox
     ````
+
     ![](images/em-express.png " ")
 
-    ![](images/emexpress.png " ")    
+    ![](images/emexpress.png " ")
 
 6. Explore the database using Enterprise Manager Express.
-
 
 You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Oracle NATD Solution Engineering
-* **Last Updated By/Date** - Kay Malcolm, Database Product Management, April 2020
+* **Contributors** - Kay Malcolm, Director, Anoosha Pilli, Product Manager
+* **Last Updated By/Date** - Anoosha Pilli, Product Manager, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/docker). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

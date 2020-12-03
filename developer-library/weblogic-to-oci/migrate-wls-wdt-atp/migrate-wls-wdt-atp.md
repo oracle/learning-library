@@ -418,43 +418,11 @@ appDeployments:
 
     ```
     <copy>
-    jdbc:oracle:thin:@wlsatpdb_low
+    jdbc:oracle:thin:@wlsatpdb_tp?TNS_ADMIN=/u01/data/domains/nonjrf_domain/config/atp
     </copy>
     ```
 
     Note that in a real case scenario, you should use the service name best suited for your needs (ATP support `low`, `medium`, `high`, `tp` or `tpurgent`)
-
-5. Add the extra parameters required for connection using the wallet.
-
-    Note that we will need to download the wallet on each Weblogic server to a specific location (`/u01/data/domains/<PREFIX>_domain/config/atp`), so that it is automatically replicated when scaling the server.
-
-    Add the following values under `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->Properties`
-
-    ```yaml
-    <copy>
-    oracle.jdbc.fanEnabled:
-        Value: false
-    oracle.net.tns_admin:
-        Value: /u01/data/domains/nonjrf_domain/config/atp
-    oracle.net.tls_version:
-        Value: "1.2"
-    oracle.net.ssl_server_dn_match:
-        Value: true
-    javax.ssl.trustStore:
-        Value: /u01/data/domains/nonjrf_domain/config/atp/truststore.jks
-    javax.ssl.trustStoreType:
-        Value: JKS
-    javax.ssl.trustStorePassword:
-        Value: '@@PROP:TrustStore.PasswordEncrypted@@'
-    javax.ssl.keyStore:
-        Value: /u01/data/domains/nonjrf_domain/config/atp/keystore.jks
-    javax.ssl.keyStoreType:
-        Value: JKS
-    javax.ssl.keyStorePassword:
-        Value: '@@PROP:KeyStore.PasswordEncrypted@@'
-    </copy>
-    ```
-
 
     The resulting `source.yaml` file should be like:
 
@@ -472,32 +440,12 @@ appDeployments:
                         GlobalTransactionsProtocol: TwoPhaseCommit
                         JNDIName: jdbc.JDBCConnectionDS
                     JDBCDriverParams:
-                        URL: 'jdbc:oracle:thin:@wlsatpdb_low'
+                        URL: 'jdbc:oracle:thin:@wlsatpdb_tp?TNS_ADMIN=/u01/data/domains/nonjrf_domain/config/atp'
                         PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
                         DriverName: oracle.jdbc.xa.client.OracleXADataSource
                         Properties:
                             user:
                                 Value: riders
-                            oracle.jdbc.fanEnabled:
-                                Value: false
-                            oracle.net.tns_admin:
-                                Value: /u01/data/domains/nonjrf_domain/config/atp
-                            oracle.net.tls_version:
-                                Value: "1.2"
-                            oracle.net.ssl_server_dn_match:
-                                Value: true
-                            javax.ssl.trustStore:
-                                Value: /u01/data/domains/nonjrf_domain/config/atp/truststore.jks
-                            javax.ssl.trustStoreType:
-                                Value: JKS
-                            javax.ssl.trustStorePassword:
-                                Value: '@@PROP:TrustStore.PasswordEncrypted@@'
-                            javax.ssl.keyStore:
-                                Value: /u01/data/domains/nonjrf_domain/config/atp/keystore.jks
-                            javax.ssl.keyStoreType:
-                                Value: JKS
-                            javax.ssl.keyStorePassword:
-                                Value: '@@PROP:KeyStore.PasswordEncrypted@@'
     appDeployments:
         Application:
             SimpleDB:
@@ -541,15 +489,11 @@ appDeployments:
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
-3. Add the 2 password properties for the `TrustStore` and the `KeyStore`. This is the password used when downloading the wallet. Here we use the password used in the script, but make sure to enter your own password if you changed it when downloading the wallet on the WLS servers
-
   the resulting file should look like the follwoing (with the default wallet password):
 
     ```yaml
     <copy>
     JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
-    TrustStore.PasswordEncrypted=atpPasSword1
-    KeyStore.PasswordEncrypted=atpPasSword1
     </copy>
     ```
 
@@ -859,7 +803,7 @@ updateDomain.sh completed successfully (exit code = 0)
 
 2. In Firefox you will see the self-certificate warning as below:
 
-    <img src="./images/self-cert-warning.png" width="100%">
+    <img src="../../../migrate-wls-wdt-atp/images/self-cert-warning.png" width="100%">
 
     Click **Advanced...** and then **Accept the Risk and Continue**
 
@@ -867,14 +811,14 @@ updateDomain.sh completed successfully (exit code = 0)
 
 4. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
 
-  <img src="./images/oci-deployments.png" width="100%">
+  <img src="../../../migrate-wls-wdt-atp/images/oci-deployments.png" width="100%">
 
 5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioing, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
     Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
 
-  <img src="./images/oci-simpledb-app.png" width="100%">
+  <img src="../../../migrate-wls-wdt-atp/images/oci-simpledb-app.png" width="100%">
 
 You may proceed to the next lab.
 
@@ -884,6 +828,6 @@ You may proceed to the next lab.
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

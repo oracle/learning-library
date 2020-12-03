@@ -26,7 +26,7 @@ This workshop walks you through the steps to get started using the **Oracle Auto
 
 - Perfect for Developers!
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 - Create an Autonomous Database with the latest features of Oracle Databases

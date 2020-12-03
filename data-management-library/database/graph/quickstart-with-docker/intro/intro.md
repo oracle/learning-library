@@ -6,7 +6,7 @@ In this workshop, you will work with Docker images for an Oracle Database and de
 
 Next, you will load data, create a graph, and query and analyze the graph and visualize query results. The data consists of information about customers, their social network, their accounts, their purchases, and the stores where they made these purchases.
 
-Estimated Workshop Time: 75 minutes.
+Estimated Workshop Time: 130 minutes.
 
 ### About Oracle Property Graph
 
@@ -31,7 +31,7 @@ In this workshop, you will:
 
 ### Prerequisites
 
-- This workshop requires Docker and Git. You must have Docker and Git installed and running on your machine.
+- This workshop requires an Oracle Free Tier, Always Free, Paid or an existing Oracle Cloud account (Not all services in this workshop are Always Free services).
 
 ## Acknowledgements
 
@@ -40,6 +40,6 @@ In this workshop, you will:
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

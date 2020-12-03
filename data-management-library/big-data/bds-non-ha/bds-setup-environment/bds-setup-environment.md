@@ -147,7 +147,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
 
 4. In the **Create Policy** dialog box, provide the following information:
-    - Enter **`training-admin-policy`** in the **NAME** field.
+    * Enter **`training-admin-policy`** in the **NAME** field.
     - Enter **`Training Admin Group Policy`** in the **DESCRIPTION** field.
     - Select **`training-compartment`** from the **COMPARTMENT** drop-down list, if it's not already selected.
     - In the **Policy Builder** section, click the **Customize (Advanced)** link. An empty text box is displayed in this section.
@@ -186,6 +186,8 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
     + In the **POLICY VERSIONING** section, accept the default **KEEP POLICY CURRENT** option.
 
+    + Uncheck the **CREATE ANOTHER POLICY** check box.
+    
 7. Click **Create**. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
 
        ![](./images/policy-2-detail-page.png " ")

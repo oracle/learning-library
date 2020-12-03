@@ -1,36 +1,37 @@
 {
     "workshoptitle": "Introduction to Cloud Native",
-    "tutorials": [{
-            "title": "Prerequisites",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
+    "tutorials": [
         {
             "title": "Introduction",
             "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Prerequisites",
+            "filename": "../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Setup Cloud Environment",
             "filename": "../../setup-cloud-env/setup-cloud-env.md"
         },
         {
-            "title": "Lab 2: Autonomous Microservice Data Structure Configuration",
-            "filename": "../../autonomous-microservice-data-structure-configuration/autonomous-microservice-data-structure-configuration.md"
+            "title": "Lab 2: Deploy the Microservices App",
+            "filename": "../../../../../developer-library/mushop/deploy/deploy.md"
         },
         {
-            "title": "Lab 3: Building, Containerizing Java REST Services",
-            "filename": "../../containerizing-java-services/containerizing-java-services.md"
+            "title": "Lab 3: Monitoring the deployment",
+            "filename": "../../../../../developer-library/mushop/observability/monitoring.md"
         },
         {
-            "title": "Lab 4: Kubernetes REST Service Deployment",
-            "filename": "../../kubernetes-rest-service-deployment/kubernetes-rest-service-deployment.md"
+            "title": "Functions Prerequisites",
+            "filename": "../../../da-functions-load-file-into-adw-python/prerequisites/functions.md"
         },
         {
-            "title": "Lab 5: Generate SSH Keys - Cloud Shell",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+            "title": "Lab 4: Functions",
+            "filename": "../../../da-functions-load-file-into-adw-python/fn-lab/lab.md"
         },
         {
-            "title": "Lab 6: Configuring Functions",
-            "filename": "./../../configuring-fn/configuring-fn.md"
+            "title": "Lab 5 (OPTIONAL): Clean Up",
+            "filename": "../../cleanup/cleanup.md"
         }
     ]
 }

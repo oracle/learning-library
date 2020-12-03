@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Migrate a WebLogic domain to Oracle Cloud Infrastructure",
+    "workshoptitle": "Migrate WebLogic Server to OCI with Autonomous Database",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -8,7 +8,8 @@
         },{
             "title": "Introduction",
             "publisheddate": "07/30/2020",
-            "filename": "../../../intro/intro.md"
+            "filename": "../../../intro/intro.md",
+            "type": "oci"
         },
         {
             "title": "Lab 1: Setup the Demo On-Premises Environment",
@@ -43,7 +44,8 @@
         {
             "title": "Lab 5: Migrate the Application Database",
             "publisheddate": "07/30/2020",
-            "filename": "../../../migrate-app-db-atp-datapump/migrate-app-db-atp-datapump.md"
+            "filename": "../../../migrate-app-db-atp-datapump/migrate-app-db-atp-datapump.md",
+            "type": "oci"
         },
         {
             "title": "Lab 6: Migrate the WebLogic Domain",

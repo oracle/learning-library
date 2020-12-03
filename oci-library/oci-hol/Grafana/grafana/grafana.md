@@ -240,7 +240,7 @@ As part of preparation for this lab, a dynamic group and IAM policy was created.
     ![](./../grafana/images/Grafana_008.PNG " ")
 
 12. Switch to Grafana tab and paste the OCID in **Tenancy OCID**. Choose your region for **Default Region**
-Choose **OCI Instance** for Enviornment.
+Choose **OCI Instance** for environment.
     ![](./../grafana/images/Grafana_009.PNG " ")
 
 13. Click **Save & Test** and verify **Data source is working** message is displayed.

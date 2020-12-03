@@ -8,7 +8,8 @@
         },{
             "title": "Introduction",
             "publisheddate": "07/30/2020",
-            "filename": "../../../intro/intro.md"
+            "filename": "../../../intro/intro.md",
+            "type": "oci"
         },
         {
             "title": "Lab 1: Setup the Demo On-Premises Environment",
@@ -38,7 +39,8 @@
         {
             "title": "Lab 4: Provision the Database on OCI",
             "publisheddate": "07/30/2020",
-            "filename": "../../../provision-app-db/provision-app-db.md"
+            "filename": "../../../provision-app-db/provision-app-db.md",
+            "type": "oci"
         },
         {
             "title": "Lab 5: Gather Information about the DB VM on OCI",
@@ -48,7 +50,8 @@
         {
             "title": "Lab 6: Migrate the Application Database",
             "publisheddate": "07/30/2020",
-            "filename": "../../../migrate-app-db-datapump/migrate-app-db-datapump.md"
+            "filename": "../../../migrate-app-db-datapump/migrate-app-db-datapump.md",
+            "type": "oci"
         },
         {
             "title": "Lab 7: Migrate the WebLogic Domain",

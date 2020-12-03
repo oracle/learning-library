@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Introduction to Cloud Native",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro-sandbox.md"
+        },
+        {
+            "title": "Lab 1: Deploy the Microservices App",
+            "filename": "../../../../../developer-library/mushop/deploy/deploy-sandbox.md"
+        },
+        {
+            "title": "Lab 2: Monitoring the deployment",
+            "filename": "../../../../../developer-library/mushop/observability/monitoring-sandbox.md"
+        },
+        {
+            "title": "Lab 3: Functions Prerequisites",
+            "filename": "../../../da-functions-load-file-into-adw-python/prerequisites/functions-sandbox.md"
+        },
+        {
+            "title": "Lab 4: Functions",
+            "filename": "../../../da-functions-load-file-into-adw-python/fn-lab/lab-sandbox.md"
+        },
+        {
+            "title": "Lab 5 (OPTIONAL): Clean Up",
+            "filename": "../../cleanup/cleanup-sandbox.md"
+        }
+    ]
+}

@@ -6,7 +6,7 @@ Before you get started, you will need an Oracle Cloud account. This 5-minute lab
 
 ### Existing Cloud Accounts
 
-If you already have access to an Oracle Cloud Account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
+If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
 
 ### Two Cloud Offers in One
 
@@ -99,7 +99,7 @@ You may now [proceed to the next lab](#next).
 ## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Last Updated By/Date** - Kamryn Vinson, Database Product Management, October 2020
+- **Last Updated By/Date** - John Peach, Kamryn Vinson, Database Product Management, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

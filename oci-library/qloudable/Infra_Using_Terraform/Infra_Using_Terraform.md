@@ -288,7 +288,7 @@ Paste this OCID in **env-vars** file
 source env-vars
 ```
 
-17. The enviornment is now set. Next we will download a terraform file (.tf) file that will be used to create VCN, Compute instnace, block volume and attach block volume to compute instance. We will download this file in **/home/opc** directory, Enter Command:
+17. The environment is now set. Next we will download a terraform file (.tf) file that will be used to create VCN, Compute instnace, block volume and attach block volume to compute instance. We will download this file in **/home/opc** directory, Enter Command:
 ```
 cd /home/opc
 ```

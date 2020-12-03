@@ -1,0 +1,3 @@
+#!/bin/bash
+export CLASSPATH=../lib/launcher/ant.jar:../lib/launcher/ant-launcher.jar:$JAVA_HOME/lib/tools.jar:$CLASSPATH
+java org.apache.tools.ant.Main

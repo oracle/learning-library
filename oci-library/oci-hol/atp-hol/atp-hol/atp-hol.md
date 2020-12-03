@@ -36,7 +36,7 @@ In this lab, you will dynamically scale the number of OCPU resources available t
 
 1. Switch to OCI console, from services menu Click **Autonomous Transaction Processing** under Oracle Database.
 
-2. Select your compartment. <if type="livelabs">Your compartment should begin with the username you logged in with. Do not select the root compartment. <if>Leave Transaction Processing selected. Click **Create Autonomous Database**.
+2. Select your compartment. <if type="livelabs">Your compartment should begin with the username you logged in with. Do not select the root compartment. </if>Leave Transaction Processing selected. Click **Create Autonomous Database**.
 
 3. Fill out the dialog box:
 

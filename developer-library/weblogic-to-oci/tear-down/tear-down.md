@@ -25,7 +25,13 @@ In this lab you will tear down the infrastructure provisioned.
     </copy>
     ```
 
+    Note: the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment
+
 ### If you used the workshop image from the marketplace
+
+*If you intend on accessing the environment deployed after destroying the demo environment, you must extract the SSH key pair that was created inside the demo VM, or you will lose SSH access to the OCI environment*
+
+To destroy the demo VM:
 
 1. Go to **Resources Manager**
 
@@ -33,17 +39,17 @@ In this lab you will tear down the infrastructure provisioned.
 
 3. Click the stack name for the **Workshop on-premises environment**
 
-  <img src="./images/stack.png"  width="50%">
+  <img src="../../../tear-down/images/stack.png"  width="50%">
 
 4. In **Terraform Actions**, click **Destroy**
 
-  <img src="./images/tf-destroy.png"  width="50%">
+  <img src="../../../tear-down/images/tf-destroy.png"  width="50%">
 
 5. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
 6. Click **Delete Stack**
 
-  <img src="./images/delete-stack.png"  width="50%">
+  <img src="../../../tear-down/images/delete-stack.png"  width="50%">
 
 <if type="dbcs">
 ## **STEP 2:** Tear down the Application Database on OCI
@@ -111,13 +117,13 @@ You need to terminate the DB subnet before you can tear down the WebLogic deploy
 
 3. In **Terraform Actions**, click **Destroy**
 
-  <img src="./images/tf-destroy.png"  width="50%">
+  <img src="../../../tear-down/images/tf-destroy.png"  width="50%">
 
 4. Once the job completed, click **stack details** in the bread-crumbs menu to get back to the stack details.
 
 5. Click **Delete Stack**
 
-  <img src="./images/delete-stack.png"  width="50%">
+  <img src="../../../tear-down/images/delete-stack.png"  width="50%">
 
 ## Acknowledgements
 
@@ -125,6 +131,6 @@ You need to terminate the DB subnet before you can tear down the WebLogic deploy
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

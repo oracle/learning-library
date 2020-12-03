@@ -6,7 +6,7 @@
 
 This workshop walks you through the steps to use **Autonomous Database** and **Application Express (APEX)** to store information, offer a **REST API** with **Oracle REST Data Services (ORDS)** and enable you to interact with your customers by keeping a conversation with **Digital Assistant**.
 
-Estimated Workshop Time: 120 minutes
+Estimated Workshop Time: 90 minutes
 
 ### Objectives
 

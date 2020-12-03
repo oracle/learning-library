@@ -2,11 +2,11 @@
 
 ## Getting Started
 
-Before attempting any of the workshops listed below you need to determine which environment you are going to utilize. You have the choice of signing up for an "Always Free" service on Oracle Autonomous Database, or signing up for the free, "Development-Only" service on [http:\\apex.oracle.com](http:\\apex.oracle.com). Prerequisites in each workshop will walk you through how to register for a new service.
+Before attempting any of the workshops listed below you need to determine which environment you are going to utilize. You have the choice of signing up for an "Always Free" service on Oracle Autonomous Database, or signing up for the free, "Development-Only" service on [http://apex.oracle.com](http://apex.oracle.com). Prerequisites in each workshop will walk you through how to register for a new service.
 
 ## Overview
 
-These workshops are based on Oracle APEX 20.1.
+These workshops are based on Oracle APEX 20.2.
 
 ## Available Workshops
 Each workshop is completely independent and does not rely on any other lab, therefore, you can complete the labs in any order you choose. The labs do not require any prior knowledge of APEX.
@@ -27,4 +27,4 @@ Please submit feedback or ask for help using our [LiveLabs Support Forum](https:
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 ### Archived Tutorials
-If you are looking for workshops designed for APEX 19.2 and earlier versions, [please use this link](https://apex.oracle.com/en/learn/tutorials/archived/).
+If you are looking for workshops designed for earlier versions, [please use this link](https://apex.oracle.com/en/learn/tutorials/archived/).

@@ -9,7 +9,7 @@ Estimated Lab Time:  5 minutes
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
--   Idenfity DB Instance Public IP Addresses
+-   Identify DB Instance Public IP Addresses
 -   Connect to the each RAC instance:  Node 1 and Node 2
 
 ### Prerequisites
@@ -63,7 +63,7 @@ For more information about Terraform and Resource Manager, please see the append
 
 
 ## **STEP 6**: MAC or Windows CYGWIN Emulator
-*NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before conneting. *
+*NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 1.  Using one of the Public IP addresses in Step 4, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
     ````
@@ -81,7 +81,7 @@ For more information about Terraform and Resource Manager, please see the append
 3. After successfully logging in, you may *proceed to the next lab*
 
 ## **STEP 7**: Windows using Putty
-*NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before conneting. *
+*NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
@@ -115,7 +115,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 ### **Repeat Putty setup for the second node**
 
-1. Repeat the steps upbove to create a login window for the second node - use the Public IP address of node2
+1. Repeat the steps above to create a login window for the second node - use the Public IP address of node2
 3.  Select or enter the following information:
     - Category: _Session_
     - IP address: _Your service instance’s (node2) public IP address_
@@ -126,7 +126,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 You may now *proceed to the next lab*.  
 
-## Appendix:  Teraform and Resource Manager
+## Appendix:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
@@ -186,7 +186,7 @@ When creating a stack your ability to create an instance is based on the capacit
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
 5.  Click on the stack you created previously
@@ -208,7 +208,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**

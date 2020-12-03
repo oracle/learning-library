@@ -9,8 +9,9 @@
 5. In a third tab, open workshop-with-commons/product-solution-short-name/workshops/just-visualization-workshop-name
 6. We precreated 7 folders.  A workshop is created out of multiple labs.  
 7. Make sure you stick to all lower case and dashes for spaces
-8. Make sure you watch this [video](https://otube.oracle.com/media/1_ucr6grc6) for how to do Self QA of a workshop.  These are the standards that need to be met before going to production.  (It's short don't worry!)
-9. Download our [QA Feedback doc](https://confluence.oraclecorp.com/confluence/download/attachments/1966947336/LiveLabs-QA-Feedback-Form-v2.docx?version=2&modificationDate=1598913736000&api=v2) as well.  We find workshops get in production quicker when you know what's needed to move to production up front and you use the skeleton.
+8. Your image names should have descriptive names. Not just adb1, adb2, adb3.  For handicap accessiblity we need the image descriptions to explain what the image looks like.  Remember all lower case and dashes.
+9. Make sure you watch this [video](https://otube.oracle.com/media/1_ucr6grc6) for how to do Self QA of a workshop.  These are the standards that need to be met before going to production.  (It's short don't worry!)
+10. Download our [QA Feedback doc](https://confluence.oraclecorp.com/confluence/download/attachments/1966947336/LiveLabs-QA-Feedback-Form-v2.docx?version=2&modificationDate=1598913736000&api=v2) as well.  We find workshops get in production quicker when you know what's needed to move to production up front and you use the skeleton.
 
 PS  You do not need a Readme.md.  Readme's exist only at the top library levels. We direct all traffic to LiveLabs since we can't track usage on GitHub.  Do not create any direct links to GitHub, your workshop may be super popular but we can't track it so no one will know.
 

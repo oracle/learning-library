@@ -1,10 +1,11 @@
 {
-  "workshoptitle": "Oracle Data Safe",
+  "workshoptitle": "Oracle Data Safe Fundamentals",
     "tutorials": [
       {
           "title": "Prerequisites",
           "description": "Prerequisites to run the Oracle Data Safe workshop in the LiveLabs tenancy.",
-          "filename": "./prerequisites.md"        },
+          "filename": "./prerequisites.md"
+        },
           {
               "title": "Introduction",
               "description": "This lab provides information about the Oracle Data Safe workshop.",

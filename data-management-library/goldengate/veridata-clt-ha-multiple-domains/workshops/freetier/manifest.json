@@ -1,0 +1,31 @@
+{
+  "workshoptitle": "A Few Advanced Features of Oracle GoldenGate Veridata",
+    "tutorials": [
+
+      {
+            "title": "Introduction to Oracle GoldenGate Veridata",
+            "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
+            "filename": "./intro.md"
+        }
+        ,
+        {
+              "title": "Lab 1: Use the Oracle GoldenGate Veridata Command-line Utilities",
+              "description": "This lab walks you through This lab describes how to accomplish the following tasks using Oracle GoldenGate Veridata command-line utilities:",
+              "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
+        }
+        ,
+        {
+              "title": "Lab 2: Set Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability",
+              "description": "This lab shows you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.x) deployed on the Oracle WebLogic Platform for High Availability.",
+              "filename": "./../../ggv_ha_data-server/ggv-ha-data-server.md"
+          }
+          ,
+
+          {
+               "title": "Lab 3: Create Multiple Domains for Oracle GoldenGate Veridata",
+                "description": "This lab shows you how to create multiple domains for Oracle GoldenGate Veridata",
+                "filename": "./../../ggv-create-multiple-domains/ggv-create-multiple-domains.md"
+            }
+
+       ]
+  }

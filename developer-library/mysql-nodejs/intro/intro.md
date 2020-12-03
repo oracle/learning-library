@@ -10,7 +10,6 @@ As Derek, you will spin up a new Oracle Cloud Developer Instance and build a Ser
 
 Estimated Workshop Time: 100 minutes
 
-Please proceed to the next lab.
 
 ## Acknowledgements
 

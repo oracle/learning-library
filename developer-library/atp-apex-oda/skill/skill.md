@@ -20,7 +20,7 @@ Go to **Digital Assistant Dashboard** as we did on **Lab 3**. As a reminder chec
 
 ![ODA Menu Service Console](./images/oda_lab5_2.png)
 
-Estimated Lab Time: 45 minutes
+Estimated Lab Time: 20 minutes
 
 ## **STEP 1**: Build your first Skill
 
@@ -104,7 +104,7 @@ Let's create a **Greeting Intent**.
 
     - **Conversation Name**: ListTasks
     - **Name**: ListTasks
-    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `list my tasks` and click enter. Wait to be added as part of the intents. Type on the same filed `show me my tasks` and wait to be added as before. And finally type on the same filed `tasks` and wait to be added as before
+    - **Utterances to Add**: In this field is where you have to type the different Greetings that you want to include as part of the Intent. Type on this field `list my tasks` and click enter. Wait to be added as part of the intents. Type on the same field `show me my tasks` and wait to be added as before. And finally type on the same field `tasks` and wait to be added as before.
 
     The three **Intents** that you added a few seconds ago will be visible in the page. Check the following screenshot to confirm.
 
@@ -124,90 +124,25 @@ Time to **integrate** your **Custom Component with the Intent** `ListTasks` crea
 
     ![Flows 2](./images/flows_2.png)
 
-3. **Copy** this `YAML` content:
-
-    ```yaml
-    metadata:
-    platformVersion: '1.1'
-    main: true
-    name: mytasks
-
-    context:
-    variables:
-        iResult: 'nlpresult'
-
-    states:
-    intent:
-        component: 'System.Intent'
-        properties:
-        variable: iResult
-        transitions:
-        actions:
-            Greeting: greeting
-            ListTasks: listTasks
-            unresolvedIntent: unresolved
-
-    greeting:
-        component: System.Output
-        properties:
-        translate: false
-        text: 'Greetings, hooman!'
-        keepTurn: false
-        transitions:
-        return: greeting
-
-    listTasks:
-        component: com.example.tasks
-        transitions:
-        actions:
-            success: successState
-            failure: failureState
-
-    successState:
-        component: 'System.Output'
-        properties:
-        text: |-
-            Success!
-        keepTurn: false
-        transitions:
-        return: 'done'
-
-    failureState:
-        component: 'System.Output'
-        properties:
-        text: |-
-            Failed! Check the logs.
-        keepTurn: false
-        transitions:
-        return: 'done'
-
-    unresolved:
-        component: System.Output
-        properties:
-        translate: false
-        text: "I don't understand. What do you want to do?"
-        keepTurn: false
-        transitions:
-        return: unresolved
-    ```
+2. **Copy** the `YAML` content from [here](files/flow.yml) and paste it into the canvas.
 
     The **Flows** section should look like this one:
 
     ![Flows 3](./images/flows_3.png)
 
-4. **Make sure** the syntax is correct. **Click** on the `Validate` button. **Be sure** that you get the **correct validation message** on the top of the page as you can see on the image below:
+3. **Make sure** the syntax is correct. **Click** on the `Validate` button. **Be sure** that you get the **correct validation message** on the top of the page as you can see on the image below:
 
     ![Flows 4](./images/flows_4.png)
 
-1. Click **Train** button to run the **Machine Learning Algorithm**.
+4. Click **Train** button to run the **Machine Learning Algorithm**.
 
     ![Flows 5](./images/flows_5.png)
 
-6. **Be sure** that you get the **correct train message** confirmation on the top of the page as you can see on the image below:
+5. **Be sure** that you get the **correct train message** confirmation on the top of the page as you can see on the image below:
 
     ![Flows 6](./images/flows_6.png)
 
-7. **Run** the test of the skill clicking the `Play` button next to `Validate`.
+6. **Run** the test of the skill clicking the `Play` button next to `Validate`.
 
     ![Run Flows](./images/flows_7.png)
 

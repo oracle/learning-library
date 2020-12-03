@@ -1,0 +1,20 @@
+#!/bin/bash; C:/Program\ Files/Git/usr/bin/sh.exe
+# check and exit if a binary file is in the commit, proceed otherwise
+
+has_invalid_file=false
+
+for fileName in $(git status -s | grep '^[MARCD]' | cut -d " " -f3)
+do
+  if [[ $fileName =~ \.(zip|tar|mp4|csv|exe|sh|tf|xls|py) ]]
+  then
+    echo "$fileName => Cannot be committed!"
+    has_invalid_file=true
+  fi
+done
+
+if [ $has_invalid_file == true ]
+then
+  echo "Commit Aborted!"
+  echo "Oracle policy restricts storing binary files in GitHub. Please store the files in object storage or contact us on #livelabs-help slack channel."
+  exit 1
+fi

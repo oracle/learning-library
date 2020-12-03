@@ -15,7 +15,7 @@ Estimated Lab Time: 25 minutes
 
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## **STEP 1:** Prepare your terraform script for execution
+## **STEP 1:** Prepare your Terraform Script for Execution
 
 Terraform provides a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects. This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
@@ -31,11 +31,11 @@ Terraform provides a reusable process for creating infrastructure. In some cases
 
   ![](images/011.png " ")
 
-4. Click on **Browse** and find the zipped **node-mysql-hol-tf.zip** file. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
+4. Select **My Configuration**, choose the **.ZIP FILE** button, Click on **Browse** and find the zipped **node-mysql-hol-tf.zip** file. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
 
-  ![](images/terra01.png " ")
+  ![](./images/zip-file.png)
 
-5. You can configure different variables on this screen. A password for the MySQL user is suggested. You can change it according to your wishes, as long as you fulfill the requirements. **For this Hands-on-Lab the password will not be stored securly. Don't use a password you use elsewhere**.  Select Next.
+5. You can configure different variables on this screen. A password for the MySQL user is suggested. You can change it according to your wishes, as long as you fulfill the requirements. **For this Hands-on-Lab the password will not be stored securely. Don't use a password you use elsewhere**.  Select Next.
 
   ![](images/terra02.png " ")
 

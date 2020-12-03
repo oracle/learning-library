@@ -23,7 +23,7 @@ Estimated Lab Time: 25 minutes
 To access the system you need the private ssh key and the IP, which were created by
 Terraform and was shown on the **Application Information** tab in the 
 **Resource Manager**. Store it in a file like `ssh_private_key`. The file must
-not be world readble on your machine, otherwise the ssh client will complain.
+not be world readable on your machine, otherwise the ssh client will complain.
 By default a user with name `opc` is created. On first connect your
 client will ask to confirm the server identity, type `yes` to confirm.
 
@@ -45,26 +45,26 @@ ssh client frequently used on Windows. To access the system you need
 the private ssh key and the IP, which were created by Terraform. The key from the
 previous Lab has to be stored in a file.
 
-Before being able to use it, the key has to be converted to PuTTY's format. For that
+1. Before being able to use it, the key has to be converted to PuTTY's format. For that
 the **PuTTYgen** tool is being used. In that tool open the **Conversion** menu and 
 pick **Import key**. After picking the file you stored the key details will be
 shown in the main window. Now click **Save private key** and store that file.
 
   ![](images/putty_key_convert.png " ")
 
-After the conversion you can close **PuTTYgen** and open **PuTTY**. In there pick
+2. After the conversion you can close **PuTTYgen** and open **PuTTY**. In there pick
 the **SSH**, **Auth** section and load the **Private Key**.
 
   ![](images/putty_key.png " ")
 
-After that go to the **Session** section, enter the **IP** address from your compute
-isntance, as shown in the Terraform Application Informationm ake sure **SSH** is set
+3. After that go to the **Session** section, enter the **IP** address from your compute
+instance, as shown in the Terraform Application Information make sure **SSH** is set
 as protocol and **Port 22** is selected. After clicking **Open** enter **opc** as
 username when asked.
 
   ![](images/putty_connect.png " ")
 
-## **STEP 2:** Use MySQL Shell to access the MySQL Database Service Instance
+## **STEP 2:** Use MySQL Shell to Access the MySQL Database Service Instance
 
 In the Terraform output you got an URL in the format `mysqlx://` which can be
 used with MySQL Shell. MySQL Shell is an interactive Shell, introduced with
@@ -80,11 +80,11 @@ Let's login to MySQL:
     ...
     Server version: 8.0.21-u1-cloud MySQL Enterprise - Cloud
     No default schema selected; type \use <schema> to set one.
-     MySQL  10.0.2.7:33060+ ssl  JS > 
+      MySQL  10.0.2.7:33060+ ssl  JS > 
     
-*Note: Make sure you are using the IP from your environment. Also mind that the
-default password of this setup uses special characters like `!` thus we have to
-escape it using single quote (`'`) on the command line!*
+  *Note: Make sure you are using the IP from your environment. Also mind that the
+  default password of this setup uses special characters like `!` thus we have to
+  escape it using single quote (`'`) on the command line!*
 
 The application you will build uses MySQL as Document Store. As the database
 instance is empty we have to create a database schema and a collection.
@@ -211,7 +211,7 @@ Terraform setup:
 Using the `--help` option the OCI tool will provide context sensitive help
 about available APIs.
 
-## **STEP 4:** Configure fn client for Oracle Functions
+## **STEP 4:** Configure fn Client for Oracle Functions
 
 The application you are going to build, is a serverless application using
 Oracle Functions. Serverless also known as FaaS let's you run an microservice

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Part2 (Advanced) - ASO",
+  "workshoptitle": "DB Security - Advanced Security Options",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -36,13 +36,13 @@
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
-      "title": "Lab 5: Oracle Transparent Data Encryption (TDE)",
+      "title": "Lab 5: Transparent Data Encryption (TDE)",
       "description": "In this lab you can see how to leverage Oracle Transparent Data Encryption (TDE)",
       "publisheddate": "10/20/2020",
       "filename": "../../advanced-security/tde/tde.md"
     },
     {
-      "title": "Lab 6: Oracle Data Redaction",
+      "title": "Lab 6: Data Redaction",
       "description": "In this lab you can see how to leverage Oracle Data Redaction",
       "publisheddate": "10/20/2020",
       "filename": "../../advanced-security/data-redaction/data-redaction.md"

@@ -1,0 +1,69 @@
+{
+  "workshoptitle": "Oracle GoldenGate Classic",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to Classic",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+    {
+      "title": "Lab 4: Initial GoldenGate Setup",
+      "description": "Initial Setup",
+      "filename": "../../initial-setup/initial-setup.md"
+    },
+    {
+      "title": "Lab 5: Oracle to MySql Replication",
+      "description": "Oracle to MySql Replication",
+      "filename": "../../oracle-to-mysql/oracle-to-mysql.md"
+    },
+    {
+      "title": "Lab 6: MySql to Oracle Replication",
+      "description": "MySql to Oracle Replication",
+      "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
+    },
+    {
+      "title": "Lab 7: Active Active Replication",
+      "description": "Bidirectional Active Active Replication - HA/DR",
+      "filename": "../../active-active/active-active.md"
+    },
+    {
+      "title": "Lab 8: GoldenGate Column Conversions",
+      "description": "GoldenGate Column Conversions",
+      "filename": "../../column-conversions/column-conversions.md"
+
+    },
+    {
+      "title": "Lab 9: Install GoldenGate for PostgresSQL",
+      "description": "GoldenGate installation for PostgresSQL",
+      "filename": "../../postgres-installation/postgres-installation.md"
+
+    },
+    {
+      "title": "Lab 10: PostgreSQL to PostgresSQL Replication",
+      "description": "PostgreSQL to PostpresSQL Replication",
+      "filename": "../../postgresql-to-postgresql/postgresql-to-postgresql.md"
+    }
+  ]
+}

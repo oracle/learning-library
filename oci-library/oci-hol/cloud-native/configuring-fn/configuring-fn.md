@@ -7,13 +7,12 @@ Estimated Time: 75 minutes
 
 ### Prerequisites
 
-1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-4. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-5. [Connecting to a Compute Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
-6. Free Trial, LiveLabs or Paid Oracle Cloud account
-7. Lab 1: Generate SSH Keys - Cloud Shell
+* [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
+* [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+* [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+* [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+* [Connecting to a Compute Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+* Free Trial, LiveLabs or Paid Oracle Cloud account
 
 
 ## **STEP 1**: Create a Virtual Cloud Network

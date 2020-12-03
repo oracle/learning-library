@@ -106,7 +106,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
    <img src="../../provision-soamp/images/service-type.png" width="70%">
 
 
-7. Keep the **Enable SOA Schema partinioning** unchecked
+7. Keep the **Enable SOA Schema partitioning** unchecked
 
    <img src="../../provision-soamp/images/partitioning.png" width="70%">
 
@@ -166,7 +166,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 21. Select **EXISTING SUBNET FOR BASTION HOST** as `Public Subnet-SOAMP1VCN(Regional)`
 
-   **Note:** Since we are choosing private subnet for SOA instance we need a bastion host in public subnet (using public IP which is the gateway to SOA instance for the external world) to connect internally to the private IP of SOA Instance , bastion host wouldn't be required if we use public subnet for SOA instance as it will have a public IP to be commnubicated from eternal world.
+   **Note:** Since we are choosing private subnet for SOA instance we need a bastion host in public subnet (using public IP which is the gateway to SOA instance for the external world) to connect internally to the private IP of SOA Instance , bastion host wouldn't be required if we use public subnet for SOA instance as it will have a public IP to be communicated from eternal world.
 
   <img src="../../provision-soamp/images/bastion3.png" width="70%">
 

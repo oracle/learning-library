@@ -45,7 +45,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 ## **Step 2:** Create and connect to compute instance
 
-1. Got to your OCI console. From OCI services menu, under **Compute**, click **Instances**.
+1. Go to your OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
 2. Click **Create Instance**. Fill out the dialog box:
 

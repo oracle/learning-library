@@ -24,7 +24,7 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -34,7 +34,7 @@ This lab assumes you have:
 | 1 | Display the current audit settings | 5 minutes |
 | 2 | Audit Non App Usage | 10 minutes |
 | 3 | Audit Database Role Usage | 10 minutes |
-| 4 | Audit Data Pump Usage | 5 minutes |
+| 4 | Cleanup the Unified Auditing configuration | <5 minutes |
 
 ## **STEP 1**: Display the current audit settings
 
@@ -288,64 +288,20 @@ When such a policy is enabled, Oracle Database audits all system privileges that
 
    ![](./images/ua-025.png " ")
 
-10. When you have completed the lab, you can run the cleanup script
+## **STEP 4**: Cleanup the Unified Auditing Configuration
 
-      ````
-      <copy>./09_cleanup.sh</copy>
-      ````
-
-## **STEP 4**: Audit Data Pump Usage
-
-In this lab you will configure the Unified Audit Trail and review an audit of Oracle Data Pump export. This is a feature of Unified Audit that is not available in traditional auditing.
+When you have completed the lab, you can run the cleanup script
 
 1. Go to the scripts directory
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Unified_Auditing/Audit_DataPump</copy>
+      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Unified_Auditing/Audit_DB_Role</copy>
       ````
 
-2. Switch to pure Unified Audit mode
+2. Run
 
       ````
-      <copy>./01_configure_unified_audit_trail.sh</copy>
-      ````
-
-    **Note**: This involves shutting down the database, making a change to the binary, and restarting it
-
-3. Review the audit settings
-
-      ````
-      <copy>./02_current_audit_settings.sh</copy>
-      ````
-
-4. Generate Audit activity
-
-      ````
-      <copy>./03_generate_audit_workload.sh</copy>
-      ````
-
-5. View the audit records from the activity
-
-      ````
-      <copy>./04_review_audit_output.sh</copy>
-      ````
-
-6. Create a Unified Audit policy to audit Data Pump activities
-
-      ````
-      <copy>./05_audit_datapump_export.sh</copy>
-      ````
-
-7. Perform a test Data Pump Export
-
-      ````
-      <copy>./06_datapump_export_hr_table.sh</copy>
-      ````
-
-8. Review the Unified Audit Trail for the Data Pump activity
-
-      ````
-      <copy>./07_review_datapump_audit_events.sh</copy>
+      <copy>./09_cleanup.sh</copy>
       ````
 
 You may proceed to the next lab.

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Part2 (Advanced) - DV",
+  "workshoptitle": "DB Security - Database Vault",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -36,7 +36,7 @@
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
-      "title": "Lab 5: Oracle Database Vault (DV)",
+      "title": "Lab 5: Database Vault (DV)",
       "description": "In this lab you can see how to leverage Oracle Database Vault (DV)",
       "publisheddate": "10/20/2020",
       "filename": "../../database-vault/database-vault.md"

@@ -1,0 +1,1 @@
+Oracle Spatial platform overview showing in-database features and deployable mid-tier components

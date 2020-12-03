@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Build the Perfect Digital Assistant for Your Business",
+    "workshoptitle": "Digital Assistant Fundamentals",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -21,15 +21,15 @@
         },
         {
             "title": "Lab 3: Personalize Your Digital Assistant",
-            "filename": "../../data-load/data-load.md"
+            "filename": "../../personalize/personalize.md"
         },
         {
             "title": "Lab 4: Evaluate Routing Behaviors",
-            "filename": "../../query/query.md"
+            "filename": "../../evaluate/evaluate.md"
         },
         {
             "title": "Lab 5: Expose the Digital Assistant to Users through a Web Channel",
-            "filename": "../../analyze/analyze.md"
+            "filename": "../../expose/expose.md"
         }
     ]
 }

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Database Security - Part2 (Advanced) - AVDF",
+  "workshoptitle": "DB Security - Audit Vault and DB Firewall",
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -36,7 +36,7 @@
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
-      "title": "Lab 5: Oracle Audit Vault and DB Firewall (AVDF)",
+      "title": "Lab 5: Audit Vault and DB Firewall (AVDF)",
       "description": "In this lab you can see how to leverage Oracle Audit Vault and DB Firewall (AVDF)",
       "publisheddate": "10/20/2020",
       "filename": "../../avdf/avdf.md"

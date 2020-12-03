@@ -57,7 +57,10 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
 1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stack**
 2. Click **Create Stack**
 
-   - **Select a Terraform Configuration (.zip) File to Upload:** *Upload the zip file [orm_oke_quick_create.zip](orm_oke_quick_create.zip)*
+   - Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file [orm_oke_quick_create.zip](orm_oke_quick_create.zip). Click **Select**.
+
+	![](./img/zip-file.png) 
+    
    - **Name:** *Quickly Create an OKE Cluster*
    - **Description:** *Quickly create a cluster with default settings, also creates a dedicated network*
    - **Create in Compartment:** *sandbox*

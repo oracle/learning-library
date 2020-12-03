@@ -1,0 +1,31 @@
+{
+  "workshoptitle": "Oracle Weblogic and Helidon Workshop",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to Weblogic and Helidon",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 3: Weblogic and Helidon",
+      "description": "Weblogic and Helidon Lab",
+      "publisheddate": "08/10/2020",
+      "filename": "../../weblogic-helidon/weblogic-helidon.md"
+    }
+  ]
+}

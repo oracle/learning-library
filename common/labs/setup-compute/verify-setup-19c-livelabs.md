@@ -37,7 +37,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -188,7 +188,7 @@ There may be several reasons why you can't login to the instance.  Here are some
 When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
 
 #### Tips for fixing for Issue #2
-- Go back to the registration page, delete your registraiton and recreate it ensuring you create and **copy/paste** your *.pub key into the registration page correctly.
+- Go back to the registration page, delete your registration and recreate it ensuring you create and **copy/paste** your *.pub key into the registration page correctly.
 - Ensure you pasted the *.pub file into the window.
 
 

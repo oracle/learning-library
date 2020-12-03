@@ -1,0 +1,3 @@
+#!/bin/sh
+cd `dirname "$0"`
+java -cp ../launcher LauncherBootstrap -executablename oewizard oewizard -c ../wizardconfigs/jsonwizard.xml $*

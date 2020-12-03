@@ -4,7 +4,7 @@
 
 This lab will walk you through the steps to build and start Oracle Linux Docker containers. You will deploy and configure the Property Graph server and client component in these containers.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -14,20 +14,36 @@ In this lab, you will:
 
 ### Prerequisites
 
-* Docker and GIT on your local machine (laptop or desktop).
+* This lab assumes that you have completed the lab - Set up Docker on an Oracle Cloud Compute Instance
 * Internet access to download the Graph Server and Client kit.
 
 ## **STEP 1:** Get required components
 
 ### Clone repository
 
-1. Clone the git repository which has the required Docker Compose files and other configuration files and scripts to your machine.
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance as opc user:
+
+    ```
+    <copy>
+    ssh -i ./your-key-name opc@your-instance-ip-address
+    </copy>
+    ```
+
+2. Clone the git repository which has the required Docker Compose files and other configuration files and scripts to your machine.
 
     ```
     <copy>git clone https://github.com/jayant62/oracle-pg.git</copy>
     ```
 
-  Note the directory where you have cloned it. We will refer to it as `$REPO_HOME` here and in other labs in this workshop.
+    Note the directory where you have cloned it. We will refer to it as `$REPO_HOME` here and in other labs in this workshop.
+
+3. Grant permission on the directory
+
+    ```
+    <copy>
+    chmod 777 oracle-pg
+    </copy>
+    ```
 
 ### Download and extract the graph and other packages
 
@@ -47,11 +63,51 @@ Put the following files into `$REPO_HOME/oracle-pg/docker/tmp/`
     - oracle-graph-20.1.0.x86_64.rpm
     - oracle-graph-zeppelin-interpreter-20.1.0.zip
     - apache-groovy-binary-2.4.18.zip
+    - oracle-graph-client-20.1.0.zip
 
-3. Change directory to `$REPO_HOME` and run the following script to extract the packages:
+    To put the files in the directory, open a new terminal window, run the below commands by copying one by one, and replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address.
+
+    ```
+    <copy>
+    scp -i ~/.ssh/your-key-name ~/Downloads/oracle-graph-20.1.0.x86_64.rpm opc@your-instance-ip-address:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+    ```
+    <copy>
+    scp -i ~/.ssh/your-key-name ~/Downloads/oracle-graph-zeppelin-interpreter-20.1.0.zip opc@your-instance-ip-address:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+    ```
+    <copy>
+    scp -i ~/.ssh/your-key-name ~/Downloads/apache-groovy-binary-2.4.18.zip opc@your-instance-ip-address:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+    ```
+    <copy>
+    scp -i ~/.ssh/your-key-name ~/Downloads/oracle-graph-client-20.1.0.zip opc@your-instance-ip-address:oracle-pg/docker/tmp/
+    </copy>
+    ```
+
+3. Navigate to the previous terminal in which you were opc user and change directory to `$REPO_HOME`.
 
     ```
     $ <copy>cd oracle-pg/docker/tmp/</copy>
+    ```
+
+4. Now let's unzip oracle-graph-client-20.1.0.zip file.
+
+    ```
+    <copy>
+    unzip oracle-graph-client-20.1.0.zip
+    </copy>
+    ```
+
+5. Run the following script to extract the packages:
+
+    ```
     $ <copy>sh extract.sh</copy>
     ```
 
@@ -91,7 +147,7 @@ to
 
 2. `Ctl+C` to quit.
 
-### Starting, stopping, restarting, or removing containers once they're built.
+### Starting, stopping, restarting, checking status or removing containers once they're built.
 
 1. Start, stop, or restart the containers.
 
@@ -100,7 +156,13 @@ to
     $ <copy>docker-compose start|stop|restart</copy>
     ```
 
-2. To remove the docker containers.
+2. Check status of the containers.
+
+    ```
+    $ <copy>docker-compose ps</copy>
+    ```
+
+3. To remove the docker containers.
 
     ```
     $ <copy>cd oracle-pg/docker/ </copy>
@@ -112,10 +174,10 @@ You may now proceed to the next lab.
 ## Acknowledgements ##
 
 * **Author** - Jayant Sharma, Product Manager
-* **Contributors** - Ryota Yamanaka
+* **Contributors** - Ryota Yamanaka, Anoosha Pilli, Product Manager
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

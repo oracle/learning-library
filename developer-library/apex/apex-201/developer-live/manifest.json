@@ -1,0 +1,53 @@
+{
+  "workshoptitle": "Advanced Low Code - Oracle APEX on Autonomous Database",
+    "tutorials": [{
+            "title": "Prerequisites",
+            "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "./workshop-intro/intro.md"
+        },
+        {
+            "title": "Part 1 - Lab 1: Create an App from a Spreadsheet",
+            "filename": "../spreadsheet/2-creating-an-app-from-a-spreadsheet/2-creating-an-app-from-a-spreadsheet.md"
+        },
+        {
+
+            "title": "Part 1 - Lab 2: Improve the Faceted Search",
+            "filename": "../spreadsheet/3-improving-the-faceted-search/3-improving-the-faceted-search.md"
+        },
+        {
+            "title": "Part 1 - Lab 3: Improve the Report and Form",
+            "filename": "../spreadsheet/4-improving-the-report-and-form/4-improving-the-report-and-form.md"
+        },
+        {
+            "title": "Part 1 - Lab 4: Link the Calendar",
+            "filename": "../spreadsheet/5-linking-the-calendar/5-linking-the-calendar.md"
+        },
+        {
+            "title": "Part 2 - Lab 1: Define New Data Structures",
+            "filename": "../proof-of-concept/quick-sql/using-quick-sql.md"
+        },
+        {
+            "title": "Part 2 - Lab 2: Create the Application",
+            "filename": "../proof-of-concept/create-app/create-app.md"
+        },
+        {
+            "title": "Part 2 - Lab 3: Regenerate the Application",
+            "filename": "../proof-of-concept/regen-app/regen-app.md"
+        },
+        {
+            "title": "Part 2 - Lab 4: Improve Tasks",
+            "filename": "../proof-of-concept/improving-tasks/improving-tasks.md"
+        },
+        {
+            "title": "Part 2 - Lab 5: Improve To Dos",
+            "filename": "../proof-of-concept/improving-todos/improving-todos.md"
+        },
+        {
+            "title": "Part 2 - Lab 6: Improve Links",
+            "filename": "../proof-of-concept/improving-links/improving-links.md"
+        }
+    ]
+}

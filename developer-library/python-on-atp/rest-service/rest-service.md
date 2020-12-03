@@ -98,7 +98,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
   ![](images/5-2.png " ")
 
-11. In the terminal enter command.  This will create virtual enviornment to install and run the packages, so that we don't install packages globally.
+11. In the terminal enter command.  This will create virtual environment to install and run the packages, so that we don't install packages globally.
   ```
   <copy>sudo pip install virtualenv</copy>
   ```
@@ -112,7 +112,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
   ![](images/6.png " ")
 
-13. To run the virtual enviornment type the following. If successfull you will see (env) before the path that means you are now in virtual env.
+13. To run the virtual environment type the following. If successfull you will see (env) before the path that means you are now in virtual env.
   ```
   <copy>source env/bin/activate</copy>
   ```

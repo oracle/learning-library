@@ -249,7 +249,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
   ![](./images/e12.png " ")
 
     ```
-    <copy>cd dirdef
+    <copy>cd /u01/gg4hadoop123010/dirdef
     ls -lrt
     more gg2kafka_json.dept.schema.json</copy>
     ```
