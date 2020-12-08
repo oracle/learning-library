@@ -44,7 +44,7 @@ This module uses the Oracle Cloud Infrastructure (OCI) Data Science service. Whi
 
 1. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
-2. Familiarity with OCI console: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm
+2. Familiarity with OCI console: https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm
 
 3. Familiarity with Oracle Accelerated Data Science SDX (ADS): https://docs.cloud.oracle.com/en-us/iaas/tools/ads-sdk/latest/index.html
 

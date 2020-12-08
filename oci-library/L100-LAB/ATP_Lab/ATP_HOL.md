@@ -31,10 +31,10 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 ## Recommended Learning Assets
 
 - [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-- [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-- [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-- [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-- [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+- [Familiarity with OCI console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
+- [Overview of Networking](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+- [Familiarity with Compartment](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
+- [Connecting to a compute instance](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
 
 ## Practice-1: Sign in to OCI Console and create VCN
 

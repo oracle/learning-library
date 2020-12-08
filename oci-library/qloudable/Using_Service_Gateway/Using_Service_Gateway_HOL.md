@@ -54,13 +54,13 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
 2. OCI Training : https://cloud.oracle.com/en_US/iaas/training
 
-3. Familiarity with OCI console: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm
+3. Familiarity with OCI console: https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm
 
-4. Overview of Networking: https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+4. Overview of Networking: https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm
 
-5. Familiarity with Compartment: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm
+5. Familiarity with Compartment: https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm
 
-6. Connecting to a compute instance: https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm
+6. Connecting to a compute instance: https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm
 
 ## Sign in to OCI Console create Object Storage Bucket and VCN
 

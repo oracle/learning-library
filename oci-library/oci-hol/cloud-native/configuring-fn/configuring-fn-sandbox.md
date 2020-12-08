@@ -8,10 +8,10 @@ Estimated Time: 75 minutes
 ### Prerequisites
 
 * [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-* [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-* [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-* [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-* [Connecting to a Compute Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+* [Familiarity with OCI console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
+* [Overview of Networking](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+* [Familiarity with Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
+* [Connecting to a Compute Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
 * Free Trial, LiveLabs or Paid Oracle Cloud account
 
 

@@ -15,10 +15,10 @@ Estimated Lab Time: 10 minutes
 ### Pre-Requisites
 
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-3. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+2. [Familiarity with OCI console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
+3. [Overview of Networking](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+4. [Familiarity with Compartment](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
+5. [Connecting to a compute instance](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
  
 ## **STEP 1**: Create a Virtual Cloud Network
 

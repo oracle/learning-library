@@ -21,9 +21,9 @@ In this lab, you will:
 ### Prerequisites
 
 1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
-1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+1. [Familiarity with OCI console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
+1. [Overview of Networking](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+1. [Familiarity with Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
 1. Basic conceptual knowledge of containers and [Kubernetes](https://kubernetes.io/)
 
 You may now [proceed to the next lab](#next).

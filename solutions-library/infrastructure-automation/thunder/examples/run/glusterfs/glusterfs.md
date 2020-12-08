@@ -21,7 +21,7 @@ Follow the instructions from Prerequisites links in order to install terraform.
 * Unzip the archive
 * Add the executable to the PATH
 
-You will have to generate an API signing key (public/private keys) and the public key should be uploaded in the OCI console, for the iam user that will be used to create the resources. Also, you should make sure that this user has enough permissions to create resources in OCI. In order to generate the API Signing key, follow the steps from: <https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How>
+You will have to generate an API signing key (public/private keys) and the public key should be uploaded in the OCI console, for the iam user that will be used to create the resources. Also, you should make sure that this user has enough permissions to create resources in OCI. In order to generate the API Signing key, follow the steps from: <https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#How>
 The API signing key will generate a fingerprint in the OCI console, and that fingerprint will be used in a terraform file described below.
 
 You will also need to generate an OpenSSH public key pair in order for you and terraform to be able to access the GlusterFS compute nodes through SSH protocol. Please store those keys in a place accessible like your user home .ssh directory.

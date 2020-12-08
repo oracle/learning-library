@@ -31,7 +31,7 @@ Allow group MS to use key-delegate in compartment MS
 You will have to generate an API signing key (public/private keys) and the public key should be uploaded in the OCI
 console, for the iam user that will be used to create the resources. Also, you should make sure that this user has
 enough permissions to create resources in OCI. In order to generate the API Signing key, follow the steps
-from: <https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How>
+from: <https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#How>
 The API signing key will generate a fingerprint in the OCI console, and that fingerprint will be used in a terraform
 file described below.
 

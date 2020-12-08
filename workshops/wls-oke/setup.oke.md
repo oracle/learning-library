@@ -146,15 +146,15 @@ Execute oci setup config command to setup the CLI:
 
 	    User OCID and Tenancy OCID:
 
-	        https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#Other
+	        https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other
 
 	    Region:
 
-	        https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm
+	        https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
 
 	    General config documentation:
 
-	        https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
+	        https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
 
 
 	Enter a location for your config [/home/oracle/.oci/config]:

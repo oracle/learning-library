@@ -18,7 +18,7 @@ Assuming you have already prepared the following:
 
 - Collect your tenancy and compartment OCIDs in advance. you can check the following link for more details about OCID:
 
-  https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm#one
+  https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm#one
 
 
 

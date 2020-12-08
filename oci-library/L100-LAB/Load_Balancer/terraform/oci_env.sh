@@ -11,5 +11,5 @@ export TF_VAR_compartment_ocid="ocid1.compartment.FIXME"
 export TF_VAR_ssh_public_key=$(cat ${HOME}/.ssh/dhutty-orcl-2019.rsa.pub)
 export TF_VAR_ssh_private_key=$(cat ${HOME}/.ssh/dhutty-orcl-2019.rsa)
 ## NOTE: These are not your api keys. More info on the right keys see
-## https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingkeypairs.htm
+## https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/Tasks/managingkeypairs.htm
 

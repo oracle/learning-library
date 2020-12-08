@@ -20,7 +20,7 @@ variable "instance_image_ocid" {
 
   default = {
     // Oracle-provided image "Oracle-Linux-7.x"
-    // See https://docs.us-phoenix-1.oraclecloud.com/images/
+    // See https://docs.cloud.oracle.com/en-us/iaas/images/
     // https://docs.cloud.oracle.com/iaas/images/image/7d31cb1d-f31f-450c-95c4-0539776c3dcf/
     ca-toronto-1 = "ocid1.image.oc1.ca-toronto-1.aaaaaaaafozx4cw5fgcnptx6ukgdjjfzvjb2365chtzprratabynb573wria"
     eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaagbrvhganmn7awcr7plaaf5vhabmzhx763z5afiitswjwmzh7upna"

@@ -112,7 +112,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
   ![Select Object Storage from the left navigation window in the Oracle Cloud homepage.](images/snap0014294.jpg " ")
 
-  *To learn more about the OCI Object Storage, refer to its <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
+  *To learn more about the OCI Object Storage, refer to its <a href="https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
 
 2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, the **root** compartment is chosen. For LiveLabs tenancy users, select the compartment that you were assigned in the *Launch Workshop* window.
 *Note: If you are doing this workshop in the LiveLabs tenancy and you have issues selecting your compartment, go back to your ADB instance create page and select your compartment.  Now go back to Object Storage, you should be able to select your compartment and create your bucket.  This is a known OCI issue that should be resolved shortly*

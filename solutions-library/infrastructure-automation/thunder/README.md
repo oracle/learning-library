@@ -18,7 +18,7 @@ Why bother with creating all the infrastructure manually, or creating all the te
 
 ## Getting Started
 
-Before working through the examples, set up a config file with the required credentials on your Workstation or Instance described in Dependencies. See [SDK and Tool Configuration](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm) for instructions.
+Before working through the examples, set up a config file with the required credentials on your Workstation or Instance described in Dependencies. See [SDK and Tool Configuration](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm) for instructions.
 
 The examples are organized as follows:
 

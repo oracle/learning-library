@@ -382,9 +382,9 @@ Kubernetes. Before you can use kubectl, you need to specify the cluster on which
 1) Install *kubectl* based on the OS you are running on your laptop. [kubectl documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 2) Install the Oracle Cloud Infrastructure CLI. See [Installing the
-CLI](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/cliinstall.htm).
+CLI](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm).
 
-3) Configure the Oracle Cloud Infrastructure CLI. See [Configuring the CLI](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/cliconfigure.htm).
+3) Configure the Oracle Cloud Infrastructure CLI. See [Configuring the CLI](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/cliconfigure.htm).
 
 4) Upload the public key of the API signing key pair
 	- In the top-right corner of the Console, click on api.user name, and then
