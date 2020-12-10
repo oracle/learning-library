@@ -10,12 +10,12 @@ Watch this short video to preview how to deploy your Oracle E-Business Suite clo
 
 [](youtube:vzIJ4LFOi0s)
 
-### Objectives
+### **Objectives**
 
 * Deploy and Configure Oracle E-Business Suite Cloud Manager
 * Verifying login into Oracle E-Business Suite Cloud Manager
 
-### Prerequisites
+### **Prerequisites**
 
 * Tenancy Admin User
 * Tenancy Admin Password
@@ -112,7 +112,8 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
     g. **EBS Cloud Manager Shape**: ``VM.Standard.E2.2``
 
     h. **EBS Cloud Manager Admin Password**:
-      - Note: This password should be saved as: `Cloud_Manager_Admin_Password` in your key-data.txt
+      - Note: This password is what will allow you to login to the cloud manager instance that is created and **CAN** be different than the user password for logging into the IDCS Admin Console.
+      - Add this password to your ``key-data.txt`` file.
 
     i. **Public Key**:
 
@@ -160,7 +161,40 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
   ![](./images/11.png " ")
 
-## **STEP 3:** Log in to Oracle E-Business Suite Cloud Manager
+## **STEP 3:** Update key-data.txt
+
+### **Part 1:** Tenancy Info
+
+Find the following in the OCI Console and record in `key-data.txt`
+
+Navigate to **Administration** -> **Tenancy Details**
+
+Note down the following:
+
+* `Oracle_Cloud_Tenancy_Name`
+* `Oracle_Cloud_Tenancy_OCID`
+
+In addition note down your Region and region identifer: (Ex: West(Phoenix)=us-pheonix-1)
+
+* `Oracle_Cloud_Region_Identifier`
+
+### **Part 2:** User Info
+
+Navigate to **Identity** -> **Users** -> ebsadmin@example.com
+
+Copy the User OCID in your `key-data.txt` as : `Cloud_Manager_Admin_User_OCID`
+
+Then Click **API Keys** in the bottom left.
+
+Copy the fingerprint that has just been created as : `Cloud_Manager_Admin_Fingerprint`
+
+### **Part 3:** Cloud Manager Info
+
+Find the following under **Identity** -> **Compartments** 
+
+Record the OCID for the compartment that was created in your `key-data.txt` as : `Oracle_Cloud_Compartment_OCID` 
+
+## **STEP 4:** Log in to Oracle E-Business Suite Cloud Manager
 
 Before logging into the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
 

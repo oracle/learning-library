@@ -32,6 +32,10 @@
             "filename": "../../clone/clone.md"
         },
         {
+            "title": "Optional (Advanced):  Migrating an Oracle E-Business Suite environment to Oracle Cloud Infrastructure",
+            "filename": "../../migrate/migrate.md"
+        },
+        {
             "title": "Next Steps:  Load and Optimize Data from EBS",
             "filename": "../../optimize-data/optimize-data.md"
         },

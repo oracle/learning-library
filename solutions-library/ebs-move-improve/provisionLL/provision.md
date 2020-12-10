@@ -6,11 +6,11 @@ In this lab, we will use the One-Click Provisioning feature of Oracle E-Business
 Estimated Lab Time: 45 minutes
 
 ### Objectives
-* Log into EBS Cloud Manager and Provision E-0Business Suite environment
+* Log into EBS Cloud Manager and Provision E-Business Suite environment
 * Enable and Set Oracle E-Business Suite Account Passwords
 * Configure Local Hosts File and Log in to Oracle E-Business Suite
 
-### Prerequisites
+### **Prerequisites**
 * Cloud Manager Instance provisioned
 * Cloud Manager Admin credentials
 * Cloud Manager Application variables in ``key-data.txt`` file. This is found in the .zip file you were provided to begin the lab.
