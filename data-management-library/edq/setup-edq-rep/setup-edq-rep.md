@@ -57,7 +57,7 @@ This lab assumes you have:
     ![](images/weblogic_3.png)
 
 
-### **Optional:** EDQ Start Script
+### **Optional:** If EDQ is not running, use EDQ Start Script to start the Services
 
 1. Right click on Home screen and select "Open Terminal".
 
@@ -79,15 +79,13 @@ Please login into weblogic console and check if all the EDQ services are up and 
 
 ## **STEP 2**: Start EDQ Director and Create new project in EDQ
 
-1.	Open a web browser, go to EDQ Launchpad and click on “Director”.
+1.	On the desktop, double click on Director icon.
 
-    **URL:** http://localhost:8001/edq 
+    ![](./images/edq_desktop.png)
 
-    ![](./images/image1200_5.png)
+2.	Select "Later" for the java update option.
 
-2.	Click “OK” to accept opening the program.
-
-    ![](./images/image1200_6.png)
+    ![](./images/java_update.png)
 
 3.	Wait a few minutes, you will receive a new message, click on “Run”.
 

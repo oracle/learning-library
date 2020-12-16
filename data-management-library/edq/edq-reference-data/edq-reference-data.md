@@ -91,13 +91,22 @@ then click “Finish”.
 ## **STEP 2**: Copy Reference Data
 Now, we will copy reference data previously created into our project, which will be used in further labs. 
 
-1. Go to browser and download the Examples project from the link <a href='./images/Examples.dxi'> Examples.dxi </a>.
+1. We will use Examples.dxi package which is located in below path.
+   
+    ````
+   <copy>
+    Path: /home/opc/Dxi_Files
+    File Name: Examples.dxi
+   </copy>
+    ````
 
 2. Click on "File" in Director and select "Open Package File...". Browse to the appropriate directory and select the examples.dxi file.
 
     ![](./images/image1200_67.png " ")
 
-3. Select the Downloaded Examples.dxi file in the pop up box and click open.
+3. Select the Examples.dxi file in the pop up box and click open.
+
+    ![](./images/image1200_67_1.png " ")
 
 4.	In the “Project Browser” find a project titled “Examples”, expand it.
 
@@ -117,7 +126,7 @@ Now, we will copy reference data previously created into our project, which will
  
      ![](./images/image1200_71.png " ")
 
-9.  Right click on the Examples.dxi package and select "Close Package File". This action will close the package file in EDQ director.
+1.  Right click on the Examples.dxi package and select "Close Package File". This action will close the package file in EDQ director.
 
     ![](./images/image1200_72.png " ")
 
