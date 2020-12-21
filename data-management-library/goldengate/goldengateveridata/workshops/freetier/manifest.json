@@ -1,0 +1,43 @@
+{
+  "workshoptitle": "Getting Started with Oracle GoldenGate Veridata",
+    "tutorials": [
+
+      {
+            "title": "Introduction to Oracle GoldenGate Veridata",
+            "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
+            "filename": "./intro.md"
+        }
+        ,
+        {
+              "title": "Lab 1: Install and Configure Oracle GoldenGate Veridata",
+              "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+              "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
+        }
+        ,
+        {
+              "title": "Lab 2: Create Multiple Domains",
+              "description": "This lab describes how to create multiple domains in Oracle GoldenGate Veridata.",
+              "filename": "./../../ggv-create-multiple-domains/ggv-create-multiple-domains.md"
+        }
+        ,
+        {
+              "title": "Lab 3: Set Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability",
+              "description": "This lab shows you how to  you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.2) deployed on the Oracle Weblogic Platform for High Availability.",
+              "filename": "./../../ggv_ha_dataserver/ggv-ha-dataserver.md"
+        }
+        ,
+        {
+              "title": "Lab 4: Connect the Oracle GoldenGate Veridata Agent to Autonomous Data Warehouse",
+              "description": "This lab describes how to connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.",
+              "filename": "./../../ggv-adw-atp/ggv-adw-atp.md"
+          }
+          ,
+          {
+                "title": "Lab 5:  Use the Oracle GoldenGate Veridata Command-line Utilities",
+                "description": "This lab describes how to accomplish the tasks using Oracle GoldenGate Veridata command-line utilities: Create Oracle GoldenGate Veridata configuration using the Veridata GoldenGate Parameter Processing program from the Oracle GoldenGate parameter files, and Run the compare job using Vericom.",
+                "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
+            }
+
+
+             ]
+  }

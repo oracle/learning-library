@@ -13,11 +13,11 @@ The bulk fulfillment process must run according to a predefined pick-up schedule
 ### Objectives
 
 * Introducing SOA development tool, JDeveloper 12c
-* Design SOA composite application using JDeveloper
-* Develop service orchestration with SOA process automation
-* Deploy the composite application on the embedded Weblogic in JDeveloper
+* Design SOA composite application using JDeveloper as an IDE
+* Develop service orchestration in SOA, JDeveloper 12c
+* Deploy the composite application on the embedded SOA-Weblogic in JDeveloper
 
-Estimated Workshop Time: 4 Hours
+Estimated Total Workshop Time: 3 Hours
 
 *{Note: For this lab, it assumes you have accessed to JDeveloper12c environment, which can be run on Linux instance on OCI.}*
 
@@ -57,5 +57,7 @@ When you're ready to proceed, please click the Contents menu on the right-hand.
 * **Contributors** - Tom McGinn, Kamryn Vinson
 * **Last reviewed By/Date** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

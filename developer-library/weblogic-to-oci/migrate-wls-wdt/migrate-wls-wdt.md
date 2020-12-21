@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes
 Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
 
 - Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
-- Edit the the **model** file and **variable** file to target the new infrastructure on OCI.
+- Edit the **model** file and **variable** file to target the new infrastructure on OCI.
 - Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
 
 ### Objectives
@@ -412,7 +412,7 @@ appDeployments:
                 Target: nonjrf_cluster # <---
     ```
 
-  3. finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
+  4. finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
 
     The new JDBC connection string should be:
     
@@ -427,6 +427,7 @@ appDeployments:
     The resulting `source.yaml` file should be like:
 
     ```yaml
+    <copy>
     resources:
         JDBCSystemResource:
             JDBCConnection:
@@ -457,11 +458,12 @@ appDeployments:
                 ModuleType: ear
                 StagingMode: stage
                 Target: nonjrf_cluster
+    </copy>
     ```
 
   **Important Note**: if when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers
 
-4. Save the `source.yaml` file by typing `CTRL+x` then `y`
+5. Save the `source.yaml` file by typing `CTRL+x` then `y`
 
 ## **STEP 4:** Edit the `source.properties` file
 
@@ -518,12 +520,34 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
     nano update_domain.sh
     </copy>
     ```
-2. Provide the `TARGET_WLS_ADMIN` 
-    This is the **WebLogic Admin Server public IP** gather previously.
-  
-3. Save the file with `CTRL+x` and `y`
+2. Provide the `TARGET_WLS_ADMIN`
 
-4. Run the `update_domain.sh` script
+    This is the **WebLogic Admin Server public IP** gather previously if you deployed in a **Public Subnet**
+    or the **Admin Server Private IP** if you deployed in a **Private subnet**
+
+3. If you deployed in a **Private Subnet**, you also need to provide a `BASTION_IP` which is the **public IP** of the Bastion Instance.
+
+    Furthermore, you'll need to add a **NAT gateway** to the admin server subnet so it is possible to download the required software.
+
+    - Go to **Core Infrastructure -> Networking -> Virtual Cloud Networks**
+    - Select the VCN for the WLS on OCI stack
+    - Click **NAT Gateways** on the left menu
+    - Click **Create NAT Gateway**
+    - Name it **NAT gw**
+    - Click **Create NAT Gateway**
+    - Go to **Subnets**
+    - Select the `nonjrf-wl-subnet`
+    - In the Subnet Information, click the **Route Table** (`nonjrf-routetable`)
+    - Click **Add Route Rules**
+    - Select **NAT Gateway**
+    - Enter **0.0.0.0/0** for the CIDR range
+    - Select the **NAT gw** NAT Gateway created earlier
+    - Click **Add Route Rules**
+
+
+4. Save the file with `CTRL+x` and `y`
+
+5. Run the `update_domain.sh` script
 
     ```bash
     <copy>
@@ -775,13 +799,13 @@ updateDomain.sh completed successfully (exit code = 0)
 
 ## **STEP 6:** Check that the app deployed properly
 
-1. Go to the WebLogic Admin console at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console
+1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel (at https://localhost:7002/console) as you did earlier.
 
     Note: If you're using Chrome, you might encounter Self-signed certificate issues. We recommend using Firefox to test.
 
 2. In Firefox you will see the self-certificate warning as below:
 
-    <img src="./images/self-cert-warning.png" width="100%">
+    <img src="../../../migrate-wls-wdt/images/self-cert-warning.png" width="100%">
 
     Click **Advanced...** and then **Accept the Risk and Continue**
 
@@ -789,14 +813,14 @@ updateDomain.sh completed successfully (exit code = 0)
 
 4. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state
 
-  <img src="./images/oci-deployments.png" width="100%">
+  <img src="../../../migrate-wls-wdt/images/oci-deployments.png" width="100%">
 
-5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioing, with the route `/SimpleDB/` like:
+5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioning, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
     Making sure you use `https` as scheme and the proper case for `/SimpleDB` 
 
-  <img src="./images/oci-simpledb-app.png" width="100%">
+  <img src="../../../migrate-wls-wdt/images/oci-simpledb-app.png" width="100%">
 
 You may proceed to the next lab.
 
@@ -805,5 +829,7 @@ You may proceed to the next lab.
  - **Author** - Emmanuel Leroy, May 2020
  - **Last Updated By/Date** - Emmanuel Leroy, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Weblogic). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

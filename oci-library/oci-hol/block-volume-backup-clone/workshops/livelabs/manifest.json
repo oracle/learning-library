@@ -10,7 +10,7 @@
           "filename": "./../../../intro/intro.md"
       },
       {
-          "title": "Lab 1: Using Backup and Clone Feature of Block Volume Storage",
+          "title": "Using Backup and Clone Feature of Block Volume Storage",
           "filename": "./../../block-volume-backup-clone.md"
       }
     ]

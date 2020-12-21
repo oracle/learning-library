@@ -1,0 +1,33 @@
+{
+  "workshoptitle": "Containerized Development with Docker on Autonomous Database",
+  "tutorials": [
+      {
+        "title": "Prerequisites",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+        "title": "Introduction",
+        "filename":"../../intro/intro.md"
+      },
+      {
+        "title": "Lab 1: Create SSH Keys",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+      },
+      {
+        "title": "Lab 2: Setup Compute Instance",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-freetier.md"
+      },
+      {
+        "title": "Lab 3: Docker Setup & Basic Concepts",
+        "filename": "../../docker-basic-concepts/docker-basic-concepts.md"
+      },
+      {
+        "title": "Lab 4: Create an Oracle Database Container and Schema",
+        "filename": "../../create-db-container/create-db-container.md"
+      },
+      {
+        "title": "Lab 5: Modify a Containerized Application",
+        "filename": "../../deploy-and-change-application/deploy-and-change-application.md"
+      }
+  ]
+}

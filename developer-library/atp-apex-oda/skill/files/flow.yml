@@ -1,0 +1,62 @@
+metadata:
+  platformVersion: '1.1'
+main: true
+name: mytasks
+
+context:
+  variables:
+    iResult: 'nlpresult'
+
+states:
+  intent:
+    component: 'System.Intent'
+    properties:
+      variable: iResult
+    transitions:
+      actions:
+        Greeting: greeting
+        ListTasks: listTasks
+        unresolvedIntent: unresolved
+
+  greeting:
+    component: System.Output
+    properties:
+      translate: false
+      text: 'Greetings, hooman!'
+      keepTurn: false
+    transitions:
+      return: greeting
+
+  listTasks:
+    component: com.example.tasks
+    transitions:
+      actions:
+        success: successState
+        failure: failureState
+
+  successState:
+    component: 'System.Output'
+    properties:
+      text: |-
+        Success!
+      keepTurn: false
+    transitions:
+      return: 'done'
+
+  failureState:
+    component: 'System.Output'
+    properties:
+      text: |-
+        Failed! Check the logs.
+      keepTurn: false
+    transitions:
+      return: 'done'
+
+  unresolved:
+    component: System.Output
+    properties:
+      translate: false
+      text: "I don't understand. What do you want to do?"
+      keepTurn: false
+    transitions:
+      return: unresolved

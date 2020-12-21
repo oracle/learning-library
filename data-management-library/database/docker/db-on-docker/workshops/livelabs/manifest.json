@@ -1,0 +1,25 @@
+{
+  "workshoptitle": "Containerized Development with Docker on Autonomous Database",
+  "tutorials": [
+      {
+        "title": "Prerequisites",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+      {
+        "title": "Introduction",
+        "filename":"../../intro/intro.md"
+      },
+      {
+        "title": "Lab 1: Docker Setup & Basic Concepts",
+        "filename": "../../docker-basic-concepts/docker-basic-concepts.md"
+      },
+      {
+        "title": "Lab 2: Create an Oracle Database Container and Schema",
+        "filename": "../../create-db-container/create-db-container.md"
+      },
+      {
+        "title": "Lab 3: Modify a Containerized Application",
+        "filename": "../../deploy-and-change-application/deploy-and-change-application.md"
+      }
+  ]
+}

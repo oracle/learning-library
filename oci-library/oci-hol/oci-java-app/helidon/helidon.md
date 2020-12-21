@@ -20,36 +20,36 @@ Estimated Lab Time: 5 minutes
 
 One can generate the skeleton of a microservice using Helidon Maven archetypes. To simplify things, you will use the Helidon CLI (Command Line Interface), which under the hood uses the same approach, to initialize a simple Helidon project.
 
-Run `helidon init`, and select the suggested options (**SE flavor**, **bare Minimal Helidon SE project**, and other default values).
+1. Run `helidon init`, and select the suggested options (**SE flavor**, **bare Minimal Helidon SE project**, and other default values).
 
-![](.././images/lab3-1.png " ")
+    ![](.././images/lab3-1.png " ")
 
-Go into the project directory (`cd java-devlive`), and check the newly generated project (`tree -C .`). You should notice it is a Maven project:
+2. Go into the project directory (`cd java-devlive`), and check the newly generated project (`tree -C .`). You should notice it is a Maven project:
 * there is `pom.xml`,
 * sources are located in `src/main/java/com/devlive/`,
 * tests are located in `src/test/java/com/devlive/`, etc.
 
-![](.././images/lab3-2.png " ")
+    ![](.././images/lab3-2.png " ")
 
 ## **STEP 2**: Build and test an Helidon project
 
-You can build the Helidon project using the `mvn package` command in the `java-devlive` directory. 
+1. You can build the Helidon project using the `mvn package` command in the `java-devlive` directory. 
 
-![](.././images/lab3-3.png " ")
+    ![](.././images/lab3-3.png " ")
 
 💡 The first time, Maven will populate its local cache so this initial build will take longer!
 
-You can now check the project's target directory (`tree -C target`), it contains a lot of files including the dependencies used by the application, and the application itself.
+2. You can now check the project's target directory (`tree -C target`), it contains a lot of files including the dependencies used by the application, and the application itself.
 
-![](.././images/lab3-4.png " ")
+    ![](.././images/lab3-4.png " ")
 
-To run the application, simply use `java -jar target/java-devlive.jar`
+3. To run the application, simply use `java -jar target/java-devlive.jar`
 
-![](.././images/lab3-5.png " ")
+    ![](.././images/lab3-5.png " ")
 
 The sample service is now accessible on locally port 8080 and given that you have configured earlier the VCN and the instance firewall to allow incoming traffic on port 8080, it should also be accessible via your instance public IP address. 
 
-Invoke the endpoint using either `curl` or a web browser and its public IP address (`http://{public-ip}:8080/greet`), it should return the `{"message":"Hello World!"}` json payload.
+4. Invoke the endpoint using either `curl` or a web browser and its public IP address (`http://{public-ip}:8080/greet`), it should return the `{"message":"Hello World!"}` json payload.
 
 💡 You might want to use Firefox during this lab as it formats nicely any returned JSON payload.
 
@@ -161,5 +161,7 @@ For more information, please check [https://helidon.io/](https://helidon.io/).
  - **Author** - [David Delabassee](https://delabassee.com)
  - **Last updated By** - Kamryn Vinson, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "Configuring Auto Scaling",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "./../../intro/intro-sandbox.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell-sandbox.md"
+        },
+        {
+            "title": "Lab 2: Configuring Auto Scaling",
+            "filename": "./../../configuring-auto-scaling/configuring-auto-scaling-sandbox.md"
+        }
+    ]
+}

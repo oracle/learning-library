@@ -30,9 +30,12 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/011.png " ")
 
-4. Click on **Browse** and find the zipped **python4atp-tf-free.zip** or **python4atp-tf.zip** file if using the non-free version. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
+4. Select **My Configuration**, choose the **.ZIP FILE** button, Click on **Browse** and find the zipped **python4atp-tf-free.zip** or **python4atp-tf.zip** file if using the non-free version. 
 
-  ![](images/012.png " ")
+  ![](./images/zip-file.png)
+
+  Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
+
 
 5. There are two required variables - **VNC password** and **Database password**.  Enter these noting that the database password must confirm to rules noted on the screen.  All other variables are defaulted in.  **IF others are running this workshop at the same time in the same tenancy you also need to make the database name and the object storage bucket unique**.  Otherwise select Next.
 
@@ -131,7 +134,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/033.png " ")
 
-2. Select the **AlphaOffice** Autonomus Transaction Processing Database.  Be sure to select the correct region, and the correct compartment.
+2. Select the **AlphaOffice** Autonomous Transaction Processing Database.  Be sure to select the correct region, and the correct compartment.
 
   ![](images/034.png " ")
 
@@ -276,6 +279,8 @@ Please proceed to the next lab.
 - **Last Updated By/Date** - Kay Malcolm, April 2020
 - **Workshop Expiration Date** - April 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
 

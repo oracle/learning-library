@@ -10,7 +10,7 @@ The following workshops are available in this repository.
 Access them in [LiveLabs](http://bit.ly/golivelabs).
 
 - Property Graphs - **Manually deploy the Graph Server and Client kit on a compute instance** and get started with property graphs:
-  The Graph Server and Client kit consists of a set of compoments. These include an in-memory graph server (PGX), a visualization component (GraphViz), and an interactive shell (JShell).  
+  The Graph Server and Client kit consists of a set of components. These include an in-memory graph server (PGX), a visualization component (GraphViz), and an interactive shell (JShell).  
   This workshop walks through the steps for 
     - deploying the kit on a compute instance,
     - completing the post-install tasks,

@@ -15,55 +15,55 @@ This lab will give you an introduction to the Java SE *Preview Feature* mechanis
 
 1. Create a basic application
 
-In a new directory, create a simple _Hello.java_ application:
+   In a new directory, create a simple _Hello.java_ application:
 
-`
-nano Hello.java
-`
+   `
+   nano Hello.java
+   `
 
-with the following content:
+   with the following content:
 
-```java
-class Hello {
-	public static void main (String ... args) {
-		System.out.println(new Attendee("Jane", "Doe"));
-	}
-}
+      ```java
+      class Hello {
+         public static void main (String ... args) {
+            System.out.println(new Attendee("Jane", "Doe"));
+         }
+      }
 
-record Attendee(String first, String last) {}
+      record Attendee(String first, String last) {}
 
-```
+      ```
 
 
 2. Compile it
 
-`javac Hello.java`
+   `javac Hello.java`
 
-   ![](.././images/lab4-1.png " ")
-
-
-This simple application uses a Record (see Lab 7) which is a Preview Feature in Java 15. This error simply informs you that preview features are disabled by default. To use those, you need to explicitly enable them using the `--enable-preview` java compiler flag. Note that, you also need to confirm to the Java compiler which version of the Preview Feature you are using (ex. using the `--release` flag). 
-
-` javac --enable-preview --release 15 Hello.java`
-
-Those 2 flags are simply a safeguard mechanism to make sure that you are aware that you are using features from the platform that are not final, and hence those might change in a future version.
-
-   ![](.././images/lab4-1.5.png " ")
-
-The compilation now succeeds. Notice that you are still warned that preview features are used in the code.
+      ![](.././images/lab4-1.png " ")
 
 
-2. Run the application
+3. This simple application uses a Record (see Lab 6) which is a Preview Feature in Java 15. This error simply informs you that preview features are disabled by default. To use those, you need to explicitly enable them using the `--enable-preview` java compiler flag. Note that, you also need to confirm to the Java compiler which version of the Preview Feature you are using (ex. using the `--release` flag). 
 
-`java Hello`
+   ` javac --enable-preview --release 15 Hello.java`
 
-   ![](.././images/lab4-2.png " ")
+   Those 2 flags are simply a safeguard mechanism to make sure that you are aware that you are using features from the platform that are not final, and hence those might change in a future version.
 
-You are facing the same safeguard as Preview Features are also disabled at runtime! To be used, they should be explicitly enabled using the `--enable-preview`. The difference is that at runtime, you don't need to use a flag to confirm that version that you are using.
+      ![](.././images/lab4-1.5.png " ")
 
-`java --enable-preview Hello`
+   The compilation now succeeds. Notice that you are still warned that preview features are used in the code.
 
-   ![](.././images/lab4-3.png " ")
+
+4. Run the application
+
+   `java Hello`
+
+      ![](.././images/lab4-2.png " ")
+
+5. You are facing the same safeguard as Preview Features are also disabled at runtime! To be used, they should be explicitly enabled using the `--enable-preview`. The difference is that at runtime, you don't need to use a flag to confirm that version that you are using.
+
+   `java --enable-preview Hello`
+
+      ![](.././images/lab4-3.png " ")
 
 It now works!
 
@@ -133,7 +133,9 @@ Java 15 includes several *Preview Features* which will be discussed in upcoming 
 ## Acknowledgements
 
  - **Author** - [David Delabassee](https://delabassee.com)
- - **Last updated By** - Kamryn Vinson, September 2020
+ - **Last updated By** - Kamryn Vinson, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

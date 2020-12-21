@@ -1,11 +1,15 @@
 # Graph Visualization
 
 ## Introduction
+<<<<<<< HEAD
+
+This lab will walk you through the steps to visualize graph queries on the Customer 360 graph.
+=======
+>>>>>>> upstream/master
 
 This lab will walk you through the steps to visualize graph queries on the Customer 360 graph.
 
-Estimated time: 4 minutes
-
+<<<<<<< HEAD
 ### Objectives
 
 In this lab, you will:
@@ -25,6 +29,31 @@ In this lab, you will:
 
 Next, let's run a few PGQL queries.
 
+=======
+Estimated Lab Time: 4 minutes
+
+### Objectives
+
+In this lab, you will:
+* Visualize graph queries on the Customer 360 graph
+
+### Prerequisites
+
+* This lab assumes that you have successfully completed the lab - Query and Analyze the Customer 360 Graph
+
+## **STEP 1:** Open the graph viz web page
+
+1. Replace *your-instance-ip-address* with your instance IP address in the URL and open Graph Visualization and check if this graph is successfully loaded.
+
+    ```
+    http://your-instance-ip-address:7007/ui/
+    ```
+
+## **STEP 2:** Run some queries and visualize the results
+
+Next, let's run a few PGQL queries.
+
+>>>>>>> upstream/master
 The [pgql-lang.org](http://pgql-lang.org) site and [specification](http://pgql-land.org/spec/1.2) are the best reference for details and examples. For the purposes of this lab, however, here are minimal basics.
 
 The general structure of a PGQL query is
@@ -103,6 +132,10 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
 ## Need Help?
+<<<<<<< HEAD
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+=======
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+>>>>>>> upstream/master
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

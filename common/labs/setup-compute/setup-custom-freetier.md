@@ -78,7 +78,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 
 Now that you have a network for your compute instance, it's time to create the compute instance.  
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
     - [db19c-compute-livelabs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xbuVfRwRZRhZCiGrsFOa3l_3mW3wyk3ZNl4pm7GzCak/n/c4u03/b/labfiles/o/db19c-compute-livelabs-v1.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 
 2.  Save in your downloads folder.
@@ -91,11 +91,10 @@ Now that you have a network for your compute instance, it's time to create the c
 
     ![](./images/db19c-freetier-step3-1.png " ")
 
-4.  Click the **Browse** link and select the zip file (db19c-compute-livelabs.zip) that you downloaded. Click **Open**.
+4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (db19c-compute-livelabs.zip) that you downloaded. Click **Select**.
 
-    ![](./images/db19c-freetier-step3-2.png " ")
+    ![](./images/zip-file.png " ")
 
-    ![](./images/db19c-freetier-step3-4.png " ")
 
     Enter the following information:
 

@@ -72,7 +72,7 @@ Oracle Autonomous Transaction Processing delivers a self-driving, self-securing,
 
 2. Click on the Clipboard icon and select **Paste to remote session**.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/clipboard.png" alt="image-alt-text">
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/clipboard.png)
 
 3. Click into the pop up window and press Ctrl-V.
 
@@ -82,7 +82,7 @@ Oracle Autonomous Transaction Processing delivers a self-driving, self-securing,
 
 5. Open a Git-Bash window.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/gitBash.png" alt="image-alt-text">
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Node_js/img/gitBash.png)
 
 6. Navigate to the root folder of the C: drive.
 
@@ -220,3 +220,9 @@ node example.js
 4. Oracle Instant Client : http://www.oracle.com/technetwork/database/database-technologies/instant-client/overview/index.html
 
 5. Example.js Node Application used : https://github.com/oracle/oracle-db-examples/blob/master/exadata-express/Example.js
+
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

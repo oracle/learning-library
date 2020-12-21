@@ -234,20 +234,20 @@ sudo python get-pip.py
 
 ```
 
-8. Install a virtual enviornement. This is being done so we have a clean enviornment to execute our python script that will create and publish messages to OCI streaming service. Enter command:
+8. Install a virtual enviornement. This is being done so we have a clean environment to execute our python script that will create and publish messages to OCI streaming service. Enter command:
 
 ```
 sudo pip install virtualenv
 ```
 
-9. Now create a virtual enviornment, Enter command:
+9. Now create a virtual environment, Enter command:
 
 ```
-virtualenv <Enviornment_Name>
+virtualenv <environment_Name>
 ```
 For example **virtualenv stream_env**
 
-Now initialize the virtual enviornment, Enter command:
+Now initialize the virtual environment, Enter command:
 ```
 source ~/stream_env/bin/activate
 ```
@@ -314,7 +314,7 @@ User name and password are 'admin'
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_008.PNG" alt="image-alt-text" height="100" width="100">
 
 12. Switch to Grafana tab and paste the OCID in **Tenancy OCID**. Choose your region for **Default Region**(IAD if us-ashburn, PHX if us-phoneix1, LHR if London etc). All region codes are listed at https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm.
-Choose **OCI Instance** for Enviornment.
+Choose **OCI Instance** for environment.
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_009.PNG" alt="image-alt-text" height="100" width="100">
 

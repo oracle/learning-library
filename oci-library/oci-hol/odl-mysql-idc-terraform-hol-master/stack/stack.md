@@ -22,9 +22,10 @@ You need to download the stack package (zip file) and save it on your disk.
 
     ![](.././images/stack/02.png)
 
-2. Just drop here the zip file downloaded earlier:
+2. Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the stack_mysql_idc.zip zip file that you downloaded. Click **Select**.
 
-    ![](.././images/stack/04.png)
+    ![](.././images/zip-file.png " ")
+
 
 3. Now you need to fill some variables:
 
@@ -67,6 +68,16 @@ You need to download the stack package (zip file) and save it on your disk.
 
     💡 The public IP was returned by the apply job and is also available on OCI's Dashboard when checking the Compute Instances. You can always returned to the output logs of the job.
 
+## **STEP 6**: Use your MySQL InnoDB Cluster
+
+You can now use MySQL Shell like you did in Step 2 & 3 of Lab 4.
+
+   ```
+   mysql-js> cluster=dba.getCluster()
+   mysql-js> cluster.status()
+   ...
+   ```
+
 Thank you for attending this MySQL InnoDB Cluster & OCI hands-on lab.
 
 
@@ -76,5 +87,7 @@ Thank you for attending this MySQL InnoDB Cluster & OCI hands-on lab.
 - **Contributors** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Frédéric Descamps, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

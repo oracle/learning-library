@@ -251,6 +251,7 @@ Now that the source side is setup, let us configure GG on the target side (HDFS)
     ```
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by `insert/update/deletes`). Counts should match between source and target.
+<<<<<<< HEAD
 
 ## **STEP 5**: GoldenGate Results using HUE
 
@@ -267,6 +268,29 @@ The stats command displays the statistics of the data that GoldenGate processed 
 2. Click on Hamburger Menu, File Browser then Navigate to `/user/ggtarget/hdfs…`
 
   ![](./images/b19.png " ")
+=======
+
+## **STEP 5**: GoldenGate Results using HUE
+
+1. Open a Browser window from your local machine to visualize data from HUE frontend application.
+    - URL
+
+    ```
+    <copy>http://<Your Host Public IP address>:8888</copy>
+    e.g: http://111.222.111.222:8888
+    ```
+
+    - Credentials: cloudera/cloudera
+
+2. Click on Hamburger Menu, File Browser then Navigate to `/user/ggtarget/hdfs…`
+
+
+
+  ![](./images/b19.png " ")
+  
+  select **ggtarget2hdfs_csv.emp**
+
+>>>>>>> upstream/master
   ![](./images/b16.png " ")
   ![](./images/b17.png " ")
   ![](./images/b18.png " ")

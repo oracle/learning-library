@@ -1,0 +1,41 @@
+{
+  "workshoptitle": "High Performance Compute - GROMACS",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Brief Introduction on Oracle HPC",
+            "filename": "../../hpc-introduction/hpc-introduction.md"   
+        },
+        {
+            "title": "Lab 1: Add Gromacs Installer to Object Storage",
+            "description": "Add Gromacs Installer to Object Storage",
+            "filename": "../../obj-storage/obj-storage.md"        
+        },
+        {
+            "title": "Lab 2: Resource Manager",
+            "description": "Resource Manager",
+            "filename": "../../rsc-manager/rsc-manager.md"
+            
+        },
+        {         
+            "title": "Lab 3: Select Variables",
+            "description": "Select Variables",
+            "filename": "../../select-variables/select-variables.md"
+        },
+
+        {
+            "title": "Lab 4: Run the Stack",
+            "filename": "../../run-stack/run-stack.md"
+        },
+        {
+            "title": "Lab 5: Access your GPU Node",
+            "filename": "../../access-gpu/access-gpu.md"
+        }
+        
+    ]
+}

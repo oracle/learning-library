@@ -8,21 +8,21 @@ See Requirements to get the code and the required Docker images.
 
 - Go to **Solutions and Platforms** 
 
-  <img src="./images/provision-1.png" width="50%">
+  ![](./images/provision-1.png)
 
 - In the search input, type "`weblogic`". For this lab, we'll use the **WebLogic Enterprise Edition UCM**
 
-   <img src="./images/provision-2.png" width="100%">
+   ![](./images/provision-2.png)
 
 - Make sure you are in the **Compartment** you want to use, use the **default WebLogic version** available, accept the License agreement and click **Launch the Stack**
 
-   <img src="./images/provision-3.png" width="100%">
+   ![](./images/provision-3.png)
 
 - **Name** the stack and click **Next**
 
-   <img src="./images/provision-4.png" width="100%">
+   ![](./images/provision-4.png)
 
-   <img src="./images/provision-5.png" width="100%">
+   ![](./images/provision-5.png)
 
 - **Enter** a **Resource Name Prefix**.
 
@@ -30,13 +30,13 @@ See Requirements to get the code and the required Docker images.
 
   The next steps in this workshop assumes the resource name prefix is `nonjrf`, so it is highly recommended to use this name.
 
-  <img src="./images/provision-6-prefix.png" width="70%">
+  ![](./images/provision-6-prefix.png)
 
 - **Select** a **Shape**.
 
    In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.1** shape or a shape that is available in your tenancy.
 
-  <img src="./images/provision-7-shape.png" width="70%">
+  ![](./images/provision-7-shape.png)
 
    To check shape availability, you can go to **Governance -> Limits and Quotas** in another tab, and verify you have a specific shape available
 
@@ -44,7 +44,7 @@ See Requirements to get the code and the required Docker images.
 
    To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer. Since the various commands will be ran from inside the docker containers, you will need to provide the key generated in the container.
 
-  <img src="./images/provision-8-sshkey.png" width="70%">
+  ![](./images/provision-8-sshkey.png)
 
    To output the public key information, use the following command from inside the docker container
    ```
@@ -63,44 +63,44 @@ See Requirements to get the code and the required Docker images.
 
 - **Select** an **Availability Domain**
 
-  <img src="./images/provision-9-ad.png" width="70%">
+  ![](./images/provision-9-ad.png)
 
 - **Select** a **Node count**. In this lab, we'll provision 2 nodes.
 
-  <img src="./images/provision-10-nodes.png" width="70%">
+  ![](./images/provision-10-nodes.png)
 
 - We'll keep the WebLogic Administrator Name as the default of `weblogic`
 
-  <img src="./images/provision-11-admin-name.png" width="70%">
+  ![](./images/provision-11-admin-name.png)
 
 - **Paste** the **OCID** of the **Secret** generated in step 2.3) for the **Secret OCID for WebLogic Admin Password**
 
-  <img src="./images/provision-12-secret.png" width="70%">
+  ![](./images/provision-12-secret.png)
 
 - **Check** the checkbox for **WebLogic Server Advanced Server Configuration**
    Here you can see all the default ports, which we will keep as-is.
 
-  <img src="./images/provision-13-advanced.png" width="70%">
+  ![](./images/provision-13-advanced.png)
 
 - in this same **Advanced** section, **uncheck** the checkbox to **Provision the Sample Application**: since we will migrate our domain, we want a clean domain to start from.
 
-  <img src="./images/provision-14-no-app.png" width="70%">
+  ![](./images/provision-14-no-app.png)
 
 - In the **WebLogic Network** section, make sure you are in the proper compartment
 
-  <img src="./images/provision-15-net.png" width="70%">
+  ![](./images/provision-15-net.png)
 
 - Select **Create New VCN**
 
-  <img src="./images/provision-16-create-vcn.png" width="70%">
+  ![](./images/provision-16-create-vcn.png)
 
 - **Name** the VCN `wls`
 
-  <img src="./images/provision-17-vcn-name.png" width="70%">
+  ![](./images/provision-17-vcn-name.png)
 
 - **Keep the default** VCN CIDR block as-is.
    
-  <img src="./images/provision-18-vcn-cidr.png" width="70%">
+  ![](./images/provision-18-vcn-cidr.png)
 
    Note: If you were to migrate from an on-premises domain connected via VPN or FastConnect, you would want to make sure the CIDR block does not conflict with the local network.
 
@@ -108,42 +108,42 @@ See Requirements to get the code and the required Docker images.
 
    The stack will create the subnets for us.
 
-  <img src="./images/provision-19-subnets.png" width="70%">
+  ![](./images/provision-19-subnets.png)
 
 - **Check** the **Provision Load Balancer** checkbox and keep the defaults
 
-  <img src="./images/provision-20-lb.png" width="70%">
+  ![](./images/provision-20-lb.png)
 
 - Keep IDCS **unchecked**
 
-  <img src="./images/provision-21-idcs.png" width="70%">
+  ![](./images/provision-21-idcs.png)
 
 - Make sure **No Database** is selected
 
-  <img src="./images/provision-22-nodb.png" width="70%">
+  ![](./images/provision-22-nodb.png)
 
 - Optionally add Tags
 
-  <img src="./images/provision-23-tags.png" width="70%">
+  ![](./images/provision-23-tags.png)
 
 - Click **Next**
 
-  <img src="./images/provision-24.png" width="100%">
+  ![](./images/provision-24.png)
 
 - and then click **Create**
 
-  <img src="./images/provision-25.png" width="100%">
+  ![](./images/provision-25.png)
 
 - The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  <img src="./images/provision-26.png" width="100%">
+  ![](./images/provision-26.png)
 
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu. 
 
 ## **Step 2:** Gather the necessary WebLogic stack information
 
-  <img src="./images/provision-27.png" width="100%">
+  ![](./images/provision-27.png)
 
 - Make a note of the **WebLogic Admin Server public IP address** from the **WebLogic Admin Server Console URL** for later use.
 

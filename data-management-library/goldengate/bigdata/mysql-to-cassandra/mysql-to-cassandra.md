@@ -50,6 +50,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 2. Select **R** to reset the lab environment, then select **7**
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
+<<<<<<< HEAD
 
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
@@ -62,15 +63,35 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     ```
       <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+=======
+  
+4. Review the content of each of these files to explore how GoldenGate is being configured.
+
+    ```
+    <copy> cd /u01/gg4mysql/dirprm
+    view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+    ```
+    ```
+    <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
+    ```
+    ```
+    <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+>>>>>>> upstream/master
     ```
     ```
     <copy>view /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
     ```
     ```
     <copy> cd /u01/gg4hadoop123010/dirprm</copy>
+<<<<<<< HEAD
     ````
     ````
     view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
+=======
+    ```
+    ```
+    <copy>view /u01/gg4hadoop123010/dirprm/create_cassandra_replicat.oby</copy>
+>>>>>>> upstream/master
     ```
     ```
     <copy>view /u01/gg4hadoop123010/dirprm/rcass.prm</copy>

@@ -50,7 +50,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
  2. Login to ggsci (GG command line interface)
 
     ```  
+<<<<<<< HEAD
     <copy>ggsci</copy>
+=======
+    <copy>./ggsci</copy>
+>>>>>>> upstream/master
     ```
 3. Add the replicat with the below commands by logging into ggsci prompt
 
@@ -120,19 +124,35 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm</copy>
     ```
 
+<<<<<<< HEAD
 5. Now Goto ggsci command prompt and start the replicat. We can see the stats of the replicat
+=======
+5. Now Goto ggsci command prompt and start the replicat. 
+```
+<copy>start rjdbc</copy>
+```
+   We can see the stats of the replicat
+>>>>>>> upstream/master
 
 6. Login to the database `cdb1`
 
     ```
     <copy>. oraenv</copy>
+<<<<<<< HEAD
     ORACLE_SID = [cdb1] ?
+=======
+    ORACLE_SID = [cdb1] 
+>>>>>>> upstream/master
     ```
     ```
     <copy>sqlplus employees/employees@pdb1</copy>
     ```
 
+<<<<<<< HEAD
 6. Now run the below script to get the tables counts
+=======
+7. Now run the below script to get the tables counts
+>>>>>>> upstream/master
 
     ```
     <copy>select 'employees       table -> '|| count(1) as Target from employees.employees UNION ALL

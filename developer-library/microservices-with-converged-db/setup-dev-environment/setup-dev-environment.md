@@ -27,18 +27,18 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 1. To work with application code, you need to download a GitHub repository using
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
-   ```
-   <copy>cd ~ ; curl -sL https://tinyurl.com/yyvf9bpk --output master.zip ; unzip master.zip ; rm master.zip</copy>
-   ```
+    ```
+    <copy>cd ~ ; curl -sL https://tinyurl.com/yyvf9bpk --output master.zip ; unzip master.zip ; rm master.zip</copy>
+    ```
 
   You should now see `msdataworkshop-master` in your root directory
 
 
 2. Change directory into the msdataworkshop-master directory:
 
-   ```
-   <copy>cd msdataworkshop-master</copy>
-   ```
+    ```
+    <copy>cd msdataworkshop-master</copy>
+    ```
 
 ## **STEP 3**: Create an OCI compartment and an OKE cluster in that compartment
 
@@ -210,4 +210,4 @@ You may now proceed to the next lab.
 
 
 ## Need Help?
-Please submit feedback or ask for help using this [Oracle Communities Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request. 
+Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request.

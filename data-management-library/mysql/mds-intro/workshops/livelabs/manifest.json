@@ -1,0 +1,19 @@
+{
+  "workshoptitle": "Launch Your First MySQL Database Service System",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Launch Your First MySQL Database Service System",
+            "filename": "../../launchmds/launchmds.md"
+        }
+    ]
+}

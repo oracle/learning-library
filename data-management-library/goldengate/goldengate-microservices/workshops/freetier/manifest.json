@@ -1,0 +1,57 @@
+{
+  "workshoptitle": "Oracle GoldenGate Microservices",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to GoldenGate Microservices",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+
+    {
+      "title": "Lab 4: GG Initial Setup",
+      "description": "GG Initial Setup",
+      "filename": "../../gg-microservices-workshop-ogg-env-initial-setup/gg-microservices-workshop-ogg-env-initial-setup.md"
+    },
+
+     {
+      "title": "Lab 5: Create Replication",
+      "description": "GG Replication",
+      "filename": "../../gg-microservices-workshop-create-replication/gg-microservices-workshop-create-replication.md"
+    },
+  
+    {
+      "title": "Lab 7: HA/DR Replication",
+      "description": "Hign Availability / Disaster Recovery Replication",
+      "filename": "../../gg-microservices-workshop-high-availability-disaster-recovery/gg-microservices-workshop-high-availability-disaster-recovery.md"
+    },
+    {
+      "title": "Lab 8: Transformations Using GoldenGate Microservices",
+      "description": "Transformations using GoldenGate Microservices ",
+      "filename": "../../gg-microservices-workshop-transformations-using-goldengate/gg-microservices-workshop-transformations-using-goldengate.md"
+
+    }
+
+  ]
+}

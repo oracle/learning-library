@@ -1,5 +1,5 @@
-
 {
+    "workshoptitle": "Deploying MySQL InnoDB Cluster on OCI with Terraform",
     "tutorials": [
         {         
             "title": "Prerequisites",

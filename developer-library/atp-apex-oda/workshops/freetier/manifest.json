@@ -1,0 +1,37 @@
+{
+  "workshoptitle": "Extend your application with advanced chat-bots",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Create Autonomous Database",
+      "filename": "../../create-atp/create-atp.md"
+    },
+    {
+      "title": "Lab 2: Create APEX workshop and REST API",
+      "filename": "../../create-apex/create-apex.md"
+    },
+    {
+      "title": "Lab 3: Create Oracle Digital Assistant",
+      "filename": "../../create-oda/create-oda.md"
+    },
+    {
+      "title": "Lab 4: Implement Custom Component",
+      "filename": "../../cc/cc.md"
+    },
+    {
+      "title": "Lab 5: Create Digital Assistant Skill",
+      "filename": "../../skill/skill.md"
+    },
+    {
+      "title": "Next Steps",
+      "filename": "../../next/next.md"
+    }
+  ]
+}

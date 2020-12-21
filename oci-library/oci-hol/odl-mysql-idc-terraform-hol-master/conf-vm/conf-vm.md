@@ -22,7 +22,7 @@ Estimated Lab Time: 15 minutes
 
 ## **STEP 2**: Create your SSH Keys
 
-1. In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI.
+1. In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI. **Pay attention that you should not enter a passphrase, leave it blank!**
 
     ```
     $ ssh-keygen -t rsa
@@ -40,7 +40,9 @@ Estimated Lab Time: 15 minutes
 
 1. The API Key you created earlier needs to be linked to your OCI account: 
 
-    ![](.././images/gui/10.png)
+    ![](.././images/gui/10b.png)
+
+    ![](.././images/gui/10c.png)
 
     ![](.././images/gui/11.png)
 
@@ -55,12 +57,12 @@ Estimated Lab Time: 15 minutes
     ```
     $ cd ~bin
     $ wget \
-    https://releases.hashicorp.com/terraform/0.13.2/terraform_0.13.2_linux_amd64.zip
-    $ unzip terraform_0.13.2_linux_amd64.zip 
-    Archive:  terraform_0.13.2_linux_amd64.zip
+    https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip
+    $ unzip terraform_0.13.4_linux_amd64.zip 
+    Archive:  terraform_0.13.4_linux_amd64.zip
       inflating: terraform 
     $ terraform --version
-    Terraform v0.13.2
+    Terraform v0.13.4
     ``` 
 
     ### For Windows users
@@ -75,5 +77,7 @@ Congratulations, everything is now correctly set-up! *You can proceed to the nex
 - **Contributors** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Frédéric Descamps, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

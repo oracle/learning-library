@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Node.js Sample Application</title>
+    
+    <!--
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/jquery-1.11.0.min.js"></script>
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/jquery.tocify.jd.js"></script>
+    <script src="https://oracle.github.io/learning-library/common/redwood-hol/js/main.js"></script>
+    <link rel="shortcut icon" href="https://oracle.github.io/learning-library/common/redwood-hol/img/favicon.ico">
+    -->
+
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!--<link href="/css/sample-app.css" rel="stylesheet" type="text/css"> -->
+    <script language="javascript">
+  	  function loginIDCS(){
+  		    alert('Logging in with Oracle Identity Cloud Service credentials!');
+  	  }
+  	  function doLogin(){
+  		    alert('Logging in to the Sample Application!');
+  		    window.location='/private/home';
+  	  }
+	  </script>
+  </head>
+
+  <body>
+    <header class="hol-Header" role="banner">
+        <div class="hol-Header-wrap">
+            <div class="hol-Header-logo"><span>IDCS - Node.js Integration Sample Application</span></div>
+            <div class="hol-Header-actions">
+                
+            </div>
+        </div>
+    </header>
+    
+    <div id="container">
+        <div id="leftNav">
+            <div id="toc">
+              {{#ifequals title 'Login'}}
+                  <a href="/">Index</a> </br>
+                  <a href="/about">About</a>
+                {{else ifequals title 'About'}}
+                  <a href="/login">Log in</a> </br>
+                  <a href="/">Index</a>
+                {{else}}
+                  <a href="/login">Log in</a> </br>
+                  <a href="/about">About</font></a>
+                {{/ifequals}}
+
+            </div>
+        </div>
+        <div id="contentBox">
+            <main class="hol-Content" id="module-content">
+
+               {{{body}}}
+
+            </main>
+           
+        </div>
+    </div>
+
+    
+
+    <footer class="hol-Footer">
+        <a class="lightTextSmall" href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright &copy; 2020, Oracle and/or its affiliates. All rights reserved.</a>
+        <a class="hol-Footer-topLink" href="#top">Return to Top</a>
+        
+    </footer>
+</body>
+
+
+ 
+ 
+</html>

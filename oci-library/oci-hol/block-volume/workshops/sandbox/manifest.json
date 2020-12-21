@@ -1,0 +1,13 @@
+{
+    "workshoptitle": "Create and Attach a Block Volume Service",
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "filename": "./../../../intro/intro-sandbox.md"
+      },
+      {
+          "title": "Create and Attach a Block Volume Service",
+          "filename": "./../../block-volume-sandbox.md"
+      }
+    ]
+}

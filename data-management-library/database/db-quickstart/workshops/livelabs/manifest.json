@@ -1,0 +1,40 @@
+{
+    "workshoptitle": "Oracle Database Quickstart",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../db-quickstart-workshop/intro.md"
+        },
+        {
+            "title": "Lab 1: Provision an Autonomous Database",
+            "description": "Provision Autonomous Database",
+            "filename": "./../../db-provision/db-provision.md"
+        },
+        {
+            "title": "Lab 2: Connect to the Database with SQL Developer Web",
+            "description": "Connect to the Database with SQL Developer Web",
+            "filename": "./../../db-connect-sqldev-web/db-connect-sqldev-web.md"
+        },
+       {
+            "title": "Lab 3: Familiarize with the SH Sample Schema",
+            "description": "Familiarize with the SH Sample Schema",
+            "filename": "./../../db-familiarize-sh/db-familiarize-sh.md"
+        },
+        {
+            "title": "Lab 4: Query the SH Sample Schema",
+            "description": "Query the SH Sample Schema",
+            "filename": "./../../db-query/db-query.md"
+        },
+        {
+            "title": "Lab 5: Create a Schema",
+            "description": "Create a Schema",
+            "filename": "./../../db-create-schema/db-create-schema.md"
+        }
+    ]
+}

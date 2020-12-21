@@ -110,7 +110,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![](./images/1.31.png " ")
 
-12. On the same page, you will find the **Associated Resources** under the **Reosurces** menu. Click on it to get the links to the provisioned resources.
+12. On the same page, you will find the **Associated Resources** under the **Resources** menu. Click on it to get the links to the provisioned resources.
 
     ![](./images/1.25.png " ")
 

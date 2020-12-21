@@ -17,7 +17,11 @@
             "filename": "../../hello-world/hello-world.md"
         },
         {
+<<<<<<< HEAD
             "title": "Lab 2: Create a model and graph from the SH tables",
+=======
+            "title": "Lab 2: Create a graph from the SH tables",
+>>>>>>> upstream/master
             "filename": "../../create-graph-from-sh-tables/create-graph-from-sh-tables.md"
         },
         {

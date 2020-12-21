@@ -36,27 +36,27 @@
     {
       "title": "Lab 5: Data Profiling",
       "description": "Data Profiling",
-      "filename": "../../edq-profiling/edq-profiling.md"
+      "filename": "../../edq-profiling/profiling.md"
     },
     {
       "title": "Lab 6: Reference Data",
       "description": "Reference Data",
-      "filename": "../../edq-reference-data/edq-reference-data.md"
+      "filename": "../../edq-reference-data/reference-data.md"
     },
     {
       "title": "Lab 7: Data Auditing",
       "description": "Data Auditing",
-      "filename": "../../edq-audit-tools/edq-audit-tools.md"
+      "filename": "../../edq-audit-tools/audit-tools.md"
     },
     {
       "title": "Lab 8: Data Standardization and Enhancement",
       "description": "Data Standardization and Enhancement",
-      "filename": "../../edq-data-standardization/edq-data-standardization.md"
+      "filename": "../../edq-data-standardization/data-standardization.md"
     },
     {
       "title": "Lab 9: Prepare EDQ Process for ODI Consumption",
       "description": "Prepare EDQ Process for ODI Consumption",
-      "filename": "../../edq-odi-consumption/edq-odi-consumption.md"
+      "filename": "../../edq-odi-consumption/odi-consumption.md"
     }
   ]
 }

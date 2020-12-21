@@ -1,1 +1,0 @@
-This image shows the Users window for Oracle Machine Learning User Administration. In the upper right corner is the Home button, which this image highlights with a red rectangle. The button looks like a house.

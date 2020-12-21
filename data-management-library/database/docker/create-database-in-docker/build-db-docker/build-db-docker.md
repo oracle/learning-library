@@ -83,7 +83,11 @@ Choose the environment where you created your SSH Key.
 
   Download the zip file to this folder.
     ```
+<<<<<<< HEAD
     <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4tcV_zZFruaGi4wz-U6IERHuzwx2NqIcRJAnitcIE-jGAQfVccZXFk20FxKuIpvW/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
+=======
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LK1k7CgQxR2LcgcF1sG8E0Z_B3q3yNC4H62dZQ8xaSr7OBN7D6lcpIutXF17oZU6/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
+>>>>>>> upstream/master
     ```
 
   ![](images/download_PAR.png " ")
@@ -200,6 +204,7 @@ Choose the environment where you created your SSH Key.
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
+* **Lab Expiry Date** - November 30, 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

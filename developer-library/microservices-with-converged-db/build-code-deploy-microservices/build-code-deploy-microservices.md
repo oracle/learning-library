@@ -22,15 +22,15 @@ You will also clone a GitHub repository.
 
 1. Run `./addAndSourcePropertiesInBashrc.sh`
 
-   ```
-   <copy>./addAndSourcePropertiesInBashrc.sh</copy>
-   ```
+    ```
+    <copy>./addAndSourcePropertiesInBashrc.sh</copy>
+    ```
 
 2. Source the `.bashrc` file with the following command.
 
-  ```
-  <copy>source ~/.bashrc</copy>
-  ```
+    ```
+    <copy>source ~/.bashrc</copy>
+    ```
 
 ## **STEP 2**: Build and push the Docker images
 
@@ -71,7 +71,7 @@ You will also clone a GitHub repository.
    ```
       <copy>source ~/.bashrc</copy>
    ```
-      
+
   ![](images/185c88da326994bb858a01f37d7fb3e0.png " ")
 
 3.  Change directory into `/frontend-helidon` folder:
@@ -80,7 +80,7 @@ You will also clone a GitHub repository.
     <copy>cd ~/msdataworkshop-master/frontend-helidon</copy>
     ```
 
-   
+
 4.  Run the build script which will build the frontend-helidon application, store it in a docker image and push it to Oracle Registry
 
     ```
@@ -117,7 +117,7 @@ You will also clone a GitHub repository.
   ![](images/d575874fe6102633c10202c74bf898bc.png " ")
 
 8. Check that the load balancer service is running, and write down the external IP
-    address and port. 
+    address and port.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
@@ -145,4 +145,4 @@ You may now proceed to the next lab.
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
 ## Need Help?
-Please submit feedback or ask for help using this [Oracle Communities Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request. 
+Please submit feedback or ask for help using this [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-microservices-with-oracle-converged-database). Please login using your Oracle Sign On and click the **Ask A Question** button to the left.  You can include screenshots and attach files.  Communicate directly with the authors and support contacts.  Include the *lab* and *step* in your request.

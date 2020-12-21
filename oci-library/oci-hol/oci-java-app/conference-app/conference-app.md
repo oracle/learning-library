@@ -13,68 +13,68 @@ Estimated Lab Time: 5 minutes
 
 ## **STEP 1**: The Conference Application
 
-The application is hosted on GitHub, just clone its repository:
+1. The application is hosted on GitHub, just clone its repository:
 
-```
-cd ~
-git clone https://github.com/delabassee/odl-java-hol.git
-cd odl-java-hol
-```
+	```
+	cd ~
+	git clone https://github.com/delabassee/odl-java-hol.git
+	cd odl-java-hol
+	```
 
 
-The repository has multiple branches
+	The repository has multiple branches
 
-* `lab4` : starting point
-* `lab5` : lab 6 starting point, including the lab 5 solution
-* `lab6` : lab 7 starting point, including the lab 5 and 6 solution
-* `lab7` : lab 8 starting point, including the lab 5 to 7 solutions
-* `lab8` : lab 9 starting point, including the lab 5 to 8 solutions
-* `lab9` : lab 10 starting point, including the lab 5 to 9 solutions
-* `lab10` : all solutions from lab 5 to 10 included
+	* `lab4` : starting point
+	* `lab5` : lab 6 starting point, including the lab 5 solution
+	* `lab6` : lab 7 starting point, including the lab 5 and 6 solution
+	* `lab7` : lab 8 starting point, including the lab 5 to 7 solutions
+	* `lab8` : lab 9 starting point, including the lab 5 to 8 solutions
+	* `lab9` : lab 10 starting point, including the lab 5 to 9 solutions
+	* `lab10` : all solutions from lab 5 to 10 included
 
-💡 `lab10` is optional and does not require any code update so there's no solution for this lab.
+	💡 `lab10` is optional and does not require any code update so there's no solution for this lab.
 
-Switch to the starting point:
-```
-git checkout lab4
-```
+2. Switch to the starting point:
+	```
+	git checkout lab4
+	```
 
-Update the project's `pom.xml` to enable Preview Features as described in the previous section.
+3. Update the project's `pom.xml` to enable Preview Features as described in the previous section.
 
 ## **STEP 2**: Build and test the Application
 
-By now, you should know how to build and test an Helidon application. 
+1. By now, you should know how to build and test an Helidon application. 
 
-Either using Maven:
+	Either using Maven:
 
-```
-mvn clean package
-java --enable-preview -jar target/conference-app.jar
-# When the app is not using any preview features… 
-# java -jar target/conference-app.jar
-```
+	```
+	mvn clean package
+	java --enable-preview -jar target/conference-app.jar
+	# When the app is not using any preview features… 
+	# java -jar target/conference-app.jar
+	```
 
-or using the Helidon CLI devloop:
+	or using the Helidon CLI devloop:
 
-```
-helidon dev --app-jvm-args "--enable-preview"
-# When the app is not using any preview features… 
-# helidon dev
-```
+	```
+	helidon dev --app-jvm-args "--enable-preview"
+	# When the app is not using any preview features… 
+	# helidon dev
+	```
 
-The Conference application exposes simple REST endpoints to get speaker-related information.
+2. The Conference application exposes simple REST endpoints to get speaker-related information.
 
-* http://{public-ip}:8080/speakers ➞ Get all speakers
-* http://{public-ip}:8080/speakers/company/{company} ➞ Get speakers for a given company
-* http://{public-ip}:8080/speakers/lastname/{name} ➞ Get speaker by its lastname
-* http://{public-ip}:8080/speakers/track/{track} ➞ Get speakers for a given track
-* http://{public-ip}:8080/speakers/{id} ➞ Get speaker details for a given id
+	* http://{public-ip}:8080/speakers ➞ Get all speakers
+	* http://{public-ip}:8080/speakers/company/{company} ➞ Get speakers for a given company
+	* http://{public-ip}:8080/speakers/lastname/{name} ➞ Get speaker by its lastname
+	* http://{public-ip}:8080/speakers/track/{track} ➞ Get speakers for a given track
+	* http://{public-ip}:8080/speakers/{id} ➞ Get speaker details for a given id
 
-Once the application is running, you can test it. 
+3. Once the application is running, you can test it. 
 
-* http://{public_ip}:8080/speakers/lastname/goetz
-* http://{public_ip}:8080/speakers/company/oracle
-* http://{public_ip}:8080/speakers/track/db
+	* http://{public_ip}:8080/speakers/lastname/goetz
+	* http://{public_ip}:8080/speakers/company/oracle
+	* http://{public_ip}:8080/speakers/track/db
 
 ## Lab Navigation & Tips
 
@@ -116,5 +116,7 @@ Here are some simple tips that might be useful in the course of this Lab.
  - **Author** - [David Delabassee](https://delabassee.com)
  - **Last updated By** - Kamryn Vinson, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

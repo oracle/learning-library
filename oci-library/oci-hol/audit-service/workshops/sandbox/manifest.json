@@ -1,0 +1,13 @@
+{
+  "workshoptitle": "Using OCI Audit Service",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "./../../intro/intro-sandbox.md"
+        },
+        {
+            "title": "Lab 1: Using OCI Audit Service",
+            "filename": "./../../audit-service/audit-service-sandbox.md"
+        }
+    ]
+}

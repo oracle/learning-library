@@ -1,10 +1,9 @@
 {
-    "workshoptitle": "High Performance Compute - Introductory Workshop",
+    "workshoptitle": "High Performance Compute - Siemens STAR-CCM+",
     "tutorials": [
         {
             "title": "Prerequisites",
-            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"        
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Introduction",

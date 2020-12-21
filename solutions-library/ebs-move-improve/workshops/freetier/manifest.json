@@ -34,6 +34,11 @@
         {
             "title": "Next Steps:  Load and Optimize Data from EBS",
             "filename": "../../optimize-data/optimize-data.md"
+        },
+        {
+            "title": "Teardown Your EBS Environments",
+            "description": "Teardown Your Oracle E-Business Suite Environments",
+            "filename": "../../teardown/teardown.md"
         }
      ]
 }

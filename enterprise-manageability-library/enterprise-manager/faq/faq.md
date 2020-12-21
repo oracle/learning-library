@@ -2,21 +2,26 @@
 ## Introduction
 The following are Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs.
 ### Contents
-1. [How to Check Status of Oracle Management Service, Other Services and Agent](#1HowtoCheckStatusofOracleManagementServiceOtherServicesandAgent)
-2. [How to be root on the workshop instance](#2Howtoberootontheworkshopinstance)
-3. [How to Locate EMCLI on Your Instance](#3HowtoLocateemclionYourInstance)
-4. [Oracle Management Server (OMS) / WebTier is Down](#4OracleManagementServer(OMS)WebTierisDown)
-5. [Unable to Connect to Oracle Management Server (OMS) Website](#5UnabletoConnecttoOracleManagementServer(OMS)Website)
-6. [Restart an Agent Not Responding](#6RestartanAgentNotResponding)
-7. [How to Stop all Enterprise Manager (EM) Services Before Stopping an OCI instance](#7HowtoStopallEnterpriseManager(EM)ServicesBeforeStoppinganOCIinstance)
-8. [Steps To Setup VCN for FastConnect](#8StepsToSetupVCNforFastConnect)
-9. [Licensing Terms for the Enterprise Manager Marketplace Instance](#9LicensingTermsfortheEnterpriseManagerMarketplaceInstance)
-10. [How to Reset user oracle  password or if Named Credentials for user oracle are not working](#10HowtoResetuseroraclepasswordorifNamedCredentialsforuseroracleisnotworking)
-11. [Unable to connect to Enterprise Manager Console](#11UnabletoconnecttoEnterpriseManagerConsole)
-12. [Unable to Select Shape for Creating an instance](#12UnabletoSelectShapeforCreatinganinstance)
-13. [While trying to launch the EM instance: "Unable to accept Terms of Use."](#13WhiletryingtolaunchtheEMinstance:UnabletoacceptTermsofUse)
-14. [Information about Oracle Cloud Infrastructure Pricing](#14AdditionalinformationonOracleCloudInfrastructurePricing)
-15. [Additional information on Oracle Cloud Infrastructure Setup](#15AdditionalinformationonOracleCloudInfrastructureSetup)
+- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
+  - [Introduction](#introduction)
+    - [Contents](#contents)
+  - [1. How to Check Status of Oracle Management Service, Other Services and Agent](#1-how-to-check-status-of-oracle-management-service-other-services-and-agent)
+  - [2. How to be root on the workshop instance](#2-how-to-be-root-on-the-workshop-instance)
+  - [3. How to Locate emcli on Your Instance](#3-how-to-locate-emcli-on-your-instance)
+  - [4. Oracle Management Server (OMS) / WebTier is Down](#4-oracle-management-server-oms--webtier-is-down)
+  - [5. Unable to Connect to Oracle Management Server (OMS)  Website](#5-unable-to-connect-to-oracle-management-server-oms-website)
+  - [6. Restart an Agent Not Responding](#6-restart-an-agent-not-responding)
+  - [7. How to Stop all Enterprise Manager (EM) Services Before Stopping an OCI instance](#7-how-to-stop-all-enterprise-manager-em-services-before-stopping-an-oci-instance)
+  - [8. Steps To Setup VCN for FastConnect](#8-steps-to-setup-vcn-for-fastconnect)
+  - [9. Licensing Terms for the Enterprise Manager Marketplace Instance](#9-licensing-terms-for-the-enterprise-manager-marketplace-instance)
+  - [10. How to Reset user *oracle* password or if Named Credentials for user oracle is not working](#10-how-to-reset-user-oracle-password-or-if-named-credentials-for-user-oracle-is-not-working)
+  - [11. Unable to connect to Enterprise Manager Console](#11-unable-to-connect-to-enterprise-manager-console)
+  - [12. Unable to Select Shape for Creating an instance](#12-unable-to-select-shape-for-creating-an-instance)
+  - [13. While trying to launch the EM instance: Unable to accept Terms of Use.](#13-while-trying-to-launch-the-em-instance-unable-to-accept-terms-of-use)
+  - [14. Additional information on Oracle Cloud Infrastructure Pricing](#14-additional-information-on-oracle-cloud-infrastructure-pricing)
+  - [15. Additional information on Oracle Cloud Infrastructure Setup](#15-additional-information-on-oracle-cloud-infrastructure-setup)
+  - [Acknowledgements](#acknowledgements)
+  - [Need Help?](#need-help)
 
 ## 1. How to Check Status of Oracle Management Service, Other Services and Agent
 Sudo to user oracle; As user *oracle* run the emctl status commands as shown:
@@ -113,5 +118,7 @@ The Named Credential can also be updated via Enterprise Manager UI. On the EM Co
 - **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 - **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -17,7 +17,17 @@ In the lab, you will:
 
 ## **STEP 1:** Create the Customer 360 Property Graph
 
+<<<<<<< HEAD
 1. The following DDL creates a property graph (i.e. node and edge tables) from the relational table data.
+=======
+1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
+
+    ```
+    ssh -i ./your-key-name opc@your-instance-ip-address
+    ```
+
+2. The following DDL creates a property graph (i.e. node and edge tables) from the relational table data.
+>>>>>>> upstream/master
 
   ![](images/create_graph.jpg)
 
@@ -82,7 +92,11 @@ In the lab, you will:
 
   Note: The file is part of the repository under the `graphs/customer_360/` directory. The parent directory is mapped to `/graphs` in the container.
 
+<<<<<<< HEAD
 2. Using Graph Client, connect to Oracle Database and run the DDL above.
+=======
+3. Using Graph Client, connect to Oracle Database and run the DDL above.
+>>>>>>> upstream/master
 
   If the graph-client is not up and running start it by executing the following command.
 
@@ -90,7 +104,11 @@ In the lab, you will:
     <copy>docker-compose -f docker-compose-rdbms.yml up -d graph-client</copy>
     ```
 
+<<<<<<< HEAD
 3. Then start a JShell in the client.
+=======
+4. Then start a JShell in the client.
+>>>>>>> upstream/master
 
     ```
     $ <copy>docker exec -it graph-client opg-rdbms-jshell</copy>
@@ -107,7 +125,11 @@ In the lab, you will:
     opg-rdbms-jshell>
     ```
 
+<<<<<<< HEAD
 4. Enter the following code to:
+=======
+5. Enter the following code to:
+>>>>>>> upstream/master
 
     - Specify the JDBC connection to the database
     - Open a Connection
@@ -144,14 +166,24 @@ In the lab, you will:
         } catch(Exception e) {
           throw new RuntimeException(e);
         }
+<<<<<<< HEAD
       }
 
     query.accept("select count(v) from Customer360-PG match (v)");
+=======
+      };
+
+    query.accept("select count(v) from customer_360 match (v)");
+>>>>>>> upstream/master
     </copy>
     +----------+
     | count(v) |
     +----------+
+<<<<<<< HEAD
     | 8        |
+=======
+    | 15       |
+>>>>>>> upstream/master
     +----------+
     ```
 
@@ -159,7 +191,11 @@ In the lab, you will:
 
     ```
     <copy>
+<<<<<<< HEAD
     \exit
+=======
+    /exit
+>>>>>>> upstream/master
     </copy>
     ```
 
@@ -168,10 +204,18 @@ You may now proceed to the next lab where you will load, query, and analyze the 
 ## Acknowledgements
 
 * **Author** -  Jayant Sharma, Product Manager
+<<<<<<< HEAD
 * **Contributors** - Ryota Yamanaka
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+=======
+* **Contributors** - Ryota Yamanaka, Anoosha Pilli, Product Manager
+* **Last Updated By/Date** - Anoosha Pilli, Database Product Management, October 2020
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+>>>>>>> upstream/master
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -27,12 +27,32 @@ In this lab, you will:
 
 ### Prerequisites
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+You require ``terraform`` installed to create a Terraform configuration file for provisioning the Hyperion package on OCI. To install Terraform, find the appropriate package for your system from this [link](https://www.terraform.io/downloads.html) and download it as a zip archive. After downloading Terraform, unzip the package. Terraform runs as a single binary named terraform. Any other files in the package can be safely removed and Terraform will still function. Finally, make sure that the terraform binary is available on your ``PATH``. This process will differ depending on your operating system.
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+#### For Mac Users 
 
-*This is the "fold" - below items are collapsed by default*
+1. Open a terminal window.
+2. Navigate to the folder where you downloaded the Terraform zip, unzip the package. 
+
+**For e.g. -** 
+`` cd /Users/local/Downloads
+  unzip terraform_0.13.4_darwin_amd64.zip``
+
+3.  Determine the path location using the following commands -
+
+``cd 
+cat ~/.bash_profile
+``
+
+5. Make a note of the location of the folder where the PATH is set to. 
+
+**For e.g. -** ``export PATH=/Users/local/bin:$PATH``
+
+8.  We have to move the terraform file that you unzipped to the path recorded in the previous step. Use the following command for it.
+
+``mv /Users/local/Downloads/terraform /Users/local/bin/terraform``
+
+9. Verify if terraform works. Enter `terraform` in your terminal and hit enter.
 
 ## **STEP 1**: title
 
@@ -108,5 +128,7 @@ You may proceed to the next lab.
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

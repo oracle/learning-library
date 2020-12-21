@@ -11,6 +11,7 @@
       },
       {
           "title": "Lab 1: Identity Access Management",
+		      "type": "freetier",
           "filename": "./../../virtual-cloud-networks.md"
       }
     ]

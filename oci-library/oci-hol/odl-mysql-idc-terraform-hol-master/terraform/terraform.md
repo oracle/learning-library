@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will create retrieve the code for the Terraform infrastructure and learn how to configure it to use it with Oracle Cloud Infrastructure.
+In this lab, you will retrieve the code for the Terraform infrastructure and learn how to configure it to use it with Oracle Cloud Infrastructure.
 
 Estimated Lab Time: 20 minutes
  
@@ -45,7 +45,7 @@ Estimated Lab Time: 20 minutes
 
     number_of_nodes = "3"
 
-    node_shape = "VM.Standard1.1"
+    node_shape = "VM.Standard.E2.1"
     ```
 
 ## **STEP 3**: tenancy_ocid
@@ -134,7 +134,7 @@ Estimated Lab Time: 20 minutes
 
     The different shapes can be found on OCI Dashboard:
 
-    ![](.././images/gui/09.png)
+    ![](.././images/gui/13.png)
 
 You can get more info [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm).
 
@@ -146,5 +146,7 @@ You can get more info [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Co
 - **Contributors** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Frédéric Descamps, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

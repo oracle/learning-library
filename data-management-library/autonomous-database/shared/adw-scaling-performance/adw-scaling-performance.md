@@ -26,7 +26,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
     -   **OCPU count :** 8
     -   **Storage (TB):** 2
     -   **Auto-Scaling:** Disabled
-  
+
   *Note: You can scale up/down your autonomous database only if your autonomous database is NOT Always Free.*
 
 3.  Click **Update** after filling in the form. This will take you to the database instance's Details page.

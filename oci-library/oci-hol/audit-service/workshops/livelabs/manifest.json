@@ -1,14 +1,15 @@
 {
+  "workshoptitle": "Using OCI Audit Service",
     "tutorials": [
-        {         
+        {
             "title": "Prerequisites",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
-        {         
+        {
             "title": "Introduction",
             "filename": "./../../intro/intro.md"
         },
-        {         
+        {
             "title": "Lab 1: Using OCI Audit Service",
             "filename": "./../../audit-service/audit-service.md"
         }

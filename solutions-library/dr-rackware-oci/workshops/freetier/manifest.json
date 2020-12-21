@@ -1,0 +1,32 @@
+{
+    "workshoptitle": "Disaster Recovery RackWare Deployment on OCI",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Disaster Recovery Network and Connectivity Setup",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../dr-network-setup/dr-network-setup.md"
+        },
+        {
+            "title": "Lab 2: Configure APEX instance for DR",
+            "filename": "../../apex-configure/apex-configure.md"
+        },
+        {
+            "title": "Lab 3: Setting Up RackWare DR components",
+            "filename": "../../rackware-setup/rackware-setup.md"
+        },
+        {
+            "title": "Lab 4: Complete DR Configuration & Perform Failover",
+            "filename": "../../dr-failover/dr-failover.md"
+        }
+    ]
+}

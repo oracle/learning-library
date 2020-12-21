@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "workshoptitle": "The Title of the Workshop is defined in the manifest",
     "include": {"define_channels_local_table": "../../data-load/files/define_channels_local_table.sql",
                 "load_data": "../../data-load/files/load_data.sql",
@@ -40,4 +41,29 @@
             "filename": "../../visualize/visualize.md"
         }
     ]
+=======
+    "workshoptitle": "Active/Passive Data Recovery",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {            
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {            
+            "title": "Lab 1: Disaster Recovery Network and Connectivity Setup",
+            "filename": "../../setup/setup.md"
+        },
+        {            
+            "title": "Lab 2: Using Rsync for Application File Sync",
+            "filename": "../../rsync/rsync.md"
+        },
+        {            
+            "title": "Lab 3: Oracle Data Guard",
+            "filename": "../../dataguard/dataguard.md"
+        }
+     ]
+>>>>>>> upstream/master
 }

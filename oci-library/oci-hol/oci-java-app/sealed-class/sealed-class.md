@@ -37,259 +37,259 @@ All extends the **Session** abstract class
 
 1. Create a `session` directory (`mkdir src/main/java/conference/session/`) and create the abstract sealed `Session.java` superclass.
 
-`nano src/main/java/conference/session/Session.java`
+    `nano src/main/java/conference/session/Session.java`
 
-```
-package conference.session;
+    ```
+    package conference.session;
 
-import conference.Track;
+    import conference.Track;
 
-import java.util.UUID;
+    import java.util.UUID;
 
-sealed public abstract class Session
-permits Keynote, Breakout {
+    sealed public abstract class Session
+    permits Keynote, Breakout {
 
-    private String id;
-    private String title;
+        private String id;
+        private String title;
 
-    public Session(String id, String title) {
-        this.title = title;
-        //uid = UUID.randomUUID().toString();
-        this.id= id;
+        public Session(String id, String title) {
+            this.title = title;
+            //uid = UUID.randomUUID().toString();
+            this.id= id;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
     }
+    ```
 
-    public String getId() {
-        return id;
-    }
+    🔎 `sealed public … class Session` ➞ declares it to be a **sealed** class.
 
-    public String getTitle() {
-        return title;
-    }
-}
-```
-
-🔎 `sealed public … class Session` ➞ declares it to be a **sealed** class.
-
-🔎 `permits Keynote, Breakout …` ➞ explicitly declares that only the `Keynote` and the `Breakout` classes can extend it.
+    🔎 `permits Keynote, Breakout …` ➞ explicitly declares that only the `Keynote` and the `Breakout` classes can extend it.
 
 
 2. Now you need to create both `Keynote.java` and `Breakout.java` classes
 
-`nano src/main/java/conference/session/Keynote.java`
+    `nano src/main/java/conference/session/Keynote.java`
 
-```
-package conference.session;
+    ```
+    package conference.session;
 
-final public class Keynote extends Session {
+    final public class Keynote extends Session {
 
-    public String getKeynoteSpeaker() {
-        return keynoteSpeaker;
+        public String getKeynoteSpeaker() {
+            return keynoteSpeaker;
+        }
+
+        String keynoteSpeaker;
+
+        public Keynote(String id, String keynoteSpeaker, String title) {
+            super(id, title);
+            this.keynoteSpeaker = keynoteSpeaker;
+        }
     }
+    ```
+    🔎 `Keynote.java` is **final**, it can't be extended.
 
-    String keynoteSpeaker;
 
-    public Keynote(String id, String keynoteSpeaker, String title) {
-        super(id, title);
-        this.keynoteSpeaker = keynoteSpeaker;
+    `nano src/main/java/conference/session/Breakout.java`
+
+    ```
+    package conference.session;
+
+    import java.util.Random;
+
+    public sealed abstract class Breakout extends Session
+    permits Lab, Lecture {
+
+        private String speaker;
+        private int virtualRoom;
+
+        public Breakout(String id, String title, String speaker) {
+            super(id, title);
+            this.speaker = speaker;
+            this.virtualRoom = new Random().nextInt(3) + 1; // randomly assign a room
+        }
+
+        public String getSpeaker() {
+            return speaker;
+        }
+
+        public int getVirtualRoom() {
+            return virtualRoom;
+        }
     }
-}
-```
-🔎 `Keynote.java` is **final**, it can't be extended.
-
-
-`nano src/main/java/conference/session/Breakout.java`
-
-```
-package conference.session;
-
-import java.util.Random;
-
-public sealed abstract class Breakout extends Session
-permits Lab, Lecture {
-
-    private String speaker;
-    private int virtualRoom;
-
-    public Breakout(String id, String title, String speaker) {
-        super(id, title);
-        this.speaker = speaker;
-        this.virtualRoom = new Random().nextInt(3) + 1; // randomly assign a room
-    }
-
-    public String getSpeaker() {
-        return speaker;
-    }
-
-    public int getVirtualRoom() {
-        return virtualRoom;
-    }
-}
-```
-🔎 `Breakout.java` is also **sealed**, it **permits** both the `Lab` and the `Lecture` classes to extend it.
+    ```
+    🔎 `Breakout.java` is also **sealed**, it **permits** both the `Lab` and the `Lecture` classes to extend it.
 
 3. Create the `Lecture.java` and `Lab.java` classes
 
-`nano src/main/java/conference/session/Lecture.java`
+    `nano src/main/java/conference/session/Lecture.java`
 
-```
-package conference.session;
+    ```
+    package conference.session;
 
-final public class Lecture extends Breakout {
+    final public class Lecture extends Breakout {
 
-    String slidesUrl;
+        String slidesUrl;
 
-    public Lecture(String id, String title, String speaker, String slidesUrl) {
-        super(id, title, speaker);
-        this.slidesUrl = slidesUrl;
+        public Lecture(String id, String title, String speaker, String slidesUrl) {
+            super(id, title, speaker);
+            this.slidesUrl = slidesUrl;
+        }
+
+        public String getslidesUrl() {
+            return slidesUrl;
+        }
     }
+    ```
 
-    public String getslidesUrl() {
-        return slidesUrl;
+    `nano src/main/java/conference/session/Lab.java`
+
+    ```
+    package conference.session;
+
+    final public class Lab extends Breakout {
+
+        String labUrl;
+
+        public Lab(String id, String title, String speaker, String labUrl) {
+            super(id, title, speaker);
+            this.labUrl = labUrl;
+        }
+
+        public String getLabUrl() {
+            return labUrl;
+        }
     }
-}
-```
+    ```
 
-`nano src/main/java/conference/session/Lab.java`
-
-```
-package conference.session;
-
-final public class Lab extends Breakout {
-
-    String labUrl;
-
-    public Lab(String id, String title, String speaker, String labUrl) {
-        super(id, title, speaker);
-        this.labUrl = labUrl;
-    }
-
-    public String getLabUrl() {
-        return labUrl;
-    }
-}
-```
-
-🔎 Both classes are `final`.
+    🔎 Both classes are `final`.
 
 
 4. Create a fictional 'AgendaRepository.java' class
 
-`nano src/main/java/conference/AgendaRepository.java`
+    `nano src/main/java/conference/AgendaRepository.java`
 
-```
-package conference;
+    ```
+    package conference;
 
-import conference.session.Keynote;
-import conference.session.Lab;
-import conference.session.Lecture;
-import conference.session.Session;
+    import conference.session.Keynote;
+    import conference.session.Lab;
+    import conference.session.Lecture;
+    import conference.session.Session;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+    import java.util.List;
+    import java.util.Optional;
+    import java.util.stream.Collectors;
 
-public final class AgendaRepository {
+    public final class AgendaRepository {
 
-    private final List<Session> sessionList;
+        private final List<Session> sessionList;
 
-    public AgendaRepository() {
+        public AgendaRepository() {
 
-        var keynote = new Keynote("001", "007", "The Future of Java Is Now");
-        var s1 = new Lecture("005", "Java Language Futures - Mid 2020 Edition", "021", "https://speakerdeck/s1");
-        var s2 = new Lecture("006", "ZGC: The Next Generation Low-Latency Garbage Collector", "005", "https://slideshare/s2");
-        var s3 = new Lecture("007", "Continuous Monitoring with JDK Flight Recorder (JFR)", "010", "https://speakerdeck/007");
-        var hol1 = new Lab("010", "Building Java Cloud Native Applications with Micronaut and OCI", "030", "https://github.com/micronaut");
-        var hol2 = new Lab("011", "Using OCI to Build a Java Application", "019", "https://github.com/011");
+            var keynote = new Keynote("001", "007", "The Future of Java Is Now");
+            var s1 = new Lecture("005", "Java Language Futures - Mid 2020 Edition", "021", "https://speakerdeck/s1");
+            var s2 = new Lecture("006", "ZGC: The Next Generation Low-Latency Garbage Collector", "005", "https://slideshare/s2");
+            var s3 = new Lecture("007", "Continuous Monitoring with JDK Flight Recorder (JFR)", "010", "https://speakerdeck/007");
+            var hol1 = new Lab("010", "Building Java Cloud Native Applications with Micronaut and OCI", "030", "https://github.com/micronaut");
+            var hol2 = new Lab("011", "Using OCI to Build a Java Application", "019", "https://github.com/011");
 
-        sessionList = List.of(keynote, s1, s2, s3, hol1, hol2);
+            sessionList = List.of(keynote, s1, s2, s3, hol1, hol2);
+        }
+
+
+        public List<Session> getAll() {
+
+            List<Session> allSessions = sessionList.stream()
+                    .collect(Collectors.toList());
+            return allSessions;
+        }
+
+
+        public Optional<Session> getBySessionId(String sessionId) {
+
+            Optional<Session> session = sessionList.stream()
+                    .filter(s -> s.getId().equals(sessionId))
+                    .findFirst();
+            return session;
+        }
     }
-
-
-    public List<Session> getAll() {
-
-        List<Session> allSessions = sessionList.stream()
-                .collect(Collectors.toList());
-        return allSessions;
-    }
-
-
-    public Optional<Session> getBySessionId(String sessionId) {
-
-        Optional<Session> session = sessionList.stream()
-                .filter(s -> s.getId().equals(sessionId))
-                .findFirst();
-        return session;
-    }
-}
-```
+    ```
 
 5. Create `AgendaService.java`
 
-`nano src/main/java/conference/AgendaService.java`
+    `nano src/main/java/conference/AgendaService.java`
 
-```
-package conference;
+    ```
+    package conference;
 
-import conference.session.Keynote;
-import conference.session.Lab;
-import conference.session.Lecture;
-import conference.session.Session;
-import io.helidon.webserver.Routing;
-import io.helidon.webserver.ServerRequest;
-import io.helidon.webserver.ServerResponse;
-import io.helidon.webserver.Service;
+    import conference.session.Keynote;
+    import conference.session.Lab;
+    import conference.session.Lecture;
+    import conference.session.Session;
+    import io.helidon.webserver.Routing;
+    import io.helidon.webserver.ServerRequest;
+    import io.helidon.webserver.ServerResponse;
+    import io.helidon.webserver.Service;
 
-import java.util.List;
-import java.util.logging.Logger;
+    import java.util.List;
+    import java.util.logging.Logger;
 
 
-public class AgendaService implements Service {
+    public class AgendaService implements Service {
 
-   private final AgendaRepository sessions;
-   private static final Logger LOGGER = Logger.getLogger(AgendaService.class.getName());
+    private final AgendaRepository sessions;
+    private static final Logger LOGGER = Logger.getLogger(AgendaService.class.getName());
 
-   AgendaService() {
-      sessions = new AgendaRepository();
-   }
+    AgendaService() {
+        sessions = new AgendaRepository();
+    }
 
-   @Override
-   public void update(Routing.Rules rules) {
-      rules.get("/", this::getAll);
-   }
+    @Override
+    public void update(Routing.Rules rules) {
+        rules.get("/", this::getAll);
+    }
 
-   private void getAll(final ServerRequest request, final ServerResponse response) {
-     LOGGER.fine("getSessionsAll");
+    private void getAll(final ServerRequest request, final ServerResponse response) {
+        LOGGER.fine("getSessionsAll");
 
-     List<Session> allSessions = this.sessions.getAll();
-     response.send(allSessions);
-   }
-}
-```
+        List<Session> allSessions = this.sessions.getAll();
+        response.send(allSessions);
+    }
+    }
+    ```
 
 
 6. Update the `createRouting` method in `Main.java` to instantiate the AgendaService and register its handler under the "/sessions" path.
 
 
-`nano src/main/java/conference/Main.java`
+    `nano src/main/java/conference/Main.java`
 
-```
-…
-AgendaService sessionsService = new AgendaService();
+    ```
+    …
+    AgendaService sessionsService = new AgendaService();
 
-…
-return Routing.builder()
-      …
-      .register("/sessions", sessionsService)
-      .build();
+    …
+    return Routing.builder()
+        …
+        .register("/sessions", sessionsService)
+        .build();
 
-```
-As you have probably guessed, you have just created an endpoint to exposes sessions details
-It can be accessed via `{public_ip}:8080/sessions`.
+    ```
+    As you have probably guessed, you have just created an endpoint to exposes sessions details
+    It can be accessed via `{public_ip}:8080/sessions`.
 
 
 7. Create a new session type.
 
-The interesting part of the lab is the restricted Session classes hierarchy that you have created at the beginning. You can challenge it by creating, for example, a new session type (ex. `Quickie`) type that extends `Breakout`. Given that only `Lab` and `Lecture` are permitted to extend `Breakout`, the Java compiler will simply refuse that `Quickie` tries to extends `Breakout` but you should be able to fix this.
+    The interesting part of the lab is the restricted Session classes hierarchy that you have created at the beginning. You can challenge it by creating, for example, a new session type (ex. `Quickie`) type that extends `Breakout`. Given that only `Lab` and `Lecture` are permitted to extend `Breakout`, the Java compiler will simply refuse that `Quickie` tries to extends `Breakout` but you should be able to fix this.
 
 ## Wrap-up
 
@@ -304,8 +304,10 @@ For more details, please check [JEP 360: Sealed Classes (Preview)](https://openj
  - **Author** - [David Delabassee](https://delabassee.com)
  - **Last updated By** - Kamryn Vinson, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 
 

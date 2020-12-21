@@ -63,7 +63,7 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
     -   Click **Select files** to select the file for data uploading.
 
     -   Click the browse button and navigate to the channels.csv file that you downloaded in Step 1.
-  
+
     -   Or, you can drag and drop the channels.csv file
 
     ![](./images/click_select_files_in_import_data_wizard.jpg " ")    
@@ -81,7 +81,7 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
     ![](./images/column_mapping_in_import_data_wizard.jpg " ")
 
-6.  The final step of the Import Wizard, **Review**, reflects all of the choices you made in the Wizard. Click **Finish** to load the data into your newly created table *CHANNELS_LOCAL*. 
+6.  The final step of the Import Wizard, **Review**, reflects all of the choices you made in the Wizard. Click **Finish** to load the data into your newly created table *CHANNELS_LOCAL*.
     ![](./images/review_step_in_import_data_wizard.jpg " ")
 
 7. Click **OK** to confirm the import. Depending on the size of the data file you are importing, the import may take some time. After importing finishes, you can expand the *CHANNELS_LOCAL* table to see the data being imported. If you don't see your table or your data in your object tree under Tables, click the refresh button.
@@ -114,7 +114,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
   *To learn more about the OCI Object Storage, refer to its <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
 
-2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, the **root** compartment is chosen. For LiveLabs tenancy users, select the compartment that you were assigned in the *Launch Workshop* window. 
+2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, the **root** compartment is chosen. For LiveLabs tenancy users, select the compartment that you were assigned in the *Launch Workshop* window.
 *Note: If you are doing this workshop in the LiveLabs tenancy and you have issues selecting your compartment, go back to your ADB instance create page and select your compartment.  Now go back to Object Storage, you should be able to select your compartment and create your bucket.  This is a known OCI issue that should be resolved shortly*
     ![](images/snap0014298.jpg " ")
 
@@ -122,7 +122,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![](images/snap0014299.jpg " ")
 
-4. Bucket names must be unique per tenancy and region; otherwise you will receive an "already exists" message. Enter a unique bucket name and click the **Create Bucket** button.
+4. **Bucket names must be unique per tenancy and region**; otherwise you will receive an "already exists" message. For example, if you are running this lab in LiveLabs,  include your LiveLabs user login ID, as in **<user login>-ADWCLab**. Enter the unique bucket name and click the **Create Bucket** button.
 
     ![](images/snap0014300.jpg " ")
 

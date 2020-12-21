@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-sdk-oracle-idcs",
+  "version": "1.0.0",
+  "description": "Node.js sample application integrated with Oracle Identity Cloud Service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Felippe Oliveira (felippe.oliveira@oracle.com)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "bunyan": "1.8.12",
+    "cache-manager": "2.9.0",
+    "cookie-parser": "1.4.4",
+    "express": "4.16.4",
+    "express-handlebars": "3.0.2",
+    "express-session": "1.15.6",
+    "express-validator": "5.3.1",
+    "json": "9.0.6",
+    "json-web-token": "^2.1.3",
+    "jsonwebtoken": "8.5.1",
+    "jwk-to-pem": "2.0.1",
+    "lru": "^3.1.0",
+    "passport": "0.4.0",
+    "promise": "8.0.3",
+    "request": "2.88.0",
+    "base64url": "3.0.1"
+  }
+}
