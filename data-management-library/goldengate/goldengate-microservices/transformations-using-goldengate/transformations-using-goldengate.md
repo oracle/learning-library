@@ -46,7 +46,7 @@ Open a terminal session and switch to ***oracle*** user
 <copy>sudo su - oracle</copy>
 ````
 
-![](./images/terminal3.png " ")
+![](./images/oracle.png " ")
 
 
 1.	Add a new column ***CUSTOMER_NAME*** to target table ***CUSTOMERS***
@@ -404,9 +404,9 @@ You may now *proceed to the next lab*.
 * [GoldenGate Microservices](https://docs.oracle.com/en/middleware/goldengate/core/19.1/understanding/getting-started-oracle-goldengate.html#GUID-F317FD3B-5078-47BA-A4EC-8A138C36BD59)
 
 ## Acknowledgements
-* **Author** - Madhu Kumar S ,Brian Elliott Data Integration, December 2020
-* **Contributors** - Madhu Kumar S  
-* **Last Updated By/Date** - Madhu Kumar S January 2020
+* **Author** - Madhu Kumar S January 2021
+* **Contributors** - Madhu Kumar S ,Brian Elliott Data Integration  
+* **Last Updated By/Date** - Madhu Kumar S January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
