@@ -1,5 +1,5 @@
 # GoldenGate Microservices Transformations 
-
+Jan 4 2021
 ## Introduction
 
 This lab is intended to give you familiarity with how to configure GG for database to database replication transformations. GoldenGate is Non-invasive, real-time transactional data streaming
