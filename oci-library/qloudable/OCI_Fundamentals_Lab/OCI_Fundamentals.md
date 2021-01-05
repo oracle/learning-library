@@ -76,7 +76,7 @@ In this lab you will deploy http servers on two compute instances in Oracle Clou
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Choose **VCN with Internet Connectivity** and click **Start Workflow**
+3. Choose **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 4. Fill out the dialog box:
 

@@ -52,11 +52,11 @@ Copy and paste the Username and Password credentials from the Luna Lab landing s
 
  ![](img/004.png " ")
 
-2. Select the compartment where you want to create your resources from the List Scope/Compartment drop down menu.   Then click the Networking Quickstart button.
+2. Select the compartment where you want to create your resources from the List Scope/Compartment drop down menu.   Then click the Start VCN Wizard button.
 
  ![](img/005.png " ")
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
  ![](img/006.png " ")
 

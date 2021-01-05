@@ -1,0 +1,52 @@
+{
+    "workshoptitle": "High Performance Compute - ANSYS Fluent",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Brief Introduction on Oracle HPC",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: ANSYS Fluent Introduction",
+            "description": "Introduction to the software",
+            "filename": "../../ansys-intro/ansys-intro.md"
+        },
+        {
+            "title": "Lab 2: Architecture",
+            "filename": "../../architecture/architecture.md"
+        },
+        {
+            "title": "Lab 3: Launch HPC Cluster Network",
+            "description": "Steps to launch HPC Cluster Network",
+            "filename": "../../launch-cluster/launch-cluster.md"
+        },
+        {
+            "title": "Lab 4: Access your Cluster",
+            "description": "Steps to access the cluster",
+            "filename": "../../access-cluster/access-cluster.md"
+        },
+        {
+            "title": "Lab 5: Configure Visualization",
+            "description": "Setup and configure Visualization Tools",
+            "filename": "../../config-visualization/config-visualization.md"
+        },
+        {
+            "title": "Lab 6: Access your VNC",
+            "description": "Steps to access VNC",
+            "filename": "../../access-VNC/access-VNC.md"
+        },
+        {
+            "title": "Lab 7: Install ANSYS Fluent",
+            "filename": "../../install/install.md"
+        },
+        {
+            "title": "Lab 8: Run ANSYS Fluent",
+            "filename": "../../run/run.md"
+        }
+    ]
+}
+

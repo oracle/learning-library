@@ -82,7 +82,7 @@ Oracle Cloud Infrastructure's Autonomous Transaction Processing Cloud Service is
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 4. Fill out the dialog box:
 

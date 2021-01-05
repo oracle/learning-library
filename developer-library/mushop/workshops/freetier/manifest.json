@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "MuShop",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -12,9 +12,14 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Deploy MuShop",
+            "title": "Lab 5: Deploy MuShop",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../deploy/deploy.md"
+        },
+        {
+            "title": "Lab 8: Service Broker",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../service-broker/service-broker.md"
         }
     ]
 }

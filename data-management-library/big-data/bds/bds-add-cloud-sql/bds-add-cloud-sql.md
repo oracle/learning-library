@@ -11,17 +11,17 @@ In this lab, you will learn how to maintain the new cluster that you created in 
 
 ### What Do You Need?
 
-This lab assumes that you have successfully completed the following labs in the **Contents** menu on the right:
+This lab assumes that you have successfully completed the following labs in the **Contents** menu:
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 
-## **Step 1:** Maintain the Cluster
+## **STEP 1:** Maintain the Cluster
 
 You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Data & AI**, select **Big Data**.
+2. Click the **Navigation** menu in the upper left-hand corner of the **Oracle Cloud Console** Home page. Under **Data and AI**, select **Big Data**.
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. You can use the context menu to view the cluster's details, add nodes, block storage, Cloud SQL, and also to rename or terminate the cluster.
 
@@ -39,7 +39,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
 **Note:** Oracle Cloud Infrastructure Tagging allows you to add metadata to resources, which enables you to define keys and values and associate them with resources. You can use the tags to organize and list resources based on your business needs. For additional information, see [Tagging Overview](https://docs.cloud.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm#Tagging_Overview) in the OCI documentation.    
 
-## **Step 2:** Add Oracle Cloud SQL to the Cluster
+## **STEP 2:** Add Oracle Cloud SQL to the Cluster
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 
@@ -49,7 +49,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
   ![](./images/add-cloud-sql-menu-option.png " ")  
 
-3. In the **Add Cloud SQL** dialog box, provide the following information:
+2. In the **Add Cloud SQL** dialog box, provide the following information:
     + **QUERY SERVER NODE SHAPE CONFIGURATION:** Select **`VM.Standard2.4`**.
     + **QUERY SERVER NODE BLOCK STORAGE (IN GB):** Enter **`1000`**.
     + **CLUSTER ADMIN PASSWORD:** Enter your cluster administration password that you chose when you created the cluster such as **`Training123`**.
@@ -58,23 +58,23 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
     **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D).
 
-4. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`8`** instead of **`7`**.
+3. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`8`** instead of **`7`**.
 
     ![](./images/updating-cluster.png " ")  
 
-5. Click the **`training-cluster`** name link in the **Name** column to display the **Cluster Details** page. The **Cluster Information** tab displays the cluster, network, and Cloud SQL Information. In addition, the newly added Cloud SQL node, **`traininqs0`** is displayed in the **List of cluster nodes** section.
+4. Click the **`training-cluster`** name link in the **Name** column to display the **Cluster Details** page. The **Cluster Information** tab displays the cluster, network, and Cloud SQL Information. In addition, the newly added Cloud SQL node, **`traininqs0`** is displayed in the **List of cluster nodes** section.
 
     ![](./images/cluster-details-cs.png " ")
 
-6. You can also navigate to **Clusters > Cluster Details > Work Requests** to display the status, logs, and errors (if any) of adding the Cloud SQL node to the cluster.
+5. You can also navigate to **Clusters > Cluster Details > Work Requests** to display the status, logs, and errors (if any) of adding the Cloud SQL node to the cluster.
 
     ![](./images/add-cloud-sql-wr.png " ")
 
-7. Once the Cloud SQL node is successfully added to the cluster, the cluster's state changes to **Active** and the number of nodes in the cluster is now **`8`**.
+6. Once the Cloud SQL node is successfully added to the cluster, the cluster's state changes to **Active** and the number of nodes in the cluster is now **`8`**.
 
     ![](./images/cs-active.png " ")    
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu on the right.**
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Want to Learn More?
 
@@ -88,6 +88,9 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
     + Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2020
+* **Last Updated By/Date:** Lauran Serhal, October 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

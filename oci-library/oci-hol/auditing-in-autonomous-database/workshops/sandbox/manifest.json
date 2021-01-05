@@ -1,0 +1,13 @@
+{
+    "workshoptitle": "Auditing in an Autonomous Database",
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "filename": "../../intro/intro-sandbox.md"
+      },
+      {
+          "title": "Auditing in Autonomous Database",
+          "filename": "./../../auditing-in-autonomous-database/auditing-in-autonomous-database-sandbox.md"
+      }
+    ]
+}

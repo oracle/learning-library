@@ -27,7 +27,7 @@ This lab assumes you have:
 
    ![Create a stack](images/em-compute-instances.png " ")
 
-## **Step 2:** Connect to your instance
+## **STEP 2:** Connect to your instance
 
 ### Oracle Cloud Shell
 
@@ -99,11 +99,11 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 1.  In the category section, **Click** session.
 2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 1. Can't login to instance
 2. Invalid public key
 
@@ -135,5 +135,7 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 - **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 - **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

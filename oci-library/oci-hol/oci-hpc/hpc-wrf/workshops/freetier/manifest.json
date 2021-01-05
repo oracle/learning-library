@@ -1,0 +1,33 @@
+{
+  "workshoptitle": "Getting Started with Weather Prediction using WRF",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Small excerpt on WRF, prequsites, and objectives for this lab.",
+            "filename": "../../introduction/introduction.md"        
+        },
+        {
+            "title": "Lab 1: Create SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
+        },
+        {
+            "title": "Lab 2: Setup Network and Compute Instance",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-freetier.md"
+        },
+        {
+            "title": "Lab 3: WRF/WPS Setup, Install, and Run",
+            "description": "Simple Guide on setting up, configuring, and running WRF on OCI",
+            "filename": "../../wrf-wps-setup-install-run/wrf-wps-setup-install-run.md"
+        },
+        {
+            "title": "Lab 4: Changing Experiment Data with WRF",
+            "description": "Modifying guide from previous lab to choose new locations and times to run WRF simulations",
+            "filename": "../../wrf-change-experiments/wrf-change-experiments.md"
+        }
+    ]
+}

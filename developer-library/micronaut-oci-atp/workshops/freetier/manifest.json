@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Building Java Cloud Applications with Micronaut and OCI",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -13,9 +14,6 @@
         {
             "title": "Lab 1: Generate SSH Keys",
             "description": "Generate SSH Key",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/01/2020",
-            "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {

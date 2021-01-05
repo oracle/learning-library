@@ -29,9 +29,9 @@ In this lab you will:
 
    ![Create Stack button](images/create_stack_btn.png)
 
-4. Choose 'My Configuration', and upload the Terraform configuration zip either by browsing to the location locally where the zip exists or dragging and dropping the ZIP into the "Stack Configuration" pane:
+4. Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file. Click **Select**.
 
-   ![Stack Configuration - Step 1](images/stack_info_1.png)
+	![](./images/zip-file.png)
 
 5. You can optionally enter a name and description of the stack then then choose the compartment for the Stack, then click 'Next':
 
@@ -82,10 +82,10 @@ In this lab you will:
 
 2. The Terraform stack produces the following values which are available in the 'Outputs' tab:
 
-      * `atp_admin_password` - This is the adminstrative password of the Autonmous Database Instance
-      * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
-      * `atp_schema_password` - This is the schema password of the Autonmous Database Instance
-      * `atp_wallet_password` - This is the wallet password of the Autonmous Database Instance
+      * `atp_admin_password` - This is the administrative password of the Autonomous Database Instance
+      * `atp_db_ocid` - This is the unique OCID of the Autonomous Database Instance
+      * `atp_schema_password` - This is the schema password of the Autonomous Database Instance
+      * `atp_wallet_password` - This is the wallet password of the Autonomous Database Instance
       * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
       * `public_ip` - This is the public IP address from the Oracle Cloud Infrastructure address pool
       * `region` - This is the region where the instance is running
@@ -117,5 +117,7 @@ You may now *proceed to the next lab*.
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/building-java-cloud-applications-with-micronaut-and-oci). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

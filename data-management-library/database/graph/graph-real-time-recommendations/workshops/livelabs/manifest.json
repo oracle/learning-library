@@ -1,0 +1,45 @@
+{
+  "workshoptitle": "Oracle Property Graph for Real-Time Recommendations",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+          "title": "Lab 1: Provision Lab Environment",
+          "description":"Lab 1: Provision Lab Environment",
+          "filename":"../../provision-environment/provision-environment.md"
+        },
+        {
+          "title": "Lab 2: Load a Retail Dataset",
+          "description":"Lab 2: Load a Retail Dataset",
+          "filename":"../../load-data/load-data.md"
+        },
+        {
+          "title": "Lab 3: Install Oracle Graph Server",
+          "description":"Lab 3: Install Oracle Graph Server",
+          "filename":"../../install-graph-server/install-graph-server.md"
+        },
+        {
+          "title": "Lab 4: Create Property Graph",
+          "description":"Lab 4: Create Property Graph",
+          "filename":"../../create-graph/create-graph.md"
+        },
+        {
+          "title": "Lab 5: Generate Recommendations and Visualize using GraphViz",
+          "description":"Lab 5: Generate Recommendations and Visualize using GraphViz",
+          "filename":"../../visualize-graphviz/visualize-graphviz.md"
+        },
+        {
+          "title": "Lab 6: Graph Analysis using Apache Zeppelin",
+          "description":"Lab 6: Graph Analysis using Apache Zeppelin",
+          "filename":"../../analyze-zippelin/analyze-zippelin.md"
+        }
+    ]
+}

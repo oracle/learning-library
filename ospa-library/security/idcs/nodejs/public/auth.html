@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script>
+      function login() {
+        var xmlhttp = new XMLHttpRequest();
+        var url = "/auth";
+        xmlhttp.open('GET', url, true);
+        xmlhttp.setRequestHeader("idcs_user_assertion", getCookieValue('idcs_user_assertion'));
+        xmlhttp.send(null);
+        xmlhttp.onreadystatechange = function() {
+          if(xmlhttp.readyState == 4){
+            if(xmlhttp.status == 200){
+            	document.open("text/html", "replace");
+            	document.write(xmlhttp.responseText);
+      		    document.close();
+            }else{
+            	document.write(xmlhttp.responseText);
+              document.close();
+            }//else
+          }//if(xmlhttp.readyState == 4)
+        }//onreadystatechange = function()
+      }//login()
+      function getCookieValue(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+      }
+    </script>
+  </head>
+  
+  <body onload="javascript:login();">
+
+    <header class="hol-Header" role="banner">
+    <div class="hol-Header-wrap">
+        <div class="hol-Header-logo"><span>IDCS - Node.js Integration Sample Application</span></div>
+        <div class="hol-Header-actions">
+            
+        </div>
+    </div>
+</header>
+
+  </div>
+    Logging in...
+  </body>
+
+</html>

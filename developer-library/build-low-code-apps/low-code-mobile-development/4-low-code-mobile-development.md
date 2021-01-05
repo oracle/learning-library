@@ -36,11 +36,11 @@ Estimated time: 45 minutes
 
     ![](images/step1/3.png " ")
 
-4. Click on **Create Enviornment**.
+4. Click on **Create environment**.
   
     ![](images/step1/4.png " ")
 
-5. Give the name of Enviornment,such as appDevApp.
+5. Give the name of environment,such as appDevApp.
   
     ![](images/step1/5.png " ")
 
@@ -52,7 +52,7 @@ Estimated time: 45 minutes
   
     ![](images/step1/7.png " ")
 
-8. It will take few seconds for enviornment to get ready, once it is ready click on **Designer** tab
+8. It will take few seconds for environment to get ready, once it is ready click on **Designer** tab
 
     ![](images/step1/8.png " ")
 
@@ -72,63 +72,59 @@ Estimated time: 45 minutes
 
 Service Connections are REST endpoints pointing to various services. In this step you will reference REST endpoints from the application deployment you created in Lab 300. We will create endpoints for GET, GET/{id}, POST.
 
-1. If not already opened click on the **Navigator icon** near the upper left hand side of the web page. This will expand the pane. You can click the **X** on the Welcome tab to close it. Finally, click on the **Service Connections** icon.
+1. Click on the **Service Connections** icon and then click **+** button to add new connection.
 
     ![](images/step2/1.png " ")
 
-2. Click **+** button to add new connection
-
-    ![](images/step2/2.png " ")
-
-3. Select **Define by Endpoint**
+2. Select **Define by Endpoint**
   
     ![](images/step2/3.png " ")
 
-4. Leave the Method as **GET**. From Lab 300 **Copy and Paste the URL** used to test the REST endpoint that retrieved all of the Product Catalog records. 
+3. Leave the Method as **GET**. From Lab 300 **Copy and Paste the URL** used to test the REST endpoint that retrieved all of the Product Catalog records. 
 
     **Note:**  In this example:  `http://150.136.0.174:8080/product/list` into the URL field. Leave the Action Hint at **Get Many**:
 
     ![](images/step2/4.png " ")
 
-5. Click **Next**.
+4. Click **Next**.
 
-6. Select the **Test** tab and click **Send**. The request should return all of the records (shown in the Response). If successful, click the **Save as Example Response** button.
+5. Select the **Test** tab and click **Send**. The request should return all of the records (shown in the Response). If successful, click the **Save as Example Response** button.
 
     ![](images/step2/5.png " ")
 
-7. Click **Create**.
+6. Click **Create**.
 
     ![](images/step2/6.png " ")
 
-8. Click the **Endpoints** tab to see the created GET. Click **+ Endpoint** to add another.
+7. Click the **Endpoints** tab to see the created GET. Click **+ Endpoint** to add another.
 
     ![](images/step2/7.png " ")
 
-9. Create another **GET** method with the PATH having a **suffix** of **/{id}**. Set the Action Hint dropdown to **Get One**.
+8. Create another **GET** method with the PATH having a **suffix** of **/{id}**. Set the Action Hint dropdown to **Get One**.
 
     ![](images/step2/8.png " ")
 
-10. Click the **Test** tab. For the URL Parameter enter **1027**. Click **Send**. One record is returned with the PRODUCT_ID of `1027`. If successfull, Click the **Save as Example Response** button.
+9.  Click the **Test** tab. For the URL Parameter enter **1027**. Click **Send**. One record is returned with the PRODUCT_ID of `1027`. If successfull, Click the **Save as Example Response** button.
 
     ![](images/step2/9.png " ")
 
-11. Click **Add**.
+10. Click **Add**.
 
     ![](images/step2/10.png " ")
 
-12. Create one more REST Endpoint for request info.
+11. Create one more REST Endpoint for request info.
+ 
+    ![](images/step2/1.png " ")
 
-    ![](images/step2/2.png " ")
-
-13. Select **Define by Endpoint**
+12. Select **Define by Endpoint**
   
-    ![](images/step2/3.png" ")
+    ![](images/step2/3.png " ")
 
-14. Select **POST as method** and give the URL ending with **/user/request** and in Action Hint select **Create**, click **Next**.
+13. Select **POST as method** and give the URL ending with **/user/request** and in Action Hint select **Create**, click **Next**.
 
     ![](images/step2/11.png " ")
 
-15. Click on **Test** tab and copy the following JSON payload in body.
+14. Click on **Test** tab and copy the following JSON payload in body.
 
     ```
     <copy>
@@ -145,7 +141,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
     </copy>
     ```
 
-16. Click on Send button and if the response is 200, click on **Save as Example Request** and **Save as Example Response**. Click **Create**
+15. Click on Send button and if the response is 200, click on **Save as Example Request** and **Save as Example Response**. Click **Create**
    
     ![](images/step2/12.png " ")
 
@@ -180,15 +176,13 @@ Service Connections are REST endpoints pointing to various services. In this ste
 
 8. Time to set some Properties. You can select the specific component who wish to set property values for by ether selecting from the Page Structure OR the display canvas. In some cases it will be easier to use one or the other...
 
-9. Select the **Mobile Page Template** from the Page Structure pane and name it Products or Catalog anything you perefer.
+9. Select the **Mobile Page Template** from the Page Structure pane and name it Products or Catalog anything you perefer. Which can be found under the **General** properties area on the right.
   
     ![](images/step3/7.png " ")
 
-10. ... which can be found under the **General** properties area on the right.
+10. You'll notice the change does not take affect until you tab out of the Page Title field.
 
-11. You'll notice the change does not take affect until you tab out of the Page Title field.
-
-12. Click on the **Heading** field and set the text to:
+11. Click on the **Heading** field and set the text to:
   
     ```
     <copy>
@@ -196,25 +190,25 @@ Service Connections are REST endpoints pointing to various services. In this ste
     </copy>
     ```
 
-13. ... leaving the Heading size to **H1**. You screen looks like:
+12. ...leaving the Heading size to **H1**. You screen looks like:
 
     ![](images/step3/8.png " ")
 
-14. Download a static image from here: [AlphaOffice Image](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/spw-appDev-DevOps-files/o/AlphaOfficeSupply.png). Click on this link and save the file locally.
+13. Download a static image from here: [AlphaOffice Image](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/spw-appDev-DevOps-files/o/AlphaOfficeSupply.png). Click on this link and save the file locally.
 
-15. Now, click on the **Image** component in the canvas and click the **Data** tab in the Properties section. 
+14. Now, click on the **Image** component in the canvas and click the **Data** tab in the Properties section. 
 
     ![](images/step3/9.png " ")
 
-16. Click on the **Drop an image here...** box and upload the static image; **AlphaOfficeSupply.PNG** you just downloaded:
+15. Click on the **Drop an image here...** box and upload the static image; **AlphaOfficeSupply.PNG** you just downloaded:
 
     ![](images/step3/10.png " ")
 
-17. The image is uploaded. If it doesn't display right away on the canvas click the **Refresh icon**.
+16. The image is uploaded. If it doesn't display right away on the canvas click the **Refresh icon**.
 
     ![](images/step3/11.png " ")
 
-18. Your screen should now look like:
+17. Your screen should now look like:
 
     ![](images/step3/12.png " ")
 
@@ -249,7 +243,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
 
 1. In this step we are configuring product details page where we can see information of single product. For that we need to configure the page with REST Endpoint to fetch the single record.
 
-2. Click on **main-get-id-detail** under pages Then click on Flag icon which is Actions. Click on **loadGetidChain**
+2. Click on **main-get-id-detail** under pages Then click on **Actions** and lastly click on **loadGetidChain**
 
     ![](images/step5/1.png " ")
 
@@ -279,31 +273,23 @@ Service Connections are REST endpoints pointing to various services. In this ste
 
 1. In this Step we will configure request more info page.
 
-2. If you click on **main-request-info** and then **Designer** tab. We can see the form. Our main goal for this step is to configure the Submit Button so that we can post the request information using POST REST Endpoint.
+2. If you click on **main-request-info** and then **Actions** tab, click on **SubmitButtonActionChain**.
 
     ![](images/step6/1.png " ")
 
-3. Click on **Actions** tab.
-
+3. Click on **Call REST Endpoint** and then on right panel click **Select Endpoint**
+  
     ![](images/step6/2.png " ")
 
-4. Under **Actions** page click on **SubmitButtonActionChain**
-
-    ![](images/step6/3.png " ")
-
-5. Click on **Call REST Endpoint** and then on right panel click **Select Endpoint**
-  
-    ![](images/step6/4.png " ")
-
-6. Click on **Service Connections** and select **POST /request** endpoint.
+4. Click on **Service Connections** and select **POST /request** endpoint.
   
     ![](images/step6/5.png " ")
 
-7. Once endpoint is configured, we need to set the body for POST method. Under Parameters click **Assign**
+5. Once endpoint is configured, we need to set the body for POST method. Under Parameters click **Assign**
 
     ![](images/step6/6.png " ")
 
-8. Drag and drop contactDetails from Source to Body in Target. Click **Save**
+6. Drag and drop contactDetails from Source to Body in Target. Click **Save**
 
     ![](images/step6/7.gif " ")
 
@@ -352,8 +338,10 @@ Service Connections are REST endpoints pointing to various services. In this ste
 ## Acknowledgements
 
 - **Authors/Contributors** - Varun Yadav
-- **Last Updated By/Date** - 
+- **Last Updated By/Date** - October 22, 2020
 - **Workshop Expiration Date** - May 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.     
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

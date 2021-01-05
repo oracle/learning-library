@@ -79,7 +79,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 4. Fill out the dialog box:
 

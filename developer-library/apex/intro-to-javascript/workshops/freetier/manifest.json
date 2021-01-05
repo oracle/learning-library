@@ -1,13 +1,14 @@
 {
+  "workshoptitle": "JavaScript for APEX Developers",
   "tutorials": [
     {
       "title": "Prerequisites",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
       "title": "Introduction",
       "filename": "../../0-lab-intro-and-setup/intro.md"
-    }, 
+    },
     {
       "title": "Lab 0: Setup",
       "filename": "../../0-lab-intro-and-setup/setup.md"

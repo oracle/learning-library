@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Configuring NAT Gateway for Private Compute Instance",
     "tutorials": [
       {
           "title": "Prerequisites",

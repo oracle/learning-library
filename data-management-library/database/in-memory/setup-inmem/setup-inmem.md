@@ -95,6 +95,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     alter system set inmemory_size=2G scope=spfile;
+    alter system set db_keep_cache_size=2G scope=spfile;
     shutdown immediate;
     startup;
     </copy>
@@ -190,7 +191,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     ````
      ![](images/step2num5.png)   
 
-By default the IM column store is only populated when the object is accessed.
+    By default the IM column store is only populated when the object is accessed.
 
 6.  Let's populate the store with some simple queries.
 
@@ -253,5 +254,7 @@ You may now proceed to the next lab.
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request. 

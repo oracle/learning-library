@@ -23,17 +23,20 @@ This lab assumes you have:
 ## **STEP 1**: Setup Stack
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
     - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/R_vJuMUIrsFofKYcTuJOsDiXl2xdSjHNQU7yjQPtnh4/n/c4u03/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 2.  Save in your downloads folder.
 3.  Login to your Oracle Cloud account.
 4.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**.
    ![Create a stack](images/db19c-freetier-step1.png " ")
-5.  Click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Open**.
-   ![](./images/db19c-freetier-step3-2.png " ")
+
+5.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Select**.
+
+   ![](./images/zip-file.png " ")
+
 6. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
    ![Create a stack](images/workshop-001.png " ")
-7. Accept the region and select your compartment.  Select an **availabilty domain** from the drop down.
+7. Accept the region and select your compartment.  Select an **availability domain** from the drop down.
    ![Create a stack](images/workshop-002.png " ")
 8. Paste the SSH key you created in the previous lab.
    ![Create a stack](images/workshop-003.png " ")
@@ -237,7 +240,7 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **See an Issue** section to submit your issue via our feedback form.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 1. Can't login to instance
 2. Invalid public key
 3. Limits Exceeded
@@ -287,7 +290,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**

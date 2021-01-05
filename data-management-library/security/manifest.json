@@ -1,0 +1,10 @@
+{
+    "workshoptitle": "Database Security LiveLabs on GitHub",
+    "tutorials": [
+        {
+            "title": "Content Relocated",
+            "description": "The Database Security content has been relocated",
+            "filename": "content-relocated.md"
+        }
+    ]
+}

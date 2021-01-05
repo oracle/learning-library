@@ -1,0 +1,35 @@
+{
+    "workshoptitle": "Python and Oracle for Developers",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Python and Database scripting workshop.",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Keys - Cloud Shell",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Lab 3: Environment Setup",
+            "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
+        },
+        {
+            "title": "Lab 4: Python and Oracle Database: Scripting for the Future",
+            "description": "Use Python and the Oracle Database",
+            "filename": "../../python-scripting/python-scripting.md"
+        }
+    ]
+}

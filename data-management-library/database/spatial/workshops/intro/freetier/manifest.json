@@ -1,0 +1,33 @@
+{
+    "workshoptitle": "Introduction to Oracle Spatial",
+    "tutorials": [
+      {
+        "title": "Prerequisites",
+        "description": "Login to Oracle Cloud",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+      {
+        "title": "Introduction",
+        "filename": "../introduction/introduction.md"
+      },
+      {
+        "title": "Lab 1: Autonomous Database",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+    },
+
+      {
+        "title": "Lab 2: SQL Developer Web",
+        "description": "SQL Developer Web",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-sqldevweb/adb-sqldevweb.md"
+    },
+      {
+        "title": "Lab 3: Create Sample Spatial Data",
+        "filename": "../../../intro/create-sample-data/create-sample-data.md"
+    },
+    {
+      "title": "Lab 4: Run Spatial Queries",
+      "filename": "../../../intro/run-spatial-queries/run-spatial-queries.md"
+  }
+    ]
+}
+

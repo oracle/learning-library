@@ -8,18 +8,20 @@
 
 In this lab, you examine the structures and data in the Sales History (SH) sample schema that comes with the database.
 
-## Objectives
+Estimated lab time: 10 minutes
+
+### Objectives
 
 -   Familiarize with the tables and their relationships within the SH sample schema
 
 -   Use the DESCRIBE command to examine the details of an SH table
 
 
-## Prerequisites
+### Prerequisites
 
--   This lab requires completion of the preceding 3 labs in the Contents menu on the right.
+-   This lab requires completion of the preceding labs in the Contents menu on the left.
 
-## **Step 1:** Examine the SH Tables and Their Relationships
+## **STEP 1:** Examine the SH Tables and Their Relationships
 
 A database schema is a collection of metadata that describes the relationship between the data in a database. A schema can be simply described as the "layout" of a database or the blueprint that outlines how data is organized into tables.
 
@@ -36,7 +38,7 @@ Here is the entity-relationship diagram of the SH schema:
 
 ![](./images/sales_history_sh_schema_er_diagram.png " ")
 
-## **Step 2:** Use the DESCRIBE Command to Examine the Details of an SH Table
+## **STEP 2:** Use the DESCRIBE Command to Examine the Details of an SH Table
 
 The `DESCRIBE` command provides a description of a specified table or view. The description for tables and views contains the following information:
 -   Column names
@@ -55,7 +57,8 @@ Syntax: DESC[RIBE] schema\_name.table\_name
     ![](images/describe_countries.png " ")
 
 2. If you wish, use the `DESCRIBE` command to view descriptions of other tables in the SH schema, such as CHANNELS, CUSTOMERS and SALES.
-    Please proceed to the next lab.
+
+    You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 
@@ -64,7 +67,9 @@ For more information on the SH schema, see the documentation on [Sample Schemas]
 ## Acknowledgements
 
 - **Author** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, May 2020
+- **Last Updated By/Date** - Richard Green, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

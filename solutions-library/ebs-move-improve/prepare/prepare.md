@@ -5,16 +5,18 @@ In this exercise, you will prepare your Oracle E-Business Suite environment by s
 
 Estimated Lab Time: 30 minutes
 
-### Objectives
+Watch this short video to preview how to prepare your tenancy for Oracle E-Business Suite.
+
+[](youtube:kWBDCZ-r0zQ)
+
+### **Objectives**
 * Setup EBS Cloud Manager Authentication with Identity Cloud Service (IDCS)
 * Create the EBS Cloud Manager Administrators group and user in IDCS
 * Register Oracle E-Business Suite Cloud Manager as a Confidential Application in IDCS
 
-### Prerequisites
+### **Prerequisites**
 * Tenancy Admin User
 * Tenancy Admin Password
-* Cloud Manager Admin credentials
-* OCI resource information and other variables saved to key-data.txt file
 
 ## **STEP 1:** Create the EBS Cloud Manager Administrators group and user in IDCS
 
@@ -60,11 +62,11 @@ Estimated Lab Time: 30 minutes
 
     c. In the Add User dialog box (Step 1: Add User Details), supply the following information:
 
-      1. **First Name**: Enter EBS Cloud Manager
+      1. **First Name**: EBS Cloud Manager
 
-      2. **Last Name**: Enter Administrator
+      2. **Last Name**: Administrator
 
-      3. **User Name**: Enter ebscm.admin@example.com
+      3. **User Name**: ebscm.admin@example.com
 
       4. **Use the email address as the user name**: Deselect the check box
 
@@ -129,6 +131,10 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 7. Select **Admin Console**. This will display the IDCS Administration Console.
 
+    If there is no **Admin Console** option to select, you may already be on the Admin Console. Below is an example of the Admin Console after you login. 
+
+    ![](./images/admin-console-2.png " ")
+
 8. In the top right of the Applications tile, click the icon to Add an Application.
 
     ![](./images/select-add-application.png " ")
@@ -139,9 +145,9 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
 10. On the Details screen, enter the following:
 
-    a. **Name**: Enter ``Oracle E-Business Suite Cloud Manager``
+    a. **Name**: ``Oracle E-Business Suite Cloud Manager``
 
-    b. **Description**: Enter a description.
+    b. **Description**: Write a description.
 
     c. Click **Next**.
 
@@ -159,9 +165,13 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
       3. Authorization Code
 
-    c. Save your cloud manager url in your ``key-data.txt`` file as ``Cloud_Manager_URL``
+    c. Here we are going to set our cloud manager url. For this lab we will use the following example URL.
 
-        Example: https://myebscm.ebshol.org:443
+        Example Cloud Manager URL: https://myebscm.ebshol.org:443
+
+    Save your cloud manager url in your ``key-data.txt`` file as ``Cloud_Manager_URL``
+
+    Using the Cloud Manager url you have just saved, append that url with the following values as shown below to enter your Redirect URL.
 
     d. **Redirect URL**: ``<Cloud_Manager_URL>/cm/auth/callback``
 
@@ -195,10 +205,13 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     ![](./images/resources-screen.png " ")
 
-13. On the Authorization screen, click **Finish**.
+13. On the Web Tier screen, click **Next**.
+    ![](./images/web-tier-screen.png " ")
+
+14. On the Authorization screen, click **Finish**.
     ![](./images/auth-screen.png " ")
 
-14. Make note of the following values in your ``key-data.txt`` file (under ``Client_ID`` and ``Client_Secret``, respectively) when they are displayed in a pop-up window:
+15. Make note of the following values in your ``key-data.txt`` file (under ``Client_ID`` and ``Client_Secret``, respectively) when they are displayed in a pop-up window:
 
     a. **Client ID**
 
@@ -210,19 +223,19 @@ In this section, you will register the Oracle E-Business Suite Cloud Manager as 
 
     ![](./images/client-id-again.png " ")
 
-15. Click **Close**.
+16. Click **Close**.
 
-16. Click **Activate** to activate the Confidential Application.
+17. Click **Activate** to activate the Confidential Application.
 
     ![](./images/activate-app.png " ")
 
-17. Click on the avatar icon on the top right hand side of the screen.
+18. Click on the avatar icon on the top right hand side of the screen.
 
-18. Select the **About** option.
+19. Select the **About** option.
 
     ![](./images/avatar-about.png " ")
 
-19. Copy the value displayed for Instance GUID. Record this as ``Client_Tenant`` in the ``key-data.txt``. Your IDCS Client Tenant begins with the characters ``idcs-`` and then is followed by a string of numbers and letters, for example, ``idcs-6572bfeb183b4becad9e649bfa14a488``.
+20. Copy the value displayed for Instance GUID. Record this as ``Client_Tenant`` in the ``key-data.txt``. Your IDCS Client Tenant begins with the characters ``idcs-`` and then is followed by a string of numbers and letters, for example, ``idcs-6572bfeb183b4becad9e649bfa14a488``.
 
     ![](./images/about.png " ")
 
@@ -231,8 +244,13 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author:** Quintin Hill, Cloud Engineering
-* **Contributors:** Santiago Bastidas, Product Management Director
+* **Contributors:** 
+  - Santiago Bastidas, Product Management Director
+  - William Masdon, Cloud Engineering
+  - Mitsu Mehta, Cloud Engineering
 * **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

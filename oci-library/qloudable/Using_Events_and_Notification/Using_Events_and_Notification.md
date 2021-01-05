@@ -121,7 +121,7 @@ Under **Actions**
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-2. Click **VCN with Internet Connectivity** and click **Start Workflow**
+2. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 3. Fill out the dialog box:
 

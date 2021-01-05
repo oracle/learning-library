@@ -39,7 +39,8 @@ img {
 #download_zip,
 #enter_json,
 #import_md, 
-#view_md_template {
+#view_md_template,
+#import_html {
     font-size: 0.8rem;
     line-height: 0.8;
     padding: .5rem .7rem;

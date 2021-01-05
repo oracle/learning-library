@@ -83,7 +83,7 @@ Choose the environment where you created your SSH Key.
 
   Download the zip file to this folder.
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/stLcOoar25AiY52XlpwYP2pie5XTvKw3uF-0qyewXoA/n/idq7tl4pseo1/b/bucket-20200622-1405/o/LINUX.X64_193000_db_home.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LK1k7CgQxR2LcgcF1sG8E0Z_B3q3yNC4H62dZQ8xaSr7OBN7D6lcpIutXF17oZU6/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
     ```
 
   ![](images/download_PAR.png " ")
@@ -200,6 +200,9 @@ Choose the environment where you created your SSH Key.
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Last Updated By/Date** - Kamryn Vinson, September 2020
+* **Lab Expiry Date** - November 30, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

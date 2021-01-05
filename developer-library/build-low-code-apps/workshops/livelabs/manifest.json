@@ -1,15 +1,17 @@
 {
-    "tutorials": [{
+  "workshoptitle": "Modernize and Extend Legacy Apps in the Oracle Cloud",
+    "tutorials": [
+        {
             "title": "Prerequisites",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Introduction",
-            "filename": "../../README.md"
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Setup Cloud Environment",
-            "filename": "../../setup-cloud-env/0-setup-cloud-env.md"
+            "filename": "../../setup-cloud-env/setup-cloud-env.md"
         },
         {
             "title": "Lab 1: Autonomous Microservice Data Structure Configuration",

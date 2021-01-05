@@ -1,4 +1,5 @@
 {
+    "workshoptitle": "Querying Data in the Autonomous Database",
     "tutorials": [
       {
            "title": "Prerequisites",
@@ -8,34 +9,22 @@
         {
             "title": "Introduction",
             "description": "Introduction",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
             "filename": "./../../../intro/intro-ziplab.md"
         },
         {
             "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/29/2020",
-            "contentid": "12nnnn",
             "filename": "./../../../adb-provision/adb-provision.md"
         },
         {
             "title": "Lab 2: Loading Data",
             "description": "Provision a new ADW instance and connect to the database",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/29/2020",
-            "contentid": "12nnnn",
             "filename": "./../../../adb-loading/adb-loading.md"
         }
         ,
         {
             "title": "Lab 3: ADB Query",
             "description": "Provision a new ADW instance and connect to the database",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/29/2020",
-            "contentid": "12nnnn",
             "filename": "./../../../adb-query/adb-query.md"
         }
     ]

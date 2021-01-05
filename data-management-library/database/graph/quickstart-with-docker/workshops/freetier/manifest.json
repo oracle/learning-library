@@ -1,0 +1,62 @@
+{
+    "workshoptitle": "Getting Started with Oracle Property Graph on Docker",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Create SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
+        },
+        {
+            "title": "Lab 2: Setup Network and Compute Instance",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-ol7.8-ft-compute-instance.md"
+        },
+        {
+            "title": "Lab 3: Setup Docker and Install Git on Oracle Cloud Instance",
+            "filename": "../../setup-docker-compute/setup-docker-compute.md"
+        },
+        {
+            "title": "Lab 4: Setup a Property Graph Analysis Environment in Docker",
+            "description":"Setup environment with Docker",
+            "filename":"../../setup-graph-in-docker/setup-graph-in-docker.md"
+        },
+        {
+            "title": "Lab 5: Load Graphs from Files",
+            "description":"Working with file-based graphs",
+            "filename":"../../load-graphs-from-files/load-graphs-from-files.md"
+        },
+        {
+            "title": "Lab 6: Setup Oracle Database in Docker",
+            "description":"Build and start an Oracle Database container in Docker",
+            "filename":"../../setup-database-in-docker/setup-database-in-docker.md"
+        },
+        {
+            "title": "Lab 7: Create and Populate Database Tables",
+            "description":"Create and populate database tables with sample data",
+            "filename":"../../create-and-populate-tables/create-and-populate-tables.md"
+        },
+        {
+            "title": "Lab 8: Create the Graph",
+            "description":"Create the Customer 360 graph from the database tables",
+            "filename":"../../create-graph/create-graph.md"
+        },
+        {
+            "title": "Lab 9: Query and Analyze the Customer 360 Graph",
+            "description":"Query and Analyze the Customer 360 graph",
+            "filename":"../../query-and-analyze-graphs/query-and-analyze-graphs.md"
+        },
+        {
+            "title": "Lab 10: Graph Visualization",
+            "description":"Visualize graph query results",
+            "filename":"../../visualize-graphs/visualize-graphs.md"
+        }
+    ]
+}

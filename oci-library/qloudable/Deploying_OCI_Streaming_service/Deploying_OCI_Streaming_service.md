@@ -70,7 +70,7 @@ In this lab we will create a compute instance, download a script to configure st
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 4. Fill out the dialog box:
 
@@ -243,9 +243,9 @@ virtualenv <Environment_Name>
 ```
 For example **virtualenv stream_env**
 
-Now initialize the virtual enviornment, Enter command:
+Now initialize the virtual environment, Enter command:
 
-**NOTE** : Below command assumes that the enviornment name is 'stream-env'
+**NOTE** : Below command assumes that the environment name is 'stream-env'
 ```
 cd /home/opc/stream_env/bin
 ```

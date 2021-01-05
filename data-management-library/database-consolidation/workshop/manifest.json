@@ -1,0 +1,36 @@
+{
+    "tutorials": [
+        {         
+            "title": "Introduction to Consolidation of Databases",
+            "description": "Introduction to Consolidation of Databases",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "07/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../intro/intro.md"
+        },
+        {         
+            "title": "Lab 1: Consolidate your databases on ADB using MV2ADB",
+            "description": "Consolidate your databases on ADB using MV2ADB",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/26/2020",
+            "contentid": "12nnnn",
+            "filename": "./../mv2adb/mv2adb.md"
+        },
+        {         
+            "title": "Lab 2: Consolidate your databases using Goldengate",
+            "description": "Consolidate your databases using Goldengate",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "07/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-provisioning-exadata/adb-provisioning-exadata.md"
+        },
+        {         
+            "title": "Lab 3: Consolidate your databases using Data Pump",
+            "description": "Consolidate your databases using Data Pump",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "07/10/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-provisioning-exaC@C/adb-provisioning-exaC@C.md"
+        }
+    ]
+}

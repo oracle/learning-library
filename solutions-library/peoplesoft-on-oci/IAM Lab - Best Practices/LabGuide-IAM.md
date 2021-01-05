@@ -215,7 +215,7 @@ NOTE: You may need to click on the + sign next to your main compartment name to 
 
 ![](./images/VCN1.png "")
 
-2.	Select VCN with Internet Connectivity, and then click Start Workflow.
+2.	Select VCN with Internet Connectivity, and then click Start VCN Wizard.
 
 ![](./images/VCN2.png "")
 

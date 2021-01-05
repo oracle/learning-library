@@ -1,10 +1,10 @@
-# Workshop Introduction and Overview                                    
+# Introduction                                   
 
 The labs in this workshop walk you through all the steps to get started using the **Oracle Autonomous Database** and perform simple operations on tables. You will provision a new autonomous database instance in the Oracle Cloud, connect to the database using SQL Developer Web, perform queries, and create a schema in which you will create a user, assign privileges, and create tables.
 
 With Oracle Autonomous Database we make it quick and easy for you to create a secure, fully managed database service in the Oracle Cloud and start analyzing data immediately.
 
-### **What is an Oracle Database?**
+## **What is an Oracle Database?**
 In general, a database is a collection of data treated as a unit. A database management system (DBMS) stores, manages and retrieves a large amount of data in a multi-user environment so that many users can access the same data concurrently.
 
 Oracle Database is a robust object relational database that provides efficient and effective solutions for database users such as delivering high performance, protecting users from unauthorized access, and enabling fast failure recovery.
@@ -20,31 +20,32 @@ Watch our short video that explains key features in Oracle's Autonomous Database
 
 Oracle’s Autonomous Database is the perfect quick-start service for fast data loading and sophisticated data reporting and analysis. Oracle manages everything for you so you can focus on your data.
 
-### Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account or a cloud account that you obtained through a trial.
+Estimated Workshop Time: 70 minutes
 
-## Workshop Objectives
+### Workshop Prerequisites
+This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
+
+### Workshop Objectives
 - Get comfortable with Oracle's public cloud services
 - Provision a new Autonomous Database instance on Shared Infrastructure
 - Run sample queries against the sample data sets
 - Create a schema, create a user, assign privileges, and create tables
 
 ## Lab Breakdown
-- **Lab 1:** Log in to Oracle Cloud and access the Oracle Autonomous Data Warehouse console.
-- **Lab 2:** Provision your first Autonomous Database.
-- **Lab 3:** Connect to the database with SQL Developer Web.
-- **Lab 4:** Familiarize with the structures and data in the Sales History (SH) sample schema that comes with the database.
-- **Lab 5:** Query the SH sample schema.
-- **Lab 6:** Create a user (schema), assign privileges to the user, create tables, add and maintain records, and maintain the schema.
+- **Lab 1:** Provision your first Autonomous Database.
+- **Lab 2:** Connect to the database with SQL Developer Web.
+- **Lab 3:** Familiarize with the structures and data in the Sales History (SH) sample schema that comes with the database.
+- **Lab 4:** Query the SH sample schema.
+- **Lab 5:** Create a user (schema), assign privileges to the user, create tables, add and maintain records, and maintain the schema.
 
-**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
+**After reading the following workshop prerequisites, get started by clicking Lab 1 in the menu on the left.**
 
 ###Getting Help During This Workshop
 If you have a question during this workshop then use the <a href="https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary" target="\_blank">**Autonomous Data Warehouse Forum**</a> on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Autonomous Data Warehouse.
 
 Are you are completely new to the **Cloud Customer Connect**</a> forums? Visit our <a href="https://cloudcustomerconnect.oracle.com/pages/1f00b02b84" target="\_blank">**Getting Started forum page**</a> to learn how to best leverage community resources.
 
-**You are all set; let's begin! Click Lab 1 in the Contents menu on the right.**
+**You are all set; let's begin! Click Lab 1 in the Contents menu on the left.**
 
 ## Want to Learn More About Oracle Autonomous Database?
 
@@ -57,9 +58,12 @@ Use these links to get more information about Oracle Autonomous Database:
 
 ## Acknowledgements
 
-- **Author** - Supriya Ananth, Database User Assistance
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, May 2020
+- **Author** - Rick Green, Principal Developer, Database User Assistance
+- **Contributor** - Supriya Ananth
+- **Adapted for Cloud by** - Rick Green
+- **Last Updated By/Date** - Rick Green, October 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

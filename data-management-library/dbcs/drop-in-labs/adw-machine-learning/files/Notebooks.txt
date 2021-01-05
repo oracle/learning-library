@@ -1,1 +1,0 @@
-This image shows the Notebooks page. Under the page title are a series of buttons: Edit, Create, Duplicate, Save as Template, Delete, Import, and Version. To the right of these buttons is a search bar. Under these buttons is a list of all the notebooks created. There is currently one notebook in the list. It's Name and Comment description matches that of the previous steps.

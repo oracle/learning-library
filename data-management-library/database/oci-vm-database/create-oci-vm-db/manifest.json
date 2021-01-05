@@ -1,12 +1,13 @@
 {
-    "tutorials": [
+  "workshoptitle": "Create a DBCS VM Database",
+   "tutorials": [
       {
         "title": "Introduction",
         "filename": "introduction/intro.md"
       },
       {
         "title": "Lab 1: Sign Up for Free Trial",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
         "title": "Lab 2: Create SSH Keys",
@@ -18,7 +19,7 @@
       },
       {
         "title": "Lab 4: Create an Oracle Cloud Infrastructure VM Database",
-        "filename": "create-oci-vm-db/create-oci-vm-db.md"
+        "filename": "create-oci-vm-db/create-oci-vm-db-vcn.md"
       },
       {
           "title": "(Optional) Lab 5: Add an Ingress Rule",

@@ -1,0 +1,53 @@
+{
+    "workshoptitle": "Using OCI to Build a Java Application",
+    "tutorials": [
+        {         
+            "title": "Prerequisites",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Setup your Oracle Cloud environment",
+            "filename": "./../../setup-env/setup-env.md"
+        },
+        {
+            "title": "Lab 2: Exploring Helidon",
+            "filename": "./../../helidon/helidon.md"
+        },
+        {
+            "title": "Lab 3: Java SE Preview Features",
+            "filename": "./../../preview/preview.md"
+        },
+        {
+            "title": "Lab 4: The Conference Application",
+            "filename": "./../../conference-app/conference-app.md"
+        },
+        {
+            "title": "Lab 5: Text Blocks",
+            "filename": "./../../textblock/textblock.md"
+        },
+        {
+            "title": "Lab 6: Records",
+            "filename": "./../../record/record.md"
+        },
+        {
+            "title": "Lab 7: Sealed Classes",
+            "filename": "./../../sealed-class/sealed-class.md"
+        },
+        {
+            "title": "Lab 8: Switch Expressions",
+             "filename": "./../../switch-expression/switch-expression.md"
+        },
+        {
+            "title": "Lab 9: Pattern Matching for instanceof",
+             "filename": "./../../instanceof/instanceof.md"
+        },
+        {
+            "title": "Lab 10: jlink",
+             "filename": "./../../jlink/jlink.md"
+        }
+     ]
+}

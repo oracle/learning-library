@@ -1,35 +1,24 @@
 {
+  "workshoptitle": "Scaling and Performance in Your Autonomous Database",
     "tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
             "filename": "./../../../intro/intro-ziplab.md"
         },
         {
             "title": "Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
-        {         
+        {
             "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "04/29/2020",
-            "contentid": "12nnnn",
             "filename": "./../../../adb-provision/adb-provision.md"
         },
         {
             "title": "Lab 2: Scaling and Performance",
             "description": "Scaling and Performance in Your Autonomous Database",
-            "partnumber": "Ennnnn_01",
-            "publisheddate": "03/10/2020",
-            "contentid": "12nnnn",
             "filename": "./../../../adw-scaling-performance/adw-scaling-performance.md"
         }
     ]

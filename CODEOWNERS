@@ -1,9 +1,12 @@
 # The last matching pattern has the most precedence.
-*                         @snicholspa @flavio-santino @kaymalcolm @tmcginn @tammybednar 
-/data-management-library/ @kaymalcolm @tammybednar @tmcginn @troyanthony06 
-/developer-library/       @kaymalcolm @tammybednar @tmcginn @troyanthony06
-/enterprise-manageability-library/            @dankoloski @davidleroyatoracle @kaymalcolm @tmcginn
-/oci-library/             @flavio-santino @umairs123 @enschilling @snafuz @kaymalcolm @tmcginn
+*                        @flavio-santino @kaymalcolm @tmcginn @kamryn-v @anooshapilli
+/ai-ml-library/       @kaymalcolm @tmcginn @kamryn-v @troyanthony06 @anooshapilli
+/analytics-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli
+/data-management-library/ @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @anooshapilli
+/developer-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli
+/enterprise-manageability-library/       @kaymalcolm @tmcginn @rfontcha @kamryn-v @anooshapilli
+/oci-library/             @flavio-santino @oegentil @peterj @kaymalcolm @tmcginn
 /ospa-library/            @jjking2019 @dankingsley001 @AlejandroCasas-oracle
-/solutions-library/       @kaymalcolm @tammybednar @tmcginn @troyanthony06 
-/workshops/               @snicholspa @chipbaber @kaymalcolm @tmcginn @tammybednar @troyanthony06
+/solutions-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli
+/security-library/       @kaymalcolm @tmcginn @troyanthony06 @rfontcha @anooshapilli @kamryn-v
+/workshops/               @snicholspa @chipbaber @kaymalcolm @tmcginn @troyanthony06

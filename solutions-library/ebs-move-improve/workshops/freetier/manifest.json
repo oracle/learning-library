@@ -4,7 +4,7 @@
         {
             "title": "Prerequisites",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Introduction",
@@ -30,6 +30,19 @@
             "title": "Lab 4: Clone Your Oracle E-Business Suite Environment",
             "description": "Clone Your Oracle E-Business Suite Environment",
             "filename": "../../clone/clone.md"
+        },
+        {
+            "title": "Optional (Advanced):  Migrating an Oracle E-Business Suite environment to Oracle Cloud Infrastructure",
+            "filename": "../../migrate/migrate.md"
+        },
+        {
+            "title": "Next Steps:  Load and Optimize Data from EBS",
+            "filename": "../../optimize-data/optimize-data.md"
+        },
+        {
+            "title": "Teardown Your EBS Environments",
+            "description": "Teardown Your Oracle E-Business Suite Environments",
+            "filename": "../../teardown/teardown.md"
         }
      ]
 }

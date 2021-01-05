@@ -25,7 +25,7 @@ The example below using port 7803 is for illustration only and validation (*Step
 
 Depending on your local computer platform and SSH client, select the appropriate *Step 1* below to proceed.
 
-## **Step 1 (A):** Running your workshop from MacOS or Windows with Unix/Linux emulators
+## **STEP 1 (A):** Running your workshop from MacOS or Windows with Unix/Linux emulators
 The following steps are meant for anyone running this workshop on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities. If you are on Windows and use *PuTTY* utility as your SSH client, please skip to the next step.
 
 ### **Setup**
@@ -48,7 +48,7 @@ The following steps are meant for anyone running this workshop on MacOS, Unix/Li
    - This SSH session must remain alive throughout your connectivity to above remote port.
    - Steps (1)-(2) must be performed for each remote port needed
 
-## **Step 1 (B):** Running your workshop from Windows with PuTTY
+## **STEP 1 (B):** Running your workshop from Windows with PuTTY
 The following steps are meant for anyone running this workshop on Windows and use *PuTTY* utility as your SSH Client. If you are on MacOS, Unix/Linux, or Windows with Unix/Linux emulators such as Cygwin, MobaXterm, Exceed, and other similar utilities, please go back to the prior step.
 
 ### **Setup**
@@ -92,7 +92,7 @@ The following steps are meant for anyone running this workshop on Windows and us
    - This SSH session must remain alive throughout your connectivity to above remote port.
    - Steps (1)-(2) must be performed for each remote port needed
 
-## **Step 2:** Validate
+## **STEP 2:** Validate
 Using the corresponding utility indicated in the table above, open a connection to the remote destination by addressing your local computer. While we are using a browser client for this illustration, the same applies to other clients as well. e.g. Using SQL Developer on port 1521 to access the database.  
 
 1. **EM13c OMS Console**
@@ -102,12 +102,14 @@ Launch your browser and open a connection to [https://localhost:7803/em](https:/
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-Now you are ready to run the workshop. Proceed to the next *Lab*
+Now you are ready to run the workshop. You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 - **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

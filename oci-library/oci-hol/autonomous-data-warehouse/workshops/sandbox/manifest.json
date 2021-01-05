@@ -1,0 +1,12 @@
+{
+    "tutorials": [
+        {
+            "title": "Introduction and Overview",
+            "filename": "./../../../intro/intro-sandbox.md"
+        },
+        {
+            "title": "Deploying and configuring Autonomous Data Warehouse",
+            "filename": "./../../../autonomous-data-warehouse/autonomous-data-warehouse-sandbox.md"
+        }
+    ]
+}

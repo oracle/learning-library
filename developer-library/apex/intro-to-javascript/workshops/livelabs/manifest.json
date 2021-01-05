@@ -1,15 +1,13 @@
 {
+  "workshoptitle": "JavaScript for APEX Developers",
   "tutorials": [
     {
       "title": "Introduction",
       "filename": "../../0-lab-intro-and-setup/intro.md"
-    }, {         
+    }, {
       "title": "Login to Oracle Cloud",
       "description": "Register for Free Tier Account",
-      "partnumber": "Ennnnn_01",
-      "publisheddate": "03/10/2020",
-      "contentid": "12nnnn",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
   },
     {
       "title": "Lab 0: Setup",

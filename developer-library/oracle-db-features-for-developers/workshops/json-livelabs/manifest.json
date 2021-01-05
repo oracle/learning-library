@@ -1,4 +1,5 @@
-{
+{   
+     "workshoptitle":"JSON in Oracle Database 19c",  
     "tutorials": [
         {
             "title": "Prerequisites",

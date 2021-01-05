@@ -1,0 +1,42 @@
+{
+  "workshoptitle": "Creating Labs and Workshops",
+    "tutorials": [
+      {
+            "title": "Introduction to Labs and Workshops",
+            "description": "This lab provides an overview of the workshops and labs (livelabs).",
+            "filename": "./intro.md"
+        }
+        ,
+        {
+              "title": "Lab 1: Get Started with Git and Set up the Environment",
+              "description": "This lab walks you through the required and optional tasks to set up the GitHub Development Environment, and install GitHub Desktop",
+              "filename": "./../../1-labs-git-hub-get-started-install-configure/1-labs-git-hub-get-started-install-configure.md"
+        }
+        ,
+        {
+              "title": "Lab 2: Understand the learning-library Folder Structure",
+              "description": "This lab describes the prescribed folder structure that we need follow for developing labs and workshops.",
+              "filename": "./../../2-labs-templates-folder-structure/2-labs-templates-folder-structure.md"
+        }
+        ,
+        {
+              "title": "Lab 3: Use Atom Editor to Develop Markdown Content",
+              "description": "This lab shows you how to develop your lab (markdown) content using an editor, such as **Atom** and starting the atom-live-server.",
+              "filename": "./../../3-labs-use-atom-editor-develop-content/3-labs-use-atom-editor-develop-content.md"
+        }
+        ,
+        {
+              "title": "Lab 4: Use GitHub Desktop to Commit to the GitHub Repository",
+              "description": "This lab shows you how to map a node's private IP address to a public IP address",
+              "filename": "./../../4-labs-github-merge-commit-pullrequest/4-labs-github-merge-commit-pullrequest.md"
+          }
+          ,
+          {
+                "title": "Lab 5:  Add GitHub Hosted Labs and Workshop to OHC",
+                "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
+                "filename": "./../../5-labs-add-git-hub-hosted-tutorials-to-ohc/5-labs-add-git-hub-hosted-tutorials-to-ohc.md"
+            }
+
+
+             ]
+  }

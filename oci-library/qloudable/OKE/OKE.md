@@ -8,7 +8,7 @@
 
 [Sign in to OCI Console and create Kubernetes Cluster](#sign-in-to-oci-console-and-create-kubernetes-cluster)
 
-[Install OCI CLI in your enviornment](#install-oci-cli-in-your-enviornment)
+[Install OCI CLI in your environment](#install-oci-cli-in-your-environment)
 
 [Install Kubectl](#install-kubectl)
 
@@ -91,7 +91,7 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OKE/img/OKE_015.PNG" alt="image-alt-text">
 
 
-## Install OCI CLI in your enviornment
+## Install OCI CLI in your environment
 
 1. Click the Apps icon in the toolbar and select Git-Bash to open a terminal window.
 

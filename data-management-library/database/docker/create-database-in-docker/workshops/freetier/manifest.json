@@ -1,4 +1,5 @@
 {
+  "workshoptitle": "Create an Oracle Database in a Docker Container on Oracle Cloud",
     "tutorials": [
         {
           "title": "Prerequisites",

@@ -1,9 +1,10 @@
 {
-    "tutorials": [
+      "workshoptitle": "Speed Up Data Science with the Accelerated Data Science SDK",
+      "tutorials": [
         {
             "title": "Prerequisites",
             "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../../../../common/labs/cloud-login/register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Introduction",
@@ -18,12 +19,12 @@
         {
             "title": "Lab 2: Create a Project",
             "description": "Create a project to contain the Data Science Notebooks.",
-            "filename": "./../../common/project-setup.md"
+            "filename": "./../../common/project-setup-free-tier.md"
         },
         {
             "title": "Lab 3: Create a Notebook Session",
             "description": "Create a Notebook Session and launch it.",
-            "filename": "./../../common/notebook-setup.md"
+            "filename": "./../../common/notebook-setup-free-tier.md"
         },
         {
             "title": "Lab 4: Accelerated Data Science SDK",

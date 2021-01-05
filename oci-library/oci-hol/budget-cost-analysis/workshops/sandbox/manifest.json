@@ -1,0 +1,18 @@
+{
+    "workshoptitle": "Oracle Cloud Budget and Cost Analysis",
+    "tutorials": [
+        {
+            "title": "Budget and Cost Analysis Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../../intro/intro-sandbox.md"
+        },
+        {
+            "title": "Lab 1: Budget Creation",
+            "filename": "../../budget/budget-sandbox.md"
+        },
+        {
+            "title": "Lab 2: Cost Analysis",
+            "filename": "../../cost-analysis/cost-analysis-sandbox.md"
+        }
+    ]
+}

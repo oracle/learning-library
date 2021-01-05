@@ -32,7 +32,9 @@ Creating a **Stack** involves uploading the Terraform configuration file, provid
 
 3. In the **Create Stack** dialog, enter the following :
 
-	* Add the Terraform configuration file that you've downloaded earlier. You can either drag and drop it onto the dialog box or click **Browse** and navigate to the file location.
+	* Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file that you downloaded earlier. Click **Select**.
+
+	![](./images/zip-file.png)
 
 	* Enter a **Name** for the new stack (or accept the default name provided).
 
