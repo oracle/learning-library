@@ -352,7 +352,14 @@
             "contentid": "12nnnn",
             "filename": "./../adb-kms/adb-kms.md"
         },
-        
+	   {         
+            "title": "Lab 29: Autonomous Data Guard",
+            "description": "Enabling and using Autonomous Data Guard",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "12/7/2020",
+            "contentid": "12nnnn",
+            "filename": "./../adb-data-guard/adb-data-guard.md"
+        },
         {         
             "title": "Appendix",
             "description": "Common tools for windows Users Finding the IP address of your AEI Cluster.",
