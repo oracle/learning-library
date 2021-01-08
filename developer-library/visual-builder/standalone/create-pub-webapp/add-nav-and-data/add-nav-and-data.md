@@ -19,7 +19,7 @@ You can also populate your business objects by importing data from a file. You d
 
     ![](./images/vbcsnd_cse_s2.png)
 
-3.  Click **Properties**, then in the **General** tab of the button's Property Inspector, change the **Text** field to `Display Employees`.
+3.  Click **Properties**, then in the **General** tab of the button's Properties pane, change the **Text** field to `Display Employees`.
 4.  Click the **Events** tab for the button, then click the **\+ New Event** button. From the menu, select **Quick Start: 'ojAction'**, the default action for a button click.
 
     ![](./images/vbcsnd_cse_s4.png)
@@ -27,7 +27,7 @@ You can also populate your business objects by importing data from a file. You d
     An action chain with the ID **ButtonActionChain** is created. It contains only the **Start** action.
 
 5.  Drag the **Navigate** action from the **Navigation** section of the Actions palette to the **+** sign pointed to by the **Start** action.
-6.  In the **Navigate** Property Inspector, select **main-employees** from the **Target** drop-down list.
+6.  In the **Navigate** Properties pane, select **main-employees** from the **Target** drop-down list.
 
     ![](./images/vbcsnd_cse_s6.png)
 
@@ -40,13 +40,13 @@ You can also populate your business objects by importing data from a file. You d
 
 1.  In the Web Apps pane of the Navigator, click **main-employees** under the **Flows** and **main** nodes. If necessary, click **Reload page** ![Reload page icon](./images/vbcsnd_refresh_icon.png) to display the new employee you created.
 2.  In the Components palette, locate the **Common** components and drag a **Button** component into the **Toolbar**, to the right of the **Create** button.
-3.  In the Property Inspector, change the **Text** field to `Display Departments`.
+3.  In the Properties pane, change the **Text** field to `Display Departments`.
 4.  Click the **Events** tab for the button, then click the **+ New Event** button and select **Quick Start: 'ojAction'**.
 
     Another empty action chain with the ID **ButtonActionChain** is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
 5.  Move the **Navigate** action from the **Navigation** section of the Actions palette to the **+** sign pointed to by the **Start** action.
-6.  In the **Navigate** Property Inspector, select **main-departments** from the **Target** drop-down list.
+6.  In the **Navigate** Properties pane, select **main-departments** from the **Target** drop-down list.
 
     The action now has the label `Navigate main-departments`.
 
