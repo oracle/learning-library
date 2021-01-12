@@ -58,23 +58,23 @@ to open the EM console for the on-premises environment,
     - usename `weblogic`
     - password `welcome1`
 
-    <img src="../../migrate-soa-app/images/3-open-console.png" width="100%">
+    ![](./images/3-open-console.png)
 
 2. Click the menu icon
 
-    <img src="../../migrate-soa-app/images/menu.png" width="80%">
+    ![](./images/menu.png =80%x*)
 
 3. Now click on top right button and go to **SOA_Domain -> SOA -> SOA-Infra**
 
-    <img src="../../migrate-soa-app/images/4-open-project.png" width="100%">
+    ![](./images/4-open-project.png)
 
 4. Then click the **Deployed Composites** tab
 
-    <img src="../../migrate-soa-app/images/deployed-composites.png" width="100%">
+    ![](./images/deployed-composites.png)
 
 5. Search for the composite **IWSProj3[1.0]** used for migration in this lab.
 
-    <img src="../../migrate-soa-app/images/5-deployed-composite.png" width="100%">
+    ![](./images/5-deployed-composite.png)
 
     This application is a simple file movement composite which moves a test XML file from the `/tmp/soa/out` folder to the `/tmp/soa/out1` folder.
 
@@ -153,39 +153,39 @@ In order to achieve this, you need to:
 
 *If you are using the Markletplace demo image, both 12.2.1.3 and 1.2.2.14 JDeveloper version are available on the desktop*
 
-<img src="../../migrate-soa-app/images/soa-local-rdp.png" width="70%">
+![](./images/soa-local-rdp.png =70%x*)
 
 1. Open the Jdeveloper 12.2.1.3 on the on-premises desktop
 
-    <img src="../../migrate-soa-app/images/jdev12213.png" width="100%">
+    ![](./images/jdev12213.png)
 
 2. In the Application tab, select **IWSApplication**
 
-    <img src="../../migrate-soa-app/images/open-iwsapplication.png" width="40%">
+    ![](./images/open-iwsapplication.png =40%x*)
 
 3. Right click on the Project **IWSProj3**
 
-    <img src="../../migrate-soa-app/images/iwsproj3.png" width="40%">
+    ![](./images/iwsproj3.png =40%x*)
 
 4. Select **Deploy -> Deploy IWSProj3...**
 
-    <img src="../../migrate-soa-app/images/deploy-iwsproj3a.png" width="70%">
+    ![](./images/deploy-iwsproj3a.png =70%x*)
 
 5. Select **Generate SAR File** and click **Next**
 
-    <img src="../../migrate-soa-app/images/deploy-iwsproj3b.png" width="70%">
+    ![](./images/deploy-iwsproj3b.png =70%x*)
 
 6. Review and click **Next**
 
-    <img src="../../migrate-soa-app/images/deploy-iwsproj3c.png" width="70%">
+    ![](./images/deploy-iwsproj3c.png =70%x*)
 
 7. Review and click **Finish**
 
-    <img src="../../migrate-soa-app/images/deploy-iwsproj3d.png" width="70%">
+    ![](./images/deploy-iwsproj3d.png =70%x*)
 
 8. Let the code build successfully 
 
-    <img src="../../migrate-soa-app/images/compilecode12213.png" width="100%">
+    ![](./images/compilecode12213.png)
 
 9. Open Jdeveloper 12.2.1.4
 
@@ -196,39 +196,39 @@ In order to achieve this, you need to:
 
 10. Create a new SOA Application 
 
-    <img src="../../migrate-soa-app/images/j12214a.png" width="50%">
+    ![](./images/j12214a.png =50%x*)
 
 11. Select **SOA Application** in the template list
 
-    <img src="../../migrate-soa-app/images/j12214b.png" width="70%">
+    ![](./images/j12214b.png =70%x*)
 
 12. Set **IWSApplication** for Application Name, and click **Next**
 
-    <img src="../../migrate-soa-app/images/j12214c.png" width="70%">
+    ![](./images/j12214c.png =70%x*)
 
 13. Keep the default Project Name, and click **Next**
 
-    <img src="../../migrate-soa-app/images/j12214d.png" width="70%">
+    ![](./images/j12214d.png =70%x*)
 
 14. Select **Empty Composite**, and click **Finish**
 
-    <img src="../../migrate-soa-app/images/j12214e.png" width="70%">
+    ![](./images/j12214e.png =70%x*)
 
 15. Click on **File -> Import**
 
-    <img src="../../migrate-soa-app/images/j12214f.png" width="35%">
+    ![](./images/j12214f.png =35%x*)
 
 16. Select **SOA Archive Into SOA Project** and click **OK**
 
-    <img src="../../migrate-soa-app/images/j12214g.png" width="50%">
+    ![](./images/j12214g.png =50%x*)
 
 17. Name the project as same as in source environmant **IWSProj3** and click **Next**` button**
 
-    <img src="../../migrate-soa-app/images/j12214h.png" width="70%">
+    ![](./images/j12214h.png =70%x*)
 
 18. Click on **Browse**
 
-    <img src="../../migrate-soa-app/images/j12214i.png" width="70%">
+    ![](./images/j12214i.png =70%x*)
 
 19. Go to the location where you have deployed your Jdeveloper 12.2.1.3 project.
 
@@ -239,11 +239,11 @@ In order to achieve this, you need to:
 
 20. Select the **sca_IWSProj3.jar** and click on **Open** button
 
-    <img src="../../migrate-soa-app/images/j12214j.png" width="70%">
+    ![](./images/j12214j.png =70%x*)
 
 21. Review and click on **Finish** 
 
-    <img src="../../migrate-soa-app/images/j12214k.png" width="70%">
+    ![](./images/j12214k.png =70%x*)
 
 22. Let the 12.2.1.3 code migrate to Jdev 12.2.1.4 
 
@@ -252,19 +252,19 @@ We can now deploy the upgraded project as a SAR file
 
 23. Right click the **IWSProj3** project
 
-    <img src="../../migrate-soa-app/images/iwsproj3.png" width="40%">
+    ![](./images/iwsproj3.png =40%x*)
 
 24. Select **Deploy -> Deploy IWSProj3...**
 
-    <img src="../../migrate-soa-app/images/j12214l.png" width="70%">
+    ![](./images/j12214l.png =70%x*)
 
 25. Select **Generate SAR file** and click **Finish**
 
-    <img src="../../migrate-soa-app/images/j12214m.png" width="70%">
+    ![](./images/j12214m.png =70%x*)
 
 26. Wait until the code compiles successfully
 
-    <img src="../../migrate-soa-app/images/compilecode12214.png" width="70%">
+    ![](./images/compilecode12214.png =70%x*)
 
 ## **STEP 3:** Prepare Your Target Environment
 
@@ -297,11 +297,11 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
 2. You might see a browser warning because the SSL security is using a self-signed certificate. Go through the steps to confirm the exception:
 
-    <img src="../../migrate-soa-app/images/firefox-ssl1.png" width="50%">
+    ![](./images/firefox-ssl1.png =50%x*)
 
-    <img src="../../migrate-soa-app/images/firefox-ssl2.png" width="50%">
+    ![](./images/firefox-ssl2.png =50%x*)
 
-    <img src="../../migrate-soa-app/images/soamp-deployment-1.png" width="100%">
+    ![](./images/soamp-deployment-1.png)
 
 3. Login with the credential from provisioning
 
@@ -310,23 +310,23 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
 
 2. Click the menu icon
 
-    <img src="../../migrate-soa-app/images/menu.png" width="80%">
+    ![](./images/menu.png =80%x*)
 
 3. Now click on top right button and go to **SOA_Domain -> SOA -> SOA-Infra**
 
-    <img src="../../migrate-soa-app/images/nav-composite.png" width="40%">
+    ![](./images/nav-composite.png =40%x*)
 
 4. Then click the **Deployed Composites** tab
 
-    <img src="../../migrate-soa-app/images/deployed-composites.png" width="100%">
+    ![](./images/deployed-composites.png)
 
 5. Click **Deploy**
 
-    <img src="../../migrate-soa-app/images/deploy.png" width="70%">
+    ![](./images/deploy.png =70%x*)
 
 6. Select the **Archive is on the machine...** option
 
-    <img src="../../migrate-soa-app/images/deploy2.png" width="70%">
+    ![](./images/deploy2.png =70%x*)
 
 
 7. Click **Browse** and the navigate to the folder location of the upgraded 12.2.14 Application 
@@ -336,31 +336,31 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
         
     - If you used the marketplace environment, it is under `/u02/oracle/developer/mywork/IWSApplication/IWSProj3/deploy`
 
-    <img src="../../migrate-soa-app/images/filepath.png" width="70%">
+    ![](./images/filepath.png =70%x*)
 
 8. Select the `sca_IWSProj3.jar` file then click on **Open**
 
 
 9. Click **Next**
 
-    <img src="../../migrate-soa-app/images/deploy2.png" width="70%">
+    ![](./images/deploy2.png =70%x*)
 
 
 10. Select **SOA Folder** as **default** and click **Next**
 
-    <img src="../../migrate-soa-app/images/deploy4.png" width="100%">
+    ![](./images/deploy4.png)
 
 12. Review all the information and then click **Deploy**
 
-    <img src="../../migrate-soa-app/images/deploy5.png" width="100%">
+    ![](./images/deploy5.png)
 
 8. You can see **Processing Deploy** Deployment in progress message and wait until you get the message **Deployment Succeeded** and click **Close** button
 
-    <img src="../../migrate-soa-app/images/deploy6.png" width="60%">
+    ![](./images/deploy6.png =60%x*)
 
 9. Check the deployed project in **Dashboard** 
 
-    <img src="../../migrate-soa-app/images/soamp-deployment-9.png" width="100%">
+    ![](./images/soamp-deployment-9.png)
 
 
 ## **STEP 5:** Check the application on the target SOA domain
@@ -392,15 +392,15 @@ in the on-premises environment at [https://localhost:7002/em](https://localhost:
     ls -l
     ```
 
-    <img src="../../migrate-soa-app/images/success.png" width="70%">
+    ![](./images/success.png =70%x*)
 
 6. you can check the **Flow Instances** of the project with one **FlowID** generated
 
-    <img src="../../migrate-soa-app/images/soamp-testing-5.png" width="100%">
+    ![](./images/soamp-testing-5.png)
 
 5. Click on **FlowID** and see the **Audit Trail** and the relevant logs.
 
-    <img src="../../migrate-soa-app/images/soamp-testing-6.png" width="100%">
+    ![](./images/soamp-testing-6.png)
 
 You may proceed to the next lab
 

@@ -21,6 +21,10 @@ With **Oracle Analytics Cloud**, you also get flexible service management capa
 
 To run the workshop, you will need an Oracle Free Tier Account, with a provisioned ADW instance and a a provisioned OAC instance. This pre-requisite guide will take you step-by-step through how to get the account and set the instance up, to be ready to start the workshop.
 
+Watch our short video that explains **Oracle Autonomous Database (ADB)** and **Oracle Analytics Cloud (OAC)** in detail:
+
+[](youtube:O-obYJ8TBw8)
+
 Estimated Workshop Time: 120 minutes
 
 *At this point, you are ready to start learning! Please proceed*

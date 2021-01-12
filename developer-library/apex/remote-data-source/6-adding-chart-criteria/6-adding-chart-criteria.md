@@ -27,12 +27,12 @@ In order for the chart to properly utilize the updated value in the select list,
     ![](images/drop-item.png " ")
 
 3. In the Property Editor (right panel), update the following.
-    - **Identification > Name:** enter **P4_COUNTRY**
+    - **Identification > Name:** enter **P3_COUNTRY**
     - **List of Values > Type:** select **SQL Query**
     - **List of Values > SQL Query:** cut and paste the following.
 
       ```
-      <copy>select distinct country_name d, iso r  
+      <copy>select distinct country_name d, country_iso r  
       from big_mac_index  
       order by 1</copy>
       ```
@@ -46,7 +46,7 @@ In order for the chart to properly utilize the updated value in the select list,
 ## **STEP 2** – Add a Dynamic Action
 In order for the chart to be refreshed when a country is selected from the new item a Dynamic Action must be defined.
 
-1. In the Rendering tree (left pane), right click on **P4_COUNTRY**, select **Create Dynamic Action**.
+1. In the Rendering tree (left pane), right click on **P3_COUNTRY**, select **Create Dynamic Action**.
 
     ![](images/go-da.png " ")
 
@@ -69,21 +69,21 @@ Currently, all three chart series have the country hard-coded. To ensure the val
 
 1. In the Rendering tree (left pane), under Content Body, click **Country Chart**.
 
-    In the Property Editor (right pane), for Source > Page Items to Submit, select **P4\_COUNTRY**.
+    In the Property Editor (right pane), for Source > Page Items to Submit, select **P3\_COUNTRY**.
 
     ![](images/set-chart.png " ")
 
 2. In the Rendering tree (left pane), under Series, click **Dollar Exchange Rate**.
 
-    In the Property Editor (right pane), for Source > SQL Query, replace **'AUS'** with **:P4\_COUNTRY**.
+    In the Property Editor (right pane), for Source > SQL Query, replace **'AUS'** with **:P3\_COUNTRY**.
 
     ![](images/set-series.png " ")
 
 3. In the Rendering tree (left pane), under Series, click **Relative Exchange Rate**.
-    In the Property Editor (right pane), for Source > SQL Query, replace **'AUS'** with :**P4\_COUNTRY**.
+    In the Property Editor (right pane), for Source > SQL Query, replace **'AUS'** with :**P3\_COUNTRY**.
 
 4. In the Rendering tree (left pane), under Series, click **Percentage Difference**.
-    In the Property Editor (right pane), for Source > SQL Query, replace **'AUS'** with :**P4\_COUNTRY**.
+    In the Property Editor (right pane), for Source > SQL Query, replace **'AUS'** with :**P3\_COUNTRY**.
 
 ## **STEP 4** – Improve the Chart Page
 
@@ -126,7 +126,7 @@ This completes Lab 6 and the workshop. In this lab you learned how to create ite
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

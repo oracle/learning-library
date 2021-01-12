@@ -6,7 +6,7 @@ This lab will show how the application can be scaled at the application and data
 ![](images/architecture.png " ")
 
 ### Objectives
--   Install the k6 load testing tool
+-   Install a load testing tool
 -   Start the external load balancer for the order-helidon microservice
 -   Test the performance of the existing deployment and identify the point at which performance begins to degrade
 -   Scale the application tier to improve performance and identify the point at which further application tier scaling does not help
@@ -16,10 +16,12 @@ This lab will show how the application can be scaled at the application and data
 
 This lab assumes that you have already completed labs 1 through 4.
 
-## **STEP 1**:  Install the k6 load testing tool and start an external load balancer for the Order service
+## **STEP 1**:  Install a load testing tool and start an external load balancer for the Order service
 
-1. Install the k6 tool (takes less than a second).
+1. Install a load testing tool.  
 
+    You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool (takes less than a second).
+    
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
     ```
@@ -48,8 +50,10 @@ This lab assumes that you have already completed labs 1 through 4.
 
 ## **STEP 2**: Load test and scale the application tier
 
-1.  Execute a load test by executing the following command.
+1.  Execute a load test using the load testing tool you have installed.  
 
+    Here is an example using k6:
+    
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```
@@ -74,8 +78,9 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/2replicas.png " ")
 
-3. Execute the load test again by executing the following command.
+3. Execute the load test again.
 
+   For example:
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```
@@ -100,8 +105,9 @@ This lab assumes that you have already completed labs 1 through 4.
 
     ![](images/3replicas.png " ")
 
-5. Execute the load test again by executing the following command.
+5. Execute the load test again.
 
+   For example:
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```
@@ -126,8 +132,10 @@ This lab assumes that you have already completed labs 1 through 4.
 
    ![](images/ScaleTo2dbocpuScreen3.png " ")
 
-4. Execute the load test by executing the following command.
+4. Execute the load test again.
 
+   For example:
+    
     ```
     <copy>cd $MSDATAWORKSHOP_LOCATION/k6; ./test.sh</copy>
     ```

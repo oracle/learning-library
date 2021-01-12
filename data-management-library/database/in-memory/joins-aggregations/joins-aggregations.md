@@ -19,7 +19,7 @@ This lab assumes you have completed the following labs:
 * Lab: Querying the IMC
 
 
-## Step: In-Memory Joins and Aggregation
+## Step 1: In-Memory Joins and Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the  fact table, LINEORDER, and a dimension table and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond the basic performance benefits of scanning data in a columnar format.
 
@@ -30,7 +30,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
     set pages 9999
     set lines 100
-    <copy>    
+    </copy>    
     ````
 
     ![](images/num1.png " ") 

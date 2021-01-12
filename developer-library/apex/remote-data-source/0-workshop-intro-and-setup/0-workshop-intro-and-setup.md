@@ -15,7 +15,7 @@ Estimated Time: 50 minutes
 * Create an application on the new data
 * Refine the application
 
-*Note: This lab assumes you are using Oracle APEX 20.1.*
+*Note: This lab assumes you are using Oracle APEX 20.2.*
 
 ### Labs
 
@@ -48,7 +48,7 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

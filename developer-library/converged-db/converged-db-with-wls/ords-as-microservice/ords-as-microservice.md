@@ -9,6 +9,13 @@ Oracle Converged Database with ORDS – Oracle REST Data Services options enable
 
 *Estimated Lab Time:* 15 Minutes
 
+### About Oracle REST Data Services (ORDS)
+ORDS is a middle tier JAVA application that allows you to access your Oracle Database resources via REST. Use standard HTTP calls `(GET|POST|PUT|DELETE|HEAD)` via URIs that ORDS makes available.
+
+ORDS will find and run the appropriate database workload (a query, an anonymous block), and return the output as formatted JSON.
+
+  ![](./images/lab10-about-ords.png)
+
 ### Objectives
 - Modify JEE code to replace data from database by ORDS end-point
 
@@ -18,24 +25,15 @@ This lab assumes you have:
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
-    - Lab: Setup Compute Instance
-    - Lab: Start Services
+    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
     - Lab: eSHOP Application
-
-### About Oracle REST Data Services (ORDS)
-
-ORDS is middle tier JAVA application that allows you to access your Oracle Database resources via REST. Use standard HTTP calls (GET|POST|PUT|DELETE|HEAD) via URIs that ORDS makes available.
-
-ORDS will find and run the appropriate database workload (a query, an anonymous block), and return the output as formatted JSON.
-
-
-![](./images/lab10-about-ords.png)
-
 
 
 ## **STEP 1**: Observe eSpeedShop analytical data
 
-1. Open web browser, type `http://localhost:7101/` and hit enter to go to eSpeedShop application home page.
+1. Open a web browser, type *`http://localhost:7101/`* and hit enter to go to eSpeedShop application home page.
 
 2. Navigate to the analytics module by clicking the Analytics link provided in application navigation bar at the top.
 
@@ -65,24 +63,23 @@ ORDS will find and run the appropriate database workload (a query, an anonymous 
 
     ![](./images/lab10-step2-6.png)
 
-7. Look for the function body and make sure it is getting data by executing the SQL query string named **PRODUCT\_COUNT\_BY_GROUP**.
+7. Look for the function body and make sure it is getting data by executing the SQL query string named **`PRODUCT_COUNT_BY_GROUP`**.
 
 8. Modify the function in such a way that instead of getting data by executing the SQL, it should fetch data from the provided ORDS URL.
 
     In order to achieve that, uncomment the function call below:
-    ````
+
+    ```
     <copy>    
     Vector v = getProductCountByCategoryOrds();
     </copy>
-    ````
-    comment the function body after the above line, except the return statement at the end of function body.
+    ```
 
-   
-9. Once done, save the changes using **Ctrl + s**.
+    Comment the function body after the above line, except the return statement at the end of function body.
 
+9. Once done, save the changes using **`Ctrl + s`**.
 
 ## **STEP 3**: Build and redeploy eSpeedShop application
-
 
 1.	In JDeveloper, go to the project panel and right click on the project folder (converge).
 
@@ -102,9 +99,7 @@ ORDS will find and run the appropriate database workload (a query, an anonymous 
 ## **STEP 4**: Re-check analytical data
 
 1.	Go to the browser.
-
 2.	Open the eSpeedShop application by entering the URL – localhost:7101.
-
 3.	Navigate to the analytics module by clicking the Analytics link, provided in the application navigation bar at the top.
 
     ![](./images/lab10-step1-2.png)
@@ -113,11 +108,10 @@ ORDS will find and run the appropriate database workload (a query, an anonymous 
 
     ![](./images/lab10-step1-3.png)
 
-
 ## Summary
-In summary, you replaced the business logic to retrieve JSON data-type from converged database with the URL fetching the same data over REST using Oracle REST Data Services(ORDS).
+To summarize, you replaced the business logic to retrieve JSON data-type from converged database with the URL fetching the same data over REST using Oracle REST Data Services(ORDS).
 
-You have successfully completed *Converged Database for WebLogic Developer* workshop 
+You have successfully completed *Converged Database for WebLogic Developer* workshop
 
 ## Want to learn more
 - [ORDS](https://www.oracle.com/in/database/technologies/appdev/rest.html)
@@ -127,12 +121,9 @@ You have successfully completed *Converged Database for WebLogic Developer* work
 ## Acknowledgements
 - **Authors** - Pradeep Chandramouli, Nishant Kaushik, Balasubramanian Ramamoorthy, Dhananjay Kumar, AppDev & Database Team, Oracle, October 2020
 - **Contributors** - Robert Bates, Daniel Glasscock, Baba Shaik, Meghana Banka, Rene Fontcha
-- **Last Updated By/Date** - Kanika Sharma, NA Technology, October 2020
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-
-

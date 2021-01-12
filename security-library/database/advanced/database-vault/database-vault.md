@@ -35,11 +35,11 @@ This lab assumes you have:
 | 3 | Create a Trusted Path / Multi-factor Authorization | 10 minutes |
 | 4 | Simulation Mode | 10 minutes |
 | 5 | Ops Control | 5 minutes |
-| 6 | (Optional) Disabling Database Vault | <5 minutes |
+| 6 | Disabling Database Vault | <5 minutes |
 
 ## **STEP 1**: Enable Database Vault
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
       ````
     <copy>sudo su - oracle</copy>
@@ -48,338 +48,343 @@ This lab assumes you have:
 2. Go to the scripts directory
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Enable_Database_Vault</copy>
+      <copy>cd $DBSEC_LABS/database-vault</copy>
       ````
 
-3. Start by enabling Database Vault in the container database.
+3. Start by enabling Database Vault in the container database **cdb1**
 
       ````
-      <copy>./01_config_enable_dv_on_cdb.sh</copy>
+      <copy>./dv_enable_on_cdb.sh</copy>
       ````
 
    ![](./images/dv-001.png " ")
 
-      **Note**: To enable DB Vault, database will be rebooted!
+    **Note**: To enable DB Vault, database will be rebooted!
 
-4. Next, enable it on the pluggable database. For now, just enable it on pdb1.
+4. Next, enable it on the pluggable database. For now, just enable it on **pdb1**
 
       ````
-      <copy>./02_config_enable_dv_on_pdb.sh pdb1</copy>
+      <copy>./dv_enable_on_pdb.sh pdb1</copy>
       ````
 
    You should see a status like this:
 
    ![](./images/dv-002.png " ")
 
-5. Now, Database Vault is enabled in the container database as well as `PDB1`!
+5. Now, Database Vault is enabled in the container database as well as pdb1!
 
 ## **STEP 2**: Create a Simple Realm
 
-1. Open a web browser and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
+1. Open a web browser and launch the Glassfish app by navigating to this URL: *`http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`*
 
-2. Login to the application as `hradmin/Oracle123`
+   ![](./images/dv-029.png " ")
 
-3. Click [**Search Employee**]
+2. Login to the application as *`hradmin`* with the password "*`Oracle123`*"
+
+   ![](./images/dv-030.png " ")
+
+3. Click **Search Employee**
+
+   ![](./images/dv-031.png " ")
 
 4. Click [**Search**]
 
-5. Go back to your SSH session and go to the scripts directory
+   ![](./images/dv-032.png " ")
+
+5. Go back to your SSH session and run the command to view the details about the Glassfish session
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Simple_Realm</copy>
-      ````
-
-6. Run the command to view the details about the Glassfish session
-
-      ````
-      <copy>./01_query_employee_data.sh</copy>
+      <copy>./dv_query_employee_data.sh</copy>
       ````
 
    ![](./images/dv-003.png " ")
 
-7. Now, create the Realm
+6. Now, create the **Realm**
 
       ````
-      <copy>./02_create_realm.sh</copy>
+      <copy>./dv_create_realm.sh</copy>
       ````
 
    ![](./images/dv-004.png " ")
 
-8. Add objects to the Realm to protect
+7. Add objects to the Realm to protect
 
       ````
-      <copy>./03_add_objects_to_realm.sh</copy>
+      <copy>./dv_add_obj_to_realm.sh</copy>
       ````
 
    ![](./images/dv-005.png " ")
 
-9. Make sure you have an authorized user in the realm. In this step, we will add `EMPLOYEESEARCH_PROD` as a realm authorized owner.
+8. Make sure you have an authorized user in the realm. In this step, we will add `EMPLOYEESEARCH_PROD` as a realm authorized owner
 
       ````
-      <copy>./04_add_auth_to_realm.sh</copy>
+      <copy>./dv_add_auth_to_realm.sh</copy>
       ````
 
    ![](./images/dv-006.png " ")
 
-10. Re-execute the SQL query to show that SYS now receives the **insufficient privileges** error message
+9. Re-execute the SQL query to show that `SYS` now receives the **insufficient privileges** error message
 
       ````
-      <copy>./05_query_employee_data.sh</copy>
+      <copy>./dv_query_employee_data.sh</copy>
       ````
 
-   ![](./images/dv-007.png " ")
+   ![](./images/dv-007a.png " ")
 
-11. When you have completed this lab, you can drop the Realm
+10. When you have completed this lab, you can drop the Realm
 
       ````
-      <copy>./06_drop_realm.sh</copy>
+      <copy>./dv_drop_realm.sh</copy>
       ````
+
+   ![](./images/dv-007b.png " ")
 
 ## **STEP 3**: Create a Trusted Path / Multi-factor Authorization
 
-1. Open a web browser and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
+1. Go back to your Glassfish app as *`hradmin`*
 
-2. Login as `hradmin/Oracle123`
+   ![](./images/dv-030.png " ")
 
-3. Click [**Search Employee**]
+2. Click [**Search Employee**] again
 
-4. Click [**Search**]
+   ![](./images/dv-031.png " ")
 
-5. Go back to your SSH session and go to the scripts directory
+3. And click [**Search**]
 
-      ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Trusted_App_Path</copy>
-      ````
+   ![](./images/dv-032.png " ")
 
-6. Next, run this query to view the session information associated with the Glassfish application
+4. Go back to your SSH session and run this query to view the session information associated with the Glassfish application
 
       ````
-      <copy>./01_query_employeesearch_usage.sh</copy>
+      <copy>./dv_query_employeesearch_usage.sh</copy>
       ````
 
    ![](./images/dv-019.png " ")
 
-7. Now, query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table as `SYS` to demonstrate it is accessible
+5. Now, query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table with the owner `EMPLOYEESEARCH_PROD` to demonstrate it is accessible
 
       ````
-      <copy>./02_query_employeesearch.sh</copy>
+      <copy>./dv_query_employee_search.sh</copy>
       ````
 
    ![](./images/dv-020.png " ")
 
-8. Begin protecting the application credentials by creating a Database Vault Rule
+6. Begin protecting the application credentials by creating a Database Vault Rule
 
       ````
-      <copy>./03_create_rule.sh</copy>
+      <copy>./dv_create_rule.sh</copy>
       ````
 
    ![](./images/dv-021.png " ")
 
-9. We use the Database Vault Rule by adding it to a DV Rule Set. You can have one or more rules in the rule set. If you have more than one, you can choose between the rule set evaluating all rules must be true or *any* rule must be true. Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches
+    **Note**: We authorize as a Trusted Path app only the access from Glassfish Web App (JDBC Thin Client) through the schema owner `EMPLOYEESEARCH_PROD`!
+
+7. We use the Database Vault Rule by adding it to a **DV Rule Set**
+
+    - You can have one or more rules in the rule set
+    - If you have more than one, you can choose between the rule set evaluating all rules must be true or `ANY` rule must be true
+    - Think of it like the difference between `IN` and `EXISTS` - `IN` includes all while `EXISTS` stops once it identifies one result matches
 
     ````
-    <copy>./04_create_rule_set.sh</copy>
+    <copy>./dv_create_rule_set.sh</copy>
     ````
 
    ![](./images/dv-022.png " ")
 
-10. Create a Command Rule on Connect to protect the `EMPLOYEESEARCH_PROD` user. You can only `CONNECT` AS `EMPLOYEESEARCH_PROD` if you match the Rule Set we created
+8. Create a Command Rule on "**CONNECT**" to protect the `EMPLOYEESEARCH_PROD` user
 
     ````
-    <copy>./05_create_command_rule.sh</copy>
+    <copy>./dv_create_command_rule.sh</copy>
     ````
 
    ![](./images/dv-023.png " ")
 
-11. Go to your web browser and refresh a few times and run some queries by clicking [**Search**] and explore employee data
+   **Note**: You can only "`CONNECT`" as `EMPLOYEESEARCH_PROD` if you match the Rule Set we created!
 
-12. Go back to your terminal session and re-run our query of the application usage to verify that it still works.
+9. Go back to your Glassfish app and refresh a few times and run some queries by clicking [**Search**] and explore employee data
+
+    **Note**: Because you're using the Glassfish App as a Trusted Path app you can access the data!
+
+10. Go back to your terminal session and re-run our query of the application usage to verify that it still works
 
     ````
-    <copy>./06_query_employeesearch_usage.sh</copy>
+    <copy>./dv_query_employeesearch_usage.sh</copy>
     ````
 
    ![](./images/dv-024.png " ")
 
-13. Now, try to query the `DEMO_HR_EMPLOYEES` table as `SYS`... You should be blocked!
+11. Now, try to query the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table with the owner `EMPLOYEESEARCH_PROD`... **You should be blocked**!
 
     ````
-    <copy>./07_query_employeesearch.sh</copy>
+    <copy>./dv_query_employee_search.sh</copy>
     ````
 
    ![](./images/dv-025.png " ")
 
-14. Once you have successfully completed the lab, you can delete the `Command Rule`, `Rule Set`, and `Rule` from Database Vault
+    **Note**: Because you're querying via a non-"Trusted Path" app you can't access the data!
+
+12. Once you have successfully completed the lab, you can delete the **Command Rule**, **Rule Set**, and **Rule** from Database Vault
 
     ````
-    <copy>./08_delete_trusted_path.sh</copy>
+    <copy>./dv_del_trusted_path.sh</copy>
     ````
 
    ![](./images/dv-026.png " ")
 
 ## **STEP 4**: Simulation Mode
 
-1. Go to the scripts directory
+1. First, query the simulation log to show that it has no current values
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Simulation_Mode</copy>
-      ````
-
-2. First, query the simulation log to show that it has no current values
-
-      ````
-      <copy>./01_query_simulation_log.sh</copy>
+      <copy>./dv_query_simulation_logs.sh</copy>
       ````
 
    ![](./images/dv-008.png " ")
 
-3. Next, create a command rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
+2. Next, create a Command Rule that will simulate blocking all connections to the database. This is an easy way for us to identify who is connecting and where they are connecting from.
 
       ````
-      <copy>./02_command_rule_sim_mode.sh</copy>
+      <copy>./dv_command_rule_sim_mode.sh</copy>
       ````
 
    ![](./images/dv-009.png " ")
 
-4. Execute a script to create some db connections and generate some log entries
+3. Execute a script to create some db connections and generate some log entries
 
       ````
-      <copy>./03_run_queries.sh</copy>
+      <copy>./dv_run_queries.sh</copy>
       ````
 
    ![](./images/dv-010.png " ")
 
-5. Now, we query the simulation log again to see what new entries we have. Remember we created a command rule to simulate blocking user connections!
+4. Now, we query the simulation log again to see what new entries we have. Remember we created a command rule to simulate blocking user connections!
 
       ````
-      <copy>./04_query_simulation_log.sh</copy>
+      <copy>./dv_query_simulation_logs.sh</copy>
       ````
 
    ![](./images/dv-011.png " ")
 
    The log shows all the users who connected and would have been blocked by the rule. It also shows where they connected from and what client they used to connect
 
-6. Run this script to get a list of distinct usernames
+5. Run this script to get a list of distinct usernames present in the simulation logs
 
       ````
-      <copy>./05_distinct_users_sim_log.sh</copy>
+      <copy>./dv_distinct_users_sim_logs.sh</copy>
       ````
 
-   ![](./images/dv-012.png " ")
+   ![](./images/dv-012a.png " ")
 
-7. Although we only used Simulation mode on a `CONNECT` rule, we could have used this on a Realm to show what violations we would had
+6. Although we only used Simulation mode on a **CONNECT** rule, we could have used this on a Realm to show what violations we would had
 
-8. Before moving to the next lab, we will remove the command rule and clean out the log
-
-      ````
-      <copy>./06_purge_sim_log.sh</copy>
-      ````
+7. Before moving to the next lab, we will clean out the simulation logs and remove the Command Rule
 
       ````
-      <copy>./07_drop_command_rule.sh</copy>
+      <copy>./dv_purge_sim_logs.sh</copy>
       ````
+
+   ![](./images/dv-012b.png " ")
+
+      ````
+      <copy>./dv_drop_command_rule.sh</copy>
+      ````
+
+   ![](./images/dv-012c.png " ")
 
 ## **STEP 5**: Ops Control
 
-1. Go to the scripts directory
+1. Check the status of Database Vault and Operations Control
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Ops_Control</copy>
-      ````
-
-2. Check the status of Database Vault and Operations Control
-
-      ````
-      <copy>./01_query_dv_status.sh</copy>
+      <copy>./dv_status.sh</copy>
       ````
 
    ![](./images/dv-013.png " ")
 
       **Note**: It is not yet configured!
 
-3. Next, we will run the same queries as both container admin, `SAL` as well as `DBA_DEBRA`
+2. Next, we will run the same queries as both pluggable database **pdb1** and **pdb2**...
 
-      **Note**:
-      - The query results are the same
-      - The common user `SAL` has access to data in the PDB, just as the pdb admin has
-
+    - ... as `DBA_DEBRA`
+      
       ````
-      <copy>./02_query_w_pdb_debra.sh</copy>
+      <copy>./dv_query_with_debra.sh</copy>
       ````
 
    ![](./images/dv-014.png " ")
 
+    - ... as `C##SEC_DBA_SAL`
+
       ````
-      <copy>./03_query_with_sal.sh</copy>
+      <copy>./dv_query_with_sal.sh</copy>
       ````
 
    ![](./images/dv-015.png " ")
 
-4. Enable Database Vault 19c Operations Control and run the queries again. Notice who can and who cannot query the `EMPLOYEESEARCH_PROD` schema data now. SAL should no longer be able to access data.
+    **Note**:
+      - The query results are the same
+      - The common user `C##SEC_DBA_SAL` has access to data in the pluggable databases, just as the pdb Admin has
+
+3. Enable Database Vault 19c **Operations Control** and run the queries again
+
+    **Note**: Notice who can and who cannot query the `EMPLOYEESEARCH_PROD` schema data now... `SAL` should no longer be able to access data!
 
       ````
-      <copy>./04_enable_ops_control.sh</copy>
+      <copy>./dv_enable_ops_control.sh</copy>
       ````
 
-   ![](./images/dv-009.png " ")
+   ![](./images/dv-016a.png " ")
 
       ````
-      <copy>./05_query_dv_status.sh</copy>
+      <copy>./dv_status.sh</copy>
       ````
 
-   ![](./images/dv-016.png " ")
+   ![](./images/dv-016b.png " ")
 
       ````
-      <copy>./06_query_w_pdb_debra.sh</copy>
+      <copy>./dv_query_with_debra.sh</copy>
       ````
 
    ![](./images/dv-017.png " ")
 
       ````
-      <copy>./07_query_with_sal.sh</copy>
+      <copy>./dv_query_with_sal.sh</copy>
       ````
 
-   ![](./images/dv-018.png " ")
+   ![](./images/dv-018a.png " ")
 
 
-5. When you are have completed this lab, disable Ops Control
-
-      ````
-      <copy>./08_disable_ops_control.sh</copy>
-      ````
-
-   ![](./images/dv-009.png " ")
-
-## **STEP 6**: (Optional) Disabling Database Vault
-**Attention: DO NOT run this lab if you want perfoming Oracle Label Security labs later!**
-
-1. Go to the scripts directory
+4. When you are have completed this lab, disable Ops Control
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Database_Vault/Disable_Database_Vault</copy>
+      <copy>./dv_disable_ops_control.sh</copy>
       ````
 
-2. Disable the pluggable database `PDB1`
+   ![](./images/dv-018b.png " ")
+
+## **STEP 6**: Disabling Database Vault
+
+1. Disable the pluggable database **pdb1**
 
       ````
-      <copy>./01_config_disable_dv_on_pdb.sh pdb1</copy>
+      <copy>./dv_disable_on_pdb.sh pdb1</copy>
       ````
 
-   You should see a status like this:
+   You should see a status like this
 
    ![](./images/dv-027.png " ")
 
-3. Now, Disable Database Vault in the container database
+2. Now, Disable Database Vault in the container database **cdb1**
 
       ````
-      <copy>./02_config_disable_dv_on_cdb.sh</copy>
+      <copy>./dv_disable_on_cdb.sh</copy>
       ````
 
    ![](./images/dv-028.png " ")
 
       **Note**: To disable DB Vault, database will be rebooted!
 
-4. Now, Database Vault is disabled in the container database as well as `PDB1`!
+3. Now, Database Vault is disabled in the container database as well as pdb1!
 
 You may proceed to the next lab.
 
@@ -452,7 +457,7 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

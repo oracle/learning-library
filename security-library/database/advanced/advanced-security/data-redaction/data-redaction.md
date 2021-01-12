@@ -31,7 +31,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Create a basic Data Redaction policy
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
       ````
       <copy>sudo su - oracle</copy>
@@ -40,21 +40,21 @@ This lab assumes you have:
 2. Go to the scripts directory
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/Data_Redaction/Redact_EMPLOYEESEARCH_Data</copy>
+      <copy>cd $DBSEC_LABS/data-redaction</copy>
       ````
 
 3. First, let's view the data before we redact it
 
       ````
-      <copy>./01_query_employee_data.sh</copy>
+      <copy>./dr_query_employee_data.sh</copy>
       ````
 
    ![](./images/dr-001.png " ")
 
-4. Create a redaction policy for the `DEMO_HR_EMPLOYEES` table to redact data for all queries
+4. Create the redaction policy `PROTECT_EMPLOYEES` for the `DEMO_HR_EMPLOYEES` table to (**FULL**) redact data on column **SIN** for all queries (**Expression "1=1"**)
 
       ````
-      <copy>./02_redact_for_all.sh</copy>
+      <copy>./dr_redact_for_all.sh</copy>
       ````
 
    ![](./images/dr-002.png " ")
@@ -62,25 +62,25 @@ This lab assumes you have:
 5. Re-run the query to see the redacted data
 
       ````
-      <copy>./03_query_employee_data.sh</copy>
+      <copy>./dr_query_employee_data.sh</copy>
       ````
 
    ![](./images/dr-003.png " ")
 
 ## **STEP 2**: Contextualize an existing Data Redaction policy
 
-1. Now, modify the redaction policy to only redact non-Glassfish queries
+1. Now, modify the redaction policy to only redact non-Glassfish queries (**Expression with "Rule Set"**)
 
       ````
-      <copy>./04_redact_nonapp_queries.sh</copy>
+      <copy>./dr_redact_nonapp_queries.sh</copy>
       ````
 
    ![](./images/dr-004.png " ")
 
-2. Add additional columns to the redaction policy
+2. Add additional columns (**SSN** and **NINO**) to the redaction policy
 
       ````
-      <copy>./05_add_redacted_columns.sh</copy>
+      <copy>./dr_add_redacted_columns.sh</copy>
       ````
 
    ![](./images/dr-005.png " ")
@@ -88,7 +88,7 @@ This lab assumes you have:
 3. Run the query to see the redact data again
 
       ````
-      <copy>./06_query_employee_data.sh</copy>
+      <copy>./dr_query_employee_data.sh</copy>
       ````
 
    ![](./images/dr-006.png " ")
@@ -98,10 +98,18 @@ This lab assumes you have:
 1. When you are finished with the lab, you can drop the redaction policy
 
       ````
-      <copy>./07_drop_redaction_policy.sh</copy>
+      <copy>./dr_drop_redaction_policy.sh</copy>
       ````
 
    ![](./images/dr-007.png " ")
+
+2. Check that all data are now not redacted
+
+      ````
+      <copy>./dr_query_employee_data.sh</copy>
+      ````
+
+   ![](./images/dr-001.png " ")
 
 You may now proceed to the next lab.
 
@@ -144,7 +152,7 @@ Technical Documentation: [Data Redaction 19c](https://docs.oracle.com/en/databas
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

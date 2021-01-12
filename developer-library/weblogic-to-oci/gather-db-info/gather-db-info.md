@@ -28,7 +28,7 @@ Once the database system is provisioned, under the **Database System -> details*
 
 3. Copy the **DB connection string** for later use
 
-  <img src="../../../gather-db-info/images/provision-db-27-connection2.png" width="70%">
+  ![](./images/provision-db-27-connection2.png =70%x*)
 
 You may now proceed to the next lab.
 

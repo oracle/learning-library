@@ -20,7 +20,6 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
-    - Lab: Configure GoldenGate
 
 ## **STEP 1**: Remove Deployments.
 
@@ -28,7 +27,7 @@ This lab assumes you have:
 
     ![](./images/terminal3.png " ")
 
-                         
+
 
 2.  From the Terminal window in the VNC Console, navigate to the Reset directory under ~/OGG181_WHKSHP.
 
@@ -55,7 +54,7 @@ Below example will guide to how to delete the deployment **"Target"** - (***SanF
 |      A7         |Metrics Server Port          |   17004             |
 |      A8         |Metrics Server UDP Port      |   17005             |
 
-1.  From the terminal enter **"./delete_deployment.sh SanFran welcome1 16000 17001 17002 17003 17004 17005"**
+4.  From the terminal enter **"./delete_deployment.sh SanFran welcome1 16000 17001 17002 17003 17004 17005"**
 
         [oracle@OGG181DB183 Reset]$ ./delete_deployment.sh SanFran Welcome1 16000 17001 17002 17003 17004 17005
         Successfully Setup Software.
@@ -114,7 +113,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Zia Khan
-* **Last Updated By/Date** - Brian Elliott, November 2020
+* **Last Updated By/Date** - Brian Elliott, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

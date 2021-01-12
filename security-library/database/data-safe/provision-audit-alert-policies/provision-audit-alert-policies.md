@@ -41,6 +41,7 @@ To complete this lab, you need the following:
     c) Click **Service Console**. The **Home** tab in the Oracle Data Safe Console is displayed.
 
 
+
 ## **STEP 2**: Provision audit and alert policies on your target database by using the Activity Auditing wizard
 
 1. In the Oracle Data Safe Console, click the **Home** tab, and then click the **Activity Auditing** tab. The first page of the Activity Auditing wizard is displayed.
@@ -61,7 +62,7 @@ To complete this lab, you need the following:
 
     - The check mark under **Additional Policies** means that your target database has predefined audit policies enabled on it.
 
-    - **CIS** under **Compliance Standards** means that your target database has the **Center for Internet Security (CIS) Configuration** audit policy enabled on it.
+    - The check mark under **Compliance Standards** means that your target database has the **Center for Internet Security (CIS) Configuration** audit policy enabled on it.
 
     - Currently, there are no basic, admin activity, or user activity audit policies provisioned on your target database, nor are there any alert policies.
 
@@ -124,7 +125,7 @@ To complete this lab, you need the following:
 
     - The audit trail location is automatically set to `UNIFIED_AUDIT_TRAIL`, which is the default audit trail for Autonomous Databases.
     - Audit collection is not yet started.
-    - The auto purge feature is not enabled by default.
+    - The auto purge feature is not enabled by default. If you are using a Free Trial, the auto purge option is not displayed.
     - You need to configure an audit collection start date.
 
   ![Start Audit Collection page](images/start-audit-collection-page.png)
@@ -188,7 +189,7 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, November 3, 2020
+* **Last Updated By/Date** - Jody Glover, December 14, 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

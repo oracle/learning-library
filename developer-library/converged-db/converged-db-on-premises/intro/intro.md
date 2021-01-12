@@ -12,12 +12,13 @@ In this workshop, you will gain first-hand experience of using data types beyond
 
 Once you complete your setup, the next four labs in this workshop cover these individual data types, and the final lab consists of multi-model examples:
 
-- Lab 4: NODE.JS
-- Lab 5: JSON
-- Lab 6: XML
-- Lab 7: Spatial
-- Lab 8: Graph
-- Lab 9: Cross Data Types
+- Lab : NODE.JS
+- Lab : JSON
+- Lab : XML
+- Lab : Spatial
+- Lab : Graph
+- Lab : Cross Data Types
+- Lab : ORDS as Microservices
 
 You will also download Oracle SQL Developer to help execute the programs associated with the lab. We will use Docker containers and demonstrate multiple use cases with a Node.js application.
 
@@ -34,8 +35,8 @@ You will also download Oracle SQL Developer to help execute the programs associa
 Feel free to share with your colleagues.
 
 1. Blogs
-      - [What is a converged database?](https://blogs.oracle.com/database/what-is-a-converged-database)
-      - [Many single purpose database vs a converged database](https://blogs.oracle.com/database/many-single-purpose-databases-versus-a-converged-database)
+  - [What is a converged database?](https://blogs.oracle.com/database/what-is-a-converged-database)
+  - [Many single purpose database vs a converged database](https://blogs.oracle.com/database/many-single-purpose-databases-versus-a-converged-database)
 
 ## Acknowledgements
 - **Owners** - Balasubramanian Ramamoorthy, Arvind Bhope

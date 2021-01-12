@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to download, configure, and run the DRAGON Stack manager in order to create your very first React Web Application connected to an Autonomous Transaction Processing database (Always Free or not). 
+This lab walks you through the steps to download, configure, and run the DRAGON Stack manager in order to create your very first React Web Application connected to an Autonomous Transaction Processing database (Always Free or not).
 
-Estimated Lab Time:  10 minutes
+Estimated Lab Time:  30 minutes
 
 ### About DRAGON
 The DRAGON Stack manager is designed to speed up as much as possible the development of applications that leverage the power of Oracle Autonomous Databases.
@@ -14,13 +14,16 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
 ## **STEP 1**: Download the DRAGON Stack manager
 
-1. In Cloud Shell, change directories to your home directory:
+1. Launch the cloud shell terminal.
+  ![Launch Cloud Shell terminal](images/launch-cloud-shell.png)
+
+2. In Cloud Shell, change directories to your home directory:
 
     ```
     $ <copy>cd</copy>
     ```
 
-2. If you have an existing DRAGON Stack manager you can simply *upgrade* it to the latest version:
+3. If you have an existing DRAGON Stack manager you can simply *upgrade* it to the latest version:
 
     ```
     $ <copy>dragon-linux-x86_64-<your version> -upgrade</copy>
@@ -28,33 +31,33 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
     For example:
 
-    ![](images/dragon-upgrading.png)
-    
-    ![](images/dragon-upgrade.png)
+    ![DRAGON Stack manager being upgraded](images/dragon-upgrading.png)
+
+    ![DRAGON Stack manager upgraded with success](images/dragon-upgrade.png)
 
     *[Click here to skip to STEP 4](#STEP4:DeploytheDRAGONStackbackend)*
 
-2. Download the DRAGON Stack manager and make it executable:
+4. Download the DRAGON Stack manager and make it executable:
    *See [the GitHub repo](https://github.com/loiclefevre/dragon) for the latest version.*
 
     ```
-    $ <copy>wget https://github.com/loiclefevre/dragon/releases/download/v2.0.7/dragon-linux-x86_64-2.0.7</copy>
+    $ <copy>wget https://github.com/loiclefevre/dragon/releases/download/v2.0.8/dragon-linux-x86_64-2.0.8</copy>
     ```
 
     ```
     $ <copy>chmod +x dragon-linux-*</copy>
     ```
 
-3. Run the dragon command to generate SSH keys and display the config file:
+5. Run the dragon command to generate SSH keys and display the config file:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.7 -config-template -create-keys</copy>
-    DRAGON Stack manager v2.0.7
+    $ <copy>./dragon-linux-x86_64-2.0.8 -config-template -create-keys</copy>
+    DRAGON Stack manager v2.0.8
 
     > Command line parameters ................................................... ok
     Entering keys generation process...
     These keys (public and private) will be used for future connection to Oracle Cloud Infrastructure API endpoints.
-    Please enter a passphrase: banana
+    Please enter a passphrase: &lt;enter a passphrase&gt;
     > Keys creation ..................................... ok [Upload the Public Key]
     Please upload this public key to your Oracle Cloud Infrastructure user's API Keys:
 
@@ -86,32 +89,46 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
     ```
 
-4. Copy the public key (from the BEGIN RSA PUBLIC KEY to the end of END RSA PUBLIC KEY, including the dashes).
+6. Copy the public key (from the BEGIN RSA PUBLIC KEY to the end of END RSA PUBLIC KEY, including the dashes).
+  ![Copy the public key](images/copy-key.png)
 
 ## **STEP 2:** Gather Data you need
 
-1. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add Public Key**.
-   ![](./images/select-user.png " ")
-   ![](./images/create-api-key.png " ")
+1. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add API Key**.
+   ![Select user in OCI Console](./images/select-user.png " ")
+   ![Create an API key for the user](./images/create-api-key.png " ")
 
-2. Paste the content of public key you created and click **Add**. A new finger print will be generated.
-   ![](./images/add-public-key.png " ")
+2. Select **Paste Public Keys** and paste the content of the public key you created and click **Add**. A new finger print will be generated.
+   ![Add a public key for the user](./images/add-public-key.png " ")
 
   Make a note of the fingerprint for later.
 
   To see more information about generating the keys and finding your OCIDs, refer to [API Signing Key](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm).
 
+3. Click on **Auth Tokens** and click **Generate Token** to create an Authentication token.
+
+  ![](images/generate-auth-token-1.png)
+
+4. Enter a description and click **Generate Token**. Click **Copy** to save the token to the clipboard and then click **Close**.
+
+  ![](images/generate-auth-token-2.png)
+
+  ![](images/copy-auth-token.png)
+
+  Save the auth token for later.
+
 3. On the User Details page, copy the user OCID and save it for later:
 
-  ![](images/user-ocid.png)
+  ![Retrieve user OCID](images/user-ocid.png)
 
 4. Click on the user icon again and click **Tenancy: <tenancy-name>**, then copy and save the tenancy OCID for later:
 
-  ![](images/tenancy-ocid.png)
+  ![Retrieve tenancy OCID](images/user-icon-tenancy.png)
+  ![Retrieve tenancy OCID](images/tenancy-ocid.png)
 
-5. From your compartment details page, copy the compartment OCID and save it for later.
+5. If you are using a LiveLabs reservation, your compartment OCID is provided on your reservation page. If you are using a Free Trial or Customer-owned tenancy, from your compartment details page, copy the compartment OCID and save it for later.
 
-  ![](images/compartment-details.png)
+  ![Retrieve compartment OCID](images/compartment-details.png)
 
 6. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top) to determine your region code. Save it for later.
 
@@ -131,6 +148,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     user=<user ocid>
     fingerprint=<api key fingerprint>
     key_file=~/dragon_ssh_key
+    pass_phrase=<your passphrase>
     tenancy=<tenancy ocid>
     compartment_id=<compartment ocid>
     region=<region code>
@@ -142,32 +160,15 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
     *Remark: we provide a sample JSON file for initializing a JSON collection during the deployment of the stack.*
 
-3. In the case of Always Free Database limit reached for a paid tenant or a LiveLabs provided account, you can change the type of the database to provision using the `database_type` parameter:
 
-    ```
-    <copy>
-    [DEFAULT]
-    user=<user ocid>
-    fingerprint=<api key fingerprint>
-    key_file=~/dragon_ssh_key
-    tenancy=<tenancy ocid>
-    compartment_id=<compartment ocid>
-    region=<region code>
-    auth_token=<authentication token>
-    database_password=5uPeR_5tRoNg_PaSsWoRd
-    database_collections=employees
-    database_type=ajd
-    </copy>
-    ```
- 
 ## **STEP 4:** Deploy the DRAGON Stack backend
 
 1. Use the `-help` to see the parameters that DRAGON accepts:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.7 -help</copy>
+    $ <copy>./dragon-linux-x86_64-2.0.8 -help</copy>
     ```
-    ![](./images/dragon-help.png)
+    ![Help for DRAGON Stack manager](./images/dragon-help.png)
 
 2. Create a sample JSON file to load named `employees.json`. Open the following file and paste the content into it, and save the file:
 
@@ -181,52 +182,71 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
 3. Create the DRAGON Stack backend with the employees collection:
 
-    The following commad will use the configuration information from the `dragon.config`file in order to deploy an
+    The following command will use the configuration information from the `dragon.config`file in order to deploy an
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.7 -loadjson</copy>
+    $ <copy>./dragon-linux-x86_64-2.0.8 -loadjson</copy>
     ```
-   
-    ![](./images/dragon-provisioned-backend.png)
+
+    ![Autonomous database provisioned with DRAGON](./images/dragon-provisioned-backend.png)
+
+4. If your tenancy has reached its limit for available Always Free Databases, you can change the type of the database to provision using the `database_type` parameter and try again. For example, this file uses an Autonomous Transaction Processing database (ATP).
+
+    ```
+    <copy>
+    [DEFAULT]
+    user=<user ocid>
+    fingerprint=<api key fingerprint>
+    key_file=~/dragon_ssh_key
+    pass_phrase=<your passphrase>
+    tenancy=<tenancy ocid>
+    compartment_id=<compartment ocid>
+    region=<region code>
+    auth_token=<authentication token>
+    database_password=5uPeR_5tRoNg_PaSsWoRd
+    database_collections=employees
+    database_type=atp
+    </copy>
+    ```
 
 ## **STEP 5:** Using DRAGON
 
 1. Copy and paste the link into a browser and connect to SQL Developer Web:
 
-  ![](images/connect-to-sql-dev-web.png)
+  ![SQL Developer Web connect link](images/connect-to-sql-dev-web.png)
 
 2. Login, using the login name and password you created in the `dragon.config` file:
 
-  ![](images/sql-dev-web-signin.png)
+  ![Signing-in into SQL Developer Web](images/sql-dev-web-signin.png)
 
 3. Click SQL Worksheet:
 
-  ![](images/open-sql-worksheet.png)
+  ![SQL Developer Web - SQL Worksheet](images/open-sql-worksheet.png)
 
 4. Expand the two collections:
 
-  ![](images/expand-collections.png)
+  ![Listing SODA collections in SQL Developer Web](images/expand-collections.png)
 
 5. In the worksheet, enter the following command to look at the contents of the employees collection (JSON), and click **Run Statement**:
 
-  ```
-  <copy>select json_query(json_document, '$' returning CLOB) from employees;</copy>
-  ```
+    ```
+    <copy>select json_query(json_document, '$' returning CLOB) from employees;</copy>
+    ```
 
-  ![](images/view-employees-collection-json.png)
+  ![Query JSON documents from the employees collection](images/view-employees-collection-json.png)
 
 6. Click in the query result to see the contents of the JSON document:
 
-  ![](images/employees-values.png)
+  ![View a JSON document](images/employees-values.png)
 
 ## **STEP 6:** Create the front end React application
 
 1. In Cloud Shell, generate the front-end project:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.6 -create-react-app</copy>
+    $ <copy>./dragon-linux-x86_64-2.0.8 -create-react-app</copy>
     ```
-    ![](images/frontend-creation.png)
+    ![Create the React frontend with the DRAGON Stack manager](images/frontend-creation.png)
 
 2. Configure Cloud Shell `Node.js` version using the command provided (optional if you are in the good version already):
 
@@ -240,7 +260,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     $ <copy>cd frontend; npm install</copy>
     ```
 
-    ![](images/deploying-stack-frontend.png)
+    ![Deploys the React frontend with npm](images/deploying-stack-frontend.png)
 
 4. Once the Web Application deployed, install NGROK to access the local website (deployed on Cloud Shell):
 
@@ -254,17 +274,17 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     $ <copy>npm start &</copy>
     ```
 
-    ![](images/frontend-installed.png)
+    ![React frontend started](images/frontend-installed.png)
 
     ```
     $ <copy>./ngrok http 3000</copy>
     ```
 
-    ![](images/ngrok.png)
+    ![NGROK link to connect from OCI Cloud Shell](images/ngrok.png)
 
 6. Click in the interface to learn more about the DRAGON project, Reactjs, ORDS, or sign into the database on your ATP instance.
 
-    ![](images/dragon-react-frontend.png)
+    ![React frontend connected to the backend](images/dragon-react-frontend.png)
 
 
 ## **STEP 7:** Cleanup your environment
@@ -277,12 +297,12 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     $ <copy>cd</copy>
     ```
 
-3. Destroy you DRAGON Stack backend
+3. Destroy your DRAGON Stack backend
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.7 -destroy</copy>
+    $ <copy>./dragon-linux-x86_64-2.0.8 -destroy</copy>
     ```
-   ![](./images/dragon-destroy-backend.png)
+   ![Destroying the backend with the DRAGON Stack manager](./images/dragon-destroy-backend.png)
 
 Congratulations! You have completed the very first DRAGON Stack workshop!
 
@@ -293,9 +313,10 @@ Congratulations! You have completed the very first DRAGON Stack workshop!
 
 ## Acknowledgements
 * **Author** - Loic Lefevre, Principal Product Manager
+* **Contributors** - Tom McGinn, Kamryn Vinson
 * **Last Updated By/Date** - Tom McGinn, Database Product Management, November 2020
 
-![](./images/dragon-logo.png)
+![DRAGON Stack logo](./images/dragon-logo.png)
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -42,7 +42,7 @@ In this lab, you:
 1. Select the VCN compartment that contains the VCN that you want to use. 
 1. Select the VCN to use.
 1. Select the subnet compartment that contains the subnet you want to use.
-1. Select the subnet to use. Using a public subnet is recommended.
+1. Select the subnet to use. Using a private subnet is recommended.
 1. (Optional) Add tags to the notebook session by selecting a tag namespace, then entering the key and the value. You can add more tags to the compartment by clicking **+Additional Tags**, see [Working with Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm#workingtags).
 1. (Optional) View the details for your notebook session immediately after creation by selecting **VIEW DETAIL PAGE ON CLICKING CREATE.**. 
 1. Click **Create**.
@@ -77,7 +77,7 @@ Once the notebook session has been created the notebook session page shows the n
     1. Select the VCN compartment that contains the VCN that you want to use. 
     1. Select the VCN to use.
     1. Select the subnet compartment that contains the subnet that you want to use.
-    1. Select the subnet to use. Using a public subnet is recommended.
+    1. Select the subnet to use. Using a private subnet is recommended.
     1. Click **Activate** and the notebook session status changes to **Updating**.
     1. When the notebook session status changes to **Active**, click **Open**
 

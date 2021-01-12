@@ -119,11 +119,11 @@ to open the EM console
 
 2. Login using usename `weblogic`, and password `welcome1`
 
-  <img src="../../on-prems-env-mp/images/em-login.png" width="100%">
+  ![](./images/em-login.png)
 
 3. Check that the admin server and SOA domain are running (other domains will not be running and that is normal)
 
-  <img src="../../on-prems-env-mp/images/soa-desktop-em-status.png" width="100%">
+  ![](./images/soa-desktop-em-status.png)
 
 You may proceed to the next lab
 

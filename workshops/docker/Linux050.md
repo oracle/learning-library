@@ -101,7 +101,7 @@ All the availability domains in a region are connected to each other by a low la
 
   ![](images/050Linux/10a.png " ")
 
-- Click **Networking Quickstart**, select **VCN with Internet Connectivity**, then click **Start Workflow**
+- Click **Start VCN Wizard**, select **VCN with Internet Connectivity**, then click **Start VCN Wizard**
 
   ![](images/050Linux/11u1.PNG " ")
   ![](images/050Linux/11u2.PNG " ")

@@ -50,13 +50,13 @@ This lab assumes you have:
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
     ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
-8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
+8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless not available or you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
-    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
-9. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+    - **Instance OCPUS:** Accept the default shown. e.g. (**4**) will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count by selecting from the dropdown. e.g. `[2-24]`. Please ensure you have the capacity available before increasing.
+9. If don't have quota for Flex Shapes or you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard.E2.4
 
   ![](./images/standardshape.png " ")
 
@@ -113,7 +113,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
-    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+    - **Instance OCPUS:** Accept the default shown. e.g. (**4**) will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count by selecting from the dropdown. e.g. `[2-24]`. Please ensure you have the capacity available before increasing.
     - **Use Existing VCN?:** Check to select.
 
   ![](./images/em-create-stack-2c.png " ")
@@ -128,7 +128,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
 6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard.E2.4
 
   ![](./images/standardshape-2.png " ")
 

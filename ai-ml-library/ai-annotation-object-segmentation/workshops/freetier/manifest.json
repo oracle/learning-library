@@ -1,0 +1,38 @@
+{
+  "workshoptitle": "Artificial Intelligence: Build Your Own Object Detection Solution",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Steps to set up the python environment and install pytorch",
+            "filename": "../../introduction/introduction.md"        
+        },
+        {
+            "title": "Lab 1: Create SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
+        },
+        {
+            "title": "Lab 2: Setup Network and Compute Instance",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-linux-freetier.md"
+        },
+        {
+            "title": "Lab 3: Setting up the Environment",
+            "description": "Steps to set up the frameworks and software",
+            "filename": "../../setting-up-environment/setting-up-environment.md"
+        },
+        {
+            "title": "Lab 4: Annotating images with COCO Annotator",
+            "description": "Getting comfortable with the image-processing workflow to annotate images in a dataset and export for training",
+            "filename": "../../image-annotation/image-annotation.md"
+        },
+        {
+            "title": "Lab 5: Training a model and testing it for accuracy",
+            "description": "Training a model from the annotated dataset and testing its effectiveness on new data",
+            "filename": "../../training-testing/training-testing.md"
+        }
+    ]
+}

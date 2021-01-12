@@ -1,10 +1,10 @@
-# Oracle Golden Gate
+# Real-time Migration with Oracle Goldengate Replication
 
 ## Introduction
 
 Data Replication is a essential part of your efforts and tasks when you are migrating your Oracle databases. While data migration can be acheived in many ways, there are fewer options when downtime tolerance is low and live, trickle feed replication may be the only way. Oracle Cloud Infrastructure Marketplace provides a goldengate microservice that can easily be setup for logical data replication between a variety of databases. In this hands-on lab we will setup goldengate to replicate data from a 12.2 Oracle database comparable to an 'on-prem' source database to an ExaCS  database in OCI. This approach is recommended while migrating most production or business critical application to ExaCS .
 
-Why Golden Gate?
+### Why Golden Gate?
 
 * Oracle Golden Gate is an enterprise grade tool which can provide near real time data replication from one database to another.
 * Oracle GoldenGate offers a real-time, log-based change data capture (CDC) and replication software platform to meet the needs of today’s transaction-driven applications. It provides capture, routing, transformation, and delivery of transactional data across heterogeneous environments in real time can be achieved using Golden Gate.
@@ -14,7 +14,7 @@ Why Golden Gate?
 
 * The source database can be any Oracle database version 11.2.0.4 or higher with atleast one application schema that you wish to replicate to an ExaCS database in OCI. For the purpose of this lab, you may provision a 12.2.0.1 DBCS instance in your compartment in OCI and configure it as source.
 
-*Note: You cannot complete this lab without setting up access to your ExaCS instance.*
+* *Note: You cannot complete this lab without setting up access to your ExaCS instance.*
 
 * The Golden Gate software is going to be deployed on a linux server in a public network which has access to both the source database and the target database via the Goldengate marketplace image in OCI.
 

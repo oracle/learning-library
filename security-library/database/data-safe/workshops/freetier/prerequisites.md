@@ -3,11 +3,8 @@
 
 ## Introduction
 
-This lab describes the steps that you need to take prior to starting the Oracle Data Safe Workshop when using the 30-day Free Trial for Oracle Cloud. The steps assume that you are the tenancy administrator.
+This lab describes the steps that you need to take prior to starting the Oracle Data Safe Fundamentals workshop when using a Free Trial with Oracle Cloud.
 
-If you already have an Oracle Cloud account, you can skip step 1.
-
-**Note:** The Oracle Data Safe service is not available to you if your free trial period has ended and you are now using Always Free resources.
 
 Estimated Lab Time: 15 minutes
 
@@ -15,8 +12,8 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you'll:
 
-- Create an Oracle Cloud account
-- Sign in to the Oracle Cloud Infrastructure Console with your account credentials
+- Create a free Oracle Cloud account
+- Sign in to your free tenancy in Oracle Cloud Infrastructure
 - Enable Oracle Data Safe
 - Create a compartment
 
@@ -29,9 +26,9 @@ Be sure you have the following before starting:
 - Ability to receive SMS text verification (only if your email is not recognized)
 
 
-## **STEP 1**: Create an Oracle Cloud Account
+## **STEP 1**: Create a free Oracle Cloud account
 
-If you already have an Oracle Cloud account, you can skip this step.
+When you create an Oracle cloud account, you are provided a free tenancy in Oracle Cloud. Your user account is automatically created as a tenancy administrator. If you already have a free tenancy and a tenancy administrator account, you can skip this step.
 
 1. In a browser, enter the following URL: `https://oracle.com/cloud/free`.
 
@@ -93,8 +90,8 @@ If you already have an Oracle Cloud account, you can skip this step.
 
 
 
-## **STEP 2**: Sign in to the Oracle Cloud Infrastructure Console with your Oracle Cloud account credentials
-Throughout the workshop, it is assumed that you are signed in to the Oracle Cloud Infrastructure Console so you may need to refer back to this step from time to time.
+## **STEP 2**: Sign in to your free tenancy in Oracle Cloud Infrastructure
+Throughout the workshop, it is assumed that you are signed in to the Oracle Cloud Infrastructure Console. You may need to refer back to this step from time to time.
 
 1. Open a new browser tab.
 
@@ -114,7 +111,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
   ![SIGN IN page for Oracle Cloud Infrastructure](images/349900293.png)
 
-6. You are now signed in to the Oracle Cloud Infrastructure Console. The landing page shows you a dashboard. In the upper-left corner, there is a navigation menu (hamburger menu).
+6. You are now signed in to the Oracle Cloud Infrastructure Console as a tenancy administrator. The landing page shows you a dashboard. In the upper-left corner, notice that there is a navigation menu (hamburger menu).
 
   ![Oracle Cloud Infrastructure Console](images/349900294.png)
 
@@ -123,7 +120,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 ## **STEP 3**: Enable Oracle Data Safe
 
-1. At the top of the page on the right, select a region in your tenancy (usually your Home region), for example, **US East (Ashburn)**.
+1. (Optional) At the top of the page on the right, select a region in your tenancy. Usually, you leave your home region selected, for example, **US East (Ashburn)**.
 
    ![Select Home region](images/select-region.png)
 
@@ -145,7 +142,7 @@ Throughout the workshop, it is assumed that you are signed in to the Oracle Clou
 
 ## **STEP 4**: Create a compartment
 
-You need to create a compartment in your tenancy to store your Autonomous Database and Oracle Data Safe resources. In the labs, this compartment is referred to as "your compartment."
+You need to create a compartment in your tenancy to store an Autonomous Database and Oracle Data Safe resources, both of which you create during the workshop. In the labs, this compartment is referred to as "your compartment."
 
 1. From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
 
@@ -160,25 +157,26 @@ You need to create a compartment in your tenancy to store your Autonomous Databa
 5. Click **Create Compartment**.
 
 
-You are ready to begin the labs. Start with the [**Introduction**](?lab=introduction).
-
+You may now proceed to the next lab.
 
 
 
 
 ## Learn More
 
-- <a  href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiV9crfq4LsAhV1lnIEHbzbABwQFjAAegQIARAC&amp;url=https%3A%2F%2Fdocs.cloud.oracle.com%2Fiaas%2F&amp;usg=AOvVaw0AhysJe8ZnjMdve29qGMtZ" >Oracle Cloud Infrastructure documentation</a>
-- <a  href="https://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=DChcSEwjpqdLfq4LsAhVMwMgKHXwlCVUYABAAGgJxdQ&amp;ohost=www.google.com&amp;cid=CAASEuRoiOXrrdCP5n-DJ1ywMcKyYQ&amp;sig=AOD64_22iprJaffo5nOe9sztGr9oHNidFQ&amp;q&amp;adurl&amp;ved=2ahUKEwiV9crfq4LsAhV1lnIEHbzbABwQ0Qx6BAgNEAE" >Try Oracle Cloud</a>
+- [Oracle Cloud Infrastructure documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/home.htm)
+- [Try Oracle Cloud](https://www.oracle.com/cloud/free/)
+
+
 
 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, October 29, 2020
+* **Last Updated By/Date** - Jody Glover, December 14, 2020
 
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

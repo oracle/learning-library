@@ -11,10 +11,14 @@ There are several steps within this lab.
 *Estimated Lab Time:* 15 Minutes
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-- Lab: Generate SSH Key
-- Lab: Setup Compute Instance
-- Lab: Start Database and Application
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 ***Note:***  All scripts for this lab are stored in the /u01/workshop/xml folder and are run as the oracle user.
 
@@ -26,9 +30,7 @@ The basic building block of an XML document is an element, defined by tags. An e
 
 For example, XML documents can be very simple, such as the following:
 
-
  ![](./images/xml_snapa.png " ")
-
 
 ### XML with Oracle Database
 
@@ -40,236 +42,245 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
 
-## **Step 1:** Connect to the Pluggable Database (PDB)
+## **STEP 1**: Connect to the Pluggable Database (PDB)
 
 1. Open a terminal window and sudo to the user **oracle**
-    ````
+
+    ```
     <copy>
     sudo su - oracle
     </copy>
-    ````
+    ```
 
 2. Navigate to the xml directory.
-    ````
+
+    ```
     <copy>
     cd /u01/workshop/xml
     </copy>
-    ````
+    ```
 
  3. Set your environment.
-    ````
+
+    ```
     <copy>
     . oraenv
     </copy>
-    ````
+    ```
 
 4. When prompted paste the following:
-    ````
+
+    ```
     <copy>
     convergedcdb
     </copy>
-    ````
+    ```
 
 5. Open SQLPlus as the user appjson
 
-    ````
+    ```
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB
     </copy>
-    ````
+    ```
 
-## **Step 2:** Connect to SQL Developer
+## **STEP 2**: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
-      - **Name**: XML
-      - **Username**: appxml
-      - **Password**: Oracle_4U
-      - **Hostname**: PUBLIC-IP
-      - **Port**: 1521
-      - **Service name**: JXLPDB
+  - **Name**: XML
+  - **Username**: appxml
+  - **Password**: `Oracle_4U`
+  - **Hostname**: PUBLIC-IP
+  - **Port**: 1521
+  - **Service name**: JXLPDB
 
 
     ![](./images/xml_sql_developer.png " ")
 
-## **Step 3:** XML Query
+## **STEP 3**: XML Query
 
 1. Getting the number of XML documents.
-    ````
+
+    ```
     <copy>
     SELECT Count(*) FROM   purchaseorder p,  XMLTABLE('for $r in /PurchaseOrder return $r' passing object_value) t;
     </copy>
-    ````
+    ```
 
     ![](./images/xml_s3_p1.png " ")
 
 2. Retrieving the content of an XML document-using pseudocolumn OBJECT_VALUE
-    ````
+
+    ```
     <copy>
       SELECT t.object_value.getclobval()FROM   purchaseorder t
       WHERE  rownum = 1;  
     </copy>
-    ````
+    ```
 
     ![](./images/xml_m2a.png " ")
 
 3. Accessing text node value
 
-    ````
-      <copy>
-      SELECT xmlcast(xmlquery('$p/PurchaseOrder/Reference/text()' passing object_value AS "p" returning content) AS varchar2(30))
-      FROM   purchaseorder
-      WHERe ROWNUM<= 5
-      /
-
-      </copy>
-    ````
+    ```
+    <copy>
+    SELECT xmlcast(xmlquery('$p/PurchaseOrder/Reference/text()' passing object_value AS "p" returning content) AS varchar2(30))
+    FROM   purchaseorder
+    WHERe ROWNUM<= 5
+    /
+    </copy>
+    ```
 
     ![](./images/xml_query_meth4a.png " ")
 
 
 4. Searching XML document
-    ````
+
+    ```
     <copy>
      SELECT t.object_value.getclobval() FROM   purchaseorder t   WHERE  xmlexists('/PurchaseOrder[Reference/text()=$REFERENCE]' passing    object_value, 'AHUNOLD-20141130' AS "REFERENCE" )
          /
-
     </copy>
-    ````
+    ```
 
     ![](./images/xml_step3_search.png " ")
 
-## **Step 4:** Insert XML record.
+## **STEP 4**: Insert XML record.
 
 1. Let's take a count of the rows we have currently and then do a insert.
 
-    ````
+    ```
     <copy>
     select t.object_value.getclobval() from purchaseorder t;
-
      </copy>
-     ````
+     ```
 
      ![](./images/xml_s4_p1.png " ")
 
 
 2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
-
-
 3. Set your oracle environment and connect to PDB as **oracle** user.
-    ````
+
+    ```
     <copy>
     . oraenv
     </copy>
-    ````
-    ````
+    ```
+    ```
     <copy>
     convergedcdb
     </copy>
-    ````
-    ````
+    ```
+    ```
     <copy>
     cd /u01/workshop/xml
     </copy>
-    ````
-    ````
+    ```
+    ```
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB
     </copy>
-    ````
+    ```
+
     ![](./images/xml_input2a.png " ")
-    ````
+
+    ```
     <copy>
     @insert.sql
     </copy>
-    ````
+    ```
+
     ![](./images/xml_input3a.png " ")
 
 4. Verify XML record post insert
 
-    ````
+    ```
     <copy>select t.object_value.getclobval() from purchaseorder t;</copy>
-    ````
+    ```
+
     ![](./images/xml_s4_p3.png " ")
 
-## **Step 5:** Update XML table
+## **STEP 5**: Update XML table
 
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
 
 2. Set your oracle environment and connect to PDB as **oracle** user.
-    ````
+
+    ```
     <copy>
     . oraenv
     </copy>
-    ````
+    ```
 
-    ````
+    ```
     <copy>
     convergedcdb
     </copy>
-    ````
-    ````
+    ```
+    ```
     <copy>
     cd /u01/workshop/xml
     </copy>
-    ````
-    ````
+    ```
+    ```
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB
     </copy>
-    ````
+    ```
 
     ![](./images/xml_input2a.png " ")
-    ````
+
+    ```
     <copy>
     @update.sql
     </copy>
-    ````
+    ```
 
     ![](./images/xml_s5_p1.png " ")
 
 3. Below is the select query to check if user is updated.
 
-    ````
+    ```
     <copy>
     SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/User') FROM purchaseorder WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Reference="MSD-20200505"]') =1;
     </copy>
-    ````
+    ```
+
     ![](./images/xml_s5_p2.png " ")
 
-## **Step 6:** Example Queries
+## **STEP 6**: Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.
 
-    ````
+    ```
     <copy>
       SELECT t.object_value.getclobval() FROM   purchaseorder t
       WHERE xmlexists('/PurchaseOrder/ShippingInstructions/Address[city/text()=$CITY]' passing object_value, 'South San Francisco' AS "CITY" );
-
     </copy>
-    ````
+    ```
 
     ![](./images/xml_s6_p1.png " ")
 
 2. Customer purchase history  
     **XMLTABLE** converts XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
-    ````
+    ```
     <copy>
       SELECT t.object_value.getclobval()
       FROM   purchaseorder p,
       XMLTABLE('for $r in /PurchaseOrder[Reference/text()=$REFERENCE] return $r' passing object_value, 'AHUNOLD-20141130' AS  "REFERENCE") t;  
     </copy>
-    ````
+    ```
 
     ![](./images/xml_step_6_q2.png " ")
 
 3. Listing the product description those unit price matches to ‘$xx’.  
     **XMLSERIALIZE** is a SQL/XML operator that you can use to convert an XML type to a character type.
 
-    ````
+    ```
     <copy>
       SELECT XMLSERIALIZE(CONTENT COLUMN_VALUE AS CLOB INDENT SIZE=2)
       FROM  Purchaseorder p,
@@ -284,14 +295,14 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
         )
         WHERE xmlexists('/PurchaseOrder/LineItems/Part[UnitPrice/text()=$UnitPrice]' passing object_value, '27.95' AS "UnitPrice" );
     </copy>
-    ````
+    ```
 
     ![](./images/xml_s6_p3.png " ")
 
 4. Customer order summary – Cost center wise.  
     **XMLQUERY** lets you query XML data in SQL statements. It takes an XQuery expression as a string literal, an optional context item, and other bind variables and returns the result of evaluating the XQuery expression using these input values. XQuery string is a complete XQuery expression, including prolog.
 
-    ````
+    ```
     <copy>
       SELECT xmlquery(
           '&lt;POSummary lineItemCount="{count($XML/PurchaseOrder/LineItems/ItemNumber)}"&gt;{
@@ -310,44 +321,42 @@ Oracle XML DB allows an organization to manage XML content in the same way that 
                    'A90' AS "CS"      )
                    /
     </copy>
-    ````
+    ```
 
     ![](./images/xml_m9a.png " ")
 
 5. Next Day Air - Customer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
     **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
 
-    ````
+    ```
     <copy>
       SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/Reference') "REFERENCE"
       FROM purchaseorder WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Special_Instructions="Next Day Air"]')=1;
-
     </copy>
-    ````
+    ```
 
     ![](./images/xml_m10_gg.png " ")
 
 6. Priority Overnight - Customer Delivery Priority Instruction for e.g Ex - Courier, Expidite, Surface Mail, Air Mail etc..  
     **ExistsNodechecks** if xpath-expression returns at least one XML element or text node. If so, `existsNode` returns 1, otherwise, it returns 0. `existsNode` should only be used in the where clause of the select statement.
 
-    ````
+    ```
     <copy>
       SELECT extractValue(OBJECT_VALUE, '/PurchaseOrder/Reference') "REFERENCE"
     FROM purchaseorder
     WHERE existsNode(OBJECT_VALUE, '/PurchaseOrder[Special_Instructions="Priority Overnight"]')=1;
-
     </copy>
-    ````
+    ```
 
     ![](./images/xml_m10_ba.png " ")
 
 ## Want to learn more
-- [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
+- [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adxdb/index.html)
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

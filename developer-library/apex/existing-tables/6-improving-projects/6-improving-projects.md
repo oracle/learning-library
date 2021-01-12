@@ -3,8 +3,8 @@
 ## Introduction
 In this lab, you will learn how to use the *Create Page Wizard* to add additional pages to your app. Then, you will link the new page to the existing Card page. You will then learn how to easily manipulate how items are displayed, and finally to create a *Dynamic Action*.
 
-## **STEP 1** - Improving the Cards Display
-Looking at the Projects Card region, you should notice it is only 3 cards wide and icons include initials, which could be displayed better. To improve the page, you will utilize **Live Template Options** directly in the runtime environment. You could also make changes from the App Builder; however, it is much easier to make changes as you can see the results.
+## **STEP 1** - Changing the Cards Region Style
+Looking at the Projects Card region, you should notice the cards' icons are circle, which could be displayed differently. To change the cards region style, you will utilize **Live Template Options** directly in the runtime environment. You could also make changes from the App Builder; however, it is much easier to make changes as you can see the results.
 
 1. In the runtime environment, click **Projects**.
 2. In the Developer Toolbar (at the bottom of the runtime environment), click **Quick Edit**.
@@ -14,15 +14,26 @@ Looking at the Projects Card region, you should notice it is only 3 cards wide a
 
     ![](images/quick-edit.png " ")
 
-3. In the Live Template Options dialog, click **Attributes**, and select the following:
-    - Icons - select **Display Icons**
-    - Layout - select **4 columns**
+3. In the Live Template Options dialog, select the following:
+    - Style - select **Style A**
 
 4. Click **Save**
 
     ![](images/live-template.png " ")
 
-## **STEP 2** - Adding a Form Page
+## **STEP 2** - Enhancing Projects Page
+You will notice that the Projects page shows the cards columns based on the current available width. Let's fix the number of grid columns to 4. We will also add the project lead in the subtitle of the card.
+1. In the Developer Toolbar (at the bottom of the runtime environment), click **Edit Page 4**.
+    ![](images/enhance-projects-cards-edit-page.png " ")
+2. In the Property Editor (the right pane), under Attributes tab, change the followings:
+      - Grid Columns to **4 Columns**
+      - Subtitle Column to **PROJECT_LEAD**
+      - Click the **Save and Run Page** button
+    ![](images/enhance-projects-cards-save-page.png " ")
+3. The Cards Region now show only four projects per row. The Project Lead is added in the subtitle of the card.
+    ![](images/enhance-projects-cards-run-page.png " ")
+
+## **STEP 3** - Adding a Form Page
 Currently there is no way to maintain project records. Therefore, you will use the *Create Page Wizard* to create a form page on the *EBA_PROJECTS* table.
 
 1. Navigate back to the App Builder  by clicking **Application xxxxx** in the Developer Toolbar, or by navigating back to the App Builder browser tab manually.
@@ -63,7 +74,7 @@ Currently there is no way to maintain project records. Therefore, you will use t
     ![](images/columns.png " ")
     *Note: This will create _Page 10: Project_ if you have followed the previous sections correctly. If not Page 10, please repeat Lab 3, and ensure the Interactive Grids for both Milestones and Statuses are created*
 
-## **STEP 3** - Link to Projects Page
+## **STEP 4** - Link to Projects Page
 Now to link this new page to the Project Cards page.    
 *Note: Defining a link for a Card region requires modifying the SQL statement. However, elsewhere in Oracle APEX, defining links is very easy and declarative as you will learn in Lab 7.*
 
@@ -74,19 +85,17 @@ Now to link this new page to the Project Cards page.
 
     *Note: Alternatively, you can type in a page number or use the up / down arrows in the Application Toolbar to navigate to different pages within Page Designer*
 
-2. In the Rendering tree (left pane), select **Projects**.   
-    In the Property Editor (right pane), right of **Source > SQL Query**, click the **Code Editor** icon.  
+2. In the Rendering tree (left pane), right click **Actions** under **Projects** then click **Create Action**.   
+    
+    ![](images/enhance-projects-cards-create-action.png " ")
 
-    For the CARD\_LINK selection, replace the existing code with the following:   
-    ```
-    <copy>apex_util.prepare_url('f?p='||:APP_ID||':10:'||:APP_SESSION||'::::P10_ID:'||id) CARD_LINK,</copy>
-    ```
+    In the Property Editor (right pane), update the following properties:
+    - **Type:** - select Full Card
+    - Click **Link > Target**
+    - In the Link Builder, **Page** - enter 10
+    - Under **Set Items**, **Name** - enter P10_ID and for **Value** - enter &ID.
 
-    *Note: f?p= is the call to an APEX page; :APP\_ID is the Application Id; 10 is the target page (Project Form page); :APP\_SESSION is the current user’s session; P10\_ID is the primary key item on the target page; _id_ is the primary key from the Projects table*
-
-    Click **OK**.
-
-    ![](images/set-link.png " ")
+    ![](images/enhance-projects-cards-link-edit-form.png " ")
 
 3. You also need to be able to add new projects, so will need to add a button and link it to the Project form page. The easiest way to add this is to drag and drop a component into the Layout (middle pane) from the Gallery.
 
@@ -119,7 +128,7 @@ Now to link this new page to the Project Cards page.
 
     ![](images/view-form.png " ")
 
-## **STEP 4** - Update How Items are Displayed
+## **STEP 5** - Update How Items are Displayed
 The way the Status Id, Name, and Project Lead are displayed can be easily improved.
 The **Status Id** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. Therefore, rather than requiring end users to enter a number, you will update the item to be a list of values based on the lookup table. The Name and Project Lead fields should be updated to Text Fields. Lastly, the audit columns (Created, Created By, Updated, Updated by) should be hidden.
 
@@ -166,7 +175,7 @@ The **Status Id** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. T
 
     ![](images/set-hidden.png " ")
 
-## **STEP 5** - Improve the Completed Date
+## **STEP 6** - Improve the Completed Date
 Currently a Completed Date can be entered on any project. However, it would greatly improve data quality to allow the completed date to be entered only if the Status is _COMPLETED_. Implementing such functionality requires JavaScript to dynamically enable / disable the Completed Date item based on the value of Status. Thankfully, as an APEX developer, you don't need to write such JavaScript. You can simply define a *Dynamic Action*, which allows you to declaratively define such client-side interactivity, by specifying the trigger, action, and affected element(s).
 
 1. You need to define the Dynamic Action on the triggering element, which is the Status.        
@@ -202,8 +211,8 @@ Currently a Completed Date can be entered on any project. However, it would grea
 5. Rather than displaying the Completed Date down the page, it would be far better to display the item directly after the Status item.   
     In the Rendering tree (left pane), click **P10\_COMPLETED\_DATE**.    
     In the Property Editor (right pane), enter the following:
-    - Layout > Sequence - enter **25**  
-    *Note: This will position P10\_COMPLETED\_DATE between P10\_STATUS\_ID (Sequence 20) and P10\_NAME (Sequence 30)*
+    - Layout > Sequence - enter **50**  
+    *Note: This will position P10\_COMPLETED\_DATE between P10\_STATUS\_ID (Sequence 40) and P10\_NAME (Sequence 60)*
     - Layout > Start New Row - _Uncheck_    
     *Note: This will position the item on the same line as the previous item, P10\_STATUS\_ID*
 
@@ -228,7 +237,7 @@ This completes Lab 5. You now know how to add additional pages to your applicati
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

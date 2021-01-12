@@ -20,7 +20,7 @@ As an OCI account administrator with network resource privileges,
 * An Oracle Cloud Infrastructure account with privileges to create users, IAM policies and networks.
 * Since this is the starting point to building your Exadata Cloud Service platform, an admin account is recommended.
 
-## **Step 1:** Create Compartments, Groups, Users and Policies
+## **STEP 1:** Create Compartments, Groups, Users and Policies
 
 We will use the following IAM structure in line with the bare minimum isolation recommended.
 
@@ -109,7 +109,7 @@ We will use the following IAM structure in line with the bare minimum isolation 
 You now have the users, groups and compartments setup to provision an Exadata Cloud Service database system
 
 
-## **Step 2:** Secure Network for DB and Application Infrastructure
+## **STEP 2:** Secure Network for DB and Application Infrastructure
 
 If you are new to cloud Networking concepts, please refer to the OCI network documentation to get an understanding of VCNs, Subnets, Security lists, routers, gateways etc.
 

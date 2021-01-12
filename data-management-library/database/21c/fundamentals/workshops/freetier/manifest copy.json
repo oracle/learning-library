@@ -1,0 +1,173 @@
+{
+    "workshoptitle": "Database 21c New Features",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create SSH Keys",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Create a DBCS VM Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/database/oci-vm-database/create-oci-vm-db/create-oci-vm-db/create-oci-vm-db-vcn.md"
+        },
+        {
+            "title": "Lab 3: 21C Setup",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "APPLICATION DEVELOPMENT",
+            "filename": "../../introduction/intro-appdev.md"
+        }, 
+        {
+            "title": "Lab: New Set Operators",
+            "filename": "../../set-operators/set-operators.md"
+        },
+        {
+            "title": "Lab: Expressions in Init Parameters",
+            "filename": "../../init-params/init-params.md"
+        },
+        {
+            "title": "Lab: SQM Scalar and Table Expressions",
+            "filename": "../../sql-macro/sql-macro.md"
+        },
+        {
+            "title": "BIG DATA AND DW",
+            "filename": "../../introduction/intro-bigdata-dw.md"
+        }, 
+        {
+            "title": "Lab: Bitwise Aggregate Functions",
+            "filename": "../../bitwise-agg/bitwise-agg.md"
+        },
+        {
+            "title": "Lab: Enhanced Analytic Functions",
+            "filename": "../../enhanced-analytics/enhanced-analytics.md"
+        },
+        {
+            "title": "Lab: Detecting Data Tampering",
+            "filename": "../../data-tampering/data-tampering.md"
+        },
+        {
+            "title": "Lab: Measuring Asymmetry in Data",
+            "filename": "../../skewness/skewness.md"
+        },
+        {
+            "title": "Lab: Measuring Tailedness of Data",
+            "filename": "../../kurtosis/kurtosis.md"
+        },
+        {
+            "title": "PERFORMANCE AND HA",
+            "filename": "../../introduction/intro-perf-ha.md"
+        }, 
+        {
+            "title": "Lab: PDB Point-in-Time Recovery",
+            "filename": "../../flashback-pdbs/flashback-pdbs.md"
+        },
+        {
+            "title": "Lab: Automatic Zone Maps",
+            "filename": "../../auto-zone-maps/auto-zone-maps.md"
+        },
+        {
+            "title": "Lab: SecureFile LOBs",
+            "filename": "../../securefile-lobs/securefile-lobs.md"
+        },
+        {
+            "title": "Lab: Automatic In-Memory",
+            "filename": "../../auto-in-mem/auto-in-mem.md"
+        },
+        {
+            "title": "Lab: In-Memory Hybrid Scans",
+            "filename": "../../im-hybrid-scans/im-hybrid-scans.md"
+        },
+        {
+            "title": "Lab: Synchronizing Apps in App PDBs",
+            "filename": "../../sync-app-pdbs/sync-app-pdbs.md"
+        },
+        {
+            "title": "Lab: MAX_IDLE_BLOCKER_TIME Parameter",
+            "filename": "../../max-idle-blocker/max-idle-blocker.md"
+        },
+        {
+            "title": "DATABASE UTILITIES",
+            "filename": "../../introduction/intro-dbutilities.md"
+        }, 
+        {
+            "title": "Lab: Data Pump Checksums",
+            "filename": "../../data-pump-validity/data-pump-validity.md"
+        },
+        {
+            "title": "Lab: Data Pump Includes & Excludes",
+            "filename": "../../data-pump-incl-excl/data-pump-incl-excl.md"
+        }, 
+        {
+            "title": "Lab: Data Pump Transportable Tbsp",
+            "filename": "../../data-pump-tts/data-pump-tts.md"
+        },           
+        {
+            "title": "Lab: Data Pump Index Compression",
+            "filename": "../../data-pump-index-comp/data-pump-index-comp.md"
+        },
+        {
+            "title": "SECURITY ",
+            "filename": "../../introduction/intro-security.md"
+        }, 
+        {
+            "title": "Lab: Blockchain Tables & Rows",
+            "filename": "../../blockchain-tables/blockchain-tables.md"
+        },
+        {
+            "title": "Lab: Tablespace Encryption Algorithm",
+            "filename": "../../tbsp-encryption/tbsp-encryption.md"
+        },
+        {
+            "title": "Lab: Realms",
+            "filename": "../../realms/realms.md"
+        },
+        {
+            "title": "Lab: Uninstall DB Vault",
+            "filename": "../../dbv-uninstall/dbv-uninstall.md"
+        },
+        {
+            "title": "Lab: Install DB Vault",
+            "filename": "../../dbv-install/dbv-install.md"
+        },
+        {
+            "title": "AUTHENTICATION AND ADMINISTRATION",
+            "filename": "../../introduction/intro-admin.md"
+        }, 
+        {
+            "title": "Lab: Upgraded Password File Case Sensitivity",
+            "filename": "../../upgraded-pwd/upgraded-pwd.md"
+        },
+        {
+            "title": "Lab: Password Length Enforcement",
+            "filename": "../../enforce-min-pwd/enforce-min-pwd.md"
+        },
+        {
+            "title": "AUDIT",
+            "filename": "../../introduction/intro-audit.md"
+        }, 
+        {
+            "title": "Lab: Unified Audit Policies for STIG",
+            "filename": "../../audit-stig-compl/audit-stig-compl.md"
+        },
+        {
+            "title": "Lab: SYSLOG Destination for Audit Policies",
+            "filename": "../../common-audit-dest/common-audit-dest.md"
+        },
+        {
+            "title": "Lab: Unified Audit Policies",
+            "filename": "../../unified-audit-policies/unified-audit-policies.md"
+        }
+        
+    ]
+}

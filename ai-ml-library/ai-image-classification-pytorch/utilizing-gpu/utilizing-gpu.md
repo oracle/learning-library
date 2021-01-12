@@ -37,7 +37,7 @@ This lab assumes you have:
 
 `data[0]` contains the batched images, and `data[1]` contains the matching labels. All of those values are sent over to the GPU with `.to(device)`. That's it! PyTorch makes it easy to enable the GPU with declarative syntax.
 
-[Click here to download the full code example](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UudtANEChREpKXDjzRvqRzNPhPJpTEMfq5BHf6Ym7H12zSE8wGcTtwabHyxpcpow/n/c4u03/b/ai-ml-library/o/jblau-image-classification-pytorch.zip)
+[Click here to download the full code example](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6Z0fLjfKUUIytz0uXeDpi0Uotu68sWLsqJoYxDwKVfzjBN23ifPvyFCJE6R9Cp09/n/c4u03/b/ai-ml-library/o/jblau-image-classification-pytorch.zip)
 
 
 ***NOTE:*** When running this specific example, you may not see a significant decrease in the training time. This example is designed to keep things simple, so the goal is to just make sure that the code executes properly. The issue is that the images and the model are small. Increasing the number of layers and channels in the model as well as increasing the `batch_size` in the dataloader will start to show differences in the execution time when comparing CPUs to GPUs.

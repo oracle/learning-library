@@ -206,9 +206,7 @@ The Data Masking wizard generates a masking policy for your target database base
 
 4. For the `HCM1.LOCATIONS.STREET_ADDRESS` column, click the arrow to the right of the masking format to view other masking formats.
 
-  **Tip:** To quickly find a column on the page, you can enter its name in the **Search** field at the top of the page.
-
- ![HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list](images/view-masking-formats.png)
+  ![HCM1.LOCATIONS.STREET_ADDRESS circled and masking formats drop-down list](images/view-masking-formats.png)
 
 
 5. Next to the arrow, click the **Edit Format** button (pencil icon).
@@ -304,7 +302,7 @@ The Data Masking wizard generates a masking policy for your target database base
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, November 3, 2020
+* **Last Updated By/Date** - Jody Glover, December 14, 2020
 
 
 ## Need Help?

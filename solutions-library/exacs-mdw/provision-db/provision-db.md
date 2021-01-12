@@ -17,7 +17,7 @@ As a database user, DBA or application developer,
 
 * An Oracle Cloud Infrastructure account with a pre-provisioned Exadata Infrastructure
 
-## **Step 1:** Create an Exadata Cloud Service Database
+## **STEP 1:** Create an Exadata Cloud Service Database
 
 1. Login to your OCI account as a database user.
 

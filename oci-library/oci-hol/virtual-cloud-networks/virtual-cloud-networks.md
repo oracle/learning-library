@@ -33,7 +33,7 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 2. Select **VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
-    ![Start Workflow](images/setupVCN2.png " ")
+    ![Start VCN Wizard](images/setupVCN2.png " ")
 
 3. Complete the following fields:
 

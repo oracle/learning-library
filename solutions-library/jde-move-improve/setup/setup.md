@@ -190,22 +190,17 @@ With the VCN in place, define the open inbound and outbound ports that will be a
 3.	On Default Security List, under Resources, click the ***Add Ingress Rules*** button.
     ![](./images/ingress-rules.png " ")
 
-4.  Set five new ingress rules with the following properties:
-    
-    | STATELESS | SOURCE TYPE | SOURCE CIDR | IP PROTOCOL | SOURCE PORT RANGE | DEST PORT |
+4.  Set a new ingress rule with the following properties:
+    *   **STATELESS**: unchecked
+    *   **SOURCE TYPE**: CIDR
+    *   **SOURCE CIDR**: 0.0.0.0/0
+    *   **IP PROTOCOL**: TCP
+    *   **SOURCE PORT RANGE**: All
+    *   **DESTINATION PORT RANGE**: 443,7005-7006,7072,7077,9703,9705,8080
+    *   **DEESCRIPTION**: JDE Trial
 
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 443 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 7000-7006 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 7072-7077 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 8080 |
-
-    | Unchecked | CIDR | 0.0.0.0/0 | TCP | All | 9703-9705 |
-
-    **NOTE:** Within the interface, click the + ***Additional Ingress Rules*** button to add new rows. Click the ***Add Ingress Rules***  button when complete. 
-        ![](./images/ingress-details.png " ")
+    Click the ***Add Ingress Rules***  button when complete. 
+        ![](./images/ingress-rule-details.png " ")
 
     These Ingress Rules will be sufficient to allow the network traffic required for JDE Trial Edition.
 

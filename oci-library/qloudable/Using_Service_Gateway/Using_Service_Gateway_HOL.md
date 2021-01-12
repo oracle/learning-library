@@ -130,7 +130,7 @@ This should create a file by the name "samplefile" in the Downloads folder
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-15. Click **VCN with Internet Connectivity** and click **Start Workflow**
+15. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 16. Fill out the dialog box:
 

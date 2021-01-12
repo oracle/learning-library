@@ -26,6 +26,10 @@ This workshop walks you through the steps to get started using the **Oracle Auto
 
 - Perfect for Developers!
 
+Watch our short video that explains Lab 1 - Create Autonomous Database and Lab 2 - Create APEX workshop and REST API:
+
+[](youtube:S9WPR0N0f2E)
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives

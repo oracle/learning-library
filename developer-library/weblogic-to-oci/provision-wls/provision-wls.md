@@ -26,19 +26,19 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 1. Go to **Solutions and Platforms -> Marketplace -> Applications** 
 
-  <img src="../../../provision-wls/images/provision-1.png" width="50%">
+  ![](./images/provision-1.png =50%x*)
 
 2. In the search input, type "`weblogic`". For this lab, we'll use the **Oracle WebLogic Server Enterprise Edition UCM**
 
-   <img src="../../../provision-wls/images/provision-2.png" width="100%">
+   ![](./images/provision-2.png)
 
 3. Make sure you are in the **Compartment** you want to use, use the **default WebLogic version** available, accept the License agreement and click **Launch the Stack**
 
-   <img src="../../../provision-wls/images/provision-3.png" width="100%">
+   ![](./images/provision-3.png)
 
 4. **Name** the stack and click **Next**
 
-   <img src="../../../provision-wls/images/provision-4.png" width="100%">
+   ![](./images/provision-4.png)
 
 5. **Enter** a **Resource Name Prefix**.
 
@@ -46,13 +46,13 @@ For this lab, you need to have prepared the OCI tenancy with:
 
   The next steps in this workshop assumes the resource name prefix is `nonjrf`, so it is highly recommended to use this name.
 
-  <img src="../../../provision-wls/images/provision-6-prefix.png" width="70%">
+  ![](./images/provision-6-prefix.png =70%x*)
 
 6. **Select** a **Shape**.
 
    In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.E2.1** shape, the **VM.Standard.E2.2** shape or a suitable shape that is available in your tenancy.
 
-  <img src="../../../provision-wls/images/provision-7-shape.png" width="70%">
+  ![](./images/provision-7-shape.png =70%x*)
 
    To check shape availability, you can go to **Governance -> Limits and Quotas** in another tab, and verify you have a specific shape available
 
@@ -62,7 +62,7 @@ For this lab, you need to have prepared the OCI tenancy with:
    
    *Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you will need to provide the key generated in the 'on-premises' environment.*
 
-  <img src="../../../provision-wls/images/provision-8-sshkey.png" width="70%">
+  ![](./images/provision-8-sshkey.png =70%x*)
 
    To output the public key information, use the following command from inside the 'on-premises' environment as the `oracle` user.
     ```
@@ -81,40 +81,40 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 8. **Select** a **Node count**. In this lab, we'll provision 2 nodes.
 
-  <img src="../../../provision-wls/images/provision-10-nodes.png" width="70%">
+  ![](./images/provision-10-nodes.png =70%x*)
 
 9. We'll keep the **WebLogic Server Admin User Name** as the default of `weblogic`
 
-  <img src="../../../provision-wls/images/provision-11-admin-name.png" width="70%">
+  ![](./images/provision-11-admin-name.png =70%x*)
 
 10. **Paste** the **OCID** of the **Secret** generated previously for the **Secret OCID for WebLogic Admin Password**
 
-  <img src="../../../provision-wls/images/provision-12-secret.png" width="70%">
+  ![](./images/provision-12-secret.png =70%x*)
 
 11. **Check** the checkbox for **WebLogic Server Advanced Server Configuration**
    Here you can see all the default ports, which we will keep as-is.
 
-  <img src="../../../provision-wls/images/provision-13-advanced.png" width="70%">
+  ![](./images/provision-13-advanced.png =70%x*)
 
 12. in this same **Advanced** section, **uncheck** the checkbox to **Provision the Sample Application**: since we will migrate our domain, we want a clean domain to start from.
 
-  <img src="../../../provision-wls/images/provision-14-no-app.png" width="70%">
+  ![](./images/provision-14-no-app.png =70%x*)
 
 13. In the **WebLogic Network** section, make sure you are in the proper compartment
 
-  <img src="../../../provision-wls/images/provision-15-net.png" width="70%">
+  ![](./images/provision-15-net.png =70%x*)
 
 14. Select **Create New VCN**
 
-  <img src="../../../provision-wls/images/provision-16-create-vcn.png" width="70%">
+  ![](./images/provision-16-create-vcn.png =70%x*)
 
 15. **Name** the VCN `wls`
 
-  <img src="../../../provision-wls/images/provision-17-vcn-name.png" width="70%">
+  ![](./images/provision-17-vcn-name.png =70%x*)
 
 16. **Keep the default** VCN CIDR block as-is.
 
-  <img src="../../../provision-wls/images/provision-18-vcn-cidr.png" width="70%">
+  ![](./images/provision-18-vcn-cidr.png =70%x*)
 
    Note: If you were to migrate from an on-premises domain connected via VPN or FastConnect, you would want to make sure the CIDR block does not conflict with the local network.
 
@@ -126,49 +126,49 @@ For this lab, you need to have prepared the OCI tenancy with:
 
     The stack will create the subnets for us.
 
-    <img src="../../../provision-wls/images/provision-19-subnets.png" width="70%">
+    ![](./images/provision-19-subnets.png =70%x*)
 
     *To provision in a Private subnet*:
 
     - Select **Use Private Subnet**
     - Select a **Bastion Host Shape**
 
-    <img src="../../../provision-wls/images/private-subnet.png" width="70%">
+    ![](./images/private-subnet.png =70%x*)
 
 
 19. **Check** the **Provision Load Balancer** checkbox and keep the defaults
 
-  <img src="../../../provision-wls/images/provision-20-lb2.png" width="70%">
+  ![](./images/provision-20-lb2.png =70%x*)
 
   Note: If you chose to provision in a **Private Subnet** you will get an option to use a **Private Load Balancer**. Keep it **Unchecked**.
 
 20. Keep IDCS **unchecked**
 
-  <img src="../../../provision-wls/images/provision-21-idcs.png" width="70%">
+  ![](./images/provision-21-idcs.png =70%x*)
 
 21. Keep Policies **checked**
 
-  <img src="../../../provision-wls/images/provision-22-policies.png" width="70%">
+  ![](./images/provision-22-policies.png =70%x*)
 
 22. Make sure **Provision with JRF** is **not** selected
 
-  <img src="../../../provision-wls/images/provision-22-nojrf.png" width="70%">
+  ![](./images/provision-22-nojrf.png =70%x*)
 
 23. Optionally add Tags
 
-  <img src="../../../provision-wls/images/provision-23-tags.png" width="70%">
+  ![](./images/provision-23-tags.png =70%x*)
 
 24. Click **Next**
 
-  <img src="../../../provision-wls/images/provision-24.png" width="100%">
+  ![](./images/provision-24.png)
 
 25. and then click **Create**
 
-  <img src="../../../provision-wls/images/provision-25.png" width="100%">
+  ![](./images/provision-25.png)
 
 26. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  <img src="../../../provision-wls/images/provision-26.png" width="100%">
+  ![](./images/provision-26.png)
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
@@ -178,7 +178,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 - *If you provisioned in a **Public Subnet***, you should see something like the following:
 
-  <img src="../../../provision-wls/images/provision-27.png" width="100%">
+  ![](./images/provision-27.png)
 
 
     - Make a note of the **WebLogic Admin Server Public IP address** from the **WebLogic Admin Server Console URL** for later use.
@@ -189,7 +189,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 - *If you provisioned in a **Private Subnet***, you should see something like the following:
 
-  <img src="../../../provision-wls/images/provision-28.png" width="100%">
+  ![](./images/provision-28.png)
 
     - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
 

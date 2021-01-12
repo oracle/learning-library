@@ -1,4 +1,4 @@
-# REST API-Enabled - Validate Payment Composite
+# Enable REST API for Validate Payment Composite
 
 ## Introduction
 With a mobile app launch in progress, this new validate-payment composite app must support access via RESTful API.
@@ -18,17 +18,19 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Develop SOA Composite App Validate Payment
+    - Lab: Register Validate Payment App to the Service Bus
 
 ## **STEP 1**: REST-Enabled the Service Bus Proxy End-Point
 
 1. In the Components swimlane, right-click the left wired connection of validatePaymentProcess, and select **Expose as REST**.
 
-   ### Video Preview
+### Video Preview
 
-   Watch this video on how to REST-enabled SOA composite, start at 3:25
+Watch this video on how to enable REST-API for SOA composite, start at 3:25
 
    [](youtube:50i0b8ry-z8)
-
 
 ## **STEP 2**: Review Post workshop
 
@@ -36,16 +38,16 @@ Congratulations you've completed developing the validate payment service using S
 
 Salient points about Oracle SOA. It is a platform to address application **integration**, for both cloud SaaS and on-premise. Oracle SOA can be deployed on customer's datacenter, OCI or your choice of IaaS, Cloud provider:
 
-1. Companies can develop applications without replacing existing enterprise applications or system of record.
-2. SOA allows reusing the service of an existing system, alternately building new services from existing applications or system of record. It can provide REST API-enabled from existing system or enterprise business service.
-3. It offers reliable applications in which you can test and debug the independent services as compared to a large set of huge lines of code.
+- Companies can develop applications without replacing existing enterprise applications or system of record.
+- SOA allows reusing the service of an existing system, alternately building new services from existing applications or system of record. It can provide REST API-enabled from existing system or enterprise business service.
+- It offers reliable applications in which you can test and debug the independent services as compared to a large set of huge lines of code.
 
-SOA complement Microservices architecture by 
-1. Maximizing service reusability and decoupling 
-2. It can use lightweight protocols like HTTP, REST, or Thrift APIs. 
-3. Quick and easy deployment with docker and Kubernetes
-4. Strong emphasis on DevOps and Continuous Delivery 
-5. Communicate through an API layer.
+SOA complement Microservices architecture by
+- Maximizing service reusability and decoupling
+- It can use lightweight protocols like HTTP, REST, or Thrift APIs.
+- Quick and easy deployment with docker and Kubernetes
+- Strong emphasis on DevOps and Continuous Delivery
+- Communicate through an API layer.
 
 Congratulations you've exposed a REST-api end-point from the Oracle Service Bus. You've also completed the Integration-SOA workshop.
 
@@ -76,14 +78,14 @@ At the end of this module, your solution will look similar to the following proc
 
 ## Learn More
 
-To find more detail about Service Bus development using JDeveloper - please go to this [Oracle Service Bus link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/getting-started-oracle-service-bus-jdeveloper.html#GUID-669A9F6F-EE55-499A-AF33-D2FF7DB651B4)
+To find more detail about Service Bus development using JDeveloper, check out [Oracle Service Bus](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/getting-started-oracle-service-bus-jdeveloper.html#GUID-669A9F6F-EE55-499A-AF33-D2FF7DB651B4)
 
-Further details about generating REST Services can be found on [this link](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/creating-rest-services-oracle-service-bus.html#GUID-50F6B4C8-D34F-4729-BC8E-7785CEE66DA5)
+Further details about generating REST Services can be found on [here](https://docs.oracle.com/en/middleware/soa-suite/service-bus/12.2.1.4/develop/creating-rest-services-oracle-service-bus.html#GUID-50F6B4C8-D34F-4729-BC8E-7785CEE66DA5)
 
 ## Acknowledgements
 * **Author for LiveLabs** - Daniel Tarudji
-* **Contributors** - Kamryn Vinson
-* **Last Updated By/Date** - Kamryn Vinson, October 2020
+* **Contributors** - Kamryn Vinson, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -6,7 +6,7 @@ In this lab we will exercise several use cases associated with employee on-board
 
 My HR Application is a sample application developed in Oracle APEX and hosted in the Oracle database. Its main function is to manage and store employee data in tables within the database HR schema. The Oracle Identity Manager **DBAT Connector** is used to interface with the database tables facilitating the on-boarding and management of employees records into Oracle Identity Manager.
 
-<a name="image-01"></a>![Image](images/img-myhr-app-menu.png)
+![](./images/img-myhr-app-menu.png " ")
 
 Figure 1. My HR Application
 
@@ -30,39 +30,11 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
-- You have added the public IP of the Oracle Cloud compute instance to your computer host file. E.g. if using Microsoft Windows edit file **C:\Windows\System32\drivers\etc\hosts** and add the following line:
+    - Lab: Initialize Environment
 
-```
-<copy><public_ip> secureoracle.oracledemo.com</copy>
-```
+## **STEP 1**: Validate Access to required components and applications
 
-## **STEP 0:** Running your Lab
-### Login to Host using SSH Key based authentication
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*” user. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-Follow the steps below to continue with the lab exercises.
-
-## **STEP 1**: Start SecureOracle Components
-1.  Login as “*oracle*” user and start the different components. E.g. start **Oracle Identity Manager, SOA Server and BI Publisher** by running the following command
-
-    ```
-    <copy>sc start oim_bip</copy>
-    ```
-
-    **Note:** the time to start the OIG components varies between 15-20 minutes.
-
-2. Make sure you can access the OIM Admin and Self Service consoles, Roundcube email client and My HR Application.
+1. Validate Access to required components and applications. These are also bookmarked on Firefox running on your remote desktop. Refer to *Lab: Initialize Environment* for more
 
     Oracle Identity Manager Admin Console:
 
@@ -126,9 +98,9 @@ Follow the steps below to continue with the lab exercises.
     Password     Oracle123
     ```
 
-2. In the APEX Workspace, click on **SQL Workshop** tile, then on **Utilities -> Data Workshop**. In the Data Workshop page, click on **Load Data**, then select **Choose File** and enter the location of file **import-new-employees.csv**.
+2. In the APEX Workspace, click on **SQL Workshop** tile, then on **`Utilities -> Data Workshop`**. In the Data Workshop page, click on **Load Data**, then select **Choose File** and enter the location of file **`import-new-employees.csv`**.
 
-    **Note**: file **import-new-employees.csv** can be copied from **/home/oracle/demo/sample-data**
+    **Note**: file **`import-new-employees.csv`** can be copied from **`/home/oracle/demo/sample-data`**
 
 3. Once the file is analyzed, the **Preview** section is displayed, click on the **Preview** button to see a full view of all columns and rows to be imported. Proceed to close the window.
 
@@ -181,7 +153,7 @@ Follow the steps below to continue with the lab exercises.
 
     **Note:** before adding a new employee, you must first create an email account so the new employee receives a notification after being on-boarded into OIM. Access the **Email Server Admin Console** as admin user to create new email accounts.
 
-### On-board new employees
+## **STEP 3**:  On-board New Employees
 1. Login as user **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and under System Management tab enter **HRData\*** in the search box.
 
 2. From the results list, select job **HRData DBAT Trusted Resource User Reconciliation**
@@ -206,14 +178,14 @@ Follow the steps below to continue with the lab exercises.
     USERNAME, DEPARTMENT_NAME, FIRST_NAME, LAST_NAME, JOB_TITLE, PHONE_NUMBER, MANAGER, EMAIL, HIRE_DATE, END_DATE.
     ```
 
-### Checking on-boarded employees
-1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **Manage -> Users**, review if the on-boarded employees are listed as users in the Users page.
+## **STEP 4**:  Checking On-boarded Employees
+1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **`Manage -> Users`**, review if the on-boarded employees are listed as users in the Users page.
 
-2. Notice if user login **RMAINOR** is listed in the Users page, then click on the user login to open the User Details page, select the **Attributes** tab and check the **End Date** attribute for this user. His end date had passed the current date, meaning this user will be disabled and deleted in the next **Disable/Delete User After End Date** job execution. Do not close the User Details page to proceed with the next step.
+2. Notice if user login **RMAINOR** is listed in the Users page, then click on the user login to open the User Details page, select the **Attributes** tab and check the **End Date** attribute for this user. His end date had passed the current date, meaning this user will be disabled and deleted in the next **`Disable/Delete User After End Date`** job execution. Do not close the User Details page to proceed with the next step.
 
 3. Open another tab in your browser and login to the OIM Admin Console.
 
-4. Click on **Scheduler** and under **System Management** tab search for job **Disable/Delete User After End Date**. Open the Job Details page and click on **Run Now** button to execute the job.
+4. Click on **Scheduler** and under **System Management** tab search for job **`Disable/Delete User After End Date`**. Open the Job Details page and click on **Run Now** button to execute the job.
 
     **Note**: by default this job is scheduled to run every day.
 
@@ -223,7 +195,7 @@ Follow the steps below to continue with the lab exercises.
 
 7. Sign out from the Self Service Console. This will also close the session for the Admin Console.
 
-### Optional: Check for notification and new credentials
+## **STEP 5**:  Check for Notification and New Credentials (Optional)
 1. Optionally, proceed to login to the Email Web client **Roundcube** as employee **DCOBY** using **Oracle123** as password.
 
     E.g. Login to Roundcube Email Client:
@@ -247,18 +219,18 @@ Follow the steps below to continue with the lab exercises.
 
 6. Sign out from the Self Service Console.
 
-## **STEP 3**: Employee Transfer and Role Updates
+## **STEP 6**: Employee Transfer and Role Updates
 1. Login as user **hradmin** with password **Oracle123** to My HR Application.
 
 2. Click on **Employees** tile to open the employees page, select one employee e.g. **DCOBY** and click on the **Pencil** icon to edit the employee details.
 
-    <a name="image-02"></a>![Image](images/img-myhr-app.png)
+    ![](./images/img-myhr-app.png " ")
 
     Figure 2. Edit Employee Details
 
 3. Proceed to change the department from **Sales** to **Finance** and click on **Apply Changes**.
 
-4. Login as **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and under **System Management** tab search for **HRData\***.
+4. Login as **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and under **System Management** tab search for **`HRData*`**.
 
 5. From the results list, select job **HRData DBAT Trusted Resource User Reconciliation**
 
@@ -266,9 +238,9 @@ Follow the steps below to continue with the lab exercises.
 
 7. Once the job is completed with job status **Stopped::Success**, proceed to close the Scheduler window and sign out from the Admin Console.
 
-### Checking on department transfer and role updates
+## **STEP 7**: Checking on department transfer and role updates
 
-1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **Manage -> Users**, click on user login **DCOBY**.
+1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **`Manage -> Users`**, click on user login **DCOBY**.
 
 2. In the user details page, click on **Attributes** tab and check if the organization name has changed from Sales to Finance.
 
@@ -278,11 +250,11 @@ Follow the steps below to continue with the lab exercises.
 
 5. Sign out from the Self Service Console.
 
-## **STEP 4**: Self Service, Access Request and Approvals
+## **STEP 8**: Self Service, Access Request and Approvals
 
 1. Login to the Email Web client **Roundcube** as employee **RLAURIA** using password **Oracle123** to obtain the OIM user credentials (UserID) and link to set the password and challenge questions.
 
-2. Once the previous step is completed, proceed to login to the OIM Self Service console. Click on **Request Access -> Request for Self**.
+2. Once the previous step is completed, proceed to login to the OIM Self Service console. Click on **`Request Access -> Request for Self`**.
 
 3. In the request page, select the **Catalog** tab, next click on the **Application** radio-button.
 
@@ -315,7 +287,7 @@ Follow the steps below to continue with the lab exercises.
 
 13. Close the page and sign out from the Self Service Console.
 
-### Approving the request using actionable notifications
+## **STEP 9**: Approving the request using actionable notifications
 1. Login to the Email Web client **Roundcube** as manager **JSMITH** using **Oracle123** as password.
 
     E.g. login to Roundcube Email Client:
@@ -331,17 +303,17 @@ Follow the steps below to continue with the lab exercises.
 
 3. Open the email and verify if the requester is **Ray Lauria** and proceed to click on the **Approve** link.
 
-    <a name="image-03"></a>![Image](images/uc03-action-notification.png)
+    ![](./images/uc03-action-notification.png " ")
 
     Figure 3. Actionable Notification - Approvals
 
 4. In the reply notification, proceed to type a note between brackets in the **Comments** section, e.g. **Request Approved**, then click on the **Send** button to send the email.
 
-5. Notice that the destination address is **soa@oracledemo.com** which indicates that the notification will be processed by the SOA server as an actionable notification and then relayed to OIM to update the request.
+5. Notice that the destination address is **`soa@oracledemo.com`** which indicates that the notification will be processed by the SOA server as an actionable notification and then relayed to OIM to update the request.
 
 6. Logout from the Email Web Client.
 
-### Checking on the requested application access
+## **STEP 10**: Checking on the requested application access
 
 1. Login as user **RLAURIA** to the OIM Self Service Console. Click on **My Access** tile.
 
@@ -351,11 +323,11 @@ Follow the steps below to continue with the lab exercises.
 
 4. Proceed to sign out from the Self Service Console.
 
-    <a name="image-04"></a>![Image](images/uc03-account-provisioned.png)
+    ![](./images/uc03-account-provisioned.png " ")
 
     Figure 4. Provisioned Account - Access Request
 
-### Optional: Check the account on the target application
+## **STEP 11**: Check the account on the target application (Optional)
 
 1. This step is optional and requires to have the OAM server running to test the provisioned account. Since you have already started the OIM components, you will need at least 48 GB of total memory in your environment to be able to start the OAM server components in addition to OIM.
 
@@ -383,7 +355,7 @@ Follow the steps below to continue with the lab exercises.
 
 4. Proceed to sign out from the OAM console.
 
-## **STEP 5**: Employee Termination
+## **STEP 12**: Employee Termination
 
 1. Login as user **hradmin** with password **Oracle123** to My HR Application.
 
@@ -391,36 +363,36 @@ Follow the steps below to continue with the lab exercises.
 
 3. Proceed to delete the user by clicking on the **Delete** button and **OK** to confirm the deletion.
 
-4. Login as user **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and under System Management tab search for **HRData\***.
+4. Login as user **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and under System Management tab search for **`HRData*`**.
 
 5. From the results list, select job **HRData DBAT Trusted Resource User Delete Reconciliation**.
 
 6. In the Job Details tab, click on **Run Now** and monitor the progress by clicking on **Refresh** and looking at the bottom under Job History.
 
-7. Once the job is completed with Job Status **Stopped::Success**, click on the Event Management tab at the top and click the **Arrow** icon to search for reconciliation events.
+7. Once the job is completed with Job Status **`Stopped::Success`**, click on the Event Management tab at the top and click the **Arrow** icon to search for reconciliation events.
 
 8. A list of events with Profile Name **HRData** should be listed as recent events indicating that records were processed. Click on the last event ID to see the details. If the current status shows **Delete Succeeded** for the event, the employee was successfully deleted. Sign out from the Admin Console.
 
-### Checking on terminated employees
+## **STEP 13**: Checking on terminated employees
 
-1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **Manage -> Users**, review if the terminated employee is not listed as user in the users page.
+1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **`Manage -> Users`**, review if the terminated employee is not listed as user in the users page.
 
 2. Sign out from the Self Service Console.
 
-## **STEP 6**: About Approval Workflows
+## **Appendix**: About Approval Workflows
 
 1. OIM Request generation and approval depends on the usage and configuration of workflow rules. Workflow rules determine the following:
 	* Whether or not approvals are required for an operation
 	* Which workflow must be invoked for a specific operation
 
-2. For the purpose of demonstrating manager approvals in **UC03. Self Service, Access Request and Approvals** we have added a workflow rule to the **Provision ApplicationInstance** operation in OIM.
+2. For the purpose of demonstrating manager approvals in **`UC03. Self Service, Access Request and Approvals`** we have added a workflow rule to the **Provision ApplicationInstance** operation in OIM.
 
     E.g. the following rule has been added and set as first in order to be evaluated before the default rule:
 
     ```
 	RULE NAME   Provision Account Organization Rule
 	CONDITION   IF user.Organization Name Equal Sales OR user.Organization Name Equal Finance
-	            THEN workflow Equal default/RequesterManagerApproval!3.0 
+	            THEN workflow Equal default/RequesterManagerApproval!3.0
     ```
 
 3. The following must be considered during workflow rule evaluation:
@@ -430,23 +402,22 @@ Follow the steps below to continue with the lab exercises.
 
 4. Workflow rules can be exported from a source environment, such as test environment, and imported to a target environment, such as production environment using the Deployment Manager.
 
-5. You can learn more about the OIM system defined operations and rules in the following [link](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.3/omadm/managing-workflows.html#GUID-F21C1DC9-49A3-48F1-820C-2422CB24678A). 
+5. You can learn more about the OIM system defined operations and rules in the following [link](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.3/omadm/managing-workflows.html#GUID-F21C1DC9-49A3-48F1-820C-2422CB24678A).
 
 You may now *proceed to the next lab*.
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
-- <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html" target="\_blank">Oracle Identity Governance Documentation</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html" target="\_blank">Oracle Access Management Documentation</a>
+- [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+- [Oracle Identity Governance Documentation](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html)
+- [Oracle Access Management Documentation](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html)
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
-- **Last Updated By/Date** - Ricardo Gutierrez, November 2020
+- **Contributors** - Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-
-

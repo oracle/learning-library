@@ -5,7 +5,7 @@ has_invalid_file=false
 
 for fileName in $(git status -s | grep '^[MARCD]' | cut -d " " -f3)
 do
-  if [[ $fileName =~ \.(zip|tar|mp4|csv|exe|sh|tf|xls|json|py) ]]
+  if [[ $fileName =~ \.(zip|tar|mp4|csv|exe|sh|tf|xls|py) ]]
   then
     echo "$fileName => Cannot be committed!"
     has_invalid_file=true

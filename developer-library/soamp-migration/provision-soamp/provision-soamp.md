@@ -24,7 +24,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 1. Open a terminal in the 'on-premises' environment.
 
-  <img src="../../provision-soamp/images/desktop-terminal-launch.png" width="100%">
+  ![](./images/desktop-terminal-launch.png)
 
 2. In the terminal, create a SSH key
 
@@ -77,19 +77,19 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 1. Go to **Solutions and Platforms -> Marketplace -> Applications**
 
-  <img src="../../provision-soamp/images/marketplace-menu.png" width="50%">
+  ![](./images/marketplace-menu.png =50%x*)
 
 2. In the search input, type "`soa`". For this lab, we'll use the **Oracle SOA Suite (BYOL)**
 
-   <img src="../../provision-soamp/images/soa-mp-list.png" width="100%">
+   ![](./images/soa-mp-list.png)
 
 3. Make sure you are in the **Compartment** you want to use, use the **default WebLogic version** available, accept the License agreement and click **Launch the Stack**
 
-   <img src="../../provision-soamp/images/provision-3.png" width="100%">
+   ![](./images/provision-3.png)
 
 4. **Name** the stack and click **Next**
 
-   <img src="../../provision-soamp/images/provision-4.png" width="100%">
+   ![](./images/provision-4.png)
 
 5. **Enter** a **Resource Name Prefix**, we'll use `SOAMP2`.
 
@@ -97,24 +97,24 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
   The next steps in this workshop assumes the resource name prefix is `SOAMP2`, so it is highly recommended to use this name.
 
-   <img src="../../provision-soamp/images/prefix.png" width="70%">
+   ![](./images/prefix.png =70%x*)
 
 6. **Select** a **Service Type**.
 
    In a real world situation, choose a service type according to your requirement. for this workshop we are using **SOA with SB & B2B Cluster**.
 
-   <img src="../../provision-soamp/images/service-type.png" width="70%">
+   ![](./images/service-type.png =70%x*)
 
 
 7. Keep the **Enable SOA Schema partitioning** unchecked
 
-   <img src="../../provision-soamp/images/partitioning.png" width="70%">
+   ![](./images/partitioning.png =70%x*)
 
 8. **Select** a **Shape**.
 
    In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.E2.1** shape, the **VM.Standard.2.1** shape or a suitable shape that is available in your tenancy.
 
-   <img src="../../provision-soamp/images/shape.png" width="70%">
+   ![](./images/shape.png =70%x*)
 
    To check shape availability, you can go to **Governance -> Limits and Quotas** in another tab, and verify you have a specific shape available
 
@@ -122,23 +122,23 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
    *Important:* Provide the SSH public key you created earlier inside the on-premises environment, not your local public key.
 
-   <img src="../../provision-soamp/images/ssh-key.png" width="70%">
+   ![](./images/ssh-key.png =70%x*)
 
 9. **Select** an **Availability Domain**
 
-   <img src="../../provision-soamp/images/ad.png" width="70%">
+   ![](./images/ad.png =70%x*)
 
 10. **Select** a **Node count**. In this lab, we'll provision `1` node.
 
-   <img src="../../provision-soamp/images/node-count.png" width="70%">
+   ![](./images/node-count.png =70%x*)
 
 11. We'll keep the **WebLogic Server Admin User Name** as the default of `weblogic`
 
-   <img src="../../provision-soamp/images/admin-user.png" width="70%">
+   ![](./images/admin-user.png =70%x*)
 
 12. Provide password of your choice or you can use the below which we have used for this lab `welcome1`
 
-   <img src="../../provision-soamp/images/admin-password.png" width="70%">
+   ![](./images/admin-password.png =70%x*)
 
 13. In the **WebLogic Network** section, make sure you are in the proper compartment for this lab we have used `SOAMP1Compartment`
  
@@ -146,7 +146,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 15. Select **EXISTING NETWORK** as `SOAMP1VCN`
 
-  <img src="../../provision-soamp/images/network1.png" width="70%">
+  ![](./images/network1.png =70%x*)
 
 16. Select **SUBNET STRATEGY** as `Use Existing Subnet`
    
@@ -158,33 +158,33 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 
 20. Select **EXISTING SUBNET** as `Private Subnet-SOAMP1VCN(Regional)`
 
-  <img src="../../provision-soamp/images/network2.png" width="70%">
+  ![](./images/network2.png =70%x*)
 
 21. Select **Bastion Instance Strategy** as `Create new Bastion Instance`
 
-  <img src="../../provision-soamp/images/bastion2.png" width="70%">
+  ![](./images/bastion2.png =70%x*)
 
 21. Select **EXISTING SUBNET FOR BASTION HOST** as `Public Subnet-SOAMP1VCN(Regional)`
 
    **Note:** Since we are choosing private subnet for SOA instance we need a bastion host in public subnet (using public IP which is the gateway to SOA instance for the external world) to connect internally to the private IP of SOA Instance , bastion host wouldn't be required if we use public subnet for SOA instance as it will have a public IP to be communicated from eternal world.
 
-  <img src="../../provision-soamp/images/bastion3.png" width="70%">
+  ![](./images/bastion3.png =70%x*)
 
 22. Select **BASTION HOST SHAPE** as `VM Standard2.1`
 or can Select `VM StandardE2.1` if working on trial instance
 
-  <img src="../../provision-soamp/images/bastion4.png" width="70%">
+  ![](./images/bastion4.png =70%x*)
 
 23. **Check** the **Provision Load Balancer** checkbox
 
       - Select **EXISTING SUBNET FOR LOAD BALANCER** as `Public Subnet-SOAMP1VCN(Regional)` 
       - Select **LOAD BALANCER SHAPE** as `400Mbps`
 
-  <img src="../../provision-soamp/images/load-balancer.png" width="70%">
+  ![](./images/load-balancer.png =70%x*)
 
 24. Select **DATABASE STRATEGY** as `Database Systems`
 
-  <img src="../../provision-soamp/images/db-strategy.png" width="70%">
+  ![](./images/db-strategy.png =70%x*)
 
 25. Select **DB SYSTEM COMPARTMENT** as `SOAMP1VCNCompartment`
 
@@ -197,31 +197,31 @@ or can Select `VM StandardE2.1` if working on trial instance
       - **DB IN THE DB SYSTEM** as `SOAMP2DB` and
       - **PDB** as `PDB1`
 
-  <img src="../../provision-soamp/images/db1.png" width="70%">
+  ![](./images/db1.png =70%x*)
 
 27. Select **DATABASE ADMINISTRATOR** as `SYS`
 
 28. Select **DATABASE ADMINISTRATOR PASSWORD** as `WELcome##123`
 
-   <img src="../../provision-soamp/images/db-password.png" width="70%">
+   ![](./images/db-password.png =70%x*)
 
 29. **Check** the checkbox for **SERVICE INSTANCE ADVANCED CONFIGURATION**
    Here you can see all the default ports, which we will keep as-is.
 
-   <img src="../../provision-soamp/images/provision-13-advanced.png" width="70%">
+   ![](./images/provision-13-advanced.png =70%x*)
 
 30. In this same **Advanced** section, **check** the checkbox to **DEPLOY SAMPLE APPLICATION**: since we can reuse the service to migrate from onprem to soamp.
 
-   <img src="../../provision-soamp/images/provision-14-advanced.png" width="70%">
+   ![](./images/provision-14-advanced.png =70%x*)
 
 
 31. Once you got all the port details click **Next** and then verify all the details and click **Create**
 
-  <img src="../../provision-soamp/images/provision-17.png" width="100%">
+  ![](./images/provision-17.png)
 
 34. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  <img src="../../provision-soamp/images/provision-19.png" width="100%">
+  ![](./images/provision-19.png)
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu. 
 
@@ -233,7 +233,7 @@ To save some time you may proceed to the next lab and move to first steps of mig
 
 1. In the job **Outputs** (left menu)
 
-  <img src="../../provision-soamp/images/outputs.png" width="100%">
+  ![](./images/outputs.png)
 
    Make a note of :
 
@@ -250,7 +250,7 @@ To save some time you may proceed to the next lab and move to first steps of mig
 
    Note the Public IP address of the bastion
 
-   <img src="../../provision-soamp/images/bastion-ip.png" width="100%">
+   ![](./images/bastion-ip.png)
 
 
 ## **STEP 4:** Connect to the SOA Console through the Bastion Host.
@@ -279,11 +279,11 @@ Since the stack is deployed in a **private subnet**, accessing the console is ac
 
    Note: the connection uses SSL, so make sure to use the `https://` scheme.
 
-   <img src="../../provision-soamp/images/provision-29-connectinstance.png" width="100%">
+   ![](./images/provision-29-connectinstance.png)
 
 11. go to **SOA -> soa-infra** you can see some pre deployed example applications, and check the server health.
 
-   <img src="../../provision-soamp/images/provision-30-connectinstance.png" width="100%">
+   ![](./images/provision-30-connectinstance.png)
 
 
 You may proceed to the next lab

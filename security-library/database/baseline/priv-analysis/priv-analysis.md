@@ -29,11 +29,11 @@ This lab assumes you have:
 |--|------------------------------------------------------------|-------------|
 | 1 | Capture the workloard to analyze | 5 minutes |
 | 2 | Analyze the workload caputred | 5 minutes |
-| 3 | (Optionnal) Drop the capture | <5 minutes |
+| 3 | (Optional) Drop the capture | <5 minutes |
 
 ## **STEP 1**: Capture the workload to analyze
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
       ````
       <copy>sudo su - oracle</copy>
@@ -42,13 +42,13 @@ This lab assumes you have:
 2. Go to the scripts directory
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Privilege_Analysis/Simple_PA_Lab</copy>
+      <copy>cd $DBSEC_LABS/priv-analysis</copy>
       ````
 
-3. Start by ensuring the user has the `CAPTURE_ADMIN` role and creating the PA Capture
+3. Start by ensuring the user has the "`CAPTURE_ADMIN`" role and creating the Privilege Analysis capture
 
       ````
-      <copy>./01_start_pa_capture.sh</copy>
+      <copy>./pa_create_capture.sh</copy>
       ````
 
    ![](./images/pa-001.png " ")
@@ -56,7 +56,7 @@ This lab assumes you have:
 4. Next, start the capture
 
       ````
-      <copy>./02_start_capture.sh</copy>
+      <copy>./pa_enable_capture.sh</copy>
       ````
 
    ![](./images/pa-002.png " ")
@@ -66,13 +66,13 @@ This lab assumes you have:
 5. Generate some workload so we have used and unused roles and privileges
 
       ````
-      <copy>./03_generate_workload.sh</copy>
+      <copy>./pa_generate_workload.sh</copy>
       ````
 
 6. We can disable the capture when we feel we have enough data
 
       ````
-      <copy>./04_disable_capture.sh</copy>
+      <copy>./pa_disable_capture.sh</copy>
       ````
 
    ![](./images/pa-003.png " ")
@@ -82,7 +82,7 @@ This lab assumes you have:
 1.  Generating the report
 
       ````
-      <copy>./05_generate_report.sh</copy>
+      <copy>./pa_generate_report.sh</copy>
       ````
 
    ![](./images/pa-004.png " ")
@@ -94,17 +94,17 @@ This lab assumes you have:
 2. Next, view the report results by querying the views associated with the capture output
 
       ````
-      <copy>./06_review_report.sh</copy>
+      <copy>./pa_review_report.sh</copy>
       ````
 
    ![](./images/pa-005.png " ")
 
-## **STEP 3**: (Optionnal) Drop the capture
+## **STEP 3**: (Optional) Drop the capture
 
 1. Once we have reviewed our report and we are comfortable with Privilege Analysis, we can drop the capture we created
 
       ````
-      <copy>./07_drop_capture.sh</copy>
+      <copy>./pa_drop_capture.sh</copy>
       ````
 
    ![](./images/pa-006.png " ")
@@ -155,7 +155,7 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

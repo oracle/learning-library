@@ -12,45 +12,41 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Generate SSH Keys",
+      "title": "Lab 1: Generate SSH Keys",
       "description": "Generate SSH Key",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
     },
     {
-      "title": "Prepare Setup",
+      "title": "Lab 2: Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
       "publisheddate": "09/28/2020",
       "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
-      "title": "Environment Setup",
+      "title": "Lab 3: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
-
     {
-      "title": "GG Initial Setup",
+      "title": "Lab 4: Initialize Environment",
       "description": "GG Initial Setup",
       "filename": "../../initial-setup/initial-setup.md"
     },
-
-     {
-      "title": "Create Replication",
+    {
+      "title": "Lab 5: Create One-Way Replication",
       "description": "GG Replication",
       "filename": "../../create-replication/create-replication.md"
     },
-  
     {
-      "title": "HA/DR Replication",
+      "title": "Lab 6: Create HA/DR Replication",
       "description": "Hign Availability / Disaster Recovery Replication",
       "filename": "../../ha-dr/ha-dr.md"
     },
     {
-      "title": "Transformations",
+      "title": "Lab 7: Transformations",
       "description": "Transformations",
-      "filename": "../../transformations-using-goldengate/transformations-using-goldengate.md"
+      "filename": "../../transformations/transformations.md"
     }
-   
   ]
 }

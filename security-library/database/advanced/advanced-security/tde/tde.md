@@ -40,7 +40,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Allow DB Restore
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
       ````
       <copy>sudo su - oracle</copy>
@@ -49,13 +49,13 @@ This lab assumes you have:
 2. Go to the scripts directory
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Allow_DB_Restore</copy>
+      <copy>cd $DBSEC_LABS/tde</copy>
       ````
 
 3. Run the backup command:
 
       ````
-      <copy>./01_backup_db.sh</copy>
+      <copy>./tde_backup_db.sh</copy>
       ````
 
    ![](./images/tde-001.png " ")
@@ -68,291 +68,271 @@ This lab assumes you have:
 
 ## **STEP 2**: Create Keystore
 
-1. Go to the scripts directory
+1. Run this script to create the Keystore directories on the Operating System
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Software_Keystore</copy>
-      ````
-
-2. Run this script to create the directory on the operating system:
-
-      ````
-      <copy>./01_create_os_directory.sh</copy>
+      <copy>./tde_create_os_directory.sh</copy>
       ````
 
    ![](./images/tde-002.png " ")
 
-3. Use the database parameters to manage TDE. This will require a database restart for one of the parameters to take effect. The script will perform the reboot for you.
+2. Use the database parameters to manage TDE. This will require a database restart for one of the parameters to take effect. The script will perform the reboot for you.
 
       ````
-      <copy>./02_set_tde_parameters.sh</copy>
+      <copy>./tde_set_tde_parameters.sh</copy>
       ````
 
    ![](./images/tde-003.png " ")
 
-4. Create the software keystore (Oracle Wallet) for the container database. You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`.
+3. Create the software keystore (**Oracle Wallet**) for the container database. You will see the status result goes from `NOT_AVAILABLE` to `OPEN_NO_MASTER_KEY`.
 
       ````
-      <copy>./03_create_wallet.sh</copy>
+      <copy>./tde_create_wallet.sh</copy>
       ````
 
    ![](./images/tde-004.png " ")
 
-5. Now, your wallet has been created!
+4. Now, your Oracle Wallet has been created!
 
 ## **STEP 3**: Create Master Key
 
-1. Go to the scripts directory
+1. To create the container database TDE Master Key (**MEK**), run the following command
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Master_Key</copy>
-      ````
-
-2. To create the container database TDE master key, run the following command:
-
-      ````
-      <copy>./01_create_cdb_mkey.sh</copy>
+      <copy>./tde_create_mek_cdb.sh</copy>
       ````
 
    ![](./images/tde-005.png " ")
 
-3. To create a master key for the pluggable database `PDB1`, run the following command:
+2. To create a Master Key (MEK) for the pluggable database **pdb1**, run the following command
 
       ````
-      <copy>./02_create_pdb_mkey.sh pdb1</copy>
+      <copy>./tde_create_mek_pdb.sh pdb1</copy>
       ````
 
    ![](./images/tde-006.png " ")
 
-4. If you want, you can do the same for `PDB2`. This is not a requirement though. It might be helpful to show some databases with TDE and some without.
+3. If you want, you can do the same for **pdb2**... This is not a requirement and it might be helpful to show some databases with TDE and some without
 
       ````
-      <copy>./02_create_pdb_mkey.sh pdb2</copy>
+      <copy>./tde_create_mek_pdb.sh pdb2</copy>
       ````
 
    ![](./images/tde-007.png " ")
 
-5. Now, you have a master key and you can begin encrypting tablespaces or column!
+4. Now, you have a master key and you can begin encrypting tablespaces or column!
 
 ## **STEP 4**: Create Auto-login Wallet
 
-1. Go to the scripts directory
+1. Run the script to view the Oracle Wallet content on the Operating System
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Create_Autologin_Wallet</copy>
-      ````
-
-2. Then run the script to view the wallet on the operating system. Notice there is no `cwallet.sso`, there will be when we create the auto login wallet.
-
-      ````
-      <copy>./01_view_wallet_on_os.sh</copy>
+      <copy>./tde_view_wallet_on_os.sh</copy>
       ````
 
    ![](./images/tde-010.png " ")
 
-3. You can view what the wallet looks like in the database
+2. You can view what the Oracle Wallet looks like in the database
 
       ````
-      <copy>./02_view_wallet_in_db.sh</copy>
+      <copy>./tde_view_wallet_in_db.sh</copy>
       ````
 
    ![](./images/tde-011.png " ")
 
-5. Now, create the autologin wallet
+3. Now, create the **Autologin Oracle Wallet**
 
       ````
-      <copy>./03_create_autologin_wallet.sh</copy>
+      <copy>./tde_create_autologin_wallet.sh</copy>
       ````
 
    ![](./images/tde-012.png " ")
 
-6. Run the same queries... You should now see the `cwallet.sso` file:
+4. Run the same queries to view the Oracle Wallet content on the Operating System
 
       ````
-      <copy>./04_view_wallet_on_os.sh</copy>
+      <copy>./tde_view_wallet_on_os.sh</copy>
       ````   
 
    ![](./images/tde-013.png " ")
 
-       **Note**: Now you should see the `*.sso` file
+       **Note**: You should now see the **cwallet.sso** file
 
-7. And no changes to the wallet in the database
+5. And no changes to the Oracle Wallet in the database
 
       ````
-      <copy>./05_view_wallet_in_db.sh</copy>
+      <copy>./tde_view_wallet_in_db.sh</copy>
       ````
 
    ![](./images/tde-014.png " ")
 
-8. Now your Autologin is created!
+6. Now your Autologin is created!
 
 ## **STEP 5**: Encrypt Existing Tablespace
 
-1. Go to the scripts directory
+1. Use the Linux command, strings, to view the data in the data file, `empdata_prod.dbf` that is associated with the `EMPDATA_PROD` tablespace. This is an operating system command that bypasses the database to view the data. This is called a 'side-channel attack' because the database is unaware of it.
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Encrypt_Existing_Tablespace</copy>
-      ````
-
-2. Use the Linux command, strings, to view the data in the data file, `empdata_prod.dbf` that is associated with the `EMPDATA_PROD` tablespace. This is an operating system command that bypasses the database to view the data. This is called a 'side-channel attack' because the database is unaware of it.
-
-      ````
-      <copy>./01_Search_Strings_Plain_Text.sh</copy>
+      <copy>./tde_strings_data_empdataprod.sh</copy>
       ````
 
    ![](./images/tde-015.png " ")
 
-3. Next, encrypt the data by encrypting the entire tablespace:
+2. Next, **encrypt** the data by encrypting the entire tablespace
 
       ````
-      <copy>./02_Encrypt_Tablespace.sh</copy>
+      <copy>./tde_encrypt_tbs.sh</copy>
       ````
 
    ![](./images/tde-016.png " ")
 
-4. And finally, try the side-channel attack again
+3. Now, try the side-channel attack again
 
       ````
-      <copy>./03_Search_Strings_Encrypted.sh</copy>
+      <copy>./tde_strings_data_empdataprod.sh</copy>
       ````
 
    ![](./images/tde-017.png " ")
 
-5. You will see that all of the data is now encrypted!
+4. You see that all of the data is now encrypted and no longer visible!
 
-## **STEP 6**: Encyrpt All New Tablespaces
+## **STEP 6**: Encrypt All New Tablespaces
 
-1. Go to the scripts directory
-
-      ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Encrypt_All_New_Tablespaces</copy>
-      ````
-
-2. First, check the existing initialization parameters
+1. First, check the existing initialization parameters
 
       ````
-      <copy>./01_Check_Init_Params.sh</copy>
+      <copy>./tde_check_init_params.sh</copy>
       ````
 
    ![](./images/tde-018.png " ")
 
-3. Next, change the init parameter `encrypt_new_tablespaces` to be `ALWAYS` so all new tablespaces are encrypted.
+2. Next, change the init parameter `ENCRYPT_NEW_TABLESPACES` to be **ALWAYS** so all new tablespaces are encrypted
 
       ````
-      <copy>./02_Encrypt_All_New_Tablespaces.sh</copy>
+      <copy>./tde_encrypt_all_new_tbs.sh</copy>
       ````
 
    ![](./images/tde-019.png " ")
 
-4. Finally, create a tablespace to test it. The tablespace `TEST` will be created without specifying the encryption parameters (the default encryption is `AES128`) and will be dropped after.
+3. Finally, create a tablespace to test it. The tablespace **TEST** will be created without specifying the encryption parameters (the default encryption is **AES256**) and will be dropped after.
 
       ````
-      <copy>./03_Create_New_Tablespace.sh</copy>
+      <copy>./tde_create_new_tbs.sh</copy>
       ````
 
    ![](./images/tde-020.png " ")
 
-5. Now, your new Tablespaces will be encrypted by default!
+4. Now, your new Tablespaces will be encrypted by default!
 
 ## **STEP 7**: Rekey Master Key
 
-1. Go to the scripts directory
+1. To rekey the container database TDE Master Key (MEK), run the following command
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Rekey_Master_Key</copy>
+      <copy>./tde_rekey_mek_cdb.sh</copy>
       ````
 
-2. To rekey the container database TDE master key, run the following command:
+    - Have a look on the CDB key before rekeying...
+
+    ![](./images/tde-021.png " ")
+
+    - ...and after
+
+    ![](./images/tde-022.png " ")
+
+    - You can see the new key generated for the container
+
+2. To rekey a Master Key (MEK) for the pluggable database **pdb1**, run the following command
 
       ````
-      <copy>./01_rekey_cdb_mkey.sh</copy>
+      <copy>./tde_rekey_mek_pdb.sh pdb1</copy>
       ````
 
-3. To rekey a master key for the pluggable database `PDB1`, run the following command:
+    - Have a look on the pdb1 key before rekeying...
+
+    ![](./images/tde-023.png " ")
+
+    - ...and after
+
+    ![](./images/tde-024.png " ")
+
+    - You can see the new key generated for the pluggable database
+
+3. If you want, you can do the same for **pdb2**
 
       ````
-      <copy>./02_rekey_pdb_mkey.sh pdb1</copy>
-      ````
-
-4. If you want, you can do the same for `PDB2`
-
-      ````
-      <copy>./02_rekey_pdb_mkey.sh pdb2</copy>
+      <copy>./tde_rekey_mek_pdb.sh pdb2</copy>
       ````
 
        **Note**:
        - This is not a requirement though
        - It might be helpful to show some databases with TDE and some without
 
-5. Now that you have a master key, you can begin encrypting tablespaces or column!
+4. Now that you have a master key, you can begin encrypting tablespaces or column!
 
 ## **STEP 8**: View Keystore Details
 
-1. Go to the scripts directory
-
-      ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/View_Software_Keystore</copy>
-      ````
-
-2. Once you have a keystore, you can run either of these scripts. You will notice there are multiple copies of the `ewallet.p12` file. Every time you make a change, including create or rekey, the `ewallet.p12` file is backed up. You will also see the contents of the wallet file by using `orapki`
+1. Once you have a keystore, you can run either of these scripts. You will notice there are multiple copies of the **ewallet.p12** file. Every time you make a change, including create or rekey, the ewallet.p12 file is backed up. You will also see the contents of the Oracle Wallet file by using **orapki**
 
    - View the OS files related to the keystore
 
       ````
-      <copy>./01_view_wallet_on_os.sh</copy>
+      <copy>./tde_view_wallet_on_os.sh</copy>
       ````
-
-   ![](./images/tde-008.png " ")
 
    - View the keystore data in the database
 
       ````
-      <copy>./02_view_wallet_in_db.sh</copy>
+      <copy>./tde_view_wallet_in_db.sh</copy>
       ````
-
-   ![](./images/tde-009.png " ")
 
 ## **STEP 9**: (Optional) Restore Before TDE
 **Attention: DO NOT run this lab if you want perfoming Oracle Key Vault labs later!**
 
-1. Go to the scripts directory
+1. First, execute this script to restore the pfile
 
       ````
-      <copy>cd /home/oracle/DBSecLab/workshops/Database_Security_Labs/Advanced_Security/TDE/Restore_Before_TDE</copy>
+      <copy>./tde_restore_init_parameters.sh</copy>
       ````
 
-2. First, execute this script to restore the pfile
+    ![](./images/tde-025.png " ")
+
+
+2. Second, restore the database (this may take some time)
 
       ````
-      <copy>./01_restore_init_parameters.sh</copy>
+      <copy>./tde_restore_db.sh</copy>
       ````
 
-3. Second, restore the database (this may take some time)
+    ![](./images/tde-026.png " ")
+
+3. Third, delete the associated Oracle Wallet files
 
       ````
-      <copy>./02_restore_db.sh</copy>
+      <copy>./tde_delete_wallet_files.sh</copy>
       ````
 
-4. Third, delete the associated wallet files
+    ![](./images/tde-027.png " ")
+
+4. Fourth, start the container and pluggable databases
 
       ````
-      <copy>./03_delete_wallet_files.sh</copy>
+      <copy>./tde_start_db.sh</copy>
       ````
 
-5. Finally, start the container and pluggable databases
+    ![](./images/tde-028.png " ")
+
+       **Note**: This should have restored your database to it's pre-TDE state!
+
+5. Finally, verify the initialization parameters don't say anything about TDE
 
       ````
-      <copy>./04_start_db.sh</copy>
+      <copy>./tde_check_init_params.sh</copy>
       ````
 
-6. This should have restored your database to it's pre-TDE state
+    ![](./images/tde-029.png " ")
 
-7. Verify the initialization parameters don't say anything about TDE
-
-      ````
-      <copy>./05_check_init_params.sh</copy>
-      ````
-8. Now, your database is restored to the point in time prior to enabling TDE!
+7. Now, your database is restored to the point in time prior to enabling TDE!
 
 You may now proceed to the next lab.
 
@@ -392,7 +372,7 @@ Video
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

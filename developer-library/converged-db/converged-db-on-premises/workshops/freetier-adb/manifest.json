@@ -1,5 +1,5 @@
 {
-  "workshoptitle":"Oracle’s Converged Database: Make Developers And Data More Productive",  
+  "workshoptitle":"Oracle’s converged Autonomous Database ",  
   "tutorials": [
     {
       "title": "Prerequisites",
@@ -22,24 +22,23 @@
       "filename": "../../setup-compute/setup-compute-adb.md"
     },
     {
-      "title": "Lab 3: Import Data and Start Application",
+      "title": "Lab 3: Load Data and Start Application",
       "description": "Connect to Schema",
       "filename": "../../setup/setup-adb.md"
-    },
-    {
-      "title": "Lab 4: NODE.JS",
-      "description": "NODE.JS Lab",
-      "filename": "../../nodejs/nodejs.md"
-    },
-    {
-      "title": "Lab 5: JSON",
+    },   {
+      "title": "Lab 4: JSON",
       "description": "JSON Lab",
       "filename": "../../json/json.md"
     },
     {
-      "title": "Lab 6: XML",
-      "description": "XML Lab",
-      "filename": "../../xml/xml.md"
+      "title": "Lab 5: SODA - coming soon",
+      "description": "SODA Lab",
+      "filename": "../../json/json.md"
+    },
+    {
+      "title": "Lab 6: NODE.JS",
+      "description": "NODE.JS Lab",
+      "filename": "../../nodejs/nodejs.md"
     },
     {
       "title": "Lab 7: Spatial",
@@ -52,9 +51,19 @@
       "filename": "../../graph/graph.md"
     },
     {
-      "title": "Lab 9: Cross Data Types",
+      "title": "Lab 9: Multiple Data Types",
       "description": "Labs that leverage data types across schemas",
       "filename": "../../crossdatatype/crossdatatype.md"
+    },
+    {
+      "title": "Lab 10: XML",
+      "description": "XML Lab",
+      "filename": "../../xml/xml.md"
+    },
+    {
+      "title": "Lab 11: ORDS as Microservices",
+      "description": "Labs that leverage data types across schemas",
+      "filename": "../../ords/ords.md"
     }
   ]
 }

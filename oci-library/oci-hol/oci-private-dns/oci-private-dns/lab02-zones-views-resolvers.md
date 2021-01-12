@@ -27,10 +27,10 @@ This lab assumes you are a tenancy administrator. If you are not, request to the
 
 ## **Step 2:** Create a compartment (optional)
 
-1. From the OCI services menu, click **Compartments** under **Identity**
-2. Click on the **Create Compartment** button
+1. From the OCI services menu, click **Compartments** under **Identity**.
+2. Click on the **Create Compartment** button.
 3. Fill the compartment name, description and choose the parent compartment.
-4. Click on **Create Compartment**
+4. Click on **Create Compartment**.
 
 
 ## **Step 3:** Use resource manager to create VCNs and test VM
@@ -48,50 +48,50 @@ For DNS Management:
 
 1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://console.us-phoenix-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oegentil/learning-library/raw/master/oci-library/oci-hol/oci-private-dns/oci-private-dns/privatedns.zip)
 
-2. Acept the Terms of use, chane the compartment to you want to use, and change the name (optional)
-3. Enter the required information for the stack, and click **Next**
-4. Review the Stack and click **Create**
+2. Acept the Terms of use, chane the compartment to you want to use, and change the name (optional).
+3. Enter the required information for the stack, and click **Next**.
+4. Review the Stack and click **Create**.
 5. Click **Plan** under **Terraform Actions**.
-6. Click **Plan** in the Plan window
+6. Click **Plan** in the Plan window.
 7. Upon Completion (RMJ big button will turn green), click  **Stack Details** and then click **Apply** under **Terraform Actions**.
-8. Click **Apply** in the Apply window
+8. Click **Apply** in the Apply window.
 
 
 ## **Step 4:** Create hubzone.com Custom Private Zone
-1. From the OCI services menu, click **DNS Management** under **Networking**
-2. Under DNS Management, click on **Zones**, and then **Private Zones**
+1. From the OCI services menu, click **DNS Management** under **Networking**.
+2. Under DNS Management, click on **Zones**, and then **Private Zones**.
 You should see the private zones that are created automatically for your subnets.
-3. Click on **Create Zone** and create zone **hubzone.com**. Select **Selecting existing DNS Private View** and name it **hub_vcn**
+3. Click on **Create Zone** and create zone **hubzone.com**. Select **Selecting existing DNS Private View** and name it **hub_vcn**.
 ![](../images/create_custom_zone_hub_vcn.png)
 
 ## **Step 5:** View automatically generated records
-1. After the zone is created, select **Records** to view the automatically generated NS and SOA records
+1. After the zone is created, select **Records** to view the automatically generated NS and SOA records.
 ![](../images/automatic_created_records_hub_vcn.png)
 
 ## **Step 6:** Create A record in hubvcn.com 
 1. Click on **Add Record** button.
-2. Select Record Type **A - IPv4 Address**
-3. Set Name to **server01**
-4. Set TTL to **30 seconds**. If the lock icon is engaged, click on it to disengage and enable the field
-5. Set Address to **10.0.0.2**
-6. Click **Submit**
+2. Select Record Type **A - IPv4 Address**.
+3. Set Name to **server01**.
+4. Set TTL to **30 seconds**. If the lock icon is engaged, click on it to disengage and enable the field.
+5. Set Address to **10.0.0.2**.
+6. Click **Submit**.
 ![](../images/server_record_hub_vcn.png)
 7. Click on **Publish Changes** and then **Publish Changes** again in the new window.
 
 ## **Step 7:** Create spokezone.com Custom Private Zone on the hub VCN
-1. From the OCI services menu, click **DNS Management** under **Networking**
-2. Under DNS Management, click on **Zones** and then **Private Zones**
+1. From the OCI services menu, click **DNS Management** under **Networking**.
+2. Under DNS Management, click on **Zones** and then **Private Zones**.
 You are able to see the private zones that are created automatically for your subnets.
-3. Click on **Create Zone** and create zone **spokezone.com**. Select **Selecting existing DNS Private View** and name it **spoke_vcn**
+3. Click on **Create Zone** and create zone **spokezone.com**. Select **Selecting existing DNS Private View** and name it **spoke_vcn**.
 ![](../images/create_custom_zone_spoke_vcn.png)
 
 ## **Step 8:** Create A record in spokevcn.com
 1. Click on **Add Record** button.
-2. Select Record Type **A - IPv4 Address**
-3. Set Name to **server01**
-4. Set TTL to **60**
-5. Set Address to **10.10.0.123**
-6. Click **Submit**
+2. Select Record Type **A - IPv4 Address**.
+3. Set Name to **server01**.
+4. Set TTL to **60**.
+5. Set Address to **10.10.0.123**.
+6. Click **Submit**.
 ![](../images/server_record_spoke_vcn.png)
 7. Click on **Publish Changes** and then **Publish Changes** again in the new window.
 
@@ -136,6 +136,6 @@ The zone is not associated with any of the VCN's view leave cloud shell connect 
 
 `[opc@primaryvnic ~]$ host server01.spokevcn.com`
 
-`server01.hubzone.com has address 10.0.0.2`
+`server01.spokezone.com has address 10.0.0.2`
 
 Now the hub_vcn resolver has access to the spoke_vcn private view and can resolve names from the zones within it.

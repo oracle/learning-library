@@ -1,107 +1,98 @@
-# Migrate from another E-Business Suite Environment
+# Migrate Existing EBS to Cloud Manager
 
-## Introduction
+## About this Workshop
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This workshop showcases the use of the migration of an existing Oracle E-Business Suite to Oracle Cloud Infrastructure using the Object Storage service to our Cloud Manager instance. 
 
-Estimated Lab Time: n minutes
+### **Access this workshop**:
+[**Migrate EBS to OCI EBS Cloud Manager**](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=753&p210_type=1&session=12356884103673)
+
+Estimated Workshop Time: 1.5 hours
+    Note: This does not include downtime for creating the backup, which lasts about 2.5 hours. 
+
+### **Background**
+
+Creating a backup of your source Oracle E-Business Suite instance is the first part of a lift and shift process. You can subsequently complete the lift and shift process by using Oracle E-Business Suite Cloud Manager to provision an environment on Oracle Cloud Infrastructure based on the backup.
+
+Note: Although this process is intended primarily for on-premises instances, you can also run the Oracle E-Business Suite Cloud Backup module to conduct a lift and shift in certain cases when the source environment is already in Oracle Cloud Infrastructure with optional database services. These cases include the following:
+  * You initially used a manual procedure, such as a platform migration, to migrate an environment to Oracle Cloud Infrastructure, and now would like to leverage Oracle E-Business Suite Cloud Manager to manage that environment going forward.
+  * You want to migrate your environment from one tenancy to another. The lift and shift process can be used for this purpose whether or not you are currently using Oracle E-Business Suite Cloud Manager.
+
+Notes:
+
+* The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
+* IP addresses and URLs in the screenshots in this workbook may differ from what you use in the labs as these are dynamically generated.
+* For security purposes, some sensitive text (such as IP addresses) may be redacted in the screenshots in this workbook.
+
+### Workshop Overview
+
+
+This workshop uses the following components:
+
+* Trial accounts (one per attendee).
+
+* Virtual Cloud Network and related resources.
+    - User-generated using Resource Manager and provided Terraform script.
+
+* Oracle E-Business Suite Cloud Manager Compute instance.
+    - User-provisioned using Oracle Marketplace image.
+    - Oracle E-Business Suite Cloud Manager application.
+    - EBS sandbox network deployment script.
+
+* Oracle E-Business Suite environment 1 Compute instance.
+    - User-provisioned environment from OCI Marketplace.
+    - Application and database tiers on this compute instance.
+
 
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a standalone E-Business Suite Environment that will act as the source for the migration.
+* Prepare the source EBS enviornment for migration.
+* Install the Oracle E-Business Suite Cloud Backup Module on the source environment.
+* Create a backup of the source EBS environment and store it on the Oracle Object Storage service.
+* Provision a new EBS instance in Cloud Manager using the backup of the source EBS enviornment.
 
-### Prerequisites
+### **Prerequisites**
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+* A MyOracleSupport account is needed to download the Cloud Backup tool to the source EBS environment.
+* key-data.txt file documented with following information (from this EBS Cloud Manger lab).
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
+**From MyOracleSupport Account:**
 
-*This is the "fold" - below items are collapsed by default*
+* `MOS_Email_Address` (typically your tenancy admin user).
 
-## **STEP 1**: title
+**From Provisioning your Cloud Manager Instance You Should have recorded:**
 
-Step 1 opening paragraph.
+* `Oracle_Cloud_Region_Identifier`
+* `Oracle_Cloud_Tenancy_Name`
+* `Oracle_Cloud_Tenancy_OCID`
+* `Cloud_Manager_Admin_User_OCID`
+* `Cloud_Manager_Admin_Fingerprint`
+* `Oracle_Cloud_Compartment_OCID`
+* `Cloud_Manager_Instance_public_IP`
 
-1. Sub step 1
+**From your source EBS Instance**
 
-  To create a link to local file you want the reader to download, use this format:
+* `Source_EBS_Instance_public_IP`
+* `Source_EBS_Instance_private_IP`
+* `Fully_Qualified_Hostname` (In this Lab: apps.example.com)
+* `apps_password` (In this Lab: apps)
+* `weblogic_password` (In this Lab: welcome1)
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+**Access this workshop**
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
-
-    ![Image alt text](images/sample1.png "Image title")
-
-3. Ordered list item 3 with the same image but no link to the text description below.
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. One example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-*At the conclusion of the lab add this statement:*
-You may proceed to the next lab.
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+[**Migrate EBS to OCI EBS Cloud Manager**](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=753&p210_type=1&session=12356884103673)
 
 ## Acknowledgements
 
-* **Author:** Quintin Hill, Cloud Engineering
-* **Contributors:** 
-  - Aurelian Baetu, Solution Engineering - Cloud Infrastructure
-  - Santiago Bastidas, Product Management Director
-  - William Masdon, Cloud Engineering
-  - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Author:** William Masdon, Cloud Engineering
+* **Contributors:** Santiago Bastidas, Product Management Director
+* **Contributors:** Quintin Hill, Cloud Engineering
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, Nov 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section. 
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

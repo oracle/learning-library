@@ -1,0 +1,37 @@
+{
+    "workshoptitle": "Migration of Oracle Forms to Oracle APEX on ATP",
+    "tutorials": [
+        {
+          "title": "Prerequisites",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename":"../../developer-library/apex/forms-to-apex-migration-library/introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+		    {
+            "title": "Lab 2: Setup VCN",
+            "filename":"../../developer-library/apex/forms-to-apex-migration-library/setup-vcn/setup-vcn.md"
+        },
+		    {
+            "title": "Lab 3: Configuring a development system for Oracle Forms Application from Marketplace in OCI",
+            "filename":"../../developer-library/apex/forms-to-apex-migration-library/setup-oracle-forms/setup-oracle-forms.md"
+        },
+		    {
+            "title": "Lab 4: Setup Oracle APEX in Autonomous Database/Sign up for Workspace in apex.oracle.com",
+            "filename":"../../developer-library/apex/forms-to-apex-migration-library/setup-apex/setup-apex.md"
+        },
+        {
+            "title": "Lab 5: Create Migration Project in Oracle APEX",
+            "filename":"../../developer-library/apex/forms-to-apex-migration-library/create-apex-forms-migration-app/create-apex-forms-migration-app.md"
+        },
+        {
+            "title": "Lab 6: Modernizing Customer Oracle Form to Oracle APEX Page",
+            "filename":"../../developer-library/apex/forms-to-apex-migration-library/modernize-forms-in-apex/modernize-forms-in-apex.md"
+        }
+    ]
+}

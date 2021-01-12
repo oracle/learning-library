@@ -25,12 +25,17 @@ This lab assumes you have:
 
 ## **STEP 1**: Log-in
 
-1. Log-in to the GoldenGate Stream Analytics using the url:
+1. Launch your browser to the following URL
 
     ```
-    User Name: <copy>osaadmin</copy>
+    URL: <copy>http://[your instance public-ip address]/osa</copy>
     ```
 
+2. Provide login credentials
+
+    ```
+    Username: <copy>osaadmin</copy>
+    ```
     ```
     Password: <copy>welcome1</copy>
     ```
@@ -41,6 +46,9 @@ This lab assumes you have:
 
     ![](./images/home.png " ")
 
+3. Click on (*`X`*) to ignore the error below if shown
+
+    ![](./images/ignore-error-first-login.png " ")
 
 ## **STEP 2**: Check Version
 1. Click on the drop-down menu in the upper right-hand corner of the screen.
@@ -79,11 +87,11 @@ This lab assumes you have:
 
 1. Click on the Catalog menu on the top right-hand corner of the home page:
 
-  ![](./images/catalog.png " ")
+    ![](./images/catalog.png " ")
 
-Notice there are no resources currently available.
+    Notice there are no resources currently available.
 
-  ![](./images/emptycatalog.png " ")
+    ![](./images/emptycatalog.png " ")
 
 2. Navigate back to the Home page again.
 
@@ -125,7 +133,7 @@ the main page.
 
     Database: "MySql"
 
-    Jdbc url: `jdbc:mysql://OSA_DEMO:Welcome123!\@localhost:3306/OSA_DEMO`
+    Jdbc url: *`jdbc:mysql://OSA_DEMO:Welcome123!@localhost:3306/OSA_DEMO`*
 
 4. Then click on Test connection and make sure the connection is successful. Click on the Cancel button. Do not save this connection here.
 
@@ -220,7 +228,7 @@ A `Target` is a destination environment downstream that is usually used when we 
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

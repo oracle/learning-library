@@ -9,10 +9,16 @@ Estimated Workshop Time: 60 minutes
 ### About Autonomous Graph 
 Oracle Autonomous Database contains features that enable it to function as a scalable property graph database. They automate the creation of graph models and in-memory graphs from database tables. They  include notebooks and developer APIs for executing graph queries using PGQL, a SQL-like graph query language, and nearly 60 built-in graph algorithms, and offer dozens of visualizations including native graph visualization.
 
+Watch the following two videos for more information. The first is an introduction to property graphs and their use cases. The second is a tour of the Graph Studio interface. 
+
+[](youtube:eCd-969hrak)   Simply Graph Analytics with Autonomous Database   
+
+[](youtube:S6Q-IJcBkU0)   Autonomous Graph Database: A tour of the Graph Studio interface
+
 ### Objectives
 
 In this workshop you will:
-* Connect to your autonomous database using *Graph Studio*
+* Connect to your autonomous database using **Graph Studio**
 * Quickly create a graph from scratch using PGQL (a graph query language)
 * Load graphs into memory for analysis
 * Create a notebook

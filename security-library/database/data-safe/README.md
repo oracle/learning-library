@@ -10,7 +10,7 @@ This workshop lets you practice the main features in Oracle Data Safe, including
 
 Alternatively, you can follow the labs on this repository:
 
-- [Prerequisites](./workshops/customertenancy/prerequisites.md)
+- [Prerequisites](./workshops/freetier/prerequisites.md)
 - [Introduction](./introduction/introduction.md)
 - [Provision and Register an Autonomous Database](./provision-register-autonomous-database/provision-register-autonomous-database.md)
 - [Provision Audit and Alert Policies](./provision-audit-alert-policies/provision-audit-alert-policies.md)

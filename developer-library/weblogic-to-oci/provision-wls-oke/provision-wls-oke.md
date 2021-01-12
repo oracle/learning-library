@@ -27,19 +27,19 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 1. Go to **Solutions and Platforms**
 
-  <img src="../../../provision-wls-oke/images/provision-1.png" width="50%">
+  ![](./images/provision-1.png =50%x*)
 
 2. In the search input, type "`weblogic`". For this lab, we'll use the **WebLogic Enterprise Edition on OKE UCM**
 
-   <img src="../../../provision-wls-oke/images/provision-2.png" width="100%">
+   ![](./images/provision-2.png)
 
 3. Make sure you are in the **Compartment** you want to use, use the **default WebLogic version** available, accept the License agreement and click **Launch the Stack**
 
-   <img src="../../../provision-wls-oke/images/provision-3.png" width="100%">
+   ![](./images/provision-3.png)
 
 4. **Name** the stack and click **Next**
 
-   <img src="../../../provision-wls-oke/images/provision-4.png" width="100%">
+   ![](./images/provision-4.png)
 
 5. **Enter** a **Resource Name Prefix**.
 
@@ -47,7 +47,7 @@ For this lab, you need to have prepared the OCI tenancy with:
 
   The next steps in this workshop assumes the resource name prefix is `nonjrf`, so it is highly recommended to use this name.
 
-  <img src="../../../provision-wls-oke/images/provision-6-prefix.png" width="70%">
+  ![](./images/provision-6-prefix.png =70%x*)
 
 6. **SSH key**
 
@@ -55,7 +55,7 @@ For this lab, you need to have prepared the OCI tenancy with:
    
    *Since the various commands will be ran from inside the 'on-premises' environment (either the workshop compute instance or the local docker containers), you will need to provide the key generated in the 'on-premises' environment.*
 
-  <img src="../../../provision-wls-oke/images/provision-8-sshkey.png" width="70%">
+  ![](./images/provision-8-sshkey.png =70%x*)
 
    To output the public key information, use the following command from inside the 'on-premises' environment as the `oracle` user.
     ```
@@ -76,67 +76,67 @@ For this lab, you need to have prepared the OCI tenancy with:
 
 8. Use the standard *weblogic* for **Administration User Name**
 
-  <img src="../../../provision-wls-oke/images/provision-11-admin-name.png" width="70%">
+  ![](./images/provision-11-admin-name.png =70%x*)
 
 9. **Paste** the **OCID** of the **Secret** generated previously for the **Secret OCID for Administration Password**
 
-  <img src="../../../provision-wls-oke/images/provision-12-secret.png" width="70%">
+  ![](./images/provision-12-secret.png =70%x*)
 
 10. Click the **WebLogic Advanced Configuration** and enter the name **nonjrf_domain** for the domain name
 
-  <img src="../../../provision-wls-oke/images/domain-name.png" width="70%">
+  ![](./images/domain-name.png =70%x*)
 
 11. Under **WebLogic Cluster (OKE) Configuration**, the Kubernetes version is default and select a **Shape** you have available in your tenancy.
 
    In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.E2.1** shape, the **VM.Standard.E2.2** shape or a suitable shape that is available in your tenancy.
 
-   <img src="../../../provision-wls-oke/images/shape.png" width="70%">
+   ![](./images/shape.png =70%x*)
 
    To check shape availability, you can go to **Governance -> Limits and Quotas** in another tab, and verify you have a specific shape available
 
 12. Select the **Number of Nodes in the WebLogic Pool** to 1 for now 
 
-   <img src="../../../provision-wls-oke/images/node-in-wls-pool.png" width="70%">
+   ![](./images/node-in-wls-pool.png =70%x*)
 
 13. Select a shape and number of nodes for the non-WebLogic pool (for infra services like Jenkins)
 
-   <img src="../../../provision-wls-oke/images/node-in-non-wls-pool.png" width="70%">
+   ![](./images/node-in-non-wls-pool.png =70%x*)
 
 14. Keep the **CIDR** block the default
 
-   <img src="../../../provision-wls-oke/images/cidr.png" width="70%">
+   ![](./images/cidr.png =70%x*)
 
 15. Under **Container Cluster (OKE) Administration Instances**, select an **Availability Domain** and shapes for the **Administration Server Compute Shape** and **Bastion Instance Shape**
 
-   <img src="../../../provision-wls-oke/images/admin-bastion-shape.png" width="70%">
+   ![](./images/admin-bastion-shape.png =70%x*)
 
 16. Under **Network**, select **Create New VCN** and keep the other defaults
 
-   <img src="../../../provision-wls-oke/images/create-vcn.png" width="70%">
+   ![](./images/create-vcn.png =70%x*)
 
 17. For **Database**, select **No Database**. This is only needed for a JRF domain. We will provision the application database separately.
 
-   <img src="../../../provision-wls-oke/images/no-database.png" width="70%">
+   ![](./images/no-database.png =70%x*)
 
 18. Select an **Availability Domain** for the **File System**
 
-   <img src="../../../provision-wls-oke/images/file-system-ad.png" width="70%">
+   ![](./images/file-system-ad.png =70%x*)
 
 19. Under Registry (OCIR) enter your full **Username**, which you find under you **User icon**
 
-   <img src="../../../provision-wls-oke/images/username.png" width="40%">
+   ![](./images/username.png =40%x*)
 
 20. and enter the **OCID** of the Secret for the **OCI Registry Auth Token**
 
-   <img src="../../../provision-wls-oke/images/ocir-secret.png" width="70%">
+   ![](./images/ocir-secret.png =70%x*)
 
 21. and then click **Create**
 
-  <img src="../../../provision-wls-oke/images/provision-25.png" width="100%">
+  ![](./images/provision-25.png)
 
 22. The stack will get provisioned using the **Resource Manager**. This may take 7-15min.
 
-  <img src="../../../provision-wls-oke/images/provision-26.png" width="100%">
+  ![](./images/provision-26.png)
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
@@ -146,7 +146,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
   You should see something like the following:
 
-  <img src="../../../provision-wls-oke/images/provision-28.png" width="100%">
+  ![](./images/provision-28.png)
 
   - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
 
@@ -212,13 +212,13 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
   - Search for **Proxy**
 
-    <img src="../../../provision-wls-oke/images/firefox-proxy1.png" width="60%">
+    ![](./images/firefox-proxy1.png =60%x*)
 
   - Click **Settings**
   - Click **Manual Proxy** setup
   - Enter **localhost** and port **1088**
 
-    <img src="../../../provision-wls-oke/images/firefox-proxy2.png" width="60%">
+    ![](./images/firefox-proxy2.png =60%x*)
 
 ## **Step 4:** Check the deployment
 
@@ -226,11 +226,11 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 2. Find the load balancer marked *Private* and note the IP address
 
-  <img src="../../../provision-wls-oke/images/lb-oke.png" width="60%">
+  ![](./images/lb-oke.png =60%x*)
 
 3. In Firefox, go to *http://`PRIVATE_LOAD_BALANCER_IP`/console* to find the WebLogic Admin console
 
-  <img src="../../../provision-wls-oke/images/wls-empty.png" width="100%">
+  ![](./images/wls-empty.png)
 
   You should find the deployment list is empty under **Deployments**
 
@@ -238,7 +238,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
   You will be prompted to create a default admin user, and then you can see the Jenkins UI and pipelines
 
-  <img src="../../../provision-wls-oke/images/jenkins.png" width="100%">
+  ![](./images/jenkins.png)
 
 
 You can proceed to the next lab

@@ -1,0 +1,1 @@
+This partial image shows the "Bucket Details" page for the "training" bucket. In the "Objects" section of the page, the three folders representing the objects in the "training" bucket are highlighted. The objects are: "biketrips", "stations", and "weather". 

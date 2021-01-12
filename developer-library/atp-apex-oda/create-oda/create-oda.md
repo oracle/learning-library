@@ -28,6 +28,10 @@ Both intents and entities are common **Natural Language Processing (NLP)** conce
 
 - **Channels**: Digital assistants and skills aren’t apps that you download from an app marketplace, like iTunes. Instead, users access them through messaging platforms or through client messaging apps. Channels, which are platform-specific configurations, allow this access. A single digital assistant or skill can have several channels configured for it so that it can run on different services simultaneously
 
+Watch our short video that explains Lab 3 - Create Oracle Digital Assistant, Lab 4 - Implement Custom Component and Lab 5 - Create Digital Assistant Skill:
+
+[](youtube:kdvjXTMC-PI)
+
 Estimated Lab Time: 15 minutes
 
 ## **STEP 1**: Create a Digital Assistant instance

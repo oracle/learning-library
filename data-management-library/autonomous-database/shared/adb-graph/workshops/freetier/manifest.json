@@ -12,16 +12,21 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Hello World",
+            "title": "Lab 1: Create a graph user",
+            "description": "Create a simple graph and learn how to navigate the user interface.",
+            "filename": "../../create-user/create-user.md"            
+        },
+        {
+            "title": "Lab 2: Hello World",
             "description": "Create a simple graph and learn how to navigate the user interface.",
             "filename": "../../hello-world/hello-world.md"
         },
         {
-            "title": "Lab 2: Create a graph from the SH tables",
+            "title": "Lab 3: Create a graph from the SH tables",
             "filename": "../../create-graph-from-sh-tables/create-graph-from-sh-tables.md"
         },
         {
-            "title": "Lab 3: Analyze a Data Warehouse with Graph Algorithms",
+            "title": "Lab 4: Analyze a Data Warehouse with Graph Algorithms",
             "filename": "../../run-graph-algorithms-on-data-warehouse/run-graph-algorithms-on-data-warehouse.md"
         }
     ]

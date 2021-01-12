@@ -30,25 +30,25 @@ For this lab you need:
 
 1. To scale the number of nodes, go to **Resources Manager -> Stacks** and select the stack that was used to provision the WebLogic domain
 
-  <img src="../../../scale-wls/images/scale-stack.png" width="100%">
+  ![](./images/scale-stack.png)
 
 2. Click **Variables** then click **Edit Variables**
 
-  <img src="../../../scale-wls/images/scale-variables.png" width="100%">
+  ![](./images/scale-variables.png)
 
 3. Scroll to the **Weblogic Server Node Count** input and adjust the number of nodes
 
-  <img src="../../../scale-wls/images/scale-10-nodes.png" width="70%">
+  ![](./images/scale-10-nodes.png =70%x*)
 
 4. Make sure the **Do not update domain configuration** is left **unchecked**. This option is to be used if you want to scale the number of nodes without scaling the cluster
 
-  <img src="../../../scale-wls/images/scale-no-update.png" width="70%">
+  ![](./images/scale-no-update.png =70%x*)
 
 5. Click **Next** and then **Save Changes**
 
 6. Then Click **Terraform Actions -> Apply** to make the changes
 
-  <img src="../../../scale-wls/images/scale-tf-apply.png" width="70%">
+  ![](./images/scale-tf-apply.png =70%x*)
 
   The new job will update the number of nodes, reverting any manual shape change to the originally provisioned shape. Servers will be restarted and new nodes will join the cluster if there was one defined, unless the **Do not update domain** was checked.
 
@@ -62,23 +62,23 @@ For this lab you need:
 
 1. To scale a node by changing its shape, go to **Compute -> Instances**
 
-  <img src="../../../scale-wls/images/scale-compute.png" width="50%">
+  ![](./images/scale-compute.png =50%x*)
 
 2. Click the WebLogic instance to modify
 
-  <img src="../../../scale-wls/images/scale-compute-instance.png" width="100%">
+  ![](./images/scale-compute-instance.png)
 
 3. In the instance details, click **Edit**
 
-  <img src="../../../scale-wls/images/scale-compute-edit.png" width="70%">
+  ![](./images/scale-compute-edit.png =70%x*)
 
 4. In the Edit pane, click **Edit Shape**
 
-  <img src="../../../scale-wls/images/scale-compute-edit-shape.png" width="70%">
+  ![](./images/scale-compute-edit-shape.png =70%x*)
 
 5. Select an new shape and click **Save Changes**
 
-  <img src="../../../scale-wls/images/scale-compute-edit-shape2.png" width="70%">
+  ![](./images/scale-compute-edit-shape2.png =70%x*)
 
   You will be prompted to reboot the instance. The WebLogic servers will be restarted on reboot.
 

@@ -40,14 +40,20 @@ Reviewing the facets, you will notice that Status is down the page and you can c
 
 5. In the runtime environment, click one of the statuses. Review how the counts on the other facets are updated based on your selection. Also notice how you can still select one of the other statuses or click **Clear**, within the Status facet, to clear your selection and again show all the counts for statuses.
 
-    ![](images/runtime-status.png " ")   
+    ![](images/runtime-status.png " ")
+
+6. Click on the chart icon next to the Project facet. A popup window with a chart of the total counts shows up. You can toggle between the bar and the pie chart by clicking on the chart type icon.
+
+    ![](images/facet-chart1.png " ")
+
+    ![](images/facet-chart2.png " ")
 
 ## **STEP 2**: Collapsing Facets
 1. You may have noticed that the facets go off the bottom of the page. Therefore, it would be preferable to collapse the last three facets, making it easier to see all available facets.
 
     Navigate back to the development environment (APEX App Builder) by using the edit link in the Developer toolbar, or manually navigating to the appropriate browser tab.
 
-    In the Rendering tree (left pane), under **Search**, within **Facets**, click **P3\_ASSIGNED\_TO**, hold down the *Shift* key and then click **P3\_COST**, such that three facets are selected. In the Property Editor (right pane), within the filter at the top, enter **collap**, so that only two attributes are displayed. For Advanced > Initially Collapsed, change the switch to selected.
+    In the Rendering tree (left pane), under **Search**, within **Facets**, click **P3\_ASSIGNED\_TO**, hold down the *Shift* key and then click **P3\_COST**, such that three facets are selected. In the Property Editor (right pane), within the filter at the top, enter **collap**, so that only two attributes are displayed. For Advanced > Initially Collapsed, switch it to On.
 
     ![](images/set-collapsed.png " ")   
 
@@ -63,7 +69,7 @@ You now know how to enhance a faceted search page and have been introduced to Pa
 
 ## **Acknowledgements**
 
- - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
+ - **Author/Contributors** -  Salim Hlayel, Principal Product Manager
  - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
 
 ## Need Help?

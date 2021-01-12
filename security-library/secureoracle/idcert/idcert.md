@@ -21,39 +21,10 @@ This lab assumes you have:
     - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
-- You have added the public IP of the Oracle Cloud compute instance to your computer host file. E.g. if using Microsoft Windows edit file **C:\Windows\System32\drivers\etc\hosts** and add the following line:
+    - Lab: Initialize Environment
 
-```
-<copy><public_ip> secureoracle.oracledemo.com</copy>
-```
-
-## **STEP 0:** Running your Lab
-### Login to Host using SSH Key based authentication
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*” user. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-Follow the steps below to continue with the lab exercises.
-
-## **STEP 1**: Start SecureOracle Components
-1.  Login as “*oracle*” user and start the different components. E.g. start **Oracle Identity Manager, SOA Server and BI Publisher** by running the following command
-
-    ```
-    <copy>sc start oim_bip</copy>
-    ```
-
-    **Note:** the time to start the OIG components varies between 15-20 minutes.
-
-2. Make sure you can access the OIM Admin and Self Service consoles, Roundcube email client and My HR Application.
+## **STEP 1**: Validate Access to required components and applications
+1. Make sure you can access the OIM Admin and Self Service consoles, Roundcube email client and My HR Application. The links below are also bookmarked on Firefox running on your remote desktop. Refer to *Lab: Initialize Environment* for more
 
     Oracle Identity Manager Admin Console:
 
@@ -89,11 +60,11 @@ Follow the steps below to continue with the lab exercises.
     ```
 
 ## **STEP 2**: User Certification with Custom Reviewers
-1. User certification allows managers to certify employee access to roles, accounts, and entitlements. Typically, each manager in an organization reviews the access-privileges of the people who report directly to that manager. Alternatively, custom reviewers for user certifications can be specified by defining certification rules in the **CERT_CUSTOM_ACCESS_REVIEWERS** table in the Oracle Identity Manager database.
+User certification allows managers to certify employee access to roles, accounts, and entitlements. Typically, each manager in an organization reviews the access-privileges of the people who report directly to that manager. Alternatively, custom reviewers for user certifications can be specified by defining certification rules in the **`CERT_CUSTOM_ACCESS_REVIEWERS`** table in the Oracle Identity Manager database.
 
-2. In the SecureOracle environment, My IGA Application contains a custom UI to maintain the **CERT_CUSTOM_ACCESS_REVIEWERS** table, so administrators can easily define custom reviewers.
+In the SecureOracle environment, My IGA Application contains a custom UI to maintain the **`CERT_CUSTOM_ACCESS_REVIEWERS`** table, so administrators can easily define custom reviewers.
 
-3. Login to My IGA Application to define customer reviewers.
+1. Login to My IGA Application to define customer reviewers.
 
     E.g. Use the following link and credentials:
 
@@ -103,7 +74,7 @@ Follow the steps below to continue with the lab exercises.
 	Password    Oracle123
     ```
 
-4. In the sidebar menu click on the **Custom Reviewers** option to open the Custom Reviewers page. Proceed to define custom reviewers and users as needed.
+2. In the sidebar menu click on the **Custom Reviewers** option to open the Custom Reviewers page. Proceed to define custom reviewers and users as needed.
 
     E.g. For convenience a custom reviewer has been defined already along with two users who will be certified.
 
@@ -115,13 +86,13 @@ Follow the steps below to continue with the lab exercises.
 
     **Note**: You are welcome to add additional reviewers and users. OIM will generate a certification task for each **Map Name**. For more details in rules and definitions please consult the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A).
 
-    <a name="image-01"></a>![Image](images/img-custom-reviewer.png)
-    
+    ![](./images/img-custom-reviewer.png " ")
+
     Figure 1. Custom Reviewers
 
-5. Proceed to sign out from My IGA Application.
+3. Proceed to sign out from My IGA Application.
 
-6. Configure the certification options by login to OIM Self Service as administrator.
+4. Configure the certification options by login to OIM Self Service as administrator.
 
     E.g. Use the following link and credentials:
 
@@ -131,32 +102,32 @@ Follow the steps below to continue with the lab exercises.
 	Password    Oracle123
     ```
 
-7. Go to **Compliance -> Identity Certification -> Certification Configuration** and validate the configuration as follow.
+5. Go to **`Compliance -> Identity Certification -> Certification Configuration`** and validate the configuration as follow.
 
     E.g. Use the following configuration as reference:
 
     ```
     Password required on sign-off                : [checked]
     Allow comments on certify operations         : [unchecked]
-    Allow comments on all non-certify operations : [checked]	
+    Allow comments on all non-certify operations : [checked]
     Verify employee access                       : [checked]
     Prevent self certification                   : [checked]
 	                                               Alternate Reviewer : User Manager
 
     User and Account Selections         : Include any user with active accounts
     Allow advanced delegation           : [unchecked]
-    Allow multi-phased review           : [unchecked]	
+    Allow multi-phased review           : [unchecked]
     Allow reassignment                  : [unchecked]
     Allow auto-claim                    : [checked]
     Perform closed loop remediation     : [checked]
-				
-    Enable Interactive Excel            : [unchecked]	
-    Enable Certification Reports        : [checked]	
+
+    Enable Interactive Excel            : [unchecked]
+    Enable Certification Reports        : [checked]
     ```
 
-    Proceed to click the **Test Connection** button to test the communication with the BI Publisher component, if you make changes, save the changes otherwise click **Cancel** to close the page.
+6. Proceed to click the **Test Connection** button to test the communication with the BI Publisher component, if you make changes, save the changes otherwise click **Cancel** to close the page.
 
-8. Proceed to create a certification definition. For your convenience we have already created a certification definition, as a reference the following table contains the parameters used in the definition.
+7. Proceed to create a certification definition. For your convenience we have already created a certification definition, as a reference the following table contains the parameters used in the definition.
 
     E.g. Parameters in certification definition:
 
@@ -204,13 +175,13 @@ Follow the steps below to continue with the lab exercises.
 	                    All Entitlements
     ```
 
-    **Note**: Notice the section **Reviewers** where we have specified the map name **2019 Q4 Review** defined in the **CERT_CUSTOM_ACCESS_REVIEWERS** table. After a certification definition is created, OIM offers the option to automatically create a job for the new certification. In the above example OIM created job **Cert_2019 Q4 Review**.
+    **Note**: Notice the section **Reviewers** where we have specified the map name **`2019 Q4 Review`** defined in the **`CERT_CUSTOM_ACCESS_REVIEWERS`** table. After a certification definition is created, OIM offers the option to automatically create a job for the new certification. In the above example OIM created job **`Cert_2019 Q4 Review`**.
 
-9. Proceed to run the certification, do so by login into OIM Self Service as user **XELSYSADM**. Go to **Compliance -> Identity Certification -> Definitions**.
+8. Proceed to run the certification, do so by login into OIM Self Service as user **XELSYSADM**. Go to **`Compliance -> Identity Certification -> Definitions`**.
 
-10. Select certification **2019 Q4 Review** and click the **Run Now** button.
+9. Select certification **`2019 Q4 Review`** and click the **Run Now** button.
 
-11. OIM will start the certification task and notify the reviewer in this case user **MGRAFF**. You can login to the Email Web Client (Roundcube) to review the email notification.
+10. OIM will start the certification task and notify the reviewer in this case user **MGRAFF**. You can login to the Email Web Client (Roundcube) to review the email notification.
 
     E.g. Use the following link and credentials
 
@@ -221,46 +192,47 @@ Follow the steps below to continue with the lab exercises.
 	Server      secureoracle.oracledemo.com
     ```
 
-    <a name="image-02"></a>![Image](images/img-cert-email.png)
-    
+    ![](./images/img-cert-email.png " ")
+
     Figure 2. Certification Email
 
-12. Proceed to Login to OIM Self Service as user **MGRAFF**. Go to **Self Service -> Certifications**. In the **Pending Certifications** page the new certification will be listed, proceed to click in the link name **2019 Q4 Review [Molly Graff]** to review and certify the users.
+11. Proceed to Login to OIM Self Service as user **MGRAFF**. Go to **`Self Service -> Certifications`**. In the **Pending Certifications** page the new certification will be listed, proceed to click in the link name **`2019 Q4 Review [Molly Graff]`** to review and certify the users.
 
-    <a name="image-03"></a>![Image](images/user-certifications.png)
-    
+    ![](./images/user-certifications.png " ")
+
     Figure 3. User Certification
 
-13. Once all the users are certified by default OIM will prompt the reviewer **MGRAFF** to enter her credentials to sign off the certification task.
+12. Once all the users are certified by default OIM will prompt the reviewer **MGRAFF** to enter her credentials to sign off the certification task.
 
-14. Proceed to sign out from OIM Self Service.
+13. Proceed to sign out from OIM Self Service.
 
-## **STEP 3**: About Custom Reviewers
-1. You can define your own custom access reviewer for user certifications by specifying certification rules for specific user accounts, roles, entitlements, or application instances, or a combination of these entities, with a particular reviewer. In addition, you can group the certification rules and assign a map name to the certification rule to specify a reviewer for that map name.
+## **Appendix**: About Custom Reviewers
+You can define your own custom access reviewer for user certifications by specifying certification rules for specific user accounts, roles, entitlements, or application instances, or a combination of these entities, with a particular reviewer. In addition, you can group the certification rules and assign a map name to the certification rule to specify a reviewer for that map name.
 
-2. These rules can be defined in the **CERT_CUSTOM_ACCESS_REVIEWERS** table in Oracle Identity Manager database.
+These rules can be defined in the **`CERT_CUSTOM_ACCESS_REVIEWERS`** table in Oracle Identity Manager database.
 
-3. The following conditions must be met for using the custom access reviewer for user certification feature:
-	* Reviewer table does not support any wildcards for any of the fields/columns.
-	* Reviewer table has mappings defined for each and every user to be included in certification.
-	* Application instance information is required for all account and entitlement mappings.
-	* Only one instance of default reviewer and alternate reviewer mapping is allowed per map name.
+The following conditions must be met for using the custom access reviewer for user certification feature:
+* Reviewer table does not support any wildcards for any of the fields/columns.
+* Reviewer table has mappings defined for each and every user to be included in certification.
+* Application instance information is required for all account and entitlement mappings.
+* Only one instance of default reviewer and alternate reviewer mapping is allowed per map name.
 
-4. In the SecureOracle environment, My IGA Application contains a custom UI to maintain the **CERT_CUSTOM_ACCESS_REVIEWERS** table, so administrators can easily define custom reviewers, this option is available under **Custom Reviewers** option in My IGA Application menu.
+In the SecureOracle environment, My IGA Application contains a custom UI to maintain the **`CERT_CUSTOM_ACCESS_REVIEWERS`** table, so administrators can easily define custom reviewers, this option is available under **Custom Reviewers** option in My IGA Application menu.
 
-5. Additional details can be found in the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A). 
+Additional details can be found in the official documentation under [Custom Reviewer for User Certifications](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/omusg/managing-identity-certification.html#GUID-941F44D2-1B30-4B0A-AF25-3BE0430C7F8A).
 
 You may now *proceed to the next lab*.
 
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
-- <a href="https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html" target="\_blank">Oracle Identity Management Website</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html" target="\_blank">Oracle Identity Governance Documentation</a>
-- <a href="https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html" target="\_blank">Oracle Access Management Documentation</a>
+- [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+- [Oracle Identity Governance Documentation](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html)
+- [Oracle Access Management Documentation](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html)
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
-- **Last Updated By/Date** - Ricardo Gutierrez, November 2020
+- **Contributors** - Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

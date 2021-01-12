@@ -63,6 +63,61 @@ By default all non-SSL ports are used to execute the different lab exercises, ho
 - **Lab: RESTful OIM and OAM APIs** -
     In this lab we will review several use cases associated with invoking REST APIs for OIM Self Service, User Profile Updates, Request, Approvals and OAM OAuth Service.
 
+## What is New in Version 8.0
+Version 8.0 of SecureOracle include the following features:
+* Fresh installation of Oracle IAM Suite 12c R2 PS4 (12.2.1.4.0)
+* Oracle Access Management includes the following services:
+	* Adaptive Authentication Service
+	* OAuth and OpenIDConnect Service
+	* Identity Federation
+	* Access Portal Service
+* By default the communication between OAM and WebGate is OAP over REST
+* [HTTPie](https://httpie.org/) open source command line HTTP client to interact with RESTful APIs, Web Services and HTTP servers.
+* Oracle Identity Governance includes the following 12c connectors:
+	* Box, Concur, DB Applications Table, Oracle/MySQL DB User Management, Flat File, Google Apps, GoToMeeting, IDCS, Microsoft AD User Management, Office365, EBS Employee Reconciliation, EBS User Management, OID/ODSEE/OUD/LDAP, Salesforce, SAP Success Factor, SAP User Management, SAP User Management Engine, ServiceNow, Unix, WebEx
+* [Cockpit](https://cockpit-project.org/) is an open source tool to manage servers using an easy to use web console. Cockpit comes pre-installed with SecureOracle and allows to start all components without having to use an SSH client.
+
+  ![](./images/img-cockpit.png " ")
+
+  Figure 1. Cockpit Web Console
+
+* Oracle Unified Directory include the following services:
+	* REST APIs for accessing identity information and managing directory data
+* Pre-configured connectors
+	* 12c IDCS connector for integration with IDCS provisioning and governance
+	* 12c ODSEE/OUD/LDAP connector for integration with OUD
+	* 12c DBAT connector for integration with My HR Application
+* Updated SecureOracle documentation including:
+	* Getting Started Guide
+	* Deploying SecureOracle in OCI
+	* Deploying SecureOracle in VMware-VirtualBox
+	* Employee Lifecycle Management
+	* RESTful OIM and OAM APIs
+	* OAM Hybrid Scenario
+	* Identity Certifications
+	* Android Emulator NoxPlayer Guide
+* Open source email server and client to support demo use cases
+	* Webmail client: [Roundcube 1.4.1](https://roundcube.net/ "Roundcube") with support for HTML content
+	* Email server: [Hedwig Mail Server](http://hwmail.sourceforge.net/ "Hedwig") with simple web console for maintaining email accounts
+* SecureOracle images are available for deployment on:
+	* OCI Compute
+	* VirtualBox or VMware
+* Updated Demonstration Assets to APEX 19.2
+	* My HR Application - developed entirely in APEX and running in the Oracle Database, help demonstrate HR employee life cycle management and integration with OIG. Full HTML5 interface supporting modern browsers.
+	* My IGA Application - also developed in APEX aimed to showcase governance capabilities using OIG REST APIs and certifications like custom reviewers. Full HTML5 interface supporting modern browsers.
+
+    ![](./images/img-myhr-app-menu.png " ")
+
+    Figure 2. My HR Application
+
+    ![](./images/img-iga-app-dash.png " ")
+
+    Figure 3. My IGA Application
+
+* Support for hybrid use cases on integration with IDCS, including:
+	* OIG 12c connector for provisioning with IDCS
+	* OAM Webgate configured in cloud-mode for integration with IDCS
+
 ## Learn More About Identity and Access Management
 Use these links to get more information about Oracle Identity and Access Management:
 - [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)

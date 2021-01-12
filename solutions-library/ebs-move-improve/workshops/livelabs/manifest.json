@@ -22,6 +22,10 @@
             "filename": "../../clone/clone.md"
         },
         {
+            "title": "Optional (Advanced):  Migrating an Oracle E-Business Suite environment to Oracle Cloud Infrastructure",
+            "filename": "../../migrate/migrate.md"
+        },
+        {
             "title": "Teardown Your Oracle E-Business Suite Environments",
             "description": "Teardown Your Oracle E-Business Suite Environments",
             "filename": "../../teardownLL/teardownLL.md"

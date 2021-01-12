@@ -28,7 +28,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     the following curl and unzip command. The workshop assumes this is done from your root directory.
 
     ```
-    <copy>cd ~ ; curl -sL https://tinyurl.com/yyvf9bpk --output master.zip ; unzip master.zip ; rm master.zip</copy>
+    <copy>cd ~ ; curl -sL https://tinyurl.com/y7xuq9c4 --output master.zip ; unzip master.zip ; rm master.zip</copy>
     ```
 
   You should now see `msdataworkshop-master` in your root directory

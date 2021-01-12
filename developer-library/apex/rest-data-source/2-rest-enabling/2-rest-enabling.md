@@ -104,7 +104,7 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
         p_pattern     => 'hol/:empno',
         p_method      => 'DELETE',
         p_source_type => ords.source_type_plsql,
-        p_source      => 'begin delete emp where empno=:empno;:status_code:=200;htp.p('{}');end;' );
+        p_source      => 'begin delete emp where empno=:empno;:status_code:=200;htp.p('{"status":"success"}');end;' );
     end;
     /
 
@@ -154,7 +154,7 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
         p_pattern     => 'hol/:deptno',
         p_method      => 'DELETE',
         p_source_type => ords.source_type_plsql,
-        p_source      => 'begin delete dept where deptno=:deptno;:status_code:=200;htp.p('{}');end;' );
+        p_source      => 'begin delete dept where deptno=:deptno;:status_code:=200;htp.p('{"status":"success"}');end;' );
     end;
     /
 

@@ -17,7 +17,7 @@ As a database user or DBA,
 * An Oracle Cloud Infrastructure account with service limits to deploy at least one 1/4 rack of Exadata Infrastructure in any one region or Availability Domain.
 * You also need privileges to create Exadata Infrastructure
 
-## **Step 1:** Create an Exadata Cloud Service Infrastructure
+## **STEP 1:** Create an Exadata Cloud Service Infrastructure
 
 1. Login to your OCI account as a database user.
 

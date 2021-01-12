@@ -25,7 +25,7 @@ As a database user, a DBA, or an application developer,
 * A pre-provisioned ExaCS database instance. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how to provision an EXACS database.
 * VNC Viewer or other suitable VNC client on your local laptop
 
-## **Step 1:** Provision an OCI Marketplace Developer Client Image Instance
+## **STEP 1:** Provision an OCI Marketplace Developer Client Image Instance
 
 We start by deploying a pre-configured client machine instance from the OCI marketplace
 
@@ -73,7 +73,7 @@ We start by deploying a pre-configured client machine instance from the OCI mark
 
     ![](./images/computeready.png " ")
 
-## **Step 2:** Connect to Dev Client Desktop Over VNC
+## **STEP 2:** Connect to Dev Client Desktop Over VNC
 
 1. First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -124,7 +124,7 @@ We start by deploying a pre-configured client machine instance from the OCI mark
 13. You should now see a linux desktop in your VNC window.
 
 
-## **Step 3:** Connect to your Database Using SQL Developer and SQL Plus
+## **STEP 3:** Connect to your Database Using SQL Developer and SQL Plus
 
 1. In your VNC session, invoke SQL Developer from the top left Applications menu as shown below
 

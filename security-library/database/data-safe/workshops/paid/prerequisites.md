@@ -7,12 +7,16 @@ To complete the Oracle Data Safe labs in your own tenancy in Oracle Cloud Infras
 
 Estimated Lab Time: 5 minutes
 
+
 ### Objectives
+
 
 In this lab, you'll:
 
 - Request access to an Oracle Data Safe service in your tenancy
 - Sign in to a region of your tenancy by using your Oracle Cloud account credentials
+
+
 
 ### Prerequisites
 
@@ -23,15 +27,20 @@ Your tenancy administrator needs to set up an Oracle Data Safe environment for y
 - An Oracle Data Safe service that you can access in a region of your tenancy.
 - Privileges to use all of the Oracle Data Safe features, including User Assessment, Security Assessment, Activity Auditing, Data Discovery, and Data Masking.
 
-## **STEP 1:** Request access to Oracle Data Safe
+
+
+## **STEP 1** Request access to Oracle Data Safe
 
 1. Send your email address to your tenancy administrator and request a user account in your tenancy and access to Oracle Data Safe.
 
 2. Refer your tenancy administrator to STEP 3 below for instructions on how to set up an Oracle Data Safe environment for you.
 
-## **STEP 2:** Sign in to the Oracle Cloud Infrastructure Console by using your Oracle Cloud account credentials
+
+
+## **STEP 2** Sign in to the Oracle Cloud Infrastructure Console by using your Oracle Cloud account credentials
 
 After the Oracle Data Safe environment is set up by your tenancy administrator, you should receive an email from Oracle with instructions on how to sign in to your tenancy.
+
 
 1. Access the Oracle email that was sent to you with the sign-in information for your Oracle Cloud user account. The email provides two links to the Oracle Cloud Infrastructure Console (you can use either link), your tenancy name, and your user name.
 
@@ -39,21 +48,32 @@ After the Oracle Data Safe environment is set up by your tenancy administrator, 
 
 3. When you're ready to sign in, click the **Sign in to your new user account** link. The **Oracle Cloud Infrastructure Sign In** page is displayed. Your tenancy name is already filled in for you.
 
+
 4. Under **Oracle Cloud Infrastructure**, in the **USER NAME** field, enter your Oracle Cloud user name.
 
+
 5. In the **PASSWORD** field, enter the temporary password provided to you by your tenancy administrator.
+
 
 6. Click **Sign In**.
 
 7. If prompted by your browser to save the password, click **Never**.
 
+
+
 8. If this is the first time that you are signing in to the Oracle Cloud Infrastructure Console, you are prompted to change your password. Enter your temporary password and your new password, and then click **Save New Password**. After you sign in, the message **Email Activation Complete** is displayed.
+
+
+
+
 
 You are ready to begin the labs. Start with the [**Introduction**](?lab=introduction).
 
+
 If you have a question during this workshop, you can use the **[Autonomous Data Warehouse Forum](https://cloudcustomerconnect.oracle.com/resources/32a53f8587/summary)** on **Cloud Customer Connect** to post questions, connect with experts, and share your thoughts and ideas about Oracle Data Safe. Are you completely new to the **Cloud Customer Connect** forums? Visit our **[Getting Started forum page](https://cloudcustomerconnect.oracle.com/pages/1f00b02b84)** to learn how to best leverage community resources.
 
-## **STEP 3:** Set Up an Oracle Data Safe Environment
+
+## **STEP 3** Set Up an Oracle Data Safe Environment
 
 This step is intended for your tenancy administrator. The steps show the administrator how to set up an Oracle Data Safe environment for a regular Oracle Cloud user.
 
@@ -83,6 +103,9 @@ You can create a native or federated user account. Both are supported in Oracle 
 
 11. Click **Close**.
 
+
+
+
 ### **Create a user group and add the user account to the group**
 
 1. From the navigation menu, select **Identity**, and then **Groups**. The **Groups** page in IAM is displayed.
@@ -101,6 +124,8 @@ You can create a native or federated user account. Both are supported in Oracle 
 
 8. From the drop-down list, select the regular Oracle Cloud user account that you created (for example, `dsu01`), and then click **Add**. The user account is listed as a group member.
 
+
+
 ### **Create a compartment for the user**
 
 1. From the navigation menu, select **Identity**, and then **Compartments**. The **Compartments** page in IAM is displayed.
@@ -113,13 +138,14 @@ You can create a native or federated user account. Both are supported in Oracle 
 
 5. Click **Create Compartment**.
 
+
 ### **Create a policy for the user group**
 
 Create a policy in IAM that grants permissions to the group to which the user belongs. The policy needs to allow the user to create an Autonomous Database in the compartment and use it with Oracle Data Safe.
 
 1. From the navigation menu, select **Identity**, and then **Policies**. The **Policies** page in IAM is displayed.
 
-2. Under **COMPARTMENT**, select the user's compartment.
+2. Under **COMPARTMENT**, leave the **root** compartment selected.
 
 3. Click **Create Policy**. The **Create Policy** page is displayed.
 
@@ -141,17 +167,21 @@ Create a policy in IAM that grants permissions to the group to which the user be
 
     e) Verify that the policy statement generated reads: **Allow dsg01 to manage all-resources in compartment dsc01**. This statement allows the user to create and manage an Autonomous Database.
 
-8. For **Policy Versioning**, leave **KEEP POLICY CURRENT** selected.
 
-9. Click **Create**.
+8. Click **Create**.
 
-10. Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
+9. Click **Edit Policy Statements** to add another statement. The **Edit Policy Statements** page is displayed.
 
-11. Click **+ Another Statement**.
+10. Click **+ Another Statement**.
 
-12. In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
+11. In the **STATEMENT 2** field, enter **Allow group dsg01 to use autonomous-database in compartment dsc01**. This statement is required so that the user can successfully register and access the database in Oracle Data Safe. Without it, the user can register the database with Oracle Data Safe, but not view it in Oracle Data Safe.
 
-13. Click **Save Changes**.
+12. Click **Save Changes**.
+
+
+
+
+
 
 ### **Enable Oracle Data Safe in a region of your tenancy**
 
@@ -165,6 +195,7 @@ You can enable Oracle Data Safe in multiple regions of your tenancy, if needed. 
 
 4. Before continuing, verify that the following message is displayed in the upper-right corner: **Data Safe is enabled. Please click Service Console to use the features**.
 
+
 ### **Grant all Oracle Data Safe privileges to the user group**
 
 1. From the **Overview** page for Oracle Data Safe, click **Service Console** to access the Oracle Data Safe Console. As a tenancy administrator, you have all privileges in Oracle Data Safe.
@@ -176,6 +207,8 @@ You can enable Oracle Data Safe in multiple regions of your tenancy, if needed. 
 4. For the user group that you created (for example, `dsg01`), select **Manage** from the **All Features** drop-down list.
 
 5. Click **Save**. The regular user can now access Oracle Data Safe.
+  here
+
 
 ### **Send information to the user**
 
@@ -185,14 +218,17 @@ When you are done setting up the environment, email the user with the following 
 
 - The user's compartment name.
 
+
 ## Learn More
 
 - [ Oracle Cloud Infrastructure documentation - Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm)
 
+
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, November 4, 2020
+* **Last Updated By/Date** - Jody Glover, December 14, 2020
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [Data Safe Community Support Forum]( https://community.oracle.com/tech/developers/categories/data-safe). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

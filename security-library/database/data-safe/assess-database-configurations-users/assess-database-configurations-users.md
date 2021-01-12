@@ -70,7 +70,7 @@ You can use Security Assessment to evaluate the current security state of your t
 
     c) In the **At** field, click the **Select Time** button. Select **11:00 PM**, and then click **OK**.
 
-    d) Click **Schedule**. A confirmation messages states that the scheduled periodic job is successful.
+    d) Click **Update Schedule**. A confirmation messages states that the scheduled periodic job is successful.
 
     ![Schedule every Sunday](images/schedule-every-sunday.png)
 
@@ -110,6 +110,7 @@ You can use Security Assessment to evaluate the current security state of your t
 
 4. Expand the subcategories and review the findings.
 
+    - You can find more information on the identified risk and how to mitigate it in the **Details** and **Remarks** sections of each risk.
     - On the right, indicators show whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These indications make it easy for you to identify the recommended security controls.
 
     ![Summary table in the Comprehensive Assessment report](images/findings-user-accounts.png)
@@ -180,7 +181,22 @@ You can use the User Assessment feature to identify user settings and user risks
   ![User Assessment table](images/user-table.png)
 
 
-5. To view audit records for the `admin` user, do the following:
+
+5. To view details for a user, click any user's name. The **User Details** dialog box shows you the following information:
+
+    - The date and time the user was created
+    - The user type (for example, Privileged)
+    - The user status (for example, OPEN)
+    - The privileged roles for the user (for example, DBA, DV Admin, Audit Admin)
+    - The risk level for the user (for example, Critical)
+    - The last date and time the user logged in to the target database
+    - The number of audit records collected for the user
+    - The roles and privileges granted to the user
+
+    You can position your cursor over the question marks next to **Privileged Roles** and **Risk** to view more details about the values for these fields. The following screenshot shows you details for the `DBA_HARVEY` user.
+    ![Admin User Details](images/DBA_HARVEY-user-details.png)
+
+6. To view audit records for the `admin` user, do the following:
 
     - Identify the row for the `ADMIN` user.
 
@@ -191,26 +207,26 @@ You can use the User Assessment feature to identify user settings and user risks
   ![Audit Records column with View Activity circled](images/view-activity-admin-user.png)
 
 
-6. Examine the **All Activity** report for the `ADMIN` user. This report is automatically filtered to show you the audit records for the past week, for the `ADMIN` user, and for your target database.
+7. Examine the **All Activity** report for the `ADMIN` user. This report is automatically filtered to show you the audit records for the past week, for the `ADMIN` user, and for your target database.
 
   ![All Activity report](images/all-activity-report-admin-user.png)
 
-7. At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
+8. At the top of the report, view the totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **DDLs**, **DMLs**, and **Total Events**.
 
-8. View the **Event** column in the table. It shows you the types of activities performed, for example, LOGON, AUDIT, CREATE AUDIT POLICY, and so on.
+9. View the **Event** column in the table. It shows you the types of activities performed, for example, LOGON, AUDIT, CREATE AUDIT POLICY, and so on.
 
-9. At the bottom of the page, click the page numbers to view more audit records.
-
-
-10. At the top of the report, click **Back to User Assessment report**.
+10. At the bottom of the page, click the page numbers to view more audit records.
 
 
-11. Identify an expired user, and then click **View Activity** for that user to view the user's audit records. The following example shows `VOLDEMORT` as expired.
+11. At the top of the report, click **Back to User Assessment report**.
+
+
+12. Identify an expired user, and then click **View Activity** for that user to view the user's audit records. The following example shows `VOLDEMORT` as expired.
 
   ![User Assessment table with VOLDEMORT expired status](images/identify-expired-user.png)
 
 
-12. If the user has no activity on the target database, there are no audit records displayed in the **All Activity** report. In this case, you might consider removing the user from the target database.
+13. If the user has no activity on the target database, there are no audit records displayed in the **All Activity** report. In this case, you might consider removing the user from the target database.
 
 
 
@@ -224,7 +240,7 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, November 3, 2020
+* **Last Updated By/Date** - Jody Glover, December 14, 2020
 
 
 ## Need Help?

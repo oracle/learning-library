@@ -33,7 +33,7 @@ There are a number of methods to set up a python environment to run PyTorch. You
 4. Exit the terminal and open a new terminal after installation, which ensures that conda is activated. Optional: create a specific environment for PyTorch by running the command `conda create --name pytorch python=3.6` and then enabling the environment by running `conda activate pytorch`
 5. [Install PyTorch](https://pytorch.org/) through conda `conda install pytorch torchvision cudatoolkit=10.2 -c pytorch`
 
-[Click here to download the full code example](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UudtANEChREpKXDjzRvqRzNPhPJpTEMfq5BHf6Ym7H12zSE8wGcTtwabHyxpcpow/n/c4u03/b/ai-ml-library/o/jblau-image-classification-pytorch.zip)
+[Click here to download the full code example](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6Z0fLjfKUUIytz0uXeDpi0Uotu68sWLsqJoYxDwKVfzjBN23ifPvyFCJE6R9Cp09/n/c4u03/b/ai-ml-library/o/jblau-image-classification-pytorch.zip)
 
 ## **STEP 2**: CIFAR10 and DataLoader
 

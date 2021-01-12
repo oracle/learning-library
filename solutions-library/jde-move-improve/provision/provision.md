@@ -32,14 +32,14 @@ To deploy JDE Trial Edition, in this lab, you will:
 Create an instance in OCI that is based off the JDE Trial Edition image
 
 1.	If not already done, sign in to OCI tenancy.
-On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation*** Menu Button in the upper-left corner and select ***Marketplace***.
+On the Oracle Cloud Infrastructure Console Home page, click the ***Navigation*** Menu Button in the upper-left corner and hover over ***Marketplace*** and select ***Applications***.
     ![](./images/marketplace.png " ")
 
 2.  Locate the Oracle JD Edwards image tile for ***JD Edwards EnterpriseOne Trial Edition*** (you might have to search for it; there could be several images out there) and click the tile
     ![](./images/jde-trial-edition-image.png " ")
 
-3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.4.3 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right
-    ![](./images/launch-button.png " ")
+3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version ***(9.2.5.0 – default)*** to deploy and the compartment (you created a compartment in Lab 2, Exercise 1, Step d) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click the ***Launch Instance*** button on the right 
+    ![](./images/launch-instance.png " ")
 
 4.  Next, define the instance with the following options: 
 

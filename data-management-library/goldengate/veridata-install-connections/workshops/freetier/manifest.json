@@ -1,0 +1,27 @@
+{
+  "workshoptitle": "Getting Started with Oracle GoldenGate Veridata",
+    "tutorials": [
+
+      {
+            "title": "Introduction to Oracle GoldenGate Veridata",
+            "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
+            "filename": "./intro.md"
+        }
+        ,
+        {
+              "title": "Lab 1: Install and Configure Oracle GoldenGate Veridata",
+              "description": "This lab walks you through the required and optional tasks to install Oracle GoldenGate Veridata.",
+              "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
+        }
+        ,
+
+        {
+              "title": "Lab 2: Create Connections to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP)",
+              "description": "This lab describes how to connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.",
+              "filename": "./../../ggv-adw-atp/ggv-adw-atp.md"
+          }
+
+
+
+       ]
+  }

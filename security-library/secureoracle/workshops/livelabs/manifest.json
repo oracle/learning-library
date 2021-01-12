@@ -23,21 +23,21 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
     },
     {
-      "title": "Lab 4: Getting Started with SecureOracle 8.0",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-      "filename": "../../gstarted/gstarted.md"
+      "title": "Lab 4: Initialize Environment",
+      "description": "Labs that follow the initialize your workshop environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
     },
-  {
+    {
       "title": "Lab 5: Employee Lifecycle Management",
       "filename": "../../employeelm/employeelm.md"
-  },
-  {
+    },
+    {
       "title": "Lab 6: Identity Certification",
       "filename": "../../idcert/idcert.md"
-  },
-  {
-      "title": "Lab 7: RESTful OIM and OAM APIs",
+    },
+    {
+      "title": "Lab 7: Using REST APIs for OIM and OAM",
       "filename": "../../restapi/restapi.md"
-  }
+    }
   ]
 }

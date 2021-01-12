@@ -8,7 +8,7 @@ Estimated Time: 5 minutes
 ### Background Information
 The Big Mac Index includes data for countries over the last 20 years. Therefore, to better visualize trends in a country's exchange rate over time it would be highly beneficial to create a chart that is country specific.
 
-Initially you will create a chart that displays the Dollar Exchange Rate for Australia (ISO = 'AUS'). Then you will add additional data series.
+Initially you will create a chart that displays the Dollar Exchange Rate for Australia (COUNTRY_ISO = 'AUS'). Then you will add additional data series.
 
 ## **STEP 1** – Create a New Page
 
@@ -48,7 +48,7 @@ Initially you will create a chart that displays the Dollar Exchange Rate for Aus
         <copy>select entry_date
         , dollar_exchange_rate
         from big_mac_index l
-        where iso = 'AUS'
+        where country_iso = 'AUS'
         order by entry_date</copy>
         ```
     Click **Next**.
@@ -98,6 +98,11 @@ Time to update the existing chart line (series), and add a few more data series.
 
     ![](images/set-series1.png " ")
 
+    - Select **Axes > y**
+    - **Value > Decimal Places** enter **1**, this will allow the labels on the chart to have decimal values that are more readable.
+
+    ![](images/set-y-axis.png " ")
+
 2. The next two series are very similar to the first, so it is easiest to just duplicate the existing series.
 
     In the Rendering tree (left pane), under **Country Chart**, right-click **Dollar Exchange Rate**, click **Duplicate**.
@@ -119,11 +124,11 @@ Time to update the existing chart line (series), and add a few more data series.
         <copy>select entry_date
         , (local_price / (select local_price from big_mac_index u
                           where u.entry_date = l.entry_date
-                          and u.iso = 'USA'
+                          and u.country_iso = 'USA'
                          )
           ) relative_exchange_rate
         from BIG_MAC_INDEX l
-        where iso = 'AUS'
+        where country_iso = 'AUS'
         order by entry_date</copy>
         ```
     - **Column Mapping > Value:** select **RELATIVE\_EXCHANGE_RATE**  
@@ -142,13 +147,13 @@ Time to update the existing chart line (series), and add a few more data series.
         <copy>select entry_date
         , ((  local_price / (select local_price from big_mac_index u
                              where u.entry_date = l.entry_date
-                             and u.iso = 'USA'
+                             and u.country_iso = 'USA'
                             )
             - dollar_exchange_rate
            ) * 100 / dollar_exchange_rate
           ) percentage_difference
         from BIG_MAC_INDEX l
-        where iso = 'AUS'
+        where country_iso = 'AUS'
         order by entry_date</copy>
         ```
 
@@ -170,7 +175,7 @@ This completes Lab 5. In this lab you learnt how to create and modify a chart ad
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

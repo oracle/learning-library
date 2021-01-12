@@ -12,8 +12,7 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Objectives
 -   Create Compute + ADB + Networking Resource Manager Stack
--   Connect to compute instance, SQL Developer
--   Create auth token
+-   Connect to Compute instance
 
 ### Prerequisites
 This lab assumes you have:
@@ -37,7 +36,7 @@ If you already have a VCN setup, please visit the appendix to see how to optiona
 
   ![](./images/em-create-stack.png " ")
 
-5.  Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
+5.  Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file that you downloaded. Click **Select**.
 
   ![](./images/em-create-stack-1.png " ")
 
@@ -140,61 +139,6 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
     exit
     ````
 
-## **STEP 4:** Create Oracle Wallet
-There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
-
-1.  With the autononous\_database\_ocid that is listed in your apply results, create the Oracle Wallet. You will be setting the wallet password to a generic value:  *WElcome123##*.  
-   
-      ````
-      <copy>
-      oci db autonomous-database generate-wallet --password WElcome123## --file converged-wallet.zip --autonomous-database-id </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
-      ````
-2.  The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
-3.  Click the list command below to verify the *converged-wallet.zip* was created
-   
-      ````
-      ls
-      ````
-4.  Transfer this wallet file to your application compute instance.  Replace the instance below with your instance 
-
-    ````
-    sftp -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address> <<< $'mput ../converged-wallet*' 
-    ````
-
-
-## **STEP 5:** Create Auth Token
-There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
-
-1.  Click on the person icon in the upper right corner.
-2.  Select **User Settings**
-3.  Under the **User Information** tab, click the **Copy** button to copy your User OCID.
-4.  Create your auth token using the command below substituting your actual *user id* for the userid below.
-   
-      ````
-      <copy>
-       oci iam auth-token create --description ConvergedDB --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
-      ````
-5.  Copy the token somewhere safe, you will need it for the next step.
-
-
-## **STEP 6:** Connect to SQL Developer and Create Credentials
-1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous JSON Database**
-2.  Click on the **Display Name**, *cvgadbnn*
-3.  Click on the **Tools** tab, select **SQL Developer Web**, a new browswer will open up
-4.  Login with the *admin* user and the password that you wrote down in the previous lab.  (*Note*: the admin password can also be changed in the **More Actions** drop down)
-5.  In the worksheet, enter the following command to create your credentials.  Replace the password below with your token. Make sure you do *not* copy the quotes.
-   
-    ````
-    begin
-      DBMS_CLOUD.create_credential(
-        credential_name => 'DEF_CRED_NAME',
-        username => 'admin',
-        password => '*****************************'
-      );
-    end;
-    /
-    ````
-
 You may now [proceed to the next lab](#next).
 
 ## Appendix:  Teraform and Resource Manager
@@ -239,79 +183,6 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
   ![](./images/em-stack-plan-results-3.png " ")
 
   ![](./images/em-stack-plan-results-4.png " ")
-
-Return to the Terraform Apply step to continue.
-
-## **STEP 1B**: Create Stack:  Compute only
-If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
-- Ingress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
-
-If you do not know how to add egress rules, skip to the Appendix to add rules to your VCN.  
-
-***Note:*** *We recommend using our stack to create to reduce the potential for error.*
-
-1. Click on the link below to download the Resource Manager zip file you need to build your environment.  
-     - [converged-db-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uZPsGTFvwVSVjMn9JtlhRw5tk8zIiYfIz8iTql-I6eI/n/omcinternal/b/workshop-labs-files/o/converged-db-mkplc-freetier.zip)
-
-2. Save in your downloads folder.
-3. Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  Click the **Create Stack** button.
-
-  ![](./images/em-oci-landing.png " ")
-
-  ![](./images/em-nav-to-orm.png " ")
-
-  ![](./images/em-create-stack.png " ")
-
-4. Select **My Configuration**, choose the **.ZIP FILE** radio button, click the **Browse** link and select the zip file (converged-db-mkplc-freetier.zip) that you downloaded. Click **Select**.
-
-  ![](./images/em-create-stack-1.png " ")
-
-  Enter the following information:
-    - **Name**:  Enter a name  or keep the prefilled default (*DO NOT ENTER ANY SPECIAL CHARACTERS HERE*, including periods, underscores, exclamation etc, it will mess up the configuration and you will get an error during the apply process)
-    - **Description**:  Same as above
-    - **Create in compartment**:  Select the correct compartment if not already selected
-
-  ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
-
-5. Click **Next**.
-
-  ![](./images/em-create-stack-2b.png " ")
-
-  Enter or select the following:
-    - **Instance Count:** Keep the default to **1** to create only one instance. You may also choose to a higher number if you need more than one instance created.
-    - **Select Availability Domain:** Select an availability domain from the dropdown list.
-    - **SSH Public Key**:  Paste the public key you created in the earlier lab
-
-  ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
-
-    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
-    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
-    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
-    - **Use Existing VCN?:** Check to select.
-
-  ![](./images/em-create-stack-2c.png " ")
-
-    - **Select Existing VCN?:** Select existing VCN with regional public subnet and required security list.
-
-  ![](./images/em-create-stack-2d.png " ")
-
-    - **Select Public Subnet:** Select existing public subnet from above VCN.
-
-   ***Note:*** *For an existing VCN Option to be used successful, review the details at the bottom of this section*
-
-6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
-    - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
-
-  ![](./images/standardshape-2.png " ")
-
-7. Review and click **Create**.
-
-  ![](./images/em-create-stack-3b.png " ")
-
-8. Your stack has now been created!  
-
-  ![](./images/em-stack-details-b.png " ")
 
 Return to the Terraform Apply step to continue.
 

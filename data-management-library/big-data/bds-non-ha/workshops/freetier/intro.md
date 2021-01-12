@@ -2,6 +2,8 @@
 
 The labs in this workshop walk you through all the steps to get started using **Oracle Big Data Service (BDS)**.
 
+Estimated Workshop Time: 6 hours
+
 ## What is Oracle Big Data Service?
 Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
 
@@ -32,6 +34,8 @@ Watch our short video that explains key features in Oracle Big Data Service:
 - **Lab 4:** Access a BDS Utility Node Using a Public IP Address
 - **Lab 5:** Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
 - **Lab 6:** Create a Hadoop Administrator User
+- **Lab 7:** Upload Data to Hadoop Distributed File System and Object Storage
+- **Lab 8:** Clean up Resources Used in this Workshop (Optional)
 
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Prerequisites** lab in the **Contents** menu.

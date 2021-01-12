@@ -24,7 +24,6 @@ This lab assumes you have:
     - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
-    - Lab: Oracle Database Vault
 
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
@@ -38,19 +37,19 @@ This lab assumes you have:
 
 Different applications have different purposes:
 - **User App**
-      - Application where users sets their preferences for consent to marketing, processing data or asks to be forgotten.
+      - Application where users sets their preferences for consent to marketing, processing data or asks to be forgotten
       - Runs with User Label: `NCNST::DP` and uses Database user: `APPPREFERENCE`
 
 - **Email Marketing**
-      - Application that can only access users that have consented to process their data and specifically for email marketing.
+      - Application that can only access users that have consented to process their data and specifically for email marketing
       - Runs with User Label: `CONS::EMAIL` and uses Database user: `APPMKT`
 
 - **Business Intelligence**
-      - Application that can access all users who have consented to process their data.
+      - Application that can access all users who have consented to process their data
       - Runs with User Label: `CONS::DP` and uses Database user: `APPBI`
 
 - **Anonymizer**
-      - Batch process to anonmyize user records and set the data label to `ANON::`.
+      - Batch process to anonmyize user records and set the data label to `ANON::`
       - Runs with User Label: `FORGET::` and uses Database user: `APPFORGET`
 
 ### **How to walk through the lab**
@@ -60,7 +59,7 @@ Different applications have different purposes:
 
 ### **The Labs**
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
       ````
       <copy>sudo su - oracle</copy>
@@ -69,37 +68,38 @@ Different applications have different purposes:
 2. Go to the scripts directory
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Simple_CRM_App</copy>
+      <copy>cd $DBSEC_LABS/label-security</copy>
       ````
 
 3. First, you must setup the Label Security environment
 
       ````
-      <copy>./01_setup_ols_environment.sh</copy>
+      <copy>./ols_setup_env.sh</copy>
       ````
 
    ![](./images/ols-001.png " ")
 
       **Note**:
       - This script creates `C##OSCAR_OLS` user, creates a table, loads data, creates users that will be used to showcase difference scenarios and it also configures, and enables OLS
-      - This sql script invoke `load_crm_customer_data.sql` script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts 389 rows
-      - For each step, you can review the output of the script that you executed (example: `more 01_setup_ols_environment.out`)
+      - This sql script invoke `load_crm_customer_data.sql` script to create the table `CRM_CUSTOMER` in `APPCRM` schema and inserts **389 rows**
+      - For each step, you can review the output of the script that you executed (example "`more ols_setup_env.out`")
 
-4. Next, you create the Label Security policy.
-   A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level
+4. Next, you create the Label Security policy. A policy consists of  levels, groups and/or compartments. The only mandatory component of a policy is at least one level
 
       ````
-      <copy>./02_create_ols_policy.sh</copy>
+      <copy>./ols_create_policy.sh</copy>
       ````
 
    ![](./images/ols-002.png " ")
 
-      **Note**: This script will create Policy (Levels, Groups, and Labels), set Levels and Groups for Users, and apply the Policy to the `APPCRM.CRM_CUSTOMER` table
+      **Note**:
+      - This script will create Policy (Levels, Groups, and Labels), set Levels and Groups for Users, and apply the Policy to the `APPCRM.CRM_CUSTOMER` table
+      - For each step, you can review the output of the script that you executed (example "`more ols_create_policy.out`")
 
  5. Then, we must label the data... We use the policy we created and apply one level and optionally, one or more compartments and, optionally, one or more groups
 
       ````
-      <copy>./03_label_data.sh</copy>
+      <copy>./ols_label_data.sh</copy>
       ````
 
    ![](./images/ols-003.png " ")
@@ -107,11 +107,12 @@ Different applications have different purposes:
       **Note**:   
       - This script update data labels to create some diversity of labels that will be used in the scenarios
       - In real world scenarios would be advisable to create a labeling function that would assign labels based on other existing table data (other columns)
+      - For each step, you can review the output of the script that you executed (example "`more ols_label_data.out`")
 
 6. Then we will see the label security in action
 
       ````
-      <copy>./04_label_sec_in_action.sh</copy>
+      <copy>./ols_label_sec_in_action.sh</copy>
       ````
 
    ![](./images/ols-004.png " ")
@@ -120,11 +121,12 @@ Different applications have different purposes:
       - This script connects as different apps would be connecting
       - Each App would only see records that they would be able to process
       - E.g. AppMKT (app that is used for emailing customers) would only be able to see records labeled as `CNST::EMAIL`; `AppBI` would be able to see records labeled as `ANON`, and `CNST::ANALYTICS` (rows labeled with level `CNST`, and part of Group Analytics – would work for `CNST::ANALYTICS,EMAIL` as well)
+      - For each step, you can review the output of the script that you executed (example "`more ols_label_sec_in_action.out`")
 
-7. Now, we change users status to be forgotten
+7. Now, we change status of the **UserID(100)** to be forgotten
 
       ````
-      <copy>./05_to_be_forgotten.sh</copy>
+      <copy>./ols_to_be_forgotten.sh</copy>
       ````
 
    ![](./images/ols-005.png " ")
@@ -133,51 +135,47 @@ Different applications have different purposes:
       - This script simulates an app that would process records marked to be forgotten
       - It creates a stored procedure to show records marked to be Forgotten (labeled `FRGT::`)
       - It also creates a procedure under an AppPreference app schema that would serve the purpose of forgetting a certain customer
-      - AppPreference can access all data and `forget_me(p_id)` procedure will label a certain customerid row `FRGT::` “moving” a record from Consent to Forgotten
+      - AppPreference can access all data and `forget_me(p_id)` procedure will label a certain customerid row `FRGT::` “moving” a record from Consent to Forgotten... in our example, we will change the status of the UserID(100): `forget_me(100)`
+      - After, we check that the status of this has been correctly changed to be forgotten
+      - For each step, you can review the output of the script that you executed (example "`more ols_to_be_forgotten.out`")
 
 8. Finally, we can clean up the environment (drops the OLS policy and users)
 
       ````
-      <copy>./06_clean_env.sh</copy>
+      <copy>./ols_clean_env.sh</copy>
       ````
 
    ![](./images/ols-006.png " ")
 
 ## **STEP 2**: Protect Glassfish Application
 
-1. Go to the scripts directory
+1. First, setup the Glassfish App environment ... and makes sure you don't already have the OLS changes deployed to the application
 
       ````
-      <copy>cd $DBSEC_HOME/workshops/Database_Security_Labs/Label_Security/Protect_Glassfish_App</copy>
-      ````
-
-2. First, starts the infrastructure and makes sure you don't already have the OLS changes deployed to the application
-
-      ````
-      <copy>./00_start_infrastructure.sh</copy>
+      <copy>./ols_setup_glassfish_env.sh</copy>
       ````
 
    ![](./images/ols-007.png " ")
 
-3. Press [**Enter**] to close
-
-4. Next, setup the OLS environment
+2. Next, setup the OLS policy for Glassfish
 
       ````
-      <copy>./01_setup_ols_environment.sh</copy>
+      <copy>./ols_setup_glassfish_policy.sh</copy>
       ````
 
    ![](./images/ols-008.png " ")
 
       **Note**:   
-      - This script creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (`PUBLIC`, `CONFIDENTIAL`, `HIGHLY CONFIDENTIAL`), compartments (`HR`, `FIN`, `IP`, `IT`) and the OLS groups (`GLOBAL`, `USA`, `CANADA`, `EU`, `GERMAN`, `LATAM`)
-      - This script also generates the data labels that will be used
+      - This script enable OLS, so it will reboot the DB 
+      - Then, it creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (`PUBLIC`, `CONFIDENTIAL`, `HIGHLY CONFIDENTIAL`), compartments (`HR`, `FIN`, `IP`, `IT`) and the OLS groups (`GLOBAL`, `USA`, `CANADA`, `LATAM`, `EU`, `GERMAN`)
+      - It also generates the data labels that will be used
       - This allows us to assign the numbers to our `label_tag` we want to have
+      - For each step, you can review the output of the script that you executed (example "`more ols_setup_glassfish_policy.out`")
 
-5. Create `EMPLOYEESEARCH_APP`
+3. Create the **EMPLOYEESEARCH app** env
 
       ````
-      <copy>./02_configure_employeesearch_app.sh</copy>
+      <copy>./ols_config_employeesearch_app.sh</copy>
       ````
 
    ![](./images/ols-009.png " ")
@@ -186,46 +184,48 @@ Different applications have different purposes:
       - This script will create a custom table for the Application User Labels, `EMPLOYEESEARCH_PROD.DEMO_HR_USER_LABELS`, and populate it with all of the rows from `EMPLOYEESEARCH_PROD.DEMO_HR_USERS`
       - The script will also create a few additional users we will use in this exercise, such as `CAN_CANDY`, `EU_EVAN`, and then grant the appropriate OLS User Labels to all of the Application Users
 
-6. Open a web browser and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
+4. Open a web browser and launch the Glassfish app by navigating to this URL: *`http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`*
 
-7. Login to the application as `can_candy` / `Oracle123`
+5. Login to the application as *`can_candy`* with the password "*`Oracle123`*"
 
-8. Select "**Search Employees**" and click [**Search**]. See the result before enabling OLS policy
+    - Select "**Search Employees**" and click [**Search**]
+    - See the result before enabling OLS policy
 
    ![](./images/ols-017.png " ")
 
-9. Logout and do the same thing as `eu_evan/Oracle123`
+6. Logout and login as *`eu_evan`* with the password "*`Oracle123`*"
+
+    - Select "**Search Employees**" and click [**Search**]
+    - You can see all employees data with no geographic restriction
 
    ![](./images/ols-018.png " ")
 
-      **Note**: You can see all employees data with no geographic restriction
-
-10. Go back to your terminal session and apply the OLS policy to the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table
+7. Go back to your terminal session and apply the OLS policy to the `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table
 
       ````
-      <copy>./03_apply_ols_policy.sh</copy>
+      <copy>./ols_apply_policy.sh</copy>
       ````
 
    ![](./images/ols-010.png " ")
 
 	**Note**: Once an OLS policy is applied to a table, only users with authorized labels, or OLS privileges, can see data
 
-11. Now, update `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table to populate the `OLSLABEL` column with the appropriate OLS numeric label
+8. Now, update `EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES` table to populate the `OLSLABEL` column with the appropriate OLS numeric label
 
       ````
-      <copy>./04_set_row_labels.sh</copy>
+      <copy>./ols_set_row_labels.sh</copy>
       ````
 
    ![](./images/ols-011.png " ")
 
       **Note**:   
-      - We will dot his based on the `location` column in the table
-      - For example, 'German' or 'Berlin' will receive an OLS label of `P::GER` because they belong to the GERMANY group
+      - We will do this based on the `CITY` column in the table
+      - For example, "`Berlin`" will receive an OLS label of `P::GER` because they belong to the GERMANY group
 
-12. See what policy output looks like:
+9. See what policy output looks like (for each step, you can review the output of the script that you executed; example "`more ols_verify_our_policy.out`"):
 
       ````
-      <copy>./05_verify_our_policy.sh</copy>
+      <copy>./ols_verify_our_policy.sh</copy>
       ````
 
    ![](./images/ols-012.png " ")
@@ -248,38 +248,39 @@ Different applications have different purposes:
 
     ![](./images/ols-016.png " ")
 
-13. Finally, we make changes to the Glassfish JSP files. This script will step you through all of the additions we need to make
+10. Finally, we make changes to the Glassfish App config files to embbed the OLS policy... This script will step you through all of the additions we need to make
 
       ````
-      <copy>./06_Update_Glassfish_app.sh</copy>
+      <copy>./ols_upd_glassfish.sh</copy>
       ````
 
    ![](./images/ols-019.png " ")
 
-   ![](./images/ols-020.png " ")
-
-14. Go back to your web browser and launch the Glassfish app by navigating to this URL: `http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`
-
-15. Login to the application as `can_candy` / `Oracle123`
+11. Go back to your Glassfish app and login as *`can_candy`* with the password "*`Oracle123`*"
 
     - Select "**Search Employees**" and click [**Search**]
+    - Now, you will see there is a difference after enabling OLS policy: `CAN_CANDY` can only see **Canadian-labeled users**!
 
-	 - See the result after enabling OLS policy
+   ![](./images/ols-020.png " ")
+
+12. Logout and login as *`eu_evan`* with the password "*`Oracle123`*"
+
+    - Select "**Search Employees**" and click [**Search**]
+    - Notice that `EU_EVAN` can only see **EU-labeled users**!
 
    ![](./images/ols-021.png " ")
 
-    - Logout and do the same thing as `eu_evan` / `Oracle123`
+13. Logout and login as *`hradmin`* with the password "*`Oracle123`*"
+
+    - Select "**Search Employees**" and click [**Search**]
+    - Notice that accordingly to the OLS policy, `HRADMIN` can still see **all users**!
 
    ![](./images/ols-022.png " ")
 
-      **Note**:   
-      - Now, you will see there is a difference from before
-      - `CAN_CANDY` can only see Canadian-labeled users and `EU_EVAN` can only see EU-labeled users!
-
-16. When you have completed the lab, you can remove the policies and restore the Glassfish JSP files to their original state
+14. When you have completed the lab, you can remove the policies and restore the Glassfish JSP files to their original state
 
       ````
-      <copy>./09_Remove_Policies_and_Restore.sh</copy>
+      <copy>./ols_restore_glassfish_env.sh</copy>
       ````
 
     ![](./images/ols-023.png " ")
@@ -318,7 +319,7 @@ Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

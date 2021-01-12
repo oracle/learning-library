@@ -47,7 +47,7 @@ In this lab, you will:
 
 ### JDE Trial Edition on Oracle Cloud Infrastructure Overview
 
-JD Edwards EnterpriseOne is a comprehensive suite of integrated global business applications. The machine image provided by Oracle allows organizations to create a trial instance of JD Edwards EnterpriseOne Release 9.2 in the Oracle Compute Cloud.  This 'All-in-One' Demo/Sandbox image enables customers to explore new functionality in JD Edwards EnterpriseOne Applications Release 9.2 & Tools Release 9.2.4.3 without installing JD Edwards EnterpriseOne in their data centers. New functionality may include:
+JD Edwards EnterpriseOne is a comprehensive suite of integrated global business applications. The machine image provided by Oracle allows organizations to create a trial instance of JD Edwards EnterpriseOne Release 9.2 in the Oracle Compute Cloud. This 'All-in-One' Demo/Sandbox image enables customers to explore new functionality in JD Edwards EnterpriseOne Applications Release 9.2, Update 4 & Tools Release 9.2.5.0 without installing JD Edwards EnterpriseOne in their data centers. New functionality may include:
 
 * New industry modules
 * One View Financial Statements
@@ -64,7 +64,7 @@ JD Edwards EnterpriseOne is a comprehensive suite of integrated global business 
 * You must have sufficient resources in Oracle Cloud Infrastructure to install and run JD Edwards EnterpriseOne Trial Edition. 
 * Minimum Shape: VMStandard2.2 (2 OCPUs and 30 GB memory)
   Recommended Shape: VMStandard2.4 (4 OCPUs and 30 GB memory)
-* Boot Volume Storage of 100 GB
+* Boot Volume Storage of 120 GB
 
 At this point, you are ready to start creating instances in Oracle Cloud Infrastructure.
 

@@ -44,8 +44,6 @@ Once it's started, check that all necessary labs resources are operational
       - PDB2
         - Prod        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
         - Dev         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
-   - **Oracle AVDF** Web Console (for AVDF labs only) : `https://<YOUR_AVS-VM_PUBLIC-IP>`
-   - **Oracle Key Vault** Web Console (for OKV labs only) : `https://<YOUR_OKV-VM_PUBLIC-IP>`
 
 **Note**: In case of error, please check your **internet connection settings** (Web Application Firewall (WAF) or Web Proxy)
 
@@ -54,7 +52,7 @@ Once it's started, check that all necessary labs resources are operational
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, 2nd November 2020
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

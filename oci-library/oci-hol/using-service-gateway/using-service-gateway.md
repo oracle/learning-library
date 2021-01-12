@@ -121,7 +121,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
-15. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+15. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 16. Fill out the dialog box:
 

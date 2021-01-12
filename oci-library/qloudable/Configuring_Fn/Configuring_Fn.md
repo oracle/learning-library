@@ -67,7 +67,7 @@ Oracle Functions is a fully managed, highly scalable, on-demand, Functions-as-a-
 
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 4. Fill out the dialog box:
 
