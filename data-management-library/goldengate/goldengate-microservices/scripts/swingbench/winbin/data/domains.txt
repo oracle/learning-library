@@ -1,7 +1,0 @@
-com
-gov
-org
-co
-name
-tv
-net
