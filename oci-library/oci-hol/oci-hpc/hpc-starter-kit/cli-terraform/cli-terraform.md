@@ -285,7 +285,6 @@ In addition, you can use cli commands to easily manage and keep tracks of your r
 ## **STEP 12**: Delete
 
 1. When you are done with your deployment, you can delete it by changing to the stack folder and running `ocihpc delete --stack <stack name>`. For example:
-
     ```
     $ <copy>ocihpc delete --stack ClusterNetwork</copy>
 
