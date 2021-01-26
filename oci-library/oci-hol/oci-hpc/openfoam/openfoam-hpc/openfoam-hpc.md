@@ -44,7 +44,7 @@ Before you begin using this lab, make sure to have access to the following:
 2. Go to Menu -> Marketplace -> Applications
   ![](./images/02-Marketplace.png)
 
-3. In the searchbox type "cfd"
+3. In the searchbox, type "cfd"
   ![](./images/03-Search_marketplace.png)
 
 4. Click on the Image, select it and then Click on "Launch Stack" button. Check that you are in the right compartment.
@@ -190,7 +190,7 @@ All Done! This completes the demo for running OpenFoam application on an HPC clu
 ## Acknowledgements
 * **Author** - High Performance Compute Team
 * **Contributors** -  Chris Iwicki, Harrison Dvoor, Gloria Lee, Selene Song, Bre Mendonca
-* **Last Updated By/Date** - Harrison Dvoor, October 2020
+* **Last Updated By/Date** - Harrison Dvoor, January 2021
 
 
 ## See an issue?

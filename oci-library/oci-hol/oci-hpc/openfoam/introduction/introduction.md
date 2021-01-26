@@ -2,39 +2,44 @@
 
 ## Introduction
 
-This lab explains why you should consider running machine-learning and deep-learning workloads on Oracle Cloud Infrastructure. It also provides a framework for IT administrators, machine-learning engineers, and data scientists to build solutions using Oracle Cloud Infrastructure. 
+This runbook is designed to assist in the assessment of the OpenFOAM CFD Software in Oracle Cloud Infrastructure. It automatically downloads and configures OpenFOAM. OpenFOAM is the free, open source CFD software released and developed primarily by OpenCFD Ltd since 2004. It has a large user base across most areas of engineering and science, from both commercial and academic organisations. OpenFOAM has an extensive range of features to solve anything from complex fluid flows involving chemical reactions, turbulence and heat transfer, to acoustics, solid mechanics and electromagnetics.
 
-### About Deep Learning and High Performance Computing (HPC)
-Building on-premises high-performance computing (HPC) environments for machine learning, deep learning, or other performance-intensive workloads can be complex and time consuming. The public cloud can provide a variety of benefits over this more traditional approach, including faster infrastructure updates, easier scaling of resources, lower capital expenditures (CapEx), and fewer personnel dedicated to basic infrastructure maintenance. But the cloud also provokes concerns around performance and cost for those who tried to run performance-intensive workloads on first-generation public clouds.
+### About High Performance Computing (HPC)
+HPC, or supercomputing, is like everyday computing, only more powerful. It is a way of processing huge volumes of data at very high speeds using multiple computers and storage devices as a cohesive fabric. HPC makes it possible to explore and find answers to some of the world’s biggest problems in science, engineering, and business.
 
-This validated solution guide explains why you should consider running deep learning workloads on Oracle’s Generation 2 Cloud. It then provides a framework for IT administrators, deep-learning engineers, and data scientists to build solutions using Oracle Cloud Infrastructure.
+A cluster network is a pool of high performance computing (HPC) instances that are connected with a high-bandwidth, ultra low-latency network. Each node in the cluster is a bare metal machine located in close physical proximity to the other nodes. A remote direct memory access (RDMA) network between nodes provides latency as low as single-digit microseconds, comparable to on-premises HPC clusters.
 
-This guide can help you accelerate the building of cloud infrastructure for your deep learning workloads while providing guidance on customizing the architecture and security throughout. Additionally, it provides guidelines, code, and Terraform scripts for quickly setting up a proof of concept (PoC) using TensorFlow and NVIDIA GPUs for deep learning and image processing for autonomous driving, a rapidly growing area of focus for deep learning. 
+High Performance Computing is offered on Oracle Cloud Infrastructure, within OCI regions.
+
+High Performance Computing Instance available in Oracle Marketplace Image and BM.HPC2.36 in OCI.
+
+High Performance Computing rack in Oracle Marketplace Image includes HPC cluster nodes, cluster network and NFS share.
+
+The compute nodes are connected via cluster network that provides RDMA based storage access to the compute nodes.
+
+Currently, a single BM per compute node is supported. It allows root access for customers while protecting hardware and network, compute nodes are virtualized using BM.HPC2.36.
 
 
-**Estimated Lab Time: 6 hours**
+**Estimated Lab Time: 2 hours**
 
 ### Objectives
 
 In this lab, you will:
-* Prepare your tenancy for the data science service using infrastructure as code
-* Automation with Terraform
-* Build a convolutional neural network in TensorFlow, running on OCI GPU compute instances, to classify traffic sign images from the German Traffic Sign Dataset
-* Train a deep network to replicate the human steering behavior while driving, thus being able to drive autonomously on a simulator provided by Udacity
+* Run OpenFOAM projects using HPC instances interconnected through Remote Direct Memory Access (RDMA)
+* Run OpenFOAM projects using regular standard Virtual Machines (VMs) on Oracle Cloud Infrastructure (OCI)
 
 ### Prerequisites
 
 - An Oracle Cloud Infrastructure account with privileges to create a compartment as well as a stack.
-- Familiarity with Oracle Cloud resources is helpful
-- Familiarity with Data Science and AI/ML is helpful
+- Familiarity with the OCI Console and Oracle Cloud resources (i.e. Virtual Cloud Networks, Compute and Storage) is helpful.
+- Assumption that you have completed the OCI Cloud Architect Associate Exam.
 
 ## About this Workshop
 
-- Lab 1: Prepare your tenancy for the data science service using infrastructure as code
+- Lab 1: Run OpenFOAM projects using HPC Cluster
 
-- Lab 2: Build a convolutional neural network in TensorFlow, running on OCI GPU compute instances, to classify traffic sign images from the German Traffic Sign Dataset
+- Lab 2: Run OpenFOAM projects using Standard VM on OCI
 
-- Lab 3: Train a deep network to replicate the human steering behavior while driving, thus being able to drive autonomously on a simulator provided by Udacity
 
 
 #### All Done! Please proceed to the next lab.
