@@ -37,7 +37,12 @@
       "filename": "../../ha-dr/ha-dr.md"
     },
     {
-      "title": "Lab 6: Transformations",
+      "title": "Lab 6: New HA/DR",
+      "description": "New Hign Availability / Disaster Recovery Replication",
+      "filename": "../../new-ha-dr/new-ha-dr.md"
+    },
+    {
+      "title": "Lab 7: Transformations",
       "description": "Transformations",
       "filename": "../../transformations/transformations.md"
     }
