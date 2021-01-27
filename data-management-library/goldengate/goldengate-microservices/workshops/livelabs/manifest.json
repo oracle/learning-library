@@ -32,8 +32,8 @@
       "filename": "../../create-replication/create-replication.md"
     },
     {
-      "title": "Lab 5: Create HA/DR Replication",
-      "description": "Hign Availability / Disaster Recovery Replication",
+      "title": "Lab 5: Create Active-Active Replication",
+      "description": "Active-Active Replication",
       "filename": "../../ha-dr/ha-dr.md"
     },
     {
