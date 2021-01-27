@@ -1,4 +1,4 @@
-# GoldenGate Microservices Active-Active 
+# GoldenGate Microservices HA-DR Lab
 
 ## Introduction
 This lab will introduce you to Oracle GoldenGate for Microservices Workshop Architecture and High Availability / Disaster Recovery using Active-Active Technology
