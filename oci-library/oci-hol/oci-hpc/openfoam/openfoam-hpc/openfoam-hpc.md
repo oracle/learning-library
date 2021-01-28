@@ -1,4 +1,4 @@
-# Run OpenFoam project in HPC cluster
+# Run OpenFoam Project in HPC Cluster
 
 ## Introduction 
 Setting up of the HPC hardware and deploying application software on top of it can take a long time and include various complex operations. With this demo all these tasks are automated within a OCI marketplace image and a fully working HPC environment along with OpenFoam simulation software is available right after the provisioning. All that is needed is to execute the workload on the fully functional HPC environment and run the visualization application like Paraview to render the output.

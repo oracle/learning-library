@@ -1,4 +1,4 @@
-# Run OpenFoam project in standard VM on OCI
+# Run OpenFoam Project in Standard VM on OCI
 
 ## Introduction
 
