@@ -141,8 +141,8 @@ Now that we have created a project, the next step is creating a Data Store. A Da
    <copy>
     Database host: localhost
     Port: 1521
-    Database name: orcl.us.oracle.com
-    Name type: Service
+    Database name: orcl
+    Name type: SID
     User name: EDQ_SRC
     Password: oraedq
     Schema: 
@@ -152,7 +152,7 @@ Now that we have created a project, the next step is creating a Data Store. A Da
 
 6.	Click on “Test…” button located on the bottom right corner.
 
-    ![](./images/image1200_14.png)
+    ![](./images/image1200_14_1.png)
 
 7.	When all information is correct, you will receive a message about connection success, click “OK”.
 

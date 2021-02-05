@@ -95,7 +95,7 @@ Now, we will copy reference data previously created into our project, which will
    
     ````
    <copy>
-    Path: /home/opc/Dxi_Files
+    Path: /home/oracle/Downloads
     File Name: Examples.dxi
    </copy>
     ````
