@@ -1,5 +1,6 @@
 # The last matching pattern has the most precedence.
 <<<<<<< HEAD
+<<<<<<< HEAD
 *                         @snicholspa @flavio-santino @kaymalcolm @tmcginn @tammybednar @kamryn-v
 /ai-ml-library/       @kaymalcolm @tammybednar @tmcginn @troyanthony06 @kamryn-v
 /analytics-library/       @kaymalcolm @tammybednar @tmcginn @troyanthony06 @kamryn-v @rfontcha
@@ -23,4 +24,17 @@
 /solutions-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha
 /security-library/       @kaymalcolm @tmcginn @troyanthony06 @rfontcha
 /workshops/               @snicholspa @chipbaber @kaymalcolm @tmcginn @troyanthony06
+>>>>>>> upstream/master
+=======
+*                        @flavio-santino @kaymalcolm @tmcginn @kamryn-v @anooshapilli @davidastart
+/ai-ml-library/       @kaymalcolm @tmcginn @kamryn-v @troyanthony06 @anooshapilli @davidastart
+/analytics-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart
+/data-management-library/ @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @anooshapilli @davidastart
+/developer-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart
+/enterprise-manageability-library/       @kaymalcolm @tmcginn @rfontcha @kamryn-v @anooshapilli @davidastart
+/oci-library/             @flavio-santino @oegentil @peterj @kaymalcolm @tmcginn @davidastart @anooshapilli @kamryn-v
+/ospa-library/            @jjking2019 @dankingsley001 @AlejandroCasas-oracle
+/solutions-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart
+/security-library/       @kaymalcolm @tmcginn @troyanthony06 @rfontcha @anooshapilli @kamryn-v @davidastart
+/workshops/               @snicholspa @chipbaber @kaymalcolm @tmcginn @troyanthony06 @davidastart
 >>>>>>> upstream/master

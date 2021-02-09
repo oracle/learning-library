@@ -1,0 +1,14 @@
+{
+    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "include": {"starter-file.sql":"../../livelabs-template/files/starter-file.sql",
+                "sample.json":"../../files/sample.json",
+                "injected-step.md":"../../files/injected-step.md"},
+    "support": "https://community.oracle.com/tech/developers/categories/autonomous-database-shared",
+    "tutorials": [
+        {
+            "title": "LiveLabs Complete Template",
+            "description": "This is the complete template for LiveLabs content developers",
+            "filename": "../../livelabs-template.md"
+        }
+    ]
+}

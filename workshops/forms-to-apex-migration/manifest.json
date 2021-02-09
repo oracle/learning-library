@@ -1,0 +1,40 @@
+{
+    "tutorials": [
+        {
+            "title": "Workshop Overview",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/0-intro-and-setup/intro.md"
+        },
+        {
+          "title": "Sign Up for Free Trial",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Introduction",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/0-intro-and-setup/intro.md"
+        },
+        {
+            "title": "Lab 2: Generate SSH Keys",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/0-intro-and-setup/generate-ssh-keys.md"
+        },
+		    {
+            "title": "Lab 3: Setup VCN",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/0-intro-and-setup/setup-vcn.md"
+        },
+		    {
+            "title": "Lab 4: Setup Oracle Forms Service from Marketplace in OCI",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/1-setup-oracle-forms/oracle-forms-dev-system.md"
+        },
+		    {
+            "title": "Lab 5: Setup Oracle APEX in Autonomous Database",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/2-setup-aoex/setup-apex.md"
+        },
+        {
+            "title": "Lab 6: Create Migration Project in Oracle APEX",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/3-create-apex-forms-migration-app/create-migration-project.md"
+        },
+        {
+            "title": "Lab 7: Migrate Oracle Forms into Oracle APEX",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/forms-to-apex-migration-library/4-modernize-forms-in-apex/create-app.md"
+        }
+    ]
+}

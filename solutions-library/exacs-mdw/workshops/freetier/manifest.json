@@ -1,0 +1,58 @@
+{
+  "workshoptitle": "Oracle ExaCS for Modern Data Warehouse",
+  "tutorials": [
+      {
+        "title": "Prerequisites",
+        "publisheddate": "03/10/2020",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+        "title": "Introduction",
+        "description": "Exadata Cloud Service self-guided hands-on Workshop overview",
+        "publisheddate": "4/20/2020",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Lab 1: Preparing your Data Center in OCI",
+        "description": "Preparing your private data center in the Oracle Cloud Infrastructure",
+        "publisheddate": "4/20/2020",
+        "filename": "../../exacs-networking/exacs-networking.md"
+      },
+      {
+        "title": "Lab 2: Provision Exadata Infrastructure",
+        "description": "Provision Exadata Infrastructure in a private OCI network",
+        "publisheddate": "4/20/2020",
+        "filename": "../../provision-exa-infra/provision-exa-infra.md"
+      },
+      {
+        "title": "Lab 3: Provision Databases",
+        "description": "Provision databases on your Exadata Cloud Service Infrastructure",
+        "publisheddate": "4/20/2020",
+        "filename": "../../provision-db/provision-db.md"
+      },
+      {
+        "title": "Lab 4: Configure a Development System",
+        "description": "Configure a development system for use with your Exadata Cloud Service database",
+        "publisheddate": "4/20/2020",
+        "filename": "../../config-dev-client/config-dev-client.md"
+      },
+      {
+        "title": "Lab 5: Data Safe with ExaCS",
+        "description": "Data Safe with EXACS",
+        "publisheddate": "4/20/2020",
+        "filename": "../../data-safe/data-safe.md"
+      },
+      {
+        "title": "Lab 6: Real-time Migration with Oracle Goldengate Replication",
+        "description": "Real time migration of database using Oracle Goldengate Replication",
+        "publisheddate": "4/20/2020",
+        "filename": "../../golden-gate/golden-gate.md"
+      },
+      {
+        "title": "Lab 7: Connect Oracle Analytics Cloud with your Exadata Cloud Service",
+        "description": "OAC to EXACS",
+        "publisheddate": "6/10/2020",
+        "filename": "../../oac/oac.md"
+      }
+    ]
+}

@@ -69,31 +69,32 @@ Then click the "Sign In" button.
 =======
 ## **STEP 1**: Connect to your Autonomous Database using Graph Studio
 
-1. Open the ADB service console and click on the Development link in the menu on the left. 
+1. If you have the Graph Studio URL then proceed to step 3. 
 
-    **Note: This particular image is from an instance where some features were disabled. Your instance will likely have them all and other features. While the UI may be slightly different the Graph Studio card will be there.**
+    Log in to the OCI Console, choose the ADB-S (i.e. ADW or ATP) instance, then click on the Tools tab on the details page menu on the left. 
 
-    ![](./images/ADWConsoleWithGraphStudio.png)
+   ![OCI Console](./images/oci-console-adb-tools-graph-studio-link.png)
+
 
 2. Click on the Graph Studio card to open in a new page or tab in your browser. 
 
-3. If you prefer to connect directly and know the database, tenant, and region details then use the URL pattern shown below.
+3. If you prefer to connect directly and know the database, tenancy OCID, and region details then use the URL pattern shown below.
 
     ```
-    https://adb.<region_identifier>.oraclecloud.com/graphstudio/?tenant=<tenant_name>&database=<database_name>
+    https://adb.<region_identifier>.oraclecloud.com/graphstudio/?tenant=<tenancy_ocid>&database=<database_name>
     ```
 
-    For example, to access Graph Studio of database `ADW1` belonging to tenant `TENANT1` in the US Ashburn (IAD) region, open
+    For example, to access Graph Studio of database `ADW1` belonging to tenant `TENANT1` with OCID `ocid1.tenancy.oc1..thisisadecidedlybogusvalue` in the US Ashburn (IAD) region, open
 
     ```
-    https://adb.us-ashburn-1.oraclecloud.com/graphstudio/?tenant=TENANT1&database=ADW1
+    https://adb.us-ashburn-1.oraclecloud.com/graphstudio/?tenant=ocid1.tenancy.oc1..thisisadecidedlybogusvalue&database=ADW1
     ```
 
     in your browser. You can find the [region identifier for all regions here](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 
 4. Enter your ADW/ATP account credentials into the login screen:
 
-    ![](./images/login.png " ")
+    ![](./images/graph-studio-login.png " ")
 
 5. Then click the "Sign In" button.
 
@@ -116,11 +117,17 @@ Then click the "Sign In" button.
     ```
     <copy>
 <<<<<<< HEAD
+<<<<<<< HEAD
     CREATE PROPERTY GRAPH my_first_graph;
 =======
     DROP PROPERTY GRAPH my_first_graph  
 
     CREATE PROPERTY GRAPH my_first_graph
+>>>>>>> upstream/master
+=======
+    DROP PROPERTY GRAPH my_first_graph ; 
+
+    CREATE PROPERTY GRAPH my_first_graph ;
 >>>>>>> upstream/master
 
     INSERT INTO my_first_graph

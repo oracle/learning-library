@@ -1,0 +1,42 @@
+{
+  "workshoptitle": "SecureOracle 8.0 Workshop",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Prepare Setup",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+    {
+      "title": "Lab 4: Initialize Environment",
+      "description": "Labs that follow the initialize your workshop environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 5: Employee Lifecycle Management",
+      "filename": "../../employeelm/employeelm.md"
+    },
+    {
+      "title": "Lab 6: Identity Certification",
+      "filename": "../../idcert/idcert.md"
+    },
+    {
+      "title": "Lab 7: Using REST APIs for OIM and OAM",
+      "filename": "../../restapi/restapi.md"
+    }
+  ]
+}
