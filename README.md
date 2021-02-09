@@ -1,6 +1,6 @@
 # Welcome
 
-[![](common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs/)
+[![](common/images/livelabs-banner-formarketplace.png)](http://bit.ly/golivelabs)
 ---
 LiveLabs is the place to explore Oracle's products and services using workshops designed to enhance your experience building and deploying applications on the Cloud and On-Premises.   Our library of workshops cover everything from how to provision the world's first autonomous database to setting up a webserver on our world class OCI Generation 2 infrastructure, machine learning and much more.  Use your existing Oracle Cloud account, a Free Tier account or a LiveLabs Cloud Account to build, test, and deploy applications on Oracle's Cloud.
 
@@ -12,7 +12,7 @@ Visit [LiveLabs](http://bit.ly/golivelabs) now to get started.  Workshops are ad
 ## **Developer** Featured Workshops
 - [Oracle's Converged Database](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=613)
 - [Building Java Cloud Applications with Micronaut and OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
-- [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=667)
+- [Building Microservices with Oracle Converged DB](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=637)
 - [Building an Application from a Spreadsheet](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=631)
 - [Deploying OKE Using Oracle Cloud Shell](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=649)
 - [Databse 19c JSON](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=638)

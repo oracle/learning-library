@@ -8,7 +8,7 @@ The **Quick-start Tenancy Configuration** and **Advanced Configuration of a Tena
 
 By default, a tenancy is not configured to work with the Data Science service. If the tenancy is already configured to work with the service, then you can skip the following setup instructions. If you do not know if your account is configured for the service or not, ask your system administrator. 
 
-You only need to complete the instructions in the **Quick Start Tenancy Configuration** or the **Advanced Configuration of a Tenancy** if the tenancy is not configured to work with the Data Science service. If you aren't sure which set of instructions to follow, start with the **Quick Start Tenancy Configuration**.
+You only need to complete the instructions in the **Quick Start Tenancy Configuration** or the **Advanced Configuration of a Tenancy** if the tenancy is not configured to work with the Data Science service. If you are not sure which set of instructions to follow, start with the **Quick Start Tenancy Configuration**.
 
 *Estimated Lab Time:* 30 minutes
 
@@ -53,7 +53,7 @@ Configuring a tenancy using Oracle Resource Manager includes creating a solution
     ![](./../speed-up-ds-with-the-ads-sdk/images/uncheck.png)
 
 1. Click **Next** and review the stack configuration.
-1. Click **Create** to create your stack. This creates the stack, but doesn't create any Data Science resources. The **Stack Details** page appears.
+1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
     ![](./../speed-up-ds-with-the-ads-sdk/images/stack-details.png)
 
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues, and then repeat this step.
@@ -96,10 +96,10 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
 1. Select **Provision Functions and API Gateway?** to enable deploying models to Oracle Functions and use the API gateway.
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/stack-details2.png)
+    ![](./../speed-up-ds-with-the-ads-sdk/images/stack-details.png)
 
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues and then repeat this step.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/apply2.png)
+    ![](./../speed-up-ds-with-the-ads-sdk/images/apply.png)
 
 You can *proceed to the next lab*.
 
@@ -110,6 +110,6 @@ You can *proceed to the next lab*.
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, November 2020
 
 ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/data-science). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

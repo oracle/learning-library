@@ -57,8 +57,8 @@ You will create a Virtual Cloud Network to contains your Terraform assets in you
 ![VCN Menu](images/VCN_Menu.png)
 2. Select  your Terraform compartment from the dropdown menu. **NOTE:** You may need to click on the "plus sign" next to your root compartment name to expand it. If you don't see the `Terraform` compartment name, refrech your browser using the F5 key on Windows and COMMAND+R on a mac.
 ![Select Terraform Compartment](images/Select_Terraform_Compartment.png)
-3. Press the *Networking Quickstart* button.
-4. Select the `VCN with Internet Connectivity` option. Press the *Start Workflow* button.
+3. Press the *Start VCN Wizard* button.
+4. Select the `VCN with Internet Connectivity` option. Press the *Start VCN Wizard* button.
 ![](images/VCN_QS_1.png)
 5. Fill out the next screen as shown.
 | Field                      | Value         |

@@ -363,7 +363,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
 
     ![](./images/xml_m10_ba.png " ")
 
-## Want to learn more
+## Learn More
 - [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
 ## Acknowledgements

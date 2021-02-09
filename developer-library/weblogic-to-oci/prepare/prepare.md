@@ -28,7 +28,7 @@ For this lab you will need:
 
 1. Go to **Security -> Vault**
 
-   <img src="../../../prepare/images/prereq-vault1.png" width="50%">
+   ![](./images/prereq-vault1.png =50%x*)
 
 2. Make sure you are in the compartment where you want to deploy WebLogic
 
@@ -38,46 +38,46 @@ For this lab you will need:
 
 4. Name the vault `WebLogic Vault` or a name of your choosing. Make sure the `private` option is **not checked** and click **Create Vault**
 
-   <img src="../../../prepare/images/prereq-vault3.png" width="80%">
+   ![](./images/prereq-vault3.png =80%x*)
 
 ## **STEP 2:** Create a key in the vault
 
 1. Once the vault is provisioned, click the vault
 
-   <img src="../../../prepare/images/prereq-vault4.png" width="100%">
+   ![](./images/prereq-vault4.png)
 
 2. then click **Create Key**
 
-   <img src="../../../prepare/images/prereq-key1.png" width="100%">
+   ![](./images/prereq-key1.png)
 
 3. name the key `WebLogicKey` or a name of your choosing and click **Create Key**
 
-   <img src="../../../prepare/images/prereq-key2.png" width="80%">
+   ![](./images/prereq-key2.png =80%x*)
 
 ## **STEP 3:** Create a secret for the WebLogic admin password
 
 1. Once the key is provisioned, click **Secrets**
 
-   <img src="../../../prepare/images/prereq-secret1.png" width="60%">
+   ![](./images/prereq-secret1.png =60%x*)
 
 2. then **Create Secret**
 
-  <img src="../../../prepare/images/prereq-secret2.png" width="80%">
+  ![](./images/prereq-secret2.png =80%x*)
 
 3. Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**
 
-  <img src="../../../prepare/images/prereq-secret3.png" width="100%">
+  ![](./images/prereq-secret3.png)
 
 4. Click the `WebLogicAdminPassword` **Secret** you just created and **make a note** of its **OCID**
 
-   <img src="../../../prepare/images/prereq-secret4.png" width="100%">
+   ![](./images/prereq-secret4.png)
 
 <if type="oke">
 ## **STEP 4:** Create an Auth Token to access OCI Registry
 
 1. Go to **User -> User Settings** and click **Auth Tokens** on the left menu
 
-   <img src="../../../prepare/images/auth-token.png" width="60%">
+   ![](./images/auth-token.png =60%x*)
 
 2. Click **Generate Token**
 

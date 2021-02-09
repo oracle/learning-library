@@ -50,7 +50,7 @@ In this step you can choose between three different implementations of the Inven
 
 ## **STEP 3**: Verify application functionality
 
-1. Repeat Lab 4 Step 2 to verify the order and inventory functionality of the GrubDash store remains the same using new order ID's, for example 166 and 167.
+1. Repeat Lab 4 Step 2 to verify the order and inventory functionality of the GrabDish store remains the same using new order ID's, for example 166 and 167.
 
 ## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
 

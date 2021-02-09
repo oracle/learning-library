@@ -1,18 +1,21 @@
 {
-  "workshoptitle": "Identity and Access Management",
+    "workshoptitle": "Identity and Access Management Lab",
     "tutorials": [
-      {
-          "title": "Prerequisites",
-          "description": "Login to Oracle Cloud",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-      },
-      {
-          "title": "Introduction",
-          "filename": "./../../intro/intro.md"
-      },
-      {
-          "title": "Lab 1: Identity Access Management",
-          "filename": "./../../identity-access-management.md"
-      }
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "IAM Prerequisites",
+            "filename": "./../../prerequisites/iam.md"
+        },
+        {
+            "title": "Lab 1: Identity and Access Management",
+            "filename": "./../../iam/identity-access-management.md"
+        }
     ]
 }

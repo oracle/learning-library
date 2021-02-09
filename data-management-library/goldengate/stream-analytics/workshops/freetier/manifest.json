@@ -1,35 +1,57 @@
 {
   "workshoptitle": "Oracle GoldenGate Stream Analytics",
-    "tutorials": [
-        {
-            "title": "Introduction",
-            "description": "Introduction",
-            "filename": "../../introduction/introduction.md"
-        },
-        {
-            "title": "Lab 1: Login and Navigation",
-            "description": "Login and Navigation",
-            "filename": "../../ggsa-login-navigation/ggsa-login-navigation.md"
-        },
-        {
-            "title": "Lab 2: Streaming IOT Data",
-            "description": "Streaming IOT Data",
-            "filename": "../../ggsa-iot-stream/ggsa-iot-stream.md"
-        },
-        {
-            "title": "Lab 3: Streaming Retail data",
-            "description": "Streaming Retail data",
-            "filename": "../../ggsa-create-retail-pipeline/ggsa-create-retail-pipeline.md"
-        },
-        {
-            "title": "Lab 4: Publishing Dashboards Import/Export",
-            "description": "Publishing Dashboards Import/Export",
-            "filename": "../../ggsa-publishing-export/ggsa-publishing-export.md"
-        },
-        {
-            "title": "Appendix",
-            "description": "Appendix",
-            "filename": "../../appendix/appendix.md"
-        }
-    ]
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+    {
+      "title": "Lab 4: Login and Navigation",
+      "description": "Login and Navigation",
+      "filename": "../../ggsa-login-navigation/ggsa-login-navigation.md"
+    },
+    {
+      "title": "Lab 5: Streaming IOT Data",
+      "description": "Streaming IOT Data",
+      "filename": "../../ggsa-iot-stream/ggsa-iot-stream.md"
+    },
+    {
+      "title": "Lab 6: Streaming Retail data",
+      "description": "Streaming Retail data",
+      "filename": "../../ggsa-create-retail-pipeline/ggsa-create-retail-pipeline.md"
+    },
+    {
+      "title": "Lab 7: Publishing Dashboards Import/Export",
+      "description": "Publishing Dashboards Import/Export",
+      "filename": "../../ggsa-publishing-export/ggsa-publishing-export.md"
+    },
+    {
+      "title": "Appendix",
+      "description": "Appendix",
+      "filename": "../../appendix/appendix.md"
+    }
+  ]
 }

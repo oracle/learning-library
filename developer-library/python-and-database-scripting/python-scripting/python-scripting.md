@@ -1,18 +1,22 @@
-# Python Programming
+# Python and Oracle Database: Scripting for the Future
 
 ## Introduction
-
-cx\_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions. See the homepage for a feature list.
-
-cx\_Oracle 7 has been tested with Python versions 3.5 through 3.8. You can use cx\_Oracle with Oracle Database 11.2, 12c, 18c and 19c client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2. Older versions of cx\_Oracle may work with older versions of Python.
-
-Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
-
-### Overview
 
 This tutorial is an introduction to using Python with Oracle Database. It contains beginner and advanced material. Sections can be done in any order. Choose the content that interests you and your skill level.
 
 Follow the steps in this document. The **tutorial** directory has scripts to run and modify. The **tutorial/solutions** directory has scripts with the suggested code changes.
+
+Estimated Lab Time: 60 minutes
+
+### About cx\_Oracle Python extension
+
+cx\_Oracle is a Python extension module that enables access to Oracle Database. It conforms to the Python database API 2.0 specification with a considerable number of additions and a couple of exclusions.
+
+cx\_Oracle 8 has been tested with Python versions 3.6 through 3.9. Older versions of cx\_Oracle may be used with previous Python releases. You can use cx\_Oracle with Oracle 11.2, 12, 18, 19 and 21 client libraries. Oracle's standard client-server version interoperability allows connection to both older and newer databases. For example Oracle 19c client libraries can connect to Oracle Database 11.2.
+
+cx\_Oracle 8 is available.
+
+Python is open-source, cross-platform, and free of cost. There's no excuse not to give Python a try!
 
 ### Objectives
 
@@ -22,11 +26,11 @@ Follow the steps in this document. The **tutorial** directory has scripts to run
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Environment Setup using Marketplace Image
+* Login to Oracle Cloud
+* Generate SSH Key
+* Environment Setup using Marketplace Image
 
-## **Step 1:** Install Python
+## **STEP 1:** Install Python
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
@@ -44,7 +48,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
     </copy>
     ````
 
-    For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**. cx\_Oracle version 7.2 (or later) is needed. Oracle database 19c is installed with the 19c client libraries. SQL*Plus is preinstalled. The Advanced Queuing section requires Oracle client 12.2 or later. The SODA section requires Oracle client 18.5, or later, and Oracle Database 18 or later.
+    For this tutorial Python Version 3.6 (or later) is preferred. **You will typically have to update Python**. cx\_Oracle version 7.2 (or later) is needed. cx\_Oracle version 8 is available. Oracle database 19c is installed with the 19c client libraries. SQL*Plus is preinstalled. The Advanced Queuing section requires Oracle client 12.2 or later. The SODA section requires Oracle client 18.5, or later, and Oracle Database 18 or later.
 
 3.  Upgrade Python if you do not have Python 3 installed. There is no harm in running this command multiple times, the system will either install packages or let you know they are already installed.
 
@@ -56,7 +60,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![](./images/p_installPython.jpg " ")
 
-## **Step 2:** Add a Sample Schema in your Database
+## **STEP 2:** Add a Sample Schema in your Database
 
 1.  Switch to the `oracle` user using the sudo command.
 
@@ -119,11 +123,11 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
     </copy>
     ````
 
-## **Step 3:** Install Python Oracle Module and Connect to a Database
+## **STEP 3:** Install Python Oracle Module and Connect to a Database
 
 cx\_Oracle is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
-1.  Install the `cx_Oracle` module using python3 and pip for the oracle user. If your terminal disconnected and you are opc again, enter the command `sudo su - oracle` to switch back to the `oracle` user.
+1.  Install the `cx_Oracle` module using python3 and pip for the oracle user. If your terminal disconnected and you are opc again, enter the command `sudo su - oracle` to switch back to the `oracle` user. The **pip** command will install cx_Oracle8.
 
     ````
     <copy>
@@ -165,7 +169,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 
     ![](./images/p_python-3.png " ")
 
-## **Step 4:** The Python Interpreter
+## **STEP 4:** The Python Interpreter
 
 There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
@@ -221,7 +225,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-2.png " " )
 
-## **Step 5:** Connect to the Oracle Database
+## **STEP 5:** Connect to the Oracle Database
 
 1.  Review the connection credentials.
 
@@ -466,7 +470,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Any cx\_Oracle installation can connect to older and newer Oracle Database versions. By checking the Oracle Database and client versions numbers, the application can make use of the best Oracle features available.
 
-## **Step 6:** Connection Pooling
+## **STEP 6:** Connection Pooling
 
 1.  Connection pooling
 
@@ -506,7 +510,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     In the method, the **pool.acquire()** call gets one connection from the pool (as long as less than 5 are already in use). This connection is used in a loop of 4 iterations to query the sequence myseq. At the end of the method, cx\_Oracle will automatically close the cursor and release the connection back to the pool for reuse.
 
-    The **seqval, = cur.fetchone()** line fetches a row and puts the single value contained in the result tuple into the variable   seqval. Without the comma, the value in seqval would be a tuple like "(1,)".
+    The **seqval, = cur.fetchone()** line fetches a row and puts the single value contained in the result tuple into the variable **seqval**. Without the comma, the value in **seqval** would be a tuple like **"(1,)"**.
 
     Two threads are created, each invoking the Query() method.
 
@@ -576,13 +580,13 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Database Resident Connection Pooling allows multiple Python processes on multiple machines to share a small pool of database server processes.
 
-    Below left is a diagram without DRCP. Every application connection has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a precreated pool of servers and return them when they are not in use.
+    Below left is a diagram without DRCP. Every application connection has its own 'dedicated' database server process. Application connect and close calls require the expensive create and destroy of those database server processes. To avoid these costs, scripts may hold connections open even when not doing database work: these idle server processes consumes database host resources. Below right is a diagram with DRCP. Scripts can use database servers from a pre-created pool of servers and return them when they are not in use.
 
     Without DRCP: ![](./images/python_nopool.png "Without DRCP " )
 
     With DRCP: ![](./images/python_pool.png "Without DRCP ")
 
-    DRCP is useful when the database host machine does not have enough memory to handled the number of database server processes required. However, if database host memory is large enough, then the default, 'dedicated' server process model is generally recommended. If DRCP is enabled, it is best used in conjunction with cx\_Oracle middle-tier connection pooling.
+    DRCP is useful when the database host machine does not have enough memory to handle the number of database server processes required. However, if database host memory is large enough, then the default, 'dedicated' server process model is generally recommended. If DRCP is enabled, it is best used in conjunction with cx\_Oracle middle-tier connection pooling.
 
     Batch scripts doing long running jobs should generally use dedicated connections. Both dedicated and DRCP servers can be used in the same database for different applications.
 
@@ -708,7 +712,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     and add calls to **time.sleep(1)** in the code, for example in the query loop. Then look at the way the threads execute. Use **drcp\_query.sql** to monitor the pool's behavior.
 
-## **Step 7:** Fetching Data
+## **STEP 7:** Fetching Data
 
 1. A simple query
 
@@ -803,7 +807,7 @@ There are several ways to execute Python code. In this step, we start with two e
     print(res)
     ````
 
-    The fetchmany() method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute    arraysize (which defaults to 100). Here the numRows parameter specifies that three rows should be returned.
+    The fetchmany() method returns a list of tuples. By default the number of rows returned is specified by the cursor attribute **arraysize** (which defaults to 100). Here the numRows parameter specifies that three rows should be returned.
 
     Run the script in a terminal window:
 
@@ -881,7 +885,9 @@ There are several ways to execute Python code. In this step, we start with two e
 
 5.  Tuning with arraysize
 
-    This section demonstrates a way to improve query performance by increasing the number of rows returned in each batch from Oracle    to the Python program.
+    This section demonstrates a way to improve query performance by increasing the number of rows returned in each batch from Oracle to the Python program.
+
+    Row prefetching and array fetching are both internal buffering techniques to reduce round-trips to the database. The difference is the code layer that is doing the buffering, and when the buffering occurs.
 
     First, create a table with a large number of rows. Review **query\_arraysize.sql**:
 
@@ -923,7 +929,8 @@ There are several ways to execute Python code. In this step, we start with two e
     start = time.time()
 
     cur = con.cursor()
-    cur.arraysize = 10
+    cur.prefetchrows = 100
+    cur.arraysize = 100
     cur.execute("select * from bigtab")
     res = cur.fetchall()
     # print(res)  # uncomment to display the query results
@@ -932,7 +939,7 @@ There are several ways to execute Python code. In this step, we start with two e
     print(elapsed, "seconds")
     ````
 
-    This uses the 'time' module to measure elapsed time of the query. The arraysize is set to 10. This causes batches of 10 records at  a time to be returned from the database to a cache in Python. This reduces the number of "roundtrips" made to the database, often    reducing network load and reducing the number of context switches on the database server. The fetchone(), fetchmany() and fetchall () methods will read from the cache before requesting more data from the database.
+    This uses the 'time' module to measure elapsed time of the query. The prefetchrows and arraysize values are set to 100. This causes batches of 100 records at a time to be returned from the database to a cache in Python. This reduces the number of **roundtrips** made to the database, often reducing network load and reducing the number of context switches on the database server. The **fetchone()**, **fetchmany()** and **fetchall()** methods will read from the cache before requesting more data from the database.
 
     In a terminal window, run:
 
@@ -958,11 +965,12 @@ There are several ways to execute Python code. In this step, we start with two e
 
     In general, larger array sizes improve performance. Depending on how fast your system is, you may need to use different arraysizes than those given here to see a meaningful time difference.
 
-    The default arraysize used by cx\_Oracle 7 is 100. There is a time/space tradeoff for increasing the arraysize. Larger arraysizes will require more memory in Python for buffering the records.
+    There is a time/space tradeoff for increasing the values. Larger values will require more memory in Python for buffering the records.
+    If you know the query returns a fixed number of rows, for example 20 rows, then set arraysize to 20 and prefetchrows to 21.  The addition of one to prefetchrows prevents a round-trip to check for end-of-fetch.  The statement execution and fetch will take a total of one round-trip.  This minimizes load on the database.
 
-    If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
+    The default value of arraysize for cx\_Oracle is 100. If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
 
-## **Step 8:** Binding Data
+## **STEP 8:** Binding Data
 
 Bind variables enable you to re-execute statements with new data values, without the overhead of reparsing the statement. Bind variables improve code reusability, and can reduce the risk of SQL injection attacks.
 
@@ -1162,7 +1170,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     cx\_Oracle can fetch and bind named object types such as Oracle's Spatial Data Objects (SDO).
 
-    In a terminal window, start SQL*Plus using the lab credentials and connection string, such as:
+    In a terminal window, start SQL\*Plus using the lab credentials and connection string, such as:
 
     ````
     <copy>
@@ -1170,7 +1178,7 @@ Bind variables enable you to re-execute statements with new data values, without
     </copy>
     ````
 
-    Use the SQL*Plus **DESCRIBE** command to look at the SDO definition:
+    Use the SQL\*Plus **DESCRIBE** command to look at the SDO definition:
 
     ````
     <copy>
@@ -1190,7 +1198,7 @@ Bind variables enable you to re-execute statements with new data values, without
     SDO_ORDINATES                                      MDSYS.SDO_ORDINATE_ARRAY
     ````
 
-    In the terminal type **exit** to exit from SQL*Plus and review the code contained in **bind\_sdo.py**:
+    In the terminal type **exit** to exit from SQL\*Plus and review the code contained in **bind\_sdo.py**:
 
     ````
     import cx_Oracle
@@ -1327,7 +1335,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     The gettype() and newobject() methods can also be used to bind PL/SQL Records and Collections.
 
-## **Step 9:** PL/SQL
+## **STEP 9:** PL/SQL
 
 PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
 
@@ -1440,7 +1448,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
     246
     ````
 
-## **Step 10:** Type Handlers
+## **STEP 10:** Type Handlers
 
 1.  Basic output type handler
 
@@ -1708,7 +1716,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
 
     ![](./images/step10.3-typeinput.png " ")
 
-## **Step 11:** LOBs
+## **STEP 11:** LOBs
 
 Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes.
 
@@ -1804,7 +1812,7 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     </copy>
     ````
 
-## **Step 12:** Rowfactory functions
+## **STEP 12:** Rowfactory functions
 
 Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects.
 
@@ -1877,7 +1885,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     ![](./images/step12.1-rowfactory.png " ")
 
-## **Step 13:** Subclassing Connections and Cursors
+## **STEP 13:** Subclassing Connections and Cursors
 
 1. Subclassing connections
 
@@ -1969,7 +1977,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     </copy>
     ````
 
-## Step 14: Advanced Queueing
+## **STEP 14:** Advanced Queueing
 
 1. Message passing with Oracle Advanced Queuing
 
@@ -2087,9 +2095,9 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     If you are stuck, look in the **solutions** directory at the aq-dequeue.py, aq-enqueue.py and aq-queuestart.py files.
 
-## Step 15: Simple Oracle Document Access (SODA)
+## **STEP 15:** Simple Oracle Document Access (SODA)
 
-Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database. By default, documents are JSON strings. SODA APIs exist in many languages.
+Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database using a set of NoSQL-style cx\_Oracle methods. By default, documents are JSON strings. SODA APIs exist in many languages.
 
 1.  Inserting JSON Documents
 
@@ -2120,9 +2128,9 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
 
     **insertOneAndGet()** inserts the content of a document into the database and returns a SODA Document Object. This allows access to meta data such as the document key. By default, document keys are automatically generated.
 
-    The find() method is used to begin an operation that will act upon documents in the collection.
+    The **find()** method is used to begin an operation that will act upon documents in the collection.
 
-    content is a dictionary. You can also get a JSON string by calling doc.getContentAsString().
+    **content** is a dictionary. You can also get a JSON string by calling **doc.getContentAsString()**.
 
     Run the file:
 
@@ -2167,11 +2175,11 @@ Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be ins
     </copy>
     ````
 
-    The find operation filters the collection and returns documents where the city is Melbourne. Note the insertMany() method is currently in preview.
+    The find operation filters the collection and returns documents where the city is Melbourne. Note the **insertMany()** method is currently in preview.
 
     ![](./images/step15.2-soda1.png " ")
 
-    SODA supports query by example (QBE) with an extensive set of operators. Extend soda.py with a QBE to find documents where the age is less than 25:
+    SODA supports query by example (QBE) with an extensive set of operators. Extend **soda.py** with a QBE to find documents where the age is less than 25:
 
     ````
     <copy>
@@ -2206,7 +2214,7 @@ An additional lab on using Python with is available in the New Features for Deve
 
 * **Author** - Christopher Jones, Anthony Tuininga
 * **Contributors** - Jaden McElvey, Anoosha Pilli, Troy Anthony
-* **Last Updated By/Date** - Kay Malcolm, DB Product Management, June 2020
+* **Last Updated By/Date** - Troy Anthony, DB Product Management, December 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -206,11 +206,11 @@ Go to Core Infrastructure -> Networking in the main menu and click in Virtual Cl
 
 ![](./images/vnc-create01.PNG)
 
-Check that you are in you HandsOnLab compartment. If the compartment doesn't appear in the dropdown list, please refresh your browser (F5). After refreshing, select the HandsOnLab compartment. Then click Networking Quickstart button.
+Check that you are in you HandsOnLab compartment. If the compartment doesn't appear in the dropdown list, please refresh your browser (F5). After refreshing, select the HandsOnLab compartment. Then click Start VCN Wizard button.
 
 ![](./images/vnc-create02.PNG)
 
-Select VCN with Internet Connectivity if it's not selected and click Start Workflow button
+Select VCN with Internet Connectivity if it's not selected and click Start VCN Wizard button
 
 ![](./images/vnc-create03.PNG)
 

@@ -13,6 +13,8 @@ Watch our short video that explains key features in Oracle's Autonomous Database
 
 Oracle’s Autonomous Database is the perfect quick-start service for fast data loading and sophisticated data reporting and analysis. Oracle manages everything for you so you can focus on your data.
 
+Estimated workshop time: 3 hours and 45 minutes
+
 ## Workshop Objectives
 - Get comfortable with Oracle's public cloud services
 - Provision a new Autonomous Database instance on Shared Infrastructure

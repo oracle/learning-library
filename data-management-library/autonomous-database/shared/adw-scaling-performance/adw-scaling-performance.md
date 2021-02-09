@@ -12,14 +12,14 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 ### Prerequisites
 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account or a LiveLabs account, then you can obtain a new cloud account through the Oracle Free Trial program.
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the right.
+-   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the left.
 
 
 ## **Step 1**: Scaling your Autonomous Database Instance
 
 1. Go back to the Cloud Console you used during the provisioning exercise and open the database instance's Details page. From the **action menu**, click **Scale Up/Down**.
 
-    ![](./images/Picture300-2.jpg " ")
+    ![Click Scale Up/Down on your database console.](./images/Picture300-2.jpg " ")
 
 2.  Fill in the form with the following information:
 
@@ -31,13 +31,13 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
 3.  Click **Update** after filling in the form. This will take you to the database instance's Details page.
 
-    ![](./images/Picture300-3.jpg " ")
+    ![Click Update.](./images/Picture300-3.jpg " ")
 
     *Note: Applications can continue running during the scale operation without downtime.*
 
 4.  **Refresh** the page to see the result of the scale operation.
 
-    ![](./images/Picture300-6.png " ")
+    ![A refreshed database console page with updated OCPU count and storage.](./images/Picture300-6.png " ")
 
 ## **Step 2**: Performance and Concurrency Benefits of Dynamic Scaling
 
@@ -47,7 +47,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
 2.  In this example, scaling up the number of CPUs from 2 to 8 increased the transaction throughput from 2000 to 7500 transactions per second.
 
-    ![](./images/screenshot-of-increased-transaction-throughput.png " ")
+    ![An example of increased throughput after scaling up the number of CPUs.](./images/screenshot-of-increased-transaction-throughput.png " ")
 
 ## Want to Learn More?
 

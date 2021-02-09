@@ -56,7 +56,17 @@ The following is a summary of the steps that are covered in this lab along with 
 1. **Local explanations**: ``local_explainer = explainer.local_explanation()``
 1. **Feature important**: ``global_explainer.feature_importance_summary()`` and ``global_explainer.compute_feature_importance()``
 
-## **STEP 3:** Binary Classification Model
+## **STEP 3:** Install a Conda Package
+
+A conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
+
+1. Open a terminal window by clicking on **File**, **New** and then **Terminal**.
+1. Run the command: `odsc conda install -s mlcpuv1`
+1. You will receive a prompt related to what version number you want. Press `Enter` to select the default.
+1. Wait for the conda package to be installed.
+
+
+## **STEP 4:** Binary Classification Model
 
 To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**. 
 
@@ -80,7 +90,7 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 
 1. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs.
 
-## **STEP 4:** Next Steps
+## **STEP 5:** Next Steps
 
 **Congratulations! You have successfully completed the lab**
 
@@ -96,7 +106,7 @@ You may now *proceed to the next lab*.
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, November 2020
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

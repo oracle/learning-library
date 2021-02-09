@@ -1,0 +1,3 @@
+BDC-ADW demo details page is displayed. In this page, Database administration and developer tools for Autonomouse Database is shown.
+SQL Developer Web, Oracle Application Express, Oracle ML User Administration, and SODA Drivers are displayed. 
+SQL Developer Web option is being clicked.

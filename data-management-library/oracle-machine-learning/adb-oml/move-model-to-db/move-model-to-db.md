@@ -57,7 +57,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/005.png  " ")
 
-5.  Log in with your adw userid, **Username - admin** and **Password** you created for the ADW Instance.
+5.  Log in with your adw userid, **Username - ADMIN** and the <if type="freetier">**Password** you created for the ADW Instance.</if><if type="livelabs">password **WELcome__1234**.</if>
 
     ![](./images/006.png  " ")
 
@@ -459,4 +459,3 @@ Please proceed to the next lab.
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-

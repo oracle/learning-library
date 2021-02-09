@@ -1,5 +1,6 @@
 {
-    "tutorials": [
+  "workshoptitle": "Create a DBCS VM Database",
+   "tutorials": [
       {
         "title": "Introduction",
         "filename": "introduction/intro.md"
@@ -18,7 +19,7 @@
       },
       {
         "title": "Lab 4: Create an Oracle Cloud Infrastructure VM Database",
-        "filename": "create-oci-vm-db/create-oci-vm-db.md"
+        "filename": "create-oci-vm-db/create-oci-vm-db-vcn.md"
       },
       {
           "title": "(Optional) Lab 5: Add an Ingress Rule",

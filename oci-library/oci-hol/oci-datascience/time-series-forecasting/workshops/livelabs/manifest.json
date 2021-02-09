@@ -1,0 +1,39 @@
+{
+      "workshoptitle": "Time Series Forecasting with fb Prophet",
+      "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Data Science Service",
+            "filename": "../../../common/odsc-intro.md"
+        },
+        {
+            "title": "Lab 1: Create a Project",
+            "description": "Create a project to contain the Data Science Notebooks.",
+            "filename": "../../../common/project-setup-green-button.md"
+        },
+        {
+            "title": "Lab 2: Create a Notebook Session",
+            "description": "Create a Notebook Session and launch it.",
+            "filename": "../../../common/notebook-setup-green-button.md"
+        },
+        {
+            "title": "Lab 3: Conda Environments",
+            "description": "Introduction to conda environments.",
+            "filename": "../../condas-intro/condas-intro.md"
+        },
+        {
+            "title": "Lab 4: Time Series Forecasting Models",
+            "description": "Learn how to build time series forecasting models.",
+            "filename": "../../time-series/time-series.md"
+        },
+        {
+            "title": "Lab 5: Shutting Down a Notebook Session",
+            "description": "Deactivate or terminate a notebook session.",
+            "filename": "../../../common/notebook-shutdown.md"
+        }
+    ]
+}

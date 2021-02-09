@@ -535,7 +535,7 @@ http://&lt;Instance_ip_address&gt:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
   [](youtube:rvxTbTuUm5k)
   
 
-## Want to learn more
+## Learn More
 - [ORDS](https://www.oracle.com/in/database/technologies/appdev/rest.html)
 
 ## Acknowledgements

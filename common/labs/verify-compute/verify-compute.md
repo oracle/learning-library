@@ -7,7 +7,8 @@ This lab will show you how to login to your pre-created compute instance running
 
 ### Objectives
 In this lab, you will:
-* Connect to your compute instance
+- Gather details needed to connect to your instance (Public IP Address)
+- Learn how to connect to your compute instance using SSH protocol
 
 ### Prerequisites
 
@@ -17,43 +18,23 @@ This lab assumes you have:
 - Successfully logged into your LiveLabs account
 - A Valid SSH Key
 
-## **STEP 1**: Gather compute instance details
-1. Go to the hamburger menu (in the top left corner) and click ***Compute >> Instances***.
+## **Step 1:** Gather compute instance details
+1. Now that your instance has been provisioned, navigate to ***My Reservations***, find the request you submitted from the list displayed (only one item will be displayed if this is your first request).
 
-   ![Create a stack](images/em-nav-to-compute-instances.png " ")
+   ![](images/ll-launch-workshop.png " ")
 
-2. Select the compartment that was assigned.
-3. Look for the instance that was created for you jot down the public IP address.
+2. Click on ***Launch Workshop***
 
-   ![Create a stack](images/em-compute-instances.png " ")
+3. In the expanded **Workshop Details**, look for the instance(s) and write down the public IP address(es).
 
-## **STEP 2:** Connect to your instance
+   ![](images/ll-get-public-ip.png " ")
 
-### Oracle Cloud Shell
+4. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+## **Step 2:** How to Establish a Terminal Connection to your Instance
+Depending on your workshop, you may need to connect to the instance via a secure shell client (SSH). If you're instructed in the next lab(s) to execute tasks via an SSH terminal, review the options below and select the one that best meet your needs.
 
-    ![](./images/em-cloudshell.png " ")
-
-2.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP address for your instance.
-4.  Enter the command below to login to your instance.    
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-
-    ![](./images/em-cloudshell-ssh.png " ")
-
-If you used the default RSA key name of **id_rsa** then use the following to connect as there's no need to explicitly specify the key.
-
-````
-ssh  opc@<Your Compute Instance Public IP Address>
-````
-
-5.  When prompted, answer **yes** to continue connecting.
-6.  Continue to Step 5 on the left hand menu.
-
-### MAC or Windows CYGWIN Emulator
+### **Option 1:** MAC or Windows CYGWIN Emulator
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP address for your instance.
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
@@ -63,10 +44,8 @@ ssh  opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/em-mac-linux-ssh-login.png " ")
 
-4.  After successfully logging in, proceed to Step 5.
 
-### Windows using Putty
-
+### **Option 2:** Windows using Putty
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
 1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)
@@ -99,13 +78,11 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 1.  In the category section, **Click** session.
 2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now [proceed to the next lab](#next).
+**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Appendix: Troubleshooting Tips
 
 If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
-1. Can't login to instance
-2. Invalid public key
 
 ### Issue 1: Can't login to instance
 Participant is unable to login to instance
@@ -120,20 +97,10 @@ There may be several reasons why you can't login to the instance.  Here are some
 - Make sure the instance is running (type the command *ps -ef | grep oracle* to see if the oracle processes are running)
 
 
-### Issue 2: Invalid public key
-![](images/invalid-ssh-key.png  " ")
-
-#### Issue #2 Description
-When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
-
-#### Tips for fixing for Issue #2
-- Go back to the registration page, delete your registration and recreate it ensuring you create and **copy/paste** your *.pub key into the registration page correctly.
-- Ensure you pasted the *.pub file into the window.
-
 ## Acknowledgements
-- **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-- **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -3,7 +3,7 @@
 
 ![](images/100/image110_1.png)
 
-## Want to learn more:
+## Learn More:
 " https://www.oracle.com/middleware/data-integration/goldengate/big-data/ "
 
 ### Introduction

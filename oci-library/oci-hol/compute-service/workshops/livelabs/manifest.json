@@ -8,7 +8,7 @@
       },
       {
           "title": "Introduction and Overview",
-          "filename": "./../../../intro/intro.md"
+          "filename": "./../../intro/intro.md"
       },
       {
           "title": "Lab 1: Generate SSH Keys",
@@ -18,7 +18,7 @@
       {
           "title": "Lab 2: Create a Compute Service",
           "type": "livelabs",
-          "filename": "./../../compute-service.md"
+          "filename": "./../../cs/compute-service.md"
       }
     ]
 }

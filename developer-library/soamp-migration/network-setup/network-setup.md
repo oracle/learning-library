@@ -34,15 +34,15 @@ Before we can provision the Application Database (SOADB), we need to provision a
 
 1. Go to the menu button on the top left and select **Identity -> Compartment** .
 
-  <img src="../../network-setup/images/menu-compartment.png" width="50%">
+  ![](./images/menu-compartment.png =50%x*)
 
 2. Click on **Create Compartment**
 
-  <img src="../../network-setup/images/compartment-create-0.png" width="70%">
+  ![](./images/compartment-create-0.png =70%x*)
 
 3. Provide all the required details and make sure you have relevant permissions from your OCI Administrator to create the **Compartment**.
 
-  <img src="../../network-setup/images/compartment-create.png" width="70%">
+  ![](./images/compartment-create.png =70%x*)
 
 ## **STEP 2:** Create the VCN
 
@@ -50,19 +50,19 @@ We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigur
 
 1. Go to the menu button and go to **Networking -> Virtual Cloud Networks**.
 
-  <img src="../../network-setup/images/vcn-menu.png" width="50%">
+  ![](./images/vcn-menu.png =50%x*)
 
 2. Click on **Create VCN** button and then select **VCN with Internet Connectivity** and click on **Start VCN Wizard** button.
 
-  <img src="../../network-setup/images/provision-vcn-4.png" width="100%">
+  ![](./images/provision-vcn-4.png)
 
 3. Provide the VCN NAME (we'll use `SOAMP1VCN`) and select the Compartment which you have created earlier.
 
-  <img src="../../network-setup/images/provision-vcn-5.png" width="100%">
+  ![](./images/provision-vcn-5.png)
 
 4. Select the default values for Configure VCN and Subnets unless you have been provided by specific CIDR range from your Network Administrator to use, then click on **Next** button.
 
-  <img src="../../network-setup/images/provision-vcn-6.png" width="100%">
+  ![](./images/provision-vcn-6.png)
 
 5. Review all the **VCN** ,**Subnet** ,**Gateway**, **Security List** and **Route Table** details and then click on **Create** button.
 
@@ -72,11 +72,11 @@ We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigur
 
 6. Click **Create**
 
-  <img src="../../network-setup/images/provision-vcn-7.png" width="100%">
+  ![](./images/provision-vcn-7.png)
 
 7. *If you see any provisioning error, make sure to click* **Retry Provision** *before continuing*
 
-    <img src="../../network-setup/images/retry-provision.png" width="70%">
+    ![](./images/retry-provision.png =70%x*)
 
 8. When all is clear click **View Virtual Network**
 
@@ -96,25 +96,25 @@ In this section we will create a Security List for the SOA subnet to be able to 
 
 1. Click **Security Lists**
 
-  <img src="../../network-setup/images/sec-lists.png" width="70%">
+  ![](./images/sec-lists.png =70%x*)
 
 2. Click **Security List for Private Subnet-SOAMP1VCN** 
 
-  <img src="../../network-setup/images/provision-db-23-sl.png" width="100%">
+  ![](./images/provision-db-23-sl.png)
 
 3. Click on **Add Ingress Rules**
 
 4. Add an ingress rules to open the DB port to the VCN CIDR.
 
-  <img src="../../network-setup/images/db-seclist.png" width="70%">
+  ![](./images/db-seclist.png =70%x*)
 
 5. Add an ingress rules to open the 7001-7004 ports to the VCN CIDR (10.0.0.0/16).
 
-  <img src="../../network-setup/images/wls-7001-seclist.png" width="70%">
+  ![](./images/wls-7001-seclist.png =70%x*)
 
 6. Add an ingress rules to open the 9071-9074 ports to the VCN CIDR (10.0.0.0/16).
 
-  <img src="../../network-setup/images/wls-9071-seclist.png" width="70%">
+  ![](./images/wls-9071-seclist.png =70%x*)
 
 
 You may proceed to the next lab

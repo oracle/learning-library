@@ -1,0 +1,1 @@
+A sign-in page for SQL Developer Web is displayed. Username and password is being entered and Sign in button is clicked.

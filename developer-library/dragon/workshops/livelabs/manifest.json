@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Simplify Application Development with Autonomous Database using the DRAGON Stack Manager",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -12,7 +12,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Download and Run DRAGON",
+            "title": "Lab 1: Create your first React Web Application",
             "filename": "../../run-dragon/run-dragon.md"
         }
     ]

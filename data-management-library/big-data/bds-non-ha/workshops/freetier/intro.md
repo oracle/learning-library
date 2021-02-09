@@ -2,6 +2,8 @@
 
 The labs in this workshop walk you through all the steps to get started using **Oracle Big Data Service (BDS)**.
 
+Estimated Workshop Time: 6 hours
+
 ## What is Oracle Big Data Service?
 Oracle Big Data Service is an Oracle Cloud Infrastructure service designed for a diverse set of big data use cases and workloads. From short-lived clusters used to tackle specific tasks to long-lived clusters that manage large data lakes, Big Data Service scales to meet an organization’s requirements at a low cost and with the highest levels of security.
 
@@ -32,9 +34,11 @@ Watch our short video that explains key features in Oracle Big Data Service:
 - **Lab 4:** Access a BDS Utility Node Using a Public IP Address
 - **Lab 5:** Use Cloudera Manager (CM) and Hue to Access a BDS Cluster
 - **Lab 6:** Create a Hadoop Administrator User
+- **Lab 7:** Upload Data to Hadoop Distributed File System and Object Storage
+- **Lab 8:** Clean up Resources Used in this Workshop (Optional)
 
 ## Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Prerequisites** lab in the **Contents** menu.
+This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Get Started with Oracle Cloud** lab in the **Contents** menu.
 
 **Notes:**
  + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
@@ -49,7 +53,7 @@ Use these links to get more information about BDS and OCI:
 * [Using Oracle Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/index.html)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 * [Overview of Oracle Cloud Infrastructure Identity and Access Management (IAM)](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
-* [Oracle Cloud Infrastructure Self-paced Learning Modules] (https://www.oracle.com/cloud/iaas/training/foundations.html)
+* [Oracle Cloud Infrastructure Self-paced Learning Modules](https://www.oracle.com/cloud/iaas/training/foundations.html)
 * [Overview of Compute Service](https://www.oracle.com/pls/topic/lookup?ctx=cloud&id=oci_compute_overview)
 * [VCN and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm)
 

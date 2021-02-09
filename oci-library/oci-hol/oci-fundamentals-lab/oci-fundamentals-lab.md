@@ -34,7 +34,7 @@ Lab 2: Create SSH Keys - Cloud Shell
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-2. Choose **VCN with Internet Connectivity** and click **Start Workflow**
+2. Choose **VCN with Internet Connectivity** and click **Start VCN Wizard**
 
 3. Fill out the dialog box:
 

@@ -1,0 +1,1 @@
+Autonomous DataWarehouse Instance page is displayed. BDC-ADW-demo instance is being selected.

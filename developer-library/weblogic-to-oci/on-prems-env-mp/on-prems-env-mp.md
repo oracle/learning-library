@@ -75,7 +75,7 @@ For this lab you need:
 
 3. It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
-  <img src="../../../on-prems-env-mp/images/localhost-simpledb-app.png" width="100%">
+  ![](./images/localhost-simpledb-app.png)
 
 You may proceed to next steps while the environment is coming up, but make sure it is up before proceeding to the next lab.
 

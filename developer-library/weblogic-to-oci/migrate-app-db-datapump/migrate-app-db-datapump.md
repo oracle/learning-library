@@ -152,7 +152,7 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
       If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
-      <img src="../../../migrate-app-db-datapump/images/provision-db-27-connection2.png" width="70%">
+      ![](./images/provision-db-27-connection2.png =70%x*)
 
 
 ## **STEP 4:** Import the data into the target database on OCI

@@ -24,7 +24,7 @@ If you have Oracle Database, you already have Oracle APEX. APEX is a fully suppo
 -  Use SQL Developer Web to create a data model
 -  Create and modify an APEX application
 
-*Note: This lab assumes you are using Oracle APEX 20.1.*
+*Note: This lab assumes you are using Oracle APEX 20.2.*
 
 ### Labs
 

@@ -1,0 +1,2 @@
+BDC-ADW-demo instance details page is displayed. There are five menu options options: DB Connection, Performance Hub, Service Console, Scale Up/Down, More Actions.
+DB connection menu option is being selected.

@@ -1,4 +1,5 @@
 {
+  "workshoptitle":"Oracle Machine Learning with Autonomous Database",
   "tutorials": [
       {
         "title": "Prerequisites",
@@ -10,21 +11,18 @@
         "filename": "../../intro/intro.md"
       },
       {
-      "title": "Lab 1: Provision ADB",
-      "filename": "../../connect-provision-adb/connect-provision-adb.md"
-      },
-      {
-        "title": "Lab 2: Create Machine Learning Model",
+        "title": "Lab 1: Create Machine Learning Model",
         "description": "Explore Zeppelin notebooks and create a ML model on customer credit data set.",
-        "filename":  "../../create-ml-model/create-ml-model.md"
+        "filename":  "../../create-ml-model/create-ml-model-ll.md"
       },
       {
-        "title": "Lab 3: Migrate ML Model to ATP",
+        "title": "Lab 2: Migrate ML Model to ATP",
         "description": "Export the ML model from ADW and import into ATP",
+        "type": "livelabs",
         "filename": "../../move-model-to-db/move-model-to-db.md"
       },
       {
-        "title": "Lab 4: Using Prediction in an Application",
+        "title": "Lab 3: Using Prediction in an Application",
         "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
         "filename": "../../integrate-with-app/integrate-with-app.md"
       }

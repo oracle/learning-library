@@ -8,12 +8,12 @@
       },
       {
           "title": "Introduction",
-          "filename": "./../../../intro/intro.md"
+          "filename": "./../../intro/intro.md"
       },
       {
           "title": "Lab 1: Create and Attach a Block Volume Service",
           "type": "livelabs",
-          "filename": "./../../block-volume.md"
+          "filename": "./../../bv/block-volume.md"
       }
     ]
 }

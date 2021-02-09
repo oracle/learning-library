@@ -18,10 +18,10 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 
 
-## **STEP 1**: Deploy GrubDash store services
+## **STEP 1**: Deploy GrabDish store services
 
 1. After you have successfully set up the databases, you can now test the
-    “GrubDash” Food Order application. You will interact with several
+    “GrabDish” Food Order application. You will interact with several
     different data types, check the event-driven communication, saga, event-sourcing
     and Command Query Responsibility Segregation via order and inventory
     services. Go ahead and deploy the related order, inventory and supplier
@@ -96,7 +96,7 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 
 
-## **STEP 2**: Verify order and inventory activity of GrubDash store
+## **STEP 2**: Verify order and inventory activity of GrabDish store
 
 1.   Open the frontend microservices home page.
   If you need the URL, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.

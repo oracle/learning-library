@@ -520,7 +520,7 @@ appDeployments:
     ```
     Note: this is NOT the private load balancer IP, this is the **Private IP of the admin node**, found in the **Outputs** of the deployment stack
 
-    <img src="../../../migrate-wls-oke/images/admin-ip.png" width="70%">
+    ![](./images/admin-ip.png =70%x*)
 
 1. Run the following command to copy the files:
 
@@ -573,13 +573,13 @@ appDeployments:
 
 6. Run the job with the **Build** button
 
-    <img src="../../../migrate-wls-oke/images/jenkins4.png" width="60%">
+    ![](./images/jenkins4.png =60%x*)
 
 7. In case of failure, hover over the job step and check the logs for information about issues at each build step.
 
 8. Wait until the job completes without failure in Jenkins
 
-    <img src="../../../migrate-wls-oke/images/jenkins5.png" width="80%">
+    ![](./images/jenkins5.png =80%x*)
 
 
 ### You're done!
@@ -594,11 +594,11 @@ appDeployments:
 
 3. Find the IP of the Public Load Balancer
 
-  <img src="../../../migrate-wls-oke/images/public-lb.png" width="70%">
+  ![](./images/public-lb.png =70%x*)
 
 4. Go to *https://PUBLIC_LOAD_BALANCER_IP/SimpleDB* to see the SimpleDB application
 
-  <img src="../../../migrate-wls-oke/images/oci-simpledb-app.png" width="100%">
+  ![](./images/oci-simpledb-app.png)
 
   You will be prompted once again with the self-sign certificate warning in Firefox
 

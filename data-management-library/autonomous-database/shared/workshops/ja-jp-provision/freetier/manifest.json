@@ -1,0 +1,20 @@
+{
+    "workshoptitle": "自律データベースのプロビジョニング",
+    "tutorials": [
+      {
+           "title": "Prerequisites",
+           "description": "Get a Free Trial",
+           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+       },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "./../../../intro/intro-ziplab.md"
+        },
+        {
+            "title": "Lab 1: Provision an ADW Instance",
+            "description": "ADWインスタンスをプロビジョニングし、データベースに接続します",
+            "filename": "./../../../ja-jp-adb-provision/adb-provision.md"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+  "workshoptitle": "Oracle Enterprise Data Quality",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to EDQ",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 2: Initialize Environment",
+      "description": "Initialize Environment",
+      "filename": "../../setup-edq-rep/setup-edq-rep.md"
+    },
+    {
+      "title": "Lab 3: Data Profiling",
+      "description": "Data Profiling",
+      "filename": "../../profiling/profiling.md"
+    },
+    {
+      "title": "Lab 4: Reference Data",
+      "description": "Reference Data",
+      "filename": "../../reference-data/reference-data.md"
+    },
+    {
+      "title": "Lab 5: Data Auditing",
+      "description": "Data Auditing",
+      "filename": "../../audit-tools/audit-tools.md"
+    },
+    {
+      "title": "Lab 6: Data Standardization and Enhancement",
+      "description": "Data Standardization and Enhancement",
+      "filename": "../../data-standardization/data-standardization.md"
+    },
+    {
+      "title": "Lab 7: Prepare EDQ Process for ODI Consumption",
+      "description": "Prepare EDQ Process for ODI Consumption",
+      "filename": "../../odi-consumption/odi-consumption.md"
+    }
+  ]
+}

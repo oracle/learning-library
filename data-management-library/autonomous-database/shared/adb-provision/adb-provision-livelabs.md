@@ -108,14 +108,14 @@ Watch a video demonstration of provisioning a new Autonomous Transaction Process
 
     ![](./images/Picture100-26e.png " ")
 
-9. Choose a license type. For this lab, choose __License Included__. The two license types are:
+9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
 10. Click __Create Autonomous Database__.
 
-    ![](./images/Picture100-27.png " ")
+    ![](./images/Picture100-27-byol.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 

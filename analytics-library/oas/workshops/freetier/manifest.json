@@ -1,0 +1,47 @@
+{
+  "workshoptitle": "Oracle Analytics Server",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    }, 
+    {
+      "title": "Lab 4: Initialize Environment",
+      "description": "Initialize Environment Lab",
+      "filename": "../../init-start-oas/init-start-oas.md"
+    },
+    {
+      "title": "Lab 5: Self-Service Data Visualization",
+      "description": "Self-Service Data Visualization Lab",
+      "filename": "../../self-service-data-visualization/self-service-data-visualization.md"
+    },
+    {
+      "title": "Lab 6: Augmented Analytics",
+      "description": "Augmented Analytics",
+      "filename": "../../augmented-analytics/augmented-analytics.md"
+    }
+  ]
+}

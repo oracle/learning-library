@@ -1,0 +1,10 @@
+Converged DB Notes-
+
+ADMIN Passwd: WElcome_1234#
+
+ConvgDB-AuthTOken
+-> 0M:uLQp]Mn7X+]p9]a):
+
+1. Python is preinstalled in the cloudshell
+2. pip is preinstalled in the cloudshell
+

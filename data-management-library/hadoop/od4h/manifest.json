@@ -1,0 +1,9 @@
+{
+    "tutorials": [
+        {
+            "title": "Connecting Oracle DataSource for Apache Hadoop on Big Data Service to Autonomous Data Warehouse",
+            "description": "This lab walks you through the steps to connecting Oracle DataSource for Apache Hadoop on Big Data Service to Autonomous Data Warehouse",
+            "filename": "content.md"
+        }
+    ]
+}

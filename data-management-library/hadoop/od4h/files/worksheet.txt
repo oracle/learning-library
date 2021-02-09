@@ -1,0 +1,1 @@
+SQL Developer Worksheet is displayed. And a series of pop-up informational boxes introduce you to the main features.

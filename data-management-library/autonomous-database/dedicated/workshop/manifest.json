@@ -222,6 +222,11 @@
             "filename": "./../adb-kms/adb-kms.md"
         },
         {
+            "title": "Lab 29: Autonomous Data Guard",
+            "description": "Customer managed keys using OCI Vault Service",
+            "filename": "./../adb-data-guard/adb-data-guard.md"
+        },
+        {
             "title": "Appendix",
             "description": "Common tools for windows Users Finding the IP address of your AEI Cluster.",
             "filename": "./../adb-appendix/adb-appendix.md"

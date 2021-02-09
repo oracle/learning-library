@@ -1,0 +1,48 @@
+{
+    "workshoptitle": "Introduction to Oracle Spatial Studio",
+    "tutorials": [
+      {
+        "title": "Prerequisites",
+        "description": "Login to Oracle Cloud",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+      {
+        "title": "Introduction",
+        "filename": "../introduction/introduction.md"
+      },
+      {
+        "title": "Lab 1: Autonomous Database",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
+    },
+
+      {
+        "title": "Lab 2: SQL Developer Web",
+        "description": "SQL Developer Web",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-sqldevweb/adb-sqldevweb.md"
+    },
+    {
+      "title": "Lab 3: Spatial Studio Repo Schema",
+      "filename": "../../../../spatial-studio/env/repo-schema/repo-schema.md"
+  },    {
+      "title": "Lab 4: Provision Spatial Studio",
+      "filename": "../../../../spatial-studio/env/env-marketplace/env-marketplace.md"
+},
+    {
+      "title": "Lab 5: Load Data",
+      "filename": "../../../../spatial-studio/intro/load-data/load-data.md"
+  },
+  {
+      "title": "Lab 6: Create Project",
+      "filename": "../../../../spatial-studio/intro/create-project/create-project.md"
+  },
+  {
+      "title": "Lab 7: Explore Point Styling",
+      "filename": "../../../../spatial-studio/intro/apply-styling/apply-styling.md"
+  },
+  {
+      "title": "Lab 8: Explore Layer Interactions",
+      "filename": "../../../../spatial-studio/intro/apply-interactions/apply-interactions.md"
+  }
+    ]
+}
+

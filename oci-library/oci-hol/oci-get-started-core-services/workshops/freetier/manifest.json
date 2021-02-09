@@ -16,22 +16,22 @@
       },
       {
           "title": "Lab 2: Identity and Access Management",
-          "filename": "../../../identity-access-management/identity-access-management.md"
+          "filename": "../../../identity-access-management/iam/identity-access-management.md"
       },
       {
           "title": "Lab 3: Virtual Cloud Networks",
           "type": "freetier",
-          "filename": "../../../virtual-cloud-networks/virtual-cloud-networks.md"
+          "filename": "../../../virtual-cloud-networks/vcn/virtual-cloud-networks.md"
       },
       {
           "title": "Lab 4: Create a Compute Service",
           "type": "freetier",
-          "filename": "../../../compute-service/compute-service.md"
+          "filename": "../../../compute-service/cs/compute-service.md"
       },
       {
           "title": "Lab 5: Block Volume",
           "type": "freetier",
-          "filename": "../../../block-volume/block-volume.md"
+          "filename": "../../../block-volume/bv/block-volume.md"
       },
       {
           "title": "Lab 6: Object Storage",

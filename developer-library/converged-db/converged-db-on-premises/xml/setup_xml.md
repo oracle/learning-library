@@ -36,7 +36,7 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
 
  
-### Want to learn more
+### Learn More
 - [XML](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 
 ## **Step 1:** Connect to the Pluggable Database (PDB)

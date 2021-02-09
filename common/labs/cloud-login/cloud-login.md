@@ -23,33 +23,30 @@ We offer two types of Cloud Accounts:
 - Password
 
 ## **Step 1:**  Login to Oracle Cloud
-1. From any browser go to oracle.com to access the Oracle Cloud.
+If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
-    [https://www.oracle.com/](https://www.oracle.com/)
+1. Go to [cloud.oracle.com](https://cloud.oracle.com) and enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
-    ![](images/cloud-login-1.png " ")
+    ![](images/cloud-oracle.png " ")
 
-2.  Click the *View Accounts* button in the upper right corner.  Click on **Sign in to Cloud** underneath the Sign in to Cloud.  *NOTE:  Do NOT click the Sign-In button under ORACLE ACCOUNT, this will take you to Single Sign-On, not the Oracle Cloud*
+2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
 
-    ![](images/cloud-login-2.png " ")   
+    ![](images/cloud-login-tenant.png " ")
 
-3. Enter your Cloud Account Name.  This is your Tenant that you received during sign up.
+3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
-    ![](images/cloud-login-tenant.png " ")   
+    ![](images/oci-signin.png " ")
 
-3. Enter your username and password and click on **Sign In**.
+4. You are now signed in to Oracle Cloud!
 
-    ![](images/cloud-login-3.png " ")   
-
-
-4. Once you successfully login, you will be presented with the Oracle Cloud homepage.
-  ![](./images/cloud-homepage.png " ")
+    ![](images/oci-console-home-page.png " ")
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Mgmt, October 2020
+- **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **Last Updated By** - Rene Fontcha, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

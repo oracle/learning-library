@@ -25,7 +25,7 @@ Quick SQL provides an easy way to generate the SQL required to create a relation
     ```
     <copy>big_mac_index  
       country_name  
-      iso
+      country_iso
       currency_code
       local_price num
       dollar_exchange_rate num
@@ -38,13 +38,6 @@ Quick SQL provides an easy way to generate the SQL required to create a relation
     Click **Generate SQL**.
 
     ![](images/enter-table.png " ")
-
-2. In SQL (right pane), click **Settings**.
-
-    In the Settings dialog, for Primary Keys, select **12c Identity Data Types**.
-    Click **Save Changes**.
-
-    ![](images/set-settings.png " ")
 
 ## **STEP 3** – Implement the Script
 At this stage you have created a SQL statement. However, you first need to save the statement as a script file and then run the script. This will create the database object you defined.
@@ -116,7 +109,7 @@ This completes Lab 2. You now know how to utilize Quick SQL to build a simple ta
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -42,7 +42,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 ![](./images/json_intro.png " ")
 
 
-### Want to learn more
+### Learn More
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
   
 ## **Step 1:** Connect to your Instance

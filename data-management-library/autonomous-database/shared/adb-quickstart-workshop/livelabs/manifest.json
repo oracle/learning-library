@@ -14,7 +14,7 @@
       {
           "title": "Lab 2: Getting Started",
           "description": "Provision Autonomous Database",
-          "filename": "./../../adb-provision/adb-provision.md"
+          "filename": "./../../adb-provision/adb-provision-livelabs.md"
       },
       {
           "title": "Lab 3: Working with Free Sample Data Sets",

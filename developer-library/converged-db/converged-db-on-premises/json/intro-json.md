@@ -30,7 +30,7 @@ The first thing to realize about JSON is that it remains a simple text format—
 
   [](youtube:oiOCp23T1ZU)
 
-## Want to learn more
+## Learn More
 - [JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
   
 

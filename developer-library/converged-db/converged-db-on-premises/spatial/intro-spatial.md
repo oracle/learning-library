@@ -31,7 +31,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
   [![Spatial Datatype for Oracle Converged Database](./images/spatial-Images_introa.png " ")](https://www.youtube.com/watch?v=Q2jm93Rm95g)
   
 
-## Want to learn more
+## Learn More
 - [spatial](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
 
 ## Acknowledgements

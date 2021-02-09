@@ -14,7 +14,7 @@ Estimated Time: 40 minutes
 * Improve Calendar page
 * Link pages
 
-*Note: This workshop assumes you are using Oracle APEX 20.1.*
+*Note: This workshop assumes you are using Oracle APEX 20.2.*
 
 ### Labs
 
@@ -29,7 +29,7 @@ Total estimated time: 45 minutes
 
 ### **Let's Get Started!**
 
-If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the upper-right corner of the page.
+If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the upper-left corner of the page.
 
 ### Downloads
 
@@ -38,16 +38,16 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 ## Learn More - *Useful Links*
 
 - [APEX on Autonomous](https://apex.oracle.com/autonomous)
-- [APEX Collateral](https://apex.oracle.com)
+- [APEX Collateral](https://www.oracle.com/database/technologies/appdev/apex/collateral.html)
 - [Tutorials](https://apex.oracle.com/en/learn/tutorials)
 - [Community](https://apex.oracle.com/community)
 - [External Site + Slack](http://apex.world)
 
 ## **Acknowledgements**
 
- - **Author** -  Salim Hlayel, Principle Product Manager, June 2020
+ - **Author** -  Salim Hlayel, Principal Product Manager, June 2020
  - **Contributors** - Tom McGinn, Arabella Yao
- - **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principal Product Manager, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

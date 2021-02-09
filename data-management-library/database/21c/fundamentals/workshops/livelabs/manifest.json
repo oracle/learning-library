@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
+  "workshoptitle": "Database 21c New Features",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -11,29 +11,124 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "title": "Lab 1: Login to your Environment",
+            "filename": "../../create-oci-vm-db/create-oci-vm-db-vcn-livelabs.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
+            "title": "Lab 2: 21C Setup",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Application Development",
+            "filename": "../../introduction/intro-appdev.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab: New Set Operators",
+            "filename": "../../set-operators/set-operators.md"
         },
         {
-            "title": "Lab 5: Analyze Data",
-            "filename": "../../analyze/analyze.md"
+            "title": "Lab: Expressions in Init Parameters",
+            "filename": "../../init-params/init-params.md"
         },
         {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
+            "title": "Lab: SQM Scalar and Table Expressions",
+            "filename": "../../sql-macro/sql-macro.md"
+        },
+        {
+            "title": "Big Data and DW",
+            "filename": "../../introduction/intro-bigdata-dw.md"
+        },
+        {
+            "title": "Lab: Bitwise Aggregate Functions",
+            "filename": "../../bitwise-agg/bitwise-agg.md"
+        },
+        {
+            "title": "Lab: Enhanced Analytic Functions",
+            "filename": "../../enhanced-analytics/enhanced-analytics.md"
+        },
+        {
+            "title": "Lab: Detecting Data Tampering",
+            "filename": "../../data-tampering/data-tampering.md"
+        },
+        {
+            "title": "Lab: Measuring Asymmetry in Data",
+            "filename": "../../skewness/skewness.md"
+        },
+        {
+            "title": "Lab: Measuring Tailedness of Data",
+            "filename": "../../kurtosis/kurtosis.md"
+        },
+        {
+            "title": "Performance and HA",
+            "filename": "../../introduction/intro-perf-ha.md"
+        },
+        {
+            "title": "Lab: Automatic Zone Maps",
+            "filename": "../../auto-zone-maps/auto-zone-maps.md"
+        },
+        {
+            "title": "Lab: SecureFile LOBs",
+            "filename": "../../securefile-lobs/securefile-lobs.md"
+        },
+        {
+            "title": "Lab: Automatic In-Memory",
+            "filename": "../../auto-in-mem/auto-in-mem.md"
+        },
+        {
+            "title": "Lab: In-Memory Hybrid Scans",
+            "filename": "../../im-hybrid-scans/im-hybrid-scans.md"
+        },
+        {
+            "title": "Lab: Synchronizing Apps in App PDBs",
+            "filename": "../../sync-app-pdbs/sync-app-pdbs.md"
+        },
+        {
+            "title": "Lab: MAX_IDLE_BLOCKER_TIME Parameter",
+            "filename": "../../max-idle-blocker/max-idle-blocker.md"
+        },
+        {
+            "title": "Database Utilties",
+            "filename": "../../introduction/intro-dbutilities.md"
+        },
+        {
+            "title": "Lab: Data Pump Checksums",
+            "filename": "../../data-pump-validity/data-pump-validity.md"
+        },
+        {
+            "title": "Lab: Data Pump Transportable Tbsp",
+            "filename": "../../data-pump-tts/data-pump-tts.md"
+        },
+        {
+            "title": "Lab: Data Pump Index Compression",
+            "filename": "../../data-pump-index-comp/data-pump-index-comp.md"
+        },
+        {
+            "title": "Security ",
+            "filename": "../../introduction/intro-security.md"
+        },
+        {
+            "title": "Lab: Blockchain Tables & Rows",
+            "filename": "../../blockchain-table/blockchain-table.md"
+        },
+        {
+            "title": "Lab: Tablespace Encryption Algorithm",
+            "filename": "../../tbsp-encryption/tbsp-encryption.md"
+        },
+        {
+            "title": "Lab: Realms",
+            "filename": "../../realms/realms.md"
+        },
+        {
+            "title": "Authentication and Administration",
+            "filename": "../../introduction/intro-admin.md"
+        },
+        {
+            "title": "Lab: Upgraded Password File Case Sensitivity",
+            "filename": "../../upgraded-pwd/upgraded-pwd.md"
+        },
+        {
+            "title": "Lab: Password Length Enforcement",
+            "filename": "../../enforce-min-pwd/enforce-min-pwd.md"
         }
     ]
 }

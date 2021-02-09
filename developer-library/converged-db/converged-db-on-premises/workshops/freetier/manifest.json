@@ -29,19 +29,19 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
     },
     {
-      "title": "Lab 4: Start Database and Application",
-      "description": "Connect to Schema",
-      "filename": "../../setup/setup.md"
+      "title": "Lab 4: Initialize Environment",
+      "description": "Initialize Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 5: NODE.JS",
-      "description": "NODE.JS Lab",
-      "filename": "../../nodejs/nodejs.md"
-    },
-    {
-      "title": "Lab 6: JSON",
+      "title": "Lab 5: JSON",
       "description": "JSON Lab",
       "filename": "../../json/json.md"
+    },
+    {
+      "title": "Lab 6: NODE.JS",
+      "description": "NODE.JS Lab",
+      "filename": "../../nodejs/nodejs.md"
     },
     {
       "title": "Lab 7: XML",
@@ -62,6 +62,11 @@
       "title": "Lab 10: Cross Data Types",
       "description": "Labs that leverage data types across schemas",
       "filename": "../../crossdatatype/crossdatatype.md"
+    },
+    {
+      "title": "Lab 11: ORDS as Microservices",
+      "description": "Labs that leverage data types across schemas",
+      "filename": "../../ords/ords.md"
     }
   ]
 }

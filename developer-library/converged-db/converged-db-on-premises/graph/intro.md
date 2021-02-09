@@ -86,7 +86,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 [](youtube:-DYVgYJPbQA)
 [](youtube:zfefKdNfAY4)
 
-## Want to learn more
+## Learn More
 - [Oracle Graph](https://docs.oracle.com/en/database/oracle/oracle-database/19/spatl/index.html)
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 

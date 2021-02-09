@@ -18,7 +18,7 @@ In this lab you will:
 
 1. Go to **Database -> Bare Metal, VM and Exadata**
 
-  <img src="../../provision-app-db/images/provision-db-10.png" width="40%">
+  ![](./images/provision-db-10.png =40%x*)
 
 2. Click **Create DB System**
 
@@ -30,45 +30,45 @@ In this lab you will:
 
 4. Select an Availability Domain or keep the default, keep the default **Virtual Machine** and select a **Shape** that is available.
 
-  <img src="../../provision-app-db/images/provision-db-13-ad-shape.png" width="70%">
+  ![](./images/provision-db-13-ad-shape.png =70%x*)
 
 5. Keep the defaults for **Total node count** and **Database Edition**
 
-  <img src="../../provision-app-db/images/provision-db-14.png" width="70%">
+  ![](./images/provision-db-14.png =70%x*)
 
 6. Select **Logical Volume Manager** 
 
-  <img src="../../provision-app-db/images/db-lvm.png" width="70%">
+  ![](./images/db-lvm.png =70%x*)
 
 7. Keep defaults for **Storage**
 
-  <img src="../../provision-app-db/images/provision-db-16-storage.png" width="70%">
+  ![](./images/provision-db-16-storage.png =70%x*)
 
 8. Add your **SSH public key** 
 
-  <img src="../../provision-app-db/images/provision-db-17-ssh.png" width="70%">
+  ![](./images/provision-db-17-ssh.png =70%x*)
 
 9. Keep the default **License Included**
 
-  <img src="../../provision-app-db/images/provision-db-18-license.png" width="70%">
+  ![](./images/provision-db-18-license.png =70%x*)
 
 10. Select the **Virtual cloud network** `SOAMP1VCN`, the **Client subnet** `Private Subnet-SOAMP1VCN(regional)` and set a **Hostname prefix** of `soamp2db`
 
-  <img src="../../provision-app-db/images/db-network.png" width="70%">
+  ![](./images/db-network.png =70%x*)
 
 11. Click **Next**
 
 12. Name the Database `SOAMP2DB`
 
-  <img src="../../provision-app-db/images/db-name.png" width="70%">
+  ![](./images/db-name.png =70%x*)
 
 13. Select the **Database version** `19c`
 
-  <img src="../../provision-app-db/images/db-version.png" width="70%">
+  ![](./images/db-version.png =70%x*)
 
 14. Name the **PDB** `PDB1`
 
-  <img src="../../provision-app-db/images/db-pdbname.png" width="70%">
+  ![](./images/db-pdbname.png =70%x*)
 
 
 15. Enter and confirm the **SYS Database password**: 
@@ -81,7 +81,7 @@ In this lab you will:
     </copy>
     ```
 
-  <img src="../../provision-app-db/images/db-password.png" width="70%">
+  ![](./images/db-password.png =70%x*)
 
 16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**
 
@@ -105,7 +105,7 @@ Before you can proceed to the next lab, you need to check that the DB has been f
 
 3. Check the status of the database is `Available` or wait until it is before proceeding to the next lab.
 
-  <img src="../../provision-app-db/images/db-available.png" width="70%">
+  ![](./images/db-available.png =70%x*)
 
 You may proceed to the next lab.
 

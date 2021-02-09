@@ -1,5 +1,5 @@
 {
-  "workshoptitle":"Oracle Machine Learning with Autonomous Database",  
+  "workshoptitle":"Oracle Machine Learning with Autonomous Database",
   "tutorials": [
       {
         "title": "Prerequisites",
@@ -23,6 +23,7 @@
       {
         "title": "Lab 3: Migrate ML Model to ATP",
         "description": "Export the ML model from ADW and import into ATP",
+        "type": "freetier",
         "filename": "../../move-model-to-db/move-model-to-db.md"
       },
       {

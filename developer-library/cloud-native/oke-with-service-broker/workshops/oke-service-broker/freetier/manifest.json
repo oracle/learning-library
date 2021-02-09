@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "Deploy an OKE cluster with OCI Service Broker",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },{
+            "title": "Introduction",
+            "publisheddate": "01/07/2021",
+            "filename": "../../../intro/intro.md",
+            "type": "oci"
+        },
+        {
+            "title": "Lab 1: Install Pre-requisites",
+            "publisheddate": "01/07/2021",
+            "filename": "../../../prereq/prereq.md"
+        },
+        {
+            "title": "Lab 2: Deploy an OKE cluster with OCI Service Broker",
+            "publisheddate": "01/07/2021",
+            "filename": "../../../deploy/deploy.md"
+        },
+        {
+            "title": "Lab 3: Provision an ATP database with kubernetes",
+            "publisheddate": "01/07/2021",
+            "filename": "../../../provision-atp/provision-atp.md"
+        },
+        {
+            "title": "Lab 4: Provision an Storage Bucket with kubernetes",
+            "publisheddate": "01/07/2021",
+            "filename": "../../../provision-bucket/provision-bucket.md"
+        },
+        {
+            "title": "Lab 5: Provision a Stream with kubernetes",
+            "publisheddate": "01/07/2021",
+            "filename": "../../../provision-stream/provision-stream.md"
+        },
+        {
+            "title": "Lab 6: Tear down the Environment",
+            "publisheddate": "01/07/2021",
+            "filename": "../../../tear-down/tear-down.md",
+            "type": "dbcs"
+        }
+     ]
+}

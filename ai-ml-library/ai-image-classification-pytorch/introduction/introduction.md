@@ -20,7 +20,7 @@ Topics covered in this lab:
 * Convolutional Neural Networks (CNN)
 * Loss Function and Optimizer
 * Model Training
-* GPU Acceleration
+* GPU Acceleration;
 
 ### Prerequisites
 

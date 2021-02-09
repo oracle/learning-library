@@ -67,7 +67,7 @@ When Node.js needs to perform an I/O operation, like reading from the network, a
 
 You may proceed to the next lab.
 
-## Want to learn more
+## Learn More
 
 - [Node-js](https//nodejs.org/en/)
 - [Node-js for oracle Linux](https//yum.oracle.com/oracle-linux-nodejs.html)  

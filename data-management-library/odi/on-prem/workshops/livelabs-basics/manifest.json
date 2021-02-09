@@ -1,0 +1,53 @@
+{
+  "workshoptitle": "Oracle Data Integrator 12c",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction to ODI",
+      "description": "Introduction to ODI",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 3: Initialize Environment",
+      "filename": "../../setup-odi-rep/setup-odi-rep.md"
+    },
+    {
+      "title": "Lab 4: Getting Started",
+      "filename": "../../odi12c-lab/odi12c-lab.md"
+    },
+    {
+      "title": "Lab 5: Work with Mappings - 1",
+      "filename": "../../odi12c-mappings-1/odi12c-mappings-1.md"
+    },
+    {
+      "title": "Lab 6: Work with Mappings - 2",
+      "filename": "../../odi12c-mappings-2/odi12c-mappings-2.md"
+    },
+    {
+      "title": "Lab 7: Implementing Data Quality Control",
+      "filename": "../../odi12c-data-quality-control/odi12c-data-quality-control.md"
+    },
+    {
+      "title": "Lab 8: Work with Packages",
+      "filename": "../../odi12c-packages/odi12c-packages.md"
+    },
+    {
+      "title": "Lab 9: Deploying Integrated Applications ",
+      "filename": "../../odi12c-production/odi12c-production.md"
+    }
+  ]
+}

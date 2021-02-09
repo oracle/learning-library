@@ -190,8 +190,8 @@ There are several ways to check the lag between the primary and standby.
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/6qb-tsAMHHM-iQhmVPifNoBazUUuKFjh6MN27xapzuTNcAHzoZTuZqnn1QgBgnaE/n/c4u03/b/data-management-library-files/o/workload.sh
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/PpXBKEofD92m-Q7jh-465U3FbCpvnysflKdk6ptRPRJzcKngSKcJU5l5iCWo4eN0/n/c4u03/b/data-management-library-files/o/scn.sql
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/data-management-library-files/o/workload.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/data-management-library-files/o/scn.sql
     </copy>
     ```
 
@@ -200,8 +200,8 @@ There are several ways to check the lag between the primary and standby.
 2. From on-premise side, run as **oracle** user, download scripts using the command you copied.
 
     ```
-    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/6qb-tsAMHHM-iQhmVPifNoBazUUuKFjh6MN27xapzuTNcAHzoZTuZqnn1QgBgnaE/n/c4u03/b/data-management-library-files/o/workload.sh
-    --2020-10-31 02:48:08--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/6qb-tsAMHHM-iQhmVPifNoBazUUuKFjh6MN27xapzuTNcAHzoZTuZqnn1QgBgnaE/n/c4u03/b/data-management-library-files/o/workload.sh
+    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/data-management-library-files/o/workload.sh
+    --2020-10-31 02:48:08--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/data-management-library-files/o/workload.sh
     Resolving objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)... 134.70.31.247, 134.70.27.247, 134.70.35.189
     Connecting to objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)|134.70.31.247|:443... connected.
     HTTP request sent, awaiting response... 200 OK
@@ -212,8 +212,8 @@ There are several ways to check the lag between the primary and standby.
     
     2020-10-31 02:48:09 (10.5 MB/s) - ‘workload.sh’ saved [1442/1442]
     
-    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/PpXBKEofD92m-Q7jh-465U3FbCpvnysflKdk6ptRPRJzcKngSKcJU5l5iCWo4eN0/n/c4u03/b/data-management-library-files/o/scn.sql
-    --2020-10-31 02:48:29--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/PpXBKEofD92m-Q7jh-465U3FbCpvnysflKdk6ptRPRJzcKngSKcJU5l5iCWo4eN0/n/c4u03/b/data-management-library-files/o/scn.sql
+    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/data-management-library-files/o/scn.sql
+    --2020-10-31 02:48:29--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/data-management-library-files/o/scn.sql
     Resolving objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)... 134.70.35.189, 134.70.31.247, 134.70.27.247
     Connecting to objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)|134.70.35.189|:443... connected.
     HTTP request sent, awaiting response... 200 OK
@@ -702,7 +702,8 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management
-* **Last Updated By/Date** - Minqiao Wang, October 2020
+* **Last Updated By/Date** - Minqiao Wang, Nov 2020
+* **Workshop Expiry Date** - Nov 30, 2021
 
 
 ## Need Help?

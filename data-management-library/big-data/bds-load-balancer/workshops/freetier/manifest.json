@@ -1,0 +1,16 @@
+{
+  "workshoptitle": "",
+    "tutorials": [
+      {
+         "title": "Get Started with Oracle Cloud",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
+      {
+          "title": "Use a Load Balancer to Access Services on Big Data Service (Non-HA Cluster)",
+          "description": "Access Cloudera, Hue, and Big Data Studio on Big Data Service By Using a Load Balancer",
+          "filename": "./../../load-balancer/load-balancer.md"
+      }
+
+           ]
+}

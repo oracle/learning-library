@@ -1,25 +1,11 @@
-# Workshop Introduction and Overview #
-
-## GoldenGate Stream Analytics (GGSA) Workshop
 # Introduction
 
 This workshop aims at providing hands-on lab in creating a complete solution platform to filter, correlate, and process events in real-time using GoldenGate for Big data and GoldenGate stream Analytics.  
 
-### About Product/Technology
+*Estimated Lab Time*: 3 hours
+
+## About GoldenGate Stream Analytics (GGSA)
 Golden Gate Stream Analytics is an environment that originally began as a Complex Event Processing engine and evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka.  The tool is designed to ingest a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST, or even a file system file.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.  
-
-### Objectives
-
-In this workshop you will:
-* Navigate Oracle GoldenGate Stream Analytics UI
-* Walk-through an IoT Use Case
-* Create a pipeleine for a Retail Use Case
-* Create dashboards and export artifacts
-
-### Prerequisites
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
 
 **Architecture Overview**
 
@@ -28,63 +14,59 @@ In this workshop however, we will be reading streaming data from the file system
 
 ![](./images/osaarchitecture.png " ")
 
+### Objectives
 
-**Labs**
+In this workshop you will:
+* Navigate Oracle GoldenGate Stream Analytics UI
+* Walk-through an IoT Use Case
+* Create a pipeline for a Retail Use Case
+* Create dashboards and export artifacts
 
-GoldenGate Stream Analytics workshop consists of 4 separate labs.  The labs should be followed in order from Lab1-Lab4.  There are also screen shots available throughout the labs to guide you through the exercises.  Additional screen shots have been provided in the Appendix section of the workshop to help guide through the lab exercises.
+### Prerequisites
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-Estimated Lab Time:  25 minutes
+### Lab Overview
 
-* **Lab 1:** Login and Navigation
-
-This lab is designed to get the user familiar with the navigation and resources in the the GGSA application
-
-Estimated Lab Time:  30 minutes
-
-* **Lab 2:** Streaming IoT Data
-
-This lab will walk the user through a sample IoT scenario and how a pipeline is created
-
-Estimated Lab Time:  70 minutes
-
-* **Lab 3:** Streaming Retail data 
-
-The user in this lab is rquired to create a pipeline for the Retail promotion scenario
-
-Estimated Lab Time:  25 minutes
-
-* **Lab 4:** Publishing – Dashboard – Import/Export
-
-
-The user will learn how to publish a pipeline, create dashboards and perform Import/Export of artifacts
-
-* **Appendix:**
-
-This is intended to provide the user with screen shots of the lab exercises 
+| Lab Title | Description | Approx. Time |
+|--|------------------------------------------------------------|-------------|
+| Login and Navigation | This lab is designed to get the user familiar with the navigation and resources in the the GGSA application  | 25 minutes  |
+| Streaming IoT Data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 30minutes |
+| Streaming Retail data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 70 minutes |
+| Publishing – Dashboard – Import/Export | Publishing – Dashboard – Import/Export | 25 minutes |
+| Appendix | This is intended to provide the user with screen shots of the lab exercises   | NA |
 
 
 ### Required Credentials for GoldenGate Stream Analytics
 
-**MySQL root password:** OSADemo1111!
+    ```
+    MySQL root password: <copy>OSADemo1111!</copy>
+    ```
 
-**OSA_DEMO database password:** Welcome123!
+    ```
+    OSA_DEMO database password: <copy>Welcome123!</copy>
+    ```
 
-**osaadmin password:** welcome1
+    ```
+    osaadmin password: <copy>welcome1</copy>
+    ```
 
-**Spark Username:** sparkadmin
+    ```
+    Spark Username: <copy>sparkadmin</copy>
+    ```
 
-**Spark Password:** Sparkadmin#123
+    ```
+    Spark Password: <copy>Sparkadmin#123</copy>
+    ```
 
 ## Learn More
 
 * [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
 
-
 ## Acknowledgements
 
 * **Author** - Hadi Javaherian, Solution Engineer
-* **Contributors** - Shrinidhi Kulkarni, Solution Engineer
-* **Last Updated By/Date** - Hadi Javaherian, September 2020
+* **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

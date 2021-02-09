@@ -2,16 +2,17 @@
 
 ## About this Workshop
 
-This workshop introduces the Oracle DRAGON stack project, a simple way to deploy applications using an Oracle Autonomous Database, using an Always Free Oracle Autonomous Transaction Processing (ATP), Oracle Autonomous JSON Database, or Oracle Autonomous Data Warehouse. The DRAGON stack consists of _D_ata, _R_eact components, _A_utonomous Database, _G_raalVM, _O_racle REST data services, and _N_ode.js. In this short workshop, you'll download the stack and deploy the stack to Oracle Cloud.
+This workshop introduces the Oracle DRAGON stack project, a simple way to deploy applications using an Oracle Autonomous Database, using an Always Free Oracle Autonomous Transaction Processing (ATP), Oracle Autonomous JSON Database, or Oracle Autonomous Data Warehouse. In this short workshop, you'll download the DRAGON Stack manager and deploy a React based stack on Oracle Cloud.
 
-Estimated Workshop Time: 10 minutes
+Estimated Workshop Time: 30 minutes
 
-### About the DRAGON stack
-*Need a couple of sentences here...*
+### About the DRAGON Stack manager
+The DRAGON Stack manager is an open-source project which provides the fastest way to build and run applications connected to an Autonomous Database shared infrastructure. It can indeed:
+ - provision and configure an Autonomous Database as well as load JSON data into collections while taking care of the side resources such as Oracle Cloud Infrastructure Object Storage buckets
+ - integrates SQL Developer Web and Oracle REST Data Services integration with standard application development frameworks such as React or Spring-Boot
+ - generates project source code to start coding as soon as possible!  
 
-*Do you have a video you want to include?*
-
-  [](youtube:zNKxJjkq0Pw)
+  ![DRAGON Stack manager speeds up application development](./images/dragon-stack-manager-overview.png)
 
 ### Prerequisites
 
@@ -21,14 +22,12 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*Any links you want to include?*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [DRAGON Stack manager portal](https://bit.ly/DRAGONStackManager)
+* [DRAGON Stack manager on GitHub](https://bit.ly/DragonStack)
 
 ## Acknowledgements
 * **Author** - Loic Lefevre, Principal Product Manager
-* **Last Updated By/Date** - Tom McGinn, Database Product Management, October 2020
+* **Last Updated By/Date** - Tom McGinn, Database Product Management, November 2020
 
 
 ## Need Help?

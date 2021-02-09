@@ -21,7 +21,7 @@ Key reasons why companies choose Oracle Data Integrator for their data integrati
 
 ### Objectives
 
-- Provision ADB & Link to ODi
+- Provision ADB & Link to ODI
 - Create an ODI instance
 - Work with Mappings
 - Implement Data Quality Control
@@ -30,7 +30,7 @@ Key reasons why companies choose Oracle Data Integrator for their data integrati
 ### Prerequisites
 * Basic knowledge of Oracle Database
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-  
+
 ## Acknowledgements
 
  - **Author** - Jayant Mahto, July 2020

@@ -14,7 +14,7 @@
         {
             "title": "Lab 2: Create a Notebook Session",
             "description": "Create a Notebook Session and launch it.",
-            "filename": "./../../common/notebook-setup.md"
+            "filename": "./../../common/notebook-setup-green-button.md"
         },
         {
             "title": "Lab 3: Accelerated Data Science SDK",

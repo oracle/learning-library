@@ -1,0 +1,35 @@
+{
+  "workshoptitle": "Oracle Analytics Server",
+  "tutorials": [
+    {
+      "title": "Prerequisites",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 2: Initialize Environment",
+      "description": "Initialize Environment Lab",
+      "filename": "../../init-start-oas/init-start-oas.md"
+    },
+    {
+      "title": "Lab 3: Self-Service Data Visualization",
+      "description": "Self-Service Data Visualization Lab",
+      "filename": "../../self-service-data-visualization/self-service-data-visualization.md"
+    },
+    {
+      "title": "Lab 4: Augmented Analytics",
+      "description": "Augmented Analytics",
+      "filename": "../../augmented-analytics/augmented-analytics.md"
+    }
+  ]
+}

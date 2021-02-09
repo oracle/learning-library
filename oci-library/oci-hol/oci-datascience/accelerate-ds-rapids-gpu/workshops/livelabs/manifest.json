@@ -1,0 +1,40 @@
+{
+      "workshoptitle": "GPU Accelerated Data Science with NVIDIA RAPIDS",
+      "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Data Science Service",
+            "filename": "./../../rapids-intro.md"
+        },
+        {
+            "title": "Lab 1: Create a Project",
+            "description": "Create a project to contain the Data Science Notebooks.",
+            "filename": "./../../../common/project-setup-green-button.md"
+        },
+        {
+            "title": "Lab 2: Create a Notebook Session Running on a GPU",
+            "description": "Create a Notebook Session and launch it on a GPU VM shape.",
+            "filename": "./../../../common/notebook-gpu-setup-green-button.md"
+        },
+        {
+            "title": "Lab 3: Install the RAPIDS Conda Environment",
+            "description": "Install the RAPIDS conda environment in the notebook session.",
+            "filename": "./../../../common/conda-rapids.md"
+        },
+        {
+            "title": "Lab 4: Data Manipulations with RAPIDS cuDF Library",
+            "description": "Learn how to use cuDF to speed up data manipulations on GPU with a simple introductory notebook.",
+            "filename": "./../../intro-to-cudf.md"
+        },
+        {
+            "title": "Lab 5: Train Models Faster with the cuML Library",
+            "description": "Train simple ML models faster with cuML with a simple notebook example.",
+            "filename": "./../../intro-to-cuml.md"
+        },
+        {
+            "title": "Lab 6: Terminate your Notebook Session",
+            "description": "Terminate your notebook session.",
+            "filename": "./../../../common/notebook-shutdown.md"
+        }
+    ]
+}

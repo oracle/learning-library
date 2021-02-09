@@ -1,0 +1,36 @@
+{
+    "workshoptitle": "Picking a Good Wine Using ADW, OML and OAC",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Provision and Load Data into Autonomous Database Instance",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../provision-load-adb/provision-load-adb.md"
+        },
+        {
+            "title": "Lab 2: Getting Started with Machine Learning Notebook",
+            "filename": "../../start-oml-nb/start-oml-nb.md"
+        },
+        {
+            "title": "Lab 3: Run the Notebook",
+            "filename": "../../run-nb/run-nb.md"
+        },
+        {
+            "title": "Lab 5: Provision and Register an OML Model into Oracle Analytics Cloud",
+            "filename": "../../provision-load-oac/provision-load-oac.md"
+        },
+        {
+            "title": "Lab 6: Visualize Data",
+            "filename": "../../visualize/visualize.md"
+        }
+    ]
+}
