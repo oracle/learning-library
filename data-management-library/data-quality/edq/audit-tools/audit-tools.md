@@ -69,41 +69,41 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 ## **Step 2**: Pattern Check
 
-1.	Now, find the “Pattern Check” processor in the Tool Palette. Drag and drop it into the canvas and rename it to “Zip Code in Right Format” by double clicking on processor.
+1.	Now, find the “Pattern Check” processor in the Tool Palette. Drag and drop it into the canvas and rename it to “Cell Number in Right Format” by double clicking on processor.
 
     ![](./images/image1200_81.png " ")
 
-2.	Connect the “All” end triangle from “Email Populated” to the “Zip Code in Right Format” processor. The configuration dialog for the "Pattern Check" processor appears on screen.
+2.	Connect the “All” end triangle from “Email Populated” to the “Cell Number in Right Format” processor. The configuration dialog for the "Pattern Check" processor appears on screen.
 
-3.	Select “ZIP” from “Available Attributes” as the “Field for validation” using the ">" icon.
+3.	Select “CELL” from “Available Attributes” as the “Field for validation” using the ">" icon.
 
     ![](./images/image1200_82.png " ")
 
-4.	Click the “Options” tab at the top of the dialog box, then click the "..."  button in the “Valid Patterns” section in the middle of the window.
+4.	Click the “Options” tab at the top of the dialog box, then click the "..."  button in the “Invalid Patterns” section in the middle of the window.
 
     ![](./images/image1200_83.png " ")
 
-5.	Uncheck “Filter by Category” in the “Select Resource” applet. This is where you will select the Reference Data we created for the different types of valid zip codes. Click on “Valid Zip Patterns”, then click “OK”.
+5.	Uncheck “Filter by Category” in the “Select Resource” applet. This is where you will select the Reference Data we created for the different types of invalid cell number patterns. Click on “Invalid Cell Pattern”, then click “OK”.
 
     ![](./images/image1200_84.png " ")
 
-6.	In the section under “Valid Patterns”, click the drop-down box to change “Categorize unmatched as” to “Invalid”, then click “OK” to continue.
+6.	In the section under “Invalid Patterns”, click the drop-down box to change “Categorize unmatched as” to “Valid”, then click “OK” to continue.
 
     ![](./images/image1200_85.png " ")
 
-7.	Click the “Run” icon in the toolbar (top of the Project Canvas) to run the process. Once it finishes, click the “Zip Code in Right Format” processor to view the results.
+7.	Click the “Run” icon in the toolbar (top of the Project Canvas) to run the process. Once it finishes, click the “Cell Number in Right Format” processor to view the results.
 
     ![](./images/image1200_86.png " ")
 
-    Notice that there are 5362 Valid Records and 76 Invalid Records. That is, there are 76 records that fail the rule, that is they do not match the patterns `“NNNNN”` or `“NNNNNpNNNN”`.
+    Notice that there are 5424 Valid Records and 14 Invalid Records.
 
 ## **Step 3**: List Check
 
 1.	Return to the "Tool Palette" and find the “List Check” processor. Drag and drop it onto the "Project Canvas".
 
-    ![](./images/image1200_87.png " ")
+2.	Link the “All” triangle from “Cell Number in Right Format” to the “List Check” processor, the “List Check” dialog comes up. Select “Gender” in “Available Attributes” and click on the ">" icon to add it to the “Selected Attributes”.
 
-2.	Link the “All” triangle from “Zip Code in Right Format” to the “List Check” processor, the “List Check” dialog comes up. Select “Gender” in “Available Attributes” and click on the ">" icon to add it to the “Selected Attributes”.
+    ![](./images/image1200_87.png " ")
 
 3.	Click the “Options” tab in the top of the dialog box to add reference data. On the section “Valid Values” click on the "..." button.
 
@@ -117,7 +117,9 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 6.	Double-click the “List Check” processor to rename it to “Check for Valid Gender”.
 
-7.	Finally, click the “Run” icon to start the process.
+7.	Finally, click the “Run” icon to start the process and check the results.
+
+    ![](./images/image1200_89_1.png " ")
 
 We now have a better understanding of our data and its issues. Next step is to create a process that will fix those issues.
 

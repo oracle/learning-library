@@ -40,13 +40,9 @@ We will create a job that runs data through the process we just created. This jo
 
     ![](images/image1200_110.png " ")
 
-4.	Select “CLEAN_CUSTOMERS” table. Click on “Next”.
+4.	Select "Create New Table"  and provide the table name as “CLEAN_CUSTOMERS” table. Click on “Next”.
 
     ![](images/image1200_111.png " ")
-
-5.  Click Next on the screen.
-
-    ![](images/image1200_112.png " ")
 
 5.	You can leave the default name or assign a new one. For now we will use the default name. Make sure “Run now?” box is NOT checked. Click “Finish”.
 
@@ -66,7 +62,7 @@ We will create a job that runs data through the process we just created. This jo
 
     ![](images/image1200_116.png " ")
 
-4.	Click the   icon in the “Tool Palette” to display the “Snapshots” and drag the “`US_Customer_Data`” snapshot onto the canvas.
+4.	Click the   icon in the “Tool Palette” to display the “Snapshots” and drag the “`US Customer Data`” snapshot onto the canvas.
 
 5.	Next, click the   icon in the “Tool Palette” to display the “Processes” and drag the “Clean Data” process onto the canvas.
 
