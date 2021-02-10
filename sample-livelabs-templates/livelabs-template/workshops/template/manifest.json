@@ -8,6 +8,7 @@
         {
             "title": "LiveLabs Complete Template",
             "description": "This is the complete template for LiveLabs content developers",
+            "type": "livelabs",
             "filename": "../../livelabs-template.md"
         }
     ]

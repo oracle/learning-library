@@ -6,6 +6,10 @@
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the Steps to ...
 
+*You may add an option video, using this format: [](youtube:YouTube video id)*
+
+  [](youtube:zNKxJjkq0Pw)
+
 Estimated Lab Time: n minutes
 
 ### Background
@@ -142,7 +146,17 @@ In this lab, you will:
   ![](./images/pic2.png =50%x50%)
 
 
-This is an example of a segment of the Markdown file injected before rendering:
+4. Conditional content example (type="livelabs")
+
+    Select your compartment. <if type="livelabs">If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked,</if><if type="alwaysfree">Choose any compartment, select "Always Free",</if> and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
+
+    ![](images/atp-settings-1.png)
+    <if type="livelabs">![](images/atp-settings-2-notaf.png)</if>
+    <if type="alwaysfree">![](images/atp-settings-2.png)</if>
+    ![](images/atp-settings-3.png)
+
+
+5. This is an example of a segment of the Markdown file injected before rendering:
 
 [](include:injected-step.md)
 
