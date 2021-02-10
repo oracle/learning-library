@@ -34,7 +34,7 @@ We will create a job that runs data through the process we just created. This jo
 
 2.	 Click “Next” on the first window of the dialog since the Staged Data is already selected.
 
-    ![](images/image1200_108.png " ")
+    ![](images/image1200_109.png " ")
 
 3.	Select “Connection to Oracle Database” for Output data store. Click “Next”.
 
