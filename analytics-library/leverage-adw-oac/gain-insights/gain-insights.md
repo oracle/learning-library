@@ -15,11 +15,11 @@ _Estimated Lab Time:_ 20 minutes
 
 ### Prerequisites
 
-- An Oracle Cloud Free Tier or Paid
-- You have completed  
-    Lab 1: Provisioning your Autonomous Database instance  
-    Lab 2: Provisioning your Oracle Analytics Cloud instance  
-    Lab 3: Connecting OAC to ADW and adjusting Data Set properties
+* An Oracle Cloud Free Tier or Paid
+* You have completed  
+    * Lab 1: Provisioning your Autonomous Database instance
+    * Lab 2: Provisioning your Oracle Analytics Cloud instance
+    * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
 
 ## **STEP 1**: Gain Insights with Visuals
 

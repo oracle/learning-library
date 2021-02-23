@@ -10,7 +10,7 @@ Curated data can also be send back to a relational database or Essbase for any d
 
 _Estimated Lab Time_: 20 minutes
 
-![Connect Data Sets](../data-flows/images/data-flows.png)
+![Data Flow](../data-flows/images/data-flows.png)
 
 ### Objectives
 

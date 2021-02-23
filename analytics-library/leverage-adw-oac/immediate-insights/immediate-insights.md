@@ -106,8 +106,8 @@ Select first two visualizations and click on top right of the insight (_Select f
 
   ![Explain Value](./images/explainvalueaddselected.png) 
 
-9. Returning to the canvas you notice the 4 selected insights as visualizations.
-   * Note that the canvas name has changed to **Explain VALUE** and under _My Calculations_ you get 2 new measures and 2 new attributes.  
+9. Returning to the canvas you notice the 4 selected insights as visualizations.  
+Note that the canvas name has changed to **Explain VALUE** and under _My Calculations_ you get 2 new measures and 2 new attributes.  
 
    ![Explain Value](./images/explainvaluecanvas.png) 
 

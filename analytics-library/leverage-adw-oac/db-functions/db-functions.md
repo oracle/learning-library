@@ -78,7 +78,7 @@ OAC Evaluate function enables users to create powerful analyses by directly invo
 
 1.  Open your **Training01** Project.
 
-    ![Open Project](../db-functions/images/sqldev-web.png)
+     ![Open Project](../db-functions/images/open-projectsmall.png)
 
 2.  Click **Add Canvas** icon  
 
@@ -87,7 +87,7 @@ OAC Evaluate function enables users to create powerful analyses by directly invo
 3.  Create Best `Visualization` for **#Customers**  
 Select **#Customers** from Data Panel, Right-Click and Select **Create Best Visualization**
 
-    ![Create Best Visualization](../db-functions/images/customerscreateviz.png)
+    ![Create Best Visualization](../db-functions/images/customerscreatevizsmall.png)
 
 4.  Check the results
 
@@ -95,7 +95,7 @@ Select **#Customers** from Data Panel, Right-Click and Select **Create Best Visu
 
 
 5.  Lets see the Query Log.
-* Hint: use another browser page or second browser to avoid to close (save) and then open agin your project. Switch beetwen pages for Query Log and Project. 
+    Hint: use another browser page or second browser to avoid to close (save) and then open agin your project. Switch beetwen pages for Query Log and Project. 
 
     Go to **Console**, click on **Session and Query Cache**  
     The query log shows that **Count Distinct** is being used against the column in the query
@@ -113,9 +113,9 @@ Select Overview > Autonomous Database > Autonomous Database Details > Tools > SQ
 
 8.  Run the following select statement in the Worksheet.  
 SELECT
-    APPROX_COUNT_DISTINCT(CUST_ID)
+    APPROX\_COUNT\_DISTINCT(CUST\_ID)
 FROM
-    DCA_SALES_DATA;
+    DCA\_SALES\_DATA;
 
     ![Run](../db-functions/images/sqldevweb3.png)
 
@@ -183,7 +183,7 @@ The calculation returns an approximate distinct count of Customer ID
 
 20.  Go to the Query Log.  
 Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
-The query logs shows that the function approx_count_distinct is function shipped to database query 
+The query logs shows that the function approx\_count\_distinct is function shipped to database query 
 
      ![](../db-functions/images/approxcountlog.png)  
      ![](../db-functions/images/approxcountlog2.png)
@@ -257,6 +257,6 @@ Congrats, you have just finished this workshop.
 ## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.  
-Please contact us at  analyticsenablement_us_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
+Please contact us at  analyticsenablement\_us\_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
