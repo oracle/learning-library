@@ -8,7 +8,7 @@ You are going to use an **Oracle Analytics Cloud** instance to give your end use
 
 _Estimated Lab Time:_ 20 minutes
 
-![Oracle ADW + 0racle OAC](./images/adw_oac_banner.png)
+![Oracle ADW + 0racle OAC](./images/adw_oac.png)
 
 ### Objectives  
 
@@ -40,10 +40,14 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
     ![ADW DB Console](./images/lab300_3a.png) 
 
-      - This will open a new window. Click **Open SQL Developer Web** and then enter your **Username / Password**.  
+      - This will open a new window. Click **Open SQL Developer Web**, enter your **Username**, Click **Next**, enter your **Password** and then Click **Sign In**.  
+      ![](./images/sqldev-username.png)
       ![SQL Developer Web](./images/lab300_3b.png) 
 
-   - Download the [starter file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/c_PgI7AIzbn3bkEkqbZAhAUuNjMVw2KE6dvITNOtj9AVRJ_sNiCub6nRaR2kJApp/n/idbwmyplhk4t/b/LiveLabs/o/starter-file.sql) SQL code, _Copy_ the content and _Paste_ to _SQL Developer Web_ worksheet.  
+      - Select **SQL** from **Development** section.  
+      ![](./images/sqldev-tools.png)
+
+   - Download the [starter file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/c_PgI7AIzbn3bkEkqbZAhAUuNjMVw2KE6dvITNOtj9AVRJ_sNiCub6nRaR2kJApp/n/idbwmyplhk4t/b/LiveLabs/o/starter-file.sql) SQL code, _Copy_ the content and _Paste_ to the _SQL Developer Web_ worksheet.  
    ![SQL Developer Web worksheet](./images/lab300_3c.png)    
 
     - Click **Run Script** ![SQL Developer Web worksheet] ![Run Script](./images/lab300_3d.png)
@@ -195,8 +199,8 @@ You may now [proceed to the next lab](#next)
 
 ## Want to Learn More?
 
-- Free [Udemy: Modern Data Visualization with Oracle Analytics Cloud](https://www.udemy.com/augmented-analytics/), Section 3: Data Preparation and Augumented Data Enrichment 
-- [Typical Workflow to Prepare Your Data Set for Analysis](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/typical-workflow-prepare-your-data-set-analysis.html)
+* Free [Udemy: Modern Data Visualization with Oracle Analytics Cloud](https://www.udemy.com/augmented-analytics/), Section 3: Data Preparation and Augumented Data Enrichment 
+* [Typical Workflow to Prepare Your Data Set for Analysis](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/typical-workflow-prepare-your-data-set-analysis.html)
 
 ## **Acknowledgements**
 
@@ -207,6 +211,6 @@ You may now [proceed to the next lab](#next)
 ## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.  
-Please contact us at  analyticsenablement_us_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
+Please contact us at  analyticsenablement\_us\_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

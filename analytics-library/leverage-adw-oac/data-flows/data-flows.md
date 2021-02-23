@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn about OAC Data Flow, the use case, benefits and how to use it to save the data in an ADW.  
+In this lab, you will learn about OAC Data Flow, the use case, benefits and how to use it to save your curated data in ADW.  
 Data Flow is a lightweight, simple and easy to use tool for business users to combine, organize and integrate data-sets and produce a curated data set (or data sets) that your users can analyze.
 Data Flow, is an important enabler of self – service, analytics environment.
 You can curate data from data sets, subject areas, or database connections.
@@ -171,6 +171,7 @@ You may now [proceed to the next lab](#next)
 * [Merge Data Easily Using Oracle Analytics Data Flow Feature](https://blogs.oracle.com/analytics/merge-data-easily-using-oracle-analytics-data-flow-feature)
 * [How to Create Data Flow Sequences in Oracle Analytics Cloud](https://blogs.oracle.com/cloud-platform/how-to-create-data-flow-sequences-in-oracle-analytics-cloud)
 * [Perform Incremental Data Loads in Oracle Analytics Cloud](https://blogs.oracle.com/analytics/perform-incremental-data-loads-in-oracle-analytics-cloud)
+* [Smarter and More Efficient Dataflows in Oracle Analytics](https://blogs.oracle.com/analytics/smarter-and-more-efficient-dataflows-in-oracle-analytics)
 
 ## **Acknowledgements**
 
@@ -181,6 +182,6 @@ You may now [proceed to the next lab](#next)
 ## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.  
-Please contact us at  analyticsenablement_us_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
+Please contact us at  analyticsenablement\_us\_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

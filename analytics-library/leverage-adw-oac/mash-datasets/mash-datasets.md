@@ -45,8 +45,8 @@ Click **Create Data Set** button, Click 'Drop data file here or click to browse'
     ![Add Data Set](../mash-datasets/images/add-dataset2.png)
 
 4.  Lets change the properties of the Data Set.  
-Set **CUST_ID** as an **Attribute** so that we can join to our existing Data Set.  
-Click on **CUST_ID** column, go to **General Property Pane** from bottom left, click on the default 'Match' properties from **Treat As** General Properties and change to **Attribute**.
+Set **CUST\_ID** as an **Attribute** so that we can join to our existing Data Set.  
+Click on **CUST\_ID** column, go to **General Property Pane** from bottom left, click on the default 'Match' properties from **Treat As** General Properties and change to **Attribute**.
 
     ![Treat As Attribute](../mash-datasets/images/prepscript-custidasattribute.png)
 
@@ -131,7 +131,7 @@ Click on **Add Another Match** button.
     ![Blend Data Sets](../mash-datasets/images/datadiagram-blend1.png)
 
 4.  **Blend Data** Sets.  
-Select **CUST_ID**column from both Data Sets.
+Select **CUST\_ID**column from both Data Sets.
 
     ![Blend Data Sets](../mash-datasets/images/datadiagram-blend2.png)
 
@@ -167,6 +167,6 @@ You may now [proceed to the next lab](#next)
 ## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.  
-Please contact us at  analyticsenablement_us_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
+Please contact us at  analyticsenablement\_us\_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

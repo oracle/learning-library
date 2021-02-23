@@ -36,7 +36,7 @@ Go to **Menu** and select **Delete** Visualization
     ![Delete Visualization](../geo-maps/images/delete-viz.png)
 
 2.  Expand **Customers** Data Set.  
-Select **MARITAL_STATUS** and Drag and Drop it to **SUB_CATEGORY**.
+Select **MARITAL\_STATUS** and Drag and Drop it to **SUB\_CATEGORY**.
 
     ![Add Marital Status](../geo-maps/images/add-maritalstatus.png)
 
@@ -170,7 +170,7 @@ Select **STATE # Customers** visualization and Drag it to the top of the Canvas.
 
 
 13. Lets create a detailed tabular report.  
-Select: **CUST_ID, FIRST_NAME, LAST_NAME, GENDER, AGE, ZIPCODE, CITY, STATE**, Right Click  and Select **Pick Visualization**.
+Select: **CUST\_ID, FIRST\_NAME, LAST\_NAME, GENDER, AGE, ZIPCODE, CITY, STATE**, Right Click  and Select **Pick Visualization**.
 
     ![Pick Visualization](../geo-maps/images/pickvizsmall.png)
 
@@ -236,6 +236,6 @@ You may now [proceed to the next lab](#next)
 ## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.  
-Please contact us at  analyticsenablement_us_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
+Please contact us at  analyticsenablement\_us\_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

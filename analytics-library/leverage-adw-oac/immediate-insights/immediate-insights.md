@@ -3,7 +3,7 @@
 ## Introduction
 
 When creating a Project out of a Data Set, you'll see a blank canvas.  
-We are going to avoid the _blank canvas syndrome_  using **Explain**. Explain uses machine learning (**ML**) to find useful insights about your data. 
+You avoid the _blank canvas syndrome_  using **Explain**. Explain uses machine learning (**ML**) to find useful insights about your data. 
 
 _Estimated Lab Time:_ 25 minutes
 
@@ -19,7 +19,7 @@ _Estimated Lab Time:_ 25 minutes
 * You have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
-    * Lab 3: Connecting OAC to ADW and adjusting Data Set propertie
+    * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
 
 ## **STEP 1**: Create a Project  
 Creating visualizations and projects is easy, and your data analysis work is flexible and exploratory.  
@@ -107,7 +107,7 @@ Select first two visualizations and click on top right of the insight (_Select f
   ![Explain Value](./images/explainvalueaddselected.png) 
 
 9. Returning to the canvas you notice the 4 selected insights as visualizations.
-   > Note that the canvas name has changed to **Explain VALUE** and under _My Calculations_ you get 2 new measures and 2 new attributes.  
+   * Note that the canvas name has changed to **Explain VALUE** and under _My Calculations_ you get 2 new measures and 2 new attributes.  
 
    ![Explain Value](./images/explainvaluecanvas.png) 
 
@@ -136,6 +136,6 @@ You may now [proceed to the next lab](#next)
 ## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.  
-Please contact us at  analyticsenablement_us_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
+Please contact us at  analyticsenablement\_us\_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

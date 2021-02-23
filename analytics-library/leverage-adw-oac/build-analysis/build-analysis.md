@@ -81,7 +81,7 @@ This Drill to [Attribute Name] to directly drill to a specific attribute within 
      ![Customers by Sales Week and Subcategory](../build-analysis/images/channeldirect-drilltosubcategoryimg.png)
 
 11.  Lets analyze customers across various sub categories and choose the **Create Best Visualization** option.  
-Go to **Data Panel**,  Select **# Customers**, keep pressed CTRL key and Select  **SUB_CATEGORY**; Right Click and select **Create Best Visualization**  
+Go to **Data Panel**,  Select **# Customers**, keep pressed CTRL key and Select  **SUB\_CATEGORY**; Right Click and select **Create Best Visualization**  
 A visualization is automatically created on the canvas, and the best visualization type is selected based on the preconfigured logic. The selected data element is also positioned on a specific area of the Grammar Panel.
 
      ![Create Best Visualization](../build-analysis/images/createbestviz-customerssubcategory.png)
@@ -190,6 +190,6 @@ You may now [proceed to the next lab](#next)
 ## Need Help?
 
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.  
-Please contact us at  analyticsenablement_us_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
+Please contact us at  analyticsenablement\_us\_grp@oracle.com for any suggestions or challenges you might have with **Oracle Analytics** labs.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

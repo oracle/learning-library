@@ -2,19 +2,24 @@
 
 ## Introduction
 
-In this lab, you will learn about OAC Data Flow, the use case, benefits and how to use it to save the data in an ADW.  
-Data Flow is a lightweight, simple and easy to use tool for business users to combine, organize and integrate data-sets and produce a curated data set (or data sets) that your users can analyze.
-Data Flow, is an important enabler of self – service, analytics environment.
-You can curate data from data sets, subject areas, or database connections.
-Curated data can also be send back to a relational database or Essbase for any downstream processing.
+In this lab, you will learn about OAC integration with the underline database, especially with ADW.  
+Oracle Analytics Cloud (OAC) exposes the power of Oracle Autonomous Database (ADW/ADB) through a simplified UI.  
+Each OAC release brings more integration.  
+An non exhaustive list is:
 
-_Estimated Lab Time_: 20 minutes
+1. **EVALUATE**, **EVALUATE\_AGGR** database functions (create custom calculations)
+2. **Registering OML** exposes existing OML models from ADW to the enterprise models
+3. **Database analytics nodes**, easily execute complex functions on your data (Data Flow)
 
-![Connect Data Sets](../db-functions/images/db-functions.png)
+For this lab we are going to cover **EVALUATE** and **EVALUATE\_AGGR** database functions.
+
+_Estimated Lab Time_: 30 minutes
+
+![Evaluate](../db-functions/images/db-functions.png)
 
 ### Objectives
 
-* OAC **Data Flow**
+* Use **EVALUATE** and **EVALUATE\_AGGR** functions to ship heavy-lift work down to the underlying ADW database.
 
 ### Prerequisites
 
@@ -29,148 +34,219 @@ _Estimated Lab Time_: 20 minutes
     * Lab 8: Mashing up additional Data Sets, Contextual Data Preparation
     * Lab 10: Geo Maps and Custom Binning
 
-## **STEP 1**: Data Flow
+## **STEP 1**: Enable Evaluate Support Level
 
-Data Flow enables training of Machine Learning models and application models for scoring of data and detects sentiment from a text column allowing for Sentiment Analysis.
-To build a Data Flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the Data Flow Editor to add and configure your steps.  
-Lets create a Data Flow by leveraging the mashup data set we used in the earlier sections
+First step is to check **Evaluate Support Level** for your OAC instance.  
+That specifies who can issue database functions: \_EVALUATE, EVALUATE_ANALYTIC, EVALUATE\_AGGR, and EVALUATE\_PREDICATE.\_
 
-1.  Create Data Flow.  
-On the **Home** or Data **page**, click **Create** and select **Data Flow**
+By default is (**0**) that means the **EVALUATE** database functions are **disabled**.
 
-    ![Create DF](../db-functions/images/createdfsmall.png)
+1.  Open System Settings.  
+On the **Home** page, click **Navigator** ![](../db-functions/images/navigator.png), select **Console** and click on **System Settings**
 
-2.  Add Data Set.  
-You can select an existing Data Set or click Create Data Set to create a new one based on a file, local subject area, or database connection.  
-In the **Add Data Set** dialog, Select **customers** Data Set and Click **Add**.
+    ![System Settings](../db-functions/images/consolesystemsettings.png)
 
-    ![Add Data Set](../db-functions/images/createdf2small.png)
+2.  Change the default value (0) to 1.  
+Value 1 is for Service administrators only. Users with the BI Service Administrator application role can invoke EVALUATE database functions.  
+Value 2 is for Anyone. Any user who signs in to Oracle Analytics can invoke EVALUATE database functions.   
+Go to **Performance and Compatibility** section, select **Evaluate Support Level**, click on the arrow and choose 1.
 
-
-3.  You can see the Data Flow Editor with the Data Flow Steps. Lets start working by converting the data type of CUST\_ID column.  
-It's going to add a transform column step to the data flow.  
-Select **CUST\_ID** > Options select **Convert to Text**
-
-    ![Convert To Text](../db-functions/images/custidtotext2.png)
-
-4.  Notice a new step has been added.  
-Click **Validate** to check that the syntax is correct.
-
-    ![Validate](../db-functions/images/custidtotext3.png)
-
-5.  There are various transformation options available like Merge, Rename, Split etc. Let's remove unwanted columns using the **Select Columns** step.  
-Click **Add a Step(+)** and Click **Select Columns**.
-
-    ![Select Columns](../db-functions/images/addstep-selectcolumns.png)
-
-6.  **Remove** **CITY\_Population**, **CREDIT\_LIMIT** columns.  
-Select CITY\_Population, CREDIT\_LIMIT and Click **Remove selected** button.
-
-    ![Remove Columns](../db-functions/images/selectcolumnremoveselected.png)
-
-7.  Lets **filter** our Data Set to retain only few States.  
-Click **Add a Step(+)** and Click **Filter**.
-
-    ![Filter](../db-functions/images/addfilter.png)
-    * Click **Add Filter**
-
-     ![Filter](../db-functions/images/addfilter2.png)
-
-    * Select **STATE** from the available data
-
-     ![Filter](../db-functions/images/addfilter3.png)
-
-    * Select **AK, AL, AR, CA, CO**
-
-     ![Filter](../db-functions/images/addfilter4.png)
-
-8.  Lets now **merge** the first name and last name as a single column and call it **Customer Name**.  
-Click **Add a Step(+)** and Click **Merge Column**.
-
-    ![Merge Column](../db-functions/images/mergecolumn.png)
-
-9.  New column **Customer Name**.  
-Type in **New column name**: 'Customer Name', **Merge column** select 'FIRST\_NAME', **With**: select 'LAST\_NAME' and **Delimiter**: Space ( ).
-
-    ![Customer Name](../db-functions/images/selectcolumnremoveselected.png)
-
-10.  Notice the new column created.
-
-     ![Customer Name](../db-functions/images/mergecolumncustomername2.png)
-
-11.  Renaming columns can be achieved by using Rename column step.  
-Click **Add a Step(+)** and Click **Rename**.
-
-     ![Rename Column](../db-functions/images/renamecolumn.png)
-
-12.  Type in the **Rename** column change INCOME\_LEVEL to **Income Level** and MARITAL\_STATUS to **Marital Status**.  
-
-     ![Rename Column](../db-functions/images/renamecolumn2.png)
-
-13. Lets now **save** the **output** as a table in our **ADW** connection.  
-Click **Add a Step(+)** and Click **Save**.
-
-     ![Save Data](../db-functions/images/savedata.png)
-
-14. Type in the following:  
-**Data Set**: DCA\_CUST\_DATA  
-**Save data to**: select **Database Connection**  
-**Connection**: ADWH (that's the connection you setup in "**_Lab 3: Connecting OAC to ADW and adjusting Data Set properties_**", **_Step 4_**)  
-**When run**: select **Replace existing data**
-
-     ![Save](../db-functions/images/savedata2small.png)
-     ![Save](../db-functions/images/savedata3small.png)
-
-15.  Column property can be changed at the time of saving the data to attribute/metric if needed.
-
-     ![Column Property](../db-functions/images/savedata4small.png)
-
-16.  Lets save and execute the Data Flow.  
-Click **Save icon**, type in the **Name**: 'Training DF' and Click **OK** button.
-
-     ![Save DF](../db-functions/images/savedataflowsmall.png)
-     ![Save DF](../db-functions/images/savedataflow2small.png)
-
-17.  Click **Run** icon and check the _complete_ message.
-
-     ![Run](../db-functions/images/rundataflowsmall.png)  
-     ![Run](../db-functions/images/rundataflow2.png)
-
-18.  Go to the OAC Home page.  
-Click on **Go Back** icon.
-
-     ![Go Back](../db-functions/images/gobacksmall.png)
-
-## **STEP 2**: Connect to SQL Developer Web tool to check you data
-
-**Oracle SQL Developer Web (Database Actions)** is the web-based version of Oracle SQL Developer that enables you to execute queries and scripts, create database objects, load data, build data models, and monitor database performance.  
-To connect to Oracle SQL Developer Web you have at least a couple of options.
-
-1.  First option: you can replicate the steps from ""**Lab 3: Connecting OAC to ADW and adjusting Data Set properties**"", "**STEP 1: Load data to your Autonomous Database**".  
-Essentially from your **Autonomous Database Details** page, click the **Tools** tab. Click **Open SQL Developer Web**..
-
-2.  Second option: you can directly connect to the SQL Developer Web page URL. The URL should be similar to  
-<https://dbname.adb.us-ashburn-1.example.com/ords/schema-alias/_sdw/?nav=worksheet>  
-In the SQL Developer Web Sign in page, enter your **Username** and **Password**...
-    > For more details please check [Connect with Built-in Oracle Database Actions](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sql-developer-web.html#GUID-102845D9-6855-4944-8937-5C688939610F)
-
-3.  Go to the **Worksheet** pane and **Run** a basic Select statement (SELECT * FROM ADMIN.DCA\_CUST\_DATA;)
-
-    ![Sql Dev Web](../db-functions/images/sqldev-web.png)
+    ![Evaluate Support Level](../db-functions/images/consolesystemsettings2.png)
 
 
-You have just finished learning about the Data Flow feature of OAC.
+3.  You have to restart the instance.  
+Scroll up, Click **Restart** button and then Click **OK**.
 
-You may now [proceed to the next lab](#next)
+    ![Restart](../db-functions/images/consolesystemsettings3small.png)
+
+4.  Wait till OBI Server finish restarting.
+
+    ![Restart](../db-functions/images/restart2.png)
+
+5.  Close the page and return to the **Home** page.  
+Click **Navigator** and select **Home**
+
+    ![Home](../db-functions/images/home.png)
+
+6.  You should also need to make sure that **Data Access** is set to **Live** for the Data Sets that will be referenced by the Evaluate function.  
+By setting it to Live, you are ensuring that OAC Server always sends the query to the underlying database and does not try to simply retrieve results from cache.  
+You have already configured **DCA\_SALES\_DATA** to **Live**.
+## **STEP 2**: Leverage EVALUATE function
+
+OAC transparently ships heavy-lift work down to the underlying database engines and makes the most of each specific capabilities of each database system, by automatically shipping proper syntaxes.  
+OAC Evaluate function enables users to create powerful analyses by directly invoking database functions. Evaluate provides a syntax to pass the specified database function with optional OA referenced columns as parameters. It is particularly useful when users wants to call a specialized database function to process a heavy calculation directly in the underlying database.
+
+1.  Open your **Training01** Project.
+
+    ![Open Project](../db-functions/images/sqldev-web.png)
+
+2.  Click **Add Canvas** icon  
+
+    ![Add Canvas](../db-functions/images/addcanvas.png)
+
+3.  Create Best `Visualization` for **#Customers**  
+Select **#Customers** from Data Panel, Right-Click and Select **Create Best Visualization**
+
+    ![Create Best Visualization](../db-functions/images/customerscreateviz.png)
+
+4.  Check the results
+
+    ![Create Best Visualization](../db-functions/images/customerscreateviz1.png)
+
+
+5.  Lets see the Query Log.
+* Hint: use another browser page or second browser to avoid to close (save) and then open agin your project. Switch beetwen pages for Query Log and Project. 
+
+    Go to **Console**, click on **Session and Query Cache**  
+    The query log shows that **Count Distinct** is being used against the column in the query
+
+    ![Query Log](../db-functions/images/customerslog.png)
+
+6.  Lets open SQL Developer Web and run **APPROX\_COUNT\_DISTINCT** function with **DCA\_SALES\_DATA** 
+Select Overview > Autonomous Database > Autonomous Database Details > Tools > SQL DEveloper Web > Open SQL Developer Web
+
+    ![SQL Develope Web](../db-functions/images/sqldevweb.png)
+
+7.  Enter your **Username** and **Password** and click **Login In**
+
+    ![](../db-functions/images/sqldevweb2.png)
+
+8.  Run the following select statement in the Worksheet.  
+SELECT
+    APPROX_COUNT_DISTINCT(CUST_ID)
+FROM
+    DCA_SALES_DATA;
+
+    ![Run](../db-functions/images/sqldevweb3.png)
+
+9.  Go back to your project.  
+**EVALUATE** and **EVALUATE\_AGGR** are functions in OAC that allows to invoke functions from the underlying database. We can invoke the APPROX\_COUNT_DISTINCT function of the database using EVALUATE\_AGGR from OAC
+
+10.  Create a **new calculation**.  
+You can create a new data element (typically a measure) to add to your visualization.  
+The calculated data elements are stored in the data set’s **My Calculations** folder and not in the project. In a project with a single data set only one My Calculations folder is available and the new calculated data elements are added to it
+
+     In the **Visualize** canvas navigate to the bottom of the Data Panel, right-click **My Calculations**, and click **Add Calculation** to open the New Calculation dialog
+
+     ![Add Calculation](../db-functions/images/addcalculationsmall.png)
+
+11.  Enter a name and add the following expression.  
+The exact function name should be used within EVALUATE\_AGGR. Parameters needed to the function are passed as %1 and they are substituted with actual column values.  
+Enter the Name 'Approx Count' and in the expression builder pane, compose and edit 'EVALUATE\_AGGR('APPROX\_COUNT\_DISTINCT(%1)',CUST\_ID)'.  
+Click **Validate** and click **Save**.
+
+     ![Add Calculation](../db-functions/images/addcalculation2.png)
+
+12.  Create Best `Visualization` for **#Customers**  
+Select **#Customers** from Data Panel, Right-Click and Select **Create Best Visualization**
+
+     ![Create Best Visualization](../db-functions/images/customerscreatevizsmall.png)
+
+13.  A new **Tile** visualization pops-up.
+
+     ![Create Best Visualization](../db-functions/images/customerscreateviz1.png)
+
+14. Open the query log.  
+Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
+The query log shows that **Count Distinct** is being used against the column in the query
+
+     ![Create Best Visualization](../db-functions/images/customerslog.png)
+
+15.  Lets switch to **SQL Developer Web** and run **APPROX\_COUNT\_DISTINCT** function in the ADW database. 
+
+     **APPROX\_COUNT\_DISTINCT** returns the approximate number of rows that contain a distinct value for expr.  
+     This function provides an alternative to the **COUNT (DISTINCT** expr) function, which returns the exact number of rows that contain distinct values of expr. APPROX\_COUNT\_DISTINCT processes large amounts of data significantly faster than COUNT, with negligible deviation from the exact result.
+
+     Connect to the _SQL Developer Web page URL_, enter your **Username** and **Password** > Select **SQL** from **Development** tab > **Worksheet** pane > **Run** (SELECT APPROX\_COUNT\_DISTINCT(CUST\_ID) FROM ADMIN.DCA\_CUST\_DATA);
+
+     ![](../db-functions/images/customersaproxcaoundistinct.png)  
+     Note: COUNT\_DISTINCT shows 4,096 and  APPROX\_COUNT\_DISTINCT shows 4,087
+
+16.  Lets switch back to your OAC project and check **EVALUATE\_AGGR** function.  
+EVALUATE and EVALUATE\_AGGR are functions in OAC that allow you to invoke functions from the underlying database. You can invoke the APPROX\_COUNT\_DISTINCT function of the database using EVALUATE\_AGGR
+
+17.  Create **Approx Count** new calculation.  
+In the Visualize canvas navigate to the bottom of the Data Panel, right-click **My Calculations**, and click **Add Calculation** to open the New Calculation dialog.  
+Enter Name **Approx Count**; In the expression builder pane, compose and edit an expression 'EVALUATE\_AGGR('APPROX\_COUNT\_DISTINCT(%1)',CUST\_ID)', Click **Validate**, Click **Save**.
+
+     ![Create Best Visualization](../db-functions/images/addcalculation2.png)
+
+18.  Create Best Visualization for **Approx Count**. 
+Expand My Calculations, Select **Approx Count**, Right-Click and Select **Create Best Visualization** 
+
+     ![Create Best Visualization](../db-functions/images/approxcount.png)
+
+19.  Check the visualization.  
+The calculation returns an approximate distinct count of Customer ID 
+
+     ![Create Best Visualization](../db-functions/images/approxcountviz.png)
+
+20.  Go to the Query Log.  
+Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
+The query logs shows that the function approx_count_distinct is function shipped to database query 
+
+     ![](../db-functions/images/approxcountlog.png)  
+     ![](../db-functions/images/approxcountlog2.png)
+
+21.  Calculations performed using EVALUATE\_AGGR can be sliced and diced with attributes, but calculations with EVALUATE cannot be broken down by dimensions/attributes in the Data Set.
+
+22.  Switch back to your OAC project and lets add **CATEGORY** attribute.  
+Double-Click on **CATEGORY** attribute from the Data Pane. 
+
+     ![Add Category](../db-functions/images/approxcountvizcategsmall.png)
+
+23.  Check the visualization.  
+
+     ![](../db-functions/images/approxcountvizcateg1.png)
+
+24.  **Save** and **Close** the Project.  
+Click the **Save** icon from top right.  
+
+     ![Save](../db-functions/images/save.png)
+
+     Click **Go Back** left arrow ![Go Back](../db-functions/images/goback.png)
+## **STEP 3**: Performance impact of function shipping database functions
+
+To demonstrate the performance impact of function shipping database functions, lets open the **SSB schema** on ADW and run a Count Distinct on Supplier Key.  
+The [SSB schema](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html#GUID-431A16E8-4C4D-4786-BE5C-30029AC1EFD8) provides a well-known large sample data set. The SSB schema in the Autonomous Database contains 1 TB of data. You can use this schema to test the performance of your service. The SSB schema contains the tables: lineorder, customer, supplier, part, and dwdate.
+
+You have 2 main options:  
+* OAC: create a new live Data Set (**SSB**), run  **Count Distinct** for **LO\_SUPPKEY**, create a new calculation **Approx Count** '(EVALUATE\_AGGR('APPROX\_COUNT\_DISTINCT(%1)',LO\_SUPPKEY)', run both and note the time.  
+* ADW: run the 2 statements directly in the database using SQL Developer Web
+
+For simplicity, you go with the second one.
+
+1.  Connect to SQL Developer Web.  
+SQL Developer Web page URL should be similar to
+https://dbname.adb.us-ashburn-1.example.com/ords/schema-alias/_sdw/?nav=worksheet  
+In the SQL Developer Web Sign in page, enter your **Username** and **Password…**.
+
+2.  Run first Select Statement.  
+Go to the **Worksheet** pane and Run (SELECT Count(Distinct(LO\_SUPPKEY)) FROM SSB.LINEORDER;).
+
+     ![](../db-functions/images/sqldevweb-run1.png)
+
+3.  Run the second Select Statement.  
+(SELECT APPROX\_COUNT\_DISTINCT(LO\_SUPPKEY) FROM SSB.LINEORDER;).
+
+     ![](../db-functions/images/sqldevweb-run2.png)
+
+4.  Compare the Running Time.  
+**Count Distinct** ran for around **573 seconds** while **APPROX\_COUNT\_DISTINCT** has been completed in **76.3 seconds**.
+
+
+You have just finished learning about how to leverage your database functions with OAC.  
+Approximate query processing is an interesting feature that can be used when there are performance issues with aggregated data.  
+The performance of approximate queries can be significant faster than the standard query.
+
+Congrats, you have just finished this workshop.
 
 ## Want to Learn More?
 
-* Free [Udemy: Augmented Data Visualization with Machine Learning](https://www.udemy.com/machinelearning-analytics/), Section 3: Data Flow Deep-Dive with Oracle Analytics  
-* [Curate Your Data Using Data Flows](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/curate-your-data-using-db-functions.html)
-* [Where is the Log for My Data-Flow In Oracle Analytics?](https://blogs.oracle.com/analytics/where-is-the-log-for-my-data-flow-in-oracle-analytics)
-* [Merge Data Easily Using Oracle Analytics Data Flow Feature](https://blogs.oracle.com/analytics/merge-data-easily-using-oracle-analytics-data-flow-feature)
-* [How to Create Data Flow Sequences in Oracle Analytics Cloud](https://blogs.oracle.com/cloud-platform/how-to-create-data-flow-sequences-in-oracle-analytics-cloud)
-* [Perform Incremental Data Loads in Oracle Analytics Cloud](https://blogs.oracle.com/analytics/perform-incremental-data-loads-in-oracle-analytics-cloud)
+* [Unleash your Database power within OAC using Evaluate function](http://oracledataviz.blogspot.com/2019/07/unleash-your-database-power-within-oac.html)  
+* Free [Udemy: Modern Data Visualization with Oracle Analytics Cloud](https://www.udemy.com/augmented-analytics/), Section 4: Story Telling and Collaborating your Discovery Project / Section 30. Build Calculated Metrics
+* [Evaluate Functions](https://docs.oracle.com/en/cloud/paas/bi-cloud/bilug/functions.html#GUID-7035040C-BB40-4392-920A-9A435593F659)
+* [Aggregate Functions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/functions.html#GUID-8A4462E9-68C8-4064-8A98-D7390207F92A)
 
 ## **Acknowledgements**
 
