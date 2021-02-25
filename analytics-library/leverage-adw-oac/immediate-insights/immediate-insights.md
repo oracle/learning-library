@@ -26,7 +26,7 @@ Creating visualizations and projects is easy, and your data analysis work is fle
 Oracle Analytics helps you to understand your data from different perspectives and fully explore your data to find correlations, discover patterns, and see trends.
 
 1.  Prerequisites  
-After you have applied the [starter file script](files/starter-file.sql) and run the SQL code with "**_Lab 2: Provisioning your Oracle Analytics Cloud instance_**", you can quickly **create** your **Project**.  
+After you have applied the [starter file script](https://objectstorage.us-ashburn-1.oraclecloud.com/p/c_PgI7AIzbn3bkEkqbZAhAUuNjMVw2KE6dvITNOtj9AVRJ_sNiCub6nRaR2kJApp/n/idbwmyplhk4t/b/LiveLabs/o/starter-file.sql) and run the SQL code with "**_Lab 3: Connecting OAC to ADW and adjusting Data Set properties_**", you can quickly **create** your **Project**.  
 
 2.  Go to top right and click **Create Project** button.
 
