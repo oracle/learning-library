@@ -97,7 +97,7 @@ t3ChannelPort: 30012
 # kubernetes server address, which you can get by running "kubectl cluster-info".  If this
 # value is not set to that address, WLST will not be able to connect from outside the
 # kubernetes cluster.
-#t3PublicAddress: 
+#t3PublicAddress:
 
 # Boolean to indicate if the channel should be exposed as a service
 exposeAdminT3Channel: false
@@ -140,10 +140,10 @@ domainHomeImageBase: iad.ocir.io/aurablocks9/domain-home-in-image:12.2.1.4-dev-2
 # which uses WDT, instead of WLST, to generate the domain configuration.
 domainHomeImageBuildPath: ./docker-images/OracleWebLogic/samples/12213-domain-home-in-image
 
-# Uncomment and edit value(s) below to specify the maximum amount of 
-# compute resources allowed, and minimum amount of compute resources 
+# Uncomment and edit value(s) below to specify the maximum amount of
+# compute resources allowed, and minimum amount of compute resources
 # required for each server pod.
-# These are optional.                
+# These are optional.
 # Please refer to the kubernetes documentation on Managing Compute
 # Resources for Containers for details.
 #
@@ -151,4 +151,3 @@ domainHomeImageBuildPath: ./docker-images/OracleWebLogic/samples/12213-domain-ho
 # serverPodCpuRequest: "250m"
 # serverPodMemoryLimit: "1Gi"
 # serverPodCpuLimit: "1000m"
-
