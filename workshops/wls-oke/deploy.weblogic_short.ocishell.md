@@ -37,11 +37,11 @@ After you have your domain namespace (the WebLogic domain is not deployed yet), 
 
 Before executing the domain **helm** install, be sure that you are in the WebLogic operator local Git repository folder.
 
-```
+```bash
 <copy>cd ~/weblogic-kubernetes-operator/</copy>
 ```
 To update the operator, execute the following **helm upgrade** command:
-```
+```bash
 <copy>helm upgrade sample-weblogic-operator \
   kubernetes/charts/weblogic-operator \
   --namespace sample-weblogic-operator-ns \
@@ -50,10 +50,10 @@ To update the operator, execute the following **helm upgrade** command:
   --wait</copy>
 ```
 
-To update Traefik, execute the following **helm upgrade** command:
+To update Traefik, execute the following `helm upgrade` command:
 ```bash
 <copy>helm upgrade traefik-operator \
-  stable/traefik \
+  traefik/traefik \
   --namespace traefik \
   --reuse-values \
   --set "kubernetes.namespaces={traefik,sample-domain1-ns}" \
@@ -67,9 +67,9 @@ To deploy WebLogic domain, you need to create a domain resource definition which
 
 We provided for you a **domain.yaml** file that contains a YAML representation of the custom resource object. Please copy it locally:
 ```bash
-<copy>curl -LSs https://raw.githubusercontent.com/nagypeter/weblogic-operator-tutorial/master/k8s/domain_short.yaml >~/domain.yaml</copy>
+<copy>curl -LSs https://raw.githubusercontent.com/nagypeter/weblogic-operator-tutorial/livelabs/k8s/domain_short.v8.yaml >~/domain.yaml</copy>
 ```
-Review it in your favorite editor or a [browser](../domain.yaml).
+Review it in your favorite editor or a [browser](https://raw.githubusercontent.com/nagypeter/weblogic-operator-tutorial/livelabs/k8s/domain_short.v8.yaml).
 
 Create the domain custom resource object with the following command:
 ```bash
@@ -122,9 +122,9 @@ spec:
         backend:
           serviceName: sample-domain1-admin-server
           servicePort: 7001          
-EOF</copy>
+EOF
+</copy>
 ```
-
 
 Please note the two backends and the namespace, **serviceName**, **servicePort** definitions. The first backend is the domain cluster service to reach the application at the root context path. The second is for the admin console which is a different service.
 
@@ -158,9 +158,9 @@ The URL pattern of the sample application is the following:
 Refresh the page and notice the hostname changes. It reflects the Managed Server's name which responds to the request. You should see load balancing between the two Managed Servers.
 ## Acknowledgements
 
-- **Authors/Contributors** - 
-- **Last Updated By/Date** - 
-- **Workshop Expiration Date** - April 31, 2021
+- **Authors/Contributors** -
+- **Last Updated By/Date** - March 22, 2021
+- **Workshop Expiration Date** - March 31, 2022
 
 ## See an issue?
 Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
