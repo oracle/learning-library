@@ -4,7 +4,7 @@
 
 Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow, which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
 
-The estimated time to complete this lab is 15 minutes.
+Estimated Lab Time: 15 minutes.
 
 ### Objectives
 
@@ -65,7 +65,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 **Adding a Scenario to a Sandbox-Enabled Cube**
 
-* To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
+To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
 
 1.	In Essbase, login as a user with database update (or higher) permission to at least one application.
 
@@ -101,7 +101,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 **Show that Sandboxes are lightweight**  
 
-* This exercise shows that creating sandboxes has little impact on resource usage such as disk space.
+This exercise shows that creating sandboxes has little impact on resource usage such as disk space.
 
 1. Connect to `Sample_Scenario_Basic` in Smart View analysis.
 
@@ -153,7 +153,7 @@ As a scenario user, you can model data slices in your own scenario.
 
 You can review a scenario using an optional approval workflow.
 
-    ![](./images/imagenew.png "")
+  ![](./images/imagenew.png "")
 
 In the real use case, the scenario flow that we will simulate is:
 
@@ -210,5 +210,7 @@ You may proceed to the next lab.
 * Reviewed by - Ashish Jain, Product Management
 * Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

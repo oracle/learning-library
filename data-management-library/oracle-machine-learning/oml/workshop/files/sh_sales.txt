@@ -1,0 +1,1 @@
+This is the image of the sql query to fetch data from the SALES table in the SH schema. The sql query is select * from SH.SALES. 

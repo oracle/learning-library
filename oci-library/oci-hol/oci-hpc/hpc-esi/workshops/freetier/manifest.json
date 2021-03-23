@@ -1,0 +1,37 @@
+{
+    "workshoptitle": "High Performance Compute - ESI Pam-Crash",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Brief Introduction on Oracle HPC",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: ESI Pam-Crash Introduction",
+            "description": "Introduction to the software",
+            "filename": "../../esi-intro/esi-intro.md"
+        },
+        {
+            "title": "Lab 2: Architecture",
+            "filename": "../../architecture/architecture.md"
+        },
+        {
+            "title": "Lab 3: Deployment",
+            "description": "Deployment of the architecture",
+            "filename": "../../deployment/deployment.md"
+        },
+        {
+            "title": "Lab 4: Installation",
+            "filename": "../../install/install.md"
+        },
+        {
+            "title": "Lab 5: Run ESI Pam-Crash",
+            "filename": "../../run/run.md"
+        }
+    ]
+}
+

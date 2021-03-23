@@ -1,0 +1,10 @@
+{
+    "workshoptitle": "OCI LiveLabs on GitHub",
+    "tutorials": [
+        {
+            "title": "Welcome!",
+            "description": "This is the landing page for the OCI library withing LiveLabs",
+            "filename": "README.md"
+        }
+    ]
+}

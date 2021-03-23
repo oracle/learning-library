@@ -1,0 +1,7 @@
+[Description of the illustration sales_note_user1_edit.png]
+
+This screenshot shows the Sales Note notebook opened and edited by USER1 in USER1 Project in Firefox browser. The screenshot depicts the Sales Note notebook that is rendered after USER1 edits it by entering the command ORDER BY CUST_ID;
+
+The screenshot also highlights the date and timestamp at the time of edit by USER1 which is "Took 5 sec. Last Updated by USER1 at April 23 2020, 5.22.00 pm."   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

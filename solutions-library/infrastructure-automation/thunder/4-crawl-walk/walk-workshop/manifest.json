@@ -1,0 +1,53 @@
+{
+    "workshoptitle":"OCI Adoption Framework Thunder - Walk",
+    "tutorials": [
+        {
+            "title": "Walk intro",
+            "description": "Walk intro",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../crawl-workshop/crawl.md"
+        },
+        {
+            "title": "Lab 1: Walk DNS",
+            "description": "DNS Walk Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../walk/dns/dns.md"
+        },
+        {
+            "title": "Lab 2: Walk FSS",
+            "description": "FSS Walk Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../walk/fss/fss.md"
+        },
+        {
+            "title": "Lab 3: Walk Instance Principal",
+            "description": "Instance Principal Walk Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../walk/instance-principal/instance-principal.md"
+        },
+        {
+            "title": "Lab 4: Walk Load Balancer",
+            "description": "Load Balancer Walk Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../walk/load-balancer/load-balancer.md"
+        },
+        {
+            "title": "Lab 5: Walk Object Storage",
+            "description": "Object Storage Walk Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../walk/object-storage/object-storage.md"
+        }
+    ]
+}

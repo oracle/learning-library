@@ -1,0 +1,6 @@
+[Description of the illustration workspace_ab.png.]
+
+This images shows the Create Workspace dialog box in the foreground, and the Create Project dialog box in the background. In the Name field, it has Workspace A entered.  
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

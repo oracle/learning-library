@@ -1,0 +1,36 @@
+{
+    "workshoptitle": "Introduction to Data Science",
+    "tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "An Oracle Cloud tenancy is required for all labs in this workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Linear Regression (OCI Data Science)",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../linear-regression/linear-regression.md"
+        },
+        {
+            "title": "Lab 2: Neural Networks (OCI Data Science)",
+            "filename": "../../neural-networks/neural-networks.md"
+        },
+        {
+            "title": "Lab 3: ML for Business Users (Oracle Analytics Cloud)",
+            "filename": "../../ml-oac/ml-oac.md"
+        },
+        {
+            "title": "Lab 4: In-database ML (Oracle Machine Learning)",
+            "filename": "../../oml/oml.md"
+        },
+        {
+            "title": "Lab 5: Graph and ML",
+            "filename": "../../graph/graph.md"
+        }
+    ]
+}

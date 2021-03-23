@@ -1,0 +1,10 @@
+[Description of the illustration scratchpad_python.png]
+
+This images shows the following python commands in the scratchpad:
+1. import oml - to import the oml module.
+2. import matplotlib.pyplot as plt and import numpy as np to import the python packages matplotlin and numpy respectively.
+3. Commands to compute and render the data in two histograms - list1 and list2.
+
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

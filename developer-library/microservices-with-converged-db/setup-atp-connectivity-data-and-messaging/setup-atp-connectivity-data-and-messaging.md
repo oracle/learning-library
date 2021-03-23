@@ -16,7 +16,56 @@ the ATP instances.
 * OKE cluster and the ATP databases created
 * Microservices code from GitHub (or zip) built and deployed
 
-## **STEP 1**: Create Secrets To Connect To ATP PDBs
+## **STEP 1**: Download Regional DB wallet, upload to Object Storage, and create authenticated link.
+Select  **Autonomous Transaction Processing** from the side menu in the OCI Console
+
+  ![](images/sidemenuatp.png " ")
+  
+Select the correct compartment on the left-hand side (if not already selected) and select the **ORDERDB**.
+
+Click the **DB Connection** button
+
+  ![](images/pdbpage.png " ")
+
+Select **Regional Wallet** from the drop-down menu and click the **Download Wallet** button.
+
+  ![](images/pdbpageconninfo.png " ")
+
+Provide a password and click the **Download** button to save the wallet zip file to your computer.
+
+  ![](images/pdbpagedownloadwallet.png " ")
+
+Select  **Object Storage** from the side menu in the OCI Console.
+
+  ![](images/objectstorage.png " ")
+
+Select the correct compartment on the left-hand side (if not already selected) and click the **Create Bucket** button.
+
+Provide a name and click the **Create** button
+
+  ![](images/objectstoragecreatedbucket.png " ")
+
+Select the bucket you've just created and in the bucket screen  click the **Upload** button under **Objects** .
+
+  ![](images/objectstorescreenuploadbutton.png " ")
+
+Provide the wallet zip you saved to your computer earlier and click the **Upload** button.
+
+  ![](images/objectstoreuploadscreen.png " ")
+
+You should now see the wallet zip object you just uploaded in the list of Objects. Click the "..." menu to the far right of the object and select **Create Pre-Authenticated Request**.
+
+  ![](images/objectstorecreeatlinkbutton.png " ")
+
+Click the **Create Pre-Authenticated Request** button (default values are sufficient).
+
+  ![](images/objecstorecreatelink.png " ")
+
+Copy the value of the **Pre-Authenticated Request URL** as it will be used in the next step.
+
+  ![](images/objectstorelinkcopy.png " ")
+
+## **STEP 2**: Create Secrets To Connect To ATP PDBs
 You will run a script that will download the connection information (wallet, tnsnames.ora, etc.) and then create kubernetes secrets from the information that will be used to connect to the ATP instances provisioned earlier.
 
 1.  Change directory into atp-secrets-setup.
@@ -25,29 +74,19 @@ You will run a script that will download the connection information (wallet, tns
     <copy>cd $MSDATAWORKSHOP_LOCATION/atp-secrets-setup</copy>
     ```
 
-2.  Run `createAll.sh` and notice output creating secrets.
+2.  Run `createAll.sh` providing the pre-authenticated link created in Step 1 and notice output creating secrets.
 
     ```
-    <copy>./createAll.sh</copy>
+    <copy>./createAll.sh https://objectstorage.us-phoenix-1.oraclecloud.com/REPLACE_WITH_YOUR_PREAUTH_LINK/Wallet_ORDERDB.zip</copy>
     ```
 
-  ![](images/createAll.png " ")
+3.  Execute `msdataworkshop` and notice secrets for order and inventory wallets.
 
-3.  Execute `msdataworkshop` and notice secrets for order and inventory database and users.
     ```
     <copy>msdataworkshop</copy>
     ```
-    ![](images/msdataworkshop_secrets.png " ")
 
-    If there is an issue, execute `deleteAll.sh` to delete all secrets in workshop namespace
-    ```
-    <copy>./deleteAll.sh</copy>
-    ```
-
-  ![](images/deleteAll.png " ")
-
-
-## **STEP 2**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
+## **STEP 3**: Verify and understand ATP connectivity via Helidon microservice deployment in OKE
 You will verify the connectivity from the frontend Helidon microservice to the atp admin microservice connecting to the ATP PDBs.
 
 1.  First, let’s analyze the Kubernetes deployment YAML file: `atpaqadmin-deployment.yaml`.
@@ -111,7 +150,7 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 
   ![](images/33ed0b2b6316c6cdbbb2939947759119.png " ")
 
-7.  Use the frontend LoadBalancer URL `http://<external-IP>:8080` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
+7.  Use the frontend LoadBalancer URL `https://<external-IP>:443` to open the frontend webpage. If you need the URL, execute the `services` shortcut command and note the External-IP of the msdataworkshop/frontend/LoadBalancer.
 
   ![](images/testdatasourcescreen.png " ")
 
@@ -163,5 +202,3 @@ You will verify the connectivity from the frontend Helidon microservice to the a
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

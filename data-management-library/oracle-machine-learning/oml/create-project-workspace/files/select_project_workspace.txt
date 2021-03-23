@@ -1,0 +1,6 @@
+[Description of the illustration select_project_workspace.png.]
+
+This images shows the Select Project dialog box. This dialog box lists all the workspaces along with the projects in it. It has the Create, Edit and Delete buttons.
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

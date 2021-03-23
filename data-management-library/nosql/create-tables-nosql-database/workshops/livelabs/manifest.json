@@ -1,8 +1,9 @@
 {
     "workshoptitle": "Get Started with Tables in Oracle NoSQL Database Cloud Service",
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
@@ -18,6 +19,11 @@
 		    {
           "title": "Lab 2: Run the Sample NoSQL Application",
           "filename": "../../run-sample-application/run-sample-application.md"
+        },
+        {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

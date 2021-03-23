@@ -1,5 +1,7 @@
 {
-    "tutorials": [
+  "workshoptitle": "Simple Introduction to Machine Learning Algorithms",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction",
@@ -16,13 +18,13 @@
             "contentid": "12nnnn",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
-        {         
+        {
             "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
             "partnumber": "Ennnnn_01",
             "publisheddate": "04/29/2020",
             "contentid": "12nnnn",
-            "filename": "./../../../adb-provision/adb-provision.md"
+            "filename": "./../../../adb-provision/adb-provision-livelabs.md"
         },
         {
             "title": "Lab 2: Loading Data",
@@ -47,6 +49,11 @@
             "publisheddate": "03/10/2020",
             "contentid": "12nnnn",
             "filename": "./../../../adw-machine-learning/adw-machine-learning.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

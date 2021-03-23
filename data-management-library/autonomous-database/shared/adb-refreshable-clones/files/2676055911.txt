@@ -1,0 +1,1 @@
+This screenshot shows the Tools tab in the Autonomous Database Details page of the OCI console. "Open SQL Developer Web" link is highlighted.

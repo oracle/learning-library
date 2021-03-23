@@ -1,0 +1,20 @@
+recid,checking_status,duration,credit_history,purpose,credit_amount,savings_status,employment,installment_commitment,gender,personal_status,other_parties,residence_since,property_magnitude,age,other_payment_plans,housing,existing_credits,job,num_dependents,own_telephone,foreign_worker
+2000,<0,24,critical/other existing credit,new car,1199,<100,>=7,4,male,single,none,4,car,60,none,own,2,unskilled resident,1,none,yes
+2001,<0,15,existing paid,new car,1403,<100,1<= & <4,2,female,div/dep/mar,none,4,car,28,none,rent,1,skilled,1,none,yes
+2002,0<= & <200,24,existing paid,used car,12579,<100,>=7,4,female,div/dep/mar,none,2,no known property,44,none,for free,1,high qualif/self emp/mgmt,1,yes,yes
+2003,no checking,24,existing paid,radio/tv,3430,500<= & <1000,>=7,3,male,single,none,2,car,31,none,own,1,skilled,2,yes,yes
+2004,<0,10,critical/other existing credit,new car,2241,<100,<1,1,male,single,none,3,real estate,48,none,rent,2,unskilled resident,2,none,no
+2005,0<= & <200,12,critical/other existing credit,used car,1804,100<= & <500,<1,3,male,single,none,4,life insurance,44,none,own,1,skilled,1,none,yes
+2006,no checking,6,no credits/all paid,radio/tv,426,<100,>=7,4,male,mar/wid,none,4,car,39,none,own,1,unskilled resident,1,none,yes
+2007,>=200,12,all paid,radio/tv,409,>=1000,1<= & <4,3,female,div/dep/mar,none,3,real estate,42,none,rent,2,skilled,1,none,yes
+2008,0<= & <200,18,existing paid,business,1913,>=1000,<1,3,male,mar/wid,none,3,real estate,36,bank,own,1,skilled,1,yes,yes
+2009,<0,24,existing paid,furniture/equipment,4020,<100,1<= & <4,2,male,single,none,2,car,27,stores,own,1,skilled,1,none,yes
+2010,>=200,12,existing paid,furniture/equipment,1474,<100,<1,4,female,div/dep/mar,none,1,life insurance,33,bank,own,1,high qualif/self emp/mgmt,1,yes,yes
+2011,0<= & <200,45,critical/other existing credit,radio/tv,4746,<100,<1,4,male,single,none,2,life insurance,25,none,own,2,unskilled resident,1,none,yes
+2012,>=200,10,existing paid,domestic appliance,1225,<100,1<= & <4,2,male,single,none,2,car,37,none,own,1,skilled,1,yes,yes
+2013,0<= & <200,9,existing paid,radio/tv,458,<100,1<= & <4,4,male,single,none,3,real estate,24,none,own,1,skilled,1,none,yes
+2014,0<= & <200,18,delayed previously,repairs,6204,<100,1<= & <4,2,male,single,none,4,real estate,44,none,own,1,unskilled resident,2,yes,yes
+2015,<0,30,critical/other existing credit,used car,6187,100<= & <500,4<= & <7,1,male,mar/wid,none,4,car,24,none,rent,2,skilled,1,none,yes
+2016,no checking,36,existing paid,radio/tv,2299,500<= & <1000,>=7,4,male,single,none,4,car,39,none,own,1,skilled,1,none,yes
+2017,<0,6,existing paid,used car,1352,500<= & <1000,unemployed,1,female,div/dep/mar,none,2,life insurance,23,none,rent,1,unemp/unskilled non res,1,yes,yes
+2018,0<= & <200,24,delayed previously,furniture/equipment,2333,no known savings,<1,4,male,single,none,2,life insurance,29,bank,own,1,unskilled resident,1,none,yes

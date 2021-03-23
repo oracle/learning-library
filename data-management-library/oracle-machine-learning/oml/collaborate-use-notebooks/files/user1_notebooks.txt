@@ -1,0 +1,5 @@
+[Description of the illustration user1_notebooks.png]
+
+This images shows the Notebooks page of USER1. The Notebooks page lists three notebooks that are present in Project1 under Workspace1,that is owned by USER1.   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

@@ -1,0 +1,1 @@
+This is the image of the Py Note notebook with python commands. The commands import two python packages to compute and render the data in two histograms list1 and list2. The Python packages are Matplotlib - Python package to render graphs, and Numpy - Python package for computations.

@@ -1,7 +1,8 @@
 {
+  "workshoptitle": "OCI Command Line Interface",
     "tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {

@@ -1,10 +1,10 @@
-# Moving Block Volumes
+# Create Compute instance, Block Volume and install an app.
 
 ## Introduction
 
-In this lab we will create a compute instance, install httpd server on it, attach block volume to it, and install an app on the Block Volume. We will then create a second compute instance using the boot volume of the first compute instance and move the Block Volume to the second compute instance (with the app installed).
+In this lab we will create a compute instance, install httpd server, attach block volume to it, and install an app on the Block Volume. We will then create a second compute instance using the boot volume of the first compute instance and move the Block Volume to the second compute instance (with the app installed).
 
-### Objectives
+## Objectives
 - Demonstrate launching VCN
 - Compute Instance
 - Use Boot volume of compute instance
@@ -12,16 +12,13 @@ In this lab we will create a compute instance, install httpd server on it, attac
 
 ## **Step 1:** Create VCN
 
-1. From the OCI Services menu, click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking  
-![](./../oci-quick-start/images/QuickStart_S1P1.PNG " ")
-
+1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select the compartment assigned to you from drop down menu on left part of the screen 
 2. Click **Start VCN Wizard**.
 
    **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
    ![](./../oci-quick-start/images/QuickStart_S1P2.PNG " ")
 
 3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
-![](./../oci-quick-start/images/QuickStart_S1P3.PNG " ")
 
 4. Fill out the dialog box:
 
@@ -31,22 +28,20 @@ In this lab we will create a compute instance, install httpd server on it, attac
       - **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
       - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
       - Click **Next**
-![](./../oci-quick-start/images/QuickStart_S1P4.PNG " ")
 
 5. Verify all the information and  Click **Create**.
-![](./../oci-quick-start/images/QuickStart_S1P5.PNG " ")
 
 6. This will create a VCN with following components.
 
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
-![](./../oci-quick-start/images/QuickStart_S1P7.PNG " ")
 
 8. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Scroll down and Click **Security List** under **Resources** and then **Default Security list for`<YOUR_VCN_NAME>`**
 ![](./../oci-quick-start/images/QuickStart_S1P8.PNG " ")
+
 9. Click **Add Ingress Rule**
-![](./../oci-quick-start/images/QuickStart_S1P9.PNG " ")
+
 10. Add the following rule under **Ingress Rules**:
 
       - **Make sure STATELESS is un-checked**
@@ -57,51 +52,43 @@ In this lab we will create a compute instance, install httpd server on it, attac
       - **DESTINATION PORT RANGE:** 80
 
     Then, Click **Add Ingress Rules** at the bottom.
-     ![](./../oci-quick-start/images/QuickStart_S1P10.PNG " ")
+
 ## **Step 2:** Compute instance.
-1. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
-      ![](./../oci-quick-start/images/QuickStart_S2P1.PNG " ")
-2. On the left sidebar, select the **Compartment** in which you placed your VCN under **List Scope**. The, Click **Create Instance**.
-      ![](./../oci-quick-start/images/QuickStart_S2P2.PNG " ")
-3. Enter a **Name** for your Instance and the **Compartment** in which you placed your VCN. The select **Show Shape, Network, and Storage Options**. Leave **Image or Operating System** and **Availability Domain** as the default values.
-      ![](./../oci-quick-start/images/QuickStart_S2P3.PNG " ")
-4. Scroll down to **Shape** and click **Change Shape**. Select **Virtual Machine** and **VM.Standar2.1**. Click **Select Shape**
-      ![](./../oci-quick-start/images/QuickStart_S2P4.PNG " ")
-      ![](./../oci-quick-start/images/QuickStart_S2P4.5.PNG " ")
-5. Scroll Down to **Configure Networking** and select the following.
-      - **Virtual Cloud Network Compartment**: Choose the compartment in whih you created your VCN
-      - **Virtual Cloud Network**: The VCN you created in Step 1
-      - **Subnet Compartment**: Choose the compartment in whih you created your VCN
-      - **Subnet**: Public Subnet (Which should be named Public Subnet-NameofVCN)
-      - **Use network security groups to control traffic**: Un-checked.
+
+1. Launch **Cloud Shell** by clicking the icon next to region name on top right of OCI console. ('<=' icon)
+
+2. Once cloud Shell is launched. Enter command **ssh-keygen**, press enter for all prompts. This will create a ssh key pair. Enter command;
+```
+ <copy>
+bash
+cd .ssh
+cat id_rsa.pub
+</copy>
+```
+Copy the key displayed. Thsi will be used when creating the compute instance.
+
+3. From OCI services menu, Click **Instances** under **Compute**.
+ 
+4. On the left sidebar, select the **Compartment** in which you placed your VCN under **List Scope**. The, Click **Create Instance**.
+ 
+5. Enter a **Name** for your Instance and the **Compartment** in which you placed your VCN. Fill out the dialog box. Leave **Image or Operating System** and **Availability Domain** as the default values.
+
+6. Leave Shape  **Shape** as default value.
+
+7. Scroll Down to **Configure Networking** and verify the following.
+      - Your Compartment is selected
+      - The VCN created is populated
+      - The subnet created is populated 
       - **Assign a public IP address**: Checked
-      - **Boot Volume:**: Leave default
 
-      ![](./../oci-quick-start/images/QuickStart_S2P5.PNG " ")
-6. Choose 'Paste SSH Keys' under **Add SSH Keys:** and paste the Public Key saved from Lab 2 and click **Create**.
-      ![](./../oci-quick-start/images/QuickStart_S2P6.PNG " ")
-
+8. Ensure **PASTE PUBLIC KEYS** is slected under **Add SSH Keys**. Paste the public key copied earlier.
+ 
    **NOTE:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1 OR choose a different AD.
 
-7. Wait for Instance to be in **Running** state.
-![](./../oci-quick-start/images/QuickStart_S2P7.PNG " ")
+9. Click **Create** and wait for Instance to be in **Running** state. Note down the public IP address of the compute instance.
 
-8. Launch the Cloud Shell if it is not running. When running, enter the command below:
 
-      ```
-      <copy>
-      cd .ssh
-      </copy>
-      ```
-
-9. Enter **ls** and verify id\_rsa file exists.
-      ```
-      <copy>
-      ls
-      </copy>
-      ```
-
-10. Enter the following command replacing SSH-KEY-NAME with the name of your ssh key and replacing PUBLIC-IP-OF-COMPUTE1 with the IP address of the first compute instance you created.
+10. Enter the following command replacing SSH-KEY-NAME with the name of your ssh private key(in this case id_rsa) and replacing PUBLIC-IP-OF-COMPUTE1 with the IP address of the first compute instance you created.
   *Note: Your SSH-KEY-NAME name should NOT end in .pub*
 
       ```
@@ -111,7 +98,7 @@ In this lab we will create a compute instance, install httpd server on it, attac
       </copy>
       ```
 
-      Ex: ssh -i quickstartkey opc@193.122.146.136
+      Ex: ssh -i id_rsa opc@193.122.146.136
 
       *Note: If a "Permission denied error" is seen, ensure you are using '-i' in the ssh command. Also make sure that you correctly copied the name of your ssh key and the public IP of your compute instance.*
 
@@ -121,11 +108,9 @@ In this lab we will create a compute instance, install httpd server on it, attac
 
   Ex: [opc@quickstart_instance ~]
 
-## **Step 3:** Compute and attach block volume to compute instance.
+## **Step 3:** Attach block volume to compute instance.
 
 1. From OCI services menu Click **Block Volumes** under **Block Storage**, then Click **Create Block Volume**.
-![](./../oci-quick-start/images/QuickStart_S2P11.PNG " ")
-![](./../oci-quick-start/images/QuickStart_S2P11.5.PNG " ")
 
 2. Fill out the dialog box:
 
@@ -137,40 +122,31 @@ In this lab we will create a compute instance, install httpd server on it, attac
     - **Backup Policy:** Leave empty.
     - **Encryption:** Select "Encrypt Using Oracle-Managed Keys"
 
-    Then, Click **Create Block Volume**.
-![](./../oci-quick-start/images/QuickStart_S2P12.PNG " ")
-![](./../oci-quick-start/images/QuickStart_S2P12.5.PNG " ")
+    Click **Create Block Volume**.
 
+3.  Wait for Block Volume state to change from 'Provisioning' to 'Available'.
 
-3. Wait for volume to become available. Wait for Block Volume state to change from 'Provisioning' to 'Available'.
-![](./../oci-quick-start/images/QuickStart_S2P13.PNG " ")
+4. Attach Block volume to your compute instance. From OCI services menu Click **Instance** under **Compute**.
 
-4. Attach Block volume to your compute instance. From OCI services menu Click **Instance** under Compute.
-![](./../oci-quick-start/images/QuickStart_S2P1.PNG " ")
-
-5. Click the Compute instance name compute created earlier to see instance details page. Scroll down and Select the **Attach Block Volumes** section under the **Resources** section on the left side of the page. Click **Attach Block Volume**
-![](./../oci-quick-start/images/QuickStart_S3P5.PNG " ")
+5. Click the Compute instance name created earlier to see instance details page. Scroll down and Select the **Attached Block Volumes** under  **Resources** on the left side of the page. Click **Attach Block Volume**
 
 6. Fill out the dialog box:
 
-    - **Volume Attachment Type:** Choose Paravirtualized
+    - **Volume Attachment Type:** Leave the default
     - **Block Volume In:** Click the drop down and choose the block volume created earlier
     - **Device Path:** Select a device path
 
     **NOTE:** Selecting the device path /dev/oracleoci/oraclevdb would result in the same device path as the screenshots in  the rest of the lab.
     ![](./../oci-quick-start/images/QuickStart_S3P6.PNG " ")
 
-    *NOTE: We can also use ISCSI mode. For more information please refer to the Appendix section at the end of the lab.*
-
 7. Click **Attach**.
 
 8. Verify Block volume is attached on compute instance details page (Refresh the screen if needed).
-    ![](./../oci-quick-start/images/QuickStart_S3P8.PNG " ")
+
 
 ## **Step 4:** Install httpd on compute instance and an app on block volume.
 
-
-1. Switch to ssh session to compute install. Install httpd server, Enter Command:
+1. Switch to ssh session to compute instance (Cloud Shell). Install httpd server, Enter Command:
 
       ```
       <copy>
@@ -389,29 +365,24 @@ In this section we will detach the block volume, Stop the compute instance, use 
 
 2. In OCI console window, Click your compute instance name and in **Attached Block Volume** section  Click the action icon and **Click Detach**. Then, verify the detachment by pressing **Continue Detachment** and **OK** in the Confirm Window.
 
-      ![](./../oci-quick-start/images/Quick_S5P2.PNG " ")
-
       ![](./../oci-quick-start/images/Quick_S5P2.4.PNG " ")
 
 3. Stop your compute instance by Clicking **Stop** in compute instance details page. Then, click **Stop Instance** in the Confirm window.
-      ![](./../oci-quick-start/images/Quick_S5P3.PNG " ")
 
 4. Once the instance is in Stopped state, Click **Boot Volume**, Click action icon and Click **Detach**. Click **Detatch Boot Volume** in Confirm window.
-      ![](./../oci-quick-start/images/Quick_S5P4.PNG " ")
+
 
 5. Once the Boot volume is detached, Click **Terminate** to Terminate the instance. Then, click **Terminate Instance** in the Confirm window.
-      ![](./../oci-quick-start/images/Quick_S5P5.PNG " ")
 
 6. Click the action icon, Click **View Boot Volume Details**.
 
       ![](./../oci-quick-start/images/Quick_S5P6.PNG " ")
 
 7. In the Boot Volume Details window Click **Create Instance:**
-      ![](./../oci-quick-start/images/Quick_S5P7.PNG " ")
 
 8. Repeat the settings detailed in **STEP 2** to create an instance.
 
-9. Wait for the instance to be in Running state. Then, use the instructions from **STEP 3** to attach the block volume.
+9. Wait for the instance to be in Running state. Then, use the instructions from **STEP 3** to attach the block volume and ssh to compute instance.
 
   *NOTE: Ensure to use Paravirtualized mode and wait for the block volume to change from 'Attaching' to 'Attached'.*
 
@@ -449,80 +420,28 @@ We have now successfully launched a compute instance using another instance's bo
 
 2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
 
-3. Locate first compute instance, Click Action icon and then **Terminate**.
-
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0016.PNG " ")
+3. Locate the compute instance, Click Action icon and then **Terminate**.
 
 4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
 
-     ![](./../oci-quick-start/images/RESERVEDIP_HOL0017.PNG " ")
 
-5. Repeat the step to delete second compute instance.
+5. From OCI services menu Click **Block Volumes** under Block Storage.
 
-6. From OCI services menu Click **Block Volumes** under Block Storage.
-      ![](./../oci-quick-start/images/Quick_S6P6.PNG " ")
-
-7. Find the storage block volume you created.
+6. Find the storage block volume you created.
 
    **HINT:** If multiple storage block volumes are listed, scroll down to find the one you created.   
 
-8. Click the Action icon and select **Terminate**.
-      ![](./../oci-quick-start/images/Quick_S6P8.PNG " ")
-      ![](./../oci-quick-start/images/Quick_S6P8.5.PNG " ")
+7. Click the Action icon and select **Terminate**.
 
-9. Click OK in the confirmation window.
+8. Click OK in the confirmation window.
 
-10. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will
+9. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will
 appear.
-      ![](./../oci-quick-start/images/Quick_S6P10.PNG " ")
 
-11. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
-
-      ![](./../oci-quick-start/images/Quick_S6P11.PNG " ")
+10. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
 
 
 ***Congratulations! You have successfully completed the lab.***
-
-## Appendices
-
-### Appendix A: ISCSI Method to Attach Block Volume to Compute Instance
-
-1. Click Action icon for the Block Volume, then **ISCSI Commands & Information**.
-
-   *NOTE: The iSCSI Commands and Information dialog box displays specific identifying information about your volume and the iSCSI commands you will need. The commands are ready to use with the appropriate information included. You can copy and paste the commands into your instance once you login.*
-
-     ![](./../oci-quick-start/images/Customer_Lab_017.PNG " ")
-
-2. Click **Copy** in **ATTACH COMMANDS** section.
-
-     ![](./../oci-quick-start/images/Customer_Lab_018.PNG " ")
-
-3. Click **Close** to close the window.
-
-4. In OCI Console Window, Click the Apps icon and Click Notepad.
-
-   **HINT:** You can swap between the OCI window and any other application (Notepad etc.) by Clicking the Switch Window icon
-
-5. Paste the ISCSI commands in Notepad using your mouse/touch pad or Ctrl v.
-
-**To attach ssh to the compute instance and paste the ISCSI commands copied earlier**
-
-### Appendix B: ISCSI Method to Detach block volume
-
-1. Click Action icon for the Block Volume, then **ISCSI Commands & Information**.
-
-2. Click **Copy** in **DETACH COMMANDS** section.
-
-     ![](./../oci-quick-start/images/Customer_Lab_019.PNG " ")
-
-3. Paste the detach command in the ssh session to the compute instance.
-
-4. In OCI console window, Click your compute instance name and in **Attached Block Volumes** section Click the action icon and Click **Detach**.
-
-     ![](./../oci-quick-start/images/Customer_Lab_020.PNG " ")
-
-*Congratulations! You have successfully completed the lab.*
-
 
 ## Learn More
 1. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
@@ -535,8 +454,10 @@ appear.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Tom McGinn, August 2020
+- **Last Updated By/Date** - Umair Siddiqu, November 2020
 - **Contributors** - Marilyn Isabella Kessinger, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

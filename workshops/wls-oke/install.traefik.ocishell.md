@@ -32,6 +32,11 @@ Create a namespace for Traefik:
 <copy>kubectl create namespace traefik</copy>
 ```
 Install the Traefik operator in the `traefik` namespace with the provided sample values:
+
+```bash
+<copy>helm repo add traefik https://helm.traefik.io/traefik</copy>
+```
+
 ```bash
 <copy>helm install traefik-operator \
 traefik/traefik \
@@ -98,5 +103,7 @@ traefik-operator        traefik         1               2020-09-03 13:50:09.1994
 - **Last Updated By/Date** - March 22, 2021
 - **Workshop Expiration Date** - March 31, 2022
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. Please include the workshop name and lab in your request.

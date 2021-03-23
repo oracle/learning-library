@@ -1,7 +1,9 @@
 {
-  "tutorials": [
+  "workshoptitle": "Building an App using a Remote Data Source for Oracle Autonomous Cloud Services",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
     {
-      "title": "Prerequisites",
+      "title": "Getting Started",
       "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
     },
     {
@@ -27,6 +29,11 @@
     {
       "title": "Lab 5: Adding Chart Criteria",
       "filename": "6-adding-chart-criteria/6-adding-chart-criteria.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }

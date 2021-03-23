@@ -1,20 +1,27 @@
 {
+    "workshoptitle": "Deploying Infrastructure using Terraform",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
-        {         
-            "title": "Prerequisites",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
-        },
-        {         
+        {
             "title": "Introduction",
             "filename": "./../../intro/intro.md"
         },
-        {         
+        {
+            "title": "Getting Started",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
             "title": "Lab 1: Generate SSH Key - Cloud Shell",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
         },
-        {         
+        {
             "title": "Lab 2: Deploying Infrastructure using Terraform",
             "filename": "./../../infra-using-terraform/infra-using-terraform.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

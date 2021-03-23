@@ -1,0 +1,8 @@
+[Description of the illustration create_workspace.png.]
+
+This images shows the Notebook page in the background. The Notebook page shows all the options for the tasks that you can perform such as Edit, Create, Duplicate, Save as Template, Delete, Import, and  Version. 
+
+The image also shows the Create Notebook and Create Workspace dialog boxes in the foreground. The Create Notebook dialog box opens when clicking the Create option in the Notebook page. You enter the name of the Notebook, and any comments related to the notebook. You also select a connection to the notebook, as applicable. The default connection is already selected.  
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

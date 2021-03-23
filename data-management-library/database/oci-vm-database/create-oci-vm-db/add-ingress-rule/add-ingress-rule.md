@@ -54,5 +54,7 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 * **Last Updated By/Date** - Tom McGinn, March 2020
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?  
+Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

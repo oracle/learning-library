@@ -1,0 +1,7 @@
+[Description of the illustration new_project_option.png.]
+
+This figure shows the project and workspace drop-down list that is available on the top right corner of the Oracle Machine Learning home page. The project name and the workspace, in which the project resides, are displayed here. In this screenshot, the project name is Project A, and the workspace name is Admin.
+
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

@@ -1,0 +1,3 @@
+This images shows the Save as Template dialog box. In the background, the Notebook page is displayed with the Save as Template option highlighted. In the Save As Template, all the fields about the Notebook template such as the Name, Comments, Tags, and the location to save it as a template that is My Library and Shared are shown.    
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

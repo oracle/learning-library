@@ -58,15 +58,16 @@ As you can see a table called `OWNER` and a table called `PET` were created.
     import io.micronaut.data.annotation.Id;
     import io.micronaut.data.annotation.MappedEntity;
 
-
     @MappedEntity
     public class Owner {
 
-      // The ID of the class uses an generated sequence value
+      // The ID of the class uses a generated sequence value
       @Id
       @GeneratedValue
       private Long id;
+
       private final String name;
+
       private int age;
 
       // the constructor reads column values by the name of each constructor argument
@@ -112,12 +113,12 @@ As you can see a table called `OWNER` and a table called `PET` were created.
     package example.atp.domain;
 
     import io.micronaut.core.annotation.Creator;
+    import io.micronaut.core.annotation.Nullable;
     import io.micronaut.data.annotation.AutoPopulated;
     import io.micronaut.data.annotation.Id;
     import io.micronaut.data.annotation.MappedEntity;
     import io.micronaut.data.annotation.Relation;
 
-    import javax.annotation.Nullable;
     import java.util.UUID;
 
     @MappedEntity
@@ -127,11 +128,13 @@ As you can see a table called `OWNER` and a table called `PET` were created.
       @Id
       @AutoPopulated
       private UUID id;
-      private String name;
+
+      private final String name;
 
       // A relation is defined between Pet and Owner
       @Relation(Relation.Kind.MANY_TO_ONE)
-      private Owner owner;
+      private final Owner owner;
+
       private PetType type = PetType.DOG;
 
       // The constructor defines the columns to be read
@@ -177,7 +180,7 @@ Note that the `Pet` class uses an automatically populated `UUID` as the primary 
 
 A relationship between the `Pet` class and the `Owner` class is also defined using the `@Relation(Relation.Kind.MANY_TO_ONE)` annotation, indicating this is a many-to-one relationship.
 
-With that done it is time move onto defining repository interfaces to implement queries.
+With that done it is time to move onto defining repository interfaces to implement queries.
 
 ## **STEP 2**: Define Micronaut Data repositories to implement queries
 
@@ -213,9 +216,9 @@ public interface OwnerRepository extends CrudRepository<Owner, Long> {
 
 Note that if you were unable to setup Autonomous database and are using the H2 in-memory database you should use the `H2` dialect instead.
 
-The `CrudRepository` interface takes 2 generic argument types. The first is the type of the entity (in this case `Owner`) and the second is the type if the ID (in this case `Long`).
+The `CrudRepository` interface takes 2 generic argument types. The first is the type of the entity (in this case `Owner`) and the second is the type of the ID (in this case `Long`).
 
-The `CrudRepository` interface defines methods that allow you to create, read, update and delete (CRUD) entities from the database with the appropriate SQL inserts, selects, updates and deletes computed for you at compilation time. For more information see the javadoc for [CrudRepository](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html).
+The `CrudRepository` interface defines methods that allow you to create, read, update and delete (CRUD) entities from the database with the appropriate SQL inserts, selects, updates and deletes computed for you at compilation time. For more information see the Javadoc for [CrudRepository](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html).
 
 You can define methods within the interface that perform JDBC queries and automatically handle all the intricate details for you such as defining correct transaction semantics (read-only transactions for queries), executing the query and mapping the result set to the `Owner` entity class you defined earlier.
 
@@ -284,7 +287,7 @@ With the data repositories in place let's move on to exposing REST endpoints.
 
 ## **STEP 3**: Expose Micronaut Controllers as REST endpoints
 
-REST endpoints in Micronaut are easy to write and defined as [controllers (as per the MVC pattern)](https://docs.micronaut.io/latest/guide/index.html#httpServer).
+REST endpoints in Micronaut are easy to write and are defined as [controllers (as per the MVC pattern)](https://docs.micronaut.io/latest/guide/index.html#httpServer).
 
 Define a new `OwnerController` class in a file called `OwnerController.java` in `src/main/java/example/atp/controllers` like the following:
 
@@ -395,8 +398,6 @@ import example.atp.repositories.PetRepository;
 import io.micronaut.context.event.StartupEvent;
 import io.micronaut.runtime.Micronaut;
 import io.micronaut.runtime.event.annotation.EventListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
 import javax.transaction.Transactional;
@@ -419,7 +420,7 @@ public class Application {
     @EventListener
     @Transactional
     void init(StartupEvent event) {
-        // clear out an existing data
+        // clear out any existing data
         petRepository.deleteAll();
         ownerRepository.deleteAll();
 
@@ -448,7 +449,7 @@ once the application is up and running and can be used to persist data when your
 
 The rest of the example demonstrates saving a few entities using the [saveAll](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html#saveAll-java.lang.Iterable-) method of the [CrudRepository](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html) interface.
 
-Notice that `javax.transaction.Transactional` is declared on the method which ensures that Micronaut Data wraps the execution of the `init` method in a JDBC transaction that is rolled back if anything goes wrong during the execution of the method.
+Notice that `javax.transaction.Transactional` is declared on the method which ensures that Micronaut Data wraps the execution of the `init` method in a JDBC transaction that is rolled back if an exception occurs during the execution of the method.
 
 If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL logging:
 
@@ -466,23 +467,51 @@ To execute your tests make sure you have set the `TNS_ADMIN` environment variabl
 <copy>
 export TNS_ADMIN=[Your absolute path to wallet]
 export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
+</copy>
+```
+
+Then if you are using Gradle use the `test` task to execute your tests:
+
+```bash
+<copy>
 ./gradlew test
+</copy>
+```
+
+Alternatively if you chose Maven use the `test` goal:
+
+```bash
+<copy>
+./mvnw test
 </copy>
 ```
 
 ## **STEP 6**: Run the Micronaut application locally
 
-To run the application locally and test against the Autonomous Database that was setup in the previous labs. Make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab and then execute `./gradlew run -t`:
+To run the application locally and test against the Autonomous Database that was setup in the previous labs. Make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab:
 
 ```bash
 <copy>
 export TNS_ADMIN=[Your absolute path to wallet]
 export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
-./gradlew run -t
 </copy>
  ```
 
-Note that the `-t` argument is optional and activates continuous build such that if you make changes to your application it will be automatically restarted.
+Then if you are using Gradle using the `run` task to start the application:
+
+```bash
+<copy>
+./gradlew run
+</copy>
+ ```
+
+Alternatively if you are using Maven use the `mn:run` goal:
+
+```bash
+<copy>
+./mvnw mn:run
+</copy>
+ ```
 
 You can now access [http://localhost:8080/pets](http://localhost:8080/pets) for the `/pet` endpoint and [http://localhost:8080/owners](http://localhost:8080/owners) for the `/owners` endpoint. For example:
 
@@ -507,6 +536,3 @@ You may now *proceed to the next lab*.
 - **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

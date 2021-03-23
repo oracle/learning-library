@@ -1,0 +1,32 @@
+{
+  "workshoptitle": "Replicating Data Using Oracle Cloud Infrastructure GoldenGate",
+    "tutorials": [
+       {
+           "title": "Prerequisites",
+           "description": "Prerequisites for Oracle-owned tenancies.",
+           "filename": "../prereqs/prereqs.md"
+       },
+       {
+            "title": "Introduction",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Set up the Oracle Cloud Intrastructure GoldenGate Environment",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../setup/setup.md"
+        },
+        {
+            "title": "Lab 2: Access to the GoldenGate Deployment Console",
+            "filename": "../access/access.md"
+        },
+        {
+            "title": "Lab 3: Create the Extract and Replicat",
+            "filename": "../extracts-replicats/extracts-replicats.md"
+        },
+        {
+            "title": "Lab 4: Monitor Extracts and Replicats",
+            "filename": "../monitor/monitor.md"
+        }
+    ]
+}

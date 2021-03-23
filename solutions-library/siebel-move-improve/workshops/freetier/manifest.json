@@ -1,0 +1,35 @@
+{
+    "workshoptitle": "Siebel Move and Improve",
+    "tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Explanation of the Workshop and Goals",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create SSH Keys Using Oracle Cloud Shell",
+            "description": "Create SSH keys for use with this lab",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+        },
+        {
+            "title": "Lab 2: Set Up OCI for Siebel Deployment",
+            "description": "In this lab, the recently provisioned OCI Trial tenancy will be set up for the Siebel Application",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 3: Provisioning the Siebel Application",
+            "description": "In this exercise, you will create your Siebel application by setting up the Siebel Marketplace image and then use Jenkins to deploy an instance of Siebel.",
+            "filename": "../../provision/provision.md"
+        },
+        {
+            "title": "Lab 4: Teardown Your Oracle Siebel Environment",
+            "description": "Teardown Your Siebel Environment",
+            "filename": "../../teardown/teardown.md"
+        }
+    ]
+}

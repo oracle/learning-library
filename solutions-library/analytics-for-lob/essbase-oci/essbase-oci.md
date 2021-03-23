@@ -4,7 +4,7 @@
 
 This lab provides detailed instructions for deploying Essbase on OCI using the Marketplace listing. It includes details of how-to setup users/groups and corresponding policies and compartments on OCI. It also provides details of the network topology for the deployment. Following OCI components will be deployed/configured – IDCS, OCI Vault, OCI VMs, ATP, storage, VCNs, Load Balancer, etc. Once the deployment is complete, you should be able to access Essbase on the Web UI.
 
-The estimated time to complete this lab is 45 minutes.
+Estimated Lab Time: 45 minutes.
 
 ### Objectives
 
@@ -21,15 +21,19 @@ The estimated time to complete this lab is 45 minutes.
 
 ## **Step 1:** Essbase 19c - Basic Topology
 
-    ![](./images/image13_1.png "")
+![](./images/image13_1.png "")
 
 Above is the basic topology of Essbase19c architecture on Oracle Cloud Infrastructure.
 
-* Essbase19c VM resides in the Application subnet as shown in the above figure which is configured automatically with Block Volumes – Configuration Volume and Data Volume.
-* The connections to this application subnet are dependent on the Security List rules associated with the Application subnet and in this topology we will have ingress rules on    the application subnet for SSH Connectivity and for HTTPS - Web UI connectivity to the Essbase19c VM via the Internet Gateway.
-* SSH connectivity is first required during the procurement process for the Resource Manager to configure and install the Essbase19c in the compute instance automatically with no manual work from our end and secondly after the procurement SSH connectivity enables the users to login to the backend Essbase19c instance and for corresponding access.
-* The Essbase19c instance procured will manage its users using the IDCS of Oracle Cloud and metadata gets stored in the ATP-Autonomous Database.
-* Essbase backups gets stored in the Object storage of the OCI and the connectivity to this is established by the service gateway.
+Essbase19c VM resides in the Application subnet as shown in the above figure which is configured automatically with Block Volumes – Configuration Volume and Data Volume.
+
+The connections to this application subnet are dependent on the Security List rules associated with the Application subnet and in this topology we will have ingress rules on    the application subnet for SSH Connectivity and for HTTPS - Web UI connectivity to the Essbase19c VM via the Internet Gateway.
+
+SSH connectivity is first required during the procurement process for the Resource Manager to configure and install the Essbase19c in the compute instance automatically with no manual work from our end and secondly after the procurement SSH connectivity enables the users to login to the backend Essbase19c instance and for corresponding access.
+
+The Essbase19c instance procured will manage its users using the IDCS of Oracle Cloud and metadata gets stored in the ATP-Autonomous Database.
+
+Essbase backups gets stored in the Object storage of the OCI and the connectivity to this is established by the service gateway.
 
 ## **Step 2:** Deployment of Essbase 19c - Prerequisites
 
@@ -178,21 +182,21 @@ Above is the basic topology of Essbase19c architecture on Oracle Cloud Infrastru
 
 7. The policy statements of the corresponding groups will look like the images shown below.
 
-**Dynamic group policy statements**
+    a. Dynamic Group Policy Statements
 
     ![](./images/image13update1.png "")
 
-**Administrators group policy statements**
+    b. Administrator Group Policy Statements
 
     ![](./images/image13update2.png "")
 
 ## **Step 4:** Encrypt Values Using OCI Virtual Vault
 
-* Key Management (KMS) enables you to manage sensitive information when creating a server domain.
+Key Management (KMS) enables you to manage sensitive information when creating a server domain.
 
-* When you use KMS to encrypt credentials during provisioning, you need to create a key. Passwords chosen for Essbase administrator and database must meet the Resource Manager password requirements.
+When you use KMS to encrypt credentials during provisioning, you need to create a key. Passwords chosen for Essbase administrator and database must meet the Resource Manager password requirements.
 
-* Keys need to be encrypted for the following fields: Essbase Administrator Password, IDCS application client secret, and Database system administrator password.
+Keys need to be encrypted for the following fields: Essbase Administrator Password, IDCS application client secret, and Database system administrator password.
 
 1. Sign in to the Oracle Cloud Infrastructure console.
 
@@ -269,7 +273,7 @@ Above is the basic topology of Essbase19c architecture on Oracle Cloud Infrastru
 
 ## **Step 5:** Provision Essbase using Marketplace Listing
 
-* As the Oracle Cloud Infrastructure administrator, you use Oracle Cloud Infrastructure to set up Essbase. Oracle Cloud Marketplace uses Oracle Resource Manager to provision the network, compute instances, Autonomous Transaction Processing database for storing Essbase metadata, and Load Balancer.
+As the Oracle Cloud Infrastructure administrator, you use Oracle Cloud Infrastructure to set up Essbase. Oracle Cloud Marketplace uses Oracle Resource Manager to provision the network, compute instances, Autonomous Transaction Processing database for storing Essbase metadata, and Load Balancer.
 
 1.	Sign into Oracle Cloud Infrastructure console as the Oracle Cloud Infrastructure administrator.
 
@@ -390,5 +394,7 @@ You may proceed to the next lab.
 * Reviewed by - Ashish Jain, Product Management
 * Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

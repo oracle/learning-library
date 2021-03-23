@@ -1,0 +1,10 @@
+{
+  "displayName":"Identity Cloud Service SDK for Node.js",
+  "description":"Use this SDK to develop web-based Node.js applications.",
+  "fileType":"idcs-nodejs-sdk",
+  "fileName":"nodejs-1.0.0-1711301730.zip",
+  "fileVersion":"20171130.173000",
+  "category":"idcs-sdk",
+  "isAdminOnly":true,
+  "isPublic":false
+}

@@ -1,0 +1,1 @@
+This is the image of a notebook that shows the value TRUE after the notebook is successfully connected to a Python interpreter. 

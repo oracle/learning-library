@@ -1,0 +1,3 @@
+This images shows the icons for graphical representation of data, namely Histogram, Pie-chart, Cumulative Gain Chart, Line chart, and Scatter plot in the data visualization paragraph. The Data visualization paragraph is visible after a notebook is run.  
+
+Copyright © 2017, 2018 Oracle and/or its affiliates. All rights reserved.

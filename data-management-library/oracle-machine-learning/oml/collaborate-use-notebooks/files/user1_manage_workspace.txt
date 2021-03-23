@@ -1,0 +1,5 @@
+[Description of the illustration user1_manage_workspace.png]
+
+This images shows the Manage Workspace option under project - workspace drop-down list while signed in as USER1.   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

@@ -1,0 +1,37 @@
+{
+    "workshoptitle": "Oracle Database Consolidation",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {         
+            "title": "Introduction to Consolidation of Databases",
+            "description": "Introduction to Consolidation of Databases",
+            "filename": "../intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {         
+            "title": "Lab 1: Consolidate your databases on ADB using MV2ADB",
+            "description": "Consolidate your databases on ADB using MV2ADB",
+            "filename": "./../mv2adb/mv2adb.md"
+        },
+        {         
+            "title": "Lab 2: Consolidate your databases using Goldengate",
+            "description": "Consolidate your databases using Goldengate",
+            "publishdate": "Stuff is in Data manage lib/ad/decidated/adbprovisingexadata",
+            "filename": "./../adb-provisioning-exadata/adb-provisioning-exadata.md"
+        },
+        {         
+            "title": "Lab 3: Consolidate your databases using Data Pump",
+            "description": "Consolidate your databases using Data Pump",
+            "filename": "./../adb-provisioning-exaC@C/adb-provisioning-exaC@C.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+[Description of the histogram.png]
+
+This images shows the icon for Histogram. Click this icon to view the grapgical representation of youe data in a histogram.
+
+Copyright © 2017, 2018 Oracle and/or its affiliates. All rights reserved.

@@ -1,0 +1,7 @@
+[Description of the illustration sales_note_edit_user2.png]
+
+This screenshot shows the Sales Note notebook opened and edited by USER2 in USER1 Project in Chrome. The screenshot depicts the Sales Note notebook that is rendered after USER2 edits it by entering the command where AMOUNT_SOLD <= 50.68 ;
+
+The screenshot also highlights the date and timestamp at the time of edit by USER2 which is "Took 1 sec. Last Updated by USER2 at April 23 2020, 5.37.00 pm."   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

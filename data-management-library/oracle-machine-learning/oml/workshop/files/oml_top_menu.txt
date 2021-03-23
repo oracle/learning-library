@@ -1,0 +1,5 @@
+[Description of the illustration oml_top_menu.png]
+
+This images shows the Oracle Machine Learning menu while signed in as USER2. In the username field, it shows USER2 and in the project-workspace drop-down list name, it shows USER1 Project User1 Workspace.
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

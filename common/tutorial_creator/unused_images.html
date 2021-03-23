@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                Instructions                                                        
+            </div>    
+            <div id="intro">
+                <p>This tool helps you identify unused or missing images from the images folder that is associated with a LiveLabs Markdown file that you specify. The tool:</p>
+                <ol>
+                    <li>Lists all extra (unused) images in the images folder that is associated with the your lab's .MD file that you select. The unused images are displayed on the right-hand side of the page.</li>
+                    <li>Lists any images that are referenced in the lab (.MD) file that you select which are missing from the images folder. The missing images are displayed on the left-hand side of the page. </li>
+                </ol>
+                <p>To use this tool select the:</p>
+                <ul>
+                    <li>Markdown (MD) file for a LiveLabs lab that you want to check (on the left-hand side).</li>
+                    <li>Images folder that is associated with the MD file that you selected (on the right-hand side).</li>                            
+                </ul>
+                <p>To check the images for a new lab, simply select the new MD file and the associated images folder.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                Markdown                                                        
+            </div>                                        
+            <div type="button" id="md_to_check" class="btn btn-primary">[Click here to select the MD file for a LiveLabs lab that you want to check]</div>
+            <input type="file" id="upload_md_to_check" accept=".md" hidden />
+            <div class="card-body" style="display:none;">
+                <div id = "mdfile"></div>
+                <strong>Images referenced in the MD file but missing in the images folder</strong>
+                <div id = "missing">
+                    None
+                </div>                        
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div id="rightBox" class="card">
+            <div class="card-header">
+                Images                
+            </div>
+            <div type="button" id="btn_images_to_check" class="btn btn-primary">[Click here to select the images folder associated with the MD file you selected]</div>
+<!-- <link rel="stylesheet" href="./css/style.css"> -->
+            <input type="file" id="images_to_check" name="images_to_check[]" class="btn-preview btn" accept="image/*" webkitdirectory directory multiple hidden/>
+            <div class="card-body" style="display:none;">
+                <div id = "images"></div>
+                <strong>Extra images in the images folder</strong>
+                <div id = "extra">None</div>                        
+            </div>
+        </div>
+    </div>
+</div>

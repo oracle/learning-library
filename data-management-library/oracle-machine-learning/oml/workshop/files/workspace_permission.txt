@@ -1,0 +1,3 @@
+This images shows the Permissions dialog box that opens after you select Workspace Permissions option. The dialog box has the option to select a user and a permission type. The dialog box also shows the delete option to delete a user and the associated permissions.    
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

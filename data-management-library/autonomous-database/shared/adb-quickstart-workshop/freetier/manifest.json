@@ -1,14 +1,16 @@
 {
-    "tutorials": [
-      {
-         "title": "Prerequisites",
-         "description": "Get a Free Trial",
-         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
-      },
+    "workshoptitle":"Autonomous Database Quickstart Workshop",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
       {
         "title": "Introduction",
         "description": "Introduction to ADB on Shared Infrastructure",
         "filename": "./intro.md"
+      },
+      {
+        "title": "Getting Started",
+        "description": "Get a Free Trial",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
           "title": "Lab 1: Provision Autonomous Database",
@@ -34,6 +36,11 @@
           "title": "Lab 5: Visualizing Your Data",
           "description": "Visualizing Your Data",
           "filename": "./../../adw-visualizations/adw-visualizations.md"
+      },
+      {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
       }
     ]
 }

@@ -1,0 +1,31 @@
+{
+  "workshoptitle": "Python and Oracle for Developers",
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies).",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Python and Database scripting workshop",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Lab 1: Verify LiveLabs Setup",
+            "description": "Verify LiveLabs Setup",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/verify-setup-19c-livelabs.md"
+        },
+        {
+            "title": "Lab 2: Python and Oracle Database: Scripting for the Future",
+            "description": "Use Python and the Oracle Database",
+            "filename": "../../python-scripting/python-scripting.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

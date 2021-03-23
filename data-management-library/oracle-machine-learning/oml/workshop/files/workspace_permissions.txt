@@ -1,0 +1,3 @@
+This is the image of the Permissions dialog. It shows the three types of permissions  - Manager, Developer, and Viewer.
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

@@ -1,0 +1,5 @@
+[Description of the illustration data_visuals.png]
+
+This images shows data that is presented in a histogram in the Data visualization paragraph in a notebook. The Data visualization paragraph is visible after a notebook is run. The top let corner shows the icons for graphical representation of data. Clicking these icons displays the data in the corresponsding graphical representation, as applicable, such as hstogram, pie-chart, cumulative gain chart, line chart, and scatter plot respectively.   
+
+Copyright © 2017, 2018 Oracle and/or its affiliates. All rights reserved.

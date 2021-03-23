@@ -1,26 +1,34 @@
 # Introduction
 
-## **About Oracle REST Data Services**
+## About this Workshop
 
-Oracle REST Data Services (ORDS) is a Java EE-based alternative for Oracle HTTP Server and *mod_plsql*. The Java EE implementation offers increased functionality including a command line based configuration, enhanced security, file caching, and RESTful web services. Oracle REST Data Services also provides increased flexibility by supporting deployments using Oracle WebLogic Server, Apache Tomcat, and a standalone mode.
+This lab will walk you through creating a REST service using Oracle REST Data Services (ORDS) on an Autonomous Database. You will start by creating an application user whom you will use throughout all the lab steps. Once created, we will load data and create a table in our database. Using the same UI, we will REST enable that table so that endpoints created for all major operations (create, update, query, delete). Lastly, we will use OAuth to secure the REST service endpoints. This lab will be done entirely from the Database Actions UI that is provided with all Oracle REST Data Services (ORDS) installs and with the Autonomous Database in Oracle Cloud Infrastructure.
 
-The Oracle Application Express architecture requires some form of web server to proxy requests between a web browser and the Oracle Application Express engine. Oracle REST Data Services satisfies this need but its use goes beyond that of Oracle Application Express configurations. Oracle REST Data Services simplifies the deployment process because there is no Oracle home required, as connectivity is provided using an embedded JDBC driver.
+Estimated Workshop Time: 30-45 minutes
+
+### About Oracle REST Data Services
+
+Oracle REST Data Services (ORDS) bridges HTTPS and your Oracle Database. A mid-tier Java application, ORDS provides a Database Management REST API, a web based SQL, JSON and REST workshops, a PL/SQL Gateway, SODA for REST, and the ability to publish RESTful Web Services for interacting with the data and stored procedures in your Oracle Database.
+
+The Java EE implementation offers increased functionality including a command line based configuration, enhanced security, file caching, and RESTful web services. Oracle REST Data Services also provides increased flexibility by supporting deployments using Oracle WebLogic Server, Apache Tomcat, and a standalone mode. Oracle REST Data Services further simplifies the deployment process because there is no Oracle home required, as connectivity is provided using an embedded JDBC driver.
 
 Watch the video below for a comprehensive overview of REST and how ORDS provides what you need to deliver RESTful Services for your Oracle Database.
 
 [](youtube:rvxTbTuUm5k)
 
+### Objectives
+
+- Connect to your Autonomous Database using SQL Developer Web
+- Create a user for Application development
+- Load data into the database
+- Auto-REST enable a table
+- Securing the REST endpoint
+
 ### Prerequisites
-This workshop assumes you have completed the following labs:
-[Login to Oracle Cloud] (?lab=lab-1-login-oracle-cloud) and [Provision ADB] (?lab=lab-2-provision-adb)
-* Lab: [Login to Oracle Cloud](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-1-login-oracle-cloud)
-* Lab: [Provision an Autonomous Database](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/workshops/livelabs-overview/?lab=lab-2-provision-adb)
 
-## **Acknowledgements**
+- This workshop assumes you have  Oracle cloud account and signed in to your cloud account.
 
- - **Author** - Troy Anthony, Database Product Management, May 2020
- - **Contributors** - Arabella Yao, Product Manager Intern, Database Management
- - **Last Updated By/Date** - Troy Anthony, May 20 2020
+## Acknowledgements
 
- ## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+ - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Product Manager
+ - **Last Updated By/Date** - February 2021

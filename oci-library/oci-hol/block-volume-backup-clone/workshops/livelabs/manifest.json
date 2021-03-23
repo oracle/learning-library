@@ -1,7 +1,7 @@
 {
     "tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "description": "Login to Oracle Cloud",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
       },
@@ -10,7 +10,7 @@
           "filename": "./../../../intro/intro.md"
       },
       {
-          "title": "Lab 1: Using Backup and Clone Feature of Block Volume Storage",
+          "title": "Using Backup and Clone Feature of Block Volume Storage",
           "filename": "./../../block-volume-backup-clone.md"
       }
     ]

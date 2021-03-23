@@ -1,0 +1,1 @@
+In the SQL Developer Worksheet, create user code is entered and Run Statement is clicked. The script output shows the user od4h is created and granted the permission.

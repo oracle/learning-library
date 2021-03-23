@@ -1,0 +1,3 @@
+This images shows the Examples Templates page in Oracle Machine Learning. It shows all the nine types of templates that are available in Oracle Machine Learning - Anomaly Detection, Association Rules, Attribute Importance, Classification Prediction Model, Clustering, My First Notebook, Regression, Statistical Function, and Time Series Forecasting.
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

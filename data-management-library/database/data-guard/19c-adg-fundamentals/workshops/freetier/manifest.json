@@ -1,0 +1,71 @@
+{
+    "workshoptitle": "19c Active Data Guard Fundamentals",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description":"Workshop Overview",
+            "publisheddate": "26/02/2021",
+            "filename":"../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create the primary database",
+            "description":"Setup the 19c Primary Database",
+            "publisheddate": "26/02/2021",
+            "filename":"../../primary-db/primary-db.md"
+        },
+        {
+            "title": "Lab 2: Create the standby database",
+            "description":"Setup the standby Database",
+            "publisheddate": "26/02/2021",
+            "filename":"../../standby-db/standby-db.md"
+        },    
+        {
+            "title": "Lab 3: Connect to the database",
+            "description":"Connection to the databases",
+            "publisheddate": "26/02/2021",
+            "filename":"../../connect-db/connect-db.md"
+        },
+        {
+            "title": "Lab 4: Perform a switchover",
+            "description":"Perform a switchover",
+            "publisheddate": "26/02/2021",
+            "filename":"../../switchover/switchover.md"
+        },
+        {
+            "title": "Lab 5: Perform a failover ",
+            "description":"Perform a Failover",
+            "publisheddate": "26/02/2021",
+            "filename":"../../failover/failover.md"
+        },
+        {
+            "title": "Lab 6: Enable Active Data Guard DML Redirection ",
+            "description":"Enable Active Data Guard DML Redirection",
+            "publisheddate": "26/02/2021",
+            "filename":"../../dml-redirection/dml-redirection.md"
+        },
+        {
+            "title": "Lab 7: Automatic block media recovery",
+            "description":"Learn about Automatic block media recovery ",
+            "publisheddate": "26/02/2021",
+            "filename":"../../media-recovery/media-recovery.md"
+        },
+        {
+            "title": "Lab 8: Restore point propagation",
+            "description":"Learn about Restore point propagation ",
+            "publisheddate": "26/02/2021",
+            "filename":"../../restore-point-propagation/restore-point-propagation.md"
+        },
+        {
+            "title": "Lab 9: Change the SYS password",
+            "description":"Change the SYS password",
+            "publisheddate": "26/02/2021",
+            "filename":"../../sys-passwords/sys-passwords.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

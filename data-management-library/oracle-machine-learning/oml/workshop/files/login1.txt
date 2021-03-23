@@ -1,0 +1,6 @@
+[Description of the illustration login1.png.]
+
+This images shows the Oracle Machine Learning Sign In page. It contains the fields Tenant and Database, that the user must enter to gain access to the Oracle Machine Learning account. 
+
+
+Copyright © 2017, 2020, Oracle and/or its affiliates. All rights reserved.

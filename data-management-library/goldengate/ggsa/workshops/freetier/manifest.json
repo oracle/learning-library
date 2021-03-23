@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "GoldenGate Stream Analytics Labs",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+
+      {
+          "title": "Introduction to GoldenGate Stream Analytics",
+          "filename": "../../Introduction/introduction.md"
+      },
+
+        {
+            "title": "Lab 1: Create your HelloWorld Pipeline",
+            "filename": "../../1-ggsa-hwp/1-ggsa-hwp.md"
+        }
+
+    ]
+}

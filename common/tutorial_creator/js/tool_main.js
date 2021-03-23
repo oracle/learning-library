@@ -20,15 +20,16 @@ const shortcutbtn_click = [
     { id: '#btn_indent', placeholder1: '    ', placeholder2: '    ', placeholder3: undefined },
     { id: '#btn_code', placeholder1: '`Enter one line code here`', placeholder2: '`', placeholder3: '`' },
     { id: '#btn_codeblock', placeholder1: '```\nEnter multiple line\ncode here\n```', placeholder2: '```\n', placeholder3: '\n```' },
+    { id: '#btn_youtube', placeholder1: '[](youtube:<video_id>)', placeholder2: '[](youtube:', placeholder3: ')' }
 ];
 // This array defines which page should load when the top navigation buttons are clicked
 const nav_pages = [
     { id: '#btn_home', html: 'home.html' },
     { id: '#btn_manifest', html: 'manifest.html' },
-    { id: '#btn_templates', html: 'templates.html' }
+    { id: '#btn_unused_images', html: 'unused_images.html' }
 ];
 // links to the template files on Github
-const template_md = "https://raw.githubusercontent.com/oracle/learning-library/master/templates/redwood-hol/content.md";
+const template_md = "https://raw.githubusercontent.com/oracle/learning-library/master/sample-livelabs-templates/livelabs-template/livelabs-template.md";
 const template_html = "https://raw.githubusercontent.com/oracle/learning-library/master/templates/redwood-hol/index.html";
 const main_js = "https://oracle.github.io/learning-library/common/redwood-hol/js/main.js";
 
@@ -41,10 +42,14 @@ const filesaver_js = "./js/FileSaver.min.js";
 // This is used for zipping the files
 const jszip_js = "./js/jszip.min.js";
 
+let images_md = [], images_dir = [];
+
 // document.ready function
 $(() => {
     $('#lastmodified').text(document.lastModified); //sets the value for the last modified date in the HTML output
     loadFile(nav_pages[0].html); //loads the first page in the array by default
+
+    window.localStorage.removeItem("manifestValue"); // REMOVE LATER (after manifest page is fixed)
 
     $('#main').on('change', '#show_images, #simple_view', () => setTimeout(showMdInHtml, 0));
 
@@ -106,9 +111,9 @@ $(() => {
         temp = $.trim(temp.replace(/\n\n<!-- -->\n/g, '\n'));
         temp = $.trim(temp.replace(/\n<!-- -->\n/g, '\n'));
         temp = $.trim(temp.replace(/\<!-- -->/g, ''));
-        temp = $.trim(temp.replace(/\n\n<!-- Downloaded from Tutorial Creator on.*-->/g, ''));
-        temp += "\n\n<!-- Downloaded from Tutorial Creator on " + new Date($.now()) + " -->";
-        download("content.md", temp);
+        temp = $.trim(temp.replace(/\n\n<!-- Downloaded from Workshop Creator on.*-->/g, ''));
+        temp += "\n\n<!-- Downloaded from Workshop Creator on " + new Date($.now()) + " -->";
+        download("workshop_creator.md", temp);
     });
 
     $('#main').on('click', '#download_manifest', () => download('manifest.json', $.trim(JSON.stringify(getFormData(), null, "\t")))); //event listener for download manifest button
@@ -267,11 +272,32 @@ $(() => {
         $('#upload_md').click();
     });
     $('#main').on('change', '#upload_md', enterMdData); //event listener for upload MD
+
+    $('#main').on('click', '#import_html', function () { //event listener for import HTML
+        $('#upload_html').click();
+    });
+    $('#main').on('change', '#upload_html', enterHTMLData); //event listener for upload HTML
+
+
+    //the following part contains code for check unusued images feature
+
+    //the actual image button is hidden. The actual image button is #images_to_check
+    //the button that is displayed for image upload is #btn_images_to_check. When this button is clicked, the #images_to_check button click is triggered
+    $('#main').on('change', '#images_to_check', checkUsedImages); //event listener for change image button
+    $('#main').on('click', '#btn_images_to_check', () => {  //event to trigger the actual image upload button
+        $('#images_to_check')[0].click();
+    });
+
+    $('#main').on('click', '#md_to_check', function () { //event listener for import MD
+        $('#upload_md_to_check').click();
+    });
+
+    $('#main').on('change', '#upload_md_to_check', checkImagesInMd); //event listener for upload MD
 });
 
 let homeInit = () => { //home page init function
     $('#mdBox').val(window.localStorage.getItem("mdValue"));
-    if (window.localStorage.getItem("mdValue") === null) { //template is set only if you open the tool for the first time
+    if (window.localStorage.getItem("mdValue") === null || window.localStorage.getItem("mdValue").trim() === '') { //template is set only if you open the tool for the first time
         getTemplate();
     }
     showMdInHtml();
@@ -284,6 +310,11 @@ let manifestInit = () => { //manifest page init function
     }
     $('#manifestForm input').trigger('input');
 }
+
+let unused_images_init = () => { // unused images page init function
+    images_md = [];
+    images_dir = [];
+}
 let loadFile = filename => { //function to load file
     let xhr = new XMLHttpRequest();
     xhr.open('GET', filename, true);
@@ -294,6 +325,8 @@ let loadFile = filename => { //function to load file
                 homeInit();
             else if (filename === nav_pages[1].html)
                 manifestInit();
+            else if (filename === nav_pages[2].html)
+                unused_images_init();
         }
     }
     xhr.send();
@@ -488,6 +521,47 @@ let download = (filename, text) => {
     }
 }
 
+let customRule = (html) => {
+    let doc = document.createElement('html');
+    $(doc).html(html);
+
+    $(doc).find('h1 img').remove();
+    $(doc).find('h2 img').remove();
+    $(doc).find('.modal').remove();
+
+    console.log(doc);
+    return doc;
+}
+
+let enterHTMLData = evt => {
+    let files = evt.target.files;
+    let file = files[0];
+    let reader = new FileReader();
+    let html;
+
+    reader.onload = (function (theFile) {
+        return function (e) {
+            html = e.target.result;
+        };
+    })(file);
+    reader.onloadend = function () {            
+        let turndownService = new TurndownService({headingStyle: 'atx', hr: '', bulletListMarker: '-'});
+
+        turndownService.addRule('codeblock', {
+            filter: ['pre'],
+            replacement: function (content) {
+              return '\n```\n' + content + '\n```'
+            }
+        });        
+        turndownService.remove(['head', 'title', 'script', 'noscript', 'wrapper', 'header', 'footer', 'figcaption', 'button']);        
+        let md = turndownService.turndown(customRule(html)).trim();        
+        $('#mdBox').val(md);
+        $('#mdBox').trigger('input');
+    }
+    $('#upload_html').val("");
+    reader.readAsText(file);
+}
+
 // defines what happens when a shortcut button is clicked
 let shortcutClick = (placeholder1, placeholder2, placeholder3) => {
     let mdBox = $('#mdBox')[0];
@@ -660,7 +734,7 @@ let downloadZip = () => {
         let scriptCount = 0, scriptDone = 0, scriptFailed = 0;
         let fileCount = 0, fileDone = 0, fileFailed = 0;
         let logWindow = window.open("download.html", "log", "width=1100,height=500");
-        logWindow.document.title = "Tutorial Creator: Creating zip file";
+        logWindow.document.title = "Workshop Creator: Creating zip file";
         logWindow.document.body.innerHTML = "";
         logWindow.document.write('<pre>Packaging files. Please wait...</pre>');
         let log = logWindow.document.getElementsByTagName('pre')[0];
@@ -937,4 +1011,128 @@ let disableDownloadButton = () => {
     $('#download_zip').html(spinner);
     $('#download_zip').append(" Downloading...");
     $('#download_zip').attr('disabled', 'true');
+}
+
+let checkImagesInMd = evt => {
+    let files = evt.target.files;
+    let file = files[0];
+    let reader = new FileReader();
+    let md, filename;
+
+    images_md = [];
+    reader.onload = (function (theFile) {
+        return function (e) {
+            md = e.target.result;
+            filename = theFile.name;
+        };
+    })(file);
+    reader.onloadend = function () {
+        $('.card-body').hide();
+        let imagesRegExp = new RegExp(/!\[.*?\]\((.*?)\)/g);
+        let matches;
+
+        do {
+            matches = imagesRegExp.exec(md);
+            if (matches !== null) 
+                images_md.push(matches[1].substring(matches[1].lastIndexOf('/')).replace('/', '').split(' ')[0]);
+        } while(matches);
+
+        images_md = sort_unique(images_md);
+        $('#md_to_check').text('[1 MD file containing ' + images_md.length + ' image references uploaded successfully]');
+        $('#mdfile').html('<strong>MD file selected</strong><div>' +  filename + '</div><br/>');
+        $('#md_to_check').attr('title', "Click here to select another MD file"); 
+    
+        checkDiff();
+    }
+    reader.readAsText(file);
+}
+
+//reads image content. Function is used for viewing images locally.
+let checkUsedImages = (evt) => {
+    let files = evt.target.files; // FileList object
+    let uploaded_images = [];
+    let total = 0, check = 0;
+    $.each(files, function () {
+        let file = $(this)[0];
+        if (file.type.match('image.*')) {
+            let reader = new FileReader();
+            reader.onload = (function (theFile) {    
+                $('.card-body').hide();                            
+                return function (e) {
+                    total++;
+                    uploaded_images.push(escape(theFile.name));
+                };
+            })(file);            
+                        
+            reader.onloadend = function () {
+                check++;                
+                if (check == total) {                      
+                    $('#btn_images_to_check').text('[' + uploaded_images.length + ' image(s) uploaded successfully]');
+                    $('#images').html('<strong>All images in the images folder</strong><div>' +  uploaded_images.join(', ') + '</div><br/>');
+                    $('#btn_images_to_check').attr('title', "Click here to select another image folder"); 
+                    images_dir = uploaded_images;       
+                    checkDiff();                
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+let checkDiff = () => {
+    let missing = [], extra = [];
+
+    if (images_md.length > 0 && images_dir.length > 0) {
+        $(images_md).each(function() {
+            let found = false;
+            for (let i = 0; i < images_dir.length; i++) {
+                if (this == images_dir[i]) {
+                    found = true;
+                    break;
+                }
+            }
+            if(found == false) {
+                missing.push(this);
+            }
+        });
+
+        $(images_dir).each(function() {
+            let found = false;
+            for (let i = 0; i < images_md.length; i++) {
+                if (this == images_md[i]) {
+                    found = true;
+                    break;
+                }
+            }
+            if(found == false) {
+                extra.push(this);
+            }
+        });
+        $('.card-body').show();
+    }
+
+    if (missing.length === 0) {
+        $('#missing').text('None');
+    } else {
+        $('#missing').html('<ol><li>' + missing.join('</li><li>') + '</ol>');
+    }
+
+    if (extra.length === 0) {
+        $('#extra').text('None');
+    } else {
+        $('#extra').html('<ol><li>' + extra.join('</li><li>') + '</ol>');
+    }
+}
+
+function sort_unique(arr) {
+    //retrieved from: https://stackoverflow.com/questions/4833651/javascript-array-sort-and-unique
+    if (arr.length === 0) return arr;
+    arr = arr.sort(function (a, b) { return a*1 - b*1; });
+    var ret = [arr[0]];
+    for (var i = 1; i < arr.length; i++) { //Start loop at 1: arr[0] can never be a duplicate
+      if (arr[i-1] !== arr[i]) {
+        ret.push(arr[i]);
+      }
+    }
+    return ret;
 }

@@ -1,11 +1,12 @@
 {
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
             "filename": "../intro/intro.md"
         },  {
             "title": "Lab 0: Register for Free Tier Account",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Setup",
@@ -22,6 +23,11 @@
         {
             "title": "Lab 4: Show customers based on regions",
             "filename": "../show-customers/show-customers.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
 
     ]

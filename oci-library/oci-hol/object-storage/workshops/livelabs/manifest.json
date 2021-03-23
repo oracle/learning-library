@@ -1,7 +1,8 @@
 {
+  "workshoptitle": "Create an Object Storage Service",
     "tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "description": "Login to Oracle Cloud",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
       },
@@ -11,7 +12,8 @@
       },
       {
           "title": "Lab 1: Create an Object Storage Service",
-          "filename": "./../../object-storage.md"
+          "type": "livelabs",
+          "filename": "./../../os/object-storage.md"
       }
     ]
 }

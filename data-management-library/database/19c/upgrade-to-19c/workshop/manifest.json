@@ -1,4 +1,5 @@
 {
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Workshop Overview",
@@ -41,6 +42,11 @@
             "description":"Upgrade to 19c on Oracle Autonomous Database cloud using MV2ADB",
             "publisheddate": "04/15/2020",
             "filename":"./../mv2adb-upgrade/mv2adb-upgrade.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

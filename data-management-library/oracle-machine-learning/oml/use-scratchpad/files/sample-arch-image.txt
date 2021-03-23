@@ -1,0 +1,10 @@
+[This is a sample image description file.]
+
+This illustration shows the process to integrate Oracle IoT Cloud Service with Oracle Service Cloud by using the service's application integration feature. 
+The sequence of flow is depicted as follows:
+1. The message flows from a device to Oracle IoT Cloud Service.
+2. Oracle IoT Cloud Service uses its application integration feature to connect with Oracle Integration Cloud Service, and sends the messages that fulfill the Exploration filter (temperature > 55).
+3. Oracle Integration Cloud Service verifies, if a message for a device in Oracle IoT Cloud Service wasn't already created as an incident in Oracle Service Cloud, then sends the incident to Oracle Service Cloud.
+4. Oracle Service Cloud creates an incident for a device.
+
+In the image, the Organization part of the Oracle Service Cloud configuration is bordered.

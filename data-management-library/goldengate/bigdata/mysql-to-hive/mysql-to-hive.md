@@ -1,131 +1,293 @@
-# Lab 4 -  MySQL --> Hive (Avro format)
+#  MySQL to Hive (Avro format)
 
-### Introduction
-In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and wrote them to the local trail file. The pump process ‘pmphadop’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat
-process ‘rhive’ will read the trail file, create the Hive tables, write the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and /user/ggtarget/hive/schema/*
+## Introduction
 
+In this lab we will load data in MySQL database `ggsource`, GG extract process `extmysql` will capture the changes from MySQL’s binary logs and wrote them to the local trail file. The pump process `pmphadop` will route the data from the local trail (on the source) to the remote trail (on the target). The replicatprocess `rhive` will read the trail file, create the Hive tables, write the data and the schema files (avsc) to the HDFS target directory for Hive: `/user/ggtarget/hive/data/*` and `/user/ggtarget/hive/schema/*`
 
-Lab Architecture
+*Estimated Lab Time*:  60 minutes
 
-![](./images/image401_1.png)
+#### Lab Architecture
 
-Time to Complete -
-Approximately 60 minutes
+  ![](./images/image401_1.png " ")
 
 ### Objectives
-- GoldenGate replication from **MySQL to Hive**
+- Explore GoldenGate replication from **MySQL to Hive**
 
-## Before You Begin
-For the Lab terminal session:
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
+    - Lab: Deploy GoldenGate for Big Data
 
-use ggadmin/oracle to log into your new Lab4
+## **STEP 0:** Running your Lab
+### Login to Host using SSH Key based authentication
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - OS User – “*ggadmin*”.
 
-## Steps: 
+1. First login as “*opc*” using your SSH Private Key
 
-Setting up the Environment For MySQL.
-    
-If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
+2. Then sudo to “*ggadmin*”. E.g.
 
-**Step1:** The following Lab Menu will be displayed, select R to reset the lab environment, then option 4
+    ```
+    <copy>sudo su - ggadmin</copy>
+    ```
 
-![](./images/lab4menu.png)
+ 3. Repeat the two steps above to create a second session. These two sessions will be used respectively for `source` and `target` execution tasks
 
-**Step2:** The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. The workshop facilitator will review the content of each of these files to understand how GoldenGate is being configured.
+## **STEP 1**: Explore GoldenGate Configuration
+1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
-view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
+2. Select **R** to reset the lab then Option **4**
 
-view these files, same as in previous lab
-/u01/gg4mysql/dirprm/mgr.prm
+  ![](./images/labmenu_opt1.png " ")
 
-/u01/gg4mysql/dirprm/extmysql.prm
+3. Review the overview notes on the following screen, then select **Q** to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
-/u01/gg4mysql/dirprm/pmpmysql.prm
+4. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 
-view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby
+5. Review the content of each of these files to explore how GoldenGate is being configured.
 
-view /u01/gg4hadoop123010/dirprm/rhive.prm
+    ```
+    <copy>cd /u01/gg4mysql
+    view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+    ```
+    ```
+    <copy>cd /u01/gg4mysql/dirprm
+    view /u01/gg4mysql/dirprm/mgr.prm</copy>
+    ```
+    ```
+    <copy>view /u01/gg4mysql/dirprm/extmysql.prm</copy>
+    ```
+    ```
+    <copy>view  /u01/gg4mysql/dirprm/pmpmysql.prm</copy>
+    ```
+    ```
+    <copy>cd /u01/gg4hadoop123010/dirprm
+    view /u01/gg4hadoop123010/dirprm/create_hive_replicat.oby</copy>
+    ```
+    ```
+    <copy>view /u01/gg4hadoop123010/dirprm/rhive.prm</copy>
+    ```
+    ```
+    <copy>view /u01/gg4hadoop123010/dirprm/rhive.properties</copy>
+    ```
 
-view /u01/gg4hadoop123010/dirprm/rhive.properties
+Now we need to start the GG manager process on both the source and target. Keep these sessions open for the rest of this lab.
 
-**Step3:** First we will start the GG manager process on both the source and target. Start 2 putty sessions, connect to ggadmin/oracle (then click Q to get to a prompt). Keep these sessions open for the rest of this lab.
+## **STEP 2**: GoldenGate Source Configuration
 
-**Step4:** In the first session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
+4. In the first or `source` terminal session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
 
-![](./images/c2.png)
+ ![](./images/c2.png " ")
 
-**Step5:** In the second session, go to the GG Home for Hadoop, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
+    ```
+    <copy>ggmysql</copy>
+    ```
+    ```
+     <copy> pwd
+     ./ggsci</copy>
+    ```
+    ```
+    <copy> info all</copy>	 
+    ```
+    ```
+    <copy> start mgr</copy>		
+    ```
+    ```
+    <copy> info all</copy>
+    ```
 
-![](./images/c3.png)
+5. In the second or `target` terminal session, go to the **GG Home for Hadoop**, and start the manager process. You can either cd to the directory, or call the alias gghadoop:
 
-**Step6:** In the GG for MySQL ggsci session, we will create and start the GG extract process:
+  ![](./images/c3.png " ")
 
-![](./images/c4.png)
-![](./images/c5.png)
+    ```
+    <copy> cd /u01/gg4hadoop123010
+    ./ggsci</copy>
+    ```
+    ```
+    <copy> info all</copy>	 
+    ```
+    ```
+    <copy> start mgr</copy>		
+    ```
+    ```
+    <copy> info all</copy>	 
+    ```
+    ```
+    <copy> exit</copy>
+    ```
 
-**Step7:** Now that the source side is setup, let’s configure GG on the target side (Hive Avro format).
+6. In the first or `source` terminal session (**GG for MySQL ggsci session**), we will create and start the GG extract process:
 
-**Step8:** In the GG for Hadoop session, you’ll need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
+  ![](./images/c4.png " ")
+  ![](./images/c5.png " ")
 
-![](./images/c6.png)
+    ```
+     <copy>./ggsci</copy>
+     ```
+     ```
+    <copy> obey ./dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
+    ```
+    ```
+    <copy> info all</copy>
+     ```
+     ```
+    <copy> start extmysql</copy>
+    ```
+    ```
+    <copy> info all</copy>
+    ```
+    ```
+    <copy> start pmphadop</copy>
+    ```
+    **or use the following to start ALL**
+    ```
+    <copy> start *</copy>
+    ```
 
-**Step9:** Now create and start the Hive replicat process:
+    ```
+    <copy> info all</copy>
+    ```
 
-![](./images/c7.png)
+## **STEP 3**: GoldenGate Target Configuration
 
-**Step10:** Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on
-the MySQL database ‘ggsource’ and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory /user/ggtarget/hive/data.
+Now that the source side is setup, let us configure GG on the target side (Hive Avro format).
 
-**Step11:** Start a new session, connect to ggadmin/oracle (then click Q to get to a prompt):
+1. In the second or `target` terminal session (**GG for Hadoop session**), you will need to modify the Hive properties by removing the ‘---‘ from the highlighted values:
 
-![](./images/c8.png)
+  ![](./images/c6.png " ")
 
-**Step12:** There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. You will notice that a new directory has been created for each table in the data directory.
+    ```
+    <copy>cd /u01/gg4hadoop123010/dirprm</copy>
+    ```
+    ```
+    <copy> vi rhive.properties</copy>
+    ```
 
-![](./images/c9.png)
+2. Remove "--" from the items below as highlighted above
 
-**Step13:** Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let’s take a look at the contents of the tables:
+    ```
+    ---hdfs
+    ---avro_op_ocf
+    ---/user/ggtarget/hive/data
+    ---/user/ggtarget/hive/schema
+    ---.avro
+    ---jdbc:hive2://localhost:10000
+    ---ORACLEWALLETUSERNAME myalias
+    ---ORACLEWALLETPASSWORD myalias
+    ```
 
-![](./images/c10.png)
-![](./images/c11.png)
+3. Now create and start the Hive replicat process:
 
-**Step14:** Also take a look at the Avro schema files created by GG, it’s created in the ./dirdef directory in the GG Home for Hadoop:
+  ![](./images/c7.png " ")
 
-![](./images/c12.png)
+    ```
+    <copy> cd ..
+    ./ggsci</copy>
+    ```
+    ```
+     <copy> info all</copy>
+    ```
+    ```
+    <copy> obey ./dirprm/create_hive_replicat.oby</copy>
+    ```
+    ```
+    <copy> info all</copy>
+    ```
+    ```
+    <copy> start rhive</copy>
+    ```
+    ```
+    <copy> info all</copy>
+    ```
+## **STEP 4**:GoldenGate Hive Target
 
-In summary, we loaded data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
-‘pmphadop’ routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘rhive’ read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: /user/ggtarget/hive/data/* and
-/user/ggtarget/hive/schema
+Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on the MySQL database `ggsource` and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory `/user/ggtarget/hive/data`.
 
-**Step15:** You can also see the files that are created in the Hive directory in HDFS:
+1. Open a terminal session as `ggadmin`, then click **Q** to get to a prompt:
 
-**Step16:** Click on File Browser (Manage HDFS) > Navigate to /user/ggtarget/hive… Take a look at the .avro and the schema .avsc files:
+  ![](./images/c8.png " ")
 
-![](./images/c18.png)
-![](./images/c19.png)
+    ```
+    <copy> hivels</copy>
+    ```
+    ```
+    <copy> mysqlselect</copy>
+    ```
+    ```
+    <copy> loadsource</copy>
+    ```
+    ```
+    <copy> dmlsource</copy>
+    ```
+    ```
+    <copy> mysqlselect	</copy>
+    ```
+    ```
+    <copy> hivels</copy>
+    ```
+2. There should be several .avro files in the data directory, and 3 .avsc files in the schema directory. You will notice that a new directory has been created for each table in the data directory.
 
-**End of Lab 4 - You may proceed to the next Lab**
+  ![](./images/c9.png " ")
 
-**Optional:** Only if VNC is available
+**Notes**:Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let us take a look at the contents of the tables
 
-You can also see the Hive data created by GG from Hue:
+## **STEP 5**: GoldenGate Results using HUE
 
-Open a Browser window>
-[HUE - Click here](http://127.0.0.1:8888) 
+1. Open a Browser window from your local machine to visualize data from HUE frontend application.
+    - URL
 
-Login to Hue: cloudera/cloudera
+    ```
+    <copy>http://<Your Host Public IP address>:8888</copy>
+    e.g: http://111.222.111.222:8888
+    ```
 
-1-	Click on Query Editor, Hive
-2-	Pull down on Database selection, and select ggtarget2hive_avro
-3-	Then hover the mouse over the emp table, and click the ‘preview sample data’ –small grey icon Hue screens:
+    - Credentials: cloudera/cloudera
+
+2. Click on Query, Editor, Select Hive
+
+  ![](./images/hive1.png " ")
+
+   ![](./images/hive2.png " ")
+   Query, Editor, Hive
+
+  ![](./images/hive3.png " ")
+
+  ![](./images/hive23.png " ")
+
+  **Schema:**
+
+  **`/user/ ggtarget/ hive/ schema/ ggtarget2hive_avro.dept.avsc`**
+
+  ![](./images/c26.png " ")
+
+  **Data**
+
+   **`/user/ ggtarget/ hive/ data/ ggtarget2hive_avro.dept.avsc`**
+
+  ![](./images/hive24.png " ")
+
+  ![](./images/hive25.png " ")
+
+## Summary
+In summary, we loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rhive` read the remote trail files, created the Hive tables, wrote the data and the schema files (avsc) to the HDFS target directory for Hive: `/user/ggtarget/hive/data/*` and `/user/ggtarget/hive/schema`
+
+You may now *proceed to the next lab*.
+
+##  Learn More
+
+* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
+* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
 
-  * Authors ** - Brian Elliott
-  * Contributors ** - Brian Elliott
-  * Team ** - Data Integration Team
-  * Last Updated By/Date ** - Brian Elliott, August 2020
 
-## See an issue?
-
-Please submit feedback using this link: [issues](https://github.com/oracle/learning-library/issues) 
-  

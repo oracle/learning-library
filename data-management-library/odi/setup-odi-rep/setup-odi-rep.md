@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to create an ODI instance from a Marketplace image and configure ODI Studio
 
-### Objecives
+### Objectives
 * Create an ODI Instance from Marketplace
 * Configure ODI Studio
 
@@ -44,7 +44,7 @@ Make sure you have chosen the correct **COMPARTMENT**
 6. Scroll down to **ODI Instance Settings** and choose the
     * **VM Shape** (*Check with your administrator/instructor for which shape to use*),
     * **SSH Key**: Paste the Public Key you created earlier (it should be only ONE line)
-    * **Availability Domain**: (*Check with your administrator/instructor for which availibility domain to use*)
+    * **Availability Domain**: (*Check with your administrator/instructor for which availability domain to use*)
     * **VNC Password**: create and remember a password to access your VNC environment (This password will not be accessible again and is required to access the VNC from which to run ODI Studio)
     ![](./images/odi_config_6a.png " ")
 
@@ -226,7 +226,5 @@ Congratulations!  Now you have the environment to run the ODI labs.
 ## Acknowledgements
 
 - **Author** - Jayant Mahto, July 2020
-- **Last Updated By/Date** - Troy Anthony, July 2020
+- **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

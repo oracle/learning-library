@@ -1,1 +1,0 @@
-A header in the browser explains that Firefox is preventing a tab from appearing.  On the right side of the margin is a Preferences button. This button was pressed to reveal a menu. The final option in the menu is to show the content. Both the Preferences button and Show option are highlighted in a red rectangle.

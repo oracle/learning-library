@@ -24,7 +24,7 @@ In this lab you will:
 
     ```
     <copy>
-    wget -O setup.sh https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/setup.sh
+    wget -O setup.sh https://objectstorage.us-ashburn-1.oraclecloud.com/p/qf2omeWDSGOoNsUaGDF8TeJ9Ib_c8o1b-EWE5BQO6vc4-OAC4xMlvVn2EfPHSeBL/n/cloudnative-devrel/b/micronaut-hol/o/setup.sh
     chmod +x setup.sh
     ./setup.sh
     </copy>
@@ -33,7 +33,7 @@ In this lab you will:
 
 ![Setup Script](images/setup_input.png)
 
-The script will produce several snippets of output to be used to build, run and deploy.
+The script will produce several snippets of output to be used to build, run and deploy later in the lab.
 
 ## **STEP 2**: Download and Configure Wallet Locally
 
@@ -86,6 +86,3 @@ You may now *proceed to the next lab*.
 - **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

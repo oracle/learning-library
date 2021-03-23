@@ -1,0 +1,5 @@
+[Description of the illustration sales_note_connected.png]
+
+This screenshot shows the Sales Note notebook opened by USER2 in USER1 Project. It shows that the notebook is connected to the SQL interpreter. 
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

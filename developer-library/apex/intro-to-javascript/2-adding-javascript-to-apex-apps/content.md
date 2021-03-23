@@ -194,7 +194,7 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
     ![](images/sales-by-category.png)
 
-5.  Navigate to the Page Designer for page 16 and drill down on the **Attributes** of the **Sales by Category** region. Scroll down through the properties until you come to **JavaScript Initialization Code**, then copy the following function to that field.
+5.  Navigate to the Page Designer for page 16 and select the **Sales by Category** region. Click **Attributes** tab on the Property Editor on the right side of the Page Designer. Scroll down through the properties until you come to **JavaScript Initialization Code**, then copy the following function to that field.
 
     ```
     <copy>
@@ -282,5 +282,3 @@ This completes Lab 2. At this point, you should have a solid understanding of th
  - **Contributors** - Arabella Yao, Jeffrey Malcolm Jr, Robert Ruppel, LiveLabs QA
  - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

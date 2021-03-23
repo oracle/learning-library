@@ -4,7 +4,7 @@
 
 This lab walks you through the major features of Essbase-19c and their functionalities across the platform along with Overview of the Essbase 19c Web interface.
 
-The approximate time to complete the lab is 20 minutes.
+Estimated Lab Time: 20 minutes.
 
 ### Objectives
 
@@ -83,7 +83,7 @@ Essbase.
 
 ## **Step 3:** Create Ad Hoc Grids
 
-    ![](./images/smartview.png "")
+  ![](./images/smartview.png "")
 
 **Smart View Ribbon**
 
@@ -216,7 +216,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 ## **Step 5:** Creating a Cube from Tabular Data in Cube Designer
 
-* This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Using Tabular Data to Create Cubes](https://docs.oracle.com/en/cloud/paas/analytics-cloud/esugc/using-tabular-data-create-cubes.html)
+This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Using Tabular Data to Create Cubes](https://docs.oracle.com/en/cloud/paas/analytics-cloud/esugc/using-tabular-data-create-cubes.html)
 
 1.	In Excel, on the ‘Cube Designer’ ribbon, click ‘Catalog’.
 
@@ -377,5 +377,7 @@ You may proceed to the next lab.
 * Reviewed by - Ashish Jain, Product Management
 * Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

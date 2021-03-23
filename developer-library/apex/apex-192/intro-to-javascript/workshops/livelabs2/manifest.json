@@ -1,7 +1,8 @@
 {
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
     {
-        "title": "Prerequisites",
+        "title": "Getting Started",
         "description": "Login to Oracle Cloud",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
     },
@@ -24,6 +25,11 @@
     {
       "title": "Lab 4: Working with the DOM and jQuery",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/3-working-with-the-dom-and-jquery/content.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }

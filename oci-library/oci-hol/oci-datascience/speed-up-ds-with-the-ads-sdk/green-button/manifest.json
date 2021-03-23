@@ -1,0 +1,35 @@
+{
+      "workshoptitle": "Speed Up Data Science with the Accelerated Data Science SDK",
+      "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to the Data Science Service",
+            "filename": "./../../common/odsc-intro.md"
+        },
+        {
+            "title": "Lab 1: Create a Project",
+            "description": "Create a project to contain the Data Science Notebooks.",
+            "filename": "./../../common/project-setup-green-button.md"
+        },
+        {
+            "title": "Lab 2: Create a Notebook Session",
+            "description": "Create a Notebook Session and launch it.",
+            "filename": "./../../common/notebook-setup-green-button.md"
+        },
+        {
+            "title": "Lab 3: Accelerated Data Science SDK",
+            "description": "Introduction to the Accelerated Data Science SDK.",
+            "filename": "./../../common/ads-intro.md"
+        },
+        {
+            "title": "Lab 4: Binary Classification Model",
+            "description": "Learn about ADS using a binary classification model.",
+            "filename": "./../binary-classification-attrition.md"
+        },
+        {
+            "title": "Lab 5: Shutting Down a Notebook Session",
+            "description": "Deactivate or terminate a notebook session.",
+            "filename": "./../../common/notebook-shutdown.md"
+        }
+    ]
+}

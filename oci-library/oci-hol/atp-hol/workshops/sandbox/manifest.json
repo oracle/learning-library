@@ -1,0 +1,17 @@
+{
+    "workshoptitle": "Dynamic Scaling Autonomous Transacation Processing Cloud Service",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro-sandbox.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local-sandbox.md"
+        },
+        {
+            "title": "Lab 2: Configuring Dynamic CPU Scaling in Autonomous Transaction Processing Service",
+            "filename": "./../../atp-hol/atp-hol-sandbox.md"
+        }
+    ]
+}

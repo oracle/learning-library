@@ -1,0 +1,53 @@
+{
+    "workshoptitle":"OCI Adoption Framework Thunder - Crawl",
+    "tutorials": [
+        {
+            "title": "Crawl intro",
+            "description": "Crawl intro",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "./crawl.md"
+        },
+        {
+            "title": "Lab 1: Crawl IAM",
+            "description": "IAM Crawl Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../crawl/iam/iam.md"
+        },
+        {
+            "title": "Lab 2: Crawl Network",
+            "description": "Network Crawl Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../crawl/network/network.md"
+        },
+        {
+            "title": "Lab 3: Crawl Compute",
+            "description": "Compute Crawl Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../crawl/instances/compute.md"
+        },
+        {
+            "title": "Lab 4: Crawl Autonomous",
+            "description": "Autonomous Crawl Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../crawl/adw/adw.md"
+        },
+        {
+            "title": "Lab 5: Crawl DbaaS",
+            "description": "DbaaS Crawl Lab",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "04/01/2020",
+            "contentid": "12nnnn",
+            "filename": "../crawl/dbaas/dbaas.md"
+        }
+    ]
+}

@@ -1,10 +1,13 @@
 {
-    "tutorials": [
+    "workshoptitle":"Oracle Multitenant Fundamentals",  
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "description": "Login to Oracle Cloud",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-        },{
+        },
+        {
             "title": "Introduction",
             "description": "Introduction to Multitenant Workshop",
             "filename": "./../../intro/intro.md"
@@ -24,6 +27,11 @@
             "title": "Lab 3: Application Containers",
             "description": "Using Application Containers with Multitenant",
             "filename": "./../../app-containers/app-containers.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

@@ -8,9 +8,35 @@ Estimated time: 45 - 60 minutes
 [](youtube:ZPOjjF3kCvo)
 
 ## Step 0: Connect to Your Instance and Login
-Before you begin, please connect to your instance, using the commands from **[Lab 3, Step 4](?lab=lab-3-environment-setup#Step4:Connecttoyourinstance)** 
+1. Before you begin, please connect to your instance
+   
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
 
-Then, login using the commands from **[Lab 4, Step 1.1 and 1.2](?lab=lab-4-multitenant-basics#Step1:LoginandCreatePDB)**
+2. Then, login using the following commands:
+    ````
+    <copy>
+    sudo su - oracle
+    cd /home/oracle/labs/multitenant
+    </copy>
+    ````
+
+    ````
+    <copy>. oraenv</copy>
+    CDB1
+    ````
+    
+    ````
+    <copy>
+    sqlplus /nolog
+    connect sys/oracle@localhost:1523/cdb1 as sysdba
+    </copy>
+    ````
+
+    ````
+    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
+    ````
 
 ## **Step 1:** Instant SaaS
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.
@@ -2499,5 +2525,3 @@ The tasks you will accomplish in this step are:
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, April 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

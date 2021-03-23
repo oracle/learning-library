@@ -1,0 +1,9 @@
+[Description of the illustration sql_statement.png]
+
+This images shows the Scratchpad with the following SQL statement:
+
+SELECT * FROM SH.SALES;
+
+The screenshot shows the SALES table that is populated after running the statement.   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

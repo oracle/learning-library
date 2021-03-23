@@ -1,0 +1,5 @@
+[Description of the illustration scratchpad_sql.png]
+
+This images shows the Scratchpad with these three directives - %sql, %script, and %python. This image has the %sql directive highlighted.   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

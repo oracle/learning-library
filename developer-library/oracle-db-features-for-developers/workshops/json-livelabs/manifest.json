@@ -1,7 +1,9 @@
-{
-    "tutorials": [
+{   
+     "workshoptitle":"JSON in Oracle Database 19c",  
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "description": "Login to Oracle Cloud",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },{
@@ -32,6 +34,11 @@
             "description": "JSON Documents",
             "publisheddate": "4/05/2020",
             "filename": "../../json/json-advanced.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

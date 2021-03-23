@@ -141,7 +141,7 @@ The Tasks Calendar page shows numerous tasks; however, there is no way to direct
 5. In the Link Builder dialog, enter the following:
     - Target > Page - select **7**
     - Set Items > Name - select **P7_ID**
-    - Set Items > Value - select **ID** (Returns **&ID**)
+    - Set Items > Value - select **ID** (Returns **&ID.**)
     - Clear / Reset > Clear Cache - enter **7**
 
 6. Click **OK**
@@ -195,7 +195,5 @@ This completes Lab 7 and the workshop. You now know how to create a Shared Compo
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

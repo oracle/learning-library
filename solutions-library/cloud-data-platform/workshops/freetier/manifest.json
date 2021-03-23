@@ -1,14 +1,17 @@
 {
-    "tutorials": [
+    "workshoptitle": "Oracle Cloud Data Platform Workshop",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
-            "title": "Prerequisites",
-            "publisheddate": "03/10/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        }, {            
             "title": "Introduction",
             "publisheddate": "02/24/2020",
             "filename": "../../intro/intro.md"
         },
+        {
+            "title": "Getting Started",
+            "publisheddate": "03/10/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        }, 
         {
             "title": "Lab 1: Autonomous Data Warehouse (ADW) and Application Express (APEX)",
             "publisheddate": "02/24/2020",
@@ -38,6 +41,11 @@
             "title": "Lab 6: Oracle Digital Assistant (ODA) with APEX APIs",
             "publisheddate": "02/24/2020",
             "filename": "../../oda-with-apex-api/oda-with-apex-api.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
      ]
 }

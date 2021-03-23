@@ -1,0 +1,5 @@
+[Description of the illustration paragraphs_1.png]
+
+This images shows two paragraphs in a notebook in Oracle Machine Learning. In the first paragraph, a table OML_CARS_DATA is created. You can also see the message "PL/SQL Procedure successfully completed. In the next paragraph, the SQL script to fetch data from the table OML_CARS_DATA is displayed. In the top right corner of each paragraph, the edit and run options are present, as highlighted.   
+
+Copyright © 2017, 2018 Oracle and/or its affiliates. All rights reserved.

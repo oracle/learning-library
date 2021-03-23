@@ -1,14 +1,17 @@
 {
-    "tutorials": [
+    "workshoptitle": "Oracle Cloud Data Platform Workshop",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
-            "title": "Prerequisites",
-            "publisheddate": "03/10/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        }, {            
             "title": "Introduction",
             "publisheddate": "02/24/2020",
             "filename": "../../intro/intro.md"
         },
+        {
+            "title": "Getting Started",
+            "publisheddate": "03/10/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        }, 
         {
             "title": "Lab 1: Autonomous Data Warehouse (ADW) and Application Express (APEX)",
             "publisheddate": "02/24/2020",
@@ -39,20 +42,25 @@
             "publisheddate": "02/24/2020",
             "filename": "../../oda-with-apex-api/oda-with-apex-api.md"
         },
-	{
+        {
             "title": "Lab 7: Oracle Cloud Infrastructure Data Science for Fraud Protection",
             "publisheddate": "02/24/2020",
             "filename": "../../data-science/data-science.md"
         },
-	{
+        {
             "title": "Lab 8: Oracle Data Safe",
             "publisheddate": "02/24/2020",
             "filename": "../../data-safe/data-safe.md"
         },
-	{
+        {
             "title": "Lab 9: Using Oracle Management Cloud (OMC) to Monitor ADW",
             "publisheddate": "02/24/2020",
             "filename": "../../omc-adw/omc-adw.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
      ]
 }

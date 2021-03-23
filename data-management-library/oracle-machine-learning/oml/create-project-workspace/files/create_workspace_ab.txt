@@ -1,0 +1,6 @@
+[Description of the illustration create_workspace_ab.png.]
+
+This images shows the Create Project dialog box. In the Name field, it has Project B entered, and the + icon next to the Workspace field is highlighted. You click the + icon to create a new workspace.  
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

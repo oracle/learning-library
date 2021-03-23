@@ -1,0 +1,1 @@
+This is the image of the prodcuct sales data that is pulled from the SALES table  visualized in a scatter plot. 

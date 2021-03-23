@@ -4,7 +4,7 @@
 
 In this lab, we will learn how to build an Essbase cube sourcing data from Autonomous Data Warehouse (ADW Database). We will build dimensions and load data using ADW data. We will use Essbase drill-through functionality to display additional detailed data that is retrieved from Autonomous Data Warehouse. Through Essbase Smart View for Office, we will interactively investigate the data in Essbase, slice and dice the data, and do ad hoc analysis on it.
 
-The estimated time to complete this lab is 20 minutes.
+Estimated Lab Time: 20 minutes.
 
 ### Objectives
 
@@ -136,11 +136,11 @@ This section demonstrates how to import a table to ADW instance.
 
 ## **Step 3:** Create a Connection and Datasource for Oracle Autonomous Data Warehouse
 
-* For reference - [Click Here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/ugess/create-connection-and-datasource-access-oracle-autonomous-data-warehouse.html)
+For reference - [Click Here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/ugess/create-connection-and-datasource-access-oracle-autonomous-data-warehouse.html)
 
-1.	In the Essbase web interface, click **Sources**.
+1. In the Essbase web interface, click **Sources**.
 
-    ![](./images/image15_25.png "")
+    ![](./images/image16_25.png "")
 
 2. Click **Create Connection** and select **Oracle Database**.
 
@@ -170,7 +170,9 @@ This section demonstrates how to import a table to ADW instance.
 
 13. In the **Query** field, provide the SQL query as :
 
-    ``<copy> Select distinct market, statename from SAMPLE_BASIC_TABLE </copy>``
+    ```
+    <copy> Select distinct market, statename from SAMPLE_BASIC_TABLE </copy>
+    ```
 
     ![](./images/image16_28.png "")
 
@@ -190,7 +192,9 @@ This section demonstrates how to import a table to ADW instance.
 
 19. In the query section of ADW_Dataload Datasource use:
 
-    ``<copy> Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE </copy>``
+    ```
+    <copy> Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE </copy>
+    ```
 
     ![](./images/image16_31.png "")
 
@@ -292,9 +296,9 @@ This section demonstrates how to import a table to ADW instance.
 
 ## **Step 5:** Load ADW Data to Essbase Using SQL Datasource
 
-* This task flow demonstrates how to clear data from a cube, create data load rules, load data (using SQL) from an ADW instance, and verify in Smart View that the data was loaded.
+This task flow demonstrates how to clear data from a cube, create data load rules, load data (using SQL) from an ADW instance, and verify in Smart View that the data was loaded.
 
-* After building the dimensions, you will clear data from the cube, and then load the data again from a table. In Essbase, click **Jobs**, and click **New Job**.
+After building the dimensions, you will clear data from the cube, and then load the data again from a table. In Essbase, click **Jobs**, and click **New Job**.
 
 1. Select **Clear Data** as the job type. Select application Sample and database Basic and click OK.
 
@@ -324,7 +328,9 @@ This section demonstrates how to import a table to ADW instance.
 
 11. In ADW instance write and test a SELECT statement selecting some columns from the table ``SAMPLE_BASIC_TABLE`` :
 
-    ``<copy> Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE; </copy>``
+    ```
+    <copy> Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE; </copy>
+    ```
 
 12. Ensure that the SQL query is valid and returns a result in your SQL tool. If the SQL query is valid, it should return the requested table columns, PRODUCT, SCENARIO, STATENAME, MONTHS and SALES, from the database to which your SQL tool is connected.
 
@@ -376,13 +382,13 @@ The data load begins. Click the **Refresh** symbol to watch the status, and when
 
 ## **Step 6:** Create Drill Through Reports with ADW data
 
-* When you want more information than what you can see in the Essbase cube, you can use drill through reports to access external data sources.
+When you want more information than what you can see in the Essbase cube, you can use drill through reports to access external data sources.
 
-* Drill through refers to linking the Essbase cube to further data, for example, transactional-level data stored in a relational database.
+Drill through refers to linking the Essbase cube to further data, for example, transactional-level data stored in a relational database.
 
-* You can drill through to data from any other Oracle application, an external database, a file (delimited or Excel), or a URL-based target.
+You can drill through to data from any other Oracle application, an external database, a file (delimited or Excel), or a URL-based target.
 
-* After defining the connection and data source, the next step to define the report.
+After defining the connection and data source, the next step to define the report.
 
 1.	Open Database inspector for ‘Basic’ Database under Sample Application.
 
@@ -404,7 +410,9 @@ The data load begins. Click the **Refresh** symbol to watch the status, and when
 
     d.	Select PRODUCT, map it to Product, and select Level0. Repeat for more columns:
 
-    ``<copy> MONTHS/Year/Months, SCENARIO/Scenario/Level0 </copy>``
+    ```
+    <copy> MONTHS/Year/Months, SCENARIO/Scenario/Level0 </copy>
+    ```
 
     e.  Select SALES and STATENAME but leave them mapped to None.
 
@@ -414,7 +422,9 @@ The data load begins. Click the **Refresh** symbol to watch the status, and when
 
 7.	Double click in the empty row, and add this Essbase calculation expression to define its area:
 
-    ``<copy> Sales,Actual,Year,@DESCENDANTS(Year),Product </copy>``
+    ```
+    <copy> Sales,Actual,Year,@DESCENDANTS(Year),Product </copy>
+    ```
 
     ![](./images/image16_57.png "")
 
@@ -443,5 +453,7 @@ You may proceed to the next lab.
 * Reviewed by - Ashish Jain, Product Management
 * Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

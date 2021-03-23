@@ -16,3 +16,4 @@ Alternatively, you can follow the labs on this repo:
 * [Module 3: Working with the DOM and jQuery](3-working-with-the-dom-and-jquery/content.md)
 
 *{Note: This lab assumes you are using Oracle APEX 20.1.}*
+

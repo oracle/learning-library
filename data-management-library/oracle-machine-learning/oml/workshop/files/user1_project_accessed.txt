@@ -1,0 +1,5 @@
+[Description of the illustration user1_project_accessed.png]
+
+This images shows the Oracle Machine Learning homepage in the background while signed in as USER2. In the foreground, it shows the Select Project dialog. The Select Project dialog shows two workspaces - USER1 Workspace and USER2 Workspace. USER2 Workspace is the default workspace for User2. The USER1 Workspace along with USER1 Project that is owned by USER1, is now accessible to USER2. 
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

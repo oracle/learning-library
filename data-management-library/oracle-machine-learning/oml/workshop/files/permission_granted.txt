@@ -1,0 +1,5 @@
+[Description of the illustration permission_granted.png]
+
+This images shows the Workspace Permissions dialog while signed in as USER1. The screenshot shows USER2 listed Developer permission type in the Workspace Permissions dialog in the Oracle Machine Learning instance while signed in as USER1.   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

@@ -39,7 +39,10 @@ img {
 #download_zip,
 #enter_json,
 #import_md, 
-#view_md_template {
+#import_html,
+#view_md_template,
+#md_to_check,
+#btn_images_to_check {
     font-size: 0.8rem;
     line-height: 0.8;
     padding: .5rem .7rem;
@@ -126,4 +129,13 @@ textarea {
     width: 0.5rem !important;
     height: 0.5rem !important;
     vertical-align: unset !important;
+}
+
+#intro {
+    padding: 24px;    
+    font-size: 14px;
+}
+
+.card-body {
+    font-size: 14px;
 }

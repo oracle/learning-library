@@ -1,0 +1,302 @@
+{
+    "version": 6,
+    "theme": "light",
+    "height": 300,
+    "similarEdges": "keep",
+    "edgeMarker": "arrow",
+    "vertexGeometry": "sphere",
+    "antiAlias": true,
+    "floorGrid": true,
+    "edgesGeometry": true,
+    "enable3DLayout": false,
+    "selectedPropZ": "",
+    "valueRangePropZ": 0.5,
+    "sortPropZ": "descending",
+    "filters": [
+        {
+            "_id": 1553836264517,
+            "type": "styling",
+            "enabled": true,
+            "conditions": {
+                "operator": "and",
+                "conditions": [
+                    {
+                        "property": "label",
+                        "operator": "=",
+                        "value": "ACCOUNT"
+                    }
+                ]
+            },
+            "component": "vertex",
+            "target": "vertex",
+            "properties": {
+                "colors": [
+                    "red"
+                ],
+                "sizes": [
+                    16
+                ],
+                "icons": [
+                    "fa-address-card-o"
+                ],
+                "iconColors": [
+                    "rgb(255, 255, 255)"
+                ],
+                "label": [
+                    "ACCOUNT_NO"
+                ]
+            }
+        },
+        {
+            "_id": 1553836346451,
+            "type": "styling",
+            "enabled": true,
+            "conditions": {
+                "operator": "and",
+                "conditions": [
+                    {
+                        "property": "label",
+                        "operator": "=",
+                        "value": "CUSTOMER"
+                    }
+                ]
+            },
+            "component": "vertex",
+            "target": "vertex",
+            "properties": {
+                "colors": [
+                    "rgb(21, 0, 255)"
+                ],
+                "sizes": [
+                    16
+                ],
+                "icons": [
+                    "fa-user-man"
+                ],
+                "iconColors": [
+                    "white"
+                ],
+                "label": [
+                    "NAME"
+                ]
+            }
+        },
+        {
+            "_id": 1553836414230,
+            "type": "styling",
+            "enabled": true,
+            "conditions": {
+                "operator": "and",
+                "conditions": [
+                    {
+                        "property": "label",
+                        "operator": "=",
+                        "value": "MERCHANT"
+                    }
+                ]
+            },
+            "component": "vertex",
+            "target": "vertex",
+            "properties": {
+                "colors": [
+                    "rgb(3, 173, 11)"
+                ],
+                "sizes": [
+                    16
+                ],
+                "icons": [
+                    "fa-shopping-cart"
+                ],
+                "iconColors": [
+                    "white"
+                ],
+                "label": [
+                    "NAME"
+                ]
+            }
+        },
+        {
+            "_id": 1553836846437,
+            "type": "styling",
+            "enabled": true,
+            "conditions": {
+                "operator": "and",
+                "conditions": [
+                    {
+                        "property": "label",
+                        "operator": "=",
+                        "value": "ACCOUNT"
+                    },
+                    {
+                        "property": "ACCOUNT_NO",
+                        "operator": "~",
+                        "value": "xxx-zzz."
+                    }
+                ]
+            },
+            "component": "vertex",
+            "target": "vertex",
+            "properties": {
+                "colors": [
+                    "rgb(255, 162, 0)"
+                ],
+                "sizes": [
+                    16
+                ],
+                "icons": [
+                    "fa-address-card-o"
+                ],
+                "iconColors": [
+                    "white"
+                ],
+                "label": [
+                    "ACCOUNT_NO"
+                ]
+            }
+        },
+        {
+            "_id": 1554773861505,
+            "type": "styling",
+            "enabled": true,
+            "conditions": {
+                "operator": "and",
+                "conditions": []
+            },
+            "component": "edge",
+            "target": "edge",
+            "properties": {
+                "label": [
+                    "label"
+                ]
+            }
+        }
+    ],
+    "smartExpands": [],
+    "smartGroups": [],
+    "vertexLabelProperty": null,
+    "edgeLabelProperty": null,
+    "vertexLabelOrientation": "bottom",
+    "vertexPositions": [],
+    "pageSize": 100,
+    "selectedPage": 0,
+    "charLimit": 11,
+    "truncateLabel": true,
+    "showTitle": true,
+    "dimension": "2d",
+    "layout": "force",
+    "layoutProperties": {
+        "circle": {
+            "avoidOverlap": true,
+            "radius": 40
+        },
+        "grid": {
+            "avoidOverlap": true,
+            "rows": 5,
+            "columns": 5
+        },
+        "concentric": {
+            "avoidOverlap": true,
+            "minimumVertexSpacing": 10
+        },
+        "force": {
+            "edgeDistance": 120,
+            "forceStrength": -30,
+            "vertexPadding": 40,
+            "velocityDecay": 0.3
+        },
+        "force3D": {
+            "attractionMultiplier": 20,
+            "repulsionMultiplier": 0.2
+        },
+        "geographical": {
+            "latitude": "latitude",
+            "longitude": "longitude"
+        },
+        "hierarchical": {
+            "rankDirection": "TB",
+            "ranker": "network-simplex",
+            "align": "",
+            "vertexSeparation": {
+                "value": 0,
+                "enabled": false
+            },
+            "edgeSeparation": {
+                "value": 0,
+                "enabled": false
+            },
+            "rankSeparation": {
+                "value": 0,
+                "enabled": false
+            }
+        },
+        "radial": {
+            "arcDegree": 360,
+            "startingPoint": "left",
+            "packing": 1,
+            "intelligentSeparation": true
+        }
+    },
+    "animateChanges": true,
+    "liveSearch": {
+        "enabled": false,
+        "enabledTypes": [],
+        "selectedColumns": [],
+        "value": "",
+        "location": 0,
+        "distance": 100,
+        "maxPatternLength": 32,
+        "minMatchCharLength": 1,
+        "advancedSettingsToggle": false,
+        "disabledSelectedColumns": []
+    },
+    "graphAction": {
+        "enabled": true,
+        "graphName": "Customer 3601",
+        "lastRun": 0,
+        "metadata": {
+            "vertexProperties": [],
+            "edgeProperties": []
+        },
+        "stack": [],
+        "index": 0,
+        "numberOfHops": 1,
+        "smartExpand": 0,
+        "smartGroup": 0
+    },
+    "interactionMode": "select",
+    "networkEvolution": {
+        "enabled": false,
+        "vertexProperty": "id",
+        "vertexEndProperty": "",
+        "dataType": "int",
+        "axis": "vertices",
+        "overview": "on",
+        "height": 100,
+        "overviewChartType": "bar",
+        "valuesToExclude": [],
+        "valuesToExcludeType": "hideBoth",
+        "stepSize": 0,
+        "edgeProperty": "id",
+        "edgeEndProperty": "",
+        "playTimeout": 1000,
+        "playStep": 1,
+        "advancedSettingsToggle": false
+    },
+    "stickyVertices": true,
+    "annotationMode": false,
+    "fitToScreen": true,
+    "viewTransform": [
+        [
+            -86.49984402204166,
+            -38.53708969704607,
+            1.2049061624314663,
+            960
+        ]
+    ],
+    "showLegend": true,
+    "visibleGraphMode": {
+        "enabled": false,
+        "name": ""
+    },
+    "width": 100
+}

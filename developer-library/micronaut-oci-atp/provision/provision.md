@@ -3,7 +3,7 @@
 ## Introduction
 In this lab you are going to provision the Oracle Cloud instances needed to run a Micronaut application with Autonomous Database.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -19,7 +19,7 @@ In this lab you will:
 
 ## **STEP 1**: Create a new Stack
 
-1. Create Infrastructure by downloading the Terraform configuration: A [stack.zip](https://objectstorage.us-phoenix-1.oraclecloud.com/n/toddrsharp/b/micronaut-lab-assets/o/stack.zip) file.
+1. Create Infrastructure by downloading the Terraform configuration: A [stack.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vk4scdlVl3XADcppSfidX9GUGlQEtAqfJyjCBCbNARXWZobt00Wwx7JoTxyRzKX6/n/cloudnative-devrel/b/micronaut-hol/o/stack.zip) file.
 
 2. In the Oracle Cloud Console go to the "Solutions and Platforms" -> "Resource Manager" -> "Stacks".
 
@@ -29,9 +29,9 @@ In this lab you will:
 
    ![Create Stack button](images/create_stack_btn.png)
 
-4. Choose 'My Configuration', and upload the Terraform configuration zip either by browsing to the location locally where the zip exists or dragging and dropping the ZIP into the "Stack Configuration" pane:
+4. Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file. Click **Select**.
 
-   ![Stack Configuration - Step 1](images/stack_info_1.png)
+	![](./images/zip-file.png)
 
 5. You can optionally enter a name and description of the stack then then choose the compartment for the Stack, then click 'Next':
 
@@ -57,19 +57,11 @@ In this lab you will:
 
 ##  **STEP 2**: Apply the Terraform Plan
 
-1. On the Stack Details page, click 'Terraform Actions' and select 'Plan'.
-
-   ![Terraform Plan](images/stack_plan.png)
-
-2. Review the plan output and ensure no failures occurred.
-
-   ![Review Terraform Plan Log](images/plan_log.png)
-
-3. On the Stack Details page, Click 'Terraform Actions' and select 'Apply'.
+1. On the Stack Details page, Click 'Terraform Actions' and select 'Apply'.
 
    ![Applying the Stack](images/stack_apply.png)
 
-4. Choose the plan you just created, then click 'Apply'.
+2. Choose the Automatically approve job plan resolution, then click 'Apply'.
 
    ![Applying the Stack](images/stack_apply_2.png)
 
@@ -82,10 +74,10 @@ In this lab you will:
 
 2. The Terraform stack produces the following values which are available in the 'Outputs' tab:
 
-      * `atp_admin_password` - This is the adminstrative password of the Autonmous Database Instance
-      * `atp_db_ocid` - This is the unique OCID of the Autonmous Database Instance
-      * `atp_schema_password` - This is the schema password of the Autonmous Database Instance
-      * `atp_wallet_password` - This is the wallet password of the Autonmous Database Instance
+      * `atp_admin_password` - This is the administrative password of the Autonomous Database Instance
+      * `atp_db_ocid` - This is the unique OCID of the Autonomous Database Instance
+      * `atp_schema_password` - This is the schema password of the Autonomous Database Instance
+      * `atp_wallet_password` - This is the wallet password of the Autonomous Database Instance
       * `compartment_ocid` - This is the compartment OCID used to identify the compartment where the database is setup
       * `public_ip` - This is the public IP address from the Oracle Cloud Infrastructure address pool
       * `region` - This is the region where the instance is running
@@ -116,6 +108,3 @@ You may now *proceed to the next lab*.
 - **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

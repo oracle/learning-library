@@ -1,0 +1,1 @@
+This is the image of the Py Note notebook. It has the interpreter bindings icon clicked, and therefore displays the list of available interpreter bindings - %sql, %script, and %python.  

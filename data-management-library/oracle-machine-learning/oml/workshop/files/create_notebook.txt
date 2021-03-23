@@ -1,0 +1,6 @@
+This images shows the Notebook page in the background. The Notebook page shows all the options for the tasks that you can perform such as Edit, Create, Duplicate, Save as Template, Delete, Import, and  Version. 
+
+The image also shows the Create Notebook dialog box in the foreground. This dialog box opens when clicking the Create option in the Notebook page. You enter the name of the Notebook, any comments related to the notebook, and select a connection to the notebook. The default connection is already selected.  
+
+
+Copyright © 2017, 2018 Oracle and/or its affiliates. All rights reserved.

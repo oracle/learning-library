@@ -1,0 +1,59 @@
+{
+  "workshoptitle": "Oracle GoldenGate Classic",
+  "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+    {
+      "title": "Getting Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction to Classic",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+    {
+      "title": "Oracle to MySql",
+      "description": "Oracle to MySql",
+      "filename": "../../oracle-to-mysql/oracle-to-mysql.md"
+    },
+    {
+      "title": "MySql to Oracle",
+      "description": "MySql to Oracle",
+      "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
+    },
+    {
+      "title": "Active Active",
+      "description": "Bidirectional Active Active - HA/DR",
+      "filename": "../../active-active/active-active.md"
+    },
+    {
+      "title": "GoldenGate Column Conversions",
+      "description": "GoldenGate Column Conversions",
+      "filename": "../../column-conversions/column-conversions.md"
+
+    },
+    {
+      "title": "PostgreSQL to PostgresSQL",
+      "description": "PostgreSQL to PostpresSQL",
+      "filename": "../../postgresql-to-postgresql/postgresql-to-postgresql.md"
+    }
+  ]
+}

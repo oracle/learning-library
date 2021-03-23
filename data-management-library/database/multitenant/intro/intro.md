@@ -9,7 +9,7 @@ Enormous gains in technical efficiency are enabled by a shared technical infrast
 
 Watch the video below for an overview of Oracle Multitenant.
 
-[](youtube:I7cygRKBbI8)
+[](youtube:4mUwjBfztfU)
 
 ### Containers and Pluggable Databases
 
@@ -42,5 +42,3 @@ Oracle Database Product Management Videos on Multitenant
 - **Last Updated By/Date** - Kay Malcolm, March 2020
 - **Workshop Expiration Date** - March 31, 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

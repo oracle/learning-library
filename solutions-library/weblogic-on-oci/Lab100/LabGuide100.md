@@ -62,14 +62,14 @@ docker logs -t on-prems-setup_oracledb_1
 
 Before proceeding, make sure the local environment has been deployed properly and is running. 
 
-<img src="./images/localhost-admin-console.png"  width="100%">
+![](./images/localhost-admin-console.png)
 
 
-The **SimpleDB** application should be running at <a href="http://localhost:7003/SimpleDB/" target="_blank">http://localhost:7003/SimpleDB/</a> or <a href="http://localhost:7005/SimpleDB/" target="_blank">http://localhost:7005/SimpleDB/</a>
+The **SimpleDB** application should be running at [http://localhost:7003/SimpleDB/](http://localhost:7003/SimpleDB/) or [http://localhost:7005/SimpleDB/](http://localhost:7005/SimpleDB/)
 
 It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
-<img src="./images/localhost-simpledb-app.png" width="100%">
+![](./images/localhost-simpledb-app.png)
 
 ## Step 3) Create a SSH key
 

@@ -1,7 +1,8 @@
 # Run a container application on the Oracle Database
+
 ## Introduction
 
-Welcome to the Oracle Database on Docker Workshop. 
+Welcome to the Oracle Database on Docker Workshop.
 
 ### About Docker
 

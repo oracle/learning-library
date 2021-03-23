@@ -1,0 +1,43 @@
+{
+    "workshoptitle": "Oracle Machine Learning for Python on Autonomous Database",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Getting Started",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Getting Started with OML4Py",
+            "type": "livelabs",
+            "filename": "../../get-started/get-started.md"
+        },
+        {
+            "title": "Lab 2: Select and manipulate data using the Transparency Layer",
+            "filename": "../../data-slct-mnpn/data-slct-mnpn.md"
+        },
+        {
+            "title": "Lab 3: Use in-database algorithms and models",
+            "filename": "../../in-db-algo-models/in-db-algo-models.md"
+        },
+		    {
+            "title": "Lab 4: Use Datastores to store Python objects",
+            "filename": "../../dstore-script-repo/dstore-script-repo.md"
+        },
+        {
+            "title": "Lab 5: Run user-defined functions using Embedded Python Execution",
+            "filename": "../../embd-python/embd-python.md"
+        },
+        {
+            "title": "Lab 6: Use AutoML",
+            "filename": "../../automl/automl.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+[Description of the illustration user1_notes_for_user2.png]
+
+This images shows the Notebooks page viewed by USER2. The screenshot shows all the notebooks present in USER1 Project owned by USER1.    
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

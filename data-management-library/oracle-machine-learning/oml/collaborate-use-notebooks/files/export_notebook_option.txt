@@ -1,0 +1,5 @@
+[Description of the illustration export_notebook_option.png]
+
+This images shows the export icon in the SQL Query Scratch Pad page in Oracle Machine. The export icon is highlighted. Clicking this icon saves the SQL script as a .json file in your system.   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

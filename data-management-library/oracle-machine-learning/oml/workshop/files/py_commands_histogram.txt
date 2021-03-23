@@ -1,0 +1,1 @@
+This is the image of the Py Note notebook with python commands. This screenshot displays the two histograms list1 and list2 that are rendered after the user runs the commands. 

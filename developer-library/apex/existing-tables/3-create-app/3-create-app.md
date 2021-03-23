@@ -85,10 +85,11 @@ Card pages are especially good when there is not a huge number of records, and y
 
 3. On the Add Cards Page, enter the following:
      - Page Name - enter **Projects**
-     - Table - select **EBA_PROJECTS**
-     - Card Title - select **NAME**
-     - Description Column - select **Description**
-     - Additional Text Column - select **PROJECT_LEAD**
+     - Table or View - select **EBA_PROJECTS**
+     - Title Column - select **NAME**
+     - Body Column - select **Description**
+     - Icon Initials Column - select **NAME**
+     - Badge Column - select **COMPLETED_DATE**
 
 4. Click **Add Page**
 
@@ -231,7 +232,5 @@ If you want to change a page's name after you create an application, the process
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

@@ -1,0 +1,37 @@
+{
+  "workshoptitle":"Predicting Auto Claim Fraud with Oracle Machine Learning",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+      {
+        "title": "Introduction",
+        "description": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Getting Started",
+        "description": "Get a Free Trial",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      },
+      {
+      "title": "Lab 1: Provision ADB",
+      "filename": "../../connect-provision-adb/connect-provision-adb.md"
+      },
+      {
+        "title": "Lab 2: Create Machine Learning Model",
+        "type": "freetier",
+        "description": "Explore Zeppelin notebooks and create a ML model on customer credit data set.",
+        "filename":  "../../create-ml-model/create-ml-model.md"
+      },
+      {
+        "title": "Lab 3: Using Prediction in an Application",
+        "type": "freetier",
+        "description": "Set up the ATP environment, import and APEX application and explore how ADB can be embedded into applications.",
+        "filename": "../../integrate-with-app/integrate-with-app.md"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      }
+    ]
+}

@@ -1,0 +1,5 @@
+[This is a sample image description file.]
+
+This images shows the Service Details page for an Storage Cloud service instance. In the top of image there is an icon representing Oracle Storage Cloud and a button labeled Open Service Console.
+Below the icon are four tabs: Overview, Billing Metrics, Business Metrics and Documents. The Overview tab is selected.
+In the body of the image is the overview information for this instance of Oracle Storage Cloud Service, including Plan: Oracle Storage Cloud Service, Data Jurisdiction: EMEA Commercial 2 - Amsterdam, Service Start Date: 11-Aug-2016, Identity Domain Name: paas116, Service End Date: 7-May-2019, Status: Active, Subscription ID: 538835520, Domain SFTP Host & Port: stftp.em2.cloud.oracle.com:22, Service Instance ID: 538835587, Domain SFTP User Name: em230803, Customer Account: OraclePaaS (GB), REST Endpoint: https://paas116.storage.oracle (circled).

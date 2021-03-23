@@ -41,14 +41,14 @@ When the application was generated it utilized the standard table columns. By co
         ```
         <copy>select  ID,
                 COUNTRY_NAME,
-                ISO,
+                COUNTRY_ISO,
                 CURRENCY_CODE,
                 LOCAL_PRICE,
                 DOLLAR_EXCHANGE_RATE,
                 ENTRY_DATE,
                 (local_price / (select local_price from big_mac_index u
                                 where u.entry_date = l.entry_date
-                                and u.iso = 'USA'
+                                and u.country_iso = 'USA'
                                )
                 ) relative_exchange_rate
         from BIG_MAC_INDEX l</copy>
@@ -180,7 +180,5 @@ This completes Lab 4. In this lab you learnt how to utilize a SQL query as the b
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

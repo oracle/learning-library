@@ -1,5 +1,7 @@
 {
-    "tutorials": [
+    "workshoptitle": "Analyzing your data with Autonomous Database",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
       {
           "title": "Introduction to ADB on Shared Infrastructure",
           "description": "Introduction to ADB on Shared Infrastructure",
@@ -50,15 +52,30 @@
             "description": "Scaling and Performance in Your Autonomous Database",
             "filename": "./../../adw-scaling-performance/adw-scaling-performance.md"
         },
+	{
+            "title": "Lab 10: Auto Scaling",
+            "description": "Auto Scaling an Autonomous Database",
+            "filename": "./../../adb-auto-scaling/adb-auto-scaling.md"
+        },
         {
-            "title": "Lab 10: Getting Started with Machine Learning Notebooks",
+            "title": "Lab 11: Disaster Recovery",
+            "description": "Enable Autonomous Data Guard",
+            "filename": "./../../adb-autonomous-data-guard/adb-autonomous-data-guard.md"
+        }, 
+        {
+            "title": "Lab 12: Getting Started with Machine Learning Notebooks",
             "description": "Using Oracle Machine Learning Notebooks",
             "filename": "./../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
-            "title": "Lab 11: Building a Simple Machine Learning Algorithm",
+            "title": "Lab 13: Building a Simple Machine Learning Algorithm",
             "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "filename": "./../../adw-machine-learning/adw-machine-learning.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

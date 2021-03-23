@@ -18,10 +18,10 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 
 
-## **STEP 1**: Deploy GrubDash store services
+## **STEP 1**: Deploy GrabDish store services
 
 1. After you have successfully set up the databases, you can now test the
-    “GrubDash” Food Order application. You will interact with several
+    “GrabDish” Food Order application. You will interact with several
     different data types, check the event-driven communication, saga, event-sourcing
     and Command Query Responsibility Segregation via order and inventory
     services. Go ahead and deploy the related order, inventory and supplier
@@ -96,15 +96,15 @@ The lab will then show you metrics, health checks and probes, and tracing that h
 
 
 
-## **STEP 2**: Verify order and inventory activity of GrubDash store
+## **STEP 2**: Verify order and inventory activity of GrabDish store
 
-1.   Open the frontend microservices home page.
-  If you need the URL, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
+1.   Open the frontend microservices home page from the previous lab.
+  If you need the URL again, execute the `services` shortcut command and note the External-IP:PORT of the msdataworkshop/frontend/LoadBalancer.
     ```
     <copy>services</copy>
     ```
 
-     ![](images/frontend_lb.png " ")
+     ![](images/frontendservicekubectloutput.png " ")
 
 2. Click **Transactional** under **Labs**.
 
@@ -163,7 +163,34 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
 You have successfully configured the databases with the necessary users, tables and message propagation across the two ATP instances. You may proceed to the next step.
 
-## **STEP 3**: Verify metrics
+## **STEP 3**: Verify spatial
+
+1. Click **Spatial** on the **Transactional** tab 
+
+   ![](images/spatial1.png " ")
+
+2. Check **Show me the Fusion** menu to make your choices for the Fusion Cuisine 
+
+   ![](images/spatial2.png " ")
+
+3. Click the plus sign to add Makizushi, Miso Soup, Yakitori and Tempura to your order and click **Ready to Order**. 
+
+   ![](images/spatial3.png " ")
+
+4. Click **Deliver here** to deliver your order to the address provided on the screen
+
+   ![](images/spatial4.png " ")
+
+5. Your order is being fulfilled and will be delivered via the fastest route.
+
+   ![](images/spatial5.png " ")
+
+This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates. 
+Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. 
+This web component allows to simply integrate mapping into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
+
+
+## **STEP 4**: Verify metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
@@ -178,8 +205,7 @@ You have successfully configured the databases with the necessary users, tables 
 
    ![](images/metrics.png " ")
 
-
-## **STEP 4**: Verify health
+## **STEP 5**: Verify health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
@@ -200,7 +226,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
 5. Click **Set Liveness to False** . This will cause the Helidon Health Check to report false for liveness which will result in OKE restarting the pod/microservice
 
-   ![](images/lastcontainerstarttime1.png " ")
+   ![](images/setlivenesstofalse.png " ")
 
 6. Click **Get Last Container Start Time**.
    It will take a minute or two for the probe to notice the failed state and conduct the restart and as it does you may see a connection refused exception.
@@ -211,9 +237,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/lastcontainerstartuptime2.png " ")
 
-
-
-## **STEP 5**: Verify tracing
+## **STEP 6**: Verify tracing
 
 1. Notice @Traced annotations on `placeOrder` method of `$MSDATAWORKSHOP_LOCATION/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java` and `placeOrder` method of `$MSDATAWORKSHOP_LOCATION/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
    Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
@@ -241,5 +265,3 @@ requests or not). In this STEP you will see how the probes pick up the health th
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

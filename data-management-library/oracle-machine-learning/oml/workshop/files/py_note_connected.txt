@@ -1,0 +1,6 @@
+[Description of the illustration py_note_connected.png]
+
+This images shows the Py Note notebook opened. The Py Note notebook is present in USER1 Project and is opened by USER2. The notebook is connected to the Python interpreter. All other paragraphs in the notebook are blank. 
+
+ 
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

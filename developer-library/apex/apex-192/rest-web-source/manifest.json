@@ -1,5 +1,6 @@
 {
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
     {
 
       "title": "Introduction",
@@ -26,6 +27,11 @@
     {
       "title": "Lab 5: Defining a List of Values",
       "filename": "5-defining-lov/5-defining-lov.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }

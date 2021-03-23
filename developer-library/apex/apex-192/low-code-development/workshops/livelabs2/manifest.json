@@ -1,7 +1,8 @@
 {
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
       },
         {
@@ -23,6 +24,11 @@
 		    {
             "title": "Lab 4: Create and Modify an APEX Application",
             "filename": "../../create-modify-apex-app/4-create-and-modify-an-apex-app.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

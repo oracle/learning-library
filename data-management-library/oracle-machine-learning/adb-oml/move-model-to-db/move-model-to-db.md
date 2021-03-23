@@ -57,7 +57,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/005.png  " ")
 
-5.  Log in with your adw userid, **Username - admin** and **Password** you created for the ADW Instance.
+5.  Log in with your adw userid, **Username - ADMIN** and the <if type="freetier">**Password** you created for the ADW Instance.</if><if type="livelabs">password **WELcome__1234**.</if>
 
     ![](./images/006.png  " ")
 
@@ -454,7 +454,3 @@ Please proceed to the next lab.
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 - **Contributors** - Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
-

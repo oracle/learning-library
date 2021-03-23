@@ -1,0 +1,6 @@
+[Description of the illustration py_note_hist_rendered.png]
+
+This images shows the Py Note notebook. The Py Note notebook is present in USER1 Project and contains edits by USER2. The second paragraph of the notebook shows commands to render data in two histograms and also shows two histograms that are rendered after USER2 runs it. 
+
+ 
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

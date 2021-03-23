@@ -18,4 +18,4 @@ Furthermore, you can use your free cloud credits to do all of this and not pay a
 
 ### Access the Labs Using Our Web Interface
 **Click the image to use our easy to navigate HTML format:**
-[![Tables in Oracle NoSQL Database Cloud Service Workshop](images/tables-oracle-nosql-database-cloud-ws.png " ")](https://oracle.github.io/learning-library/data-management-library/nosql/create-tables-nosql-database)
+[![Tables in Oracle NoSQL Database Cloud Service Workshop](images/tables-oracle-nosql-database-cloud-ws.png " ")](https://oracle.github.io/learning-library/data-management-library/nosql/create-tables-nosql-database/freetier)

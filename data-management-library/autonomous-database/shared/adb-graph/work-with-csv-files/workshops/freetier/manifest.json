@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "Autonomous Graph Database: Load CSV files, create a graph, and query and visualize it",
+      "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Loading data from CSV files and creating a graph.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Lab 1: Load CSV files into the Autonomous Database",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../load-csv-files/load-csv-files.md"
+        },
+        {
+            "title": "Lab 2: Create a graph",
+            "filename": "../../create-graph/create-graph.md"
+        },
+        {
+            "title": "Lab 3: Query and visualize the graph",
+            "filename": "../../query-graph/query-graph.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+      ]
+  }

@@ -1,0 +1,34 @@
+{
+  "workshoptitle": "IAM 11g to 12c In-Place Upgrade Workshop",
+  "tutorials": [
+    {
+      "title": "Getting Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab 2: Prepare Setup",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab 3: Environment Setup",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+    {
+      "title": "Lab 4: Initialize Environment",
+      "description": "Lab to Initialize IAM 11g Baseline Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 5: Upgrade IAM 11g to 12c",
+      "filename": "../../upgrade/upgrade.md"
+    }
+  ]
+}

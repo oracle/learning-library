@@ -1,0 +1,6 @@
+[Description of the illustration login2.png.]
+
+This images shows the second Sign In page that opens after the user enters the tenant and database name, and clicks Continue. This page contains the fields Username and Password that the user must enter to log in to Oracle Machine Learning. The user can also edit the tenant and database fields here, by clicking the corresponding edit icon.  
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

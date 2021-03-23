@@ -1,0 +1,30 @@
+{
+  "workshoptitle": "IAM 11g to 12c In-Place Upgrade Workshop",
+  "tutorials": [
+    {
+      "title": "Getting Started",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "publisheddate": "09/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 2: Initialize Environment",
+      "description": "Lab to Initialize IAM 11g Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 3: Upgrade IAM 11g to 12c",
+      "filename": "../../upgrade/upgrade.md"
+    }
+  ]
+}

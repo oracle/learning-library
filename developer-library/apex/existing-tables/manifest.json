@@ -1,7 +1,9 @@
 {
-  "tutorials": [
+  "workshoptitle": "Creating an App based on Existing Tables for Oracle Autonomous Cloud Service",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
     {
-      "title": "Prerequisites",
+      "title": "Getting Started",
       "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
     },
     {
@@ -35,6 +37,11 @@
     {
       "title": "Lab 7: Improving Tasks",
       "filename": "8-improving-tasks/8-improving-tasks.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }

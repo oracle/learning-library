@@ -1,0 +1,6 @@
+[Description of the illustration select_project_create.png.]
+
+This images shows the Select Project dialog box. It shows the default workspace USER1 Workspace higlighted and the cursor on the Create button. The other options available in this dialog box are Edit and Delete. 
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

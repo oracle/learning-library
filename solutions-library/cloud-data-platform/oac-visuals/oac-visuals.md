@@ -1,10 +1,5 @@
 # Visualizations in Oracle Analytics Cloud (OAC)
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
 ## Introduction
 
 This lab walks you through the steps on how you can use the Oracle Analytics Cloud to visualize entities from a database such as the results of the model created in OML.
@@ -28,7 +23,7 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
 
 ## **STEP 1**: Create a Project
 
-1. From Oracle Analytics Cloud, click on the hamburger menu icon and click on **Data**. 
+1. From Oracle Analytics Cloud, click on the hamburger menu icon and click on **Data**.
 
     ![](./images/0.png " ")
 
@@ -42,7 +37,7 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
 1. If you don't see all the columns, expand **Master_Table** on the left with the **small arrow** in order to see all the columns in the data set.
 
     ![](./images/2.png " ")
-    
+
 2.  Scroll down until you see the **ITEM\_NAME** column.  **Right click** on this column and select **Explain ITEM\_NAME**.
 
     ![](./images/2a.png " ")
@@ -150,5 +145,4 @@ This lab walks you through the steps on how you can use the Oracle Analytics Clo
 - **Contributors** - Kamryn Vinson, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Jeffrey Malcolm, QA Specialist, July 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+

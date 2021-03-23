@@ -22,3 +22,4 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 - **Authors** -  Valentin Tabacaru, Product Manager, Database Partner Technical Services
 - **Contributors** - Troy Anthony, Kay Malcolm, Arabella Yao, Dylan McLeod
 - **Last Updated By/Date** - Arabella Yao, July 2020
+

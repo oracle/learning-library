@@ -1,12 +1,14 @@
 {
-    "tutorials": [
-      {
-           "title": "Prerequisites",
-           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-       },
+    "workshoptitle": "Managing and Monitoring",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [      
         {
             "title": "Introduction",
             "filename": "./../../../intro/intro-ziplab.md"
+        },
+        {
+            "title": "Getting Started",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Provision an ADW Instance",
@@ -23,6 +25,11 @@
         {
             "title": "Lab 4: Monitoring",
             "filename": "./../../../adw-managing-monitoring/adw-managing-monitoring.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

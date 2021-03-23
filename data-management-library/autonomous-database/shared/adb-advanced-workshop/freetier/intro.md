@@ -13,6 +13,8 @@ Watch our short video that explains key features in Oracle's Autonomous Database
 
 Oracle’s Autonomous Database is the perfect quick-start service for fast data loading and sophisticated data reporting and analysis. Oracle manages everything for you, so you can focus on your data.
 
+Estimated workshop time: 3 hours and 45 minutes
+
 ## **Workshop Objectives**
 - Get comfortable with Oracle's public cloud services
 - Provision a new Autonomous Database instance on Shared Infrastructure
@@ -66,5 +68,3 @@ Use these links to get more information about Oracle Autonomous Database:
 - **Contributors** - Oracle LiveLabs QA Team (Arabella Yao, Product Manager Intern | Ayden Smith, QA Intern)
 - **Last Updated By/Date** - Arabella Yao, July 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

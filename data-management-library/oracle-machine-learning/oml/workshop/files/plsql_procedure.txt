@@ -1,0 +1,9 @@
+[Description of the illustration plsql_procedure.png]
+
+This images shows the Scratchpad with a PL/SQL procedure to create a table named SMALL_TABLE. 
+
+The first part of the script contains the SQL statement CREATE TABLE to create a table named small_table. It defines the table name, table column, data types, and size. In this example, the column names are NAME, ID1, ID2, ID3, ID4, and TEXT.
+
+The second part of the script begins with the keyword BEGIN. It inserts 100 rows in to the table small_table.
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

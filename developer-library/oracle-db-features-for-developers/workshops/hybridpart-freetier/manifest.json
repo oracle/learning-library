@@ -1,14 +1,17 @@
 {
-    "tutorials": [
+    "workshoptitle":"Hybrid Partitioning on Oracle Database 19c",  
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
-            "title": "Prerequisites",
-            "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },{
             "title": "Introduction",
             "description": "About the New features for Developers Workshop",
             "filename": "../../intro/intro.md"
-          },
+        },
+        {
+            "title": "Getting Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
         {
             "title": "Lab 1: Generate SSH Key - Cloud Shell",
             "description": "Generate SSH Key",
@@ -31,6 +34,11 @@
             "description": "Hybrid Partition Tables",
             "publisheddate": "4/05/2020",
             "filename": "../../partitioning/partitioning.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

@@ -1,7 +1,8 @@
 {
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {            
-            "title": "Workshop Introduction",
+            "title": "Introduction",
             "publisheddate": "02/24/2020",
             "filename": "../intro/intro.md"
         },
@@ -39,6 +40,11 @@
             "title": "Lab 7: Oracle Digital Assistant (ODA) with APEX APIs",
             "publisheddate": "02/24/2020",
             "filename": "../oda-with-apex-api/oda-with-apex-api.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
      ]
 }

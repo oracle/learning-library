@@ -2,7 +2,7 @@
     "workshoptitle": "OCI Move and Improve",
     "tutorials": [
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
@@ -21,13 +21,16 @@
             "filename": "../../ha-oscommerce/ha-oscommerce.md"
         },
         {
-            "title": "Lab 3: Integrate Oracle Cloud with your Application",
+            "title": "Lab 3: Connecting your application with MDS",
+            "filename": "../../mds-connect/mds-connect.md"
+        },
+        {
+            "title": "Lab 4: Integrate Oracle Cloud with your Application",
             "filename": "../../integrate/integrate.md"
         },
         {
-            "title": "Lab 4: Monitoring your Application with OMC",
+            "title": "Lab 5: Monitoring your Application with OMC",
             "filename": "../../monitoring/monitoring.md"
         }
     ]
 }
-

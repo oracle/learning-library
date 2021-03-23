@@ -1,0 +1,5 @@
+This images shows the Oracle Machine Learning home page. In the top left corner of the image, there is the navigation link and the name Oracle Machine Learning. In the top right corner, the project and workspace name if displayed. The user account name is at the extreme top right corner. In the next section Quick Links, you can navigate directly to Noteboks, Jobs, and Gallery by clicking the links respectively. In the middle right section, the links to resources on Getting Started and Learning Resources are present. The recently opened notebook is available in the third section under Recent Notebook. 
+  
+Below the Quick Link section, is the Recent Activities section where all the links to recently opened notebooks are present.  
+
+Copyright © 2017, 2018 Oracle and/or its affiliates. All rights reserved.

@@ -8,15 +8,17 @@
 
 In this lab, you will connect to the database using SQL Developer Web, a browser-based tool that is easily accessible from the Autonomous Data Warehouse or Autonomous Transaction Processing console.
 
-## Objectives
+Estimated lab time: 5 minutes
+
+### Objectives
 
 -   Learn how to connect to your new autonomous database using SQL Developer Web
 
-## Prerequisites
+### Prerequisites
 
--   This lab requires completion of the 2 prior labs in this workshop: **Get a Free Trial** and **Provision an Autonomous Database**, in the Contents menu on the right.
+-   This lab requires completion of the prior labs in this workshop: **Prerequisites** and **Provision an Autonomous Database**, in the Contents menu on the left.
 
-## **Step 1:** Connect with SQL Developer Web
+## **STEP:** Connect with SQL Developer Web
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your Autonomous Data Warehouse or Autonomous Transaction Processing console.
 1. In your database's details page, click the **Tools** tab.
@@ -35,7 +37,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
     ![](./images/Picture100-16b.png " ")
 
-    Keep this worksheet tab open and please proceed to the next lab.
+    Keep this worksheet tab open and please **proceed to the next lab.**
 
 ## Want to Learn More?
 
@@ -44,7 +46,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 ## Acknowledgements
 
 - **Author** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, May 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+- **Last Updated By/Date** - Richard Green, October 2020

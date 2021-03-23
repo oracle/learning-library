@@ -1,0 +1,54 @@
+{
+    "workshoptitle":"Converged functionality of Oracle Autonomous Database",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Introduction",
+      "filename": "../../intro/intro-adb.md"
+    },
+    {
+      "title": "Getting Started",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab 1: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+    },
+    {
+      "title": "Lab 2: Setup Compute and Autonomous DB",
+      "description": "Setup compute instance running 19c using Terraform script and Resource Manager",
+      "filename": "../../setup-compute/setup-compute-adb.md"
+    },
+    {
+      "title": "Lab 3: Load Data and Start Application",
+      "description": "Connect to Schema",
+      "filename": "../../setup/setup-adb.md"
+    },   {
+      "title": "Lab 4: JSON",
+      "description": "JSON Lab",
+      "filename": "../../json/json-adb.md"
+    }, {
+      "title": "Lab 5: Spatial",
+      "description": "Spatial Lab",
+      "filename": "../../spatial/spatial-adb.md"
+    },
+    {
+      "title": "Lab 6: SODA",
+      "description": "SODA Lab",
+      "filename": "../../soda/soda-adb.md"
+    },
+    {
+      "title": "Lab 7: XML",
+      "description": "XML Lab",
+      "filename": "../../xml/xml-adb.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

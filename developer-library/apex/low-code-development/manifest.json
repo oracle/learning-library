@@ -1,7 +1,9 @@
 {
-    "tutorials": [
+  "workshoptitle": "Low Code Development with Oracle Autonomous Database",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
         },
         {
@@ -19,6 +21,11 @@
 		    {
             "title": "Lab 3: Create and Modify an APEX Application",
             "filename": "./create-modify-apex-app/4-create-and-modify-an-apex-app.md"
+        },
+        {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

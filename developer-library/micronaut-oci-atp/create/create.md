@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you are going to get create a Micronaut application locally and configure the application to communicate with an Autonomous Database instance.
+In this lab you are going to get create a Micronaut application locally and configure the application to communicate with an Oracle Autonomous Database instance.
 
 If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command to checkout the code:
 
@@ -48,7 +48,7 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
     ```
     <copy>
-    curl https://launch.micronaut.io/example-atp.zip\?features\=oracle,data-jdbc -o example-atp.zip
+    curl https://launch.micronaut.io/example-atp.zip\?javaVersion\=JDK_8\&features\=oracle,data-jdbc -o example-atp.zip
     unzip example-atp.zip -d example-atp
     cd example-atp
     </copy>
@@ -58,9 +58,8 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
 
 ## **STEP 2**: Configure the Micronaut Application
 
-1. To configure the Micronaut application to work with Autonomous Database open the `src/main/resources/application.yml` file and modify the default datasource connection settings as follows:
+To configure the Micronaut application to work with Autonomous Database open the `src/main/resources/application.yml` file and modify the default datasource connection settings as follows:
 
-    ```yaml
     <copy>
     datasources:
       default:
@@ -73,32 +72,62 @@ Note: By default Micronaut will use the [Gradle](https://gradle.org/) build tool
             jdbc:
               fanEnabled: false        
     </copy>    
-    ```
-2. Delete the existing `src/main/resources/application-test.yml` file so that you can run tests against the Autonomous database instance.
 
-    ```
+Delete the existing `src/main/resources/application-test.yml` file so that you can run tests against the Autonomous database instance.
+
     <copy>
     $ rm src/main/resources/application-test.yml
     </copy>
-    ```
 
-3. Now open up `build.gradle` in the root of the project and below the `runtimeOnly("com.oracle.database.jdbc:ojdbc8")` dependency and within the `dependencies` block add the following additional dependencies required to connect to Autonomous Database:
+## **STEP 3**: Configure Oracle Autonomous Database JDBC Drivers
 
-    ```
+If you are using Gradle add the following dependencies to the `build.gradle` file in the root of your project inside the `dependencies` block:
 
-    dependencies {
-       ...  
-       runtimeOnly("com.oracle.database.jdbc:ojdbc8")
-    <copy>       
-       &nbsp;&nbsp;&nbsp;runtimeOnly('com.oracle.database.security:oraclepki:19.7.0.0')
-       runtimeOnly('com.oracle.database.security:osdt_cert:19.7.0.0')
-       runtimeOnly('com.oracle.database.security:osdt_core:19.7.0.0')
+    <copy>
+    runtimeOnly("io.micronaut.sql:micronaut-jdbc-hikari")
+    runtimeOnly("com.oracle.database.jdbc:ojdbc8")
+    runtimeOnly("com.oracle.database.security:oraclepki:21.1.0.0")
+    runtimeOnly("com.oracle.database.security:osdt_cert:21.1.0.0")
+    runtimeOnly("com.oracle.database.security:osdt_core:21.1.0.0")
     </copy>
-    }
-    ```
+
+Alternatively if you are using Maven, add the following dependencies to your `pom.xml` inside the `<dependencies>` element:
+
+    <copy>
+    <dependency>
+      <groupId>io.micronaut.sql</groupId>
+      <artifactId>micronaut-jdbc-hikari</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.oracle.database.jdbc</groupId>
+        <artifactId>ojdbc8</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.oracle.database.security</groupId>
+        <artifactId>oraclepki</artifactId>
+        <version>21.1.0.0</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.oracle.database.security</groupId>
+        <artifactId>osdt_cert</artifactId>
+        <version>21.1.0.0</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.oracle.database.security</groupId>
+        <artifactId>osdt_core</artifactId>
+        <version>21.1.0.0</version>
+        <scope>runtime</scope>
+    </dependency>
+    </copy>
 
 
-4. Finally, to configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
+## **STEP 4**: Configure Environment Variables with Credentials
+
+Finally, to configure the datasource password you should set an environment variable named `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous section.
 
 
 
@@ -139,6 +168,3 @@ You may now *proceed to the next lab*.
 - **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

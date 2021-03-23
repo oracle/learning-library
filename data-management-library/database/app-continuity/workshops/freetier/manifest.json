@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "App Continuity",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+         {
+            "title": "Introduction",
+            "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
+            "title": "Lab 2: Build a DB System",
+            "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
+            "filename": "../../setup/setup-compute.md"
+        },
+        {
+            "title": "Lab 3: Next Lab",
+            "description": "Ian, Troy, here is the framework for a sample lab",
+            "filename": "../../samplelab/analyze.md"
+        }
+    ]
+}

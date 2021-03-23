@@ -30,7 +30,7 @@ Estimated Time: 5 minutes
 
     ![](images/copy-paste-projects-tasks.png " ")
 
-5.  Review the parsed data. Set Table Name to **PROJECT_TASKS** and click **Load Data**. Note that the Error Table Name defaults to the Table Name with a postfix of \_ERR$.
+6.  Review the parsed data. Enter **PROJECT_TASKS** for Table Name and Click **Load Data**.
 
     ![](images/new-table-name.png " ")
 
@@ -76,7 +76,10 @@ The Data Load wizard has created a new table and populated that table with the r
 
     ![](images/sign-in.png " ")
 
-3.  Explore the application a little. Click **Dashboard** (in the home menu or the navigation menu) to view the charts created. Click **Project Tasks Search**, in the navigation menu, to play with the faceted search. Click **Project Tasks Report** to view an interactive report, then click the edit icon for a record to display the details in an editable "form" page. Next, navigate to the **Calendar** page and review the data displayed (*Note: You may need to scroll back several months to see data*). Finally, review the options available under **Administration**.
+3. Click on the navigation menu icon to expand the navigation menu
+    ![](images/new-app-expand-nav.png " ")
+
+4.  Explore the application a little. Click **Dashboard** (in the home menu or the navigation menu) to view the charts created. Click **Project Tasks Search**, in the navigation menu, to play with the faceted search. Click **Project Tasks Report** to view an interactive report, then click the edit icon for a record to display the details in an editable "form" page. Next, navigate to the **Calendar** page and review the data displayed (*Note: You may need to scroll back several months to see data*). Finally, review the options available under **Administration**.
 
     ![](images/new-app.png " ")
 
@@ -86,9 +89,7 @@ You now know how to create an application from a spreadsheet by either dragging 
 
 ## **Acknowledgements**
 
- - **Author** -  Salim Hlayel, Principle Product Manager
+ - **Author** -  Salim Hlayel, Principal Product Manager
  - **Contributors** - Tom McGinn, Database Cloud Services, Product Management
- - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principal Product Manager, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

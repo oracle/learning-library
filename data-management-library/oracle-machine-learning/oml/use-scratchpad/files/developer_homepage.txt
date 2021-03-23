@@ -1,0 +1,5 @@
+[Description of the illustration scratchpad_sql.png]
+
+This images shows the Oracle Machine Learning home page with Scratchpad highlighted under the Quick Actions section.   
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

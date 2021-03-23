@@ -1,0 +1,1 @@
+Image of the Oracle Database and 3 key areas of support.  Including many datatypes and data models, multiple workload types and significant support for developers and analysts.

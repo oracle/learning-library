@@ -18,7 +18,7 @@ Estimated time: 20 - 30 minutes
 
 ### Objectives
 
-- Import an Apache Zepplin notebook.
+- Import an Apache Zeppelin notebook.
 - Become familiar with Oracle Machine Learning Algorithms.
 - Create a machine learning model to determine factors that predict good credit.
 
@@ -108,7 +108,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
     ![](./images/049.png  " ")
 
-    Zepplin notebooks are composed of paragraphs that can contain formatted text, sql, and script (pl/sql). Notebooks can support a broad range of scripting languages (python, R, etc.), but we'll just be using these three. We create different paragraphs with different interpreters based on what we want to put in the paragraphs. The interpreter is set at the top of the paragraph:
+    Zeppelin notebooks are composed of paragraphs that can contain formatted text, sql, and script (pl/sql). Notebooks can support a broad range of scripting languages (python, R, etc.), but we'll just be using these three. We create different paragraphs with different interpreters based on what we want to put in the paragraphs. The interpreter is set at the top of the paragraph:
     - %md - markdown language which is used for formatted text.
     - %sql - used to run sql statements.  Note you can only run one statement per paragraph, otherwise use a script.
     - %script - used to run multiple sql statements and pl/sql blocks.
@@ -170,7 +170,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
     <copy>
     %sql
 
-    /* This is a basic example of a chart visualization in Zepplin.  This particular one is a column graph.  Click on the 'settings' link below.  That will show you the fields in the query that were used to create the chart.  After you review the settings you can click on the link again to hide the settings. */
+    /* This is a basic example of a chart visualization in Zeppelin.  This particular one is a column graph.  Click on the 'settings' link below.  That will show you the fields in the query that were used to create the chart.  After you review the settings you can click on the link again to hide the settings. */
 
     select customer_id, age, income, tenure, loan_type, loan_amount, occupation, number_of_current_accounts, max_cc_spent_amount, mode_job_of_contacts from admin.credit_scoring_100k where rownum &lt; 1000
     </copy>
@@ -223,7 +223,9 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
 ## **Step 4:** Import ML Notebook
 
-As you have seen adding content to a notebook is simple and fast. However, we have already built out all the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the Credit Score Predictions.json file. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook if you wish to continue with lab 3 and 4*. Executing the steps takes only a few minutes.
+Adding content to a notebook is simple and fast. In this step, we have built the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the file you can download. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook if you wish to continue with lab 3 and 4*. Executing the steps takes only a few minutes.
+
+1. Download the notebook [targeting\_customers\_that\_complete\_all\_payments\_v4.json](files/targeting_customers_that_complete_all_payments_v4.json?download=1).
 
 1.  Navigate back to the Notebook page.
 
@@ -233,7 +235,7 @@ As you have seen adding content to a notebook is simple and fast. However, we ha
 
     ![](./images/021.png  " ")
 
-3.  Go to the install directory in your git repository and import **Targeting Customers That Complete All Payments.json** notebook.
+3.  Go to the directory where you downloaded the JSON file and import the **targeting\_customers\_that\_complete\_all\_payments\_v4.json** notebook.
 
 4.  Select the **Targeting Customers That Complete All Payments** notebook.
 
@@ -302,6 +304,3 @@ Please proceed to the next lab.
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 - **Contributors** - Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

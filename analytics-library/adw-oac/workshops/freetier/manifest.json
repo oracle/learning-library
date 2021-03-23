@@ -1,0 +1,35 @@
+{
+  "workshoptitle": "Setting up a Departmental Data Warehouse with ADW and OAC",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Getting Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab 1: Provisioning your Autonomous Database instance",
+      "filename": "../../provision-atp/provision-atp.md"
+    },
+    {
+      "title": "Lab 2: Provisioning your Oracle Analytics Cloud instance",
+      "filename": "../../provisioning-oac/provisioning-oac.md"
+    },
+    {
+      "title": "Lab 3: Using Oracle Analytics Cloud",
+      "filename": "../../oac/oac.md"
+    },
+    {
+      "title": "Next Steps",
+      "filename": "../../next/next.md"
+    },
+    {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

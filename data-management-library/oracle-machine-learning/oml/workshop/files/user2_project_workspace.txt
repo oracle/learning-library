@@ -1,0 +1,5 @@
+[Description of the illustration user2_project_workspace.png]
+
+This images shows the project-workspace drop-down list while signed in as USER2. USER2 clicks on Select Project option in the drop-down list.  
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

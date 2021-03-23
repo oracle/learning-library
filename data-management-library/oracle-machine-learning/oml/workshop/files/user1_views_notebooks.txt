@@ -1,0 +1,5 @@
+[Description of the illustration user1_views_notebooks.png]
+
+This screenshot shows the Notebooks page while signed in as USER1. It shows all the notebooks that are present in USER1 Project, the default project owned by USER1. It highlights the Sales Note notebook that is updated by USER2.
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

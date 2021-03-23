@@ -1,0 +1,5 @@
+[Description of the illustration notebooks_user2.png]
+
+This images shows the Oracle Machine Learning homepage highlighting the Notebooks option in the homepage and in the left navigation menu. The screenshot shows the homepage while logged in as USER1 and shows USER1 Project USER1 Workspace in the project-workspace drop-down menu name.    
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

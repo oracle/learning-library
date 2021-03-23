@@ -5,10 +5,12 @@
                 Markdown
                 <button type="button" id="download_md" class="btn btn-primary float-right">Download MD
                     File</button>
-                <button type="button" id="view_md_template" class="btn btn-primary float-right">View MD
-                    Template</button>
+                <!-- <button type="button" id="view_md_template" class="btn btn-primary float-right">View MD
+                    Template</button>                 -->
                 <input type="file" id="upload_md" accept=".md" hidden />
-                <button type="button" id="import_md" class="btn btn-primary float-right">Import MD</button>
+                <button type="button" id="import_md" class="btn btn-primary float-right">Import MD</button>            
+                <input type="file" id="upload_html" accept=".html" hidden />
+                <button type="button" id="import_html" class="btn btn-primary float-right">Convert HTML to MD</button>
             </div>
             <div class="card-body">
                 <div id="shortcuts">
@@ -38,6 +40,8 @@
                         title="Select the text in the textbox and click this button to make it look like code. Shortcut: Alt + =">code</button>
                     <button type="button" class="btn btn-primary" id="btn_codeblock" accesskey="`"
                         title="Select the text in the textbox and click this button to add the text in a codeblock. Shortcut: Alt + `">codeblock</button>
+                    <button type="button" class="btn btn-primary" id="btn_youtube" accesskey="y"
+                        title="Click this button to add a YouTube video. Shortcut: Alt + y">YouTube</button>    
                     <!--<button type="button" class="btn btn-primary" id="btn_template">template</button>-->
                 </div>
                 <textarea id="mdBox" class="form-control"></textarea>

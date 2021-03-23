@@ -1,0 +1,80 @@
+{
+  "workshoptitle": "Upgrade to 19c",
+  "support": "https://community.oracle.com/tech/developers/categories/database-19c",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Getting Started",
+      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "description": "The Introduction to Upgrade to 19c Workshop.",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+    },
+    {
+      "title": "Lab 2: Initialize Environment",
+      "description": "Initialize Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 3: Capture and Preserve SQL",
+      "filename": "../../capture-sql/capture-sql.md"
+    },
+    {
+      "title": "Lab 4: AutoUpgrade",
+      "filename": "../../upgrade/upgrade-to-19c.md"
+    },
+    {
+      "title": "Lab 5: AWR Compare Report",
+      "filename": "../../awr-compare/awr-compare.md"
+    },
+    {
+      "title": "Lab 6: SQL Performance Analyzer",
+      "filename": "../../sql/sql-perf-analyzer.md"
+    },
+    {
+      "title": "Lab 7: SQL Plan Management",
+      "filename": "../../sql/sql-plan-mgmt.md"
+    },
+    {
+      "title": "Lab 8: SQL Tuning Advisor",
+      "filename": "../../sql/sql-tuning-advisor.md"
+    },
+    {
+      "title": "Lab 9: Plugin UPGR into CDB2",
+      "filename": "../../upgrade/plugin-upgr-cdb2.md"
+    },
+    {
+      "title": "Lab 10: Transportable Export/Import",
+      "filename": "../../migrate-ftex/migrate-ftex.md"
+    },
+    {
+      "title": "Lab 11: Unplug Plug Upgrade",
+      "filename": "../../upgrade/unplug-plug-upgr.md"
+    },
+    {
+      "title": "Lab 12: Fallback Before Upgrade",
+      "filename": "../../fallback/fallback-before-upgrade.md"
+    },
+    {
+      "title": "Lab 13: Fallback After Upgrade",
+      "filename": "../../fallback/fallback-after-upgrade.md"
+    },
+    {
+      "title": "Lab 14: AutoUpgrade (Optional)",
+      "filename": "../../upgrade/autoupgrade.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}

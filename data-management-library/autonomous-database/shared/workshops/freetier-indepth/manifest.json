@@ -1,15 +1,17 @@
 {
-    "tutorials": [
-      {
-           "title": "Prerequisites",
-           "description": "Get a Free Trial",
-           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-       },
-      {
-          "title": "Introduction",
-          "description": "Introduction to ADB on Shared Infrastructure",
-          "filename": "./intro.md"
-      },
+    "workshoptitle" : "Analyzing your data with Autonomous Database",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to ADB on Shared Infrastructure",
+            "filename": "./intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
         {
             "title": "Lab 1: Getting Started",
             "description": "Provision Autonomous Database",
@@ -51,14 +53,39 @@
             "filename": "./../../adw-scaling-performance/adw-scaling-performance.md"
         },
         {
-            "title": "Lab 9: Getting Started with Machine Learning Notebooks",
+            "title": "Lab 9: Auto Scaling",
+            "description": "Auto Scaling an Autonomous Database",
+            "filename": "./../../adb-auto-scaling/adb-auto-scaling.md"
+        },
+        {
+            "title": "Lab 10: Disaster Recovery",
+            "description": "Enable Autonomous Data Guard",
+            "filename": "./../../adb-autonomous-data-guard/adb-autonomous-data-guard.md"
+        },
+        {
+            "title": "Lab 11: Creating Refreshable Clones",
+            "description": "Creating Refreshable Clones",
+            "filename": "./../../adb-refreshable-clones/adb-refreshable-clones.md"
+        }, 
+        {
+            "title": "Lab 12: Setting Event and Alarm Notifications",
+            "description": "Setting Event and Alarm Notifications for an Autonomous Database",
+            "filename": "./../../adb-event-alarm/adb-event-alarm.md"
+        },
+        {
+            "title": "Lab 13: Using Machine Learning Notebooks",
             "description": "Using Oracle Machine Learning Notebooks",
             "filename": "./../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
-            "title": "Lab 10: Building a Simple Machine Learning Algorithm",
+            "title": "Lab 14: Building a Simple Machine Learning Algorithm",
             "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "filename": "./../../adw-machine-learning/adw-machine-learning.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

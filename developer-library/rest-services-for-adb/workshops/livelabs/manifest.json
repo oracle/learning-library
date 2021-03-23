@@ -1,5 +1,7 @@
 {
-    "tutorials": [
+  "workshoptitle": "RESTful Services for your Autonomous Database",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "About the Introduction to REST Services Workshop",
@@ -23,6 +25,11 @@
             "title": "Lab 3: RESTful Services for your Autonomous Database",
             "description": "RESTful Services for your Autonomous Database",
             "filename": "../../rest_services_for_adb/rest_services_for_adb.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

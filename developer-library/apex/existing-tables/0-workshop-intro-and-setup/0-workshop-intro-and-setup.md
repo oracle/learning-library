@@ -15,7 +15,7 @@ Estimated Time: 70 minutes
 * Learn how to manipulate regions and items
 * Learn how to define client-side interactivity declaratively
 
-*Note: This lab assumes you are using Oracle APEX 20.1.*
+*Note: This lab assumes you are using Oracle APEX 20.2.*
 
 ### Labs
 
@@ -50,7 +50,5 @@ If the menu is not displayed, you can open by clicking the menu button (![Menu i
 
  - **Author** -  Salim Hlayel, Principle Product Manager
  - **Contributors** - LiveLabs QA Team (Arabella Yao, Product Manager Intern | Dylan McLeod, QA Intern)
- - **Last Updated By/Date** - Tom McGinn, Database Innovations Architect, Product Management, July 2020
+ - **Last Updated By/Date** - Salim Hlayel, Principle Product Manager, November 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

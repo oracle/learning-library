@@ -1,12 +1,12 @@
 {
     "tutorials": [
         {         
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {         
             "title": "Introduction",
-            "filename": "./../../intro/intro.md"
+            "filename": "./../../using-reserved-public-ip/00-intro.md"
         },
         {
             "title": "Lab 1: Generate SSH Keys - Cloud Shell",
@@ -14,7 +14,7 @@
         },
         {         
             "title": "Lab 2: Using Reserved Public IP",
-            "filename": "./../../using-reserved-public-ip/using-reserved-public-ip.md"
+            "filename": "./../../using-reserved-public-ip/01-using-reserved-public-ip.md"
         }
     ]
 }

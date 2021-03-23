@@ -1,0 +1,52 @@
+{
+    "workshoptitle": "APEX development workflow",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "publisheddate": "03/03/2021",
+            "filename": "../../intro/intro.md",
+            "type": "oci"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Install Pre-requisites",
+            "publisheddate": "03/03/2021",
+            "filename": "../../prereq/prereq.md"
+        },
+        {
+            "title": "Lab 2: Provision the databases and environments",
+            "publisheddate": "03/03/2021",
+            "filename": "../../provision/provision.md"
+        },
+        {
+            "title": "Lab 3: Install a Sample Application",
+            "publisheddate": "03/03/2021",
+            "filename": "../../install-app/install-app.md"
+        },
+        {
+            "title": "Lab 4: Tracking Changes",
+            "publisheddate": "03/03/2021",
+            "filename": "../../flow/flow.md"
+        },
+        {
+            "title": "Lab 5: Rollback",
+            "publisheddate": "03/03/2021",
+            "filename": "../../rollback/rollback.md"
+        },
+        {
+            "title": "Lab 6: Decommissioning the environments",
+            "publisheddate": "03/03/2021",
+            "filename": "../../tear-down/tear-down.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+     ]
+}

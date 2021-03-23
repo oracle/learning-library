@@ -11,7 +11,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 2. From the OCI Services menu, Click **Virtual Cloud Networks** under Networking. Select the compartment assigned to you from the drop down menu on the left part of the screen under Networking and Click **Start VCN Wizard**.
 
-    **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+    **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
 3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
@@ -65,7 +65,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
       - **Virtual cloud network compartment**: Select your compartment
       - **Virtual cloud network**: Choose the VCN you created in Step 1
-      - **Subnet Compartment:** Choose your compartment.
+      - **Subnet Compartment:** Choose your compartment
       - **Subnet:** Choose the Public Subnet under **Public Subnets**
       - **Use network security groups to control traffic** : Leave un-checked
       - **Assign a public IP address**: Check this option
@@ -75,7 +75,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 6. Boot Volume and Add SSH Keys     
 
       - **Boot Volume:** Leave the default, uncheck values
-      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved in Lab 1.
+      - **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved in Lab 1
 
       ![](images/create-compute-4.png)
 
@@ -198,5 +198,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management, Kamryn Vinson, Intern
 - **Last Updated By/Date** - Tom McGinn, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,0 +1,40 @@
+{
+    "workshoptitle":"Oracle Database 19c New Features",  
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Introduction to Multitenant Workshop",
+            "filename": "./../../intro/intro.md",
+            "type": "compute"
+        },
+         {
+            "title": "Getting Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introduction to Multitenant Workshop",
+            "filename": "./../../intro/intro.md",
+            "type": "compute"
+        },
+        {
+            "title": "Lab 1: Verify Setup",
+            "description": "Finish LiveLabs setup",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/verify-setup-19c-livelabs.md"
+        },
+        {
+            "title": "Lab 3: Start Labs Here",
+            "description": "Duplicate this folder and rename based on lab name",
+            "filename": "./../../analyze/analyze.md",
+            "type": "compute"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

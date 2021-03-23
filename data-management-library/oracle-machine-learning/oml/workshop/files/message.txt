@@ -1,0 +1,3 @@
+This images shows the message - Notebook 'Test Anomaly Detection' created in Project USER1 project' on the Example Templates page. The message is displayed after you sucessfully created this notebook based on the Anomaly Detection example template. 
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.

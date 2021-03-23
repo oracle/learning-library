@@ -1,7 +1,8 @@
 {
+  "workshoptitle": "Create an Object Storage Service",
     "tutorials": [
       {
-          "title": "Prerequisites",
+          "title": "Getting Started",
           "description": "Login to Oracle Cloud",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
@@ -11,7 +12,8 @@
       },
       {
           "title": "Lab 1: Create an Object Storage Service",
-          "filename": "./../../object-storage.md"
+          "type": "freetier",
+          "filename": "./../../os/object-storage.md"
       }
     ]
 }

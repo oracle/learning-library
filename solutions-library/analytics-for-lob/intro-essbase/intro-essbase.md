@@ -4,7 +4,7 @@
 
 This lab provides an introduction to Oracle Essbase and how it can be used to enhance business analytics and data management. Through this lab, you will understand the overall Essbase architecture, as well as perform the prerequisites for the subsequent Essbase labs in this workshop.
 
-The estimated time to complete this lab is 15 minutes.
+Estimated Lab Time: 15 minutes.
 
 ### Objectives
 
@@ -16,9 +16,9 @@ The estimated time to complete this lab is 15 minutes.
 
 This lab will require the following -
 
-1. An Oracle public cloud tenancy where you have the resources available to provision an ATP instance with 1 OCPU, an Essbase instance with 1 OCPU.
+* An Oracle public cloud tenancy where you have the resources available to provision an ATP instance with 1 OCPU, an Essbase instance with 1 OCPU.
 
-2. [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
+* [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
 
 
 ## **Step 1:** Features of Oracle Essbase
@@ -39,7 +39,7 @@ This lab will require the following -
 
 ## **Step 2:** Essbase Architecture on OCI
 
-    ![](./images/notionalarchitecture.png "")
+  ![](./images/notionalarchitecture.png "")
 
 ## **Step 3:** Working with Essbase
 
@@ -105,5 +105,7 @@ You may proceed to the next lab.
 * Reviewed by - Ashish Jain, Product Management
 * Last Updated By/Date - Jess Rein, Cloud Engineer, Sept 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-analytics-cloud). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

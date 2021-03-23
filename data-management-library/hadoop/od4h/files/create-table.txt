@@ -1,0 +1,1 @@
+In the SQL Developer Worksheet, create EMPLOYEEDATA table code is entered and Run Statement is clicked. The script output shows the employeedata table is created.

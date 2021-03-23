@@ -56,15 +56,12 @@ Once you have created the console connection for the instance, you can then conn
 
 1. On the **Instances Details** page, in the **Resources** section, click **Console Connections**.
 
-2. Click the Actions icon (three dots), and then click **Connect with SSH**.
-   
-   ![]( img/image003.png)
-
-3. Select **LINUX/MAC OS** for **PLATFORM** and click **Copy** to copy the string to the clipboard
+2. Click the Actions icon (three dots), and then click **Copy Serial Console Connection for Linux/Mac**.
    
    ![]( img/image004.png)
+
    
-4. Paste the connection string copied from the previous step to the gitbash installed on your Windows laptop, and hit enter to connect to the console.
+3. Paste the connection string copied from the previous step to the gitbash installed on your Windows laptop, and hit enter to connect to the console.
 
 **Note:** 
 If you are not using the default SSH key or ssh-agent, you can modify the serial console connection string to include the identity file flag, -i to specify the SSH key to use. You need to specify this for both the SSH connection and the SSH ProxyCommand, as shown in the following line:
@@ -72,7 +69,7 @@ If you are not using the default SSH key or ssh-agent, you can modify the serial
 
     `$ ssh -i /<path>/<ssh_key> -o ProxyCommand='ssh -i /<path>/<ssh_key> -W %h:%p -p 443...`
     
-6. Hit enter again to activate the console.
+4. Hit enter again to activate the console.
     
     ![]( img/image005.png)
     ![]( img/image006.png)

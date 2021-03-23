@@ -1,5 +1,6 @@
 {
-  "tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
     {
       "title": "Introduction",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/0-lab-intro-and-setup/content.md"
@@ -22,6 +23,11 @@
 
       "title": "Lab 4: Working with the DOM and jQuery",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/intro-to-javascript/3-working-with-the-dom-and-jquery/content.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }

@@ -54,7 +54,10 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
 1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stack**
 2. Click **Create Stack**
 
-   - **Select a Terraform Configuration (.zip) File to Upload:** *Upload the zip file [orm-lbass-demo.zip](orm-lbaas-demo/orm-lbass-demo.zip)*
+   - Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file [orm-lbass-demo.zip](orm-lbaas-demo/orm-lbass-demo.zip). Click **Select**.
+
+	![](./img/zip-file.png)
+
    - **Name:** *HA Load Balanced Simple Web App*
    - **Description:** *Provisions a primary load balancer and a failover load balancer into public subnets distributing load across 2 compute instances hosting a simple web app each in different private subnets*
    - **Create in Compartment:** *OCI-ORM*

@@ -1,0 +1,5 @@
+-- Standby database window
+select database_role from v$database;
+
+-- list the current restore points 
+select name,replicated,guarantee_flashback_database from v$restore_point;

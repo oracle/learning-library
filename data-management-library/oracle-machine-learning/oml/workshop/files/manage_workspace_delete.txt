@@ -1,0 +1,6 @@
+[Description of the illustration manage_workspace_delete.png.]
+
+This images shows the Manage Workspace dialog box. It shows the Workspace A selected and the Delete button highlighted.  
+
+
+Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.
