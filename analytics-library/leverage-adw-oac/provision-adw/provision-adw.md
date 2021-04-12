@@ -34,7 +34,7 @@ _Estimated Lab Time:_ 15 minutes
 
 ## **STEP 1**: Create a new Autonomous Data Warehouse Database
 
-1. Click on the hamburger **MENU** link at the upper left corner of the page.
+1. Click on the hamburger **MENU (Navigator)** link at the upper left corner of the page.
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse.**  
     ![Oracle Cloud Web Console](./images/lab100_1a.png)
@@ -103,14 +103,14 @@ _Estimated Lab Time:_ 15 minutes
 6. A summary of your instance status is shown in the large box on the left. In this example, the color is amber and the status is **Provisioning.**  
 ![ADB Creation Provisioning Amber](./images/lab100_8.png)
 
-7. After a short while, the status will change to **Available** and the "ADW" box will change color to green:  
+7. After a short while, the status turns to **Available State** and the "ADW" box will change color to green:  
 ![ADB Creation Provisioning Green](./images/lab100_9.png)
 
-8. Once the Lifecycle Status is **Available**, additional summary information about your instance is populated, including workload type and other details.
+8. Once the Instance Status is **Available**, additional summary information about your instance is populated, including workload type and other details.
 
     The provisioning process should take **under 5 minutes**.
 
-9. After having the Autonomous Database instance **created** and **available**, you can get a message window asking you to upgrade from 18c to 19c if you have selected 18c as a database version during the provisioning. You can **upgrade** the database release if you wish after the hands-on session, otherwise the upgrade process can take a **few minutes** and you can miss a few exercises during the session.
+9. After having the Autonomous Database instance **created** and **available**, you you may be prompted with a Pop Up window asking you to upgrade (from 18c to 19c, if you have selected 18c as a database version during the provisioning - the database version might be different). You may choose to upgrade the database version after the hands-on session, otherwise the upgrade process can take a few minutes, and you may miss a few exercises during the session.
 
     This page is known as the **Autonomous Database Details Page**. It provides you with status information about your database, and its configuration. Get **familiar** with the buttons and tabs on this page.  
     ![ADB Creation Details](./images/lab100_adw_readya.png)

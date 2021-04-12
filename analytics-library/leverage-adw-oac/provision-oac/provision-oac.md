@@ -22,8 +22,8 @@ Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home P
 Click in **View Account** and **Sign in to Cloud**.  
 ![Oracle Console SignIn](./images/lab200_1.png)
 
-1. Click on the menu icon on the left. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon
-in the top right hand side of your screen. If your username is shown as:
+1. Click on the menu icon on the right. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon in the top right hand side of your screen.  
+    If your username is shown as:
 
     > oracleidentitycloudservice/&lt;your username&gt;
     >
@@ -31,7 +31,7 @@ in the top right hand side of your screen. If your username is shown as:
 
     ![Federated User](./images/lab200_2.png)
 
-    If your username is shown as:
+      If your username is shown as:
 
     > &lt;your username&gt;
     >
@@ -43,7 +43,7 @@ in the top right hand side of your screen. If your username is shown as:
     using **Single Sign On**.  
     ![Oracle Console SignIn](./images/lab200_4.png)
 
-    To be capable of using **Oracle Analytics Cloud** we need to be Sign-On as a **Single Sign-On** (SSO) user.
+    To use **Oracle Analytics Cloud** you need to be a **Single Sign-On** (SSO) user.
 
     [More information about federated users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
 

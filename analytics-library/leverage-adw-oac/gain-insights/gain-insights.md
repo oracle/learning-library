@@ -15,8 +15,8 @@ _Estimated Lab Time:_ 20 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
@@ -24,8 +24,7 @@ _Estimated Lab Time:_ 20 minutes
 ## **STEP 1**: Gain Insights with Visuals
 
 1.  **Search** for your Data Set.  
-Back in the web mode, lets pick a visual and analyze it further with Data Visualization.  
-In the **Home** Page of OAC, a dialog bar appearing at the top can be leveraged to **ask** in plain natural language questions on the data.  
+Lets go back in the web mode; in the **Home** Page of OAC, a dialog bar appearing at the top can be leveraged to **ask** your business questions using natural language.  
 Click the **Search** bar and **Type** in the bar area **"show me value by sales week" “for customers” "by channel"**.  
 As you enter the information, the application returns search results in a drop-down list. The system can be searched by column names or data elements or both. Best fit results are returned immediately
 
@@ -35,16 +34,16 @@ As you enter the information, the application returns search results in a drop-d
 
     In order to **enable searching** and ask questions, you already have **indexed** the Data Set as part of the previous chapter.
 
-3.  Hover over the mouse on the first visualization and Click **Explore as Project** 
+3.  Mouse Hover on the first visualization and Click **Explore as Project** 
 
     ![Explore Data](../gain-insights/images/biask8.png)
 
 4.  **Explore** your Visualization.  
-A new Canvas Page is opening  
+A new Canvas Page will be opened  
 
     ![Explore Data](../gain-insights/images/valuebysalesweekforcustomersbychannel.png)
 
-5.  You notice that there are 2 measures, with 2 different units, on the same Y axis. That's difficult to interpret.  
+5.  You would notice that there are 2 measures, with 2 different units, on the same Y axis, which is difficult to interpret.  
 We have to move one of the measure to the second Y axis and get a proper visualization.  
 Change **"# Customers"** to the second Y Axis > Go to the **Grammar Panel**, under the **Values** Section, hover over "**# Customers**", right-click and select **Y2 axis**  
 
@@ -65,8 +64,8 @@ Change **"# Customers"** to the second Y Axis > Go to the **Grammar Panel**, und
 
 ## **STEP 2**: Use Advanced Analytics  
 
-You've created your visual to explore and find patterns with Value and Customers by Sales Week and Channel, and to understand the split over Categories. You spot it a decrease over Mobil Phones category.  
-Now you need to enhance the data displayed and add Advanced Analytics functions as easy as the right-click of a mouse.
+You've created your visual to explore and find patterns with Value and Customers by Sales Week and Channel, and to understand the split over Categories. You spot it a decrease over Mobile Phones category.  
+Now you need to enhance the insights is the data displayed and add Advanced Analytics functions as easy as the right-click of a mouse.
 
 1. Add a **Trend Line**  
 Adding Trend lines is easy. It is used to analyze the specific direction of a group of value sets.  
@@ -87,7 +86,7 @@ Go to **Analytics** tab, and is you click on "Linear" you can select a different
     > please check this [blog](https://blogs.oracle.com/analytics/how-to-add-functions-with-a-simple-right-click-in-oracle-analytics) for deeper details.
 
 4.  Add a **Forecast**  
-Adding a **Forecast** is pretty much the same one mouse click as the Trend lines one.  
+Adding a **Forecast** is pretty much the same way as the Trend lines one.  
 
     Forecasting is the process of making predictions about the future based on past and present data and most commonly by analysis of trends.  
     Right-click your visualization, select **Add Statistics** and choose **Forecast**.  
@@ -99,13 +98,13 @@ Adding a **Forecast** is pretty much the same one mouse click as the Trend lines
     ![Add Forecast](../gain-insights/images/addforecast2.png)
 
 6.  The **Properties** of the Forecast can be controlled on the "**Chart Properties**" pane from bottom left side.  
-Go to **Analytics** tab, and is you click on "Linear" you can select a different Method (Exponential, Polynomial).
+Go to **Analytics** tab, and click on "Linear" you can select a different Method (Exponential, Polynomial).
 
     ![Forecast Properties Pane](../gain-insights/images/addforecast-propertiessmall.png)  
     Method is Next 3 periods, Model is Seasonal ARIMA (a regular pattern of changes that repeats over time periods), with 95% Prediction Interval.  
     > if you want more control over the various options for the computation you can create a [custom calculations](https://blogs.oracle.com/analytics/how-to-add-functions-with-a-simple-right-click-in-oracle-analytics) using Analytics functions.
 
-You have just finished to learn how starting from direct questions to your data you can move and explore automated generated visuals and enhancing by adding one-click advanced analytics functions to get further future looking insights.
+You have just finished to learn how to start from direct questions on your data. You can move and explore automated generated visuals and enhancing by adding one-click advanced analytics functions to get further future looking insights.
 
 You may now [proceed to the next lab](#next)
 
@@ -119,7 +118,7 @@ You may now [proceed to the next lab](#next)
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** - 
-- **Last Updated By/Date** - Lucian Dinescu, February 2021
+- **Last Updated By/Date** - Lucian Dinescu, April 2021
 
 ## Need Help?
 

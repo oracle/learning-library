@@ -18,8 +18,8 @@ _Estimated Lab Time:_ 20 minutes
 
 ### Prerequisites  
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance  
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
 
@@ -206,7 +206,7 @@ You may now [proceed to the next lab](#next)
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** - Priscila Iruela, Database Business Development | Juan Antonio Martin Pedro, Analytics Business Development Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Last Updated By/Date** - Lucian Dinescu, February 2021
+- **Last Updated By/Date** - Lucian Dinescu, April 2021
 
 ## Need Help?
 

@@ -15,8 +15,8 @@ _Estimated Lab Time_: 20 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
@@ -47,7 +47,7 @@ Still difficult to interpret.
     ![Add Data Set](../geo-maps/images/add-maritalstatus2.png)
 
 4.  Lets analyze by **Age**.  
-Select **AGE** and Drag and Drop it to **MARITAL_STATUS**.
+Select **AGE** and Drag and Drop it on **MARITAL\_STATUS**. **MARITAL\_STATUS** will be replaced with **Age**.
 
     ![Age](../geo-maps/images/replacewithage.png)
 
@@ -86,7 +86,7 @@ Drag **Income Group** to **Trellis Columns**
 
      ![Income Group](../geo-maps/images/replacewithincomegroup.png)
 
-12.  More so in the higher Income Group.  
+12.  You could find most of the customers from the higher Income Group.  
 
      ![Income Group](../geo-maps/images/replacewithincomegroup2.png)
 
@@ -100,7 +100,7 @@ Click **Above 130** to move to the Selections. Click anywhere in the Filter are.
 
      ![Above 130](../geo-maps/images/filterincomegroup2small.png)
 
-14. More so in the higher Income Group.
+15. You could find most of the customers from the higher Income Group.
 
      ![Higher Income Group](../geo-maps/images/replacewithincomegroup3.png)
 
@@ -212,7 +212,7 @@ Select Table visualization, go to **Export** icon on top right and select **File
     ![Export](../geo-maps/images/exporttabel2small.png)
 
 21. Check the downloaded csv file.  
-Notice that it has been exported the entire data from the filtered table (FL)
+Notice that it has exported the entire data from the filtered table (FL)
 
     ![Export](../geo-maps/images/exporttabel3small.png)  
     ![Export](../geo-maps/images/exporttabel4small.png)
@@ -231,7 +231,7 @@ You may now [proceed to the next lab](#next)
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
-- **Last Updated By/Date** - Lucian Dinescu, February 2021
+- **Last Updated By/Date** - Lucian Dinescu, April 2021
 
 ## Need Help?
 

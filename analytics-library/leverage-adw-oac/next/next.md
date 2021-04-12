@@ -9,9 +9,9 @@ Estimated workshop Time: 2 minutes
 
 ![Oracle Cloud Pricing](./images/next_banner.png)
 
-I hope you could complete all the workshops on this ADW and OAC workshop and you have learned the basic concepts from the technologies that we have used: - **Oracle Autonomous Database** - **Oracle Analytics Cloud**.
+I hope you have completed all the workshops on this ADW and OAC workshop and you have learned the basic concepts from the technologies that we have used: - **Oracle Autonomous Database** - **Oracle Analytics Cloud**.
 
-The technologies that we have covered on this workshop are using **Always Free** and **Free Trial** credits so you don't have to pay for the services that you have used. 
+The technologies that we have covered in this workshop are using **Always Free** and **Free Trial** credits, so you don't have to pay for the services that you have used. 
 
 If you want to **Upgrade** the Instances that we used, you can follow these simple steps to upgrade to your favorite paid subscription model.
 
@@ -23,7 +23,7 @@ Remember that you will see **Always Free** logo next to the name of your databas
 
 ![Always Free Database Details](./images/always_free_upgrade.png)
 
-1. We will upgrade to Paid License in this step. You can either click on the **Instance Type** that I referred before or click on **More Actions** bottom and go to **Upgrade Database Instance to Paid**, both ways bring you to the same step.
+1. We will upgrade to Paid License in this step. You can either click on the **Instance Type** that I  or click on **More Actions** bottom and go to **Upgrade Database Instance to Paid**, both ways bring you to the same step.
 
     ![Always Free Database Details More Actions](./images/always_free_upgrade_actions.png)
 

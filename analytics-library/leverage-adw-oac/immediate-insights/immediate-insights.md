@@ -15,8 +15,8 @@ _Estimated Lab Time:_ 25 minutes
 
 ### Prerequisites  
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
@@ -37,12 +37,12 @@ After you have applied the [starter file script](https://objectstorage.us-ashbur
     ![Create Project](../immediate-insights/images/blankcanvas.png)    
 
 ## **STEP 2**: Get Started with Visualizing Data  
-Before drowning into details, let us give you a quick **explanation** of the different parts of this screen. This will help you to easily follow the next steps.
+Before drowning into details, let us introduce you to the different sections of the screen. This will help you to easily follow the next steps.
 
 1. An **Oracle Analytics Project** consist of **three main parts** (you can see them at the top center part of the screen):
 
    ![OAC Navigation](./images/lab300_23b.png)  
-     - **Prepare**: Here is where you configure your data. You get a preview of each dataset on the project. You enrich it by adding columns, hiding or renaming the available ones. You can also define joins between datasets here  
+     - **Prepare**: Here is where you prepare your data. You get a preview of each dataset on the project. You enrich it by adding columns, hiding or renaming the available ones. You can also define joins between datasets here  
      - **Visualize**: Here is where you explore and Analyze the data. You can create several canvases to hold the different visualizations you define  
      - **Narrate**: Here is where you create a more presentation-oriented view of the analysis you created. This tab allows you to choose which insights to show and add comments and descriptions. It helps to understand your analysis journey and focus on showing the results
 
@@ -55,7 +55,7 @@ The **Visualize** screen is this one:
 
     Main areas to note here are:  
     - **Elements Pane**: Contains all fields from your datasets to be used in the project  
-    - **Properties Pane**: Allows you to define the properties and parameters of the selected object. If it is a column it will be highlighted in blue (in the screen PROD_ID in the Explorer menu is selected), if it is a graphic from the canvas it will have a thin blue borderline around it  
+    - **Properties Pane**: Allows you to define the properties and parameters of the selected object. If it is a column it will be highlighted in blue (in the screen PRODUCT in the Explorer menu is selected), if it is a graphic from the canvas it will have a thin blue borderline around it  
     - **Visualization Grammar Pane**: Contains definition of the selected Visualization, which fields to use and where (Axis, Filters, Trellis Groups...)
       > After you’ve selected the Data Sets for your project, you can begin to add data elements such as _measures_ and _attributes_ to visualizations
     - **Canvas**: Your play area. You can place your visuals here. You can also create more Canvases and copy/move visuals around
@@ -67,13 +67,13 @@ The **Visualize** screen is this one:
 Now that you know a bit your way around in the **Project**, you can continue with the lab.  
 **Remember** that you have just added the new dataset from the **DCA\_SALES\_DATA** table.  
 
-1. Let’s start by letting the system to generate insights.  
+1. Let’s start by allowing the system to generate insights.  
 This is the **Explain** feature.  
-    It works for both for **Attributes** and **Measure** columns, and helps to analyze important and non-obvious patterns in data.  
+    It works on both **Attributes** and **Measures** columns, and helps to analyze important and non-obvious patterns in data.  
     The insights that Explain delivers are based on the column type or aggregation that you chose and will vary according to the aggregation rule set for the chosen metric. Explain generates only the insights that makes sense for the column type that you chose.
 
 2. Explain for **Attributes**  
-    **_Basic Fact insights_** (distribution across categories)  
+    **_Basic Facts_** insights (distribution across categories)  
     **_Key Drivers_** list columns that influence attribute values and their distribution  
     **_Segment_** tab visualizes segments where value for the attribute can be identified with certain confidence based on other columns in the dataset  
     **_Anomalies_** tab performs combinatorial analysis between selected attribute and other attribute columns and shows groups that exhibit unexpected behavior
@@ -102,7 +102,7 @@ Select first two visualizations and click on top right of the insight (_Select f
 
    ![Explain Value](./images/explainvalueanomalies.png) 
 
-8. Go on top right of the page and click **Add Selected**
+8. Go to top right corner of the page and click **Add Selected**
 
   ![Explain Value](./images/explainvalueaddselected.png) 
 

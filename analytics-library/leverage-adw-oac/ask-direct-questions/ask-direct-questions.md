@@ -2,9 +2,11 @@
 
 ## Introduction
 
-When create a **Project** out of a **Data Set**, you see a blank canvas at first.  
-You avoid _blank canvas syndrome_  using **BI Ask** to find the data and quickly visualize it.  
-That's the _**Search Bar**_ on the _**OAC Home page**_.
+When you create a **Project** out of a **Data Set**, you have a blank canvas to start with.  
+You can avoid _blank canvas syndrome_  using **BI Ask** to find the data and quickly visualize it.  
+You can leverage the **BI ASK** feature using the _**Search Bar**_ on the _**OAC Home page**_.  
+Use BI Ask to direct type your questions (using Natural Language) on data with your desktop/laptop or ask the same on your mobile, with Day by Day mobile app.
+
 
 **BI Ask** (**N**atural **L**anguage **Q**uery **P**rocessing) promotes direct interactions between the users and the BI System to explicitly understand what every user is interested in.  
 It interprets semantic layer, user private data, expression library and catalog artifacts and generates on-the-fly queries – visualizations.
@@ -21,8 +23,8 @@ _Estimated Lab Time:_ 40 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
@@ -37,7 +39,7 @@ Note: if you are still on the previous lab, you can quickly Go Back ![Go Back](.
    ![Data](../ask-direct-questions/images/biaskconsoledata.png)
 
 2. **Select** your Data Set.  
-   From **Data** page, then **Data Sets** section identify **DCA\_SALES\_DATA** Data Set.  
+   From **Data** page, select **Data Sets** section and identify or search for **DCA\_SALES\_DATA** Data Set.  
    Click the **Actions menu** of the data set or right-click the Data Set, and click **Inspect**
 
    ![Data Set](../ask-direct-questions/images/dataset.png)
@@ -57,7 +59,7 @@ Note: if you are still on the previous lab, you can quickly Go Back ![Go Back](.
    Access to the Data Sets can be controlled from **Access** tab  
   
    ![Control](../ask-direct-questions/images/datasetcontrol.png)  
-   Note: is best practice to enforce control using **Roles** rather than individual **Users**
+   Note: best practice is to enforce control using **Roles** rather than individual **Users**
 
    Click **Save** and then **Close** button.
 
@@ -278,7 +280,7 @@ You may now [proceed to the next lab](#next)
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** - 
-- **Last Updated By/Date** - Lucian Dinescu, February 2021
+- **Last Updated By/Date** - Lucian Dinescu, April 2021
 
 ## Need Help?
 

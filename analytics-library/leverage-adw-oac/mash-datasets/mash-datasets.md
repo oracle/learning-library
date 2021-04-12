@@ -14,8 +14,8 @@ _Estimated Lab Time_: 15 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
@@ -62,7 +62,7 @@ Click **Add** button from top right.
 
 7.  Recommendations on columns are available for the new Data Set as well.  
 Lets enhance the city column with population.  
-Select **CITY** column and choose **Enhance CITY with Population** from recommendations.
+Select **CITY** column and choose **Enrich CITY with Population** from recommendations.
 
     ![Enhance City with Population](../mash-datasets/images/prepscript-enhancewithpopulation.png)
 
@@ -77,22 +77,22 @@ Type **Below 70** (instead of Group 1) and select A, B and C.
 
     ![Below 70](../mash-datasets/images/prepscript-group1.png)
 
-10.  Add first group. 
+10.  Add second group. 
 Click on '+' sign
 
      ![Add 1st Group](../mash-datasets/images/add-group.png)
 
-11.  Add second group.  
+11.  Type group name.  
 Type **From 70 to 130**  (instead of Group 2)  and select D, E and F
 
      ![From 70 to 130](../mash-datasets/images/prepscript-group2.png)
 
-12.  Add second group.  
+12.  Add third group.  
 Click on '+' sign
 
      ![Add 2nd Group](../mash-datasets/images/add-group2.png)
 
-13.  Add third group.  
+13.  Type group name.  
 Type **Above 130**  (instead of Group 3), select **Add All**.
 
      ![Above 130](../mash-datasets/images/prepscript-group3.png)
@@ -109,7 +109,7 @@ Click **Apply Script**.
 ## **STEP 2**: Join the Data Sets
 
 When you add more than one data set to a project, the system tries to find matches for the data that’s added. It automatically matches external dimensions where they share a common name and have a compatible data type with attributes in the existing data set.  
-Lets join the Data Sets using **CUST_ID** as the join condition between the data sets.
+Lets join the Data Sets using **CUST\_ID** as the join condition between the data sets.
 
 1.  Go to **Data Diagram** tab.  
 In this tab, you can view a representation of the **different datasets** included in the project and their **relationships**.  
@@ -119,7 +119,7 @@ Click on **Data Diagram** tab
 
 2.  **Connect** Data Sets.  
 Currently, there is no relationship defined, so you see both as isolated boxes.  
-Hover the mouse  over the imaginary line **between** the two Data Sets and click on the **0 number** that will appear.
+Mouse  hover on the imaginary dotted line **between** the two Data Sets and click on the **0 number** that will appear.
 
     ![Connect Data Sets](../mash-datasets/images/datadiagram-join.png)
 
@@ -162,7 +162,7 @@ You may now [proceed to the next lab](#next)
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
-- **Last Updated By/Date** - Lucian Dinescu, February 2021
+- **Last Updated By/Date** - Lucian Dinescu, April 2021
 
 ## Need Help?
 

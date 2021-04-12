@@ -18,8 +18,8 @@ _Estimated Lab Time_: 20 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
@@ -92,7 +92,7 @@ Click **Add a Step(+)** and Click **Merge Column**.
 9.  New column **Customer Name**.  
 Type in **New column name**: 'Customer Name', **Merge column** select 'FIRST\_NAME', **With**: select 'LAST\_NAME' and **Delimiter**: Space ( ).
 
-    ![Customer Name](../data-flows/images/selectcolumnremoveselected.png)
+    ![Customer Name](../data-flows/images/customername.png)
 
 10.  Notice the new column created.
 
@@ -141,7 +141,7 @@ Click on **Go Back** icon.
 
      ![Go Back](../data-flows/images/gobacksmall.png)
 
-## **STEP 2**: Connect to SQL Developer Web tool to check you data
+## **STEP 2**: Connect to SQL Developer Web tool to check your data
 
 **Oracle SQL Developer Web (Database Actions)** is the web-based version of Oracle SQL Developer that enables you to execute queries and scripts, create database objects, load data, build data models, and monitor database performance.  
 To connect to Oracle SQL Developer Web you have at least a couple of options.
@@ -177,7 +177,7 @@ You may now [proceed to the next lab](#next)
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
-- **Last Updated By/Date** - Lucian Dinescu, February 2021
+- **Last Updated By/Date** - Lucian Dinescu, April 2021
 
 ## Need Help?
 

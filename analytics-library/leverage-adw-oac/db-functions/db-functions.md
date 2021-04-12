@@ -23,8 +23,8 @@ _Estimated Lab Time_: 30 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier or Paid
-* You have completed  
+* An Oracle Cloud Free Tier or Paid account
+* You should have completed  
     * Lab 1: Provisioning your Autonomous Database instance
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
@@ -68,8 +68,8 @@ Click **Navigator** and select **Home**
 
     ![Home](../db-functions/images/home.png)
 
-6.  You should also need to make sure that **Data Access** is set to **Live** for the Data Sets that will be referenced by the Evaluate function.  
-By setting it to Live, you are ensuring that OAC Server always sends the query to the underlying database and does not try to simply retrieve results from cache.  
+6.  You make sure that **Data Access** is set to **Live** for the Data Sets that will be referenced by the Evaluate function.  
+By setting it to Live, you are ensuring that OAC Server always sends the query to the underlying database and does not retrieve results from cache.  
 You have already configured **DCA\_SALES\_DATA** to **Live**.
 ## **STEP 2**: Leverage EVALUATE function
 
@@ -252,7 +252,7 @@ Congrats, you have just finished this workshop.
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
-- **Last Updated By/Date** - Lucian Dinescu, February 2021
+- **Last Updated By/Date** - Lucian Dinescu, April 2021
 
 ## Need Help?
 
