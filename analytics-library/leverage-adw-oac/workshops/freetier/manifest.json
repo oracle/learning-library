@@ -65,7 +65,7 @@
     {
        "title": "Need Help?",
        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-       "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+       "filename":"../../need-help-freetier/need-help-freetier.md"
     }
   ]
 }

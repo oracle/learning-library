@@ -247,6 +247,7 @@ Congrats, you have just finished this workshop.
 * Free [Udemy: Modern Data Visualization with Oracle Analytics Cloud](https://www.udemy.com/augmented-analytics/), Section 4: Story Telling and Collaborating your Discovery Project / Section 30. Build Calculated Metrics
 * [Evaluate Functions](https://docs.oracle.com/en/cloud/paas/bi-cloud/bilug/functions.html#GUID-7035040C-BB40-4392-920A-9A435593F659)
 * [Aggregate Functions](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/functions.html#GUID-8A4462E9-68C8-4064-8A98-D7390207F92A)
+* [Making the Most of OAC and Oracle Machine Learning Native Integration](https://analyticsanddatasummit.org/techcasts/)
 
 ## **Acknowledgements**
 
