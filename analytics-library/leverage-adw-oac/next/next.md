@@ -45,7 +45,7 @@ Remember that you will see **Always Free** logo next to the name of your databas
 
 ## **STEP 2**: Want to learn more?
 
-If you have enjoyed the workshop, give me a star on Github: [click here](https://github.com/PriscilaIruela/ADW-OAC-HOLs)!
+If you have enjoyed the workshop, give me a star on Github: [click here](https://github.com/LucianDinescu/learning-library/tree/master/analytics-library/leverage-adw-oac)!
 
 ![Github start](./images/gthib_start.png)
 
@@ -59,4 +59,4 @@ Learn more about [Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/
 
 - **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Last Updated By/Date** - Kamryn Vinson, October 2020
+- **Last Updated By/Date** - Lucian Dinescu, April 2021

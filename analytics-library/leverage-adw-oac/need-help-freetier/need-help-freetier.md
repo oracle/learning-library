@@ -7,11 +7,7 @@ If you still find yourself stuck or would like to report an issue with the works
 
 ![](images/help-button.png)
 
-For more about getting support using our email, click [here](#HowToFormatYourSupportEmailRequest).
-
-### Common Issues Table of Contents
-  - [Can't Login to Oracle Cloud](#CantLogintoOracleCloud)
-  - [Connectivity Issues? Unable To Upload Data or Connect To The database?](#ConnectivityIssues?UnableToUploadDataorConnectToThedatabase?)
+For more about getting support using our email, click [here](#How-To-Format-Your-Support-Email-Request).
 
 ### **Rate This Workshop**
 When you are finished please don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating. 
@@ -42,7 +38,7 @@ This will construct an email in your default mail application that is auto popul
 
     ![](images/problem-picture.png)
 
-## Connectivity Issues? Unable to Upload Data or Connect to the Database?
+## Connectivity Issues
 Are you connected to a **VPN**, **Corporate Network**, or behind a strict **Firewall**?
 
 If any of these three conditions are true, some ports in your network may be closed to traffic. Uploading data through Database Actions in your web browser and applications like the Oracle Analytics Tool could be restricted and may appear to "Hang" or freeze. 
