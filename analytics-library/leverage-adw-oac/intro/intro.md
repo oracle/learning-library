@@ -36,9 +36,10 @@ Watch our short video that explains **Oracle Autonomous Database (ADB)** and **O
 
 Estimated Workshop Time: 210 minutes
 
-*At this point, you are ready to start learning! Please proceed*
+You may now [proceed to the next lab](#next)
 
 ## **Acknowledgements**
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** - Priscila Iruela, Database Business Development | Juan Antonio Martin Pedro, Analytics Business Development Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Last Updated By/Date** - Lucian Dinescu, January 2021
+- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
+- **Last Updated By/Date** - Lucian Dinescu, April 2021

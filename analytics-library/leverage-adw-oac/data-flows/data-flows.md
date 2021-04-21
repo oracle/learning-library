@@ -177,4 +177,5 @@ You may now [proceed to the next lab](#next)
 
 - **Author** - Lucian Dinescu, Product Strategy, Analytics
 - **Contributors** -
+- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
 - **Last Updated By/Date** - Lucian Dinescu, April 2021
