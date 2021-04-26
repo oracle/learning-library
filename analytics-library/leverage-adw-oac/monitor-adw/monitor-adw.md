@@ -36,7 +36,7 @@ Log in to **Oracle Cloud Infrastructure Console**, select **Autonomous Data Ware
 2.  Click on the hamburger **MENU** link at the upper left corner of the page.  
 This will produce a drop-down menu, where you select **Autonomous Data Warehouse.** 
 
-    ![Autonomous Data Warehouse](../monitor-adw/images/ociadwhsmall.png)
+    ![Autonomous Data Warehouse](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png)
 
 3.  Select your Compartment and Click on your ADW instance
 

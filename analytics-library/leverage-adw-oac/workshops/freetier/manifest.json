@@ -3,12 +3,12 @@
   "help": "livelabs-help-analytics_us@oracle.com",
   "tutorials": [
     {
-      "title": "Prerequisites",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
-    {
       "title": "Introduction",
       "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Getting Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
       "title": "Lab 1: Provisioning your Autonomous Database instance",
