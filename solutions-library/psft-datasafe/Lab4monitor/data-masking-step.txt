@@ -1,0 +1,13 @@
+5. The next job we can run is for Data Masking. This is mask the sensitive data that you discovered in the last step. Note: this should only be done on non-production databases. 
+
+  a. Click on **Data Masking** on the left panel and select your target database. Click **Continue**. 
+
+  b. Select **Create** for Masking Policy and provide a name for the policy, if desired. 
+
+  c. You can either click **Create** for the Sensitive Data Model to create a new model like we did in the last step, or you can click **Pick from Library** to select a saved model that you have already created. 
+
+  d. Leave **Show and save sample data?** unchecked. Select the compartment where you would like to store this policy. Click **Continue**.
+
+  e. If you are creating a new Sensitive Data Model, you will follow similar steps to the last step. If you are picking from a library (e.g. the model you created in the previous step), you will select your model from a list available in the Data Safe Console. 
+
+  f. 

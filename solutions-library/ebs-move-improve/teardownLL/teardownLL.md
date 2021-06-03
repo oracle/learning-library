@@ -24,8 +24,6 @@ Estimated Lab Time: 5 minutes
 
     The environment will begin the deletion process. This will teardown all resources created by the environment. You can check the progress of the deletion by clicking the link next to Latest Activity. 
 
-    ![](./images/latestActivity.png " ")
-
     Once the environemnt has been destroyed, it will no longer appear on the Cloud Manager Environements page. 
 
     You can repeat this step for all other EBS environments you wish to delete. 
@@ -38,6 +36,6 @@ Estimated Lab Time: 5 minutes
   - Santiago Bastidas, Product Management Director
   - Quintin Hill, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Oct 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 
 

@@ -1,0 +1,1 @@
+A screenshot of the Registered Databases page in the Oracle Data Safe service showing the Service Console option for a target database.

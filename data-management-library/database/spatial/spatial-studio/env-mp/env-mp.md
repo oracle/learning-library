@@ -103,7 +103,7 @@ In this lab, you will:
 
   Click the link to continue to the website.
 
-2. Enter the Spatial Studio admin user name (default is studio_admin) and the password you entered in the Step 2 (Create Stack wizard, item 3). Then click Sign In.
+2. Enter the Spatial Studio admin user name (default is admin) and the password you entered in the Step 2 (Create Stack wizard, item 3). Then click Sign In.
 
   ![Image alt text](images/env-marketplace-14.png "Image title")
 

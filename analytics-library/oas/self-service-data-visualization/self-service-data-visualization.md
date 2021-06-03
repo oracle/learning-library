@@ -31,7 +31,7 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
 - vendor payments.xlsx
 - JRC Americas Group.jpg
 
-## **Step 1:** Data Visualization and Mash Ups
+## **STEP 1:** Data Visualization and Mash Ups
 1. From the browser session you started in *Lab: Initialize Environment*, Click on *"Create"* at the upper right-hand corner
    ![](./images/asdvff1.png " ")
 
@@ -80,18 +80,44 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
    Drag and drop, or browse and select the *“Inventory.xlsx”* file from the staging area where you unpacked the downloaded artifacts in *Lab: Initialize Environment*
    ![](./images/asdvff12.png " ")
 
-11. Oracle Analytics Server includes its own light weight data preparation capabilities. When you add your data source it will take you to the Preparation tab before adding the data to the project. Let’s define the relationship between the subject area data source and the spreadsheet. Note here that if the attributes were named exactly the same they would be matched automatically.
+11. Oracle Analytics Server includes its own light weight data preparation capabilities. When you import the spreadsheet, you will navigate to the preparation tab before adding the data to the project.  Here you can make some modifications to the data elements or make modifications to your data based upon any recommendations Oracle Analytics knowledge service suggests.  Additionally, you can define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis. 
 
-    - **Click** on "Product Name."  Note the properties box in the lower left hand corner.
-    - **Click** on the "None" link associated with "Match" and select "Products -> Product" from the subject area.
+    - **Click** on the "Product Name” column.  Note the properties box in the lower left hand corner.
 
-   ![](./images/asdvff13.png " ")
-   ![](./images/asdvff14.png " ")
+    The properties box provides format and configuration settings.  Settings can be modified as needed.  We are going to join our subject area – SampleApp to our inventory spreadsheet by identifying the key field.
+
+    - Within the properties box, navigate to “match” and Click on the "None".
+    ![](./images/asdvff13.png " ")
+
+    You will see the SampleApp data source, and it’s data elements. 
+
+    -	Select "Products -> Product" from the subject area.
+    ![](./images/asdvff14.png " ")
 
     - **Click** "Add."
     - **Navigate** to the "Visualize" tab, where you can start playing with the data.
 
-   ![](./images/asdvff15.png " ")
+    ![](./images/asdvff15.png " ")
+
+    Note:  You may also join data sources via the data diagrams tab within the prepare tab of the project. 
+    
+    Once you’ve added the inventory spreadsheet, notice the additional tab “data diagrams” in the bottom left of the work area. 
+
+    ![](./images/asdvff62.4.png " ")
+
+    Click “Data Diagram”.  You will see a graphical representation of the connection. 
+    
+    ![](./images/asdvff62.5.png " ")
+
+    As you become more familiar with the features of Oracle Analytics, you will find there are often multiple ways to execute functions.  
+    
+    Click on the link in between SampleApp and Inventory. 
+    
+    You may set the connection in a similar fashion by clicking on “add another match” .
+
+    ![](./images/asdvff62.6.png " ")
+
+
 
 12. Explore the data elements panel on the left. Note the Inventory spread sheet is listed under SampleApp. Now, in order to do a mashup of the data sets, **hold control** and **select** "Product -> Product" from the subject area and "Stock" and "Demand" from the spreadsheet source.
 
@@ -170,7 +196,7 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
 27. **Save** your project under  /My Folders as `"<your_name>_Project`".
    ![](./images/asdvff34.png " ")
 
-## **Step 2:** Custom Calculations and Maps
+## **STEP 2:** Custom Calculations and Maps
 The data visualization capabilities in Oracle Analytics Server include mapping and custom calculations. In this exercise we will use both capabilities: we will create custom calculations based on two available metrics, and we will then display the results on a map.
 
 1. In this exercise we will create two custom calculations and then use Oracle’s self-service built in map capabilities to analyze state and average profit per customer.
@@ -185,8 +211,7 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
    Now we will create a new metric called "Profit by Customer Count".
    ![](./images/asdvff36.png " ")
 
-3. Utilize the expression builder to create the calculation.
-   ![](./images/asdvff37.png " ")
+3. We are going to utilize the expression builder to create the calculation.  Notice there are a wide range of functions available for creating custom calculations.
 
 4. **Select** "Profit Value" from "Profit Metrics" and **drag** and **drop** into the calculation dialog. Type "/" after the "Profit Value" then drag and drop "# of Customers" from
 "Revenue Metrics" after "/." Click Validate. Click Save.
@@ -194,36 +219,30 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
    You have successfully created your own custom calculation that can be used like any other metric.
    ![](./images/asdvff38.png " ")
 
-5. There are a wide range of functions available for creating custom calculations.
-   ![](./images/asdvff39.png " ")
+5. Let’s utilize our custom calculation in a couple of visualizations.
 
-6. **Select** "Country Name" from "Geography" and drag and drop to the top left of the canvas, right above the canvas,  where it is labelled "Click here or drag data to add filter." Filter to "United States" by typing "uni" and select "United States".
+   Select "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labelled "Click here or drag data to add filter." Filter to "United States" by typing "uni" and select "United States".
+
    ![](./images/asdvff40.png " ")
 
-7. **Select** "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas." You will notice that not all states are making a profit.
+6. Select "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas."  Notice that not all states are making a profit. 
+   ![](./images/asdvff62.8.png " ")
 
    Let’s see what this looks like on a map.
-   ![](./images/asdvff41.png " ")
 
-8. Switch the visualization to horizontal bar graph if needed.
+7. On the upper right corner of the visual, click the menu hamburger and select "Edit" and then "Duplicate Visualization".
 
-   On the upper right corner of the visual, **click** the menu hamburger and **select** "Edit" and then "Duplicate Visualization".
-   ![](./images/asdvff42.png " ")
+   ![](./images/asdvff62.9.png " ")
 
-   ![](./images/asdvff43.png " ")
+8. Change the visualization type for the visualizations by selecting the "change visualization" menu in the upper left-hand corner of the grammar panel.
 
-9. Delete duplicated visualization by right **clicking** visualization and **selecting** "Delete Visualization".
+   Select map. 
+   ![](./images/asdvff62.10.png " ")
 
-   Change the visualization type for the visualizations by selecting the "change visualization" menu in the upper left-hand corner of the grammar panel.
+9. Let’s change the default color scheme to a red to green gradient. From Color, click on the down arrow > Manage Assignments
+   ![](./images/asdvff62.11.png " ")
 
-   **Select** map.
-   ![](./images/asdvff44.png " ")
-   ![](./images/asdvff45.png " ")
-
-10. Let’s change the default color scheme to a red to green gradient. From Color Assignment, **click** on the down arrow  > Manage Assignments
-   ![](./images/asdvff46.png " ")
-
-11. Scroll to Series, and locate the calculation you created : Profit by Customer Count measure
+10. Scroll to Series, and locate the calculation you created : Profit by Customer Count measure
 
       - **Click** the edit option (the pen) for Profit by Customer Count.
       - **Click** the Down arrow next to the color bar
@@ -232,13 +251,17 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
    ![](./images/asdvff47.png " ")
 
+11. You have successfully completed custom calculations and mapping. Select "Save" to save and update your project.
+
+   ![](./images/asdvff62.13.png " ")
+
 12. Within the properties box, select the visualization options. Change the "Zoom Control" to "On".
    ![](./images/asdvff48.png " ")
 
 13. **Click** the + on the zoom. You have successfully completed custom calculations and mapping. Select "Save" to save and update your project.
    ![](./images/asdvff49.png " ")
 
-## **Step 3:** Freeform Canvases, Trend Lines, and Custom Backgrounds  
+## **STEP 3:** Freeform Canvases, Trend Lines, and Custom Backgrounds  
 Oracle self-service includes a freeform canvas mode. This allows you to place visualizations and content anywhere on the canvas. In this exercise we will use this capability to display the *"JTC Americas Group"* corporate logo as the background for trendline analysis. Advanced analytic functions such as trendline, forecast, clustering and identifying outliers are as easy as one click or a drag and drop.
 
 1. In this exercise, we will leverage the freeform capabilities of a canvas to create a custom background. Let’s start by adding a new canvas. Click on the "+" icon at the bottom to create a new canvas. On the new canvas click the upside down triangle to the right of its name. Select "Canvas Properties".
@@ -286,7 +309,7 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
 11. The result should look something like this. Select "save" to update and save your project.
    ![](./images/asdvff62.png " ")
 
-## **Step 4:** Uploading a custom visual extension (Read-only)  
+## **STEP 4:** Uploading a custom visual extension (Read-only)  
 *Note:* Tasks listed under this step are for ***reference*** only as they have already been performed on your instance
 
 Oracle Analytics provides users choice and flexibility with deployment.  Users can upload custom visualizations and analytics scrips in order to expand and enhance self-service visualization capabilities. In this step, you will review how to leverage two of our extension options.
@@ -310,4 +333,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Linda Dest, Jyotsana Rawat, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021

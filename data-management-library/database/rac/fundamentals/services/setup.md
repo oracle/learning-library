@@ -10,7 +10,7 @@ This lab will show you how to setup your database schemas for the subsequent lab
 
 Watch the video below for an overview of the Install Sample Schema lab
 [](youtube:rUIxZjy9HQg)
-  
+
 ## **STEP**: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
@@ -19,14 +19,14 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the oracle user*.  Run a *whoami* to ensure the value *oracle* comes back.)
 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
-2.  Start Cloudshell
-   
+2.  Start Cloud Shell
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -34,7 +34,7 @@ Copy the following commands into your terminal. These commands download the file
     ![](../clusterware/images/racnode1-login.png " ")
 
 4.  Switch to the oracle user
-   
+
     ````
     <copy>
     sudo su - oracle
@@ -73,7 +73,7 @@ Copy the following commands into your terminal. These commands download the file
      ![](./images/setup-num7.png " " )
 
 8. To save the file press the **esc** key and **wq!** to save the file.
-   
+
 9.  No other lines need to be changed.  Run the **setupDB.sh** script
 
     ````

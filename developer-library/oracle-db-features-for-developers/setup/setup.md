@@ -20,7 +20,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     <copy>
     cd /home/opc/
 
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3chG0fCfimn_Dq6kER9r0qOBqjPLfM3I4b3l0EaN2w4/n/c4u03/b/labfiles/o/nfscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/MdRi7ggqoriYiU9YHtIWnlEyjL8F9uIoCXLtygMh6gBPIUH3dkYtxv90tPco0aZD/n/c4u03/b/labfiles/o/nfscripts.zip
 
     unzip nfscripts.zip;
 

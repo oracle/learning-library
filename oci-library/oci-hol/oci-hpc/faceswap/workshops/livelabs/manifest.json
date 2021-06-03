@@ -10,37 +10,32 @@
         {
             "title": "Introduction to the workshop",
             "description": "This is an introduction to the workshop, the topic of deepfake and the faceswap application.",
-            "filename": "../../Introduction to the workshop/Introduction to the workshop.md"
+            "filename": "../../Introduction-to-the-workshop/Introduction-to-the-workshop.md"
         },
         {
             "title": "Lab 1: Create SSH keys",
             "description": "This lab walks you through the required and optional steps to create SSH keys that you will need to connect to your compute instance.",
-            "filename": "../../Lab1/Lab 1 - Create SSH keys.md"
+            "filename": "../../Lab1/Lab1-Create-SSH-keys.md"
         },
         {
             "title": "Lab 2: Provision GPU instance",
             "description": "This lab you through the required and optional steps to launch a GPU instance on OCI .",
-            "filename": "../../Lab2/Lab 2 - Provision a GPU instance.md"
+            "filename": "../../Lab2/Lab2-Provision-a-GPU-instance.md"
         },
         {
             "title": "Lab 3: Set up and access through VNC",
             "description": "This lab will walk through the required steps to set up and access your Ubuntu instance through a VNC client (here: TigerVNC).",
-            "filename": "../../Lab3/Set up and access through VNC.md"
+            "filename": "../../Lab3/Set-up-and-access-through-VNC.md"
         },
         {
             "title": "Lab 4: Install Faceswap",
             "description": "This lab will walk through the required and optional steps to install Faceswap on your compute instance.",
-            "filename": "../../Lab4/Install Faceswap.md"
+            "filename": "../../Lab4/Install-Faceswap.md"
         },
         {
             "title": "Lab 5: Run Faceswap",
             "description": "This lab will walk through the required and optional steps to run Faceswap on your compute instance (terminal and GUI).",
-            "filename": "../../Lab5/Run Faceswap.md"
-        },
-        {
-              "title": "Lab 5: Run Faceswap",
-              "description": "This lab will walk through the required and optional steps to run Faceswap on your compute instance (terminal and GUI).",
-              "filename": "../../Lab5/Run Faceswap.md"
+            "filename": "../../Lab5/Run-Faceswap.md"
         },
         {
             "title": "Need Help?",

@@ -1,0 +1,33 @@
+{
+  "workshoptitle": "Deploying Nextcloud on the Ampere A1 compute in Oracle Cloud Infrastructure",
+  "help": "livelabs-help-**enterarea**_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Getting Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Create an OCI Arm A1 instance",
+      "filename": "../../../common/create-a1-instance-ol8/create-a1-instance.md"
+    },
+    {
+      "title": "Expose application ports to users",
+      "filename": "../../../common/allow-traffic-8080/allow-traffic.md"
+    },
+    {
+      "title": "Deploying Nextcloud on the Ampere A1 Compute",
+      "description": "This workshop guides the user on how to get started with Nextcloud on the OCI Arm A1 compute platform. Nextcloud is a suite of file hosting and collaboration tools, and can be used for collaborative working as well as personal file management and sync in the cloud. ",
+      "filename": "../../tutorial/deploy-nextcloud-a1.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+    }
+  ]
+}

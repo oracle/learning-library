@@ -41,9 +41,9 @@ menu:
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+  ![](./images/big-data.png " ")
 
 3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
 
@@ -144,7 +144,7 @@ In this step, you will set three variables using the **`export`** command. The v
   ![](./images/ll-output-white-ip-address.png " ")
   </if>
 
-7.  To view the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > IP Management**. In the **IP Management** section on the left, the **Public IPs** option is selected by default. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** list.
+7.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
   <if type="freetier">
   ![](./images/mn0-reserved-public-ip.png " ")
@@ -422,4 +422,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, March 2021
+* **Last Updated By/Date:** Lauran Serhal, May 2021

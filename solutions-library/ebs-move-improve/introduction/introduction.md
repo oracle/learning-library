@@ -138,6 +138,6 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 * **Author:** Quintin Hill, Cloud Engineering
 * **Contributors:** Santiago Bastidas, Product Management Director
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
 

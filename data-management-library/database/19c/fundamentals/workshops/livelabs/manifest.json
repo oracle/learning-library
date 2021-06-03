@@ -1,40 +1,88 @@
 {
-    "workshoptitle":"Oracle Database 19c New Features",  
+    "workshoptitle":"Oracle Database 19c New Features",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
+
+    {
+        "title": "Introduction",
+        "description": "Introduction to Oracle Database 19c and the workshop.",
+        "filename": "./../../intro/intro.md",
+        "type": "livelabs"
+    },
         {
-            "title": "Introduction",
-            "description": "Introduction to Multitenant Workshop",
-            "filename": "./../../intro/intro.md",
-            "type": "compute"
-        },
-         {
-            "title": "Getting Started",
-            "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-        },
-        {
-            "title": "Introduction",
-            "description": "Introduction to Multitenant Workshop",
-            "filename": "./../../intro/intro.md",
-            "type": "compute"
-        },
-        {
-            "title": "Lab 1: Verify Setup",
-            "description": "Finish LiveLabs setup",
-            "publisheddate": "3/24/2020",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/verify-setup-19c-livelabs.md"
+            "title": "Getting Started - LiveLabs Login",
+            "description": "Get an Oracle Cloud Free Tier account and sign in.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md",
+            "type": "livelabs"
         },
         {
-            "title": "Lab 3: Start Labs Here",
-            "description": "Duplicate this folder and rename based on lab name",
-            "filename": "./../../analyze/analyze.md",
-            "type": "compute"
+            "title": "Lab 1: Generate SSH Keys - Cloud Shell",
+            "description": "Steps to generate SSH keys using Cloud Shell.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md",
+            "type": "livelabs"
         },
+        {
+        "title": "Lab 2: Obtain a Compute Image with Staged Oracle Database 19c Installer Files",
+        "description": "Obtain a compute instance wtih staged Oracle Database 19c installer files by using Resource Manager.",
+        "filename": "./../../obtain-compute-image-19c-staged/obtain-compute-image-19c-staged.md",
+        "type": "livelabs"
+    },
+
+        {
+        "title": "Lab 3: Install Oracle Database 19c with Automatic Root Script Execution",
+        "description": "Install Oracle Database 19c with automatic configuration script execution.",
+        "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md",
+        "type": "livelabs"
+         },
+          {
+              "title": "Lab 4: Obtain a Compute Image with Oracle Database 19c Installed",
+              "description": "Obtain a compute instance that has Oracle Database 19c already installed by using Resource Manager",
+              "filename": "./../../obtain-compute-image-19c-installed/obtain-compute-image-19c-installed.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 5: Clone a PDB by Using DBCA in Silent Mode",
+              "description": "Clone a PDB by using DBCA in silent mode.",
+              "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 6: Relocate a PDB by Using DBCA in Silent Mode",
+              "description": "Relocate a PDB by using DBCA in silent mode.",
+              "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 7: Duplicate a CDB by Using DBCA in Silent Mode",
+              "description": "Duplicate a CDB by using DBCA in silent mode.",
+              "filename": "./../../duplicate-cdb-using-dbca-silent-mode/duplicate-cdb-using-dbca-silent-mode.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 8: Decrease the Transportable Tablespace (TTS) Import and Export Time",
+              "description": "Decrease the transportable tablespace (TTS) import and export time.",
+              "filename": "./../../decrease-transportable-tablespace-import-export-time/decrease-transportable-tablespace-import-export-time.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 9: Omit the Column Encryption Attribute During Import",
+              "description": "Omit the column encryption attribute during import.",
+              "filename": "./../../omit-column-encryption-attribute-during-import/omit-column-encryption-attribute-during-import.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 10: Explore Automatic Deletion of Flashback Logs",
+              "description": "Omit the column encryption attribute during import.",
+              "filename": "./../../explore-automatic-deletion-flashback-logs/explore-automatic-deletion-flashback-logs.md",
+              "type": "livelabs"
+          },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

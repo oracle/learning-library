@@ -36,29 +36,56 @@ In this lab, you will:
 
 ## **STEP 1:** Setup Docker on compute instance
 
-1. Using the terminal of your choice (we recommend the Oracle Cloud Shell) login to the instance you created using secure shell (ssh).
+1. If you are not logged into you compute instance as an `opc` user, using the terminal of your choice (we recommend using the Oracle Cloud Shell) login to the instance you created using secure shell (ssh).
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-2. You will use yum (a package management tool for Linux) to install the Docker engine, enable it to start on re-boot, grant docker privledges to the opc user and finally install GIT.  When prompted, press *Y* to download.  All of these steps will be performed as the root user.
+2.  Become a `root` user first, to install docker on compute instance
 
     ````
     <copy>
     sudo -s
-    yum install docker-engine
+    </copy>
+    ````
+
+3.  To install Docker on Oracle Linux 8, install the yum-utils package and enable all the required repositories.
+
+    ````
+    <copy>
+    dnf install -y dnf-utils zip unzip
+    dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+    </copy>
+    ````
+
+4. Run the below commands to install Docker on Oracle Linux 8.
+
+    ```
+    <copy>
+    dnf remove -y runc
+    dnf install -y docker-ce --nobest
+    </copy>
+    ```
+
+5.  Grant Docker privileges to the `opc` user.
+
+    ````
+    <copy>
     usermod -aG docker opc
+    </copy>
+    ````
+
+6. Enable and start the docker service
+
+    ````
+    <copy>
     systemctl enable docker
     systemctl start docker
     </copy>
     ````
 
-   ![](images/python1.png " ")
-
-   ![](images/python2.png " ")
-
-3. Next, we are going to install git using yum as the root user.
+7. Next, as the root user, we are going to install git using yum (package management tool for Linux). We will need git in the next lab. Enter `y` when prompted.
 
     ````
     <copy>
@@ -68,7 +95,7 @@ In this lab, you will:
 
     ![](images/installgit.png " ")
 
-4. Verify the version by switching to the opc user.
+8. Verify the version by switching to the opc user.
 
     ````
     <copy>
@@ -81,7 +108,7 @@ In this lab, you will:
 
     ![](images/gitversion.png " ")
 
-5. Place your server in permissive mode.
+9. Place your server in permissive mode.
 
     ````
     <copy>
@@ -93,7 +120,7 @@ In this lab, you will:
 
     ![](images/setenforce.png " ")
 
-6. Switch back to the opc user and verify you are the `opc` user.
+10. Switch back to the opc user and verify you are the `opc` user.
 
     ````
     <copy>
@@ -114,13 +141,14 @@ In this lab, you will:
 
     ![](images/dockerversion2.png " ")
 
-2. Start your application, restclient, in docker on port 8002 in json format.
+2. Start your application, restclient, in docker on port 8002 in json format and verify if containers are running.
 
 
     ````
     <copy>
     docker ps
     docker run -d -it --rm --name restclient -p=8002:8002 -e DS='json' wvbirder/restclient
+    docker ps -a
     </copy>
     ````
 
@@ -133,17 +161,13 @@ In this lab, you will:
 
     ![](images/dockerps.png " ")
 
-3. Find the public IP address of your instances.  Compute -> Instance. It is listed on the main page.  If you would like to do more exploration, it is also listed in the page for your instance.
+3. Open up a browser on your laptop and go to your public URL on port 8002. Replace `Enter IP Address` with the Public IP of your compute instance you noted earlier in lab 2.
 
-    ![](images/computeinstance.png " ")
+    ```
+    http://Enter IP Address:8002/products
+    ```
 
-    ![](images/instance-public-ip.png " ")
-
-    ![](images/selectdboptions2.png " ")
-
-    ![](images/dboptions2.png " ")
-
-4. Open up a browser on your laptop and go to your public URL on port 8002.  Go to http://Enter IP Address:8002/products. Depending on whether you have a JSON formatter, you should see the products in your application, in RAW or FORMATTED format.  `Note:  If you are on the VPN, disconnect.`
+4. Depending on whether you have a JSON formatter, you should see the products in your application, in RAW or FORMATTED format.  `Note:  If you are on the VPN, disconnect.`
 
     ![](images/products2-8002.png " ")
 
@@ -211,5 +235,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Oracle NATD Solution Engineering
 * **Contributors** - Kay Malcolm, Director, Anoosha Pilli, Product Manager
-* **Last Updated By/Date** - Anoosha Pilli, Product Manager, November 2020
+* **Last Updated By/Date** - Anoosha Pilli, Product Manager, May 2021
 

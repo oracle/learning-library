@@ -49,7 +49,7 @@ Quick walk through on how you can trace microservice activity using Jaeger.
     ![](images/jaegertracedetail.png " ")
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Author** - Paul Parkinson, Developer Evangelist
                Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon

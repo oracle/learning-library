@@ -49,9 +49,9 @@ This lab assumes that you have successfully completed the following labs in the 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+  ![](./images/big-data.png " ")
 
 3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
 
@@ -169,7 +169,7 @@ In this step, you will set three variables using the **`export`** command. The v
 </if>
 
 
-8.  To view the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > IP Management**. In the **IP Management** section on the left, the **Public IPs** option is selected by default. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** list. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
+8.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as  **publicip_nnnnnnnnn_** is generated.
 
   <if type="freetier">
   ![](./images/reserved-public-ip.png " ")
@@ -227,7 +227,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
 </if>
 
 
-5.  To view the newly created reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > IP Management**. Make sure that the **Public IPs** option in the **IP Management** section on the left is selected. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
+5.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
       <if type="freetier">
       ![](./images/list-public-ip.png " ")
@@ -242,7 +242,7 @@ In this step, you will set two variables using the **`export`** command. Next, y
 
 In this step, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click the Navigation menu and navigate to **Core Infrastructure > Networking > IP Management**. Select the **Public IPs** option in the **IP Management** section on the left, if not already selected. The new reserved public IP addresses that you created in this lab are displayed in the **Reserved Public IP Addresses** page.
+1. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP addresses that you created in this lab are displayed in the **Reserved Public IP Addresses** page.
 
   <if type="freetier">
   ![](./images/list-public-ip-addresses.png " ")
@@ -299,5 +299,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
 * **Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, March 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

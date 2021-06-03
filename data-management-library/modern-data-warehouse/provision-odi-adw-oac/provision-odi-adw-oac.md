@@ -12,7 +12,7 @@ Estimated Lab Time: 30 minutes
 
 ### Prerequisites
 
-- IDCS Access Token to provision an analytics instance as part of the stack.
+- Ability to obtain IDCS Access Token to provision an analytics instance as part of the stack.
 - Necessary permissions and quota to provision the stack in a compartment.
 
 ## **STEP 1:** Obtain IDCS Access Token
@@ -37,27 +37,25 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/1.6.png " ")
 
-7. Open the token.tok file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
+7. Open the **token.tok** file that you just downloaded. Keep it handy because in a few minutes you will need to copy the contents of this file.
 
     ![](./images/1.7.png " ")
 
-**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OVQA-GCUjlO9VwEdWqHSre02rNj4K6wZ3VsacpzsXNg/n/oradbclouducm/b/bucket-20200907-1650/o/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
-
 8. You may now close the Identity Cloud Service Console.
+
+**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OVQA-GCUjlO9VwEdWqHSre02rNj4K6wZ3VsacpzsXNg/n/oradbclouducm/b/bucket-20200907-1650/o/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
 
 ## **STEP 2:** Provision the Stack
 
-1. On the OCI architecture centre's page for [Departmental data warehousing - an EBS integration](https://docs.oracle.com/en/solutions/oci-ebs-analysis/index.html#GUID-A8644D8A-54F2-4015-90F1-7727C68E40CD), click on **Deploy to Oracle Cloud** under the **deploy** section. This should take you to the OCI login screen. Log in to OCI, as usual.
+1. On the OCI architecture centre's page for [Departmental data warehousing - an EBS integration](https://docs.oracle.com/en/solutions/oci-ebs-analysis/index.html#GUID-A8644D8A-54F2-4015-90F1-7727C68E40CD), click on **Deploy to Oracle Cloud** under the **deploy** section. This should take you to the stack creation page. If you are prompted to login to OCI instead, then login to proceed.
 
     ![](./images/1.13.png " ")
-    
-    ![](./images/1.14.png " ")
 
-2. On the next screen, provide a name to the stack and hit **Next**.
+2. On the next screen, review and accept the Oracle Terms of Use by selecting the check box. Doing so will auto-populate the description section and select the terraform version. Provide a name for the stack and choose a compartment for it. Then, hit **Next**.
 
     ![](./images/1.17.png " ")
 
-3. On the **Configure Variables** screen, choose the compartment you used in the previous screen, enter the passwords you wish to use for ADW, ODI database, VNC connection to the ODI compute instance, ODI database schema and the previously downloaded IDCS access token. Under optional configuration, choose VM.Standard2.4 as the instance shape.
+3. On the **Configure Variables** screen, enter the passwords you wish to use for ADW, ODI database, VNC connection to the ODI compute instance, ODI database schema and the previously downloaded IDCS access token. Select the check box to reveal the advanced options.
 
     ![](./images/1.18.png " ")
 
@@ -75,7 +73,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/1.22.png " ")
     
-7. Now that the stack has been created, click on **Terraform Actions** and select **Apply**. In the iframe that pops-up, click on **Apply**, again.
+7. Now that the stack has been created, click on **Terraform Actions** and select **Apply**. In the panel that appears, click on **Apply**, again.
 
     ![](./images/1.23.png " ")
     
@@ -99,7 +97,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/1.30.png " ")
     
-**Note**: You may use any names for the files and folders. We will be using the names that we mentioned above.
+**Note:** You may use any names for the files and folders. We will be using the names that we mentioned above.
 
 ## **STEP 3:** Download Autonomous Data Warehouse wallet file
 
@@ -111,7 +109,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/1.32.png " ")
   
-3. Click on the **DB Connection** button. In the dialog box that opens, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no connection to any of the passwords that you provided while provisioning the stack. Hit **Download**.
+3. Click on the **DB Connection** button. In the panel that appears, click on **Download Wallet**. You will be prompted to enter a password for the wallet file. Feel free to choose any password. This password has no relation with any of the passwords that you provided while provisioning the stack. Hit **Download**.
 
     ![](./images/1.33.png " ")
     
@@ -127,5 +125,4 @@ You may now proceed to Lab 2.
 
 ## Acknowledgements
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
-- **Last Updated By/Date** - Yash Lamba, January 2021
-
+- **Last Updated By/Date** - Yash Lamba, May 2021

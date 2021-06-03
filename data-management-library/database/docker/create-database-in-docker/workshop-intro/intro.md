@@ -34,7 +34,7 @@ Free Trial or an existing Oracle Cloud account (Not all services in this worksho
 
 - Click on **Lab 1** from the menu on the right **[Lab 1: Create SSH Keys](?lab=lab-1-create-ssh-keys)**.
 
-- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top right of the page.
+- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top left of the page.
 
 ### Learn More
 
@@ -46,6 +46,4 @@ Free Trial or an existing Oracle Cloud account (Not all services in this worksho
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
-* **Last Updated By/Date** - Kamryn Vinson, September 2020
-
-
+* **Last Updated By/Date** - Tom McGinn, June 2021

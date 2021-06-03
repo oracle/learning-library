@@ -1,0 +1,88 @@
+{
+    "workshoptitle":"Oracle Database 19c New Features",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+
+    {
+        "title": "Introduction",
+        "description": "Introduction to Oracle Database 19c and the workshop.",
+        "filename": "./../../intro/intro.md",
+        "type": "paid"
+    },
+        {
+            "title": "Getting Started",
+            "description": "Get an Oracle Cloud Free Tier account and sign in.",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md",
+            "type": "paid"
+        },
+        {
+            "title": "Lab 1: Generate SSH Keys - Cloud Shell",
+            "description": "Steps to generate SSH keys using Cloud Shell.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md",
+            "type": "paid"
+        },
+        {
+        "title": "Lab 2: Obtain a Compute Image with Staged Oracle Database 19c Installer Files",
+        "description": "Obtain a compute instance wtih staged Oracle Database 19c installer files by using Resource Manager.",
+        "filename": "./../../obtain-compute-image-19c-staged/obtain-compute-image-19c-staged.md",
+        "type": "paid"
+    },
+
+        {
+        "title": "Lab 3: Install Oracle Database 19c with Automatic Root Script Execution",
+        "description": "Install Oracle Database 19c with automatic configuration script execution.",
+        "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md",
+        "type": "paid"
+         },
+          {
+              "title": "Lab 4: Obtain a Compute Image with Oracle Database 19c Installed",
+              "description": "Obtain a compute instance that has Oracle Database 19c already installed by using Resource Manager",
+              "filename": "./../../obtain-compute-image-19c-installed/obtain-compute-image-19c-installed.md",
+              "type": "paid"
+          },
+          {
+              "title": "Lab 5: Clone a PDB by Using DBCA in Silent Mode",
+              "description": "Clone a PDB by using DBCA in silent mode.",
+              "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md",
+              "type": "paid"
+          },
+          {
+              "title": "Lab 6: Relocate a PDB by Using DBCA in Silent Mode",
+              "description": "Relocate a PDB by using DBCA in silent mode.",
+              "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md",
+              "type": "paid"
+          },
+          {
+              "title": "Lab 7: Duplicate a CDB by Using DBCA in Silent Mode",
+              "description": "Duplicate a CDB by using DBCA in silent mode.",
+              "filename": "./../../duplicate-cdb-using-dbca-silent-mode/duplicate-cdb-using-dbca-silent-mode.md",
+              "type": "paid"
+          },
+          {
+              "title": "Lab 8: Decrease the Transportable Tablespace (TTS) Import and Export Time",
+              "description": "Decrease the transportable tablespace (TTS) import and export time.",
+              "filename": "./../../decrease-transportable-tablespace-import-export-time/decrease-transportable-tablespace-import-export-time.md",
+              "type": "paid"
+          },
+          {
+              "title": "Lab 9: Omit the Column Encryption Attribute During Import",
+              "description": "Omit the column encryption attribute during import.",
+              "filename": "./../../omit-column-encryption-attribute-during-import/omit-column-encryption-attribute-during-import.md",
+              "type": "paid"
+          },
+          {
+              "title": "Lab 10: Explore Automatic Deletion of Flashback Logs",
+              "description": "Omit the column encryption attribute during import.",
+              "filename": "./../../explore-automatic-deletion-flashback-logs/explore-automatic-deletion-flashback-logs.md",
+              "type": "paid"
+          },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

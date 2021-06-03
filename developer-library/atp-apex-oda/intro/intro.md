@@ -49,7 +49,7 @@ We are going to **install** Node.js, if you have done this you can skip this ste
 
 [Download Node.js LTS](https://nodejs.org/en/download/) from the official website. It is fine if the version is higher than the one in the screenshot.
 
-![Node Download](./images/node_download.png)
+![Node Download](./images/node_download2.png)
 
 1. We are going to install on **Windows** but it works in a similar way in **Linux** and **MacOS**.
 
@@ -85,13 +85,12 @@ We are going to **install** Node.js, if you have done this you can skip this ste
 
     Like this:
 
-    ![Node Versions](./images/node_versions.png)
+    ![Node Versions](./images/node_versions2.png)
 
 At this point, you are ready to start learning!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
-

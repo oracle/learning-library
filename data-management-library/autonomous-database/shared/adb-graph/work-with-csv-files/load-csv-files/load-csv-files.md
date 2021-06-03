@@ -15,18 +15,16 @@ Estimated Lab Time: 10 minutes.
 ### Objectives
 
 Learn how to
-- load CSV files into an Autonomous Database using Database Actions SQL.
+- load CSV files into an Autonomous Database using Database Actions.
 
 
 ### Prerequisites
 
 - The following lab requires an Autonomous Database - Shared Infrastructure account. 
-- It assumes that a Graph and Web-Access enabled user has been created. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions SQL.
+- It assumes that a Graph and Web-Access enabled user has been created. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions.
 
 
 ## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
-
-**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
 
 1. Open the service detail page for your Autonomous Database instance in the OCI console.  
 
@@ -39,84 +37,111 @@ Learn how to
 
 1. Login as the graph user (e.g. `GRAPHUSER`) for your Autonomous Database instance. 
    
-    ![](./images/02-SDW-login.png " ")  
+    ![](./images/db-actions-graphuser-login.png " ")  
 
     **Note:** If necessary, do the following to create the user with the right roles and privileges:
     - Log in to Database Actions as the ADMIN user for your Autonomous Database.
     - Select Administration and then Database Users from the navigation menu
     - Click on Create User
-    - Turn on the Web-Access and Graph-enable buttons
+    - Turn on the Web-Access and Graph buttons
 
 ## **STEP 3**: Download the sample datasets from the ObjectStore
 
-1. Use `wget` or `curl` to download the sample data, i.e. CSV files, to you computer. Or copy and paste the url in your browser for the zip archive, i.e.  
+1. Use `wget` or `curl` to download the sample data to you computer. Or copy and paste the url in your browser for the zip archive, i.e.  
 
     ```
-    https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
     A sample `curl` request is:
     ```
-    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Z71OXMvPLSZcYliEoe49EVCvcjcW_FlXmqAR2JCdZ49cIecbP1e3gtMB-4Z68cN/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
-2. Unzip the archive into a local directory such as ~/downloads.
+2. **Unzip** the archive into a local directory such as ~/downloads.
 
-## **STEP 4**: Upload using Database Actions SQL
+## **STEP 4**: Upload using Database Actions Data Load
 
-1. Click on the Data Loading tab in the SQL worksheet. 
+1. Click on the Data Load card. 
    
-   ![](images/data-loading-sql-worksheet.png " ")
+   ![](images/db-actions-dataload-card.png " ")
    
-   Then click on `Select Files`.
+   Then specifcy the location of your data. That is, make sure the Load Data and the Local File cards are checked. Click `Next`.
 
-   ![](./images/03-upload-first-file.png)
+   ![](./images/db-actions-dataload-location.png)
 
-2. Navigate to the correct folder (e.g. ~/downloads) and select the bank_account.csv file.
-![](./images/04-choose-accts-file.png)
-
-3. Preview the data then click `Next`.
-![](./images/05-preview-accts-file.png)
-
-4. Modify the properties as follows:
-    - Change the column type for `ACCT_ID` to `NUMBER`.
-    - Click the PK checkbox to indicate that it is a primary key.
-
-   ![](./images/06-accts-edit-properties.png)
-
-5. Click `Next` to view the generated DDL. Then click `Finish` to create the table and load the data. 
-   ![](./images/07-accts-view-ddl.png)
+2. Click on `Select Files`.
    
-   Note: If you see an error message that the SDW$ERR$_BANK_ACCOUNTS$ table could not be created then check that the user has adequate quota for the tablespace name `DATA` or whichever tablesapce the user has privileges on.
+      ![](images/db-action-dataload-file-browser.png " ") 
 
-6. Once the file is loaded you should see the table in the list on the left.
-   ![](./images/08-accts-loaded.png)
+    Navigate to the correct folder (e.g. ~/downloads/random-acct-data) and select the bank_account.csv and the bank_txns.csv file.
 
-7. Now repeat the process for the second file, i.e. bank_txns.csv. 
+    ![](./images/db-actions-dataload-choose-files.png " ")
+
+3. Verify that the correct files were selected and then click `Run` icon.
+![](./images/b-actions-dataload-click-run.png " ")
+
+4. Confirm that you wish the data laod job.
+
+   ![](./images/db-actions-dataload-confirm-run.png " ")
+
+5. Once the files are loaded 
    
-   ![](./images/09-upload-second-file.png)
+   ![](./images/db-actions-dataload-files-loaded.png " ")  
 
-8. Navigate to the correct folder (e.g. ~/downloads) and select the bank_txns.csv file.  
-   ![](./images/10-choose-txns-file.png)
+   Click `Done` to exit.
 
-9. Edit the proeprties as follows:
-    - Change the data type for `FROM_ACCT_ID`, `TO_ACCT_ID`, and `AMOUNT` to `NUMBER`.
-    - Change the length for `DESCRIPTION` to 128.
-    - Check the `PK` checkbox for each of `FROM_ACCT_ID`, `TO_ACCT_ID`, and `AMOUNT` to indicate that these columns form the composite primary key.  
+   ![](images/db-actions-dataload-click-done.png " ")
+
+6. Now open the SQL Worksheet.
+   ![](./images/db-actions-choose-sql-card.png " ")
+
+7. Navigate to the correct folder (e.g. ~/downloads) and select the `fixup.sql` file and drag and drop it into the SQL worksheet. 
    
-   ![](./images/11-txns-edit-properties.png)
+   ![](./images/db-actions-drag-drop-fixup-sql.png " ")  
+
+   The contents of `fixup.sql` are:
+
+   ```
+   alter table bank_accounts add primary key (acct_id);
+   
+   alter table bank_txns add txn_id number;
+   update bank_txns set txn_id = rownum;
+   commit;
+   
+   alter table bank_txns add primary key (txn_id);
+   alter table bank_txns modify from_acct_id references bank_accounts (acct_id);
+   alter table bank_txns modify to_acct_id references bank_accounts (acct_id);
+
+   desc bank_txns;
+   
+   select * from USER_CONS_COLUMNS where table_name in ('BANK_ACCOUNTS', 'BANK_TXNS');
+   
+   ```
+
+   It does the following:
+   - Adds a primary key constraint to the `bank_accounts` table.
+   - Adds a column (`txn_id`) to the `bank_txns` table.
+   - Sets a value for the `txn_id` and commits the transaction.
+   - Adds a primary key constraint to the `bank_txns` table.
+   - Adds a foreign key constraint to the `bank_txns` table specifying that `from_acct_id` references `bank_accounts.acct_id`.
+   - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts_acct_id`.  
+   - Helps you verify that the `txn_id` column was added and the cosntraints defined.
+
+
+8. Execute the `fixup.sql` script in the SQL worksheet.  
+   ![](./images/db-actions-sql-execute-fixup.png " ")  
+   
+9. The script output should look as as follows:
+   
+   ![](./images/db-actions-sql-script-output.png " ")
   
-10. Click `Next` to view the generated DDL. Then click `Finish` to create the table and load the data.  
-   ![](./images/12-txns-ddl.png)
 
-11. Once the file is loaded you should see the table in the list on the left.  
-   ![](./images/13-txns-loaded.png)
-
-
-Please **proceed to the next lab** to create a graph from these tables.
+Please *proceed to the next lab* to create a graph from these tables.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
 * **Last Updated By/Date** - Jayant Sharma, May 2021
+* **Lab Expiry Date** - May 31, 2022
   

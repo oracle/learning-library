@@ -126,6 +126,6 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Dec 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 
 

@@ -3,21 +3,27 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
-        "title": "Getting Started",
-        "description": "Prerequisites to run the Oracle Data Safe workshop in the LiveLabs tenancy.",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md",
-        "type": "livelabs"
-      },
-      {
         "title": "Introduction",
         "description": "This lab provides information about the Oracle Data Safe workshop.",
         "filename": "../../introduction/introduction.md",
         "type": "livelabs"
       },
       {
-        "title": "Lab 1: Register an Autonomous Database",
-        "description": "This lab shows you how to register an Autonomous Transaction Processing database with Oracle Data Safe and load sample data into it.",
-        "filename": "../../provision-register-autonomous-database/provision-register-autonomous-database.md",
+        "title": "Getting Started",
+        "description": "Get an Oracle Cloud account if needed and sign in.",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Prepare Your Environment",
+        "description": "Prerequisites to run the Oracle Data Safe workshop in your own tenancy.",
+        "filename": "../../prepare-environment/prepare-environment.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Lab 1: Register an Autonomous Database with Oracle Data Safe",
+        "description": "This lab shows you how to register an Autonomous Data Warehouse on Shared Exadata Infrastructure with Oracle Data Safe and load sample data into it.",
+        "filename": "../../register-autonomous-database/register-autonomous-database.md",
         "type": "livelabs"
       },
       {

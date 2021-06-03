@@ -48,15 +48,17 @@ In steps 1 through 3, with auto scaling **disabled**, you will have 3 SQL Develo
 
 ## **STEP 1**: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
 
-1. You created an Autonomous Data Warehouse database in an earlier lab named *Provision Autonomous Database*. Go to the details page for the database, click the  **Scale Up/Down** button, and deselect the **Auto Scaling** checkbox to disable auto scaling.
+1. You created an Autonomous Data Warehouse database in an earlier lab named *Provision Autonomous Database*. Go to the details page for the database, click the  **Scale Up/Down** button, and deselect the **Auto Scaling** checkbox to disable auto scaling if you have not done so already.
 
     ![](images/disable-auto-scaling.png " ")
 
-2. Go back to the details page for your ADW database. Click the **Tools** tab. In the next screen, click **Open SQL Developer Web**. In the log-in dialog, provide the username `admin` and the administrator password you specified when you created the Autonomous Database. (Note that you can alternatively use SQL Developer desktop client instead of SQL Developer Web.)
+2. Go back to the details page for your ADW database. Click the **Tools** tab. In the next screen, click **Open Database Actions**. In the log-in dialog, provide the username `admin` and the administrator password you specified when you created the Autonomous Database. (Note that you can alternatively use SQL Developer desktop client instead of SQL Developer Web.)
 
     ![](./images/click-tools-tab.png " ")
 
-    ![](./images/open-sql-developer-web.jpg)
+    ![](./images/open-sql-developer-web.png)
+
+    ![](./images/click-sql.png)
 
 3. Create and save 4 SQL Developer Web worksheets. In SQL Developer Web worksheets, you choose the consumer group from the drop-down menu in the upper-right corner.:
     - Save the first worksheet with the name **Setup**. You will use this worksheet with the LOW consumer group in STEP 2, to run the setup that creates a procedure for running test queries. The LOW consumer group is appropriate for non-CPU-intensive tasks such as this creation of a procedure.
@@ -78,120 +80,120 @@ In this step, you run a script that will:
 
 1. Copy and paste the following script into the first worksheet you named **Setup**. Run the following script using the LOW consumer group.
 
-```
-<copy>-- Create a sequence to increment the number of tests running
-create sequence test_run_seq order nocache;
+    ```
+    <copy>-- Create a sequence to increment the number of tests running
+    create sequence test_run_seq order nocache;
 
-create table test_run_data
-(test_no    number,
- cpu_count  number,
- sid        number,
- query_no   number,
- start_time timestamp,
- end_time   timestamp
-);
+    create table test_run_data
+    (test_no    number,
+    cpu_count  number,
+    sid        number,
+    query_no   number,
+    start_time timestamp,
+    end_time   timestamp
+    );
 
-create or replace procedure test_proc(i_executions number := 2) as
-  v_sid        number;
-  v_loop       number := 0;
-  v_test_sql   varchar2(32767);
-  v_test_sql_1 varchar2(32767);
-  v_test_sql_2 varchar2(32767);
-  v_end_date   date;
-  v_begin_date date;
-  v_begin_sql_time timestamp;
-  v_end_sql_time timestamp;
-  v_minute     number;
-  v_result     number;
-  v_last_test_no  number;
-  v_test_no   number;
-  v_test_start_time date;
-  v_last_test_start_time date;
-  v_cpu_count number;
+    create or replace procedure test_proc(i_executions number := 2) as
+      v_sid        number;
+      v_loop       number := 0;
+      v_test_sql   varchar2(32767);
+      v_test_sql_1 varchar2(32767);
+      v_test_sql_2 varchar2(32767);
+      v_end_date   date;
+      v_begin_date date;
+      v_begin_sql_time timestamp;
+      v_end_sql_time timestamp;
+      v_minute     number;
+      v_result     number;
+      v_last_test_no  number;
+      v_test_no   number;
+      v_test_start_time date;
+      v_last_test_start_time date;
+      v_cpu_count number;
 
-function get_test_no return number is
-  v_last_test_no         number;
-  v_last_test_start_time date;
-  v_test_no              number;
-  v_test_start_time      date;
+    function get_test_no return number is
+      v_last_test_no         number;
+      v_last_test_start_time date;
+      v_test_no              number;
+      v_test_start_time      date;
 
-begin
-  select test_no, start_time into v_last_test_no, v_last_test_start_time
-  from   test_run_data
-  where  start_time = (select max(start_time)
-                       from   test_run_data);
-  if v_last_test_start_time > (sysdate - 1/1440)
-    then v_test_no := v_last_test_no;
-    else v_test_no:= test_run_seq.nextval;
-    end if;
-  return v_test_no;
-exception
-  when others then
-    v_test_no:= test_run_seq.nextval;
-    return v_test_no;
-end get_test_no;
+    begin
+      select test_no, start_time into v_last_test_no, v_last_test_start_time
+      from   test_run_data
+      where  start_time = (select max(start_time)
+                          from   test_run_data);
+      if v_last_test_start_time > (sysdate - 1/1440)
+        then v_test_no := v_last_test_no;
+        else v_test_no:= test_run_seq.nextval;
+        end if;
+      return v_test_no;
+    exception
+      when others then
+        v_test_no:= test_run_seq.nextval;
+        return v_test_no;
+    end get_test_no;
 
-begin
-  v_test_no := get_test_no;
-  select userenv('SID') into v_sid from dual;
-  select sum(value) into v_cpu_count from gv$parameter where name = 'cpu_count';
-  insert into test_run_data values(v_test_no, v_cpu_count, v_sid, null, systimestamp, null);
-  commit;
-  v_begin_date := sysdate;
-  v_test_sql_1 := q'#select /* #';
-  v_test_sql_2 := q'# */ /*+ NO_RESULT_CACHE */ count(*) from (
--- This query will summarize orders by month and city for customers in the US in the Fall of 1992
-SELECT
-    d.d_month,
-    d.d_year,
-    c.c_city,
-    SUM(lo.lo_quantity),
-    SUM(lo.lo_ordtotalprice),
-    SUM(lo.lo_revenue),
-    SUM(lo.lo_supplycost)
-FROM
-    ssb.lineorder   lo,
-    ssb.dwdate      d,
-    ssb.customer    c
-WHERE
-    lo.lo_orderdate = d.d_datekey
-    AND lo.lo_custkey = c.c_custkey
-    AND d.d_year = 1992
-    AND d.d_sellingseason='Fall'
-    AND c.c_nation = 'UNITED STATES'
-GROUP BY
-    d.d_month,
-    d.d_year,
-    c.c_city
-)
-#';
-  loop
-    v_loop   := v_loop + 1;
-    v_minute := round((sysdate - v_begin_date) * 1440, 1);
-    v_test_sql := v_test_sql_1 || 'test no:' || v_test_no || ', sid:' || v_sid || ', loop:' || v_loop || v_test_sql_2;
-    v_begin_sql_time := systimestamp;
-    execute immediate v_test_sql into v_result;
-    v_end_sql_time := systimestamp;
-    insert into test_run_data values(v_test_no, v_cpu_count, v_sid, v_loop, v_begin_sql_time, v_end_sql_time);
-    commit;
-    exit when v_loop = i_executions;
-  end loop;
-end;
-/
-</copy>
-```
+    begin
+      v_test_no := get_test_no;
+      select userenv('SID') into v_sid from dual;
+      select sum(value) into v_cpu_count from gv$parameter where name = 'cpu_count';
+      insert into test_run_data values(v_test_no, v_cpu_count, v_sid, null, systimestamp, null);
+      commit;
+      v_begin_date := sysdate;
+      v_test_sql_1 := q'#select /* #';
+      v_test_sql_2 := q'# */ /*+ NO_RESULT_CACHE */ count(*) from (
+    -- This query will summarize orders by month and city for customers in the US in the Fall of 1992
+    SELECT
+        d.d_month,
+        d.d_year,
+        c.c_city,
+        SUM(lo.lo_quantity),
+        SUM(lo.lo_ordtotalprice),
+        SUM(lo.lo_revenue),
+        SUM(lo.lo_supplycost)
+    FROM
+        ssb.lineorder   lo,
+        ssb.dwdate      d,
+        ssb.customer    c
+    WHERE
+        lo.lo_orderdate = d.d_datekey
+        AND lo.lo_custkey = c.c_custkey
+        AND d.d_year = 1992
+        AND d.d_sellingseason='Fall'
+        AND c.c_nation = 'UNITED STATES'
+    GROUP BY
+        d.d_month,
+        d.d_year,
+        c.c_city
+    )
+    #';
+      loop
+        v_loop   := v_loop + 1;
+        v_minute := round((sysdate - v_begin_date) * 1440, 1);
+        v_test_sql := v_test_sql_1 || 'test no:' || v_test_no || ', sid:' || v_sid || ', loop:' || v_loop || v_test_sql_2;
+        v_begin_sql_time := systimestamp;
+        execute immediate v_test_sql into v_result;
+        v_end_sql_time := systimestamp;
+        insert into test_run_data values(v_test_no, v_cpu_count, v_sid, v_loop, v_begin_sql_time, v_end_sql_time);
+        commit;
+        exit when v_loop = i_executions;
+      end loop;
+    end;
+    /
+    </copy>
+    ```
 
 ## **STEP 3**: Run the `test_proc` Procedure Concurrently in Three Worksheets
 
-1. Open 3 worksheets you named **Query 1**, **Query 2**, and **Query 3**. To open 3 SQL Developer Web worksheets, simply go to the OCI console's Details page for your database, open the **Tools** tab and click the **Open SQL Developer Web** button on the console 3 times. Each time you click it, a new SQL Developer Web instance will open in a tab in the browser.
+1. Open 3 worksheets you named **Query 1**, **Query 2**, and **Query 3**. To open 3 SQL Developer Web worksheets, simply go to the OCI console's Details page for your database, open the **Tools** tab and click the **Open Database Actions** button on the console 3 times. Each time you click it, a new SQL Developer Web instance will open in a tab in the browser.
 
-    ![](./images/open-multiple-sql-dev-web-worksheets.png " ")
+    ![](./images/open-sql-developer-web.png " ")
 
 2. **Make sure that each of the 3 worksheets are set to the HIGH consumer group.** Enter - but do not immediately execute - the following execute command in each worksheet. After you have entered the command into all 3 worksheets, quickly execute the command in each worksheet so that they begin at nearly the same time.
 
-````
-exec test_proc;
-````
+    ````
+    exec test_proc;
+    ````
 
 3. While the 3 procedure instances are running concurrently, which in our test runs for approximately 4.5 minutes on a 1 OCPU system (you may see different execution times), go to your Autonomous Database's console page and click **Performance Hub**. In Performance Hub, click the **SQL Monitoring** tab, and look at the Monitored SQL to see that each worksheet is running your procedure.
 
@@ -205,27 +207,27 @@ exec test_proc;
 
 5. In your **Setup** worksheet, run the following script to view your test's results:
 
-```
-<copy>alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
+    ```
+    <copy>alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
 
-select test_no,
-       cpu_count,
-       sessions,
-       queries_finished,
-       test_duration_in_seconds,
-       avg_query_time
-from   (select test_no,
-               cpu_count,
-               count(distinct sid) sessions,
-               sum(nvl2(end_time,1,0)) queries_finished,
-               round(extract(minute from (max(end_time) - min(start_time))) * 60 + extract(second from (max(end_time) - min(start_time))),1) test_duration_in_seconds,
-               round(avg(to_number(extract(minute from (end_time - start_time)) * 60 + extract(second from (end_time - start_time)))),1) avg_query_time
-        from   test_run_data
-        group by test_no,
-                 cpu_count)
-order by 1;
-</copy>
-```
+    select test_no,
+          cpu_count,
+          sessions,
+          queries_finished,
+          test_duration_in_seconds,
+          avg_query_time
+    from   (select test_no,
+                  cpu_count,
+                  count(distinct sid) sessions,
+                  sum(nvl2(end_time,1,0)) queries_finished,
+                  round(extract(minute from (max(end_time) - min(start_time))) * 60 + extract(second from (max(end_time) - min(start_time))),1) test_duration_in_seconds,
+                  round(avg(to_number(extract(minute from (end_time - start_time)) * 60 + extract(second from (end_time - start_time)))),1) avg_query_time
+            from   test_run_data
+            group by test_no,
+                    cpu_count)
+    order by 1;
+    </copy>
+    ```
 
 6. Review the results of running the test. Notice that in our run:
     - The average time each query ran was 275.5 seconds.
@@ -244,7 +246,7 @@ In steps 4 through 6, you will enable auto scaling and again have 3 SQL Develope
 
 1. Enable auto scaling, to allow you to use 3X the amount of base CPU and IO. Go to the details page for the database, click the  **Scale Up/Down** button, and select the **Auto Scaling** checkbox to **re-enable** auto scaling.
 
-    ![](images/disable-auto-scaling.png " ")
+    ![](images/enable-auto-scaling.png " ")
 
 ## **STEP 5**: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
 
@@ -266,27 +268,27 @@ In steps 4 through 6, you will enable auto scaling and again have 3 SQL Develope
 
 1. When the procedures have completed, run this script to see the test results:
 
-```
-<copy>alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
+    ```
+    <copy>alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
 
-select test_no,
-       cpu_count,
-       sessions,
-       queries_finished,
-       test_duration_in_seconds,
-       avg_query_time
-from   (select test_no,
-               cpu_count,
-               count(distinct sid) sessions,
-               sum(nvl2(end_time,1,0)) queries_finished,
-               round(extract(minute from (max(end_time) - min(start_time))) * 60 + extract(second from (max(end_time) - min(start_time))),1) test_duration_in_seconds,
-               round(avg(to_number(extract(minute from (end_time - start_time)) * 60 + extract(second from (end_time - start_time)))),1) avg_query_time
-        from   test_run_data
-        group by test_no,
-                 cpu_count)
-order by 1;
-</copy>
-```
+    select test_no,
+          cpu_count,
+          sessions,
+          queries_finished,
+          test_duration_in_seconds,
+          avg_query_time
+    from   (select test_no,
+                  cpu_count,
+                  count(distinct sid) sessions,
+                  sum(nvl2(end_time,1,0)) queries_finished,
+                  round(extract(minute from (max(end_time) - min(start_time))) * 60 + extract(second from (max(end_time) - min(start_time))),1) test_duration_in_seconds,
+                  round(avg(to_number(extract(minute from (end_time - start_time)) * 60 + extract(second from (end_time - start_time)))),1) avg_query_time
+            from   test_run_data
+            group by test_no,
+                    cpu_count)
+    order by 1;
+    </copy>
+    ```
 
 2. Let's examine the improved performance after enabling auto scaling. **Test 1** had auto scaling **disabled** and **Test 2** had auto scaling **enabled**:
 
@@ -327,7 +329,5 @@ For more information about auto scaling, see the documentation [Use Auto Scaling
 
 - **Authors** - Rick Green, Database User Assistance; Nilay Panchal, ADB Product Management
 - **Contributors** - John Zimmerman, Real World Performance Team; Keith Laker, ADB Product Management
-- **Last Updated By/Date** - Rick Green, December 2020
+- **Last Updated By/Date** - Kamryn Vinson, May 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

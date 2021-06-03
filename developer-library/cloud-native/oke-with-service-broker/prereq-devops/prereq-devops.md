@@ -31,7 +31,8 @@ In this lab you will:
     Press **Enter** to use the defaults for all options.
 
 2. Restart your shell.
-    ```
+
+    ```bash
     <copy>
     exec -l $SHELL
     </copy>
@@ -39,7 +40,7 @@ In this lab you will:
 
 3. Configure the OCI CLI.
 
-    ```
+    ```bash
     <copy>
     oci setup config
     </copy>
@@ -55,7 +56,6 @@ In this lab you will:
     - name for the key: press **Enter** for the default.
     - Passphrase: press **Enter** for no passphrase.
 
-
     You should see an output like:
 
     ```bash
@@ -64,14 +64,13 @@ In this lab you will:
     Config written to ~/.oci/config
     ```
 
-
 4. Upload the public key to your OCI account.
 
     In order to use the CLI, you need to upload the public key generated to your user account.
 
     Get the key content with:
 
-    ```
+    ```bash
     <copy>
     cat ~/.oci/oci_api_key_public.pem
     </copy>
@@ -92,7 +91,7 @@ In this lab you will:
 
 5. Test your CLI.
 
-    ```
+    ```bash
     <copy>
     oci os ns get
     </copy>
@@ -100,7 +99,7 @@ In this lab you will:
 
     This command should output the namespace of your tenancy (usually the name of the tenancy or a randomized string).
 
-    ```
+    ```json
     {
         "data": "your-tenancy-namespace"
     }
@@ -117,7 +116,7 @@ In this lab you will:
     ```bash
     <copy>
     PLATFORM=$(uname)
-    curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/${PLATFORM}/amd64/kubectl"
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/${PLATFORM,,}/amd64/kubectl"
     chmod +x ./kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
     </copy>
@@ -171,7 +170,6 @@ In this lab you will:
     For more detailed instructions for your specific OS, go to:
     [https://skaffold.dev/docs/install/](https://skaffold.dev/docs/install/)
 
-    
 ## **STEP 6:** Check OpenSSL
 
 1. Make sure you have OpenSSL installed with:

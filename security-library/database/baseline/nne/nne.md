@@ -5,7 +5,7 @@ This workshop introduces the functionality of Oracle Native Network Encryption (
 
 *Estimated Lab Time:* 15 minutes
 
-*Version tested in this lab:* Oracle DB 19.8
+*Version tested in this lab:* Oracle DB 19.10
 
 ### Objectives
 - Enable/Disable the Native Network Encryption on your database
@@ -16,8 +16,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -87,6 +87,14 @@ This lab assumes you have:
 4. On your Glassfish App, perform the following steps:
 
     - Login to the HR Application as *`hradmin`* with the password "*`Oracle123`*"
+
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
    ![](./images/nne-009.png " ")
 
@@ -183,7 +191,7 @@ You will enable SQL*Net encryption with the `REQUESTED` value for `SQLNET.ENCRYP
 
    ![](./images/nne-013.png " ")
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next)..
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -206,5 +214,4 @@ Technical Documentation: [Oracle Native Network Encryption 19c](https://docs.ora
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

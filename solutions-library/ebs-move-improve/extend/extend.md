@@ -60,6 +60,6 @@ In this lab, you will:
 
 * **Author:** Quintin Hill, William Masdon, Cloud Engineering
 * **Contributors:** Santiago Bastidas, Product Management Director
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Feb 2021
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
 #

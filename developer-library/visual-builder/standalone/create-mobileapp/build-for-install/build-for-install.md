@@ -39,6 +39,6 @@ After you create the build configuration for both Android and iOS, you can gener
 7. Try out the app on the device to test its functionality. When you are done, close the app. Remember to also close the preview tab or window.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - April 2021
+* **Last Updated By/Date** - Sheryl Manoharan, April 2021

@@ -5,7 +5,7 @@
           {
               "title": "Introduction",
               "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
-              "filename": "../../introduction/introduction.md"
+              "filename": "../../0introduction/introduction.md"
           },
           {
               "title": "Getting Started",
@@ -15,37 +15,62 @@
           {
               "title": "Lab 1: Creating Identity and Access Management (IAM) Resources",
               "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-              "filename": "../../iam/iam.md"
+              "filename": "../../1iam/iam.md"
           },
           {
               "title": "Lab 2: Provisioning the PeopleSoft Cloud Manager using Marketplace",
-              "filename": "../../provision-cm/provision-cm.md"
+              "filename": "../../2provision-cm/provision-cm.md"
           },
           {
               "title": "Lab 3: Configuring Cloud Manager Settings",
-              "filename": "../../configure-cm/configure-cm.md"
+              "filename": "../../3configure-cm/configure-cm.md"
           },
           {
             "title": "Lab 4: Subscribing to PeopleSoft Download Channels",
-            "filename": "../../channels/channels.md"
+            "filename": "../../4channels/channels.md"
           },
           {
               "title": "Lab 5: Reviewing and Updating the Topology",
-              "filename": "../../topology/topology.md"
+              "filename": "../../5topology/topology.md"
           },
           
           {
               "title": "Lab 6: Creating a new Environment Template",
-              "filename": "../../env-template/env-template.md"
+              "filename": "../../6env-template/env-template.md"
           },
           {
               "title": "Lab 7: Creating Environment in PeopleSoft",
-              "filename": "../../psft-env/psft-env.md"
+              "filename": "../../7psft-env/psft-env.md"
           },
           {
-              "title": "Additional Lab: Provisioning Environments with Windows Clients",
-              "filename": "../../windows-env/windows-env.md"
+            "title": "Lab 8: Cloning an Environment",
+            "filename": "../../8clone/clone.md"
           },
+          {
+            "title": "Lab 9: Backing up and Restoring an Environment",
+            "filename": "../../9backup/backup.md"
+          },
+          {
+            "title": "Lab 10: Patching an Environment",
+            "filename": "../../10patching/patching.md"
+          },
+          {
+            "title": "Lab 11: Upgrading an Environment",
+            "filename": "../../11upgrading/upgrading.md"
+          },
+          {
+            "title": "Lab 12: Setting Governance Policies",
+            "filename": "../../12governance-policies/policies.md"
+          },
+          {
+            "title": "Lab 13: Selective Adoption",
+            "filename": "../../13selective-adoption/adoption.md"
+          },
+          {
+            "title": "Lab 14: Refreshing an Environment",
+            "filename": "../../14refresh/refresh.md"
+          },
+          
           {
               "title": "Windows VM Compute Lab (Optional): Provisioning Windows Compute in OCI",
               "filename": "../../windows-optional/windows-optional.md"

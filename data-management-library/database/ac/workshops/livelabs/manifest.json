@@ -2,16 +2,16 @@
     "workshoptitle": "Application Continuity Fundamentals",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
+          {
+              "title": "Getting Started",
+              "description": "Login to Oracle Cloud",
+              "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+          },
          {
             "title": "Introduction",
             "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
             "filename": "../../intro/intro.md"
         },
-        {
-            "title": "Getting Started",
-            "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-        },        
         {
             "title": "Lab 1: Build a DB System",
             "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
@@ -26,7 +26,8 @@
             "title": "Lab 3: Application Continuity",
             "description": "This lab walks you through the function of Application Continuity.",
             "filename": "../../appcont/appcont.md"
-        },        {
+        },
+        {
             "title": "Lab 4: Optional Lab: Fast Application Notification",
             "description": "This lab examines FAN events.",
             "filename": "../../fan/fan.md"

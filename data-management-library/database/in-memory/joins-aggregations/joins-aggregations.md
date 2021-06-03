@@ -12,6 +12,8 @@ Quick walk through on how to perform In-Memory Joins and Aggregations.
 
 [](youtube:-yactiOo8fA)
 
+Estimated Lab Time: 15 minutes
+
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
@@ -26,7 +28,7 @@ This lab assumes you have completed the following labs:
 * Lab: Querying the IMC
 
 
-## Step 1: In-Memory Joins and Aggregation
+## **STEP 1:** In-Memory Joins and Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the  fact table, LINEORDER, and a dimension table and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond the basic performance benefits of scanning data in a columnar format.
 
@@ -144,5 +146,5 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
 - **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 

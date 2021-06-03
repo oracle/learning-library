@@ -1,0 +1,1 @@
+A screenshot of the Database Actions application showing the HCM1 schema. An arrow from the EMPLOYEES table is pointing to a worksheet.

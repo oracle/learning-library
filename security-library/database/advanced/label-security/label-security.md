@@ -5,7 +5,7 @@ This workshop introduces the various features and functionality of Oracle Label 
 
 *Estimated Lab Time:* 30 minutes
 
-*Version tested in this lab:* Oracle DB 19.8
+*Version tested in this lab:* Oracle DB 19.10
 
 ### Video Preview
 Watch a preview of "*Understanding Oracle Label Security (April 2020)*" [](youtube:o4-XpUQWfaM)
@@ -20,8 +20,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -166,7 +166,7 @@ Different applications have different purposes:
    ![](./images/ols-008.png " ")
 
       **Note**:   
-      - This script enable OLS, so it will reboot the DB 
+      - This script enable OLS, so it will reboot the DB
       - Then, it creates the OLS policy named `OLS_DEMO_HR_APP` as well as the levels (`PUBLIC`, `CONFIDENTIAL`, `HIGHLY CONFIDENTIAL`), compartments (`HR`, `FIN`, `IP`, `IT`) and the OLS groups (`GLOBAL`, `USA`, `CANADA`, `LATAM`, `EU`, `GERMAN`)
       - It also generates the data labels that will be used
       - This allows us to assign the numbers to our `label_tag` we want to have
@@ -188,12 +188,28 @@ Different applications have different purposes:
 
 5. Login to the application as *`can_candy`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>can_candy</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
     - Select "**Search Employees**" and click [**Search**]
     - See the result before enabling OLS policy
 
    ![](./images/ols-017.png " ")
 
 6. Logout and login as *`eu_evan`* with the password "*`Oracle123`*"
+
+      ````
+      <copy>eu_evan</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
     - Select "**Search Employees**" and click [**Search**]
     - You can see all employees data with no geographic restriction
@@ -258,6 +274,14 @@ Different applications have different purposes:
 
 11. Go back to your Glassfish app and login as *`can_candy`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>can_candy</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
     - Select "**Search Employees**" and click [**Search**]
     - Now, you will see there is a difference after enabling OLS policy: `CAN_CANDY` can only see **Canadian-labeled users**!
 
@@ -265,12 +289,28 @@ Different applications have different purposes:
 
 12. Logout and login as *`eu_evan`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>eu_evan</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
     - Select "**Search Employees**" and click [**Search**]
     - Notice that `EU_EVAN` can only see **EU-labeled users**!
 
    ![](./images/ols-021.png " ")
 
 13. Logout and login as *`hradmin`* with the password "*`Oracle123`*"
+
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
     - Select "**Search Employees**" and click [**Search**]
     - Notice that accordingly to the OLS policy, `HRADMIN` can still see **all users**!
@@ -285,7 +325,7 @@ Different applications have different purposes:
 
     ![](./images/ols-023.png " ")
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -318,7 +358,5 @@ Technical Documentation: [Oracle Label Security 19c](https://docs.oracle.com/en/
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
-
+- **Contributors** - Alan Williams, Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

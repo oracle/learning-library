@@ -10,10 +10,7 @@ Estimated Lab Time: 10 minutes
 
 ## **STEP 1**: Install the Traefik operator with a Helm chart
 
-Change to your operator local Git repository folder.
-```bash
-<copy>cd ~/weblogic-kubernetes-operator/</copy>
-```
+
 Create a namespace for Traefik:
 ```bash
 <copy>kubectl create namespace traefik</copy>
@@ -24,12 +21,18 @@ Install the Traefik operator in the `traefik` namespace with the provided sample
 <copy>helm repo add traefik https://helm.traefik.io/traefik</copy>
 ```
 
+Get the value overrides from the github repository:
+```bash
+<copy>
+curl -L -o traefik-values.yaml https://raw.githubusercontent.com/oracle/weblogic-kubernetes-operator/v3.0.0/kubernetes/samples/charts/traefik/values.yaml
+</copy>
+```
 
 ```bash
 <copy>helm install traefik-operator \
 traefik/traefik \
 --namespace traefik \
---values kubernetes/samples/charts/traefik/values.yaml  \
+--values traefik-values.yaml \
 --set "kubernetes.namespaces={traefik}" \
 --set "serviceType=LoadBalancer"</copy>
 ```

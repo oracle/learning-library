@@ -1,10 +1,10 @@
-# Migrating the WebLogic Domain to WebLogic on OKE
+# Migrate the WebLogic Domain to Oracle WebLogic Server for OKE
 
 ## Introduction
 
 Migrating a WebLogic domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
 
-We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on WLS on OKE via the Jenkins build pipeline to update the domain.
+We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on WebLogic Server (WLS) on Oracle Kubernetes Engine (OKE) via the Jenkins build pipeline to update the domain.
 
 Estimated Lab Time: 15 minutes.
 
@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes.
 Migration with WebLogic Deploy Tooling (WDT) consists of 4 steps:
 
 - Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
-- Edit the **model** file and **variable** file to target the new infrastructure on OCI.
+- Edit the **model** file and **variable** file to target the new infrastructure on Oracle Cloud Infrastructure (OCI).
 - Copy the files to shared file system on the OKE deployment.
 - Run the update-domain pipeline with the model files.
 
@@ -36,7 +36,7 @@ In this lab, you will:
 To run this lab, you need to:
 
 - Have set up the demo on-premises environment to use as the source domain to migrate.
-- Have deployed a WebLogic on OCI domain using the marketplace.
+- Have deployed a WebLogic on OCI domain using the Oracle Cloud Marketplace.
 - Have migrated the application database from the source environment to OCI.
 
 ## **STEP 1:** Installing WebLogic Deploy Tooling
@@ -73,7 +73,6 @@ To run this lab, you need to:
 
 ### Using the demo workshop marketplace image
 
-
 You should already be in the on-premises environment logged in as the `oracle` user.
 
 1. Run the `install_wdt.sh` script:
@@ -90,7 +89,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
 
 ## **STEP 2:** Discover the On-Premises Domain
 
-The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate 3 files:
+The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate three files:
 
 - `source.yaml`: the model file.
 - `source.properties`: the variables file.
@@ -108,9 +107,7 @@ Applications found under `ORACLE_HOME` will have a path that includes `@@ORACLE_
     </copy>
     ```
 
-The output should look like:
-
-<details><summary>output of the <code>discover_domain.sh</code> script</summary>
+The output of the `discover_domain.sh` script should look like:
 
 ```bash
 rm: cannot remove ‘source.*’: No such file or directory
@@ -121,7 +118,7 @@ JDK version is 1.8.0_241-b07
 JAVA_HOME = /u01/jdk
 WLST_EXT_CLASSPATH = /home/oracle/wdt/weblogic-deploy/lib/weblogic-deploy-core.jar
 CLASSPATH = /home/oracle/wdt/weblogic-deploy/lib/weblogic-deploy-core.jar
-WLST_PROPERTIES = -Djava.util.logging.config.class=oracle.weblogic.deploy.logging.WLSDeployCustomizeLoggingConfig -Dcom.oracle.cie.script.throwException=true 
+WLST_PROPERTIES = -Djava.util.logging.config.class=oracle.weblogic.deploy.logging.WLSDeployCustomizeLoggingConfig -Dcom.oracle.cie.script.throwException=true
 /u01/oracle/oracle_common/common/bin/wlst.sh /home/oracle/wdt/weblogic-deploy/lib/python/discover.py -oracle_home /u01/oracle -domain_home /u01/oracle/user_projects/domains/base_domain -archive_file source.zip -model_file source.yaml -variable_file source.properties -domain_type JRF
 
 Initializing WebLogic Scripting Tool (WLST) ...
@@ -195,8 +192,6 @@ Extracting those files and updating paths in the model file...
   adding: wlsdeploy/applications/SimpleHTML.ear (deflated 72%)
   adding: wlsdeploy/applications/SimpleDB.ear (deflated 62%)
 ```
-
-</details>
 
 ## **STEP 3:** Edit the `source.yaml` File
 
@@ -419,7 +414,7 @@ appDeployments:
   4. Finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
 
     The new JDBC connection string should be:
-    
+
     ```
     <copy>
     jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
@@ -465,7 +460,7 @@ appDeployments:
     </copy>
     ```
 
-  **Important Note**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
+  > **Important**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 
@@ -491,9 +486,9 @@ appDeployments:
 
 2. Enter the JDBC Connection password for the `RIDERS` user pdb: `Nge29v2rv#1YtSIS#`.
 
-  Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
+   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
-  The resulting file should look like:
+   The resulting file should look like:
 
     ```yaml
     JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
@@ -518,9 +513,10 @@ appDeployments:
     export RHOST=<Private IP of the Admin node>
     </copy>
     ```
-    Note: this is NOT the private load balancer IP, this is the **Private IP of the admin node**, found in the **Outputs** of the deployment stack.
 
-    ![](./images/admin-ip.png)
+	> **Note:** this is NOT the private load balancer IP, this is the **Private IP of the admin node**, found in the **Outputs** of the deployment stack.
+
+    ![](./images/admin-ip.png " ")
 
 1. Run the following command to copy the files:
 
@@ -534,76 +530,74 @@ appDeployments:
 
 ## **STEP 6:** Run the `update-domain` Build Job on Jenkins
 
-1. Go to the Jenkins UI at *http://PRIVATE_LOAD_BALANCER_IP/jenkins* using the tunnel set up earlier.
+1. Go to the Jenkins UI at `http://PRIVATE_LOAD_BALANCER_IP/jenkins` using the tunnel set up earlier.
 
-2. Click the top menu **Jenkins**.
+2. Click the **Jenkins** top menu.
 
 3. Click the *update-domain* pipeline.
 
-    ![](./images/jenkins1.png)
+    ![](./images/jenkins1.png " ")
 
 4. Click the Build with Parameters menu on the left.
 
-    ![](./images/jenkins2.png)
+    ![](./images/jenkins2.png " ")
 
 5. Select **Shared Filesystem** for each of the file locations, and type the full path to each file as below.
 
     - Archive file
-    ```
-    <copy>
-    /u01/shared/source.zip
-    </copy>
-    ```
+
+       ```
+       <copy>
+       /u01/shared/source.zip
+       </copy>
+       ```
 
     - Model file
-    ```
-    <copy>
-    /u01/shared/source.yaml
-    </copy>
-    ```
+
+       ```
+       <copy>
+       /u01/shared/source.yaml
+       </copy>
+       ```
 
     - Properties file
-    ```
-    <copy>
-    /u01/shared/source.properties
-    </copy>
-    ```
 
-    ![](./images/jenkins3.png)
+       ```
+       <copy>
+       /u01/shared/source.properties
+       </copy>
+       ```
+
+    ![](./images/jenkins3.png " ")
 
 6. Run the job with the **Build** button.
 
-    ![](./images/jenkins4.png)
+    ![](./images/jenkins4.png " ")
 
 7. In case of failure, hover over the job step and check the logs for information about issues at each build step.
 
 8. Wait until the job completes without failure in Jenkins.
 
-    ![](./images/jenkins5.png)
+    ![](./images/jenkins5.png " ")
 
-
-### You're done!
 
 ## **STEP 7:** Check the Application Deployed Properly
 
-1. Go to the WebLogic Admin console (at *http://PRIVATE_LOAD_BALANCER_IP/console* under **Deployment** you should see the 2 applications listed.
+1. Go to the WebLogic Admin console (at `http://PRIVATE_LOAD_BALANCER_IP/console` under **Deployment** you should see the two applications listed.
 
-    ![](./images/oci-deployments.png)
-    
-2. Go to **Core Infrastructure -> Networking -> Load Balancers**.
+   ![](./images/oci-deployments.png " ")
+
+2. On the **Core Infrastructure** menu, click **Networking** then click **Load Balancers**.
 
 3. Find the IP of the Public Load Balancer.
 
-  ![](./images/public-lb.png)
+   ![](./images/public-lb.png " ")
 
-4. Go to *https://PUBLIC_LOAD_BALANCER_IP/SimpleDB* to see the SimpleDB application.
+4. Go to `https://PUBLIC_LOAD_BALANCER_IP/SimpleDB` to see the SimpleDB application.
 
-  ![](./images/oci-simpledb-app.png)
+   ![](./images/oci-simpledb-app.png " ")
 
-  You will be prompted once again with the self-sign certificate warning in Firefox.
-
-
-You may proceed to the next lab.
+   You will be prompted once again with the self-sign certificate warning in Firefox.
 
 ## Acknowledgements
 

@@ -36,11 +36,15 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
    ![](images/ll-get-public-ip.png " ")
 
+4. Note the Compartment your compute instance was created in.
+
 4. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
 ## **Step 2:** Start Cloud Shell and Upload Key
 
-1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
+1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment).
+
+2.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
@@ -48,39 +52,40 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
 
-2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
-   
+3.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
+
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
 
-3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
-   
+4.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
+
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
 
-4. Be patient while the key file uploads to your Cloud Shell directory
+5. Be patient while the key file uploads to your Cloud Shell directory
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
 
-5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory
+6. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory
 
-    ````
+    ```nohighlight
     <copy>
     ls
     </copy>
-    ````
-    ````
-    mv <<keyname>> .ssh
-    ls .ssh
-    cd ~
-    ````
+    ```
+    ```nohighlight
+    mkdir ~/.ssh
+    mv <<keyname>> ~/.ssh
+    chmod 600 ~/.ssh/<privatekeyname>
+    ls ~/..ssh
+    ```
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
 
-6.  Secure Shell into the copute instance using your uploaded key name
-   
-    ````
+7.  Secure Shell into the compute instance using your uploaded key name
+
+    ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
+    ```
     ![](./images/em-mac-linux-ssh-login.png " ")
 
 If you are unable to ssh in, check out the troubleshooting tips below.
@@ -96,6 +101,7 @@ Participant is unable to login to instance
 
 #### Tips for fixing Issue #1
 There may be several reasons why you can't login to the instance.  Here are some common ones we've seen from workshop participants
+- Permissions are too open for the private key - be sure to chmod the file using `chmod 600 ~/.ssh/<yourprivatekeyname>`
 - Incorrectly formatted ssh key (see above for fix)
 - User chose to login from MAC Terminal, Putty, etc and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
 - Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
@@ -106,6 +112,5 @@ There may be several reasons why you can't login to the instance.  Here are some
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Kay Malcolm
+* **Contributors** - Kay Malcolm, Tom McGinn
 * **Last Updated By/Date** - Kay Malcolm, May 2021
-

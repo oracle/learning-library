@@ -237,7 +237,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
-You may now *proceed to the next lab*.  
+You may now [proceed to the next lab](#next).
 
 ## Appendix:  Teraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
@@ -333,7 +333,7 @@ Reload your browser
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, DB Product Management
+- **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Jeffrey Malcolm Jr.
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 

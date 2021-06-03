@@ -19,7 +19,7 @@ Watch a video demonstration of connecting to an autonomous database instance usi
 
 -   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
--   Oracle SQL Developer 19.2 or later is recommended (see <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">Oracle SQL Developer Downloads site</a>).
+-   Oracle SQL Developer 19.2 or later is recommended (see <a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html" target="\_blank">Oracle SQL Developer Downloads site</a>).
     Please use SQL Developer version 18.3 or later, as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.
 
     *Note:* If you are a Windows user on a 64-bit platform, download the "Windows 64-bit with JDK 8 included" distribution, as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and to connect to your Autonomous Data Warehouse.
@@ -39,7 +39,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
 2.  In your database's instance Details page, click on **DB Connection**.
 
-    ![](./images/Picture100-34.png " ")
+    ![](./images/dbconnection.png " ")
 
 3.  Use the Database Connection dialog to download client credentials.
     - Wallet Type - For this lab, select **Instance Wallet**. This wallet type is for a single database only. This provides a database-specific wallet. 
@@ -111,5 +111,5 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Richard Green, DB Docs Team
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
+- **Last Updated By/Date** - Kamryn Vinson, May 2021
 

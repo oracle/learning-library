@@ -1,5 +1,5 @@
 {
-    "workshoptitle":"Oracle Database 19c New Features",  
+    "workshoptitle":"Oracle Database 19c New Features",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
@@ -10,7 +10,7 @@
         },
          {
             "title": "Getting Started",
-            "description": "Login to Oracle Cloud",
+            "description": "Log in to Oracle Cloud",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {

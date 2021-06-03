@@ -1,0 +1,1 @@
+A screenshot showing the custom policies listed for an Autonomous Transaction Processing database. The APP_USER_NOT_APP_SERVER policy is selected and circled.

@@ -39,12 +39,12 @@ We will take a brief look at this property through two simple tests.
 ## **STEP 1:**  Assign a Job Class to a service and prepare a package to be scheduled
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. If you are logged in, skip to step 4.
 
-2.  Start Cloudshell
-    
+2.  Start Cloud Shell
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -52,7 +52,7 @@ We will take a brief look at this property through two simple tests.
     ![](../clusterware/images/racnode1-login.png " ")
 
 4. Confirm which instance is offering the service **svctest**.  Execute the following on **node 1** as the *oracle* user.  Remember to replace the database name with the database name you have been using in previous labs.
-   
+
     ````
     <copy>
     sudo su - oracle
@@ -62,7 +62,7 @@ We will take a brief look at this property through two simple tests.
     ![](./images/job-num4.png " " )
 
 5.  Stop the service **svctest**
-   
+
     ````
     <copy>
     srvctl stop service -d aTFdbVm_replacename -s svctest
@@ -155,7 +155,7 @@ We will take a brief look at this property through two simple tests.
 Look in the diagnostic_dest for files with the **id** set in the job schedule. The **id** will be in UPPERCASE
 
 6. On node1, for example, execute the following command.  Remember to replace the database name.
-   
+
     ````
     ls -altr /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm1/trace/*SCHEDULER01*
     ````
@@ -237,7 +237,7 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
     Trace files will exist in the trace directory of each node:
 
 7. On node 1 for as the oracle user query the trace files for ACTION NAME.
-   
+
     ````
     <copy>
     grep "ACTION NAME" `ls /u01/app/oracle/diag/rdbms/atfdbvm_replacename/aTFdbVm1/trace/*SCHEDULER*.trc`
@@ -248,7 +248,7 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
 
     ![](./images/job-step3-num7.png " " )
 
-    
+
 You may now *proceed to the next lab*.  
 
 ## Acknowledgements

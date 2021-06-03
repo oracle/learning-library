@@ -1,0 +1,27 @@
+{
+  "workshoptitle": "Deploy Java applications on Ampere A1 with Oracle Cloud Infrastructure",
+  "tutorials": [
+    {
+      "title": "Getting Started",
+      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Create an OCI Arm A1 instance",
+      "filename": "../../../common/create-a1-instance-ol8/create-a1-instance.md"
+    },
+    {
+      "title": "Expose application ports to users",
+      "filename": "../../../common/allow-traffic-8080/allow-traffic.md"
+    },
+    {
+      "title": "Running Java web applications on Ampere A1 Compute",
+      "description": "This workshop guides the user through building and deploying a Java web application running on OCI Arm A1 Compute platform. The sample application is deployed on Apache Tomcat 9.0 and uses MySQL as a database.",
+      "filename": "../../tutorial/arm-tomcat-mysql.md"
+    }
+  ]
+}

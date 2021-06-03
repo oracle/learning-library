@@ -23,15 +23,11 @@ Create a Kubernetes secret containing the Administration Server boot credentials
 
 After you have your domain namespace (the WebLogic domain is not deployed yet), you have to update the load balancer and operator configuration to specify where the domain will be deployed.
 
-Before executing the domain `helm` install, be sure that you are in the WebLogic operator local Git repository folder.
-
-```bash
-<copy>cd ~/weblogic-kubernetes-operator/</copy>
-```
 To update the operator, execute the following `helm upgrade` command:
 ```bash
 <copy>helm upgrade sample-weblogic-operator \
-  kubernetes/charts/weblogic-operator \
+  weblogic-operator/weblogic-operator \
+  --version 3.0.0 \
   --namespace sample-weblogic-operator-ns \
   --reuse-values \
   --set "domainNamespaces={sample-domain1-ns}" \

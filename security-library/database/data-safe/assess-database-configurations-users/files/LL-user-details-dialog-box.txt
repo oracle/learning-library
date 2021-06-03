@@ -1,0 +1,1 @@
+A screenshot of the User Details dialog box showing details for the DBA_HARVEY user.

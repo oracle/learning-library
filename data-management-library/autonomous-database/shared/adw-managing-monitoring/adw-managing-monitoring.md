@@ -36,7 +36,7 @@ The first facility that we will look at for monitoring your autonomous database 
 
 2. In your ADW Finance Mart **Database Details** page, click the **Service Console** button.
 
-    ![](images/click-service-console.jpg " ")
+    ![](images/click-service-console.png " ")
 
 ## **STEP 2**: Examine the Console Overview Page
 The **Overview** and **Activity** tabs show real-time and historical information about the service's utilization. The Service Console opens on the Overview tab by default.
@@ -85,19 +85,19 @@ Another facility for monitoring your autonomous database is the OCI Monitoring C
 
 1. Go back to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![](images/click-navigation-menu.jpg " ")
+    ![](images/click-navigation-menu.png " ")
 
-2. Scroll down the navigation menu. Under **Solutions and Platform**, click **Monitoring**. Click **Service Metrics**.
+2. Scroll down the navigation menu. Click **Observability & Management**, click **Service Metrics**.
 
-    ![](images/click-service-metrics.jpg " ")
+    ![](images/click-service-metrics.png " ")
 
 3. Choose a **Compartment** that you have permission to work in. Choose a **Metric Namespace** in the drop-down menu to the right of the compartment. If you're not sure which compartment and namespace to use, contact an administrator. Click the **edit** symbol next to **Dimensions**.
 
-    ![](images/click-edit-dimensions-icon.jpg " ")
+    ![](images/click-edit-dimensions-icon.png " ")
 
 4. In the **Edit dimensions** pop-up dialog, select a **Deployment Type**. Click **Done**.
 
-    ![](images/select-a-deployment-type.jpg " ")
+    ![](images/select-a-deployment-type.png " ")
 
 5. The page updates to display only the resources in that compartment and namespace. Scroll down this very long page. It shows the following metrics:
     -   CPU Utilization
@@ -127,7 +127,7 @@ You can view real-time and historical performance data from the Performance Hub.
 
 1. In your ADW Finance Mart **Database Details** page, click **Performance Hub**.
 
-    ![](images/click-performance-hub.jpg " ")
+    ![](images/click-performance-hub.png " ")
 
 2. The Performance Hub page is displayed. This page has the following sections:
     -   The time selector.
@@ -170,4 +170,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 ## **Acknowledgements**
 
 - **Author** - Richard Green, DB Docs Team
-- **Last Updated By/Date** - Richard Green, April 2021
+- **Last Updated By/Date** - Kamryn Vinson, May 2021

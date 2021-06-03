@@ -1,0 +1,1 @@
+A screenshot of the Review and Provision Audit and Alert Policies page with all policy categories showing as enabled, except for the All User Activity policy category.

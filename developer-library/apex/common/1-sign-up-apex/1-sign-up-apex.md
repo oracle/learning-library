@@ -39,7 +39,7 @@ Click one of the options below to proceed.
 
 In this part, you will create an Oracle APEX Application Development Service trial account. Once you have signed up for the service, you will create an *APEX Service*. The final step in the process is to provision Oracle APEX.
 
-1.  Please [click this link to create your free account](https://myservices.us.oraclecloud.com/mycloud/signup?language=en). When you complete the registration process, you'll receive an account with a $300 credit that you can utilize to create an APEX Service. You can then use any remaining credit to continue to explore the Oracle Cloud. 
+1.  Please [click this link to create your free account](https://signup.cloud.oracle.com/). When you complete the registration process, you'll receive an account with a $300 credit that you can utilize to create an APEX Service. You can then use any remaining credit to continue to explore the Oracle Cloud.
 
 2.  Once the Signup process is complete, you will be logged in automatically to the Oracle Cloud Infrastructure (OCI) Console.
     -  In case you have closed the browser, you can always refer to the **Get Started Now with Oracle Cloud** email that you should have received to login to OCI Console.   
@@ -133,7 +133,7 @@ In this part, you will create an Oracle APEX Application Development Service tri
 
 In this part, you will create an Oracle Cloud trial account. Once you have signed up for the service, you will create an *Autonomous Transaction Processing* database. The final step in the process is to provision Oracle APEX.
 
-1.  Please [click this link to create your free account](https://signup.oraclecloud.com). When you complete the registration process, you'll receive an account with a $300 credit and several "forever free" services that will enable you to complete the workshop for free. You can then use any remaining credit to continue to explore the Oracle Cloud. The forever free services will continue to work after the trial expires.
+1.  Please [click this link to create your free account](https://signup.cloud.oracle.com). When you complete the registration process, you'll receive an account with a $300 credit and several "forever free" services that will enable you to complete the workshop for free. You can then use any remaining credit to continue to explore the Oracle Cloud. The forever free services will continue to work after the trial expires.
 
 2.  Soon after requesting your trial, you will receive a  **Get Started Now with Oracle Cloud** email.   
     Make note of your **Username**, **Password**, and **Cloud Account Name**.
@@ -262,4 +262,3 @@ You may now *proceed to the next lab*.
  - **Author** -  Salim Hlayel, Principal Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, Database Management | Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
  - **Last Updated By/Date** - Salim Hlayel, Principal Product Manager, November 2020
-

@@ -23,7 +23,7 @@ Watch this short video to preview how to prepare your tenancy for Oracle E-Busin
 1. As the Tenancy Administrator, log in to the Oracle Cloud Infrastructure console.
     ![](./images/login-oci.png " ")
 
-2. In the Oracle Cloud Infrastructure console menu, under Governance and Administration, navigate to **Identify > Federation**.
+2. In the Oracle Cloud Infrastructure console menu, under Governance and Administration, navigate to **Identify & Security > Federation**.
     ![](./images/federation-menu.png " ")
 
 3. Click on OracleIdentityCloudService
@@ -248,6 +248,6 @@ You may now proceed to the next lab.
   - Santiago Bastidas, Product Management Director
   - William Masdon, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
 

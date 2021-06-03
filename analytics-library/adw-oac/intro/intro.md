@@ -29,12 +29,13 @@ And another short video that explains **Oracle Analytics Cloud (OAC)**:
 
 [](youtube:ptA6CnncfB8)
 
-Estimated Workshop Time: 120 minutes
+Estimated Workshop Time: 120 minutes.
 
-*At this point, you are ready to start learning! Please proceed*
+*At this point, you are ready to start learning! Please proceed.*
 
 ## **Acknowledgements**
-- **Author** - Priscila Iruela, Database Business Development | Juan Antonio Martin Pedro, Analytics Business Development
+
+- **Author** - Priscila Iruela, Technology Product Strategy Director, Juan Antonio Martin Pedro, Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 

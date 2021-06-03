@@ -1,0 +1,1 @@
+A screenshot of the Worksheet tab in Database Actions showing the SELECT statement to query the HCM1.EMPLOYEES table.

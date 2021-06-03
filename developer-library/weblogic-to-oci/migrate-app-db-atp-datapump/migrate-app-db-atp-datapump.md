@@ -80,26 +80,25 @@ To run this lab you need:
 
       It sets up the directory to backup to, and uses DataPump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
 
-<details><summary>View the <code>datapump_export.sh</code> script</summary>
-
-```bash
-EXPORT_DB_DIRNAME=export
-
-# all other variables are from the local environment
-
-# clear the folder and recreate
-rm -rf ~/datapump/export && mkdir -p ~/datapump/export
-
-# drop directory if it exists
-echo "DROP DIRECTORY ${EXPORT_DB_DIRNAME};" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
-
-# create a directory object in the DB for export with DataPump, pointing to the folder created above
-echo "CREATE DIRECTORY ${EXPORT_DB_DIRNAME} AS '/home/oracle/datapump/export/';" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
-
-# export the schema 'RIDERS' with DataPump, which is our user schema with the Tour de France Riders data
-expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDERS DIRECTORY=${EXPORT_DB_DIRNAME}
-```
-</details>
+      The `datapump_export.sh</code>` script appears as follows.
+      
+      ```bash
+      EXPORT_DB_DIRNAME=export
+      
+      # all other variables are from the local environment
+      
+      # clear the folder and recreate
+      rm -rf ~/datapump/export && mkdir -p ~/datapump/export
+      
+      # drop directory if it exists
+      echo "DROP DIRECTORY ${EXPORT_DB_DIRNAME};" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
+      
+      # create a directory object in the DB for export with DataPump, pointing to the folder created above
+      echo "CREATE DIRECTORY ${EXPORT_DB_DIRNAME} AS '/home/oracle/datapump/export/';" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
+      
+      # export the schema 'RIDERS' with DataPump, which is our user schema with the Tour de France Riders data
+      expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDERS DIRECTORY=${EXPORT_DB_DIRNAME}
+      ```
 
 ## **STEP 2:** Export the Source Database
 

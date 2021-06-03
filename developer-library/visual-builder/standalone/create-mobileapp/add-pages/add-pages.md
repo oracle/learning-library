@@ -100,6 +100,6 @@ Oracle Visual Builder provides Quick Starts that create pages to help you quickl
 8.  Close the tab or window.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - April 2021
+* **Last Updated By/Date** - Sheryl Manoharan, April 2021

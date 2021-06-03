@@ -1,0 +1,1 @@
+A screenshot showing the Retrieval Status as successfully completed (check mark) for a target database.

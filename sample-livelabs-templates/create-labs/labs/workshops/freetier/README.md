@@ -4,8 +4,8 @@ The **Creating Workshops and Labs** is a series of step-by-step labs that guide 
 
 ## Access the Labs Using Our Web Interface
 
-
-**[Click here](https://oracle.github.io/learning-library/create-labs/labs/1-labs-quickstart-workshop)** to use our easy to navigate HTML format. <!-- This URL is not functional -->
+**[Click here](https://oracle.github.io/learning-library/create-labs/labs/workshops/freetier)** to use our easy to navigate HTML format.
+*If you are looking for information on creating images for compute instances and storing them in Marketplace, please click this link: [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/).*
 
 
 ## Access the Labs on the Repo

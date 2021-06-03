@@ -25,9 +25,9 @@ This lab assumes that you completed all preceding labs.
 
 *Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
-1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
 
     You're brought to the **Deployments** page.
 
@@ -100,4 +100,4 @@ In this lab, you created an OCI Deployment and reviewed its Deployment details. 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, April 2021
+* **Last Updated By/Date** - Jenny Chan, May 2021

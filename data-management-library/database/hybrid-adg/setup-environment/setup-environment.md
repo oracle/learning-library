@@ -18,7 +18,7 @@ This lab assumes you have already completed the following:
 
 Click on the link below to download the Resource Manager zip files you need to build your environment.
 
-- [db19c-primary-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/H_AOI7dUSBW4xMRnTULYeF3nOeAd0SfKGyIR6pAam1lYQjSNOGrE52OKOD9EURC8/n/c4u03/b/data-management-library-files/o/Oracle%20Sharding/db19c-primary-num.zip) - Packaged terraform primary database instance creation script.
+- [db19c-primary-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s-qeS2mcWmyygcQx-Q_jdZ4ZuchnpXxHeGVGL4zfooV0fHIVlHNpVYZkeFLRAn9s/n/c4u03/b/data-management-library-files/o/Oracle%20Sharding/db19c-primary-num.zip) - Packaged terraform primary database instance creation script.
 
 
 ## **STEP 1:** Prepare the Primary Database
@@ -26,7 +26,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 1. Login to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**. *Note: If you are in a workshop, double check your region to ensure you are on the assigned region.*
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
-   
+  
      ![](./images/step1.3-createstackpage.png " ")
 
 2. Check the **.ZIP FILE**, Click the **Browse** link and select the primary database setup zip file (`db19c-primary-num.zip`) that you downloaded. Click **Select** to upload the zip file.
@@ -39,7 +39,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
      ![](images/image-20201030094440068.png)
 
-    
+​    
 
 4. Click **Create**.
 
@@ -56,9 +56,9 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 1.  [OPTIONAL] Click **Terraform Actions** -> **Plan** to validate your configuration. Click **Plan**. This takes about a minute, please be patient.
 
      ![](./images/terraformactions.png " ")
-      
+     
      ![](images/image-20201030095622286.png)
-      
+     
      ![](./images/planjob.png " ")
      
      ![](./images/planjob1.png " ")
@@ -103,7 +103,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      [opc@primary ~]$ 
      ```
 
-    
+​    
 
 ### Windows using Putty
 
@@ -149,7 +149,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      ps -ef | grep ORCL
      </copy>
      ````
- 
+
      ![](./images/pseforcl.png " ")
 
 4. Verify the listener is running:
@@ -170,10 +170,10 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      sqlplus system/Ora_DB4U@localhost:1521/orclpdb
      </copy>
      ````
-    
+
 
      ![](./images/sqlplus_login_orclpdb.png " ")
-    
+
 6.  To leave `sqlplus` you need to use the exit command. Copy and paste the text below into your terminal to exit sqlplus.
 
      ````

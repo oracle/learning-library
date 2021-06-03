@@ -62,7 +62,8 @@ The backend is implemented using the following Java classes (under ./backend/src
  If the variable is not set or is an empty string, the push will fail (but the docker image will be built).
 
 2. Make sure to be in backend/target/classes/wallet directory then execute
-	```
+	
+   ```
 	<copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
 	```
 

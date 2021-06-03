@@ -1,0 +1,36 @@
+{
+  "workshoptitle": "APEX + Server-Side JavaScript",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+    {
+      "title": "Getting Started",
+      "filename": "0-sign-up-apex/0-sign-up-apex.md"
+    },
+    {
+      "title": "Introduction",
+      "filename": "intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Create an App from a Spreadsheet",
+      "filename": "creating-an-app-from-a-spreadsheet/creating-an-app-from-a-spreadsheet.md"
+    },
+    {
+
+      "title": "Lab 2: Prepare the Report and Provide the JavaScript Pseudo Code",
+      "filename": "prepare-report-javascript-pseudo-code/prepare-report-javascript-pseudo-code.md"
+    },
+    {
+      "title": "Lab 3: Extend the App using JavaScript",
+      "filename": "extend-app-using-javascript/extend-app-using-javascript.md"
+    },
+    {
+      "title": "Lab 4: Using External Modules",
+      "filename": "external-modules/external-modules.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 ## About Oracle Machine Learning
 **Move the algorithms, not the data!**
 
-With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects.
+With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data resides. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects.
 
 **Oracle Database - the multi-model converged database**
 
@@ -14,7 +14,7 @@ Users should not have to create and manage multiple databases to access differen
 
 **Features of Oracle Machine Learning**
 
-`Here are a few highlights of Oracle Machine Learning functionality:`
+Here are a few highlights of Oracle Machine Learning functionality:
 
 - Oracle integrates machine learning across the Oracle stack and the enterprise, fully leveraging Oracle Database and Oracle Autonomous Database
 - Empowers data scientists, data analysts, developers, and DBAs/IT with machine learning
@@ -33,14 +33,14 @@ Users should not have to create and manage multiple databases to access differen
 * In this workshop, you will gain first-hand experience of using data types beyond relational data - JSON and XML.
 * Identify Data Miner interface components.
 * Create a Data Miner project.
-* Build a Workflow document that uses different type of models to predict customer behavior.
+* Build a Workflow document that uses different types of models to predict customer behavior.
 
 ### Prerequisites
 - Oracle SQL Developer client
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account.
 
 
-Once you complete your setup, the next four labs in this workshop cover these individual data types, and the final lab consists of multi-model examples:
+Once you have complete your setup, the next four labs in this workshop covers these individual data types, and the final lab consists of multi-model examples:
 
   - Lab : OML Data Miner
   - Lab : OML Data Preparation

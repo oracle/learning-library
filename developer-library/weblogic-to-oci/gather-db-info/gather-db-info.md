@@ -1,4 +1,4 @@
-# Gather Database Information
+# Gather database information
 
 ## Introduction
 
@@ -16,21 +16,19 @@ In this lab you will:
 
 ## **STEP 1:** Gather the OCI Database Information
 
-Once the database system is provisioned, under the **Database System -> details**.
+Once the database system is provisioned, on the **Database System** menu, click **details**.
 
 1. Go to the `nodes` left-side menu and note the **private IP address** of the node provisioned for later use:
 
-  ![](./images/provision-db-26-nodeip.png)
+   ![](./images/provision-db-26-nodeip.png " ")
 
 2. Click **DB Connection**.
 
-  ![](./images/provision-db-27-connection.png)
+   ![](./images/provision-db-27-connection.png " ")
 
 3. Copy the **DB connection string** for later use.
 
-  ![](./images/provision-db-27-connection2.png)
-
-You may now proceed to the next lab.
+   ![](./images/provision-db-27-connection2.png " ")
 
 ## Acknowledgements
 

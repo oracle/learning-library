@@ -18,8 +18,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -104,6 +104,10 @@ This lab assumes you have:
 
 5. When prompted, enter the password "*`Oracle123`*"
 
+      ````
+      <copy>Oracle123</copy>
+      ````
+
    ![](./images/dbsat-003.png " ")
 
     **Note**:
@@ -129,6 +133,10 @@ This lab assumes you have:
     - If you choose not to encrypt data, the four report files are generated in the specified directory
 
 2. DBSAT will prompt the user for one password – the password used when running the collector so it can unzip the file – followed by another password prompt that will be used to protect the reports zip file, plus the password confirmation: stick to "*`Oracle123`*"
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
    ![](./images/dbsat-004.png " ")
 
@@ -392,7 +400,7 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
 
     **Note**:
     - In this case, 10 files have wrong permission settings
-    - Make sure OS file permissions are rightly setup to avoid having database binaries and files modified by users other than the ORACLE_HOME owner
+    - Make sure OS file permissions are rightly setup to avoid having database binaries and files modified by users other than the `ORACLE_HOME` owner
 
 25. **Congratulations, so far you have learned how to use DBSAT collector and reporter to Assess your Database Security!**
 
@@ -449,11 +457,19 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
 
 7. Enter *`DBSAT_ADMIN`* as the username and "*`Oracle123`*" as the password
 
+      ````
+      <copy>DBSAT_ADMIN</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
    ![](./images/dbsat-030.png " ")
 
     **Note**:
     - At the end of the process, you’ll be asked to provide a password twice (please use "*`Oracle123`*")
-    - A file named `pdb1_dbsat_report.zip` is created in the directory **/home/oracle/dbsat/**
+    - A file named `pdb1_dbsat_report.zip` is created in the **current directory**
 
 8. Unzip the file and check the contents by opening the HTML report in firefox
 
@@ -831,7 +847,7 @@ DBSAT uses pattern files and the regexes that are there defined to find sensitiv
           ````
 
     - Add the new Sensitive Category to the bottom of the file
-    
+
           ````
           <copy>Financial Info - Company Data = Medium Risk</copy>
           ````
@@ -1040,7 +1056,7 @@ In this exercise, you will be exposed to the DBSAT utilities ("`dbsat_diff`" & "
 
    ![](./images/dbsat-054.png " ")
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next)..
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -1098,5 +1114,4 @@ Technical Documentation:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

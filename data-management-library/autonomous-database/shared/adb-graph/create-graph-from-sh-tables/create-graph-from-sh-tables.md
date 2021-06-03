@@ -176,7 +176,7 @@ Estimated Lab Time: 30 minutes.
 
 Congratulations! You successfully converted relational tables into a property graph. You can now go ahead and analyze the relationships in that data using powerful graph queries and algorithms.
 
-You may now **proceed to the next lab.**
+You may now *proceed to the next lab.*
 
 ## Acknowledgements
 * **Author** - Korbi Schmid, Product Development

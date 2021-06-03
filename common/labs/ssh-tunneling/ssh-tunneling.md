@@ -24,7 +24,7 @@ In this workshop, you will:
 
 ## **STEP 1:** Gather DB System Details
 
-1. On the Oralce home page, click on the hamburger menu and click on  **Bare Metal, VM and Exadata**.
+1. On the Oracle home page, click on the hamburger menu and click on  **Bare Metal, VM and Exadata**.
 
     ![](./images/vm.png " ")
 
@@ -146,4 +146,3 @@ In this workshop, you will:
 
 * **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date** - Anoosha Pilli, February 2021
-

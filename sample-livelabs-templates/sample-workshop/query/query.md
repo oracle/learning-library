@@ -6,10 +6,10 @@
 
 Estimated Lab Time: n minutes
 
-### About Product/Technology
+## About Product/Technology
 Enter background information here..
 
-### Objectives
+## Objectives
 
 *List objectives for the lab - if this is the intro lab, list objectives for the workshop*
 
@@ -18,7 +18,9 @@ In this lab, you will:
 * Objective 2
 * Objective 3
 
-### Prerequisites
+To link to other areas in document use this [syntax](#STEP1:title)
+
+## Prerequisites
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
@@ -102,5 +104,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-

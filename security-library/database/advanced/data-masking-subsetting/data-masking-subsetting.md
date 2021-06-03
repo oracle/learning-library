@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Data Masking and Subsetting (DMS) pack for Enterprise Manager. It gives the user an opportunity to learn how to configure those features in order to secure their sensitive data in a Non-Production environment.
 
-*Estimated Lab Time:* 65 minutes
+*Estimated Lab Time:* 85 minutes
 
 *Version tested in this lab:* Oracle Enterprise Manager 13.4
 
@@ -20,33 +20,44 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 ### Lab Timing (estimated)
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
-| 1 | Import schema structure | 5 minutes |
-| 2 | Enhance the meta-model | 5 minutes |
+| 1 | Import Schema Structure | 5 minutes |
+| 2 | Enhance the Meta-Model | 5 minutes |
 | 3 | Use Pre-Defined Sensitive Column Types | 5 minutes |
-| 4 | Create a new Sensitive Column Type | 5 minutes |
-| 5 | Create a new Sensitive Column Type using Pre-Defined Templates | 5 minutes |
-| 6 | Create a new Masking Format | 5 minutes |
+| 4 | Create a New Sensitive Column Type | 5 minutes |
+| 5 | Create a New Sensitive Column Type Using Pre-Defined Templates | 5 minutes |
+| 6 | Create a New Masking Format | 5 minutes |
 | 7 | Manually Identify Sensitive Columns | 5 minutes |
 | 8 | Create Data Masking Definitions | 5 minutes |
 | 9 | Format Columns Using the Format Library and Masking Primitive | 10 minutes |
 |10 | Generate Data Masking Scripts | 5 minutes |
-|11 | Execute the Data Masking Script | 5 minutes |
+|11 | Execute the Data Masking Scripts | 5 minutes |
 |12 | Compare the Pre-Masked Data vs. the Post-Masked Data | 5 minutes |
-|13 | (Optional) Restore Dev Data | <5 minutes |
+|13 | Create Data Subsetting Definitions | 5 minutes |
+|14 | Generate Data Subsetting Scripts | 5 minutes |
+|15 | Compare the Pre-Subsetted Data vs. the Post-Subsetted Data | 5 minutes |
+|16 | (Optional) Reset the Labs Environment | <5 minutes |
 
-## **STEP 1**: Import schema structure
+## **STEP 1**: Import Schema Structure
 
 1. Open a Web Browser at the URL *`https://<DBSecLab-VM_@IP-Public>:7803/em`*
 
 2. Login to Oracle Enterprise Manager 13c Console as *`SYSMAN`* with the password "*`Oracle123`*"
+
+      ````
+      <copy>SYSMAN</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
 
    ![](./images/dms-001.png " ")
 
@@ -70,9 +81,13 @@ This lab assumes you have:
 
 6. Click [**Continue**]
 
-7. Select the **Named** radio button, choose the Credential Name *`DMS_ADMIN`* (pwd: "*`Oracle123`*") and click [**Login**]
+7. Connect with the DMS Admin pre-defined user
+    - Select the **Named** radio button
+    - Choose the Credential Name *`DMS_ADMIN`* (pwd: "*`Oracle123`*")
 
-   ![](./images/dms-005.png " ")
+      ![](./images/dms-005.png " ")
+
+    - Click [**Login**]
 
     **Note**: Alternatively, `SYS` can be used as well... In a production environment, you could limit the privileges of `DMS_ADMIN` to only the packages necessary to perform their duties
 
@@ -94,7 +109,7 @@ This lab assumes you have:
 
 12. Once the job completes, the `EMPLOYEE_ADM` will no longer be in a locked, uneditable status. Check the status by refreshing this page (**refresh icon**) and move forward when the Most Recent Jobs Status of the `Employee_ADM` has "**Succeeded**"!
 
-## **STEP 2**: Enhance the meta-model
+## **STEP 2**: Enhance the Meta-Model
 
 1. Once you've created the ADM in Step 1, highlight the `Employee_ADM` Model and click the [**Edit**] button
 
@@ -123,6 +138,8 @@ This lab assumes you have:
 
       ![](./images/dms-014.png " ")
 
+    - Click [**OK**]
+
     - The new relation is available in the referential relationships view of your ADM, and now that Cloud Control is aware of the foreign keys, it will automatically apply the same format masks to child tables
 
       ![](./images/dms-015.png " ")
@@ -141,18 +158,20 @@ This lab assumes you have:
 
    ![](./images/dms-016.png " ")
 
-3. Review the Sensitive Column Discovery Templates that are shipped by default with the Data Masking Pack. As an example, review the `EMAIL_ID` template by hovering over the name `EMAIL_ID`. When using this Sensitive Column Type will:
+3. Review the Sensitive Column Discovery Templates that are shipped by default with the Data Masking Pack.
+
+    As an example, by hovering over the name **`EMAIL_ID`**, review this template to understand what this Sensitive Column Type will do when using it:
     - Search for '`EMAIL`' or '`MAIL`' in the Column Name
     - Search for '`EMAIL`' or '`MAIL`' in the Column Comment
     - Apply a regular expression pattern match to all of the Column Data if the user (i.e. `DMS_ADMIN`) has access to the data
 
       ![](./images/dms-017.png " ")
 
-      **Note**:
-      - This process uses Oracle Regular Expressions which is compatible with the IEEE Portable Operating System Interface (POSIX) regular expression standard and to the Unicode Regular Expression Guidelines of the Unicode Consortium
-      - In this case, the **Search Type** has been set as an **Or** condition, so if any of the conditions listed above are met, it will result in a match
+        **Note**:
+        - This process uses Oracle Regular Expressions which is compatible with the IEEE Portable Operating System Interface (POSIX) regular expression standard and to the Unicode Regular Expression Guidelines of the Unicode Consortium
+        - In this case, the **Search Type** has been set as an **Or** condition, so if any of the conditions listed above are met, it will result in a match
 
-## **STEP 4**: Create a new Sensitive Column Type
+## **STEP 4**: Create a New Sensitive Column Type
 
 1. Navigate to the sub-menu **Sensitive column types** as described in Step 3 previously and click [**Create...**] to add a custom Sensitive Column Type
 
@@ -161,8 +180,8 @@ This lab assumes you have:
 2. Create a Sensitive Column Type that will look for the wildcard "**NAME**" as part of the Column Name or the Column Comment:
     - Name: *`NAME`*
     - Description: *`Search for NAME in either the Column Name or in the Column Comment`*
-    - Column Name: *`NAME`*
-    - Column Comment: *`NAME`*
+    - Column Name: *`*NAME*`*
+    - Column Comment: *`*NAME*`*
 
       ![](./images/dms-019.png " ")
 
@@ -171,7 +190,7 @@ This lab assumes you have:
 
       ![](./images/dms-020.png " ")
 
-## **STEP 5**: Create a new Sensitive Column Type using Pre-Defined Templates
+## **STEP 5**: Create a New Sensitive Column Type using Pre-Defined Templates
 
 1. Navigate to the sub-menu **Sensitive column types** as described in Step 3 previously and select the Sensitive Column Type template that you want to duplicate (here `EMAIL_ID`)
 
@@ -193,7 +212,7 @@ This lab assumes you have:
 
       ![](./images/dms-023.png " ")
 
-## **STEP 6**: Create a new Masking Format
+## **STEP 6**: Create a New Masking Format
 
 1. To create a masking format in the format library, navigate to the Data Masking Formats page from the menu **Enterprise > Quality Management > Data Masking Formats Library** as follow:
 
@@ -212,25 +231,30 @@ This lab assumes you have:
 4. Provide required information for the new format:
   - Name: *`Mask Oracle Corp EMail`*
   - Sensitive Colum Type: *`EMAIL_ORA`*
+  - Description: *`Mask the Oracle Corp email by changing prefixe and domain name`*
 
       ![](./images/dms-027.png " ")
 
-  - Add the formats entries types from the Add list and click [**Go**], here:
-      - **Random Strings**
+  - Add the formats entries types from the Add list, here:
+      - Select **Random Strings** and click [**Go**]
 
       ![](./images/dms-028.png " ")
 
-      - Mention the **start length** (here "*`6`*") and **end length** (here "*`8`*") in the Edit Format screen of Format Library and click [**OK**]
+          - Mention the **start length** (here "*`6`*") and **end length** (here "*`8`*") in the Edit Format screen of Format Library
 
-      ![](./images/dms-029.png " ")
+              ![](./images/dms-029.png " ")
 
-      - **Fixed String**
+          - Click [**OK**]
+
+      - Select **Fixed String** and click [**Go**]
 
       ![](./images/dms-030.png " ")
 
-      - Mention the string you want to add (here "*`@elcaro.com`*") and click [**OK**]
+          - Mention the string you want to add (here "*`@elcaro.com`*")
 
-      ![](./images/dms-031.png " ")
+              ![](./images/dms-031.png " ")
+
+          - Click [**OK**]
 
     **Note**:
     - When you will use this masking algorithm, it will replace the initial value by a new value generated from the concatenation of a random string of 6 to 8 characters at the beginning, followed by the fixed value `@elcaro.com`
@@ -263,7 +287,7 @@ This lab assumes you have:
 
 5. Currently, there are no sensitive columns discovered so you must initiate a search. Click the option to **Create Discovery Job...**
 
-6. Provide the parameters for the sensitive columns discovery job. Choose the *`EMPLOYEESEARCH_DEV`* schema and choose the all of them except `EMAIL_ID`, `ISBN_10`, `ISBN_13`, and `UNIVERSAL_PRODUCT_CODE` Sensitive Column Types
+6. Provide the parameters for the sensitive columns discovery job. Choose the *`EMPLOYEESEARCH_DEV`* schema and choose the all of them **except `EMAIL_ID`, `ISBN_10`, `ISBN_13`, and `UNIVERSAL_PRODUCT_CODE`** Sensitive Column Types
 
    ![](./images/dms-037.png " ")
 
@@ -288,7 +312,7 @@ This lab assumes you have:
    ![](./images/dms-041.png " ")
 
 12. Notice that the Sensitive Status of these columns is currently set to **Undefined** and now you have to set the sensitive status of all columns to **Sensitive** that you want to mask
-    - Select each identified sensitive column entry that you want to mask (for this lab, select the *`PAYMENT_ACCT_NO`*, *`EMAIL`*, *`FIRST_NAME`*, *`LAST_NAME`* and *`ROUTING_NUMBER`*)
+    - Select each identified sensitive column entry that you want to mask (for this lab, select the *`DEMO_HR_SUPPLEMENATL_DATA.PAYMENT_ACCT_NO`*, *`DEMO_HR_EMPLOYEES.EMAIL`*, *`DEMO_HR_USERS.EMAIL`*, *`DEMO_HR_EMPLOYEES.FIRST_NAME`*, *`DEMO_HR_EMPLOYEES.LAST_NAME`* and *`DEMO_HR_SUPPLEMENATL_DATA.ROUTING_NUMBER`*)
     - Click [**Set Sensitive Status**] menu item
     - Then select "*`Sensitive`*"
 
@@ -318,7 +342,7 @@ This lab assumes you have:
     - Name: *`EMPLOYEE_DATA_MASK`*
     - Application Data Model: *`Employee_ADM`*
     - Reference Database: *`cdb1_pdb1`*
-    - Description: *`Mask Employee Data`*
+    - Description: *`Mask Employee Sensitive Data`*
 
    ![](./images/dms-045.png " ")
 
@@ -424,11 +448,22 @@ This lab assumes you have:
 
 22. Click [**Import**]
 
-   ![](./images/dms-062.png " ")
+   ![](./images/dms-062a.png " ")
 
-    **Note**: Here, this pre-defined library uses the Function `MGMT_DM_GEN_ANYC` of the Package `DBSNMP.DM_FMTLIB` and it's automatically put in the correct field
+    **Note**: Here, this pre-defined library uses the Function `MGMT_DM_GEN_ANYC` of the Package `DBSNMP.DM_FMTLIB`
 
-23. You can see the algorythmic sequence and click [**OK**]
+23. Click [**OK**]
+
+    **Note:**
+    - If the function and package names **are not in the correct fields** you will have an error!
+
+       ![](./images/dms-062b.png " ")
+
+    - Please, be sure you put Package Name `DBSNMP.DM_FMTLIB` and Function Name `MGMT_DM_GEN_ANYC`
+
+       ![](./images/dms-062c.png " ")
+
+    - Then, click [**OK**]
 
 24. We’ll define a customised format to the *`DEMO_HR_SUPPLEMENTAL_DATA.ROUTING_NUMBER`* column as the format **999-999-999** where digits are randomly attributed. Select the row and click on the **Define Format** icon
 
@@ -605,7 +640,9 @@ This lab assumes you have:
 
 12. Click [**Return**] to return to the Data Masking Definitions screen
 
-## **STEP 11**: Execute the Data Masking Script
+## **STEP 11**: Execute the Data Masking Scripts
+
+**Recommendation:** To execute the Data Masking script you will need a SSH key-pair. Do not use a putty key-pair, instead use a RSA preferably created in a linux environment.
 
 1. Once you've generated the data masking script in Step 10, before continuing this lab and as prerequisite, **make sure you can R/W files to your DBSecLab VM** from the OEM Console
 
@@ -613,15 +650,17 @@ This lab assumes you have:
 
       ![](./images/dms-201.png " ")
 
-    - Select *`OS_ORACLE_SSH`* named credential and click [**Edit**]
+    - Select *`OS_ORACLE_SSH`* named credential
 
       ![](./images/dms-202.png " ")
 
-      **Note**: We have already pre-configured this Named Credential for you but you have to put your own SSH Private Key to enable it!
+     - Click [**Edit**]
 
-    - In the section **Credential Properties**, load your *`SSH Private Key`* generated in Lab 1 of this workshop (remember, this key must be **in RSA format**!)
+    - We have already pre-configured this Named Credential for you but **you have to put your own SSH Private Key to enable it**!
+        - In the section **Credential Properties**, load your *`SSH Private Key`* generated in Lab 1 of this workshop
+        - Remember, this key must be *`in RSA format`*, so please **open your own "SSH Private Key" file, copy the content and paste it here**!
 
-      ![](./images/dms-203.png " ")
+          ![](./images/dms-203.png " ")
 
     - Click [**Test and Save**]
 
@@ -689,20 +728,17 @@ This lab assumes you have:
 
    ![](./images/dms-094.png " ")
 
-4. Do it again in order to have 2 tabs and put a comment to differentiate them as follow:
+4. Do it again in order to have 2 tabs
 
-    - The first one for the original data in **Production before masking**
-
-       ![](./images/dms-095.png " ")
-
-    - The second one for the masked data in **Dev after masking**
-
-       ![](./images/dms-096.png " ")
-
-5. Copy the following queries for the **PROD**
+5. In the first one, copy the following queries for the **PROD: BEFORE MASKING**
 
       ````
-      <copy>-- EMPLOYEE_DATA
+      <copy>
+      -- -----------------------------
+      -- PROD: BEFORE MASKING
+      -- -----------------------------
+
+      -- EMPLOYEE_DATA
       SELECT distinct(e.userid), e.firstname, e.lastname, e.email, sd.routing_number, sd.payment_acct_no
         FROM EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES e, EMPLOYEESEARCH_PROD.DEMO_HR_SUPPLEMENTAL_DATA sd
        WHERE e.userid = sd.userid
@@ -711,15 +747,22 @@ This lab assumes you have:
       -- USERS_DATA
       SELECT userid, email
         FROM EMPLOYEESEARCH_PROD.DEMO_HR_USERS
-       ORDER BY 1;</copy>
+       ORDER BY 1;
+
+      </copy>
       ````
 
    ![](./images/dms-097.png " ")
 
-6. And these one for the **DEV**
+6. In the second one, copy the following queries for the **DEV: AFTER MASKING**
 
       ````
-      <copy>-- EMPLOYEE_DATA
+      <copy>
+      -- -----------------------------
+      -- DEV: AFTER MASKING
+      -- -----------------------------
+
+      -- EMPLOYEE_DATA
       SELECT distinct(e.userid), e.firstname, e.lastname, e.email, sd.routing_number, sd.payment_acct_no
         FROM EMPLOYEESEARCH_DEV.DEMO_HR_EMPLOYEES e, EMPLOYEESEARCH_DEV.DEMO_HR_SUPPLEMENTAL_DATA sd
        WHERE e.userid = sd.userid
@@ -728,7 +771,9 @@ This lab assumes you have:
       -- USERS_DATA
       SELECT userid, email
         FROM EMPLOYEESEARCH_DEV.DEMO_HR_USERS
-       ORDER BY 1;</copy>
+       ORDER BY 1;
+
+      </copy>
       ````
 
    ![](./images/dms-098.png " ")
@@ -755,32 +800,390 @@ This lab assumes you have:
 
 8. **Now, your sensitive data has been masked!**
 
-## **STEP 13**: (Optional) Restore Dev Data
+## **STEP 13**: Create Data Subsetting Definitions
 
-This lab will reset the `EMPLOYEESEARCH_DEV` tables on **pdb1** by cloning data from `EMPLOYEESEARCH_PROD` schema
+1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Subsetting Definitions** as follow:
 
-1. Open a SSH session on your DBSec-Lab VM as Oracle User
+   ![](./images/dms-130.png " ")
+
+2. From the Data Subsetting Definitions Dialog, we will create a new definition. Click on the [**Create**] button to begin the process of masking data
+
+3. From the **Data Subsetting Definition Properties** screen, fill it as follow:
+    - Name: *`EMPLOYEE_DATA_SUBSET`*
+    - Description: *`Subset Employee Data`*
+    - Application Data Model: *`Employee_ADM`*
+    - Source Database: *`cdb1_pdb1`*
+
+   ![](./images/dms-131.png " ")
+
+4. Click [**Continue**]
+
+5. In the **Credentials"** section, select the **Named** radio button, choose the default credential using the `DMS_ADMIN` username
+
+   ![](./images/dms-132.png " ")
+
+6. Click [**Submit**]
+
+7. Now your Subsetting definition is scheduling... please refresh the page until you see "**Succeeded**"
+
+   ![](./images/dms-133.png " ")
+
+8. Once the subsetting definition is created, select it and click on [**Edit...**]
+
+   ![](./images/dms-134.png " ")
+
+9. In the "**Applications**" tab, select the schema `EMPLOYEESEARCH_DEV(EMPLOYEESEARCH_DEV)` available in your ADM
+
+   ![](./images/dms-135.png " ")
+
+10. In the "**Object Rules**" tab, create all the Subset rules by clicking [**Create**] as many time as needed
+
+   ![](./images/dms-136.png " ")
+
+    Here, we will create 4 Object Rules, so in the "Create Object Rule" screen proceed like this...
+
+    - ... for `DEMO_HR_EMPLOYEES` table, because this a dataset table, we will keep only **25% of rows**
+        - In "Objects", select **Specified** and choose "*`DEMO_HR_EMPLOYEES`*"
+        - In "Rows to Include", select **Some Rows** and put "*`25`*"
+        - Tick "**Include Related Rows**" and select "**Ancestor and Descendant Objects**"
+
+           ![](./images/dms-137.png " ")
+
+        - Click [**OK**]
+
+    - ... for `DEMO_HR_ERROR_LOG` table, because this is a log table we will keep **0% of rows**
+        - In "Objects", select **Specified** and choose "*`DEMO_HR_ERROR_LOG`*"
+        - In "Rows to Include", select **Rows Where** and put "*`1=0`*" (here this condition allow to extract 0 rows!)
+        - Tick "**Include Related Rows**" and select "**Ancestor and Descendant Objects**"
+
+           ![](./images/dms-138.png " ")
+
+        - Click [**OK**]
+
+    - ... for `DEMO_HR_ROLES` table, because this a reference table, we will keep **100% of rows**
+        - In "Objects", select **Specified** and choose "*`DEMO_HR_ROLES`*"
+        - In "Rows to Include", select **All Rows**
+        - Tick "**Include Related Rows**" and select "**Ancestor and Descendant Objects**"
+
+           ![](./images/dms-139.png " ")
+
+        - Click [**OK**]
+
+    - ... for `DEMO_HR_USERS` table, because this a reference table, we will keep **100% of rows**
+        - In "Objects", select **Specified** and choose "*`DEMO_HR_USERS`*"
+        - In "Rows to Include", select **All Rows**
+        - Tick "**Include Related Rows**" and select "**Ancestor and Descendant Objects**"
+
+           ![](./images/dms-140.png " ")
+
+        - Click [**OK**]
+
+    - Now, you should see all your Object Rules like this
+
+       ![](./images/dms-141.png " ")
+
+11. In the **Space Estimate** tab, expand the entire list (Menu **View** and Submenu **Expand All**)
+
+   ![](./images/dms-142.png " ")
+
+    **Note:**
+    - Here, you can see a simulation of the effects of your subsetting scripts
+    - The "Object Rule" column shows you the "Object Rules" defined previously
+    - Like that you can see easily the direct impact on the subset size targeted (in MB and in number of rows)
+    - Because the tables are dependant each other, you see the effect of your subsetting on the parent-child tables. As example, `DEMO_HR_EMPLOYEES` keep only 25% of rows, but because there's a dependance with `DEMO_HR_SUPLLEMENATL_DATA` table, this one is also impacted by the subsetting and it will keep only 71%.
+
+12. You can stop here if you just want to subset your data, but we will continue by **associating the Data Masking scripts** generated previously in Step 11 to show that is possible to combine the subsetting and the masking in a same process
+
+    - In the **Data Masking Definitions** tab, click [**Add**]
+
+       ![](./images/dms-143.png " ")
+
+    - Select the masking définition *`EMPLOYEE_DATA_MASK`* created earlier
+
+       ![](./images/dms-144.png " ")
+
+    - Click [**OK**]
+
+    - Now, you Data Masking script is associated to you Data Subsetting definition and it will be executed after subsetting your data
+
+       ![](./images/dms-145.png " ")
+
+13. Click [**Return**]
+
+## **STEP 14**: Generate Data Subsetting Scripts
+
+Once you've defined all the data subsetting definitions in Step 13, it's time to generate the Subsetting scripts
+
+1. But before, we have to restore the `EMPLOYEESEARCH_DEV` tables on **pdb1** by cloning data from `EMPLOYEESEARCH_PROD` schema to have original data
+
+    - Open a SSH session on your **DBSec-Lab VM as *oracle* user**
+
+          ````
+          <copy>sudo su - oracle</copy>
+          ````
+
+    - Go to the scripts directory
+
+          ````
+          <copy>cd $DBSEC_LABS/dms</copy>
+          ````
+
+    - Reset the `EMPLOYEESEARCH_DEV` data as it was before masking
+
+          ````
+          <copy>./dms_restore_pdb1_dev.sh</copy>
+          ````
+
+       ![](./images/dms-150.png " ")
+
+2. Now, go back to the OEM Console and navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Subsetting Definitions**
+
+   ![](./images/dms-130.png " ")
+
+3. From the Data Subsetting Definitions Dialog, select the `EMPLOYEE_DATA_SUBSET` subsetting definition
+
+    - Select **Action** menu
+
+       ![](./images/dms-151.png " ")
+
+    - Select **Generate Subset...**
+
+       ![](./images/dms-152.png " ")
+
+4. In the "**Generate Subset: General**" screen
+
+    - In "Create Subset By", select "*`Deleting Data From a Target Database`*" (this is similar than the "Mask-in-database" for Data Masking)
+    - In "Database Credentials", select the **Named** radio button and choose the default credential using the `DMS_ADMIN` username
+    - In "Host Credentials", select the **Named** radio button and choose the default credential using the `OS_ORACLE_SSH` credential name
+
+       ![](./images/dms-153.png " ")
+
+    - Click [**Continue**]
+
+5. In the "**Generate Subset: Parameters**" screen
+
+    - In "Subset Directory", select "*`Select a custom directory path on target database to save subset scripts`*"
+    - Enter this location: *`/home/oracle/DBSecLab/livelabs/dms`*
+    - Tick the checkbox "*`The selected target is not a production database`*"
+
+       ![](./images/dms-154.png " ")
+
+    - Click [**Continue**]
+
+6. A warning message tells you that a Directory will be created to store the scripts into the location you've mentioned
+
+   ![](./images/dms-155.png " ")
+
+    - Click [**OK**]
+
+7. After reviewing that the required space is available, click [**Submit**] to generate the scripts
+
+   ![](./images/dms-156.png " ")
+
+    **Note:** The script is generated and automatically executed!
+
+8. In the "Data Subsetting Definitions" page, refreshing the page until you see the "Job Status" as "**Succeeded**"
+
+   ![](./images/dms-157.png " ")
+
+## **STEP 15**: Compare the Pre-Subsetted Data vs. the Post-Subsetted Data
+
+1. Once the job successfully completes, query the subsetted data in the Development and Production environments for a before and after comparison
+
+2. Open **SQL Developer** on your PC and connect to **pdb1 as sysdba**
+
+   ![](./images/dms-093.png " ")
+
+3. Press [**Alt**]+[**F10**] to open a SQL Worksheet and select `pdb1@sysdba`
+
+   ![](./images/dms-094.png " ")
+
+4. Do it again in order to have 2 tabs
+
+5. In the first one, copy the following queries for the **PROD: BEFORE SUBSETTING**
 
       ````
-      <copy>sudo su - oracle</copy>
+      <copy>
+      -- -----------------------------
+      -- PROD: BEFORE SUBSETTING
+      -- -----------------------------
+
+      -- EMPLOYEE_DATA
+      SELECT count(*) "EMPLOYEES COUNT" FROM EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES;
+
+      -- SUPPLEMENTAL_DATA
+      SELECT count(*) "SUPPLEMENTAL_DATA COUNT" FROM EMPLOYEESEARCH_PROD.DEMO_HR_SUPPLEMENTAL_DATA;
+
+      -- USERS_DATA
+      SELECT count(*) "USERS COUNT" FROM EMPLOYEESEARCH_PROD.DEMO_HR_USERS;
+
+
+      -- -----------------------------
+      -- PROD: BEFORE MASKING
+      -- -----------------------------
+
+      -- EMPLOYEE_DATA
+      SELECT distinct(e.userid), e.firstname, e.lastname, e.email, sd.routing_number, sd.payment_acct_no
+        FROM EMPLOYEESEARCH_PROD.DEMO_HR_EMPLOYEES e, EMPLOYEESEARCH_PROD.DEMO_HR_SUPPLEMENTAL_DATA sd
+       WHERE e.userid = sd.userid
+       ORDER BY 1;
+
+      -- USERS_DATA
+      SELECT userid, email
+        FROM EMPLOYEESEARCH_PROD.DEMO_HR_USERS
+       ORDER BY 1;
+
+      </copy>
       ````
 
-2. Go to the scripts directory
+   ![](./images/dms-158.png " ")
+
+5. In the second one, copy the following queries for the **DEV: AFTER SUBSETTING**
 
       ````
-      <copy>cd $DBSEC_LABS/dms</copy>
+      <copy>
+      -- -----------------------------
+      -- DEV: AFTER SUBSETTING
+      -- -----------------------------
+
+      -- EMPLOYEE_DATA
+      SELECT count(*) "EMPLOYEES COUNT" FROM EMPLOYEESEARCH_DEV.DEMO_HR_EMPLOYEES;
+
+      -- SUPPLEMENTAL_DATA
+      SELECT count(*) "SUPPLEMENTAL_DATA COUNT" FROM EMPLOYEESEARCH_DEV.DEMO_HR_SUPPLEMENTAL_DATA;
+
+      -- USERS_DATA
+      SELECT count(*) "USERS COUNT" FROM EMPLOYEESEARCH_DEV.DEMO_HR_USERS;
+
+
+      -- -----------------------------
+      -- DEV: AFTER MASKING
+      -- -----------------------------
+
+      -- EMPLOYEE_DATA
+      SELECT distinct(e.userid), e.firstname, e.lastname, e.email, sd.routing_number, sd.payment_acct_no
+        FROM EMPLOYEESEARCH_DEV.DEMO_HR_EMPLOYEES e, EMPLOYEESEARCH_DEV.DEMO_HR_SUPPLEMENTAL_DATA sd
+       WHERE e.userid = sd.userid
+       ORDER BY 1;
+
+      -- USERS_DATA
+      SELECT userid, email
+        FROM EMPLOYEESEARCH_DEV.DEMO_HR_USERS
+       ORDER BY 1;
+
+      </copy>
       ````
 
-3. Reset the EMPLOYEESEARCH_DEV data as it was before masking
+   ![](./images/dms-159.png " ")
 
-      ````
-      <copy>./dms_restore_pdb1_dev.sh</copy>
-      ````
+7. **Execute all these queries** and **compare the results** to confirm your sensitives data have been masked
 
-   ![](./images/dms-103.png " ")
+    - Row count **before subsetting** (in PROD)
 
+      ![](./images/dms-160.png " ")
 
-You may now proceed to the next lab.
+    - Row count **after subsetting** (in DEV)
+
+      ![](./images/dms-161.png " ")
+
+    - Employee Data:
+        - **Before masking** (in PROD)
+
+          ![](./images/dms-099.png " ")
+
+        - **After masking** (in DEV)
+
+          ![](./images/dms-100.png " ")
+
+    - Users Data:
+        - **Before masking** (in PROD)
+
+          ![](./images/dms-101.png " ")
+
+        - **After masking** (in DEV)
+
+          ![](./images/dms-102.png " ")
+
+8. **Now, your sensitive data has been subsetted and masked in same time!**
+
+## **STEP 16**: (Optional) Reset the Labs Environment
+
+1. Restore the `EMPLOYEESEARCH_DEV` tables on pdb1 by cloning data from `EMPLOYEESEARCH_PROD` schema
+
+    - Open a SSH session on your **DBSec-Lab VM as *oracle* user**
+
+          ````
+          <copy>sudo su - oracle</copy>
+          ````
+
+    - Go to the scripts directory
+
+          ````
+          <copy>cd $DBSEC_LABS/dms</copy>
+          ````
+
+    - Reset the `EMPLOYEESEARCH_DEV` data as it was before masking
+
+          ````
+          <copy>./dms_restore_pdb1_dev.sh</copy>
+          ````
+
+       ![](./images/dms-150.png " ")
+
+2. Now, go back to the OEM Console and remove all definitions created
+
+3. First, drop the **Data Masking Definitions"
+
+    - Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Masking Definitions**
+
+    - Select `EMPLOYEE_DATA_MASK` data masking definition
+    - Click [**Delete**]
+
+       ![](./images/dms-162.png " ")
+
+    - Click [**Yes**] to confirm
+
+       ![](./images/dms-163.png " ")
+
+    - Now, your Data Masking Definition is dropped!
+
+       ![](./images/dms-164.png " ")
+
+4. Next, drop the **Data Subsetting Definitions"
+
+    - Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Subsetting Definitions**
+
+    - Select `EMPLOYEE_DATA_SUBSET` data subsetting definition
+    - Click [**Delete**]
+
+       ![](./images/dms-165.png " ")
+
+    - Click [**Yes**] to confirm
+
+       ![](./images/dms-166.png " ")
+
+    - Now, your Data Subsetting Definition is dropped!
+
+       ![](./images/dms-167.png " ")
+
+5. Next, drop the **Application Data Model"
+
+    - Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling**
+
+    - Select `EMPLOYEE_ADM` Application Data Model
+    - Click [**Delete**]
+
+       ![](./images/dms-168.png " ")
+
+    - Click [**Yes**] to confirm
+
+       ![](./images/dms-169.png " ")
+
+    - Now, your Data Subsetting Definition is dropped!
+
+       ![](./images/dms-170.png " ")
+
+You may now [proceed to the next lab](#next)..
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -822,6 +1225,4 @@ Video
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Manish Choudhary, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
-
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

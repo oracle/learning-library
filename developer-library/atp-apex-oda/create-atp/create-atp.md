@@ -99,7 +99,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 

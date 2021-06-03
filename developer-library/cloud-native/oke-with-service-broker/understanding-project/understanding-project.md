@@ -48,8 +48,8 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
     ```
 
 6. Get into the folder:
-    
-    ```
+
+    ```bash
     <copy>
     cd ./<name of your repo>
     </copy>
@@ -113,37 +113,13 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
 
 4. The *`terraform`* folder contains templates to create the *`users`* and *`credentials`* needed to publish Docker images to the Oracle Container Image Registry (OCIR) and to access the Oracle Streaming Service, as well as a user that can interact with the Kubernetes cluster to use for Continuous Integration / Continuous Deployment (CI/CD) pipelines.
 
-## **STEP 3:** Set Up the Variables Required to Run Terraform
+## **STEP 3:** Get into the Terraform Folder
 
 1. Get into the terraform folder:
 
     ```bash
     <copy>
     cd ./terraform
-    </copy>
-    ```
-
-
-2. Create a *`TF_VARS.sh`* file from this template:
-
-    You have created a similar file for the OKE cluster with OCI Service Broker deployment, and if the variables are already exported you can skip to the next step.
-
-    ```bash
-    <copy>
-    export TF_VAR_user_ocid=ocid1.user.oc1....
-    export TF_VAR_fingerprint=00:00:00:00...
-    export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
-    export TF_VAR_tenancy_ocid=ocid1.tenancy.oc1.....
-    export TF_VAR_region=us-ashburn-1    
-    </copy>
-    ```
-3. Populate the variables with your tenancy information, gathered from the installation of the OCI CLI.
-
-4. Source the *`TF_VARS.sh`* file
-
-    ```bash
-    <copy>
-    . ./TF_VARS.sh
     </copy>
     ```
 
@@ -156,6 +132,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
     cp terraform.tfvars.template terraform.tfvars
     </copy>
     ```
+
 2. Populate the required variables:
 
     If you are not able to create users, you will need to provide the *`user_ocid`* of users that are part of groups with the proper policies (see below).
@@ -163,34 +140,61 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
 
     Provide the *`cluster_id`* of the cluster created in lab 2, which was output in the Terraform output.
 
-    ```yaml
-    tenancy_ocid = "ocid1.tenancy.oc1.."
-    compartment_ocid = "ocid1.compartment.oc1.."
-    region           = "us-ashburn-1"
-    cluster_id = "ocid1.cluster...."
+    ```bash
+    tenancy_ocid = "ocid1.tenancy.oc1..."
+    compartment_ocid = "ocid1.compartment.oc1..."
 
-    # provide the OCID of the pusher user if you want to reuse an existing user
-    ocir_pusher_ocid = null
-    # provide the OCID of the OCIR pusher group if you want to reuse an existing group to create a user
-    # only one group is needed per tenancy
+    region           = "us-ashburn-1"
+    cluster_id = "ocid1.cluster.."
+
+
+    # If you do not have permission to create users, provide the user_ocid of a user 
+    # that has permission to create OKE clusters
+    ci_user_ocid        = null
+
+    # If you have permission to create users, and a group already exists with policies 
+    # to create OKE cluster, you can provide the ci_users_group_ocid 
+    # and a new user will be created and be made a member of this group
+    # Ignored if you are providing a ci_user_ocid
+    ci_users_group_ocid = null
+
+    # If you do not have permission to create users, provide the user_ocid of a user 
+    # that has permission to push images to OCI Registry
+    ocir_pusher_ocid        = null
+
+    # If the ocir_pusher_ocid user already has an auth_token to use, provide it here. 
+    # If null a new token will be created. 
+    # This requires that the user has 1 token at most already (as there is a limit of 2 tokens per user)
+    ocir_pusher_auth_token = null
+
+    # If you have permission to create users, and a group already exists with policies 
+    # to push images to OCI Registry, you can provide the ocir_pushers_group_ocid 
+    # and a new user will be created and be made a member of this group
+    # Ignored if you are providing a ocir_pusher_ocid
     ocir_pushers_group_ocid = null
 
-    # provide the OCID of the CI user to deploy to k8s, if you want to reuse an existing user
-    ci_user_ocid = null
-    # provide the OCID of the CI User group if you want to reuse an existing group to create a user
-    # only one group is needed per OKE cluster
-    ci_user_group_ocid = null
 
-    # provide the OCID of the streaming user if you want to reuse an existing user
-    streaming_user_ocid = null
-    # provide the OCID of the streaming user group if you want to reuse an existing group to create a user
-    # only one group is needed per OKE cluster
+    # If you do not have permission to create users, provide the user_ocid of a user 
+    # that has permission to create Streams
+    streaming_user_ocid        = null
+
+    # If the streaming_user_ocid user already has an auth_token to use, provide it here. 
+    # If null a new token will be created. 
+    # This requires that the user has 1 token at most already (as there is a limit of 2 tokens per user)
+    # Since we create 2 tokens in this template, 
+    # !!! If the same user is used for all users, this requires that this user has 0 token
+    streaming_user_auth_token = null
+
+    # If you have permission to create users, and a group already exists with policies 
+    # to create Streams, you can provide the streaming_group_ocid 
+    # and a new user will be created and be made a member of this group
+    # Ignored if you are providing a streaming_user_ocid
     streaming_group_ocid = null
     ```
 
     The Terraform will provision a user in a OCIR pusher group with the following policies (provided here for reference for your tenancy administrator if they need to create them for you).
 
-    ```
+    ```bash
     <copy>
     allow group ocir_pusher_group_name to use repos in tenancy
     allow group ocir_pusher_group_name to manage repos in tenancy where ANY {request.permission = 'REPOSITORY_CREATE', request.permission = 'REPOSITORY_UPDATE'}
@@ -199,7 +203,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
 
     The Terraform will provision a user in a Streaming Service group with the following policies:
 
-    ```
+    ```bash
     <copy>
     allow group streaming_group_name to use stream-pull in tenancy
     allow group streaming_group_name to use stream-push in tenancy
@@ -208,7 +212,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
 
     The Terraform will provision a user in a Cluster user group with the following policies:
 
-    ```
+    ```bash
     <copy>
     allow group ci_group_name to use clusters in tenancy where request.region = '{region}'
     </copy>
@@ -267,7 +271,6 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
     ```
 
     This uses the `creds.env` and `gobal.env` files and runs the `docker login <region>.ocir.io/<tenancy_namespace>` command with the credentials saved in `creds.env`.
-
 
 You may proceed to the next lab.
 

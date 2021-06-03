@@ -5,7 +5,7 @@
     {
       "title": "Introduction",
       "description": "Modern Data Warehouse Hands-On Workshop Overview",
-      "filename": "../../introduction/introduction.md"
+      "filename": "../../introduction/introduction-v2.md"
     },
     {
       "title": "Getting Started",
@@ -18,24 +18,29 @@
       "filename": "../../provision-odi-adw-oac/provision-odi-adw-oac.md" 
     },
     {
-      "title": "Lab 2: Connect to ODI",
+      "title": "Lab 2: Provision and Configure EBS, and Prepare All Data Sources",
+      "description": "Provision and Configure E-Business Suite on OCI and prepare all data sources",
+      "filename": "../../provision-configure-ebs/provision-configure-ebs.md"
+    },
+    {
+      "title": "Lab 3: Connect to ODI",
       "description": "Connect to ODI using VNC Viewer",
-      "filename": "../../connect-to-odi/connect-to-odi.md"
+      "filename": "../../connect-to-odi/connect-to-odi-v2.md"
     },
     {
-      "title": "Lab 3: Connect to ODI Repository and Prepare Source",
-      "description": "Create and connect to work repository and prepare data source",
-      "filename": "../../create-odi-repo-prep-data/create-odi-repo-prep-data.md"
+      "title": "Lab 4: Connect to ODI Repository",
+      "description": "Create and connect to work repository",
+      "filename": "../../create-odi-repo/create-odi-repo.md"
     },
     {
-      "title": "Lab 4: Configure and Run ODI Integration",
+      "title": "Lab 5: Configure and Run ODI Integration",
       "description": "Configure and run integration",
-      "filename": "../../configure-integration/configure-integration.md"
+      "filename": "../../configure-integration/configure-integration-v2.md"
     },
     {
-      "title": "Lab 5: Perform Analysis",
+      "title": "Lab 6: Perform Analysis",
       "description": "Upload and analyze dashboards",
-      "filename": "../../perform-analysis/perform-analysis.md"
+      "filename": "../../perform-analysis/perform-analysis-v2.md"
     },
     {
       "title": "Need Help?",

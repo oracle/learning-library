@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-okv-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G5Is-fH2rhmhnat_cKaw_mOMGikYGeA11LqAzCd_WwGcPC9T90tNgE5ZlatE2MmG/n/natdsecurity/b/stack/o/dbsec-okv-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-okv-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4kmyerTmtU2rG8ME19erkXyKvRTiokBvjFQxPUEbPSRNPsTV9mDP14FeG2aJafER/n/natdsecurity/b/stack/o/dbsec-okv-v3-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -51,10 +51,9 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
   - Compute Instance Count (4): dbsec-lab, avs, dbf and okv
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
-
-* **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, November 2020
-
-
+- **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+- **Contributors** - Kay Malcolm, Database Product Management
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021

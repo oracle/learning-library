@@ -1,0 +1,1 @@
+A screenshot of the Audit Summary report showing a filter set on Last Week and the number of targets, users, and client hosts.

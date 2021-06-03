@@ -116,7 +116,7 @@ The prerequisite scripts have run successfully.
 
 </if>
 
-## **Step 4:** (Optional) Download and View the Notebook File
+## **Step <if type="freetier">4</if><if type="livelabs">3</if>:** (Optional) Download and View the Notebook File
 
 To download the notebook version of this lab (without screenshots), click <if type="freetier">[here](./../notebooks/lab1_get_started_freetier.json?download=1)</if><if type="livelabs">[here](./../notebooks/lab1_get_started_livelabs.json?download=1)</if>.
 

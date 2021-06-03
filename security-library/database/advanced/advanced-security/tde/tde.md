@@ -5,7 +5,7 @@ This workshop introduces the various features and functionality of Oracle Transp
 
 *Estimated Lab Time:* 45 minutes
 
-*Version tested in this lab:* Oracle DB 19.8
+*Version tested in this lab:* Oracle DB 19.10
 
 ### Video Preview
 Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Part1 (January 2020)*" [](youtube:avNWykLpic4)
@@ -20,8 +20,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -29,9 +29,9 @@ This lab assumes you have:
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Allow DB Restore | 5 minutes  |
-| 2 | Create Keystore | 5 minutes |
-| 3 | Create Master Key | 5 minutes |
-| 4 | Create Auto-login Wallet | 5 minutes |
+| 2 | Create Keystore | <5 minutes |
+| 3 | Create Master Key | <5 minutes |
+| 4 | Create Auto-login Wallet | <5 minutes |
 | 5 | Encrypt Existing Tablespace | 5 minutes |
 | 6 | Encyrpt All New Tablespaces | 5 minutes |
 | 7 | Rekey Master Key | 5 minutes |
@@ -334,7 +334,7 @@ This lab assumes you have:
 
 7. Now, your database is restored to the point in time prior to enabling TDE!
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next)..
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -371,7 +371,5 @@ Video
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
-
+- **Contributors** - Peter Wahl, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

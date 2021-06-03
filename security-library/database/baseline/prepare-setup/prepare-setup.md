@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-cp-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bKvP3wTGN1UBfI9uRqhyPcVio_E2fIheptYGf-g4vDG2TcB9L2Nde_GFRXHbkkPB/n/natdsecurity/b/stack/o/dbsec-cp-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-basics-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uInBuHTWiaS9QMSUZCMUhefu74NqaYtAlQEHDYgjMCLj924MUNnGwP6GEk5XZkTv/n/natdsecurity/b/stack/o/dbsec-basics-v3-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -48,9 +48,10 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
-

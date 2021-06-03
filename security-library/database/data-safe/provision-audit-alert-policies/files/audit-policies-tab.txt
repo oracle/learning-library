@@ -1,0 +1,1 @@
+A screenshot of the Edit Policies dialog box showing the Basic Auditing and Admin Activity Auditing options selected.

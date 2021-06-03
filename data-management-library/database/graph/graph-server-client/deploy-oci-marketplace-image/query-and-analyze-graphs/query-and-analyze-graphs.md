@@ -88,6 +88,8 @@ graph.query_pgql("""
 +-----------------------------------------------------------------------------+
 ```
 
+This result will be visualized in the next section:
+
 ![](images/detection.jpg)
 
 The second query just adds one more transfer to the pattern (list) and could be expressed as:
@@ -114,9 +116,13 @@ graph.query_pgql("""
 +-----------------------------------------------------------------------------+
 ```
 
+This result will be visualized in the next section:
+
 ![](images/detection2.jpg)
 
 ## **STEP 4:** Influential Accounts
+
+Let's find which accounts are influential in the network. There are various algorithms to score the importance and centrality of the vertices. We'll use the built-in PageRank algorithm as an example.
 
 1. Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
 
@@ -245,7 +251,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     +----------------------+
     ```
 
-5. List the other accounts in the same conneted component (partition) as John's account.
+5. List the other accounts in the same connected component (partition) as John's account.
 
     The partition (or component) id is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
     *John's account_no is xxx-yyy-201 as shown in Lab 6.*
@@ -282,5 +288,5 @@ You may now proceed to the next Lab.
 
 * **Author** -  Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
-* **Last Updated By/Date** - Ryota Yamanaka, Febrary 2021
+* **Last Updated By/Date** - Ryota Yamanaka, April 2021
 

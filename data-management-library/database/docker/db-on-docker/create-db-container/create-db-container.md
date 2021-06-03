@@ -112,7 +112,7 @@ Estimated Lab Time: 15 minutes.
 
     ![](images/section6step2.png " ")
 
-3.  Now run the sql scipt from inside the container using sqlplus.
+3.  Now run the sql script from inside the container using sqlplus.
 
     ````
     <copy>

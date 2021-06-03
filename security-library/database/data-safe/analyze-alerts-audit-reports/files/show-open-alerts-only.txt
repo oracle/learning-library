@@ -1,0 +1,1 @@
+A screenshot showing the toggle for "Open Alerts only".

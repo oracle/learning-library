@@ -155,6 +155,6 @@ Watch this short video to preview how to clone Oracle E-Business Suite using clo
   - Santiago Bastidas, Product Management Director
   - William Masdon, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
 

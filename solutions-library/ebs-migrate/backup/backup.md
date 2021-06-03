@@ -84,6 +84,14 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     </copy>
     ```
 
+    If you run into a symbol lookup error stating "undefined symbol: Perl\_xs\_handshake," run the following command and then rerun the above command.
+
+    ```
+    <copy>
+    unset PERL5LIB
+    </copy>
+    ```
+
     ![](./images/25.png " ")
 
 4. On the first screen, choose **Option 1**, "Create E-Business Suite Backup and Upload to Oracle Cloud Infrastructure".
@@ -107,7 +115,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
 
     4. Enter the location of the context file on the database tier, including the complete file path.
 
-    5. Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.8 image from the OCI Marketplace**
+    5. Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.10 image from the OCI Marketplace**
 
     6. Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
 
@@ -122,7 +130,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
             OS User Custom Private Key [skip if not applicable] : Press Enter to skip     
             OS User Passphrase [skip if not applicable] : Press Enter to skip
         
-            Context File : **/u01/install/APPS/12.1.0/appsutil/ebsdb_apps.xml**
+            Context File : **/u01/install/APPS/19.0.0/appsutil/ebsdb_apps.xml**
         
             Database Transparent Data Encrypted ( TDE ): ( Yes | No ) : **No**
 
@@ -174,7 +182,7 @@ To ensure a successful backup, avoid activities that could interfere with the ba
 
         WebLogic Server Admin Password (example: **welcome1**) : <weblogic_password>
         
-        ![](./images/30.png " ")
+    ![](./images/30.png " ")
 
 9. Enter details to specify how you want to create the backup on Oracle Cloud Infrastructure Object Storage.
 
@@ -286,6 +294,6 @@ You may proceed to the next lab.
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Dec 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 
 

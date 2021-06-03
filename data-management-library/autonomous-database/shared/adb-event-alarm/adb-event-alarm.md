@@ -44,16 +44,13 @@ OCI Notifications service enables you to set up communication channels for publ
 
 In Steps 1 through 7, you create a notification topic with an email subscription, then create a rule that triggers a message (email) when a database is stopped.
 
-## STEP 1: Sign in to OCI Console and Create a Notification Topic
+## **STEP 1**: Sign in to OCI Console and Create a Notification Topic
 
-1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
+1. First, you will create a Notification topic. From OCI Services menu, click **Developer Services** -> **Notifications** 
+  ![ALT text is not available for this image](images/2570118073.png)
+2. Click **Create Topic**. ![ALT text is not available for this image](images/2570118185.png)
 
-  ![ALT text is not available for this image](images/2570118096.png)
-
-2. First, you will create a Notification topic. From OCI Services menu, click **Notifications** under **Solutions and Platform >** **Application Integration**.![ALT text is not available for this image](images/2570118073.png)
-3. Click **Create Topic**. ![ALT text is not available for this image](images/2570118185.png)
-
-4. Fill out the dialog box:
+3. Fill out the dialog box:
 
     - **Name**: Provide a name
     - **Description**: Provide a description
@@ -62,7 +59,7 @@ In Steps 1 through 7, you create a notification topic with an email subscription
 
   ![ALT text is not available for this image](images/2569299698.png)
 
-## STEP 2: Create a Subscription to the Topic
+## **STEP 2**: Create a Subscription to the Topic
 
 Now that you have created a notification topic, create a subscription to that topic, so that you can receive email alerts when a condition changes. (You will create a rule with conditions in a following step.)
 
@@ -83,7 +80,7 @@ In this lab, you create an email subscription. Subscriptions can be defined to t
 
   ![ALT text is not available for this image](images/2569305971.png)
 
-## STEP 3: Respond to the Verification Email
+## **STEP 3**: Respond to the Verification Email
 
 You will receive an email notification of your subscription. You will need to respond to the email's verification request.
 
@@ -95,7 +92,7 @@ You will receive an email notification of your subscription. You will need to re
 
   ![ALT text is not available for this image](images/2587885600.png)
 
-## STEP 4: Verify that Subscription Status Has Changed from Pending to Active
+## **STEP 4**: Verify that Subscription Status Has Changed from Pending to Active
 
 Your verification of the email will change the subscription status from pending to active.
 
@@ -105,11 +102,11 @@ Your verification of the email will change the subscription status from pending 
 
 2. You are now subscribed to a Notification topic. Next you will define an event with conditions that, when met, will publish messages to this Notification topic.
 
-## STEP 5: Define an Event with Rules that Will Publish Messages
+## **STEP 5**: Define an Event with Rules that Will Publish Messages
 
 Let's define an event that triggers an email notification when an Autonomous Database is stopped.
 
-1. From OCI Services menu, under **Solutions and Platform >** **Application Integration**, click **Events Service**.
+1. From OCI Services menu, click **Observability & Management >** **Rules**.
 
   ![ALT text is not available for this image](images/2587885780.png)
 
@@ -140,7 +137,7 @@ Let's define an event that triggers an email notification when an Autonomous Dat
 
 You have configured a Notification service and tied an event to it with a specific compartment. When a database is shut down, an email notification will be sent to the email address specified.
 
-## STEP 6: Trigger the Event
+## **STEP 6**: Trigger the Event
 
 Now shut down the Autonomous Database to trigger the notification email.
 
@@ -154,7 +151,7 @@ Now shut down the Autonomous Database to trigger the notification email.
 
 3. Wait until the database status changes to **STOPPED**.
 
-## STEP 7: Verify that an Email Notification Was Sent
+## **STEP 7**: Verify that an Email Notification Was Sent
 
 Check the email account you specified to verify that a notification email was sent.
 
@@ -168,7 +165,7 @@ In Steps 8 through 10, define an alarm that triggers an email when CPU utilizati
 
 **Note:** For convenience, use the same topic and subscription that you defined in Part 1. You could define new ones, if you prefer.
 
-## STEP 8:  Define an Alarm for the CPU Utilization Chart
+## **STEP 8**:  Define an Alarm for the CPU Utilization Chart
 
 1. Navigate to your Autonomous Database's **Details** page. Scroll down to the **Metrics** charts. In the **CPU Utilization** chart, click the **Options** drop-down menu and select **Create an Alarm on this Query**. 
 
@@ -178,6 +175,8 @@ In Steps 8 through 10, define an alarm that triggers an email when CPU utilizati
 
 - **ALARM NAME** : Provide a name, perhaps indicating the metric that will trigger the alarm. In this lab example, the alarm is to alert unusual CPU usage .
 - **ALARM BODY** : Provide a description, for example: CPU usage alarm; an Autonomous Database may be utilizing more CPU than usual.
+
+  ![ALT text is not available for this image](images/2619004504.png)
 
   Under **Metric description**
 
@@ -191,11 +190,15 @@ In Steps 8 through 10, define an alarm that triggers an email when CPU utilizati
 - **DIMENSION VALUE**: Keep the default value.
 - **DEPLOYMENTTYPE**: Select **Shared**
 
+![ALT text is not available for this image](images/2619005278.png)
+
   Under **trigger rule**
 
 - **OPERATOR:** greater than
 - **VALUE**: Specify the value of the condition threshold. In this lab example, specify **30** so that the alarm will trigger if CPU utilization exceeds 30 percent..
 - **TRIGGER DELAY MINUTES**: Specify the number of minutes that the condition must be maintained before the alarm is in a firing state. In this lab example, specify **1** minute.
+
+  ![ALT text is not available for this image](images/notifications.png)
 
   Under **Notifications**
 
@@ -203,18 +206,14 @@ In Steps 8 through 10, define an alarm that triggers an email when CPU utilizati
 - **COMPARTMENT**: Select your compartment.
 - **TOPIC**: Select the topic you defined earlier in Part 1 > Step 1 of this lab.Click **Save alarm**.
 
-  ![ALT text is not available for this image](images/2619004504.png)
-
-  ![ALT text is not available for this image](images/2619005278.png)
-
   ![ALT text is not available for this image](images/2619005285.png)
 
-## Step 9: Re-run the Procedure in the Auto Scaling Lab to Create a CPU Utilization that Triggers the Alarm
+## **Step 9**: Re-run the Procedure in the Auto Scaling Lab to Create a CPU Utilization that Triggers the Alarm
 
 1. Return to this workshop's Auto Scaling lab.  
 2. In Part 2 of that lab, perform Step 5. Run the `**test_proc**` procedure concurrently in 3 SQL Developer Web query worksheet instances, which should result in CPU utilization greater than the 30% specified as the triggering level in the alarm. 
 
-## STEP 10: Verify that an Email Notification Was Sent
+## **STEP 10**: Verify that an Email Notification Was Sent
 
 Check the email account you specified to verify that a notification email was sent.
 
@@ -236,8 +235,4 @@ You have finished this lab.
 
 - **Author **- Rick Green, Principal Developer, Database User Assistance
 - **Contributor** - Nilay Panchal, ADB Product Management
-- **Last Updated By/Date** - Rick Green, Database User Assistance, December 2020
-
-## See an issue
-
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab**, and **step** in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.
+- **Last Updated By/Date** - Kamryn Vinson, May 2021

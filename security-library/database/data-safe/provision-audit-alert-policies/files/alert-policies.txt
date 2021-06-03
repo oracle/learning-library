@@ -1,0 +1,1 @@
+A screenshot of the Alert Policies tab in the Edit Policies dialog box with all of the alert policies circled.

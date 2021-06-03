@@ -12,7 +12,7 @@ Estimated Lab Time: 10 Minutes
 - Lab: Fast Application Notification
 - Lab: Install Sample Schema
 - Lab: Services
-  
+
 ### About PL/SQL Packages
 With any PL/SQL operations on RAC you must be aware that the code could execute on any node where its service lives. This could also impact packages like DBMS\_PIPE, UTL\_MAIL, UTL\_HTTP (proxy server source IP rules for example), or even DBMS\_RLS (refreshing policies).
 
@@ -30,14 +30,14 @@ UTL\_FILE provides file access both on the client side and on the server side. W
 
 ## **STEP 1:**  Create a DIRECTORY OBJECT and write a file in this location
 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
-2.  Start Cloudshell
-    
+2.  Start Cloud Shell
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>

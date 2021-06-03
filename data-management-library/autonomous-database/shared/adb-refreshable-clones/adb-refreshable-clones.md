@@ -47,7 +47,7 @@ To complete this lab, you need to have the following:
 
 **Note:**  This lab uses refreshable clones, which are not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy.
 
-## STEP 1: Create a Table in the Source Database
+## **STEP 1**: Create a Table in the Source Database
 
 1. Navigate to your existing **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab. (Alternatively, create a new database as your source.) Insert a line of data into this source database before you clone it, by opening a Database Actions worksheet via the **Tools** tab in the Autonomous Database Details page of the OCI console. Connect to Database Actions as the user named **admin** with the password you created for the admin user in the Getting Started lab. On the Database Actions page, under the **Development** heading, click **SQL**.
 
@@ -55,16 +55,16 @@ To complete this lab, you need to have the following:
 
 2. Create a table named refreshclonetests with a single row of data in it, before you proceed to clone the database. In the worksheet, note the time that you perform this action.
 
-```
-<copy>create table refreshclonetests (testcol varchar(255));</copy>
+    ```
+    <copy>create table refreshclonetests (testcol varchar(255));</copy>
 
-<copy>insert into refreshclonetests (testcol) values ('Is this great?');
-commit;</copy>
-```
+    <copy>insert into refreshclonetests (testcol) values ('Is this great?');
+    commit;</copy>
+    ```
 
-  ![ALT text is not available for this image](images/2676056294.png)
+    ![ALT text is not available for this image](images/2676056294.png)
 
-## STEP 2: Create a Refreshable Clone from the Autonomous Database Instance
+## **STEP 2**: Create a Refreshable Clone from the Autonomous Database Instance
 
 Now that you have created a table in the source database and populated it with a row of data, you will create a refreshable clone from the source database.
 
@@ -88,22 +88,22 @@ Now that you have created a table in the source database and populated it with a
 5. Open a Database Actions SQL worksheet from the **refreshable clone's** OCI console<ins>,</ins> and query the database. It shows the table **refreshclonetests **that you created in the source, with the single row of data that you inserted.
   ![ALT text is not available for this image](images/2676058068.png)
 
-## STEP 3: Insert Additional Data into the Source Database
+## **STEP 3**: Insert Additional Data into the Source Database
 
 You have proven that the refreshable clone contains the source database's table with one row of data. Now add a second row of data to the source, and see how to refresh the clone to pick up that second row.
 
 1. Switch back to the **source database's**  Database Actions SQL worksheet. (This will be the **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab, or another database you are using as the source.)  Insert and commit an additional row into the source database. You now have 2 rows in the source but only a single row in the refreshable clone. Make note of the time when you inserted the second row.
 
-```
-<copy>insert into refreshclonetests (testcol) values ('You can refresh whenever you need!');
+    ```
+    <copy>insert into refreshclonetests (testcol) values ('You can refresh whenever you need!');
 
-commit;</copy>
+    commit;</copy>
 
-```
+    ```
 
-  ![ALT text is not available for this image](images/2696552059.png)
+    ![ALT text is not available for this image](images/2696552059.png)
 
-## STEP 4: Refresh the Clone to View New Data
+## **STEP 4**: Refresh the Clone to View New Data
 
 Now see how easy it is to refresh the clone with the new data you just added to the source.
 
@@ -125,16 +125,16 @@ Now see how easy it is to refresh the clone with the new data you just added to 
 
 5. In the clone's Database Actions SQL worksheet, you can now run a SELECT query on the **refreshclonetests** table and instead of a single row, you now see both rows of data from the source! The data in the clone has been seamlessly updated to reflect that which is in the source.
 
-```
-<copy>select * from refreshclonetests;</copy>
+    ```
+    <copy>select * from refreshclonetests;</copy>
 
-```
+    ```
 
-  ![ALT text is not available for this image](images/2694887768.png)
+    ![ALT text is not available for this image](images/2694887768.png)
 
   With the Refreshable Clones feature, you can now keep cloned databases updated without any tedious manual export process. As new data comes into your source database each day, it can easily be refreshed into all its connected refreshable clones with a few button clicks.
 
-You have finished this lab.
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -144,8 +144,6 @@ You have finished this lab.
 
 - **Author** - Rick Green, Principal Developer, Database User Assistance
 - **Contributor** - Nilay Panchal, ADB Product Management
-- **Last Updated By/Date**  - Rick Green, Database User Assistance, January 2021
+- **Last Updated By/Date**  - Kamryn Vinson, May 2021
 
-## See an issue
 
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab**, and **step** in your request. If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.

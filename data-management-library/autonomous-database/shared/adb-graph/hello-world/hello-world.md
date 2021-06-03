@@ -252,7 +252,7 @@ analyst.countTriangles(graph, true)
 
 Congratulations! You successfully created, analyzed and visualized a graph from scratch using Graph Studio. Hopefully this little example gave you a feeling of how can use your Autonomous Database as a graph database.
 
-Please **proceed to the next lab** to see more complex examples of how to create and analyze graphs.
+Please *proceed to the next lab* to see more complex examples of how to create and analyze graphs.
 
 ## Acknowledgements
 * **Author** - Korbi Schmid, Product Development

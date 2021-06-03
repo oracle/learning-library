@@ -1,4 +1,4 @@
-# RAC SQL and PL2./SQL - Sequences
+# SQL and PL/SQL - Sequences
 
 ## Introduction
 
@@ -18,14 +18,14 @@ Watch the video below for an overview of the SQL and PL/SQL Sequences lab
 
 ## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
-2.  Start Cloudshell
-   
+2.  Start Cloud Shell
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -167,7 +167,7 @@ Watch the video below for an overview of the SQL and PL/SQL Sequences lab
 1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance.
 
 2. You should still be connected as the *sys* user on **node 1**.  If you disconnected, connect to **node 1** as the *opc* user and switch to the *oracle* user.  *Remember to replace the password as you did in Step 1.*
-   
+
     ````
     <copy>
     sudo su - oracle
@@ -175,7 +175,7 @@ Watch the video below for an overview of the SQL and PL/SQL Sequences lab
     </copy>
     ````
 3. Connect to **node 2** as the *opc* user and switch to the *oracle* user.  *Remember to replace the password as you did in Step 1.*
-   
+
     ````
     <copy>
     sudo su - oracle
@@ -184,8 +184,8 @@ Watch the video below for an overview of the SQL and PL/SQL Sequences lab
     ````
     ![](./images/sqlplus-node2.png " ")
 
-4. Create the following SEQUENCES on *one* **node 1** 
-   
+4. Create the following SEQUENCES on *one* **node 1**
+
     ````
     <copy>
     create table SEQTEST (seqid varchar2(30), highval number);
@@ -302,4 +302,3 @@ You may now *proceed to the next lab*.
 * **Authors** - Troy Anthony, Anil Nair
 * **Contributors** - Kay Malcolm, Kamryn Vinson
 * **Last Updated By/Date** - Kamryn Vinson, March 2021
-

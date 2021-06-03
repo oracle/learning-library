@@ -28,6 +28,11 @@
       "filename": "./../../3-labs-use-atom-editor-develop-content/3-labs-use-atom-editor-develop-content.md"
     },
     {
+      "title": "Lab 3a: Common Markdown Features for Content Development",
+      "description": "This lab shows you some common markdown features to help create content.",
+      "filename": "./../../3a-labs-misc-develop-content-features/3a-labs-misc-develop-content-features.md"
+    },
+    {
       "title": "Lab 4: Use GitHub Desktop to Commit to the GitHub Repository",
       "description": "This lab shows you how to map a node's private IP address to a public IP address",
       "filename": "./../../4-labs-github-merge-commit-pullrequest/4-labs-github-merge-commit-pullrequest.md"
@@ -36,26 +41,6 @@
       "title": "Optional Lab 5: Add GitHub Hosted Labs and Workshop to OHC",
       "description": "This lab shows you how to to use Oracle Learning Library (OLL) administration tools to manage links and how to add a link to an OHC page.",
       "filename": "./../../5-labs-add-git-hub-hosted-tutorials-to-ohc/5-labs-add-git-hub-hosted-tutorials-to-ohc.md"
-    },
-    {
-      "title": "Optional Lab 6: Setup Guacamole Remote Desktop on Compute Instance",
-      "description": "This lab will show you how to deploy and Configure a self-contained Guacamole Instance with VNC on the same host for remote desktop access.",
-      "filename": "./../../6-labs-setup-guacamole-remote-desktop/6-labs-setup-guacamole-remote-desktop.md"
-    },
-    {
-      "title": "Optional Lab 7: Create Custom Compute Image for OCI Marketplace",
-      "description": "This lab will show you how to prepare a host for custom image capture and create the custom image that meets stringent OCI marketplace requirements.",
-      "filename": "./../../7-labs-create-custom-image-for-marketplace/7-labs-create-custom-image-for-marketplace.md"
-    },
-    {
-      "title": "Optional Lab 8: Publish Custom Compute Image to OCI Marketplace",
-      "description": "This lab will show you how to create an OCI marketplace compute based artifact from your custom image, and use it to create a private listing on marketplace exclusively dedicated to your LiveLabs workshop.",
-      "filename": "./../../8-labs-publish-custom-image-to-marketplace/8-labs-publish-custom-image-to-marketplace.md"
-    },
-    {
-      "title": "Optional Lab 9: Converting to Need Help Lab Workshop Template",
-      "description": "This lab will show you how to comply with the new Need Help standard",
-      "filename": "./../../9-labs-convert-to-new-help/change-help-page.md"
     },
     {
       "title": "Need Help?",

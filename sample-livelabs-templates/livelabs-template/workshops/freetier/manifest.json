@@ -1,0 +1,20 @@
+{
+    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "include": {"starter-file.sql":"../../files/starter-file.sql",
+                "sample.json":"../../files/sample.json",
+                "injected-step.md":"../../files/injected-step.md"},
+      "help": "livelabs-help-db_us@oracle.com",
+      "tutorials": [
+        {
+            "title": "LiveLabs Complete Template",
+            "description": "This is the complete template for LiveLabs content developers",
+            "type": "livelabs",
+            "filename": "../../livelabs-template.md"
+        },
+        {
+          "title": "Need Help?",
+          "description": "Template to link to Need Help lab at the end of workshop. Change 'CHANGE-ME' in link below to need-help-livelabs.md or need-help-freetier.md",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

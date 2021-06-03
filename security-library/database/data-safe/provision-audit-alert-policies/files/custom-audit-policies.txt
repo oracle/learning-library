@@ -1,0 +1,1 @@
+A screenshot of the default custom audit policies enabled on an Autonomous Transaction Processing database.

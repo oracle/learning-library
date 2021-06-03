@@ -18,6 +18,8 @@ In this lab, you will:
 * Objective 2
 * Objective 3
 
+To link to other areas in document use this [syntax](#STEP1:title)
+
 ### Prerequisites
 
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
@@ -35,28 +37,28 @@ Cloud Navigation Picture Paths:
 
 Administration - Tenancy Details
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Governance & Administration**, and select **Tenancy Details**. 
-	
+1. Click the **Navigation Menu** in the upper left, navigate to **Governance & Administration**, and select **Tenancy Details**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/admin-details.png " ")
 
 Analytics - Cloud - OAC
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
-	
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
-	
+
 Analytics - Big Data
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
-	
+
 Analytics - Digital Assistant
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**. 
-	
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-assist.png " ")
 
 Analytics - Machine Learning - Data Science
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
-	
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 
 Compute - Instances
@@ -66,7 +68,7 @@ Compute - Instances
 
 Database - Autonomous Data Warehouse - ADW
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 Database - Autonomous JSON Database - AJD
@@ -93,7 +95,7 @@ Oracle Database - GoldenGate - Golden Gate - GG
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
-	
+
 DB Systems - DB sys
 1. Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **DB Systems**.
 
@@ -104,6 +106,11 @@ Developer Services - Resource Manager Stacks - ResMgr Stacks
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
+Developer Services - APEX
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **APEX**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-apex.png " ")
+
 Developer Services - Containers - Kubernetes Clusters (OKE)
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Kubernetes Clusters (OKE)**.
 
@@ -113,7 +120,7 @@ Developer Services - Containers - Container Registry
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Container Registry**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-container-registry.png " ")
-	
+
 Developer Services - APEX
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **APEX**.
 
@@ -137,13 +144,13 @@ Developer Services - Application Integration - Notifications
 Developer Services - Application Integration - Email Delivery
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Email Delivery**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-application-emaildelivery.png " ") 
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-application-emaildelivery.png " ")
 
 Networking - Virtual Cloud Networks - VCN
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
-	
+
 Networking - Load Balancer
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Load Balancer**.
 
@@ -153,31 +160,31 @@ Storage - Buckets
 1. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
-	
+
 ExadataC@C
 1. Click the **Navigation Menu** in the upper left, navigate to **Hybrid**, and select **Exadata Cloud@Customer**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/hybrid-exadata.png " ")	
-	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/hybrid-exadata.png " ")
+
 Marketplace
 1. Click the **Navigation Menu** in the upper left and select **Marketplace**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/marketplace.png " ")	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/marketplace.png " ")
 
 Compartment
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
 
 Federation
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-federation.png " ")	
-	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-federation.png " ")
+
 Policies
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
 Identity & Security - Audit
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
@@ -276,5 +283,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-

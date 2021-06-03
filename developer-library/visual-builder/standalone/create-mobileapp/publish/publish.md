@@ -44,6 +44,6 @@ If you built the mobile app for installation on Android and iOS devices, you'll 
 
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - April 2021
+* **Last Updated By/Date** - Sheryl Manoharan, April 2021

@@ -34,7 +34,7 @@
       "title": "Lab 4: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
-      "filename": "../../init-start-env/init-start-env.md"
+      "filename": "../../init-start-env/init-start-env-freetier.md"
     },
     {
       "title": "Lab 5: Database Assessment Tool (DBSAT)",
@@ -59,6 +59,12 @@
       "description": "In this lab you can see how to leverage Oracle Unified Auditing",
       "publisheddate": "10/20/2020",
       "filename": "../../unified-auditing/unified-auditing.md"
+    },
+    {
+      "title": "Lab 9: Transparent Sensitive Data Protection (TSDP)",
+      "description": "In this lab you can see how to leverage Oracle Transparent Sensitive Data Protection (TSDP)",
+      "publisheddate": "04/14/2021",
+      "filename": "../../tsdp/tsdp.md"
     },
     {
       "title": "Need Help?",

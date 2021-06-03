@@ -43,8 +43,8 @@
             "filename":"../../create-graph/create-graph.md"
         },
         {
-            "title": "Lab 7: Graph Query and Analysis with JShell",
-            "description":"Graph Query and Analysis with JShell on the Free Tier compute",
+            "title": "Lab 7: Query and Analyze the Graphs",
+            "description":"Query and Analyze the Graphs",
             "filename":"../../query-and-analyze-graphs/query-and-analyze-graphs.md"
         },
         {

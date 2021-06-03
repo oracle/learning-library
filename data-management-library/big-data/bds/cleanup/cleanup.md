@@ -19,15 +19,15 @@ Estimated Lab Time: 25 minutes
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 **Note:**     
-If you want to list the resources in your **`training-compartment`**, you can use the **Compartment Explorer** page. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Governance > Compartment Explorer**. On the **Compartment Explorer** page, in the **Search Compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
+If you want to list the resources in your **`training-compartment`**, you can use the **Tenancy Explorer** page. From the **Navigation** menu, navigate to **Governance & Administration**. In the  **Governance** section, click **Tenancy Explorer**. On the **Tenancy Explorer** page, in the **Search compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
 
 ## **STEP 1:** Delete Your Big Data Service Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used in the workshop.
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+	![](./images/big-data.png " ")
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button, and then select **Terminate Big Data Cluster** from the context menu.
 
@@ -50,7 +50,7 @@ If you want to list the resources in your **`training-compartment`**, you can us
 
 ## **STEP 2:** Delete Your IAM Group, IAM User, and IAM Policies
 
-1. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Groups**.
+1. Click the **Navigation** menu and navigate to **Identity & Security > Groups**.
 
 2. From the list of available groups, search for your **training-bds-admin-group**. You cannot delete a group that contains any members; therefore, you will need to remove the **training-bds-admin** user from this group first. Click the group's name link in the **Name** column.
 
@@ -68,7 +68,7 @@ If you want to list the resources in your **`training-compartment`**, you can us
 
 To delete a VCN, it must first be empty and have no related resources or attached gateways such as internet gateway, dynamic routing gateway, and so on. To delete a VCN's subnets, they must first be empty too.
 
-1. From the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks**.
+1. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
 2. From the list of available VCNs in your compartment, click the **training-vcn** name link in the **Name** column. The **Virtual Cloud Network Details** page is displayed.
 
@@ -103,7 +103,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 ## **STEP 4:** Delete Your Reserved Public IP Addresses
 
-1. From the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed.
+1. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The **Reserved Public IP Addresses** page is displayed.
 
 2. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
 
@@ -119,9 +119,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 ## **STEP 5:** Delete Your Object Storage Bucket
 
-1. In the **Oracle Cloud Console** navigation menu, navigate to **Object Storage > Object Storage**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
-
-  ![](./images/buckets-page.png " ")
+1. In the **Navigation** menu, navigate to **Storage**. In the **Object Storage & Archive Storage** section, click **Buckets**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
 
   **Note:** Before you can delete a bucket that contains objects, you must delete all the objects in the bucket first.
 
@@ -146,13 +144,11 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 ## **STEP 6:** Delete Your Compartment
 
-1. From the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Compartments**.
+1. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**. From the list of available compartments, search for your **training-compartment**.
 
-2. From the list of available compartments, search for your **training-compartment**.
+2. On the **Compartments** page, click the **Actions** button associated with **training-compartment**. Select **Delete** from the context menu.
 
-3. From the **Compartments** page, click the **Actions** button associated with **training-compartment**. Select **Delete** from the context menu.
-
-4. A confirmation message box is displayed. Click **Delete**. The status of the deleted compartment changes from **Active** to **Deleting** until the compartment is successfully deleted. You can click on the compartment name link in the **Name** column to display the status of this operation.
+3. A confirmation message box is displayed. Click **Delete**. The status of the deleted compartment changes from **Active** to **Deleting** until the compartment is successfully deleted. You can click on the compartment name link in the **Name** column to display the status of this operation.
 
     ![](./images/delete-compartment.png " ")
 
@@ -172,5 +168,4 @@ To delete a VCN, it must first be empty and have no related resources or attache
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Alexey Filanovskiy, Senior Principal Product Manager, DW & Big Data Global Leaders Program
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, January 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

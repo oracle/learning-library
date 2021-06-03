@@ -1,0 +1,1 @@
+A screenshot of SQL Text, Additional SQL, and Audit Type information in the Alert Details dialog box.

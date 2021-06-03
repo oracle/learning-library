@@ -3,7 +3,7 @@
 ## Introduction
 In this section you can learn how to upgrade instances to a Paid Model.
 
-Estimated workshop Time: 2 minutes
+Estimated workshop Time: 2 minutes.
 
 ## **STEP 1**: Upgrade Instances to Paid
 
@@ -57,7 +57,7 @@ Learn more about [Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 

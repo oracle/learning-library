@@ -178,7 +178,7 @@ There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 

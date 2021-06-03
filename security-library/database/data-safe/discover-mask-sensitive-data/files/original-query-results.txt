@@ -1,0 +1,1 @@
+A screenshot of the Query Result tab in Database Actions showing the original data in the EMPLOYEES table before it gets masked.

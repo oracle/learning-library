@@ -11,6 +11,7 @@ Watch this short video to preview how to provision Oracle E-Business Suite using
 
 ### Objectives
 * Enable and Set Oracle E-Business Suite Account Passwords
+* Open up security configurations to allow traffic to E-Business Suite
 * Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 ### Prerequisites
@@ -93,7 +94,69 @@ The SYSADMIN user can now connect to Oracle E-Business Suite through the web int
 
 You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html#EnableandSetOracleE-BusinessAccountPasswords(ConditionallyRequired)) for more details.
 
-## **STEP 4:** Configure Local Hosts File and Log in to Oracle E-Business Suite
+## **STEP 4:** Open Firewall and Security List to Allow Connections to EBS Environment
+
+1. Exit from the EBS instance and reconnect as the opc user
+
+    ```
+    <copy>
+    exit
+
+    ssh opc@<ebsholenv1_private_ip>
+    </copy>
+    ```
+  ![](./images/5.png " ")
+
+2. Open the firewall on the EBS instance to allow traffic on port 4443. 
+
+    ```
+    <copy>
+    sudo firewall-cmd --zone=public --permanent --add-port=4443/tcp
+
+    sudo firewall-cmd --reload
+    </copy>
+    ```
+  ![](./images/6.png " ")
+
+    ```
+    <copy>
+    sudo firewall-cmd --zone=public --add-rich-rule='rule family=ipv4 source address=0.0.0.0/0 port port=8000 protocol=tcp accept' --permanent
+
+    sudo firewall-cmd --zone=public --add-rich-rule='rule family=ipv4 source address=0.0.0.0/0 port port=8000 protocol=tcp accept'
+    </copy>
+    ```
+  ![](./images/6-1.png " ")
+
+
+3. Now we will open the Security List in our VCN to allow traffic from the internet on port 4443. Go to OCI and navigate to the **Networking** > **Virtual Cloud Networks** section. 
+
+  Note: In the below screenshots, the naming convention is a little different. Where you see **ebswjm** as a prefix, you will most likely have **ebshol**. 
+
+  ![](./images/7.png " ")
+
+  a. Ensuring you are in the right compartment (**ebshol\_compartment**), click on **ebshol\_vcn**. Then select the **Security Lists** Resource and the **ebshol\_apps\_seclist** from there. 
+
+    ![](./images/8.png " ")
+
+    ![](./images/9.png " ")
+
+  b. Here we will add an Ingress rule to allow traffic to access our EBS instance. Click **Add Ingress Rule**. 
+
+    ![](./images/10.png " ")
+
+  c. Fill out the following information leaving the rest as default: 
+
+    i. **Source CIDR:** ``0.0.0.0/0``
+
+    ii. **Destination Port Range:** ``4443``
+
+    
+  d. Click **Add Ingress Rule**.
+
+      ![](./images/11.png " ")
+
+
+## **STEP 5:** Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 1. Click the Cloud Manager Environment: "ebsholenv1"
 
@@ -172,6 +235,6 @@ You may now proceed to the next lab.
   - Santiago Bastidas, Product Management Director
   - William Masdon, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
 

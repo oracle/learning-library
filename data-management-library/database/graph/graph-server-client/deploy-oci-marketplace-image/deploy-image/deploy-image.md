@@ -15,14 +15,25 @@ Estimated time: 7 minutes
 * A cloud account
 * SSH Keys to use for connecting to a compute instance
 * An ADB instance with the downloaded wallet
-* A VCN and Subnet
 
-*Note 1: Some of the UIs may look a little different from the screenshots in the instructions.*
+## **STEP 1:** Create Network for Graph Server
 
-## **STEP 1:** Locate the Graph Server and Client in the Oracle Cloud Marketplace
+Oracle Cloud console > Networking > Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity
 
-Oracle Cloud Marketplace is an online platform which offers Oracle and partner software as click-to-deploy solutions that
-are built to extend Oracle Cloud products and services.
+- Configuration
+  - VCN NAME: (e.g. `VCN1`)
+  - The rest of the items: Do not need to be changed
+
+Public Subnet vcn1
+
+- Add Ingress Rules
+  - Source CIDR: `0.0.0.0/0`
+  - Destination port range: `7007`
+  - Description: `For Graph Server`
+
+## **STEP 2:** Locate the Graph Server and Client in the Oracle Cloud Marketplace
+
+Oracle Cloud Marketplace is an online platform which offers Oracle and partner software as click-to-deploy solutions that are built to extend Oracle Cloud products and services.
 
 Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a fully automated end-to-end deployment of a partner solution on Oracle Cloud Infrastructure.
 
@@ -30,7 +41,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/OCIMarketplaceFindGraphServer.jpg)
 
-2. Select the stack and then review the System Requirements and Usage Instructions. Then select the latest version and choose a compartment and click on `Launch Stack`.
+2. Select the stack and then review the System Requirements and Usage Instructions. Then select the version **20.4** (18-month patch release) or **21.1** and choose a compartment and click on `Launch Stack`.
 
     ![](images/GSC211LaunchStack.jpg)
 
@@ -39,9 +50,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
     - Paste your public SSH key. This is used when you ssh into the provisioned compute later.
     - Choose an existing virtual cloud network.
     - Select a subnet compartment and subnet.
-    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you will have uploaded and unzipped the wallet, e.g. `jdbc:oracle:thin:@atpgraph_low?TNS_ADMIN=/etc/oracle/graph/wallets`
-
-    ***Note: This JDBC URL is stored in a configuration which can be updated later if necessary.***
+    - Enter the JDBC URL for the ADB instance. The TNS_ADMIN entry points to the directory where you **will** have uploaded and unzipped the wallet **on the VM**, so please set: `jdbc:oracle:thin:@atpgraph_low?TNS_ADMIN=/etc/oracle/graph/wallets` where the database name is `atpgraph`. (If you named your database something else, e.g. `myatpgraph` then replace `@atpgraph_low` with `@myatpgraph_low` in the JDBC URL. This JDBC URL is stored in `/etc/oracle/graph/pgx.conf` which can be updated later if necessary.)
 
     ![](images/ConfigureStackVariables_211_1.jpg)
     ![](images/ConfigureStackVariables_211_2.jpg)
@@ -54,7 +63,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/RMJobStarted_Sombrero203.png)
 
-    Once the job has successfully completed the status will change from "In Progess" to "Succeeded".
+    Once the job has successfully completed the status will change from "In Progess" to "Succeeded". If you get **"shape VM.Standard.E2.1.Micro not found"** error, the availability domain cannot provide the selected shape. Please edit the job and change the availability domain and retry. (An always-free compute VM can only be created in your home region. If you have previously created an always-free compute VM then this new VM.Standard.E2.1.Micro instance can only be created in the same availability domain as the previous one.)
 
     ![](images/RMJobCompleted_211.jpg)
 
@@ -107,7 +116,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     *Note: You should remove angle brackets <> from your code.*
 
-## **STEP 2:** Upload ADB Wallet, Configure your Compute Instance.
+## **STEP 3:** Upload ADB Wallet, Configure your Compute Instance.
 
 The steps are as follows:
 
@@ -145,7 +154,7 @@ The steps are as follows:
 
     Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
-## **STEP 3:**  Copy ADB Wallet to the Linux Compute
+## **STEP 4:**  Copy ADB Wallet to the Linux Compute
 
 1. On your desktop or laptop (i.e. your machine), we'll assume the ADB wallet was downloaded to ~/Downloads.
 
@@ -162,7 +171,7 @@ The steps are as follows:
     scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@203.0.113.14:/etc/oracle/graph/wallets
     ```
 
-## **STEP 4:** Unzip ADB Wallet
+## **STEP 5:** Unzip ADB Wallet
 
 1.  Now connect to the compute instance (via SSH) as `opc` user.
 

@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to create a simple non-Highly-Available (non-HA) Cloudera Distribution Including Apache Hadoop (CDH) cluster using the Oracle Cloud Infrastructure Console (OCI) and Big Data Service (BDS). This will be a small testing cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
-Estimated Lab Time: 75 minutes
+Estimated Lab Time: 60 minutes
 
 ### Objectives
 
@@ -55,15 +55,16 @@ Create the cluster as follows:
 </if>
 
 <if type="freetier">
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+2. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+
+ ![](./images/big-data.png " ")
 
     <if type="livelabs">
-4. On the **Clusters** page, click **Create Cluster**.
+5. On the **Clusters** page, click **Create Cluster**.
 
   ![](./images/ll-clusters-page.png " ")
 
@@ -78,14 +79,14 @@ Create the cluster as follows:
 
    <if type="freetier">
 
-5. On the **Clusters** page, click **Create Cluster**.
+6. On the **Clusters** page, click **Create Cluster**.
 
      ![](./images/clusters-page.png " ")
 
      **Note:** If your compartment is not selected, click the **Compartment** drop-down list in the **List Scope** section on the left. Enter your compartment's name in the **Compartment** text field to search for it. When your compartment is displayed in the list of compartments, select it.
     </if>
 
-6. At the top of the **Create Cluster** wizard, provide the cluster details as follows:
+7. At the top of the **Create Cluster** wizard, provide the cluster details as follows:
     * **Cluster Name:** **`training-cluster`**.
     * **Cluster Admin Password:** Enter a `cluster admin password` of your choice such as **`Training123`**.
     **Important:** You'll need this password to sign into Cloudera Manager and to perform certain actions on the cluster through the Cloud Console.
@@ -96,7 +97,7 @@ Create the cluster as follows:
     ![](./images/create-cluster-1.png " ")
 
 
-7. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
+8. In the **Hadoop Nodes > Master/Utility Nodes** section, provide the following details:
 
     * **Choose Instance Type:** **``Virtual Machine``**.
     * **Choose Master/Utility Node Shape:** **`VM.Standard2.4`**.
@@ -108,7 +109,7 @@ Create the cluster as follows:
 
     **Note:** For information on the supported cluster layout, shape, and storage, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D) in the Using Oracle Big Data Service documentation.
 
-8. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
+9. In the **Hadoop Nodes > Worker Nodes** section, provide the following details:
 
     * **Choose Instance Type:** **`Virtual Machine`**.
     * **Choose Worker Node Shape:** **`VM.Standard2.1`**.
@@ -117,7 +118,7 @@ Create the cluster as follows:
 
     ![](./images/create-cluster-3.png " ")
 
-9. In the **Network Setting > Cluster Private Network** section, provide the following details:
+10. In the **Network Setting > Cluster Private Network** section, provide the following details:
 
      * **CIDR BLOCK:** **`10.1.0.0/24`**. This CIDR block assigns a range of **`256`** contiguous IP addresses, **`10.1.0.0`** to **`10.1.0.255`**. The IP addresses will be available for the cluster's private network that BDS creates for the cluster. This private network is created in the Oracle tenancy and not in your customer tenancy. It is used exclusively for private communication among the nodes of the cluster. No other traffic travels over this network, it isn't accessible by outside hosts, and you can't modify it once it's created. All ports are open on this private network. This
 
@@ -125,7 +126,7 @@ Create the cluster as follows:
      **Note:** Use the above CIDR block instead of the already displayed CIDR block range to avoid any possible overlapping of IP addresses with the CIDR block range for the **`training-vcn`** VCN that you created in **Lab 1**.
      </if>
 
-10. In the **Network Setting > Customer Network** section, provide the following details:
+11. In the **Network Setting > Customer Network** section, provide the following details:
 
     <if type="livelabs">
     * **Choose VCN in _`LiveLabs-assigned-compartment`_:** This is the VCN that you was assigned to you by **`LiveLabs`**. The VCN must contain a regional subnet.   **Note:** If your assigned LiveLabs compartment is not selected, click the _**Change Compartment_** link, and then search for and select your LiveLabs assigned compartment.
@@ -149,7 +150,7 @@ Create the cluster as follows:
     ![](./images/ll-create-cluster-4.png " ")
     </if>
 
-11. In the **Additional Options > SSH public key** section, associate a public Secure Shell (SSH) key with the cluster.
+12. In the **Additional Options > SSH public key** section, associate a public Secure Shell (SSH) key with the cluster.
 
     Linux instances use an SSH key pair instead of a password to authenticate a remote user. A key pair file contains a private key and public key. You keep the private key on your computer and provide the public key when you create an instance. When you connect to the instance using SSH, you provide the path to the private key in the SSH command. Later in **Lab 6**, you will connect to your cluster's master node using the private SSH key that is associated with the public SSH key that you specify here for your cluster.
 
@@ -166,7 +167,7 @@ Create the cluster as follows:
      ![](./images/create-cluster-5.png " ")
 
 
-12.  Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
+13.  Click **Create Cluster**. The **Clusters** page is re-displayed. The state of the cluster is initially **Creating**.
 
     ![](./images/status-creating.png " ")
 
@@ -313,5 +314,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
 * **Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, March 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

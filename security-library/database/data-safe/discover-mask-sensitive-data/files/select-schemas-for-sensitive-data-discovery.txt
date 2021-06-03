@@ -1,0 +1,1 @@
+A screenshot of the Select Schemas for Sensitive Data Discovery page showing the check box for the HCM1 schema selected and circled.

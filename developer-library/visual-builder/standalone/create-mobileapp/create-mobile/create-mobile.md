@@ -76,6 +76,6 @@ You’ll create a business object and a mobile application that you'll later use
     ![](./images/vbmca_cde_s9.png)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - February 2021
+* **Last Updated By/Date** - Sheryl Manoharan, February 2021

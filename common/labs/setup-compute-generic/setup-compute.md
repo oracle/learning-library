@@ -188,24 +188,57 @@ Depending on your workshop, you may need to connect to the instance via a secure
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 ***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
-### **Option 1:** Oracle Cloud Shell
+### **Option 1:** Upload Key to Cloud Shell and Connect
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
-  ***Note:*** *Make sure you are in the region you were assigned*
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
-  ![](./images/em-cloudshell.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
 
-2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP address for your instance.
-4.  Enter the command below to login to your instance.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+
+2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+
+3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+
+4. Be patient while the key file uploads to your Cloud Shell directory
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Change the permissions to 600 and move it into your .ssh directory
+
+    ````
+    <copy>
+    ls
+    </copy>
+    ````
+    ````
+    chmod 600 <<keyname>>
+    mv <<keyname>> .ssh
+    ls .ssh
+    cd ~
+    ````
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+
+6.  If you didn't jot down your compute instance public IP address, go to *Compute* -> *Instance* and select the instance you created (make sure you choose the correct compartment). Alternatively, you can navigate to *My Reservations* in LiveLabs, click on *Launch Workshop* and get your public IP.
+
+7.  Secure Shell into the compute instance using your uploaded key name
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
-5.  When prompted, answer **yes** to continue connecting.
-6.  Continue to Step 5 on the left hand menu.
+    *Note:* Make sure you are in the region and compartment you were assigned. If you are unable to ssh in, check out the troubleshooting tips below.
+
+8.  When prompted, answer **yes** to continue connecting.
 
 ### **Option 2:** MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)

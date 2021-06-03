@@ -9,7 +9,7 @@ Estimated Lab Time: 80 minutes
 ### What Is Oracle Visual Builder?
 Oracle Visual Builder provides easy access to data from any REST-based service, and enables the creation of reusable business objects for storing and managing data. Using the cloud-based visual development tools, you can create and test responsive web applications and native mobile apps without the need to install any additional software.
 
-You can also run your mobile app as a Progressive Web App (PWA) to combine the advantages of native mobile apps and web apps. PWAs allow your users to leverage device-specific features such as camera access and location information and offer a user experience akin to native mobile apps. They can be distributed fairly easily like web apps, so users won't need to go to the app store to install them. Also, because PWAs can be installed on laptops, users can run them on Windows, Mac, and other operating systems, not just Android and iOS.
+You can also run your mobile app as a Progressive Web App (PWA) that combines the advantages of native mobile apps and web apps. PWAs allow your users to leverage device-specific features such as camera access and location information and offer a user experience akin to native mobile apps. They can be distributed fairly easily like web apps, so users won't need to go to the app store to install them. Also, because PWAs can be installed on laptops, you can run them on Windows, Mac, and other operating systems, not just Android and iOS.
 
 Whatever app you're building, visual designer capabilities enable you to quickly design pages by dragging and dropping UI components, customizing their attributes, and defining their behavior.
 
@@ -27,5 +27,5 @@ In this workshop, you'll learn how to create a simple mobile application that di
 * A Chrome browser
 
 ## Acknowledgements
-* **Author** Sheryl Manoharan
-* **Last Updated By/Date** - Sheryl Manoharan, April 2021
+* **Author** Sheryl Manoharan, Visual Builder User Assistance
+* **Last Updated By/Date** - Sheryl Manoharan, May 2021

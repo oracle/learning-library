@@ -22,7 +22,7 @@ In this lab, you will:
 
 1. Log in to the [Oracle Cloud Infrastructure Console](https://login.us-phoenix-1.oraclecloud.com/) with your username and password.
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+2. Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
@@ -40,8 +40,8 @@ In this lab, you will:
 
 ## **STEP 2:** Verify the target Autonomous Data Warehouse connection details
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
+1. Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 2. Under List Scope, if **Compartment_Workshop** is not already selected, select it from the **Compartment** dropdown.
@@ -59,4 +59,4 @@ In this lab, you will:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - February 2021
+* **Last Updated By/Date** - May 2021

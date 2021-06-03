@@ -1,0 +1,26 @@
+{
+    "workshoptitle": "Extend OCI Environments with Data Safe",
+    "tutorials": [
+        {
+            "title": "Prerequisites",
+            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Enable Data Safe",
+            "filename": "../../enable/enable.md"
+        },
+        {
+            "title": "Lab 2: Configure the Target Database",
+            "filename": "../../database/database.md"
+        },
+        {
+            "title": "Lab 3: Monitor the Target Database on Data Safe",
+            "filename": "../../monitor/monitor.md"
+        }
+    ]
+}

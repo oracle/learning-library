@@ -1,0 +1,1 @@
+A screenshot of the calendar widget to set the collection start date in the Activity Auditing wizard. The widget shows October 16 2019 as the date configured.

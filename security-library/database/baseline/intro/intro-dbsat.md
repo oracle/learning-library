@@ -13,7 +13,7 @@ Now, you no longer need important resources on your PC (storage, CPU or memory),
 ### Components
 The complete architecture of the DB Security Hands-On Labs is as following:
 
-  ![](./images/dbseclab-archi_202011.png "")
+  ![](./images/dbseclab-archi-v3.png "")
 
 It's composed of 4 VMs:
   - **DBSec-Lab VM** (mandatory for all workshops: Baseline and Advanced workshops)
@@ -34,8 +34,9 @@ In this mini-lab, you will learn how to use the **Oracle Database Security Asses
 
 The entire DB Security PMs Team wishes you an excellent workshop!
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
+- **Contributors** - Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

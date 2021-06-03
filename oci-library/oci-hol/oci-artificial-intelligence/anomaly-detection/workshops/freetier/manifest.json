@@ -1,0 +1,46 @@
+{
+    "workshoptitle": "Anomaly Detection with OCI Artificial Intelligence",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "../../anomalies/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction: Anomaly Detection",
+            "description": "Learn how to build anomaly detection model and use it for detection",
+            "filename": "../../anomalies/anomaly-detection-intro.md"
+        },
+        {
+            "title": "Lab 1: Understand Data And Download Samples",
+            "description": "Learn what data and format needed for training, and use the prepared sample data for nex steps.",
+            "filename": "../../anomalies/anomaly-detection-understand-data.md"
+        },
+        {
+            "title": "Lab 2: Create Anomaly Detection Project",
+            "description": "Learn how to create AD project",
+            "filename": "../../anomalies/anomaly-detection-project.md"
+        },
+        {
+            "title": "Lab 3: Train Anomaly Detection Model And Detect",
+            "description": "Learn how to create data asset, build and deploy model, and perform detection",
+            "filename": "../../anomalies/anomaly-detection-model.md"
+        },
+        {
+            "title": "Lab 4: (Advanced) Access Anomaly Detection Service with REST API",
+            "description": "Using REST API to call the AD services",
+            "filename": "../../anomalies/anomaly-detection-rest-api.md"
+        },
+        {
+            "title": "Lab 5: (Advanced) How to Preprocess Raw Data",
+            "description": "How to preprocess your raw dataset for training the model and detecting",
+            "filename": "../../anomalies/anomaly-detection-data-preprocessing.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

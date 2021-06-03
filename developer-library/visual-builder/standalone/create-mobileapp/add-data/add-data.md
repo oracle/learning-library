@@ -18,6 +18,6 @@ This lab shows you how to add data to a mobile application by importing the data
     ![](./images/vbcsnd_mob_imp_s6.png)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - February 2021
+* **Last Updated By/Date** - Sheryl Manoharan, February 2021

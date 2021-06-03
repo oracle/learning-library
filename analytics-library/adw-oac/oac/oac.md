@@ -11,8 +11,8 @@ You are going to use an **Oracle Analytics Cloud** instance to give your end use
 - **Create a connection** from Oracle Analytics Cloud to Autonomous Database
 - **Prepare** a dataset
 - **Create Visualizations** to analyze data
-DE
-Estimated Lab Time: 75 minutes
+
+Estimated Lab Time: 75 minutes.
 
 ## **STEP 1**: Create the connection from Oracle Analytics Cloud to Autonomous Database
 
@@ -87,15 +87,15 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
 
     I recommend selecting first the autonomous database wallet zip file you just downloaded in ***Client Credentials*** field. It will automatically extract the required *cwallet.sso* and then **autocomplete** several of the fields for you. Later on you just have to review and modify them if need it.
 
-    > **Connection Name**: WORKSHOPADWOAC
-    >
-    > **Service Name**: Choose the name of your database followed by the \_high suffix.
-    >
-    > **Client Credentials**: Use the Browse button to upload the **wallet zip > file** that you downloaded. It will automatically extract the cwallet.sso file from this zip bundle.
-    >
-    > **Username**: ADMIN -- We have created this user on the ADW instance creation.
-    >
-    > **Password**: The password that you created on the ADW instance creation at the beginning of the workshop. ADWwelcome-1234
+    - **Connection Name**: WORKSHOPADWOAC
+    
+    - **Service Name**: Choose the name of your database followed by the \_high suffix.
+    
+    - **Client Credentials**: Use the Browse button to upload the **wallet zip > file** that you downloaded. It will automatically extract the cwallet.sso file from this zip bundle.
+    
+    - **Username**: `ADMIN` -- We have created this user on the ADW instance creation.
+    
+    - **Password**: The password that you created on the ADW instance creation at the beginning of the workshop. `ADWwelcome-1234`.
 
     ![Connection Creation - ADW - WORKSHOPADWOAC](./images/lab300_11.png)
 
@@ -139,21 +139,21 @@ existing projects.
 
     ![OAC - Sales Add](./images/lab300_17.png)
 
-    After you clicked **Add** to create the Data Set, select **SALES** at the top of the page (figure 1) or at the right side of the selection panel (figure 2) depending the version of OAC that you are using to modify the Data Set that we are currently creating.
+    After you clicked **Add** to create the Data Set, select **SALES** at the top of the page (Add_Data_Set_1 image) or at the right side of the selection panel (Add_Data_Set_2 image) depending the version of OAC that you are using to modify the Data Set that we are currently creating.
 
-    **Figure 1**.
+    **Add_Data_Set_1**.
 
-    ![OAC - Sales Add - Figure1](./images/lab300_18.png)
+    ![OAC - Sales Add - Add_Data_Set_1](./images/lab300_18.png)
 
-    **Figure 2**.
+    **Add_Data_Set_2**.
 
-    ![OAC - Sales Add - Figure2](./images/lab300_19.png)
+    ![OAC - Sales Add - Add_Data_Set_2](./images/lab300_19.png)
 
 6. Use the following **information** to configure your **Data Set**:
 
-    > **Data Access**: Live
-    >
-    > **Name**: SH&#95;SALES
+    - **Data Access**: Live
+    
+    - **Name**: SH&#95;SALES
 
 7. Then click **Add** to create the **Data Set**.
 
@@ -280,9 +280,9 @@ existing projects.
 
     Use the following information to configure your **Data Set**:
 
-    > **Data Access**: Live
-    >
-    > **Name**: SH&#95;PRODUCTS
+    - **Data Access**: Live
+    
+    - **Name**: SH&#95;PRODUCTS
 
 18. Then click **Add** to create the **Data Set**.
 
@@ -314,7 +314,7 @@ existing projects.
 
     ![Connect Sources - SH-SALES & SH-PRODUCTS ](./images/lab300_47.png)
 
-    > **NOTE**: You might see a balloon warning about using **PROD_ID** as a **Measure**. Do not worry about it. It is just a kind reminder that you are using a column that looks like a number only as a join column, but that is exactly what we want to do.
+    > **Note**: You might see a balloon warning about using **PROD_ID** as a **Measure**. Do not worry about it. It is just a kind reminder that you are using a column that looks like a number only as a join column, but that is exactly what we want to do.
 
     ![Connect Sources - Measure](./images/lab300_48.png)
 
@@ -413,7 +413,6 @@ Watch our short recap video that includes an outlook of other functionalities of
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
-

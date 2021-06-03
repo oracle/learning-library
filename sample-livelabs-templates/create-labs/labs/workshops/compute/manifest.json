@@ -1,0 +1,26 @@
+{
+  "workshoptitle": "Creating Compute Images for Marketplace",
+  "help": "livelabs-help-license_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Lab 1: Setup Graphical Remote Desktop on Compute Instance",
+      "description": "This lab will show you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance.",
+      "filename": "./../../6-labs-setup-graphical-remote-desktop/6-labs-setup-graphical-remote-desktop.md"
+    },
+    {
+      "title": "Lab 2: Create Custom Compute Image for OCI Marketplace",
+      "description": "This lab will show you how to prepare a host for custom image capture and create the custom image that meets stringent OCI marketplace requirements.",
+      "filename": "./../../7-labs-create-custom-image-for-marketplace/7-labs-create-custom-image-for-marketplace.md"
+    },
+    {
+      "title": "Lab 3: Publish Custom Compute Image to OCI Marketplace",
+      "description": "This lab will show you how to create an OCI marketplace compute based artifact from your custom image, and use it to create a private listing on marketplace exclusively dedicated to your LiveLabs workshop.",
+      "filename": "./../../8-labs-publish-custom-image-to-marketplace/8-labs-publish-custom-image-to-marketplace.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}

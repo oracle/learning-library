@@ -58,9 +58,9 @@ _**Note:** All screen captures in this lab show the resources' names used when y
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. <if type="livelabs">_**Note:** If you are using the LiveLabs environment, you do not have administrative privileges._ </if>On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
+2. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+	![](./images/vcn.png " ")
 
 3. On the **Virtual Cloud Networks** page, click your cluster's Virtual Cloud Network, **`training-vcn`**.
 
@@ -123,7 +123,7 @@ In this step, you will use CM to access the cluster. In a non-HA cluster, CM run
     https://<ip-address>:7183
     ```
     **Note:**    
-    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab. To view your reserved public IP address in the console, click the Navigation menu and navigate to **Core Infrastructure > Networking > IP Management**. The reserved public IP address is displayed in the **Reserved Public IP Addresses** list.
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab. To view your reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
     In our example, we used the reserved public IP address that is associated with our first utility node as follows:
 
@@ -248,4 +248,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, March 2021
+* **Last Updated By/Date:** Lauran Serhal, May 2021

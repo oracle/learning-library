@@ -90,5 +90,5 @@ In this lab, you will:
 * **Author:** William Masdon, Cloud Engineering
 * **Contributors:** Santiago Bastidas, Product Management Director
 * **Contributors:** Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Nov 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 

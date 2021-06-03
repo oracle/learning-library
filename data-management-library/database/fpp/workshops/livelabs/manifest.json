@@ -20,7 +20,8 @@
         {
             "title": "Lab 2: Get Acquainted with the Environment and the rhpctl Command line tool",
             "description": "This lab walks you through the steps to start using Oracle Fleet Patching and Provisioning",
-            "filename": "../../environment/environment.md"
+            "filename": "../../environment/environment.md",
+            "type": "livelabs"
         },
         {
             "title": "Lab 3: Import Gold Images",

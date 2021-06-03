@@ -287,7 +287,9 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     ![React frontend connected to the backend](images/dragon-react-frontend.png)
 
 
-## **STEP 7:** Cleanup your environment
+## **STEP 7:** Cleanup your environment (Optional)
+
+**_If you wish to continue to Lab 2, then skip this step._**
 
 1. Quit ngrok by pressing `Ctrl-C`.
 

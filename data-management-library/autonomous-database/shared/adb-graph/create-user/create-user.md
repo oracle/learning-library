@@ -105,7 +105,7 @@ Learn how to
 
 
 
-Please **proceed to the next lab** to learn how to create and analyze graphs in ADB.
+Please *proceed to the next lab* to learn how to create and analyze graphs in ADB.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Development

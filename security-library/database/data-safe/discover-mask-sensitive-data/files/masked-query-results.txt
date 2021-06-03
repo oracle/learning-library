@@ -1,0 +1,1 @@
+A screenshot of the Query Results tab in Database Actions showing masked data.

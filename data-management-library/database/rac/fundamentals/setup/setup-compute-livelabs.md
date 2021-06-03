@@ -1,15 +1,12 @@
-# Build a DB System
+# Connect to your DB System
 
 ## Introduction
 This lab will show you how to connect to your DB System.  
 
-Estimated Lab Time:  5 minutes 
+Estimated Lab Time:  5 minutes
 
 Watch the video below for an overview of the Build a DB System lab
 [](youtube:tRo33KktXt0)
-
-### About Terraform and Oracle Cloud Resource Manager
-For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
 -   Identify DB Instance Public IP Addresses
@@ -19,7 +16,7 @@ For more information about Terraform and Resource Manager, please see the append
 - An assigned Oracle LiveLabs Cloud account
 - An assigned compartment
 - An assigned Database Cluster Password
-- Lab: Download SSH Keys 
+- Lab: Download SSH Keys
 
 ## **STEP 1**: Login to Oracle Cloud
 
@@ -30,64 +27,104 @@ For more information about Terraform and Resource Manager, please see the append
 5.  In the upper right corner select the region you were assigned
 6.  Open up the hamburger menu in the left hand corner.  
 
-7.  From the hamburger menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category. 
+7.  From the hamburger menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category.
 
   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
-2.  Identify your database system from your My Reservations page in LiveLabs and click it.  (Note:  Remember to choose the compartment that you were assigned if running on LiveLabs)
+8.  Select the compartment you were assigned in LiveLabs and identify your database system from your My Reservations page. Click on the database system name to see the details.
 
   ![](./images/setup-compute-2.png " ")
 
-3. Explore the DB Systems home page.  On the left hand side, scroll down to view the Resources section.  Click Nodes.
+9. Explore the DB Systems home page.  On the left hand side, scroll down to view the Resources section.  Click Nodes.
 
   ![](./images/setup-compute-3.png " ")
 
-4. Locate your two nodes and jot down their public IP addresses.
+10. Locate your two nodes and jot down their public IP addresses.
 
   ![](./images/setup-compute-4.png " ")
 
-5. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private and Public Key to the cloud shell and set the proper permissions, otherwise, choose the platform that matches your local environment. 
-- [Step 2: Oracle Cloud Shell (RECOMMENDED)](#STEP5:OracleCloudShell)
-- [Step 3: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
-- [Step 4: Putty](#STEP7:WindowsusingPutty)
+11. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private to the cloud shell and set the proper permissions, otherwise, choose the platform that matches your local environment.
 
-## **STEP 2**: Oracle Cloud Shell
+## **Step 2:** Choose a path to connect
+Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 
-1.  To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
+Your options are:
+1. Step 2A: Connect using Cloud Shell *(recommended)*
+2. Step 2B: Connect using MAC or a Windows CYGWIN Emulator
+3. Step 2C: Connect using Putty *(Requires you to install applications on your machine)*
 
-    ![](../clusterware/images/start-cloudshell.png " ")
 
-2.  Using one of the Public IP addresses, enter the command below to login as the *opc* user and verify connection to your nodes.    
+## **STEP 2A**: Connect using Oracle Cloud Shell
 
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address>
-    ````
-    ![](./images/em-cloudshell-ssh.png " ")
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+
+2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+
+3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+
+4. Be patient while the key file uploads to your Cloud Shell directory
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory, and change the permissions on the file.
+
+    ```nohighlight
+    <copy>
+    ls
+    </copy>
+    ```
+    ```nohighlight
+    mkdir ~/.ssh
+    mv <<keyname>> ~/.ssh
+    chmod 600 ~/.ssh/<<keyname>>
+    ls ~/.ssh
+    cd ~
+    ```
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+
+6.  Using one of the Public IP addresses, enter the command below to login as the *opc* user and verify connection to your nodes.
+
+    ```nohighlight
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Node Public IP Address>
+    ```
+    ![](./images/em-mac-linux-ssh-login.png " ")
 
 3.  When prompted, answer **yes** to continue connecting.
 4.  Repeat step 2 for your 2nd node.
-5.  You may now *proceed to the next lab*.  
+5.  You may now [proceed to the next lab](#next).  
 
 
-## **STEP 3**: MAC or Windows CYGWIN Emulator
+## **STEP 2B**: Connect using MAC terminal or Windows CYGWIN Emulator
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 1.  Using one of the Public IP addresses, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
-    ````
+    ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node1>
-    ````
+    ```
     ![](./images/em-mac-linux-ssh-login.png " ")
 
 2. You can also log in to the **Public IP Address of node2**
 
-    ````
+    ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node2>
-    ````
+    ```
     ![](./images/em-mac-linux-ssh-login.png " ")
 
-3. After successfully logging in, you may *proceed to the next lab*
+3. After successfully logging in, you may [proceed to the next lab](#next).
 
-## **STEP 4**: Windows using Putty
+## **STEP 2C**: Connect using Putty on Windows
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
@@ -131,105 +168,43 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
   ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
-You may now *proceed to the next lab*.  
-
-## Appendix:  Terraform and Resource Manager
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
-
-Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
-
-[](youtube:udJdVCz5HYs)
-
-### Oracle Cloud Marketplace
-The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud services.  It offers multiple consumption modes and deployment modes.  In this lab we will be deploying the free Oracle Enterprise Manager 13c Workshop marketplace image.
-
-[Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
+You may now [proceed to the next lab](#next).
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during this lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
-- Availability Domain Mismatch
-- Limits Exceeded
-- Invalid public key
-- Flex Shape Not Found
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our support forum.
 
-### Issue 1: Availability Domain Mismatch
-![](images/error-ad-mismatch.png  " ")
+### Issue 1: Can't login to instance
+Participant is unable to login to instance
 
-#### Issue #1 Description
-When creating a stack and using an existing VCN, the availability domain and the subnet must match otherwise the stack errors.  
+#### Tips for fixing Issue #1
+There may be several reasons why you can't login to the instance.  Here are some common ones we've seen from workshop participants
+- Permissions are too open for the private key - be sure to chmod the file using `chmod 600 ~/.ssh/<yourprivatekeyname>`
+- Incorrectly formatted ssh key (see above for fix)
+- User chose to login from MAC Terminal, Putty, etc and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
+- Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
+- @ placed before opc user (Remove @ sign and login using the format above)
+- Make sure you are the oracle user (type the command *whoami* to check, if not type *sudo su - oracle* to switch to the oracle user)
+- Make sure the instance is running (type the command *ps -ef | grep oracle* to see if the oracle processes are running)
 
-#### Fix for Issue #1
-1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
-2.  Scroll down to the network definition.
-3.  Make sure the Availability Domain number matches the subnet number.  E.g. If you choose AD-1, you must also choose subnet #1.
-4.  Click **Next**
-5.  Click **Save Changes**
-6.  Click **Terraform Actions** -> **Apply**
+### Issue 2: Need a ppk key
+Participant is unable to login to instance
 
-### Issue 2: Invalid public key
-![](images/invalid-ssh-key.png  " ")
+#### Tips for fixing Issue #1
+If you want to use Putty to connect to your server, you must convert your SSH key into a format compatible with Putty. To convert your key into the required .ppk format, you can use PuTTYgen.
 
-#### Issue #2 Description
-When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
+[Download PuTTYgen](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtZLx47DwAhUYKFkFHf99BmAQFjAAegQIAxAD&url=https%3A%2F%2Fwww.puttygen.com%2F&usg=AOvVaw1fagG6hM51oZWfQB_rqn2t)
 
-#### Tips for fixing for Issue #2
-- Go back to the instructions and ensure you create and **copy/paste** your key into the stack correctly.
-- Copying keys from Cloud Shell may put the key string on two lines.  Make sure you remove the hard return and ensure the key is all one line.
-- Ensure you pasted the *.pub file into the window.
-1.  Click on **Stack**-> **Edit Stack** -> **Configure Variables**.
-2.  Repaste the correctly formatted key
-3.  Click **Next**
-4.  Click **Save Changes**
-5.  Click **Terraform Actions** -> **Apply**
+To use PuTTYgen to convert a key into .ppk format, complete the following steps:
 
-### Issue 3: Flex Shape Not Found
-![](images/flex-shape-error.png  " ")
+1. Open PuTTYgen, go to **Conversions**, and then click **Import key**. PuTTYgen will display a window to load your key.
+2. Browse to your **SSH private key**, select the file, and then click **Open**. Your SSH private key may be in the Users\[user_name]\.ssh directory.
+3. Enter the passphrase associated with the private key, or leave blank if none and then click **OK**. *Note the key fingerprint confirms the number of bits is 4096.*
+4. Go to **File**, and then click **Save private key** to save the key in .ppk format.
 
-#### Issue #3 Description
-When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy.
-
-#### Fix for Issue #3
-If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
-1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
-2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
-4. Look for Standard.E2, Standard.E3.Flex and Standard2
-4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
-5.  Click on the stack you created previously
-6.  Click **Edit Stack** -> **Configure Variables**.
-7.  Scroll down to Options
-8.  Change the shape based on the availability you have in your system
-9.  Click **Next**
-10. Click **Save Changes**
-11. Click **Terraform Actions** -> **Apply**
-
-### Issue 4: Limits Exceeded
-![](images/no-quota.png  " ")
-
-#### Issue #4 Description
-When creating a stack your ability to create an instance is based on the capacity you have available for your tenancy.
-
-#### Fix for Issue #4
-If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
-
-1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
-2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
-4. Look for Standard.E2, Standard.E3.Flex and Standard2
-5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
-6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
-7.  Click on the stack you created previously
-8.  Click **Edit Stack** -> **Configure Variables**.
-9.  Scroll down to Options
-10. Change the shape based on the availability you have in your system
-11. Click **Next**
-12. Click **Save Changes**
-13. Click **Terraform Actions** -> **Apply**
 
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, October 2020
-
+* **Last Updated By/Date** - Tom McGinn, May 2021

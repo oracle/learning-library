@@ -26,6 +26,7 @@ In this lab, you will:
 * A Mac OS X, Linux or Windows machine (note that installation of some pre-requisites may be different than the steps in this workshop on Windows).
 * An SSH key-pair.
 * A OCI account with a compartment set up.
+* Terraform installed.
 
 If you are not an administrator on your tenancy, you must insure that the following policies have been set for you:
 
@@ -43,6 +44,12 @@ Allow group MyGroup to use tag-namespaces in tenancy
 Allow group MyGroup to manage all-resources in compartment MyCompartment
 </copy>
 ```
+
+If you do not have permission to create users and group, you can use your own user when a user would otherwise be created. Provide your user_ocid for each user_ocid variable required. This is not recommended for security reasons.
+
+You should also provide an auth token if you have one, or have enough slots open to create one token.
+
+This template also creates an API key on each user that requires one, so you must have at most 2 API keys on your user if you will provide your own user.
 
 You may proceed to the next lab.
 

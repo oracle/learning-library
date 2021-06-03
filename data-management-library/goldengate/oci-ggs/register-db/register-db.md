@@ -102,4 +102,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - March 2021
+* **Last Updated By/Date** - May 2021

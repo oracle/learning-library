@@ -5,7 +5,7 @@ This workshop introduces the functionality of Oracle Unified Auditing. It gives 
 
 *Estimated Lab Time:* 35 minutes
 
-*Version tested in this lab:* Oracle DB 19.8
+*Version tested in this lab:* Oracle DB 19.10
 ### Video Preview
 Watch a preview of "*Understanding Unified Auditing (February 2019)*" [](youtube:8spLhyj3iC0)
 
@@ -23,8 +23,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -33,8 +33,8 @@ This lab assumes you have:
 |--|------------------------------------------------------------|-------------|
 | 1 | Display the current audit settings | 5 minutes |
 | 2 | Audit Non App Usage | 10 minutes |
-| 3 | Audit Database Role Usage | 10 minutes |
-| 4 | Audit Data Pump Usage | 10 minutes |
+| 3 | Audit Database Role Usage | <10 minutes |
+| 4 | Audit Data Pump Usage | <10 minutes |
 | 5 | Cleanup the Unified Auditing configuration | <5 minutes |
 
 ## **STEP 1**: Display the current audit settings
@@ -132,6 +132,14 @@ In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outsi
     - Open a web browser window to *`http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`*
     - Login to the HR Application as *`hradmin`* with the password "*`Oracle123`*"
 
+      ````
+      <copy>hradmin</copy>
+      ````
+
+      ````
+      <copy>Oracle123</copy>
+      ````
+
       ![](./images/ua-008.png " ")
 
       ![](./images/ua-009.png " ")
@@ -179,7 +187,7 @@ In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outsi
 
 7. Run additional queries to generate traffic and to see if Audit records are generated
 
-      - Execute 
+      - Execute
 
           ````
             <copy>./ua_query_employeesearch_usage.sh</copy>
@@ -315,7 +323,7 @@ In this lab you will configure the Unified Audit Trail and review an audit of Or
       ````
 
     ...as a user authorized (`SYSTEM`): **Successfully!**
-    
+
     ![](./images/ua-029a.png " ")
 
      ...and as a user who is not authorized (`DBSAT_ADMIN`): **In Failure!**
@@ -342,7 +350,7 @@ In this lab you will configure the Unified Audit Trail and review an audit of Or
 
    ![](./images/ua-031.png " ")
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next)..
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -351,7 +359,7 @@ In unified auditing, the unified audit trail captures audit information from a v
 
 Unified auditing enables you to capture audit records from the following sources:
 - Audit records (including SYS audit records) from unified audit policies and AUDIT settings
-- Fine-grained audit records from the DBMS_FGA PL/SQL package
+- Fine-grained audit records from the `DBMS_FGA` PL/SQL package
 - Oracle Database Real Application Security audit records
 - Oracle Recovery Manager audit records
 - Oracle Database Vault audit records
@@ -360,7 +368,7 @@ Unified auditing enables you to capture audit records from the following sources
 - Oracle Data Pump
 - Oracle SQL*Loader Direct Load
 
-The unified audit trail, which resides in a read-only table in the AUDSYS schema in the SYSAUX tablespace, makes this information available in a uniform format in the UNIFIED_AUDIT_TRAIL data dictionary view, and is available in both single-instance and Oracle Database Real Application Clusters environments. In addition to the user SYS, users who have been granted the AUDIT_ADMIN and AUDIT_VIEWER roles can query these views. If your users only need to query the views but not create audit policies, then grant them the AUDIT_VIEWER role.
+The unified audit trail, which resides in a read-only table in the AUDSYS schema in the SYSAUX tablespace, makes this information available in a uniform format in the `UNIFIED_AUDIT_TRAIL` data dictionary view, and is available in both single-instance and Oracle Database Real Application Clusters environments. In addition to the user SYS, users who have been granted the `AUDIT_ADMIN` and `AUDIT_VIEWER` roles can query these views. If your users only need to query the views but not create audit policies, then grant them the `AUDIT_VIEWER` role.
 
 When the database is writeable, audit records are written to the unified audit trail. If the database is not writable, then audit records are written to new format operating system files in the `$ORACLE_BASE/audit/$ORACLE_SID` directory.
 
@@ -379,6 +387,5 @@ Technical Documentation:
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
+- **Contributors** - Angeline Dhanarani, Gian Sartor, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

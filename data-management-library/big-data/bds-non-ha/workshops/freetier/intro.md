@@ -40,7 +40,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 - **Lab 8:** Clean up Resources Used in this Workshop (Optional)
 
 ## Workshop Prerequisites
-This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Get Started with Oracle Cloud** lab in the **Contents** menu.
+This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Getting Started** lab in the **Contents** menu.
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
@@ -48,7 +48,7 @@ This workshop requires an Oracle Cloud account. You may use your own cloud accou
  + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
  + To submit a request to increase your service limits, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#Requesti) in the Oracle Cloud Infrastructure documentation.
 
-**You are all set to begin the labs in this workshop! Click "Lab 1: Set Up the BDS Environment" in the Contents menu.**
+You are all set to begin the labs in this workshop! Click **Lab 1: Set Up the BDS Environment** in the **Contents** menu.
 
 ## Want to Learn More About Oracle Big Data Service?
 
@@ -67,4 +67,4 @@ Use these links to get more information about BDS and OCI:
 * **Authors:**
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, March 2021
+* **Last Updated By/Date:** Lauran Serhal, May 2021

@@ -3,7 +3,6 @@
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
-    "support": "https://community.oracle.com/tech/developers/categories/autonomous-database-shared",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {

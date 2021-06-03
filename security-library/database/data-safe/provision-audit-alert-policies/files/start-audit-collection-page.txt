@@ -1,0 +1,1 @@
+A screenshot of the Start Audit Collection page showing the collection state as Not Started.

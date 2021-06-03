@@ -2,7 +2,7 @@
 
 ## About the Workshop
 
-Welcome to the Containerized Development with Docker on Autonomous Database workshop. In this workshop, you will create an infrastructure to support deployment of a multi-container Docker application (AlphaOffice) running on the Oracle Database.
+Welcome to the Containerized Development with Docker on Oracle Database workshop. In this workshop, you will create an infrastructure to support deployment of a multi-container Docker application (AlphaOffice) running on the Oracle Database.
 
 Estimated Workshop Time: 60 minutes
 

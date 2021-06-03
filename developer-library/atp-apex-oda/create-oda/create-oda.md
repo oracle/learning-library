@@ -88,7 +88,7 @@ In this lab, you will:
 
 7. You will be on the Oracle Digital Assistant **Dashboard** where you can start building your bots.
 
-    ![ODA Menu](./images/oda_5_new.png)
+    ![ODA Menu](./images/oda_5_new2.png)
 
 ## **STEP 2**: Explore your Digital Assistant
 
@@ -96,13 +96,13 @@ You can always **Watch Videos** on the **Learn** section at the bottom and explo
 
 Make sure you look around and feel familiar with the menus.
 
-![ODA Menu](./images/oda_6_new.png)
+![ODA Menu](./images/oda_6_new2.png)
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Anoosha Pilli, March 2021
 

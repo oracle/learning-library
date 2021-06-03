@@ -104,7 +104,7 @@ In the tutorial Setting up Oracle Data Miner 11g Release 2, you learned how to c
 
 ## **STEP 4:** Create a Workflow and Add data for the workflow
 
-1. Right-click your project (Retail\_Data\_Analysis) and select **New Workflow** from the menu. For this workflow we will be using these three tables :  `DATA_REL, JSON_PURCHASEORDER, XML_PURCHASEORDER`
+1. Right-click on your project (Retail\_Data\_Analysis) and select **New Workflow** from the menu. For this workflow we will be using these three tables :  `DATA_REL, JSON_PURCHASEORDER, XML_PURCHASEORDER`
 
     ![](./images/data-preparation-10.png " ")
 
@@ -222,12 +222,12 @@ Follow these steps.
     ![](./images/data-preparation-24.png " ") 
 
     `Notes`:
-    A yellow Information (!) icon in the border around any node indicates that it is not complete. Therefore, at least one addition step is required before the Explore Data node can be used.
+    A yellow Information (!) icon in the border around any node indicates that it is not complete. Therefore, at least one additional step is required before the Explore Data node can be used.
    
     In this case, a data source node must be "linked" to the Explore Data node to enable further exploration of the source data.
 
 2. To link the data source and explore data nodes, use the following instructions.
-    Right-click the data source node (DATA\_RELTN), select **Connect** from the pop-up menu, and then drag the pointer to the Explore Data node, as shown here:
+    Right-click on the data source node (DATA\_RELTN), select **Connect** from the pop-up menu, and then drag the pointer to the Explore Data node, as shown here:
 
     ![](./images/data-preparation-25.png " ") 
 
@@ -255,10 +255,10 @@ Follow these steps.
     `Note`: When you run any process from the workflow canvas, the steps that you have specified are executed by the Oracle Data Miner Server.
    
 6. To see results from the Explore Data node, perform the following:
-    Right-click the Explore Data node and select View Data from the menu
+    Right-click on the Explore Data node and select View Data from the menu
     ![](./images/data-preparation-29.png " ")
 
-    Go to statistics tab and click on one of the row.
+    Go to the statistics tab and click on one of the rows.
 
     ![](./images/data-preparation-31.png " ")
 
@@ -276,7 +276,7 @@ Follow these steps.
 ## **STEP 6:** Append Data from Two Different Table
 
 1. Now we can append the data from `DATA_REL` and `JSON_XML_COMBINED` into a single table using the `UNION ALL` query in the `SQL Query` control and store the data in a output table. Steps will be similar to what we had mentioned earlier. 
-Before we `JOIN` the tables, we will update the some of the attributes to numeric type, so that the data types of both tables match during the join.  Add a `Transform` node and connect the `DATA_REL` table to the `Transform` node. 
+Before we `JOIN` the tables, we will update some of the attributes to numeric type, so that the data types of both tables match during the join.  Add a `Transform` node and connect the `DATA_REL` table to the `Transform` node. 
    
     ![](./images/data-preparation-32.png " ")
 
@@ -344,7 +344,7 @@ Before we `JOIN` the tables, we will update the some of the attributes to numeri
 
     ![](./images/data-preparation-48.png " ")
 
-15. Put the `Column Name` as TOTALAMOUNT, click on the `validate` button to Validate the expression and    then click `OK`.
+15. Name the `Column Name` TOTALAMOUNT, click on the `validate` button to Validate the expression and  then click `OK`.
     The new attribute is now visible in the attribute `Names` Column. Click OK. 
 
     ![](./images/data-preparation-49.png " ")
@@ -474,7 +474,7 @@ Now we will create 3 new attributes with the aggregate function. Three attribute
     Now your data is ready for usage in machine learning algorithms. 
     ![](./images/data-preparation-82.png " ")
 
-We have final three source tables:
+We have the three final source tables:
 -	JSON and XML data combined
 -	JSON, XML and RELATIONAL data combined
 -	Transformed Relational Data

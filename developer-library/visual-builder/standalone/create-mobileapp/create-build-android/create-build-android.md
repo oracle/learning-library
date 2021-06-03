@@ -61,6 +61,6 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
     ![](images/vbcsia_mob_bp_result.png)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - March 2021
+* **Last Updated By/Date** - Sheryl Manoharan, May 2021

@@ -1,0 +1,1 @@
+A screenshot showing the Autonomous Database page with the compartment drop-down menu circled.

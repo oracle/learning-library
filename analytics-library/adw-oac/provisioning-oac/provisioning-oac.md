@@ -8,7 +8,7 @@ Your Oracle Cloud Free Tier account will use the Oracle Cloud Free Trial **credi
 
 Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
-Watch our short video that explains Lab 2 - Provisioning your Oracle Analytics Cloud instance:
+Watch our short video that explains how to provision your Oracle Analytics Cloud instance:
 
 [](youtube:ZAqXlhivQCg)
 
@@ -24,19 +24,18 @@ Click in **View Account** and **Sign in to Cloud**.
 
 ![Oracle Console SignIn](./images/lab200_1.png)
 
-1. Click on the menu icon on the left. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon
-in the top right hand side of your screen. If your username is shown as:
+1. Click on the menu icon on the left. Verify that you are signed in as a **Single Sign On** (Federated user) user by selecting the **Profile** icon in the top right hand side of your screen. If your username is shown as:
 
-    > oracleidentitycloudservice/&lt;your username&gt;
-    >
+    - oracleidentitycloudservice/&lt;your username&gt;
+    
     Then you are **connected** as a **Single Sign On** user.
 
     ![Federated User](./images/lab200_2.png)
 
     If your username is shown as:
 
-    > &lt;your username&gt;
-    >
+    -  &lt;your username&gt;
+    
     Then you are **signed in** as an **Oracle Cloud Infrastructure** user.
 
     ![OCI User](./images/lab200_3.png)
@@ -48,7 +47,7 @@ in the top right hand side of your screen. If your username is shown as:
 
     To be capable of using **Oracle Analytics Cloud** we need to be Sign-On as a **Single Sign-On** (SSO) user.
 
-    [More information about federated users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
+    For more information about federated users, see [User Provisioning for Federated Users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
 
 2. Return to the **Home Console Page** and navigate to **Analytics & AI** section and then **Analytics Cloud**.
 
@@ -60,17 +59,17 @@ in the top right hand side of your screen. If your username is shown as:
 
     Complete the form using the following information:
 
-    >**Compartment**: Select a valid compartment in your tenancy
-    >
-    >**Instance Name**: WORKSHOPADWOAC
-    >
-    >**Description**: &lt;optional&gt;
-    >
-    >**Feature Set**: Enterprise Analytics (important)
-    >
-    >**Capacity**: 1 - Non Production
-    >
-    >**License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part of the free Oracle Cloud trial that you requested for this workshop).
+    - **Compartment**: Select a valid compartment in your tenancy
+    
+    - **Instance Name**: `WORKSHOPADWOAC`
+    
+    - **Description**: &lt;optional&gt;
+    
+    - **Feature Set**: Enterprise Analytics (important)
+    
+    - **Capacity**: 1 - Non Production
+    
+    - **License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part of the free Oracle Cloud trial that you requested for this workshop).
 
 4. Select **Create**.
 
@@ -91,7 +90,7 @@ in the top right hand side of your screen. If your username is shown as:
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 

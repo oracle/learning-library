@@ -13,10 +13,9 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Generate SSH Keys (*Free Tier* and *Paid Tenancies* only)
+    - Lab: Prepare Setup (*Free Tier* and *Paid Tenancies* only)
     - Lab: Environment Setup
-
 
 
 ## **Step 0:** Initialize Environment
@@ -57,7 +56,7 @@ Refer to *Lab Environment Setup* for the detailed instructions relevant to your 
     </copy>
     ```
 
-## **STEP 1:** Login and Create PDB
+## **Step 1:** Login and Create PDB
 This section looks at how to login and create a new PDB. You will create a pluggable database **PDB2** in the container database **CDB1**
 
 1. All scripts for this lab are stored in the `labs/multitenant` folder and are run as the oracle user. Let's navigate to the path now.
@@ -1002,15 +1001,9 @@ The tasks you will accomplish in this step are:
     ```
 
     ```
-    <copy>create pluggable database oe from oe@cdb1_link relocate;</copy>
-    ```
-
-    ```
-    <copy>alter pluggable database oe open;</copy>
-    ```
-
-    ```
-    <copy>show pdbs</copy>
+    <copy>create pluggable database oe from oe@cdb1_link relocate availability max;
+    alter pluggable database oe open;
+    show pdbs</copy>
     ```
 
     ![](./images/step9.2-relocateoe.png " ")

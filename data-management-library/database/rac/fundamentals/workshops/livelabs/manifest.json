@@ -2,17 +2,17 @@
     "workshoptitle": "RAC Fundamentals",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
+          {
+              "title": "Getting Started",
+              "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+          },
          {
             "title": "Introduction",
             "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
             "filename": "../../intro/intro.md"
-        },{
-            "title": "Getting Started",
-            "description": "Get a Free Trial",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 1: Build a DB System",
+            "title": "Lab 1: Connect to your DB System",
             "description": "This lab walks you through building a RAC system in the Oracle Cloud.",
             "filename": "../../setup/setup-compute-livelabs.md"
         },

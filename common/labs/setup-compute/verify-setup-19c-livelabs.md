@@ -29,11 +29,11 @@ This lab assumes you have:
 - A Valid SSH Key
 
 ## **STEP 1**: Gather compute instance details
-1. Go to the hamburger menu (in the top left corner) and click **Compute** -> **Instances**.
-   ![Create a stack](images/workshop-011.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 2. Select the compartment that was assigned.
 3. Look for the instance that was created for you jot down the public IP address.
-   ![Create a stack](images/workshop-012.png " ")
+    ![Create a stack](images/workshop-012.png " ")
 
 ## **STEP 2**: Connect to your instance
 
@@ -76,7 +76,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     ![](./images/putty-setup.png " ")
 
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
+3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root or the user specified in your workshop.
 
 4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
@@ -200,7 +200,7 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, DB Product Management
+- **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Robert Pastijn, DB Product Management, PTS
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 

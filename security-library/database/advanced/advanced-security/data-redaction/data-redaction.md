@@ -5,7 +5,7 @@ This workshop introduces the various features and functionality of Oracle Data R
 
 *Estimated Lab Time:* 15 minutes
 
-*Version tested in this lab:* Oracle DB 19.8
+*Version tested in this lab:* Oracle DB 19.10
 ### Video Preview
 Watch a preview of "*Understanding Oracle Data Redaction (July 2020)*" [](youtube:ssy6Hov-MAs)
 
@@ -17,8 +17,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -111,7 +111,7 @@ This lab assumes you have:
 
    ![](./images/dr-001.png " ")
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next)..
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -151,7 +151,5 @@ Technical Documentation: [Data Redaction 19c](https://docs.oracle.com/en/databas
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
-
+- **Contributors** - Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

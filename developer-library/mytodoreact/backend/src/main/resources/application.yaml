@@ -1,8 +1,0 @@
-server:
-  port: 8080
-  host: 0.0.0.0
-
-database:
-  url: "jdbc:oracle:thin:@<your SERVICE alias>?TNS_ADMIN=target/classes/wallet"
-  user: Todouser
-  password: <Database user PASSWORD>

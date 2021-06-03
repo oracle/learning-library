@@ -82,6 +82,6 @@ In this lab, you'll configure the HR mobile application to run as a PWA. You'll 
 If you only want to try your mobile app as a PWA, skip to Lab 9 to see how to publish the live version of your app. But if you want to build your app for installation on Android and iOS, you'll need to create build configurations, as described in Labs 6, 7, and 8.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - April 2021
+* **Last Updated By/Date** - Sheryl Manoharan, May 2021

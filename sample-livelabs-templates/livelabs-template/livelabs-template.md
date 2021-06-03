@@ -1,6 +1,6 @@
 # LiveLabs Complete Template
 
-*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with ![this Confluence page](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) and then follow it with ![this page](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+New+Features+and+Fixed).*
+*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) page.*
 
 ## Introduction
 
@@ -81,6 +81,114 @@ In this lab, you will:
     This is a code block.
     ```
 
+9. Long code block with line breaks test
+
+    ```
+    <copy>/* Specify the base URL that you copied from your files in OCI Object Storage in the define base_URL line below*/
+    /* change idthydc0kinr to your real namespace. The name is case-sensitive. */
+    /* change ADWCLab to your real bucket name. The name is case-sensitive. */
+    /* change us-phoenix-1 to your real region name. The name is case-sensitive. */
+    /* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+    set define on
+    define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o'
+
+    /* copy Channels table */
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'CHANNELS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/chan_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+     );
+    end;
+    /
+
+    /* copy Countries table */
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'COUNTRIES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/coun_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+     );
+    end;
+    /
+
+    /* Copy customers */
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'CUSTOMERS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/cust1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'SUPPLEMENTARY_DEMOGRAPHICS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/dem1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'SALES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/dmsal_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'PRODUCTS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/prod1v3.dat',
+        format => json_object('delimiter' value '|', 'quote' value '^', 'ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'PROMOTIONS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/prom1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'SALES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/sale1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'TIMES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/time_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'COSTS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/costs.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
+     );
+    end;
+    /</copy>
+    ```
+
 9. Use the copy function to allow your users to copy code snippets from LiveLabs into the clipboard.
 
     ```
@@ -98,12 +206,17 @@ In this lab, you will:
     ```
     <copy>select * from employees;</copy>
     ```
+    Sample with line breaks:
 
     ```
     <copy>class Simple{  
+
       public static void main(String args[]){  
+
         System.out.println("Hello Java");  
+
       }  
+
     }</copy>
     ```
 
@@ -202,9 +315,6 @@ In this lab, you will:
 5. This is an example of a segment of the Markdown file injected before rendering:
 
 [](include:injected-step.md)
-
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 

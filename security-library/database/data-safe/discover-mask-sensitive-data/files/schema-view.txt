@@ -1,0 +1,1 @@
+A screenshot of the Data Masking wizard with the drop-down menu option for selecting Schema View circled.

@@ -76,7 +76,7 @@ img {
 #htmlBox,
 #previewBox {    
     height: 100%;
-    /*height: 69vh;*/
+    min-height: 69vh;
     vertical-align: top;
 }
 

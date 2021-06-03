@@ -1,0 +1,1 @@
+A screenshot of the Autonomous Database Details tab showing a Registered status for Oracle Data Safe.

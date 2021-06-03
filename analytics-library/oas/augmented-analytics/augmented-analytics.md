@@ -11,7 +11,10 @@ Advanced analytics functions such as forecasting, trend analysis and clustering 
   [](youtube:VlMiMnk287Q)
 
 ### Objectives
-In this lab, you will play the role of an HR Analyst.  The VP of HR has noticed an increasing rate of attrition.  As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk. Additionally, you will identify those employees who are at greatest risk for leaving.   
+* This exercise will introduce you to OAS augmented analytics such as Explain feature, outlier identification, etc.
+* You will explore OAS predictive analytics using built-in  machine learning algorithms.
+* In this lab, you will play the role of an HR Analyst. The VP of HR has noticed an increasing rate of attrition.  
+* As an analyst, you have been tasked with identifying what is happening internally in order to decrease the rate of attrition and identify potential strategies to mitigate risk. Additionally, you will identify those employees who are at greatest risk for leaving.   
 
 ### Prerequisites
 This lab assumes you have:
@@ -27,7 +30,7 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
 - Attrition Training v3.xlsx
 - Employee_Analysis.dva
 
-## **Step 1:** Using Machine Learning to Accelerate Root Cause Analysis
+## **STEP 1:** Using Machine Learning to Accelerate Root Cause Analysis
 In this exercise we are going to import a data set containing a number of employee records with various attributes that record employee experience, performance, and incentive. The data is historical in nature and includes a data element that identifies whether the employee has left the organization.  
 
   - Note the attrition column, a binary indicator.  
@@ -175,7 +178,7 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
 
 23. Save your analysis.
 
-## **Step 2:** Leverage machine learning to predict voluntary termination
+## **STEP 2:** Leverage machine learning to predict voluntary termination
 This exercise will explore how self-service machine learning enables predictive analytics. We are now going to extend our analysis by seeing how we can predict whether an employee is likely to leave the organization. For this we will be using a Binary Classification model. Before we venture any further let us try to understand briefly what binary classification is.  
 
 Binary classification is a technique of classifying elements of a given dataset into two groups on the basis of classification rules for example Employee Attrition Prediction, i.e. whether the employee is expected to Leave or Not Leave. These classification rules are generated when we train a model using training dataset which contains information about the employees and whether the employee has left the company or not.
@@ -333,4 +336,4 @@ Binary classification is a technique of classifying elements of a given dataset 
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Linda Dest, Jyotsana Rawat, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021

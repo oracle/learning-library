@@ -13,7 +13,7 @@
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
     },
       {
-          "title": "Lab 2: Getting Started",
+          "title": "Lab 2: Getting Started with ADB",
           "description": "Provision Autonomous Database",
           "filename": "./../../adb-provision/adb-provision-livelabs.md"
       },

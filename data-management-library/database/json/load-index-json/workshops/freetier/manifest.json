@@ -1,0 +1,55 @@
+{
+    "workshoptitle":"Loading, Indexing and Querying JSON Data",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {         
+            "title": "Introduction",
+            "description": "Introduction to JSON Workshop",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {         
+            "title": "Lab 1: Upload Files to Object Storage",
+            "description": "Create a bucket in Object Storage and transfer local files",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../object-storage/object-storage.md"
+        },
+        {            
+            "title": "Lab 2: Loading from Object Storage",
+            "description": "In SQL Developer Web, use DBMS_CLOUD.COPY_DATA to load database from Object Storage",
+            "publisheddate": "3/24/2020",
+            "filename": "../../loading-from-object-storage/loading-from-object-storage.md"
+        },
+        {         
+            "title": "Lab 3: Creating Indexes and Basic Queries",
+            "description": "Create functional and search indexes on JSON data, and run queries against it",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../indexes-queries/indexes-queries.md"
+        },
+        {         
+            "title": "Lab 4: RESTful Queries Through Oracle Application Express",
+            "description": "Use Oracle Application Express to create a RESTful API over JSON queries",
+            "partnumber": "Ennnnn_01",
+            "publisheddate": "03/10/2020",
+            "contentid": "12nnnn",
+            "filename": "../../restful-queries/restful-queries.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+
+}

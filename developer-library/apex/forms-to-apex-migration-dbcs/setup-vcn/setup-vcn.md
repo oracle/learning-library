@@ -23,7 +23,7 @@ To sign in to the Console, you need the following:
 - URL for the Console: [https://console.us-ashburn-1.oraclecloud.com/](https://console.us-ashburn-1.oraclecloud.com/)
 - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Internet Explorer 11. ***It does not support the Edge browser***.
 
-## **STEP 1**: Create Your VCN
+## **STEP 1:** Create Your VCN
 
 To create a VCN on Oracle Cloud Infrastructure:
 
@@ -44,7 +44,6 @@ To create a VCN on Oracle Cloud Infrastructure:
     |VCN CIDR BLOCK|10.0.0.0/16|
     |PUBLIC SUNBET CIDR BLOCK|10.0.2.0/24|
     |PRIVATE SUNBET CIDR BLOCK|10.0.1.0/24|
-
     |USE DNS HOSTNAMES IN THIS VCN| Checked|
 
     Your screen should look similar to the following:
@@ -67,15 +66,10 @@ You may now *proceed to the next lab*.
 
 ## Summary
 
-This VCN will contain all of the other assets that you will create during this set of labs. In real-world situations, you would crete multiple VCNs based on their need for access (which ports to open) and who can access them.
+This VCN will contain all of the other assets that you will create during this set of labs. In real-world situations, you would create multiple VCNs based on their need for access (which ports to open) and who can access them.
 
-## **Acknowledgements**
+## Acknowledgements
 
  - **Author** -  Vanitha Subramanyam, Senior Solution Architect
  - **Contributors** - Abhinav Jain, Staff Cloud Engineer, Sakthikumar Periyasamy Senior Cloud Engineer, Nayan Karumuri Staff Cloud Engineer
- - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, December 2020
-
-## Need Help?
- Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
- If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+ - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, May 2021

@@ -13,39 +13,43 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Create a Mobile Application",
+            "title": "Lab 1: Create an Instance of Oracle Visual Builder",
+            "filename": "../../spin-up-vb/spin-up-vb.md"
+        },
+        {
+            "title": "Lab 2: Create a Mobile Application",
             "filename": "../../create-mobile/create-mobile.md"
         },
         {
-            "title": "Lab 2: Create Pages for a Business Object",
+            "title": "Lab 3: Create Pages for a Business Object",
             "filename": "../../create-pages/create-pages.md"
         },
         {
-            "title": "Lab 3: Add Data to Your Mobile App",
+            "title": "Lab 4: Add Data to Your Mobile App",
             "filename": "../../add-data/add-data.md"
         },
         {
-            "title": "Lab 4: Add Pages for Working with Data",
+            "title": "Lab 5: Add Pages for Working with Data",
             "filename": "../../add-pages/add-pages.md"
         },
         {
-            "title": "Lab 5: Configure a Mobile Application to Run as a PWA",
+            "title": "Lab 6: Configure a Mobile Application to Run as a PWA",
             "filename": "../../configure-app-settings/configure-app-settings.md"
         },
         {
-            "title": "Lab 6: Create a Build to Install a Mobile Application on Android Devices",
+            "title": "Lab 7: Create a Build to Install a Mobile Application on Android Devices",
             "filename": "../../create-build-android/create-build-android.md"
         },
         {
-            "title": "Lab 7: Create a Build to Install a Mobile Application on iOS Devices",
+            "title": "Lab 8: Create a Build to Install a Mobile Application on iOS Devices",
             "filename": "../../create-build-ios/create-build-ios.md"
         },
         {
-            "title": "Lab 8: Build a Mobile Application for Installation on Android and iOS Devices",
+            "title": "Lab 9: Build a Mobile Application for Installation on Android and iOS Devices",
             "filename": "../../build-for-install/build-for-install.md"
         },
         {
-            "title": "Lab 9: Publish a Visual Builder Mobile Application",
+            "title": "Lab 10: Publish a Visual Builder Mobile Application",
             "filename": "../../publish/publish.md"
         },
         {

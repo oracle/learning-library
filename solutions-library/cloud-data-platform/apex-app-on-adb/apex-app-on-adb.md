@@ -4,6 +4,7 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous Data Warehouse (ADW) and Oracle Application Express (APEX) provided with your Autonomous Data Warehouse on Oracle Infrastructure Cloud (OCI). You will provision a new ADW instance as well as use APEX to create a workspace and user, load data, and create an app.
 
+Estimated Lab Time: 45 minutes
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
 [](youtube:N1EoJtf1onE)
@@ -19,8 +20,6 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 ### Prerequisites
 -   Assumes the participant has completed the Register for Free Tier/Cloud Login Lab
 
-### Estimated Time to Complete Lab
-30 minutes
 
 ### Extra Resources
 Watch this video to learn more about Autonomous Database.
@@ -40,9 +39,11 @@ Watch this video to learn more about Autonomous Database.
 	
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
-3. This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Compartments are used to organize resources in the Cloud. Using the drop down, select the compartment of your choice.  Here, we are selecting **CloudDataWorkshop** from the compartment list.
+3. Click **Create Autonomous Database**.
 
-4. Specify a memorable display name for the instance. Also specify your database's name, use **ADW\_FIRSTNAME\_LASTNAME** for this lab.
+    ![](./images/create-adb.png " ")
+
+4. Specify a memorable display name for the instance. Also specify your database's name.
 
     ![](./images/adw0.png " ")
 
@@ -62,7 +63,7 @@ Watch this video to learn more about Autonomous Database.
 
     ![](./images/adw3img.png " ")
 
-10. Your instance will begin provisioning. Once the state goes from Provisioning to Available, click on your ADW display name to see its details.  Note: Here, the name is ADWDEMO, but instead, you should see your **ADW\_FIRSTNAME\_LASTNAME**.
+10. Your instance will begin provisioning. Once the state goes from Provisioning to Available, click on your ADW display name to see its details.  Note: Here, the name is ADWDEMO.
 
     ![](./images/Part_1_Step_2_5.png " ")
 
@@ -77,7 +78,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/8.png " ")
 
-2. Under Download a Connection Wallet, click **Download**.
+2. Click **Download Wallet**.
 
     ![](./images/9.png " ")
 
@@ -112,11 +113,11 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 2. Then, create a Database User and Workspace Name. For this workshop, use **DEVELOPER** for both. 
 
-3. **Note**: it is essential you make sure to use **DEVELOPER** as many files and configurations in later labs depend on it. Please do not use a different name here for this workshop.
+    **Note**: it is essential you make sure to use **DEVELOPER** as many files and configurations in later labs depend on it. Please do not use a different name here for this workshop.
 
-4. Then, specify a password for the **DEVELOPER** user you just created. Make a note of this password.
+3. Then, specify a password for the **DEVELOPER** user you just created. Make a note of this password.
 
-5. Click **Create Workspace** to continue.
+4. Click **Create Workspace** to continue.
 
     ![](./images/Part_2_Step_2_2.png " ")
 
@@ -269,7 +270,7 @@ Please proceed to the next lab.
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributors** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
 
 

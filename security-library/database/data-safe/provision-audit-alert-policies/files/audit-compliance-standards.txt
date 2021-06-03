@@ -1,0 +1,1 @@
+A screenshot of the policies available for audit compliance standards on an Autonomous Database. The Center for Internet Security (CIS) Configuration option is selected.

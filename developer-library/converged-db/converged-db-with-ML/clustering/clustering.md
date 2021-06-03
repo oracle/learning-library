@@ -33,7 +33,7 @@ This lab assumes you have:
 ## **STEP 1:** Create a Data Miner Project
 To create a Data Miner Project, perform the following steps:
 
-1.	In the Data Miner tab, right-click the data mining user connection that you previously created, and select **New Project**, as shown here.
+1.	In the Data Miner tab, right-click on the data mining user connection that you previously created, and select **New Project**, as shown here.
     ![](./images/clustering_6.jpg " ") 
  
 2.	In the Create Project window, enter a project name (in this example Clustering) and then **click OK**.
@@ -69,9 +69,9 @@ To create a Data Miner Project, perform the following steps:
 
 3. Sample Data Mining Scenario
    
-    In this topic, you will create a data mining process that groups customers into clusters based on their attributes like items purchased, spending, location etc. This technique is called Clustering. Typically clustering is used in customer segmentation analysis to try an better understand what type of customers you have.
+    In this topic, you will create a data mining process that groups customers into clusters based on their attributes like items purchased, spending, location etc. This technique is called Clustering. Typically clustering is used in customer segmentation analysis to try and  understand better what type of customers you have.
 
-     Like with all data mining techniques, Clustering will not tell you or give you some magic insight into your data. Instead, it gives you more information for you to interpret and add the business meaning to them. With Clustering, you can explore the data that forms each cluster to understand what it really means.
+     Similar to all data mining techniques, Clustering will not tell you or give you some magical insight into your data. Instead, it will provide more information for you to interpret and add business insight to them. With Clustering, you can explore the data that forms each cluster to understand what it really means.
      To accomplish this goal, you build a workflow that enables you to:
 
      - Build and compare several Clustering models
@@ -81,7 +81,7 @@ To create a Data Miner Project, perform the following steps:
 
 ## **STEP 3:** Create a Workflow and Add data for the workflow
 
-1.	Right-click your project (Retail\_Data\_Analysis) and select New Workflow from the menu.
+1.	Right-click on your project (Retail\_Data\_Analysis) and select New Workflow from the menu.
     ![](./images/clustering_10.jpg " ")
  
     **Result**: The Create Workflow window appears.
@@ -102,11 +102,11 @@ To create a Data Miner Project, perform the following steps:
 
 3. The first element of any workflow is the source data. We will extract data from a JSON table and a XM table. Here, we cannot directly add a data source. We will use a query editor to read the tables in a relational table format. You add a Data Source node to the workflow, and select the JSON\_PURCHASEORDER and XML\_PURCHASEORDER tables as the data source.
 
-    In the Component Palette, click the Data category. A list of data nodes appear, as shown here:
+    In the Component Palette, click on the Data category. A list of data nodes appear, as shown here:
 
     ![](./images/clustering_13.png " ")
 
-4. Defining the data we will used to Build our Cluster models
+4. Defining the data we will use to Build our Cluster models
     We are going to divide the data in our FINAL\_JSON\_XML\_DATA into two data sets. The first data set will be used to build the Cluster models. The second data set will be used as part of the Apply node.
 
     To divide the data we are going to use the Sample Node that can be found under the Transformation tab of the Component Palette.
@@ -135,10 +135,9 @@ To create a Data Miner Project, perform the following steps:
 
 ## **STEP 4:** Build the Models
 
-In this topic, you build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
+In this section, you will build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
-A common data mining practice is to build (or train) your model against part of the source data, and then to test the model against the remaining portion of your data. By default, Oracle Data Miner this approach.
-The models have the same build data and the same target.
+A common data mining practice is to build (or train) your model against part of the source data, and then to test the model against the remaining portion of your data. The models have the same build data and the same target.
 
 By default, the models are all tested. The test data is created by randomly splitting the build data into a build data set and a test data set. The default ratio for the split is 60 percent build and 40 percent test. When possible Data Miner uses compression when creating the test and build data sets.
 
@@ -161,7 +160,7 @@ By default, the models are all tested. The test data is created by randomly spli
 
 6. A new window will open that lists all the attributes for the in the data source. The CUSTOMERID is unchecked as we said that this was the CASE\_ID.
 
-7. Click on the Algorithm Settings tab to see the internal settings for the **k-means algorithm**. All of these settings have a default value. Oracle has worked out what the optimal setting are for you. The main setting that you might want to play with is the Number of Clusters to build. The default is 10, but you might want to play with numbers between 5 and 15 depending on the number of clusters or segments you want to see in your data.
+7. Click on the Algorithm Settings tab to see the internal settings for the **k-means algorithm**. All of these settings have a default value. Oracle has worked out the optimal setting for you. The main setting that you might want to play with is the Number of Clusters to build. The default is 10, but you might want to play with numbers between 5 and 15 depending on the number of clusters or segments you want to see in your data.
 
 8. To view the algorithm settings for **O-Cluster** or **EM Cluster** click on this under the Model Setting. We have less internal settings to worry about here, but we again can determine how many clusters we want to produce.
 
@@ -177,9 +176,9 @@ By default, the models are all tested. The test data is created by randomly spli
                
 ## **STEP 5:** View the Cluster Models/Rules
 
-1. To view the the cluster modes we need to right click the Cluster Build node and select View Models from the drop down list. We get an additional down down menu that gives the names of the three cluster models that were developed.
+1. To view the the cluster modes we need to right click on the Cluster Build node and select View Models from the drop down list. We get an additional down down menu that gives the names of the three cluster models that were developed.
 
-2. In my case, these are **CLUS\_EM_1\_8, CLUS\_KM\_1\_8 and CLUS\_OC\_1\_8**. You may get different numbers on your model names. These numbers are generated internally in ODM.
+2. In this case, these are **CLUS\_EM_1\_8, CLUS\_KM\_1\_8 and CLUS\_OC\_1\_8**. You may get different numbers on your model names. These numbers are generated internally in ODM.
 The first one that we will look at will be the K-Mean Cluster Model (**CLUS\_KM\_1\_8**). 
 
     Select this from the menu.
@@ -199,31 +198,31 @@ The first one that we will look at will be the K-Mean Cluster Model (**CLUS\_KM\
 
   ![](./images/clustering_36.png " ")  ![](./images/clustering_37.png " ")
  
-6. For each cluster in the tree we can see the number of cases in each cluster the percentage of overall cases for this cluster. Work your way down the tree exploring each of the clusters produced.
+6. For each cluster in the tree we can see the number of cases in each cluster ,the percentage of overall cases for this cluster. Work your way down the tree exploring each of the clusters produced.
 
     The further down the tree you go the smaller the percentage of cases will fall into each cluster.
 
 ## **STEP 6:** Compare Clusters
 
-1. In addition to the cluster tree, ODM also has two addition tabs to allow us to explore the clusters. These are Cluster and Compare tabs.
+1. In addition to the cluster tree, ODM also has two additional tabs to allow us to explore the clusters. These are Cluster and Compare tabs.
 
     ![](./images/clustering_38.png " ")
 
-2. Click on the Cluster tab. We now get a detailed screen that contain various statistical information for each attribute. We can for each attribute get a histogram of the values within each attribute for this cluster.
+2. Click on the Cluster tab. We now get a detailed screen that contains various statistical information for each attribute. We can for each attribute get a histogram of the values within each attribute for this cluster.
 
-3. We can use this important to start building up a picture of what each cluster might represent based on the values (and their distribution) for each cluster.
+3. We can use this to start building a picture of what each cluster might represent based on the values (and their distribution) for each cluster.
     ![](./images/clustering_39.png " ")
  
 **Multi-Cluster – Multi-variable Comparison of Clusters**
 
 4. The next level of comparison and evaluation of the clusters can be found under the Compare tab.
-This lets us compare two clusters against each other at an attribute level. For example, let us compare cluster 3 and 11. The attribute and graphics section is updated to reflect the data for each of cluster.   
+This lets us compare two clusters against each other at an attribute level. For example, let us compare cluster 3 and 11. The attribute and graphics section is updated to reflect the data for each of the cluster.   
 
     These are color coded to distinguish the two clusters.
 
     ![](./images/clustering_40.png " ")
  
-    We can work our way down through each attribute and again we can use this information to help us to understand what each cluster might represent.
+    We can work our way down through each attribute and again we can use this information to help us understand what each cluster might represent.
 
 5. An additional feature here is that we can do multi-variable (attribute) comparison. Holding down the control button select STATE, UNITPRICE\_SUM and QUANTITY\_SUM. With each selection, we get a new graph appearing at the bottom of the screen. This shows the distribution of the values by attribute for each cluster.  We can learn a lot from this.
 
@@ -301,7 +300,7 @@ We have one last data setup to do on the Apply node. We need to specify what dat
 
 5. To view the results and the output produced by the Apply node, right click on the Apply node and select View Data from the drop down menu.
 
-    We get a new tab opened in SQL Developer that will contain the data. This will consist of the CUSTOMERID, the K-means Cluster ID and the Cluster Probability. You will see that the some of the clusters assigned will have a number and some will have the cluster labels that we assigned in a previous step.
+    We get a new tab opened in SQL Developer that will contain the data. This will consist of the CUSTOMERID, the K-means Cluster ID and the Cluster Probability. You will see that some of the clusters assigned will have a number and some will have the cluster labels that were assigned in the previous step.
 
     ![](./images/clustering_54.png " ")
  

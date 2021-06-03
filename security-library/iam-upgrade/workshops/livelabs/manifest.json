@@ -18,7 +18,7 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
     },
     {
-      "title": "Lab 2: Initialize Oracle IAM 11.1.2.3 Environment",
+      "title": "Lab 2: Initialize Environment",
       "description": "Lab to Initialize IAM 11.1.2.3 Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },

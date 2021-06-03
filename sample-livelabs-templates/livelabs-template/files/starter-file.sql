@@ -6,6 +6,7 @@
 /* you can find these values on the OCI Console .. Storage .. Object Storage screen */
 set define on
 define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o'
+
 /* copy Channels table */
 begin
  dbms_cloud.copy_data(
@@ -16,6 +17,7 @@ begin
  );
 end;
 /
+
 /* copy Countries table */
 begin
  dbms_cloud.copy_data(
@@ -26,6 +28,7 @@ begin
  );
 end;
 /
+
 /* Copy customers */
 begin
  dbms_cloud.copy_data(

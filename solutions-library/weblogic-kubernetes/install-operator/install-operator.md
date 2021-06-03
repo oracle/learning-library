@@ -8,34 +8,7 @@ This lab walks you through the steps to prepare OCI Cloud shell (client) environ
 
 Estimated Lab Time: 15 minutes
 
-## **STEP 1**: Clone the operator repository to a Cloud Shell instance
-First, clone the operator git repository to OCI Cloud Shell.
-```bash
-<copy>git clone https://github.com/oracle/weblogic-kubernetes-operator.git -b v3.0.0</copy>
-```
-The output should be similar to the following:
-```bash
-Cloning into 'weblogic-kubernetes-operator'...
-remote: Enumerating objects: 606, done.
-remote: Counting objects: 100% (606/606), done.
-remote: Compressing objects: 100% (315/315), done.
-remote: Total 157642 (delta 271), reused 429 (delta 168), pack-reused 157036
-Receiving objects: 100% (157642/157642), 111.14 MiB | 13.26 MiB/s, done.
-Resolving deltas: 100% (92756/92756), done.
-Note: checking out 'a14b76777ccd1e039b64ea2992d8a22da05f8e3d'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b new_branch_name
-
-Checking out files: 100% (10812/10812), done.
-```
-## **STEP 2**: Prepare the Kubernetes environment
+## **STEP 1**: Prepare the Kubernetes environment
 Kubernetes distinguishes between the concept of a user account and a service account for a number of reasons. The main reason is that user accounts are for humans while service accounts are for processes, which run in pods. The operator also requires service accounts.  If a service account is not specified, it defaults to `default` (for example, the namespace's default service account). If you want to use a different service account, then you must create the operator's namespace and the service account before installing the operator Helm chart.
 
 Thus, create the operator's namespace in advance:
@@ -46,15 +19,14 @@ Create the service account:
 ```bash
 <copy>kubectl create serviceaccount -n sample-weblogic-operator-ns sample-weblogic-operator-sa</copy>
 ```
-Finally, add a stable repository to Helm, which will be needed later for 3rd party services.
+Finally, add the weblogic-operator repository to Helm.
+
 ```bash
-<copy>helm repo add stable https://kubernetes-charts.storage.googleapis.com/</copy>
+<copy>helm repo add weblogic-operator https://oracle.github.io/weblogic-kubernetes-operator/charts --force-update</copy>
 ```
-## **STEP 3**: Install the operator using Helm
-Before you execute the operator `helm` install, make sure that you are in the operator's local Git repository folder.
-```bash
-<copy>cd ~/weblogic-kubernetes-operator/</copy>
-```
+
+## **STEP 2**: Install the operator using Helm
+
 Use the `helm install` command to install the operator Helm chart. As part of this, you must specify a "release" name for their operator.
 
 You can override the default configuration values in the operator Helm chart by doing one of the following:
@@ -75,7 +47,8 @@ Note the values:
 Execute the following `helm install`:
 ```bash
 <copy>helm install sample-weblogic-operator \
-  kubernetes/charts/weblogic-operator \
+  weblogic-operator/weblogic-operator \
+  --version 3.0.0 \
   --namespace sample-weblogic-operator-ns \
   --set image=ghcr.io/oracle/weblogic-kubernetes-operator:3.0.0 \
   --set serviceAccount=sample-weblogic-operator-sa \
@@ -99,6 +72,9 @@ The output will be similar to the following:
 NAME                                 READY   STATUS    RESTARTS   AGE
 weblogic-operator-67d66b4576-jkp9g   1/1     Running   0          41s
 ```
+
+Make sure to wait until the pod is in **running** state.
+
 Check the operator Helm chart:
 ```bash
 <copy>helm list -n sample-weblogic-operator-ns</copy>

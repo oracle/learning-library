@@ -22,6 +22,8 @@ In this workshop you will:
 - Create and populate tables in the ADB instance.
 - Query, analyze, and visualize that data as graphs.
 
+This workshop is tested for the Graph Server version **20.4** or **21.1**.
+
 ### Prerequisites
 
 - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported

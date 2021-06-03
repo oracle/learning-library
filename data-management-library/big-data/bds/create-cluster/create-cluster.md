@@ -9,8 +9,7 @@ Estimated Lab Time: 60 minutes
 ### Objectives
 
 * Create an HA Hadoop cluster using BDS and OCI.
-* Monitor the cluster creation.
-* Monitor the Cluster and Nodes Metrics.
+* Monitor the cluster creation and the cluster and nodes metrics.
 * Review the locations of the various services in the cluster.
 
 ### What Do You Need?
@@ -36,13 +35,13 @@ Your simple HA cluster will have the following profile:
   ![](./images/cluster-layout.png " ")
 
 
-Create the cluster as follows:
+Create the HA cluster as follows:
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used so far in this workshop. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+  ![](./images/big-data.png " ")
 
 3. On the **Clusters** page, click **Create Cluster**.
 
@@ -302,5 +301,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
 * **Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, January 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

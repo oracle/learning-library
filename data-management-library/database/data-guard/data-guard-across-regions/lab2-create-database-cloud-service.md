@@ -1,25 +1,33 @@
-# Create your primary database with the Oracle Database Cloud Service.
+# Create your Primary Database with the Oracle Database Cloud Service
 
-Prerequisite
+The Oracle Database Cloud Service automates the provisioning and management of the Oracle database in the cloud.  We will create the Oracle Database Cloud Service as the primary database in one of the cloud regions.  The standby database will be automatically created when we set Data Guard association later.
 
+Estimated lab time:  5 minutes
+Estimated wait time: 20 minutes to create database
+
+### Objective
+- Create the Oracle Database Cloud Service as the primary database
+
+### Prerequisite
 - VCN with private subnet
 
-The Oracle Database Cloud Service automates the provisioning and management of the Oracle database in the cloud.  We will create the Oracle Database Cloud Service as the primary database in one of the cloud regions.
 
+## STEPS
 1. Select a region for your primary database.
 2. Select the menu Oracle Databases then Bare Metal, VM, and Exadata.
 3. Select your compartment.
 4. Click Create DB System.
 5. Ensure your compartment is selected.
 6. Enter a name for your database for the UI display.
-7. If you have more than one availability domain, select any one.
+7. Keep the default Database image or change to the version you want.  
 
+If you have more than one availability domain, select any one.
 
 For the lab we will use a virtual machine with only one core.  
 
 Data Guard supports RAC databases, but we'll use a single instance database in the lab.  
 
-Standard Edition does not support Data Guard, select the other editions.
+Standard Edition does not support Data Guard, select the other Enterprise editions.
 
 ![image-20210121184635385](./images/image-20210121184635385.png)
 
@@ -55,10 +63,11 @@ Standard Edition does not support Data Guard, select the other editions.
 
 16. Provide a strong password for your database sys user.
 
-17. Select OLTP or DW.
+17. Select Transaction Processing or Data Warehouse.
 
 18. Click Create DB System.  Your Oracle Database Cloud Service will be created in a few minutes.
 
 
-
 ![image-20210121185604333](./images/image-20210121185604333.png)
+
+You may now proceed to the next lab.

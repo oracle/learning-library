@@ -1,0 +1,1 @@
+A screenshot showing the compartment drop-down list and the database name circled on the Autonomous Databases page.

@@ -20,8 +20,6 @@ Learn how to
 - The following lab requires an Autonomous Database - Shared Infrastructure account. 
 - And that the Graph-enabled user has been created. That is, a database user with the correct roles and privileges exists.
 
-**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
-
 ## **STEP 1**: Connect to your Autonomous Database using Graph Studio
 
 1. If you have the Graph Studio URL then proceed to step 4. 
@@ -44,15 +42,23 @@ Learn how to
 
     ![](./images/gs-graphuser-home-page.png " ") 
 
+    Graph Studio consists of a set of pages accessed from the menu on the left. 
+
+    The Home icon ![](images/home.svg " ") takes you to the Home page you see above.  
+    The Models icon ![](images/code-fork.svg " ") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instanstiate, a graph.  
+    The Graph page ![](images/radar-chart.svg " ") lists existing graphs which can be used in notebooks.  
+    The Notebook page ![](images/notebook.svg " ") lists existing notebooks and lets you create a new one.  
+    The Jobs page ![](images/server.svg " ") lists the status of background jobs and lets you view the associated log if any.  
+
 
 ## **Step 2**: Create a small 2Gb execution environment
 
-1. Before creating a graph we will create an execution environemnt for running notebook paragraphs and loading the graph into an in-memory representation.   
+1. Before creating a graph we will **create an execution environment** for running notebook paragraphs and loading the graph into an in-memory representation.   
    
    Click on the pull-down menu under the username `GRAPHUSER` shown in the top right corner of the Graph Studio browser window.  Select the `Environment` menu item.  
 
    ![](images/ll-user-pulldown-menu.png " ")
-2. Enter a value of 2 (gb) for the memory size and then click `Create`.  
+2. Enter a **value of 2 (gb)** for the memory size and then click `Create`.  
 
    ![](images/ll-create-env-detail.png " ") 
 3. The Jobs page will show the status. Meanwhile let's start modeling and creating a graph from the existing tables.  
@@ -61,7 +67,11 @@ Learn how to
 
 ## **STEP 3**: Create a graph of accounts and transactions from the corresponding tables
 
-1. Click on the Models icon to naviagte to the start of the modeling workflow. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
+1. Click on the Models icon to navigate to the start of the modeling workflow.  
+   Then click on `Create`.  
+   ![](images/models-create.png " ")  
+
+2. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
 ![](./images/16-modeler-view-tables.png " ")
 
 2. Move them to the right, i.e. click the first icon on the shuttle control.   
@@ -78,11 +88,17 @@ Learn how to
 
 4.  Click the Source tab to bring up the existing statement and the edit dialog.  
     
-    If the generated Create Property Graph statement looks the same as the one in the screenshot below then proceed to creating the graph.  
+    The generated Create Property Graph statement should look similar to the one in the screenshot below.   
+    Note the following about that statement:
+    - The **edge direction** is incorrect. The source is `to_acct_id` instead of `from_acct_id`.
+    - There are no Vertex and Edge labels
 
-  ![](./images/19-ll-modeler-correct-ddl.png " ")   
+  ![](./images/bank-graph-incorrect-ddl.png " ")   
 
-  Otherwise replace the existing statement with the following one which specifies that `BANK_ACCOUNTS` is a vertex table with label `ACCOUNTS` and `BANK_TXNS` is an edge table with label `TRANSFERS`. And the directed edge is from the source `from_acct_id` to destination `to_acct_id`.  
+  We will be using vertex and labels in (PGQL) queries in the next lab.  
+  The labels can be added and the edge direction swapped via the GUI. However it is simpler to both in one step by updating the CREATE PROPERTY GRAPH statement.   
+
+  **Replace** the existing statement with the following one which specifies that `BANK_ACCOUNTS` is a vertex table with label `ACCOUNTS` and `BANK_TXNS` is an edge table with label `TRANSFERS`. And the directed edge is from the source `from_acct_id` to destination `to_acct_id`.  
     ```
     <copy>
     CREATE PROPERTY GRAPH bank_graph
@@ -103,23 +119,30 @@ Learn how to
     </copy>
     ```
 
-5. **Important:** Click the **Save** (floppy disk icon) to commit the changes. Then click the Designer tab to confirm that the model now has a vertex table and an edge table.  
+   ![](images/correct-ddl-save.png " " )  
+
+   **Important:** Click the **Save** (floppy disk icon) to commit the changes. 
+
+5. Then click the Designer tab to confirm that the model now has a vertex table and an edge table.  
   ![](./images/20-modeler-fix-txn-label.png " ")  
 
 6. Click `Next` and then click `Create Graph` to move on to the next step in the flow.   
 
-   Enter the prompted details. That is, supply a graph name (`bank_graph`), a model name (e.g. `bank_graph_model`), and other optional information.  
-   ![](./images/22-modeler-create-graph.png " ")
+   Enter `bank_graph` as the graph name.  
+   That graph name is used throughout the next lab.  Do not enter a different name because then the queries and code snippets in the next lab will fail.  
+   
+   Enter a model name (e.g. `bank_graph_model`), and other optional information.  
+   ![](./images/create-bank-graph-dialog.png " ")
 
 7. Graph Studio modeler will now save the metadata and start a job to create the graph.  
    The Jobs page shows the status of this job. 
 
    ![](./images/23-jobs-create-graph.png " ")  
 
-   Once the graph has been created and loaded into memory, if you enabled that radio button, you can then query and visualize it in a notebook.
+   Once the graph has been created and loaded into memory, you can query and visualize it in a notebook.
 
 
-Please **proceed to the next lab** to do so.
+Please *proceed to the next lab* to do so.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management

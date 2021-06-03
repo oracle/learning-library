@@ -5,6 +5,9 @@ This lab walks you through the steps to demonstrate many of the capabilities of 
 
 Estimated Lab Time: 20 Minutes
 
+Watch the video below for an overview of the Services lab
+[](youtube:rPUFNMGCzDc)
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -232,13 +235,13 @@ srvctl config database
 
     ````
     <copy>
-    srvctl add service -d (addDatabaseName) -s (myServiceName) -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred (YourInstance1) -available (YourInstance2) -clbgoal LONG -rlbgoal NONE
+    srvctl add service -d (addDatabaseName) -s (myServiceName) -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred (YourInstance1) -available (YourInstance2) -pdb pdb1 -clbgoal LONG -rlbgoal NONE
     ````
 2. Create a service named **noac** with no AC settings
 
     ````
     <copy>
-    srvctl add service -d (addDatabaseName) -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred (YourInstance1) -available (YourInstance2) -clbgoal LONG -rlbgoal NONE
+    srvctl add service -d (addDatabaseName) -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred (YourInstance1) -available (YourInstance2) -pdb pdb1 -clbgoal LONG -rlbgoal NONE
     ````
 3. Start both services   
     ````

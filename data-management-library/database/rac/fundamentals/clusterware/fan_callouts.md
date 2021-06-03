@@ -20,17 +20,17 @@ Watch the video below for an overview of the Fast Application Notification lab
 ### About FAN Callouts
 FAN callouts provide a simple yet powerful integration mechanism available with RAC that can be deployed with minimal programmatic efforts. A FAN callout is a wrapper shell script or pre-compiled executable written in any programming language that is executed each time a FAN event occurs. The purpose of the FAN callout is for simple logging, filing tickets and taking external actions. The purpose of the callout is not for integrated client failover –The FAN client failover is Fast Connection Failover in the next section. With the exception of node and network events (which act on all nodes), a FAN callout executes for the FAN events that are generated locally to each node and thus only for actions affecting resources on that node
 
-For more information about FAN, click [here](https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf) to view the technical paper. 
+For more information about FAN, click [here](https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf) to view the technical paper.
 
 ## **STEP 1:**  Write a callout
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
-2.  Once you are logged in, open up a 2nd webbrowser tab.
-3.  Start Cloudshell in each.  Maximize both cloudshell instances.
-   
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
+2.  Once you are logged in, open up a 2nd web browser tab.
+3.  Start Cloud Shell in each.  Maximize both Cloud Shell instances.
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](./images/start-cloudshell.png " ")
 
-4.  Connect to node 1 (you identified the IP in an earlier lab) as the opc user. 
+4.  Connect to node 1 (you identified the IP in an earlier lab) as the opc user.
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -38,14 +38,14 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     ![](./images/racnode1-login.png " ")
 
 5. Repeat this step for node 2.
-   
+
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 2 Public IP Address>>
     ````
     ![](./images/racnode2-login.png " ")
 
 6. On each node (node 1 and node 2), switch to the *grid* user, change in to the **racg/usrco** directory under the GI home
-   
+
     ````
     <copy>
     sudo su - grid
@@ -55,7 +55,7 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
 
     ![](./images/fan-step1-num6.png " ")
 
-7. Create a file named **callout-log.sh** using an editor \(vim and vi are installed\). 
+7. Create a file named **callout-log.sh** using an editor \(vim and vi are installed\).
 8. Click the command to edit the file with vi
 
     ````
@@ -79,7 +79,7 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     This callout will, place an entry in the logfile (FAN_LOGFILE) with the time (date) the event was generated, whenever a FAN event is generated,
 
 10. Repeat this for **node 2**.
-    
+
 11. Ensure that the callout file has the execute bit set.  Repeat this on **both nodes**.
 
     ````
@@ -93,7 +93,7 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     Ensure that the callout directory has write permissions only to the system user who installed Grid Infrastructure (in our case, grid), and that each callout executable or script contained therein has execute permissions only to the same Grid Infrastructure owner. Each shell script or executable has to be able to run when called directly with the FAN payload as arguments.
 
 12. Verify that the file exists on **both nodes**
-   
+
     ````
     [grid@racnode1 usrco]$ ls -al
     total 12
@@ -126,7 +126,7 @@ Stopping or starting a database instance, or a database service will generate a 
 
     ![](./images/crsctl-1.png " ")
     ![](./images/crsctl-2.png " ")
-    
+
 
 2. Find your database name in the *Cluster Resources* section.  Replace the *replacename* with the name of your database.  Stop the database instance on node1 using srvctl
 
@@ -255,7 +255,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
 
     ````
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl start database -d aTFdbVm_replacename
-    ```` 
+    ````
 6.  Note the different entries generated in each log (on each node).  Exit out of the grid user
 
     ````
@@ -270,18 +270,18 @@ ONS is configured automatically by FAN-aware Oracle clients, which include Unive
 
 In order to determine if a client has received FAN events may require running your client in a debug fashion. This may be difficult to do and even more difficult to interpret.
 
-To confirm that FAN events are being received at a particular tier, you can install a java utility called FANWatcher, that will subscribe to ONS on a cluster and display events that it receives.
+To confirm that FAN events are being received at a particular tier, you can install a Java utility called FANWatcher, that will subscribe to ONS on a cluster and display events that it receives.
 
 Download the FANWatcher utility
-1. Open a terminal on one of the nodes using CloudShell (Putty or CYGWIN may be used)
+1. Open a terminal on one of the nodes using Cloud Shell (Putty or CYGWIN may be used)
 
 2. Become the "oracle" user and create a directory named fanWatcher
 
     ````
     <copy>
     sudo su - oracle
-    mkdir -p /home/oracle/fANWatcher
-    cd /home/oracle/fANWatcher
+    mkdir -p /home/oracle/fanWatcher
+    cd /home/oracle/fanWatcher
     </copy>
     ````
 3. Download the fanWatcher utility and unzip the file
@@ -298,7 +298,7 @@ Download the FANWatcher utility
 4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lc0m3\#W3lc0m3\#**
 
 5. Create the service and start it.
-   
+
     ````
     <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl add service -d aTFdbVm_replacename -s testy -pdb pdb1 -preferred aTFdbVm1 -available aTFdbVm2
@@ -315,19 +315,19 @@ Download the FANWatcher utility
     <copy>
     hostname
     </copy>
-    ```` 
+    ````
 
 7. Connect to sqlplus as **SYS**. Replace PutYourHostnameHere in the connect string with your hostname
-   
+
     ````
     <copy>
     sqlplus sys/W3lc0m3#W3lc0m3#@//<PutYourHostnameHere>/testy.pub.racdblab.oraclevcn.com as sysdba
     </copy>
-    ```` 
+    ````
     ![](./images/fan-step4-num6.png " ")
 
 8. Run the following commands to create a test user, password *W3lc0m3#W3lc0m3#* and grant them the appropriate privileges
-   
+
     ````
     <copy>
     create user test_user identified by W3lc0m3#W3lc0m3# default tablespace users temporary tablespace temp;
@@ -344,7 +344,7 @@ Download the FANWatcher utility
     <copy>
     srvctl config scan
     </copy>
-    ```` 
+    ````
 
 10. Enter the following commands and edit the **fanWatcher.bash** script by entering the following **vi** command
 
@@ -441,7 +441,7 @@ Download the FANWatcher utility
     Event payload:
     VERSION=1.0 event_type=INSTANCE service=ractciiv_iad1tf.pub.racdblab.oraclevcn.com instance=racTCIIV2 database=ractciiv_iad1tf db_domain=pub.racdblab.oraclevcn.com host=lvracdb-s01-2021-03-10-1203442 status=up reason=FAILURE timestamp=2021-03-10 15:28:58 timezone=+00:00
     ````
-    If fanWatcher can auto-configure with ONS and receive and display events, so can any client on the same tier. This validates the communication path (no firewall blockage for example), and that FAN events are propagating correctly. 
+    If fanWatcher can auto-configure with ONS and receive and display events, so can any client on the same tier. This validates the communication path (no firewall blockage for example), and that FAN events are propagating correctly.
 
 You may now *proceed to the next lab*.  
 

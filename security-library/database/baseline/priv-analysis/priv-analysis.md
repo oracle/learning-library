@@ -5,7 +5,7 @@ This workshop introduces the functionality of Oracle Privilege Analysis. It give
 
 *Estimated Lab Time:* 15 minutes
 
-*Version tested in this lab:* Oracle DB 19.8
+*Version tested in this lab:* Oracle DB 19.10
 ### Video Preview
 Watch a preview of "*Understanding Privilege Analysis (January 2019)*" [](youtube:3oRODVtWwbg)
 
@@ -19,8 +19,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Oracle Cloud Accounts Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -109,7 +109,7 @@ This lab assumes you have:
 
    ![](./images/pa-006.png " ")
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next)..
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -141,12 +141,12 @@ You can create different types of privilege analysis policies to achieve specifi
 
       If you do not specify any type in your privilege analysis policy, then the used privileges in the database will be captured, except those for the user `SYS`. (This is also referred to as unconditional analysis, because it is turned on without any conditions.)
 
-- **Benefits of using Privilege Analysis**
-    - Finding unnecessarily granted privileges
-    - Implementing least privilege best practices: the privileges of the account that accesses a database should be limited to the privileges that are strictly required by the application or the user
-    - Development of Secure Applications: during the application development phase, some administrators may grant many powerful system privileges and roles to application developers
-    - You can create and use privilege analysis policies in a multitenant environment
-    - Can be used to capture the privileges that have been exercised on pre-compiled database objects (PL/SQL packages, procedures, functions, views, triggers, and Java classes and data)
+### **Benefits of using Privilege Analysis**
+- Finding unnecessarily granted privileges
+- Implementing least privilege best practices: the privileges of the account that accesses a database should be limited to the privileges that are strictly required by the application or the user
+- Development of Secure Applications: during the application development phase, some administrators may grant many powerful system privileges and roles to application developers
+- You can create and use privilege analysis policies in a multitenant environment
+- Can be used to capture the privileges that have been exercised on pre-compiled database objects (PL/SQL packages, procedures, functions, views, triggers, and Java classes and data)
 
 ## Want to Learn More?
 Technical Documentation:
@@ -154,6 +154,5 @@ Technical Documentation:
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
+- **Contributors** - Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

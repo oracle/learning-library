@@ -12,6 +12,8 @@ Quick walk through on how to perform In-Memory queries.
 
 [](youtube:o7XD1TIcx5s)
 
+Estimated Lab Time: 15 minutes
+
 ### Objectives
 
 -   Perform various queries on the In-Memory Column Store
@@ -24,7 +26,7 @@ This lab assumes you have completed the following labs:
 * Lab: Enabling In-Memory
 
 
-## Step: Querying the In-Memory Column Store
+## **STEP 1:** Querying the In-Memory Column Store
 
 Now that you’ve gotten familiar with the IM column store let’s look at the benefits of using it. You will execute a series of queries against the large fact table LINEORDER, in both the buffer cache and the IM column store, to demonstrate the different ways the IM column store can improve query performance above and beyond the basic performance benefits of accessing data in memory only.
 
@@ -178,9 +180,11 @@ In this lab you had an opportunity to try out Oracle’s In-Memory performance c
 
 These significant performance improvements are possible because of Oracle’s unique in-memory columnar format that allows us to only scan the columns we need and to take full advantage of SIMD vector processiong. We also got a little help from our new in-memory storage indexes, which allow us to prune out unnecessary data. Remember that with the IM column store, every column has a storage index that is automatically maintained for you.
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
 - **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 

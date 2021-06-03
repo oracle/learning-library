@@ -1,0 +1,47 @@
+{
+  "workshoptitle": "Modern Data Warehouse",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Modern Data Warehouse Hands-On Workshop Overview",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Getting Started",
+      "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab 1: Provision ODI, ADW & OCI",
+      "description": "Provisioning, Data Integrator, Autonomous Data Warehouse, Analytics Cloud and other required components for the architecture pattern",
+      "filename": "../../provision-odi-adw-oac/provision-odi-adw-oac.md" 
+    },
+    {
+      "title": "Lab 2: Connect to ODI",
+      "description": "Connect to ODI using VNC Viewer",
+      "filename": "../../connect-to-odi/connect-to-odi.md"
+    },
+    {
+      "title": "Lab 3: Connect to ODI Repository and Prepare Source",
+      "description": "Create and connect to work repository and prepare data source",
+      "filename": "../../create-odi-repo-prep-data/create-odi-repo-prep-data.md"
+    },
+    {
+      "title": "Lab 4: Configure and Run ODI Integration",
+      "description": "Configure and run integration",
+      "filename": "../../configure-integration/configure-integration.md"
+    },
+    {
+      "title": "Lab 5: Perform Analysis",
+      "description": "Upload and analyze dashboards",
+      "filename": "../../perform-analysis/perform-analysis.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
+  ]
+}
+

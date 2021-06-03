@@ -1,4 +1,4 @@
-# Set up the Demo On-Premises Environment
+# Set up the demo on-premises environment
 
 ## Introduction
 
@@ -7,9 +7,9 @@ For this migration workshop, we need an environment to migrate *from*.
 We're offering 2 ways to provision this environment:
 
 - Using a demo marketplace image for this workshop.
-- Using Docker, locally on your development machine.
+- Using Docker locally on your development machine.
 
-Both paths provide a pre-packaged on-premises simulated environment which includes an application database and a WebLogic domain with 2 web applications and a datasource to connect to the database.
+Both paths provide a pre-packaged on-premises simulated environment, which includes an application database and a WebLogic domain with two web applications and a datasource to connect to the database.
 
 The marketplace image deployment is simpler and faster, while the Docker environment provides a way to more realistically simulate an on-premises environment as it runs on your local machine.
 
@@ -21,11 +21,11 @@ In this workshop, choose a path to create a demo environment to use as the on-pr
 
 ### Prerequisites
 
-*Depending on the path you choose, there a different requirements:*
+Depending on the path you choose, there are different requirements:
 
 - For the marketplace environment, you will need one compute instance with 4 OCPU available.
 
-- For the Docker environment, you will need a machine with at least 3 CPUs and 6GB of memory to allocate to the Docker engine.
+- For the Docker environment, you will need a machine with at least 3 CPUs and 6 GB of memory to allocate to the Docker engine.
 
 ## **STEP 1:** Choose a Path
 
@@ -36,8 +36,6 @@ A. [Set up the on-premises environment using marketplace image (15min)](?lab=lab
 B. [Set up the on-premises environment using Docker (30min)](?lab=lab-1-option-b-set-up-local-(on-premises))
 
 *When you are done with the workshop, you should tear down the on-premises environment.*
-
-You may proceed to the next lab.
 
 ### Disclaimer
 

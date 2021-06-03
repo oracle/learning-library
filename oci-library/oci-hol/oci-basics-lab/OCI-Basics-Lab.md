@@ -254,7 +254,7 @@ OCI offers 3 types of storage that offer different levels of performance, access
 
 You will create block storage for this simple application exercise.
 
-1. From OCI services menu Click **Block Storage** and select **Block Volumes** from the flyout menu.
+1. From OCI services menu Click **Block Storage** and select **Block Volumes** from the menu.
 
 ![](img/032.png " ")
 

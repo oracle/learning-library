@@ -28,88 +28,89 @@ This lab assumes you have:
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Login to your Oracle Cloud account
-2.  Click the **Create a Stack** tile on the homepage.  Or, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+2.  Click the **Create a Stack** tile on the homepage.  Or, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, select **Stacks** and click **Create Stack**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
-3.  In the Browse Solutions window, select **Default VCN**.
-    ![Image alt text](images/db19c-freetier-step1-2.png " ")
+3.  Choose **Template** and click on **Select Template**.
 
-4. Click the **Select Solution** button.
-   ![Image alt text](images/db19c-freetier-step1-3.png " ")
-5.  Enter the name for your VCN:  **livelabsvcn**.  Click **next**.
-   ![Image alt text](images/db19c-freetier-step1-4.png " ")
+    ![Image alt text](images/db19c-ft-step1-3.png " ")
+
+4. In the Browse Templates window, select **Default VCN** and click the **Select Template** button.
+   ![Image alt text](images/db19c-ft-step1-4.png " ")
+5.  Enter the name for your VCN:  **livelabsvcn**. Choose your compartment and click **Next**.
+   ![Image alt text](images/db19c-ft-step1-5.png " ")
 6. Inspect and then accept all default values in the Configure Variables screen and click **Next**.
    ![Image alt text](images/db19c-freetier-step1-5.png " ")
-7.  Review your selections and click **Next**
+7.  Review your selections and click **Create**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
 
 ## **STEP 2**: Run VCN Stack Apply Job
 Now that your stack has been created, you will run an *apply* job to create the actual VCN
-1. Click on **Terraform Actions** to expose the drop down menu
-![Image alt text](images/db19c-freetier-step1-7.png " ")
-2. Select **Apply**
-![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Inspect the apply job, accept all defaults and click **Apply**
-![Image alt text](images/db19c-freetier-step1-9.png " ")
-4. The VCN will immediately begin creation.
+
+1. Click **Apply** on the Stack Details page
+![Image alt text](images/db19c-ft-step2-1.png " ")
+2. Inspect the apply job, accept all defaults and click **Apply**
+![Image alt text](images/db19c-ft-step2-2.png " ")
+3. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
-5. Once the apply job is complete, inspect the results.  
+4. Once the apply job is complete, inspect the results.  
 ![Image alt text](images/db19c-freetier-step1-11.png " ")
-6. Scroll down the log.  You will notice that 6 objects were created:  A VCN, subnet, internet gateway, default security list, route table and dhcp options, each with their own Oracle Cloud ID (ocid).  We will focus on the subnet.  You will need this subnet information to create your compute instance
+5. Scroll down the log.  You will notice that 6 objects were created:  A VCN, subnet, internet gateway, default security list, route table and dhcp options, each with their own Oracle Cloud ID (ocid).  We will focus on the subnet.  You will need this subnet information to create your compute instance
 ![Image alt text](images/db19c-freetier-step1-12.png " ")
-7. Copy the first subnet id to a notepad and save for the next step.  If you would like to further inspect the VCN, complete #s 8-12.  Otherwise skip to the next section.
+6. Copy the first subnet id to a notepad and save for the next step.  If you would like to further inspect the VCN, complete steps#7-12.  Otherwise skip to the next section.
 ![Image alt text](images/db19c-freetier-step1-13.png " ")
-8.  Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
+7.  Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
-9.  The VCN you created should be listed.  Click on the VCN you just created.
+8.  The VCN you created should be listed.  Click on the VCN you just created.
 ![Image alt text](images/db19c-freetier-step1-15.png " ")  
-10.  On the VCN homepage notice the 3 subnets that were created.  Each subnet is tied to an Availability Domain.  Click on the first subnet that matches AD-1.
+9.  On the VCN homepage notice the 3 subnets that were created.  Each subnet is tied to an Availability Domain.  Click on the subnet that matches AD-1.
 ![Image alt text](images/db19c-freetier-step1-16.png " ")  
-11.  Inspect the subnet homepage, find the OCID (Oracle Cloud ID).  Click **Copy**
+10.  Inspect the subnet homepage, find the OCID (Oracle Cloud ID).  Click **Copy**
 ![Image alt text](images/db19c-freetier-step1-17.png " ")  
-12. Copy the subnet ID to a notepad.
+11. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
 
 ## **STEP 3**: Setup Compute Stack
-1.  Click the **Create a Stack** tile on the homepage. Or, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+1.  Click the **Create a Stack** tile on the homepage.  Or, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, select **Stacks** and click **Create Stack**.
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
+2.  Choose **Template** and click on **Select Template**.
 
-3.  In the Browse Solutions window, select **Compute**. Click the **Select Solution** button.
-    ![Image alt text](images/linux-compute-step3-1.png " ")
+    ![Image alt text](images/db19c-ft-step1-3.png " ")
+3.  In the Browse Templates window, select **Compute Instance** and click the **Select Template** button.
+    ![Image alt text](images/ln-compute-step3-3.png " ")
 
-4.  Enter the name for your Compute Stack:  **livelabslinux**.  Click **next**.
-   ![Image alt text](images/linux-compute-step3-2.png " ")
+4.  Enter the name for your Compute Stack:  **livelabslinux**. Choose your compartment and click **Next**.
+   ![Image alt text](images/ln-compute-step3-4.png " ")
 5. Fill in the following values for your new compute instance.
-   - Compute Instance Display Name: Choose a name for your instance
-   - Choose the VCN you created in the previous step
-   - Choose a subnet from the drop down
+   	- Compute Instance Display Name: Choose a name for your instance
+  	 - Choose the VCN you created in the previous step
+  	 - Choose a subnet from the drop down
 
    ![Image alt text](images/linux-compute-step3-3.png " ")
-6.  Scroll down.
-   - Check the Assign Public IP *(Note: This is VERY IMPORTANT, you will not be able to login to your instance without this)
-   - Paste the public key you created in the earlier lab
+6.  Scroll down, provide the following values for your compute instance and click **Next**.
+  	 - Check the Assign Public IP *(Note: This is VERY IMPORTANT, you will not be able to login to your instance without this)
+  	 - Paste the public key you created in the earlier lab
    ![Image alt text](images/linux-compute-step3-4.png " ")
 
-7.   Review your selections and click **Next**
+7.   Review your selections and click **Create**
    ![Image alt text](images/linux-compute-step3-5.png " ")
 
 ## **STEP 4**: Run Compute Stack Apply Job
 Now that your stack has been created, you will run an *apply* job to create the actual compute instance
-1. Click on **Terraform Actions** to expose the drop down menu
-![Image alt text](images/db19c-freetier-step1-7.png " ")
-2. Select **Apply**
-![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Inspect the apply job, accept all defaults and click **Apply**
-![Image alt text](images/db19c-freetier-step1-9.png " ")
-4. The VCN will immediately begin creation.
+
+1. Click **Apply** on the Stack Details page.
+![Image alt text](images/db19c-ft-step2-1.png " ")
+2. Inspect the apply job, accept all defaults and click **Apply**
+![Image alt text](images/db19c-ft-step2-2.png " ")
+3. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
-5. Once the apply job is complete, inspect the results.  
+4. Once the apply job is complete, inspect the results.  
 ![Image alt text](images/linux-compute-step3-9.png " ")
-6. You will notice that 3 objects were created.  Your instance has a private IP address and a public IP address.  Copy the public IP address, you will need it to connect to your instance.
+5. You will notice that 3 objects were created.  Your instance has a private IP address and a public IP address.  Copy the public IP address, you will need it to connect to your instance.
 ![Image alt text](images/db19c-freetier-step1-12.png " ")
-7. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+6. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
-8.  The compute instance you created should be listed. Note the public IP address.
+7.  The compute instance you created should be listed. Note the public IP address.
 ![Image alt text](images/linux-compute-step3-11.png " ")     
 
 ## **STEP 5**: Connect to your instance
@@ -193,5 +194,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 - **Author** - Kay Malcolm, DB Product Management
 - **Contributors** - Jaden McElvey, Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
-- **Last Updated By/Date** - Kay Malcolm, August 2020
-
+- **Last Updated By/Date** - Anoosha Pilli, May 2021

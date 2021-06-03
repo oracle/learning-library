@@ -101,6 +101,6 @@ It makes sense at this point to change the name of the main-start page to main-d
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the mobile application flow.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - February 2021
+* **Last Updated By/Date** - Sheryl Manoharan, February 2021

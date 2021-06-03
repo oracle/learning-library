@@ -29,13 +29,13 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ````
     <copy>mkdir .ssh</copy>
     ````
-    ![](./images/mkdir.png " ") 
+    ![](./images/mkdir.png " ")
 
     ````
-    <copy>cd .ssh</copy>
-    ssh-keygen -b 2048 -t rsa -f </copy> <<sshkeyname>>
+    <copy>cd .ssh
+    ssh-keygen -b 2048 -t rsa -f cloudshellkey</copy>
     ````
-    *Note: The angle brackets <<>> should not appear in your code.  We recommend using the name cloudshellkey for your keyname but feel free to use the name of choice.*
+    *We recommend using the name cloudshellkey for your keyname but feel free to use the name of choice.*
 
     ![](./images/cloudshell-ssh.png " ")
 
@@ -48,11 +48,11 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](./images/ls.png " ")
 
-    Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
+    Note in the output that there are two files, a *private key:* `cloudshellkey` and a *public key:* `cloudshellkey.pub`. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 4. To list the contents of the public key, use the cat command:
      ```
-     cat <<sshkeyname>>.pub
+    <copy>cat cloudshellkey.pub</copy>
      ```
 
     *Note: The angle brackets <<>> should not appear in your code.*
@@ -68,6 +68,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
 * **Contributors** - Jaden McElvey, Kamryn Vinson
-* **Last Updated By/Date** - Kay Malcolm, Database Product Management, January 2021
+* **Last Updated By/Date** - Tom McGinn, Database Product Management, May 2021
 * **Workshop (or Lab) Expiry Date** - May 2022
-

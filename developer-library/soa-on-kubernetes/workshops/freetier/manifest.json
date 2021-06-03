@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "Deploy Oracle SOA Suite on Kubernetes",
+    "help": "livelabs-help-weblogic_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "publisheddate": "07/30/2020",
+            "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Install Prerequisites",
+            "publisheddate": "05/11/2021",
+            "filename": "../../prerequisites/prerequisites.md"
+        },
+        {
+            "title": "Lab 2: Deploy SOA Suite on OKE",
+            "publisheddate": "05/11/2021",
+            "filename": "../../soa-on-oke/soa-on-oke.md"
+        },
+        {
+            "title": "Lab 3: Scale the SOA Suite Domain",
+            "publisheddate": "05/11/2021",
+            "filename": "../../scale/scale.md"
+        },
+        {
+            "title": "Lab 4: Tear Down",
+            "publisheddate": "05/11/2021",
+            "filename": "../../tear-down/tear-down.md"
+        },
+        {
+            "title": "Need Help?",
+            "publisheddate": "10/06/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/need-help/need-help.md"
+        }
+     ]
+}

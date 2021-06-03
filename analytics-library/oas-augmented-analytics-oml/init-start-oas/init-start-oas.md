@@ -75,7 +75,7 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 ### Enable Copy/Paste from local to remote desktop (Guacamole clipboard)
 During the execution of your labs you may need to copy text from your local PC/Mac to the Guacamole remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
-1. From your remote desktop session, enter CTRL+ALT+SHIFT (*Windows*) or CTRL+CMD+SHIT (*Mac*)
+1. From your remote desktop session, enter CTRL+ALT+SHIFT (*Windows*) or CTRL+CMD+SHIFT (*Mac*)
 
 2. Select *Text Input*
 

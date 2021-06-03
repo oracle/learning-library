@@ -1,4 +1,4 @@
-# OPTIONAL - Publish Custom Image to OCI Marketplace
+# Publish Custom Image to OCI Marketplace
 
 ## Introduction
 This lab will show you how to create an OCI marketplace compute based artifact from your custom image, and use it to create a private listing on marketplace exclusively dedicated to your LiveLabs workshop.
@@ -147,4 +147,3 @@ At this point, it's assumed that the test instance created in the previous lab h
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 * **Contributors** - - -
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
-

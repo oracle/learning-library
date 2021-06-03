@@ -27,53 +27,33 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-1.png)
 
-2. Click the VCN that was created by the stack, which would be called <if type="oci">`nonjrf-wls`</if><if type="oke">`nonjrf-vcn`</if> if you used the same naming conventions.
+2. Click the VCN that was created by the stack, which would be called `nonjrf-wls` if you used the same naming conventions.
 
-  <if type="oci">
   ![](./images/provision-db-2.png)
 
   You should find 2 subnets: a `nonjrf-lb-pubsubnet` and a `nonjrf-wls-subnet`.
-  </if>
-  <if type="oke">
-  ![](./images/provision-db-2oke.png)
 
-  You should find 5 subnets, including `nonjrf-workers`, which is the subnet for the WLS worker nodes.
-  </if>
-
-<if type="oci">
-
-3. Copy the CIDR block of the `nonjrf-wls-subnet` (which should be 10.0.3.0/24) and click **Security Lists** on the left-side menu.
-
-  ![](./images/provision-db-3-seclists.png)
-</if>
-<if type="oke">
-
-3. Copy the CIDR block of the `nonjrf-workers` subnet (which should be 10.0.4.0/28) and click **Security Lists** on the left-side menu.
-
-  ![](./images/provision-db-3-seclistsoke.png)
-</if>
-
-4. Click **Create Security List**.
+3. Click **Create Security List**.
 
   ![](./images/provision-db-4.png)
 
-5. **Name** the security list `nonjrf-db-security-list`.
+4. **Name** the security list `nonjrf-db-security-list`.
 
   ![](./images/provision-db-5-dbseclist.png)
 
-6. Click **Additional Ingress Rule**.
+5. Click **Additional Ingress Rule**.
 
   ![](./images/provision-db-5-ingress1521.png)
 
-7. For **Source CIDR**, paste the CIDR block of the `nonjrf-wls-subnet` copied earlier (`10.0.3.0/24`) and for **Destination Port Range** enter **1521**.
+6. For **Source CIDR**, use the whole VCN CIDR `10.0.0.0/16` and for **Destination Port Range** enter **1521**.
 
   ![](./images/provision-db-5-ingress1521b.png)
 
-8. Click **Additional Ingress Rule** and enter `0.0.0.0/0` for the **Source CIDR** and enter `22` for the **Destination Port Range** to authorize SSH from outside (through the bastion host).
+7. Click **Additional Ingress Rule** and enter `0.0.0.0/0` for the **Source CIDR** and enter `22` for the **Destination Port Range** to authorize SSH from outside (through the bastion host).
 
   ![](./images/provision-db-6-ingress22.png)
 
-9. Click **Create Security List**.
+8. Click **Create Security List**.
 
 ## **STEP 2:** Create the Database Subnet
 

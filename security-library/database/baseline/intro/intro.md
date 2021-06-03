@@ -2,7 +2,7 @@
 
 ## About this Workshop
 ### Overview
-*Estimated Time to complete the workshop*: 170 minutes
+*Estimated Time to complete the workshop*: 190 minutes
 
 This workshop is the FIRST PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities - for the second workshop, please refer to the *DB Security Fundamentals*.
 
@@ -13,7 +13,7 @@ Now, you no longer need important resources on your PC (storage, CPU or memory),
 ### Components
 The complete architecture of the DB Security Hands-On Labs is as following:
 
-  ![](./images/dbseclab-archi_202011.png "")
+  ![](./images/dbseclab-archi-v3.png "")
 
 It's composed of 4 VMs:
   - **DBSec-Lab VM** (mandatory for all workshops: Baseline and Advanced workshops)
@@ -39,8 +39,9 @@ In this first part, you will see the Oracle Database Security baseline products 
 
 The entire DB Security PMs Team wishes you an excellent workshop!
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Pedro Lopes, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2020
-
+- **Contributors** - Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021

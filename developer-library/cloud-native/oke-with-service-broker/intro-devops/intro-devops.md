@@ -31,6 +31,7 @@ In this lab, you will:
 * A Mac OS X, Linux or Windows machine with Windows Subsystem for Linux as all commands to be used are shell commands.
 * An SSH key-pair.
 * A OCI account with a compartment set up.
+* Terraform installed.
 
 ***If you are not an administrator on your tenancy, you must insure that the following policies have been set for you:***
 
@@ -48,8 +49,12 @@ Allow group MyGroup to use tag-namespaces in tenancy
 Allow group MyGroup to manage all-resources in compartment MyCompartment
 </copy>
 ```
-***If your administrator won't let you create users and groups / policies, as required, you may need to have the administrator perform the OKE deployment steps and provide access to the cluster.***
 
+If you do not have permission to create users and group, you can use your own user when a user would otherwise be created. Provide your user_ocid for each user_ocid variable required. This is not recommended for security reasons.
+
+You should also provide an auth token if you have one, or have enough slots open to create one token.
+
+This template also creates an API key on each user that requires one, so you must have at most 2 API keys on your user if you will provide your own user.
 
 You may proceed to the next lab.
 

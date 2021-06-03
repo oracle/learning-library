@@ -1,0 +1,1 @@
+A screenshot of the Review and Provision Audit and Alert Policies page with check marks under the Additional Policies and Compliance Standards columns for the ad01 target database.

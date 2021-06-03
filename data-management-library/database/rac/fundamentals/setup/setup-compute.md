@@ -14,7 +14,7 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
-- Lab: Generate SSH Keys 
+- Lab: Generate SSH Keys
 
 ## **STEP 1A**: Create Stack:  Compute + Networking
 
@@ -154,7 +154,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 ## **STEP 2**: Terraform Plan (OPTIONAL)
 This is optional, you may skip directly to [Step 3](#STEP3:TerraformApply).
 
-When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. 
+When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
@@ -201,7 +201,7 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 Before logging in, first note down your IP addresses.
 
-1.  From the hamburger menu, select Bare Metal, VM, Exadata in the Oracle Database category. 
+1.  From the hamburger menu, select Bare Metal, VM, Exadata in the Oracle Database category.
 
   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
@@ -304,7 +304,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 You may now *proceed to the next lab*.  
 
-## Appendix:  Teraform and Resource Manager
+## Appendix:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.

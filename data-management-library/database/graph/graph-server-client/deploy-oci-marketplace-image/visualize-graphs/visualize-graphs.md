@@ -20,7 +20,7 @@ The following video provides an overview of the Graph Visualization component (=
 
 ## **STEP 1:** Setup
 
-Open the GraphViz at `https://<public_ip_for_compute>:7007/ui`. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
+Open the GraphViz at `https://<public_ip_for_compute>:7007/ui` **using Firefox**. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
 
 You should see a screen similar to the screenshot below. Enter the username (`customer_360`) and password you entered when createing the user in SQL Developer Web.
 
@@ -87,7 +87,7 @@ The graph should now look like
 
 3. Copy and paste the query into the PGQL Graph Query text input box of the GraphViz application. Click Run.
 
-    The result should look as shown below.
+    The result should look as shown below. In the highlight settings, the accounts starting with `xxx-yyy-` are shown in red (= accounts of the bank), while `xxx-zzz-` are shown in orange (= accounts from another bank). 
 
     ![](images/same-day-transfers.jpg)
 

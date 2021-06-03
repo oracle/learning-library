@@ -5,6 +5,11 @@
 This lab walks you through the use and functioning of Application Continuity.
 
 Estimated Lab Time: 60 Minutes
+
+Watch the video below for an overview of the Application Continuity lab
+[](youtube:KkwxbwII3O4)
+
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -162,6 +167,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     <copy>
     srvctl status service -d `srvctl config database` -s noac
+    </copy>
     ````    
 
     This will return an instance name, for example:
@@ -483,20 +489,25 @@ You may now *proceed to the next lab*.
 
 ### Issue 1 JNI ERROR
 
-    ![](./images/Issue1_java_mismatch.png  " ")
+    ![](./images/issue1_java_mismatch.png  " ")
 
 #### Fix for Issue #1
 1.  Recompile and re-package ACDemo with the installed JDK
     ````
-    cd /home/oracle/acdemo/src/acdemo
-    $ORACLE_HOME/jdk/bin/javac  -classpath ../../lib/ucp-19.10.0.0.jar:../../lib/ojdbc8-19.10.0.0.jar:../../lib/ons-19.10.0.0.jar:../../lib/oraclepki-19.10.0.0.jar:../..//lib/osdt_cert-19.10.0.0.jar:../../lib/osdt_core-19.10.0.0.jar:.  ACDemo.java Worker.java PrintStatThread.java
-    mv *.class ../classes/acdemo
-    cd ../classes
-    $ORACLE_HOME/jdk/bin/jar -cvf acdemo.jar acdemo ../MANIFEST.MF
-    mv acdemo.jar ../lib
+    cd /home/oracle/acdemo/src/acdemo  
+
+    $ORACLE_HOME/jdk/bin/javac  -classpath ../../lib/ucp-19.10.0.0.jar:../../lib/ojdbc8-19.10.0.0.jar:../../lib/ons-19.10.0.0.jar:../../lib/oraclepki-19.10.0.0.jar:../..//lib/osdt_cert-19.10.0.0.jar:../../lib/osdt_core-19.10.0.0.jar:.  ACDemo.java Worker.java PrintStatThread.java  
+
+    mv *.class ../classes/acdemo  
+
+    cd ../classes  
+
+    $ORACLE_HOME/jdk/bin/jar -cvf acdemo.jar acdemo ../MANIFEST.MF  
+
+    mv acdemo.jar ../lib  
     ````
 ### Issue 2 Instance not restarting
-    ![](./images/InstanceDown_error.png  " ")
+    ![](./images/instance_down_error.png  " ")
 
 #### Fix for Issue #2
 1. After crashing an instance a number of times (in a short period), it may not automatically restart. If you notice an instance down, manually restart it (this can lead to application timeouts on failover, as the instance may not start before the application abandons connection attempts)

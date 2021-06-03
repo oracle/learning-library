@@ -1,0 +1,1 @@
+A screenshot showing a filter in the Audit Summary report. The filter is Last 1 Month.

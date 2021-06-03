@@ -18,8 +18,6 @@ In this lab, you will:
 * Build a Workflow document that uses Market Basket Analysis models to uncover association between items purchased together and identify patterns of co-occurrence.
 
 
-
-
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -39,7 +37,7 @@ Create a SQL Developer connection for a data mining user named dmuser. This user
 `Note:` If you have not yet set up Oracle Data Miner, or have not created the data mining user, you must first complete the tasks presented in the tutorial Setting Up Oracle Data Miner 19c Release 2,
 To create a Data Miner Project, perform the following steps.
 
-1. In the Data Miner tab, right-click the data mining user connection that you previously created, and select **New Project**, as shown here.
+1. In the Data Miner tab, right-click on the data mining user connection that you previously created, and select **New Project**, as shown here.
     ![](./images/mba1.jpg " ")
 
 2. In the Create Project window, enter a project name (in this example MBA) and then click **OK**.
@@ -59,11 +57,11 @@ A Data Miner Workflow is a collection of connected nodes that describe a data mi
 A workflow.
  - Provides directions for the Data Mining server. For example, the workflow says, "Build a model with these characteristics." The data-mining server builds the model with the results returned to the workflow.
  - Enables you to interactively build, analyze, and test a data mining process within a graphical environment.
- - Might be used to test and analyze only one cycle within a particular phase of a larger process, or it may encapsulate all phases of a process designed to solve a particular business problem.
+ - Can be used to test and analyze only one cycle within a particular phase of a larger process, or it may encapsulate all phases of a process designed to solve a particular business problem.
 
     **Sample Data Mining Scenario**
 
-    In this topic, you will use the Market Basket Analysis technique for better understanding customer purchasing patterns
+    In this topic, you will use the Market Basket Analysis technique for a better understanding of the customer purchasing patterns
 
     To accomplish this goal, you build a workflow that enables you to.
     - Use Market Basket Analysis technique to understand customer-purchasing patterns. 
@@ -73,7 +71,7 @@ To create the workflow for this process, perform the below steps.
 
 ## **STEP 3:** Create a Workflow and Add data for the workflow
 
-1. Right-click your project (Retail\_Data\_Analysis) and select New Workflow from the menu. 
+1. Right-click on your project (Retail\_Data\_Analysis) and select New Workflow from the menu. 
  
     ![](./images/mba4.jpg " ")
  
@@ -98,7 +96,7 @@ To create the workflow for this process, perform the below steps.
 
     ![](./images/mba7.jpg " ")
 
-4. We will add a  RDBMS regular table data, using a data source. This is the JSON and XML combined table ()
+4. We will add a RDBMS regular table data, using a data source. This is the JSON and XML combined table ()
     Drag and drop the **Data Source** node onto the Workflow pane.
 
     **Result**: A Data Source node appears in the Workflow pane and the Define Data Source wizard opens.
@@ -131,9 +129,9 @@ To create the workflow for this process, perform the below steps.
 
 ## **STEP 4:** Build the Models
 
-In this topic, you build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
+In this section, you will build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
-A common data mining practice is to build (or train) your model against part of the source data, and then to test the model against the remaining portion of your data. By default, Oracle Data Miner this approach.
+A common data mining practice is to build (or train) your model against part of the source data, and then to test the model against the remaining portion of your data. 
 
 1. In the Workflow Editor, expand Models, and click Association. Drag and drop the node from the Components pane to the Workflow pane.
 
@@ -154,7 +152,7 @@ A common data mining practice is to build (or train) your model against part of 
 
     ![](./images/mba18.jpg " ")
 
-4. Now right-click on the association and select Run. You will see the following analysis model. After successful execution, a green tick is visible on the association node.
+4. Now right-click on the association and select Run. You will see the following analysis model. After successful execution, a green tick mark is visible on the association node.
 
     ![](./images/mba19.jpg " ")  ![](./images/mba20.jpg " ")
 
@@ -176,11 +174,11 @@ A common data mining practice is to build (or train) your model against part of 
 
 ## **STEP 5:** Interpreting the results of the market basket analysis
 
-Referring to the association rules of the relational data table, there are almost 1386 association rules generated from the analysis we did. That’s a lot. So, we can basically interpret the results shown in Data Miner with rationale such as:
+Referring to the association rules of the relational data table, there are almost 1386 association rules generated from the analysis we performed. That is a lot. Therefore, we can basically interpret the results shown in the Data Miner with rationale such as:
 
 “If a customer buys REGENCY TEA PLATE GREEN  AND REGENCY TEA PLATE ROSES (refer to the first line of the result set), that person is likely to buy REGENCY TEA PLATE PINK. This can be stated with a 80.12% confidence level.”
 
-And, its all about the level of confidence. This is where decisions can be made with the belief that structuring an association on grouping the two or more items together is more likely to be successful.
+And, it is all about the level of confidence. This is where decisions can be made with the belief that structuring an association on grouping the two or more items together is more likely to be successful.
 
 You can sort the rule result set by confidence level. Each of these rules discovered through the database analytics we just did will help the organization improve how it does business.
 

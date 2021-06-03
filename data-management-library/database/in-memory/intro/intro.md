@@ -7,6 +7,13 @@ Watch the video below for an overview of Oracle In-Memory.
 
 [](youtube:JGM1taVRZHs)
 
+
+### Prerequisites
+
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
 ## Database In-Memory and Performance
 
 There are four basic architectural elements of the column store that enable orders of magnitude faster analytic query processing:  
@@ -34,11 +41,11 @@ Database In-Memory Channel
 Oracle Database Product Management Videos on In-Memory
 <a href="https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ/search?query=in-memory">![](./images/youtube.png " ") </a>
 
-Please proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Authors/Contributors** - Andy Rivenes, Senior Principal Product Manager, In-Memory
 - **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 2020
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 

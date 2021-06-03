@@ -1,0 +1,1 @@
+A screenshot of the Regions drop-down menu at the top of the page in Oracle Cloud Infrastructure. The home region US East (Ashburn) is circled.

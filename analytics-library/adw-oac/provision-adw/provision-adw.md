@@ -21,11 +21,11 @@ Automates failure detection, failover, and repair.
 
 - Detect and protect from system failures and user errors automatically and provide failover to standby databases with zero data loss.
 
-Watch our short video that explains Lab 1 - Provisioning your Autonomous Database instance:
+Watch our short video that explains how to provision your Autonomous Database instance:
 
 [](youtube:IfWJhnodAxk)
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 15 minutes.
 
 ### Objectives 
 - Create an Autonomous Database with the latest features of Oracle Databases
@@ -40,59 +40,61 @@ Estimated Lab Time: 15 minutes
 
     This will take you to the management console page.
 
-    [You can learn more about compartments in this link](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
-
+    To learn more about comparments, see [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
+    
 2. To create a new instance, click the blue **Create Autonomous Database** button.
 
     ![Create ADB](./images/lab100_2.png)
 
     Enter the required information and click the **Create Autonomous Database** button at the bottom of the form. For the purposes of this workshop, use the information below:
 
-    >**Compartment:** Verify that a compartment ( &lt;tenancy_name&gt; ) is selected.
+    - **Compartment:** Verify that a compartment ( &lt;tenancy_name&gt; ) is selected.
 
     By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
+    By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
 
-    > **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database **ADW_OAC**.
-    >
-    > **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
-    >
-    > **Workload Type:** Autonomous Data Warehouse  
-    >
-    > **Deployment Type:** Shared Infrastructure
-    >
-    > **Always Free:** On
+    - **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database `ADW_OAC`.
+    
+    - **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
+    - **Workload Type:** Autonomous Data Warehouse  
+    
+    - **Deployment Type:** Shared Infrastructure
+    
+    - **Always Free:** On
 
     You can select Always Free configuration to start enjoying your Free Autonomous Database. You will have see the Always Free logo next to the name of your database:
 
     ![Always Free Logo](./images/always_free_logo.png)
 
-    [We have selected 'Always Free Tier On'. To learn more about this option check the following link](https://www.oracle.com/uk/cloud/free/#always-free).
+    We have selected 'Always Free Tier On'. 
+
+    To learn more about Always Free check the following [link](https://www.oracle.com/uk/cloud/free/#always-free).
 
     ![ADB Creation Details](./images/lab100_3_2.png)
 
-    > **Choose Database version:** 19c
-    >
-    > **CPU Count:** 1
-    >
-    > **Storage Capacity (TB):** 0.02
-    >
-    > **CPU Count and Storage Capacity (TB)** are defined by default for the Always Free Tier.
-    >
-    > **Auto scaling:** Off
+    - **Choose Database version:** 19c
+    
+    - **CPU Count:** 1
+    
+    - **Storage Capacity (TB):** 0.02
+    
+    - **CPU Count and Storage Capacity (TB)** are defined by default for the Always Free Tier.
+    
+    - **Auto scaling:** Off
 
     ![ADB Creation Storage](./images/lab100_4.png)
 
 3. Under **Create administration credentials** section:
 
-    > **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is **ADWwelcome-1234**.
-    >
-    > **Reminder:** Note your password in a safe location as this cannot be easily reset.
+    - **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is `ADWwelcome-1234`.
+    
+    - **Reminder:** Note your password in a safe location as this cannot be easily reset.
 
     Under **Choose network access** section:
 
-    > Select **'Allow secure access from everywhere'**: *On*
-    >
-    > Select **Configure access control rules:** *Off*
+    - Select **'Allow secure access from everywhere'**: *On*
+    
+    - Select **Configure access control rules:** *Off*
 
     ![ADB Creation Password](./images/lab100_5.png)
 
@@ -130,10 +132,9 @@ Estimated Lab Time: 15 minutes
 
 You have just created an Autonomous Database with the latest features of Oracle Databases.
 
-
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 

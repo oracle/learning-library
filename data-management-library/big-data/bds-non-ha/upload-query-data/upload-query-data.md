@@ -43,11 +43,11 @@ Estimated Lab Time: 45 minutes
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. In the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Compartments > training-compartment**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
+2. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**. In the list of compartments, search for the **training-compartment**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
 
   ![](./images/compartment-ocid.png " ")
 
-3. In the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
+3. Click the **Navigation** menu and navigate to **Networking > Reserved IPs**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
 
 4. In row for the `traininmn0-public-ip` reserved IP address, copy the reserved public IP address associated with the master node in the **Reserved Public IP** column. Next, paste that IP address to an editor or a file, so that you can retrieve it later in this lab. You might need this IP address to ssh to the master node, if you didn't save your ssh connection in Lab 6.
 
@@ -60,7 +60,7 @@ Estimated Lab Time: 45 minutes
 
 1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
 
-2. In the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
+2. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
 
 3. In row for the `traininmn0-public-ip` reserved IP address, copy the reserved public IP address associated with the master node in the **Reserved Public IP** column. Next, paste that IP address to an editor or a file, so that you can retrieve it later in this lab. You might need this IP address to ssh to the master node, if you didn't save your ssh connection in Lab 6.
 
@@ -480,7 +480,7 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/data-downloaded-objstore.png " ")
 
-13. In the **Oracle Cloud Console** navigation menu, navigate to **Object Storage > Object Storage**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
+13. Click the **Navigation** menu and navigate to **Storage**. In the **Object Storage & Archive Storage** section, click **Buckets**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
 
     ![](./images/buckets-page.png " ")
 
@@ -520,4 +520,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Reviewer:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, March 2021
+* **Last Updated By/Date:** Lauran Serhal, May 2021

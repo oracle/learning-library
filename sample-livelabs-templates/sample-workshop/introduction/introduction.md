@@ -53,5 +53,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-

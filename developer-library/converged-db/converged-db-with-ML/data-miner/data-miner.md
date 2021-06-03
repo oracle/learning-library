@@ -29,7 +29,7 @@ This lab assumes you have:
 
 ## **STEP 1:** Connect to SQL Developer
 
-1. Make a connection to SQL Developer. Use the details as below and click on connect.
+1. Make a connection to SQL Developer. Use the details given below and click on connect.
   - **Name**: dmuser
   - **Username**: mluser
   - **Password**: `Oracle_4U`
