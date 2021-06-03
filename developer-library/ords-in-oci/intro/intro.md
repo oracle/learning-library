@@ -9,7 +9,7 @@ Like a swiss army knife or that as-seen-on-tv multi-tool you got from your grand
 In this lab you will create a series of scenarios in OCI where Oracle REST Data Services facilitates loading different types of data into an autonomous database. The situations will be:
 
 - Send Log Data to an Autonomous Database using OCI Logging and the Service Connector Hub and Functions
-- Consume a CSV file from Object Store using Functions and Events a REST enabled table
+- Consume a CSV file from Object Store with a REST enabled table using Functions and Events
 - Expose your REST APIs securely with the API Gateway
 
 ### Prerequisites
