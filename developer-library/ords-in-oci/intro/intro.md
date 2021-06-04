@@ -2,15 +2,15 @@
 
 ## Introduction
 
-Like a swiss army knife or that as-seen-on-tv multi-tool you got from your grandmother on your birthday, Oracle REST Data Services can work with more than just the Oracle Database. This Lab will walk you through using ORDS to expose the database to multiple other OCI services and products.
+Like a swiss army knife or that as-seen-on-tv multi-tool you got from your grandmother on your birthday, Oracle REST Data Services can work with more than just the Oracle Database. This Lab will walk you through using ORDS to expose the database to multiple other OCI services and product as well as secure REST endpoints for external consumption.
 
 ### Objectives
 
-In this lab you will create a series of scenarios in OCI where Oracle REST Data Services facilitates loading different types of data into an autonomous database. The situations will be:
+In this lab you will create a series of scenarios in OCI where Oracle REST Data Services facilitates loading different types of data into an autonomous database securely. The situations will be:
 
+- Expose your REST APIs externally with the API Gateway
 - Send Log Data to an Autonomous Database using OCI Logging and the Service Connector Hub and Functions
 - Consume a CSV file from Object Store with a REST enabled table using Functions and Events
-- Expose your REST APIs securely with the API Gateway
 
 ### Prerequisites
 This lab assumes you have completed the following labs:
