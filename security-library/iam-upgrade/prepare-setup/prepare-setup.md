@@ -11,7 +11,8 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Free Tier or Paid Cloud account
+- An Oracle Paid Cloud account
+- Capacity to run 4 OCPU/64GB ram shape instance
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
