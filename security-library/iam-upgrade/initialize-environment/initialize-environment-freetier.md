@@ -151,6 +151,22 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
+    ## **STEP 6:** Review the ReadMe.txt and Binaries
+    ReadMe.txt under the /home/oracle directory provides the key information about the installation. To access it
+    1. First login as “*opc*” using your SSH Private Key
+
+    2. Then sudo to “*oracle*”. E.g.
+
+        ```
+        <copy>sudo su - oracle</copy>
+        ```
+    3. View the ReadMe.txt file. E.g.
+
+        ```
+        <copy>vi ReadMe.txt</copy>
+        ```
+    4. Review the 12c binaries provided for the upgrade. These binaries are included in /home/oracle/Downloads/12cbits folder. 11g binaries are included for your reference as well under /home/oracle/Downloads/11gbits
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
