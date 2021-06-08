@@ -19,6 +19,25 @@ ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1.
 Allow dynamic-group <dynamic-group-name> to manage objects in compartment <compartment-name> where target.bucket.name=<input-bucket-name>
 Allow dynamic-group <dynamic-group-name> to manage objects in compartment <compartment-name> where target.bucket.name=<processed-bucket-name>
 
+Allow dynamic-group functions to manage objects in compartment Tools_PM
+Allow dynamic-group functions to manage buckets in compartment Tools_PM
+allow service objectstorage-eu-frankfurt-1 to manage object-family in tenancy
+
+Service Permissions
+
+Because Object Storage is a regional service, you must authorize the Object Storage service for each region carrying out copy operations on your behalf. For example, you might authorize the Object Storage service in region US East (Ashburn) to manage objects on your behalf. After you authorize the Object Storage service, you can copy an object stored in a US East (Ashburn) bucket to a bucket in another region.
+
+To determine the region identifier value of an Oracle Cloud Infrastructure region, see Regions and Availability Domains.
+
+For administrators:
+
+To enable object copy, you must authorize the service to manage objects on your behalf:
+
+    You can create a policy that authorizes the service in the specified region to manage Object Storage namespaces, buckets, and their associated objects in all compartments in the tenancy:
+
+Allow service objectstorage-<region_identifier> to manage object-family in tenancy
+
+
 ## **STEP 2**: Prepare Database
 
 1. After signing in as **admin** from the previous lab (connecting to Database Actions/SQL Developer Web), we end up on the overview page. Click the SQL tile.
