@@ -6,7 +6,8 @@ In this lab, you will create a service connector to move log data from the Loggi
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- You have completed the user setups steps.
+- You have completed the setup lab.
+- You have completed the CSV Functions Lab
 
 ## **STEP 1:** Creating a Collection
 
@@ -26,7 +27,7 @@ In this lab, you will create a service connector to move log data from the Loggi
 
     ![New Collection slider](./images/json-3.png)
 
-    enter **airportdelayscollection** in the **Collection Name** field
+    enter **logdatacollection** in the **Collection Name** field
 
     ![Collection Name field](./images/json-4.png)
 
@@ -71,13 +72,13 @@ In this lab, you will create a service connector to move log data from the Loggi
     then, add soda to indicate we want to use the SODA APIs followed by latest and the name of the collection airportdelayscollection. Your URL should look similar to the below one. (Your hostname will be different then this sample)
 
     ```
-    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection
     ```
 
     And when we put it all together, we get the following:
 
     ```
-    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
+    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection
     ```
 
 4. We now can take this cURL command and run it in the OCI Cloud Shell. **REMEMBER to use your password in place of PASSWORD**
@@ -85,14 +86,14 @@ In this lab, you will create a service connector to move log data from the Loggi
     ![OCI Cloud Shell with cURL command](./images/json-8.png)
 
     ```
-    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection
+    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection
     HTTP/1.1 201 Created
     Date: Mon, 26 Apr 2021 15:53:46 GMT
     Content-Length: 0
     Connection: keep-alive
     X-Frame-Options: SAMEORIGIN
     Cache-Control: private,must-revalidate,max-age=0
-    Location: https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/airportdelayscollection/
+    Location: https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection/
     ```
     If the collection already exists, you will get a message similar to the following:
 
