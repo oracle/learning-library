@@ -28,7 +28,7 @@
             "filename": "../../anomalies/anomaly-detection-model.md"
         },
         {
-            "title": "Lab 4: (Advanced) Access AD Service with REST API",
+            "title": "Lab 4: (Advanced) Access Anomaly Detection Service with REST API",
             "description": "Using REST API to call the AD services",
             "filename": "../../anomalies/anomaly-detection-rest-api.md"
         },
