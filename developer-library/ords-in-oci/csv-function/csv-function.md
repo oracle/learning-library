@@ -207,6 +207,16 @@ fn config function myapp oci-adb-ords-runsql-python dbpwd-cipher "xxxxxxxxx"
 fn config function myapp oci-adb-ords-runsql-python input-bucket "input-bucket"
 fn config function myapp oci-adb-ords-runsql-python processed-bucket "processed-bucket"
 
+fn config function sql oci-load-file-into-adw-python ords_base_url "http://129.159.195.62:8080/ords/"
+fn config function sql oci-load-file-into-adw-python db_schema "gary"
+fn config function sql oci-load-file-into-adw-python db_user "gary"
+fn config function sql oci-load-file-into-adw-python dbpwd_cipher "WElcome11##11"
+fn config function sql oci-load-file-into-adw-python input_bucket "input-bucket"
+fn config function sql oci-load-file-into-adw-python processed_bucket "processed-bucket"
+fn config function sql oci-load-file-into-adw-python bucket_name "input-bucket"
+fn config function sql oci-load-file-into-adw-python destination_bucket "processed-bucket"
+
+
 ## Create an Event rule
 
 Let's configure a Cloud Event to trigger the function when files are dropped into your input bucket.
