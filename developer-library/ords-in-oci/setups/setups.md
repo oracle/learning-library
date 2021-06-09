@@ -250,7 +250,8 @@ Next, we need to associate our dynamic group to some policies so that it has the
 10. The next section is **Create administrator credentials**. Here, provide a password that conforms to the password complexity rules of:
 
     ```
-    Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
+    Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number.
+    The password cannot contain the double quote (") character or the username "admin".
     ```
 
     If the password does conform to these rules and matches in both fields, the section should look like the following image.
