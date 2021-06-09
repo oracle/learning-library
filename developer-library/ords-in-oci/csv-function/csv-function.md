@@ -10,9 +10,51 @@
 
 For the Function we create to interact with the Object Store, we first have to create a Dynamic Group and some IAM policies.
 
+## Get the Compartment OCID
+
+Before we create some of the resources we need for functions, we need to record the OCID for compartment we are using. During the setups lab, we created a compartment. We need to go back to the compartments page (Identity & Security, then Compartments in the OCI web console menu) and find our livelabs compartment.
+
+On the compartments page, find the OCID column and hover your mouse over the characters link in that row. You will see a pop up window with the OCID and a copy link. Click the copy link to copy the compartments OCID and paste it into a text editor for later reference.
+
+![Copy a compartment OCID](./images/compartmentOCID-1.png)
+
+
 ### Create a Dynamic Group
 
-ALL {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..aaaaaxxxxx'}
+Start off by creating a dynamic group. This group will be used with policy generation in the next step. More on Dynamic Groups can be found [here](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
+
+1. Use the OCI web console drop down menu and select Identity & Security, then Dynamic Groups.
+
+    ![Selecting Dynamic Groups](./images/dgroup-1.png)
+
+2. On the Dynamic Groups page, click Create Dynamic Group
+
+    ![Create Dynamic Group Button](./images/dgroup-2.png)
+
+3. On the Create Dynamic Group page, set the following values:
+
+    **Name:** functionsDynamicGroup
+
+    ![Create Dynamic Group Name Field](./images/dgroup-3.png)
+
+    **Description:** Dynamic Group for Functions
+
+    ![Create Dynamic Group Description Field](./images/dgroup-4.png)
+
+    **Matching Rules:** 
+    
+    The Match any rules defined below radio button is selected
+
+    **Rule 1 text is:** 
+    ```
+    ALL {resource.type = 'fnfunc', resource.compartment.id = '**YOUR COMPARTMENT OCID**'}
+    ```
+    
+    ![Create Dynamic Group Text](./images/dgroup-5.png)
+
+4. Once your Create Dynamic Group page looks like the below image, click the **Create** button. (Remember, your OCID for the compartment will be different than the one in the image)
+
+    ![Create Dynamic Group Filled Out](./images/dgroup-6.png)
 
 ### Create IAM Policies
 
