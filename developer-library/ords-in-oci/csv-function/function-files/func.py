@@ -14,7 +14,7 @@ import requests
 from fdk import response
 
 
-def soda_insert(ordsbaseurl, schema, dbuser, dbpwd, document):
+def csv_insert(ordsbaseurl, schema, dbuser, dbpwd, document):
     auth=(dbuser, dbpwd)
     batchurl = ordsbaseurl + schema + '/test/batchload?batchRows=5000&errorsMax=20'
     headers = {'Content-Type': 'text/csv'}
@@ -27,7 +27,7 @@ def load_data(signer, namespace, bucket_name, object_name, ordsbaseurl, schema, 
         # we assume the file can fit in memory, otherwise we have to use the "range" argument and loop through the file
         csvdata = client.get_object(namespace, bucket_name, object_name)
         if csvdata.status == 200:
-             insert_status = soda_insert(ordsbaseurl, schema, dbuser, dbpwd, csvdata)
+             insert_status = csv_insert(ordsbaseurl, schema, dbuser, dbpwd, csvdata)
         else:
             raise SystemExit("cannot retrieve the object" + str(object_name))
     except Exception as e:
