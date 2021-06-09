@@ -247,10 +247,29 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
    ![Complete Configure the database section](./images/adb-11.png)
 
-10. 
+10. The next section is **Create administrator credentials**. Here, provide a password that conforms to the password complexity rules of:
 
+    ```
+    Password must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the username "admin".
+    ```
 
+    If the password does conform to these rules and matches in both fields, the section should look like the following image.
 
+   ![admin password section](./images/adb-12.png)
+
+11. For the **Choose network access** section, select **Secure access from everywhere** if not already selected. Leave the **Configure access control rules** checkbox unchecked.
+
+   ![admin password section](./images/adb-13.png)
+
+12. The **Choose a license type** section should default to **License Included**.
+
+   ![Choose a license type section](./images/adb-14.png)
+
+13. When the **Create Autonomous Database** is completely filled out, click the **Create Autonomous Database** button on the bottom left of the page.
+
+   ![Create Autonomous Database button](./images/adb-15.png)
+
+14. Your Autonomous Database should be done creating in just a few short minutes.
 
 ## Conclusion
 
