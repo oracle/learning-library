@@ -272,7 +272,7 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
 14. Your Autonomous Database should be done creating in just a few short minutes. 
 
-Please move to the next section of the lab [Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](./csv-function/csv-function.md).
+Please move to the next section of the lab [Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](../csv-function/csv-function.md).
 
 ## Conclusion
 
