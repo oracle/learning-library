@@ -56,7 +56,30 @@ Start off by creating a dynamic group. This group will be used with policy gener
 
     ![Create Dynamic Group Filled Out](./images/dgroup-6.png)
 
+5. You will now be on the Dynamic Group Details page for the one we just created
+
+    ![Dynamic Group Details Page](./images/dgroup-7.png)
+
+
 ### Create IAM Policies
+
+Next, we need to associate our dynamic group to some policies so that it has the ability to use object store to see and process the CSV files as they come in.
+
+1. Use the OCI web console menu to navigate to Identity & Security, then Policies
+
+    ![Navigate to Policies](./images/pol-1.png)
+
+2. On the Policies page
+
+    ![Policies Page](./images/pol-2.png)
+
+    find the Compartment dropdown and select our livelabs compartment
+
+    ![Policies Compartment Dropdown](./images/pol-3.png)
+
+3. Next, click the **Create Policy** button
+
+    ![Create Policy Button](./images/pol-4.png)
 
 Allow dynamic-group <dynamic-group-name> to manage objects in compartment <compartment-name> where target.bucket.name=<input-bucket-name>
 Allow dynamic-group <dynamic-group-name> to manage objects in compartment <compartment-name> where target.bucket.name=<processed-bucket-name>
