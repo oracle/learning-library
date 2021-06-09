@@ -2,21 +2,55 @@
 
 This part of the lab will guide you through some setups that have to happen before we can start the lab.
 
-## **STEP 1**: Create a Compartment
+## **SETUP 1**: Create a Compartment
 
 We are going to create a **Compartment** for this lab so that our functions, logs, database and other OCI components reside in a single place.
 
-1. To create a compartment, use the OCI web console drop down menu and select 
+1. To create a compartment, use the OCI web console drop down menu and select **Identity & Security**, then **Compartments**.
+
+    ![Use OCI menu for compartments](./images/comp-1.png)
+
+2. On the Compartments page, click the **Create Compartment** button.
+
+    ![Create Compartment Button](./images/comp-2.png)
+
+3. Using the **Create Compartment** modal, set the following values:
+
+    **Name:** livelabs
+
+    ````
+    <copy>
+    livelabs
+    </copy>
+    ````
+
+    ![Create Compartment Name Field](./images/comp-3.png)
+
+    **Description:** livelabs
+
+    ````
+    <copy>
+    livelabs
+    </copy>
+    ````
+    ![Create Compartment Name Field](./images/comp-4.png)
+
+    **Parent Compartment:** Use the root compartment (Should be auto-selected, your root compartment will be named different, but will have (root) after it)
+
+    ![Create Compartment Parent Compartment Field](./images/pol-5.png)
+
+4. When your Create Compartment modal looks like the following image (root compartment name will be different but have (root) after the name), click the **Create Compartment** button.
+
+    ![Create Compartment Modal](./images/pol-6.png)
 
 ### Get the Compartment OCID
 
-Before we create some of the resources we need for functions, we need to record the OCID for compartment we are using. During the setups lab, we created a compartment. We need to go back to the compartments page (Identity & Security, then Compartments in the OCI web console menu) and find our livelabs compartment.
-
-On the compartments page, find the OCID column and hover your mouse over the characters link in that row. You will see a pop up window with the OCID and a copy link. Click the copy link to copy the compartments OCID and paste it into a text editor for later reference.
+Before we create some of the resources we need for functions, we need to record the OCID for compartment we just created. Back on the compartments page, find the OCID column of the livelabs compartment we just created and hover your mouse over the characters link in that row. You will see a pop up window with the OCID and a copy link. Click the copy link to copy the compartments OCID and paste it into a text editor for later reference. 
+**You may have to refresh the page to see the created compartment.**
 
 ![Copy a compartment OCID](./images/compartmentOCID-1.png)
 
-## **STEP 2**: Setup OCI Permissions
+## **SETUP 2**: Setup OCI Permissions
 
 For the Function we create to interact with the Object Store, we first have to create a Dynamic Group and some IAM policies.
 
@@ -151,3 +185,12 @@ Next, we need to associate our dynamic group to some policies so that it has the
 8. You will be brought to the Policy Details page for the just created policy
 
     ![Policy Details Page](./images/pol-11.png)
+
+## Conclusion
+
+In this section, you created a compartment, dynamic group and policies for the upcoming lab sections
+
+## Acknowledgements
+
+- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
+- **Last Updated By/Date** - Brian Spendolini, June 2021
