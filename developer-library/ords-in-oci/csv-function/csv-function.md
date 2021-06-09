@@ -9,6 +9,10 @@
 
 ## **STEP 1**: Prepare the Database
 
+1. Start by going to the detals page of your autonomous database. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
+
+    ![ADB from the menu](./images/sdw-1.png)
+
 1. After signing in as **admin** from the previous lab (connecting to Database Actions/SQL Developer Web), we end up on the overview page. Click the SQL tile.
 
     ![Database Actions Home Page, Click SQL tile](./images/sdw-15.png)
