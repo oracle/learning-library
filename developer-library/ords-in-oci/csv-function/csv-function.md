@@ -3,17 +3,36 @@
 ### Prerequisites
 
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- You have completed the setup lab.
+- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
 
 
 ## **STEP 1**: Prepare the Database
 
-1. Start by going to the detals page of your autonomous database. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
+1. Start by going to the details page of your autonomous database if not already there. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
 
     ![ADB from the menu](./images/sdw-1.png)
 
-1. After signing in as **admin** from the previous lab (connecting to Database Actions/SQL Developer Web), we end up on the overview page. Click the SQL tile.
+2. On the Autonomous Database page, find your **ORDS ADB** database in the list and left click on the Display Name
+
+    ![ORDS ADB database in the list](./images/sdw-2.png)
+
+3. On the Autonomous Database Details page for our ORDS ADB database, click the **Tools** tab in the middle of the page
+
+    ![Tools Tab](./images/sdw-3.png)
+
+    then click the **Database Actions** button.
+
+    ![Database Actions Button](./images/sdw-4.png)
+
+4. On the Database Actions page that was opened in a new browser tab/window, enter **admin** as the username. Then left click the **Next** button.
+
+    ![Database Actions login](./images/sdw-5.png)
+
+5. On the next page, enter the password you used to create the autonomous database in the setups part of the lab. Then left click the **Sign in** button.
+
+    ![Database Actions sign in](./images/sdw-6.png)
+
+6. After signing in as **admin**, we end up on the overview page. Click the SQL tile.
 
     ![Database Actions Home Page, Click SQL tile](./images/sdw-15.png)
 
