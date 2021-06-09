@@ -186,9 +186,75 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
     ![Policy Details Page](./images/pol-11.png)
 
+## **SETUP 3**: Create an Autonomous Database
+
+1. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
+
+    ![ADB from the menu](./images/adb-1.png)
+
+2. On the Autonomous Database page, change your compartment to the livelabs compartment using the **Compartment** dropdown on the left side of the page.
+
+    ![ADB compartment dropdown](./images/adb-2.png)
+
+3. With the livelabs compartment selected, click the **Create Autonomous Database** button on the top of the page.
+
+    ![Create Autonomous Database button](./images/adb-3.png)
+
+
+4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our Compartment is livelabs and give our database a **Display Name**. We can use **ORDS ADB** as the Display Name.
+
+    **Display Name:** ORDS ADB
+
+    ````
+    <copy>
+    ORDS ADB
+    </copy>
+    ````
+    ![Display Name Field](./images/adb-4.png)
+
+    For the **Database Name**, we can use **ORDSADB**.
+
+      **Database Name:** ORDSADB
+
+    ````
+    <copy>
+    ORDSADB
+    </copy>
+    ````
+    ![Display Name Field](./images/adb-5.png)  
+
+    The **Provide basic information for the Autonomous Database** section should look like the following image:
+
+   ![Provide basic information for the Autonomous Database section](./images/adb-6.png)  
+
+5. For Database **Workload Type**, choose **Transaction Processing**.
+
+   ![Database Workload](./images/adb-7.png)  
+
+6. In the **Deployment Type** section, choose **Shared Infrastructure** if not already selected for you.
+
+   ![Deployment Type](./images/adb-8.png)  
+
+7. Next we have the **Configure the database** section. Start here by clicking the **Always Free** toggle button so that it is switched to the right side as seen in the following image.
+
+   ![Always Free toggle button](./images/adb-9.png)  
+
+8. Use the **Choose database version** dropdown to choose **21c** as the database version.
+
+   ![Choose database version dropdown](./images/adb-10.png)
+
+9. Your **Configure the database** section should look like the following image.
+
+   ![Complete Configure the database section](./images/adb-11.png)
+
+10. 
+
+
+
+
 ## Conclusion
 
-In this section, you created a compartment, dynamic group and policies for the upcoming lab sections
+In this section, you created a compartment, dynamic group a database and policies for the upcoming lab sections
 
 ## Acknowledgements
 
