@@ -32,7 +32,7 @@
 
     ![Database Actions sign in](./images/sdw-6.png)
 
-6. After signing in as **admin**, we end up on the overview page. Click the SQL tile.
+6. After signing in as **admin**, we end up on the overview page. Click the **SQL** tile.
 
     ![Database Actions Home Page, Click SQL tile](./images/sdw-15.png)
 
@@ -50,11 +50,11 @@
 
     ![To upload a file, Drag into the File Load Modal or Click Select File and use the OS File Browser](./images/sdw-18.png)
 
-5. We are going to use some sample data to load data into the database and create a table at the same time. Start by downloading this file
+5. We are going to use the same file we are going to run the automated load with so that the table definitions match. Use the following link to download the file:
 
     **(right-click and download the file with the following link)**
 
-    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/pp_oz_4cJpg26fUsPQYshv6G--X4TmAkpRKeFdZWzQ_XuG-eVCo3Ea3Mz1u4RxKI/n/c4u03/b/developer-library/o/csv_data.csv)
+    [file1.csv](https://xxxxxx)
 
 6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
@@ -64,25 +64,29 @@
 
     ![View Data Preview and then Click Next Button](./images/sdw-20.png)
 
-8. On the following step of the data loading modal, we can see the name of the table we are going to create (CSV_DATA) as well as the column and data types for the table.
+8. On the following step of the data loading modal, we can see the name of the table we are going to create (FILE1) as well as the column and data types for the table.
 
     ![Data Column Layout from uploaded file](./images/sdw-21.png)
+    
+9. Seeing our sample data deals with regional counts of ska shows, lets name the table **REGION**.
 
-    Click Next on the bottom right of the modal when done looking at this step.
+    ![Rename the Table to REGION](./images/sdw-22.png)
+    
+10. Click Next on the bottom right of the modal when done renaming the table.
 
-    ![Check out data then Click Next Button](./images/sdw-22.png)
+    ![Check out data then Click Next Button](./images/sdw-23.png)
 
-9. On the last step of the modal, we can see a review of the table name and source file
+11. On the last step of the modal, we can see a review of the table name (that we changed to REGION) and source file
 
-    ![Review of Table Name and Surce File](./images/sdw-23.png)
+    ![Review of Table Name and Source File](./images/sdw-24.png)
 
     the DDL (Data Definition Language) for creating the table
 
-    ![The Data Definition Language preview for the table and data](./images/sdw-24.png)
+    ![The Data Definition Language preview for the table and data](./images/sdw-25.png)
 
     and if you scroll down, the column mappings.
 
-    ![Check out data then Click Next Button](./images/sdw-25.png)
+    ![Check out data then Click Next Button](./images/sdw-26.png)
 
 10. When you are done taking a look, click the Finish button in the lower right of the modal.
 
@@ -118,50 +122,7 @@
 
     ![The REST Enable Object Slider, view the Preview URL](./images/sdw-34.png)
 
-4. Thats it! Your table is REST enabled. We can work with the REST endpoints by using cURL commands that the SQL Worksheet can provide to us. To get to these endpoints, again right click the table name as we did in the previous step, select **REST**, then **cURL Command**.
-
-    ![right click the table name in the navigator, select REST, then cURL Command](./images/sdw-37.png)
-
-    On the right of the page, we see the cURL for the table CSV_DATA side out panel.
-
-    ![the cURL for the table CSV_DATA side out panel](./images/sdw-38.png)
-
-5. Here we can work with the various REST endpoints. To try one, click the copy icon ![copy icon](./images/copy-copy.png) for the **GET ALL** endpoint.
-
-    ![Click the copy icon for GET ALL](./images/sdw-39.png)
-
-6. You can use this cURL command we just copied in the OCI Cloud Shell or on your local compute if cURL is installed. Here is the command running:
-
-```
->curl --location \
-'https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/'
-
-{"items":[{"col1":"e40a9db6","col2":"1b","col3":"27531","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/
-ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAA"}]},{"col1":"6182c817","col2":"73","col3":"5355332","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.
-eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAB"}]},{"col1":"5ed9e437","col2":"d2","col3":"4834758","links":[{"rel":"self",
-"href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAC"}]},{"col1":"d77868a1","col2":"64",
-"col3":"2129797","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/
-AAAYuOAAAAAAF3%2FAAD"}]},{"col1":"09bfaa73","col2":"89","col3":"3294896","links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.
-oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAE"}]},{"col1":"5054cca2","col2":"97","col3":"3474577","links":[{"rel":"self","href":"https://
-coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAF"}]},{"col1":"d20e9eb4","col2":"7c","col3":"2728720",
-"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/AAAYuOAAAAAAF3%2FAAG"}]}],
-"hasMore":false,"limit":25,"offset":0,"count":7,"links":[{"rel":"self","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
-admin/csv_data/"},{"rel":"edit","href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"},{"rel":"describedby",
-"href":"https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/metadata-catalog/csv_data/"},{"rel":"first","href":"https://
-coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/csv_data/"}]}% 
-```
-
-
-
-log into DB Actions
-
-SQL Worksheet
-
-Create table
-
-Auto-REST Table
-
-Batch Load API Test
+    Thats it! Your table is REST enabled. 
 
 ## Create and Deploy the Function
 
