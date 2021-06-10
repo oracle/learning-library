@@ -173,7 +173,17 @@ With Oracle Functions, an application is:
 
     ![click the Create button](./images/func-8.png)
 
-8. 
+8. With your application created, click on the **Name** in the Applications List
+
+    ![click on the Name in the Applications List](./images/func-9.png)
+
+9. On the **Application Details** page, using the **Resources List** on the left side of the page, click **Getting Started**.
+
+    ![click Getting Started](./images/func-10.png)
+
+10. On the **Getting Started** page, ensure that **Cloud Shell Setup** is selected.
+
+    ![Cloud Shell Setup is selected](./images/func-11.png)
 
 Review the following files in the current folder:
 
