@@ -185,6 +185,18 @@ With Oracle Functions, an application is:
 
     ![Cloud Shell Setup is selected](./images/func-11.png)
 
+11. The next few steps will be using the **OCI Cloud Shell**. We can start a Cloud Shell session by clicking the **Launch Cloud Shell** button in the **Begin your Cloud Shell session** step on the **Getting Started** page.
+
+    ![clicking the Launch Cloud Shell button](./images/func-12.png)
+
+    This will open the **OCI Cloud Shell** on the bottom of the page.
+
+    ![OCI Cloud Shell](./images/func-13.png)
+
+12. In the **Setup fn CLI on Cloud Shell** section, we will be copying and pasting many commands to use in the **OCI Cloud Shell** . Starting at **Step 2** copy and paste the first command 
+
+https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html
+
 Review the following files in the current folder:
 
     the code of the function, func.py
