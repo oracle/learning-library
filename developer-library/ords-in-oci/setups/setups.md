@@ -272,6 +272,67 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
 14. Your Autonomous Database should be done creating in just a few short minutes. 
 
+## **SETUP 4**: Create an Virtual Cloud Network
+
+Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly create one with the VCN Wizard.
+
+1. Use the OCI web console drop down menu to go to **Networking** and then **Virtual Cloud Networks**.
+
+    ![VCN from the menu](./images/vcn-1.png)
+
+2. Next, ensure we are using the livelabs compartment for this Virtual Cloud Network we are about to create. Use the **Compartments** drop down on the left side of the page to select **livelabs**.
+
+    ![choose compartment](./images/vcn-2.png)
+
+3. Back on the top of the page, click the **Start VCN Wizard** button.
+
+    ![click the Start VCN Wizard button](./images/vcn-3.png)
+
+4. After clicking the button, the **Start VCN Wizard** modal window will pop up. Select the **VCN with Internet Connectivity** option if not already selected and then click the **Start VCN Wizard** button on the bottom left of the modal window.
+
+    ![Start VCN Wizard modal](./images/vcn-4.png)
+
+5. On the **Configuration** page of the **Create a VCN with Internet Connectivity** flow, in the **Basic Information** section, set the **VCN Name** to be FunctionsVCN and the **Compartment** to be livelabs if not already selected.
+
+    **VCN Name:** FunctionsVCN
+
+    ````
+    <copy>
+    FunctionsVCN
+    </copy>
+    ````
+    ![VCN Name Field](./images/vcn-5.png)
+
+    **Compartment:** livelabs (Should be auto-selected)
+
+    ![VCN Compartment Field](./images/vcn-6.png)
+
+    Your **Basic Information** section should look like the following image.
+
+    ![Basic Information section](./images/vcn-7.png)   
+
+6. In the **Configure VCN and Subnets** section, we can leave the default values.
+
+    ![Basic Information section](./images/vcn-8.png)
+
+    Once you have reviewed the default values in the **Configure VCN and Subnets** section, click the **Next** button on the bottom left of the **Create a VCN with Internet Connectivity** page.
+
+   ![click the Next button](./images/vcn-9.png)    
+
+7. On the **Review and Create** page of the **Create a VCN with Internet Connectivity** flow, review the values and when ready, click the **Create** button on the bottom left of the page.
+
+   ![click the Create button](./images/vcn-10.png)
+
+8. Your Virtual Cloud Network components will now be created.
+
+   ![click the Create button](./images/vcn-11.png)
+
+    When done, click the **View Virtual Cloud Network** botton on the bottom left of the page to view the details of the newly created VCN.
+
+   ![click the Create button](./images/vcn-12.png)
+
+## Next Steps
+
 Please move to the next section of the lab [Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](../csv-function/csv-function.md).
 
 ## Conclusion

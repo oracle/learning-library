@@ -16,7 +16,7 @@ from fdk import response
 
 def csv_insert(ordsbaseurl, schema, dbuser, dbpwd, document):
     auth=(dbuser, dbpwd)
-    batchurl = ordsbaseurl + schema + '/test/batchload?batchRows=5000&errorsMax=20'
+    batchurl = ordsbaseurl + schema + '/region/batchload?batchRows=5000&errorsMax=20'
     headers = {'Content-Type': 'text/csv'}
     r = requests.post(batchurl, auth=auth, headers=headers, data=document.data.text)
 
