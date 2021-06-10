@@ -126,6 +126,55 @@
 
 ## Create and Deploy the Function
 
+We now need to create a function that will take the incoming file from Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. First, we need to make an Application to hold our function. 
+
+With Oracle Functions, an application is:
+    a logical grouping of functions
+    a way to allocate and configure resources for all functions in the application
+    a common context to store configuration variables that are available to all functions in the application
+    a way to ensure function runtime isolation
+
+1. Use the OCI web console drop down menu to go to **Developer Services** and then **Applications**.
+
+    ![Developer Services and then Applications](./images/func-1.png)
+
+2. On the **Applications** page, ensure that the **Compartment** is set to livelabs.
+
+    ![Developer Services and then Applications](./images/func-2.png)
+
+3. Now, click the **Create Application** button.
+
+    ![Developer Services and then Applications](./images/func-3.png)
+
+4. On the **New Application** slide out form, start by setting the **Name** to functionsApp.
+
+    **Name:** functionsApp
+
+    ````
+    <copy>
+    functionsApp
+    </copy>
+    ````
+    ![Functions Name Field](./images/func-4.png)
+
+5. Use the **VNC in livelabs** dropdown to select our FunctionsVCN if not already selected. You can use the **Change Compartment** link if this did not default to using livelabs as the compartment.
+
+    ![VNC in livelabs dropdown](./images/func-5.png)
+
+6. Using the **Subnets in livelabs** dropdown, select **Public Subnet-FunctionsVCN(Regional)**. You can use the **Change Compartment** link if this did not default to using livelabs as the compartment.
+
+    ![subnets in livelabs dropdown](./images/func-6.png)
+
+7. When your **New Application** form looks like the below image
+
+    ![New Application form](./images/func-7.png)
+
+    click the **Create** button in the lower left of the slider.
+
+    ![click the Create button](./images/func-8.png)
+
+8. 
+
 Review the following files in the current folder:
 
     the code of the function, func.py
