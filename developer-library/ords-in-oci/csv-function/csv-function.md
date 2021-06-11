@@ -522,67 +522,44 @@ With Oracle Functions, an application is:
 
     ![Create Rule Filled Out](./images/event-15.png)
 
-bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com
+## **STEP 5:** Taking the Flow for a Spin
 
-https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html
+1. It's time to see our function in action. To do this we need to put a csv file into the input-bucket bucket. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
-Review the following files in the current folder:
+    ![Storage then Buckets](./images/full-1.png)
 
-    the code of the function, func.py
-    its dependencies, requirements.txt
-    the function metadata, func.yaml
+2. Click the **input-bucket** link in the **Name Column**.
 
-Deploy the function
+    ![Click the input-bucket link](./images/full-2.png)
 
-In Cloud Shell, run the fn deploy command to build the function and its dependencies as a Docker image, push the image to OCIR, and deploy the function to Oracle Functions in your application.
+3. In the **Objects Section**, click the **Upload** button.
 
-fn -v deploy --app <app-name>
+    ![click the Upload button](./images/full-3.png)
 
-Set the function configuration values
+4. On the **Upload Objects** form, use the **Choose Files from your Computer** section to drag and drop or file browse to the file1.csv file we used when creating the table earlier in this lab.
 
-The function requires several configuration variables to be set.
+    ![Find and upload the file](./images/full-4.png)
 
-Use the fn CLI to set the config value:
+5. Once selected, click the **Upload** button.
 
-fn config function <app-name> <function-name> ords-base-url <ORDS Base URL>
-fn config function <app-name> <function-name> db-schema <DB schema>
-fn config function <app-name> <function-name> db-user <DB user name>
-fn config function <app-name> <function-name> dbpwd-cipher <DB encrypted password>
-fn config function <app-name> <function-name> input-bucket <input bucket name>
-fn config function <app-name> <function-name> processed-bucket <processed bucket name>
+    ![click the Upload button](./images/full-5.png)
 
-e.g.
+6. We can check if the file was loaded into the database by going back to our **SQL Worksheet** in **Database Actions** and running the following SQL Query:
 
-fn config function functionsApp csv-to-adw-with-ords-and-fn ords-base-url "https://xxxxxx-db123456.adb.us-region.oraclecloudapps.com/ords/"
-fn config function functionsApp csv-to-adw-with-ords-and-fn db-schema "admin"
-fn config function functionsApp csv-to-adw-with-ords-and-fn db-user "admin"
-fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd-cipher "xxxxxxxxx"
-fn config function functionsApp csv-to-adw-with-ords-and-fn input-bucket "input-bucket"
-fn config function functionsApp csv-to-adw-with-ords-and-fn processed-bucket "processed-bucket"
+    ````
+    <copy>
+    select * from region;
+    </copy>
+    ````
+    With the result being 8 rows (4 new and 4 from when we loaded the initial file)
 
-fn config function sql oci-load-file-into-adw-python ords_base_url "http://129.159.195.62:8080/ords/"
-fn config function sql oci-load-file-into-adw-python db_schema "gary"
-fn config function sql oci-load-file-into-adw-python db_user "gary"
-fn config function sql oci-load-file-into-adw-python dbpwd_cipher "WElcome11##11"
-fn config function sql oci-load-file-into-adw-python input_bucket "input-bucket"
-fn config function sql oci-load-file-into-adw-python processed_bucket "processed-bucket"
-fn config function sql oci-load-file-into-adw-python bucket_name "input-bucket"
-fn config function sql oci-load-file-into-adw-python destination_bucket "processed-bucket"
+    ![SQL Worksheet and new data](./images/full-6.png)
 
+## Conclusion
 
-## Create an Event rule
+In this section, you created a table, auto-REST enabled it and use that REST endpoint with a function to batch load data from object store.
 
-Let's configure a Cloud Event to trigger the function when files are dropped into your input bucket.
+## Acknowledgements
 
-## Put it all together
-
-Finally, let's test the workflow.
-
-
-Upload one or all CSV files from the current folder to your input bucket. Let's imagine those files contains sales data from different regions of the world.
-
-On the OCI console, navigate to Autonomous Data Warehouse and click on your database, click on Service Console, navigate to Development, and click on SQL Developer Web. Authenticate with your ADMIN username and password. Enter the following query in the worksheet of SQL Developer Web:
-
-select count(*) from table_we_created;
-
-You should see the data from the CSV files.
+- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
+- **Last Updated By/Date** - Brian Spendolini, June 2021
