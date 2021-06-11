@@ -124,6 +124,12 @@
 
     Thats it! Your table is REST enabled. 
 
+4. Before we finish up with setting up our database table, we need to record some information for configuring our function later in this lab. On the SQL worksheet page we are on, look at the URL in your browser. 
+
+    ![The REST Enable Object Slider, view the Preview URL](./images/sdw-35.png)
+
+We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be similar.
+
 ## Create and Deploy the Function
 
 We now need to create a function that will take the incoming file from Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. First, we need to make an Application to hold our function. 
