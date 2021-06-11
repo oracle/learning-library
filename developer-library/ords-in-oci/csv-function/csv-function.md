@@ -130,7 +130,8 @@
 
 We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be similar.
 
-## Create and Deploy the Function
+
+## **STEP 3:** Create and Deploy the Function
 
 We now need to create a function that will take the incoming file from Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. First, we need to make an Application to hold our function. 
 
@@ -356,12 +357,153 @@ With Oracle Functions, an application is:
     fn config function functionsApp csv-to-adw-with-ords-and-fn processed_bucket "processed-bucket" 
     </copy>
     ````
-    The above commands need some values specified before running them. First, we need to change the **ords_base_url** with the one specific to your ADB you created.
+    The above commands need some values specified before running them. First, we need to change the **ords_base_url** with the one you recorded after creating the table earlier in this lab. If you remember mine was **https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer** so ill want to set this parameter to:
+    ```
+    fn config function functionsApp csv-to-adw-with-ords-and-fn ords_base_url "https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
+    ```
+    Your value will be similar (but not the same).
+
+    For the **dbpwd_cipher** parameter, use the password you entered when creating the autonomous database as well as used when logging in as the admin user.
+
+    ```
+    fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "mycoolpassword1234!!"
+    ```
+
+    Once the values are entered, run them in the OCI Cloud Shell.
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn ords_base_url "https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
+    functionsApp csv-to-adw-with-ords-and-fn updated ords_base_url with https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn db_schema "admin"
+    functionsApp csv-to-adw-with-ords-and-fn updated db_schema with admin
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
+    functionsApp csv-to-adw-with-ords-and-fn updated db_user with admin
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "mycoolpassword1234!!"
+    functionsApp csv-to-adw-with-ords-and-fn updated dbpwd_cipher with mycoolpassword1234!!
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
+    functionsApp csv-to-adw-with-ords-and-fn updated input_bucket with input-bucket
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn processed_bucket "processed-bucket" 
+    functionsApp csv-to-adw-with-ords-and-fn updated processed_bucket with processed-bucket
+    ```
+    Our function is now configured. At any time you can list the configuration parameters in a function with the command:
+    ```
+    fn list config fn <application-name> <function-name>
+    ```
+    so for our function and application it would be
+    ```
+    fn list config fn functionsApp csv-to-adw-with-ords-and-fn
+    ```
+    The Application Details page will also reflect this function has been created.
+
+    ![Deployed Function](./images/func-15.png)
+
+22. So we can see any issues with our function, we need to enable **logging**. 
+
+LOGGING HERE
 
 
+## **STEP 4:** Create an Event
 
+1. So that the function triggers when a csv file is put into a bucket, we have to create an **Event**. Use the OCI web console drop down menu to go to **Observability & Management** and then **Events Service**.
 
+    ![Observability & Management and then Events Service](./images/event-1.png)
 
+2. Next, ensure we are using the livelabs compartment for this **Event** we are about to create. Use the **Compartments** drop down on the left side of the page to select **livelabs**.
+
+    ![choose compartment](./images/event-2.png)
+
+3. Now that the livelabs compartment is selected, click the **Create Rule** button.
+
+    ![Create Rule button](./images/event-3.png)
+
+4. On the **Create Rule** page, start with the Rule's **Display Name**. Let's use **CSV File Watch** as the value.
+
+    **Display Name:** CSV File Watch
+
+    ````
+    <copy>
+    CSV File Watch
+    </copy>
+    ````
+    ![Display Name Field](./images/event-4.png)
+
+5. The **Description** can be **This rule watches for a CSV file in a bucket then triggers a function**.
+
+    **Description:** This rule watches for a CSV file in a bucket then triggers a function
+
+    ````
+    <copy>
+    This rule watches for a CSV file in a bucket then triggers a function
+    </copy>
+    ````
+    ![Display Name Field](./images/event-5.png)
+
+6. **Rule Conditions** are up next. 
+
+    ![Rule Conditions Section](./images/event-6.png)
+
+    For the first rule, we will use the following values:
+    **Condition:** Event Type
+    **Service Name:** Object Store
+    **Event Type:** Object Create
+
+    ![First Rule](./images/event-7.png)
+
+    This rule says watch for object creation in object store.
+
+    Once you have filled out the first rule, click the **+ Another Condition** button.
+
+    ![click the + Another Condition button](./images/event-8.png)  
+
+    For the second rule, use the following values:
+    **Condition:** Attribute
+    **Attribute Name:** compartmentName
+    **Attribute Value:** livelabs
+
+    ![Second Rule](./images/event-9.png)
+
+    You will have to type in the **Attribute Value** of livelabs. This rule says the compartment needs to be the livelabs compartment. 
+    
+    Once you have filled out the first rule, click the **+ Another Condition** button.
+
+    ![click the + Another Condition button](./images/event-10.png)  
+
+    For the third rule, use the following values:
+    **Condition:** Attribute
+    **Attribute Name:** bucketName
+    **Attribute Value:** input-bucket
+
+    You will have to type in the **Attribute Value** of input-bucket. This rule says the bucket needs to be the input-bucket.
+
+    ![Third Rule](./images/event-11.png)
+
+    Your **Rule Conditions** section should look like the below image
+
+    ![Completed Rules Conditions Section](./images/event-12.png)
+
+    These rules say, watch for object creation in the livelabs compartment where the bucket name is input-bucket.
+
+7. We now need to tell the Rule that when the **Rule Conditions** are met, perform this Action. We do this with the **Actions** section on the bottom of the page.
+
+    ![Actions Section](./images/event-13.png)
+
+8. We will create one **Action**. Use the following values:
+    **Action Type:** Functions
+    **Function Compartment:** livelabs
+    **Function Application:** functionsApp
+    **Function:** csv-to-adw-with-ords-and-fn
+
+    ![Actions Section Filled Out](./images/event-14.png)
+
+9. Once your **Create Rule** page looks like the following image, click the **Create Rule** button in the lower left of the page.
+
+    ![Create Rule Filled Out](./images/event-15.png)
+
+bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com
 
 https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html
 
