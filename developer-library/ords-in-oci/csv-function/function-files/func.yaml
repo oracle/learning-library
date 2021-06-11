@@ -1,5 +1,5 @@
 schema_version: 20180708
-name: oci-load-file-into-adw-python
+name: csv-to-adw-with-ords-and-fn
 version: 0.0.11
 runtime: python
 entrypoint: /python/bin/fdk /function/func.py handler

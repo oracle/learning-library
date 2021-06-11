@@ -230,16 +230,16 @@ With Oracle Functions, an application is:
 
     You will see the command similar to:
     ```
-    fn update context registry fra.ocir.io/myTenancy/[OCIR-REPO]
+    fn update context registry fra.ocir.io/mytenancy/[OCIR-REPO]
     ```
-    You can replace **[OCIR-REPO]** with any name you would like. For this lab, lets use livelabsRepo. Replace **[OCIR-REPO]** with **livelabsRepo** in your command
+    You can replace **[OCIR-REPO]** with any name you would like. For this lab, lets use livelabsRepo. Replace **[OCIR-REPO]** with **livelabsrepo** in your command
     ```
-    fn update context registry fra.ocir.io/myTenancy/livelabsRepo
+    fn update context registry fra.ocir.io/mytenancy/livelabsrepo
     ```
     and then run it
     ```
-    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn update context registry fra.ocir.io/myTenancy/livelabsRepo
-    Current context updated registry with fra.ocir.io/myTenancy/livelabsRepo
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn update context registry fra.ocir.io/mytenancy/livelabsrepo
+    Current context updated registry with fra.ocir.io/mytenancy/livelabsrepo
     ```
 
 15. Step 5 was completed in the setup lab where we generated a token for our user so we can skip this step. Now would be a good time to retrieve the saved token you saved from the setup steps.
@@ -247,13 +247,13 @@ With Oracle Functions, an application is:
 16. For step 6, we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format **docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io** as seen below:
 
     ```
-    docker login -u 'myTenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
+    docker login -u 'mytenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
     ```
 
     If your tenancy is federated with Oracle Identity Cloud Service, you will use the above format using oracleidentitycloudservice. If the user you are using is not a federated user, you will use the syntax tenancy_name/user_name.
 
     ```
-    bspendol@cloudshell:~ (eu-frankfurt-1)$ docker login -u 'myTenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ docker login -u 'mytenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
     Password: 
 
     Login Succeeded
@@ -269,7 +269,93 @@ With Oracle Functions, an application is:
 
     We are now setup to deploy our function.
 
+18. Download the function code in your OCI Cloud Shell with the following command:
+
+    ```
+    curl -o func.zip https://xxxxxx/func.zip
+    ```    
+
+    Once downloaded, unzip it
+
+    ```
+    gunzip func.zip
+    ```
+
+    ````
+    <copy>
+    gunzip func.zip
+    </copy>
+    ````
+
+19. Move into that directory that was created
+
+    cd func
+
+20. Now we can deploy our function to our application. Use the following command (this command can also be found as step number 10 on the Functions Getting Started page):
+
+    ```
+    fn -v deploy --app functionsApp
+    ```
     
+    ````
+    <copy>
+    fn -v deploy --app functionsApp
+    </copy>
+    ````
+
+    The OCI Cloud Shell will report back the progress of the function's deployment
+
+    ```
+    Pushing fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68 to docker registry...
+    The push refers to repository [fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn]
+    2775700c8222: Pushed 
+    9b50566e770b: Pushed 
+    522edf3e7d77: Pushed 
+    3613dd225bdd: Pushed 
+    c09710e8f799: Pushed 
+    43022de19af6: Pushed 
+    cdf79d97e316: Pushed 
+    88fb2db345cd: Pushed 
+    747aa001f428: Pushed 
+    f9ef7f1bcb19: Pushed 
+    02c055ef67f5: Pushed 
+    0.0.68: digest: sha256:2a9b72e1f08abc89ce3ac98bc1b074efe0bfccbc1103a14ba6b0b4c9745c623c size: 2623
+    Updating function csv-to-adw-with-ords-and-fn using image fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68...
+    Successfully created function: csv-to-adw-with-ords-and-fn with fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68
+    ```
+
+21. With the function deployed, we need to configure some of the parameters needed so that it can find and login to the database. Configuring function parameters is in the following syntax"
+    ```
+    fn config function <app-name> <function-name> <parameter> <parameter-value>
+    ```
+    We have the following values to supply:
+
+    ```
+    fn config function <app-name> <function-name> ords_base_url <ORDS Base URL>
+    fn config function <app-name> <function-name> db_schema <DB schema>
+    fn config function <app-name> <function-name> db_user <DB user name>
+    fn config function <app-name> <function-name> dbpwd_cipher <DB password>
+    fn config function <app-name> <function-name> input_bucket <input bucket name>
+    fn config function <app-name> <function-name> processed_bucket <processed bucket name>
+    ```
+    And with the values we need
+
+    ````
+    <copy>
+    fn config function functionsApp csv-to-adw-with-ords-and-fn ords_base_url "https://xxxxxx-xxxxxx/ords/"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn db_schema "admin"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "xxxxxxxxx"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn processed_bucket "processed-bucket" 
+    </copy>
+    ````
+    The above commands need some values specified before running them. First, we need to change the **ords_base_url** with the one specific to your ADB you created.
+
+
+
+
+
 
 https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html
 
@@ -300,12 +386,12 @@ fn config function <app-name> <function-name> processed-bucket <processed bucket
 
 e.g.
 
-fn config function myapp oci-adb-ords-runsql-python ords-base-url "https://xxxxxx-db123456.adb.us-region.oraclecloudapps.com/ords/"
-fn config function myapp oci-adb-ords-runsql-python db-schema "admin"
-fn config function myapp oci-adb-ords-runsql-python db-user "admin"
-fn config function myapp oci-adb-ords-runsql-python dbpwd-cipher "xxxxxxxxx"
-fn config function myapp oci-adb-ords-runsql-python input-bucket "input-bucket"
-fn config function myapp oci-adb-ords-runsql-python processed-bucket "processed-bucket"
+fn config function functionsApp csv-to-adw-with-ords-and-fn ords-base-url "https://xxxxxx-db123456.adb.us-region.oraclecloudapps.com/ords/"
+fn config function functionsApp csv-to-adw-with-ords-and-fn db-schema "admin"
+fn config function functionsApp csv-to-adw-with-ords-and-fn db-user "admin"
+fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd-cipher "xxxxxxxxx"
+fn config function functionsApp csv-to-adw-with-ords-and-fn input-bucket "input-bucket"
+fn config function functionsApp csv-to-adw-with-ords-and-fn processed-bucket "processed-bucket"
 
 fn config function sql oci-load-file-into-adw-python ords_base_url "http://129.159.195.62:8080/ords/"
 fn config function sql oci-load-file-into-adw-python db_schema "gary"

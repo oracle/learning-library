@@ -1,0 +1,6 @@
+fn config function functionsApp csv-to-adw-with-ords-and-fn ords_base_url "https://xxxxxx-xxxxxx/ords/"
+fn config function functionsApp csv-to-adw-with-ords-and-fn db_schema "admin"
+fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
+fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "xxxxxxxxx"
+fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
+fn config function functionsApp csv-to-adw-with-ords-and-fn processed_bucket "processed-bucket" 
