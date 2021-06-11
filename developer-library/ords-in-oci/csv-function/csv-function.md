@@ -228,7 +228,7 @@ With Oracle Functions, an application is:
     region_container_registry/tenancy_name/ocir_repo_name_of_your_choice
     ```
 
-    You will see the command similiar to:
+    You will see the command similar to:
     ```
     fn update context registry fra.ocir.io/myTenancy/[OCIR-REPO]
     ```
@@ -242,11 +242,34 @@ With Oracle Functions, an application is:
     Current context updated registry with fra.ocir.io/myTenancy/livelabsRepo
     ```
 
-15. Step number 5 is going to require us to create an **Auth Token** so that we can login and use the container registry to deploy our functions. Click the **Generate an Auth Token** link in step number 5.
+15. Step 5 was completed in the setup lab where we generated a token for our user so we can skip this step. Now would be a good time to retrieve the saved token you saved from the setup steps.
 
-    ![Click the Generate an Auth Token link](./images/func-14.png)
+16. For step 6, we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format **docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io** as seen below:
 
-16. Clicking this link will bring you to the
+    ```
+    docker login -u 'myTenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
+    ```
+
+    If your tenancy is federated with Oracle Identity Cloud Service, you will use the above format using oracleidentitycloudservice. If the user you are using is not a federated user, you will use the syntax tenancy_name/user_name.
+
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ docker login -u 'myTenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
+    Password: 
+
+    Login Succeeded
+    ```
+
+17. Next, in step 7, we verify we can see our application by running fn list apps
+
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list apps
+    NAME            ID
+    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaf2snfvp2gxhghcsvadeffffdddd32rf7hqh3lbcgiztw2xkqrv74ha
+    ```
+
+    We are now setup to deploy our function.
+
+    
 
 https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html
 
