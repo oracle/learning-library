@@ -551,9 +551,28 @@ With Oracle Functions, an application is:
     select * from region;
     </copy>
     ````
-    With the result being 8 rows (4 new and 4 from when we loaded the initial file)
+    With the result being 8 rows (4 new and 4 from when we loaded the initial file).
+
+    ```
+    select * from region;
+
+    REGION    COL1    COL2    COL3 
+    _________ _______ _______ _______ 
+    AMER      1       2       3       
+    APAC      4       5       6       
+    EMEA      7       8       9       
+    AMER      10      11      12      
+    AMER      1       2       3       
+    APAC      4       5       6       
+    EMEA      7       8       9       
+    AMER      10      11      12      
+
+    8 rows selected. 
+    ```
 
     ![SQL Worksheet and new data](./images/full-6.png)
+
+
 
 ## Conclusion
 
