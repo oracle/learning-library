@@ -369,6 +369,63 @@ Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly
 
     When you have copied the token and saved it somewhere (text pad, notes app, etc), click the **Close** button.
 
+
+## **SETUP 6**: Create Object Store Buckets
+
+The function will be watching an object store bucket for a CSV file, process it then place it into another bucket so we need to create two buckets.
+
+1. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
+
+    ![Storage then Buckets](./images/buck-1.png)
+
+2. Next, ensure we are using the livelabs compartment for these buckets we are about to create. Use the **Compartments** drop down on the left side of the page to select **livelabs**.
+
+    ![choose compartment](./images/buck-2.png)
+
+3. Now that we have the compartment set, click the **Create Bucket** button.
+
+    ![Create Bucket button](./images/buck-3.png)
+
+4. Using the **Create Bucket** slide out form, set the **Bucket Name** to **input-bucket**
+
+      **Bucket Name:** input-bucket
+
+    ````
+    <copy>
+    input-bucket
+    </copy>
+    ````
+
+    ![Create Bucket button](./images/buck-4.png)
+
+    Once the **Bucket Name** is **input-bucket**, click the **Create** button on the bottom left of the form.
+
+    ![Create button](./images/buck-5.png)
+
+5. We need to create one more bucket. Again click the **Create Bucket** button.
+
+    ![Create Bucket button](./images/buck-3.png)
+
+6. Using the **Create Bucket** slide out form, set the **Bucket Name** to **processed-bucket**
+
+      **Bucket Name:** processed-bucket
+
+    ````
+    <copy>
+    processed-bucket
+    </copy>
+    ````
+
+    ![Create Bucket button](./images/buck-6.png)
+
+    Once the **Bucket Name** is **processed-bucket**, click the **Create** button on the bottom left of the form.
+
+    ![Create button](./images/buck-7.png)
+
+7. You should now have two buckets created in the livelabs compartment.
+
+    ![Create button](./images/buck-8.png)
+
 ## Next Steps
 
 Please move to the next section of the lab [Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](../csv-function/csv-function.md).
