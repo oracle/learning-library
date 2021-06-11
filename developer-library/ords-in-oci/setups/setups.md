@@ -272,6 +272,8 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
 14. Your Autonomous Database should be done creating in just a few short minutes. 
 
+15. 
+
 ## **SETUP 4**: Create a Virtual Cloud Network
 
 Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly create one with the VCN Wizard.
