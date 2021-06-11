@@ -401,10 +401,29 @@ With Oracle Functions, an application is:
 
     ![Deployed Function](./images/func-15.png)
 
-22. So we can see any issues with our function, we need to enable **logging**. 
+22. So we can see any issues with our function, we need to enable **logging**. On the left side of the **functionsApp Details Page**, find and click the **Logs** option.
 
-LOGGING HERE
+    ![Logs Option in Resources](./images/func-16.png)
 
+23. Now in the **Logs** section
+
+    ![Logs section](./images/func-17.png)
+
+    either click the toggle button in the **Enable Log** column
+
+    ![Enable Logs toggle](./images/func-18.png)
+
+    or use the pop out menu and select **Enable Log**.
+
+    ![Enable Logs pop out menu](./images/func-19.png)
+
+24. When the **Enable Log** slider form appears, keep the default values and click the **Enable Log** button in the lower left of the form.
+
+    ![Enable Logs form](./images/func-20.png)
+
+25. Our log is now enabled. You can view the log by clicking on the **functionsApp_invoke** link in the **Log Name column**.
+
+    ![view the log by clicking on the functionsApp_invoke link](./images/func-21.png)
 
 ## **STEP 4:** Create an Event
 
