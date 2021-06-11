@@ -331,6 +331,44 @@ Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly
 
    ![click the Create button](./images/vcn-12.png)
 
+## **SETUP 5**: Generate an Auth Token
+
+1. Use the OCI web console menu to navigate to **Identity & Security**, then **Users**
+
+   ![Identity & Security, then Users](./images/tok-1.png)
+
+2. On the Users page, find your user login and click the the name to go to the User Details page.
+
+   ![Users List Page](./images/tok-2.png)
+
+3. On the **User Details** page, on the left side of the page, under **Resources**, find and click **Auth Tokens**.
+
+   ![User Details Page](./images/tok-3.png)
+
+4. With Auth Tokens selected, click the **Generate Token** button.
+
+   ![Generate Token button](./images/tok-4.png)
+
+5. In the **Generate Token** modal window, set the description to **functions**
+
+    ````
+    <copy>
+    functions
+    </copy>
+    ````
+
+   ![Generate Token button](./images/tok-5.png)
+
+    then click the **Generate Token** button.
+
+    ![Generate Token button](./images/tok-6.png)
+
+6. The **Generated Token** will now be displayed. Click the **Copy** link and save this token somewhere we can refer to it later in the lab.
+
+    ![Generated Token](./images/tok-7.png)
+
+    When you have copied the token and saved it somewhere (text pad, notes app, etc), click the **Close** button.
+
 ## Next Steps
 
 Please move to the next section of the lab [Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](../csv-function/csv-function.md).

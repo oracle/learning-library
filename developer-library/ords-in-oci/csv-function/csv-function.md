@@ -193,7 +193,60 @@ With Oracle Functions, an application is:
 
     ![OCI Cloud Shell](./images/func-13.png)
 
-12. In the **Setup fn CLI on Cloud Shell** section, we will be copying and pasting many commands to use in the **OCI Cloud Shell** . Starting at **Step 2** copy and paste the first command 
+12. In the **Setup fn CLI on Cloud Shell** section, we will be copying and pasting many commands to use in the **OCI Cloud Shell** . Starting at **Step 2**, copy and paste the first command
+
+    ````
+    <copy>
+    fn list context
+    </copy>
+    ````
+
+    This will return something similar to the following:
+
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list context
+    CURRENT NAME            PROVIDER        API URL     REGISTRY
+            default         oracle-cs
+    ```
+
+    Now, we are going to set a context based on the region you are in. In this example, I am in the eu-frankfurt-1 region. Your command in the Getting Started section may differ but the command will be structured in the same way.
+
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn use context eu-frankfurt-1
+    Now using context: eu-frankfurt-1 
+    ```
+
+13. We are now going to update the context with the function's compartment ID with step 3. The OCI web console gives you this command to copy and paste with the compartment OCID already in the command; no need to fetch it. Copy, paste and run this command in the cloud shell.
+
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn update context oracle.compartment-id ocid1.compartment.oc1..aaaaaaaaszrdd8hj489fhfdrhf8sjwsns98n498dfjhnsdaioocereyzgkrkosw4q
+    Current context updated oracle.compartment-id with ocid1.compartment.oc1..aaaaaaaaszrdd8hj489fhfdrhf8sjwsns98n498dfjhnsdaioocereyzgkrkosw4q
+    ```
+
+14. In step 4, we will update the context with the location of the Registry you want to use. The command the UI gives is in the format:
+    ```
+    region_container_registry/tenancy_name/ocir_repo_name_of_your_choice
+    ```
+
+    You will see the command similiar to:
+    ```
+    fn update context registry fra.ocir.io/myTenancy/[OCIR-REPO]
+    ```
+    You can replace **[OCIR-REPO]** with any name you would like. For this lab, lets use livelabsRepo. Replace **[OCIR-REPO]** with **livelabsRepo** in your command
+    ```
+    fn update context registry fra.ocir.io/myTenancy/livelabsRepo
+    ```
+    and then run it
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn update context registry fra.ocir.io/myTenancy/livelabsRepo
+    Current context updated registry with fra.ocir.io/myTenancy/livelabsRepo
+    ```
+
+15. Step number 5 is going to require us to create an **Auth Token** so that we can login and use the container registry to deploy our functions. Click the **Generate an Auth Token** link in step number 5.
+
+    ![Click the Generate an Auth Token link](./images/func-14.png)
+
+16. Clicking this link will bring you to the
 
 https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html
 
