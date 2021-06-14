@@ -112,9 +112,7 @@ In this lab, you will create a service connector to move log data from the Loggi
 
 use the app created in previous section
 
-## **STEP 2:** Create a Service Connector
-
-
+## **STEP 3:** Create a Service Connector
 
 This section walks through creating a service connector using the Console. Your function must be deployed.
 
@@ -153,5 +151,14 @@ This section walks through creating a service connector using the Console. Your 
     
 6. Click Create.
 
+## **STEP 4:** Testing the flow
+
+put file in bucket
+
+in JSON workshop
+
+query
+
+{"subject": "csv-to-adw-with-ords-and-fn"}
 
 Greg Verstraeten

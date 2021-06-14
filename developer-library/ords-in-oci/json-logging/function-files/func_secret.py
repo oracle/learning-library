@@ -13,6 +13,7 @@ import logging
 import requests
 import base64
 import sys
+import oci
 
 from fdk import response
 
@@ -41,6 +42,7 @@ def soda_insert(ordsbaseurl, dbschema, dbuser, dbpwd, collection, logentries):
     return resp.json()
 
 def handler(ctx, data: io.BytesIO=None):
+    signer = oci.auth.signers.get_resource_principals_signer()
     logger = logging.getLogger()
     logger.info("function start")
 

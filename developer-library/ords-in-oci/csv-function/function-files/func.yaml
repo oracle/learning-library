@@ -1,6 +1,6 @@
 schema_version: 20180708
 name: csv-to-adw-with-ords-and-fn
-version: 1.0
+version: 1.0.0
 runtime: python
 entrypoint: /python/bin/fdk /function/func.py handler
 memory: 256
