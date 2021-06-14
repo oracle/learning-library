@@ -34,20 +34,20 @@ def read_secret_value(signer, secret_id):
     return secret_content
 
 
-def csv_insert(ordsbaseurl, schema, dbuser, secret_ocid, document):
-    auth=(dbuser, secret_ocid)
+def csv_insert(ordsbaseurl, schema, dbuser, dbpwd, document):
+    auth=(dbuser, dbpwd)
     batchurl = ordsbaseurl + schema + '/region/batchload?batchRows=5000&errorsMax=20'
     headers = {'Content-Type': 'text/csv'}
     r = requests.post(batchurl, auth=auth, headers=headers, data=document.data.text)
 
-def load_data(signer, namespace, bucket_name, object_name, ordsbaseurl, schema, dbuser, secret_ocid):
+def load_data(signer, namespace, bucket_name, object_name, ordsbaseurl, schema, dbuser, dbpwd):
     client = oci.object_storage.ObjectStorageClient(config={}, signer=signer)
     try:
         print("INFO - About to read object {0} in bucket {1}...".format(object_name, bucket_name), flush=True)
         # we assume the file can fit in memory, otherwise we have to use the "range" argument and loop through the file
         csvdata = client.get_object(namespace, bucket_name, object_name)
         if csvdata.status == 200:
-             insert_status = csv_insert(ordsbaseurl, schema, dbuser, secret_ocid, csvdata)
+             insert_status = csv_insert(ordsbaseurl, schema, dbuser, dbpwd, csvdata)
         else:
             raise SystemExit("cannot retrieve the object" + str(object_name))
     except Exception as e:
