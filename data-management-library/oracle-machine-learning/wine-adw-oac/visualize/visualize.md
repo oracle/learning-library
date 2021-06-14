@@ -13,7 +13,7 @@ Quick walk through on how to visualize your data.
 
 ### About Product/Technology
 
-Oracle Analytics Cloud is a scalable and secure public cloud service that provides a full set of capabilities to explore and perform collaborative analytics for you, your workgroup, and your enterprise. 
+Oracle Analytics Cloud is a scalable and secure public cloud service that provides a full set of capabilities to explore and perform collaborative analytics for you, your workgroup, and your enterprise.
 
 In this workshop, we'll be utilizing Oracle Analytics Cloud's robust data preparation and visualization features to quickly digest the data from our Oracle Machine Learning model in order to solve our business problem: Picking a good wine under 30$.
 
@@ -32,10 +32,10 @@ In this lab, you will:
 
 1. Download the project DVA file from the link below.
 
-  [Picking-a-Good-Wine.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xraRX_LWYpPPYaPoJpO_RhfcZk-nYj8RVaZjrMAZ08S4IleypHO5u9oUcSxW7IuS/n/c4u03/b/data-management-library-files/o/oracle-machine-learning/Picking%20a%20Good%20Wine.dva)
+  [Picking-a-Good-Wine.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/J1vVjhQoY0-F7B7xkhNytzP4m3UYN33gtu4vuVve550uLr9Rm1MOQFF6Mz6n202d/n/c4u03/b/data-management-library-files/o/oracle-machine-learning/Picking%20a%20Good%20Wine.dva)
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**. 
-	
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 3. Under **Compartment**, make sure you select the compartment **OACWINE** is located in. Then in the OACWINE instance row, click the **Three Dots** to expand out the menu and select **Analytics Home Page**. Feel free to bookmark this page to navigate back to it easier.
@@ -90,7 +90,7 @@ In this lab, you will:
 
   ![](./images/step2-5.png  " ")
 
-6. Next, we need to blend the WINEREVIEWS130KTEXT and BEST\_WINES datasets together by matching their identical columns. This will enable us to pull columns from both datasets for our canvases. Hover your cursor over the area between the two diagrams and click the link between them. 
+6. Next, we need to blend the WINEREVIEWS130KTEXT and BEST\_WINES datasets together by matching their identical columns. This will enable us to pull columns from both datasets for our canvases. Hover your cursor over the area between the two diagrams and click the link between them.
 
   ![](./images/step2-6.png  " ")
 
@@ -128,7 +128,7 @@ In this lab, you will:
         - Drag **PREDICTION_PROBABILITY** to **Rows**
         - Drag **PRICE** to **Rows**
         - Drag **VARIETY** to **Rows**
-  
+
     * WINEREVIEWS130KTEXT
         - Drag **POINTS** to **Rows**
 
@@ -141,11 +141,11 @@ In this lab, you will:
 
   ![](./images/step3-canvas1.png  " ")
 
-4. First thing we will do is set a global filter across all canvases limiting our results to wines that are predicted to be GT\_90\_Points. In this way, PREDICTION_PROBABILITY becomes a measure of probability for which wine with be good. From BEST\_WINES, drag **PREDICTION** to the top filter bar and select **GT\_90\_Points**. The top filter bar will apply the filter to all visualizations in a particular canvas, but you can also put filters for individual visualizations in their respective Filters property at the bottom of their panel. Click the **Pin** to the left of PREDICTION, this will apply the filter across all 6 of our canvases. 
+4. First thing we will do is set a global filter across all canvases limiting our results to wines that are predicted to be GT\_90\_Points. In this way, PREDICTION_PROBABILITY becomes a measure of probability for which wine with be good. From BEST\_WINES, drag **PREDICTION** to the top filter bar and select **GT\_90\_Points**. The top filter bar will apply the filter to all visualizations in a particular canvas, but you can also put filters for individual visualizations in their respective Filters property at the bottom of their panel. Click the **Pin** to the left of PREDICTION, this will apply the filter across all 6 of our canvases.
 
   ![](./images/step3-4.png  " ")
 
-5. Take a look at your visualizations. The map visualization gives you a quick snapshot of the average price of all wines for each country. The table visualization gives you detailed information for each individual wine based on their ID. The scatter plot graph shows the average of a wine's average probability of being good over their average cost, filtered by variety. There is some good information to be gleamed from them right now, but the there is too much data for it to really be useful. 
+5. Take a look at your visualizations. The map visualization gives you a quick snapshot of the average price of all wines for each country. The table visualization gives you detailed information for each individual wine based on their ID. The scatter plot graph shows the average of a wine's average probability of being good over their average cost, filtered by variety. There is some good information to be gleamed from them right now, but the there is too much data for it to really be useful.
 
   ![](./images/step3-5.png  " ")
 
@@ -153,11 +153,11 @@ In this lab, you will:
 
   ![](./images/step3-6.png  " ")
 
-7. In this example, we're going to narrow our search to the United States. Click the **United States** in the map visualization which will automatically filter the data in the other visualizations within the canvas. 
+7. In this example, we're going to narrow our search to the United States. Click the **United States** in the map visualization which will automatically filter the data in the other visualizations within the canvas.
 
   ![](./images/step3-7.png  " ")
 
-8. Next, in the bottom right graph visualization, we can select a variety to filter with by selecting it in the legend. Scroll through the legend, and select **Chardonnay** or any other variety you'd like. 
+8. Next, in the bottom right graph visualization, we can select a variety to filter with by selecting it in the legend. Scroll through the legend, and select **Chardonnay** or any other variety you'd like.
 
   ![](./images/step3-8.png  " ")
 
@@ -201,7 +201,7 @@ In this lab, you will:
         - Drag **PRICE** to **Values (X-Axis)**
         - Drag **COUNTRY** to **Category (Y-AXIS)**
         - Drag **PREDICTION_PROBABILITY** to **Color**
-  
+
 3. Right Visualization (Horizontal Stacked)
     * BEST\_WINES
         - Drag **PRICE** to **Values (X-Axis)**
@@ -291,13 +291,13 @@ In this lab, you will:
 
 To recap, we first took the top-down approach in the initial canvas where we take a global perspective to identify the wines based on the price and quality worldwide, which is achieved using the map visualization.
 
-Then, we drilled down further in the next canvas in order to find wines based on average price by variety and by region as each person has different preferences. 
+Then, we drilled down further in the next canvas in order to find wines based on average price by variety and by region as each person has different preferences.
 
 Next, we dedicated a canvas page on displaying wine prices by country with coloring to depict how likely those wines were to be good. We also demonstrated the handiness of having a dedicated list box in which to filter wine variety, and the use of sorting to distinguish the individual usefulness of two visualizations that were very similar.
 
 An important feature while making any data driven decisions is to know how important each attribute is in comparison to the bigger picture. In the following 2 canvases, we first created a tag cloud visualization to show the top 50 most important attributes, then we used 2 more tag clouds to distinguish between the Top 25 best (positive) attributes and Bottom 25 worst (negative) attributes that contributed to our prediction of whether a wine is good or bad.  Knowing these attributes can assist you making the decision to buy after reading wine descriptions.
 
-Lastly, we created a canvas to provide us price and location insights when we select a variety from the scatter plot, and put in filters to help us find a wine under $30 that has a high probability of being good.  This enabled us to narrow down our wine choices from over 130 thousand to just 4 that met our criteria. 
+Lastly, we created a canvas to provide us price and location insights when we select a variety from the scatter plot, and put in filters to help us find a wine under $30 that has a high probability of being good.  This enabled us to narrow down our wine choices from over 130 thousand to just 4 that met our criteria.
 
 To conclude, from canvas to canvas we gather more and more information about wines and eventually were able to answer questions that someone such as yourself might have. What are the best wines? Where can I find the wines which I like ? What's the price that I am willing to pay? What are the attributes of a good wine? etc. From a technical standpoint, we saw how we can leverage Oracle's two major products, Oracle Autonomous Database and Oracle Analytics Cloud, to make more informed decisions.
 

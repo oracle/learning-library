@@ -6,7 +6,7 @@ Oracle is a relational database, meaning it typically stores data in rows and co
 
 In order to create a collection all you have to specify is the collection's name. Unlike a relational table you do not have to provide any schema information. So, lets create a collection for the products we want to sell in the store.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -25,17 +25,29 @@ In this lab, you will:
 
 1. To create a collection, click on **Create Collection**.
 
+	![](./images/create-collection.png)
+
 2. Provide a name for your collection in the field **Collection Name - products** and click **Create**.
+
+	![](./images/products.png)
 
 3. A notification pops up that displays `products` collections is created.
 
+	![](./images/popup.png)
+
 4. Click on the refresh button to verify `products` collection is created.
+
+	![](./images/refreshed.png)
 
 ## **STEP 2**: Insert First Document
 
 1. Double click on **products** collection to show the **JSON-products** worksheet.
 
+	![](./images/double-clicked.png)
+
 2. Click on New JSON Document button.
+
+	![](./images/new-document.png)
 
 3. A New JSON Document panel displays. Copy the following code, paste it in the worksheet and click **Create**.
 
@@ -55,10 +67,13 @@ In this lab, you will:
 	}
 	</copy>
 	```
+	![](./images/paste1.png)
 
-3. A notification pops up that says A New Document is created and the new document is shown in the bottom section of the JSON workshop.
+4. A notification pops up that says A New Document is created and the new document is shown in the bottom section of the JSON workshop.
 
-4. Let's repeat this with the following documents:
+	![](./images/popup2.png)
+
+5. Let's repeat this with the following documents:
 
 	Click on New JSON Document button, copy the following codes one by one, paste it in the worksheet and click **Create**.
 
@@ -80,6 +95,8 @@ In this lab, you will:
 		"year": 1982,
 		"decade": "80s"
 	}
+	![](./images/paste1.png)
+
 	</copy>
 	```
 
@@ -139,6 +156,8 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"id":101}
 	</copy>
 	```
+	![](./images/id101.png)
+	![](./images/id101-results.png)
 
 3.	Find all DVDs:
 
@@ -149,6 +168,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"format":"DVD"}
 	</copy>
 	```
+	![](./images/dvd-results.png)
 
 4.	Find all non-movies:
 
@@ -159,6 +179,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"type":{"$ne":"movie"}}
 	</copy>
 	```
+	![](./images/not-movies.png)
 
 5.	Find products where description contain the word 'new'.
 
@@ -167,6 +188,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"condition":{"$like":"%new%"}}
 	</copy>
 	```
+	![](./images/new.png)
 
 6. Find bargains of all products costing 5 or less:
 
@@ -177,6 +199,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"price":{"$lte":5}}
 	</copy>
 	```
+	![](./images/less5.png)
 
 7. Limit above query to just movies and exclude the book:
 
@@ -187,6 +210,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"$and":[{"price":{"$lte":5}}, {"type":"movie"}]}
 	</copy>
 	```
+	![](./images/less5-movie.png)
 
 ## **STEP 4:** JSON and Constraints
 
@@ -206,10 +230,11 @@ Some values need to be unique, so how do we enforce it?
 	}
 	</copy>
 	```
+	![](./images/step4.1.png)
 
 2. Use QBE:
 
-	Copy and paste the following query in the worksheet and click **Create**.
+	Copy and paste the following query in the worksheet and click **Run Query**.
 
 	Shows duplicate which is not good and so let's delete the last inserted document by clicking on the trash bin button.
 
@@ -218,12 +243,15 @@ Some values need to be unique, so how do we enforce it?
 	{"id":100}
 	</copy>
 	```
+	![](./images/id100.png)
 
 	It is likely we are looking up products by their id. Let's a create an index that gives fast access to 'id'. Make sure id is unique and numeric.
 
 	Now we use a field 'id' in the JSON document to identify the product. The value could also be a SKU (barcode) or some catalog number. Obviously, every product needs an id and we want this to be a unique numeric value across all duplicates. Also, we want to be able to quickly find a product using the id value. So, let's create a unique index that solves all requirements (unique, numeric, present).
 
 3.	Let's navigate to SQL Developer Web. Click on the navigation menu on the top left and select **SQL** under Development.
+
+	![](./images/sql-dw.png)
 
 4. Copy and paste the below query in the worksheet and click on Run query button to creates a unique index that solves all requirements (unique, numeric, present).
 
@@ -232,10 +260,13 @@ Some values need to be unique, so how do we enforce it?
 	create unique index product_id_idx on products (JSON_VALUE(json_document, '$.id.number()' ERROR ON ERROR));
 	</copy>
 	```
+	![](./images/index.png)
 
 	JSON_Value is a SQL/JSON function that extracts one value from the JSON data that is specified by a JSON Path Expression - in this case we extract the 'id' and convert the selected value to a SQL number. You'll learn more about SQJ/JSON functions later in this lab.
 
 5.	Once the product\_id\_idx is created, navigate back to JSON workshop. Click on the navigation menu on the top left and select **JSON** under Development.
+
+	![](./images/json-nav.png)
 
 6.	Try to insert some documents that do not have an id or a non-numeric id:
 
@@ -248,8 +279,12 @@ Some values need to be unique, so how do we enforce it?
 	{"id":"xxx","title":"Top Gun"}
 	</copy>
 	```
+	![](./images/create-error.png)
+	![](./images/error.png)
 
 7.  While we're at it lets add more 'checks' - we call them 'constraints'. Navigate back to the SQL Developer Web. Click on the navigation menu on the top left and select **SQL** under Development.
+
+	![](./images/nav.png)
 
 8. Check constraint to make sure every product also has a title of string data type and price >=0.
 
@@ -262,10 +297,13 @@ Some values need to be unique, so how do we enforce it?
 	alter table products add constraint required_fields check (JSON_EXISTS(json_document, '$?(@.title.type() == "string" && @.price.number() > 0)'));
 	</copy>
 	```
+	![](./images/sql-query.png)
 
 	JSON_Exists is a SQL/JSON function that checks that a SQL/JSON path expression selects at least one value in the JSON data. The selected value(s) are not getting extracted – only their existence is checked. You'll learn more about SQJ/JSON functions later in this lab.
 
 9. Once the *products* table is altered, navigate back to JSON workshop. Click on the navigation menu on the top left and select **JSON** under Development.
+
+	![](./images/nav2-json.png)
 
 10. Validate that the following documents cannot get inserted as fields are missing or of wrong type.
 
@@ -278,8 +316,10 @@ Some values need to be unique, so how do we enforce it?
 	{"id":"200","title":"Top Gun"}
 	</copy>
 	```
+	![](./images/tester.png)
+	![](./images/error2.png)
 
-11. The following document now satisfies all the constraints: the is a unique number the title is a string and the price is a positive number.
+11. The following document now satisfies all the constraints: the "id" is a unique number the title is a string and the price is a positive number.
 
 	```
 	<copy>
@@ -307,4 +347,4 @@ You may now [proceed to the next lab](#next).
 
 - **Author** - Beda Hammerschmidt, Roger Ford
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021

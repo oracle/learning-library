@@ -54,7 +54,6 @@ You may now **proceed to the next lab.**
 ## Acknowledgments
 
 **Created By/Date**   
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 

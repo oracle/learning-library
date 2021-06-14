@@ -22,7 +22,7 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
 
 すでにクラウドアカウントをお持ちの方は、**STEP2**へお進みください。
 
-1. Webブラウザを開いて、 [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en)のOracle Cloudアカウント登録フォームにアクセスします。
+1. Webブラウザを開いて、 [oracle.com/cloud/free](https://signup.cloud.oracle.com)のOracle Cloudアカウント登録フォームにアクセスします。
 2.  登録ページが表示されます.
        ![](images/ja-jp-cloud-infrastructure.png " ")
 3.  次の情報を入力して、Oracle Cloud Free Tierアカウントを作成します。
@@ -30,7 +30,7 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
     * **氏名**と**メールアドレス**
 
 4. 有効なメールアドレスを入力したら、 **電子メールの検証** ボタンを選択します。ボタンを選択すると以下のような画面が表示されます。
-    ボタンを選択すると以下のような画面が表示されます:<br> 
+    ボタンを選択すると以下のような画面が表示されます:<br>
        ![](images/ja-jp-verify-email.png " ")
 
 5. 電子メールを確認します。受信トレイにオラクルからのアカウント検証メールが表示されます。メールは以下のような内容になります:<br>
@@ -109,4 +109,3 @@ Oracle Cloudからサインアウトした場合は、以下の手順を使用�
 - **作成者・日時** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
 - **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
 - **最終更新日** - Rene Fontcha, February 2021
-

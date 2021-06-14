@@ -1,0 +1,24 @@
+{
+    "workshoptitle": "Sample Application with Oracle Cloud Infrastructure Data Flow",
+    "tutorials": [
+      {
+          "title": "Prerequisites",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
+      },
+
+        {
+            "title":"Introduction",
+            "filename": "../../intro/intro.md"
+        },
+
+        {
+            "title":"Lab 0: Setting up Oracle Cloud Infrastructure Data Flow",
+            "filename": "../../dataflow-sampleapp/setupdf.md"
+        },
+        {
+            "title": "Lab 1: Sample Python Application to convert CSV into Parquet",
+            "filename": "../../dataflow-sampleapp/sampleapp.md"
+        }
+
+    ]
+}

@@ -1,4 +1,3 @@
-# Getting Started
 
 ## Setting up Oracle Cloud Infrastructure Data Flow
 
@@ -28,26 +27,54 @@ Before you Begin with Data Flow lab, you must have:
 
 ## **STEP 1**: Object Store: Setting Up Storage
 
-1. Before running application in Data Flow service, create two storage buckets that are required in object storage
+1. Before running the application in the Data Flow service, create two storage buckets that are required in object storage.
 
-     * A bucket to store the logs (both standard out and standard err) for every application run.Create a standard storage tier bucket called `dataflow-logs` in the Object Store service. The location of the bucket must follow the pattern:
+    * From the OCI Services menu, click `Storage` and then click `Buckets` under Object Storage
 
-       ```
-       <copy>oci://dataflow-logs@<Object_Store_Namespace>/</copy>
-       ```
+       ![](../images/OBJECT-STORAGE001.png " ")
 
-     * A data warehouse bucket for Spark SQL applications. Create a standard storage tier bucket called `dataflow-warehouse` in the Object Store service. The location of the warehouse must follow the pattern:
+    * Click `Bucket`
+       ![](../images/BUCKET001.png " ")
 
-      ```
-       <copy>oci://dataflow-warehouse@<Object_Store_Namespace>/</copy>
-      ```
+      **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+
+    * A bucket to store the logs (both standard out and standard err) for every application run.Create a standard storage tier bucket called `dataflow-logs` in the Object Store service.
+
+      ![](../images/CREATEBUCKET001.png " ")
+
+    * A data warehouse bucket for Spark SQL applications. Create a standard storage tier bucket called `dataflow-warehouse` in the Object Store service.
+        ![](../images/DATAWAREHOUSEBUCKET.png " ")
+
 ## **STEP 2**: Identity: Policy Set Up
+
+A user's permissions to access services comes from the _groups_ to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
+
+We'll create a user, a group, and policies to understand the concept.
+
 
 1. **User Policies** : Data Flow requires policies to be set in IAM to access resources in order to manage and run applications. We categorize the Data Flow users into two groups for clear separation of authority administrator and users:
 
-    * Create a group in your identity service called `dataflow-admin` and add users to this group.
+    * From the OCI Services menu, click `Identity and Security` and in identity click `Group`
 
-    * Create a policy called `dataflow-admin` and add the following statements:
+        ![](../images/Groups001.png " ")
+
+    * Create a group in your identity service called `dataflow-admin`
+
+        ![](../images/DataflowAdminUser.png " ")
+
+    * Click on your new group to display it. Your new group is displayed.Add users to the groups
+
+        ![](../images/AddUsertoDFAdminGroup.png " ")
+
+        ![](../images/AddUsers.png " ")
+
+    * From the OCI Services menu, click `Identity and Security` and in identity click `Policies`
+
+        ![](../images/Policies001.png " ")    
+
+    * Create a policy called `dataflow-admin` in your `compartment` and add the following statements:
+
+       ![](../images/CreateDFAdminPolicy.png " ")  
 
       ```
       <copy>
@@ -68,7 +95,12 @@ Before you Begin with Data Flow lab, you must have:
       </copy>
       ```
     * Create a group in your identity service called dataflow-users and add users to this group.
+
+      ![](../images/DFUserGroup.png " ")
+
     * Create a policy called dataflow-users and add the following statements:
+
+      ![](../images/dfcreateuserspolicies.png " ")
 
       ```
       <copy>
@@ -94,7 +126,6 @@ Before you Begin with Data Flow lab, you must have:
       ALLOW SERVICE dataflow TO READ objects IN tenancy WHERE target.bucket.name='dataflow-logs'
       </copy>
       ```
-*Please proceed to the next lab*     
 
 ## Acknowledgements
 

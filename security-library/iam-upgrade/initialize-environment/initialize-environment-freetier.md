@@ -135,7 +135,25 @@ As a result, launching your workshop guide from the remote desktop will further 
     <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
     ```
 
-## **STEP 5:** Login to Host using SSH Key based authentication (Optional)
+## **STEP 5:** Review the ReadMe.txt and Binaries
+
+1. Review environment details to learn more about the setup. Navigate to the file browser as shown below and open *ReadMe.txt*.
+
+    ![](./images/open-readme.png " ")
+
+2. For your convenience, all software binaries needed throughout the workshop have been staged on the instance. Refer to the details below to review
+
+    - Review 12c Binaries
+    ```
+    <copy>ls -ltrh /home/oracle/Downloads/12cbits </copy>
+    ```
+    - Review 11g Binaries
+    ```
+    <copy>ls -ltrh /home/oracle/Downloads/11gbits </copy>
+    ```
+    ![](./images/staged-software-2.png " ")
+
+## **STEP 6:** Login to Host using SSH Key based authentication (Optional)
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
 
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):

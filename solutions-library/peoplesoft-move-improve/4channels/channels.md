@@ -19,22 +19,22 @@ In this lab you will:
 
 2.	Click on **Download Subscriptions** on the left and switch over to the **Unsubscribed** tab.
 
-3.	We will be creating an HCM environment later, so scroll down **HCM\_92\_Linux**, click the arrow and then **Subscribe**
+3.	We will be creating an HCM environment, so scroll down **HCM\_92\_Linux**, click the arrow and then **Subscribe**
 
     ![](./images/1.png "")
-
-4. Go to the subscribed tab to view **HCM\_92\_Linux** progress status. 
+4. Repeat the same steps for **HCM\_92\_Windows** as our environment will have both a Linux node and a Windows node.
+5. Go to the subscribed tab to view progress status for both channels.
     ![](./images/patchlist.png "")
 
-    *This takes ~2 hours to complete.* Make sure you refresh the page to check the current progress. Proceed to next Lab only when you see a green check as the status as shown in the picture.
+    *This takes ~2 hours to complete.* 
+    Make sure you refresh the page to check the current progress. Proceed to next lab only when you see green check marks as the status for both **HCM\_92\_Linux** and **HCM\_92\_Windows** as shown in the picture:
 
-    ![](./images/s.png "")
+    ![](./images/2channels.png "")
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgments
-* **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
-* **Contributor** -  Sara Lipowsky, Cloud Engineer
+* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 

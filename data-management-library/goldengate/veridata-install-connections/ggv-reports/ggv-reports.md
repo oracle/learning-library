@@ -5,7 +5,7 @@ A comparison report is generated for each job, group, and compare pair that is f
 
 The comparison report tells you how extensive an out-of-sync problem is. It also provides performance statistics and, optionally, column details. The comparison report can be viewed by any user role.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:
@@ -22,9 +22,9 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
-    * Oracle GoldenGate Veridata installed
-    * Groups and Compare Pairs have been created as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
-    * Jobs have been created and executed as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
+    * Source and Target connections are created as described in **Lab: Create Datasource Connections**.
+    * Groups and Compare Pairs are configured as described in **Lab: Create Groups and Compare Pairs**.
+    * Jobs are created and executed as described in **Lab: Create and Execute Jobs**.
 
 ## **STEP 1:** View a Report
 
@@ -41,10 +41,13 @@ This lab assumes you have:
     * **Compare Pair Like**: Retrieves reports for compare pairs whose names contain a string that matches the one you enter.
     * **Show Report Names Like**: Retrieves reports whose file names contain a string that match the one you enter.
 4. Select the Report from **Existing Reports**.
-      ![](./images/2-reports-selection-view.png " ")
-5. Click **View** to display the **Report View**.
-      ![](./images/3-reports-view-download-option.png " ")
-6. Click **Download this Report** in case you want to download and save the report for a future reference.  
+
+5. Click the **Report Name** link to display the **Report**.
+    ![](./images/2-reports-selection-view.png " ")
+
+6. Click **Download This Report** in case you want to download and save the report for a future reference.  
+
+  ![](./images/3-reports-view-download-option.png " ")
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -53,5 +56,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
+* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
+* **Last Updated By/Date** - Anuradha Chepuri, June 2021

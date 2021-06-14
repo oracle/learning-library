@@ -4,6 +4,7 @@
 
 This lab walks you through the steps to make an OML user and use SQL Developer as an interface to the ADW instance for granting user privileges. Then you will use OML to run a SQL script to generate machine learning models.
 
+Estimated Lab Time: 30 minutes
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
 [](youtube:uprqKyeuxik)
@@ -14,9 +15,8 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 -   Learn how to grant user privileges using SQL developer web
 -   Learn how to run an OML script
 
-### Required Artifacts
+### Prerequisites
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
--   The estimated time to complete this lab is 30 minutes.
 
 ### Extra Resources
 -   To learn more about Oracle Machine Learning (OML), feel free to explore the capabilities by clicking on this link: [OML Overview](https://www.oracle.com/database/technologies/datawarehouse-bigdata/oml-notebooks.html)
@@ -59,7 +59,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
 9. Now that you have an OML user created, make sure to keep note of the login details. You will use this user later in this workshop.
 
-## **STEP 2**: Access SQL Developer Web and Grant OML user priviliges
+## **STEP 2**: Access SQL Developer Web and Grant OML user privileges
 
 1. We will use SQL Developer Web, an included cloud service with your ADW instance, to grant the necessary privileges for the OML user **testuser** to run the future prediction model OML script.
 
@@ -67,7 +67,7 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/1.png " ")
 
-3. Click the **Development** tab and click **SQL Developer Web** to access SQL Developer through the cloud.
+3. Click the **Development** tab and click **Database Actions** to access SQL Developer through the cloud.
 
     ![](./images/sqlw1.png " ")
 
@@ -75,20 +75,22 @@ This lab walks you through the steps to make an OML user and use SQL Developer a
 
     ![](./images/sqlw2.png " ")
 
-5. This will open up a view of your database as the admin user and you can run sql queries directly in your browser. We will be running a SQL query to grant our new OML user specific privileges so we can create and modify tables.
+5. Select **SQL**. This will open up a view of your database as the admin user and you can run sql queries directly in your browser. We will be running a SQL query to grant our new OML user specific privileges so we can create and modify tables.
+
+    ![](./images/30.png " ")    
 
 6. First, click on the **ADMIN** user on the dropdown of all users and then scroll down to select **testuser**, the OML user that you created earlier. This will give us the ability to see the content and privileges of **testuser**.
 
     ![](./images/sqlw3.png " ")
 
 7. Let's grant this user some privileges. Copy and paste the following SQL query into the **[Worksheet]** section:
-```
-<copy>
-GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, READ ANY TABLE, SELECT ANY TABLE, UNDER ANY TABLE, UPDATE ANY TABLE TO TESTUSER
-</copy>
-```
+    ```
+    <copy>
+    GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP ANY TABLE, INSERT ANY TABLE, READ ANY TABLE, SELECT ANY TABLE, UNDER ANY TABLE, UPDATE ANY TABLE TO TESTUSER
+    </copy>
+    ```
 
-- Note: if you created an OML user with a different name other than **TESTUSER**, make sure to modify the end of the above SQL code with your specific user name appropriately.
+    *Note*: if you created an OML user with a different name other than **TESTUSER**, make sure to modify the end of the above SQL code with your specific user name appropriately.
 
     ![](./images/sqlw4.png " ")
 
@@ -125,13 +127,15 @@ GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP AN
 ## **STEP 4**: Run the OML script
 1. OML notebooks are structured with Paragraph sections that consist of markdown and SQL code. The paragraphs can be run one by one or all together.
 
-2. In order for the notebook to communicate with the database, an interpreter binding must be set for the database connection. Click on the **Gear** interpreter binding button and click on **adwdemo_low**. This service name will be labeled with your ADW instance name (which we name **adwdemo** by default in this workshop) and then low, medium, or high. To run this script, a low concurrency option is preferred to avoid script errrors.
+2. In order for the notebook to communicate with the database, an interpreter binding must be set for the database connection. Click on the **Gear** interpreter binding button and click on **adwdemo_low**. This service name will be labeled with your ADW instance name (which we name **adwdemo** by default in this workshop) and then low, medium, or high. To run this script, a low concurrency option is preferred to avoid script errors.
 
 3. Click **Save** to bind the connection to the OML interpreter.
 
     ![](./images/23.png " ")
 
-4. Then, in order for the intepreter binding to go through, refresh your browser window by clicking on your browser's **refresh icon**. The OML code should appear with colors now, signalling that the intepreter is correctly interpreting the code as SQL.
+4. Then, in order for the interpreter binding to go through, refresh your browser window by clicking on your browser's **refresh icon**. The OML code should appear with colors now, signalling that the interpreter is correctly interpreting the code as SQL.
+
+    ![](./images/31.png " ")
 
 5. Now we have to run the scripts in the ML Notebook. Some notebooks may take longer to run than others. In particular, the "build glm model" script block will likely take up to 10 minutes to fully run. This is an important step in building the ML model, so be sure to be patient and wait until this script completely finishes each code block.
 
@@ -139,9 +143,9 @@ GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP AN
 
     ![](./images/24.png " ")
 
-- Note: the Run all Paragraphs option may lead to some errors. If that occurs, it is recommended that you run each of the notebooks separately.  To do so, click the **Run** button on the top right of each script, outlined in red in the image below.  You must do this for each script in the notebook.  Do not run the next script until the script before it has finished running.  These must be done sequentially.  When the script has finished running, it will say **FINISHED** next to the "run" button.  If the run was unsuccessful, it will say **ERROR** next to the "run" button.  If this happens, try running the script again.  Make sure to run every script in the notebook. Additionally, if there is no "run" button next to a script, it does not need to be run.  Once all scripts have successfully finished running, you are ready to move on!
+    Note: the Run all Paragraphs option may lead to some errors. If that occurs, it is recommended that you run each of the notebooks separately.  To do so, click the **Run** button on the top right of each script, outlined in red in the image below.  You must do this for each script in the notebook.  Do not run the next script until the script before it has finished running.  These must be done sequentially.  When the script has finished running, it will say **FINISHED** next to the "run" button.  If the run was unsuccessful, it will say **ERROR** next to the "run" button.  If this happens, try running the script again.  Make sure to run every script in the notebook. Additionally, if there is no "run" button next to a script, it does not need to be run.  Once all scripts have successfully finished running, you are ready to move on!
 
-- Note: feel free to learn more about Oracle Machine Learning (OML) by clicking on the following text link: [OML Overview](https://www.oracle.com/database/technologies/datawarehouse-bigdata/oml-notebooks.html)
+    Note: feel free to learn more about Oracle Machine Learning (OML) by clicking on the following text link: [OML Overview](https://www.oracle.com/database/technologies/datawarehouse-bigdata/oml-notebooks.html)
 
 7. You have just ran a prediction model using OML through a SQL script! Let's view some of the data using your APEX app.
 
@@ -173,6 +177,6 @@ GRANT ALTER ANY TABLE, CREATE ANY TABLE, CREATE TABLE, DELETE ANY TABLE, DROP AN
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributors** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Jess Rein, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
 

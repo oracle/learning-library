@@ -21,9 +21,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
-- Lab 2: Create MySQL Database Service
+- All previous labs have been successfully completed.
 
 ## **STEP 1:** Create Your OCI Data Integration Instance
 

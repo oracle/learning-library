@@ -82,7 +82,9 @@ The data is provided in CSV format and your first step is to convert this data t
     At this stage your application Configuration should look like this :
     ![](../images/step2_add_args_java_app.png " ")
 
+
   *Note: The output path should point to your bucket in the tenancy*
+
 
 7. When done, click **Create**. When the Application is created, you see it in the Application list.
 

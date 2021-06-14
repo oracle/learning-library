@@ -26,7 +26,7 @@ To run this lab, you will need:
 
   Get Docker here: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
 
-  ***Note: You need at least 3 CPUs and 6Gb of memory assigned to Docker to run this template.***
+  > **Note:** You need at least 3 CPUs and 6GB of memory assigned to Docker to run this template.
 
 - Docker-compose installed (on Linux it needs to be installed separately, but it is installed automatically on Mac OS and Windows).
 
@@ -98,7 +98,7 @@ You can also download the code [here](https://objectstorage.us-ashburn-1.oraclec
     </copy>
     ```
 
-    If you do not have wget installed, you can download through your browser, or install wget with: 
+    If you do not have wget installed, you can download through your browser, or install wget with:
     ```
     <copy>
     brew install wget
@@ -130,20 +130,20 @@ This repository makes use of Oracle docker images, which are licensed and need t
 1. Sign in to Docker Hub and go to the **Oracle Database** page and accept the license terms at:</br>
   <a href="https://hub.docker.com/_/oracle-database-enterprise-edition" target="_blank">https://hub.docker.com/_/oracle-database-enterprise-edition</a>.
 
-    - Click **Proceed to Checkout**.
-    - Fill in your information.
-    - Accept the terms of license.
-    - Click **Get Content**.
+    1. Click **Proceed to Checkout**.
+    1. Fill in your information.
+    1. Accept the terms of license.
+    1. Click **Get Content**.
 
 2. Go to the **Instant Client** page and accept the license terms for the SQL*Plus Instant Client at:</br>
   <a href="https://hub.docker.com/_/oracle-instant-client" target="_blank">https://hub.docker.com/_/oracle-instant-client</a>.
 
-    - Click **Proceed to Checkout**.
-    - Fill in your information.
-    - Accept the terms of license.
-    - Click **Get Content**.
+    1. Click **Proceed to Checkout**.
+    1. Fill in your information.
+    1. Accept the terms of license.
+    1. Click **Get Content**.
 
-3. Log in to docker, providing your docker-hub username and password:
+3. Start up docker, providing your docker-hub username and password:
 
     ```bash
     <copy>
@@ -167,7 +167,7 @@ This repository makes use of Oracle docker images, which are licensed and need t
     </copy>
     ```
 
-    This step can take several minutes because some images need to be built. 
+    This step can take several minutes because some images need to be built.
 
 3. On Linux or Windows, Docker permission may cause issues, so run:
 
@@ -193,7 +193,7 @@ Go to the appropriate registry and image page, and go through the acknowledgemen
 
 For the Tomcat container to run the application, the database needs to be ready, and the schemas created. Be patient.
 
-1. To check status of the initialization, you can check if the `tomcat-to-oci_oracledbinit_1` container has finished running by running:
+1. To check status of the initialization, you can check if the `tomcat-to-oci_oracledbinit_1` container has finished running with:
 
     ```
     <copy>
@@ -202,7 +202,7 @@ For the Tomcat container to run the application, the database needs to be ready,
     ```
 
     The following output shows the init container has terminated and the system should be ready:
-    
+
     ```
     CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS                             PORTS                                                          NAMES
     c99433b680ce        tomcat-to-oci_tomcat         "catalina.sh run"        26 seconds ago      Up 25 seconds                      0.0.0.0:8080->8080/tcp                                         tomcat-to-oci_tomcat_1
@@ -233,7 +233,7 @@ For the Tomcat container to run the application, the database needs to be ready,
 
 ## **STEP 5:** Create an SSH key
 
-*We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
+We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.
 
 Since we'll be running all our commands from docker containers, a folder has been mounted on the `~/.ssh/` folder inside both containers, so that it is shared and also accessible from the outside.
 
@@ -258,13 +258,13 @@ We'll create an SSH key pair in this folder.
 
 3. You should find two files `id_rsa` and `id_rsa.pub` inside the folder `./tomcat-to-oci/ssh/` on your local machine, and under `~/.ssh/` inside the containers.
 
-    `id_rsa` is the private key, which should never be shared, and will be required to connect to any OCI resource provisioned with the corresponding public key `id_rsa.pub`.
+    `id_rsa` is the private key, which should never be shared, and will be required to connect to any Oracle Cloud Infrastructure (OCI) resource provisioned with the corresponding public key `id_rsa.pub`.
 
     Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you would need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`.
 
-    **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
+    > **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
 
-    **Note:** If you're using a firewall and your instance is not local, make sure the ports for Tomcat (8080) is open to be able to test the environment.
+    > **Note:** If you're using a firewall and your instance is not local, make sure the ports for Tomcat (8080) is open to be able to test the environment.
 
 4. Output the content of the public key:
 
@@ -274,9 +274,8 @@ We'll create an SSH key pair in this folder.
     </copy>
     ```
 
-    Copy the full text output into a notepad for later use. 
+    Copy the full text output into a notepad for later use.
 
-You may proceed to the next lab.
 
 ## Acknowledgements
 

@@ -24,10 +24,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
-- Lab 2: Create MySQL Database Service
-- Lab 3: Create Data Integration Instance
+- All previous labs have been successfully completed.
 
 ## **STEP 1:** Create the Data Flow
 

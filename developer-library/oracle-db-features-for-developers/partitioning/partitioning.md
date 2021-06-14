@@ -1,17 +1,17 @@
 # Hybrid Partitioning
 
-## Introduction 
+## Introduction
 In this lab, you will explore Hybrid Partitioning, a new feature introduced in Oracle Database 19c.
 
 Estimated Lab Time:  30 minutes
 
-## About Partitioning
+### About Partitioning
 
 Partitioning can provide tremendous benefit to a wide variety of applications by improving performance, manageability, and availability. It is not unusual for partitioning to greatly improve the performance of certain queries or maintenance operations. Moreover, partitioning can greatly simplify common administration tasks.
 
 Partitioning also enables database designers and administrators to solve some difficult problems posed by cutting-edge applications. Partitioning is a key tool for building multi-terabyte systems or systems with extremely high availability requirements.
 
-## About Hybrid Partitioning
+### About Hybrid Partitioning
 
 The Hybrid Partition Tables feature extends Oracle Partitioning by enabling partitions to reside in both Oracle Database segments and in external files and sources. This feature significantly enhances the functionality of partitioning for Big Data SQL where large portions of a table can reside in external partitions.
 
@@ -797,4 +797,3 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 - **Author** - Valentin Tabacaru, Database Product Management, Oracle PTS
 - **Contributors** - Troy Anthony, Anoosha Pilli,  Dylan McLeod
 - **Last Updated By/Date** - Kay Malcolm, August 2020
-

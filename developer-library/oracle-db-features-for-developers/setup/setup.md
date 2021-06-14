@@ -9,50 +9,72 @@ In this step, you will install a selection of the Oracle Database Sample Schemas
 
 By completing the instructions below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
 
-1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the opc user*.  Run a *whoami* to ensure the value *opc* comes back.  If you are stil the oracle user, type the **exit** command to return back to opc)
+1. Run a *whoami* to ensure the value *oracle* comes back.)
 
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
     ```
-    whoami
+    <copy>whoami</copy>
     ```
 
-    ````
-    <copy>
-    cd /home/opc/
-
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/MdRi7ggqoriYiU9YHtIWnlEyjL8F9uIoCXLtygMh6gBPIUH3dkYtxv90tPco0aZD/n/c4u03/b/labfiles/o/nfscripts.zip
-
-    unzip nfscripts.zip;
-
-    chmod +x *.sh
-
-    /home/opc/setupNF.sh
-    </copy>
-    ````
-
-    ![](./images/step1.1-setupscript1.png " " )
-
-    ![](./images/setupNFresults.png " " )
-
-2.  Switch now to the oracle user and run oraenv to set up your environment.  Enter *ORCL* when prompted for the SID.
+2. If you are not the oracle user, log back in:
     ````
     <copy>
     sudo su - oracle
+    </copy>
+    ````
+    
+    ![](./images/sudo-oracle.png " ")
+
+4.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
+    ````
+    <copy>
     . oraenv
     </copy>
     ORCL
     ````
-    ![](./images/oraenv.png " " )
+    ![](./images/oraenv.png " ")
 
-3.  Install the Sample Schemas by running the script below. Accept the default SID *ORCL* when prompted.
+5. Get the Database sample schemas and unzip them. Then set the path in the scripts.
 
     ````
     <copy>
-    . /home/oracle/setupNF_DB.sh
+    wget https://github.com/oracle/db-sample-schemas/archive/v19c.zip
+    unzip v19c.zip
+    cd db-sample-schemas-19c
+    perl -p -i.bak -e 's#__SUB__CWD__#'$(pwd)'#g' *.sql */*.sql */*.dat
     </copy>
     ````
 
-    ![](./images/setupNFscriptresults.png " " )
+    ![](./images/install-schema-zip.png " " )
+
+6.  Login using SQL*Plus as the **oracle** user.  
+
+    ````
+    <copy>
+    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
+    ![](./images/start-sqlplus.png " ")
+
+7.  Install the Sample Schemas by running the script below.
+
+    ````
+    <copy>
+    @mksample Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U users temp /home/oracle/db-sample-schemas-19c/ localhost:1521/orclpdb
+    </copy>
+    ````
+
+    ![](./images/schemas-created.png " " )
+
+8. Exit SQL Plus and exit the oracle user to return to the opc user.
+
+    ```
+    <copy>exit
+    exit
+    </copy>
+    ```
+
+    ![](images/return-to-opc.png)
 
 Congratulations! Now you have the environment to run the labs.
 
@@ -72,5 +94,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 - **Author** - Troy Anthony, DB Product Management
 - **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
-- **Last Updated By/Date** - Kay Malcolm, August 2020
-
+- **Last Updated By/Date** - Tom McGinn, June 2021

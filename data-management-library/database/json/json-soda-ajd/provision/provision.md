@@ -24,19 +24,20 @@ In this lab, you will:
 
 2. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **Region** in the top, right hand corner of the page.
 
-    ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
+    ![Select region on the far upper-right corner of the page.](./images/region.png " ")
 
 3. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![Oracle home page.](./images/Picture100-36.png " ")
+    ![Oracle home page.](./images/navigation.png " ")
 
 4. Click on **Oracle Database** and choose **Autonomous JSON Database**.
 
-    ![Click Autonomous JSON Database](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+    ![Click Autonomous JSON Database](./images/adb-json.png " ")
 
 5. Use the __List Scope__ drop-down menu to select a compartment. Make sure your workload type is __JSON Database__.
 
-    ![Check the workload type on the left.](images/livelabs-compartment.png " ")
+    ![Check the workload type on the left.](./images/compartments.png " ")
+    ![](./images/workload-type.png " ")
 
    *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
 
@@ -44,7 +45,7 @@ In this lab, you will:
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
+    ![Click Create Autonomous Database.](./images/create-adb.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 
@@ -54,20 +55,20 @@ In this lab, you will:
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __JSONDB__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONDB__.
 
-    ![Enter the required details.](./images/Picture100-26.png " ")
+    ![Enter the required details.](./images/adb-info.png " ")
 
 4. Choose a workload type: Select the workload type for your database from the choices:
 
     - __JSON__ - For this lab, choose __JSON__ as the workload type.
 
-    ![Choose a workload type.](./images/Picture100-26b.png " ")
+    ![Choose a workload type.](./images/workload-type2.png " ")
 
 5. Choose a deployment type: Select the deployment type for your database from the choices:
 
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
 
-    ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
+    ![Choose a deployment type.](./images/deployment-type.png " ")
 
 6. Configure the database:
 
@@ -79,7 +80,7 @@ In this lab, you will:
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
-    ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
+    ![Choose the remaining parameters.](./images/configuration.png " ")
 
 7. Create administrator credentials:
 
@@ -93,51 +94,58 @@ In this lab, you will:
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![Enter password and confirm password.](./images/Picture100-26d.png " ")
+    ![Enter password and confirm password.](./images/administration.png " ")
+
 8. Choose network access:
 
     - __Secure access from everywhere__ - For this lab, accept the default, "__Secure access from everywhere__.
     - __Private endpoint access only__ - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - __Configure access control rule__ - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
+    ![](./images/network-access.png " ")
+
 9. Choose a license type:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service. For this lab, choose __License Included__.
 
+    ![](./images/license-type.png " ")
+
 10. Click __Create Autonomous Database__.
 
-    ![Click Create Autonomous Database.](./images/Picture100-27.png " ")
+    ![Click Create Autonomous Database.](./images/create-adb-final.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous JSON database is ready to use! Have a look at your instance's details here including the Database Name, Database Version, OCPU Count, and Storage.
 
-    ![Database instance homepage.](./images/Picture100-32.png " ")
+    ![Database instance homepage.](./images/provisioning.png " ")
 
 ## **STEP 3**: Connect to your Autonomous Database using "JSON Workshop" UI
 
 1. On the Autonomous Database Details page, click on the Tools tab.
 
-    ![](./images/ADB-details-1.png)
+    ![](./images/tools.png)
 
 2. The Tools page provides you access to Database Actions, Oracle Application Express, Oracle ML User Administration and SODA Drivers. In the Database Actions box, click **Open Database Actions**.
 
-    ![](./images/ADB-details-2.png)
+    ![](./images/db-actions.png)
 
 3. On Database Actions page, sign in with the database instance's default administrator account, **Username - ADMIN** and click **Next**.
 
-    ![](./images/SQLDevWeb-1.png)
+    ![](./images/username.png)
 
 4. Provide the ADMIN user with the password you specified when creating the database. Click **Sign in**.
 
-    ![](./images/SQLDevWeb-1.png)
+    ![](./images/sign-in.png)
 
 5. It displays the Database Actions console. On the Database Actions console under **Development** choose **JSON** to manager your JSON documents.
 
-    ![](./images/SQLDevWeb-2.png)
+    ![](./images/json.png)
 
 6. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
 
---> JSON Workshop -->> Steps to UI interface explanation.
+    ![](./images/tutorials.png " ")
+
+
 
 You are now connected to your Autonomous Database using JSON.
 
@@ -146,4 +154,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021

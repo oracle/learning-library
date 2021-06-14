@@ -37,8 +37,8 @@ This lab assumes you have:
 In a nutshell, the installation process includes the following four major tasks. After completing these steps, you can configure the Oracle GoldenGate Veridata Agents:
 1. WebLogic Server and Infrastructure file needed for Oracle GoldenGate Veridata. Install the WebLogic Server infrastructure (formerly known as JRF) files on top of an existing 12.2.1.4.0 WebLogic Server install. Invoke this by using the command: `java -jar fmw_12.2.1.4.0_infrastructure_generic.jar`.
 2. Oracle GoldenGate Veridata Server + Oracle GoldenGate Veridata Agent. It is a jar file, and works on all supported platforms except NonStop. Select a required combination. For this lab, the choice was **complete** to get everything installed in one pass. Invoke this by using the command: `java -jar fmw_12.2.1.4.0_ogg.jar`.
-3. Run the Repository Creation Utility (RCU). It gets installed as a part of the WLS+JRF install in Step 1. You can run it once for all the products (WebLogic Server and Oracle GoldenGate Veridata.) The RCU location in this demo (and the sample VM) is: `/u01/app/oracle/product/wls/oracle_common/bin/rcu`.
-4. Configure the Oracle WebLogic Server and Oracle GoldenGate Veridata domains. You can run this once for all products. To configure the WebLogic Server, use the command: `/u01/app/oracle/product/wls/oracle_common/common/bin/config.sh`.
+3. Run the Repository Creation Utility (RCU). It gets installed as a part of the WLS+JRF install in Step 1. You can run it once for all the products (WebLogic Server and Oracle GoldenGate Veridata.) The RCU location in this demo (and the sample VM) is: `/home/opc/VDT/oracle_common/bin/rcu`.
+4. Configure the Oracle WebLogic Server and Oracle GoldenGate Veridata domains. You can run this once for all products. To configure the WebLogic Server, use the command: `/home/opc/VDT/oracle_common/common/bin/config.sh`.
 
 ## **STEP 2:** Install the Fusion Middleware Infrastructure
 1. Open a terminal session. Run the following command: `java -jar fmw_12.2.1.4.0_infrastructure_generic.jar`
@@ -109,7 +109,7 @@ To apply a patch on an Oracle GoldenGate Veridata release:
 ## **STEP 5**: Configure RCU
 The Repository Creation Utility (RCU) presumes that you have already installed a compatible database to house the repository. This example assumes that it is an Oracle 19c Database.
 To configure the RCU:
-1. Open a terminal session. Start the RCU with this command: `/u01/app/oracle/product/wls/oracle_common/bin/rcu`.
+1. Open a terminal session. Start the RCU with this command: `/home/opc/VDT/oracle_common/bin/rcu`.
 2. Click **Next** in the **Welcome** screen to display the **Create Repository** screen.
 3. In the **Create Repository** screen, the default is **Create Repository** with **System Load** and **Product Load**. Click **Next** to continue.
     ![](./images/18RCU_CreateRepository_Screen2.png " ")
@@ -134,7 +134,7 @@ To configure the RCU:
 
 ## **STEP 6**: Create the Domain
 The Configuration Wizard can either create a new domain or extend an existing domain. This example shows how to create a new domain.
-1. Open a terminal session. Invoke the Configuration wizard by entering `/u01/app/oracle/product/wls/oracle_common/common/bin/config.sh`.
+1. Open a terminal session. Invoke the Configuration wizard by entering `/home/opc/VDT/oracle_common/common/bin/config.sh`.
 
     **Note**: The Create a new domain option is selected by default.
     ![](./images/23CreatingDomain_CreateDomain_Screen1.png " ")
@@ -185,9 +185,9 @@ To deploy agents:
 2. Open the terminal session and run the following script to deploy the Oracle GoldenGate Veridata Agent:
     <pre>###########################################################
     Veridata agents. Can run from anywhere, give destination as argument.
-    /u01/app/oracle/product/wls/veridata/agent/agent_config.sh /u01/ogg/agents/veridata/agent1
+    /home/opc/VDT/veridata/agent/agent_config.sh /home/opc/agent1
     ## Should return, "Successfully deployed the agent. </pre>
-3. These are the changes made to the `agent.properties` file: `cd /u01/ogg/agents/veridata/agent1`
+3. These are the changes made to the `agent.properties` file: `cd /home/opc/agent1`
 
     **Note**: The database-specific files are under the `sample_properties` directory and you need to select the respective file and copy that as `agent.properties`.
     Example for Oracle database:
@@ -196,11 +196,10 @@ To deploy agents:
     gedit agent.properties
     server.port=7850
     database.url=jdbc:oracle:thin:@//localhost:1521:orcl
-    server.driversLocation=/u01/app/oracle/product/12.1.0/dbhome_1/jdbc/lib
-    server.jdbcDriver=odbc8.jar</pre>
+    server.jdbcDriver=ojdbc8.jar</pre>
 4. To start the Veridata agent, enter:
-    <pre
-    /u01/ogg/agents/veridata/agent1/agent.sh start</pre>
+
+    <pre>/home/opc/VDT/agent1/agent.sh start</pre>
 
 ## Learn More
 
@@ -210,5 +209,5 @@ To deploy agents:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
+* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
+* **Last Updated By/Date** - Anuradha Chepuri, June 2021

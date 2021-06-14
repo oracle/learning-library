@@ -16,7 +16,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
 
 ## **STEP 1:** Scale the Number of Nodes
 
-On your local machine where you ran the Terraform
+On your local machine where you ran the Terraform:
 
 1. Edit the `terraform.tfvars` file to have:
 
@@ -24,7 +24,7 @@ On your local machine where you ran the Terraform
     numberOfNodes=2
     ```
 
-2. Run terraform plan
+2. Run terraform plan:
 
     ```bash
     <copy>
@@ -35,7 +35,7 @@ On your local machine where you ran the Terraform
     Check the output to make sure this is what you expected. It should add a compute instance and re-register a backend to the load balancer.
 
 
-3. Run terraform apply
+3. Run terraform apply:
 
     ```bash
     <copy>

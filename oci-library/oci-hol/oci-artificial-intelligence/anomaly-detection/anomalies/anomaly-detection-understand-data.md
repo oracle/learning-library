@@ -73,7 +73,7 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 }
 ```
 
-**Best practices**
+**Prerequisites**
 * The training data should cover all the normal system conditions with the full value ranges for all attributes/signals.
 * The training data should not have abnormal conditions, which may contains anomalies.
 * The attributes in the data should be correlated well or belong to the same system or asset. Attributes from different systems are suggested to train separate models.
@@ -82,35 +82,39 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 
 Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
-* [processed training csv data](../files/demo-training-data.csv)
+* [training csv data](../files/demo-training-data.csv)
     - 10 signals with timestamp column, with 10,000 observations
-* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
+* <a href="../files/demo-testing-data.json" target="_blank" download>testing json data for detection</a>
     - same 10 signals with timestamp column, 100 observations
 
 
 ## **STEP 3:** Upload Data to Object Storage
 
-You need to upload those sample training data into Oracle object storage, to be prepared for model training in next steps.
+You need to upload the sample training data into Oracle object storage, to be prepared for model training in next steps.
 
-**STEP 3a:** Create an Object Storage Bucket
+Testing json data is not needed to upload to bucket, but is needed in detection UI later.
 
-Step 1 From the OCI Services menu, click Object Storage.
+**STEP 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
+
+First, From the OCI Services menu, click Object Storage.
 ![](../images/cloudstoragebucket.png " ")
 
-STEP 2 Click Create Bucket.
+Then, Select Compartment from the left dropdown menu. Choose the compartment matching your name or company name.
+![](../images/createCompartment.png " ")
+
+Next click Create Bucket.
 ![](../images/createbucketbutton.png " ")
 
-STEP 3 Fill out the dialog box:
+Next, fill out the dialog box:
+* Bucket Name: Provide a name <br/>
+* Storage Tier: STANDARD
 
-Bucket Name: Provide a name <br/>
-Storage Tier: STANDARD
-
-STEP 4 Click Create Bucket
+Then click Create
 ![](../images/pressbucketbutton.png " ")
 
-**STEP 3b:** Upload Object
+**STEP 3b:** Upload the Downloaded training csv data file into Storage Bucket
+
 Switch to OCI window and click the Bucket Name.
-![](../images/selectbucket.png " ")
 
 Bucket detail window should be visible. Click Upload
 ![](../images/bucketdetail.png " ")

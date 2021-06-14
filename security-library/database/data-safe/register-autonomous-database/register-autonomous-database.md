@@ -207,11 +207,11 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
     - There is a message in the upper-right corner stating that **Data Safe is enabled**.
     - If there is an error on the page, you need to sign in again to Oracle Cloud Infrastructure.
 
-4. On the left, click **Registered Databases**. Your registered database is listed.
+4. On the left, click **Target Databases**. Your registered target database is listed.
 
 5. Click the three dots to the right of your database's name, and select **Service Console**. This is another way that you can access the Oracle Data Safe Console.
 
-    ![Registered Databases tab in OCI](images/access-data-safe-console-from-registered-databases-tab.png "Registered Databases tab in OCI")
+    ![Registered Databases tab in OCI](images/access-data-safe-console-from-target-databases-tab.png "Registered Databases tab in OCI")
 
 
 ## Learn More

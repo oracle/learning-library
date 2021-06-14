@@ -8,16 +8,16 @@ Estimated Lab Time: 10 minutes.
 
 ### Objectives
 
-In this lab, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and the Object Storage service as intermediate storage location.
+In this lab, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and the Oracle Cloud Infrastructure Object Storage service as intermediate storage location.
 
 
-## **STEP 1:** Install the OCI Command Line Interface (CLI) on the source database
+## **STEP 1:** Install the Oracle Cloud Infrastructure Command Line Interface (CLI) on the source database
 
 This will be needed to get the wallet from the database and put the dump file into object storage.
 
-**Note:** You could also do without the CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
+> **Note:** You could also do without the Oracle Cloud Infrastructure (OCI) CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
 
-1. You should still be inside the database container, otherwise get inside with:
+1. You should still be inside the Oracle Database container, otherwise get inside with:
 
     ```
     <copy>
@@ -25,7 +25,7 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-1. Install the OCI CLI on the source Database:
+1. Install the OCI CLI on the source database:
 
     ```bash
     <copy>
@@ -82,11 +82,11 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    Copy the full printed output to clipboard
+    Copy the full printed output to clipboard.
 
     In the Oracle Cloud Console:
 
-    - Under **User -> User Settings**.
+    - Under **User**, select **User Settings**.
     - Click **API Keys**.
     - Click **Add Public Key**.
     - Click **Paste Public Key**.
@@ -95,7 +95,7 @@ This will be needed to get the wallet from the database and put the dump file in
 
     You can verify that the fingerprint generated matches the fingerprint output of the configuration.
 
-5. Test your CLI:
+5. Test your OCI CLI:
 
     ```
     <copy>
@@ -111,9 +111,9 @@ This will be needed to get the wallet from the database and put the dump file in
     }
     ```
 
-## **STEP 2:** Create an Object Storage Bucket
+## **STEP 2:** Create an Oracle Cloud Infrastructure Object Storage Bucket
 
-1. Go to **Core Infrastructure -> Object Storage**.
+1. Go to **Core Infrastructure** and select **Object Storage**.
 
     ![](./images/migrate-db-oss-1.png)
 
@@ -136,8 +136,8 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    This will take a minute or so. 
-    
+    This will take a minute or so.
+
     The log should look like:
 
     ```
@@ -167,7 +167,7 @@ This will be needed to get the wallet from the database and put the dump file in
     Connected to:
     Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
 
-    SQL> 
+    SQL>
     Directory created.
 
     SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
@@ -177,7 +177,7 @@ This will be needed to get the wallet from the database and put the dump file in
     Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
 
     Connected to: Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
-    Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/********@oracledb:/PDB.us.oracle.com schemas=RIDERS DIRECTORY=export 
+    Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/********@oracledb:/PDB.us.oracle.com schemas=RIDERS DIRECTORY=export
     Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
     Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
     Processing object type SCHEMA_EXPORT/STATISTICS/MARKER
@@ -206,7 +206,7 @@ This will be needed to get the wallet from the database and put the dump file in
     Job "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully completed at Fri Oct 9 22:34:04 2020 elapsed 0 00:00:24
 
     ```
-  
+
 ## **STEP 4:** Move the Dump File to the Object Storage Bucket
 
 1. Put the dump file in the `atp-upload` bucket:
@@ -220,20 +220,20 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    The log shold look like:
+    The log should look like:
 
     ```
     Uploading object  [####################################]  100%
     {
-    "etag": "4170701c-22e9-42b1-9bea-44423eede8b7", 
-    "last-modified": "Fri, 09 Oct 2020 22:36:05 GMT", 
+    "etag": "4170701c-22e9-42b1-9bea-44423eede8b7",
+    "last-modified": "Fri, 09 Oct 2020 22:36:05 GMT",
     "opc-content-md5": "9YvlOURl0QgQBvxFvxKMnQ=="
     }
     ```
 
 ## **STEP 5:** Get the OCID of the Database
 
-1. Go to **Oracle Database -> Autonomous Transaction Processing**.
+1. Go to **Oracle Database** and select **Autonomous Transaction Processing**.
 
 2. Make sure you are in the right compartment and select the database you provisioned earlier to get to the details.
 
@@ -241,13 +241,13 @@ This will be needed to get the wallet from the database and put the dump file in
 
 4. Gather the **Private Endpoint IP**.
 
-5. And the **Private Endpoint URL** (i.e. hostname).
+5. And the **Private Endpoint URL** (for example hostname).
 
     ![](./images/db-info.png)
 
 ## **STEP 6:** Get the Database Wallet
 
-1. Using the OCI CLI, download the database wallet on the source database, replacing the OCID:
+1. Using the Oracle Cloud Infrastructure (OCI) CLI, download the database wallet on the source database, replacing the OCID:
 
     ```bash
     <copy>
@@ -275,7 +275,7 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    - Replace the directory value as below
+    - Replace the directory value as below:
 
     ```
     <copy>
@@ -327,7 +327,7 @@ This will be needed to get the wallet from the database and put the dump file in
     ATP_HOSTNAME=$(sed 's|.*(host=\([a-z0-9.-]*\)).*|\1|;' tnsnames.ora | head -n1)
     sudo su -c "printf \"127.0.0.1  ${ATP_HOSTNAME}\n\"  >> /etc/hosts"
     </copy>
-    ``` 
+    ```
 
     You can verify it was inserted properly with:
 
@@ -352,7 +352,7 @@ This will be needed to get the wallet from the database and put the dump file in
 
 ## **STEP 8:** Get an OCI Auth Token
 
-1. Go to **User -> User Settings**.
+1. Go to **User** and select **User Settings**.
 
 2. Take note of your full username.
 
@@ -388,19 +388,19 @@ This will be needed to get the wallet from the database and put the dump file in
 
     You'll be prompted for the admin password for the database `atp_admin_password`, which was configured in the `terraform.tfvars` file.
 
-    You should be logged into a SQL prompt like:
+    Confirm that you are logged into a SQL prompt like:
 
     ```
     SQL*Plus: Release 12.2.0.1.0 Production on Fri Oct 9 22:52:05 2020
 
     Copyright (c) 1982, 2016, Oracle.  All rights reserved.
 
-    Enter password: 
+    Enter password:
 
     Connected to:
     Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 
-    SQL> 
+    SQL>
     ```
 
 2. Create the OCI cloud credential:
@@ -432,9 +432,9 @@ This will be needed to get the wallet from the database and put the dump file in
 4. Type `exit` to exit SQL*Plus.
 
 
-## **STEP 9:** Import the Dump File into the Database
+## **STEP 10:** Import the Dump File into the Database
 
-Use datapump to import the data dump
+Use datapump to import the data dump.
 
 1. Define the environment variables below:
     ```
@@ -453,10 +453,10 @@ Use datapump to import the data dump
     ```bash
     <copy>
     impdp admin/${ATP_PASSWORD}@${ATP_DB_NAME}_low directory=data_pump_dir dumpfile=default_credential:https://objectstorage.${REGION}.oraclecloud.com/n/${NAMESPACE}/b/${BUCKET}/o/${FILENAME} parallel=16 exclude=cluster,db_link
-    </copy> 
+    </copy>
     ```
 
-2. First attempt will fail with an error: `ORA-01950: no privileges on tablespace 'DATA'` and we need to give quota to the created user RIDERS
+2. First attempt will fail with an error: `ORA-01950: no privileges on tablespace 'DATA'` and we need to give quota to the created user RIDERS:
 
     ```
     <copy>
@@ -470,7 +470,7 @@ Use datapump to import the data dump
     Grant Succeeded
     ```
 
-3. We also need to drop the table `RIDERS.RIDERS` that was created or its data won't be created on the next run
+3. We also need to drop the table `RIDERS.RIDERS` that was created or its data won't be created on the next run:
 
     ```bash
     <copy>
@@ -478,19 +478,18 @@ Use datapump to import the data dump
     </copy>
     ```
 
-3. Re-run the import now that the user `RIDERS` has valid quota
+3. Re-run the import now that the user `RIDERS` has valid quota:
 
     ```
     <copy>
     impdp admin/${ATP_PASSWORD}@${ATP_DB_NAME}_low directory=data_pump_dir dumpfile=default_credential:https://objectstorage.${REGION}.oraclecloud.com/n/${NAMESPACE}/b/${BUCKET}/o/${FILENAME} parallel=16 exclude=cluster,db_link
     </copy>
     ```
-    
+
     You will see errors about the user `RIDERS` and the associated table `RIDERS.RIDERS`: the objects already exist as they were created during the first run of the command.
 
 The database has been migrated.
 
-You may proceed to the next lab.
 
 ## Acknowledgements
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020

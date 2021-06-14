@@ -113,7 +113,7 @@ A tenancy administrator needs to create an IAM policy that allows the user group
 
 6. From the **COMPARTMENT** drop-down list, select the **root** compartment.
 
-7. In the **Policy Builder** section, click **Customize (Advanced)** to display the field instead of the Policy Builder.
+7. In the **Policy Builder** section, move the **Show manual editor** slider to the right to display the policy field instead of drop-down lists.
 
 8. In the policy field, enter the following policy statements. Substitute {group name} and {compartment name} with the appropriate values.
 

@@ -139,7 +139,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
 
 2. Under **Security Assessment**, click **Comprehensive Assessment**.
 
-3. In the **Last Generated Report** column, click **View History**. The **Assessment History** dialog box is displayed.
+3. In the **Differs from Baseline** column, click **View History**. The **Assessment History** dialog box is displayed.
 
 4. In the **Last Assessed On** column, view the list of dates on which you generated Comprehensive Assessment reports. The dates link to the reports so that you can view them again as needed.
 

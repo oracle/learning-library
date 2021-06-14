@@ -4,7 +4,7 @@
 
 The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, create groups, configure compare pairs, create and execute jobs, view reports, repair data, and generate SQL files.
 
-*Estimated Lab Time*: 2 hours and 15 mins
+*Estimated Lab Time*: 4 hours
 
 ### About Oracle GoldenGate Veridata
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
@@ -12,12 +12,11 @@ Oracle GoldenGate Veridata compares a source (original, or trusted) set of data 
 
 ### Objectives
 In this lab, you will:
-* Install Oracle GoldenGate Veridata
-* Create Datasource Connections for source and target databases.
-* Create Groups, Compare Pairs, and jobs.
-* Run jobs.
-* Repair data and generate SQL files.
-* View Reports.
+* Create Datasource Connections for source and target databases
+* Create Groups and Compare Pairs
+* Create and Run Jobs
+* Repair data and generate SQL files
+* View Reports
 
 ### Prerequisites
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -25,7 +24,6 @@ In this lab, you will:
 * The following are required to complete this lab:
     * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
     * Prior knowledge of Database basic concepts
-You may now proceed to Lab: Install and Configure Oracle GoldenGate Veridata
 
 ## Learn More
 
@@ -37,5 +35,5 @@ Use these links to get more information about Oracle GoldenGate Veridata:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
+* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021

@@ -261,7 +261,7 @@ In this lab, you will:
 
    ![Create Bucket](images/os_object_upload.png)
 
-7. **Download** the dataset <a href="./files/reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>.
+7. **Download** the dataset <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/27PK5yRJp6ikvVdli-21D0vTwNywA0Q1aUPD2RQ7G8rtbPQwO2onh7TaZjfjawPj/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>.
 
 8. Drop the file on **Choose Files from your Computer**. Leave everything else by default.
 

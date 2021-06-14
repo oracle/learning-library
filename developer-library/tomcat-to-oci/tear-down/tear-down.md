@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will tear down the infrastructure deployed on OCI as well as the local Docker environment.
+In this lab, we will tear down the infrastructure deployed on Oracle Cloud Infrastructure (OCI) as well as the local Docker environment.
 
 Estimated Lab Time: 5 minutes.
 
@@ -13,7 +13,7 @@ In this lab, you will tear down and clean up resources.
 
 ## **STEP 1:** Tear Down Terraform Resources
 
-1. Simply run the terraform destroy command:
+1. Simply run the Terraform destroy command:
 
     ```
     <copy>

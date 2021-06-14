@@ -69,7 +69,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
     <copy>
     sudo cp SimpleDB.war /var/lib/tomcat/webapps/
     </copy>
-    ``` 
+    ```
 
 5. Check the deployment happened as expected:
 
@@ -207,10 +207,10 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
 
 9. You can check the deployment at:
 
-    http://localhost:8080/SimpleDB
+    `http://localhost:8080/SimpleDB`
 
-    Note: The first time the application runs, the query may take up to 30 seconds.
-    
+    > **Note:** The first time the application runs, the query may take up to 30 seconds.
+
 
 ## **STEP 3:** Repeat for each Tomcat Server
 
@@ -218,7 +218,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
 
 ## **STEP 4:** Check the Application Served via the Load Balancer
 
-1. Get the load balancer public IP from the Terraform output
+1. Get the load balancer public IP from the Terraform output.
 
 2. In your browser, go to http://*LOAD_BALANCER_IP*/SimpleDB/
 
@@ -226,7 +226,6 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
 
     ![](./images/lb-simpledb-app.png)
 
-You may proceed to the next lab.
 
 ## Acknowledgements
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020

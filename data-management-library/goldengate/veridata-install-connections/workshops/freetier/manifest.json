@@ -2,32 +2,59 @@
   "workshoptitle": "Getting Started with Oracle GoldenGate Veridata",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
-
       {
-            "title": "Introduction to Oracle GoldenGate Veridata",
+            "title": "Introduction",
             "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
             "filename": "./intro.md"
         }
         ,
-        {
-              "title": "Lab: Install and Configure Oracle GoldenGate Veridata",
-              "description": "This lab walks you through the required and optional tasks to install Oracle GoldenGate Veridata.",
-              "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
+      {
+      "title": "Getting Started",
+      "description": "Get a Free Trial",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+    {
+      "title": "Lab: Generate SSH Keys",
+      "description": "Generate SSH Key",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+    },
+    {
+      "title": "Lab: Prepare Setup",
+      "description": "How to download your ORM stack and update security rules for an existing VCN",
+      "publisheddate": "09/28/2020",
+      "filename": "../../prepare-setup/prepare-setup.md"
+    },
+    {
+      "title": "Lab: Environment Setup",
+      "description": "How to provision the workshop environment and connect to it",
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+    },
+    {
+          "title": "Lab: Initialize Environment",
+          "description": "How to initialize and start all the workshop components",
+          "publisheddate": "10/14/2020",
+          "filename": "../../initialize-environment/initialize-environment.md"
         }
         ,
         {
-            "title": "Lab: Create Datasource Connections",
-            "description": "This lab walks you through the steps to create datasource connections.",
-            "filename": "./../../ggv-create-connections/ggv-create-connections.md"
+        "title": "Lab: Create Datasource Connections",
+        "description": "This lab walks you through the steps to create datasource connections.",
+        "filename": "./../../ggv-create-connections/ggv-create-connections.md"
         }
         ,
-
         {
-              "title": "Lab: Create Groups, Compare Pairs, and Jobs ",
-              "description": "This lab walks you through the steps to create groups and compare pairs.",
-              "filename": "./../../ggv-create-groups-compare-pairs/ggv-create-groups-compare-pairs.md"
-          }
-          ,
+          "title": "Lab: Create Groups and Compare Pairs ",
+          "description": "This lab walks you through the steps to create groups and compare pairs.",
+          "filename": "./../../ggv-create-groups-compare-pairs/ggv-create-groups-compare-pairs.md"
+        }
+        ,
+        {
+        "title": "Lab: Create and Execute Jobs ",
+        "description": "This lab walks you through the steps to create Jobs and execute them.",
+        "filename": "./../../ggv-create-execute-jobs/ggv-create-execute-jobs.md"
+        }
+        ,
           {
               "title": "Lab: Repair Jobs and Generate SQL Files ",
               "description": "This lab walks you through the steps to repair jobs and data.",
@@ -39,6 +66,17 @@
                 "description": "This lab walks you through the steps to view comparision Reports.",
                 "filename": "./../../ggv-reports/ggv-reports.md"
               }
-
+              ,
+              {
+                    "title": "Lab: Install and Configure Oracle GoldenGate Veridata (Optional)",
+                    "description": "This lab walks you through the required and optional tasks to install Oracle GoldenGate Veridata.",
+                    "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
+              }
+              ,
+              {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+    }
        ]
     }

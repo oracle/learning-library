@@ -1,7 +1,7 @@
 # Selective Adoption
 
 ## Introduction
-Cloud Manager enables customers to take advantage of Selective Adoption by quickly creating PUM environments in Oracle Cloud and automating configuration of target databases in PUM source. Once target databases are configured, standard procedure should be followed to apply updates to target environments. For additional information on selective adoption please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to Chapter 6.
+Cloud Manager enables customers to take advantage of Selective Adoption by quickly creating PUM environments in Oracle Cloud and automating configuration of target databases in PUM source. Once target databases are configured, standard procedure should be followed to apply updates to target environments. For additional information on selective adoption please visit [https://docs.oracle.com/cd/F40091_01/psft/pdf/pcd858cmif-b032021.pdf](https://docs.oracle.com/cd/F40091_01/psft/pdf/pcd858cmif-b032021.pdf) and navigate to Chapter 9.
 
 Estimated Lab Time: 30 minutes
 

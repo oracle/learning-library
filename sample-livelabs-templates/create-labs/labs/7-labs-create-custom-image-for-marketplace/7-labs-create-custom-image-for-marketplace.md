@@ -59,7 +59,9 @@ This lab assumes you have:
     hostnamectl set-hostname <host>.livelabs.oraclevcn.com
 
     # Add static name to /etc/hosts
-    echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+    #echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+    echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+
     EOF
     </copy>
     ```

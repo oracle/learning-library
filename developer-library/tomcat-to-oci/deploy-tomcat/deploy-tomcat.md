@@ -1,4 +1,4 @@
-# Deploy Tomcat on Oracle Cloud Infrastructure with Autonomous Transaction Processing database
+# Deploy Tomcat on Oracle Cloud Infrastructure with Oracle Autonomous Transaction Processing database
 
 ## Introduction
 
@@ -35,7 +35,7 @@ For this lab, you need:
 
 2. Get your `compartment OCID`:
 
-    - In the Oracle Cloud Console, go to **Identity -> Compartments**.
+    - From the navigation menu, select **Identity** and then select **Compartments**.
 
         ![](./images/setup-tf-compartment.png)
 
@@ -48,7 +48,7 @@ For this lab, you need:
 3. Get your `user OCID`:
 
     - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **click** your user name.
-        
+
         ![](./images/setup-tf-user.png)
 
     - **Copy** the OCID of your user and paste it in your environment file.
@@ -57,8 +57,8 @@ For this lab, you need:
 
 4. Get the oci public key `fingerprint`:
 
-    - In your user settings, under API Keys, you will find the `fingerprint` value. 
-    
+    - In your user settings, under API Keys, you will find the `fingerprint` value.
+
     Make sure this is the one matching the oci public key you created for terraform.
 
         ![](./images/setup-tf-fingerprint.png)
@@ -69,9 +69,9 @@ For this step, you may want to open up a separate shell terminal.
 
 1. You'll find the code on Github.com at [https://github.com/oracle-quickstart/oci-arch-tomcat-autonomous](https://github.com/oracle-quickstart/oci-arch-tomcat-autonomous)
 
-2. You can click **Code** and download as a zip file.
+2. Click **Code** and download as a zip file.
 
-3. Or using git command line, in a local folder of your choice, clone the repository with
+3. Or using git command line, in a local folder of your choice, clone the repository with:
 
     ```bash
     <copy>
@@ -79,7 +79,7 @@ For this step, you may want to open up a separate shell terminal.
     </copy>
     ```
 
-4. Get into the code folder
+4. Get into the code folder:
 
     ```bash
     <copy>
@@ -109,7 +109,7 @@ In order to run the deployment, you need to define a few settings in a file name
     # Compartment
     compartment_ocid = "<compartment_ocid>"
 
-    # ATP instance Password 
+    # ATP instance Password
     atp_db_name = "ATPDB"
     atp_name = "TomcatATP"
     atp_password = "<password 12-30 chars including Upper + Number>"
@@ -122,15 +122,15 @@ In order to run the deployment, you need to define a few settings in a file name
     </copy>
     ```
 
-    *For the SSH Public key, make sure to provide the SSH key generated in the on-premises environment and copied earlier.*
+    For the SSH Public key, make sure to provide the SSH key generated in the on-premises environment and copied earlier.
 
 
 
-3. Save the `terraform.tfvars` file
+3. Save the `terraform.tfvars` file.
 
 ## **STEP 4:** Run the Deployment
 
-1. Initialize the project
+1. Initialize the project:
 
     ```
     <copy>
@@ -138,9 +138,9 @@ In order to run the deployment, you need to define a few settings in a file name
     </copy>
     ```
 
-2. Check the plan (optional)
+2. Check the plan (optional):
 
-    To determine what will happen, you can run the `plan` operation
+    To determine what will happen, you can run the `plan` operation:
 
     ```
     <copy>
@@ -148,7 +148,7 @@ In order to run the deployment, you need to define a few settings in a file name
     </copy>
     ```
 
-3. Apply the plan
+3. Apply the plan:
 
    ```bash
     <copy>
@@ -166,13 +166,12 @@ In order to run the deployment, you need to define a few settings in a file name
     Enter a value: yes
     ```
 
-    It will take a few minutes to provision the resources
+    It will take a few minutes to provision the resources.
 
     You may proceed to the next lab while it is provisioning, however you will not be able to migrate the data to the database until the infrastructure completed provisioning.
 
 4. Note the outputs of the terraform for future use.    
 
-You may proceed to the next lab.
 
 ## Acknowledgements
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020

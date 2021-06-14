@@ -90,7 +90,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 If you are unable to ssh in, check out the troubleshooting tips below.
 
-You may now [proceed to the next lab](#next).
+You may now *proceed to the next lab*.
 
 ## Appendix: Troubleshooting Tips
 

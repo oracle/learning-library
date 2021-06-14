@@ -23,11 +23,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
-- Lab 2: Create MySQL Database Service
-- Lab 3: Create Data Integration Instance
-- Lab 4: Design and Run your ETL Pipeline
+- All previous labs have been successfully completed.
 
 ## **STEP 1:** Create Policies
 
@@ -178,7 +174,7 @@ In this lab, you will:
 
 ## **STEP 5:** Create Jupyter Notebook Environment
 
-1. **Download** the Notebook <a href="./files/FishSurvey.ipynb" target="\_blank">here</a>.
+1. **Download** the Notebook <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/7NRyIRdKbZ6x3yNsDxqwTlWOk5s3aEzZ-sxTQ7bAGBGZrtrgtEczXxO2Jg_Uc8da/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-FishSurvey.ipynb" target="\_blank">here</a>.
 
 2. Click **Upload files**.
 

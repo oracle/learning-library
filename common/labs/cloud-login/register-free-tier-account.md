@@ -18,7 +18,7 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 
 ## **Step 1:** Create Your Free Trial Account
 
-In this section, you will fill out the registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
+In this section, you will fill out the registration form at [oracle.com/cloud/free](https://signup.cloud.oracle.com).
 
 1.  Click on the "Start for free" button and enter the appropriate information to create your account.
     * Enter the same **email address** you used to register for Oracle Open World / Oracle Code One. A popup should appear recognizing your email. If not, the registration form will ask for additional information later.
@@ -74,4 +74,3 @@ You may now [proceed to the next lab](#next).
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
 - **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, October 2020
-

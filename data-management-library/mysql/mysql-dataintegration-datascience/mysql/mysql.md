@@ -21,8 +21,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
+- All previous labs have been successfully completed.
 
 ## **STEP 1:** Create an Instance of MySQL in the Cloud
 
@@ -88,7 +87,7 @@ In this lab, you will:
       - SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
       - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
          ```
-         <copy>curl https://raw.githubusercontent.com/vmleon/mysql-dataintegrator-datascience-workshop/main/mysql/files/create_fish_survey.sql | mysqlsh --sql root@PRIVATE_IP</copy>
+         <copy>curl -L https://bit.ly/2S9abYm | mysqlsh --sql root@PRIVATE_IP</copy>
          ```
 
 2. It will ask for the **password** (`Please provide the password for 'root@PRIVATE_IP':`).
