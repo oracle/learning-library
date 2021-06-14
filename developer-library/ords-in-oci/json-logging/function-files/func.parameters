@@ -1,6 +1,14 @@
-fn config function functionsApp csv-to-adw-with-ords-and-fn ords_base_url "https://xxxxxx-xxxxxx/ords/"
-fn config function functionsApp csv-to-adw-with-ords-and-fn db_schema "admin"
-fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
-fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "xxxxxxxxx"
-fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
-fn config function functionsApp csv-to-adw-with-ords-and-fn processed_bucket "processed-bucket" 
+fn config function functionsApp log-to-adw-with-ords-and-fn ordsbaseurl "https://bqj5jpf7pvxppq5-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
+fn config function functionsApp log-to-adw-with-ords-and-fn dbschema "admin"
+fn config function functionsApp log-to-adw-with-ords-and-fn dbuser "admin"
+fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyab3w2tqt5e6hpnm2gojg33sbrvtkpzhwonbajqjozc5rq"
+fn config function functionsApp log-to-adw-with-ords-and-fn collection "loggingcollection"
+
+
+
+
+        ordsbaseurl = cfg["ordsbaseurl"]
+        dbschema = cfg["dbschema"]
+        dbuser = cfg["dbuser"]
+        secret_ocid = cfg["secret_ocid"]
+        collection = cfg["collection"]
