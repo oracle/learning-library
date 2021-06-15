@@ -27,7 +27,13 @@ In this lab, you will create a service connector to move log data from the Loggi
 
     ![New Collection slider](./images/json-3.png)
 
-    enter **logdatacollection** in the **Collection Name** field
+    enter **loggingcollection** in the **Collection Name** field
+
+    ````
+    <copy>
+    loggingcollection
+    </copy>
+    ````
 
     ![Collection Name field](./images/json-4.png)
 
@@ -48,52 +54,52 @@ In this lab, you will create a service connector to move log data from the Loggi
 3. To use the SODA for REST APIs, we need to construct the URL. To start, we use cURL and pass in the username/password combination. Be sure to use the password that you set for our user back in the User Setups lab.
 
     ```
-    curl -u "gary:PASSWORD"
+    curl -u "admin:PASSWORD"
     ```
 
     Also, we can add the -i which tells the cURL command to include the HTTP response headers in the output. This is helpful with debugging
 
     ```
-    curl -u "gary:PASSWORD" -i
+    curl -u "admin:PASSWORD" -i
     ```
 
     next, this is going to create a collection, so we will use the **PUT HTTP method**. 
 
     ```
-    curl -u "gary:PASSWORD" -i -X PUT
+    curl -u "admin:PASSWORD" -i -X PUT
     ```
 
-    Lastly, we will add the URL. The URL is built up with the hostname followed by ords, followed by our schema name gary
+    Lastly, we will add the URL. The URL is built up with the hostname followed by ords, followed by our schema name admin
 
     ```
-    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/
     ```
 
     then, add soda to indicate we want to use the SODA APIs followed by latest and the name of the collection airportdelayscollection. Your URL should look similar to the below one. (Your hostname will be different then this sample)
 
     ```
-    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection
+    https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/loggingcollection
     ```
 
     And when we put it all together, we get the following:
 
     ```
-    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection
+    curl -u "admin:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/loggingcollection
     ```
 
-4. We now can take this cURL command and run it in the OCI Cloud Shell. **REMEMBER to use your password in place of PASSWORD**
+4. We now can take this cURL command and run it in the OCI Cloud Shell. **REMEMBER to use *your* password in place of PASSWORD**
 
     ![OCI Cloud Shell with cURL command](./images/json-8.png)
 
     ```
-    curl -u "gary:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection
+    curl -u "admin:PASSWORD" -i -X PUT https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/loggingcollection
     HTTP/1.1 201 Created
     Date: Mon, 26 Apr 2021 15:53:46 GMT
     Content-Length: 0
     Connection: keep-alive
     X-Frame-Options: SAMEORIGIN
     Cache-Control: private,must-revalidate,max-age=0
-    Location: https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/gary/soda/latest/logdatacollection/
+    Location: https://coolrestlab-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/loggingcollection/
     ```
     If the collection already exists, you will get a message similar to the following:
 
@@ -108,35 +114,229 @@ In this lab, you will create a service connector to move log data from the Loggi
 
 ## **STEP 2:** Create and Deploy a Function
 
+1. The next few steps will be using the **OCI Cloud Shell**. We can start a Cloud Shell session by clicking the **Launch Cloud Shell** button in the **Begin your Cloud Shell session** step on the **Getting Started** page.
 
+    ![clicking the Launch Cloud Shell button](./images/func-1.png)
 
-use the app created in previous section
+    This will open the **OCI Cloud Shell** on the bottom of the page.
+
+    ![OCI Cloud Shell](./images/func-2.png)
+
+2. Seeing in the previous lab we set up our context and docker repository, we can start by just logging back into the repository so that we can deploy the next function. As a reminder, the command we will be running will be in the format **docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io** as seen below:
+
+    ```
+    docker login -u 'mytenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
+    ```
+
+    If your tenancy is federated with Oracle Identity Cloud Service, you will use the above format using oracleidentitycloudservice. If the user you are using is not a federated user, you will use the syntax tenancy_name/user_name. Remember to use the token we created in the setup part of the lab just as we did previously.
+
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ docker login -u 'mytenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
+    Password: 
+
+    Login Succeeded
+    ```
+
+3. Next, we verify we can see our application by running fn list apps
+
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list apps
+    NAME            ID
+    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaf2snfvp2gxhghcsvadeffffdddd32rf7hqh3lbcgiztw2xkqrv74ha
+    ```
+
+    We are now setup to deploy our function.
+
+4. Download the function code in your OCI Cloud Shell with the following command:
+
+    ```
+    curl -o func2.zip https://xxxxxx/func.zip
+    ```    
+
+    Once downloaded, unzip it
+
+    ```
+    gunzip func2.zip
+    ```
+
+    ````
+    <copy>
+    gunzip func2.zip
+    </copy>
+    ````
+
+5. Move into that directory that was created
+
+    cd func2
+
+6. Now we can deploy our function to our application. Use the following command (this command can also be found as step number 10 on the Functions Getting Started page):
+
+    ```
+    fn -v deploy --app functionsApp
+    ```
+    
+    ````
+    <copy>
+    fn -v deploy --app functionsApp
+    </copy>
+    ````
+
+    The OCI Cloud Shell will report back the progress of the function's deployment
+
+    ```
+    Pushing fra.ocir.io/mytenancy/livelabsrepo/log-to-adw-with-ords-and-fn:0.0.68 to docker registry...
+    The push refers to repository [fra.ocir.io/mytenancy/livelabsrepo/log-to-adw-with-ords-and-fn]
+    2775700c8222: Pushed 
+    9b50566e770b: Pushed 
+    522edf3e7d77: Pushed 
+    3613dd225bdd: Pushed 
+    c09710e8f799: Pushed 
+    43022de19af6: Pushed 
+    cdf79d97e316: Pushed 
+    88fb2db345cd: Pushed 
+    747aa001f428: Pushed 
+    f9ef7f1bcb19: Pushed 
+    02c055ef67f5: Pushed 
+    0.0.68: digest: sha256:2a9b72e1f08abc89ce3ac98bc1b074efe0bfccbc1103a14ba6b0b4c9745c623c size: 2623
+    Updating function log-to-adw-with-ords-and-fn using image fra.ocir.io/mytenancy/livelabsrepo/log-to-adw-with-ords-and-fn:0.0.68...
+    Successfully created function: log-to-adw-with-ords-and-fn with fra.ocir.io/mytenancy/livelabsrepo/log-to-adw-with-ords-and-fn:0.0.68
+    ```
+
+7. With the function deployed, we need to configure some of the parameters needed so that it can find and login to the database. Configuring function parameters is in the following syntax"
+    ```
+    fn config function <app-name> <function-name> <parameter> <parameter-value>
+    ```
+    We have the following values to supply:
+
+    ```
+    fn config function <app-name> <function-name> ords_base_url <ORDS Base URL>
+    fn config function <app-name> <function-name> db_schema <DB schema>
+    fn config function <app-name> <function-name> db_user <DB user name>
+    fn config function <app-name> <function-name> secret_ocid <secret ocid>
+    fn config function <app-name> <function-name> collection <input bucket name>
+    ```
+    And with the values we need
+
+    ````
+    <copy>
+    fn config function functionsApp log-to-adw-with-ords-and-fn ords_base_url "https://xxxxxx-xxxxxx/ords/"
+    fn config function functionsApp log-to-adw-with-ords-and-fn db_schema "admin"
+    fn config function functionsApp log-to-adw-with-ords-and-fn db_user "admin"
+    fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "xxxxxxxxx"
+    fn config function functionsApp log-to-adw-with-ords-and-fn collection "loggingcollection"
+    </copy>
+    ````
+
+    The above commands need some values specified before running them. First, we need to change the **ords_base_url** with the one you recorded after creating the table earlier in this lab. If you remember mine was **https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer** so ill want to set this parameter to:
+    ```
+    fn config function functionsApp log-to-adw-with-ords-and-fn ords_base_url "https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
+    ```
+    Your value will be similar (but not the same).
+
+    For the **secret_ocid** parameter, use the OCID of the password you entered in the secrets service during the setup.
+
+    ```
+    fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
+    ```
+
+    Once the values are entered, run them in the OCI Cloud Shell.
+    ```
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn ords_base_url "https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
+    functionsApp log-to-adw-with-ords-and-fn updated ords_base_url with https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn db_schema "admin"
+    functionsApp log-to-adw-with-ords-and-fn updated db_schema with admin
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn db_user "admin"
+    functionsApp log-to-adw-with-ords-and-fn updated db_user with admin
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
+    functionsApp log-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq
+    
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn collection "loggingcollection"
+    functionsApp log-to-adw-with-ords-and-fn updated input_bucket with loggingcollection
+    ```
+    Our function is now configured. At any time you can list the configuration parameters in a function with the command:
+    ```
+    fn list config fn <application-name> <function-name>
+    ```
+    so for our function and application it would be
+    ```
+    fn list config fn functionsApp log-to-adw-with-ords-and-fn
+    ```
+    The Application Details page will also reflect this function has been created.
+
+    ![Deployed Function](./images/func-3.png)
+
 
 ## **STEP 3:** Create a Service Connector
 
-This section walks through creating a service connector using the Console. Your function must be deployed.
+1. Use the OCI web console drop down menu to go to **Observability & Management** and then **Service Connectors**.
 
-1. Open the navigation menu and click Analytics & AI. Under Messaging, click Service Connector Hub.
+    ![Observability & Management and then Service Connectors](./images/con-1.png)
 
-    ![Cloud Console Link in OCI Web Console](./images/json-6.png)
+2. Next, ensure we are using the livelabs compartment for this **Service Connector** we are about to create. Use the **Compartments** drop down on the left side of the page to select **livelabs**.
 
-2. Choose the Compartment XXXXX.
+    ![choose compartment](./images/con-2.png)
 
-    ![Cloud Console Link in OCI Web Console](./images/json-6.png)
+3. Click the **Create Service Connector** button.
 
-3. Click Create Service Connector.
+    ![Click the Create Service Connector button](./images/con-3.png)
 
-    ![Cloud Console Link in OCI Web Console](./images/json-6.png)
+4. On the Create Service Connector page, start by giving the Service Connector a name. Use the **Connector Name** field and enter **Send Logs to My Autonomous Database**.
 
-4. On the Create Service Connector page:
+    **Connector Name:** Send Logs to My Autonomous Database
 
-    Type a Connector Name such as "Send Logs to My Autonomous Database." Avoid entering confidential information.
+    ````
+    <copy>
+    Send Logs to My Autonomous Database
+    </copy>
+    ````
+    ![Connector Name Field](./images/con-4.png)
 
-    Select the Resource Compartment where you want to store the new service connector.
+5. For the **Description** field, use the same value as the Connector Name.
 
-    Under Configure Service Connector, select your source and target services to move log data to a metric:
+    **Description:** Send Logs to My Autonomous Database
 
-            Select Source: Logging
+    ````
+    <copy>
+    Send Logs to My Autonomous Database
+    </copy>
+    ````
+
+    ![Description Field](./images/con-5.png)
+
+6. Ensure the **Resource Compartment** is set to **livelabs**
+
+    ![Resource Compartment](./images/con-6.png)
+
+    And the top naming section should look like the following image:
+
+    ![top naming section](./images/con-7.png)   
+
+7. Now, in the **Configure Service Connector** section, we will be selecting our source and target services to move log data to the database. Starting with the **Source** dropdown
+
+    ![source dropdown](./images/con-8.png)   
+
+    select **Logging** as the **Source**
+
+    ![select Logging as the Source](./images/con-9.png)   
+
+    In the **Configure source connection** section, ensure the **Compartment Name** is livelabs
+
+    ![compartment name is livelabs](./images/con-10.png)   
+
+    For **Log Group**, select **Default_Group**
+
+    ![Log Group is Default Group](./images/con-11.png) 
+
+    And for the **Logs** dropdown, select **functionsApp_invoke**, the log we created in the previous lab to track the batch load insert.
+
+    ![Log is functionsApp_invoke](./images/con-12.png) 
+
+    The **Configure source connection** section should look like the following image:
+
+    ![Completed Configure source connection section](./images/con-13.png) 
 
             Select Target: Functions
 
@@ -159,6 +359,6 @@ in JSON workshop
 
 query
 
-{"subject": "csv-to-adw-with-ords-and-fn"}
+{"subject": "log-to-adw-with-ords-and-fn"}
 
 Greg Verstraeten
