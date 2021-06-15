@@ -341,7 +341,7 @@ With Oracle Functions, an application is:
     fn config function <app-name> <function-name> ords_base_url <ORDS Base URL>
     fn config function <app-name> <function-name> db_schema <DB schema>
     fn config function <app-name> <function-name> db_user <DB user name>
-    fn config function <app-name> <function-name> dbpwd_cipher <DB password>
+    fn config function <app-name> <function-name> secret_ocid <secret ocid>
     fn config function <app-name> <function-name> input_bucket <input bucket name>
     fn config function <app-name> <function-name> processed_bucket <processed bucket name>
     ```
@@ -352,7 +352,7 @@ With Oracle Functions, an application is:
     fn config function functionsApp csv-to-adw-with-ords-and-fn ords_base_url "https://xxxxxx-xxxxxx/ords/"
     fn config function functionsApp csv-to-adw-with-ords-and-fn db_schema "admin"
     fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
-    fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "xxxxxxxxx"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "xxxxxxxxx"
     fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
     fn config function functionsApp csv-to-adw-with-ords-and-fn processed_bucket "processed-bucket" 
     </copy>
@@ -363,10 +363,10 @@ With Oracle Functions, an application is:
     ```
     Your value will be similar (but not the same).
 
-    For the **dbpwd_cipher** parameter, use the password you entered when creating the autonomous database as well as used when logging in as the admin user.
+    For the **secret_ocid** parameter, use the OCID of the password you entered in the secrets service during the setup.
 
     ```
-    fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "mycoolpassword1234!!"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
     ```
 
     Once the values are entered, run them in the OCI Cloud Shell.
@@ -380,8 +380,8 @@ With Oracle Functions, an application is:
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
     functionsApp csv-to-adw-with-ords-and-fn updated db_user with admin
     
-    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn dbpwd_cipher "mycoolpassword1234!!"
-    functionsApp csv-to-adw-with-ords-and-fn updated dbpwd_cipher with mycoolpassword1234!!
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
+    functionsApp csv-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq
     
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
     functionsApp csv-to-adw-with-ords-and-fn updated input_bucket with input-bucket
@@ -399,7 +399,7 @@ With Oracle Functions, an application is:
     ```
     The Application Details page will also reflect this function has been created.
 
-    ![Deployed Function](./images/func-15.png)
+    ![Deployed Function](./images/func-14.png)
 
 22. So we can see any issues with our function, we need to enable **logging**. On the left side of the **functionsApp Details Page**, find and click the **Logs** option.
 

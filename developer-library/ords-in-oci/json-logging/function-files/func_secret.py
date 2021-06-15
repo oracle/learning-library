@@ -49,13 +49,13 @@ def handler(ctx, data: io.BytesIO=None):
     # Retrieving the Function configuration values
     try:
         cfg = dict(ctx.Config())
-        ordsbaseurl = cfg["ordsbaseurl"]
-        dbschema = cfg["dbschema"]
-        dbuser = cfg["dbuser"]
+        ordsbaseurl = cfg["ords_base_url"]
+        dbschema = cfg["db_schema"]
+        dbuser = cfg["db_user"]
         secret_ocid = cfg["secret_ocid"]
         collection = cfg["collection"]
     except:
-        logger.error('Missing configuration keys: ordsbaseurl, dbschema, dbuser, secret_ocid and collection')
+        logger.error('Missing configuration keys: ords_base_url, db_schema, db_user, secret_ocid and collection')
         raise
     
     # Retrieving the log entries from Service Connector Hub as part of the Function payload
