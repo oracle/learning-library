@@ -114,13 +114,9 @@ In this lab, you will create a service connector to move log data from the Loggi
 
 ## **STEP 2:** Create and Deploy a Function
 
-1. The next few steps will be using the **OCI Cloud Shell**. We can start a Cloud Shell session by clicking the **Launch Cloud Shell** button in the **Begin your Cloud Shell session** step on the **Getting Started** page.
+1. The next few steps will be using the **OCI Cloud Shell**. We can do this by clicking the **Cloud Shell icon** in the upper right of the OCI web console.
 
-    ![clicking the Launch Cloud Shell button](./images/func-1.png)
-
-    This will open the **OCI Cloud Shell** on the bottom of the page.
-
-    ![OCI Cloud Shell](./images/func-2.png)
+    ![Cloud Console Link in OCI Web Console](./images/json-6.png)
 
 2. Seeing in the previous lab we set up our context and docker repository, we can start by just logging back into the repository so that we can deploy the next function. As a reminder, the command we will be running will be in the format **docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io** as seen below:
 
@@ -368,7 +364,7 @@ In this lab, you will create a service connector to move log data from the Loggi
 
     ![mini-topology map](./images/con-20.png)
 
-16. If prompted to create a policy (required for access to create or update a service connector), click the **Create** button.
+16. On the lower part of the page, you may see a prompt to create a policy (required for access to create or update a service connector). If you do, click the **Create** button for this policy to be auto-created for you.
 
     ![prompted to create a policy](./images/pol-1.png)
 
