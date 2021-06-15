@@ -378,14 +378,62 @@ In this lab, you will create a service connector to move log data from the Loggi
 
 ## **STEP 4:** Testing the flow
 
-put file in bucket
+To test the entire flow, we need to put a csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
-in JSON workshop
+    ![Storage then Buckets](./images/full-1.png)
 
-query
+2. Click the **input-bucket** link in the **Name Column**.
 
-{"subject": "log-to-adw-with-ords-and-fn"}
+    ![Click the input-bucket link](./images/full-2.png)
 
+3. In the **Objects Section**, click the **Upload** button.
+
+    ![click the Upload button](./images/full-3.png)
+
+4. On the **Upload Objects** form, use the **Choose Files from your Computer** section to drag and drop or file browse to the file1.csv file we used when creating the table earlier in this lab.
+
+    ![Find and upload the file](./images/full-4.png)
+
+5. Once selected, click the **Upload** button.
+
+    ![click the Upload button](./images/full-5.png)
+
+6. To see the logs uploaded to the database, we need to go back to the JSON worksheet. Back in **Database Actions**, choose **JSON** in the **Database Actions Menu**.
+
+    ![JSON in the Database Actions Menu](./images/json-1.png)
+
+or select the JSON tile on the **Database Actions** homepage.
+
+    ![JSON in the Database Actions Menu](./images/full-6.png)
+
+7. Click on our collection **loggingcollection** on the left side of the page in the **Collections Navigator**
+
+    ![JSON in the Database Actions Menu](./images/full-7.png)
+
+8. Now using the worksheet, issue a **Query by Example** that will bring back all records. We can do this by typeing **{}** in the worksheet
+    ````
+    <copy>
+    {}
+    </copy>
+    ````
+    ![All records Query by Example](./images/full-8.png)
+
+    and then clicking the **Run Query** button.
+
+    ![All records Query by Example results](./images/full-9.png)
+
+9. We can filter our search to just logs that deal with our CSV file insert. Issue the following **Query by Example** 
+    ````
+    <copy>
+    {"subject": "csv-to-adw-with-ords-and-fn"}
+    </copy>
+    ````
+
+    ![filtered Query by Example](./images/full-10.png)
+
+    and then clicking the **Run Query** button.
+
+    ![filtered Query by Example results](./images/full-11.png)
 
 ## Conclusion
 
