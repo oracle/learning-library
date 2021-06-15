@@ -378,7 +378,7 @@ In this lab, you will create a service connector to move log data from the Loggi
 
 ## **STEP 4:** Testing the flow
 
-To test the entire flow, we need to put a csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
+1. To test the entire flow, we need to put a csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
     ![Storage then Buckets](./images/full-1.png)
 
@@ -433,7 +433,7 @@ or select the JSON tile on the **Database Actions** homepage.
 
     and then clicking the **Run Query** button.
 
-    ![filtered Query by Example results](./images/full-11.png)
+    ![filtered Query by Example results](./images/full-1.png)
 
 ## Conclusion
 
