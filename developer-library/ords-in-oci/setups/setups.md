@@ -428,6 +428,135 @@ The function will be watching an object store bucket for a CSV file, process it 
 
     ![Create button](./images/buck-8.png)
 
+## **SETUP 7**: Create a Vault and Store the Database Admin Password
+
+To ensure we are not using passwords in plain text in any configurations or parts of this lab, we need to create an OCI Vault and place the password for the admin user of the database into the Secrets Service.
+
+1. Use the OCI web console drop down menu to go to **Identity & Security** and then **Valut**.
+
+    ![Identity & Security and then Valut](./images/vault-1.png)
+
+2. Next, ensure we are using the livelabs compartment for the **Vault** we are about to create. Use the **Compartments** drop down on the left side of the page to select **livelabs**.
+
+    ![livelabs compartment](./images/vault-2.png)
+
+3. Now, click the **Create Vault** button on the page.
+
+    ![click the Create Vault button](./images/vault-3.png)
+
+4. In the **Create Vault** slider, ensure that **livelabs** is selected for the **Create in Compartment** dropdown.
+
+    ![livelabs** is selected for the Create in Compartment dropdown](./images/vault-4.png)
+
+5. And lets name the vault **livelabs vault** using the Name field.
+
+    **Name:** livelabs vault
+    ````
+    <copy>
+    livelabs vault
+    </copy>
+    ````
+    ![name field](./images/vault-5.png)
+
+    Also ensure that the **Make it a virtual private vault** checkbox is **not checked** and left empty.
+
+6. Once the **Create Vault** slider looks like the following image, click the **Create Vault** button.
+
+    ![completed create vault slider](./images/vault-6.png)
+
+7. After the vault is done creating, click on the **Vault Name** to view the details.
+
+    ![click on the Vault Name to view the details](./images/vault-7.png)
+
+8. We need to set a **Master Encryption Key** for our vault. On the **Vault Details** page, in the **Master Encryption Keys in livelabs Compartment** section, click the **Create Key** button.
+
+    ![click the Create Key button](./images/vault-8.png)
+
+9. Using the **Create Key** slider, start by ensuring that the **Create in Compartment** dropdown is set to **livelabs**.
+
+    ![Create in Compartment dropdown is set to livelabs](./images/vault-9.png)
+
+10. Next, our **Protection Mode** should be set to **HSM** if not already selected. You can read more about protection modes and keys [here](https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+
+    ![Protection Mode should be set to HSM](./images/vault-10.png)
+
+11. For the **Name** field, use **Vinz Clortho**; this being a master key and all.
+
+    **Name:** Vinz Clortho
+    ````
+    <copy>
+    Vinz Clortho
+    </copy>
+    ````
+
+    ![Name field](./images/vault-11.png)
+
+12. For our **Key Shape**, set the **Key Shape: Algorithm** to **AES** if not already selected and the **Key Shape: Length** to **256 bits** if also not selected.
+
+    ![click the Create Key button](./images/vault-12.png)
+
+13. When your **Create Key** slider form looks like the following image, click the **Create Key** button.
+
+    ![click the Create Key button](./images/vault-13.png)
+
+14. Once the **Master Encryption Key** is created
+
+    ![Master Encryption Key is created](./images/vault-14.png)
+
+    Use the **Resources** links list on the left of the page and select **Secrets**.
+
+    ![Resources links list on the left of the page and select Secrets](./images/vault-15.png)
+
+15. In the **Secrets in livelabs Compartment** section, click **Create Secret**.
+
+    ![click Create Secret](./images/vault-16.png)
+
+16. Using the **Create Secret** slider, ensure that **livelabs** is selected for the **Create in Compartment** dropdown.
+
+    ![livelabs** is selected for the Create in Compartment dropdown](./images/vault-4.png) 
+
+17. For the **Name** field, enter **dbpwd**.
+
+    **Name:** dbpwd
+    ````
+    <copy>
+    dbpwd
+    </copy>
+    ````
+    ![Name Field](./images/vault-17.png)
+
+18. In the **Description** field, we can enter **Database Password for Admin User**
+
+    **Description:** Database Password for Admin User
+    ````
+    <copy>
+    Database Password for Admin User
+    </copy>
+    ````
+    ![Description Field](./images/vault-18.png)
+
+19. For the **Encryption Key in livelabs** dropdown, select the **Master Key** we just created.
+
+    ![Encryption Key in livelabs dropdown](./images/vault-19.png)
+
+20. The **Secret Type Template** dropdown should be **Plain-Text** if not already selected.
+
+    ![Secret Type Template dropdown should be **Plain-Text](./images/vault-20.png)
+
+21. Lastly, enter the password you used in the **Autonomous Database Creation** section into the **Secret Contents** text area.
+
+    ![Secret Contents text area](./images/vault-21.png)
+
+22. Once your **Create Secret** silder looks like the following image, click the **Create Secret** button in the lower left.
+
+    ![click the Create Secret button](./images/vault-22.png)
+
+23. Once the secret is done creating, use the **pop-up menu** on the right of the secret row and select **Copy OCID**.
+
+    ![click the Create Secret button](./images/vault-23.png)
+
+    Save this OCID in a text editor or notes application for later use.
+
 ## Next Steps
 
 Please move to the next section of the lab [Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](../csv-function/csv-function.md).
