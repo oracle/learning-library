@@ -364,7 +364,7 @@ In this lab, you will create a service connector to move log data from the Loggi
 
     ![mini-topology map](./images/con-20.png)
 
-16. On the lower part of the page, you may see a prompt to create a policy (required for access to create or update a service connector). If you do, click the **Create** button for this policy to be auto-created for you.
+16. On the lower part of the page, you may see a prompt to create a policy (required for access to create or update a service connector). If you do, click the **Create** button for this policy to be auto-created.
 
     ![prompted to create a policy](./images/pol-1.png)
 
