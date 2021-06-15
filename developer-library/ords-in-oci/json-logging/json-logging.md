@@ -322,15 +322,15 @@ In this lab, you will create a service connector to move log data from the Loggi
 
     ![select Logging as the Source](./images/con-9.png)   
 
-    In the **Configure source connection** section, ensure the **Compartment Name** is livelabs
+8. In the **Configure source connection** section, ensure the **Compartment Name** is livelabs
 
     ![compartment name is livelabs](./images/con-10.png)   
 
-    For **Log Group**, select **Default_Group**
+9. For **Log Group**, select **Default_Group**
 
     ![Log Group is Default Group](./images/con-11.png) 
 
-    And for the **Logs** dropdown, select **functionsApp_invoke**, the log we created in the previous lab to track the batch load insert.
+10. And for the **Logs** dropdown, select **functionsApp_invoke**, the log we created in the previous lab to track the batch load insert.
 
     ![Log is functionsApp_invoke](./images/con-12.png) 
 
@@ -338,18 +338,47 @@ In this lab, you will create a service connector to move log data from the Loggi
 
     ![Completed Configure source connection section](./images/con-13.png) 
 
-            Select Target: Functions
+11. The **Target** section is next. Use the **Target** dropdown to select **Functions**.
 
-    Under Configure source connection, select a Compartment Name, Log Group, and Log.
+    ![Target dropdown to select Functions](./images/con-14.png) 
 
-    Under Configure target connection, select the Function Application and Function corresponding to the function you created using the function code sample.
+12. Once **Functions** has been selected using the **Target** dropdown, scroll down the page to find the **Configure target connection** section, just below the **Configure Function Task (Optional)** section.
+
+    ![Configure target connection** section](./images/con-15.png) 
 
 
-5. If prompted to create a policy (required for access to create or update a service connector), click Create.
+13. Ensure the **Compartment** dropdown is set to **livelabs**
 
-    ![Cloud Console Link in OCI Web Console](./images/json-6.png)    
-    
-6. Click Create.
+    ![Resource Compartment](./images/con-16.png)
+
+14. Using the **Function Application** dropdown, select **functionsApp**.
+
+    ![Resource Compartment](./images/con-17.png)
+
+
+15. Using the **Function** dropdown, select **log-to-adw-with-ords-and-fn**
+
+    ![Function** dropdown, select log-to-adw-with-ords-and-fn](./images/con-18.png)
+
+    Your **Configure target connection** section should look like the following image:
+
+    ![Completed target connection section](./images/con-19.png)
+
+    and if you scroll the page up, you can see the mini-topology map has our services and green checks indicating we are ready to create.
+
+    ![mini-topology map](./images/con-20.png)
+
+16. If prompted to create a policy (required for access to create or update a service connector), click the **Create** button.
+
+    ![prompted to create a policy](./images/pol-1.png)
+
+17. When done reviewing, click the **Create** button in the lower left of the page.
+
+    ![click the **Create** button](./images/con-21.png)
+
+18. Our Service Connector is created and ready to be used.
+
+    ![Created Service Connector](./images/con-22.png)
 
 ## **STEP 4:** Testing the flow
 
@@ -361,4 +390,12 @@ query
 
 {"subject": "log-to-adw-with-ords-and-fn"}
 
-Greg Verstraeten
+
+## Conclusion
+
+In this section, you created a function to automate the loading of logs into a database using the service connector.
+
+## Acknowledgements
+
+- **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager, Greg Verstraeten, Product Manager
+- **Last Updated By/Date** - Brian Spendolini, June 2021
