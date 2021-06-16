@@ -251,8 +251,12 @@ With Oracle Functions, an application is:
 
 15. Step 5 was completed in the setup lab where we generated a token for our user so we can skip this step. Now would be a good time to retrieve the saved token you saved from the setup steps.
 
-16. For step 6, we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format **docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io** as seen below:
-
+16. For step 6, we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format 
+     ```
+    docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io
+    ```
+    as seen below:
+    
     ```
     docker login -u 'mytenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
     ```
