@@ -257,7 +257,7 @@ With Oracle Functions, an application is:
     docker login -u 'mytenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
     ```
 
-    If your tenancy is federated with Oracle Identity Cloud Service, you will use the above format using oracleidentitycloudservice. If the user you are using is not a federated user, you will use the syntax tenancy_name/user_name.
+    If your tenancy is federated with Oracle Identity Cloud Service, you will use the above format using oracleidentitycloudservice. If the user you are using is not a federated user, you will use the syntax tenancy_namespace/user_name. If you do not know your Tenancy Namespace, you can find that information on your user profile page or click [here](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/understandingnamespaces.htm) for more information.
 
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ docker login -u 'mytenancy/oracleidentitycloudservice/bspendol' fra.ocir.io
