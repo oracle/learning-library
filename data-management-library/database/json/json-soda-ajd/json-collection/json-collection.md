@@ -345,6 +345,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Beda Hammerschmidt, Roger Ford
+- **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
 - **Last Updated By/Date** - Brianna Ambler, June 2021

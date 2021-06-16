@@ -44,25 +44,9 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
 You may now [proceed to the next lab](#next).
 
-## **Rate this Workshop**
-
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating. 
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-
-2.  Click on the **Brown Button** to re-access the workshop  
-
-    ![](images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-    ![](images/rate-this-workshop.png " ")
-
-If you still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 
-- **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
+- **Created By/Date** - Tom McGinn, Database Product Management, March 2020
 - **Contributors** - Kay Malcolm, Rene Fontcha, Kamryn Vinson, Anoosha Pilli
-- **Last Updated By/Date** - Anoosha Pilli, April 2021
-
+- **Last Updated By/Date** - Tom McGinn, June 2021

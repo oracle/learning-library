@@ -1,4 +1,4 @@
-# Scaling and Performance in Your Autonomous Database
+# Scale Your Autonomous Database
 
 ## Introduction
 
@@ -8,12 +8,6 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
 -   Learn how to scale up an ADW or ATP service
 -   Understand the performance and concurrency impacts of scaling your autonomous database service online
-
-### Prerequisites
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account or a LiveLabs account, then you can obtain a new cloud account through the Oracle Free Trial program.
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the left.
-
 
 ## **Step 1**: Scaling your Autonomous Database Instance
 
@@ -59,4 +53,3 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - LiveLabs QA Team (Jeffrey Malcolm Jr, Ayden Smith, Arabella Yao)
 - **Last Updated By/Date** - Kamryn Vinson, May 2021
-

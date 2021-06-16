@@ -15,18 +15,6 @@ Watch a video demonstration of connecting to an autonomous database instance usi
 -   Learn how to download and configure a connection wallet
 -   Learn how to connect to your Autonomous Data Warehouse with Oracle SQL Developer
 
-### Prerequisites
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-
--   Oracle SQL Developer 19.2 or later is recommended (see <a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html" target="\_blank">Oracle SQL Developer Downloads site</a>).
-    Please use SQL Developer version 18.3 or later, as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.
-
-    *Note:* If you are a Windows user on a 64-bit platform, download the "Windows 64-bit with JDK 8 included" distribution, as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and to connect to your Autonomous Data Warehouse.
-    If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Extension](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
-
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the right.
-
 ## **Step 1**: Download the Connection Wallet
 
 As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page or from the ADW or ATP service console.
@@ -42,7 +30,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
     ![](./images/dbconnection.png " ")
 
 3.  Use the Database Connection dialog to download client credentials.
-    - Wallet Type - For this lab, select **Instance Wallet**. This wallet type is for a single database only. This provides a database-specific wallet. 
+    - Wallet Type - For this lab, select **Instance Wallet**. This wallet type is for a single database only. This provides a database-specific wallet.
     - Click **Download Wallet**.
 
     ![](./images/Picture100-15.png " ")
@@ -112,4 +100,3 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Richard Green, DB Docs Team
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Kamryn Vinson, May 2021
-

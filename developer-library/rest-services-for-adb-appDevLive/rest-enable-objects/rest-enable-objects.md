@@ -152,13 +152,9 @@ select empno, ename, dept from emp where empno = :id
 
     ![Execute button in source section of the page](./images/rest-18.png)
 
-17. After clicking the **execute** button ![execute query button](./images/execute-button.png), a **Bind Variables** modal will appear. Enter **a1** for the value in **id field** 
+17. After clicking the **execute** button ![execute query button](./images/execute-button.png), a **Bind Variables** modal will appear. Enter **a1** for the value in **id field** and then left click **OK** on the modal.
 
-    ![id field in the Bind Variables modal](./images/rest-19.png)
-
-    and then left click **OK** on the modal.
-
-    ![Bind Variables modal](./images/rest-20.png)
+    ![Bind Variables modal](./images/rest-19.png)
 
 18. You can see the results of the query just below the **Source** section. (You may need to scroll the page down)
 
@@ -190,7 +186,7 @@ select empno, ename, dept from emp where empno = :id
 
     ![Create Template slider](./images/rest-10.png)
     
-10. In the **URI Template** template field, enter bizlogic
+4. In the **URI Template** template field, enter bizlogic
 
     ````
     <copy>bizlogic</copy>
@@ -198,25 +194,25 @@ select empno, ename, dept from emp where empno = :id
 
     ![URI Template field](./images/rest-26.png)
 
-11. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+5. When the **URI Template** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
     ![Create Modules slider with all info, left click create](./images/rest-27.png)
 
-12. Click the **+ Create Handler** button on the right of the page, just below our newly created template just as we did before.
+6. Click the **+ Create Handler** button on the right of the page, just below our newly created template just as we did before.
 
     ![Left click the + Create Handler button](./images/rest-28.png)
 
-13. The **Create Handler** slider comes out of the right of the page. 
+7. The **Create Handler** slider comes out of the right of the page. 
 
     ![Create Handler slider](./images/rest-29.png)
 
-14. We need to change the **Method** from GET to POST because we are submitting a value to the REST Service. Use the dropdown in the **Method** field to select **POST**.
+8. We need to change the **Method** from GET to POST because we are submitting a value to the REST Service. Use the dropdown in the **Method** field to select **POST**.
 
     ![Selecting POST using the dropdown in the Method field](./images/rest-30.png)
 
-    Upon chaning the **Method** to post, we see the **Source Type** change to PL/SQL.
+    Upon changing the **Method** to post, we see the **Source Type** change to PL/SQL.
 
-15. Now, in the **Source** field, enter the following PL/SQL
+9. Now, in the **Source** field, enter the following PL/SQL
 
     ````
     <copy>
@@ -226,19 +222,21 @@ select empno, ename, dept from emp where empno = :id
     </copy>
     ````
 
-16. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+    ![Create Handler slider](./images/rest-00.png)
+
+10. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
     ![Create Handler slider with all info, left click create](./images/rest-31.png)
 
-17. Next step we need to create an output parameter so we can return the result; the count or rows where the passed in value is equal to the values in col2 in our table. On the bottom on the bizlogic details page, under the **Source** area, we see the **+ Create Parameter** button. Left click the **+ Create Parameter** button.
+11. Next step we need to create an output parameter so we can return the result; the count or rows where the passed in value is equal to the values in col2 in our table. On the bottom on the bizlogic details page, under the **Source** area, we see the **+ Create Parameter** button. Left click the **+ Create Parameter** button.
 
     ![Left click the + Create Parameter button](./images/rest-32.png)
 
-18. The **Create Parameter** slider comes out of the right of the page. 
+12. The **Create Parameter** slider comes out of the right of the page. 
 
     ![Create Parameter slider](./images/rest-33.png)
 
-19. For the **Parameter Name** field, enter **output**
+13. For the **Parameter Name** field and the **Bind Variable Name** field, enter **output**
 
     ````
     <copy>output</copy>
@@ -246,45 +244,37 @@ select empno, ename, dept from emp where empno = :id
 
     ![Create Parameter name field](./images/rest-34.png)
 
-20. For the **Bind Variable Name** field, enter **output**
-
-    ````
-    <copy>output</copy>
-    ````
-
-    ![Bind Variable Name field](./images/rest-35.png)
-
-21. For the **Source Type** field, use the dropdown and select **Response**
+14. For the **Source Type** field, use the dropdown and select **Response**
 
     ![Source Type field](./images/rest-36.png)
 
-22. For the **Parameter Type** field, use the dropdown and select **INT**. (We are returning a number remember)
+15. For the **Parameter Type** field, use the dropdown and select **INT**. (We are returning a number remember)
 
     ![Parameter Type field](./images/rest-37.png)
 
-23. Lastly, for the **Access Method**, use the dropdown and select **Output**
+16. Lastly, for the **Access Method**, use the dropdown and select **Output**
 
     ![Access Method field](./images/rest-38.png)
 
-24. When the **Create Parameter** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
+17. When the **Create Parameter** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
     ![Create Parameter slider with all info, left click create](./images/rest-39.png)
 
-25. You will see the newly created parameter in the parameters table on the bottom of the page.
+18. You will see the newly created parameter in the parameters table on the bottom of the page.
 
     ![Parameter created in report](./images/rest-40.png)
 
     We are now ready to test this REST API.
 
-26. Left click **bizlogic** in the Database Actions breadcrumbs in the upper left of the page.
+19. Left click **bizlogic** in the Database Actions breadcrumbs in the upper left of the page.
 
     ![bizlogic breadcrumb](./images/rest-41.png)
 
-27. Now, using the popout menu icon ![popout menu icon](./images/pop-menu.png) on our bizlogic POST tile, select **Get cURL command**.
+20. Now, using the popout menu icon ![popout menu icon](./images/pop-menu.png) on our bizlogic POST tile, select **Get cURL command**.
 
     ![selecting Get cURL command](./images/rest-42.png)
 
-28. The cURL Command modal pops up.
+21. The cURL Command modal pops up.
 
     ![cURL Command modal](./images/rest-43.png)
 
@@ -292,11 +282,11 @@ select empno, ename, dept from emp where empno = :id
     
     ![Substitutions modal](./images/rest-44.png)
 
-29. Click the copy icon ![Fill Bind Variables Values icon](./images/copy-copy.png) to copy the cURL command with the added Substitution value.
+22. Click the copy icon ![Fill Bind Variables Values icon](./images/copy-copy.png) to copy the cURL command with the added Substitution value.
 
     ![Copied cURL command](./images/rest-45.png)
 
-30. Using the OCI Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
+23. Using the OCI Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
 
     ```
     curl -X POST \
@@ -323,6 +313,6 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Anoosha Pilli, Kay Malcolm, May 2021
+- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
 - **Workshop Expiry Date** - April 2022
 

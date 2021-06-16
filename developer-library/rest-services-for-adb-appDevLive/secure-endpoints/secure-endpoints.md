@@ -304,7 +304,6 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-
-- **Last Updated By/Date** - April 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
 - **Workshop Expiry Date** - April 2022
 

@@ -22,11 +22,6 @@ You will run a basic query on the `SSB` data set which is a 1 terabyte data set 
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample data set
 
-### Prerequisites
-
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud Account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account, or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the left.
-
 ## **STEP 1**: Connect with SQL Worksheet
 
 Although you can connect to your autonomous database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your ADW or ATP console.

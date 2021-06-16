@@ -1,0 +1,31 @@
+{
+    "workshoptitle": "NetFoundry",
+    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Getting Started",
+            "description": "Prerequisites for LiveLabs",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
+            "title": "Introduction",
+            "description": "Introducing NetFoundry Zero Trust Networking",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "NetFoundry Prerequisites - Cloud Application Prep",
+            "description": "Prerequsites for Using NetFoundry Zero Trust Networking",
+            "filename": "../../netfoundry-prerequisites/netfoundry-prerequisites.md"
+        },
+        {
+            "title": "Lab 1: Setup Zero Trust Network Connectivity from Client to an Application Server",
+            "description": "Learn how to set up a Zero Trust Network in OCI Cloud",
+            "filename": "../../setup-zero-trust-network-connectivity/setup-zero-trust-network-connectivity.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

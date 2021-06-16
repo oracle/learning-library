@@ -49,4 +49,4 @@ In this lab you will use the browser-based SQL and REST workshop tools, connect 
 ## Acknowledgements
 
  - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Product Manager
- - **Last Updated By/Date** - Anoosha Pilli, Database Product Management, April 2021
+ - **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021

@@ -1,10 +1,10 @@
-# Provisioning Autonomous Database (ADW and ATP)
+# Provision an Autonomous Database (ADW and ATP)
 
 ## Introduction
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. In this lab, you provision a new ADW instance.
 
-*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
+*Note: While this lab uses ADW, the steps are identical for creating an ATP database.*
 
 Estimated time: 5 minutes
 
@@ -12,13 +12,9 @@ Estimated time: 5 minutes
 
 -   Learn how to provision a new Autonomous Database
 
-### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** seen in the Contents menu on the left. In this lab, you will provision an ADB database instance using the cloud console.
-
 ## **STEP 1**: Choosing ADW or ATP from the Services Menu
 
-1. Login to the Oracle Cloud, as shown in the previous lab.
+1. Login to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
@@ -29,7 +25,7 @@ Estimated time: 5 minutes
 
     ![Click Autonomous Data Warehouse.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
+4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment.
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 
@@ -50,6 +46,9 @@ Estimated time: 5 minutes
     ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+
+    ![](./images/create-adb-screen.png " ")
+
 3. Provide basic information for the autonomous database:
 
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
@@ -101,11 +100,14 @@ Estimated time: 5 minutes
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
+    ![](./images/network-access.png " ")
 
 9. Choose a license type. For this lab, choose __License Included__. The two license types are:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+
+    ![](./images/license.png " ")
 
 10. Click __Create Autonomous Database__.
 
@@ -126,4 +128,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Tom McGinn, June 2021

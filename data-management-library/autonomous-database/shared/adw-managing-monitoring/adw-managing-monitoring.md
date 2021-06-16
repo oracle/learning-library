@@ -1,4 +1,4 @@
-# Monitoring Your Autonomous Database Instance using the Cloud Console
+# Monitor Your Autonomous Database Instance using the Cloud Console
 
 ## Introduction
 
@@ -13,11 +13,6 @@ Oracle provides several facilities for monitoring the performance and activity o
 This lab covers using the Database Service Console, OCI Monitoring Console, and the Performance Hub to monitor an ADW database. The same steps apply to an ATP database.
 
 The ADW or ATP Service Console provides dashboards to monitor the real-time and historical CPU and storage utilization, as well as database activity, like the number of running or queued statements. It also provides Real-Time SQL Monitoring to look at current and past long-running SQL statements in your instance and allows you to cancel long-running queries or set thresholds for ADW or ATP to automatically cancel them for you.
-
-
-### Prerequisites
-
-This lab assumes you have completed the preceding labs shown in the Contents menu on the right.
 
 ### Video Preview
 Watch a video demonstration of monitoring an autonomous database in the Autonomous Data Warehouse cloud service.

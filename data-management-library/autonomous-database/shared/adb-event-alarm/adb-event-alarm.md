@@ -1,5 +1,5 @@
 ﻿
-# Setting Event and Alarm Notifications for an Autonomous Database
+# Set Event and Alarm Notifications for an Autonomous Database
 
 ## Introduction
 
@@ -24,14 +24,6 @@ In this lab, you'll:
 - Perform an activity that activates the rule and confirm that an email notification was sent. 
 - Create and test an Autonomous Database alarm that will trigger an email notification.
 
-### Prerequisites
-
-To complete this lab, you need to have the following:
-
-- Access to an Oracle Cloud account
-- An Oracle Autonomous Database instance in Autonomous Data Warehouse or Autonomous Transaction Processing
-- Completion of this workshop's Auto Scaling lab
-
 ## **PART 1 - Define an Event that Will Email a Notification When a Database Is Stopped**
 
 OCI Notifications service enables you to set up communication channels for publishing messages using topics and subscriptions.
@@ -46,7 +38,7 @@ In Steps 1 through 7, you create a notification topic with an email subscription
 
 ## **STEP 1**: Sign in to OCI Console and Create a Notification Topic
 
-1. First, you will create a Notification topic. From OCI Services menu, click **Developer Services** -> **Notifications** 
+1. First, you will create a Notification topic. From OCI Services menu, click **Developer Services** -> **Notifications**
   ![ALT text is not available for this image](images/2570118073.png)
 2. Click **Create Topic**. ![ALT text is not available for this image](images/2570118185.png)
 

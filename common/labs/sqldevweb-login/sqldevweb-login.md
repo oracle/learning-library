@@ -13,14 +13,19 @@ Estimated time: 5 minutes
 1. From the ADB Details page, select the Tools tab
 ![](./images/ADB-details-1.png)
 
-2. The Tools page provides you access to SQL Developer Web, Oracle Application Express, and Oracle ML User Administration. In the SQL Developer Web box, click **Open SQL Developer Web**.
-![](./images/ADB-details-2.png)
+2. The Tools page provides you access to Database Actions, Oracle Application Express, and Oracle ML User Administration. In the Database Actions box, click **Open Database Actions**.
+![](./images/open-database-actions.png  " ")
 
-3. A sign in page opens for SQL Developer Web. Sign in with the database instance's default administrator account, ADMIN, with the admin password you specified when creating the database. Click Sign in.
-![](./images/SQLDevWeb-1.png)
+3. A sign in page opens for Database Actions. Sign in with the database instance's default administrator account, **Username - ADMIN**, click **Next** and with the admin password you specified when creating the database. Click **Sign in**.
+![](./images/db-admin.png " ")
 
-4. SQL Developer Web opens on a worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes introduce the main features.
-![](./images/SQLDevWeb-2.png)
+![](./images/db-admin-password.png " ")
+
+4. From the Database Action menu, select **SQL**.
+![](./images/sql.png " ")
+
+5. SQL Developer Web opens on a worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes introduce the main features.
+![](./images/click-x.png  " ")
 
 ## Conclusion
  You are now connected to your Autonomous Database using SQL Developer Web.
@@ -28,5 +33,5 @@ Estimated time: 5 minutes
 ## Acknowledgements
 
  - **Author** - Troy Anthony, Database Product Management, May 2020
- - **Contributors** - Oracle LiveLabs QA Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead | Ayden Smith, Intern)
- - **Last Updated By/Date** - Troy Anthony, May 20 2020
+ - **Contributors** - Anoosha Pilli, Product Manager
+ - **Last Updated By/Date** - Anoosha Pilli, June 2021

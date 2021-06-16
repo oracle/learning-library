@@ -1,4 +1,4 @@
-# Using Oracle Machine Learning Notebooks
+# Use Oracle Machine Learning Notebooks
 
 ## Introduction
 
@@ -24,12 +24,6 @@ In this lab, you will use the Oracle Machine Learning (OML) SQL notebook applica
 -   Learn how to run a SQL Statement
 -   Learn how to share notebooks
 -   Learn how to create and run SQL scripts
-
-### Prerequisites
-
--   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the right.
 
 ## **STEP 1**: Creating OML Users
 
@@ -303,4 +297,3 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-

@@ -12,14 +12,7 @@ Estimated lab time: 15 minutes
 * Learn how to enable and disable Autonomous Data Guard
 * Learn how to switch over and fail over from primary database to a standby database
 
-### Prerequisites
-
-* This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-* Make sure you have completed the previous lab in the Contents menu on the right, **Provision Autonomous Database**, before you proceed with this lab.
-
-**Note:**  This lab uses Autonomous Data Guard, which is not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy.
-
-**Note:**  Autonomous Data Guard is available only in Autonomous Database instances 19c and above.
+**Note:**  This lab uses Autonomous Data Guard, which is not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy. Autonomous Data Guard is available only in Autonomous Database instances 19c and above.
 
 ### Basic Disaster Recovery Terminology
 **Primary or Source Database**: The main database that is actively being used to read from, and write to, by a user or application.
@@ -106,4 +99,3 @@ For more information about Standby Databases, see the documentation  [About Stan
 ## Acknowledgements
 * Authors - Vandanadevi Rajamani, Database User Assistance; Nilay Panchal, ADB Product Management
 * Last Updated By/Date -Vandanadevi Rajamani/November 2020
-

@@ -11,12 +11,6 @@ Estimated Lab Time: 10 minutes
 -   Learn how to create external tables on top of files residing on the object store
 -   Learn how to query external data by the external tables
 
-### Prerequisites
-
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the left.
-- Make sure you have completed the previous lab in the Contents menu on the left, *Loading Data*, before you proceed with this lab. In Loading Data, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.
-
 ## **STEP 1**: Create External Tables with DBMS_CLOUD
 
 1.  If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
@@ -59,7 +53,7 @@ Estimated Lab Time: 10 minutes
 
 9.  Run the script in SQL Worksheet. In the Substitutions Variables dialog, paste the base URL you copied in Loading Data Lab, Step 6, and click **OK**.
 
-    ![Click Run Scipt. A dialog window opens up.](images/step1.5.png " ")
+    ![Click Run Script. A dialog window opens up.](images/step1.5.png " ")
 
     ![Enter the base URL and click Ok.](images/substitution-variables.png " ")
 

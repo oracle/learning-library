@@ -97,7 +97,7 @@ A tenancy administrator needs to create a user group and add your Oracle Cloud a
 
 ## **STEP 4**: Create an IAM policy for the user group
 
-A tenancy administrator needs to create an IAM policy that allows the user group to which you belong to create an Autonomous Database in a compartment and use that database with Oracle Data Safe.
+A tenancy administrator needs to create an IAM policy that allows the user group to which you belong to create an Autonomous Database in a compartment and register and use that database with Oracle Data Safe.
 
 > **Note**: If you are a member of your tenancy's `Administrators` group, or you are using an Oracle-provided environment, you can skip this step.
 
@@ -119,13 +119,11 @@ A tenancy administrator needs to create an IAM policy that allows the user group
 
     ```
     Allow group {group name} to manage all-resources in compartment {compartment name}
+    Allow group {group name} to manage target-databases in compartment {compartment name}
     Allow group {group name} to use autonomous-database in compartment {compartment name}
-    ```
-
-    The first statement allows the user group to create and manage an Autonomous Database in the specified compartment. The second statement is required so that the user group can successfully register and access the database in Oracle Data Safe. Without it, the user group can register the database with Oracle Data Safe, but not view it in the Oracle Data Safe Console. If an existing Autonomous Database is available for the user, you can swap out the first policy statement with the following statement:
 
     ```
-    Allow group {group name} to manage data-safe in compartment {compartment name}
+    The first statement allows the user group to create and manage an Autonomous Database in the specified compartment. The second statement is required so that the user group can register the database with Oracle Data Safe in the specified compartment. The third statement is required so that the user group can use the Autonomous Database with Oracle Data Safe features in the Oracle Data Safe Console.
     ```
 
 9. Click **Create**.
@@ -217,4 +215,4 @@ Verify that you can access your ATP database in your compartment and that its st
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, May 28 2021
+* **Last Updated By/Date** - Jody Glover, June 15 2021

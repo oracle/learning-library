@@ -1,5 +1,5 @@
 ﻿
-# Creating Refreshable Clones in Autonomous Database
+# Create Refreshable Clones in Autonomous Database
 
 ## Introduction
 
@@ -35,15 +35,6 @@ In this lab, you'll:
 - Insert additional data into the source database.
 - Define a refresh point timestamp of the source database and refresh the clone. 
 - Confirm that the additional data in the source database is pulled into the clone.
-
-### Prerequisites
-
-To complete this lab, you need to have the following:
-
-- Access to an Oracle Cloud account
-- Completion of this workshop's &quot;Getting Started&quot; lab that provisions an Oracle Autonomous Database instance in Autonomous Data Warehouse (an Autonomous Database with Data Warehouse workload)
-
-    - Alternatively, your own Autonomous Database instance
 
 **Note:**  This lab uses refreshable clones, which are not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy.
 
@@ -145,5 +136,3 @@ You may now proceed to the next lab.
 - **Author** - Rick Green, Principal Developer, Database User Assistance
 - **Contributor** - Nilay Panchal, ADB Product Management
 - **Last Updated By/Date**  - Kamryn Vinson, May 2021
-
-

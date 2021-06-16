@@ -1,4 +1,4 @@
-# Auto Scaling an Autonomous Database
+# Apply Auto Scaling on an Autonomous Database
 
 ## **Introduction**
 
@@ -29,12 +29,6 @@ The customer is charged only for the actual average number of OCPUs used per hou
 -   Learn the benefits of auto scaling
 -   Learn how to enable and disable auto scaling
 -   Examine the performance benefits of auto scaling
-
-### Prerequisites
-
-- This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- Make sure you have completed the previous lab in the Contents menu on the left, *Provision Autonomous Database*, before you proceed with this lab, if you want to apply auto scaling to an existing ADW database. Otherwise, proceed with this lab to try auto scaling with a new Autonomous Database.
-- **Note** Auto scaling is not available with Oracle's **Always Free** databases.
 
 ### How You Will Test a Real-World Auto Scaling Example in this Lab
 
@@ -330,4 +324,3 @@ For more information about auto scaling, see the documentation [Use Auto Scaling
 - **Authors** - Rick Green, Database User Assistance; Nilay Panchal, ADB Product Management
 - **Contributors** - John Zimmerman, Real World Performance Team; Keith Laker, ADB Product Management
 - **Last Updated By/Date** - Kamryn Vinson, May 2021
-

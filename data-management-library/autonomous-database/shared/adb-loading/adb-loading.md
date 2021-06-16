@@ -1,5 +1,5 @@
 
-# Loading Data into an Autonomous Database Instance
+# Load Data into an Autonomous Database Instance
 
 ## Introduction
 
@@ -24,11 +24,6 @@ Estimated Lab Time: 30 minutes
 -   Learn how to troubleshoot data loads
 
 In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create and load several ADW tables with sample data that you stage to an *OCI Object Store*.
-
-### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-
-- This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the left.
 
 ### You Will Practice Three Loading Methods
 - **Loading Method 1**: Create and load one ADW table with sample data from your *local file system*, using the Database Actions DATA LOAD tool.
@@ -89,20 +84,20 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 In Steps 1 and 2, you downloaded a channels.csv file to your local computer and used the Database Actions DATA LOAD tool to create and load an ADW table. Now, you will download a zip file containing data files that you will stage to an *OCI Object Store*, to populate a number of tables in subsequent steps.
 
-1. Click <a href="./files/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
+1. Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/8XMKhDq1fbRYPu2QedUP_y2xyYdzu_FbY2ctO35u5XZnWdDTOlWjuzS1aVwy6ynU/n/c4u03/b/data-management-library-files/o/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
 
 ## **STEP 4**: Navigate to Object Storage and Create Bucket
 
 In OCI Object Storage, a bucket is the terminology for a container of multiple files.
 
-1. Now you set up the OCI Object Store. From the Autonomous Data Warehouse console, pull out the left side menu from the top-left corner and select **Storage > Buckets**. To revisit signing-in and navigating to ADW, please see [Lab 1](?lab=lab-1-provision-autonomous-database).
+1. Now you set up the OCI Object Store. From the Autonomous Data Warehouse console, pull out the left side menu from the top-left corner and select **Storage > Buckets**.
 
   ![Select Storage and then Buckets from the left navigation window in the Oracle Cloud homepage.](images/select-storage-then-buckets.png " ")
 
   *To learn more about the OCI Object Storage, refer to its <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
 
-2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, a **training** compartment is chosen. For LiveLabs tenancy users, select the compartment that you were assigned in the *Launch Workshop* window.
-*Note: If you are doing this workshop in the LiveLabs tenancy and you have issues selecting your compartment, go back to your ADB instance create page and select your compartment.  Now go back to Object Storage, you should be able to select your compartment and create your bucket.  This is a known OCI issue that should be resolved shortly*
+2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, a **training** compartment is chosen.
+
     ![Choose a compartment on Object Storage page.](images/choose-compartment.png " ")
 
 3. Click the **Create Bucket** button:
@@ -219,18 +214,18 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Choose LOAD DATA and CLOUD STORAGE.](./images/choose-load-data-and-cloud-storage.png " ")
 
-8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `coun_v3.dat` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
+8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `countries.csv` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
 
     ![Drag the file onto the canvas.](./images/drag-files-onto-canvas.png " ")
 
-9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `coun_v3.dat` tables.
+9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `countries.csv` tables.
 
     ![Click the pencil button.](./images/click-pencil-button.png " ")
 
 10. You can use this page to quickly review the properties sheet and make any changes to column names or data types. Since this is an initial load, accept the default option of **Create Table**, which conveniently creates the target table in the ADW database, without the need to predefine the table in SQL.
 
     - For `channels.csv`, change the target table name to **CHANNELS\_DB\_TOOLS**.
-    - For `coun_v3.dat`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
+    - For `countries.csv`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
 
     ![Review the properties sheet.](./images/review-properties-sheet.png " ")
 
@@ -256,6 +251,10 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
     + You will use this procedure to load tables to your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
 
 ***Note:*** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed with the following:
+
+1. Click on the SQL tile to open SQL web developer.
+
+  ![Open SQL Web Developer](images/open-sql-web-dev.png)
 
 1. Unlike the previous steps where the Database Actions DATA LOAD tool gave you the option to automatically create the target autonomous database tables during the data load process, the following steps for loading with the `DBMS_CLOUD` package require you to first create the target tables. Connected as your ADMIN user in SQL Worksheet, copy and paste <a href="./files/create_tables.txt" target="\_blank">this code snippet</a> to the worksheet. Take a moment to examine the script. You will first drop any tables with the same name before creating tables. Then click the **Run Script** button to run it.
 

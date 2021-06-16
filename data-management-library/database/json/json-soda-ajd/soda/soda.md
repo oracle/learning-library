@@ -8,7 +8,7 @@ Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-In this lab, you will...
+In this lab, you will:
 
 * Perform Simple REST Operations in Oracle Cloud Shell
 
@@ -16,49 +16,6 @@ In this lab, you will...
 
 * Have successfully created a JSON collection in Autonomous JSON Database and have inserted few documents
 
-<!---
-## **STEP 1:** Mass Insert
-
-1. Now do mass insert:
-
-	Click on New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
-
-	```
-	<copy>
-	soda insert products {"id":101,"title":"Top Gun","category":"VHS","condition":"like new","price":8,"starring":["Tom Cruise","Kelly McGillis","Anthony Edwards","Val Kilmer"],"year":1986,"decade":"80s"}
-	</copy>
-	```
-
-## **STEP 2:** Queries using QBE
-
-let's perform more QBEs to analyze the data.
-
--> More QBEs to analyze data
-
-1. Find all DVD's cheaper than 10$ and order by price
-
-	```
-	<copy>
-	{"type":"DVD", "price":{"$lte":10}}
-	</copy>
-	```
-
-2. Find all movies, there is no movie category, look for DVD, Blueray, VHS, LaserDisk, Betamax
-
-	```
-	<copy>
-	{}
-	</copy>
-	```
-
-3. Find all movies by Arnold
-
-	```
-	<copy>
-	Fulltext search
-	</copy>
-	```
----->
 ## **STEP 1:** Perform Simple REST Operations in Oracle Cloud Shell
 
 1. A simple REST request can be done from the browser - open a new window and copy the URL from the 'JSON Workshop' or the 'SQL Developer Web' into it.
@@ -180,11 +137,12 @@ let's perform more QBEs to analyze the data.
 	```
 	curl -X POST -H "Content-Type: application/json" --data '{"id": 1414,"type": "Toy","title": "E.T. the Extra-Terrestrial","condition": "washed","price": 50.00,"description": "50cm tall plastic figure"}' https://ppkhnzjhg74axsq-atp19cdb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/products
 	```
+
 	![](./images/created.png)
 
 11. To verify if the new document was inserted, navigate to the tab with SQL Developer Web, click on the navigation menu on the top left and select **JSON** under Development.
 
-	![](./images/nav-json.png)	
+	![](./images/nav-json.png)
 
 	If you use the following QBE in the JSON Workshop by copying and pasting the following query in the worksheet and running it, you should see a new document.
 
@@ -193,20 +151,49 @@ let's perform more QBEs to analyze the data.
 	{"id":1414}
 	</copy>
 	```
+
 	![](./images/proof.png)	
 
-12. Now, let's do a bulk load to insert more data. 
+## **STEP 2:** Insert Data into the Collection
 
--->Navigate back to the tab with Oracle Cloud Shell.
+1. Now, let's do a bulk load to insert more data. Navigate back to the tab with Oracle Cloud Shell.
 
-	TODO: how to get the file accessible by cloud shell
+2.	The test data has been uploaded to the object store and run the following pre-authenticated link that allows us to retrieve the data.
 
-13. Verify in the JSON workshop that you have many more movies in the collection. Navigate to the tab with JSON Workshop,...
+	```
+	<copy>
+	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/s-TeBtMfpFz0_r1b4QNkZeiVzLApLU4mdQ1B94uv4kKfTH_7kA3vWSN11ocF2853/n/c4u03/b/data-management-library-files/o/testdata.json --output testdata.json
+	</copy>
+	```
+
+3.	Confirm the download by doing a *ls*. You should see the file testdata.json.
+
+4.	Now, we take this files (which is one large JSON array of objects) and bulk insert it to the collection using REST. Each object of the JSON array will be inserted into the products collection as a separate document.
+
+5.	The following POST command with the action clause 'insert' will take the single JSON array and insert the embedded objects as separate documents. Replace *your URL* with your URL.
+
+	```
+	curl -X POST --data-binary @testdata.json  -H "Content-Type: application/json" https://<your URL>/ords/admin/soda/latest/products?action=insert
+	```
+
+	Your URL should now look like this:
+
+	```
+	curl -X POST --data-binary @testdata.json  -H "Content-Type: application/json" https://ppkhnzjhg74axsq-atp19cdb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/products?action=insert
+	```
+
+6. Navigate back to the tab with JSON workshop to run the below in the worksheet to verify that you have many more movies in the collection.
+
+	```
+	<copy>
+	{}
+	</copy>
+	```
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Beda Hammerschmidt, Roger Ford
+- **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
 - **Last Updated By/Date** - Brianna Ambler, June 2021
