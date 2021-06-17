@@ -4,7 +4,7 @@
 
 In this lab we will provision the infrastructure and set up various environments.
 
-We'll use the terraform template from the repositiory to deploy 2 Oracle Autonomous Databases, create credential files for 4 environments (dev, tst, stg and prd) and configure these 4 environments for APEX development
+We'll use the Terraform template from the repository to deploy two Oracle Autonomous Databases, create credential files for four environments (dev, tst, stg and prd) and configure these four environments for APEX development
 
 Estimated Lab Time: 10 minutes.
 
@@ -17,7 +17,7 @@ In this lab you will:
 
 ## **STEP 1:** Terraform Setup
 
-1. Get in the `terraform` folder:
+1. Navigate to the `terraform` folder:
 
     ```bash
     <copy>
@@ -43,7 +43,7 @@ In this lab you will:
     export TF_VAR_region=us-ashburn-1
     ```
 
-    These values come from your Oracle OCI CLI installation.
+    These values come from your Oracle Cloud Infrastructure (OCI) CLI installation.
 
 4. Create a `terraform.tfvars` file from template:
 
@@ -96,7 +96,7 @@ In this lab you will:
             apex_admin_email = "admin@local"
             ws_admin_email = "admin@local"
         },
-        # if environments are on the same DB, 
+        # if environments are on the same DB,
         # the schema and workspace need a different name
         "stg" = {
             workspace_name = "WS_STG"
@@ -123,10 +123,10 @@ In this lab you will:
     }
     ```
 
-    This creates 2 databases, and 4 environments: dev, tst, and stg are on the APEX\_DEV database and prd is on the APEX\_PRD database.
+    This creates two databases, and four environments: dev, tst, and stg are on the APEX\_DEV database and prd is on the APEX\_PRD database.
 
     Feel free to configure these as you need for your own environment. In this workshop we will use these defaults.
-    
+
     If you make changes, make sure that SCHEMA, WORKSPACE and WS_ADMIN names are different if setting up multiple environments in the same database as these need to be unique per database.
 
 ## **STEP 2:** Provision the Database and Setup the Environments
@@ -141,7 +141,7 @@ In this lab you will:
     make init
     </copy>
     ```
-  
+
     Type `yes` at the prompt to confirm applying the terraform stack.
 
     The terraform stacks generates environment files for each environment. The files are on the root folder, named *`<env_name>.env`* and they contain the credentials for user/schema/workspace for each environment.
@@ -150,7 +150,7 @@ In this lab you will:
 
 ## **STEP 3:** Using the makefile
 
-1. The makefile in this repository simplifies a lot of the tasks to be performed. Get the full list of commands with: 
+1. The makefile in this repository simplifies a lot of the tasks to be performed. Get the full list of commands with:
 
     ```bash
     <copy>
@@ -168,7 +168,7 @@ In this lab you will:
     tf-destroy                     Destroy the terraform stack
     create-apex-admin              Create the APEX admin user
     delete-apex-admin              Delete the APEX admin user
-    create-cloud-creds             Create default cloud credential for the APEX ADMIN user to use datapump to Object Storage 
+    create-cloud-creds             Create default cloud credential for the APEX ADMIN user to use datapump to Object Storage
     create-schema                  Create schema
     delete-schema                  Delete schema
     create-ws                      Create schema, workspace, add schema to workspace and create workspace admin user
@@ -192,19 +192,17 @@ In this lab you will:
     - `snapshot ID=\<app_id\>`: to take a snapshot of the state of the application (`changelog` + `export-app`)
     - `update ID=\<app_id\>`: to update the app (`update-schema` + `import-app`)
 
-    The other commands can be used to create additional environments (`create-schema`, `create-ws`) and manually perform specific tasks (`wallet`,`clean-wallets` to get and clean an environment database wallet) 
+    The other commands can be used to create additional environments (`create-schema`, `create-ws`) and manually perform specific tasks (`wallet`,`clean-wallets` to get and clean an environment database wallet)
 
 2. With this tool, you can create additional environments, by creating new workspaces and/or schemas.
 
-  *Remember that DB change tracking is per SCHEMA, and application change tracking is per application, so if you decide to create multiple applications in the same schema, make sure the applications are always deployed together otherwise one app schema change may cause issues in the other app.*
+  *Remember that DB change tracking is per SCHEMA, and application change tracking is per application, so if you decide to create multiple applications in the same schema, make sure the applications are always deployed together otherwise one application schema change may cause issues in the other application.*
 
-  The preferred way to use multiple applications is to create a schema per application, and then grouping those schemas into a workspace.
+  *The preferred way to use multiple applications is to create a schema per application, and then grouping those schemas into a workspace.*
 
 
-You may proceed to the next lab.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
  - **Last Updated By/Date** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
-

@@ -27,13 +27,13 @@ Estimated time: 5 minutes
 
 4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment.
 
-    ![Check the workload type on the left.](images/livelabs-compartment.png " ")
+    ![Check the workload type on the left.](images/list-scope-freetier.png " ")
 
    *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
 
-    ![Autonomous Databases console.](./images/Compartment.png " ")
+    ![Autonomous Databases console.](./images/no-adb-freetier.png " ")
 
 6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
@@ -47,7 +47,7 @@ Estimated time: 5 minutes
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 
-    ![](./images/create-adb-screen.png " ")
+    ![](./images/create-adb-screen-freetier-default.png " ")
 
 3. Provide basic information for the autonomous database:
 
@@ -55,7 +55,7 @@ Estimated time: 5 minutes
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __ADWFINANCE__.
 
-    ![Enter the required details.](./images/Picture100-26.png " ")
+    ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 

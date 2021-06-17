@@ -18,17 +18,17 @@
             "filename": "./../../../adb-provision/adb-provision-livelabs.md"
         },
         {
-            "title": "Lab 2: Loading Data",
+            "title": "Lab 2: Load Data",
             "description": "Load data into ADB",
-            "filename": "./../../../adb-loading/adb-loading.md"
+            "filename": "./../../../adb-loading/adb-loading-livelabs.md"
         },
         {
-            "title": "Lab 3: Getting Started with Machine Learning Notebooks",
+            "title": "Lab 3: Get Started with Machine Learning Notebooks",
             "description": "Using Oracle Machine Learning Notebooks",
             "filename": "./../../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
-            "title": "Lab 4: Building a Simple Machine Learning Algorithm",
+            "title": "Lab 4: Use Simple Machine Learning Algorithms",
             "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "filename": "./../../../adw-machine-learning/adw-machine-learning.md"
         },

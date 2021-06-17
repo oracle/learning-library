@@ -1,13 +1,13 @@
 {
     "workshoptitle": "Managing and Monitoring",
     "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [      
+	"tutorials": [
         {
             "title": "Introduction",
             "filename": "./../../../intro/intro-ziplab.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
@@ -19,11 +19,11 @@
             "filename": "./../../../adb-sqldevweb/adb-sqldevweb.md"
         },
         {
-            "title": "Lab 3: Loading Data",
+            "title": "Lab 3: Load Data",
             "filename": "./../../../adb-loading/adb-loading.md"
         },
         {
-            "title": "Lab 4: Monitoring",
+            "title": "Lab 4: Manage and Monitor",
             "filename": "./../../../adw-managing-monitoring/adw-managing-monitoring.md"
         },
         {

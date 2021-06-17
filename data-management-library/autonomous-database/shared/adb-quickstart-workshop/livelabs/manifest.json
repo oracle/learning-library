@@ -13,7 +13,7 @@
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
     },
       {
-          "title": "Lab 2: Getting Started",
+          "title": "Lab 2: Provision an Autonomous Database",
           "description": "Provision Autonomous Database",
           "filename": "./../../adb-provision/adb-provision-livelabs.md"
       },
@@ -23,17 +23,17 @@
           "filename": "./../../adb-sqldevweb/adb-sqldevweb.md"
       },
       {
-          "title": "Lab 4: Loading Data",
+          "title": "Lab 4: Load Data",
           "description": "Load data into ADB",
-          "filename": "./../../adb-loading/adb-loading.md"
+          "filename": "./../../adb-loading/adb-loading-livelabs.md"
       },
       {
-          "title": "Lab 5: Querying External Data",
+          "title": "Lab 5: Query External Data",
           "description": "Query Data in External Files",
           "filename": "./../../adb-query/adb-query.md"
       },
       {
-          "title": "Lab 6: Visualizing Your Data",
+          "title": "Lab 6: Visualize Your Data",
           "description": "Visualizing Your Data",
           "filename": "./../../adw-visualizations/adw-visualizations.md"
       },

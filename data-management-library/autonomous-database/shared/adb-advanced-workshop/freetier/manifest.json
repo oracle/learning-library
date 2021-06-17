@@ -8,7 +8,7 @@
           "filename": "./intro.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Get a Free Trial",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
@@ -23,62 +23,62 @@
             "filename": "./../../adb-sqldevweb/adb-sqldevweb.md"
         },
         {
-            "title": "Lab 3: Loading Data",
+            "title": "Lab 3: Load Data",
             "description": "Load data into ADB",
             "filename": "./../../adb-loading/adb-loading.md"
         },
         {
-            "title": "Lab 4: Querying External Data",
+            "title": "Lab 4: Query External Data",
             "description": "Query Data in External Files",
             "filename": "./../../adb-query/adb-query.md"
         },
         {
-            "title": "Lab 5: Visualizing Your Data",
+            "title": "Lab 5: Visualize Your Data",
             "description": "Create Rich Data Visualizations",
             "filename": "./../../adw-visualizations/adw-visualizations.md"
         },
         {
-            "title": "Lab 6: Using Wallets for Secure Connections",
+            "title": "Lab 6: Use Wallets for Secure Connections",
             "description": "Connecting Securely with a Connection Wallet",
             "filename": "./../../adw-connection-wallet/adw-connection-wallet.md"
         },
         {
-            "title": "Lab 7: Monitoring",
+            "title": "Lab 7: Monitor and Manage",
             "description": "Managing and Monitoring Your Autonomous Database Instance using the Cloud Console",
             "filename": "./../../adw-managing-monitoring/adw-managing-monitoring.md"
         },
         {
-            "title": "Lab 8: Scaling and Performance",
+            "title": "Lab 8: Scale for Performance",
             "description": "Scaling and Performance in Your Autonomous Database",
             "filename": "./../../adw-scaling-performance/adw-scaling-performance.md"
         },
 	{
-            "title": "Lab 9: Auto Scaling",
+            "title": "Lab 9: Apply Auto Scaling",
             "description": "Auto Scaling an Autonomous Database",
             "filename": "./../../adb-auto-scaling/adb-auto-scaling.md"
         },
         {
-            "title": "Lab 10: Disaster Recovery",
+            "title": "Lab 10: Enable Disaster Recovery",
             "description": "Enable Autonomous Data Guard",
             "filename": "./../../adb-autonomous-data-guard/adb-autonomous-data-guard.md"
         },
         {
-            "title": "Lab 11: Creating Refreshable Clones",
+            "title": "Lab 11: Create Refreshable Clones",
             "description": "Creating Refreshable Clones",
             "filename": "./../../adb-refreshable-clones/adb-refreshable-clones.md"
         },
         {
-            "title": "Lab 12: Setting Event and Alarm Notifications",
+            "title": "Lab 12: Set Event and Alarm Notifications",
             "description": "Setting Event and Alarm Notifications for an Autonomous Database",
             "filename": "./../../adb-event-alarm/adb-event-alarm.md"
         },
         {
-            "title": "Lab 13: Using Machine Learning Notebooks",
+            "title": "Lab 13: Use Machine Learning Notebooks",
             "description": "Using Oracle Machine Learning Notebooks",
             "filename": "./../../adw-oml-notebooks/adw-oml-notebooks.md"
         },
         {
-            "title": "Lab 14: Building a Simple Machine Learning Algorithm",
+            "title": "Lab 14: Build a Simple Machine Learning Algorithm",
             "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
             "filename": "./../../adw-machine-learning/adw-machine-learning.md"
         },

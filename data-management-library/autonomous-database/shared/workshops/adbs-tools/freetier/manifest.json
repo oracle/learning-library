@@ -2,30 +2,28 @@
     "workshoptitle": "Introduction to Autonomous Database Tools",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
-
-        
         {
           "title": "Workshop Introduction",
           "description": "Inroduction to this workshop",
           "filename": "../workshop-intro/workshop-intro.md"
         },
         {
-          "title": "Getting Started",
+          "title": "Get Started",
           "description": "Getting an OCI Account",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-          "title": "Lab 1: Provisioning an ADB Instance",
+          "title": "Lab 1: Provision an ADB Instance",
           "description": "Provisioning an Autonomous Database Instance",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
         },
         {
-            "title": "Lab 2: Creating a Database User",
+            "title": "Lab 2: Create a Database User",
             "description": "Intro to MovieStream and Creating a Database User",
             "filename": "../getting-started/getting-started.md"
         },
         {
-            "title": "Lab 3: Using Autonomous Database Tools",
+            "title": "Lab 3: Use Autonomous Database Tools",
             "description": "Using Autonomous Database Tools",
             "filename": "../using-adb-tools/using-adb-tools.md"
         },

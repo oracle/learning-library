@@ -70,7 +70,7 @@ In this lab you will:
 1. With the app export and the schema changelog, we can reproduce the full application to another environment with:
 
     ```bash
-    make update ENV=<environment> ID=<original_app_id> NEWID=<new_app_id> 
+    make update ENV=<environment> ID=<original_app_id> NEWID=<new_app_id>
     ```
 
     Note that APEX APP IDs must be *unique* within a single database (regardless of SCHEMA or WORKSPACE), so if you created the `prd` environment in the same database as the `dev` environment, the *`new_app_id`* MUST be different from the *`original_app_id`*. We recommend using a fixed offset (like 1000)
@@ -85,14 +85,14 @@ In this lab you will:
 
 ## **STEP 3:** Check the Deployment
 
-1. Log in to the Oracle Autonomous Database for *`prd`*: 
+1. Log in to the Oracle Autonomous Database for *`prd`*:
 
   - Go to **Oracle Databases -> Autonomous Transaction Processing** in your compartment
   - Click the database for dev (*APEX_PRD* if you used the default names)
 
     ![](./images/db-list-prd.png)
 
-  - Click **Tools** tab 
+  - Click **Tools** tab
 
     ![](./images/atp-tools.png)
 
@@ -136,7 +136,7 @@ In this lab you will:
     - Enter a new column named **BOGUS** for example.
 
     - Click **NEXT**.
-    
+
     - On the next page click **FINISH**
 
     We've now added a column to a table.
@@ -204,10 +204,8 @@ In this lab you will:
 2. On the **APEX_PRD** Database, check that the changes have propagated.
 
 
-You may proceed to the next lab.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
  - **Last Updated By/Date** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
-

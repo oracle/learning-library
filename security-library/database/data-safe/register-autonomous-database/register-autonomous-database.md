@@ -218,4 +218,4 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, May 28 2021
+  * **Last Updated By/Date** - Jody Glover, June 15 2021

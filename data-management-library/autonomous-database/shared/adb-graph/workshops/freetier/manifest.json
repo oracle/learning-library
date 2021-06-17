@@ -8,22 +8,22 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts. ",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Create a graph user",
+            "title": "Lab 1: Create a Graph User",
             "description": "Create a simple graph and learn how to navigate the user interface.",
-            "filename": "../../create-user/create-user.md"            
+            "filename": "../../create-user/create-user.md"
         },
         {
-            "title": "Lab 2: Hello World",
+            "title": "Lab 2: Create Hello World",
             "description": "Create a simple graph and learn how to navigate the user interface.",
             "filename": "../../hello-world/hello-world.md"
         },
         {
-            "title": "Lab 3: Create a graph from the SH tables",
+            "title": "Lab 3: Create a Graph from the SH Tables",
             "filename": "../../create-graph-from-sh-tables/create-graph-from-sh-tables.md"
         },
         {

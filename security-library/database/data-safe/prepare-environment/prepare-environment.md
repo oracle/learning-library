@@ -119,7 +119,6 @@ A tenancy administrator needs to create an IAM policy that allows the user group
 
     ```
     Allow group {group name} to manage all-resources in compartment {compartment name}
-    Allow group {group name} to manage target-databases in compartment {compartment name}
     Allow group {group name} to use autonomous-database in compartment {compartment name}
 
     ```

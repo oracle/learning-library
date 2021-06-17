@@ -2,15 +2,15 @@
   "workshoptitle": "Provisioning an Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
+      {
+          "title": "Get Started",
+          "description": "Login to Oracle Cloud",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
         {
             "title": "Introduction",
             "description": "Introduction",
             "filename": "./../../../intro/intro-ziplab.md"
-        },
-        {
-            "title": "Login to Oracle Cloud",
-            "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
             "title": "Lab 1: Provision an ADW Instance",
