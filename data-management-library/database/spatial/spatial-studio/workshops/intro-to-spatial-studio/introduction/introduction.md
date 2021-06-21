@@ -43,15 +43,12 @@ Understanding Spatial Studio capabilities to
 
 ### Prerequisites
 
-This workshop requires access to Spatial Studio and Oracle Database. Before proceeding with this workshop:
-  - If you are running this workshop using your own Always Free, Free Trial, or paid Tenancy:
-    - You must complete the workshop [Install Oracle Spatial Studio from Cloud Marketplace ](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=778)
-  - If you are running this workshop from a LiveLabs Reservation:
-    - Spatial Studio and Oracle Autonomous Database instances are automatically created for you 
-    - You must complete Lab 3 and Lab 4:STEP 4 in the workshop [Install Oracle Spatial Studio from Cloud Marketplace ](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=778)
-    - Note, your Spatial Studio URL will be https://[your reservation Instance IP]:4040/spatialstudio. The  default login user is admin and password is welcome1
-
-No previous experience with Oracle Spatial is required.
+ <if type="freetier"> 
+   - This workshop requires access to Spatial Studio and Oracle Database. These can be provisioned by completing the workshop [Install Oracle Spatial Studio from Cloud Marketplace ](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=778).  
+</if>
+<if type="reservation">  
+  - This workshop requires access to Spatial Studio and Oracle Database. These are created for you as part of your LiveLabs Reservation.  
+</if>
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 

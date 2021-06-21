@@ -8,27 +8,32 @@
     "tutorials": [
       {
         "title": "Introduction",
-        "filename": "../introduction/introduction.md"
+        "filename": "../introduction/introduction.md",
+        "type": "reservation"
       },  
       {
         "title": "Getting Started",
         "description": "Login to Oracle Cloud",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
     }, 
-      {
-      "title": "Lab 1: Load Spatial Data",
+   {
+      "title": "Lab 1: Access Spatial Studio",
+      "filename": "../../../env-res/env-res.md"
+  },
+  {
+      "title": "Lab 2: Load Spatial Data",
       "filename": "../../../load-spatial-data/load-spatial-data.md"
   },
   {
-    "title": "Lab 2: Create Project",
+    "title": "Lab 3: Create Project",
     "filename": "../../../create-project/create-project.md"
 },
 {
-  "title": "Lab 3: Apply Map Styling and Interactivity",
+  "title": "Lab 4: Apply Map Styling and Interactivity",
   "filename": "../../../apply-map-styling/apply-map-styling.md"
 },
 {
-  "title": "Lab 4: Perform Spatial Analyses",
+  "title": "Lab 5: Perform Spatial Analyses",
   "filename": "../../../spatial-analysis-intro/spatial-analysis-intro.md"
 },
 {

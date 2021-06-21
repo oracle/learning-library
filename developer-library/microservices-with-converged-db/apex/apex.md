@@ -6,11 +6,9 @@ This lab will show you how to create an APEX application that will help make sen
 
 Estimated Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
 
 [](youtube:ITtdiqX8nWQ)
-</if>
 
 ### Objectives
 

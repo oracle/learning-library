@@ -4,6 +4,7 @@
 	"tutorials": [
       {
         "title": "Introduction",
+        "type":"multicloud-freetier",
         "filename": "../../intro/intro.md"
       },
       {
@@ -12,31 +13,30 @@
       },
       {
         "title": "Lab 1: Setup",
-        "type":"multicloud-freetier",
         "filename": "../../setup/setup.md"
       },
       {
-        "title": "Lab 2: Data-centric microservices walkthrough with Helidon MP",
+        "title": "Lab 2: Setup Verrazzano",
+        "type":"multicloud-freetier",
+        "filename": "../../setup-verrazzano/setup-verrazzano.md"
+      },
+      {
+        "title": "Lab 3: Data-centric microservices walkthrough with Helidon MP",
+        "type":"multicloud-freetier",
         "filename": "../../walkthrough-helidon/walkthrough-helidon.md"
       },
       {
-        "title": "Lab 3: Polyglot Microservices",
-        "filename": "../../polyglot/polyglot.md"
-      },
-      {
         "title": "Lab 4: Scaling",
+        "type":"multicloud-freetier",
         "filename": "../../scaling/scaling.md"
       },
       {
-        "title": "Lab 5: Tracing Using Jaeger",
+        "title": "Lab 5: Observability",
         "filename": "../../tracing/tracing.md"
       },
       {
-        "title": "Lab 6: Create an APEX App to Make Sense of the Data",
-        "filename": "../../apex/apex.md"
-      },
-      {
-        "title": "Lab 7: Tear Down",
+        "title": "Lab 6: Tear Down",
+        "type":"multicloud-freetier",
         "filename": "../../teardown/teardown.md"
       },
       {

@@ -24,7 +24,7 @@ You do not need to execute those codes, but review them to understand what infor
 
 Our service supports CRUD (Create, Read, Update, Delete) actions on the four different resource types involved, including Project, Data Asset, Model, and Deployment.
 
-The following are a few examples of accessing those API endpoints using Python. The complete code file can be [downloaded here](../../files/anomaly_detection_rest_api_example.py).
+The following are a few examples of accessing those API endpoints using Python. The complete code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
 
 
 ### **STEP 1:** Authentication

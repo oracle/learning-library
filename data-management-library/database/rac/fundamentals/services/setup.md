@@ -33,7 +33,7 @@ Copy the following commands into your terminal. These commands download the file
     ````
     ![](../clusterware/images/racnode1-login.png " ")
 
-4.  Switch to the oracle user
+4.  Switch to the oracle user and set the Oracle database environment
 
     ````
     <copy>
@@ -41,48 +41,59 @@ Copy the following commands into your terminal. These commands download the file
     </copy>
     ````
 
-    Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
-5.  Get the seutp files
-    ````
-    <copy>    
-    whoami   
-    cd /home/oracle/
-
-    wget https://objectstorage.uk-london-1.oraclecloud.com/p/vKlh5hZ1wX-YB4K-ou5zNrL4GCsfQmj1z1y8LhIsFdU/n/lrojildid9yx/b/labtest_bucket/o/setupDB.sh.gz
-
-    gunzip setupDB.sh.gz;
-
-    chmod +x setupDB.sh
-    </copy>
-    ````
-    ![](./images/setup-num5.png " " )
-
-6. The script **setupDB.sh** assumes the password for SYS and SYSTEM user. Edit the script using vi.
-
-    ````
-    vi setupDB.sh
-    ````
-    ![](./images/setup-num6.png " " )
-
-7. Replace the db_pwd with the password you entered when your database was setup.
-
-    ````
-    # Pwds may need to be changed
-    db_pwd="W3lc0m3#W3lc0m3#"
-    ````
-     ![](./images/setup-num7.png " " )
-
-8. To save the file press the **esc** key and **wq!** to save the file.
-
-9.  No other lines need to be changed.  Run the **setupDB.sh** script
+    When connected as *oracle*
 
     ````
     <copy>
-    /home/oracle/setupDB.sh
+    . oraenv
     </copy>
     ````
 
-    ![](./images/setup-num9.png " " )
+    Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+
+5.  Get the Database sample schemas and unzip them. Then set the path in the scripts.
+
+    ````
+    <copy>
+    wget https://github.com/oracle/db-sample-schemas/archive/v19c.zip
+    unzip v19c.zip
+    cd db-sample-schemas-19c
+    perl -p -i.bak -e 's#__SUB__CWD__#'$(pwd)'#g' *.sql */*.sql */*.dat
+    </copy>
+    ````
+
+    ![](./images/install-schema-zip.png " " )
+
+6.  Login using `SQL*Plus` as the **oracle** user.  
+
+    ````
+    <copy>
+    sqlplus system/W3lcom3#W3lcom3#@localhost:1521/pdb1.pub.racdblab.oraclevcn.com
+    </copy>
+    ````
+    ![](./images/start-sqlplus.png " ")
+
+7.  Install the Sample Schemas by running the script below.
+
+    ````
+    <copy>
+    @mksample W3lcom3#W3lcom3# W3lcom3#W3lcom3# W3lcom3#W3lcom3# W3lcom3#W3lcom3# W3lcom3#W3lcom3# W3lcom3#W3lcom3# W3lcom3#W3lcom3# W3lcom3#W3lcom3# users temp /home/oracle/db-sample-schemas-19c/ localhost:1521/pdb1.pub.racdblab.oraclevcn.com
+    </copy>
+    ````
+
+    ![](./images/schemas-created.png " " )
+
+8. Exit SQL Plus and exit the oracle user to return to the opc user.
+
+    ```
+    <copy>exit
+    exit
+    </copy>
+    ```
+
+    ![](images/return-to-opc.png)
+
+Congratulations! Now you have the environment to run the labs.
 
     *Note:* There may be some drop user errors, ignore them.  Please be patient as this script takes some time.
 
@@ -104,4 +115,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 - **Author** - Troy Anthony, DB Product Management
 - **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
-- **Last Updated By/Date** - Kay Malcolm, October 2020
+- **Last Updated By/Date** - Troy Anthony, July 2021

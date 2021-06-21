@@ -13,7 +13,7 @@ Estimated Lab Time: 60 minutes
 
 ### Objectives
 
-In this lab, you'll:
+In this lab, you will:
 
 - Learn basic navigation in Data Transforms
 
@@ -33,11 +33,9 @@ To complete this lab, you need to have the following:
 
 - Oracle Data Integrator Web Edition deployed 
 
-### Assumptions
-
 - Familiarity with Database concepts
 
-## STEP 1: Launch Data Transforms and Connect to Autonomous Database
+## **STEP 1:** Launch Data Transforms and Connect to Autonomous Database
 
 1. Launch **Data Transforms** from either direct URL or from the Data Transforms card in Autonomous Database. Specify username **SUPERVISOR** and the password that you provided in the ODI installation. Click **Connect**.
 
@@ -105,7 +103,7 @@ You may already have noticed that the look-and-feel of the data previewer is con
 
 Close the preview pane by pressing the **X** on the upper right of the screen.
 
-## STEP 2: Create Data Flow
+## **STEP 2:** Create Data Flow
 
 1. Click **Projects** (on the left of the screen, and then click **Create Data Flow.**
 
@@ -275,7 +273,7 @@ In the previous steps we have:
 
 Having completed these steps we now have a table MOVIE\_SALES\_2020**Q2**, with data for just April, May &amp; June. The days have all be changed to title case.
 
-## STEP 3: Inspect Job Details
+## **STEP 3:** Inspect Job Details
 
 #### Driver or Mechanic?
 *We love thrilling car races. Fans can often be sorted into two groups: the drivers and the mechanics. The drivers want to strap in behind the wheel, rev the engine and burn some rubber. The mechanics want to get under the hood and tinker with the gears and the carburetor. Here's the point at which you can self-select as a driver or a mechanic.*
@@ -319,7 +317,7 @@ When you're satisfied, press **Close**. Then, press **Jobs** in the breadcrumb a
 
   ![ALT text is not available for this image](images/3019662928.png)
 
-## STEP 4: Create Workflow
+## **STEP 4:** Create Workflow
 
 Good engineering practice is to build and thoroughly test (with both positive and negative cases) components of functionality. These components can then be combined into larger modules. The Data Transforms tool supports this best practice, with Data Flows representing the elemental components, and Workflows the assembly of these components into larger modules. In this exercise we'll simulate this approach. We begin by creating two additional Data Flows in project *MovieStream*:
 
@@ -387,7 +385,7 @@ Good engineering practice is to build and thoroughly test (with both positive an
 
     After completing the definition of the Workflow, navigate back to the Data Transforms main page by pressing **Projects** in the breadcrumb at the upper left of the screen.
 
-## STEP 5: Create Schedules
+## **STEP 5:** Create Schedules
 
 The typical process for development with Data Transforms will be first to develop and test Data Flows individually. These will then be assembled into Workflows, which are then tested in turn. During development and testing, the validation of these Data Flows and Workflows will initially by executed on demand. As they move into production, they typically transition to &quot;lights out&quot; operations, being executed automatically against a schedule. The definition of these schedules is the topic of this section. 
 
@@ -411,21 +409,22 @@ The typical process for development with Data Transforms will be first to develo
 
     ![ALT text is not available for this image](images/3019662919.png)
 
-### RECAP
+## Conclusion
 
 In this lab we’ve covered simple to some relatively advanced features of the Data Load tool, but we have to be honest: it’s all still pretty easy. These topics were:
 
 <ul style="text-decoration: none;">
-Data flow - A data flow is process of transforming data from various sources and loading into target tables
 
-Jobs – Each time a Data Flow or a Workflow executes, it is recorded as a Job
+- Data flow - A data flow is process of transforming data from various sources and loading into target tables
 
-Workflows – A workflow is an assembly of a number of Data Flows
+- Jobs – Each time a Data Flow or a Workflow executes, it is recorded as a Job
 
-Schedules – Data Flows and Workflows can either be executed on demand, or on automated schedule
+- Workflows – A workflow is an assembly of a number of Data Flows
+
+- Schedules – Data Flows and Workflows can either be executed on demand, or on automated schedule
 
 ## Acknowledgements
 
 - **Authors** - Jayant Mahto, ADB Product Management
 - **Contributors** - Patrick Wheeler, Mike Matthews, ADB Product Management
-- **Last Updated By/Date** - Jayant Mahto, June 2021
+- **Last Updated By/Date** - Jayant Mahto, Brianna Ambler, June 2021

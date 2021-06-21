@@ -6,11 +6,10 @@ This lab will show how the application can be scaled at the application and data
 
 Estimates Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how the application can be scaled at the application and database tiers to maintain optimal performance.
 
 [](youtube:95cW9eH_os4)
-</if>
+
 
 ### Objectives
 -   Start the external load balancer for the order-helidon microservice
@@ -44,6 +43,10 @@ This lab assumes that you have already completed the previous labs.
     ```
     <copy>export LB='123.123.123.123'</copy>
     ```
+
+<if type="multicloud-freetier">
++ `export LB=$(kubectl get gateway msdataworkshop-order-helidon-appconf-gw -n msdataworkshop -o jsonpath='{.spec.servers[0].hosts[0]}')`
+</if>
 
 2. Install a load testing tool.  
 

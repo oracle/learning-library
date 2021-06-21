@@ -1,10 +1,10 @@
-# Migrating the WebLogic Domain
+# Migrate the WebLogic Domain
 
 ## Introduction
 
 Migrating a WebLogic domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
 
-We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on OCI.
+We'll use WebLogic Deploy Tooling (WDT) to migrate the domain from an on-premises environment and re-deploy it on OCI.
 
 Estimated Lab Time: 15 minutes
 
@@ -12,11 +12,11 @@ Estimated Lab Time: 15 minutes
 
 **WebLogic Deploy Tooling** is an open source tool found on Github at [https://github.com/oracle/weblogic-deploy-tooling](https://github.com/oracle/weblogic-deploy-tooling)
 
-Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
+Migration with WDT consists of three steps:
 
-- Discover the source domain, and generate a **model** file of the topology, resources and applications, a **variable** file with required credentials, and an **archive** file with the application binaries.
-- Edit the the **model** file and **variable** file to target the new infrastructure on OCI.
-- Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
+- Discover the source domain, and generate a *model* file of the topology, resources and applications, a *variable* file with required credentials, and an *archive* file with the application binaries.
+- Edit the the *model* file and *variable* file to target the new infrastructure on OCI.
+- Copy the files to the target Admin Server, and *update* the clean domain on OCI with the applications and resources discovered on-premises.
 
 ### Objectives
 
@@ -440,7 +440,7 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 2. Provide the `TARGET_WLS_ADMIN`.
 
     This is the **WebLogic Admin Server public IP** gather previously.
-  
+
 3. Save the file with `CTRL+x` and `y`.
 
 4. Run the `update_domain.sh` script:
@@ -479,8 +479,6 @@ https://*LOAD_BALANCER_IP*/SimpleDB/
     Making sure you use `https` as scheme and the proper case for `/SimpleDB`.
 
   ![](./images/oci-simpledb-app.png)
-
-You may proceed to the next lab.
 
 ## Acknowledgements
 

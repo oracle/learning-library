@@ -2,15 +2,13 @@
 
 ## Introduction
 
-This lab will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
+We will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
 
-At the end of this lab, you will have a local environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing two applications and a datasource.
+On completion, you will have a local environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing two applications and a datasource.
 
-Estimated Lab Time: 30 minutes.
+Estimated Completion Time: 30 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Get the Docker environment files.
 - Start up the Docker-based on-premises demo environment.
@@ -19,8 +17,6 @@ In this lab you will:
 
 
 ### Prerequisites
-
-To run this lab, you will need:
 
 - Docker installed locally to run the on-premises environment.
 

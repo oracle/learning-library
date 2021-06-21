@@ -6,7 +6,7 @@ Oracle is a relational database, meaning it typically stores data in rows and co
 
 In order to create a collection all you have to specify is the collection's name. Unlike a relational table you do not have to provide any schema information. So, lets create a collection for the products we want to sell in the store.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -67,6 +67,7 @@ In this lab, you will:
 	}
 	</copy>
 	```
+	
 	![](./images/paste1.png)
 
 4. A notification pops up that says A New Document is created and the new document is shown in the bottom section of the JSON workshop.
@@ -95,8 +96,6 @@ In this lab, you will:
 		"year": 1982,
 		"decade": "80s"
 	}
-	![](./images/paste1.png)
-
 	</copy>
 	```
 
@@ -236,13 +235,14 @@ Some values need to be unique, so how do we enforce it?
 
 	Copy and paste the following query in the worksheet and click **Run Query**.
 
-	Shows duplicate which is not good and so let's delete the last inserted document by clicking on the trash bin button.
+	The result now shows duplicate id values which is not good and so let's delete the last inserted document by clicking on the trash bin button.
 
 	```
 	<copy>
 	{"id":100}
 	</copy>
 	```
+
 	![](./images/id100.png)
 
 	It is likely we are looking up products by their id. Let's a create an index that gives fast access to 'id'. Make sure id is unique and numeric.
@@ -343,8 +343,12 @@ Some values need to be unique, so how do we enforce it?
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+
+* [Creating B-Tree Indexes for JSON_VALUE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/indexes-for-json-data.html#GUID-FEE83855-780A-424B-9916-B899BFF2077B)
+
 ## Acknowledgements
 
 - **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, June 2021

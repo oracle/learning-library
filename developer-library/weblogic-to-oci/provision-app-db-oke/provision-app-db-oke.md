@@ -2,13 +2,11 @@
 
 ## Introduction
 
-This lab with guide you through provisioning an application database.
+We will guide you through provisioning an application database.
 
-Estimated Lab Time: 30 to 35 minutes including 25 to 30 minutes for provisioning time.
+Estimated Completion Time: 30 to 35 minutes including 25 to 30 minutes for provisioning time.
 
 ### Objectives
-
-In this lab you will:
 
 - Create a security list with proper ports open.
 - Create a private subnet for the application database.
@@ -175,7 +173,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-25.png " ")
 
-To save some time, you can proceed to starting the database migration lab while the database is provisioning if you wish, however you will need the database fully provisioned and you will need to gather the database information before you can finish the migration.
+To save some time, you can start the database migration while the database is provisioning if you wish, however, you will need the database to be fully provisioned and you will need to gather the database information before you can finish the migration.
 
 
 ## Acknowledgements

@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-          "title": "Workshop Introduction",
+          "title": "Introduction",
           "description": "Inroduction to this workshop",
           "filename": "./../../workshop-intro/workshop-intro.md"
         },
@@ -25,7 +25,7 @@
       {
           "title": "Lab 3: Loading Data",
           "description": "This lab will load sample data in Autonomous Database for use with Lab 5 (Using Data Transforms)",
-          "filename": "/../../loading-data/loading-data.md"
+          "filename": "./../../loading-data/loading-data.md"
       },
       {
           "title": "Lab 4: Deploying ODI Web Edition",

@@ -2,20 +2,18 @@
 
 ## Introduction
 
-This lab walks you through provisioning the WebLogic Infrastructure on Oracle Kubernetes Engine (OKE) by leveraging the OCI Cloud Marketplace.
+We will walk you through provisioning the WebLogic Infrastructure on Oracle Kubernetes Engine (OKE) by leveraging the OCI Cloud Marketplace.
 
-Estimated Lab Time: 30 minutes.
+Estimated Completion Time: 30 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Provision WebLogic Server on OKE e via the Oracle Cloud Marketplace offering.
 - Gather information for further steps.
 
 ### Prerequisites
 
-For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
+You need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
 
 - A Vault.
 - A Key.
@@ -29,7 +27,7 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
 
   ![](./images/provision-1.png " ")
 
-2. In the search input, type `weblogic`. For this lab, we'll use the **WebLogic Enterprise Edition on OKE UCM**.
+2. In the search input, type `weblogic` and click **WebLogic Enterprise Edition on OKE UCM**.
 
    ![](./images/provision-2.png " ")
 

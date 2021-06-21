@@ -11,10 +11,6 @@ Estimates Lab Time - 20 minutes
 * Clone the setup and microservices code
 * Execute setup
 
-### Prerequisites
-
-LiveLabs workshop reservation for this workshop and have launched the console for that reservation.  
-
 ## **STEP 1**: Select Your Compartment
 
 You have been assigned your own OCI compartment for running this workshop.  The name of the compartment is shown on the Launch page.
@@ -45,7 +41,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 1.4 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.6.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -105,11 +101,11 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
    ![](images/generated-auth-token-value.png " ")
 
-  e. Paste the Auth Token when requested by Setup.
+  e. Paste the Auth Token when requested by Setup. **Note**: The token is not displayed. Press Enter after pasting the token.
 
   f. Click Close to close the Generate Token dialog.
 
-5. The setup will ask you to enter an Admin password for the databases.  For simplicity, the same password will be used for both the Order and Inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
+5. The setup will ask you to enter an Admin password for the databases.  For simplicity, the same password will be used for both the Order and Inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". **Note**: The passwords typed are not displayed.
 
 6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
@@ -133,7 +129,7 @@ ls -al $GRABDISH_LOG
 </copy>
 ```
 
-Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+Once the setup has completed you are ready to move to the next lab.  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 ## Acknowledgements
 

@@ -6,11 +6,19 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 *Note: While this lab uses ADW, the steps are identical for creating an ATP database.*
 
-Estimated time: 5 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
+In this lab, you will:
+
 -   Learn how to provision a new Autonomous Database
+
+### Prerequisites
+
+To complete this lab, you need to have the following:
+
+- Logged into your Oracle Cloud Account
 
 ## **STEP 1**: Choosing ADW or ATP from the Services Menu
 
@@ -39,7 +47,7 @@ Estimated time: 5 minutes
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
-## **STEP 2**: Creating the ADB instance
+## **STEP 2**: Creating the ADB Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -128,4 +136,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Tom McGinn, June 2021
+- **Last Updated By/Date** - Tom McGinn, Brianna Ambler, June 2021

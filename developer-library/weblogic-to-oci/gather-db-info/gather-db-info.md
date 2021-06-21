@@ -2,13 +2,11 @@
 
 ## Introduction
 
-This lab with guide you through getting useful information regarding a database provisioned on Oracle Cloud Infrastructure (OCI).
+We will guide you through getting useful information regarding a database provisioned on Oracle Cloud Infrastructure (OCI).
 
-Estimated Lab Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Gather the database node IP.
 - Gather the database connection string.

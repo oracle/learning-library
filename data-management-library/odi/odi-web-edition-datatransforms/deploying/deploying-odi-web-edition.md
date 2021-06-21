@@ -1,11 +1,7 @@
 ﻿
-# Data Transforms – ODI Web Edition Workshop
-
- 
+# Deploying ODI Web Edition
 
 ## Introduction
-
-#### Background on Oracle Data Integrator
 
 Oracle Data Integrator (ODI) is Oracle's industry-leading, enterprise-class data integration tool. It features an extract-load-transform (ELT) architecture, which delivers very high performance, scalability and reliability because it uses the target database to execute transformations. Why do an **E** and an **L** if all you want to do is a **T**? That's the problem with legacy ETL tools with server-based architectures that require data to be extracted for processing (transformation) and reloaded afterwards. ODI Web Edition brings this power and pedigree to a wider user base through the Data Transforms tool, which provides a simple drag and drop low-code environment for creating data integration projects.
 
@@ -15,7 +11,7 @@ Estimated Lab Time: 60 minutes
 
 ### Objectives
 
-In this lab, you'll:
+In this lab, you will:
 
 - Create an ODI Web Edition instance
 
@@ -25,7 +21,7 @@ In this lab, you'll:
 
 To complete this lab, you need to have the following:
 
-- Autonomous Database which will host repository for ODI Web Edition
+- Autonomous Database, which will host repository for ODI Web Edition
 
 - SSH Key
 
@@ -39,11 +35,9 @@ To complete this lab, you need to have the following:
 
 - Privilege to create an OCI compartment or access to a compartment
 
-### Assumptions
-
 - Knowledge of basic concepts of OCI console navigation 
 
-## STEP 1: Create OCI Policies for ODI Web Edition Deployment
+## **STEP 1:** Create OCI Policies for ODI Web Edition Deployment
 
 1. **NOTE:** If you have already been provided a compartment then skip this step. For the remaining steps, replace compartment name `odi` with your assigned compartment name. Create a compartment `odi` where ODI Web Edition related artifacts will be created. Make sure you have a privilege to create a compartment or request your administrator to give you a compartment. Use this compartment for the rest of the lab. Navigate to **Identity & Security > Compartments** and create a compartment. 
 
@@ -99,7 +93,7 @@ To complete this lab, you need to have the following:
 
     ![ALT text is not available for this image](images/3018125118.jpg)
 
-## STEP 2: Deploy ODI Web Edition
+## **STEP 2:** Deploy ODI Web Edition
 
 1. Starting from the OCI console, navigate to the OCI Marketplace, as follows (and as shown in the screenshot below):
 
@@ -164,17 +158,17 @@ To complete this lab, you need to have the following:
 
     **NOTE:** After the stack is successfully deployed, your compute instance is created. However, ODI deployment script is running in the background  to do the following:
 
-- **Installing ODI Web Edition software**
+    - **Installing ODI Web Edition software**
 
-- **Creating repository in ADW**
+    - **Creating repository in ADW**
 
-- **Starting ODI agents**
+    - **Starting ODI agents**
 
   **All the above steps take around 30-40 minutes to finish. You can come back after 30 minutes and check for Data Transforms using direct URL as shown in Step 3. If it is not ready then give it another 10 minutes.**
 
   **In order to check the progress of the deployment script, one need to login to VNC viewer to the compute instance and check the log file. This is beyond the scope of this workshop. To keep steps simple, we simply wait for 30-40 minutes and launch the Data Transforms tool.** 
 
-## Step 3 - Launch The Data Transforms Tool
+## **Step 3:** Launch The Data Transforms Tool
 
 Data Transforms tool can be launched by two methods:
 
@@ -207,7 +201,7 @@ Data Transforms tool can be launched by two methods:
 
     ![ALT text is not available for this image](images/3018123500.png)Follow the next lab for using Data Transforms to create a data flow.
 
-### RECAP
+## Conclusion
 
 In this section we've covered the following topics:
 
@@ -221,4 +215,4 @@ In this section we've covered the following topics:
 
 - **Authors** - Jayant Mahto, ADB Product Management
 - **Contributors** - Patrick Wheeler, Mike Matthews, ADB Product Management
-- **Last Updated By/Date** - Jayant Mahto, June 2021
+- **Last Updated By/Date** - Jayant Mahto, Brianna Ambler June 2021

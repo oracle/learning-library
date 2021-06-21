@@ -2,13 +2,11 @@
 
 ## Introduction
 
-In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
+We will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
 
-Estimated Lab Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Create a Vault.
 - Create a Key.
@@ -17,8 +15,6 @@ In this lab you will:
 - Copy the Secret OCIDs to use during the provisioning stage.
 
 ### Prerequisites
-
-For this lab you will need:
 
 - An OCI account with a compartment created.
 

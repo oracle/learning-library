@@ -4,19 +4,19 @@
 
 Congratulations! You've come so far and completed the workshop, and you might wonder how to clean up resources.
 
-Estimated Lab Time: 15 minutes
+Estimated Completion Time: 15 minutes
 
 *You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.*
 
 ### Objectives
 
-In this lab you will tear down the infrastructure provisioned.
+- Tear down the infrastructure provisioned.
 
 ## **STEP 1:** Cleaning up the on-premises environment
 
 ### If you used docker
 
-1. stop the services and remove containers:
+1. Stop the services and remove containers:
 
     ```
     <copy>

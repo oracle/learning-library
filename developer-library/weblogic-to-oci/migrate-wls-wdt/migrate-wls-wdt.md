@@ -6,7 +6,7 @@ Migrating a WebLogic domain is equivalent to re-deploying the applications and r
 
 We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on OCI.
 
-Estimated Lab Time: 15 minutes.
+Estimated Completion Time: 15 minutes.
 
 ### About Product/Technologies
 
@@ -20,8 +20,6 @@ Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
 
 ### Objectives
 
-In this lab, you will:
-
 - Install WebLogic Deploy Tooling on the source WebLogic domain.
 - Discover the source domain.
 - Edit the source domain model file.
@@ -30,8 +28,6 @@ In this lab, you will:
 - Check migration was successful.
 
 ### Prerequisites
-
-To run this lab, you need to:
 
 - Have set up the demo on-premises environment to use as the source domain to migrate.
 - Have deployed a WebLogic on OCI domain using the marketplace.
@@ -328,7 +324,7 @@ appDeployments:
   4. Finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
 
     The new JDBC connection string should be:
-    
+
     ```
     <copy>
     jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
@@ -480,7 +476,7 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
 2. In Firefox you will see the self-certificate warning as below:
 
-    ![](./images/self-cert-warning.png)
+    ![](./images/self-cert-warning.png " ")
 
     Click **Advanced...** and then **Accept the Risk and Continue**
 
@@ -488,16 +484,14 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
 4. Go to `deployments`: you should see the 2 applications deployed, and in the **active** state.
 
-  ![](./images/oci-deployments.png)
+  ![](./images/oci-deployments.png " ")
 
 5. Go to the SimpleDB application URL, which is the Load Balancer IP gathered previously in the **Outputs** of the WebLogic provisioning, with the route `/SimpleDB/` like:
 https://`LOAD_BALANCER_IP`/SimpleDB/
 
     Making sure you use `https` as scheme and the proper case for `/SimpleDB`.
 
-  ![](./images/oci-simpledb-app.png)
-
-You may proceed to the next lab.
+  ![](./images/oci-simpledb-app.png " ")
 
 ## Acknowledgements
 

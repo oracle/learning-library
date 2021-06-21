@@ -2,18 +2,17 @@
 
 ## About this Workshop
 
-This lab will walk you through the process of migrating an existing on-premises WebLogic domain to WebLogic for Oracle Cloud Infrastructure (OCI). The WebLogic domain we'll migrate contains a couple Java applications and a datasource connecting to a database that will be migrated along with the WebLogic domain.
+We will walk you through the process of migrating an existing on-premises WebLogic domain to WebLogic for Oracle Cloud Infrastructure (OCI). The WebLogic domain we'll migrate contains two Java applications, `SimpleDB` and `SimpleHTML`, and a datasource connecting to a database that will be migrated along with the WebLogic domain.
 
 Attached below is a sample architecture of the final solution:
-![](./images/Architecture.png)
+![](./images/Architecture.png " ")
 
-Estimated Lab Time: 80 to 120 minutes depending on the path chosen.
+Estimated Completion Time: 80 to 120 minutes depending on the path chosen.
 
 ### Objectives
 
-*Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infrastructure (OCI), provisioning WebLogic on OCI with the marketplace.*
+Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infrastructure (OCI), provisioning WebLogic on OCI with the Oracle Cloud Marketplace.
 
-In this lab, you will:
 - Provision a demo environment to use as the on-premises environment to be migrated.
 - Prepare the OCI tenancy to provision WebLogic Server from the marketplace.
 - Provision a new empty WebLogic domain on OCI with the marketplace.
@@ -25,10 +24,10 @@ In this lab, you will:
 
 ### Prerequisites
 
-*In order to run this workshop you need:*
+In order to run this workshop you need:
 
 * A Mac OS X, Windows or Linux machine.
-* A private/public SSH key-pair.
+* A private and public SSH key-pair.
 * Firefox browser.
 * An OCI account with a compartment set up.
 
@@ -50,12 +49,7 @@ Allow group MyGroup to manage all-resources in compartment MyCompartment
 ```
 
 
->**Important note:**
-
->*This lab uses the WebLogic version 12.2.1.4 stack with a non-JRF domain. It is similar with version 12.2.1.3, however WebLogic version 10.3.6 requires a JRF domain by default, which requires a database as a backend. The ONLY database versions compatible with WebLogic 10.3.6 on OCI are database version 11.2.0.4 and 12.1.0.2. Note that database 11.2.0.4 requires the Oracle Grid Infrastructure when provisioning, or it will not be visible as an option when selecting the database image version.*
-
-
-You may proceed to the next lab.
+> **Note:** Here we use the WebLogic version 12.2.1.4 stack with a non Java Required Files (JRF) domain. It is similar with version 12.2.1.3, however WebLogic version 10.3.6 requires a JRF domain by default, which requires a database as a backend. The ONLY database versions compatible with WebLogic 10.3.6 on OCI are database version 11.2.0.4 and 12.1.0.2. Note that database 11.2.0.4 requires the Oracle Grid Infrastructure when provisioning, or it will not be visible as an option when selecting the database image version.
 
 ## Acknowledgements
 

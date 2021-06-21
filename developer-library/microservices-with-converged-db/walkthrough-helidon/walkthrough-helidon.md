@@ -6,11 +6,9 @@ This lab will show you how to deploy the microservices on your Kubernetes cluste
 
 Estimated Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to deploy the microservices on your Kubernetes cluster.
 
 [](youtube:8gMmjbXSR68)
-</if>
 
 ### Objectives
 
@@ -150,7 +148,7 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
    ![](images/spatial-delivery.png " ")
 
-6. Hit the back button on your browser to the `Transactional` screen.
+6. Go to the other tab on your browser to view the `Transactional` screen.
 
    ![](images/tx-show-order-67.png " ")
 

@@ -8,14 +8,20 @@ In this lab, you will create a database user.
 Estimated Lab Time: 10 minutes
 
 ### Objectives
+
+In this lab, you will:
+
 - Create the database user that you will use in the next lab
 - Update the user's profile to grant access to load and store data
 - Log in as the user
 
 ### Prerequisites
-- This lab requires completion of the previous lab in the Contents menu on the left.
 
-## STEP 1 - Creating New Database Users
+To complete this lab, you need to have the following:
+
+- All previous labs successfully completed.
+
+## **STEP 1:** Creating New Database Users
 
 When you create a new data warehouse you automatically get an account called ADMIN that is your super administrator user. In the real world, you will definitely want to keep your data warehouse data completely separate from the administration processes. Therefore, you will need to know how to create separate new users and grant them access to your data warehouse. This section will guide you through this process using the &quot;New User&quot; wizard within the SQL Worksheet (one of the built-in tools in Autonomous Data Warehouse).
 
@@ -37,10 +43,10 @@ For this workshop we need to create one new user.
 
   ![ALT text is not available for this image](images/2878884398.png)
 
-5.  The **Create User**  form will appear on the right-hand side of your browser window. Use the settings below to complete the form:
+5. The **Create User**  form will appear on the right-hand side of your browser window. Use the settings below to complete the form:
 
-- username: **QTEAM**
-- password: make up your own suitably strong password.
+ - username: **QTEAM**
+ - password: make up your own suitably strong password.
 
     **NOTE - Rules for User Passwords** Autonomous Data Warehouse requires strong passwords. User passwords user must meet the following default password complexity rules:
 
@@ -78,7 +84,7 @@ Notice that two additional roles have already been automatically assigned: **CON
 
 8.  Finally, click the **Create User** button at the bottom of the form.
 
-## STEP 2 - Updating User Profiles
+## **STEP 2:** Updating User Profiles
 
 The final step in this section is to grant our newly created user with access to load and store data (the next lab will step you through the process of loading data).
 
@@ -104,7 +110,7 @@ The final step in this section is to grant our newly created user with access to
 
   ![ALT text is not available for this image](images/2878884854.png)
 
-## STEP 3 -  Login As User QTEAM
+## **STEP 3:** Login As User QTEAM
 
 Now you need to switch to working as the user QTEAM so you can start the next lab on data loading.
 
@@ -124,11 +130,10 @@ Now you need to switch to working as the user QTEAM so you can start the next la
 
   ![ALT text is not available for this image](images/2878885105.png)
 
-## STEP 4 - Ready to Begin Loading Data
 
 Now you have connected to your Autonomous Data Warehouse with your new user. You are ready to go to the next lab!
 
-## Want To Learn More
+## Learn More
 
 See the documentation on [Managing Users on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage.html#GUID-AD7ACC07-AAF7-482A-8845-9C726B1BA86D). This topic describes administration tasks for managing users on Autonomous Database.
 
@@ -136,4 +141,4 @@ See the documentation on [Managing Users on Autonomous Database](https://docs.o
 
 - Created By/Date - Keith Laker, Product Manager, Autonomous Database, March 2021
 - Contributors - Nilay Panchal, Rick Green, Patrick Wheeler, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews
-- Last Updated By - Keith Laker, March 2021
+- Last Updated By - Brianna Ambler, June 2021

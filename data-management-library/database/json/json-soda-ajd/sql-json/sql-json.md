@@ -10,7 +10,7 @@ A key characteristic of a JSON collection (like 'products') is that it is backed
 
 In the following we show you how you can use SQL to work with the JSON data in a collection.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -34,6 +34,8 @@ In this lab, you will:
     ![](./images/products-table.png)
 
     You see that the table 'PRODUCTS' has 5 columns: an 'ID' which is a unique identified for the document, a 'JSON\_DOCUMENT' which holds the document, 2 metadata columns to keep track of creation and update timestamps and 'VERSION' which is typically a hash value for the document and allows to keep caches in sync (similar to an eTag). None of this is really important at this point as we will only use the JSON\_DOCUMENT column in the following examples.
+
+    *Learn more -* [Use Oracle Database Actions with JSON Collections](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/use-oracle-database-actions-json-collections1.html) and [Use SQL With JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-04377B36-654B-47C4-A480-535E00E46D1F)
 
 ## **STEP: 2** JSON_Serialize
 
@@ -88,6 +90,8 @@ In this lab, you will:
     </copy>
     ```
 
+    *Learn more -* [Oracle SQL Function JSON_SERIALIZE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-667D37FF-F5FB-465D-B8AE-DAE88F191B2F), and [Simple Dot-Notation Access to JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/simple-dot-notation-access-to-json-data.html#GUID-7249417B-A337-4854-8040-192D5CEFD576)
+
 ## **STEP 3:** Unnesting JSON arrays
 
 All above examples extracted singleton values from the JSON data - values that only occurred once per document (like title or price). But JSON can have nested arrays - how can we access those?
@@ -125,16 +129,18 @@ All above examples extracted singleton values from the JSON data - values that o
     </copy>
     ```
 
-3.  On this we can already do here by slightly modifying the query is to count the number of movies by actor. All we do is group the results by actor name and count the group's size. The 'order by' clause order the results based on the second column (the count).
+4.  On this we can already do here by slightly modifying the query is to count the number of movies by actor. All we do is group the results by actor name and count the group's size. The 'order by' clause order the results based on the second column (the count).
 
     ```
     <copy>
     select jt.actor, count(1)
     from products p nested json_document.starring[*] columns (actor path '$') jt
     group by actor
-    order by 2 DESCENDING;
+    order by 2 DESC;
     </copy>
     ```
+
+    *Learn more -* [SQL NESTED Clause Instead of JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-D870AAFF-58B0-4162-AC11-4DDC74B608A5)
 
 ## **STEP 4:** SQL/JSON operators
 
@@ -151,6 +157,8 @@ An array step uses square brackets; '[0]' selects the first value in an array. I
 These steps can now be chained together. Also, a path expression typically starts with the '$' symbol which refers to the document itself.
 
 Path expressions are evaluated in a 'lax' mode. This means that an object step like '.id' can also be evaluated on an array value: it then means to select the 'id' values of each object in the array. This will be explained a bit in JSON_Exists, where we also explain Path Predicates (filters).
+
+*Learn more -* [SQL/JSON Path Expressions](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-path-expressions.html#GUID-2DC05D71-3D62-4A14-855F-76E054032494)
 
 Now let's look at the different SQL/JSON operators step by step:
 
@@ -192,6 +200,8 @@ JSON_VALUE takes one VALUE from the JSON and returns it as a SQL scalar value.
     </copy>
     ```
 
+    *Learn more -* [SQL/JSON Function JSON_VALUE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_VALUE.html#GUID-0565F0EE-5F13-44DD-8321-2AC142959215)
+
 ### JSON_Query
 
 Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query can extract complex values (objects or arrays) and also return multiple values as a new JSON array. The result of JSON_Query is JSON data itself for example an object or array.
@@ -213,6 +223,8 @@ Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query
     from products p;
     </copy>
     ```
+
+    *Learn more -* [SQL/JSON Function JSON_QUERY](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_QUERY.html#GUID-D64C7BE9-335D-449C-916D-1123539BF1FB)
 
 ## **STEP 5:** JSON_Exists
 
@@ -254,7 +266,9 @@ JSON_Exists is used to filter row, therefore you find it in the WHERE clause. In
 
     *Note:* Indexes can be added to speed up finding the right documents.
 
-### JSON_Table
+    *Learn more -* [SQL/JSON Condition JSON_EXISTS](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/condition-JSON_EXISTS.html#GUID-D60A7E52-8819-4D33-AEDB-223AB7BDE60A)
+
+## **STEP 6:** JSON_Table
 
 JSON\_Table is used to 'flatten' the hierarchical JSON data to a table consisting of rows and column. It is commonly used for analytics or reporting over JSON data. Similarly to the 'nested' clause in the simple dot notation JSON\_Table allows to unnest embedded JSON array. JSON\_Table consists of 'row' path expressions (which define the number of rows) and column path expressions (which extract a value and map it to a column with a given data type). Each row can have JSON\_Value, JSON\_Query and JSON\_Exists semantics. This allows to combine a set of these operations into one single JSON\_Table expression.
 
@@ -263,14 +277,14 @@ JSON\_Table is used to 'flatten' the hierarchical JSON data to a table consistin
     ```
     <copy>
     select jt.*
-    from products, 
+    from products,
     JSON_TABLE (json_document, '$' columns (
-    id NUMBER,
-    ProductName varchar2(50) path '$.title',
-    type,
-    actors varchar(100) FORMAT JSON path '$.starring',
-    year EXISTS,
-    numGenres NUMBER path '$.genres.size()'
+      id NUMBER,
+      ProductName varchar2(50) path '$.title',
+      type,
+      actors varchar(100) FORMAT JSON path '$.starring',
+      year EXISTS,
+      numGenres NUMBER path '$.genres.size()'
     )) jt;
     </copy>
     ```
@@ -292,11 +306,11 @@ JSON\_Table is used to 'flatten' the hierarchical JSON data to a table consistin
     select jt.*
     from products, 
     JSON_TABLE (json_document, '$' columns (
-    title, 
-    nested path '$.starring[*]' 
-    columns (actor path '$'),
-    nested path '$.genres[*]' 
-    columns (genre path '$')
+      title, 
+      nested path '$.starring[*]' 
+      columns (actor path '$'),
+      nested path '$.genres[*]' 
+      columns (genre path '$')
     )) jt;
     </copy>
     ```
@@ -311,12 +325,12 @@ JSON\_Table is used to 'flatten' the hierarchical JSON data to a table consistin
     select jt.*
     from products, 
     JSON_TABLE (json_document, '$' columns (
-    id NUMBER,
-    ProductName varchar2(50) path '$.title',
-    type,
-    actors varchar(100) FORMAT JSON path '$.starring',
-    year EXISTS,
-    numGenres NUMBER path '$.genres.size()'
+      id NUMBER,
+      ProductName varchar2(50) path '$.title',
+      type,
+      actors varchar(100) FORMAT JSON path '$.starring',
+      year EXISTS,
+      numGenres NUMBER path '$.genres.size()'
     )) jt;
     </copy>
     ```
@@ -340,7 +354,9 @@ JSON\_Table is used to 'flatten' the hierarchical JSON data to a table consistin
     </copy>
     ```
 
-## **STEP 6:** JSON Updates
+    *Learn more -* [SQL/JSON Function JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-0172660F-CE29-4765-BF2C-C405BDE8369A)
+
+## **STEP 7:** JSON Updates
 
 ### JSON_Mergepatch
 
@@ -378,7 +394,9 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     </copy>
     ```
 
-    JSON\_Mergepatch also allows you to delete a valued (by setting it to null) but JSON\_Mergepatch is not able to handle updates on JSON\_Arrays. This is why we added a more powerful operator: JSON\_Transform
+    JSON\_Mergepatch also allows you to delete a value (by setting it to null) but JSON\_Mergepatch is not able to handle updates on JSON\_Arrays. This is why we added a more powerful operator: JSON\_Transform.
+
+    *Learn more -* [Oracle SQL Function JSON_MERGEPATCH](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/oracle-sql-function-json_mergepatch.html#GUID-80B4DA1C-246F-4AB4-8DF5-D492E5661AA8)
 
 ### JSON_Transform
 
@@ -408,7 +426,9 @@ JSON\_Transform like the other SQL/JSON operators relies on path expressions to 
     </copy>
     ```
 
-## **STEP 7:** JSON Generation functions
+    *Learn more -* [Oracle SQL Function JSON_TRANSFORM](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/oracle-sql-function-json_transform.html#GUID-7BED994B-EAA3-4FF0-824D-C12ADAB862C1)
+
+## **STEP 8:** JSON Generation functions
 
 SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row operators that generate one object/array per input row and 2 are aggregate operators that generate one object/array for all rows. These operators come very handy when you want to generate JSON data from existing tables or if you want to bring JSON data into a different shape.
 
@@ -475,11 +495,12 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     ```
     <copy>
     select jt.id, jt.title, jt.actor
-    from products NESTED json_document 
-    COLUMNS(id NUMBER,
-    title,
-    NESTED starring[*]
-    COLUMNS(actor path '$')) jt
+    from products NESTED json_document COLUMNS(
+      id NUMBER,
+      title,
+      NESTED starring[*] COLUMNS(
+       actor path '$'
+      )) jt
     where jt.actor is not null;
     </copy>
     ```
@@ -491,11 +512,12 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     with 
     actor_title_map as (
     select jt.id, jt.title, jt.actor
-    from products NESTED json_document 
-    COLUMNS(id NUMBER,
-    title,
-    NESTED starring[*]
-    COLUMNS(actor path '$')) jt
+    from products NESTED json_document COLUMNS(
+      id NUMBER,
+      title,
+      NESTED starring[*] COLUMNS(
+       actor path '$'
+      )) jt
     where jt.actor is not null
     )
     select DISTINCT actor
@@ -510,11 +532,12 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     with 
     actor_title_map as (
     select jt.id, jt.title, jt.actor
-    from products NESTED json_document 
-    COLUMNS(id NUMBER,
-    title,
-    NESTED starring[*]
-    COLUMNS(actor path '$')) jt
+    from products NESTED json_document COLUMNS(
+      id NUMBER,
+      title,
+      NESTED starring[*] COLUMNS(
+       actor path '$'
+      )) jt
     where jt.actor is not null
     ),
     distinct_actors as (
@@ -531,7 +554,9 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
     Please note that the value for the field 'movies' is the result of a subquery on the actor\_title\_map with a join on the actor's name.
 
-## **STEP 8:** JSON Dataguide
+    *Learn more -* [Generation of JSON Data Using SQL](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/generation.html#GUID-6C3441E8-4F02-4E95-969C-BBCA6BDBBD9A)
+
+## **STEP 9:** JSON Dataguide
 
 Often, you do not know all the fields that occur in a collection of JSON data, especially if it is from a third party. JSON\_Dataguide allows to retrieve a JSON schema for this data: it tells you all occurring field names, their datatype and the path how to access them. It can even automate the generation of a JSON\_Table based view.
 
@@ -609,7 +634,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     </copy>
     ```
 
-6.  Now we can use a simple pl/sql function:
+6.  Now we can use a simple pl/sql function 'dbms\_json.create\_view' to automatically create a relational view over the JSON data. The JSON Dataguide provides all information for the columns like their name, data type and the JSON path expression to extract the corresponding values.
 
     ```
     <copy>
@@ -677,8 +702,10 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     "originalTitle" varchar2(1) path '$.originalTitle')JT
     ```
 
+    *Learn more -* [JSON Data Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-dataguide.html#GUID-219FC30E-89A7-4189-BC36-7B961A24067C)
+
 ## Acknowledgements
 
 - **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, June 2021

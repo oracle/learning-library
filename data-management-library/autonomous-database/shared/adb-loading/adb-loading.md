@@ -11,7 +11,7 @@ You can load data into your new autonomous database (Autonomous Data Warehouse [
 + from tables in remote databases, or
 + from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
 
-*Note: While this lab uses ADW, the steps are identical for loading data into an ATP database.*
+> **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
 Estimated Lab Time: 30 minutes
 

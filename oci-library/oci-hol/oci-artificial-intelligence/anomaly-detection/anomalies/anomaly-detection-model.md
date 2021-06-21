@@ -42,12 +42,11 @@ We can specify FAP(false alarm probability) and Train Fraction Ratio. The defaul
 
 ###FAP (False Alarm Probability)
 
-FAP stands for False Alarm Probability, which is basically the likelihood (percentage) a timestamp is flagged as anomaly in the clean training data, i.e. value of a signal in one timestamp is incorrectly detected as anomaly.
+FAP stands for False Alarm Probability, which is basically the likelihood (percentage) of a timestamp is flagged as anomaly in the clean (anomaly-free) training data. It is calculated at every signal level and then averaged across all signals as the final achieved FAP by our model.  
 
 A model with high FAP means the likelihood of an anomaly flagged by AD service to be a false alarm is high. If this is not desired, depending on the sensitivity requirements of a user, user can specify it to be low.
 
 Typically, FAP can be set to be around the same level of percentage of anomalies in real business scenarios, and a value 0.01 or 1% is relatively appropriate for many scenarios. Also, be aware that if specifying a lower target FAP, the model needs more time to train, and may not achieve to the target FAP.
-
 
 ###How to calculate FAP
 
@@ -58,9 +57,9 @@ Typically, FAP can be set to be around the same level of percentage of anomalies
 As can be inferred from the formula, the more the number of false alarms allowed for the model to learn, the higher FAP will be.
 
 ###Train Fraction Ratio
-Train Fraction Ratio specifies to the model on how much of the data to use for training. So the default value 0.7 or 70% specifies the model to use 70% of the data for training.
+Train Fraction Ratio specifies the ratio of the whole training data used for our algorithm to learn the pattern and train the model. The rest (1-ratio) of training data will be used for our algorithm to evaluate and report model performance (e.g., FAP). The default value 0.7 or 70% specifies the model to use 70% of the data for training, and the rest 30% is used to produce model performance.
 
-The default value for FAP and Train Fraction Ratio are appropriate to our demo data set, we will leave them as is.
+In this demo data set, the default value for FAP and Train Fraction Ratio are appropriate, we will leave them as is.
 ![](../images/create_and_train_model.png " ")
 
 Click Submit. For this demo dataset, it takes **5 minutes** to finish training a model.

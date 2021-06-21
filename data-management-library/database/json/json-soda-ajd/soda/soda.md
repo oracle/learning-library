@@ -4,7 +4,7 @@
 
 So far, all collection operations have been issued from a UI in the browser. In a real application these operations would be called directly from a programming language (for example using the open-source SODA drivers for Java, Python or NodeJS). Another option is to use REST. In this lab,
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -162,7 +162,7 @@ In this lab, you will:
 
 	```
 	<copy>
-	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/s-TeBtMfpFz0_r1b4QNkZeiVzLApLU4mdQ1B94uv4kKfTH_7kA3vWSN11ocF2853/n/c4u03/b/data-management-library-files/o/testdata.json --output testdata.json
+	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/D2qfIeCdhjmT3tik7QZQgVIO1bcV3jbW5vgqKMzWM3_GtLCOgZvDvz9JhaPqjhCB/n/c4u03/b/data-management-library-files/o/testdata.json --output testdata.json
 	</copy>
 	```
 
@@ -192,8 +192,16 @@ In this lab, you will:
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+
+* [Overview of SODA](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda.html#GUID-BE42F8D3-B86B-43B4-B2A3-5760A4DF79FB)
+* [SODA for REST Overview](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/rest/adrst/rest.html#GUID-CDCB8C6D-E830-4851-AED0-1BCBBCD1AC9A)
+* [Using SODA for REST](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/rest/adrst/using-soda-rest.html#GUID-C67498D7-5783-4969-80EF-C180CEC1144A)
+* [Use SODA for REST with Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/ords-develop-oracle-soda-data-services.html)
+* [Overview of SODA Filter Specifications](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda-filter-specifications-qbes.html#GUID-CB09C4E3-BBB1-40DC-88A8-8417821B0FBE)
+
 ## Acknowledgements
 
 - **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, June 2021

@@ -151,7 +151,11 @@ You are now connected to your Autonomous Database using JSON.
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+
+* [Provision Autonomous JSON Database](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/autonomous-provision.html#GUID-0B230036-0A05-4CA3-AF9D-97A255AE0C08)
+
 ## Acknowledgements
 
 - **Author** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, June 2021

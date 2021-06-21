@@ -12,11 +12,9 @@ This lab will show you how to switch the Inventory microservice to a Python, Nod
 
 Estimates Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to switch the Inventory microservice to Python while retaining the same application functionality.
 
 [](youtube:zltpjX721PA)
-</if>
 
 ### Objectives
 
@@ -33,8 +31,17 @@ This lab assumes you have already completed the previous labs.
     inventory-helidon folder, using the following command.
 
     ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
+<if type="multicloud-freetier">
+  -  <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
+  +  <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy-verrazzano.sh</copy>
+</if>
     ```
+
+<if type="multicloud-freetier">
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy-verrazzano.sh</copy>
+    ```
+</if>
 
    ![](images/undeploy-inventory-helidon-mp.png " ")
 

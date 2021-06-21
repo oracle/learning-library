@@ -2,15 +2,13 @@
 
 ## Introduction
 
-This lab walks you through setting up an environment to simulate an established on-premises environment, using a Compute instance on OCI deployed through the marketplace.
+We will walk you through setting up an environment to simulate an established on-premises environment, using a Compute instance on OCI deployed through the marketplace.
 
-At the end of this lab, you will have a simulated on-premises environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
+On completion, you will have a simulated on-premises environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
 
-Estimated Lab Time: 15 minutes.
+Estimated Completion Time: 15 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Launch a demo marketplace image.
 - Check that the services are up and running.
@@ -19,47 +17,45 @@ In this lab you will:
 
 ### Prerequisites
 
-For this lab you need:
-
 - A compute instance with 4 OCPUs available to run the image.
 
 ## **STEP 1:** Launch the Workshop Marketplace Stack
 
 1. Navigate to [Workshop Environment Marketplace Stack](https://cloudmarketplace.oracle.com/marketplace/listing/82173888).
 
-1. Click **Get App**.
+2. Click **Get App**.
 
   ![](./images/get-app.png " ")
 
-2. Sign in to your Oracle Cloud Infrastructure account.
+3. Sign in to your Oracle Cloud Infrastructure account.
 
   ![](./images/sign-in.png " ")
 
-3. Choose a compartment.
+4. Choose a compartment.
 
   ![](./images/wls-workshop-mp1.png " ")
 
-4. Accept the Terms and Conditions and click **Launch**.
+5. Accept the Terms and Conditions and click **Launch**.
 
   ![](./images/wls-workshop-mp2.png " ")
 
-5. Click **Next**.
+6. Click **Next**.
 
   ![](./images/next.png " ")
 
-6. Paste your **SSH public key**.
+7. Paste your **SSH public key**.
 
    To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer.
 
   ![](./images/ssh-key.png " ")
 
-7. Click **Next** and then **Create**.
+8. Click **Next** and then **Create**.
 
   ![](./images/job-running.png " ")
 
   It will take about 1 to 2 minutes to create the stack.
 
-8. When the job finishes, you can find the Public IP address of the instance at the bottom of the logs, or in the **Output** area. Make a note of this information.
+9. When the job finishes, you can find the Public IP address of the instance at the bottom of the logs, or in the **Output** area. Make a note of this information.
 
   ![](./images/job-output.png " ")
 

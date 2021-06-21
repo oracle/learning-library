@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to migrate the on-premises application database to the database provisioned on Oracle Cloud Infrastructure (OCI) using DataPump.
+We will walk you through the steps to migrate the on-premises application database to the database provisioned on Oracle Cloud Infrastructure (OCI) using DataPump.
 
-Estimated Lab Time: 10 minutes.
+Estimated Completion Time: 10 minutes.
 
 ### About Product/Technology
 
@@ -12,20 +12,16 @@ Estimated Lab Time: 10 minutes.
 - DataPump export function creates a DDL + data dump of the user schema.
 - DataPump import function imports the data into the database.
 
-In this workshop we will be using wrapper scripts to export, move the data to the destination and import to complete a full migration.
+We will be using wrapper scripts to export, move the data to the destination, and import to complete a full migration.
 
 ### Objectives
 
-In this lab you will:
-
 - Get shell access to the on-premises database.
 - Use a DataPump script to export the database schema to migrate.
-- Edit the DataPump import script with the information collected in the database provisioning lab.
+- Edit the DataPump import script with the information collected during the database provisioning stage.
 - Run a DataPump import script to migrate the database schema to OCI.
 
 ### Prerequisites
-
-To run this lab you need:
 
 - To have provisioned the on-premises demo environment that includes the source database to migrate.
 - To have provisioned the target database on OCI.
@@ -138,9 +134,9 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
    ![](./images/provision-db-26-nodeip.png " ")
 
-4. Enter the `TARGET_DB_DOMAIN` name, from the database connection string.
+4. Enter the `TARGET_DB_DOMAIN` name from the database connection string.
 
-   If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
+   If you followed the default naming conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
    ![](./images/provision-db-27-connection2.png " ")
 

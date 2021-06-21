@@ -6,11 +6,9 @@ In this lab, we will tear down the resources created in your tenancy and the dir
 
 Estimates Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through to tear down the resources created in your tenancy and the directory in cloud shell.
 
 [](youtube:vfj_hCDnp7g)
-</if>
 
 ### Objectives
 

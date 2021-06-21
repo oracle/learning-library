@@ -18,7 +18,7 @@ You can complete this entire workshop using your web browser. There is no need t
 
 This workshop consists of multiple 'labs' - each describing one aspect or feature. Most labs build on previous steps but there are also optional (advanced) labs which are optional - they can be skipped.
 
-Estimated Lab Time: 60 minutes (without extended labs); 90 minutes with extended labs.
+Estimated Lab Time: 75 minutes (without extended labs); 90 minutes with extended labs.
 
 Watch this quick video to know why JSON in Oracle Autonomous Database is awesome.
 
@@ -85,7 +85,12 @@ In this workshop, you will explore:
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+
+* [Overview of JSON](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-data.html#GUID-B2D82ED4-B007-4019-8B53-9D0CDA81C4FA)
+
 ## Acknowledgements
+
 * **Author** - Beda Hammerschmidt, Architect
 * **Contributors** -  Anoosha Pilli, Product Manager, Oracle Database
 * **Last Updated By/Date** - Anoosha Pilli, June 2021
