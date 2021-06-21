@@ -1,51 +1,35 @@
 {
-    "workshoptitle": "Modern Application Development with Oracle REST Data Services",
+  "workshoptitle": "Expanding Oracle REST Data Services into Oracle Cloud Infrastructure",
     "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {
             "title": "Introduction",
-            "description": "Modern Application Development with Oracle REST Data Services Introduction",
+            "description": "Expanding Oracle REST Data Services into Oracle Cloud Infrastructure",
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Getting Started",
-            "description": "Login to Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+            "title": "Login to Oracle Cloud",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Provision an Autonomous Database",
-            "description": "Provision an Autonomous Database - ATP or ADW",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-livelabs.md"
+            "title": "Lab 1: Setups",
+            "description": "Setup your OCI account and create an Oracle Autonomous Database",
+            "filename": "../../setups/setups.md"
         },
         {
-            "title": "Lab 2: Connect to ADB with SQL Dev Web",
+            "title": "Lab 2: Create a Function to batchload data into the database using ORDS",
             "description": "Connect to an Autonomous Database with SQL Developer Web",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md"
+            "filename": "../../csv-function/csv-function.md"
         },
         {
-            "title": "Lab 3: Create and Auto-REST enable a table",
+            "title": "Lab 3: Create a Function and Service Connector to load logs from the Logging Service into the database using ORDS",
             "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../create-table/create-table.md"
+            "filename": "../../json-logging/json-logging.md"
         },
-        {
-            "title": "Lab 4: Load data and create business logic in the database",
-            "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../load-data-and-biz-objs/load-data-and-biz-objs.md"
-        },
-        {
-            "title": "Lab 5: REST enable tables and business logic",
-            "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../rest-enable-objects/rest-enable-objects.md"
-        },
-        {
-            "title": "Lab 6: Securing the REST endpoints",
-            "description": "Modern App Dev with Oracle REST Data Services",
-            "filename": "../../secure-endpoints/secure-endpoints.md"
-        },  
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
     ]
-}
+}  

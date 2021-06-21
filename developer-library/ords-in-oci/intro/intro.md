@@ -1,4 +1,4 @@
-# Oracle REST Data Services in Oracle Cloud Infrastructure
+# Expanding Oracle REST Data Services into Oracle Cloud Infrastructure
 
 ## Introduction
 
@@ -8,8 +8,7 @@ Like a swiss army knife or that as-seen-on-tv multi-tool you got from your grand
 
 In this lab you will create a series of scenarios in OCI where Oracle REST Data Services facilitates loading different types of data into an autonomous database securely. The situations will be:
 
-- Expose your REST APIs externally with the API Gateway
-- Consume a CSV file from Object Store with a REST enabled table using Functions and Events
+- Consume a CSV file from Object Store with a REST enabled table in an Autonomous Database using Functions and Events
 - Send Log Data to an Autonomous Database using OCI Logging and the Service Connector Hub and Functions
 
 
@@ -20,15 +19,11 @@ This lab assumes you have completed the following labs:
 
 ## Oracle REST Data Services in Oracle Cloud Infrastructure
 
-### **STEP 1:** XXX
+### **STEP 1:** Setup Your Account and Create an Oracle Autonomous Database XXX
 
-### **STEP 2:** XXX
+### **STEP 2:** Create a Function to batchload data into the database using ORDS
 
-### **STEP 3:** XXX
-
-### **STEP 4:** XXX
-
-### **STEP 5:** XXX
+### **STEP 3:** Create a Function and Service Connector to load logs from the Logging Service into the database using ORDS
 
 ### About Oracle REST Data Services
 
@@ -43,14 +38,6 @@ Oracle Functions is a fully managed, multi-tenant, highly scalable, on-demand, F
 The serverless and elastic architecture of Oracle Functions means there's no infrastructure administration or software administration for you to perform. You don't provision or maintain compute instances, and operating system software patches and upgrades are applied automatically. Oracle Functions simply ensures your app is highly-available, scalable, secure, and monitored. With Oracle Functions, you can write code in Java, Python, Node, Go, and Ruby (and for advanced use cases, bring your own Dockerfile, and Graal VM). You can then deploy your code, call it directly or trigger it in response to events, and get billed only for the resources consumed during the execution.
 
 More about Functions can be found [here](https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm).
-
-### About API Gateway
-
-The API Gateway service enables you to publish APIs with private endpoints that are accessible from within your network, and which you can expose with public IP addresses if you want them to accept internet traffic. The endpoints support API validation, request and response transformation, CORS, authentication and authorization, and request limiting.
-
-Using the API Gateway service, you create one or more API gateways in a regional subnet to process traffic from API clients and route it to back-end services. You can use a single API gateway to link multiple back-end services (such as load balancers, compute instances, and Oracle Functions) into a single consolidated API endpoint.
-
-More about the API Gateway can be found [here](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
 
 ### About Service Connector Hub
 
