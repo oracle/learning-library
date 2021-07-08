@@ -14,10 +14,10 @@ The labs will walk the end-user through how to add all components of Oracle Gold
 
 ### Lab Overview
 
-- **Lab: Installation Of GoldenGate Microservices for Big Data** -
-    In this lab we will install GoldenGate Microservices for Big Data in the GG Target. Follow the steps below to install GGMA
+- **Lab: Installation Of GoldenGate Microservices for Big Data**
+    In this lab we will install GoldenGate Microservices for Big Data in the GG Target. Follow the steps below to install GGMA.
 
-- **Lab: Replication from Relational Database to Relational Database using GoldenGate Classic -
+- **Lab: Replication from Relational Database to Relational Database using GoldenGate Classic** -
     This lab is intended to give you familiarity with how to configure GG for database to database replication. If you are already familiar with GG, you can choose to skip this lab.
 
 - **Lab: Replication from Relational to HDFS** -
@@ -53,7 +53,7 @@ The labs will walk the end-user through how to add all components of Oracle Gold
 ## Learn More
 
 * [GoldenGate](https://www.oracle.com/middleware/data-integration/goldengate/")
-* [GoldenGate Microservices](https://www.oracle.com/middleware/data-integration/goldengate/")
+* [GoldenGate Microservices](https://docs.oracle.com/goldengate/c1230/gg-winux/GGCON/getting-started-oracle-goldengate.htm#GGCON-GUID-5DB7A5A1-EF00-4709-A14E-FF0ADC18E842")
 * [GoldenGate for Big Data](https://www.oracle.com/middleware/data-integration/goldengate/big-data/")
 
 ## Acknowledgements
