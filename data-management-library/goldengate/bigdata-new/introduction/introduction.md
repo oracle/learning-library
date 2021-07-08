@@ -9,6 +9,15 @@ The labs will walk the end-user through how to add all components of Oracle Gold
 **Workshop Architecture**
     ![](./images/classic_ggma.png " ")
 
+**Microservices Administration - GG Adminclient**
+    ![](./images/adminclient.png " ")
+
+- Command Line Tool (replacement for GGSCI)
+- Install on Windows, Linux, Containers, etc…
+- Manage multiple deployments, single interface
+
+
+
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 

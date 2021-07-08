@@ -23,6 +23,17 @@ Oracle GoldenGate 21.1 Microservices can be used to setup a replication environm
 ## Classic to Microservices architecture
 ![](images/100/classic_ggma.png " ")
 
+## Microservices and Cloud (OCI) Security
+
+- Full isolation from other tenants and Oracle Staff, and same tenant workloads (OCI)
+- Always-On Encryption – protect customer data (OCI)
+- Comprehensive log data that allows you to audit and monitor actions on your resources (OCI)
+- Role based security framework (OGG)
+- Secure Socket Layer (SSL)/HTTPs based replication (OGG)
+- Centralized Key Management (OGG)
+
+
+
 ## Workshop Details
 
 There are 7 hands-on labs in this workshop. GoldenGate software for MySQL are auto-installed as part of the initial setup. After running Lab 1 – Install GG for Big Data, the rest of the labs can be run independently of each other, and in any order.
@@ -40,6 +51,8 @@ Lab 5 – MySQL -> HBase
 Lab 6 – MySQL -> Kafka (Json format) 
 
 Lab 7 – MySQL -> Cassandra
+
+Lab 8 - 10  -> GG Microservices
 
 
 
