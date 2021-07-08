@@ -4,7 +4,7 @@
 
 In this lab you will install GoldenGate for Big Data using Microservices in the GG Target Home.
 
-*Estimated Lab Time*:  30 minutes
+*Estimated Lab Time*:  60 minutes
 
 **Source GGBD Workshop Architecture**
   ![](./images/image110_1.png " ")
@@ -103,6 +103,8 @@ Oracle GoldenGate for Big Data provides optimized and high performance delivery 
 Oracle GoldenGate for Big Data includes Oracle GoldenGate for Java, which enables customers to easily integrate to additional big data systems, such as Apache Storm, Apache Spark, Oracle NoSQL, MongoDB, SAP HANA, IBM PureData System for Analytics and many others.
 
 Oracle GoldenGate for Big Data’s real-time data streaming platform also allows customers to keep their big data reservoirs, or big data lakes, up to date with their production systems.
+
+Oracle GoldenGate 21.1 Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient via a Windows or Linux command line
 
 ## Summary
 
