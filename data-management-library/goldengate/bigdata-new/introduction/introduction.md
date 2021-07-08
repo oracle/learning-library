@@ -46,9 +46,10 @@ The labs will walk the end-user through how to add all components of Oracle Gold
     In this lab we will .....
 
 - **Lab: Configure GoldenGate Microservices BigData Kafka Target Property file using Administration Server ** -
-
     In this lab we will .....
 
+- **Lab: Managing GoldenGate Remotely using Adminclient ** -  
+    In this lab we will .....
 
 ## Learn More
 
