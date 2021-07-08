@@ -6,9 +6,6 @@ Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-
 **Workshop Architecture**
     ![](./images/classic_ggma.png " ")
 
-    New Architecture using GGMA
-
-  ![](./images/classic_ggma.png " ")
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
