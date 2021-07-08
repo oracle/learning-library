@@ -1,15 +1,19 @@
-# Deploy GoldenGate for Big Data
+# Deploy GoldenGate for Big Data using Microservices
 
 ## Introduction
 
-In this lab you will install GoldenGate for Big Data in the GG Target Home.
+In this lab you will install GoldenGate for Big Data using Microservices in the GG Target Home.
 
 *Estimated Lab Time*:  30 minutes
 
+**Source GGBD Workshop Architecture**
   ![](./images/image110_1.png " ")
 
+**Target GGBD Microservices Architecture**
+  ![](./images/classic_ggma.png " ")
+
 ### Objectives
-- Deploy GoldenGate for Big Data
+- Deploy GoldenGate for Big Data using Microservices
 
 ### Prerequisites
 This lab assumes you have:
