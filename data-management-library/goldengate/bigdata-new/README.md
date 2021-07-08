@@ -16,10 +16,12 @@ The GoldenGate for Big Data Workshop is designed to introduce replication capabi
 Oracle GoldenGate 21.1 Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient.
 
 
-## Workshop architecture
+## Classic architecture
 
 ![](images/100/image110_1.png " ")
 
+## Classic to Microservices architecture
+![](images/100/classic_ggma.png " ")
 
 ## Workshop Details
 
