@@ -89,7 +89,7 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 4. Select the option that indicates your local repository.
 In the following example, user achepuri has forked the **learning-library** repository.
 
-![](./images/get-started-git-hub-webui-forked-library.png " ")
+  ![](./images/get-started-git-hub-webui-forked-library.png " ")
 
 In the next Step, you will clone this forked repository.
 
@@ -122,7 +122,11 @@ To clone the forked repository:
 
 5. You can also use Github Desktop to Synchronize the changes that you have made in your local file system to the forked content on your github repo, more details on using Github Desktop in Lab 4 of this workshop and also on Otube [Working with GitHub Desktop](https://otube.oracle.com/media/t/1_bxj0cfqf).
 
-![](./images/github-desktop-sync.png " ")
+  ![](./images/github-desktop-sync.png " ")
+
+6. When asked how you plan to use the fork select **To contribute to the parent project**.
+
+  ![](./images/contribute-to-parent.png " ")
 
 You may now [proceed to the next lab](#next).
 
