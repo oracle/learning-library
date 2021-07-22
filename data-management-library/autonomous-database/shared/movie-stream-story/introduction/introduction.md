@@ -1,36 +1,36 @@
+![moviestream](images/moviestream.jpeg)
 # Introduction
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spendign their time on this workshop?
+Most workshops focus on teaching you about a cloud service or performing a series of tasks.  This workshop is different.  You will learn how to deliver high value solutions using Oracle Cloud data platform services.  And, it will do this in the context of a company that we all can relate to and understand.
 
-Estimated Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+Oracle MovieStream is a fictitious movie streaming service - similar to those that you currently subscribe to.  They face challenges that are typical to many organizations across industries. MovieStream needs to:
+* Gain a better understanding of their customers to ensure that they love their service  
+* Offer the right products at the right time at the right price  
+* Grow the business to become a dominant player in the streaming business
+* and much, much more
 
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
+Oracle Cloud provides an amazing platform to productively deliver secure, insightful, scalable and performant solutions. MovieStream designed their solution leveraging the world class Autonomous Database and OCI Data Lake services. You will learn how they built their solution thru a series of labs that highlight the following:
 
 ### Objectives
+* Deploy an Autonomous Database instance
+* Integrate Autonous Database with the Data Lake
+* Use advanced SQL to uncover issues and possibilities
+* Predict customer churn using with Machine Learning
+* Use spatial analyses to help provide localized promotions
+* Offer recommendations based on graph relationships
 
-*List objectives for the workshop*
+### What's Next
+MovieStream is only getting started with Oracle Cloud services.  And, this workshop will continue to evolve and highlight more capabilities that will allow MovieStream to improve their operations and profitability.  Keep an eye on this space!
 
-In this workshop, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - Marty Gubar, Product Manager
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>

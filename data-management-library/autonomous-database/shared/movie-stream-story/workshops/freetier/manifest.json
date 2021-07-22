@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-          "title": "Introduction",
+          "title": "Introduction to MovieStream",
           "filename": "../../introduction/introduction.md"
         },
         {
@@ -16,7 +16,7 @@
           "filename": "../../provision-database/adb-provision-moviestream.md"
         },
         {
-            "title": "Lab 2: Guided Tour of ADW",
+            "title": "Lab 2: Tour of ADB Console",
             "filename": "../../guided-tour/guided-tour.md"
         },
         {
